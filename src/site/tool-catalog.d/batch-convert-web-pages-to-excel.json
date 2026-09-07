@@ -1,0 +1,28 @@
+{
+  "slug": "batch-convert-web-pages-to-excel",
+  "path": "/tools/batch-convert-web-pages-to-excel",
+  "updatedAt": "2026-09-07T08:10:00.000Z",
+  "launchedAt": "2026-09-07T08:10:00.000Z",
+  "category": "developer",
+  "primaryTopic": "dev-data",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_convert_web_pages_to_excel_title",
+  "homeTitleKey": "tool_batch_convert_web_pages_to_excel_title",
+  "homeDescKey": "tool_batch_convert_web_pages_to_excel_desc",
+  "faqPrefix": "tool_batch_convert_web_pages_to_excel",
+  "related": [
+    "convert-html-web-pages-to-word-document",
+    "csv-json",
+    "batch-convert-web-pages-to-pdf"
+  ],
+  "logo": "/icons/tools/batch-convert-web-pages-to-excel.svg",
+  "page": {
+    "module": "../pages/batchConvertWebPagesToExcelPage",
+    "export": "renderBatchConvertWebPagesToExcelPage",
+    "style": "opts"
+  },
+  "localProcessing": false,
+  "scenario": "documents",
+  "subject": "data"
+}

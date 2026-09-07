@@ -288,6 +288,29 @@
     "subject": "pdf"
   },
   {
+    "slug": "batch-convert-web-pages-to-excel",
+    "path": "/tools/batch-convert-web-pages-to-excel",
+    "updatedAt": "2026-09-07T08:10:00.000Z",
+    "launchedAt": "2026-09-07T08:10:00.000Z",
+    "category": "developer",
+    "primaryTopic": "dev-data",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_convert_web_pages_to_excel_title",
+    "homeTitleKey": "tool_batch_convert_web_pages_to_excel_title",
+    "homeDescKey": "tool_batch_convert_web_pages_to_excel_desc",
+    "faqPrefix": "tool_batch_convert_web_pages_to_excel",
+    "related": [
+      "convert-html-web-pages-to-word-document",
+      "csv-json",
+      "batch-convert-web-pages-to-pdf"
+    ],
+    "logo": "/icons/tools/batch-convert-web-pages-to-excel.svg",
+    "localProcessing": false,
+    "scenario": "documents",
+    "subject": "data"
+  },
+  {
     "slug": "batch-convert-web-pages-to-jpg",
     "path": "/tools/batch-convert-web-pages-to-jpg",
     "updatedAt": "2026-09-07T05:14:25.993Z",
@@ -302,7 +325,8 @@
     "faqPrefix": "tool_batch_convert_web_pages_to_jpg",
     "related": [
       "batch-convert-web-pages-to-pdf",
-      "pdf-to-jpg"
+      "pdf-to-jpg",
+      "batch-convert-web-pages-to-png"
     ],
     "logo": "/icons/tools/batch-convert-web-pages-to-jpg.svg",
     "localProcessing": false,
@@ -334,6 +358,28 @@
     "localProcessing": false,
     "scenario": "documents",
     "subject": "pdf"
+  },
+  {
+    "slug": "batch-convert-web-pages-to-png",
+    "path": "/tools/batch-convert-web-pages-to-png",
+    "updatedAt": "2026-09-07T06:35:00.000Z",
+    "launchedAt": "2026-09-07T06:35:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_convert_web_pages_to_png_title",
+    "homeTitleKey": "tool_batch_convert_web_pages_to_png_title",
+    "homeDescKey": "tool_batch_convert_web_pages_to_png_desc",
+    "faqPrefix": "tool_batch_convert_web_pages_to_png",
+    "related": [
+      "batch-convert-web-pages-to-jpg",
+      "batch-convert-web-pages-to-pdf"
+    ],
+    "logo": "/icons/tools/batch-convert-web-pages-to-png.svg",
+    "localProcessing": false,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "batch-watermark-product-photos",
@@ -829,12 +875,39 @@
     "related": [
       "markdown-to-html",
       "write-pdf-document-online",
-      "convert-word-document-to-pdf"
+      "convert-word-document-to-pdf",
+      "convert-html-web-pages-to-word-document"
     ],
     "logo": "/icons/tools/convert-html-to-pdf.svg",
     "localProcessing": false,
     "scenario": "documents",
     "subject": "pdf"
+  },
+  {
+    "slug": "convert-html-web-pages-to-word-document",
+    "path": "/tools/convert-html-web-pages-to-word-document",
+    "updatedAt": "2026-09-07T07:20:00.000Z",
+    "launchedAt": "2026-09-07T07:20:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_html_web_pages_to_word_document_title",
+    "homeTitleKey": "tool_convert_html_web_pages_to_word_document_title",
+    "homeDescKey": "tool_convert_html_web_pages_to_word_document_desc",
+    "faqPrefix": "tool_convert_html_web_pages_to_word_document",
+    "related": [
+      "convert-html-to-pdf",
+      "turn-pdf-into-word-document",
+      "batch-convert-web-pages-to-excel"
+    ],
+    "logo": "/icons/tools/convert-html-web-pages-to-word-document.svg",
+    "localProcessing": false,
+    "scenario": "documents",
+    "subject": "word"
   },
   {
     "slug": "convert-pdf-to-dwg",
@@ -1088,7 +1161,8 @@
     "related": [
       "yaml-json",
       "text-diff",
-      "json-schema-validator"
+      "json-schema-validator",
+      "batch-convert-web-pages-to-excel"
     ],
     "logo": "/icons/tools/csv-json.svg",
     "localProcessing": true,

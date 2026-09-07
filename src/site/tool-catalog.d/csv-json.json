@@ -13,7 +13,8 @@
   "related": [
     "yaml-json",
     "text-diff",
-    "json-schema-validator"
+    "json-schema-validator",
+    "batch-convert-web-pages-to-excel"
   ],
   "logo": "/icons/tools/csv-json.svg",
   "page": {

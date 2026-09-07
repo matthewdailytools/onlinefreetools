@@ -1,0 +1,31 @@
+{
+  "slug": "convert-html-web-pages-to-word-document",
+  "path": "/tools/convert-html-web-pages-to-word-document",
+  "updatedAt": "2026-09-07T07:20:00.000Z",
+  "launchedAt": "2026-09-07T07:20:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_convert_html_web_pages_to_word_document_title",
+  "homeTitleKey": "tool_convert_html_web_pages_to_word_document_title",
+  "homeDescKey": "tool_convert_html_web_pages_to_word_document_desc",
+  "faqPrefix": "tool_convert_html_web_pages_to_word_document",
+  "related": [
+    "convert-html-to-pdf",
+    "turn-pdf-into-word-document",
+    "batch-convert-web-pages-to-excel"
+  ],
+  "logo": "/icons/tools/convert-html-web-pages-to-word-document.svg",
+  "page": {
+    "module": "../pages/convertHtmlWebPagesToWordDocumentPage",
+    "export": "renderConvertHtmlWebPagesToWordDocumentPage",
+    "style": "opts"
+  },
+  "localProcessing": false,
+  "scenario": "documents",
+  "subject": "word"
+}

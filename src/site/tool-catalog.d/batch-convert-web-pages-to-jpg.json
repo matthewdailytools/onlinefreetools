@@ -13,7 +13,8 @@
   "faqPrefix": "tool_batch_convert_web_pages_to_jpg",
   "related": [
     "batch-convert-web-pages-to-pdf",
-    "pdf-to-jpg"
+    "pdf-to-jpg",
+    "batch-convert-web-pages-to-png"
   ],
   "logo": "/icons/tools/batch-convert-web-pages-to-jpg.svg",
   "page": {

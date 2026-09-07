@@ -1071,6 +1071,107 @@ const ru: SiteLangDict = {
   tool_batch_compress_pdfs_for_email_usecase_3: 'Уменьшить несколько PDF перед письмом, не объединяя их.',
   tool_batch_compress_pdfs_for_email_usecases_title: 'Когда это кстати',
   tool_batch_compress_pdfs_for_email_warn_large: 'Есть файл больше 40 МБ — на этой строке вкладке может не хватить памяти.',
+  tool_batch_convert_web_pages_to_excel_advanced_label: 'Дополнительные настройки (по желанию)',
+  tool_batch_convert_web_pages_to_excel_article:
+    'Заберите HTML-таблицы с публичных адресов в одну книгу Excel: каждая таблица станет листом с ячейками, которые можно фильтровать. Сплошной текст и скриншоты не попадают. Это не PDF для печати A4 и не документ Word. Каждый адрес запрашивается один раз через сервер и не сохраняется. Вставленный HTML остаётся во вкладке. Печать: пакетно преобразовать веб-страницы в PDF. Правка заголовков: преобразовать HTML-страницы в документ Word.',
+  tool_batch_convert_web_pages_to_excel_clear: 'Очистить',
+  tool_batch_convert_web_pages_to_excel_col_file: 'Листы',
+  tool_batch_convert_web_pages_to_excel_col_status: 'Статус',
+  tool_batch_convert_web_pages_to_excel_col_url: 'URL',
+  tool_batch_convert_web_pages_to_excel_convert: 'Конвертировать всё',
+  tool_batch_convert_web_pages_to_excel_desc: 'Вытащите HTML-таблицы из списка URL в одну книгу Excel — не скриншот, не PDF и не Word.',
+  tool_batch_convert_web_pages_to_excel_description:
+    'Пакетно преобразовать веб-страницы в Excel: HTML-таблицы в один .xlsx (HTML в Excel / HTML-таблица в Excel). Не скриншот и не PDF A4. Шаги: вставить URL, Конвертировать всё, Скачать Excel. Пример: прайс и склад станут двумя листами. URL запрашивается один раз и не хранится.',
+  tool_batch_convert_web_pages_to_excel_download: 'Скачать Excel',
+  tool_batch_convert_web_pages_to_excel_empty: 'Вставьте хотя бы один URL страницы или перейдите к «Вставить HTML».',
+  tool_batch_convert_web_pages_to_excel_err_convert: 'На этой странице нет пригодной HTML-таблицы. Пропущено.',
+  tool_batch_convert_web_pages_to_excel_err_html_empty: 'Сначала вставьте HTML, в котором есть <table>.',
+  tool_batch_convert_web_pages_to_excel_err_load: 'Библиотека Excel не загрузилась. Обновите страницу и попробуйте снова.',
+  tool_batch_convert_web_pages_to_excel_err_too_many: 'Не больше 10 URL. Лишние строки не добавлены.',
+  tool_batch_convert_web_pages_to_excel_err_url: 'Не удалось загрузить этот URL. Проверьте адрес — или сайт блокирует запрос.',
+  tool_batch_convert_web_pages_to_excel_err_url_empty: 'Эта строка не является корректным http(s) URL. Пропущено.',
+  tool_batch_convert_web_pages_to_excel_example:
+    'Загрузить пример подставляет прайс и склад, собирает локальную книгу из двух HTML-таблиц (без живого сайта) и включает Скачать Excel. «Конвертировать всё» запрашивает адреса, которые вы вставили. «Вставить HTML» — то же сопоставление таблиц без URL.',
+  tool_batch_convert_web_pages_to_excel_example_title: 'Пример',
+  tool_batch_convert_web_pages_to_excel_faq_a1:
+    'Вставленный HTML не покидает вкладку. Если вы конвертируете URL, мы один раз отправляем каждый адрес за HTML и не храним страницы. Файл .xlsx собирается в браузере.',
+  tool_batch_convert_web_pages_to_excel_faq_a2:
+    'Страница Word переносит заголовки, списки и абзацы в редактируемый .docx. Здесь проза игнорируется, в листы Excel копируются только ячейки HTML-таблиц. Тот же запрос, другой файл.',
+  tool_batch_convert_web_pages_to_excel_faq_a3:
+    'JPG/PNG — снимки вьюпорта (ZIP картинок). PDF режет A4 для печати. Здесь числа и текст, которые фильтруются в Excel: одна книга, не ZIP фотографий.',
+  tool_batch_convert_web_pages_to_excel_faq_a4:
+    'Да. Одной строки хватит для «веб-страница в Excel». Удачные URL делят один .xlsx с несколькими листами.',
+  tool_batch_convert_web_pages_to_excel_faq_a5:
+    'Нет. Нет OCR и нет разбора PDF. Конвертируйте HTML-страницу или вставьте разметку таблицы. Если CSV уже есть — CSV ↔ JSON.',
+  tool_batch_convert_web_pages_to_excel_faq_a6:
+    'Вкладка «Вставить HTML» (HTML в Excel / HTML-таблица в Excel). Полная страница Chrome / .mhtml не поддерживается: экспортируйте HTML или скопируйте таблицу. Это не Excel в вебе.',
+  tool_batch_convert_web_pages_to_excel_faq_q1: 'Страницы загружаются и сохраняются?',
+  tool_batch_convert_web_pages_to_excel_faq_q2: 'Чем это отличается от «Преобразовать HTML-страницы в документ Word»?',
+  tool_batch_convert_web_pages_to_excel_faq_q3: 'А чем от пакетных JPG, PNG или PDF?',
+  tool_batch_convert_web_pages_to_excel_faq_q4: 'Можно конвертировать один URL?',
+  tool_batch_convert_web_pages_to_excel_faq_q5: 'Вытаскиваете таблицы из PDF?',
+  tool_batch_convert_web_pages_to_excel_faq_q6: 'У меня HTML или HTML-таблица, не URL. Excel в интернете или mhtml?',
+  tool_batch_convert_web_pages_to_excel_file_count_tpl: '{n} URL в очереди',
+  tool_batch_convert_web_pages_to_excel_how_body:
+    'Вставьте публичные URL с HTML-таблицами, нажмите «Конвертировать всё» и скачайте одну книгу Excel. Сплошной текст пропускается; листами становятся только ячейки <table>.',
+  tool_batch_convert_web_pages_to_excel_how_item_1:
+    'Один https URL в строке (прайсы и публичные HTML-таблицы подходят). Одной строки хватит для «страница в Excel».',
+  tool_batch_convert_web_pages_to_excel_how_item_2:
+    'Нажмите «Конвертировать всё». Каждый публичный URL запрашивается один раз; страницы без пригодной таблицы пропускаются, остальные идут дальше.',
+  tool_batch_convert_web_pages_to_excel_how_item_3:
+    'Есть разметка, нет URL (HTML в Excel / HTML-таблица в Excel)? Откройте «Вставить HTML», вставьте код, затем «Конвертировать всё».',
+  tool_batch_convert_web_pages_to_excel_how_item_4:
+    'Нужен один лист на URL, а не на таблицу, или оставить крошечные навигационные таблицы? Откройте дополнительные настройки.',
+  tool_batch_convert_web_pages_to_excel_how_item_5:
+    'A4? Пакетно преобразовать веб-страницы в PDF. Заголовки? Преобразовать HTML-страницы в документ Word. Уже есть CSV? CSV ↔ JSON.',
+  tool_batch_convert_web_pages_to_excel_how_item_6: 'Скачать Excel, когда сопоставлена хотя бы одна таблица.',
+  tool_batch_convert_web_pages_to_excel_how_title: 'Как это работает',
+  tool_batch_convert_web_pages_to_excel_html_hint:
+    'Вставьте фрагмент или полный HTML с <table>. Сопоставление остаётся во вкладке, ничего не отправляется.',
+  tool_batch_convert_web_pages_to_excel_html_label: 'HTML с таблицами',
+  tool_batch_convert_web_pages_to_excel_html_placeholder: '<table><tr><th>SKU</th><th>Кол-во</th></tr></table>',
+  tool_batch_convert_web_pages_to_excel_layout_label: 'Листы',
+  tool_batch_convert_web_pages_to_excel_layout_table: 'Один лист на HTML-таблицу',
+  tool_batch_convert_web_pages_to_excel_layout_url: 'Один лист на URL (сложить таблицы)',
+  tool_batch_convert_web_pages_to_excel_opts_hint:
+    'По умолчанию один лист на HTML-таблицу в одной книге. Сложение кладёт все таблицы URL на один лист с пустой строкой между ними. Крошечные таблицы (меньше двух строк или двух столбцов) пропускаются, чтобы навигационные сетки не засоряли файл.',
+  tool_batch_convert_web_pages_to_excel_progress_tpl: '{i} / {total}',
+  tool_batch_convert_web_pages_to_excel_rules_body:
+    'Копируются только ячейки HTML <table>. Один http(s) URL в строке, до 10. Неудачные строки пропускаются. Удачные таблицы делят один .xlsx. Это не переименованный скриншот и не экспорт PDF.',
+  tool_batch_convert_web_pages_to_excel_rules_item_1:
+    'Каждый URL уходит один раз за HTML и не сохраняется. Вставленный HTML не покидает вкладку. Книга собирается здесь.',
+  tool_batch_convert_web_pages_to_excel_rules_item_2: 'Частные сети, стены входа и страницы без <table> валят эту строку. Остальные продолжают.',
+  tool_batch_convert_web_pages_to_excel_rules_item_3:
+    'colspan вставляет пустые ячейки. rowspan сглаживается (каждая строка независима). Скрипты снимаются, поэтому таблица только на JS будет пустой.',
+  tool_batch_convert_web_pages_to_excel_rules_item_4:
+    'Это не обход всего сайта и не Excel в вебе. Вставьте URL или HTML, которые уже есть. Имена листов обрезаются до 31 символа.',
+  tool_batch_convert_web_pages_to_excel_rules_item_5:
+    'По сравнению с HTML→Word: только таблицы, не заголовки/списки. По сравнению с пакетными JPG/PNG/PDF: ячейки в одной книге, не ZIP растров и не A4. По сравнению с CSV ↔ JSON: вход — страница, не уже имеющийся файл.',
+  tool_batch_convert_web_pages_to_excel_rules_title: 'Правила, которых стоит ждать',
+  tool_batch_convert_web_pages_to_excel_sample: 'Загрузить пример',
+  tool_batch_convert_web_pages_to_excel_skip_tiny_label: 'Пропускать крошечные таблицы (меньше 2×2)',
+  tool_batch_convert_web_pages_to_excel_status_converting: 'Сопоставление HTML-таблиц…',
+  tool_batch_convert_web_pages_to_excel_status_done: 'Пакет закончен — проверьте таблицу и скачайте Excel.',
+  tool_batch_convert_web_pages_to_excel_status_fetching: 'Запрос HTML страницы…',
+  tool_batch_convert_web_pages_to_excel_status_ok: 'Таблицы сопоставлены',
+  tool_batch_convert_web_pages_to_excel_status_queued: 'В очереди',
+  tool_batch_convert_web_pages_to_excel_status_skip: 'Пропущено',
+  tool_batch_convert_web_pages_to_excel_status_working: 'Пакет конвертируется…',
+  tool_batch_convert_web_pages_to_excel_summary_tpl: '{ok} готово · {skip} пропущено',
+  tool_batch_convert_web_pages_to_excel_tab_html: 'Вставить HTML',
+  tool_batch_convert_web_pages_to_excel_tab_urls: 'URL страниц',
+  tool_batch_convert_web_pages_to_excel_title: 'Пакетно преобразовать веб-страницы в Excel',
+  tool_batch_convert_web_pages_to_excel_url_hint:
+    'Один публичный http(s) URL в строке, до 10. Каждую страницу запрашиваем один раз. Скрипты снимаются. Листами становятся только HTML-таблицы.',
+  tool_batch_convert_web_pages_to_excel_url_label: 'URL страниц (по одному в строке)',
+  tool_batch_convert_web_pages_to_excel_url_placeholder: 'https://example.com/data/price-list',
+  tool_batch_convert_web_pages_to_excel_usecase_1:
+    'Сложите публичный прайс или SKU из HTML в Excel, чтобы количества остались фильтруемыми числами — PNG был бы только пикселями.',
+  tool_batch_convert_web_pages_to_excel_usecase_2:
+    'Сведите таблицы параметров с двух справок в одну книгу и добавьте свой столбец SUM. Word оставил бы заголовки прозой.',
+  tool_batch_convert_web_pages_to_excel_usecase_3:
+    'Печать A4 оставьте пакетному веб→PDF, готовый CSV — CSV ↔ JSON; эту страницу — когда источник всё ещё таблица на сайте.',
+  tool_batch_convert_web_pages_to_excel_usecases_title: 'Когда это к месту',
   tool_batch_convert_web_pages_to_jpg_advanced_label: 'Дополнительные параметры (необязательно)',
   tool_batch_convert_web_pages_to_jpg_article:
     'Снимите каждый публичный URL как JPEG выбранной ширины (ПК 1280, планшет 768 или телефон 390). Вся страница или первый экран, качество JPEG, затем ZIP. Растр для чата, тикетов и проверки вёрстки — не бумага A4. Каждый адрес запрашивается один раз и не хранится. Печатные документы — «Пакетно сохранить веб-страницы в PDF».',
@@ -1276,6 +1377,117 @@ const ru: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_wait_hint:
     'Дополнительные секунды после начала загрузки картинок на каждом листе A4. По умолчанию 1. Увеличьте, если в PDF пустые рамки.',
   tool_batch_convert_web_pages_to_pdf_wait_label: 'Ожидание загрузки (с)',
+  tool_batch_convert_web_pages_to_png_advanced_label: 'Дополнительные настройки (по желанию)',
+  tool_batch_convert_web_pages_to_png_article:
+    'Каждый публичный URL становится PNG без потерь на выбранной ширине (рабочий стол 1280, планшет 768 или телефон 390). Белый или прозрачный фон, 1× или 2×, затем ZIP из удачных строк. Это скриншот интерфейса с чёткими краями, не JPEG для чата и не печать A4. Адрес запрашиваем один раз (HTML) и не храним. Сборка PNG идёт в этой вкладке. Меньший файл для пересылки: Пакетно сохранить веб-страницы в JPG.',
+  tool_batch_convert_web_pages_to_png_bg_label: 'Фон',
+  tool_batch_convert_web_pages_to_png_bg_transparent: 'Прозрачный',
+  tool_batch_convert_web_pages_to_png_bg_white: 'Белый',
+  tool_batch_convert_web_pages_to_png_capture_first: 'Первый экран',
+  tool_batch_convert_web_pages_to_png_capture_frame_title: 'Скрытая рамка захвата',
+  tool_batch_convert_web_pages_to_png_capture_full: 'Вся страница',
+  tool_batch_convert_web_pages_to_png_capture_label: 'Область захвата',
+  tool_batch_convert_web_pages_to_png_clear: 'Очистить',
+  tool_batch_convert_web_pages_to_png_col_file: 'Файл',
+  tool_batch_convert_web_pages_to_png_col_status: 'Статус',
+  tool_batch_convert_web_pages_to_png_col_url: 'URL',
+  tool_batch_convert_web_pages_to_png_convert: 'Конвертировать все',
+  tool_batch_convert_web_pages_to_png_desc: 'Список URL в PNG без потерь (прозрачный фон и 2× по желанию), ZIP. Не JPEG и не A4.',
+  tool_batch_convert_web_pages_to_png_description:
+    'Пакетно сохранить веб-страницы в PNG: скриншоты без потерь и ZIP из списка URL. Белый или прозрачный фон, 1× или 2×. Шаги: вставьте URL, Конвертировать все, Скачать ZIP. Пример: два UI выходят чёткими PNG. Одна строка — страница в PNG без потерь. Запрос один раз, не храним; конвертация в этой вкладке.',
+  tool_batch_convert_web_pages_to_png_download_zip: 'Скачать ZIP',
+  tool_batch_convert_web_pages_to_png_empty: 'Сначала вставьте хотя бы один публичный URL.',
+  tool_batch_convert_web_pages_to_png_err_convert: 'Этот адрес не удалось сохранить в PNG. Пропущен.',
+  tool_batch_convert_web_pages_to_png_err_fflate: 'Этот браузер не собрал ZIP. Попробуйте свежий браузер.',
+  tool_batch_convert_web_pages_to_png_err_load: 'Библиотека конвертера не загрузилась. Обновите страницу и повторите.',
+  tool_batch_convert_web_pages_to_png_err_too_many: 'Не больше 10 URL. Лишние строки не добавлены.',
+  tool_batch_convert_web_pages_to_png_err_url: 'Не удалось загрузить этот URL. Проверьте адрес или сайт блокирует запрос.',
+  tool_batch_convert_web_pages_to_png_err_url_empty: 'Эта строка не является допустимым http(s) URL. Пропущена.',
+  tool_batch_convert_web_pages_to_png_example:
+    'Загрузить пример подставляет kit компонентов и полупрозрачный слой, собирает два PNG во вкладке (чёткая рамка 1 px; при прозрачном фоне альфа сохраняется), не ходит на живой сайт, и включает Скачать ZIP. Конвертировать все запрашивает вставленные адреса. Ширина, фон, масштаб и вся страница vs первый экран меняют пиксели.',
+  tool_batch_convert_web_pages_to_png_example_title: 'Пример',
+  tool_batch_convert_web_pages_to_png_faq_a1:
+    'Прозрачность видна только там, где у самой вёрстки есть альфа или нет сплошной заливки. Белая главная останется белой. 2× удваивает пиксели (проверка retina) и увеличивает файл. Сплошной цвет «насквозь» до шахматной сетки не пробьёшь.',
+  tool_batch_convert_web_pages_to_png_faq_a2:
+    'Инструмент JPG пишет JPEG с потерями (ползунок качества) для чата и билетов. Здесь lossless PNG: текст и рамка 1 px остаются острыми, плюс прозрачный PNG по желанию и 1×/2×. Тот же список URL, другой файл — без ползунка JPEG.',
+  tool_batch_convert_web_pages_to_png_faq_a3:
+    'Конвертация идёт в этой вкладке. Если вы конвертируете список, каждый адрес один раз уходит на наш сервер, чтобы скачать HTML; страницы мы не храним. PNG собираются в вашем браузере, ZIP тоже здесь — результат не загружается на сервер на хранение.',
+  tool_batch_convert_web_pages_to_png_faq_a4:
+    'Удачные строки — отдельные PNG в одном ZIP. Один URL тоже работает (страница в PNG без потерь / несколько URL в PNG): вставьте одну строку. Несколько картинок в один файл не склеиваются.',
+  tool_batch_convert_web_pages_to_png_faq_a5:
+    'Нет. Скрипты снимаются. Стены входа, paywall и приложения на JavaScript редко совпадают с авторизованным видом. Адаптивный CSS следует выбранной ширине.',
+  tool_batch_convert_web_pages_to_png_faq_a6:
+    'Пакетно сохранить веб-страницы в PDF режет на листы A4 для чтения и печати. Здесь один растр PNG на URL. Нужна печать — берите PDF-инструмент.',
+  tool_batch_convert_web_pages_to_png_faq_q1: 'Когда виден прозрачный фон и что меняет 2×?',
+  tool_batch_convert_web_pages_to_png_faq_q2: 'Чем это отличается от Пакетно сохранить веб-страницы в JPG?',
+  tool_batch_convert_web_pages_to_png_faq_q3: 'Страницы загружаются на сервер и сохраняются?',
+  tool_batch_convert_web_pages_to_png_faq_q4: 'На выходе один PNG или ZIP? Можно ли одну строку URL?',
+  tool_batch_convert_web_pages_to_png_faq_q5: 'Совпадёт ли сайт с логином или тяжёлым JavaScript с живым видом?',
+  tool_batch_convert_web_pages_to_png_faq_q6: 'Чем это отличается от Пакетно сохранить веб-страницы в PDF?',
+  tool_batch_convert_web_pages_to_png_file_count_tpl: '{n} URL в очереди',
+  tool_batch_convert_web_pages_to_png_how_body:
+    'Сначала пакет в ZIP на стандартных настройках (рабочий стол 1280, белый фон, 1×, вся страница): вставьте адреса и нажмите Конвертировать все. 2× и прозрачный фон — потом, в дополнительных настройках.',
+  tool_batch_convert_web_pages_to_png_how_item_1:
+    'По одному https URL в строке (kit компонентов и открытые UI-доки подходят). Одна строка достаточна, чтобы сохранить страницу в PNG без потерь.',
+  tool_batch_convert_web_pages_to_png_how_item_2:
+    'Нажмите Конвертировать все. По умолчанию: 1280, белый, 1×, вся страница. Каждый публичный URL запрашивается один раз; сбои пропускаются.',
+  tool_batch_convert_web_pages_to_png_how_item_3:
+    'Нужны прозрачный фон, 2×, ширина телефона или только первый экран? Откройте Дополнительные настройки для ширины, фона, масштаба, области и ожидания загрузки.',
+  tool_batch_convert_web_pages_to_png_how_item_4:
+    'Меньший JPEG для чата: Пакетно сохранить веб-страницы в JPG. Печатный A4: Пакетно сохранить веб-страницы в PDF. Фото уже на устройстве: Конвертировать изображения в PNG пакетом.',
+  tool_batch_convert_web_pages_to_png_how_item_5: 'Когда хотя бы одна строка готова, нажмите Скачать ZIP.',
+  tool_batch_convert_web_pages_to_png_how_item_6: 'Загрузить пример прогоняет два локальных UI; панель прогресса видна во время конвертации.',
+  tool_batch_convert_web_pages_to_png_how_title: 'Как пользоваться',
+  tool_batch_convert_web_pages_to_png_hud_elapsed_tpl: 'прошло {s} с',
+  tool_batch_convert_web_pages_to_png_hud_pct_tpl: '{pct}%',
+  tool_batch_convert_web_pages_to_png_hud_step_fetch: 'Запрос',
+  tool_batch_convert_web_pages_to_png_hud_step_render: 'PNG',
+  tool_batch_convert_web_pages_to_png_hud_step_wait: 'Картинки',
+  tool_batch_convert_web_pages_to_png_hud_title: 'Ход пакета',
+  tool_batch_convert_web_pages_to_png_opts_hint:
+    'Ширина меняет вёрстку. Прозрачный фон сохраняет альфу. 2× удваивает пиксели. Вся страница — высокий снимок; первый экран примерно на высоту одного экрана.',
+  tool_batch_convert_web_pages_to_png_progress_tpl: '{i} / {total}',
+  tool_batch_convert_web_pages_to_png_rules_body:
+    'Один http(s) URL в строке, до 10. Последовательно. Сбои пропускаются. Удачные PNG — в ZIP. Фон и масштаб меняют пиксели: это не JPEG с другим расширением и не PDF.',
+  tool_batch_convert_web_pages_to_png_rules_item_1: 'Каждый URL один раз уходит на наш сервер за HTML и не сохраняется. PNG собирается в этой вкладке.',
+  tool_batch_convert_web_pages_to_png_rules_item_2: 'Частные сети, логины и битые адреса валят только эту строку. Остальной пакет идёт дальше.',
+  tool_batch_convert_web_pages_to_png_rules_item_3:
+    'Одинаковые имена в ZIP становятся name (2).png. Скрипты и noscript-ловушки перезагрузки снимаются. Очень высокие снимки ограничены, чтобы вкладка не упала.',
+  tool_batch_convert_web_pages_to_png_rules_item_4: 'Это не обход всего сайта. Вставляйте URL, которые у вас уже есть.',
+  tool_batch_convert_web_pages_to_png_rules_item_5:
+    'К JPG-пакету: PNG без потерь, без ползунка JPEG, опциональная прозрачность. К PDF-пакету: без нарезки A4. К пакету картинок в PNG: вход — веб-URL, не фото на устройстве.',
+  tool_batch_convert_web_pages_to_png_rules_title: 'Правила и границы',
+  tool_batch_convert_web_pages_to_png_sample: 'Загрузить пример',
+  tool_batch_convert_web_pages_to_png_scale_1x: '1×',
+  tool_batch_convert_web_pages_to_png_scale_2x: '2× (retina)',
+  tool_batch_convert_web_pages_to_png_scale_label: 'Масштаб пикселей',
+  tool_batch_convert_web_pages_to_png_status_converting: 'Рисуем PNG… вкладка может замереть на несколько секунд',
+  tool_batch_convert_web_pages_to_png_status_done: 'Пакет готов — проверьте таблицу и скачайте ZIP.',
+  tool_batch_convert_web_pages_to_png_status_fetching: 'Запрашиваем HTML…',
+  tool_batch_convert_web_pages_to_png_status_ok: 'PNG готов',
+  tool_batch_convert_web_pages_to_png_status_queued: 'В очереди',
+  tool_batch_convert_web_pages_to_png_status_skip: 'Пропущен',
+  tool_batch_convert_web_pages_to_png_status_waiting: 'Ждём окончания картинок…',
+  tool_batch_convert_web_pages_to_png_status_working: 'Конвертируем пакет…',
+  tool_batch_convert_web_pages_to_png_summary_tpl: '{ok} готово · {skip} пропущено',
+  tool_batch_convert_web_pages_to_png_title: 'Пакетно сохранить веб-страницы в PNG',
+  tool_batch_convert_web_pages_to_png_url_hint:
+    'Один публичный http(s) URL в строке, до 10. Запрашиваем один раз и переписываем CSS и картинки. Скрипты снимаются до захвата. Вёрстка следует выбранной ширине.',
+  tool_batch_convert_web_pages_to_png_url_label: 'URL (по одному в строке)',
+  tool_batch_convert_web_pages_to_png_url_placeholder: 'https://example.com/ui/component-kit',
+  tool_batch_convert_web_pages_to_png_usecase_1: 'Сохранить kit компонентов как чёткий PNG: подписи и рамка 1 px читаются. JPEG смазывает края.',
+  tool_batch_convert_web_pages_to_png_usecase_2:
+    'Выгрузить плавающую панель прозрачным PNG и положить на фрейм в Figma. Сплошная белая главная останется непрозрачной.',
+  tool_batch_convert_web_pages_to_png_usecase_3:
+    'JPEG для чата оставьте в Пакетно сохранить веб-страницы в JPG, A4 — в Пакетно сохранить веб-страницы в PDF; здесь только lossless-растр интерфейса.',
+  tool_batch_convert_web_pages_to_png_usecases_title: 'Когда это уместно',
+  tool_batch_convert_web_pages_to_png_viewport_desktop: 'Рабочий стол 1280',
+  tool_batch_convert_web_pages_to_png_viewport_label: 'Ширина вида',
+  tool_batch_convert_web_pages_to_png_viewport_mobile: 'Телефон 390',
+  tool_batch_convert_web_pages_to_png_viewport_tablet: 'Планшет 768',
+  tool_batch_convert_web_pages_to_png_wait_hint:
+    'Дополнительные секунды после того, как удалённые картинки начали грузиться. По умолчанию 1. Поднимите, если в PNG пустые рамки.',
+  tool_batch_convert_web_pages_to_png_wait_label: 'Ожидание загрузки (с)',
   tool_batch_watermark_product_photos_anchor_bc: 'Низ',
   tool_batch_watermark_product_photos_anchor_bl: 'Низ слева',
   tool_batch_watermark_product_photos_anchor_br: 'Низ справа',
@@ -3356,6 +3568,86 @@ const ru: SiteLangDict = {
     'Дополнительные секунды после начала загрузки картинок. По умолчанию 1. Увеличьте, если в PDF остаются пустые области вместо изображений.',
   tool_convert_html_to_pdf_wait_label: 'Пауза загрузки (с)',
   tool_convert_html_to_pdf_warn_large: 'Большой файл может обрабатываться медленно.',
+  tool_convert_html_web_pages_to_word_document_advanced_label: 'Дополнительные настройки (по желанию)',
+  tool_convert_html_web_pages_to_word_document_article:
+    'Вставьте HTML или публичный адрес — получите .docx, который можно править: заголовки, списки, таблицы и ссылки становятся стилями Word. Это не PDF для печати A4 и не снимок экрана. Вставленный HTML остаётся во вкладке и не уходит на сервер. URL запрашивается один раз и не сохраняется. Печать: «Конвертировать HTML в PDF». Уже есть PDF: «Превратить PDF в документ Word».',
+  tool_convert_html_web_pages_to_word_document_clear: 'Очистить',
+  tool_convert_html_web_pages_to_word_document_convert: 'Конвертировать',
+  tool_convert_html_web_pages_to_word_document_desc: 'Вставьте HTML или заберите URL в редактируемый Word — не PDF и не скриншот.',
+  tool_convert_html_web_pages_to_word_document_description:
+    'Преобразовать HTML-страницы в документ Word (HTML в Word / HTML в DOCX): вставьте код или URL и получите редактируемый .docx, не PDF A4. Шаги: вставить или забрать, Конвертировать, Скачать. Пример: заметки о выпуске с таблицей становятся стилями Word. Вставленный HTML остаётся во вкладке; URL запрашивается один раз и не хранится.',
+  tool_convert_html_web_pages_to_word_document_download: 'Скачать',
+  tool_convert_html_web_pages_to_word_document_empty: 'Сначала вставьте HTML или укажите публичный URL.',
+  tool_convert_html_web_pages_to_word_document_err_convert: 'Не удалось собрать Word из этого HTML. Проверьте разметку и повторите.',
+  tool_convert_html_web_pages_to_word_document_err_load: 'Библиотека Word не загрузилась. Обновите страницу и попробуйте снова.',
+  tool_convert_html_web_pages_to_word_document_err_url: 'Не удалось загрузить этот URL. Проверьте адрес — или сайт блокирует запрос.',
+  tool_convert_html_web_pages_to_word_document_err_url_empty: 'Сначала укажите корректный http(s) URL.',
+  tool_convert_html_web_pages_to_word_document_example:
+    '«Загрузить пример» подставляет HTML заметок о выпуске (H1, список, таблица из двух колонок, ссылка), запускает Конвертировать и включает Скачать. В .docx настоящие стили заголовка и таблицы — текст можно править. Во вкладке URL Конвертировать забирает живой адрес.',
+  tool_convert_html_web_pages_to_word_document_example_title: 'Пример',
+  tool_convert_html_web_pages_to_word_document_faq_a1:
+    'Да. Вкладка URL, один https, затем Конвертировать. Скрипты снимаются. Стены входа и JS-приложения часто не совпадают с живым сайтом. CSS-вёрстка не воспроизводится пиксель в пиксель.',
+  tool_convert_html_web_pages_to_word_document_faq_a2:
+    'Скачивается .docx (HTML в DOCX). Откройте в Word или редакторе Office Open XML. Это не двоичный .doc и не .mhtml из Chrome.',
+  tool_convert_html_web_pages_to_word_document_faq_a3:
+    '«Конвертировать HTML в PDF» режет на листы A4 для печати. Здесь HTML становится абзацами, заголовками, списками и таблицами, которые можно править. Тот же HTML, другой файл.',
+  tool_convert_html_web_pages_to_word_document_faq_a4:
+    '«Превратить PDF в документ Word» начинается с PDF и текстового слоя. Здесь — с вставленного HTML или URL. Если PDF уже есть, берите тот инструмент.',
+  tool_convert_html_web_pages_to_word_document_faq_a5:
+    'Вставленный HTML не покидает вкладку и не загружается на сервер. При URL мы один раз отправляем адрес, чтобы забрать HTML, и не сохраняем его. .docx собирается в браузере.',
+  tool_convert_html_web_pages_to_word_document_faq_a6:
+    'Нет. Экспортируйте или скопируйте HTML. Полное сохранение Chrome / MHTML — другой формат, здесь не разбирается.',
+  tool_convert_html_web_pages_to_word_document_faq_q1: 'Можно ли конвертировать URL (веб-страница в Word)?',
+  tool_convert_html_web_pages_to_word_document_faq_q2: 'Результат — HTML в Word / файл .docx?',
+  tool_convert_html_web_pages_to_word_document_faq_q3: 'Чем это отличается от «Конвертировать HTML в PDF»?',
+  tool_convert_html_web_pages_to_word_document_faq_q4: 'Чем это отличается от «Превратить PDF в документ Word»?',
+  tool_convert_html_web_pages_to_word_document_faq_q5: 'Загружаются ли HTML или URL на сервер и хранятся?',
+  tool_convert_html_web_pages_to_word_document_faq_q6: 'Можно ли конвертировать .mhtml из Chrome?',
+  tool_convert_html_web_pages_to_word_document_how_body:
+    'Сначала заголовки и таблицы становятся стилями Word, затем Скачать отдаёт редактируемый .docx. HTML в Word — не картинка экрана.',
+  tool_convert_html_web_pages_to_word_document_how_item_1: 'Свой код — вкладка «Вставить HTML». Публичный https (веб-страница в Word) — вкладка URL.',
+  tool_convert_html_web_pages_to_word_document_how_item_2:
+    'Нажмите Конвертировать. Скрипты снимаются. Заголовки, списки, таблицы, ссылки попадают в Word. Сломанные картинки пропускаются.',
+  tool_convert_html_web_pages_to_word_document_how_item_3:
+    'Нужны <img> из HTML? Откройте дополнительные настройки — «Включать изображения» включено по умолчанию; заблокированные картинки всё равно пропускаются.',
+  tool_convert_html_web_pages_to_word_document_how_item_4:
+    'Печать A4: «Конвертировать HTML в PDF». Скриншот: пакетно сохранить веб-страницы в PNG или JPG. Уже PDF: «Превратить PDF в документ Word».',
+  tool_convert_html_web_pages_to_word_document_how_item_5: 'После успешного Конвертировать нажмите Скачать. Откройте .docx и правьте текст.',
+  tool_convert_html_web_pages_to_word_document_how_title: 'Как это работает',
+  tool_convert_html_web_pages_to_word_document_html_hint:
+    'Фрагмент или полный HTML. Скрипты снимаются до конвертации. CSS-макет не воссоздаётся пиксель в пиксель.',
+  tool_convert_html_web_pages_to_word_document_html_label: 'HTML',
+  tool_convert_html_web_pages_to_word_document_html_placeholder: '<h1>Заметки о выпуске</h1><p>Вставьте HTML сюда…</p>',
+  tool_convert_html_web_pages_to_word_document_imgs_hint:
+    'Если включено, читаемые <img> пытаемся встроить. Битые и заблокированные пропускаем. Выключите для текстового Word.',
+  tool_convert_html_web_pages_to_word_document_imgs_label: 'Включать изображения',
+  tool_convert_html_web_pages_to_word_document_opts_hint:
+    '«Включать изображения» пытается встроить картинки из HTML. CSS-позиционирование не мапится. На выходе всегда один .docx.',
+  tool_convert_html_web_pages_to_word_document_rules_body:
+    'Одно Конвертировать — один .docx. Мапятся заголовки, абзацы, списки, таблицы, ссылки и необязательные картинки. Абсолютный CSS, фиксированные панели и скрипты — нет.',
+  tool_convert_html_web_pages_to_word_document_rules_item_1:
+    'Вставленный HTML остаётся во вкладке, без загрузки на сервер. URL запрашивается один раз и не сохраняется.',
+  tool_convert_html_web_pages_to_word_document_rules_item_2: 'h1–h6 становятся заголовками Word. ul/ol — списками. table — таблицей. a — гиперссылкой.',
+  tool_convert_html_web_pages_to_word_document_rules_item_3: 'Стены входа, JS-приложения и print-CSS часто расходятся с живым сайтом. Это не растр скриншота.',
+  tool_convert_html_web_pages_to_word_document_rules_item_4:
+    'Против HTML в PDF: редактируемый Word, не листы A4. Против PDF в Word: вход — HTML или URL, не загрузка PDF. Против «Изображения в Word»: вход — разметка, не стопка фото.',
+  tool_convert_html_web_pages_to_word_document_rules_title: 'Правила, которых стоит ждать',
+  tool_convert_html_web_pages_to_word_document_sample: 'Загрузить пример',
+  tool_convert_html_web_pages_to_word_document_status_done: 'Word готов — скачайте .docx и правьте.',
+  tool_convert_html_web_pages_to_word_document_status_fetching: 'Забираем HTML по URL…',
+  tool_convert_html_web_pages_to_word_document_status_working: 'Собираем документ Word…',
+  tool_convert_html_web_pages_to_word_document_tab_html: 'Вставить HTML',
+  tool_convert_html_web_pages_to_word_document_tab_url: 'URL',
+  tool_convert_html_web_pages_to_word_document_title: 'Преобразовать HTML-страницы в документ Word',
+  tool_convert_html_web_pages_to_word_document_url_hint:
+    'Один публичный http(s) URL. HTML забираем один раз и переписываем CSS/картинки. Скрипты снимаются до маппинга в Word.',
+  tool_convert_html_web_pages_to_word_document_url_label: 'URL',
+  tool_convert_html_web_pages_to_word_document_url_placeholder: 'https://example.com/help/release-notes',
+  tool_convert_html_web_pages_to_word_document_usecase_1: 'Забрать публичный URL заметок о выпуске и оставить таблицу настоящей таблицей Word.',
+  tool_convert_html_web_pages_to_word_document_usecase_2: 'Печать A4 оставить в HTML→PDF, скриншоты — в пакетном PNG; сюда — когда нужен редактируемый .docx.',
+  tool_convert_html_web_pages_to_word_document_usecase_3:
+    'Сделать из HTML экспорта справки черновик, который юристы могут комментировать: заголовки остаются заголовками.',
+  tool_convert_html_web_pages_to_word_document_usecases_title: 'Когда это к месту',
   tool_convert_pdf_to_dwg_article:
     'Переведите PDF в сторону DWG, экспортировав ASCII DXF: сущности TEXT и рамка страницы, которые откроет AutoCAD. Браузер не пишет проприетарный DWG. Файлы остаются на устройстве; без загрузки на сервер.',
   tool_convert_pdf_to_dwg_choose_file: 'Выбрать PDF',

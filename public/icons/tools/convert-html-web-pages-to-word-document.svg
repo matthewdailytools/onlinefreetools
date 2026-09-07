@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Convert HTML web pages to a Word document">
+  <rect width="32" height="32" rx="8" fill="#2b579a"/>
+  <rect x="6" y="5" width="14" height="18" rx="1.4" fill="#fff"/>
+  <path d="M9 9h8M9 12h7M9 15h6" stroke="#2b579a" stroke-width="1.15" stroke-linecap="round"/>
+  <rect x="16" y="14" width="10" height="12" rx="1.4" fill="#fff"/>
+  <path d="M18.2 23.2V16.8h1.7c1.6 0 2.6.7 2.6 2.05 0 1.35-1 2.05-2.6 2.05h-1.7M19.9 20.9H24" stroke="#2b579a" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

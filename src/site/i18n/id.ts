@@ -1063,6 +1063,106 @@ const id: SiteLangDict = {
   tool_batch_compress_pdfs_for_email_usecase_3: 'Perkecil beberapa PDF sebelum email tanpa menggabungkannya.',
   tool_batch_compress_pdfs_for_email_usecases_title: 'Cocok untuk ini',
   tool_batch_compress_pdfs_for_email_warn_large: 'Ada berkas lebih dari 40 MB — tab ini bisa kehabisan memori di baris itu.',
+  tool_batch_convert_web_pages_to_excel_advanced_label: 'Pengaturan lanjutan (opsional)',
+  tool_batch_convert_web_pages_to_excel_article:
+    'Ambil tabel HTML dari daftar URL publik ke satu buku Excel: tiap tabel jadi lembar berisi sel yang bisa disaring. Teks narasi dan tangkapan layar tidak masuk. Bukan PDF cetak A4 dan bukan dokumen Word. Tiap alamat diambil sekali lewat server dan tidak disimpan. HTML yang ditempel tetap di tab ini. Cetak: Ubah banyak halaman web menjadi PDF. Judul yang bisa diedit: Ubah halaman HTML menjadi dokumen Word.',
+  tool_batch_convert_web_pages_to_excel_clear: 'Hapus',
+  tool_batch_convert_web_pages_to_excel_col_file: 'Lembar',
+  tool_batch_convert_web_pages_to_excel_col_status: 'Status',
+  tool_batch_convert_web_pages_to_excel_col_url: 'URL',
+  tool_batch_convert_web_pages_to_excel_convert: 'Ubah semua',
+  tool_batch_convert_web_pages_to_excel_desc: 'Ambil tabel HTML dari daftar URL jadi satu buku Excel; bukan screenshot, bukan PDF, bukan Word.',
+  tool_batch_convert_web_pages_to_excel_description:
+    'Ubah banyak halaman web menjadi Excel (tabel HTML ke Excel / HTML ke Excel): tarik tabel ke satu .xlsx, bukan screenshot atau PDF A4. Langkah: tempel URL, Ubah semua, Unduh Excel. Contoh: daftar harga dan stok jadi dua lembar. URL diambil sekali, tidak disimpan.',
+  tool_batch_convert_web_pages_to_excel_download: 'Unduh Excel',
+  tool_batch_convert_web_pages_to_excel_empty: 'Tempel minimal satu URL halaman, atau pindah ke Tempel HTML.',
+  tool_batch_convert_web_pages_to_excel_err_convert: 'Halaman itu tidak punya tabel HTML yang bisa dipakai. Dilewati.',
+  tool_batch_convert_web_pages_to_excel_err_html_empty: 'Tempel dulu HTML yang berisi <table>.',
+  tool_batch_convert_web_pages_to_excel_err_load: 'Pustaka Excel gagal dimuat. Segarkan lalu coba lagi.',
+  tool_batch_convert_web_pages_to_excel_err_too_many: 'Paling banyak 10 URL. Baris ekstra tidak ditambahkan.',
+  tool_batch_convert_web_pages_to_excel_err_url: 'URL itu tidak bisa diambil. Cek alamat, atau situs menolak pengambilan.',
+  tool_batch_convert_web_pages_to_excel_err_url_empty: 'Baris itu bukan URL http(s) yang valid. Dilewati.',
+  tool_batch_convert_web_pages_to_excel_example:
+    'Muat contoh mengisi URL daftar harga dan stok, merakit satu buku lokal dari dua tabel HTML (tanpa mengunjungi situs hidup), lalu mengaktifkan Unduh Excel. Ubah semua mengambil alamat yang Anda tempel. Tempel HTML memakai pemetaan tabel yang sama tanpa URL.',
+  tool_batch_convert_web_pages_to_excel_example_title: 'Contoh',
+  tool_batch_convert_web_pages_to_excel_faq_a1:
+    'HTML yang ditempel tidak keluar dari tab ini. Jika Anda mengubah URL, kami mengirim tiap alamat sekali untuk mengambil HTML dan tidak menyimpannya. File .xlsx dibuat di peramban Anda.',
+  tool_batch_convert_web_pages_to_excel_faq_a2:
+    'Halaman Word memetakan judul, daftar, dan paragraf ke .docx yang bisa diedit. Halaman ini mengabaikan prosa dan hanya menyalin sel tabel HTML ke lembar Excel. Pengambilan sama, hasil beda.',
+  tool_batch_convert_web_pages_to_excel_faq_a3:
+    'JPG/PNG adalah tangkapan viewport (ZIP gambar). PDF memotong halaman cetak A4. Di sini angka dan teks yang bisa Anda saring di Excel: satu buku, bukan ZIP foto.',
+  tool_batch_convert_web_pages_to_excel_faq_a4:
+    'Bisa. Satu baris cukup untuk halaman web ke Excel. URL yang berhasil berbagi satu .xlsx dengan banyak lembar.',
+  tool_batch_convert_web_pages_to_excel_faq_a5:
+    'Tidak. Tidak ada OCR dan tidak ada pembaca PDF. Ubah halaman HTML atau tempel markup tabel. Kalau sudah punya CSV, pakai CSV ↔ JSON.',
+  tool_batch_convert_web_pages_to_excel_faq_a6:
+    'Pakai tab Tempel HTML (HTML ke Excel / tabel HTML ke Excel). Halaman lengkap Chrome / .mhtml di luar cakupan: ekspor HTML atau salin tabel. Ini bukan Excel di web.',
+  tool_batch_convert_web_pages_to_excel_faq_q1: 'Apakah halaman saya diunggah dan disimpan?',
+  tool_batch_convert_web_pages_to_excel_faq_q2: 'Apa bedanya dengan Ubah halaman HTML menjadi dokumen Word?',
+  tool_batch_convert_web_pages_to_excel_faq_q3: 'Bagaimana dengan JPG, PNG, atau PDF massal?',
+  tool_batch_convert_web_pages_to_excel_faq_q4: 'Boleh ubah satu URL saja?',
+  tool_batch_convert_web_pages_to_excel_faq_q5: 'Bisakah mengekstrak tabel dari PDF?',
+  tool_batch_convert_web_pages_to_excel_faq_q6: 'Saya punya HTML atau tabel HTML, bukan URL. Bagaimana Excel daring atau mhtml?',
+  tool_batch_convert_web_pages_to_excel_file_count_tpl: '{n} URL dalam antrean',
+  tool_batch_convert_web_pages_to_excel_how_body:
+    'Tempel URL publik yang berisi tabel HTML, tekan Ubah semua, lalu unduh satu buku Excel. Narasi dilewati; hanya sel <table> jadi lembar.',
+  tool_batch_convert_web_pages_to_excel_how_item_1:
+    'Satu URL https per baris (daftar harga dan tabel HTML publik cocok). Satu baris cukup untuk halaman web ke Excel.',
+  tool_batch_convert_web_pages_to_excel_how_item_2:
+    'Tekan Ubah semua. Tiap URL publik diambil sekali; halaman tanpa tabel yang bisa dipakai dilewati, sisanya lanjut.',
+  tool_batch_convert_web_pages_to_excel_how_item_3:
+    'Punya markup, bukan URL (HTML ke Excel / tabel HTML ke Excel)? Buka Tempel HTML, tempel sumber, lalu Ubah semua.',
+  tool_batch_convert_web_pages_to_excel_how_item_4: 'Ingin satu lembar per URL, bukan per tabel, atau menyimpan tabel kecil? Buka Pengaturan lanjutan.',
+  tool_batch_convert_web_pages_to_excel_how_item_5:
+    'PDF A4? Ubah banyak halaman web menjadi PDF. Judul? Ubah halaman HTML menjadi dokumen Word. Sudah punya CSV? CSV ↔ JSON.',
+  tool_batch_convert_web_pages_to_excel_how_item_6: 'Unduh Excel setelah minimal satu tabel dipetakan.',
+  tool_batch_convert_web_pages_to_excel_how_title: 'Cara kerja',
+  tool_batch_convert_web_pages_to_excel_html_hint:
+    'Tempel cuplikan atau dokumen HTML lengkap yang berisi <table>. Pemetaan tetap di tab ini, tidak diunggah.',
+  tool_batch_convert_web_pages_to_excel_html_label: 'HTML berisi tabel',
+  tool_batch_convert_web_pages_to_excel_html_placeholder: '<table><tr><th>SKU</th><th>Jml</th></tr></table>',
+  tool_batch_convert_web_pages_to_excel_layout_label: 'Lembar',
+  tool_batch_convert_web_pages_to_excel_layout_table: 'Satu lembar per tabel HTML',
+  tool_batch_convert_web_pages_to_excel_layout_url: 'Satu lembar per URL (tumpuk tabel)',
+  tool_batch_convert_web_pages_to_excel_opts_hint:
+    'Bawaan: satu lembar per tabel HTML dalam satu buku. Menumpuk menaruh semua tabel dari satu URL di satu lembar dengan baris kosong di antaranya. Tabel kecil (kurang dari dua baris atau dua kolom) dilewati agar kisi navigasi tidak memenuhi berkas.',
+  tool_batch_convert_web_pages_to_excel_progress_tpl: '{i} / {total}',
+  tool_batch_convert_web_pages_to_excel_rules_body:
+    'Hanya sel <table> HTML yang disalin. Satu URL http(s) per baris, sampai 10. Baris gagal dilewati. Tabel yang berhasil berbagi satu .xlsx. Bukan screenshot ganti ekstensi dan bukan ekspor PDF.',
+  tool_batch_convert_web_pages_to_excel_rules_item_1:
+    'Tiap URL dikirim sekali untuk mengambil HTML dan tidak disimpan. HTML tempelan tidak keluar dari tab. Buku kerja dibuat di sini.',
+  tool_batch_convert_web_pages_to_excel_rules_item_2: 'Jaringan privat, dinding login, dan halaman tanpa <table> gagal di baris itu. Sisanya lanjut.',
+  tool_batch_convert_web_pages_to_excel_rules_item_3:
+    'colspan menyisipkan sel kosong. rowspan diratakan (tiap baris mandiri). Skrip dihapus, jadi tabel yang hanya JS akan kosong.',
+  tool_batch_convert_web_pages_to_excel_rules_item_4:
+    'Bukan crawler seluruh situs dan bukan Excel di web. Tempel URL atau HTML yang sudah Anda punya. Nama lembar dipotong 31 karakter.',
+  tool_batch_convert_web_pages_to_excel_rules_item_5:
+    'Dibanding Ubah halaman HTML menjadi Word: hanya tabel, bukan judul/daftar. Dibanding JPG/PNG/PDF massal: sel dalam satu buku, bukan ZIP raster atau A4. Dibanding CSV ↔ JSON: masukannya halaman, bukan berkas yang sudah ada.',
+  tool_batch_convert_web_pages_to_excel_rules_title: 'Aturan yang perlu diantisipasi',
+  tool_batch_convert_web_pages_to_excel_sample: 'Muat contoh',
+  tool_batch_convert_web_pages_to_excel_skip_tiny_label: 'Lewati tabel kecil (kurang dari 2×2)',
+  tool_batch_convert_web_pages_to_excel_status_converting: 'Memetakan tabel HTML…',
+  tool_batch_convert_web_pages_to_excel_status_done: 'Batch selesai — cek tabel, lalu unduh Excel.',
+  tool_batch_convert_web_pages_to_excel_status_fetching: 'Mengambil HTML halaman…',
+  tool_batch_convert_web_pages_to_excel_status_ok: 'Tabel dipetakan',
+  tool_batch_convert_web_pages_to_excel_status_queued: 'Mengantri',
+  tool_batch_convert_web_pages_to_excel_status_skip: 'Dilewati',
+  tool_batch_convert_web_pages_to_excel_status_working: 'Mengubah batch…',
+  tool_batch_convert_web_pages_to_excel_summary_tpl: '{ok} siap · {skip} dilewati',
+  tool_batch_convert_web_pages_to_excel_tab_html: 'Tempel HTML',
+  tool_batch_convert_web_pages_to_excel_tab_urls: 'URL halaman',
+  tool_batch_convert_web_pages_to_excel_title: 'Ubah banyak halaman web menjadi Excel',
+  tool_batch_convert_web_pages_to_excel_url_hint:
+    'Satu URL http(s) publik per baris, sampai 10. Tiap halaman diambil sekali. Skrip dihapus. Hanya tabel HTML jadi lembar.',
+  tool_batch_convert_web_pages_to_excel_url_label: 'URL halaman (satu per baris)',
+  tool_batch_convert_web_pages_to_excel_url_placeholder: 'https://example.com/data/price-list',
+  tool_batch_convert_web_pages_to_excel_usecase_1:
+    'Arsipkan daftar harga atau SKU HTML ke Excel agar jumlah tetap angka yang bisa disaring — PNG hanya piksel.',
+  tool_batch_convert_web_pages_to_excel_usecase_2:
+    'Gabungkan tabel parameter dari dua halaman bantuan ke satu buku, lalu tambah kolom SUM. Word akan menyimpan judul sebagai prosa.',
+  tool_batch_convert_web_pages_to_excel_usecase_3:
+    'Cetak A4 di Ubah banyak halaman web menjadi PDF, CSV yang sudah ada di CSV ↔ JSON; pakai halaman ini ketika sumbernya masih tabel halaman web.',
+  tool_batch_convert_web_pages_to_excel_usecases_title: 'Cocok untuk',
   tool_batch_convert_web_pages_to_jpg_advanced_label: 'Pengaturan lanjutan (opsional)',
   tool_batch_convert_web_pages_to_jpg_article:
     'Potret tiap URL publik jadi JPEG pada lebar yang Anda pilih (desktop 1280, tablet 768, atau ponsel 390). Seluruh halaman atau layar pertama, mutu JPEG, lalu ZIP. Raster untuk chat, tiket, dan tinjauan tata letak — bukan kertas A4. Tiap alamat diambil sekali dan tidak disimpan. Dokumen siap cetak: Ubah banyak halaman web jadi PDF.',
@@ -1268,6 +1368,118 @@ const id: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_wait_hint:
     'Detik ekstra setelah gambar mulai dimuat di tiap lembar A4. Bawaan 1. Naikkan jika PDF menampilkan kotak kosong.',
   tool_batch_convert_web_pages_to_pdf_wait_label: 'Tunggu muat (detik)',
+  tool_batch_convert_web_pages_to_png_advanced_label: 'Pengaturan lanjutan (opsional)',
+  tool_batch_convert_web_pages_to_png_article:
+    'Setiap URL publik jadi PNG tanpa lossy pada lebar yang Anda pilih (desktop 1280, tablet 768, atau ponsel 390). Latar putih atau transparan, 1× atau 2×, lalu ZIP untuk baris yang berhasil. Cocok untuk screenshot UI tajam — bukan JPEG obrolan dan bukan cetakan A4. Setiap alamat diambil sekali (HTML) dan tidak disimpan. Konversi PNG berjalan di tab ini. File lebih kecil untuk chat: Ubah beberapa halaman web jadi JPG.',
+  tool_batch_convert_web_pages_to_png_bg_label: 'Latar',
+  tool_batch_convert_web_pages_to_png_bg_transparent: 'Transparan',
+  tool_batch_convert_web_pages_to_png_bg_white: 'Putih',
+  tool_batch_convert_web_pages_to_png_capture_first: 'Layar pertama',
+  tool_batch_convert_web_pages_to_png_capture_frame_title: 'Bingkai tangkapan tersembunyi',
+  tool_batch_convert_web_pages_to_png_capture_full: 'Seluruh halaman',
+  tool_batch_convert_web_pages_to_png_capture_label: 'Cakupan tangkapan',
+  tool_batch_convert_web_pages_to_png_clear: 'Hapus',
+  tool_batch_convert_web_pages_to_png_col_file: 'Berkas',
+  tool_batch_convert_web_pages_to_png_col_status: 'Status',
+  tool_batch_convert_web_pages_to_png_col_url: 'URL',
+  tool_batch_convert_web_pages_to_png_convert: 'Ubah semua',
+  tool_batch_convert_web_pages_to_png_desc: 'Daftar URL ke PNG tanpa lossy (latar transparan dan 2× opsional), dikemas ZIP. Bukan JPEG, bukan A4.',
+  tool_batch_convert_web_pages_to_png_description:
+    'Ubah banyak halaman web menjadi PNG: tangkapan tanpa lossy plus ZIP dari daftar URL. Putih atau transparan, 1× atau 2×. Langkah: tempel URL, Ubah semua, Unduh ZIP. Contoh: dua UI jadi PNG tajam. Satu baris cukup untuk URL ke PNG. Diambil sekali, tidak disimpan; konversi di tab ini.',
+  tool_batch_convert_web_pages_to_png_download_zip: 'Unduh ZIP',
+  tool_batch_convert_web_pages_to_png_empty: 'Tempel dulu minimal satu URL publik.',
+  tool_batch_convert_web_pages_to_png_err_convert: 'Alamat ini tidak bisa jadi PNG. Dilewati.',
+  tool_batch_convert_web_pages_to_png_err_fflate: 'Browser ini tidak bisa merakit ZIP. Coba browser yang lebih baru.',
+  tool_batch_convert_web_pages_to_png_err_load: 'Pustaka konversi gagal dimuat. Segarkan lalu coba lagi.',
+  tool_batch_convert_web_pages_to_png_err_too_many: 'Maksimal 10 URL. Baris berlebih tidak ditambahkan.',
+  tool_batch_convert_web_pages_to_png_err_url: 'URL itu tidak bisa dimuat. Periksa alamat, atau situs memblokir pengambilan.',
+  tool_batch_convert_web_pages_to_png_err_url_empty: 'Baris itu bukan URL http(s) yang sah. Dilewati.',
+  tool_batch_convert_web_pages_to_png_example:
+    'Muat contoh mengisi kit komponen dan overlay transparan, membuat dua PNG di tab (tepi 1 px tetap tajam; latar transparan menjaga alfa) tanpa mengambil situs hidup, dan mengaktifkan Unduh ZIP. Ubah semua mengambil URL yang Anda tempel. Lebar, latar, skala, serta seluruh halaman vs layar pertama mengubah piksel.',
+  tool_batch_convert_web_pages_to_png_example_title: 'Contoh',
+  tool_batch_convert_web_pages_to_png_faq_a1:
+    'Baris yang berhasil jadi PNG terpisah dalam satu ZIP. Satu URL tetap jalan (tangkapan layar web PNG / URL ke PNG tanpa lossy): tempel satu baris. Beberapa gambar tidak digabung jadi satu berkas.',
+  tool_batch_convert_web_pages_to_png_faq_a2:
+    'Konversi berjalan di tab ini. Jika Anda mengubah daftar URL, kami kirim tiap alamat sekali ke server kami untuk mengambil HTML; kami tidak menyimpan halaman. PNG dibuat di peramban Anda dan ZIP dirakit di sini — hasil tidak diunggah ke server untuk disimpan.',
+  tool_batch_convert_web_pages_to_png_faq_a3:
+    'Saudara JPG menulis JPEG lossy (penggeser kualitas) untuk chat dan tiket. Di sini artefaknya PNG tanpa lossy agar tepi UI 1 px dan teks tetap tajam, plus latar transparan opsional dan 1×/2×. Daftar URL sama, berkas berbeda — tanpa penggeser JPEG.',
+  tool_batch_convert_web_pages_to_png_faq_a4:
+    'Tidak. Skrip dibuang. Dinding login, paywall, dan aplikasi yang digambar JavaScript jarang cocok dengan tampilan setelah masuk. CSS responsif mengikuti lebar yang Anda pilih.',
+  tool_batch_convert_web_pages_to_png_faq_a5:
+    'Ubah banyak halaman web jadi PDF memotong ke A4 untuk dibaca dan dicetak. Di sini satu raster PNG per URL. Butuh kertas cetak? Pakai alat PDF.',
+  tool_batch_convert_web_pages_to_png_faq_a6:
+    'Transparan hanya terlihat di bagian yang punya alfa (atau tidak diisi warna padat). Beranda putih tetap putih. 2× menggandakan piksel (tinjauan retina) dan memperbesar berkas. Blok warna padat tidak bisa “dilubangi” sampai papan catur.',
+  tool_batch_convert_web_pages_to_png_faq_q1: 'Hasilnya satu PNG atau ZIP? Bisa ubah satu URL saja?',
+  tool_batch_convert_web_pages_to_png_faq_q2: 'Apakah halaman saya diunggah dan disimpan di server?',
+  tool_batch_convert_web_pages_to_png_faq_q3: 'Apa bedanya dengan Ubah beberapa halaman web jadi JPG?',
+  tool_batch_convert_web_pages_to_png_faq_q4: 'Situs login atau penuh JavaScript akan sama dengan yang live?',
+  tool_batch_convert_web_pages_to_png_faq_q5: 'Apa bedanya dengan Ubah banyak halaman web jadi PDF?',
+  tool_batch_convert_web_pages_to_png_faq_q6: 'Kapan latar transparan terlihat, dan apa yang diubah 2×?',
+  tool_batch_convert_web_pages_to_png_file_count_tpl: '{n} URL dalam antrean',
+  tool_batch_convert_web_pages_to_png_how_body:
+    'Tekan Ubah semua dulu (bawaan: desktop 1280, latar putih, 1×, seluruh halaman), lalu unduh ZIP PNG yang berhasil. Satu baris URL sudah cukup jika Anda hanya butuh tangkapan layar web PNG.',
+  tool_batch_convert_web_pages_to_png_how_item_1:
+    'Tempel satu URL https per baris (kit komponen dan dokumen UI publik cocok). Satu baris cukup untuk URL ke PNG.',
+  tool_batch_convert_web_pages_to_png_how_item_2:
+    'Tekan Ubah semua. Bawaan: desktop 1280, putih, 1×, seluruh halaman. Setiap URL publik diambil sekali; baris gagal dilewati.',
+  tool_batch_convert_web_pages_to_png_how_item_3:
+    'Butuh latar transparan, 2×, lebar ponsel, atau hanya layar pertama? Buka Pengaturan lanjutan (opsional) untuk lebar, latar, skala, cakupan, dan jeda muat.',
+  tool_batch_convert_web_pages_to_png_how_item_4:
+    'JPEG lebih kecil untuk chat: Ubah beberapa halaman web jadi JPG. A4 untuk cetak: Ubah banyak halaman web jadi PDF. Foto sudah di perangkat: Ubah gambar menjadi PNG sekaligus.',
+  tool_batch_convert_web_pages_to_png_how_item_5: 'Bila minimal satu baris berhasil, tekan Unduh ZIP.',
+  tool_batch_convert_web_pages_to_png_how_item_6: 'Muat contoh mencoba dua UI lokal; panel kemajuan tampil saat konversi.',
+  tool_batch_convert_web_pages_to_png_how_title: 'Cara kerja',
+  tool_batch_convert_web_pages_to_png_hud_elapsed_tpl: '{s}d berlalu',
+  tool_batch_convert_web_pages_to_png_hud_pct_tpl: '{pct}%',
+  tool_batch_convert_web_pages_to_png_hud_step_fetch: 'Ambil',
+  tool_batch_convert_web_pages_to_png_hud_step_render: 'PNG',
+  tool_batch_convert_web_pages_to_png_hud_step_wait: 'Gambar',
+  tool_batch_convert_web_pages_to_png_hud_title: 'Kemajuan batch',
+  tool_batch_convert_web_pages_to_png_opts_hint:
+    'Lebar tampilan mengubah tata letak. Latar transparan menjaga alfa. 2× menggandakan piksel. Seluruh halaman adalah tangkapan tinggi; layar pertama kira-kira setinggi satu viewport.',
+  tool_batch_convert_web_pages_to_png_progress_tpl: '{i} / {total}',
+  tool_batch_convert_web_pages_to_png_rules_body:
+    'Satu URL http(s) per baris, hingga 10. Serial. Gagal dilewati. PNG sukses masuk ZIP. Latar dan skala mengubah piksel — bukan JPEG ganti ekstensi dan bukan ekspor PDF.',
+  tool_batch_convert_web_pages_to_png_rules_item_1:
+    'Setiap URL dikirim sekali ke server kami untuk mengambil HTML dan tidak disimpan. PNG dibuat di tab ini.',
+  tool_batch_convert_web_pages_to_png_rules_item_2: 'Jaringan privat, login, dan alamat hilang menggagalkan baris itu. Sisa batch lanjut.',
+  tool_batch_convert_web_pages_to_png_rules_item_3:
+    'Nama ZIP kembar jadi name (2).png. Skrip dan jebakan noscript muat ulang dibuang. Tangkapan sangat tinggi dibatasi agar tab tidak crash.',
+  tool_batch_convert_web_pages_to_png_rules_item_4: 'Bukan crawler seluruh situs. Tempel URL yang sudah Anda punya.',
+  tool_batch_convert_web_pages_to_png_rules_item_5:
+    'Dibanding batch JPG: PNG tanpa lossy, tanpa penggeser JPEG, latar transparan opsional. Dibanding batch PDF: tanpa pemotongan A4. Dibanding Ubah gambar menjadi PNG sekaligus: masukan adalah URL web, bukan foto di perangkat.',
+  tool_batch_convert_web_pages_to_png_rules_title: 'Aturan yang perlu diketahui',
+  tool_batch_convert_web_pages_to_png_sample: 'Muat contoh',
+  tool_batch_convert_web_pages_to_png_scale_1x: '1×',
+  tool_batch_convert_web_pages_to_png_scale_2x: '2× (retina)',
+  tool_batch_convert_web_pages_to_png_scale_label: 'Skala piksel',
+  tool_batch_convert_web_pages_to_png_status_converting: 'Menggambar PNG… tab ini mungkin diam beberapa detik',
+  tool_batch_convert_web_pages_to_png_status_done: 'Batch selesai — cek tabel, lalu unduh ZIP.',
+  tool_batch_convert_web_pages_to_png_status_fetching: 'Mengambil HTML…',
+  tool_batch_convert_web_pages_to_png_status_ok: 'PNG siap',
+  tool_batch_convert_web_pages_to_png_status_queued: 'Antrean',
+  tool_batch_convert_web_pages_to_png_status_skip: 'Dilewati',
+  tool_batch_convert_web_pages_to_png_status_waiting: 'Menunggu gambar selesai…',
+  tool_batch_convert_web_pages_to_png_status_working: 'Mengubah batch…',
+  tool_batch_convert_web_pages_to_png_summary_tpl: '{ok} siap · {skip} dilewati',
+  tool_batch_convert_web_pages_to_png_title: 'Ubah banyak halaman web menjadi PNG',
+  tool_batch_convert_web_pages_to_png_url_hint:
+    'Satu URL http(s) publik per baris, hingga 10. Kami ambil sekali dan menulis ulang URL CSS/gambar. Skrip dibuang sebelum tangkapan. Tata letak mengikuti lebar tampilan.',
+  tool_batch_convert_web_pages_to_png_url_label: 'URL (satu per baris)',
+  tool_batch_convert_web_pages_to_png_url_placeholder: 'https://example.com/ui/component-kit',
+  tool_batch_convert_web_pages_to_png_usecase_1:
+    'Simpan kit komponen sebagai PNG tajam agar label dan tepi 1 px tetap terbaca. JPEG mengaburkan pinggir.',
+  tool_batch_convert_web_pages_to_png_usecase_2: 'Ekspor panel mengambang dengan PNG transparan lalu taruh di Figma. Beranda putih padat tetap putih.',
+  tool_batch_convert_web_pages_to_png_usecase_3:
+    'JPEG chat tetap di Ubah beberapa halaman web jadi JPG; A4 di Ubah banyak halaman web jadi PDF. Pakai ini hanya untuk raster UI tanpa lossy.',
+  tool_batch_convert_web_pages_to_png_usecases_title: 'Cocok untuk',
+  tool_batch_convert_web_pages_to_png_viewport_desktop: 'Desktop 1280',
+  tool_batch_convert_web_pages_to_png_viewport_label: 'Lebar tampilan',
+  tool_batch_convert_web_pages_to_png_viewport_mobile: 'Ponsel 390',
+  tool_batch_convert_web_pages_to_png_viewport_tablet: 'Tablet 768',
+  tool_batch_convert_web_pages_to_png_wait_hint:
+    'Detik tambahan setelah gambar jarak jauh mulai dimuat. Bawaan 1. Naikkan jika PNG menampilkan kotak kosong.',
+  tool_batch_convert_web_pages_to_png_wait_label: 'Jeda muat (dtk)',
   tool_batch_watermark_product_photos_anchor_bc: 'Bawah',
   tool_batch_watermark_product_photos_anchor_bl: 'Kiri bawah',
   tool_batch_watermark_product_photos_anchor_br: 'Kanan bawah',
@@ -3344,6 +3556,86 @@ const id: SiteLangDict = {
     'Detik tambahan setelah gambar mulai dimuat. Nilai awal 1. Naikkan jika PDF masih punya kotak gambar kosong.',
   tool_convert_html_to_pdf_wait_label: 'Tunggu muat (dtk)',
   tool_convert_html_to_pdf_warn_large: 'Berkas besar mungkin lambat.',
+  tool_convert_html_web_pages_to_word_document_advanced_label: 'Pengaturan lanjutan (opsional)',
+  tool_convert_html_web_pages_to_word_document_article:
+    'Tempel HTML atau URL publik, hasilnya .docx yang bisa diedit: judul, daftar, tabel, dan tautan jadi gaya Word. Bukan PDF cetak A4 dan bukan tangkapan layar. HTML yang ditempel tetap di tab ini, tanpa unggah ke server. URL diambil sekali dan tidak disimpan. Butuh cetak? Konversi HTML ke PDF. Sudah punya PDF? Ubah PDF menjadi dokumen Word.',
+  tool_convert_html_web_pages_to_word_document_clear: 'Hapus',
+  tool_convert_html_web_pages_to_word_document_convert: 'Ubah',
+  tool_convert_html_web_pages_to_word_document_desc: 'Tempel HTML atau ambil URL jadi Word yang bisa diedit; bukan PDF, bukan screenshot.',
+  tool_convert_html_web_pages_to_word_document_description:
+    'Ubah halaman HTML menjadi dokumen Word (HTML ke Word / HTML ke DOCX): tempel atau ambil URL, dapatkan .docx yang bisa diedit, bukan PDF A4. Langkah: tempel atau ambil, Ubah, Unduh. Contoh: catatan rilis berisi judul dan tabel jadi gaya Word. HTML yang ditempel tetap di tab ini; URL diambil sekali, tidak disimpan.',
+  tool_convert_html_web_pages_to_word_document_download: 'Unduh',
+  tool_convert_html_web_pages_to_word_document_empty: 'Tempel HTML dulu atau isi URL publik.',
+  tool_convert_html_web_pages_to_word_document_err_convert: 'HTML itu gagal jadi file Word. Cek markup lalu coba lagi.',
+  tool_convert_html_web_pages_to_word_document_err_load: 'Pustaka Word gagal dimuat. Segarkan lalu coba lagi.',
+  tool_convert_html_web_pages_to_word_document_err_url: 'URL itu tidak bisa diambil. Cek alamat, atau situs menolak pengambilan.',
+  tool_convert_html_web_pages_to_word_document_err_url_empty: 'Isi dulu URL http(s) yang valid.',
+  tool_convert_html_web_pages_to_word_document_example:
+    'Muat contoh mengisi HTML catatan rilis (H1, daftar, tabel dua kolom, tautan), menjalankan Ubah, lalu mengaktifkan Unduh. File .docx memakai gaya judul dan tabel — teksnya bisa diubah. Di tab URL, Ubah mengambil alamat yang sedang tayang.',
+  tool_convert_html_web_pages_to_word_document_example_title: 'Contoh',
+  tool_convert_html_web_pages_to_word_document_faq_a1:
+    'Unduhannya .docx (HTML ke DOCX). Buka di Word atau editor yang membaca Office Open XML. Bukan .doc biner dan bukan .mhtml Chrome.',
+  tool_convert_html_web_pages_to_word_document_faq_a2:
+    'Konversi HTML ke PDF memotong ke kertas A4 untuk cetak. Di sini HTML dipetakan ke paragraf, judul, daftar, dan tabel yang bisa diedit. HTML sama, hasil beda.',
+  tool_convert_html_web_pages_to_word_document_faq_a3:
+    'Bisa. Buka tab URL, tempel satu https, lalu Ubah. Skrip dibuang. Dinding login dan aplikasi JavaScript sering tidak sama dengan situs hidup. Tata letak CSS tidak dibuat ulang per piksel.',
+  tool_convert_html_web_pages_to_word_document_faq_a4:
+    'HTML yang ditempel tidak keluar dari tab ini dan tidak diunggah ke server. Kalau memakai URL, kami kirim alamat itu sekali untuk mengambil HTML dan tidak menyimpannya. File .docx dirakit di peramban.',
+  tool_convert_html_web_pages_to_word_document_faq_a5:
+    'Ubah PDF menjadi dokumen Word berangkat dari berkas PDF dan lapisan teksnya. Di sini berangkat dari HTML tempelan atau URL. Sudah punya PDF, pakai alat itu.',
+  tool_convert_html_web_pages_to_word_document_faq_a6:
+    'Tidak. Ekspor atau salin HTML. Paket halaman lengkap / MHTML Chrome format lain dan tidak diurai di sini.',
+  tool_convert_html_web_pages_to_word_document_faq_q1: 'Hasilnya HTML ke Word / berkas .docx?',
+  tool_convert_html_web_pages_to_word_document_faq_q2: 'Bedanya dengan Konversi HTML ke PDF?',
+  tool_convert_html_web_pages_to_word_document_faq_q3: 'Bisa ubah URL (halaman web ke Word)?',
+  tool_convert_html_web_pages_to_word_document_faq_q4: 'HTML atau URL saya diunggah dan disimpan?',
+  tool_convert_html_web_pages_to_word_document_faq_q5: 'Bedanya dengan Ubah PDF menjadi dokumen Word?',
+  tool_convert_html_web_pages_to_word_document_faq_q6: 'Bisa ubah simpanan .mhtml Chrome?',
+  tool_convert_html_web_pages_to_word_document_how_body:
+    'Tekan Ubah lalu Unduh: judul dan tabel jadi gaya Word yang bisa diketik ulang. HTML ke Word, bukan gambar layar.',
+  tool_convert_html_web_pages_to_word_document_how_item_1: 'Sumber sudah ada: tetap di Tempel HTML. Satu https publik (halaman web ke Word): tab URL.',
+  tool_convert_html_web_pages_to_word_document_how_item_2: 'Tekan Ubah. Skrip dibuang. Judul, daftar, tabel, tautan masuk Word. Gambar gagal dilewati.',
+  tool_convert_html_web_pages_to_word_document_how_item_3:
+    'Butuh <img> di dalam HTML? Buka pengaturan lanjutan — Sertakan gambar default nyala; gambar diblokir tetap dilewati.',
+  tool_convert_html_web_pages_to_word_document_how_item_4:
+    'Cetak A4: Konversi HTML ke PDF. Screenshot: Ubah banyak halaman web menjadi PNG atau JPG. Sudah PDF: Ubah PDF menjadi dokumen Word.',
+  tool_convert_html_web_pages_to_word_document_how_item_5: 'Kalau Ubah berhasil, Unduh. Buka .docx dan sunting teksnya.',
+  tool_convert_html_web_pages_to_word_document_how_title: 'Cara kerja',
+  tool_convert_html_web_pages_to_word_document_html_hint:
+    'Boleh cuplikan atau dokumen HTML utuh. Skrip dibuang sebelum konversi. CSS tata letak tidak dibuat ulang per piksel.',
+  tool_convert_html_web_pages_to_word_document_html_label: 'HTML',
+  tool_convert_html_web_pages_to_word_document_html_placeholder: '<h1>Catatan rilis</h1><p>Tempel HTML di sini…</p>',
+  tool_convert_html_web_pages_to_word_document_imgs_hint:
+    'Kalau nyala, <img> yang bisa dibaca peramban dicoba disematkan. Gambar rusak atau diblokir dilewati. Matikan untuk Word teks saja.',
+  tool_convert_html_web_pages_to_word_document_imgs_label: 'Sertakan gambar',
+  tool_convert_html_web_pages_to_word_document_opts_hint:
+    'Sertakan gambar mencoba menyematkan foto dari HTML. Posisi CSS tidak dipetakan. Keluaran selalu satu .docx.',
+  tool_convert_html_web_pages_to_word_document_rules_body:
+    'Satu kali Ubah menghasilkan satu .docx. Judul, paragraf, daftar, tabel, tautan, dan gambar opsional dipetakan. CSS absolut, bilah tetap, dan skrip tidak.',
+  tool_convert_html_web_pages_to_word_document_rules_item_1: 'HTML yang ditempel tetap di tab ini, tanpa unggah ke server. URL diambil sekali dan tidak disimpan.',
+  tool_convert_html_web_pages_to_word_document_rules_item_2: 'h1–h6 jadi judul Word. ul/ol jadi daftar. table jadi tabel. a jadi hyperlink.',
+  tool_convert_html_web_pages_to_word_document_rules_item_3:
+    'Dinding login, aplikasi JavaScript, dan CSS cetak sering tidak sama dengan situs hidup. Ini bukan raster screenshot.',
+  tool_convert_html_web_pages_to_word_document_rules_item_4:
+    'Banding Konversi HTML ke PDF: Word yang bisa diedit, bukan kertas A4. Banding Ubah PDF menjadi dokumen Word: masukan HTML atau URL, bukan unggahan PDF. Banding Gambar ke Word: masukan markup, bukan tumpukan foto.',
+  tool_convert_html_web_pages_to_word_document_rules_title: 'Aturan yang perlu diantisipasi',
+  tool_convert_html_web_pages_to_word_document_sample: 'Muat contoh',
+  tool_convert_html_web_pages_to_word_document_status_done: 'Word siap — unduh .docx lalu sunting.',
+  tool_convert_html_web_pages_to_word_document_status_fetching: 'Mengambil HTML dari URL…',
+  tool_convert_html_web_pages_to_word_document_status_working: 'Merakit dokumen Word…',
+  tool_convert_html_web_pages_to_word_document_tab_html: 'Tempel HTML',
+  tool_convert_html_web_pages_to_word_document_tab_url: 'URL',
+  tool_convert_html_web_pages_to_word_document_title: 'Ubah halaman HTML menjadi dokumen Word',
+  tool_convert_html_web_pages_to_word_document_url_hint:
+    'Satu URL http(s) publik. Kami ambil HTML sekali dan menulis ulang URL CSS/gambar. Skrip dibuang sebelum pemetaan Word.',
+  tool_convert_html_web_pages_to_word_document_url_label: 'URL',
+  tool_convert_html_web_pages_to_word_document_url_placeholder: 'https://example.com/help/release-notes',
+  tool_convert_html_web_pages_to_word_document_usecase_1: 'Ambil URL catatan rilis publik dan biarkan tabel tetap tabel Word yang bisa diedit.',
+  tool_convert_html_web_pages_to_word_document_usecase_2:
+    'Ubah ekspor HTML pusat bantuan jadi draf yang legal bisa komentari — judul tetap judul, bukan gambar pipih.',
+  tool_convert_html_web_pages_to_word_document_usecase_3:
+    'Cetak A4 di Konversi HTML ke PDF, screenshot di PNG massal; ke sini hanya jika butuh .docx yang bisa disunting.',
+  tool_convert_html_web_pages_to_word_document_usecases_title: 'Cocok untuk',
   tool_convert_pdf_to_dwg_article:
     'Konversi PDF ke arah DWG dengan mengekspor DXF ASCII: entitas TEXT dan bingkai halaman yang bisa dibuka AutoCAD. Peramban tidak bisa menulis DWG proprietary. Berkas tetap di perangkat; tanpa unggah ke server.',
   tool_convert_pdf_to_dwg_choose_file: 'Pilih PDF',

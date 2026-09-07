@@ -1069,6 +1069,106 @@ const pt: SiteLangDict = {
   tool_batch_compress_pdfs_for_email_usecase_3: 'Encolher vários PDFs antes do e-mail sem mesclá-los.',
   tool_batch_compress_pdfs_for_email_usecases_title: 'Quando faz sentido',
   tool_batch_compress_pdfs_for_email_warn_large: 'Há um arquivo maior que 40 MB — esta aba pode ficar sem memória nessa linha.',
+  tool_batch_convert_web_pages_to_excel_advanced_label: 'Configurações avançadas (opcional)',
+  tool_batch_convert_web_pages_to_excel_article:
+    'Tire tabelas HTML de uma lista de URLs públicas para um livro Excel: cada tabela vira uma planilha com células que dá para filtrar. Texto corrido e capturas ficam de fora. Não é PDF A4 nem documento Word. Cada endereço é buscado uma vez no servidor e não é guardado. O HTML colado fica nesta aba. Impressão: Converter páginas web em PDF em lote. Títulos editáveis: Converter páginas HTML em um documento Word.',
+  tool_batch_convert_web_pages_to_excel_clear: 'Limpar',
+  tool_batch_convert_web_pages_to_excel_col_file: 'Planilhas',
+  tool_batch_convert_web_pages_to_excel_col_status: 'Status',
+  tool_batch_convert_web_pages_to_excel_col_url: 'URL',
+  tool_batch_convert_web_pages_to_excel_convert: 'Converter tudo',
+  tool_batch_convert_web_pages_to_excel_desc: 'Extraia tabelas HTML de uma lista de URLs para um livro Excel — não é captura, PDF nem Word.',
+  tool_batch_convert_web_pages_to_excel_description:
+    'Converter páginas web em Excel em lote: extraia tabelas HTML para um .xlsx (HTML para Excel / tabela HTML para Excel). Não é captura nem PDF A4. Passos: colar URLs, Converter tudo, Baixar Excel. Exemplo: lista de preços e estoque viram duas planilhas. A URL é buscada uma vez e não é armazenada.',
+  tool_batch_convert_web_pages_to_excel_download: 'Baixar Excel',
+  tool_batch_convert_web_pages_to_excel_empty: 'Cole pelo menos uma URL, ou mude para Colar HTML.',
+  tool_batch_convert_web_pages_to_excel_err_convert: 'Essa página não tem tabela HTML usável. Ignorada.',
+  tool_batch_convert_web_pages_to_excel_err_html_empty: 'Cole primeiro HTML que tenha um <table>.',
+  tool_batch_convert_web_pages_to_excel_err_load: 'A biblioteca Excel não carregou. Atualize e tente de novo.',
+  tool_batch_convert_web_pages_to_excel_err_too_many: 'No máximo 10 URLs. As linhas a mais não entraram.',
+  tool_batch_convert_web_pages_to_excel_err_url: 'Não foi possível carregar essa URL. Confira o endereço ou o site bloqueia a busca.',
+  tool_batch_convert_web_pages_to_excel_err_url_empty: 'Essa linha não é uma URL http(s) válida. Ignorada.',
+  tool_batch_convert_web_pages_to_excel_example:
+    'Carregar exemplo preenche uma lista de preços e um estoque, monta um livro local com duas tabelas HTML (sem visitar o site ao vivo) e libera Baixar Excel. Converter tudo busca os endereços que você colou. Colar HTML é o mesmo mapeamento de tabelas sem URL.',
+  tool_batch_convert_web_pages_to_excel_example_title: 'Exemplo',
+  tool_batch_convert_web_pages_to_excel_faq_a1:
+    'O HTML colado não sai desta aba. Se você converter URLs, enviamos cada endereço uma vez para buscar o HTML e não guardamos. O .xlsx é montado no seu navegador.',
+  tool_batch_convert_web_pages_to_excel_faq_a2:
+    'A página Word mapeia títulos, listas e parágrafos para um .docx editável. Esta ignora a prosa e só copia células de tabelas HTML para planilhas Excel. Mesma busca, outro arquivo.',
+  tool_batch_convert_web_pages_to_excel_faq_a3:
+    'JPG/PNG são capturas de viewport (ZIP de imagens). PDF pagina A4 para imprimir. Aqui saem números e texto que você filtra no Excel: um livro, não um ZIP de fotos.',
+  tool_batch_convert_web_pages_to_excel_faq_a4:
+    'Sim. Uma linha basta para página web para Excel. URLs que deram certo compartilham um .xlsx com várias planilhas.',
+  tool_batch_convert_web_pages_to_excel_faq_a5:
+    'Não. Não há OCR nem leitor de PDF. Converta a página HTML ou cole a marcação da tabela. Se já tem CSV, use CSV ↔ JSON.',
+  tool_batch_convert_web_pages_to_excel_faq_a6:
+    'Use a aba Colar HTML (HTML para Excel / tabela HTML para Excel). Página completa do Chrome / .mhtml fica de fora: exporte HTML ou copie a tabela. Isto não é Excel na web.',
+  tool_batch_convert_web_pages_to_excel_faq_q1: 'Minhas páginas são enviadas e guardadas?',
+  tool_batch_convert_web_pages_to_excel_faq_q2: 'Qual a diferença para Converter páginas HTML em um documento Word?',
+  tool_batch_convert_web_pages_to_excel_faq_q3: 'E em relação a JPG, PNG ou PDF em lote?',
+  tool_batch_convert_web_pages_to_excel_faq_q4: 'Posso converter uma URL só?',
+  tool_batch_convert_web_pages_to_excel_faq_q5: 'Vocês extraem tabelas de um PDF?',
+  tool_batch_convert_web_pages_to_excel_faq_q6: 'Tenho HTML ou uma tabela HTML, não uma URL. E Excel online ou mhtml?',
+  tool_batch_convert_web_pages_to_excel_file_count_tpl: '{n} URLs na fila',
+  tool_batch_convert_web_pages_to_excel_how_body:
+    'Cole URLs públicas com tabelas HTML, clique em Converter tudo e baixe um livro Excel. O texto corrido é pulado; só células <table> viram planilhas.',
+  tool_batch_convert_web_pages_to_excel_how_item_1:
+    'Uma URL https por linha (listas de preço e tabelas HTML públicas encaixam). Uma linha basta para página web para Excel.',
+  tool_batch_convert_web_pages_to_excel_how_item_2:
+    'Clique em Converter tudo. Cada URL pública é buscada uma vez; páginas sem tabela usável são ignoradas e o resto segue.',
+  tool_batch_convert_web_pages_to_excel_how_item_3:
+    'Tem a marcação e não a URL (HTML para Excel / tabela HTML para Excel)? Abra Colar HTML, cole o código e Converter tudo.',
+  tool_batch_convert_web_pages_to_excel_how_item_4:
+    'Quer uma planilha por URL em vez de por tabela, ou manter tabelas minúsculas? Abra Configurações avançadas.',
+  tool_batch_convert_web_pages_to_excel_how_item_5:
+    'PDF A4? Converter páginas web em PDF em lote. Títulos? Converter páginas HTML em um documento Word. Já tem CSV? CSV ↔ JSON.',
+  tool_batch_convert_web_pages_to_excel_how_item_6: 'Baixar Excel quando pelo menos uma tabela tiver sido mapeada.',
+  tool_batch_convert_web_pages_to_excel_how_title: 'Como usar',
+  tool_batch_convert_web_pages_to_excel_html_hint: 'Cole um trecho ou um HTML completo com <table>. O mapeamento fica nesta aba; nada é enviado.',
+  tool_batch_convert_web_pages_to_excel_html_label: 'HTML com tabelas',
+  tool_batch_convert_web_pages_to_excel_html_placeholder: '<table><tr><th>SKU</th><th>Qtd</th></tr></table>',
+  tool_batch_convert_web_pages_to_excel_layout_label: 'Planilhas',
+  tool_batch_convert_web_pages_to_excel_layout_table: 'Uma planilha por tabela HTML',
+  tool_batch_convert_web_pages_to_excel_layout_url: 'Uma planilha por URL (empilhar tabelas)',
+  tool_batch_convert_web_pages_to_excel_opts_hint:
+    'O padrão é uma planilha por tabela HTML num único livro. Empilhar coloca todas as tabelas de uma URL numa planilha com uma linha vazia entre elas. Tabelas minúsculas (menos de duas linhas ou duas colunas) são ignoradas para menus não lotarem o arquivo.',
+  tool_batch_convert_web_pages_to_excel_progress_tpl: '{i} / {total}',
+  tool_batch_convert_web_pages_to_excel_rules_body:
+    'Só células de <table> HTML são copiadas. Uma URL http(s) por linha, até 10. Linhas com falha são ignoradas. Tabelas boas compartilham um .xlsx. Não é captura com outro sufixo nem exportação PDF.',
+  tool_batch_convert_web_pages_to_excel_rules_item_1:
+    'Cada URL é enviada uma vez para buscar HTML e não é guardada. O HTML colado não sai da aba. O livro é montado aqui.',
+  tool_batch_convert_web_pages_to_excel_rules_item_2: 'Redes privadas, login e páginas sem <table> falham nessa linha. O resto segue.',
+  tool_batch_convert_web_pages_to_excel_rules_item_3:
+    'colspan insere células vazias. rowspan é achatado (cada linha é independente). Scripts são removidos, então tabela só-JS sai vazia.',
+  tool_batch_convert_web_pages_to_excel_rules_item_4:
+    'Não é crawler do site inteiro nem Excel na web. Cole as URLs ou o HTML que você já tem. Nomes de planilha cortam em 31 caracteres.',
+  tool_batch_convert_web_pages_to_excel_rules_item_5:
+    'Perante Converter páginas HTML em Word: só tabelas, não títulos/listas. Perante JPG/PNG/PDF em lote: células num livro, não ZIP de rasters nem A4. Perante CSV ↔ JSON: a entrada é uma página, não um arquivo que você já tem.',
+  tool_batch_convert_web_pages_to_excel_rules_title: 'Regras e limites',
+  tool_batch_convert_web_pages_to_excel_sample: 'Carregar exemplo',
+  tool_batch_convert_web_pages_to_excel_skip_tiny_label: 'Ignorar tabelas minúsculas (menos de 2×2)',
+  tool_batch_convert_web_pages_to_excel_status_converting: 'Mapeando tabelas HTML…',
+  tool_batch_convert_web_pages_to_excel_status_done: 'Lote concluído — veja a tabela e baixe o Excel.',
+  tool_batch_convert_web_pages_to_excel_status_fetching: 'Buscando o HTML da página…',
+  tool_batch_convert_web_pages_to_excel_status_ok: 'Tabelas mapeadas',
+  tool_batch_convert_web_pages_to_excel_status_queued: 'Na fila',
+  tool_batch_convert_web_pages_to_excel_status_skip: 'Ignorada',
+  tool_batch_convert_web_pages_to_excel_status_working: 'Convertendo o lote…',
+  tool_batch_convert_web_pages_to_excel_summary_tpl: '{ok} prontas · {skip} ignoradas',
+  tool_batch_convert_web_pages_to_excel_tab_html: 'Colar HTML',
+  tool_batch_convert_web_pages_to_excel_tab_urls: 'URLs da página',
+  tool_batch_convert_web_pages_to_excel_title: 'Converter páginas web em Excel em lote',
+  tool_batch_convert_web_pages_to_excel_url_hint:
+    'Uma URL http(s) pública por linha, até 10. Buscamos cada página uma vez. Scripts são removidos. Só tabelas HTML viram planilhas.',
+  tool_batch_convert_web_pages_to_excel_url_label: 'URLs da página (uma por linha)',
+  tool_batch_convert_web_pages_to_excel_url_placeholder: 'https://example.com/data/price-list',
+  tool_batch_convert_web_pages_to_excel_usecase_1:
+    'Arquive uma lista de preços ou SKU em HTML no Excel para as quantidades continuarem números filtráveis — um PNG seria só pixels.',
+  tool_batch_convert_web_pages_to_excel_usecase_2:
+    'Junte tabelas de parâmetros de duas ajudas num livro e acrescente seu SUM. O Word deixaria os títulos como prosa.',
+  tool_batch_convert_web_pages_to_excel_usecase_3:
+    'Deixe a impressão A4 em Converter páginas web em PDF em lote e o CSV que você já tem em CSV ↔ JSON; use esta página quando a fonte ainda é tabela de página.',
+  tool_batch_convert_web_pages_to_excel_usecases_title: 'Quando encaixa',
   tool_batch_convert_web_pages_to_jpg_advanced_label: 'Configurações avançadas (opcional)',
   tool_batch_convert_web_pages_to_jpg_article:
     'Capture cada URL pública como JPEG na largura que escolher (desktop 1280, tablet 768 ou celular 390). Página inteira ou primeira tela, qualidade JPEG, depois um ZIP. Raster para chat, tickets e revisão de layout — não papel A4. Cada endereço é buscado uma vez e não fica guardado. Documentos imprimíveis: Converter várias páginas da web em PDF.',
@@ -1275,6 +1375,119 @@ const pt: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_wait_hint:
     'Segundos a mais depois que as imagens começam a carregar em cada folha A4. O padrão é 1. Aumente se o PDF mostrar caixas vazias.',
   tool_batch_convert_web_pages_to_pdf_wait_label: 'Espera de carga (s)',
+  tool_batch_convert_web_pages_to_png_advanced_label: 'Ajustes avançados (opcional)',
+  tool_batch_convert_web_pages_to_png_article:
+    'Cada URL pública vira um PNG sem perda na largura escolhida (desktop 1280, tablet 768 ou telefone 390). Fundo branco ou transparente, 1× ou 2×, e um ZIP das linhas que deram certo. Serve para print de interface nítida — não é JPEG de chat nem PDF A4. Cada endereço é buscado uma vez (HTML) e não fica armazenado. A conversão acontece nesta aba. Arquivo menor para enviar: Converter várias páginas da web em JPG.',
+  tool_batch_convert_web_pages_to_png_bg_label: 'Fundo',
+  tool_batch_convert_web_pages_to_png_bg_transparent: 'Transparente',
+  tool_batch_convert_web_pages_to_png_bg_white: 'Branco',
+  tool_batch_convert_web_pages_to_png_capture_first: 'Primeira tela',
+  tool_batch_convert_web_pages_to_png_capture_frame_title: 'Moldura oculta de captura',
+  tool_batch_convert_web_pages_to_png_capture_full: 'Página inteira',
+  tool_batch_convert_web_pages_to_png_capture_label: 'Alcance da captura',
+  tool_batch_convert_web_pages_to_png_clear: 'Limpar',
+  tool_batch_convert_web_pages_to_png_col_file: 'Arquivo',
+  tool_batch_convert_web_pages_to_png_col_status: 'Status',
+  tool_batch_convert_web_pages_to_png_col_url: 'URL',
+  tool_batch_convert_web_pages_to_png_convert: 'Converter tudo',
+  tool_batch_convert_web_pages_to_png_desc: 'Lista de URL em PNG sem perda (fundo transparente e 2× opcionais) e ZIP. Não é JPEG nem A4.',
+  tool_batch_convert_web_pages_to_png_description:
+    'Converter várias páginas web para PNG: capturas sem perda e ZIP a partir de uma lista de URL. Branco ou transparente, 1× ou 2×. Passos: cole URLs, Converter tudo, Baixar ZIP. Exemplo: dois kits de UI saem nítidos. Uma linha basta para captura de página em PNG. Busca uma vez, não guarda; conversão nesta aba.',
+  tool_batch_convert_web_pages_to_png_download_zip: 'Baixar ZIP',
+  tool_batch_convert_web_pages_to_png_empty: 'Cole primeiro pelo menos uma URL pública.',
+  tool_batch_convert_web_pages_to_png_err_convert: 'Este endereço não virou PNG. Pulado.',
+  tool_batch_convert_web_pages_to_png_err_fflate: 'Este navegador não montou o ZIP. Tente um navegador atual.',
+  tool_batch_convert_web_pages_to_png_err_load: 'A biblioteca de conversão não carregou. Atualize e tente de novo.',
+  tool_batch_convert_web_pages_to_png_err_too_many: 'No máximo 10 URLs. Linhas a mais não foram incluídas.',
+  tool_batch_convert_web_pages_to_png_err_url: 'Não foi possível carregar essa URL. Confira o endereço ou o site bloqueia a busca.',
+  tool_batch_convert_web_pages_to_png_err_url_empty: 'Essa linha não é uma URL http(s) válida. Pulada.',
+  tool_batch_convert_web_pages_to_png_example:
+    'Carregar exemplo preenche um kit de componentes e um overlay translúcido, gera dois PNG nesta aba (borda de 1 px nítida; fundo transparente preserva o alfa) sem buscar o site ao vivo, e libera Baixar ZIP. Converter tudo busca as URLs coladas. Largura, fundo, escala e página inteira vs primeira tela mudam os pixels.',
+  tool_batch_convert_web_pages_to_png_example_title: 'Exemplo',
+  tool_batch_convert_web_pages_to_png_faq_a1:
+    'Converter várias páginas da web em JPG gera JPEG com perda (controle de qualidade) para chat e tickets. Aqui o arquivo é PNG sem perda: texto e borda de 1 px nítidos, PNG transparente opcional e escala 1×/2×. Mesma lista de URL, outro artefato — sem slider JPEG.',
+  tool_batch_convert_web_pages_to_png_faq_a2:
+    'Transparente só aparece onde o HTML tem alfa ou não pinta o fundo. Uma home branca continua branca. 2× dobra os pixels (revisão retina) e aumenta o arquivo. Um bloco de cor sólida não vira tabuleiro.',
+  tool_batch_convert_web_pages_to_png_faq_a3:
+    'A conversão roda nesta aba. Se você converter uma lista, enviamos cada endereço uma vez ao nosso servidor para buscar o HTML; não armazenamos as páginas. Os PNG nascem no seu navegador e o ZIP é montado aqui, sem enviar o resultado a um servidor para guardar.',
+  tool_batch_convert_web_pages_to_png_faq_a4:
+    'Linhas ok viram PNG separados num único ZIP. Uma URL também vale (captura de página em PNG / URL para PNG sem perda): cole uma linha. Não juntamos várias imagens num arquivo só.',
+  tool_batch_convert_web_pages_to_png_faq_a5:
+    'Converter várias páginas da web em PDF pagina em A4 para leitura e impressão. Aqui é um PNG raster por URL. Precisa imprimir? Use a ferramenta PDF.',
+  tool_batch_convert_web_pages_to_png_faq_a6:
+    'Não. Scripts são removidos. Muros de login, paywalls e apps desenhados em JavaScript quase nunca batem com a vista autenticada. O CSS responsivo segue a largura escolhida.',
+  tool_batch_convert_web_pages_to_png_faq_q1: 'Qual a diferença para Converter várias páginas da web em JPG?',
+  tool_batch_convert_web_pages_to_png_faq_q2: 'Quando o fundo transparente aparece e o que o 2× muda?',
+  tool_batch_convert_web_pages_to_png_faq_q3: 'Minhas páginas são enviadas e guardadas num servidor?',
+  tool_batch_convert_web_pages_to_png_faq_q4: 'O resultado é um PNG ou um ZIP? Dá para converter uma URL só?',
+  tool_batch_convert_web_pages_to_png_faq_q5: 'E em relação a Converter várias páginas da web em PDF?',
+  tool_batch_convert_web_pages_to_png_faq_q6: 'Um site com login ou muito JavaScript fica igual ao ao vivo?',
+  tool_batch_convert_web_pages_to_png_file_count_tpl: '{n} URLs na fila',
+  tool_batch_convert_web_pages_to_png_how_body:
+    'Cole os prints de kit de componentes que você quer nítidos, clique Converter tudo (padrão: desktop 1280, fundo branco, 1×, página inteira) e baixe o ZIP dos PNG que deram certo.',
+  tool_batch_convert_web_pages_to_png_how_item_1:
+    'Uma URL https por linha (kits de componentes e docs de UI públicas encaixam bem). Uma linha basta para captura de página em PNG.',
+  tool_batch_convert_web_pages_to_png_how_item_2:
+    'Clique Converter tudo. Padrão: desktop 1280, branco, 1×, página inteira. Cada URL pública é buscada uma vez; linhas com falha são puladas.',
+  tool_batch_convert_web_pages_to_png_how_item_3:
+    'Quer fundo transparente, 2×, largura de telefone ou só a primeira tela? Abra Ajustes avançados (opcional) para vista, fundo, escala, alcance e espera de carga.',
+  tool_batch_convert_web_pages_to_png_how_item_4:
+    'JPEG menor para o chat: Converter várias páginas da web em JPG. A4 imprimível: Converter várias páginas da web em PDF. Fotos já no dispositivo: Converter imagens para PNG em lote.',
+  tool_batch_convert_web_pages_to_png_how_item_5: 'Com pelo menos uma linha ok, clique Baixar ZIP.',
+  tool_batch_convert_web_pages_to_png_how_item_6: 'Carregar exemplo testa duas interfaces locais; o painel de progresso aparece durante a conversão.',
+  tool_batch_convert_web_pages_to_png_how_title: 'Como usar',
+  tool_batch_convert_web_pages_to_png_hud_elapsed_tpl: '{s}s decorridos',
+  tool_batch_convert_web_pages_to_png_hud_pct_tpl: '{pct}%',
+  tool_batch_convert_web_pages_to_png_hud_step_fetch: 'Buscar',
+  tool_batch_convert_web_pages_to_png_hud_step_render: 'PNG',
+  tool_batch_convert_web_pages_to_png_hud_step_wait: 'Imagens',
+  tool_batch_convert_web_pages_to_png_hud_title: 'Progresso do lote',
+  tool_batch_convert_web_pages_to_png_opts_hint:
+    'A largura da vista muda o layout. Fundo transparente guarda o alfa. 2× dobra pixels. Página inteira é um print alto; primeira tela tem cerca de uma altura de vista.',
+  tool_batch_convert_web_pages_to_png_progress_tpl: '{i} / {total}',
+  tool_batch_convert_web_pages_to_png_rules_body:
+    'Uma URL http(s) por linha, até 10. Conversão em série. Falhas pulam. PNG ok vão para o ZIP. Fundo e escala mudam os pixels — não é JPEG renomeado nem exportação PDF.',
+  tool_batch_convert_web_pages_to_png_rules_item_1:
+    'Cada URL vai uma vez ao nosso servidor para buscar HTML e não é armazenada. O PNG é gerado nesta aba.',
+  tool_batch_convert_web_pages_to_png_rules_item_2: 'Redes privadas, logins e endereços inexistentes falham só essa linha. O resto do lote segue.',
+  tool_batch_convert_web_pages_to_png_rules_item_3:
+    'Nomes duplicados no ZIP viram name (2).png. Scripts e armadilhas noscript de recarga são removidos. Capturas muito altas têm teto para não derrubar a aba.',
+  tool_batch_convert_web_pages_to_png_rules_item_4: 'Não é um crawler de site inteiro. Cole as URLs que você já tem.',
+  tool_batch_convert_web_pages_to_png_rules_item_5:
+    'Em relação ao lote JPG: PNG sem perda, sem controle JPEG, fundo transparente opcional. Em relação ao lote PDF: sem paginar A4. Em relação a Converter imagens para PNG em lote: a entrada é URL da web, não foto no dispositivo.',
+  tool_batch_convert_web_pages_to_png_rules_title: 'Regras esperadas',
+  tool_batch_convert_web_pages_to_png_sample: 'Carregar exemplo',
+  tool_batch_convert_web_pages_to_png_scale_1x: '1×',
+  tool_batch_convert_web_pages_to_png_scale_2x: '2× (retina)',
+  tool_batch_convert_web_pages_to_png_scale_label: 'Escala de pixels',
+  tool_batch_convert_web_pages_to_png_status_converting: 'Renderizando PNG… esta aba pode pausar alguns segundos',
+  tool_batch_convert_web_pages_to_png_status_done: 'Lote concluído — veja a tabela e baixe o ZIP.',
+  tool_batch_convert_web_pages_to_png_status_fetching: 'Buscando o HTML…',
+  tool_batch_convert_web_pages_to_png_status_ok: 'PNG pronto',
+  tool_batch_convert_web_pages_to_png_status_queued: 'Na fila',
+  tool_batch_convert_web_pages_to_png_status_skip: 'Pulado',
+  tool_batch_convert_web_pages_to_png_status_waiting: 'Esperando as imagens terminarem…',
+  tool_batch_convert_web_pages_to_png_status_working: 'Convertendo o lote…',
+  tool_batch_convert_web_pages_to_png_summary_tpl: '{ok} prontos · {skip} pulados',
+  tool_batch_convert_web_pages_to_png_title: 'Converter várias páginas web para PNG',
+  tool_batch_convert_web_pages_to_png_url_hint:
+    'Uma URL http(s) pública por linha, até 10. Buscamos uma vez e reescrevemos CSS/imagens. Scripts saem antes da captura. O layout segue a largura da vista.',
+  tool_batch_convert_web_pages_to_png_url_label: 'URLs (uma por linha)',
+  tool_batch_convert_web_pages_to_png_url_placeholder: 'https://example.com/ui/component-kit',
+  tool_batch_convert_web_pages_to_png_usecase_1:
+    'Guardar um kit de componentes como PNG nítido: rótulos e borda de 1 px continuam legíveis. JPEG borra as arestas.',
+  tool_batch_convert_web_pages_to_png_usecase_2:
+    'Exportar um painel flutuante com PNG transparente e soltar no Figma. Home branca sólida continua opaca.',
+  tool_batch_convert_web_pages_to_png_usecase_3:
+    'Deixe o JPEG de chat em Converter várias páginas da web em JPG e o A4 em Converter várias páginas da web em PDF; use isto quando precisar de raster de UI sem perda.',
+  tool_batch_convert_web_pages_to_png_usecases_title: 'Onde encaixa',
+  tool_batch_convert_web_pages_to_png_viewport_desktop: 'Desktop 1280',
+  tool_batch_convert_web_pages_to_png_viewport_label: 'Largura da vista',
+  tool_batch_convert_web_pages_to_png_viewport_mobile: 'Telefone 390',
+  tool_batch_convert_web_pages_to_png_viewport_tablet: 'Tablet 768',
+  tool_batch_convert_web_pages_to_png_wait_hint:
+    'Segundos extras depois que as imagens remotas começam a carregar. Padrão 1. Aumente se o PNG mostrar caixas vazias.',
+  tool_batch_convert_web_pages_to_png_wait_label: 'Espera de carga (s)',
   tool_batch_watermark_product_photos_anchor_bc: 'Baixo',
   tool_batch_watermark_product_photos_anchor_bl: 'Baixo esq.',
   tool_batch_watermark_product_photos_anchor_br: 'Baixo dir.',
@@ -3373,6 +3586,87 @@ const pt: SiteLangDict = {
     'Segundos a mais depois que as imagens começam a carregar. O padrão é 1. Aumente se o PDF ficar com áreas de imagem em branco.',
   tool_convert_html_to_pdf_wait_label: 'Espera de carga (s)',
   tool_convert_html_to_pdf_warn_large: 'Arquivo grande pode ficar lento.',
+  tool_convert_html_web_pages_to_word_document_advanced_label: 'Configurações avançadas (opcional)',
+  tool_convert_html_web_pages_to_word_document_article:
+    'Cole HTML ou um endereço público e saia um .docx que dá para editar: títulos, listas, tabelas e links viram estilos Word. Não é PDF A4 nem captura de tela. O HTML colado fica nesta aba, sem enviar ao servidor. A URL é buscada uma vez e não é armazenada. Impressão: Converter HTML para PDF. Já tem PDF: Transformar PDF em documento Word.',
+  tool_convert_html_web_pages_to_word_document_clear: 'Limpar',
+  tool_convert_html_web_pages_to_word_document_convert: 'Converter',
+  tool_convert_html_web_pages_to_word_document_desc: 'Cole HTML ou busque uma URL e baixe Word editável — não é PDF nem captura.',
+  tool_convert_html_web_pages_to_word_document_description:
+    'Converter páginas HTML em um documento Word (HTML para Word / HTML para DOCX): cole ou busque uma URL e gere .docx editável, não um PDF A4. Passos: colar ou buscar, Converter, Baixar. Exemplo: notas de versão com tabela viram estilos Word. O HTML colado fica nesta aba; a URL é buscada uma vez e não é guardada.',
+  tool_convert_html_web_pages_to_word_document_download: 'Baixar',
+  tool_convert_html_web_pages_to_word_document_empty: 'Cole HTML ou informe um endereço público primeiro.',
+  tool_convert_html_web_pages_to_word_document_err_convert: 'Não deu para montar o Word com esse HTML. Confira as tags e tente de novo.',
+  tool_convert_html_web_pages_to_word_document_err_load: 'A biblioteca Word não carregou. Atualize e tente outra vez.',
+  tool_convert_html_web_pages_to_word_document_err_url: 'Não foi possível carregar essa URL. Confira o endereço ou o site bloqueia a busca.',
+  tool_convert_html_web_pages_to_word_document_err_url_empty: 'Informe primeiro uma URL http(s) válida.',
+  tool_convert_html_web_pages_to_word_document_example:
+    'Carregar exemplo preenche HTML de notas de versão (H1, lista, tabela de duas colunas e um link), roda Converter e libera Baixar. O .docx usa estilos de título e tabela: dá para mudar o texto. Na aba URL, Converter busca um endereço ao vivo.',
+  tool_convert_html_web_pages_to_word_document_example_title: 'Exemplo',
+  tool_convert_html_web_pages_to_word_document_faq_a1:
+    'Converter HTML para PDF pagina em folhas A4 para impressão. Aqui o HTML vira parágrafos, títulos, listas e tabelas editáveis. Mesmo HTML, outro arquivo.',
+  tool_convert_html_web_pages_to_word_document_faq_a2:
+    'O download é .docx (HTML para DOCX). Abra no Word ou em editor que leia Office Open XML. Não é .doc binário nem .mhtml do Chrome.',
+  tool_convert_html_web_pages_to_word_document_faq_a3:
+    'Sim. Abra a aba URL, cole um https e toque Converter. Scripts saem. Telas de login e apps em JavaScript quase nunca batem com o site ao vivo. O CSS não é refeito pixel a pixel.',
+  tool_convert_html_web_pages_to_word_document_faq_a4:
+    'Transformar PDF em documento Word começa num PDF e na camada de texto. Aqui você começa no HTML colado ou numa URL. Se já tem PDF, use aquela ferramenta.',
+  tool_convert_html_web_pages_to_word_document_faq_a5:
+    'O HTML colado não sai desta aba e não é enviado ao servidor. Se converter uma URL, mandamos o endereço uma vez para buscar o HTML e não guardamos. O .docx é montado no navegador.',
+  tool_convert_html_web_pages_to_word_document_faq_a6:
+    'Não. Exporte ou copie o HTML. O pacote de página completa / MHTML do Chrome é outro formato e não é analisado aqui.',
+  tool_convert_html_web_pages_to_word_document_faq_q1: 'Qual a diferença para Converter HTML para PDF?',
+  tool_convert_html_web_pages_to_word_document_faq_q2: 'O resultado é HTML para Word / um .docx?',
+  tool_convert_html_web_pages_to_word_document_faq_q3: 'Dá para converter uma URL (página web para Word)?',
+  tool_convert_html_web_pages_to_word_document_faq_q4: 'Qual a diferença para Transformar PDF em documento Word?',
+  tool_convert_html_web_pages_to_word_document_faq_q5: 'Meu HTML ou a URL são enviados e armazenados?',
+  tool_convert_html_web_pages_to_word_document_faq_q6: 'Dá para converter um .mhtml do Chrome?',
+  tool_convert_html_web_pages_to_word_document_how_body:
+    'Isto não pagina em A4: você cola HTML (HTML para Word) ou uma URL, toca Converter e baixa um .docx cujos títulos e tabelas ainda se editam.',
+  tool_convert_html_web_pages_to_word_document_how_item_1: 'Código na mão: fique em Colar HTML. Um https público (página web para Word): aba URL.',
+  tool_convert_html_web_pages_to_word_document_how_item_2:
+    'Toque Converter. Scripts são removidos. Títulos, listas, tabelas e links entram no Word. Imagens que falham são puladas.',
+  tool_convert_html_web_pages_to_word_document_how_item_3:
+    'Quer as <img> do HTML? Abra as configurações avançadas — Incluir imagens vem ligado e ainda ignora fotos bloqueadas.',
+  tool_convert_html_web_pages_to_word_document_how_item_4:
+    'Folhas A4: Converter HTML para PDF. Captura: Converter várias páginas web para PNG ou JPG. Já é PDF: Transformar PDF em documento Word.',
+  tool_convert_html_web_pages_to_word_document_how_item_5: 'Quando Converter terminar, Baixar. Abra o .docx e edite o texto.',
+  tool_convert_html_web_pages_to_word_document_how_title: 'Como usar',
+  tool_convert_html_web_pages_to_word_document_html_hint:
+    'Cole um trecho ou um HTML inteiro. Scripts saem antes da conversão. O CSS de layout não é recriado pixel a pixel.',
+  tool_convert_html_web_pages_to_word_document_html_label: 'HTML',
+  tool_convert_html_web_pages_to_word_document_html_placeholder: '<h1>Notas de versão</h1><p>Cole o HTML aqui…</p>',
+  tool_convert_html_web_pages_to_word_document_imgs_hint:
+    'Ligado: tentamos embutir <img> que o navegador consiga ler. Imagens quebradas ou bloqueadas são puladas. Desligue para Word só de texto.',
+  tool_convert_html_web_pages_to_word_document_imgs_label: 'Incluir imagens',
+  tool_convert_html_web_pages_to_word_document_opts_hint:
+    'Incluir imagens tenta embutir as fotos do HTML. Posicionamento CSS não é mapeado. A saída é sempre um .docx.',
+  tool_convert_html_web_pages_to_word_document_rules_body:
+    'Um Converter gera um .docx. Títulos, parágrafos, listas, tabelas, links e imagens opcionais são mapeados. CSS absoluto, barras fixas e scripts não.',
+  tool_convert_html_web_pages_to_word_document_rules_item_1: 'O HTML colado fica nesta aba, sem enviar ao servidor. Uma URL é buscada uma vez e não é armazenada.',
+  tool_convert_html_web_pages_to_word_document_rules_item_2: 'h1–h6 viram títulos Word. ul/ol listas. table uma tabela. a um hiperlink.',
+  tool_convert_html_web_pages_to_word_document_rules_item_3:
+    'Login, apps JavaScript e CSS de impressão quase nunca batem com o site ao vivo. Isto não é raster de captura.',
+  tool_convert_html_web_pages_to_word_document_rules_item_4:
+    'Perante Converter HTML para PDF: Word editável, não folhas A4. Perante Transformar PDF em documento Word: a entrada é HTML ou URL, não um PDF. Perante Imagens para Word: a entrada é marcação, não um monte de fotos.',
+  tool_convert_html_web_pages_to_word_document_rules_title: 'Regras e limites',
+  tool_convert_html_web_pages_to_word_document_sample: 'Carregar exemplo',
+  tool_convert_html_web_pages_to_word_document_status_done: 'Word pronto — baixe o .docx e edite.',
+  tool_convert_html_web_pages_to_word_document_status_fetching: 'Buscando o HTML da URL…',
+  tool_convert_html_web_pages_to_word_document_status_working: 'Montando o documento Word…',
+  tool_convert_html_web_pages_to_word_document_tab_html: 'Colar HTML',
+  tool_convert_html_web_pages_to_word_document_tab_url: 'URL',
+  tool_convert_html_web_pages_to_word_document_title: 'Converter páginas HTML em um documento Word',
+  tool_convert_html_web_pages_to_word_document_url_hint:
+    'Uma URL http(s) pública. Buscamos o HTML uma vez e reescrevemos CSS/imagens. Scripts saem antes do mapeamento para Word.',
+  tool_convert_html_web_pages_to_word_document_url_label: 'URL',
+  tool_convert_html_web_pages_to_word_document_url_placeholder: 'https://example.com/help/release-notes',
+  tool_convert_html_web_pages_to_word_document_usecase_1:
+    'Levar um HTML exportado da central de ajuda a um rascunho que o jurídico comente — títulos continuam títulos.',
+  tool_convert_html_web_pages_to_word_document_usecase_2: 'Buscar uma URL pública de notas de versão e manter a tabela como tabela Word de verdade.',
+  tool_convert_html_web_pages_to_word_document_usecase_3:
+    'Deixe A4 em Converter HTML para PDF e capturas no lote PNG; use isto quando precisar de .docx editável.',
+  tool_convert_html_web_pages_to_word_document_usecases_title: 'Quando encaixa',
   tool_convert_pdf_to_dwg_article:
     'Converter um PDF rumo ao DWG exportando DXF ASCII: entidades TEXT e borda de página que o AutoCAD abre. O navegador não escreve DWG proprietário. Os arquivos ficam no dispositivo; sem envio ao servidor.',
   tool_convert_pdf_to_dwg_choose_file: 'Escolher PDF',

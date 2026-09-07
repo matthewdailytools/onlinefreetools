@@ -118,8 +118,11 @@
 - [检查 PDF/A 指标](https://onlinefreetools.org/zh/tools/check-pdf-a-compliance) - 本地筛查五项归档线索；非 veraPDF 认证
 - [给 PDF 加文字](https://onlinefreetools.org/zh/tools/add-text-to-pdf-file) - 在每页指定坐标绘制文本；文件留在本机
 - [HTML 转 PDF](https://onlinefreetools.org/zh/tools/convert-html-to-pdf) - 粘贴 HTML 导出 PDF；文件留在本机
+- [把 HTML 网页转成 Word 文档](https://onlinefreetools.org/zh/tools/convert-html-web-pages-to-word-document) - 粘贴 HTML 或抓取网址生成可编辑 .docx；不是截图，不是 A4 PDF
 - [批量把网页转成 PDF](https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-pdf) - 网址列表逐条转成 PDF 并打包 ZIP；代抓一次不落盘
 - [批量把网页转成 JPG](https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-jpg) - 网址列表按视口截成 JPEG 并打包 ZIP；代抓一次不落盘
+- [批量把网页转成 PNG](https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-png) - 网址列表截成无损 PNG（可选透明底与 2×）并打包 ZIP；代抓一次不落盘
+- [批量把网页转成 Excel](https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-excel) - 网址里的 HTML 表格抽进一本 .xlsx；不是截图，不是 Word 文稿
 - [制作 PDF 翻页书](https://onlinefreetools.org/zh/tools/make-pdf-flipbook) - 翻页预览并导出独立 HTML 文件
 - [Word 文档转 PDF](https://onlinefreetools.org/zh/tools/convert-word-document-to-pdf) - 上传 .docx 在浏览器转 PDF；版式有边界，不上传
 - [PDF 转 Word 文档](https://onlinefreetools.org/zh/tools/turn-pdf-into-word-document) - 抽取文本层导出 .docx；无 OCR，不上传
@@ -329,8 +332,11 @@ Below are our available online tools with their links (English version):
 - [Inspect PDF/A indicators](https://onlinefreetools.org/tools/check-pdf-a-compliance) - Five local archival hints — not veraPDF certification
 - [Add text to a PDF file](https://onlinefreetools.org/tools/add-text-to-pdf-file) - Draw text at X/Y on each page — stays on device
 - [Convert HTML to PDF](https://onlinefreetools.org/tools/convert-html-to-pdf) - Paste HTML and export a PDF — stays on device
+- [Convert HTML web pages to a Word document](https://onlinefreetools.org/tools/convert-html-web-pages-to-word-document) - Paste HTML or fetch a URL into an editable .docx — not a screenshot, not A4 PDF
 - [Batch convert web pages to PDF](https://onlinefreetools.org/tools/batch-convert-web-pages-to-pdf) - Convert a URL list to PDFs and download a ZIP — fetch once, not stored
 - [Batch convert web pages to JPG](https://onlinefreetools.org/tools/batch-convert-web-pages-to-jpg) - Convert a URL list to JPEGs at a chosen viewport and download a ZIP — fetch once, not stored
+- [Batch convert web pages to PNG](https://onlinefreetools.org/tools/batch-convert-web-pages-to-png) - Convert a URL list to lossless PNGs (optional transparent background and 2x) and download a ZIP — fetch once, not stored
+- [Batch convert web pages to Excel](https://onlinefreetools.org/tools/batch-convert-web-pages-to-excel) - Pull HTML tables from a URL list into one .xlsx workbook — not a screenshot, not Word prose
 - [Make a PDF flipbook](https://onlinefreetools.org/tools/make-pdf-flipbook) - Page-turn preview plus standalone HTML export
 - [Convert Word document to PDF](https://onlinefreetools.org/tools/convert-word-document-to-pdf) - Upload .docx and convert in the browser — layout limits, no upload
 - [Turn PDF into Word document](https://onlinefreetools.org/tools/turn-pdf-into-word-document) - Extract text layer to .docx — no OCR, no upload

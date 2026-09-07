@@ -17,7 +17,8 @@
   "related": [
     "markdown-to-html",
     "write-pdf-document-online",
-    "convert-word-document-to-pdf"
+    "convert-word-document-to-pdf",
+    "convert-html-web-pages-to-word-document"
   ],
   "logo": "/icons/tools/convert-html-to-pdf.svg",
   "page": {
