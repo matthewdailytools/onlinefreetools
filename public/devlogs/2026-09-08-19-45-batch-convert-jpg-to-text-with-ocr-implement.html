@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dev Logs | OnlineFreeTools.org</title>
-  <meta name="description" content="Curated project development notes with reusable decisions and fixes, organized by month." />
+  <title>Shipped batch-convert-jpg-to-text-with-ocr with queue, skip, ZIP, combined TXT, ten-locale copy, and a back-link from the single-image OCR page. | Dev Logs</title>
+  <meta name="description" content="Shipped batch-convert-jpg-to-text-with-ocr with queue, skip, ZIP, combined TXT, ten-locale copy, and a back-link from the single-image OCR page." />
   
-  <link rel="canonical" href="https://onlinefreetools.org/devlogs/" />
-  <meta property="og:title" content="Dev Logs | OnlineFreeTools.org" />
-  <meta property="og:description" content="Curated project development notes with reusable decisions and fixes, organized by month." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://onlinefreetools.org/devlogs/" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-09-08-19-45-batch-convert-jpg-to-text-with-ocr-implement.html" />
+  <meta property="og:title" content="Shipped batch-convert-jpg-to-text-with-ocr with queue, skip, ZIP, combined TXT, ten-locale copy, and a back-link from the single-image OCR page. | Dev Logs" />
+  <meta property="og:description" content="Shipped batch-convert-jpg-to-text-with-ocr with queue, skip, ZIP, combined TXT, ten-locale copy, and a back-link from the single-image OCR page." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-09-08-19-45-batch-convert-jpg-to-text-with-ocr-implement.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
@@ -47,8 +47,8 @@
   else window.addEventListener('load', schedule, { once: true });
 })();
 </script>
-  <link rel="next" href="https://onlinefreetools.org/devlogs/page-2.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs","url":"https://onlinefreetools.org/devlogs/","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://onlinefreetools.org/devlogs/"}]}}</script>
+  
+  
 </head>
 <body class="is-info-page is-devlog-page">
   
@@ -159,150 +159,59 @@
       <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/"><span class="sidebar-tool-label">Home</span></a></div>
     </aside>
     <main id="content" class="p-4">
-    <section>
-      <header class="devlog-page-head mb-3">
-        <a class="btn btn-outline-secondary btn-sm devlog-back flex-shrink-0" href="/">Back to Home</a>
-        <h1 class="devlog-title">Dev Logs</h1>
-        <p class="devlog-lead text-muted mb-0">
-          Browse Q&A and implementation notes by month.
-          <a class="ms-1 text-decoration-none" href="https://github.com/matthewdailytools/onlinefreetools" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </p>
-      </header>
-      
-      <div class="mb-4">
-        <h2 class="h5 text-muted mb-2">2026-09</h2>
-        <ul class="list-group shadow-sm">
-          
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-08-19-45-batch-convert-jpg-to-text-with-ocr-implement.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-jpg-to-text-with-ocr-implement<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-08-08-51-batch-convert-jpg-to-text-with-ocr-brief.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-jpg-to-text-with-ocr-brief<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-08-08-50-js-speech-to-text-solutions-doc.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>js-speech-to-text-solutions-doc<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-08-08-40-js-speech-to-text-stacks.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>js-speech-to-text-stacks<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-08-08-35-text-converter-keyword-planner.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>text-converter-keyword-planner<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-08-00-25-convert-a-jpg-to-text-with-ocr-implement.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-a-jpg-to-text-with-ocr-implement<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-23-50-convert-a-jpg-to-text-with-ocr-brief.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-a-jpg-to-text-with-ocr-brief<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-23-20-devlog-slug-tags-layout.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>devlog-slug-tags-layout<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-22-50-html-to-word-fail-hud.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>html-to-word-fail-hud<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-22-35-html-to-word-keep-hud-download.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>html-to-word-keep-hud-download<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-22-25-html-to-word-progress-hud.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>html-to-word-progress-hud<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-22-07-html-to-word-plain-text-option.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>html-to-word-plain-text-option<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-21-50-html-to-word-css-not-mapped.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>html-to-word-css-not-mapped<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-21-50-gsc-url-tool-function-qa.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>gsc-url-tool-function-qa<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-21-46-hao123-meta-refresh-word.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>hao123-meta-refresh-word<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-21-45-gsc-crawled-not-indexed-reasons.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>gsc-crawled-not-indexed-reasons<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-21-30-html-to-word-sanitize-empty.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>html-to-word-sanitize-empty<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-18-36-html-to-word-empty-blocks.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>html-to-word-empty-blocks<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-17-13-batch-convert-web-pages-to-excel.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-web-pages-to-excel<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-16-05-ocr-scan-keyword-planner.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ocr-scan-keyword-planner<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-15-59-batch-png-and-html-to-word.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-png-and-html-to-word<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-15-52-js-ocr-capability-ceiling.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>js-ocr-capability-ceiling<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-14-25-opensource-js-pdf-editor-survey.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>opensource-js-pdf-editor-survey<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-13-23-upload-r2-missing-s3-token.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>upload-r2-missing-s3-token<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-13-20-batch-jpg-pdf-ig-split.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-jpg-pdf-ig-split<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-11-47-build-site-missing-pdf-lib.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>build-site-missing-pdf-lib<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-08-54-batch-jpg-serp-ui-optimize.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-jpg-serp-ui-optimize<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-08-45-converter-input-ui-skill.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>converter-input-ui-skill<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-08-45-batch-convert-web-pages-to-jpg.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-web-pages-to-jpg<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-07-08-40-converter-serp-landing-seo-skill.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>converter-serp-landing-seo-skill<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-07</span>
-          </li>
-        </ul>
-      </div>
-      
-      <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4" aria-label="Dev Logs">
-        <span class="btn btn-outline-secondary btn-sm disabled" aria-disabled="true">Previous</span>
-        <span class="small text-muted">Page 1 of 28</span>
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-2.html" rel="next">Next</a>
-      </nav>
-    </section>
-  </main>
+      <section class="mb-3">
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Shipped batch-convert-jpg-to-text-with-ocr with queue, skip, ZIP, combined TXT, ten-locale copy, and a back-link from the single-image OCR page.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-convert-jpg-to-text-with-ocr"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-jpg-to-text-with-ocr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/convert-a-jpg-to-text-with-ocr"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-a-jpg-to-text-with-ocr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-08 19:45
+Summary: Shipped batch-convert-jpg-to-text-with-ocr with queue, skip, ZIP, combined TXT, ten-locale copy, and a back-link from the single-image OCR page.
+Visibility: people</p>
+<p>[question]
+继续</p>
+<h2>Tool links (English)</h2>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-convert-jpg-to-text-with-ocr"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-jpg-to-text-with-ocr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/convert-a-jpg-to-text-with-ocr"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-a-jpg-to-text-with-ocr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
+<p>[try to solve]</p>
+<h2>Context</h2>
+<p>The brief in <code>work-tasks/batch-convert-jpg-to-text-with-ocr/</code> was already <code>ready</code>. The job is <strong>not</strong> a second “JPG to text” URL: N1 (<code>convert-a-jpg-to-text-with-ocr</code>) keeps the single-photo query. This page must carry extra Information Gain as <strong>controls</strong> — a multi-file queue, Convert all, skip a failed row, Download ZIP of <code>{stem}.txt</code> plus default <code>combined.txt</code> — or it would be a doorway.</p>
+<p>Prior session wrote catalog, icon, <code>batchConvertJpgToTextWithOcrPage.ts</code>, and five locales (en, zh, es, ja, ar). This session finished the remaining five locales, linked N1 back, ran ship gates, and recorded what still could not be clicked in a live browser.</p>
+<h2>Process</h2>
+<ol>
+<li>Confirmed the page already serializes one Tesseract worker (<code>MAX_FILES = 10</code>), does not auto-<code>loadSample()</code> on landing, and exposes Convert all / Download ZIP / Copy combined text.</li>
+<li>Wrote independent pt / id / fr / ru / de shards from <code>03-locale-briefs.md</code> (local H1: Converter vários JPG… / Ubah banyak JPG… / Convertir plusieurs JPG… / Пакетно преобразовать JPG… / Mehrere JPG mit OCR…). How steps use the same button labels as the UI in that language.</li>
+<li>Re-scanned sample locales <strong>en, zh, es, ja</strong> for coverage pass 2b: master H1 stays “Batch convert JPG to text with OCR”; secondary “batch OCR / bulk OCR” (and local equivalents) sit after Steps so the snippet keeps Convert all / ZIP. Lengthened the Chinese <code>_description</code> after <code>lint:seo</code> warned it was 118 characters (need ≥120).</li>
+<li>Cross-tool (<code>CROSS_TOOL_UPDATE=1</code>): N1 catalog <code>related</code> now leads with this slug; all ten N1 locales gained FAQ q8/a8 naming the batch H1 (not the slug). README English and Chinese tool lists each got one line next to N1.</li>
+<li>Gates: <code>coverage:gate --phase=4</code> and <code>--phase=all</code> green; <code>merge:tools</code>; <code>build:site --full</code>; <code>lint:tool-page --require-html</code>; <code>lint:seo</code>; <code>lint:vendor</code>; isolation with <code>CROSS_TOOL_UPDATE=1</code>. First <code>verify:tool</code> failed only on the short zh description; after the two-character fix the SEO step was re-run green and the two OCR slugs were re-prerendered.</li>
+<li>Static HTML check (not a click-through): English prerender contains Convert all, Download ZIP, Copy combined text, <code>function loadSample</code>, <code>multiple</code>, <code>combined.txt</code>. Chinese contains 全部转换 / 下载 ZIP / 复制合并文本. N1 English FAQ asks “Can I convert several JPGs at once?” and names the batch H1. Home <code>/</code> and <code>/zh/</code> already list the new card. Sitemap includes the English URL.</li>
+</ol>
+<h2>Root cause / analysis</h2>
+<p>A batch OCR URL only earns a separate indexable page if the extra work is on the first screen. Copy that says “also works for several files” while the form stays one <code>&lt;input&gt;</code> would fail both the brief and Google doorway / scaled-content rules. Serial WASM is a product constraint, not a copy claim: parallel workers would compete for memory on phones.</p>
+<p>N1 used to say “one image per run — not batch ocr,” which became false once this page existed. FAQ q8 points people to the queue/ZIP page by <strong>tool name</strong>, so crawlers and humans see a pair instead of two titles fighting <code>jpg to text</code>.</p>
+<h2>Solution</h2>
+<ul>
+<li>Catalog: <code>page.style: &quot;opts&quot;</code>, <code>localProcessing: true</code>, related N1 + <code>extract-text-from-pdf</code>.</li>
+<li>Status: <code>03</code> → <code>i18n-done</code>, <code>02</code> → <code>implemented</code>.</li>
+<li>Engine reuse: same <code>/vendor/tesseract/</code> as N1; ZIP via <code>/vendor/fflate/index.js</code>.</li>
+<li>Browser MCP was not available. Local wrangler on port 8788 still served pre-upload R2 HTML (404 for the new slug). Verification used prerendered <code>public/_pages/{lang}/tools/*.html</code> and home HTML, not an interactive Convert all / ZIP download.</li>
+</ul>
+<h2>Notes / boundaries</h2>
+<ul>
+<li>Still not a scanned-PDF, Word, CSV, handwriting, or shop-scan product.</li>
+<li><code>jpg to text</code> stays on N1; this H1 is the batch task sentence, not “Batch OCR” alone.</li>
+<li>Clicking Load sample → two real OCR lines → ZIP enablement was <strong>not</strong> exercised in a browser this session.</li>
+<li>Not deployed; <code>npm run deploy</code> / production <code>upload:r2</code> were not run.</li>
+</ul>
+<p>[actions]</p>
+<ul>
+<li>Added pt/id/fr/ru/de i18n shards; N1 FAQ q8 + related; README tool-list lines</li>
+<li><code>03</code> i18n-done / <code>02</code> implemented; coverage 2b named en,zh,es,ja</li>
+<li><code>npm run coverage:gate --phase=4</code>; <code>lint:seo</code>; <code>lint:tool-isolation</code> with <code>CROSS_TOOL_UPDATE=1</code>; prerender of both OCR slugs</li>
+</ul>
+</article>
+      </section>
+    </main>
   </div>
   
   <footer class="site-footer border-top text-center py-3">

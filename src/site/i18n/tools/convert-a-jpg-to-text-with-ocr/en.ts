@@ -42,7 +42,9 @@ const en: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_a6:
     'People search online ocr or free ocr for a catch-all desk. This page only turns a photo into TXT. It does not export Word, a searchable PDF, or a spreadsheet, and it is not Tesseract as an install package.',
   tool_convert_a_jpg_to_text_with_ocr_faq_a7:
-    'Optical character recognition here means reading printed pixels into copyable lines. One image per run — not batch ocr.',
+    'Optical character recognition here means reading printed pixels into copyable lines. One image per Convert. A stack of photos belongs on Batch convert JPG to text with OCR.',
+  tool_convert_a_jpg_to_text_with_ocr_faq_a8:
+    'This page is one photo, Copy text, one TXT. For Convert all, skip a failed row, and a ZIP of text files, use Batch convert JPG to text with OCR.',
   tool_convert_a_jpg_to_text_with_ocr_faq_q1: 'Is my photo uploaded?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q2: 'How is this different from extracting PDF text?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q3: 'Can I use PNG or a screenshot?',
@@ -50,6 +52,7 @@ const en: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_q5: 'How do I pick Chinese or Arabic?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q6: 'Is this Online OCR? Can I get Word?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q7: 'What does OCR text recognition mean here?',
+  tool_convert_a_jpg_to_text_with_ocr_faq_q8: 'Can I convert several JPGs at once?',
   tool_convert_a_jpg_to_text_with_ocr_how_body:
     'Turn printed letters in a photo into copyable text: drop the JPG, click Convert (the engine loads on first click), then Copy text or Download TXT.',
   tool_convert_a_jpg_to_text_with_ocr_how_item_1: 'Drop a JPG, PNG, or WebP (or choose a file).',

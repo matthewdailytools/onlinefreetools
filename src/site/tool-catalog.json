@@ -288,6 +288,31 @@
     "subject": "pdf"
   },
   {
+    "slug": "batch-convert-jpg-to-text-with-ocr",
+    "path": "/tools/batch-convert-jpg-to-text-with-ocr",
+    "updatedAt": "2026-09-08T01:00:00.000Z",
+    "launchedAt": "2026-09-08T01:00:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_convert_jpg_to_text_with_ocr_title",
+    "homeTitleKey": "tool_batch_convert_jpg_to_text_with_ocr_title",
+    "homeDescKey": "tool_batch_convert_jpg_to_text_with_ocr_desc",
+    "faqPrefix": "tool_batch_convert_jpg_to_text_with_ocr",
+    "related": [
+      "convert-a-jpg-to-text-with-ocr",
+      "extract-text-from-pdf"
+    ],
+    "logo": "/icons/tools/batch-convert-jpg-to-text-with-ocr.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
     "slug": "batch-convert-web-pages-to-excel",
     "path": "/tools/batch-convert-web-pages-to-excel",
     "updatedAt": "2026-09-07T08:10:00.000Z",
@@ -859,7 +884,7 @@
   {
     "slug": "convert-a-jpg-to-text-with-ocr",
     "path": "/tools/convert-a-jpg-to-text-with-ocr",
-    "updatedAt": "2026-09-07T16:15:00.000Z",
+    "updatedAt": "2026-09-08T11:20:00.000Z",
     "launchedAt": "2026-09-07T16:15:00.000Z",
     "category": "image",
     "primaryTopic": "image-media",
@@ -873,6 +898,7 @@
     "homeDescKey": "tool_convert_a_jpg_to_text_with_ocr_desc",
     "faqPrefix": "tool_convert_a_jpg_to_text_with_ocr",
     "related": [
+      "batch-convert-jpg-to-text-with-ocr",
       "extract-text-from-pdf",
       "images-to-pdf"
     ],

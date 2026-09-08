@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
+  <!-- Stack of photos to a ZIP of text lines. ASCII comments only. -->
+  <rect width="32" height="32" rx="8" fill="#1c83a8"/>
+  <rect x="6" y="5" width="11" height="8" rx="1" fill="#fff" opacity=".55"/>
+  <rect x="5" y="8" width="12" height="9" rx="1.2" fill="#fff" opacity=".95"/>
+  <path d="M7 11h8M7 14h6" stroke="#1c83a8" stroke-width="1.1" stroke-linecap="round"/>
+  <rect x="18" y="7" width="9" height="11" rx="1.2" fill="#fff" opacity=".95"/>
+  <path d="M20 10h5M20 13h4M20 16h5" stroke="#1c83a8" stroke-width="1.1" stroke-linecap="round"/>
+  <rect x="7" y="20" width="18" height="7" rx="1.2" fill="#fff" opacity=".95"/>
+  <path d="M10 22.5h12M10 25h8" stroke="#1c83a8" stroke-width="1.1" stroke-linecap="round"/>
+</svg>

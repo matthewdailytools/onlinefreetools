@@ -41,7 +41,9 @@ const ru: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_a6:
     '«Онлайн OCR» — зонтичный запрос. Здесь только TXT, не Word, не searchable PDF, не таблица и не установщик.',
   tool_convert_a_jpg_to_text_with_ocr_faq_a7:
-    'Распознать текст на фото — превратить печатные пиксели в копируемые строки. По одному кадру, не пакетно.',
+    'Распознать текст на фото — превратить печатные пиксели в копируемые строки. Одно изображение за «Преобразовать». Стопка фото — на «Пакетно преобразовать JPG в текст с помощью OCR».',
+  tool_convert_a_jpg_to_text_with_ocr_faq_a8:
+    'Эта страница: одно фото, копировать текст, один TXT. Для «Преобразовать всё», пропуска сбоя и ZIP с текстами — «Пакетно преобразовать JPG в текст с помощью OCR».',
   tool_convert_a_jpg_to_text_with_ocr_faq_q1: 'Загружается ли фото на сервер?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q2: 'Чем это отличается от извлечения текста из PDF?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q3: 'Подойдёт ли скриншот PNG?',
@@ -49,6 +51,7 @@ const ru: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_q5: 'Как выбрать китайский или арабский?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q6: 'Это онлайн OCR с выгрузкой в Word?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q7: 'Что здесь значит распознать текст с фото?',
+  tool_convert_a_jpg_to_text_with_ocr_faq_q8: 'Можно ли сразу преобразовать несколько JPG?',
   tool_convert_a_jpg_to_text_with_ocr_how_body:
     'Сделайте печатные буквы на фото копируемым текстом: перетащите JPG, нажмите «Преобразовать» (движок грузится при первом клике), затем «Копировать текст» или «Скачать TXT».',
   tool_convert_a_jpg_to_text_with_ocr_how_item_1: 'Перетащите JPG, PNG или WebP (или выберите файл).',

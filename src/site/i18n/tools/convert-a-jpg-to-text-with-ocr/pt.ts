@@ -41,7 +41,9 @@ const pt: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_a6:
     '«OCR online» é uma pesquisa genérica. Aqui só sai TXT, não Word, PDF pesquisável, folha de cálculo nem instalador.',
   tool_convert_a_jpg_to_text_with_ocr_faq_a7:
-    'Reconhecer texto numa foto é passar pixéis impressos a linhas copiáveis. Uma imagem de cada vez, não lote.',
+    'Reconhecer texto numa foto é passar pixéis impressos a linhas copiáveis. Uma imagem por Converter. Um monte de fotos vai para Converter vários JPG em texto com OCR.',
+  tool_convert_a_jpg_to_text_with_ocr_faq_a8:
+    'Esta página é uma foto, Copiar texto, um TXT. Para Converter tudo, pular uma linha falha e um ZIP de textos, use Converter vários JPG em texto com OCR.',
   tool_convert_a_jpg_to_text_with_ocr_faq_q1: 'O meu ficheiro é enviado ao servidor?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q2: 'Qual a diferença para extrair texto de um PDF?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q3: 'Posso usar um print PNG?',
@@ -49,6 +51,7 @@ const pt: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_q5: 'Como escolho chinês ou árabe?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q6: 'Isto é OCR online que exporta Word?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q7: 'O que cobre reconhecer texto numa foto?',
+  tool_convert_a_jpg_to_text_with_ocr_faq_q8: 'Posso converter vários JPG de uma vez?',
   tool_convert_a_jpg_to_text_with_ocr_how_body:
     'Tire texto copiável de uma foto impressa: largue o JPG, clique em Converter (o motor carrega no primeiro clique) e depois Copiar texto ou Baixar TXT.',
   tool_convert_a_jpg_to_text_with_ocr_how_item_1: 'Largue um JPG, PNG ou WebP (ou escolha o ficheiro).',

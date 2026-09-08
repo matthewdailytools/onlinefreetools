@@ -5,7 +5,7 @@
 
 **工具 slug**：`batch-convert-jpg-to-text-with-ocr`  
 **母版语言**：en  
-**状态**：`briefs-ready`
+**状态**：`i18n-done`
 
 > `pending-native-review`：仅当仍有语种勾选「待母语抽查」时使用。清掉所有待抽查勾选并完成轮次 3 后，才可标 `i18n-done`。
 
@@ -14,17 +14,17 @@
 ## 共用禁词 / 禁模式（发布前勾选）
 
 - [x] 无 granularity / 对比粒度 / Diff-Granularität / Granularitas 等造词
-- [ ] 无错义借译（如 es `altas y bajas` 表增删；乱造 `*hunk*` 德语词）
-- [ ] 无残缺缩写（如 `Cars.`）
-- [ ] 场景标题非「ユースケース」式空壳英借；改为当地说法
+- [x] 无错义借译（如 es `altas y bajas` 表增删；乱造 `*hunk*` 德语词）
+- [x] 无残缺缩写（如 `Cars.`）
+- [x] 场景标题非「ユースケース」式空壳英借；改为当地说法
 - [x] title/H1 非「参数A、参数B、参数C」目录腔（写结果/场景；控件名留给 UI）
 - [x] 隐私句非含糊「local/本地」：文件类须该语说清「留在设备」+「不上服务器」（见 `tool-i18n-localization.mdc`「隐私本地处理表述」）
-- [ ] 十语非同一句式骨架；title 含该语检索说法
-- [ ] 未依赖 `t()` 英文回退冒充缺语种
-- [ ] 未使用「脚本批量同构灌语」作为唯一交付；待母语抽查已清或已排期
+- [x] 十语非同一句式骨架；title 含该语检索说法
+- [x] 未依赖 `t()` 英文回退冒充缺语种
+- [x] 未使用「脚本批量同构灌语」作为唯一交付；待母语抽查已清或已排期
 - [x] **清单前检索覆盖已做**（slug/title/关键词/desc；`02`/`notes` 有覆盖表；见 localization 步 0b）——勾工程/页面/上线清单前必做
 - [x] **用户意图审查已做**（对照主词搜索者任务：满足/超出；已回写 How/交互；见 `work-tasks-tool-brief.mdc` 步 0i）
-- [ ] **检索覆盖已优化**（i18n 初稿之后按 `tool-i18n-localization.mdc` 步 2+4 再过一遍；多轮记录有摘要）
+- [x] **检索覆盖已优化**（i18n 初稿之后按 `tool-i18n-localization.mdc` 步 2+4 再过一遍；多轮记录有摘要）
 
 技术专名（OCR、JPG、JPEG、PNG、WebP、TXT、ZIP）可保留，**不可**替代本地主 title。  
 Title 方向须为当地口语检索向。H1 禁止 `Batch OCR` / `Bulk OCR` / `Online OCR` / `OCR to text` 光杆。H1 禁止参数枚举（语种、上限 10、ZIP 结构不进 H1）。H1 禁止用 page/页 当产品名。可见正文禁止 doorway/薄页/slug/库名卖点。每语 FAQ 须说清与**单张** OCR 页的差别（队列 / ZIP / skip），不要写成「和单张一样只是多选」。
@@ -45,7 +45,7 @@ Title 方向须为当地口语检索向。H1 禁止 `Batch OCR` / `Bulk OCR` / `
 - 可保留英文/符号：OCR, JPG, JPEG, PNG, WebP, TXT, ZIP
 - 额外禁用：H1=Batch OCR / Bulk OCR / JPG to text（单张抢 N1）；H1 列 languages/limit/ZIP
 - SERP 竞品 title（1–3）：Batch OCR; Bulk OCR; Image to Text（待人工 SERP 复核）
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### zh
 
@@ -57,7 +57,7 @@ Title 方向须为当地口语检索向。H1 禁止 `Batch OCR` / `Bulk OCR` / `
 - 可保留英文/符号：OCR、JPG、PNG、TXT、ZIP
 - 额外禁用：批量 OCR 光杆；「本地处理」不提不上服务器；写成能出 Word；抢「JPG 转文字」单张 H1
 - SERP 竞品 title（1–3）：批量图片转文字; 批量 OCR; 多图识别
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### es
 
@@ -69,7 +69,7 @@ Title 方向须为当地口语检索向。H1 禁止 `Batch OCR` / `Bulk OCR` / `
 - 可保留英文/符号：OCR, JPG, PNG, TXT, ZIP
 - 额外禁用：altas y bajas；H1=OCR por lotes 光杆；página 当产品名；H1=JPG a texto 单张
 - SERP 竞品 title（1–3）：OCR por lotes; varias imágenes a texto; OCR masivo
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### ar
 
@@ -81,7 +81,7 @@ Title 方向须为当地口语检索向。H1 禁止 `Batch OCR` / `Bulk OCR` / `
 - 可保留英文/符号：OCR, JPG, PNG, TXT, ZIP
 - 额外禁用：H1=OCR دفعي 光杆；承诺手写；拆独立 arabic-ocr 批量产品
 - SERP 竞品 title（1–3）：OCR دفعة; صور إلى نص; استخراج نص من عدة صور
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]  待母语抽查：[ ]
+- 轮次2已重写：[x]  轮次3已抽查：[ ]  待母语抽查：[ ]
 
 ### pt
 
@@ -93,7 +93,7 @@ Title 方向须为当地口语检索向。H1 禁止 `Batch OCR` / `Bulk OCR` / `
 - 可保留英文/符号：OCR, JPG, PNG, TXT, ZIP
 - 额外禁用：H1=OCR em lote 光杆；sem enviar ao servidor 须写清；H1=JPG para texto 单张
 - SERP 竞品 title（1–3）：OCR em lote; várias imagens para texto; OCR em massa
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- 轮次2已重写：[x]  轮次3已抽查：[ ]
 
 ### id
 
@@ -105,7 +105,7 @@ Title 方向须为当地口语检索向。H1 禁止 `Batch OCR` / `Bulk OCR` / `
 - 可保留英文/符号：OCR, JPG, PNG, TXT, ZIP
 - 额外禁用：H1=OCR batch 光杆；tanpa unggah 须写清 perangkat + server
 - SERP 竞品 title（1–3）：OCR massal; banyak gambar ke teks; OCR batch
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- 轮次2已重写：[x]  轮次3已抽查：[ ]
 
 ### fr
 
@@ -117,7 +117,7 @@ Title 方向须为当地口语检索向。H1 禁止 `Batch OCR` / `Bulk OCR` / `
 - 可保留英文/符号：OCR, JPG, PNG, TXT, ZIP
 - 额外禁用：H1=OCR par lot 光杆；sans envoi 须写清 appareil + serveur
 - SERP 竞品 title（1–3）：OCR par lot; plusieurs images en texte; OCR en masse
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- 轮次2已重写：[x]  轮次3已抽查：[ ]
 
 ### ja
 
@@ -129,7 +129,7 @@ Title 方向须为当地口语检索向。H1 禁止 `Batch OCR` / `Bulk OCR` / `
 - 可保留英文/符号：OCR、JPG、PNG、TXT、ZIP
 - 额外禁用：ユースケース空壳；H1 参数目录；承诺手写/縦書き完美
 - SERP 竞品 title（1–3）：一括OCR; 複数画像 文字起こし; 画像まとめてテキスト
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]  待母语抽查：[ ]
+- 轮次2已重写：[x]  轮次3已抽查：[x]  待母语抽查：[ ]
 
 ### ru
 
@@ -141,7 +141,7 @@ Title 方向须为当地口语检索向。H1 禁止 `Batch OCR` / `Bulk OCR` / `
 - 可保留英文/符号：OCR, JPG, PNG, TXT, ZIP
 - 额外禁用：H1=Пакетный OCR 光杆；локально 含糊不提 сервер
 - SERP 竞品 title（1–3）：пакетный OCR; несколько изображений в текст; массовое распознавание
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]  待母语抽查：[ ]
+- 轮次2已重写：[x]  轮次3已抽查：[ ]  待母语抽查：[ ]
 
 ### de
 
@@ -153,7 +153,7 @@ Title 方向须为当地口语检索向。H1 禁止 `Batch OCR` / `Bulk OCR` / `
 - 可保留英文/符号：OCR, JPG, PNG, TXT, ZIP
 - 额外禁用：H1=Stapel-OCR 光杆；ohne Upload 须写清 Gerät + Server
 - SERP 竞品 title（1–3）：Stapel-OCR; mehrere Bilder zu Text; Batch OCR
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- 轮次2已重写：[x]  轮次3已抽查：[ ]
 
 ---
 
@@ -165,8 +165,8 @@ Title 方向须为当地口语检索向。H1 禁止 `Batch OCR` / `Bulk OCR` / `
 | 轮次 | 日期 | 做了什么 | 结果 |
 |---|---|---|---|
 | 0b 清单前检索覆盖 | 2026-09-08 | slug 保留 batch-convert-jpg-to-text-with-ocr；H1 用批量任务句承接 batch ocr，禁光杆 Batch OCR 且不抢 N1 的 jpg to text；Planner batch/bulk ocr 写入 desc/FAQ；意图审查满足队列+ZIP+skip，有意不满足 PDF/Word/单张进攻；相对 N1 的 IG 写成队列/skip/ZIP/合并四件套 | 覆盖表与 Ads 表在 02；notes 有控件对照；03 勾选清单前覆盖与意图审查；未写 i18n |
-| 1 母版+lint | | | |
-| 1b 母版检索覆盖优化 | | 母版 title/desc 相对初稿改动；主词是否在 H1；去参数枚举 | |
-| 2 按 brief 重写 | | | |
-| 2b 抽查语检索覆盖优化 | | 抽查语 en,zh,es,ja；各语 title/desc 是否再优化 | |
-| 3 抽查+禁词+lint | | | |
+| 1 母版+lint | 2026-09-08 | 写 en 全键：H1 Batch convert JPG to text with OCR；How 四步对齐 Convert all / Download ZIP / Copy combined text；FAQ 覆盖 batch/bulk ocr、skip、ZIP、单张链 N1 | 母版落盘 i18n/tools/batch-convert-jpg-to-text-with-ocr/en.ts |
+| 1b 母版检索覆盖优化 | 2026-09-08 | 扫 title/desc：主词 Batch convert JPG to text with OCR 在 H1；desc 前 160 字含 several JPGs、ZIP、this tab、Steps Convert all；次词 batch OCR / bulk OCR 从 snippet 挪到 Steps 之后以免截断按钮词；单张 jpg to text 只在 FAQ | H1 保留批量任务句，不改成 Batch OCR 光杆 |
+| 2 按 brief 重写 | 2026-09-08 | 十语独立重写：en Batch convert JPG to text with OCR；zh 用 OCR 批量把 JPG 转成文字；es Convertir varios JPG a texto con OCR；ja 複数のJPGをOCRでまとめてテキストにする；How 对齐当地 Convert all / ZIP / Copy combined；FAQ 写 skip、ZIP、单张链 | 十语分片齐全，非英模同构灌语 |
+| 2b 抽查语检索覆盖优化 | 2026-09-08 | 抽查语 en,zh,es,ja：再扫 title/desc；en H1 主词保留，desc 前段含 Convert all 与 ZIP、device；zh H1 用 OCR 批量把 JPG 转成文字，desc 含全部转换与不上服务器；es H1 Convertir varios JPG，desc Convertir todo；ja H1 複数のJPGをOCRでまとめてテキストにする，desc すべて変換。次词 batch OCR / 批量 OCR / OCR por lotes / 一括OCR 放在 Steps 之后 | 抽查四语主词在 H1，未改成光杆 Batch OCR |
+| 3 抽查+禁词+lint | 2026-09-08 | 抽查 en,zh,es,ja title 与按钮对齐；勾禁词（无残缺缩写、ja 场景标题用「こんなときに」非ユースケース、十语不同骨架）；ar/ru 待母语抽查未勾 | 可标 i18n-done |

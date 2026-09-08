@@ -1,7 +1,7 @@
 {
   "slug": "convert-a-jpg-to-text-with-ocr",
   "path": "/tools/convert-a-jpg-to-text-with-ocr",
-  "updatedAt": "2026-09-07T16:15:00.000Z",
+  "updatedAt": "2026-09-08T11:20:00.000Z",
   "launchedAt": "2026-09-07T16:15:00.000Z",
   "category": "image",
   "primaryTopic": "image-media",
@@ -15,6 +15,7 @@
   "homeDescKey": "tool_convert_a_jpg_to_text_with_ocr_desc",
   "faqPrefix": "tool_convert_a_jpg_to_text_with_ocr",
   "related": [
+    "batch-convert-jpg-to-text-with-ocr",
     "extract-text-from-pdf",
     "images-to-pdf"
   ],

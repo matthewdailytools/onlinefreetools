@@ -1,6 +1,6 @@
 # 02 — 工具信息定稿
 
-**状态**：`ready`  
+**状态**：`implemented`  
 **slug**：`batch-convert-jpg-to-text-with-ocr`  
 **路径**：`/tools/batch-convert-jpg-to-text-with-ocr`  
 **主方向**：A  

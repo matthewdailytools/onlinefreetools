@@ -41,7 +41,9 @@ const de: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_a6:
     '„Online-OCR“ ist ein Sammelbegriff. Hier gibt es nur TXT, kein Word, kein durchsuchbares PDF, keine Tabelle und kein Installer.',
   tool_convert_a_jpg_to_text_with_ocr_faq_a7:
-    'Text in einem Foto erkennen heißt gedruckte Pixel in kopierbare Zeilen. Ein Bild pro Lauf, kein Stapel.',
+    'Text in einem Foto erkennen heißt gedruckte Pixel in kopierbare Zeilen. Ein Bild pro Umwandeln. Ein Stapel Fotos gehört auf Mehrere JPG mit OCR in Text umwandeln.',
+  tool_convert_a_jpg_to_text_with_ocr_faq_a8:
+    'Diese Seite: ein Foto, Text kopieren, eine TXT. Für Alle umwandeln, fehlende Zeile überspringen und ein ZIP mit Texten: Mehrere JPG mit OCR in Text umwandeln.',
   tool_convert_a_jpg_to_text_with_ocr_faq_q1: 'Wird mein Foto auf einen Server hochgeladen?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q2: 'Unterschied zum Extrahieren von PDF-Text?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q3: 'Geht ein PNG-Screenshot?',
@@ -49,6 +51,7 @@ const de: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_q5: 'Wie wähle ich Chinesisch oder Arabisch?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q6: 'Ist das Online-OCR mit Word-Export?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q7: 'Was bedeutet hier Text aus einem Bild erkennen?',
+  tool_convert_a_jpg_to_text_with_ocr_faq_q8: 'Kann ich mehrere JPG auf einmal umwandeln?',
   tool_convert_a_jpg_to_text_with_ocr_how_body:
     'Gedruckte Buchstaben auf einem Foto werden kopierbarer Text: JPG ablegen, Umwandeln klicken (die Engine lädt beim ersten Klick), dann Text kopieren oder TXT herunterladen.',
   tool_convert_a_jpg_to_text_with_ocr_how_item_1: 'JPG, PNG oder WebP ablegen (oder Datei wählen).',

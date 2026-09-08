@@ -41,7 +41,9 @@ const ja: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_a6:
     '「オンラインOCR」は何でも屋の検索語です。ここは TXT だけです。Word や検索可能な PDF、表計算、インストール用ソフトではありません。',
   tool_convert_a_jpg_to_text_with_ocr_faq_a7:
-    '文字認識は、印刷ピクセルをコピーできる行にすることです。1 枚ずつ。一括 OCR ではありません。',
+    '文字認識は、印刷ピクセルをコピーできる行にすることです。変換は 1 枚ずつ。まとめて処理するなら「複数のJPGをOCRでまとめてテキストにする」を使います。',
+  tool_convert_a_jpg_to_text_with_ocr_faq_a8:
+    'このページは 1 枚・テキストをコピー・1 つの TXT です。すべて変換、失敗行のスキップ、ZIP は「複数のJPGをOCRでまとめてテキストにする」へ。',
   tool_convert_a_jpg_to_text_with_ocr_faq_q1: '写真はサーバーに上がりますか？',
   tool_convert_a_jpg_to_text_with_ocr_faq_q2: 'PDF のテキスト抽出と何が違いますか？',
   tool_convert_a_jpg_to_text_with_ocr_faq_q3: 'スクリーンショットや PNG は使えますか？',
@@ -49,6 +51,7 @@ const ja: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_q5: '中国語やアラビア語、日本語はどう選びますか？',
   tool_convert_a_jpg_to_text_with_ocr_faq_q6: 'オンラインOCRで Word も出ますか？',
   tool_convert_a_jpg_to_text_with_ocr_faq_q7: '画像から文字起こしとは何を指しますか？',
+  tool_convert_a_jpg_to_text_with_ocr_faq_q8: '複数の JPG を一度に変換できますか？',
   tool_convert_a_jpg_to_text_with_ocr_how_body:
     '写真の活字をコピーできるテキストにします。JPG を置き、「変換」（初回だけエンジン読み込み）のあと「テキストをコピー」か「TXTをダウンロード」。',
   tool_convert_a_jpg_to_text_with_ocr_how_item_1: 'JPG、PNG、WebP をドロップするかファイルを選ぶ。',

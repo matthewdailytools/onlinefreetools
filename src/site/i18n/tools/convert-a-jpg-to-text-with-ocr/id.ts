@@ -41,7 +41,9 @@ const id: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_a6:
     '«OCR online» adalah kata payung. Di sini hanya TXT, bukan Word, PDF bisa dicari, spreadsheet, atau paket unduhan.',
   tool_convert_a_jpg_to_text_with_ocr_faq_a7:
-    'Kenali teks di foto berarti mengubah piksel cetak jadi baris yang bisa disalin. Satu gambar per kali, bukan massal.',
+    'Kenali teks di foto berarti mengubah piksel cetak jadi baris yang bisa disalin. Satu gambar per Konversi. Tumpukan foto ke Ubah banyak JPG menjadi teks dengan OCR.',
+  tool_convert_a_jpg_to_text_with_ocr_faq_a8:
+    'Halaman ini satu foto, Salin teks, satu TXT. Untuk Konversi semua, lewati baris gagal, dan ZIP teks, pakai Ubah banyak JPG menjadi teks dengan OCR.',
   tool_convert_a_jpg_to_text_with_ocr_faq_q1: 'Apakah foto diunggah ke server?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q2: 'Apa bedanya dengan ekstrak teks PDF?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q3: 'Boleh pakai screenshot PNG?',
@@ -49,6 +51,7 @@ const id: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_q5: 'Bagaimana memilih Cina atau Arab?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q6: 'Ini OCR online yang bisa Word?',
   tool_convert_a_jpg_to_text_with_ocr_faq_q7: 'Apa arti kenali teks di foto di sini?',
+  tool_convert_a_jpg_to_text_with_ocr_faq_q8: 'Bisa mengubah beberapa JPG sekaligus?',
   tool_convert_a_jpg_to_text_with_ocr_how_body:
     'Ubah huruf cetak di foto menjadi teks yang bisa disalin: jatuhkan JPG, klik Konversi (mesin dimuat di klik pertama), lalu Salin teks atau Unduh TXT.',
   tool_convert_a_jpg_to_text_with_ocr_how_item_1: 'Jatuhkan JPG, PNG, atau WebP (atau pilih berkas).',

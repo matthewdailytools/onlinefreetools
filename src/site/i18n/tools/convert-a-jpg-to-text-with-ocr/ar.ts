@@ -41,7 +41,9 @@ const ar: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_a6:
     '«OCR أونلاين» بحث عام. هنا TXT فقط: لا وورد ولا PDF قابل للبحث ولا جدول ولا برنامج تثبيت.',
   tool_convert_a_jpg_to_text_with_ocr_faq_a7:
-    'التعرّف على النص يعني تحويل البكسل المطبوع إلى أسطر قابلة للنسخ. صورة واحدة في كل مرة، لا دفعة.',
+    'التعرّف على النص يعني تحويل البكسل المطبوع إلى أسطر قابلة للنسخ. صورة واحدة لكل تحويل. كومة الصور على «حوّل عدة صور JPG إلى نص بالتعرّف الضوئي دفعة واحدة».',
+  tool_convert_a_jpg_to_text_with_ocr_faq_a8:
+    'هذه الصفحة صورة واحدة ونسخ نص وملف TXT. للتحويل دفعة واحدة وتخطي صف فاشل وأرشيف ZIP استخدم «حوّل عدة صور JPG إلى نص بالتعرّف الضوئي دفعة واحدة».',
   tool_convert_a_jpg_to_text_with_ocr_faq_q1: 'هل تُرفع صورتي إلى خادم؟',
   tool_convert_a_jpg_to_text_with_ocr_faq_q2: 'ما الفرق عن استخراج نص من PDF؟',
   tool_convert_a_jpg_to_text_with_ocr_faq_q3: 'هل تعمل لقطة الشاشة أو PNG؟',
@@ -49,6 +51,7 @@ const ar: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_faq_q5: 'كيف أختار العربية أو الصينية؟',
   tool_convert_a_jpg_to_text_with_ocr_faq_q6: 'هل هذا OCR أونلاين يصدّر وورد؟',
   tool_convert_a_jpg_to_text_with_ocr_faq_q7: 'ماذا يعني استخراج النص من الصورة هنا؟',
+  tool_convert_a_jpg_to_text_with_ocr_faq_q8: 'هل يمكن تحويل عدة صور JPG دفعة واحدة؟',
   tool_convert_a_jpg_to_text_with_ocr_how_body:
     'حوّل الحروف المطبوعة في صورة إلى نص يُنسخ: أفلت JPG، اضغط تحويلاً (يُحمَّل المحرّك أول مرة) ثم نسخ النص أو تنزيل TXT.',
   tool_convert_a_jpg_to_text_with_ocr_how_item_1: 'أفلت JPG أو PNG أو WebP (أو اختر ملفاً).',
