@@ -46,7 +46,7 @@ const ar: SiteLangDict = {
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a5:
 		'كل صورة ناجحة قسم: العنوان اسم الملف، ثم الصورة الاختيارية، ثم فقرات التعرّف، ثم فاصل صفحة. الأعمدة والجداول لن تطابق التخطيط الأصلي.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a6:
-		'لا. هذه الصفحة لا تقبل PDF. تحويل PDF ممسوح إلى وورد أداة أخرى (ليست هذا العنوان). PDF رقمي بطبقة نص يذهب إلى «تحويل PDF إلى مستند وورد».',
+		'لا. هذه الصفحة لا تقبل PDF. الملفات الممسوحة تذهب إلى «حوّل ملفات PDF الممسوحة إلى وورد بالتعرّف الضوئي دفعة واحدة». PDF رقمي بطبقة نص يذهب إلى «تحويل PDF إلى مستند وورد».',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a7:
 		'الحروف المطبوعة أنسب. الخط اليدوي المتصل غالبًا يفشل في ذلك الصف. هذا ليس منتج تعرّف خط يد.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a8:

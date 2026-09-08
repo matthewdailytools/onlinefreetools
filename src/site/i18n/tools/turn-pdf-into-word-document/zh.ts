@@ -22,7 +22,7 @@ const zh: SiteLangDict = {
   tool_turn_pdf_into_word_document_example: "加载样例会生成含「来自 PDF 的 Word 示例句。」的一页 PDF，抽出该句并做成同样段落的 .docx。",
   tool_turn_pdf_into_word_document_example_title: "示例",
   tool_turn_pdf_into_word_document_faq_a1: "不会。抽取和打包在本标签页完成（库从本站加载），PDF 不会上传到我们的服务器。",
-  tool_turn_pdf_into_word_document_faq_a2: "扫描页是图片。本工具不做 OCR。若只要文本层的 .txt，请用「从 PDF 提取文本」。",
+  tool_turn_pdf_into_word_document_faq_a2: "扫描页是图片。本工具不做 OCR。扫描件要进 Word，请用「用 OCR 批量把扫描 PDF 转成 Word」。若只要文本层的 .txt，请用「从 PDF 提取文本」。",
   tool_turn_pdf_into_word_document_faq_a3: "不会。得到的是抽出的段落，不是像素级还原。",
   tool_turn_pdf_into_word_document_faq_a4: "本页写出可在 Word 打开的 .docx。PDF 转 Markdown 面向编辑器里的笔记。",
   tool_turn_pdf_into_word_document_faq_a5: "大 PDF 可能较慢，建议先在桌面浏览器试用。",

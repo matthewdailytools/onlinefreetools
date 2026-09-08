@@ -46,7 +46,7 @@ const en: SiteLangDict = {
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a5:
 		'Each successful photo is a section: heading is the filename, then optional picture, then OCR paragraphs, then a page break. Columns and tables will not match the original layout.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a6:
-		'No. This page does not take PDF. A scanned PDF to Word job is a different tool (not this URL). A digital PDF with a text layer belongs on Turn PDF into a Word document.',
+		'No. This page does not take PDF. Scanned PDFs belong on Batch convert scanned PDF to Word with OCR. A digital PDF with a text layer belongs on Turn PDF into Word document.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a7:
 		'Printed type works best. Cursive handwriting often fails on that row. This is not a handwriting product.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a8:

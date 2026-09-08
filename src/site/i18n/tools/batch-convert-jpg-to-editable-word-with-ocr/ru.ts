@@ -46,7 +46,7 @@ const ru: SiteLangDict = {
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a5:
 		'Каждое удачное фото — раздел: заголовок — имя файла, затем необязательное фото, абзацы OCR и разрыв страницы. Колонки и таблицы не копируют исходную вёрстку.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a6:
-		'Нет. Эта страница не принимает PDF. Сканированный PDF в Word — другой инструмент (не этот адрес). Цифровой PDF со слоем текста — «Превратить PDF в документ Word».',
+		'Нет. Эта страница не принимает PDF. Сканы — на «Пакетно преобразовать отсканированные PDF в Word с помощью OCR». Цифровой PDF со слоем текста — «Превратить PDF в документ Word».',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a7:
 		'Печатный шрифт надёжнее. Рукописный курсив часто срывается на этой строке. Это не продукт для рукописи.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a8:

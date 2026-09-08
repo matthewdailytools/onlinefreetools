@@ -17,6 +17,7 @@ import { renderBatchChecksumReleaseFilesPage } from '../pages/batchChecksumRelea
 import { renderBatchCompressPdfsForEmailPage } from '../pages/batchCompressPdfsForEmailPage';
 import { renderBatchConvertJpgToEditableWordWithOcrPage } from '../pages/batchConvertJpgToEditableWordWithOcrPage';
 import { renderBatchConvertJpgToTextWithOcrPage } from '../pages/batchConvertJpgToTextWithOcrPage';
+import { renderBatchConvertScannedPdfToWordWithOcrPage } from '../pages/batchConvertScannedPdfToWordWithOcrPage';
 import { renderBatchConvertWebPagesToExcelPage } from '../pages/batchConvertWebPagesToExcelPage';
 import { renderBatchConvertWebPagesToJpgPage } from '../pages/batchConvertWebPagesToJpgPage';
 import { renderBatchConvertWebPagesToPdfPage } from '../pages/batchConvertWebPagesToPdfPage';
@@ -239,6 +240,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'batch-compress-pdfs-for-email': (lang, defaultLang, enabled) => renderBatchCompressPdfsForEmailPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-jpg-to-editable-word-with-ocr': (lang, defaultLang, enabled) => renderBatchConvertJpgToEditableWordWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-jpg-to-text-with-ocr': (lang, defaultLang, enabled) => renderBatchConvertJpgToTextWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-convert-scanned-pdf-to-word-with-ocr': (lang, defaultLang, enabled) => renderBatchConvertScannedPdfToWordWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-web-pages-to-excel': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToExcelPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-web-pages-to-jpg': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToJpgPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-web-pages-to-pdf': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToPdfPage({ lang, defaultLang, enabledLangs: enabled }),

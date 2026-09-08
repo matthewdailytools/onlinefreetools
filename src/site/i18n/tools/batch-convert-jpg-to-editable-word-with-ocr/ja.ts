@@ -46,7 +46,7 @@ const ja: SiteLangDict = {
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a5:
 		'成功した写真ごとに1節です。見出しはファイル名、そのあと任意の元画像、OCRの段落、改ページです。段組や表は元のレイアウトどおりにはなりません。',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a6:
-		'できません。このページはPDFを受けません。スキャンPDFをWordにする作業は別ツール（このURLではありません）。文字レイヤー付きのデジタルPDFは「PDFをWord文書にする」へ。',
+		'できません。このページはPDFを受けません。スキャンPDFは「スキャンしたPDFをOCRでまとめてWordにする」へ。文字レイヤー付きのデジタルPDFは「PDF を Word 文書にする」へ。',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a7:
 		'活字が向いています。崩した手書きはその行で失敗しがちです。手書き専用の製品ではありません。',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a8:

@@ -45,9 +45,9 @@
 | 字段 | 值 |
 |---|---|
 | 最近更新 | 2026-09-08 |
-| 最近批次 | 同日实现 **N4-jpg-batch** `batch-convert-jpg-to-editable-word-with-ocr`（多图→一份可编辑 DOCX；相对 N1-batch / images-to-word 的 IG 是节结构而非 TXT ZIP 或纯贴图）。Text Converter Planner 与 OCR+Scan 权威表仍见下 |
-| 池内 `build` 候选 | OCR N1 + N1-batch + **N4-jpg-batch** 已实现；N2–N5 PDF/表与 T4/T5 **defer**（待 SERP 不占周 `long_gap`） |
-| 本周新建工具页 | `convert-a-jpg-to-text-with-ocr`；`batch-convert-jpg-to-text-with-ocr`；`batch-convert-jpg-to-editable-word-with-ocr`（未占 long_gap KPI） |
+| 最近批次 | 同日用户点名 **N4** `batch-convert-scanned-pdf-to-word-with-ocr` brief（扫描 PDF→一份可编辑 DOCX；相对 A2 / N4-jpg-batch 的 IG 是光栅 OCR + 队列，而非字层或照片）。Text Converter Planner 与 OCR+Scan 权威表仍见下 |
+| 池内 `build` 候选 | OCR N1 + N1-batch + **N4-jpg-batch** 已实现；**N4 扫描 PDF→Word** brief `ready`（页面未实现）；N2–N3、N5 与 T4/T5 **defer**（待 SERP 不占周 `long_gap`） |
+| 本周新建工具页 | `convert-a-jpg-to-text-with-ocr`；`batch-convert-jpg-to-text-with-ocr`；`batch-convert-jpg-to-editable-word-with-ocr`；`batch-convert-scanned-pdf-to-word-with-ocr`（brief only，未占 long_gap KPI） |
 | 阻塞 | 发版：`npm run deploy` / upload:r2；SSL 为 crt.sh CT 非握手 |
 
 ---
@@ -75,7 +75,7 @@
 - [x] 周审（2026-08-25）：补全词池 `competition_tier`；两条原 `build` 改为 `defer`（`mid_covered`）；**未**建 work-tasks
 - [ ] 下一周审：仅当新批次出现 `long_gap`/`locale_gap` 且 `feasibility=yes` 时才标 `build`；`head` 不进进攻立项
 - [ ] **词根→AdWords**：每周 3–5 slug，用 [tool-keyword-roots](./2026-08-20-tool-keyword-roots.md) 种子进 Keyword Planner，长尾过滤后入池并 absorb（策略 §4.7）
-- [x] 若人工决定创建工具：确认属 `long_gap`/`locale_gap` 后，在决策日志写明 slug，再另开 `work-tasks/{slug}/`（2026-08-28：`measuring-magnetic-fields`；同日 `terraform-cidrsubnet`；**2026-09-07**：用户点名 OCR N1；**2026-09-08**：N1-batch 与 **N4-jpg-batch** `batch-convert-jpg-to-editable-word-with-ocr`，虽未 SERP、不占周 long_gap KPI，仍允许立项）
+- [x] 若人工决定创建工具：确认属 `long_gap`/`locale_gap` 后，在决策日志写明 slug，再另开 `work-tasks/{slug}/`（2026-08-28：`measuring-magnetic-fields`；同日 `terraform-cidrsubnet`；**2026-09-07**：用户点名 OCR N1；**2026-09-08**：N1-batch、N4-jpg-batch，以及 **N4** `batch-convert-scanned-pdf-to-word-with-ocr`，虽未 SERP、不占周 long_gap KPI，仍允许立项）
 
 ### P1 — 与既有页协同
 
@@ -168,6 +168,7 @@
 | 2026-09-08 | 增补 Text Converter Planner（09-07 23:55，932 词）：约四成 ASR **drop**；`jpg/jpeg/png/image to text` **absorb** N1（FAQ 欠账）；`pdf to text` **absorb** `extract-text-from-pdf`；扫描 PDF 仍 N2；Word→TXT / HTML|URL→TXT **defer** 新 slug；禁 converter 壳。未 SERP → 0 周 build；未建 work-tasks。 | 用户要求分析 Keyword Planner 09-07-2026 at 23-55-12 |
 | 2026-09-08 | 用户点名立项 OCR **N1-batch** `batch-convert-jpg-to-text-with-ocr`：`work-tasks/` 00–03，`02=ready`，`coverage:gate --phase=0b`。H1=批量任务句；相对 N1 的 IG 是队列/skip/ZIP/合并 TXT（禁止只加 multiple 换皮）；`jpg to text` 单张仍归 N1。词池 `batch ocr` `build`（仍 `await_serp`，不占周 long_gap）。页面未实现。 | 用户要求立项 batch convert jpg to text with ocr 并与 N1 做信息增益区分 |
 | 2026-09-08 | 用户点名立项 OCR **N4-jpg-batch** `batch-convert-jpg-to-editable-word-with-ocr`：`work-tasks/` 00–03，`02=ready`，`coverage:gate --phase=0b`。H1=批量可编辑 Word 任务句；相对 N1-batch 的 IG 是一份分节 DOCX + Download Word + 默认校对原图（禁止 TXT 改后缀）；相对 `images-to-word` 是 OCR 可编辑正文；`ocr pdf to word` 仍归未建 N4。词池 `build`（`await_serp`，不占周 long_gap）。 | 用户要求立项 batch convert jpg to editable word with ocr 并与其他 OCR 工具做信息增益区分 |
+| 2026-09-08 | 用户点名立项 OCR **N4** `batch-convert-scanned-pdf-to-word-with-ocr`：`work-tasks/` 00–03，`02=ready`，`coverage:gate --phase=0b`。H1=批量扫描 PDF→Word 任务句；相对 A2 的 IG 是光栅 OCR 不是抽字层；相对 N4-jpg-batch 是 PDF 页展开不是照片队列；不另建 `turn-a-scanned-pdf-into-word` doorway。头词 `ocr pdf to word` 只进 FAQ。词池 `build`（`await_serp`，不占周 long_gap）。 | 用户要求立项 batch convert scanned pdf to word with ocr |
 
 ---
 

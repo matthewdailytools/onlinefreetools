@@ -46,7 +46,7 @@ const pt: SiteLangDict = {
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a5:
 		'Cada foto ok é uma seção: o título é o nome do arquivo, depois a foto opcional, os parágrafos OCR e uma quebra de página. Colunas e tabelas não copiam o layout original.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a6:
-		'Não. Esta página não aceita PDF. Passar um PDF digitalizado para Word é outra ferramenta (não esta URL). PDF digital com camada de texto vai em Transformar PDF em documento Word.',
+		'Não. Esta página não aceita PDF. PDFs digitalizados vão em Converter PDFs digitalizados em Word com OCR. PDF digital com camada de texto vai em Transformar PDF em documento Word.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a7:
 		'Letra de impressão funciona melhor. Letra cursiva costuma falhar nessa linha. Isto não é produto de manuscrito.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a8:

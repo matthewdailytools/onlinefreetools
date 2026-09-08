@@ -22,7 +22,7 @@ const id: SiteLangDict = {
   tool_turn_pdf_into_word_document_example: "Muat sampel membuat PDF satu halaman berisi kalimat, mengekstraknya, dan membuat .docx dengan paragraf yang sama.",
   tool_turn_pdf_into_word_document_example_title: "Contoh",
   tool_turn_pdf_into_word_document_faq_a1: "Tidak. Ekstraksi dan zip .docx berjalan di tab Anda (pustaka dari situs ini). PDF tidak dikirim ke server kami.",
-  tool_turn_pdf_into_word_document_faq_a2: "Halaman pindai adalah gambar. Tidak ada OCR. Gunakan Ekstrak teks dari PDF jika hanya butuh .txt lapisan teks.",
+  tool_turn_pdf_into_word_document_faq_a2: "Halaman pindai adalah gambar. Tidak ada OCR. Untuk PDF pindai yang butuh Word, gunakan Ubah PDF hasil pindai menjadi Word dengan OCR sekaligus. Gunakan Ekstrak teks dari PDF jika hanya butuh .txt lapisan teks.",
   tool_turn_pdf_into_word_document_faq_a3: "Tidak. Anda mendapat paragraf terekstrak, bukan rekonstruksi piksel.",
   tool_turn_pdf_into_word_document_faq_a4: "Halaman ini menulis .docx untuk Word. PDF ke Markdown untuk catatan di editor teks.",
   tool_turn_pdf_into_word_document_faq_a5: "PDF besar bisa lambat; coba dulu di peramban desktop.",

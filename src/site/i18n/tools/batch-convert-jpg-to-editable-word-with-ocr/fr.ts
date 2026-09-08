@@ -46,7 +46,7 @@ const fr: SiteLangDict = {
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a5:
 		'Chaque photo réussie est une section : le titre est le nom du fichier, puis la photo facultative, les paragraphes OCR et un saut de page. Colonnes et tableaux ne recopient pas la mise en page d’origine.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a6:
-		'Non. Cette page n’accepte pas de PDF. Passer un PDF scanné en Word est un autre outil (pas cette URL). Un PDF numérique avec calque texte va dans Transformer un PDF en document Word.',
+		'Non. Cette page n’accepte pas de PDF. Les PDF scannés vont dans Convertir des PDF scannés en Word avec OCR. Un PDF numérique avec calque texte va dans Transformer un PDF en document Word.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a7:
 		'L’imprimé marche le mieux. L’écriture cursive échoue souvent sur cette ligne. Ce n’est pas un produit manuscrit.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a8:

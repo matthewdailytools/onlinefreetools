@@ -22,7 +22,7 @@ const zh: SiteLangDict = {
   tool_extract_text_from_pdf_example_title: "示例",
   tool_extract_text_from_pdf_extract: "提取",
   tool_extract_text_from_pdf_faq_a1: "不会。渲染在浏览器标签页完成（库从本站加载），PDF 不会上传到我们的服务器。",
-  tool_extract_text_from_pdf_faq_a2: "扫描版 PDF 通常是图片，没有文本层，本工具不做 OCR。",
+  tool_extract_text_from_pdf_faq_a2: "扫描版 PDF 通常是图片，没有文本层，本工具不做 OCR。扫描件要进 Word，请用「用 OCR 批量把扫描 PDF 转成 Word」。",
   tool_extract_text_from_pdf_faq_a3: "加密或损坏的文件会显示明确错误，不会静默失败。",
   tool_extract_text_from_pdf_faq_a4: "「PDF 转 Markdown」会加 ## Page N 标题和 --- 分隔，供编辑器使用；本页只导出 plain .txt。",
   tool_extract_text_from_pdf_faq_a5: "大文件可能较慢；建议先在桌面浏览器试用。",

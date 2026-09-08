@@ -46,7 +46,7 @@ const id: SiteLangDict = {
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a5:
 		'Setiap foto berhasil jadi satu bagian: judul adalah nama berkas, lalu foto opsional, paragraf OCR, lalu ganti halaman. Kolom dan tabel tidak mengikuti tata letak asli.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a6:
-		'Tidak. Halaman ini tidak menerima PDF. Mengubah PDF hasil pindai menjadi Word adalah alat lain (bukan URL ini). PDF digital dengan lapisan teks ke Ubah PDF menjadi dokumen Word.',
+		'Tidak. Halaman ini tidak menerima PDF. PDF hasil pindai ke Ubah PDF hasil pindai menjadi Word dengan OCR sekaligus. PDF digital dengan lapisan teks ke Ubah PDF menjadi dokumen Word.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a7:
 		'Huruf cetak paling cocok. Tulisan tangan bersambung sering gagal di baris itu. Ini bukan produk tulisan tangan.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a8:

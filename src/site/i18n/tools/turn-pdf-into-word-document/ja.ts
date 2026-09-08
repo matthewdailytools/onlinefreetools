@@ -22,7 +22,7 @@ const ja: SiteLangDict = {
   tool_turn_pdf_into_word_document_example: "サンプル読み込みは「PDF から Word へのサンプル文。」の1ページ PDF を作り、同じ段落の .docx を出します。",
   tool_turn_pdf_into_word_document_example_title: "例",
   tool_turn_pdf_into_word_document_faq_a1: "いいえ。抽出と .docx 作成はこのタブ内です（ライブラリはこのサイトから読みます）。当社サーバーには送りません。",
-  tool_turn_pdf_into_word_document_faq_a2: "スキャン頁は画像です。OCR はありません。テキスト層の .txt だけなら PDF からテキストを抽出を使ってください。",
+  tool_turn_pdf_into_word_document_faq_a2: "スキャン頁は画像です。OCR はありません。スキャンPDFをWordにしたい場合は「スキャンしたPDFをOCRでまとめてWordにする」。テキスト層の .txt だけなら PDF からテキストを抽出を使ってください。",
   tool_turn_pdf_into_word_document_faq_a3: "いいえ。抽出した段落であり、ピクセル単位の再現ではありません。",
   tool_turn_pdf_into_word_document_faq_a4: "こちらは Word で開く .docx です。Markdown 変換はエディタ用のメモ向けです。",
   tool_turn_pdf_into_word_document_faq_a5: "大きな PDF は遅くなることがあります。まずデスクトップブラウザで試してください。",

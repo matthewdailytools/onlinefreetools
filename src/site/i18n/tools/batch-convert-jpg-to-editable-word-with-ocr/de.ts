@@ -46,7 +46,7 @@ const de: SiteLangDict = {
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a5:
 		'Jedes gelungene Foto ist ein Abschnitt: Überschrift ist der Dateiname, dann optionales Bild, OCR-Absätze und ein Seitenumbruch. Spalten und Tabellen kopieren das Original-Layout nicht.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a6:
-		'Nein. Diese Seite nimmt kein PDF. Ein gescanntes PDF nach Word ist ein anderes Tool (nicht diese URL). Ein digitales PDF mit Textebene gehört zu PDF in ein Word-Dokument umwandeln.',
+		'Nein. Diese Seite nimmt kein PDF. Gescannte PDFs gehören zu Gescannte PDFs mit OCR in Word umwandeln. Ein digitales PDF mit Textebene gehört zu PDF in ein Word-Dokument umwandeln.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a7:
 		'Druckschrift funktioniert am besten. Verbundene Handschrift scheitert oft in dieser Zeile. Das ist kein Handschrift-Produkt.',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a8:

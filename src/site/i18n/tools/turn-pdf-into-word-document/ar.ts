@@ -22,7 +22,7 @@ const ar: SiteLangDict = {
   tool_turn_pdf_into_word_document_example: "تحميل العينة ينشئ PDF بصفحة واحدة وجملة، يستخرجها، ويصنع .docx بالفقرة نفسها.",
   tool_turn_pdf_into_word_document_example_title: "مثال",
   tool_turn_pdf_into_word_document_faq_a1: "لا. الاستخراج وتعبئة .docx تتم في تبويبك (تُحمَّل المكتبات من هذا الموقع). لا يصل الملف إلى خوادمنا.",
-  tool_turn_pdf_into_word_document_faq_a2: "الصفحات الممسوحة صور. لا يوجد OCR. استخدم استخراج النص من PDF إن أردت .txt من طبقة النص فقط.",
+  tool_turn_pdf_into_word_document_faq_a2: "الصفحات الممسوحة صور. لا يوجد OCR. لمسح يحتاج وورد استخدم «حوّل ملفات PDF الممسوحة إلى وورد بالتعرّف الضوئي دفعة واحدة». استخدم استخراج النص من PDF إن أردت .txt من طبقة النص فقط.",
   tool_turn_pdf_into_word_document_faq_a3: "لا. تحصل على فقرات مستخرجة لا إعادة بناء بكسلية.",
   tool_turn_pdf_into_word_document_faq_a4: "هذه الصفحة تكتب .docx يفتح في وورد. التحويل إلى Markdown للملاحظات في محرّر نصوص.",
   tool_turn_pdf_into_word_document_faq_a5: "قد تبطئ ملفات PDF الكبيرة؛ جرّب متصفح سطح المكتب أولاً.",

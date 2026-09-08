@@ -340,6 +340,30 @@
     "subject": "image"
   },
   {
+    "slug": "batch-convert-scanned-pdf-to-word-with-ocr",
+    "path": "/tools/batch-convert-scanned-pdf-to-word-with-ocr",
+    "updatedAt": "2026-09-08T15:25:00.167Z",
+    "launchedAt": "2026-09-08T14:10:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_convert_scanned_pdf_to_word_with_ocr_title",
+    "homeTitleKey": "tool_batch_convert_scanned_pdf_to_word_with_ocr_title",
+    "homeDescKey": "tool_batch_convert_scanned_pdf_to_word_with_ocr_desc",
+    "faqPrefix": "tool_batch_convert_scanned_pdf_to_word_with_ocr",
+    "related": [
+      "batch-convert-jpg-to-editable-word-with-ocr",
+      "turn-pdf-into-word-document",
+      "extract-text-from-pdf"
+    ],
+    "logo": "/icons/tools/batch-convert-scanned-pdf-to-word-with-ocr.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
     "slug": "batch-convert-web-pages-to-excel",
     "path": "/tools/batch-convert-web-pages-to-excel",
     "updatedAt": "2026-09-07T08:10:00.000Z",

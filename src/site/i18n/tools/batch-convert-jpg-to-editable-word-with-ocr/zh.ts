@@ -44,7 +44,7 @@ const zh: SiteLangDict = {
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a5:
 		'每张成功的图一节：标题是文件名，然后可选原图，再是识别段落，节与节分页。栏、表不会跟原件版式一样。',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a6:
-		'不收。本页不读 PDF。扫描 PDF 转 Word 是另一件事（不是这个地址）。带文字层的数字 PDF 请用「将 PDF 转为 Word 文档」。',
+		'不收。本页不读 PDF。扫描件请用「用 OCR 批量把扫描 PDF 转成 Word」。带文字层的数字 PDF 请用「将 PDF 转为 Word 文档」。',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a7:
 		'印刷体最稳。连笔手写经常在那一行失败。这不是手写识别产品。',
 	tool_batch_convert_jpg_to_editable_word_with_ocr_faq_a8:

@@ -17,6 +17,7 @@ export const TOOL_SLUGS = [
 	"batch-compress-pdfs-for-email",
 	"batch-convert-jpg-to-editable-word-with-ocr",
 	"batch-convert-jpg-to-text-with-ocr",
+	"batch-convert-scanned-pdf-to-word-with-ocr",
 	"batch-convert-web-pages-to-excel",
 	"batch-convert-web-pages-to-jpg",
 	"batch-convert-web-pages-to-pdf",
