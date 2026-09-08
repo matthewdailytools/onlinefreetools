@@ -53,7 +53,9 @@ must follow them when their trigger conditions match:
   coverage-pass or Google scaled-content rules.
 - `.cursor/skills/converter-input-ui/SKILL.md`: use when implementing converter
   input UI (URL vs file, Convert then Download, collapsed advanced settings,
-  progress). Do not add cloud-drive uploads. Complementary to converter SERP SEO.
+  gold-standard progress HUD matching batch-convert-web-pages-to-jpg). Do not
+  add cloud-drive uploads. Complementary to converter SERP SEO. Hard gate:
+  `.cursor/rules/tool-creation.mdc` 「处理中进度必须明显」.
 
 ## Verification
 

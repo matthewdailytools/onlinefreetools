@@ -111,6 +111,7 @@
 - 失败与边界行为：
 - 示例 Input → Output：
 - **进页样例（必填）**：默认样例数据是什么；进页是否 `loadSample()` 自动跑出真实结果；与 H2 Example 如何对齐；若不能自动执行写操作，例外理由与安全演示路径（见 `.cursor/rules/tool-creation.mdc`「进页样例须实际跑出结果」）
+- **进度 HUD（必填）**：对照 `/tools/batch-convert-web-pages-to-jpg`（`.bcw-hud`）。写步骤胶囊文案（如 Fetch / Wait / Render）与成功后是否保持卡片并指向 Download。即时计算器写「不适用：一帧出结果」。见 `.cursor/rules/tool-creation.mdc`「处理中进度必须明显」
 - **实现防呆**：Page 用 `opts` 签名；若有 `extraBodyHtml` 模板字符串，正则写 `\\w`；B 后跑 `npm run lint:tool-page -- --slug=…`
 
 ## 页面模块清单（与 tool-creation 对齐）
@@ -119,6 +120,7 @@
 
 - [ ] H1 + 一句话摘要
 - [ ] 首屏工具交互区（含进页自动样例结果）
+- [ ] 进度 HUD（金标；或交互规格已写不适用）
 - [ ] How it works
 - [ ] Formula / Rules（计算与转换类）
 - [ ] Example（固定文案，与默认样例一致）

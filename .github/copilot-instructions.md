@@ -38,6 +38,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - **页面内容**（可见正文）：
   - How it works（`how_body` 总答 + `how_item_1…n` 有序步骤，新工具必填）、Use cases、Formula/Rules（如适用）、Example、FAQ（≥3）、Related tools（≥2）、References（≥1；YMYL 建议 ≥2）
   - **进页样例**：须配置并可运行；初始化后自动跑出与主流程一致的真实结果（非空态占位）；与 H2 Example 对齐；例外写 `02`（见 `tool-creation.mdc`）
+  - **进度 HUD**：convert / compress / screenshot / OCR / 批量 / 可感知等待须对照 `/tools/batch-convert-web-pages-to-jpg` 的大卡片（百分比、步骤胶囊、条、耗时）；禁止只有 status 行或 `OftPdfWork` 细条；即时计算器在 `02` 写不适用（见 `tool-creation.mdc`「处理中进度必须明显」）
   - Information Gain：上线前 §3.1 九维至少 3 项；长尾默认一带多场景，慎拆近义 URL
   - 文件/粘贴类：隐私 FAQ/声明须该语说清「留在设备」+「不上服务器」（见 `tool-i18n-localization.mdc`）
   - 首页工具卡片：纯本地工具显示「不上传」标签（链到 `/{lang}/privacy#local`）；catalog `localProcessing: false` 的边缘工具不挂标签

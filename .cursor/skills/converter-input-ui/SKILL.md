@@ -2,11 +2,11 @@
 name: converter-input-ui
 description: >-
   Design convert/compress/screenshot tool input UI and interaction: one primary
-  input surface, Convert then Download, advanced settings collapsed, progress
-  and per-row errors. Use when implementing or revising converter Page.ts
-  toolbars, dropzones, URL lists, or when learning competitor converter UX
-  (FreeConvert webpage-to-jpg). Do not add cloud-drive uploads or mix settings
-  into the primary action row.
+  input surface, Convert then Download, advanced settings collapsed, gold-standard
+  progress HUD (batch-convert-web-pages-to-jpg), and per-row errors. Use when
+  implementing or revising converter Page.ts toolbars, dropzones, URL lists, or
+  when learning competitor converter UX (FreeConvert webpage-to-jpg). Do not add
+  cloud-drive uploads or mix settings into the primary action row.
 ---
 
 # 转换器输入 UI 与交互
@@ -14,7 +14,7 @@ description: >-
 从 [FreeConvert Web Page to JPG](https://www.freeconvert.com/webpage-to-jpg) 抽出**输入区与操作流**，落到本站 `*Page.ts`。  
 文案/H1/meta 走 [converter-serp-landing-seo](../converter-serp-landing-seo/SKILL.md)。本 Skill 只管**控件层级与状态机**。
 
-**权威序**：`tool-creation.mdc`（opts、loadSample、隔离）→ 本 Skill → 现有 chrome（`tools-bar`、`tool-dropzone`、`OftPdfWork`）。  
+**权威序**：`tool-creation.mdc`（opts、loadSample、隔离、**金标进度 HUD**）→ 本 Skill → 现有 chrome（`tools-bar`、`tool-dropzone`、`OftPdfWork`）。  
 **不学**：Dropbox / Drive / OneDrive、注册升级、1GB 限额广告、账号 Preset。
 
 工作对照：[example-webpage-to-jpg.md](example-webpage-to-jpg.md)
@@ -34,7 +34,7 @@ description: >-
 1. **一种主输入面**：搜这个作业的人，打开页只看见那一种（贴 URL 或丢文件），不是两套抢首屏
 2. **操作流**：输入 → **一个主按钮 Convert** → 状态变 Done → **才启用 Download**
 3. **高级设置默认收起**（`details` / Advanced），有合理默认值，不打开也能转
-4. **长任务有进度**；批量有逐行状态；失败 skip、不整批作废
+4. **金标进度 HUD**（对照 `/tools/batch-convert-web-pages-to-jpg` 的 `.bcw-hud`，不是一行 status、也不是 `OftPdfWork` 细条）；批量有逐行状态；失败 skip、不整批作废
 5. Sample / Clear 是次按钮，不替代 Convert
 
 **不学**
@@ -85,11 +85,34 @@ idle → converting → done | error
               ↘ skip row（批量）→ 继续
 ```
 
-- `aria-live="polite"` 状态行  
-- 长截图 / 批量：进度条 + 步骤胶囊（Fetch / Wait / Render）；可复用 `OftPdfWork`  
-- 进页 **不**自动 `loadSample()` 若会卡住标签页（html2canvas）；函数仍须存在并绑在 Sample 按钮上  
-- 错误：`role="alert"`，一句人话（坏 URL / 被拦 / 库未加载）  
+- 进页 **不**自动 `loadSample()` 若会卡住标签页（html2canvas / OCR）；函数仍须存在并绑在 Sample 按钮上
 - 批量：表列 URL / 文件名 / 状态；一行失败其余继续
+
+## 进度 HUD（金标 · 硬性）
+
+对照页：本站 `/tools/batch-convert-web-pages-to-jpg`（`src/pages/batchConvertWebPagesToJpgPage.ts` 的 `.bcw-hud`）。**不是**竞品页，也**不是** `pdfWorkUiProgressHtml` 那条细进度条。细条只可作 HUD 内部的 bar。
+
+硬门禁与即时工具例外见 `tool-creation.mdc`「处理中进度必须明显」。本 Skill 只管视觉与时序。
+
+点 Convert / Convert all / Load sample 后，用户必须立刻看见大卡片在动。主线程即将冻结时尤其如此：先 `yieldUi()`（一帧 + 短 delay），再开重活。
+
+卡片至少含：
+
+1. 大号百分比
+2. 步骤胶囊（当前高亮；例：Fetch / Wait / Render）
+3. 当前项（URL / 文件名）
+4. 已用时间
+5. 足够高的条纹进度条
+6. CSS `transform` 转圈 / sheen（主线程卡住时 Bootstrap 条纹会冻住，transform 仍可能动）
+
+`role="status"` / `aria-live="polite"` 是无障碍补充，**不是**唯一进度面。主按钮另加 `aria-busy` + spinner；忙碌禁用输入。
+
+成功：
+
+- 有结果表的批量：可保留表；HUD 可在完成后收起
+- 无表、下一步是 Download 的页：HUD 保持 100%，写明下一步是下载（对照 `convert-html-web-pages-to-word-document`），禁止数百毫秒后 `hidden`
+
+失败：同等尺寸的红色错误卡片（`role="alert"`，一句人话：坏 URL / 被拦 / 库未加载），不拆掉 HUD 收成一行小 alert。
 
 ## 验收清单（写 Page 时勾）
 
@@ -97,7 +120,10 @@ idle → converting → done | error
 - [ ] 主按钮行只有动作；设置在折叠或第二区
 - [ ] Download 无结果时 disabled
 - [ ] 默认不打开高级设置也能 Convert 成功
-- [ ] 忙碌禁用输入；`aria-live` 有进度
+- [ ] 金标 HUD 在重活前已可见（大百分比 + 胶囊 + 条 + 耗时）；非一行 status、非仅细进度条
+- [ ] 主线程重活前调用了 `yieldUi()`（或等价 rAF + delay）
+- [ ] 成功/失败都保持明显卡片；Download 页不自动藏 HUD
+- [ ] 忙碌禁用输入；`aria-live` 为补充而非唯一进度
 - [ ] `accept` / URL 校验 / 上限条数有 hint
 - [ ] `function loadSample` 存在；自动跑仅在不卡死时
 - [ ] chrome：`tool-panel`、`tools-bar`、`form-control-sm`、`page.style: opts`

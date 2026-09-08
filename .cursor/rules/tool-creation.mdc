@@ -41,7 +41,7 @@ alwaysApply: false
 > **检索覆盖 Skill**：多工具 / 新工具实现时先读并执行 [`.cursor/skills/tool-coverage-pass/SKILL.md`](../skills/tool-coverage-pass/SKILL.md)；分阶段跑 `npm run coverage:gate`。  
 > **Token 效率 Skill（可选）**：单工具实现/ship 且关注上下文成本时，叠加 [`.cursor/skills/tool-token-efficiency/SKILL.md`](../skills/tool-token-efficiency/SKILL.md)——只优化读文件与会话拆分，**不得**跳过覆盖门禁或降低十语质量。  
 > **转换器着陆页 SEO**：convert / compress / screenshot / `*-to-*` 写 title/H1/meta/How 时再读 [`.cursor/skills/converter-serp-landing-seo/SKILL.md`](../skills/converter-serp-landing-seo/SKILL.md)（snippet meta、How=按钮、设置可索引；禁止近义 URL 铺量）。  
-> **转换器输入 UI**：写 `*Page.ts` 首屏表单 / dropzone / 按钮态时再读 [`.cursor/skills/converter-input-ui/SKILL.md`](../skills/converter-input-ui/SKILL.md)（一种主输入、Convert 后才 Download、高级设置折叠；禁止云盘入口）。
+> **转换器输入 UI**：写 `*Page.ts` 首屏表单 / dropzone / 按钮态时再读 [`.cursor/skills/converter-input-ui/SKILL.md`](../skills/converter-input-ui/SKILL.md)（一种主输入、Convert 后才 Download、高级设置折叠、**金标进度 HUD**；禁止云盘入口）。
 
 ```
 work-tasks/{slug}/              # 00–03 brief（含清单前覆盖表 + 03-locale-briefs）
@@ -175,6 +175,27 @@ Page 里若用 TypeScript **模板字符串**拼 `<script>`：
 
 参考实现：`src/pages/imageCompressPage.ts`、`src/pages/imageCropPage.ts`（初始化末尾 `loadSample()`）。
 
+## 处理中进度必须明显（硬性）
+
+金标实现：`/tools/batch-convert-web-pages-to-jpg`（`src/pages/batchConvertWebPagesToJpgPage.ts` 的 `.bcw-hud`）。视觉与状态机细则见 [`.cursor/skills/converter-input-ui/SKILL.md`](../skills/converter-input-ui/SKILL.md)「进度 HUD」。`OftPdfWork` 默认细条只可作 HUD **内部** 的 bar，不能当整页进度。
+
+**必须用金标 HUD 的作业**（缺一不可）：convert / compress / screenshot / OCR / 批量 / 任何可能卡住主线程或用户可感知等待（约 ≥300ms）的处理。
+
+**即时工具例外**：一帧出结果的计算器（BMI、百分比等）不强制大卡片；仍须有可见结果更新，禁止静默。在 `02` 交互规格写「进度 HUD：不适用（一帧出结果）」。
+
+金标必须同时具备（禁止用一行 `aria-live` 或只转 Convert 按钮冒充）：
+
+1. 处理一开始就出现的大卡片（百分比 + 标题 + 当前步骤 + 已用秒数）。
+2. 步骤胶囊（当前高亮；批量另有当前 URL/文件名）。
+3. 足够高的条纹进度条；主线程冻结时动画用 CSS `transform`（`.bcw-hud-spin` / sheen），不要只靠 Bootstrap 条纹（会冻住）。
+4. 重活之前 `yieldUi()`（一帧 + 短 delay），先画出 HUD 再 html2canvas / WASM / OCR。
+5. 主按钮 `aria-busy` + spinner；忙碌禁用输入。
+6. 批量：表列逐行状态；一行失败其余继续。
+7. 成功且下一动作是 Download、又没有结果表：HUD 留在 100%，并写明下一步是下载（对照 `convert-html-web-pages-to-word-document`，禁止数百毫秒后 `hidden`）。
+8. 失败：同等尺寸的错误卡片，禁止收成一行小 alert。
+
+禁止：进页自动 `loadSample()` 若会卡住标签页（长截图/OCR）；Sample 按钮仍须存在。
+
 ## 上线前 Checklist（PR 合并前）
 
 - [ ] **清单前检索覆盖优化已做**（slug/title/关键词/desc；`02`/`notes` 有覆盖表含逐词落点；见 `tool-i18n-localization.mdc` 步 0b）——**勾本 Checklist 之前必须已完成**
@@ -196,6 +217,7 @@ Page 里若用 TypeScript **模板字符串**拼 `<script>`：
 - [ ] `README.md` 工具清单已更新（中英各一条，与 catalog 一致；写入前已过清单前覆盖）
 - [ ] 本地打开 `/` 与 `/zh/`（或目标语首页），latest/all-tools 可见本工具入口（Accept: text/html）；若磁盘有卡片而线上无，查 Cache API 而非改 Page
 - [ ] **进页自动跑样例并显示真实结果**（Load sample 与自动路径一致；见上节）；例外已在 `02` 注明
+- [ ] **处理中进度为金标 HUD**（对照 `/tools/batch-convert-web-pages-to-jpg`；或 `02` 已写明即时工具不适用）；非只有 status 行 / 细进度条
 - [ ] `npm run lint:seo` 通过（只修本 slug 相关 FAIL；全站 WARN 勿顺手扩 scope）
 - [ ] IG ≥ 3 项（§3.1），PR 写明对应章节
 - [ ] 长尾：写入 Use cases/FAQ，或满足拆页条件并附理由
