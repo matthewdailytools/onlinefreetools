@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dev Logs (7/28) | OnlineFreeTools.org</title>
-  <meta name="description" content="Curated project development notes with reusable decisions and fixes, organized by month. (7/28)" />
+  <title>Other OCR tools now use the same gold-standard progress HUD as scanned-PDF-to-Word, and first-run WASM/language-pack loads are named so the tab does not look frozen. | Dev Logs</title>
+  <meta name="description" content="Other OCR tools now use the same gold-standard progress HUD as scanned-PDF-to-Word, and first-run WASM/language-pack loads are named so the tab does not look frozen." />
   
-  <link rel="canonical" href="https://onlinefreetools.org/devlogs/page-7.html" />
-  <meta property="og:title" content="Dev Logs (7/28) | OnlineFreeTools.org" />
-  <meta property="og:description" content="Curated project development notes with reusable decisions and fixes, organized by month. (7/28)" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://onlinefreetools.org/devlogs/page-7.html" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-09-09-00-15-ocr-tools-gold-hud-load-wait.html" />
+  <meta property="og:title" content="Other OCR tools now use the same gold-standard progress HUD as scanned-PDF-to-Word, and first-run WASM/language-pack loads are named so the tab does not look frozen. | Dev Logs" />
+  <meta property="og:description" content="Other OCR tools now use the same gold-standard progress HUD as scanned-PDF-to-Word, and first-run WASM/language-pack loads are named so the tab does not look frozen." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-09-09-00-15-ocr-tools-gold-hud-load-wait.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
@@ -47,9 +47,8 @@
   else window.addEventListener('load', schedule, { once: true });
 })();
 </script>
-  <link rel="prev" href="https://onlinefreetools.org/devlogs/page-6.html" />
-  <link rel="next" href="https://onlinefreetools.org/devlogs/page-8.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs (7/28)","url":"https://onlinefreetools.org/devlogs/page-7.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://onlinefreetools.org/devlogs/"}]}}</script>
+  
+  
 </head>
 <body class="is-info-page is-devlog-page">
   
@@ -160,156 +159,50 @@
       <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/"><span class="sidebar-tool-label">Home</span></a></div>
     </aside>
     <main id="content" class="p-4">
-    <section>
-      <header class="devlog-page-head mb-3">
-        <a class="btn btn-outline-secondary btn-sm devlog-back flex-shrink-0" href="/">Back to Home</a>
-        <h1 class="devlog-title">Dev Logs</h1>
-        <p class="devlog-lead text-muted mb-0">
-          Browse Q&A and implementation notes by month.
-          <a class="ms-1 text-decoration-none" href="https://github.com/matthewdailytools/onlinefreetools" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </p>
-      </header>
-      
-      <div class="mb-4">
-        <h2 class="h5 text-muted mb-2">2026-09</h2>
-        <ul class="list-group shadow-sm">
-          
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-17-30-p1-chatgpt-export-to-markdown.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>p1-chatgpt-export-to-markdown<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-17-10-p1-instagram-post-size.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>p1-instagram-post-size<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-16-45-p1-instagram-story-youtube-thumbnail.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>p1-instagram-story-youtube-thumbnail<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-14-50-p1-scene-ios-icon-linkedin-banner.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>p1-scene-ios-icon-linkedin-banner<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-14-15-compare-text-scene-slug-serp.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>compare-text-scene-slug-serp<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-13-24-start-dev-fail-hard-r2-seed.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>start-dev-fail-hard-r2-seed<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-11-55-local-new-tool-r2-seed-404.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>local-new-tool-r2-seed-404<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-11-20-ship-five-p0-scene-tools.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-five-p0-scene-tools<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-10-55-apple-touch-icon-nine-locale-i18n.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>apple-touch-icon-nine-locale-i18n<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-10-45-bing-serp-technical-anti-pollution.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>bing-serp-technical-anti-pollution<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-10-20-bing-serp-user-habit-anti-pollution.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>bing-serp-user-habit-anti-pollution<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-09-45-h1-follows-longtail-verbatim.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>h1-follows-longtail-verbatim<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-        </ul>
-      </div>
-      <div class="mb-4">
-        <h2 class="h5 text-muted mb-2">2026-08</h2>
-        <ul class="list-group shadow-sm">
-          
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-31-18-40-p0-bing-serp-longtail-selection.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>p0-bing-serp-longtail-selection<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-31</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-31-17-30-reprioritize-todo-p0-p1-p2-scene-slugs.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>reprioritize-todo-p0-p1-p2-scene-slugs<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-31</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-31-13-07-cidr-p1-p2-tools.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>cidr-p1-p2-tools<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-31</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-12-35-tools-menu-two-pane-collapse.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>tools-menu-two-pane-collapse<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-12-28-stabilize-tools-mega-hover-bridge.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>stabilize-tools-mega-hover-bridge<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-12-07-fix-tools-mega-hover-restore-home-nav.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>fix-tools-mega-hover-restore-home-nav<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-11-48-collapse-nav-tools-mega-sidebar-accordion.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>collapse-nav-tools-mega-sidebar-accordion<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-11-09-ops-docs-r2-proxy-tunnel.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ops-docs-r2-proxy-tunnel<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-11-04-r2-upload-via-socks-8888-proxy.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>r2-upload-via-socks-8888-proxy<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-11-00-upload-r2-full-etimedout-cloudflare.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>upload-r2-full-etimedout-cloudflare<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-10-36-topic-hubs-multirow-nav-breadcrumbs.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>topic-hubs-multirow-nav-breadcrumbs<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-54-tool-topic-reassignment-table.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>tool-topic-reassignment-table<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-41-url-topic-prefix-vs-tools-slug-seo.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>url-topic-prefix-vs-tools-slug-seo<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-40-ship-cidr-to-ip-range-token-efficiency.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-cidr-to-ip-range-token-efficiency<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-35-i18n-cidr-to-ip-range-ja-ru.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>i18n-cidr-to-ip-range-ja-ru<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-30-brief-cidr-to-ip-range-from-notation-calculator.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>brief-cidr-to-ip-range-from-notation-calculator<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-25-ship-private-cidr-ranges.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-private-cidr-ranges<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-05-brief-private-cidr-ranges-token-mode.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>brief-private-cidr-ranges-token-mode<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-        </ul>
-      </div>
-      
-      <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4" aria-label="Dev Logs">
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-6.html" rel="prev">Previous</a>
-        <span class="small text-muted">Page 7 of 28</span>
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-8.html" rel="next">Next</a>
-      </nav>
-    </section>
-  </main>
+      <section class="mb-3">
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Other OCR tools now use the same gold-standard progress HUD as scanned-PDF-to-Word, and first-run WASM/language-pack loads are named so the tab does not look frozen.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-a-jpg-to-text-with-ocr"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-a-jpg-to-text-with-ocr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-convert-jpg-to-text-with-ocr"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-jpg-to-text-with-ocr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-convert-jpg-to-editable-word-with-ocr"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-jpg-to-editable-word-with-ocr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-convert-scanned-pdf-to-word-with-ocr"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-scanned-pdf-to-word-with-ocr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-09 00:15
+Summary: Other OCR tools now use the same gold-standard progress HUD as scanned-PDF-to-Word, and first-run WASM/language-pack loads are named so the tab does not look frozen.
+Visibility: people</p>
+<p>[question]
+把其他OCR也增加进度显示功能，类似<a href="https://onlinefreetools.org/zh/tools/batch-convert-scanned-pdf-to-word-with-ocr">https://onlinefreetools.org/zh/tools/batch-convert-scanned-pdf-to-word-with-ocr</a> ，另外如果有大的js模块要load，要写清楚，避免用户不耐烦</p>
+<h2>Tool links (English)</h2>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-a-jpg-to-text-with-ocr"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-a-jpg-to-text-with-ocr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-convert-jpg-to-text-with-ocr"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-jpg-to-text-with-ocr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-convert-jpg-to-editable-word-with-ocr"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-jpg-to-editable-word-with-ocr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-convert-scanned-pdf-to-word-with-ocr"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-scanned-pdf-to-word-with-ocr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
+<p>[try to solve]</p>
+<h2>Context</h2>
+<p>Three JPG OCR pages only had a muted <code>aria-live</code> status line while Tesseract WASM (~4 MB) and language packs (a few MB) loaded on first Convert. That wait looks like a freeze. The scanned-PDF OCR page already had the gold-standard <code>.bcw-hud</code> card (percentage, capsules, elapsed time, striped bar with CSS transform sheen). The request was to give the other OCR tools the same HUD, and to spell out large module loads so users stay on the tab.</p>
+<h2>Process</h2>
+<ol>
+<li>Confirmed the four OCR Page.ts files: only <code>batchConvertScannedPdfToWordWithOcrPage.ts</code> had <code>.bcw-hud</code>; the JPG tools used <code>setStatus(&#39;Loading OCR engine…&#39;)</code>.</li>
+<li>Extracted shared HUD CSS into <code>src/pages/site/bcwHudCss.ts</code> so the three JPG pages match the PDF card without four copies of keyframes.</li>
+<li>Wired HUD open → <code>yieldUi()</code> (one frame + 40 ms) → engine load → recognize, on Convert / Convert all / Load sample. Clear hides the card. Success stays at 100% with a next-step Download/Copy line; failure keeps a same-size red card.</li>
+<li>Mapped <code>tesseract.js</code> logger statuses to human lines: core WASM, language data, recognizer start. PDF renderer and Word builder (~0.7 MB) get their own lines, but PDF.js load during queue peek does not steal the HUD (only when the card is already open).</li>
+<li>Wrote ten-locale HUD/load strings (not title/H1 SEO). <code>status_loading</code> now says the first run is several megabytes and to stay on the tab.</li>
+</ol>
+<h2>Root cause / analysis</h2>
+<p>The slow part is not OCR of a small sample — it is the first fetch of <code>tesseract-core-*-lstm.wasm.js</code> (<del>3.7 MB) plus <code>chi_sim</code>/<code>eng</code> traineddata. A one-line status cannot compete with a stuck main thread. The gold-standard HUD uses <code>transform</code> spin/sheen so something still moves if Bootstrap stripes freeze. Naming the load (“</del>4 MB WASM”, “language data”, “PDF renderer”) is the impatient-user fix; a generic “Loading…” is not.</p>
+<h2>Solution</h2>
+<p>JPG single: Load → Read HUD; next step Copy text or Download TXT.
+JPG batch text: Load → Read; next step Download ZIP; table rows still skip on failure.
+JPG Word: Load → Read → Pack (docx UMD ~0.7 MB); next step Download Word.
+Scanned PDF: existing HUD plus the same load copy for WASM, language packs, PDF renderer, and Word builder.
+Verified: <code>lint:tool-page</code> (source + <code>--require-html</code>) on all four slugs; <code>npm run build:site</code>. No in-browser Convert click in this session (no browser MCP); prerendered HTML contains <code>.bcw-hud</code> and the first-run size copy.</p>
+<h2>Notes / boundaries</h2>
+<p>This is chrome/progress, not a new slug or title rewrite. Isolation must use <code>CROSS_TOOL_UPDATE=1</code> because four OCR shards plus shared HUD CSS changed together. Second Convert in the same tab is faster: the worker is cached and the load capsules should pass quickly.</p>
+<p>[actions]</p>
+<ul>
+<li>Added <code>src/pages/site/bcwHudCss.ts</code> and HUD markup/logic on the three JPG OCR pages</li>
+<li>Extended scanned-PDF OCR HUD with named first-run WASM / language / PDF / Word loads</li>
+<li>Ten-locale HUD keys; catalog <code>updatedAt</code> touch; <code>merge:tools</code> + <code>build:site</code></li>
+</ul>
+</article>
+      </section>
+    </main>
   </div>
   
   <footer class="site-footer border-top text-center py-3">

@@ -430,7 +430,13 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
         hudPct: ${JSON.stringify(tx(opts.lang, 'hud_pct_tpl'))},
         hudNext: ${JSON.stringify(tx(opts.lang, 'hud_next'))},
         hudFailTitle: ${JSON.stringify(tx(opts.lang, 'hud_fail_title'))},
-        hudFailHint: ${JSON.stringify(tx(opts.lang, 'hud_fail_hint'))}
+        hudFailHint: ${JSON.stringify(tx(opts.lang, 'hud_fail_hint'))},
+        hudLoadScript: ${JSON.stringify(tx(opts.lang, 'hud_load_script'))},
+        hudLoadCore: ${JSON.stringify(tx(opts.lang, 'hud_load_core'))},
+        hudLoadLang: ${JSON.stringify(tx(opts.lang, 'hud_load_lang'))},
+        hudLoadApi: ${JSON.stringify(tx(opts.lang, 'hud_load_api'))},
+        hudLoadPdf: ${JSON.stringify(tx(opts.lang, 'hud_load_pdf'))},
+        hudLoadDocx: ${JSON.stringify(tx(opts.lang, 'hud_load_docx'))}
       };
 
       /**
@@ -457,8 +463,8 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
       var hudClockId = 0;
       /** 本批开始时间戳。 */
       var hudClockStart = 0;
-      /** @type {{pct:number|null, phase:string, url:string, done:boolean, fail:boolean}} HUD 状态。 */
-      var hudState = { pct: 0, phase: '', url: '', done: false, fail: false };
+      /** @type {{pct:number|null, phase:string, detail:string, url:string, done:boolean, fail:boolean}} HUD 状态。 */
+      var hudState = { pct: 0, phase: '', detail: '', url: '', done: false, fail: false };
 
       /**
        * 填充 {key} 模板。字类必须写成 \\w。
@@ -596,7 +602,7 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
           hudBar.textContent = pct == null || !isFinite(pct) ? '' : pctText;
           hudBar.setAttribute('aria-valuenow', pct == null || !isFinite(pct) ? '0' : String(Math.round(pct)));
         }
-        if (hudStepEl) hudStepEl.textContent = hudState.phase || '';
+        if (hudStepEl) hudStepEl.textContent = hudState.detail || '';
         if (hudUrlEl) hudUrlEl.textContent = hudState.url || '';
         var order = ['load', 'render', 'read', 'pack'];
         var idx = order.indexOf(hudState.phase);
@@ -618,7 +624,8 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
         hudState.fail = false;
         hudState.pct = null;
         hudState.phase = 'load';
-        hudState.url = '';
+        hudState.detail = msg.hudWorking;
+        hudState.url = msg.hudLoadScript;
         if (hudTitleEl) hudTitleEl.textContent = hudTitleDefault;
         hudWrap.hidden = false;
         hudWrap.classList.add('is-on');
@@ -635,6 +642,7 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
         hudState.fail = false;
         hudState.url = '';
         hudState.phase = '';
+        hudState.detail = '';
         hudWrap.hidden = true;
         hudWrap.classList.remove('is-on');
         paintHud();
@@ -648,6 +656,7 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
         hudState.fail = false;
         hudState.pct = 100;
         hudState.phase = 'pack';
+        hudState.detail = msg.done;
         hudState.url = msg.hudNext;
         stopHudClock();
         paintHud();
@@ -662,6 +671,7 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
         hudState.fail = true;
         hudState.pct = hudState.pct == null ? 0 : hudState.pct;
         hudState.phase = '';
+        hudState.detail = '';
         hudState.url = hint || msg.hudFailHint;
         if (hudTitleEl) hudTitleEl.textContent = msg.hudFailTitle;
         stopHudClock();
@@ -744,6 +754,14 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
        */
       function ensurePdfJs() {
         if (window.pdfjsLib) return Promise.resolve(window.pdfjsLib);
+        if (hudWrap && !hudWrap.hidden) {
+          hudState.phase = 'load';
+          hudState.detail = msg.hudLoadPdf;
+          hudState.url = msg.hudLoadPdf;
+          hudState.pct = Math.max(hudState.pct || 0, 6);
+          setStatus(msg.hudLoadPdf);
+          paintHud();
+        }
         return import(PDF_JS).then(function (mod) {
           mod.GlobalWorkerOptions.workerSrc = PDF_WORKER;
           window.pdfjsLib = mod;
@@ -766,6 +784,11 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
           }
           var script = document.createElement('script');
           script.src = DOCX_JS;
+          hudState.phase = 'pack';
+          hudState.detail = msg.hudLoadDocx;
+          hudState.url = msg.hudLoadDocx;
+          setStatus(msg.hudLoadDocx);
+          paintHud();
           script.onload = function () {
             if (window.docx && window.docx.Document) resolve(window.docx);
             else reject(new Error('docx'));
@@ -857,6 +880,9 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
         }).then(function (Tesseract) {
           setStatus(msg.loading);
           hudState.phase = 'load';
+          hudState.detail = msg.hudLoadCore;
+          hudState.url = msg.hudLoadCore;
+          hudState.pct = Math.max(hudState.pct || 0, 8);
           paintHud();
           return Tesseract.createWorker(langs, OEM_LSTM, {
             workerPath: WORKER_PATH,
@@ -865,7 +891,30 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
             workerBlobURL: false,
             logger: function (m) {
               if (!m || !m.status) return;
-              if (String(m.status).indexOf('loading') !== -1) setStatus(msg.loading);
+              var st = String(m.status);
+              var p = typeof m.progress === 'number' && isFinite(m.progress) ? m.progress : null;
+              if (st === 'recognizing text') return;
+              hudState.phase = 'load';
+              if (st.indexOf('loading tesseract core') !== -1 || st.indexOf('initializing tesseract') !== -1) {
+                hudState.detail = msg.hudLoadCore;
+                hudState.url = msg.hudLoadCore;
+                hudState.pct = p == null ? 8 : Math.min(14, Math.round(p * 14));
+              } else if (st.indexOf('language') !== -1) {
+                hudState.detail = msg.hudLoadLang;
+                hudState.url = msg.hudLoadLang;
+                hudState.pct = p == null ? 14 : 14 + Math.round(p * 4);
+              } else if (st.indexOf('initializing api') !== -1) {
+                hudState.detail = msg.hudLoadApi;
+                hudState.url = msg.hudLoadApi;
+                hudState.pct = 18;
+              } else if (st.indexOf('loading') !== -1) {
+                hudState.detail = msg.hudLoadCore;
+                hudState.url = msg.hudLoadCore;
+              } else {
+                return;
+              }
+              setStatus(hudState.detail);
+              paintHud();
             }
           });
         }).then(function (worker) {
@@ -1049,6 +1098,7 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
         pageRow.status = 'queued';
         row.status = 'working';
         hudState.phase = 'render';
+        hudState.detail = fillTpl(msg.progressTpl, { file: row.name, page: pageRow.pageNum, pages: row.pageCount });
         hudState.url = fillTpl(msg.progressTpl, { file: row.name, page: pageRow.pageNum, pages: row.pageCount });
         hudState.pct = Math.min(88, Math.round(((jobIndex - 1) / Math.max(1, jobTotal)) * 88));
         setStatus(fillTpl(msg.progress, { i: jobIndex, n: jobTotal, name: row.name }));
@@ -1063,6 +1113,7 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
           pageRow.h = out.h;
           pageRow.status = 'reading';
           hudState.phase = 'read';
+          hudState.detail = msg.stReading;
           paintHud();
           renderQueue();
           return canvasToPngBytes(out.canvas).then(function (png) {
@@ -1183,6 +1234,8 @@ export const renderBatchConvertScannedPdfToWordWithOcrPage = (opts: {
         if (!filesDone.length) return Promise.reject(new Error('empty'));
         setStatus(msg.packing);
         hudState.phase = 'pack';
+        hudState.detail = msg.packing;
+        hudState.url = msg.hudLoadDocx;
         hudState.pct = 94;
         paintHud();
         var mode = selectedOutMode();

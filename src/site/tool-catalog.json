@@ -290,7 +290,7 @@
   {
     "slug": "batch-convert-jpg-to-editable-word-with-ocr",
     "path": "/tools/batch-convert-jpg-to-editable-word-with-ocr",
-    "updatedAt": "2026-09-08T12:31:00.000Z",
+    "updatedAt": "2026-09-08T16:11:27.219Z",
     "launchedAt": "2026-09-08T12:31:00.000Z",
     "category": "image",
     "primaryTopic": "image-media",
@@ -316,7 +316,7 @@
   {
     "slug": "batch-convert-jpg-to-text-with-ocr",
     "path": "/tools/batch-convert-jpg-to-text-with-ocr",
-    "updatedAt": "2026-09-08T12:31:00.000Z",
+    "updatedAt": "2026-09-08T16:11:27.219Z",
     "launchedAt": "2026-09-08T01:00:00.000Z",
     "category": "image",
     "primaryTopic": "image-media",
@@ -342,7 +342,7 @@
   {
     "slug": "batch-convert-scanned-pdf-to-word-with-ocr",
     "path": "/tools/batch-convert-scanned-pdf-to-word-with-ocr",
-    "updatedAt": "2026-09-08T15:25:00.167Z",
+    "updatedAt": "2026-09-08T16:11:27.219Z",
     "launchedAt": "2026-09-08T14:10:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -935,7 +935,7 @@
   {
     "slug": "convert-a-jpg-to-text-with-ocr",
     "path": "/tools/convert-a-jpg-to-text-with-ocr",
-    "updatedAt": "2026-09-08T11:20:00.000Z",
+    "updatedAt": "2026-09-08T16:11:27.219Z",
     "launchedAt": "2026-09-07T16:15:00.000Z",
     "category": "image",
     "primaryTopic": "image-media",

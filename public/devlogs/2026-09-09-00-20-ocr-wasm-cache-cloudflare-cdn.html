@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dev Logs (7/28) | OnlineFreeTools.org</title>
-  <meta name="description" content="Curated project development notes with reusable decisions and fixes, organized by month. (7/28)" />
+  <title>OCR WASM and language packs are cached in three layers — in-tab worker, IndexedDB for traineddata, and Cloudflare edge for /vendor — even though Cache-Control is max-age=0 must-revalidate. | Dev Logs</title>
+  <meta name="description" content="OCR WASM and language packs are cached in three layers — in-tab worker, IndexedDB for traineddata, and Cloudflare edge for /vendor — even though Cache-Control is max-age=0 must-revalidate." />
   
-  <link rel="canonical" href="https://onlinefreetools.org/devlogs/page-7.html" />
-  <meta property="og:title" content="Dev Logs (7/28) | OnlineFreeTools.org" />
-  <meta property="og:description" content="Curated project development notes with reusable decisions and fixes, organized by month. (7/28)" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://onlinefreetools.org/devlogs/page-7.html" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-09-09-00-20-ocr-wasm-cache-cloudflare-cdn.html" />
+  <meta property="og:title" content="OCR WASM and language packs are cached in three layers — in-tab worker, IndexedDB for traineddata, and Cloudflare edge for /vendor — even though Cache-Control is max-age=0 must-revalidate. | Dev Logs" />
+  <meta property="og:description" content="OCR WASM and language packs are cached in three layers — in-tab worker, IndexedDB for traineddata, and Cloudflare edge for /vendor — even though Cache-Control is max-age=0 must-revalidate." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-09-09-00-20-ocr-wasm-cache-cloudflare-cdn.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
@@ -47,9 +47,8 @@
   else window.addEventListener('load', schedule, { once: true });
 })();
 </script>
-  <link rel="prev" href="https://onlinefreetools.org/devlogs/page-6.html" />
-  <link rel="next" href="https://onlinefreetools.org/devlogs/page-8.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs (7/28)","url":"https://onlinefreetools.org/devlogs/page-7.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://onlinefreetools.org/devlogs/"}]}}</script>
+  
+  
 </head>
 <body class="is-info-page is-devlog-page">
   
@@ -160,156 +159,52 @@
       <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/"><span class="sidebar-tool-label">Home</span></a></div>
     </aside>
     <main id="content" class="p-4">
-    <section>
-      <header class="devlog-page-head mb-3">
-        <a class="btn btn-outline-secondary btn-sm devlog-back flex-shrink-0" href="/">Back to Home</a>
-        <h1 class="devlog-title">Dev Logs</h1>
-        <p class="devlog-lead text-muted mb-0">
-          Browse Q&A and implementation notes by month.
-          <a class="ms-1 text-decoration-none" href="https://github.com/matthewdailytools/onlinefreetools" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </p>
-      </header>
-      
-      <div class="mb-4">
-        <h2 class="h5 text-muted mb-2">2026-09</h2>
-        <ul class="list-group shadow-sm">
+      <section class="mb-3">
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">OCR WASM and language packs are cached in three layers — in-tab worker, IndexedDB for traineddata, and Cloudflare edge for /vendor — even though Cache-Control is max-age=0 must-revalidate.</h1>
           
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-17-30-p1-chatgpt-export-to-markdown.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>p1-chatgpt-export-to-markdown<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-17-10-p1-instagram-post-size.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>p1-instagram-post-size<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-16-45-p1-instagram-story-youtube-thumbnail.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>p1-instagram-story-youtube-thumbnail<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-14-50-p1-scene-ios-icon-linkedin-banner.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>p1-scene-ios-icon-linkedin-banner<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-14-15-compare-text-scene-slug-serp.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>compare-text-scene-slug-serp<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-13-24-start-dev-fail-hard-r2-seed.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>start-dev-fail-hard-r2-seed<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-11-55-local-new-tool-r2-seed-404.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>local-new-tool-r2-seed-404<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-11-20-ship-five-p0-scene-tools.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-five-p0-scene-tools<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-10-55-apple-touch-icon-nine-locale-i18n.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>apple-touch-icon-nine-locale-i18n<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-10-45-bing-serp-technical-anti-pollution.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>bing-serp-technical-anti-pollution<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-10-20-bing-serp-user-habit-anti-pollution.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>bing-serp-user-habit-anti-pollution<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-01-09-45-h1-follows-longtail-verbatim.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>h1-follows-longtail-verbatim<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-01</span>
-          </li>
-        </ul>
-      </div>
-      <div class="mb-4">
-        <h2 class="h5 text-muted mb-2">2026-08</h2>
-        <ul class="list-group shadow-sm">
-          
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-31-18-40-p0-bing-serp-longtail-selection.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>p0-bing-serp-longtail-selection<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-31</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-31-17-30-reprioritize-todo-p0-p1-p2-scene-slugs.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>reprioritize-todo-p0-p1-p2-scene-slugs<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-31</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-31-13-07-cidr-p1-p2-tools.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>cidr-p1-p2-tools<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-31</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-12-35-tools-menu-two-pane-collapse.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>tools-menu-two-pane-collapse<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-12-28-stabilize-tools-mega-hover-bridge.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>stabilize-tools-mega-hover-bridge<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-12-07-fix-tools-mega-hover-restore-home-nav.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>fix-tools-mega-hover-restore-home-nav<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-11-48-collapse-nav-tools-mega-sidebar-accordion.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>collapse-nav-tools-mega-sidebar-accordion<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-11-09-ops-docs-r2-proxy-tunnel.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ops-docs-r2-proxy-tunnel<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-11-04-r2-upload-via-socks-8888-proxy.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>r2-upload-via-socks-8888-proxy<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-11-00-upload-r2-full-etimedout-cloudflare.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>upload-r2-full-etimedout-cloudflare<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-29-10-36-topic-hubs-multirow-nav-breadcrumbs.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>topic-hubs-multirow-nav-breadcrumbs<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-29</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-54-tool-topic-reassignment-table.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>tool-topic-reassignment-table<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-41-url-topic-prefix-vs-tools-slug-seo.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>url-topic-prefix-vs-tools-slug-seo<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-40-ship-cidr-to-ip-range-token-efficiency.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-cidr-to-ip-range-token-efficiency<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-35-i18n-cidr-to-ip-range-ja-ru.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>i18n-cidr-to-ip-range-ja-ru<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-30-brief-cidr-to-ip-range-from-notation-calculator.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>brief-cidr-to-ip-range-from-notation-calculator<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-25-ship-private-cidr-ranges.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-private-cidr-ranges<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-28-23-05-brief-private-cidr-ranges-token-mode.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>brief-private-cidr-ranges-token-mode<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-        </ul>
-      </div>
-      
-      <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4" aria-label="Dev Logs">
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-6.html" rel="prev">Previous</a>
-        <span class="small text-muted">Page 7 of 28</span>
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-8.html" rel="next">Next</a>
-      </nav>
-    </section>
-  </main>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-09 00:20
+Summary: OCR WASM and language packs are cached in three layers — in-tab worker, IndexedDB for traineddata, and Cloudflare edge for /vendor — even though Cache-Control is max-age=0 must-revalidate.
+Visibility: people</p>
+<p>[question]
+WASM 会缓存么？cloudflare cdn起作用么</p>
+<p>[try to solve]</p>
+<h2>Context</h2>
+<p>OCR tools lazy-load Tesseract from same-origin <code>/vendor/tesseract/</code> (core <code>*.wasm.js</code> ~3.7 MB, language <code>.traineddata.gz</code> a few MB each). First Convert feels slow. The question is whether that download repeats, and whether Cloudflare’s CDN helps.</p>
+<h2>Process</h2>
+<ol>
+<li>Confirmed serving path: <code>/vendor/*</code> is Workers Static Assets (<code>public/vendor/</code> in <code>wrangler.jsonc</code>), not R2 HTML. <code>PAGES_CACHE_VERSION</code> only keys Worker Cache API for prerendered HTML, not these files.</li>
+<li>Fetched production headers for <code>tesseract-core-simd-lstm.wasm.js</code>, <code>eng.traineddata.gz</code>, and <code>tesseract.min.js</code>.</li>
+<li>Read tesseract.js <code>cacheMethod</code> (default <code>write</code>) and <code>src/worker-script/browser/cache.js</code> (IndexedDB via idb-keyval) plus Cloudflare’s documented default asset headers.</li>
+</ol>
+<h2>Root cause / analysis</h2>
+<p>There are three different “caches,” and they do not all store the WASM core the same way.</p>
+<ol>
+<li><strong>Same tab (JavaScript).</strong> Each OCR page keeps one <code>tessWorker</code>. Convert all / a second photo in the same visit does not reload the engine.</li>
+<li><strong>Same browser, later visit — language packs.</strong> tesseract.js default <code>cacheMethod: &#39;write&#39;</code> stores <code>.traineddata</code> in IndexedDB. A later visit on the same origin skips re-downloading chi_sim/eng/etc. unless site data is cleared. The WASM <em>core</em> is not what IndexedDB stores.</li>
+<li><strong>HTTP + Cloudflare edge — scripts and WASM.</strong> Workers Static Assets send <code>Cache-Control: public, max-age=0, must-revalidate</code> plus <code>ETag</code> (Cloudflare default). The browser may keep the file but must revalidate. If the ETag matches, the response is 304 — no 3.7 MB body. Cloudflare still caches the asset at the PoP: production showed <code>cf-cache-status: HIT</code> on <code>eng.traineddata.gz</code> and <code>tesseract.min.js</code>, and <code>MISS</code> on a first fetch of the WASM JS from another PoP (then that PoP fills). So the CDN <em>does</em> work; it does not replace the first-ever download for a cold browser.</li>
+</ol>
+<p><code>max-age=0</code> is why DevTools can still show a request on every visit: it is often a cheap revalidate against the nearest Cloudflare edge, not a pull from GitHub/origin.</p>
+<h2>Solution</h2>
+<p>No code change in this round. Practical expectation:</p>
+<ul>
+<li>First Convert in a clean profile: full WASM + language download (HUD wait is real).</li>
+<li>Same tab, more photos: memory worker, no reload.</li>
+<li>Return visitor, same origin: language packs from IndexedDB; WASM/script usually 304 or edge HIT, not a cold origin fetch.</li>
+<li>Incognito / clear site data: IndexedDB gone; HTTP cache may be gone too.</li>
+</ul>
+<p>Optional later: a <code>public/_headers</code> rule such as <code>/vendor/tesseract/*</code> with a long <code>max-age</code> would skip browser revalidation until TTL, at the cost of slower pickup if those files change without a new URL.</p>
+<h2>Notes / boundaries</h2>
+<p>Measured on <code>https://onlinefreetools.org/vendor/tesseract/...</code> (2026-09-08). Cloudflare documents that <code>CF-Cache-Status</code> can occasionally be a false HIT/MISS. HTML pages use a different cache (<code>s-maxage</code> + <code>PAGES_CACHE_VERSION</code>); do not mix that with vendor WASM.</p>
+<p>[actions]</p>
+<ul>
+<li>Production HEAD of WASM/lang/script; read tesseract.js IndexedDB cache and Cloudflare Static Assets header docs</li>
+</ul>
+</article>
+      </section>
+    </main>
   </div>
   
   <footer class="site-footer border-top text-center py-3">

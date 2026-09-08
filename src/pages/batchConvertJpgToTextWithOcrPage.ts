@@ -17,6 +17,7 @@ import {
 	renderToolReferencesSection,
 	buildToolJsonLd,
 } from './site/toolContent';
+import { bcwHudCss } from './site/bcwHudCss';
 
 /** 本工具 i18n 键前缀，与 catalog faqPrefix 一致。 */
 const PREFIX = 'tool_batch_convert_jpg_to_text_with_ocr';
@@ -107,6 +108,7 @@ export const renderBatchConvertJpgToTextWithOcrPage = (opts: {
 	const footerHtml = renderFooter({ lang: opts.lang });
 
 	/** 队列表与预览样式。 */
+	/** 队列表、金标 HUD、Convert 忙碌转圈。 */
 	const extraHeadHtml = `
   <style>
     .tools-bar { gap: .5rem; }
@@ -115,6 +117,7 @@ export const renderBatchConvertJpgToTextWithOcrPage = (opts: {
     #ocrBatchLangChips { display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
     #ocrBatchLangChips label { font-size: .875rem; }
     #ocrBatchCombined { min-height: 140px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .85rem; }
+    ${bcwHudCss({ hudId: 'ocrBatchHud', convertBtnId: 'ocrBatchBtnConvert' })}
   </style>`;
 
 	/** 首屏：多文件队列、整批语种、Convert all、ZIP。 */
@@ -165,6 +168,27 @@ export const renderBatchConvertJpgToTextWithOcrPage = (opts: {
 
     <p id="ocrBatchError" class="small text-danger mb-2" style="display:none;" role="alert"></p>
     <p id="ocrBatchStatus" class="small text-muted mb-2" role="status" aria-live="polite"></p>
+
+    <div id="ocrBatchHud" class="oft-pdf-work-progress bcw-hud mb-3" hidden>
+      <div class="bcw-hud-top">
+        <div class="bcw-hud-spin" aria-hidden="true"></div>
+        <div class="bcw-hud-pct" id="ocrBatchHudPct">0%</div>
+        <div class="bcw-hud-copy">
+          <div class="bcw-hud-title" id="ocrBatchHudTitle">${escapeHtml(tx(opts.lang, 'hud_title'))}</div>
+          <div class="bcw-hud-step" id="ocrBatchHudStep"></div>
+          <div class="bcw-hud-time" id="ocrBatchHudTime"></div>
+        </div>
+      </div>
+      <div class="progress" style="height: 1.35rem;">
+        <div id="ocrBatchHudBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+        <span class="bcw-hud-sheen" aria-hidden="true"></span>
+      </div>
+      <ol class="bcw-hud-steps" id="ocrBatchHudSteps">
+        <li data-step="load">${escapeHtml(tx(opts.lang, 'hud_step_load'))}</li>
+        <li data-step="read">${escapeHtml(tx(opts.lang, 'hud_step_read'))}</li>
+      </ol>
+      <div class="bcw-hud-url" id="ocrBatchHudUrl"></div>
+    </div>
 
     <div class="table-responsive mb-3">
       <table class="table table-sm table-striped ocr-batch-table mb-0">
@@ -240,6 +264,15 @@ export const renderBatchConvertJpgToTextWithOcrPage = (opts: {
       var combinedCb = document.getElementById('ocrBatchCombinedCb');
       var maxEdgeInput = document.getElementById('ocrBatchMaxEdge');
       var busyBtns = [btnConvert, btnSample, btnClear];
+      var hudWrap = document.getElementById('ocrBatchHud');
+      var hudPctEl = document.getElementById('ocrBatchHudPct');
+      var hudTitleEl = document.getElementById('ocrBatchHudTitle');
+      var hudStepEl = document.getElementById('ocrBatchHudStep');
+      var hudTimeEl = document.getElementById('ocrBatchHudTime');
+      var hudUrlEl = document.getElementById('ocrBatchHudUrl');
+      var hudBar = document.getElementById('ocrBatchHudBar');
+      var hudStepLis = document.querySelectorAll('#ocrBatchHudSteps [data-step]');
+      var hudTitleDefault = ${JSON.stringify(tx(opts.lang, 'hud_title'))};
 
       var msg = {
         empty: ${JSON.stringify(tx(opts.lang, 'empty'))},
@@ -258,7 +291,17 @@ export const renderBatchConvertJpgToTextWithOcrPage = (opts: {
         stQueued: ${JSON.stringify(tx(opts.lang, 'st_queued'))},
         stReading: ${JSON.stringify(tx(opts.lang, 'st_reading'))},
         stDone: ${JSON.stringify(tx(opts.lang, 'st_done'))},
-        stSkipped: ${JSON.stringify(tx(opts.lang, 'st_skipped'))}
+        stSkipped: ${JSON.stringify(tx(opts.lang, 'st_skipped'))},
+        hudElapsed: ${JSON.stringify(tx(opts.lang, 'hud_elapsed_tpl'))},
+        hudPct: ${JSON.stringify(tx(opts.lang, 'hud_pct_tpl'))},
+        hudNext: ${JSON.stringify(tx(opts.lang, 'hud_next'))},
+        hudFailTitle: ${JSON.stringify(tx(opts.lang, 'hud_fail_title'))},
+        hudFailHint: ${JSON.stringify(tx(opts.lang, 'hud_fail_hint'))},
+        hudLoadScript: ${JSON.stringify(tx(opts.lang, 'hud_load_script'))},
+        hudLoadCore: ${JSON.stringify(tx(opts.lang, 'hud_load_core'))},
+        hudLoadLang: ${JSON.stringify(tx(opts.lang, 'hud_load_lang'))},
+        hudLoadApi: ${JSON.stringify(tx(opts.lang, 'hud_load_api'))},
+        hudWorking: ${JSON.stringify(tx(opts.lang, 'hud_working'))}
       };
 
       /** @type {Array<{file: File, name: string, w: number, h: number, status: string, text: string, error: string}>} */
@@ -271,6 +314,201 @@ export const renderBatchConvertJpgToTextWithOcrPage = (opts: {
       var tessWorker = null;
       /** @type {string} worker 对应的语种键 */
       var tessWorkerKey = '';
+      /** HUD 计时器 id。 */
+      var hudClockId = 0;
+      /** 本批开始时间戳。 */
+      var hudClockStart = 0;
+      /** @type {{pct:number|null, phase:string, detail:string, url:string, done:boolean, fail:boolean}} HUD 状态。 */
+      var hudState = { pct: 0, phase: '', detail: '', url: '', done: false, fail: false };
+      /** 当前批文件总数，供 logger 估算百分比。 */
+      var hudJobTotal = 1;
+      /** 当前 1-based 文件序号。 */
+      var hudJobIndex = 1;
+
+      /**
+       * 填充 {key} 模板。字类必须写成 \\w。
+       * @param {string} tpl 模板
+       * @param {Record<string, string|number>} map 替换表
+       * @returns {string}
+       */
+      function fillTpl(tpl, map) {
+        return String(tpl || '').replace(/\\{(\\w+)\\}/g, function (_, k) {
+          return map[k] == null ? '' : String(map[k]);
+        });
+      }
+
+      /**
+       * 让出一帧再短延迟，先画出 HUD 再跑 WASM / OCR。
+       * @returns {Promise<void>}
+       */
+      function yieldUi() {
+        return new Promise(function (resolve) {
+          requestAnimationFrame(function () {
+            setTimeout(resolve, 40);
+          });
+        });
+      }
+
+      /**
+       * 刷新 HUD 已用时。
+       */
+      function tickHudClock() {
+        if (!hudTimeEl) return;
+        var s = Math.max(0, Math.floor((Date.now() - hudClockStart) / 1000));
+        hudTimeEl.textContent = fillTpl(msg.hudElapsed, { s: s });
+      }
+
+      /**
+       * 开始或重置本批计时。
+       */
+      function startHudClock() {
+        hudClockStart = Date.now();
+        if (hudClockId) clearInterval(hudClockId);
+        tickHudClock();
+        hudClockId = setInterval(tickHudClock, 200);
+      }
+
+      /**
+       * 停止本批计时。
+       */
+      function stopHudClock() {
+        if (hudClockId) {
+          clearInterval(hudClockId);
+          hudClockId = 0;
+        }
+      }
+
+      /**
+       * 把 hudState 画到百分比、步骤胶囊、当前文件。
+       */
+      function paintHud() {
+        if (!hudWrap) return;
+        hudWrap.classList.toggle('is-done', !!hudState.done);
+        hudWrap.classList.toggle('is-fail', !!hudState.fail);
+        var pct = hudState.pct;
+        var pctText = pct == null || !isFinite(pct) ? '…' : fillTpl(msg.hudPct, { pct: Math.round(pct) });
+        if (hudPctEl) hudPctEl.textContent = pctText;
+        if (hudBar) {
+          hudBar.style.width = (pct == null || !isFinite(pct) ? 8 : Math.max(4, Math.min(100, pct))) + '%';
+          hudBar.textContent = pct == null || !isFinite(pct) ? '' : pctText;
+          hudBar.setAttribute('aria-valuenow', pct == null || !isFinite(pct) ? '0' : String(Math.round(pct)));
+        }
+        if (hudStepEl) hudStepEl.textContent = hudState.detail || '';
+        if (hudUrlEl) hudUrlEl.textContent = hudState.url || '';
+        var order = ['load', 'read'];
+        var idx = order.indexOf(hudState.phase);
+        if (hudState.done) idx = order.length;
+        for (var i = 0; i < hudStepLis.length; i++) {
+          var li = hudStepLis[i];
+          var name = li.getAttribute('data-step');
+          var pos = order.indexOf(name);
+          li.classList.toggle('is-on', !hudState.done && !hudState.fail && pos === idx);
+          li.classList.toggle('is-done', hudState.done || (idx >= 0 && pos < idx));
+        }
+      }
+
+      /**
+       * 显示进度面板并开始计时。
+       */
+      function openHud() {
+        hudState.done = false;
+        hudState.fail = false;
+        hudState.pct = null;
+        hudState.phase = 'load';
+        hudState.detail = msg.hudWorking;
+        hudState.url = msg.hudLoadScript;
+        if (hudTitleEl) hudTitleEl.textContent = hudTitleDefault;
+        hudWrap.hidden = false;
+        hudWrap.classList.add('is-on');
+        startHudClock();
+        paintHud();
+      }
+
+      /**
+       * 立刻收起进度面板（清空队列时）。
+       */
+      function closeHud() {
+        stopHudClock();
+        hudState.done = false;
+        hudState.fail = false;
+        hudState.url = '';
+        hudState.phase = '';
+        hudState.detail = '';
+        hudWrap.hidden = true;
+        hudWrap.classList.remove('is-on');
+        paintHud();
+      }
+
+      /**
+       * 成功结束：留在 100%，提示下一步 Download ZIP。
+       */
+      function finishHudOk() {
+        hudState.done = true;
+        hudState.fail = false;
+        hudState.pct = 100;
+        hudState.phase = 'read';
+        hudState.detail = msg.done;
+        hudState.url = msg.hudNext;
+        stopHudClock();
+        paintHud();
+      }
+
+      /**
+       * 失败卡片：同等尺寸 HUD。
+       * @param {string} hint 失败说明
+       */
+      function finishHudFail(hint) {
+        hudState.done = false;
+        hudState.fail = true;
+        hudState.pct = hudState.pct == null ? 0 : hudState.pct;
+        hudState.phase = '';
+        hudState.detail = '';
+        hudState.url = hint || msg.hudFailHint;
+        if (hudTitleEl) hudTitleEl.textContent = msg.hudFailTitle;
+        stopHudClock();
+        hudWrap.hidden = false;
+        hudWrap.classList.add('is-on');
+        paintHud();
+      }
+
+      /**
+       * 把 tesseract.js logger 映射成人话：首次 WASM / 语种包会等很久。
+       * @param {any} m tesseract logger 消息
+       */
+      function applyTessLogger(m) {
+        if (!m || !m.status) return;
+        var st = String(m.status);
+        var p = typeof m.progress === 'number' && isFinite(m.progress) ? m.progress : null;
+        if (st === 'recognizing text') {
+          hudState.phase = 'read';
+          hudState.detail = msg.stReading;
+          var base = ((hudJobIndex - 1) / Math.max(1, hudJobTotal)) * 82;
+          hudState.pct = 12 + Math.round(base + (p == null ? 0 : p) * (82 / Math.max(1, hudJobTotal)));
+          paintHud();
+          return;
+        }
+        hudState.phase = 'load';
+        if (st.indexOf('loading tesseract core') !== -1 || st.indexOf('initializing tesseract') !== -1) {
+          hudState.detail = msg.hudLoadCore;
+          hudState.url = msg.hudLoadCore;
+          hudState.pct = p == null ? 4 : Math.min(10, Math.round(p * 10));
+        } else if (st.indexOf('language') !== -1) {
+          hudState.detail = msg.hudLoadLang;
+          hudState.url = msg.hudLoadLang;
+          hudState.pct = p == null ? 8 : 8 + Math.round(p * 3);
+        } else if (st.indexOf('initializing api') !== -1) {
+          hudState.detail = msg.hudLoadApi;
+          hudState.url = msg.hudLoadApi;
+          hudState.pct = 11;
+        } else if (st.indexOf('loading') !== -1) {
+          hudState.detail = msg.hudLoadCore;
+          hudState.url = msg.hudLoadCore;
+        } else {
+          return;
+        }
+        setStatus(hudState.detail);
+        paintHud();
+      }
 
       /**
        * 显示或隐藏整页错误（入队超额等）；行错误写在表内。
@@ -464,16 +702,18 @@ export const renderBatchConvertJpgToTextWithOcrPage = (opts: {
         return start.then(function () {
           return loadTessScript();
         }).then(function (Tesseract) {
+          hudState.phase = 'load';
+          hudState.detail = msg.hudLoadCore;
+          hudState.url = msg.hudLoadCore;
+          hudState.pct = 4;
           setStatus(msg.loading);
+          paintHud();
           return Tesseract.createWorker(langs, OEM_LSTM, {
             workerPath: WORKER_PATH,
             corePath: CORE_PATH,
             langPath: LANG_PATH,
             workerBlobURL: false,
-            logger: function (m) {
-              if (!m || !m.status) return;
-              if (String(m.status).indexOf('loading') !== -1) setStatus(msg.loading);
-            }
+            logger: applyTessLogger
           });
         }).then(function (worker) {
           tessWorker = worker;
@@ -578,9 +818,17 @@ export const renderBatchConvertJpgToTextWithOcrPage = (opts: {
        */
       function recognizeRow(row, worker, index) {
         row.status = 'reading';
-        setStatus(msg.progress.replace('{i}', String(index)).replace('{n}', String(queue.length)).replace('{name}', row.name));
+        hudJobIndex = index;
+        hudState.phase = 'read';
+        hudState.detail = fillTpl(msg.progress, { i: index, n: queue.length, name: row.name });
+        hudState.url = row.name;
+        hudState.pct = 12 + Math.round(((index - 1) / Math.max(1, queue.length)) * 82);
+        setStatus(fillTpl(msg.progress, { i: index, n: queue.length, name: row.name }));
+        paintHud();
         renderQueue();
-        return blobToCanvas(row.file).then(function (out) {
+        return yieldUi().then(function () {
+          return blobToCanvas(row.file);
+        }).then(function (out) {
           row.w = out.w;
           row.h = out.h;
           return worker.recognize(out.canvas);
@@ -630,9 +878,14 @@ export const renderBatchConvertJpgToTextWithOcrPage = (opts: {
         }
         setError('');
         setBusy(true);
+        openHud();
         setStatus(msg.loading);
         var langs = selectedTessLangs();
-        return getWorker(langs).then(function (worker) {
+        hudJobTotal = Math.max(1, queue.length);
+        hudJobIndex = 1;
+        return yieldUi().then(function () {
+          return getWorker(langs);
+        }).then(function (worker) {
           var i = 0;
           function next() {
             if (i >= queue.length) return Promise.resolve();
@@ -651,7 +904,13 @@ export const renderBatchConvertJpgToTextWithOcrPage = (opts: {
           return next();
         }).then(function () {
           rebuildZipParts();
+          if (!queue.some(function (r) { return r.status === 'done' && r.text; })) {
+            setStatus('');
+            finishHudFail(msg.errEmpty);
+            return;
+          }
           setStatus(msg.done);
+          finishHudOk();
         }).catch(function () {
           setError(msg.errEngine);
           queue.forEach(function (row) {
@@ -663,6 +922,7 @@ export const renderBatchConvertJpgToTextWithOcrPage = (opts: {
           renderQueue();
           rebuildZipParts();
           setStatus('');
+          finishHudFail(msg.hudFailHint);
         }).then(function () {
           setBusy(false);
         });
@@ -771,6 +1031,7 @@ export const renderBatchConvertJpgToTextWithOcrPage = (opts: {
         syncOutputButtons();
         setError('');
         setStatus('');
+        closeHud();
       }
 
       drop.addEventListener('dragover', function (e) {
