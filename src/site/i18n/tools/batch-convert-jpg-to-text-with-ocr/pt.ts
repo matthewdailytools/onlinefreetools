@@ -53,7 +53,7 @@ const pt: SiteLangDict = {
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a7:
 		'Letra impressa funciona melhor. Manuscrito costuma falhar nessa linha. Não é serviço de digitalização.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a8:
-		'Sem PDF, Word ou planilha. PDF digital com camada de texto vai para Extrair texto de um PDF.',
+		'Sem PDF nem planilha. Word editável com OCR está em Converter vários JPG em Word editável com OCR. PDF digital com camada de texto vai para Extrair texto de um PDF.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q1: 'As fotos são enviadas a um servidor?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q2: 'Qual a diferença de converter um único JPG com OCR?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q3: 'Se uma foto falhar, o lote inteiro para?',

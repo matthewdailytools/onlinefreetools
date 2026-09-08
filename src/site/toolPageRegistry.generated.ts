@@ -15,6 +15,7 @@ import { renderAwsVpcCidrPlannerPage } from '../pages/awsVpcCidrPlannerPage';
 import { renderBase64Page } from '../pages/base64Page';
 import { renderBatchChecksumReleaseFilesPage } from '../pages/batchChecksumReleaseFilesPage';
 import { renderBatchCompressPdfsForEmailPage } from '../pages/batchCompressPdfsForEmailPage';
+import { renderBatchConvertJpgToEditableWordWithOcrPage } from '../pages/batchConvertJpgToEditableWordWithOcrPage';
 import { renderBatchConvertJpgToTextWithOcrPage } from '../pages/batchConvertJpgToTextWithOcrPage';
 import { renderBatchConvertWebPagesToExcelPage } from '../pages/batchConvertWebPagesToExcelPage';
 import { renderBatchConvertWebPagesToJpgPage } from '../pages/batchConvertWebPagesToJpgPage';
@@ -236,6 +237,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'base64': (lang, defaultLang, enabled) => renderBase64Page({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-checksum-release-files': (lang, defaultLang, enabled) => renderBatchChecksumReleaseFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-compress-pdfs-for-email': (lang, defaultLang, enabled) => renderBatchCompressPdfsForEmailPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-convert-jpg-to-editable-word-with-ocr': (lang, defaultLang, enabled) => renderBatchConvertJpgToEditableWordWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-jpg-to-text-with-ocr': (lang, defaultLang, enabled) => renderBatchConvertJpgToTextWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-web-pages-to-excel': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToExcelPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-web-pages-to-jpg': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToJpgPage({ lang, defaultLang, enabledLangs: enabled }),

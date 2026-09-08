@@ -47,7 +47,7 @@ const zh: SiteLangDict = {
 		'只要一张请用「用 OCR 把 JPG 转成文字」。本页给一叠图用。你也可以只丢一张，但按钮仍是全部转换和下载 ZIP。',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a6: '可以。JPEG、PNG、WebP 同一条队列，多张截图提取文字不必另开网址。',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a7: '印刷体最好。连笔手写常常失败并跳过该行。这不是手写产品，也不是上门扫描服务。',
-	tool_batch_convert_jpg_to_text_with_ocr_faq_a8: '不收 PDF，不出 Word 或表格。数字 PDF 有字层请用「从 PDF 提取文本」。',
+	tool_batch_convert_jpg_to_text_with_ocr_faq_a8: '不收 PDF，不出表格。要可编辑的 OCR Word 请用「用 OCR 批量把 JPG 转成可编辑的 Word」。数字 PDF 有字层请用「从 PDF 提取文本」。',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q1: '照片会上传吗？',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q2: '和单张 JPG 识别有什么不同？',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q3: '一张失败会不会整批没了？',

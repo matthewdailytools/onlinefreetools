@@ -55,7 +55,7 @@ const en: SiteLangDict = {
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a7:
 		'Printed type works best. Cursive handwriting often fails on that row and is skipped. This is not a handwriting product or a scanning-bureau service.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a8:
-		'No PDF input, no Word or spreadsheet export, no bulk document scanning service. A digital PDF with a text layer belongs on Extract text from a PDF.',
+		'No PDF input and no spreadsheet. Editable OCR Word belongs on Batch convert JPG to editable Word with OCR. A digital PDF with a text layer belongs on Extract text from a PDF.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q1: 'Are my photos uploaded?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q2: 'How is this different from converting one JPG with OCR?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q3: 'If one photo fails, does the whole batch stop?',

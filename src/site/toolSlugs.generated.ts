@@ -15,6 +15,7 @@ export const TOOL_SLUGS = [
 	"base64",
 	"batch-checksum-release-files",
 	"batch-compress-pdfs-for-email",
+	"batch-convert-jpg-to-editable-word-with-ocr",
 	"batch-convert-jpg-to-text-with-ocr",
 	"batch-convert-web-pages-to-excel",
 	"batch-convert-web-pages-to-jpg",

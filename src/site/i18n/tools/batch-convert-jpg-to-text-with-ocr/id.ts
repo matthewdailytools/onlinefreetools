@@ -54,7 +54,7 @@ const id: SiteLangDict = {
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a7:
 		'Huruf cetak paling bagus. Tulisan tangan sering gagal di baris itu. Bukan jasa pindai dokumen.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a8:
-		'Tanpa PDF, Word, atau spreadsheet. PDF digital berlapisan teks ke Ekstrak teks dari PDF.',
+		'Tanpa PDF atau spreadsheet. Word yang bisa diedit dengan OCR ada di Ubah banyak JPG menjadi Word yang bisa diedit dengan OCR. PDF digital berlapisan teks ke Ekstrak teks dari PDF.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q1: 'Apakah foto diunggah ke server?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q2: 'Apa bedanya dengan mengubah satu JPG dengan OCR?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q3: 'Kalau satu foto gagal, apakah seluruh batch berhenti?',

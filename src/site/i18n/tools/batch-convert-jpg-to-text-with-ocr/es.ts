@@ -55,7 +55,7 @@ const es: SiteLangDict = {
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a7:
 		'La letra impresa va mejor. El manuscrito suele fallar en esa fila. No es un servicio de escaneo a domicilio.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a8:
-		'Sin PDF, Word ni hoja de cálculo. Un PDF digital con capa de texto va a Extraer texto de un PDF.',
+		'Sin PDF ni hoja de cálculo. El Word editable con OCR está en Convertir varios JPG a Word editable con OCR. Un PDF digital con capa de texto va a Extraer texto de un PDF.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q1: '¿Se suben mis fotos?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q2: '¿En qué se diferencia de convertir un solo JPG con OCR?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q3: 'Si una foto falla, ¿se cancela el lote?',

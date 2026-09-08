@@ -11,7 +11,7 @@
 - catalog：**无** OCR 页。近邻但**办不成**扫描件识别：`extract-text-from-pdf`、`pdf-to-markdown`、`turn-pdf-into-word-document`、`turn-pdf-into-editable-document`（均声明无 OCR）。照片装订：`images-to-pdf`（无识别）
 - 规则：[`../../keyword-planner-analysis-rules.md`](../../keyword-planner-analysis-rules.md) + 策略 **§3.3 H** + 同日 JS OCR 能力上限（印刷体产品级；手写/表格结构半成品；可检索 PDF 管线可行；可重排 Word 版式撞墙）
 - SERP：**无人工批次** → 不得标 `long_gap`；周进攻 **0**
-- work-tasks：**N1** `convert-a-jpg-to-text-with-ocr` 于 **2026-09-07** 用户点名立项并实现（`02=implemented`，Tesseract LSTM 点后加载）。**N1-batch** `batch-convert-jpg-to-text-with-ocr` 于 **2026-09-08** 用户点名 brief（`02=ready`，页面未实现）。N2–N5 仍未建夹。
+- work-tasks：**N1** `convert-a-jpg-to-text-with-ocr` 于 **2026-09-07** 用户点名立项并实现（`02=implemented`，Tesseract LSTM 点后加载）。**N1-batch** `batch-convert-jpg-to-text-with-ocr` 于 **2026-09-08** 用户点名并实现（队列 + skip + ZIP TXT）。**N4-jpg-batch** `batch-convert-jpg-to-editable-word-with-ocr` 于 **2026-09-08** 用户点名并实现（多图 → 一份可编辑 DOCX；≠ TXT ZIP 换皮）。N2–N3、**N4 扫描 PDF→Word**、N5 仍未建夹。
 
 > **结论先行**  
 > 1）三份 CSV 里大约六到七成是 **打印机驱动 / HP·Epson·Canon / 下载安装 / 品牌导航 / 百科**，不是浏览器作业。  
@@ -28,7 +28,7 @@
 | --- | --- |
 | 输出不同：`.txt` ≠ 可检索 PDF ≠ `.docx` ≠ `.csv` | 只换 Free / Online / Best / Tool / Software |
 | 对象不同：照片/JPG ≠ 扫描 PDF（已有数字 PDF 抽文本页） | jpg ≈ jpeg ≈ png ≈ photo 作输入芯片 |
-| 扫描件 OCR ≠ 已有字层抽取（`extract-text-from-pdf`） | scan to word ≈ ocr pdf to word ≈ jpg to word ocr（同一 docx 管线） |
+| 扫描件 OCR ≠ 已有字层抽取（`extract-text-from-pdf`） | scan to word ≈ ocr pdf to word（**扫描 PDF→Word**，N4）。`jpg to word ocr` 在用户点名后归 **N4-jpg-batch**（照片叠→一份 DOCX），不再并进未建的 N4 |
 | 可检索 PDF ≠ 转成 Word（Acrobat 搜 vs 拿去改） | arabic / chinese 只是语种，不是新作业 |
 | | 手写：能力不够独立成页，FAQ 划界 |
 | | 品牌：i2OCR、OnlineOCR.net、iLovePDF、Tesseract 下载 |
@@ -93,7 +93,8 @@ OCR 种子文件可产品化比例明显高于 Scan 硬件文件。下表只收*
 | **N1** | 手机拍页 / JPG 截图 → **可复制纯文本** | `jpg to ocr`（100–1k）、`ocr to text`（100–1k）、`ocr text recognition`（100–1k）、`ocr image reader`、`jpg to ocr online` | 图→TXT | ≠ A1（对象是 PDF 字层）；≠ N2（对象是扫描 PDF） | `convert-a-jpg-to-text-with-ocr` | Convert a JPG to text with OCR | 点后加载 OCR；PNG/WebP/照片芯片；语种默认中英，阿语/中文芯片；置信度；复制/下载 TXT。**禁 H1=`Online OCR` / `OCR to text` 光杆** |
 | **N2** | 扫描件 PDF → **抽出纯文本**（不当 Word、不改原 PDF） | `ocr pdf to text` 类（10–100）、`tesseract ocr pdf to text`、`online ocr pdf to text`；头词 `pdf to ocr`（1k–10k）歧义时 FAQ 分流 | PDF→TXT | ≠ A1（A1 无 OCR）；≠ N3（N3 仍交出 PDF） | `extract-text-from-a-scanned-pdf` | Extract text from a scanned PDF | PDF.js 逐页光栅化 + OCR；页范围；上限页数（手机更严）；失败链 A1「若本就是可选中 PDF」 |
 | **N3** | 扫描件 PDF → **可检索/可选中的 PDF**（原图保留 + 隐形字层） | `convert pdf to ocr pdf`（100–1k）、`pdf to ocr pdf`（100–1k）、`ocr searchable pdf`（10–100）、`add ocr to pdf`、`apply ocr to pdf` | PDF→可检索 PDF | 输出仍是 PDF，不是 TXT/Word；对齐 iLovePDF 主形态 | `make-a-scanned-pdf-searchable` | Make a scanned PDF searchable | 识别后按框写透明字；声明不是可重排编辑；页数上限 |
-| **N4** | 扫描 PDF / 拍页 → **可在 Word 里改的文档** | `ocr pdf to word`（1k–10k）、`pdf to word ocr`（1k–10k）、`convert scanned pdf to word`（100–1k）、`scan to word converter`（100–1k）、`jpg to word ocr`（10–100） | 扫描件→DOCX | ≠ A2（A2 无 OCR）；版式不承诺 Acrobat/ABBYY | `turn-a-scanned-pdf-into-word` | Turn a scanned PDF into Word | OCR 文本写入 docx；可选带图；FAQ：版式会乱、手写差。JPG 进页芯片，不另建 jpg-to-word URL |
+| **N4** | 扫描 PDF → **可在 Word 里改的文档** | `ocr pdf to word`（1k–10k）、`pdf to word ocr`（1k–10k）、`convert scanned pdf to word`（100–1k）、`scan to word converter`（100–1k） | 扫描 PDF→DOCX | ≠ A2（A2 无 OCR）；≠ N4-jpg-batch（对象是照片不是 PDF） | `turn-a-scanned-pdf-into-word` | Turn a scanned PDF into Word | OCR 文本写入 docx；可选带图；FAQ：版式会乱。**不收**把 JPG 批量当主输入（那是 N4-jpg-batch） |
+| **N4-jpg-batch** | 一叠 JPG/截图 → **一份可在 Word 里改的文档** | 用户点名任务句；Planner `jpg to word ocr` / `ocr jpg to word` / `convert jpg to word ocr`（10–100） | 多图→一份 DOCX | ≠ N1-batch（TXT ZIP）；≠ `images-to-word`（无 OCR 贴图）；≠ N4（PDF） | `batch-convert-jpg-to-editable-word-with-ocr` | Batch convert JPG to editable Word with OCR | 队列 + skip + **一份**分节 DOCX（Heading=文件名、分页、默认段前原图）；**Download Word**。禁只改 TXT 扩展名 |
 | **N5** | 表格照片 / 扫描表 → **CSV** | `excel ocr`（100–1k，歧义）、`ocr to spreadsheet`（10–100）、`convert pdf ocr excel`（0–10） | 表图→CSV | 主控件是表结构不是纯文本；JS 表格半成品 | `convert-a-table-photo-to-csv` | Convert a table photo to CSV | **后排**；单元格文字可抽，合并格不保证。发票/收据字段抽取 **不做**（YMYL + 超上限） |
 
 手写 6 词（皆 10–100）：`handwritten ocr`、`scan handwritten text to word` 等 → **N1/N4 FAQ 划界**，不独立 slug。
@@ -112,7 +113,8 @@ OCR 种子文件可产品化比例明显高于 Scan 硬件文件。下表只收*
 | `batch-convert-jpg-to-text-with-ocr` | batch convert JPG to text with OCR / batch ocr | bulk ocr、convert multiple jpg to text、batch image to text | batch ocr 光杆、jpg to text（单张归 N1）、online ocr |
 | `extract-text-from-a-scanned-pdf` | extract text from a scanned PDF / ocr pdf to text | online ocr pdf to text、tesseract ocr pdf to text（库名仅 FAQ 消歧） | pdf to ocr（歧义头词，FAQ 也叫并链 N3） |
 | `make-a-scanned-pdf-searchable` | convert pdf to ocr pdf | ocr searchable pdf、add ocr to pdf、pdf to ocr pdf、i love pdf to ocr（品牌消歧） | OCR PDF、online ocr |
-| `turn-a-scanned-pdf-into-word` | convert scanned pdf to word | ocr pdf to word、pdf to word ocr、scan to word converter、jpg to word ocr、ocr to word | pdf to word（无 OCR 的 A2 头词） |
+| `turn-a-scanned-pdf-into-word` | convert scanned pdf to word | ocr pdf to word、pdf to word ocr、scan to word converter、ocr to word（PDF 意图） | pdf to word（无 OCR 的 A2 头词）；jpg to word ocr（已归 N4-jpg-batch） |
+| `batch-convert-jpg-to-editable-word-with-ocr` | batch convert JPG to editable Word with OCR / jpg to word ocr | ocr jpg to word、convert jpg to word ocr、ocr to word（照片意图 FAQ 也叫） | ocr pdf to word、Batch OCR 光杆、jpg to word 光杆、N1-batch 的 TXT ZIP |
 | `convert-a-table-photo-to-csv` | convert a table photo to CSV | ocr to spreadsheet、excel ocr（FAQ 也叫；歧义消解） | excel ocr 光杆、invoice ocr |
 
 ---
@@ -177,7 +179,7 @@ G（title_gap_fallback）**未跑 SERP**，不得声称缺口。上线前须人�
 | ocr pdf to word / pdf to word ocr | 1k–10k | FAQ 也叫；**不作进攻 H1** |
 | scan to word converter / scan copy to word converter | 100–1k | Use case |
 | ocr to word / ocr to word converter / ocr to word free | 100–1k | 芯片 |
-| jpg to word ocr / ocr jpg to word / convert jpg to word ocr | 10–100 | 芯片：JPG 输入 |
+| jpg to word ocr / ocr jpg to word / convert jpg to word ocr | 10–100 | **2026-09-08 改归 N4-jpg-batch** `batch-convert-jpg-to-editable-word-with-ocr`（H1 仍是批量任务句；不另建光杆 jpg-to-word URL） |
 | convert ocr pdf to word | 100–1k | How |
 | edit scanned document in word | 100–1k | Use case：下完再在 Word 改 |
 | scan handwritten text to word | 10–100 | FAQ 失败边界 |
@@ -216,4 +218,4 @@ G（title_gap_fallback）**未跑 SERP**，不得声称缺口。上线前须人�
 4. **N4** `turn-a-scanned-pdf-into-word`（量级最大的转换对，须诚实版式边界）
 5. **N5** 仅当表结构 POC 可接受再开
 
-N1 已实现 `convert-a-jpg-to-text-with-ocr`（2026-09-07 点名立项；Tesseract LSTM 点后加载）。N2–N5 **未**建夹。
+N1 已实现；N1-batch 已实现（TXT ZIP）。N4-jpg-batch 于 2026-09-08 已实现（一份可编辑 DOCX）。N2–N3、N4 扫描 PDF、N5 **未**建夹。

@@ -54,7 +54,7 @@ const ru: SiteLangDict = {
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a7:
 		'Печать работает лучше. Рукопись часто падает на этой строке. Это не услуга выездного сканирования.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a8:
-		'Без PDF, Word и таблиц. Цифровой PDF со слоем текста — «Извлечь текст из PDF».',
+		'Без PDF и таблиц. Редактируемый Word с OCR — «Пакетно преобразовать JPG в редактируемый Word с помощью OCR». Цифровой PDF со слоем текста — «Извлечь текст из PDF».',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q1: 'Загружаются ли фото на сервер?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q2: 'Чем это отличается от OCR одного JPG?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q3: 'Если одно фото сбойнет, весь пакет остановится?',

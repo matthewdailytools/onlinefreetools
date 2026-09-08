@@ -55,7 +55,7 @@ const ja: SiteLangDict = {
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a7:
 		'活字向きです。手書きや縦書きは失敗しやすく、その行はスキップします。スキャン業者向けではありません。日本語は大きめのモデルが必要なことがあります。',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a8:
-		'PDF は不可。Word や表計算も出しません。文字レイヤー付き PDF は「PDFからテキストを抽出」。',
+		'PDF は不可。表計算も出しません。編集できる OCR の Word は「複数のJPGをOCRでまとめて編集できるWordにする」。文字レイヤー付き PDF は「PDFからテキストを抽出」。',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q1: '写真はアップロードされますか？',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q2: '1枚のJPG OCRと何が違いますか？',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q3: '1枚失敗すると全部止まりますか？',

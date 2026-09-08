@@ -53,7 +53,7 @@ const ar: SiteLangDict = {
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a7:
 		'الحرف المطبوع أفضل. خط اليد غالبًا يفشل في ذلك الصف. ليست خدمة مسح ميداني ولا منتجًا للخط العربي اليدوي.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a8:
-		'لا PDF ولا Word ولا جداول. PDF رقمي بطبقة نص يذهب إلى استخراج النص من PDF.',
+		'لا PDF ولا جداول. وورد قابل للتحرير بالتعرّف في «حوّل عدة صور JPG إلى وورد قابل للتحرير بالتعرّف الضوئي». PDF رقمي بطبقة نص يذهب إلى استخراج النص من PDF.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q1: 'هل تُرفع صوري؟',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q2: 'ما الفرق عن تحويل JPG واحد بالتعرّف الضوئي؟',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q3: 'إذا فشلت صورة هل تتوقف الدفعة كلها؟',

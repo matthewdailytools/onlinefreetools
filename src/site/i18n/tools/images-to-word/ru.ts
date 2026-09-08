@@ -20,7 +20,7 @@ const ru: SiteLangDict = {
   tool_images_to_word_example_title: 'Пример',
   tool_images_to_word_faq_a1: 'No.',
   tool_images_to_word_faq_a2: 'Any DOCX-compatible app works.',
-  tool_images_to_word_faq_a3: 'This version focuses on images; add text in Word afterward.',
+  tool_images_to_word_faq_a3: 'Эта страница вставляет фото как рисунки — буквы не выделить. Редактируемые абзацы OCR — на «Пакетно преобразовать JPG в редактируемый Word с помощью OCR».',
   tool_images_to_word_faq_a4: 'DOCX is editable in Word; PDF is fixed pages.',
   tool_images_to_word_faq_a5: 'No macros are added.',
   tool_images_to_word_faq_q1: 'Uploaded?',

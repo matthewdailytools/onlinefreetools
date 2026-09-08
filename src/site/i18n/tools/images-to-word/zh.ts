@@ -20,7 +20,7 @@ const zh: SiteLangDict = {
   tool_images_to_word_example_title: '示例',
   tool_images_to_word_faq_a1: '不会。',
   tool_images_to_word_faq_a2: '任意兼容 DOCX 的应用即可。',
-  tool_images_to_word_faq_a3: '本版以插图为主，可在 Word 里再加文字。',
+  tool_images_to_word_faq_a3: '本页把照片当图贴进文档，字选不中。要认成能改的段落请用「用 OCR 批量把 JPG 转成可编辑的 Word」。',
   tool_images_to_word_faq_a4: 'DOCX 可编辑；PDF 版式固定。',
   tool_images_to_word_faq_a5: '不添加宏。',
   tool_images_to_word_faq_q1: '会上传吗？',

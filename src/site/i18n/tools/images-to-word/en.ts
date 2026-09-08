@@ -20,7 +20,7 @@ const en: SiteLangDict = {
   tool_images_to_word_example_title: 'Example',
   tool_images_to_word_faq_a1: 'No.',
   tool_images_to_word_faq_a2: 'Any DOCX-compatible app works.',
-  tool_images_to_word_faq_a3: 'This version focuses on images; add text in Word afterward.',
+  tool_images_to_word_faq_a3: 'This page pastes photos as pictures — letters are not selectable. For OCR paragraphs you can edit, use Batch convert JPG to editable Word with OCR.',
   tool_images_to_word_faq_a4: 'DOCX is editable in Word; PDF is fixed pages.',
   tool_images_to_word_faq_a5: 'No macros are added.',
   tool_images_to_word_faq_q1: 'Uploaded?',

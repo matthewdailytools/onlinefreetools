@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
+  <!-- Stack of photos to one Word file with heading lines. ASCII comments only. -->
+  <rect width="32" height="32" rx="8" fill="#2b579a"/>
+  <rect x="5" y="5" width="11" height="8" rx="1" fill="#fff" opacity=".5"/>
+  <rect x="4" y="8" width="12" height="9" rx="1.2" fill="#fff" opacity=".95"/>
+  <path d="M6 11h8M6 14h6" stroke="#2b579a" stroke-width="1.1" stroke-linecap="round"/>
+  <rect x="17" y="6" width="11" height="20" rx="1.2" fill="#fff" opacity=".95"/>
+  <path d="M19 10h7M19 13h6M19 16h7M19 19h5" stroke="#2b579a" stroke-width="1.1" stroke-linecap="round"/>
+</svg>

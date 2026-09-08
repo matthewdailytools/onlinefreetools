@@ -20,7 +20,7 @@ const ja: SiteLangDict = {
   tool_images_to_word_example_title: '例',
   tool_images_to_word_faq_a1: 'No.',
   tool_images_to_word_faq_a2: 'Any DOCX-compatible app works.',
-  tool_images_to_word_faq_a3: 'This version focuses on images; add text in Word afterward.',
+  tool_images_to_word_faq_a3: 'このページは写真を図として貼るので文字を選べません。編集できる OCR 段落は「複数のJPGをOCRでまとめて編集できるWordにする」へ。',
   tool_images_to_word_faq_a4: 'DOCX is editable in Word; PDF is fixed pages.',
   tool_images_to_word_faq_a5: 'No macros are added.',
   tool_images_to_word_faq_q1: 'Uploaded?',

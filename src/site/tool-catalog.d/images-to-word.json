@@ -1,7 +1,7 @@
 {
   "slug": "images-to-word",
   "path": "/tools/images-to-word",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-09-08T12:31:00.000Z",
   "category": "image",
   "primaryTopic": "image-media",
   "secondaryTopics": [
@@ -14,9 +14,9 @@
   "homeDescKey": "tool_images_to_word_desc",
   "faqPrefix": "tool_images_to_word",
   "related": [
+    "batch-convert-jpg-to-editable-word-with-ocr",
     "images-to-pdf",
-    "images-to-ppt",
-    "image-merge"
+    "images-to-ppt"
   ],
   "logo": "/icons/tools/images-to-word.svg",
   "page": {

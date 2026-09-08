@@ -55,7 +55,7 @@ const fr: SiteLangDict = {
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a7:
 		'L’imprimé marche mieux. Le manuscrit échoue souvent sur cette ligne. Ce n’est pas un service de numérisation.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a8:
-		'Pas de PDF, Word ni tableur. Un PDF numérique avec calque texte va vers Extraire le texte d’un PDF.',
+		'Pas de PDF ni tableur. Le Word modifiable avec OCR est sur Convertir plusieurs JPG en Word modifiable avec OCR. Un PDF numérique avec calque texte va vers Extraire le texte d’un PDF.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q1: 'Mes photos sont-elles envoyées au serveur ?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q2: 'Quelle différence avec convertir un seul JPG avec OCR ?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q3: 'Si une photo échoue, tout le lot s’arrête-t-il ?',

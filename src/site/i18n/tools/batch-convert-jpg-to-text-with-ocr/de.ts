@@ -55,7 +55,7 @@ const de: SiteLangDict = {
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a7:
 		'Druckschrift klappt am besten. Handschrift scheitert oft in dieser Zeile. Kein Scan-Service vor Ort.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_a8:
-		'Kein PDF, Word oder Tabellenblatt. Digitales PDF mit Textschicht gehört zu Text aus einem PDF extrahieren.',
+		'Kein PDF und kein Tabellenblatt. Bearbeitbares OCR-Word liegt bei Mehrere JPG mit OCR in bearbeitbares Word umwandeln. Digitales PDF mit Textschicht gehört zu Text aus einem PDF extrahieren.',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q1: 'Werden meine Fotos auf einen Server hochgeladen?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q2: 'Worin unterscheidet sich das von einem einzelnen JPG mit OCR?',
 	tool_batch_convert_jpg_to_text_with_ocr_faq_q3: 'Stoppt der ganze Stapel, wenn ein Foto scheitert?',
