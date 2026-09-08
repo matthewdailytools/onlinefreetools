@@ -76,11 +76,12 @@ description: >-
 1. **H1 + lead** — 主词 + 一个近义（webpage to jpg / url to jpg）
 2. **首屏工具** — 默认控件就是该作业（单 URL 就单框；批量就列表）
 3. **How** — `how_item_*` 动词开头，用按钮原文（Convert all / Download ZIP）
-4. **Settings / Rules** — 每个会改产物的控件用**人话解释一次**（这是 IG，不是口号）
-5. **Example** — 与 `loadSample` 一致
-6. **Use cases** — 岗位/流水线，不是「方便快捷」
-7. **FAQ** — 上传吗？和邻页差在哪？一条 URL 行不行？登录墙？
-8. **Related** — catalog ≥2，且作业真不同
+4. **Why choose** — 紧挨 How 之后；英文 H2 `Why choose our {tool_*_title} tools`；条列本页可验证差异（skip / ZIP / 视口 / 不落盘），禁止快/免费/最好
+5. **Settings / Rules** — 每个会改产物的控件用**人话解释一次**（这是 IG，不是口号）
+6. **Example** — 与 `loadSample` 一致
+7. **Use cases** — 岗位/流水线，不是「方便快捷」
+8. **FAQ** — 上传吗？和邻页差在哪？一条 URL 行不行？登录墙？
+9. **Related** — catalog ≥2，且作业真不同
 
 How 禁止只写 Upload → Click → Download 而无对应控件。
 

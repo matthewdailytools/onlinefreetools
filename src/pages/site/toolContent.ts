@@ -397,12 +397,14 @@ export type ToolReferenceLink = {
 };
 
 /**
- * 渲染 How / Formula|Rules / Example / Use cases 结构化 IG 区块。
+ * 渲染 How / Why choose / Formula|Rules / Example / Use cases 结构化 IG 区块。
  * 键约定：`{prefix}_how_title`、`_how_body`、可选 `_how_item_1…n`（有序操作步骤）、
+ * `{prefix}_why_choose_title`、可选 `_why_choose_body`、`_why_choose_item_1…n`（How 之后的差异列表）、
  * `_formula_title` 或 `_rules_title`、`_formula_body` 或 `_rules_body`、
  * 可选 `_formula_item_1…n` / `_rules_item_1…n`、`_example_title`、`_example`、
  * `_usecases_title`、`_usecase_1…n`。
  * How：有 `how_item_*` 时渲染 `<ol>`；`how_body` 作总答（可与步骤并存）。
+ * Why choose：有 `why_choose_item_*` 时渲染 `<ul>`，紧挨 How 之后、Formula/Rules 之前。
  * 仅有 `how_body` 时仍输出单段 `<p>`（存量兼容）。缺失键则跳过对应小节。
  */
 export const renderToolIgSections = (opts: {
@@ -417,12 +419,16 @@ export const renderToolIgSections = (opts: {
 	ruleItemCount?: number;
 	/** How 操作步骤条数上限（默认 6） */
 	howItemCount?: number;
+	/** Why choose 差异条数上限（默认 5） */
+	whyChooseItemCount?: number;
 }) => {
 	const { lang, prefix } = opts;
 	const mode = opts.mode ?? 'formula';
 	const usecaseCount = opts.usecaseCount ?? 3;
 	const ruleItemCount = opts.ruleItemCount ?? 4;
 	const howItemCount = opts.howItemCount ?? 6;
+	/** Why choose 列表最多读几条 `why_choose_item_*` 键。 */
+	const whyChooseItemCount = opts.whyChooseItemCount ?? 5;
 	const parts: string[] = [];
 
 	/** 读取 i18n；若等于 key 本身则视为未配置。 */
@@ -457,6 +463,28 @@ export const renderToolIgSections = (opts: {
       <h2 class="h5" id="how-heading">${escapeHtml(howTitle)}</h2>
       ${howLead}
       ${howList}
+    </section>`);
+	}
+
+	/** Why choose：本页可验证差异；缺键则跳过（存量页改文案时再补）。 */
+	const whyTitle = tx(`${prefix}_why_choose_title`);
+	const whyBody = tx(`${prefix}_why_choose_body`);
+	const whyItems: string[] = [];
+	for (let i = 1; i <= whyChooseItemCount; i++) {
+		/** 单条差异文案；空键表示该序号未配置。 */
+		const item = tx(`${prefix}_why_choose_item_${i}`);
+		if (item) whyItems.push(item);
+	}
+	if (whyTitle && whyItems.length) {
+		const whyLead = whyBody ? `<p class="text-muted mb-2">${escapeHtml(whyBody)}</p>` : '';
+		const whyList = `<ul class="text-muted mb-0">${whyItems
+			.map((x) => `<li>${escapeHtml(x)}</li>`)
+			.join('')}</ul>`;
+		parts.push(`
+    <section class="mt-4 tool-section" id="why-choose" aria-labelledby="why-choose-heading">
+      <h2 class="h5" id="why-choose-heading">${escapeHtml(whyTitle)}</h2>
+      ${whyLead}
+      ${whyList}
     </section>`);
 	}
 

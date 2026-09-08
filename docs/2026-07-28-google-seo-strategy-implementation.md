@@ -135,7 +135,7 @@
 上线 PR 必须满足：
 
 1. ≥ **3** 项 §3.1 增益，在 PR 中写明「页面哪一节体现」。  
-2. 可见正文含 **How it works** + 至少 **1** 个完整 Example（计算/转换类另加 Formula/Rules）。  
+2. 可见正文含 **How it works**、紧随其后的 **Why choose our {tool name} tools**、以及至少 **1** 个完整 Example（计算/转换类另加 Formula/Rules）。  
 3. **FAQ ≥ 3**（与 `SEO_TOOL_RULES` 一致；YMYL 须含局限性/免责类问题）。  
 4. 至少 **1** 条可点击权威引用（YMYL 建议 ≥ 2），或说明「规范即页内规则表」。  
 5. 文件/粘贴类工具必须有 **本地处理** FAQ 或声明。
@@ -259,6 +259,7 @@ Header
 ├─ H1 + 一句话摘要
 ├─ 【工具交互区】← 首屏，满足即时意图
 ├─ H2 How it works
+├─ H2 Why choose our {tool name} tools
 ├─ H2 Formula / Rules / Algorithm（计算与转换类）
 ├─ H2 Example
 ├─ H2 Use cases（行业或场景，2–3 条）
@@ -278,7 +279,8 @@ Footer
 | `<title>` | `tool_*_title` + brand | 主词靠前，约 50–60 英文字符 |
 | description | `tool_*_description` | **≥ 120** 字符（建议 120–160）；步骤/公式 + 示例（`lint:seo`） |
 | 正文 | `tool_*_article` 或分节 | ≥ 约 300 词等效可见说明 |
-| How 步骤 | article 内 `ol` 或分字段 | 3–5 步 |
+| How 步骤 | `how_title` / `how_body` / `how_item_*` | 3–6 步；动词与按钮一致 |
+| Why choose | `why_choose_title` / `why_choose_item_*` | How 之后；英文 H2 含工具名；≥3 条可验证差异 |
 | FAQ | `tool_*_faq_qN` / `tool_*_faq_aN` | ≥ 3 |
 | References | `tool_*_references` | YMYL 建议必有 |
 | Disclaimer | `tool_*_disclaimer` | `ymyl: true` 必有 |

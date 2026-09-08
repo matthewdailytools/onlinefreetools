@@ -155,8 +155,9 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 - **「本地处理 / 不上传」隐私表述（强制）**：凡声明浏览器内处理的工具（文件、粘贴、PDF、图片等），**desc / FAQ / `home_cat_*_blurb` / 首页 `_desc`** 须用该语用户能立刻听懂的说法，说清「文件留在设备/浏览器」且「不上服务器」。详见下节。
 - **UI 短词本地说**；示例可本地化；技术专名（CRLF、`.env`、Markdown、HTML）可保留。
 - **首页** `scripts/site/i18n.mjs` 主词与工具页一致。
-- **反同构**：FAQ 题序、How/Rules 开篇、Use cases 切入点应随语种变化；禁止十语同一「Process: … Example: …」骨架只换词。
-- **只写用户视角**：面向用户的正文（description/how/rules/example/usecases/faq）只写「用户完成任务需要知道什么」。**禁止**把 SEO/工程理由（doorway、空壳页/薄页、thin URL、slug、「双向放同一地址」「不拆 URL」「不是又一个…页」等自我指涉/元叙述）或实现库名（js-yaml、papaparse…）当卖点写进用户文案；此类理由只属于 `work-tasks/` 与 `docs/`（或代码注释）。母版语（en/zh）也须遵守——母版若混入元叙述，会被逐语放大成译腔。
+- **反同构**：FAQ 题序、How/Rules 开篇、Use cases 切入点、**Why choose 条序与理由**应随语种变化；禁止十语同一「Process: … Example: …」或同一组「本地、免费、免安装」骨架只换词。
+- **Why choose H2**：英文用 `Why choose our {tool_*_title} tools`（插入该语 H1，不是 slug）。他语写当地「为什么用这套{工具名}」类说法，**禁止**直译 Why choose our … tools，也禁止 H2 用 page/页当产品名。
+- **只写用户视角**：面向用户的正文（description/how/why_choose/rules/example/usecases/faq）只写「用户完成任务需要知道什么」。**禁止**把 SEO/工程理由（doorway、空壳页/薄页、thin URL、slug、「双向放同一地址」「不拆 URL」「不是又一个…页」等自我指涉/元叙述）或实现库名（js-yaml、papaparse…）当卖点写进用户文案；此类理由只属于 `work-tasks/` 与 `docs/`（或代码注释）。母版语（en/zh）也须遵守——母版若混入元叙述，会被逐语放大成译腔。
 - **忌说明书腔**：How/Rules 少写实现术语（`toBlob`、质量二分、Canvas 流水线）当面向用户的主句；改成「缩小、重画、再导出」「逐步降低画质去逼近」等可观察说法。库名/API 名最多进 References。
 - **禁止关键词展示模块**：不得为 SEO 增加「相关关键词」可见列表；覆盖词只进自然语言句子。
 ## 隐私本地处理表述（强制）
@@ -235,6 +236,7 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 8. **跳过用户意图审查**：未对照主词搜索者任务判断满足/超出并回写 How/交互，就标 `02`=`ready`（覆盖表绿 ≠ 意图已对齐）。
 9. **含糊本地/隐私表述**：文件类工具用 `local` / `本地处理` / 半截 `no upload` 等，未按「隐私本地处理表述」说清设备与服务器边界。
 10. **H1 用 page 当产品名 / 场景抽签**：工具或 topic 叶子 title 写成 `which X page` / 「选哪张 X 页」，或场景簇只点 3 个成员套「A、B or C」模板（见写法 · 产品类型）。
+11. **Why choose 空话/缺失**：新工具无 `why_choose_item_*`，或整节只有「快 / 免费 / 最好 / 免注册」，或十语同一组三条只换词。
 
 **收紧后的通过标准**：
 
@@ -265,6 +267,7 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 | **关键词列表 SEO** | 页上「相关关键词」块、标签云、无语境词串 | 主词→H1；次词→desc/FAQ/Use cases 自然句 |
 | **英模关键词直搬** | 他语沿用 en 词表不做当地检索重跑 | 每语 brief 3–5 当地词 + 步 3/4 重跑落点 |
 | **page 当产品名** | `which prompt page`；「选哪张提示词页」；`quelle page de prompt` | 当地检索类型：prompt builder / generator、构建器与生成器 |
+| **Why choose 空话/同构** | 十语同一组「最快、免费、最好、免注册」；H2 不出现本工具名；把 How 步骤再列一遍 | 每条写本 slug 可观察差异；英文 H2 含 `{tool_*_title}`；他语当地重写 |
 | **场景抽签 H1** | 九个场景只写 Writing、Midjourney、iOS 套「A, B, or C」 | 独立场景说全，或用能覆盖全集的分组 |
 
 技术词（diff、JSON、CRLF）在开发者工具中**可以**保留，但不可代替本地主 title。
@@ -295,6 +298,7 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 - [ ] 未使用「英模 → 脚本灌其余语」作为唯一交付路径
 - [ ] 可见正文无 SEO/工程元叙述（doorway/空壳/薄页/slug/自述「单页/不拆 URL」）与库名卖点；理由仅在 `work-tasks`/`docs`
 - [ ] How/Rules 无把实现 API/`toBlob`/算法名当用户主句的说明书腔
+- [ ] **Why choose** 在 How 之后：title 含该语工具名；`why_choose_item_*` ≥3 且为本页可验证差异；非快/免费/最好空话；他语非英模直译
 
 ## 红线
 
@@ -310,3 +314,4 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 - 禁止覆盖关键词只写在 `work-tasks` 而未回写到 H1/description/FAQ/Use cases
 - 禁止页上增加「相关关键词」列表/标签云作 SEO
 - 禁止他语沿用 en 关键词表而不按当地用户搜索习惯重跑
+- 禁止新工具缺 How 之后的 Why choose（`why_choose_title` + ≥3 条本页可验证差异），或用全站同构「快/免费/最好」冒充该节

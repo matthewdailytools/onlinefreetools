@@ -61,6 +61,7 @@ alwaysApply: false
 另须：
 
 - 可见 **How it works**：`how_body`（总答）+ **`how_item_1…n` 有序操作步骤**（建议 3–6；动词开头、与 UI 一致；渲染为 `<ol>`）。凡可交互工具均须有步骤（含计算器：填字段 → 选模式 → 计算 → 读结果）。存量仅有散文 `how_body` 的页在改文案时迁移。
+- 可见 **Why choose our {tool name} tools**（紧挨 How 之后）：`why_choose_title`（英文默认 `Why choose our {tool_*_title} tools`；他语当地重写且须含该语工具名）+ **`why_choose_item_1…n`（建议 3–5）**。条数写本页可验证差异，禁止「快/免费/最好」空话或与 How 重复。新工具必填；存量改文案时补。渲染见 `renderToolIgSections`。
 - 至少 **1** 个完整 Example（计算/转换类加 Formula/Rules；Rules 写约束，勿假扮操作步骤）
 - **FAQ ≥ 3**（YMYL 须含局限性/免责类问题）
 - 动态工具结果的关键解读须落到可索引 **Example / FAQ**（勿仅依赖交互态文案）

@@ -111,6 +111,7 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 H1 + 一句话摘要
 【工具交互区】← 首屏（进页须自动跑样例并显示真实结果，见下节）
 H2 How it works（`how_body` 总答 + `how_item_1…n` 有序操作步骤，见下）
+H2 Why choose our {tool name} tools（紧挨 How 之后；见下节）
 H2 Formula / Rules / Algorithm（计算与转换类）
 H2 Example（固定 Input→Output；须与默认样例行为一致）
 H2 Use cases（2–3 条场景；长尾意图优先写此，慎拆 URL）
@@ -127,6 +128,16 @@ Disclaimer（YMYL 必备）
 - 计算器同样适用（填字段 → 选模式 → 计算 → 读结果），步骤可更短
 - Formula/Rules 写算法与边界，**不要**改写成假操作步骤
 - **新工具**：立项即写 `how_item_*`；**存量**：改文案时顺带迁移，禁止为「进 AI 摘要」单独堆 HowTo schema
+
+**Why choose our {tool name} tools（硬性 · How 之后）**：每个可交互工具都须有一块「为什么用本页」说明，紧挨 How，**先于** Formula/Rules。回答的是「和别的做法/别的页差在哪」，不是再抄一遍操作步骤。
+
+- 键：`tool_*_why_choose_title` + 可选 `tool_*_why_choose_body`（1–2 句总答）+ **`tool_*_why_choose_item_1…n`（建议 3–5 条）**
+- **英文 H2 默认句式**：`Why choose our {tool name} tools`。`{tool name}` = 该语 `tool_*_title`（与可见 H1 相同），**不是** slug、不是只写品牌名、不是 `page`。
+- **他语**：按当地说法重写（zh 如「为什么用本站的{H1}」；es `Por qué usar {H1}`；ja `{H1}を使う理由`），**禁止**把英文 Why choose our … tools 直译成十语同构。
+- 每条须是**本 slug 可验证的差异**（例如：失败 skip、ZIP、视口/质量、OCR 语种、不上传、金标 HUD）。渲染为可见 `<ul>`（`renderToolIgSections`，`id="why-choose"`）。
+- **禁止**：整节只有「快 / 免费 / 最好 / 100% / 免安装 / 免注册」；把 How 步骤换皮再列一遍；全站十个工具共用同一组三条（本地、免费、免安装）。本地处理最多占**一条**，不能当整节。
+- 与 Use cases 分工：Use cases = 谁、何时；Why choose = 为什么用**这一页**而不是别的方法。
+- **新工具**：立项即写；**存量**：改文案时顺带补键。缺键时渲染器跳过该节（与仅有散文 `how_body` 的存量 How 一样）。
 
 **文案深度**（相对「三步怎么用」）：为何遇到该问题、输入类型差异、失败边界、参数选择、与竞品/其他方法差异。
 
@@ -205,6 +216,7 @@ Page 里若用 TypeScript **模板字符串**拼 `<script>`：
 - [ ] 已 `npm run build:site`（含 merge；`public/index.html` / `public/{lang}/index.html` 与 sitemap 已含本工具；勿只跑 `merge:tools` / 单 slug prerender）
 - [ ] `npm run lint:tool-page -- --slug={slug} --require-html` 通过（style↔签名、模板 `\\w`、HTML 含 `loadSample`）
 - [ ] **How it works 含有序操作步骤**：`how_body` 总答 + `how_item_1…n`（建议 3–6；与 UI 文案一致）；十语齐全
+- [ ] **Why choose 在 How 之后**：`why_choose_title` 含该语工具名 + `why_choose_item_1…n`（≥3；本页可验证差异；非快/免费/最好空话）；十语独立重写
 - [ ] title 非参数枚举目录腔；`02` 覆盖表填满且 `03` 勾选清单前覆盖与「检索覆盖已优化」
 - [ ] **相关关键词已落入** H1 / description / FAQ / Use cases；无页上关键词列表；**每语已按当地搜法重跑**（非 en 直搬）
 - [ ] 未手改生成物（catalog.json / `i18n/{lang}.ts` / registry / i18n-tools.generated）

@@ -122,6 +122,7 @@
 - [ ] 首屏工具交互区（含进页自动样例结果）
 - [ ] 进度 HUD（金标；或交互规格已写不适用）
 - [ ] How it works
+- [ ] Why choose our {tool name} tools（How 之后；title 含工具名 + ≥3 条可验证差异）
 - [ ] Formula / Rules（计算与转换类）
 - [ ] Example（固定文案，与默认样例一致）
 - [ ] Use cases（2–3）
