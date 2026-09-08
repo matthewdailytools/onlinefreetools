@@ -110,6 +110,7 @@
 - [PDF 转 Markdown](https://onlinefreetools.org/zh/tools/pdf-to-markdown) - 浏览器内从 PDF 文本层导出 Markdown，无 OCR，不上传
 - [把 JPG 转成 PDF](https://onlinefreetools.org/zh/tools/images-to-pdf) - 本地多图合成多页 PDF
 - [合并文件成一个 PDF](https://onlinefreetools.org/zh/tools/combine-files-into-one-pdf) - 队列中的 PDF 与图片在浏览器内合并为一份；文件留在本机
+- [用 OCR 把 JPG 转成文字](https://onlinefreetools.org/zh/tools/convert-a-jpg-to-text-with-ocr) - 浏览器内识别印刷体 JPG/截图为可复制 TXT，不上传
 - [从 PDF 提取文本](https://onlinefreetools.org/zh/tools/extract-text-from-pdf) - 浏览器内抽取 PDF 文本层并下载 .txt；无 OCR，不上传
 - [在浏览器中打开 PDF](https://onlinefreetools.org/zh/tools/open-pdf-in-browser) - pdf.js 画布分页预览 PDF；文件留在本机
 - [打印 PDF](https://onlinefreetools.org/zh/tools/print-pdf) - 本地预览并调起系统打印；不上传
@@ -324,6 +325,7 @@ Below are our available online tools with their links (English version):
 - [PDF to Markdown](https://onlinefreetools.org/tools/pdf-to-markdown) - Extract PDF text layer to Markdown locally — no OCR, no upload
 - [Turn JPG into PDF](https://onlinefreetools.org/tools/images-to-pdf) - Combine photos into a multi-page PDF locally
 - [Combine files into one PDF](https://onlinefreetools.org/tools/combine-files-into-one-pdf) - Queue images and PDFs, merge into one download in the browser — stays on device
+- [Convert a JPG to text with OCR](https://onlinefreetools.org/tools/convert-a-jpg-to-text-with-ocr) - Read printed JPG/screenshots to copyable TXT in the tab — not uploaded
 - [Extract text from a PDF](https://onlinefreetools.org/tools/extract-text-from-pdf) - Extract the PDF text layer and download .txt — no OCR, no upload
 - [Open a PDF in the browser](https://onlinefreetools.org/tools/open-pdf-in-browser) - pdf.js canvas page preview — stays on device
 - [Print a PDF](https://onlinefreetools.org/tools/print-pdf) - Local preview and system print dialog — no upload

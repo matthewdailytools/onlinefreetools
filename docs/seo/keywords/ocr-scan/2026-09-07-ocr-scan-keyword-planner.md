@@ -7,9 +7,11 @@
   - [`scan-Keyword Planner 09-06-2026 at 07-25-14.csv`](./scan-Keyword%20Planner%2009-06-2026%20at%2007-25-14.csv)（**799** 词，Scan/硬件种子）
   - [`scan-Keyword Planner 09-06-2026 at 07-30-14.csv`](./scan-Keyword%20Planner%2009-06-2026%20at%2007-30-14.csv)（**799** 词，Scan→Word / OCR 转换种子）
 - 合计 **2643** 行、**2438** 个不重复词；两份 scan CSV 有少量重叠
+- 另批（不覆盖本表）：[`Keyword Planner 09-07-2026 at 23-55-12.csv`](./Keyword%20Planner%2009-07-2026%20at%2023-55-12.csv) → [`2026-09-08-text-converter-keyword-planner.md`](./2026-09-08-text-converter-keyword-planner.md)
 - catalog：**无** OCR 页。近邻但**办不成**扫描件识别：`extract-text-from-pdf`、`pdf-to-markdown`、`turn-pdf-into-word-document`、`turn-pdf-into-editable-document`（均声明无 OCR）。照片装订：`images-to-pdf`（无识别）
 - 规则：[`../../keyword-planner-analysis-rules.md`](../../keyword-planner-analysis-rules.md) + 策略 **§3.3 H** + 同日 JS OCR 能力上限（印刷体产品级；手写/表格结构半成品；可检索 PDF 管线可行；可重排 Word 版式撞墙）
-- SERP：**无人工批次** → 不得标 `long_gap`；未建 work-tasks；周进攻 **0**
+- SERP：**无人工批次** → 不得标 `long_gap`；周进攻 **0**
+- work-tasks：**N1** `convert-a-jpg-to-text-with-ocr` 于 **2026-09-07** 用户点名立项并实现（`02=implemented`，Tesseract LSTM 点后加载）。**N1-batch** `batch-convert-jpg-to-text-with-ocr` 于 **2026-09-08** 用户点名 brief（`02=ready`，页面未实现）。N2–N5 仍未建夹。
 
 > **结论先行**  
 > 1）三份 CSV 里大约六到七成是 **打印机驱动 / HP·Epson·Canon / 下载安装 / 品牌导航 / 百科**，不是浏览器作业。  
@@ -98,7 +100,7 @@ OCR 种子文件可产品化比例明显高于 Scan 硬件文件。下表只收*
 
 阿语 `arabic ocr`（100–1k）、`chinese ocr online`（10–100）→ N1/N2 **语种芯片**，禁止 `arabic-ocr` URL。
 
-`batch ocr` / `bulk ocr`（10–100）→ 后排批量页，本批不立项；单文件页不加 multiple 冒充。
+`batch ocr` / `bulk ocr`（10–100）→ **2026-09-08 用户点名立项** `batch-convert-jpg-to-text-with-ocr`（队列 + skip + ZIP + 合并 TXT；≠ N1 单张换皮）。单文件页仍不加 multiple 冒充。
 
 ---
 
@@ -107,6 +109,7 @@ OCR 种子文件可产品化比例明显高于 Scan 硬件文件。下表只收*
 | slug | 主打关键词 | 次词（同页 FAQ / Use cases / 芯片） | 禁止当本页进攻 H1 |
 | --- | --- | --- | --- |
 | `convert-a-jpg-to-text-with-ocr` | jpg to ocr | ocr to text、ocr text recognition、ocr image reader、chinese ocr online、arabic ocr（芯片） | online ocr、free ocr、ocr converter |
+| `batch-convert-jpg-to-text-with-ocr` | batch convert JPG to text with OCR / batch ocr | bulk ocr、convert multiple jpg to text、batch image to text | batch ocr 光杆、jpg to text（单张归 N1）、online ocr |
 | `extract-text-from-a-scanned-pdf` | extract text from a scanned PDF / ocr pdf to text | online ocr pdf to text、tesseract ocr pdf to text（库名仅 FAQ 消歧） | pdf to ocr（歧义头词，FAQ 也叫并链 N3） |
 | `make-a-scanned-pdf-searchable` | convert pdf to ocr pdf | ocr searchable pdf、add ocr to pdf、pdf to ocr pdf、i love pdf to ocr（品牌消歧） | OCR PDF、online ocr |
 | `turn-a-scanned-pdf-into-word` | convert scanned pdf to word | ocr pdf to word、pdf to word ocr、scan to word converter、jpg to word ocr、ocr to word | pdf to word（无 OCR 的 A2 头词） |
@@ -213,4 +216,4 @@ G（title_gap_fallback）**未跑 SERP**，不得声称缺口。上线前须人�
 4. **N4** `turn-a-scanned-pdf-into-word`（量级最大的转换对，须诚实版式边界）
 5. **N5** 仅当表结构 POC 可接受再开
 
-本批 **未**建 `work-tasks/`。
+N1 已实现 `convert-a-jpg-to-text-with-ocr`（2026-09-07 点名立项；Tesseract LSTM 点后加载）。N2–N5 **未**建夹。

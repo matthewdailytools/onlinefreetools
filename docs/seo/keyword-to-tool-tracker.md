@@ -44,10 +44,10 @@
 
 | 字段 | 值 |
 |---|---|
-| 最近更新 | 2026-09-07 |
-| 最近批次 | [ocr-scan Planner](./keywords/ocr-scan/2026-09-07-ocr-scan-keyword-planner.md)（OCR+Scan **2643** 行；硬件/品牌约六七成 drop；**0 absorb 进现有无 OCR 页**；**4+1** 场景 slug defer；禁 online-ocr 壳；**未 SERP**） |
-| 池内 `build` 候选 | OCR 五条均为 `defer`+待 SERP，不占周进攻；Excel 公式/模板 8 slug 在 catalog |
-| 本周新建工具页 | 无（ocr-scan 仅分析进池） |
+| 最近更新 | 2026-09-08 |
+| 最近批次 | [Text Converter Planner](./keywords/ocr-scan/2026-09-08-text-converter-keyword-planner.md)（**932** 词；ASR/壳 drop；jpg/png/image to text **absorb N1**；pdf to text **absorb** `extract-text-from-pdf`；Word/HTML→TXT **defer**；**未 SERP**）。OCR+Scan 权威仍是 [09-07](./keywords/ocr-scan/2026-09-07-ocr-scan-keyword-planner.md)；同日用户点名 **N1-batch** brief |
+| 池内 `build` 候选 | OCR N1 已实现；**N1-batch** `batch-convert-jpg-to-text-with-ocr` brief `ready`（页面未实现）；N2–N5 与 T4/T5 **defer**（待 SERP 不占周 `long_gap`）；Excel 公式/模板 8 slug 在 catalog |
+| 本周新建工具页 | `convert-a-jpg-to-text-with-ocr`（OCR N1 已上线）；`batch-convert-jpg-to-text-with-ocr`（brief only，未占 long_gap KPI） |
 | 阻塞 | 发版：`npm run deploy` / upload:r2；SSL 为 crt.sh CT 非握手 |
 
 ---
@@ -75,7 +75,7 @@
 - [x] 周审（2026-08-25）：补全词池 `competition_tier`；两条原 `build` 改为 `defer`（`mid_covered`）；**未**建 work-tasks
 - [ ] 下一周审：仅当新批次出现 `long_gap`/`locale_gap` 且 `feasibility=yes` 时才标 `build`；`head` 不进进攻立项
 - [ ] **词根→AdWords**：每周 3–5 slug，用 [tool-keyword-roots](./2026-08-20-tool-keyword-roots.md) 种子进 Keyword Planner，长尾过滤后入池并 absorb（策略 §4.7）
-- [x] 若人工决定创建工具：确认属 `long_gap`/`locale_gap` 后，在决策日志写明 slug，再另开 `work-tasks/{slug}/`（2026-08-28：`measuring-magnetic-fields`；同日 `terraform-cidrsubnet`）
+- [x] 若人工决定创建工具：确认属 `long_gap`/`locale_gap` 后，在决策日志写明 slug，再另开 `work-tasks/{slug}/`（2026-08-28：`measuring-magnetic-fields`；同日 `terraform-cidrsubnet`；**2026-09-07**：用户点名 OCR N1 `convert-a-jpg-to-text-with-ocr`；**2026-09-08**：用户点名 N1-batch `batch-convert-jpg-to-text-with-ocr`，虽未 SERP、不占周 long_gap KPI，仍允许立项）
 
 ### P1 — 与既有页协同
 
@@ -163,6 +163,10 @@
 | 2026-09-05 | 文本工具（subject=text）复审与修正：9 个 Prompt 工具 `localProcessing` 改为 false；Turnstile 绑定 hostname+action；html-entity/jwt/password/hreflang/SSRF 等实现边界校正；on-page-seo/robots/OG/hreflang/sitemap/meta-serp/meta-tag 纠正错误规范性结论；词池 text-compare 四行 live 工具由 `build` 回写 `absorb`；Prompt 簇十语污染清理进行中。 | Trust：工具不得教用户错误的 Google/RFC 规则；隐私标签须与可选 AI 上传一致。 |
 | 2026-09-05 | `text-compare` 五工具复审：保留既有 build/absorb 归属，不增 URL；修复 JSON 原型键与键序漏报、数组“集合”误称，Text Diff 空白选项、文本文件严格 UTF-8、Excel 公式/格式边界与 Word 后缀校验。 | SERP 对照显示竞品常见智能行匹配、公式审计、Word redline 等更强能力；本站以可验证的窄能力与失败边界提供 IG，不用文案冒充未实现功能。 |
 | 2026-09-07 | OCR/Scan Planner 三份 CSV（2643 行）归类：硬件/品牌/下载 drop；**禁止**把 OCR 词 absorb 进现有无 OCR 的抽文本/转 Word 页。独立场景 slug **defer**：`convert-a-jpg-to-text-with-ocr`、`extract-text-from-a-scanned-pdf`、`make-a-scanned-pdf-searchable`、`turn-a-scanned-pdf-into-word`；表图 CSV 后排。禁 `online-ocr` 壳。未 SERP → 0 周 build；未建 work-tasks。 | 用户要求分析 keywords/ocr-scan 并对照市场列出可做 slug 与长尾 slug |
+| 2026-09-07 | 用户点名立项 OCR **N1** `convert-a-jpg-to-text-with-ocr`：`work-tasks/` 00–03，`02=ready`，`coverage:gate --phase=0b`。H1=场景句，禁 Online OCR 光杆；Planner 长尾 absorb 进芯片/FAQ；不收 PDF/Word/表/批量。词池 N1 `defer`→`build`（仍 `await_serp`，不占周 long_gap）。页面未实现。 | 用户要求立项 convert-a-jpg-to-text-with-ocr |
+| 2026-09-07 | 实现 OCR N1：catalog/i18n 十语 + Page + Tesseract LSTM 同域 vendor（点后加载，进页不自动跑）；`02=implemented`。Paddle.js 因体积与默认拉模型未入库。N2–N5 未做。 | 用户要求实现 convert-a-jpg-to-text-with-ocr |
+| 2026-09-08 | 增补 Text Converter Planner（09-07 23:55，932 词）：约四成 ASR **drop**；`jpg/jpeg/png/image to text` **absorb** N1（FAQ 欠账）；`pdf to text` **absorb** `extract-text-from-pdf`；扫描 PDF 仍 N2；Word→TXT / HTML|URL→TXT **defer** 新 slug；禁 converter 壳。未 SERP → 0 周 build；未建 work-tasks。 | 用户要求分析 Keyword Planner 09-07-2026 at 23-55-12 |
+| 2026-09-08 | 用户点名立项 OCR **N1-batch** `batch-convert-jpg-to-text-with-ocr`：`work-tasks/` 00–03，`02=ready`，`coverage:gate --phase=0b`。H1=批量任务句；相对 N1 的 IG 是队列/skip/ZIP/合并 TXT（禁止只加 multiple 换皮）；`jpg to text` 单张仍归 N1。词池 `batch ocr` `build`（仍 `await_serp`，不占周 long_gap）。页面未实现。 | 用户要求立项 batch convert jpg to text with ocr 并与 N1 做信息增益区分 |
 
 ---
 

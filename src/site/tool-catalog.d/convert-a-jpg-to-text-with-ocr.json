@@ -1,0 +1,30 @@
+{
+  "slug": "convert-a-jpg-to-text-with-ocr",
+  "path": "/tools/convert-a-jpg-to-text-with-ocr",
+  "updatedAt": "2026-09-07T16:15:00.000Z",
+  "launchedAt": "2026-09-07T16:15:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_convert_a_jpg_to_text_with_ocr_title",
+  "homeTitleKey": "tool_convert_a_jpg_to_text_with_ocr_title",
+  "homeDescKey": "tool_convert_a_jpg_to_text_with_ocr_desc",
+  "faqPrefix": "tool_convert_a_jpg_to_text_with_ocr",
+  "related": [
+    "extract-text-from-pdf",
+    "images-to-pdf"
+  ],
+  "logo": "/icons/tools/convert-a-jpg-to-text-with-ocr.svg",
+  "page": {
+    "module": "../pages/convertAJpgToTextWithOcrPage",
+    "export": "renderConvertAJpgToTextWithOcrPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

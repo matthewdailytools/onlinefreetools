@@ -157,7 +157,7 @@
 | `@tonejs/midi` | MIDI 文件解析 | 浏览器 | 小众但完整 |
 | **Web Audio API** | 变速、混音、增益、滤波 | 浏览器 | 零依赖 |
 | **MediaRecorder API** | 麦克风/标签页录制 | 浏览器 | 输出 WebM/Opus |
-| **Web Speech API** | STT 语音识别 / TTS 朗读 | 浏览器 | Chrome 支持最佳 |
+| **Web Speech API** | STT 语音识别 / TTS 朗读 | 浏览器 | Chrome 听写最佳；**文件转写见** [2026-09-08 STT 方案](./2026-09-08-js-speech-to-text-solutions.md) |
 | **WebCodecs API** | 高效 H.264/VP9 编解码 | 浏览器 | Chrome/Edge 为主 |
 
 ### 3.2 工具方向

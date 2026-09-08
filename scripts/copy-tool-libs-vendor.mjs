@@ -74,6 +74,26 @@ const files = [
 		to: path.join(outRoot, 'html2canvas', 'html2canvas.min.js'),
 	},
 	{ from: path.join(nm, 'exifr', 'dist', 'full.umd.js'), to: path.join(outRoot, 'exifr', 'full.umd.js') },
+	{
+		from: path.join(nm, 'tesseract.js', 'dist', 'tesseract.min.js'),
+		to: path.join(outRoot, 'tesseract', 'tesseract.min.js'),
+	},
+	{
+		from: path.join(nm, 'tesseract.js', 'dist', 'worker.min.js'),
+		to: path.join(outRoot, 'tesseract', 'worker.min.js'),
+	},
+	{
+		from: path.join(nm, 'tesseract.js-core', 'tesseract-core-lstm.wasm.js'),
+		to: path.join(outRoot, 'tesseract', 'core', 'tesseract-core-lstm.wasm.js'),
+	},
+	{
+		from: path.join(nm, 'tesseract.js-core', 'tesseract-core-simd-lstm.wasm.js'),
+		to: path.join(outRoot, 'tesseract', 'core', 'tesseract-core-simd-lstm.wasm.js'),
+	},
+	{
+		from: path.join(nm, 'tesseract.js-core', 'tesseract-core-relaxedsimd-lstm.wasm.js'),
+		to: path.join(outRoot, 'tesseract', 'core', 'tesseract-core-relaxedsimd-lstm.wasm.js'),
+	},
 ];
 
 for (const item of files) {
@@ -94,5 +114,19 @@ esbuild.buildSync({
 	logLevel: 'warning',
 });
 console.log('Bundled ajv →', path.relative(root, ajvOut));
+
+/**
+ * OCR 语言包不在 npm：须已提交 `public/vendor/tesseract/lang/*.traineddata.gz`。
+ * 复制脚本不得删掉它们；缺失则失败，避免上线空 langPath。
+ */
+const tessLangDir = path.join(outRoot, 'tesseract', 'lang');
+const tessLangs = ['eng', 'chi_sim', 'ara', 'jpn'];
+for (const code of tessLangs) {
+	const langFile = path.join(tessLangDir, `${code}.traineddata.gz`);
+	if (!fs.existsSync(langFile)) {
+		console.error('Missing Tesseract lang pack (commit after download):', path.relative(root, langFile));
+		process.exit(1);
+	}
+}
 
 console.log('Done. Serve tool libs from /vendor/{lib}/* (no CDN).');

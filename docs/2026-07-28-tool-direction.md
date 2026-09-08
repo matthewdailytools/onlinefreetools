@@ -7,6 +7,7 @@
 **关联文档**:
 - [JS 工具包调研](./2026-07-09-js-tool-packages-survey.md) — 完整 npm 包枚举（技术附录）
 - [音视频可行性](./2026-06-23-10-15-js-media-conversion-feasibility.md) — 多媒体深度分析（本文方向 A 引用其结论并扩展到全品类）
+- [JS 语音转文字（多语）](./2026-09-08-js-speech-to-text-solutions.md) — 听写 / 本地 Whisper / Workers AI；方向 A.3 引用
 - [Google SEO 策略与落地](./2026-07-28-google-seo-strategy-implementation.md)
 - [每工具开发与 SEO 方案](./2026-07-28-per-tool-dev-seo-plans.md)
 - [工具页面 SEO 规则](./SEO_TOOL_RULES.md)
@@ -180,7 +181,9 @@
 
 **可落地工具**：在线录音机、WAV↔MP3、音频裁剪、音量标准化、简易 TTS。
 
-**结论**：成熟可用；非默认第一批，但方向 A 内可独立立项。
+**语音→文字（完整多语方案）**：见 [JS 语音转文字完整方案](./2026-09-08-js-speech-to-text-solutions.md)。听写 ≠ 转 MP3 文件 ≠ YouTube；文件多语默认 Workers AI Whisper。未点名立项前不建页。
+
+**结论**：录音/剪辑/TTS 成熟可用；STT 按该专文三栈选型。非默认第一批，方向 A 内可独立立项。
 
 ---
 

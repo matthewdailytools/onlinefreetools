@@ -39,6 +39,7 @@ import { renderCompareTwoPdfsPage } from '../pages/compareTwoPdfsPage';
 import { renderCompareTwoTextFilesOnlinePage } from '../pages/compareTwoTextFilesOnlinePage';
 import { renderCompareTwoWordDocumentsForDifferencesPage } from '../pages/compareTwoWordDocumentsForDifferencesPage';
 import { renderCompressPdfPage } from '../pages/compressPdfPage';
+import { renderConvertAJpgToTextWithOcrPage } from '../pages/convertAJpgToTextWithOcrPage';
 import { renderConvertHtmlToPdfPage } from '../pages/convertHtmlToPdfPage';
 import { renderConvertHtmlWebPagesToWordDocumentPage } from '../pages/convertHtmlWebPagesToWordDocumentPage';
 import { renderConvertPdfToDwgPage } from '../pages/convertPdfToDwgPage';
@@ -258,6 +259,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'compare-two-text-files-online': (lang, defaultLang, enabled) => renderCompareTwoTextFilesOnlinePage({ lang, defaultLang, enabledLangs: enabled }),
 	'compare-two-word-documents-for-differences': (lang, defaultLang, enabled) => renderCompareTwoWordDocumentsForDifferencesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'compress-pdf': (lang, defaultLang, enabled) => renderCompressPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-a-jpg-to-text-with-ocr': (lang, defaultLang, enabled) => renderConvertAJpgToTextWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-html-to-pdf': (lang, defaultLang, enabled) => renderConvertHtmlToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-html-web-pages-to-word-document': (lang, defaultLang, enabled) => renderConvertHtmlWebPagesToWordDocumentPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-pdf-to-dwg': (lang, defaultLang, enabled) => renderConvertPdfToDwgPage({ lang, defaultLang, enabledLangs: enabled }),

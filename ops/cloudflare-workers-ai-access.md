@@ -8,6 +8,7 @@
   - [Get started — Workers + Wrangler](https://developers.cloudflare.com/workers-ai/get-started/workers-wrangler/)
   - [Models](https://developers.cloudflare.com/workers-ai/models/)
 - 产品方案（二合一）：[`../docs/seo/keywords/prompt-builder/2026-09-01-local-and-cf-ai-hybrid-scheme.md`](../docs/seo/keywords/prompt-builder/2026-09-01-local-and-cf-ai-hybrid-scheme.md)
+- 语音转文字（Whisper / 多语 / 与 Prompt AI 分配额）：[`../docs/2026-09-08-js-speech-to-text-solutions.md`](../docs/2026-09-08-js-speech-to-text-solutions.md)
 - 本仓库现状：`wrangler.jsonc` 已配置 `ai` binding + `RATE_LIMIT_KV`；`POST /api/tools/prompt-template-builder/ai` 已挂载（见 `src/endpoints/promptTemplateBuilderAi.ts`）
 
 > **一句话**：免费 = 每日 **10,000 Neurons** 额度内推理（Workers Free/Paid 都有）；付费 = **Workers Paid** 后超出部分按 Neurons 计费，部分前沿模型必须 Paid。本地 `wrangler dev` 调 AI **同样计入**账户用量。

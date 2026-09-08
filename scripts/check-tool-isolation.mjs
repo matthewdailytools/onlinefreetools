@@ -69,6 +69,12 @@ function allowlistFor(toolSlug) {
 		`public/devlogs/`,
 		`README.md`,
 		`AGENTS.md`,
+		// 新工具加 npm 库时 lockfile 与 package.json 成对出现
+		`package-lock.json`,
+		// 同域 vendor 复制清单与必入库路径（本工具点后加载 WASM）
+		`scripts/copy-tool-libs-vendor.mjs`,
+		`scripts/validate-vendor-tracked.mjs`,
+		`public/vendor/`,
 		// Keyword funnel / SERP notes often land in the same session as a new tool
 		`docs/seo/`,
 		// generated / merge outputs (ok to refresh)

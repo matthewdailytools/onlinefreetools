@@ -5,6 +5,7 @@
 **关联文档**:
 - [工具方向](./2026-07-28-tool-direction.md) — 产品是否立项多媒体工具（默认谨慎 / 绑定场景）
 - [JS 工具包调研](./2026-07-09-js-tool-packages-survey.md) — 包枚举与 Tier 加载
+- [JS 语音转文字（多语）](./2026-09-08-js-speech-to-text-solutions.md) — 听写 / 本地 Whisper / Workers AI
 - [Google SEO 策略与落地](./2026-07-28-google-seo-strategy-implementation.md) — CWV 与页面合规
 - **[音视频客户端续研 2026-08-09](./2026-08-09-browser-av-client-solutions.md)** — Mediabunny / lamejs / gifenc / mediainfo / FFmpeg 分层（本文 §3「视频几乎只靠 FFmpeg」已过时，以续研为准）
 
@@ -35,7 +36,7 @@
 | **录制麦克风** | `MediaRecorder API` / `getUserMedia()` |
 | **格式转换** (MP3/WAV/OGG/AAC) | WebAssembly 编码器（如 lamejs, ogg.js） |
 | **音频剪辑/混音** | `Web Audio API` (AudioBuffer 操作) |
-| **语音识别 (STT)** | `Web Speech API` (SpeechRecognition) |
+| **语音识别 (STT)** | 见 [2026-09-08 JS 语音转文字方案](./2026-09-08-js-speech-to-text-solutions.md)（Web Speech 听写会出网；文件多语用 Whisper WASM 或 Workers AI） |
 | **文字转语音 (TTS)** | `Web Speech API` (SpeechSynthesis) |
 | **音高/变速** | `AudioBuffer.source.playbackRate` + `detune` |
 | **音频可视化** | AnalyserNode → Canvas |

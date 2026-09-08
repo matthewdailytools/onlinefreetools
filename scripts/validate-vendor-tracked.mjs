@@ -51,6 +51,15 @@ const REQUIRED = [
 	'public/vendor/html2canvas/html2canvas.min.js',
 	'public/vendor/exifr/full.umd.js',
 	'public/vendor/ajv/ajv.esm.js',
+	'public/vendor/tesseract/tesseract.min.js',
+	'public/vendor/tesseract/worker.min.js',
+	'public/vendor/tesseract/core/tesseract-core-lstm.wasm.js',
+	'public/vendor/tesseract/core/tesseract-core-simd-lstm.wasm.js',
+	'public/vendor/tesseract/core/tesseract-core-relaxedsimd-lstm.wasm.js',
+	'public/vendor/tesseract/lang/eng.traineddata.gz',
+	'public/vendor/tesseract/lang/chi_sim.traineddata.gz',
+	'public/vendor/tesseract/lang/ara.traineddata.gz',
+	'public/vendor/tesseract/lang/jpn.traineddata.gz',
 ];
 
 /**
