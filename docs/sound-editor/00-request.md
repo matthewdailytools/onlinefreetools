@@ -14,11 +14,21 @@
 
 > 重新分析和调研，要做一个最好的sound editor
 
+## 第四轮
+
+> 变声用js是否可行，用js如何实现根据一系列sound个人的声音实现变声
+
 ## 本夹如何响应
 
 - **调研（重写）** → [01-js-implementation-research.md](./01-js-implementation-research.md)  
 - **产品设计（重写）** → [02-product-design.md](./02-product-design.md)  
+- **音色迁移（第四轮）** → [03-voice-conversion-from-speaker-samples.md](./03-voice-conversion-from-speaker-samples.md)  
 - 目录入口 → [README.md](./README.md)
 
-第三轮把目标从「最小裁剪器」改成 **「免费、不上传、浏览器里最好用的波形编辑器」**。  
-未要求：写页面、开 `work-tasks/`、跑 Keyword Planner、提交 git。
+第三轮：完整波形编辑器，不是薄裁剪器。  
+第四轮：说话人音色迁移需要目标人多段录音；不是 DSP 升调。  
+## 第五轮
+
+> 详细解释三种变声
+
+第五轮详解见 [04-three-kinds-of-voice-change.md](./04-three-kinds-of-voice-change.md)。

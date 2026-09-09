@@ -22,15 +22,19 @@
 
 | 文档 | 内容 |
 |---|---|
-| [00-request.md](./00-request.md) | 用户原话（含第三轮） |
-| [01-js-implementation-research.md](./01-js-implementation-research.md) | **调研**：竞品、质量杠、EDL 架构、库与许可、算法 |
-| [02-product-design.md](./02-product-design.md) | **产品设计**：作业、chrome、功能分期、交互、SEO |
+| [00-request.md](./00-request.md) | 用户原话 |
+| [01-js-implementation-research.md](./01-js-implementation-research.md) | 波形编辑器调研 |
+| [02-product-design.md](./02-product-design.md) | 波形编辑器产品 |
+| [03-voice-conversion-from-speaker-samples.md](./03-voice-conversion-from-speaker-samples.md) | 根据某人一批录音做音色迁移（实现栈） |
+| [04-three-kinds-of-voice-change.md](./04-three-kinds-of-voice-change.md) | **三种变声详解**（V0 DSP / V1 迁移 / V2 RVC） |
 
 ## 阅读顺序
 
 1. **01** — 为什么裁剪器不够、怎样才算「最好」、JS 怎么撑住。  
-2. **02** — 这一页做成什么样。  
-3. 立项：`work-tasks/edit-audio-on-waveform/`（或 0b 后改名），覆盖表 + 0i，再写页面。
+2. **02** — 波形编辑器这一页做成什么样。  
+3. **03** — 「用一批某人的声音去变声」实现栈。  
+4. **04** — 三种变声分别改哪一层、何时用。  
+5. 立项编辑器：`work-tasks/edit-audio-on-waveform/`（或 0b 后改名）。音色迁移是 **另一作业**，未点名不建页。
 
 ## 与既有文档的关系
 

@@ -190,6 +190,7 @@ FAQ：是否上传、和 Audacity 差在哪、和 mp3cut 差在哪、能否只�
 - 嵌 Wavacity、Rubber Band GPL  
 - AI 人声分离 / 生成配乐（上传或巨大模型）  
 - 格式矩阵子 URL  
+- **用一批某人录音做音色克隆 / RVC 训练**（另一作业，见 [03](./03-voice-conversion-from-speaker-samples.md)；本页最多做 DSP 变调）  
 
 ---
 
