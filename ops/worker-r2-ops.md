@@ -1,7 +1,7 @@
 # Worker + R2 运维手册
 
 工具 / taxonomy / about 等 HTML 以 **gzip** 存 R2；Worker：**Cache → R2**（未命中 **404**）。  
-**各语言首页**由 `build:site` 写入 **常规路径** `public/index.html` 与 `public/{lang}/index.html`（进 Static Assets）；Worker：**Cache → Assets → R2 `_pages/...` 兜底**。`wrangler` 对 `/` 与各 `/{lang}/` 设 `run_worker_first`，保留 Accept-Language。须 **commit + git push** 更新首页。  
+**各语言首页**由 `build:site` 写入 **常规路径** `public/index.html` 与 `public/{lang}/index.html`（进 Static Assets）；Worker：**Cache → Assets → R2 `_pages/...` 兜底**。`wrangler` 对 `/` 与各 `/{lang}/` 设 `run_worker_first`，保留 Accept-Language。须 **commit + `npm run git:deploy`** 更新首页。  
 其它静态资源（css/js/vendor/sitemap/robots/icons）同走 Assets。  
 工具 OG 位图源文件在 `public/og/tools/`（入库 Git），**不进** Worker Assets（`public/.assetsignore`）；公开 URL 走 R2 桶 `assets` 的自定义域 `https://assets.onlinefreetools.org`（`npm run upload:r2:og`）。
 
@@ -32,7 +32,7 @@
 | R2 预览 | `onlinefreetools-pages-preview` | 本地 / preview 用（可选单独创建） |
 | R2 公开媒体 | 桶 `assets`（**无** Worker binding）+ 自定义域 `assets.onlinefreetools.org` | 工具 OG 位图 `og/tools/{slug}.webp` |
 | Assets | `assets.directory: ./public/` + `public/.assetsignore` | vendor、sitemap、**首页** `index.html` / `{lang}/index.html`（**不含** `og/tools/`） |
-| 缓存版本 | var `PAGES_CACHE_VERSION` | 改值可使 HTML Cache API key 失效（须随 Worker 一起经 **git push** 上线） |
+| 缓存版本 | var `PAGES_CACHE_VERSION` | 改值可使 HTML Cache API key 失效（须随 Worker 一起经 **`npm run git:deploy`** 上线） |
 
 R2 object key 示例：`_pages/en/tools/text-diff.html.gz`（**不是**公开 URL）。
 
@@ -80,8 +80,8 @@ npx wrangler r2 bucket create assets                         # 公开 OG 图；D
 | `npm run verify:r2` | 校验 R2 清单与 `PAGES_CACHE_VERSION` / 本地 contentHash 一致；有 S3 凭据时与 `upload:r2` 一样优先走 S3 读取 |
 | `npm run verify:r2:live` | 同上 + 请求生产 `/api/ops/pages-build`（**等 CF 部署完成后再跑**） |
 | `npm run deploy` | 默认：全量 build + lint → upload:r2（hash 增量）→ upload:r2:og（hash 增量）→ verify → **打印 git:save / git:deploy**；默认不 live |
-| `npm run git:save` | `git push origin HEAD:save`：只备份到 GitHub，**不**发 Cloudflare 生产（`--stamp` 推 `save/YYYY-MM-DD-HHMM`） |
-| `npm run git:deploy` | 当前须为 `main`：`git push origin main`，Cloudflare 拉仓库发 Worker + Assets |
+| `npm run git:save` | `HEAD` → `origin/save`：只备份，**不**发生产。旗标：`--dry-run` / `--stamp` / `--branch=` / `--force-with-lease` / `--fetch`（详见 **§4.1**） |
+| `npm run git:deploy` | 当前须为 `main`：`git push origin main`，Cloudflare 发 Worker + Assets。旗标：`--dry-run` / `--fetch`（详见 **§4.1**） |
 | `npm run deploy:full` | 强制全量 build + 全量 HTML upload + 全量 OG upload + verify |
 | `npm run deploy:skip-upload` | 跳过上传，仍 verify + 提示 push |
 | `npm run stage:tools:changed` | 只 stage 变更/新增工具相关路径；可加 `-- --slug=a,b` |
@@ -317,7 +317,7 @@ npm run upload:r2:og -- --wrangler
 
 1. 先 `npm run upload:r2:og`（图已在自定义域）。
 2. 再 `npm run build:site` + `npm run upload:r2`（预渲染 HTML 里的 `og:image` / `<img>` 指向 `assets.onlinefreetools.org`）。
-3. 最后 `git push`（CF 拉仓库；OG 文件入库但不进 Worker Assets）。
+3. 最后 **`npm run git:deploy`**（CF 拉仓库；OG 文件入库但不进 Worker Assets）。只备份用 `npm run git:save`。
 
 只改图、HTML 里 URL 已是 CDN：只需 `upload:r2:og`（或 `:full`），不必 push。  
 只改 `ogImage.ts` / 布局、图已在桶里：必须 `build:site` + `upload:r2`，否则线上仍是旧主域路径。
@@ -380,7 +380,7 @@ curl -sI "https://assets.onlinefreetools.org/og/tools/{slug}.webp"
 # 1) 本机：构建 + lint + 灌 R2 + 校验（不部署 Worker）
 npm run deploy
 
-# 2) 提交后推送 GitHub
+# 2) 先自己 commit，再推 GitHub（git:save 不是 commit；不要再跟裸 git push）
 git status   # vendor / wrangler.jsonc / 源码须入库；*.html.gz 不入库
 npm run git:save      # 只备份：HEAD → origin/save，不上线
 npm run git:deploy    # 发布：须在 main，push origin/main → Cloudflare 发 Worker + Assets
@@ -389,7 +389,7 @@ npm run git:deploy    # 发布：须在 main，push origin/main → Cloudflare �
 npm run verify:r2:live
 ```
 
-`git:save` / `git:deploy` 见 [`scripts/git-push-github.mjs`](../scripts/git-push-github.mjs)。Workers Builds **不**认 `[skip ci]`；不要 `git push origin main` 除非要上线。若 Dashboard 开了非生产分支 preview，`origin/save` 可能出预览，但不会切生产。建议关掉 **Builds for non-production branches**。
+完整命令、旗标与 preview 访问见 **§4.1**。
 
 `npm run deploy` → [`scripts/deploy-site.mjs`](../scripts/deploy-site.mjs)：
 
@@ -434,15 +434,73 @@ npm run verify:r2:live
 # npm run deploy:worker-only
 ```
 
+### 4.1 GitHub 推送：`npm run git:save` / `npm run git:deploy`
+
+脚本：[`scripts/git-push-github.mjs`](../scripts/git-push-github.mjs)。Cloudflare Workers Builds 只把生产分支 `main` 做成线上 Worker，**不**认 `[skip ci]`。不要直接 `git push origin main`，除非就是要上线。
+
+| npm | 等价 git | 何时用 |
+|---|---|---|
+| `npm run git:save` | `git push origin HEAD:save` | 已 commit 的代码只放到 GitHub，**不**发生产 |
+| `npm run git:deploy` | `git push origin main` | 当前必须是 `main`；Cloudflare 拉仓库发 Worker + Assets |
+
+可以一直待在 `main` 上开发：`git:save` 只更新远端 `save`，**不动** `origin/main`。
+
+**不是本地 commit。** 脚本不做 `git add` / `git commit`，只推已经存在的 `HEAD`。未提交改动仍留在本机；工作区脏时只会警告 `dirty worktree; only commits are pushed`。要先自己 commit，再 `git:save`。
+
+**`git:save` 之后不要再跑裸 `git push`。** 当前在 `main` 且上游是 `origin/main` 时，`git push` 等于 `git push origin main`，会把刚备份的 commit 发到生产。上线只用 `npm run git:deploy`。
+
+```bash
+npm run git:save
+npm run git:save -- --dry-run
+npm run git:save -- --stamp
+npm run git:save -- --branch=wip/docs
+npm run git:save -- --force-with-lease
+npm run git:save -- --fetch
+npm run git:deploy
+npm run git:deploy -- --dry-run
+npm run git:deploy -- --fetch
+npm run git:save -- --help
+```
+
+| 旗标 | 适用 | 说明 |
+|---|---|---|
+| `--dry-run` | 两者 | 只打印将执行的 `git push`，不推送 |
+| `--stamp` | save | 推到 `save/YYYY-MM-DD-HHMM`（本机时区） |
+| `--branch=<name>` | save | 自定义备份分支；禁止 `main` / `master` |
+| `--force-with-lease` | save | 本地 amend 后覆盖远端 save；**deploy 拒绝** |
+| `--fetch` | 两者 | 推送前 `git fetch` |
+| `--remote=<name>` | 两者 | 默认 `origin` |
+| `--prod-branch=<name>` | 两者 | 生产分支名，默认 `main` |
+| `--help` | 两者 | 打印说明 |
+
+约束：`git:deploy` 不在 `main` 上会退出。本地 `main` 落后 `origin/main` 时拒绝，先 `git pull --rebase origin main`。`git:save --branch=main` 拒绝。`--force-with-lease` 与 `--stamp` 不能一起用。
+
+#### 4.1.1 Cloudflare preview 怎么打开
+
+Preview **不是** `https://onlinefreetools.org`。自定义域永远是 Active Deployment。Preview 只在 `*.workers.dev`。
+
+**开关：** Worker `onlinefreetools` → Settings → Build → Branch control → **Builds for non-production branches**；Settings → Domains & Routes → Preview URLs 为 Enable（`workers_dev` 开着时默认开）。
+
+**找链接：**
+
+1. 从 `save`（或其它非 `main` 分支）向 `main` 开 Pull Request。Cloudflare 在 PR 评论里贴两个 `*.workers.dev`：分支别名（如 `save-onlinefreetools.{账号子域}.workers.dev`，同一分支一直不变）和本次 version URL。
+2. 不开 PR：Dashboard → Deployments → Version History / build history → 打开该版本 → Version ID 旁的 Preview URL。
+
+`npm run git:save` **不会**自动开 PR，所以没有 GitHub 评论，除非你自己开。非生产构建若已跑，Dashboard 仍有该版本。
+
+**本站 preview 能看到什么：** 这次 commit 里的 Worker + Assets（首页、vendor、sitemap）。工具 / taxonomy 正文在 R2；preview 绑 `preview_bucket_name`（`onlinefreetools-pages-preview`），`git:save` 不灌该桶，工具页常 404 或旧页。完整验收用 `npm run start:dev` → `http://127.0.0.1:8788`。
+
+不想为 `origin/save` 出 preview：关掉 **Builds for non-production branches**。Preview URL 默认公开。
+
 ### 版本对齐约定
 
 | 位置 | 字段 |
 |---|---|
-| Worker | `wrangler.jsonc` → `vars.PAGES_CACHE_VERSION`（经 **git push** / 紧急 wrangler 进 env） |
+| Worker | `wrangler.jsonc` → `vars.PAGES_CACHE_VERSION`（经 **`npm run git:deploy`** / 紧急 wrangler 进 env） |
 | R2 | `_meta/pages-build.json` → `pagesCacheVersion` + `contentHash`（**schemaVersion 4** 另含全量 `fileHashes`，供默认增量 `upload:r2`） |
 | 探针 | `GET /api/ops/pages-build` → `{ pagesCacheVersion, r2MetaVersion, aligned }` |
 
-三者 `pagesCacheVersion` 必须相同；`contentHash` 必须与本地 `public/_pages/**/*.html.gz` 一致。改 HTML 后务必重新 `upload:r2`；仅改 Worker 且 HTML 未变可用 `deploy:skip-upload` 后再 push。需要重传所有对象时用 `upload:r2:full`。
+三者 `pagesCacheVersion` 必须相同；`contentHash` 必须与本地 `public/_pages/**/*.html.gz` 一致。改 HTML 后务必重新 `upload:r2`；仅改 Worker 且 HTML 未变可用 `deploy:skip-upload` 后再 `npm run git:deploy`。需要重传所有对象时用 `upload:r2:full`。
 
 ### 入库与 Assets（GitHub 路径）
 
@@ -501,7 +559,7 @@ Cache key = 公开 URL（**含 query**）+ `__ce=identity` + `__v=<PAGES_CACHE_V
 
 发版后要尽快让用户看到新 HTML：
 
-1. 在 `wrangler.jsonc` 递增 `PAGES_CACHE_VERSION` → **`upload:r2`（写入 meta）+ git push**（Worker vars 上线）；或  
+1. 在 `wrangler.jsonc` 递增 `PAGES_CACHE_VERSION` → **`upload:r2`（写入 meta）+ `npm run git:deploy`**（Worker vars 上线）；或  
 2. 等待 s-maxage 过期；或  
 3. Dashboard Cache Purge（若账号具备）。
 
@@ -542,7 +600,7 @@ SEO / Skill / brief / 分片流程**不变**（见 `tool-creation.mdc`、`tool-c
 额外记住：
 
 1. `npm run build:site` 会预渲染该工具十语 HTML 并 gzip  
-2. 上线：`npm run deploy` → **git push** → `verify:r2:live`；紧急才 `deploy:worker-only`  
+2. 上线：`npm run deploy` → **`npm run git:deploy`** → `verify:r2:live`；紧急才 `deploy:worker-only`  
 3. **不要**改 `src/index.ts`（`toolSlugs.generated.ts` + `registerToolPages` 自动覆盖）
 
 ---
@@ -643,7 +701,7 @@ AggregateError [ETIMEDOUT]: connect ETIMEDOUT 172.64.x.x:443
 ### 每次发版
 
 - [ ] `npm run deploy`（upload + verify）  
-- [ ] **git push**（含 vendor / `PAGES_CACHE_VERSION` 等）  
+- [ ] **`npm run git:deploy`**（含 vendor / `PAGES_CACHE_VERSION` 等；只备份用 `npm run git:save`）  
 - [ ] CF Dashboard 部署成功  
 - [ ] `npm run verify:r2:live` → `aligned: true`  
 - [ ] 抽检 `/`、`/tools/{slug}`、`/sitemap.xml`、验证文件  
@@ -653,5 +711,5 @@ AggregateError [ETIMEDOUT]: connect ETIMEDOUT 172.64.x.x:443
 
 - [ ] coverage / lint 按 `tool-creation`  
 - [ ] `build:site` 后本地打开工具 URL  
-- [ ] `npm run deploy` → **git push** → `verify:r2:live`  
+- [ ] `npm run deploy` → **`npm run git:deploy`** → `verify:r2:live`  
 - [ ] 生产 `/api/ops/pages-build` → `aligned: true`  

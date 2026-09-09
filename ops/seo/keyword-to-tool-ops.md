@@ -64,10 +64,10 @@ PY="${AIBROWSERCRAWLER_VENV:-$HOME/vscodeai/aibrowsercrawler/venv}/bin/python"
 | 池内结果 | 运维 / 产品动作 |
 |---|---|
 | `absorb` | 更新对应已有工具 title / FAQ / Use cases / IG（走既有 i18n + `tool-coverage-pass`）；不新建 URL |
-| `build` | 人工确认 slug 后，再开 `work-tasks/{slug}/` → coverage 0b → 实现 → `build:site` + `lint:seo` → **`npm run deploy`**（upload/verify）→ **git push** → `verify:r2:live` |
+| `build` | 人工确认 slug 后，再开 `work-tasks/{slug}/` → coverage 0b → 实现 → `build:site` + `lint:seo` → **`npm run deploy`**（upload/verify）→ **`npm run git:deploy`** → `verify:r2:live` |
 | `defer` / `drop` | 留池即可；理由写在 `notes` 或 tracker 决策日志 |
 
-发版与 IndexNow 仍按 [`ops/README.md`](../README.md) §4 / §4.1 与 [`ops/worker-r2-ops.md`](../worker-r2-ops.md)；本流程不替代 `build:site`，也不替代 R2 灌桶、**git push（CF）** 与版本校验。
+发版与 IndexNow 仍按 [`ops/README.md`](../README.md) §4 / §4.1 与 [`ops/worker-r2-ops.md`](../worker-r2-ops.md)；本流程不替代 `build:site`，也不替代 R2 灌桶、**`npm run git:deploy`** 与版本校验。只备份用 **`npm run git:save`**。
 
 ---
 
