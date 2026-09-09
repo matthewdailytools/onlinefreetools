@@ -2,7 +2,7 @@
 
 **日期**: 2026-08-09  
 **范围**: 纯客户端（不上传）读元数据 / 截帧 / 裁剪 / 转码 / 录制；对照 Aconvert Video+Audio 工具动作。  
-**关联**: [FFmpeg ↔ Aconvert 对照](./2026-08-09-ffmpeg-wasm-vs-aconvert-av-and-ebook-alts.md) · [试点选项](./2026-08-09-browser-media-ebook-pilot-options.md) · [音视频可行性 2026-06](./2026-06-23-10-15-js-media-conversion-feasibility.md) · [电子书客户端续研](./2026-08-09-browser-ebook-client-solutions.md)
+**关联**: [FFmpeg ↔ Aconvert 对照](./2026-08-09-ffmpeg-wasm-vs-aconvert-av-and-ebook-alts.md) · [试点选项](./2026-08-09-browser-media-ebook-pilot-options.md) · [音视频可行性 2026-06](./2026-06-23-10-15-js-media-conversion-feasibility.md) · [电子书客户端续研](./2026-08-09-browser-ebook-client-solutions.md) · [Sound editor 调研与产品设计](./sound-editor/README.md)
 
 ---
 

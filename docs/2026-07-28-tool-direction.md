@@ -179,7 +179,8 @@
 
 **瓶颈**：MP3 依赖 WASM；AAC 依赖 WebCodecs 或 fdk-aac；Safari 行为差异需测。
 
-**可落地工具**：在线录音机、WAV↔MP3、音频裁剪、音量标准化、简易 TTS。
+**可落地工具**：在线录音机、WAV↔MP3、音频裁剪、音量标准化、简易 TTS。  
+**Sound editor 专题**（第三轮：完整波形编辑器，不是薄裁剪器）：[docs/sound-editor/](./sound-editor/README.md)。
 
 **语音→文字（完整多语方案）**：见 [JS 语音转文字完整方案](./2026-09-08-js-speech-to-text-solutions.md)。听写 ≠ 转 MP3 文件 ≠ YouTube；文件多语默认 Workers AI Whisper。未点名立项前不建页。
 

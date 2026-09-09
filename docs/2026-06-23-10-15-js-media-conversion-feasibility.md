@@ -8,6 +8,7 @@
 - [JS 语音转文字（多语）](./2026-09-08-js-speech-to-text-solutions.md) — 听写 / 本地 Whisper / Workers AI
 - [Google SEO 策略与落地](./2026-07-28-google-seo-strategy-implementation.md) — CWV 与页面合规
 - **[音视频客户端续研 2026-08-09](./2026-08-09-browser-av-client-solutions.md)** — Mediabunny / lamejs / gifenc / mediainfo / FFmpeg 分层（本文 §3「视频几乎只靠 FFmpeg」已过时，以续研为准）
+- **[Sound editor 调研与产品设计](./sound-editor/README.md)** — 完整波形编辑器（EDL）；裁剪/录音/导出吸收进一页（尚未立项）
 
 ## 概述
 

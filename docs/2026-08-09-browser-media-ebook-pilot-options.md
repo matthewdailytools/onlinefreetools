@@ -2,7 +2,7 @@
 
 **日期**: 2026-08-09  
 **背景**: 对标 Aconvert 音视频与 Ebook 能力，但遵守站内红线（本地优先、禁格式对 doorway、**不做完整转码站**）。  
-**关联**: [音视频可行性](./2026-06-23-10-15-js-media-conversion-feasibility.md) · [工具方向 A.3/A.4](./2026-07-28-tool-direction.md) · [Aconvert 快照](./competitor-refs/aconvert-2026-08-09/README.md) · [FFmpeg ↔ Aconvert 对照 + 电子书方案](./2026-08-09-ffmpeg-wasm-vs-aconvert-av-and-ebook-alts.md) · [音视频客户端续研](./2026-08-09-browser-av-client-solutions.md) · [电子书客户端续研](./2026-08-09-browser-ebook-client-solutions.md) · 清单 `audio-wav-mp3` / `audio-recorder` / `audio-trim`
+**关联**: [音视频可行性](./2026-06-23-10-15-js-media-conversion-feasibility.md) · [工具方向 A.3/A.4](./2026-07-28-tool-direction.md) · [Aconvert 快照](./competitor-refs/aconvert-2026-08-09/README.md) · [FFmpeg ↔ Aconvert 对照 + 电子书方案](./2026-08-09-ffmpeg-wasm-vs-aconvert-av-and-ebook-alts.md) · [音视频客户端续研](./2026-08-09-browser-av-client-solutions.md) · [电子书客户端续研](./2026-08-09-browser-ebook-client-solutions.md) · [Sound editor 调研与产品设计](./sound-editor/README.md) · 清单 `audio-wav-mp3` / `audio-recorder` / `audio-trim`
 
 > **用途**：供产品选型。选定前**不**批量建 `work-tasks`、不铺格式矩阵 URL。  
 > **共用约束**：单页一带多场景；Tier 2 WASM **点击后再加载**；可见文案写清浏览器限制与隐私；CWV 不因首屏拉 20MB+ WASM 崩盘。
