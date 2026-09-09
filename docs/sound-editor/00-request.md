@@ -58,3 +58,10 @@
 
 第八轮见 [07-voice-clone-training-cost.md](./07-voice-clone-training-cost.md)。  
 说话 RVC 与唱歌 SVC 的 GPU 通常是美元级；干声、人时、授权才是大头。ElevenLabs PVC 官方不支持唱歌。
+
+## 第九轮
+
+> 如何实现手机端实现仿照明星声音唱歌，不依赖云端
+
+第九轮见 [08-on-device-celebrity-singing.md](./08-on-device-celebrity-singing.md)。  
+端侧是 SVC 推理（ContentVec + F0 + 已训生成器），不是云端 TTS，也不是浏览器说话 V1。训练仍在电脑完成。

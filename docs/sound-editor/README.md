@@ -1,8 +1,8 @@
 # Sound editor — 调研与产品设计
 
-**日期**：2026-09-09（第八轮补训练成本）  
+**日期**：2026-09-09（第九轮补端侧离线仿唱）  
 **状态**：文档在写；**尚未**建 `work-tasks/`、尚未写页面  
-**镜头**：01–04 本站网页编辑器；**05** 需求全景；**06** 分层节奏；**07** 说话/歌曲仿声的 **训练成本数量级**。
+**镜头**：01–04 本站网页编辑器；**05** 需求全景；**06** 分层节奏；**07** 训练成本；**08** 手机端离线仿唱推理。
 
 本夹是 audio 方向专题夹，不是 catalog slug，也不是 `work-tasks/{slug}/`。立项须用户明确「创建 / 实现」后再复制 `_template`。
 
@@ -30,6 +30,7 @@
 | [05-sound-universe-demand-map.md](./05-sound-universe-demand-map.md) | **需求全景**（不限本站、不限 JS；editor 为入口的声音应用） |
 | [06-demand-difficulty-cost-roadmap.md](./06-demand-difficulty-cost-roadmap.md) | **分层与节奏**（需求 × 难度 × 成本；W0–W6） |
 | [07-voice-clone-training-cost.md](./07-voice-clone-training-cost.md) | **训练成本**（说话仿声 vs 歌曲仿声；GPU 几乎不是大头） |
+| [08-on-device-celebrity-singing.md](./08-on-device-celebrity-singing.md) | **手机端离线仿唱**（SVC 流水线；不依赖云端推理） |
 
 ## 阅读顺序
 
@@ -40,7 +41,8 @@
 5. **05** — 只从用户需求发散：编辑器只是入口，声音应用还能长出什么。  
 6. **06** — 需求 × 难度 × 成本分层，以及 W0–W6 开发节奏。  
 7. **07** — 说话训练仿声、歌曲仿声各要多少数据/GPU/人时。  
-8. 立项编辑器：`work-tasks/edit-audio-on-waveform/`（或 0b 后改名）。音色迁移是 **另一作业**，未点名不建页。05–07 **不是** 立项范围。
+8. **08** — 手机上如何离线把唱歌换成目标音色（原生推理，不是网页 V1）。  
+9. 立项编辑器：`work-tasks/edit-audio-on-waveform/`（或 0b 后改名）。音色迁移是 **另一作业**，未点名不建页。05–08 **不是** 立项范围。
 
 ## 与既有文档的关系
 
