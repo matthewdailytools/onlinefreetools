@@ -1,8 +1,8 @@
 # Sound editor — 调研与产品设计
 
-**日期**：2026-09-09（第十轮补 BYOM 翻唱竞品）  
+**日期**：2026-09-09（第十一轮补模型站空间）  
 **状态**：文档在写；**尚未**建 `work-tasks/`、尚未写页面  
-**镜头**：01–04 本站网页编辑器；**05** 需求全景；**06** 分层节奏；**07** 训练成本；**08** 端侧仿唱；**09** BYOM 翻唱竞品。
+**镜头**：01–04 本站网页编辑器；**05** 需求全景；**06** 分层节奏；**07** 训练成本；**08** 端侧仿唱；**09** BYOM 竞品；**10** 模型站空间。
 
 本夹是 audio 方向专题夹，不是 catalog slug，也不是 `work-tasks/{slug}/`。立项须用户明确「创建 / 实现」后再复制 `_template`。
 
@@ -32,6 +32,7 @@
 | [07-voice-clone-training-cost.md](./07-voice-clone-training-cost.md) | **训练成本**（说话仿声 vs 歌曲仿声；GPU 几乎不是大头） |
 | [08-on-device-celebrity-singing.md](./08-on-device-celebrity-singing.md) | **手机端离线仿唱**（SVC 流水线；不依赖云端推理） |
 | [09-byom-singing-app-competitors.md](./09-byom-singing-app-competitors.md) | **BYOM 翻唱 App 竞品**（导模型 / 桌面 RVC / 云 Cover / 非赛道） |
+| [10-voice-model-site-space.md](./10-voice-model-site-space.md) | **模型网站还有没有空间**（Weights 关站后：真空 ≠ 可做货架） |
 
 ## 阅读顺序
 
@@ -44,7 +45,8 @@
 7. **07** — 说话训练仿声、歌曲仿声各要多少数据/GPU/人时。  
 8. **08** — 手机上如何离线把唱歌换成目标音色（原生推理，不是网页 V1）。  
 9. **09** — 用户自备模型的翻唱 App 有哪些竞品、空隙在哪。  
-10. 立项编辑器：`work-tasks/edit-audio-on-waveform/`（或 0b 后改名）。音色迁移是 **另一作业**，未点名不建页。05–09 **不是** 立项范围。
+10. **10** — 网站模型站：需求真空不等于名人货架可做。  
+11. 立项编辑器：`work-tasks/edit-audio-on-waveform/`（或 0b 后改名）。音色迁移是 **另一作业**，未点名不建页。05–10 **不是** 立项范围。
 
 ## 与既有文档的关系
 

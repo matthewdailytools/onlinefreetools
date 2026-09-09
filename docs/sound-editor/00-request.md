@@ -29,6 +29,7 @@
 - **训练成本（第八轮）** → [07-voice-clone-training-cost.md](./07-voice-clone-training-cost.md)  
 - **端侧仿唱（第九轮）** → [08-on-device-celebrity-singing.md](./08-on-device-celebrity-singing.md)  
 - **BYOM 竞品（第十轮）** → [09-byom-singing-app-competitors.md](./09-byom-singing-app-competitors.md)  
+- **模型站空间（第十一轮）** → [10-voice-model-site-space.md](./10-voice-model-site-space.md)  
 - 目录入口 → [README.md](./README.md)
 
 第三轮：完整波形编辑器，不是薄裁剪器。  
@@ -75,3 +76,11 @@
 
 第十轮见 [09-byom-singing-app-competitors.md](./09-byom-singing-app-competitors.md)。  
 空隙是原生手机 + 文件导入 + 本地 SVC + 唱歌导出；不要和应用内名人货架或文生歌对打。
+
+## 第十一轮
+
+> 如果做网站模型站，是否还有空间  
+> 保存为文档
+
+第十一轮见 [10-voice-model-site-space.md](./10-voice-model-site-space.md)。  
+Weights/Replay 关站后有找模型的真空；可做的是自有模型管道与 ONNX 包装，不是再开名人货架；不要挂上本站。
