@@ -745,5 +745,6 @@ Sound OS
 | [01](./01-js-implementation-research.md) / [02](./02-product-design.md) | 浏览器波形编辑器；本篇 **不受其「不做」列表约束** |
 | [03](./03-voice-conversion-from-speaker-samples.md) / [04](./04-three-kinds-of-voice-change.md) | 只覆盖变声技术分型；本篇把变声放回更大身份层 |
 | 本篇 | 需求宇宙；筛选与立项另开 |
+| [06](./06-demand-difficulty-cost-roadmap.md) | 对本篇能力包打 D/T/C 分、分层、W0–W6 节奏 |
 
-下一步若要收敛：按人群做减法，或按「编辑器下一跳」做 MVP 地图——需用户明确点名后再写。
+下一步收敛（分层与节奏）见 [06](./06-demand-difficulty-cost-roadmap.md)。立项须用户明确点名。

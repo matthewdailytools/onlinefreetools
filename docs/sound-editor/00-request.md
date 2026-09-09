@@ -25,6 +25,8 @@
 - **音色迁移（第四轮）** → [03-voice-conversion-from-speaker-samples.md](./03-voice-conversion-from-speaker-samples.md)  
 - **三种变声（第五轮）** → [04-three-kinds-of-voice-change.md](./04-three-kinds-of-voice-change.md)  
 - **需求全景（第六轮）** → [05-sound-universe-demand-map.md](./05-sound-universe-demand-map.md)  
+- **分层节奏（第七轮）** → [06-demand-difficulty-cost-roadmap.md](./06-demand-difficulty-cost-roadmap.md)  
+- **训练成本（第八轮）** → [07-voice-clone-training-cost.md](./07-voice-clone-training-cost.md)  
 - 目录入口 → [README.md](./README.md)
 
 第三轮：完整波形编辑器，不是薄裁剪器。  
@@ -42,3 +44,17 @@
 
 第六轮需求全景见 [05-sound-universe-demand-map.md](./05-sound-universe-demand-map.md)。  
 本轮明确：不按本站定位过滤，不按 JS/浏览器可行性过滤；编辑器只是入口，枚举的是声音应用宇宙。
+
+## 第七轮
+
+> 新文档：根据用户需求，技术难度，实现成本对这些需求进行排序分层，给出开发节奏
+
+第七轮见 [06-demand-difficulty-cost-roadmap.md](./06-demand-difficulty-cost-roadmap.md)。  
+在 05 的枚举上引入难度与成本；波次是声音应用主链，不是本站 slug 排期。
+
+## 第八轮
+
+> 给出声音训练仿声，歌曲仿声的训练成本
+
+第八轮见 [07-voice-clone-training-cost.md](./07-voice-clone-training-cost.md)。  
+说话 RVC 与唱歌 SVC 的 GPU 通常是美元级；干声、人时、授权才是大头。ElevenLabs PVC 官方不支持唱歌。

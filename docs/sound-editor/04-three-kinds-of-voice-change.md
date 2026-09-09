@@ -154,7 +154,7 @@ Retrieval-based Voice Conversion（RVC）还会用特征检索（index）混一�
 ### 3.3 为什么工具页不能「丢一批 wav 点一下训出 RVC」
 
 - 要抽 f0（音高）、内容特征（HuBERT/ContentVec），再反向传播更新上千万参数。  
-- 时间：消费级 GPU 也是许多分钟到数小时，不是一次 `decodeAudioData`。  
+- 时间：消费级 GPU 也是许多分钟到数小时，不是一次 `decodeAudioData`。数量级见 [07](./07-voice-clone-training-cost.md)。  
 - 内存与 WASM：浏览器标签页扛不住完整训练图。  
 - 数据：10–50 分钟干净一致人声，用户随手录的「一系列手机备忘」通常不合格。
 

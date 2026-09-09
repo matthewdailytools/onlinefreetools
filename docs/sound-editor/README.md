@@ -1,8 +1,8 @@
 # Sound editor — 调研与产品设计
 
-**日期**：2026-09-09（第六轮补需求全景）  
+**日期**：2026-09-09（第八轮补训练成本）  
 **状态**：文档在写；**尚未**建 `work-tasks/`、尚未写页面  
-**两套镜头**：01–04 是「本站浏览器波形编辑器」；**05 故意不管本站、不管 JS**，只枚举声音应用的用户需求。两套镜头不要混着当同一份范围。
+**镜头**：01–04 本站网页编辑器；**05** 需求全景；**06** 分层节奏；**07** 说话/歌曲仿声的 **训练成本数量级**。
 
 本夹是 audio 方向专题夹，不是 catalog slug，也不是 `work-tasks/{slug}/`。立项须用户明确「创建 / 实现」后再复制 `_template`。
 
@@ -28,6 +28,8 @@
 | [03-voice-conversion-from-speaker-samples.md](./03-voice-conversion-from-speaker-samples.md) | 根据某人一批录音做音色迁移（实现栈） |
 | [04-three-kinds-of-voice-change.md](./04-three-kinds-of-voice-change.md) | **三种变声详解**（V0 DSP / V1 迁移 / V2 RVC） |
 | [05-sound-universe-demand-map.md](./05-sound-universe-demand-map.md) | **需求全景**（不限本站、不限 JS；editor 为入口的声音应用） |
+| [06-demand-difficulty-cost-roadmap.md](./06-demand-difficulty-cost-roadmap.md) | **分层与节奏**（需求 × 难度 × 成本；W0–W6） |
+| [07-voice-clone-training-cost.md](./07-voice-clone-training-cost.md) | **训练成本**（说话仿声 vs 歌曲仿声；GPU 几乎不是大头） |
 
 ## 阅读顺序
 
@@ -36,7 +38,9 @@
 3. **03** — 「用一批某人的声音去变声」实现栈。  
 4. **04** — 三种变声分别改哪一层、何时用。  
 5. **05** — 只从用户需求发散：编辑器只是入口，声音应用还能长出什么。  
-6. 立项编辑器：`work-tasks/edit-audio-on-waveform/`（或 0b 后改名）。音色迁移是 **另一作业**，未点名不建页。需求全景 **不是** 立项范围。
+6. **06** — 需求 × 难度 × 成本分层，以及 W0–W6 开发节奏。  
+7. **07** — 说话训练仿声、歌曲仿声各要多少数据/GPU/人时。  
+8. 立项编辑器：`work-tasks/edit-audio-on-waveform/`（或 0b 后改名）。音色迁移是 **另一作业**，未点名不建页。05–07 **不是** 立项范围。
 
 ## 与既有文档的关系
 
