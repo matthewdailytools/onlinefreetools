@@ -54,6 +54,8 @@
     "verify:full": "npm run build:site:full && npm run lint:seo && npm run lint:vendor && npm run lint:taxonomy",
     "stage:tools:changed": "node scripts/commit-changed-tools.mjs --changed-tools --stage-only",
     "commit:tools:changed": "node scripts/commit-changed-tools.mjs --changed-tools",
+    "git:save": "node scripts/git-push-github.mjs save",
+    "git:deploy": "node scripts/git-push-github.mjs deploy",
     "verify:tool": "node scripts/verify-tool.mjs",
     "taxonomy:apply": "node scripts/dev/apply-taxonomy-tags.mjs",
     "indexnow": "node ops/seo/submit-indexnow.mjs",

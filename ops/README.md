@@ -5,7 +5,7 @@
 **配置**：根目录 `wrangler.jsonc`（入口 `src/index.ts`；R2 binding `PAGES_BUCKET`）
 
 > 站点构建脚本仍在 `scripts/`；本目录存放**日常启停、部署、SEO 运维**相关脚本与说明。  
-> **Worker + R2**：本机 `upload:r2` + **git push（Cloudflare 拉 GitHub）** + `verify:r2:live` —— 见 [`ops/worker-r2-ops.md`](./worker-r2-ops.md)。
+> **Worker + R2**：本机 `upload:r2` + **`npm run git:deploy`（Cloudflare 拉 GitHub）** + `verify:r2:live`；只备份用 **`npm run git:save`** —— 见 [`ops/worker-r2-ops.md`](./worker-r2-ops.md)。
 
 ---
 
@@ -155,7 +155,9 @@ npx wrangler dev
 | `npm run upload:r2` | 默认增量：按上次成功上传 manifest 的 `fileHashes` 比较，只上传 hash 不同的 `.html.gz`，并重写 meta |
 | `npm run upload:r2:full` | 强制全量上传远程 R2（S3 优先；含 `_meta/pages-build.json`） |
 | `npm run verify:r2` / `verify:r2:live` | R2 ↔ Worker `PAGES_CACHE_VERSION` 校验；有 S3 凭据时优先用 S3 读取（live 含生产探针） |
-| `npm run deploy` | **生产推荐**：全量 build + lint → hash 增量 upload:r2 → verify → **提示 git push**（CF 拉 GitHub） |
+| `npm run deploy` | **生产推荐**：全量 build + lint → hash 增量 upload:r2 → verify → **提示 git:save / git:deploy** |
+| `npm run git:save` | `HEAD` → `origin/save`：只把已 commit 代码放到 GitHub，**不**发 Cloudflare 生产 |
+| `npm run git:deploy` | 当前须为 `main`：`git push origin main`，Cloudflare 拉仓库发 Worker + Assets |
 | `npm run deploy:full` | 强制全量 build + 全量 upload + verify |
 | `npm run deploy:skip-upload` | HTML 未变时跳过上传，仍 verify + 提示 push |
 | `npm run deploy:worker-only` | 紧急本机 `wrangler deploy` |
@@ -174,8 +176,8 @@ npx wrangler dev
 
 ```bash
 npm run deploy
-# 等价于：全量 build:site + lint → hash 增量 upload:r2 → verify:r2 →（请 git push，CF 拉仓库）
-# CF 成功后再：npm run verify:r2:live
+# 等价于：全量 build:site + lint → hash 增量 upload:r2 → verify:r2 →（请 git:save 备份或 git:deploy 上线）
+# git:deploy 且 CF 成功后再：npm run verify:r2:live
 ```
 
 Worker + R2 细节见 [`ops/worker-r2-ops.md`](./worker-r2-ops.md)。SEO 清单见 [`docs/SEO_PUBLISH_CHECKLIST.md`](../docs/SEO_PUBLISH_CHECKLIST.md) 与策略文档 §8.2。
@@ -354,7 +356,7 @@ npm run indexnow -- --help
 
 > IndexNow key 是协议要求的**公开验证文件**，不是 Cloudflare/OAuth 类私密密钥；但仍勿与其他真正的 API Token 混用或误提交到无关位置。
 
-**部署注意**：生产发版请用 **`npm run deploy`**（R2 upload + 版本校验）再 **git push**（CF 拉 GitHub 更新 Worker/Assets）。裸 `npx wrangler deploy` 不灌 R2、不做校验。自定义域须绑在 Cloudflare 拉仓库部署的那套 Worker 上；否则 IndexNow key 等可能仍 404。
+**部署注意**：生产发版请用 **`npm run deploy`**（R2 upload + 版本校验）再 **`npm run git:deploy`**（push `main`，CF 拉 GitHub 更新 Worker/Assets）。只备份用 **`npm run git:save`**。裸 `npx wrangler deploy` 不灌 R2、不做校验。自定义域须绑在 Cloudflare 拉仓库部署的那套 Worker 上；否则 IndexNow key 等可能仍 404。
 
 ### 4.2 关键词批次 → 新建 / 丰富工具
 
@@ -385,11 +387,11 @@ npm run deploy
 npm run verify:r2:live
 ```
 
-流程：`predeploy`（全量 `build:site` + lint）→ **`upload:r2`**（hash 增量；S3 优先，须本机 `.env`；见 [`worker-r2-ops.md`](./worker-r2-ops.md) §3.1；直连 CF 超时时见 §3.1.5）→ **`upload:r2:og`**（OG 图增量；强制全量用 `upload:r2:og:full`，见 **§3.2**）→ **`verify:r2`** → **git push**（Cloudflare 拉 GitHub 部署 Worker + Assets）→ **`verify:r2:live`**。
+流程：`predeploy`（全量 `build:site` + lint）→ **`upload:r2`**（hash 增量；S3 优先，须本机 `.env`；见 [`worker-r2-ops.md`](./worker-r2-ops.md) §3.1；直连 CF 超时时见 §3.1.5）→ **`upload:r2:og`**（OG 图增量；强制全量用 `upload:r2:og:full`，见 **§3.2**）→ **`verify:r2`** → **`npm run git:deploy`**（push `main`，Cloudflare 拉 GitHub 部署 Worker + Assets）→ **`verify:r2:live`**。只备份不上线用 **`npm run git:save`**。
 
-仅改少量 HTML 且不跑完整 `deploy` 时：`npm run upload:r2` → `npm run verify:r2` →（若需）push。  
-少量工具改动时：`npm run tool:touch -- --slug=<slug>` → `npm run build:site` → `npm run upload:r2` →（若改了 `public/og/tools`）`npm run upload:r2:og` → `npm run verify:r2` → `npm run commit:tools:changed -- --slug=<slug> -m "tools: update <slug>"` → `git push`。构建总是全量；HTML 上传只看 `.html.gz` hash；OG 上传只看位图 hash。不看 git 工作树、最新 commit 或最新 push。
-仅改 Worker、HTML 未变：`npm run deploy:skip-upload` 后再 push。  
+仅改少量 HTML 且不跑完整 `deploy` 时：`npm run upload:r2` → `npm run verify:r2` →（若需）`git:deploy`。  
+少量工具改动时：`npm run tool:touch -- --slug=<slug>` → `npm run build:site` → `npm run upload:r2` →（若改了 `public/og/tools`）`npm run upload:r2:og` → `npm run verify:r2` → `npm run commit:tools:changed -- --slug=<slug> -m "tools: update <slug>"` → `npm run git:deploy`。构建总是全量；HTML 上传只看 `.html.gz` hash；OG 上传只看位图 hash。不看 git 工作树、最新 commit 或最新 push。
+仅改 Worker、HTML 未变：`npm run deploy:skip-upload` 后再 `git:deploy`。  
 紧急本机直发：`npm run deploy:worker-only`（或 `node scripts/deploy-site.mjs --wrangler-deploy`）。裸 `npx wrangler deploy` **不**灌 R2、**不**做版本校验。
 
 直连 Cloudflare 超时示例：
