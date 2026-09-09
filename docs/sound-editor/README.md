@@ -1,8 +1,8 @@
-# Sound editor（浏览器 JS）— 调研与产品设计
+# Sound editor — 调研与产品设计
 
-**日期**：2026-09-09（第三轮重写）  
-**状态**：文档定稿；**尚未**建 `work-tasks/`、尚未写页面  
-**目标**：做 **最好的** 浏览器 Sound editor（可验证质量杠，不是口号）
+**日期**：2026-09-09（第六轮补需求全景）  
+**状态**：文档在写；**尚未**建 `work-tasks/`、尚未写页面  
+**两套镜头**：01–04 是「本站浏览器波形编辑器」；**05 故意不管本站、不管 JS**，只枚举声音应用的用户需求。两套镜头不要混着当同一份范围。
 
 本夹是 audio 方向专题夹，不是 catalog slug，也不是 `work-tasks/{slug}/`。立项须用户明确「创建 / 实现」后再复制 `_template`。
 
@@ -27,6 +27,7 @@
 | [02-product-design.md](./02-product-design.md) | 波形编辑器产品 |
 | [03-voice-conversion-from-speaker-samples.md](./03-voice-conversion-from-speaker-samples.md) | 根据某人一批录音做音色迁移（实现栈） |
 | [04-three-kinds-of-voice-change.md](./04-three-kinds-of-voice-change.md) | **三种变声详解**（V0 DSP / V1 迁移 / V2 RVC） |
+| [05-sound-universe-demand-map.md](./05-sound-universe-demand-map.md) | **需求全景**（不限本站、不限 JS；editor 为入口的声音应用） |
 
 ## 阅读顺序
 
@@ -34,7 +35,8 @@
 2. **02** — 波形编辑器这一页做成什么样。  
 3. **03** — 「用一批某人的声音去变声」实现栈。  
 4. **04** — 三种变声分别改哪一层、何时用。  
-5. 立项编辑器：`work-tasks/edit-audio-on-waveform/`（或 0b 后改名）。音色迁移是 **另一作业**，未点名不建页。
+5. **05** — 只从用户需求发散：编辑器只是入口，声音应用还能长出什么。  
+6. 立项编辑器：`work-tasks/edit-audio-on-waveform/`（或 0b 后改名）。音色迁移是 **另一作业**，未点名不建页。需求全景 **不是** 立项范围。
 
 ## 与既有文档的关系
 
@@ -45,7 +47,9 @@
 | [媒体试点选项](../2026-08-09-browser-media-ebook-pilot-options.md) | 套餐 B 的三音频薄页 **合并为本编辑器一页** |
 | [STT 方案](../2026-09-08-js-speech-to-text-solutions.md) | 听写仍不是本页 |
 
-## 明确不做（夹级）
+## 明确不做（仅约束 01–04 的本站编辑器页）
+
+05 的枚举 **不受** 下表约束。下表只约束「若做 onlinefreetools 波形编辑器页」：
 
 - 嵌 Wavacity、fork AudioMass 进工具 chrome  
 - Pro Tools / BandLab 级多轨 DAW、VST、MIDI 乐器  
