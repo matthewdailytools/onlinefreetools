@@ -27,6 +27,8 @@
 - **需求全景（第六轮）** → [05-sound-universe-demand-map.md](./05-sound-universe-demand-map.md)  
 - **分层节奏（第七轮）** → [06-demand-difficulty-cost-roadmap.md](./06-demand-difficulty-cost-roadmap.md)  
 - **训练成本（第八轮）** → [07-voice-clone-training-cost.md](./07-voice-clone-training-cost.md)  
+- **端侧仿唱（第九轮）** → [08-on-device-celebrity-singing.md](./08-on-device-celebrity-singing.md)  
+- **BYOM 竞品（第十轮）** → [09-byom-singing-app-competitors.md](./09-byom-singing-app-competitors.md)  
 - 目录入口 → [README.md](./README.md)
 
 第三轮：完整波形编辑器，不是薄裁剪器。  
@@ -65,3 +67,11 @@
 
 第九轮见 [08-on-device-celebrity-singing.md](./08-on-device-celebrity-singing.md)。  
 端侧是 SVC 推理（ContentVec + F0 + 已训生成器），不是云端 TTS，也不是浏览器说话 V1。训练仍在电脑完成。
+
+## 第十轮
+
+> 有哪些竞品  
+> （同轮已确认：用户自寻模型、App 只做转换和唱歌）
+
+第十轮见 [09-byom-singing-app-competitors.md](./09-byom-singing-app-competitors.md)。  
+空隙是原生手机 + 文件导入 + 本地 SVC + 唱歌导出；不要和应用内名人货架或文生歌对打。
