@@ -1,8 +1,8 @@
 # Sound editor — 调研与产品设计
 
-**日期**：2026-09-09（第十二轮：整树复制 AudioMass + 功能 SEO）  
-**状态**：文档在写；**尚未**建 `work-tasks/`、尚未写页面  
-**镜头**：01–04 本站网页编辑器（第十二轮起内核 = AudioMass MIT 整树）；**05** 需求全景；**06** 分层节奏；**07** 训练成本；**08** 端侧仿唱；**09** BYOM 竞品；**10** 模型站空间。
+**日期**：2026-09-10（第十二轮：AudioMass MIT 整树 + Hub 执行合同）  
+**状态**：调研齐；内核 = AudioMass 整树 copy；**执行合同**见 [11](./11-executable-plan.md)；**尚未**建 `work-tasks/`、尚未写页面  
+**镜头**：01–04 本站网页编辑器（第十二轮起内核 = AudioMass MIT 整树）；**05** 需求全景；**06** 分层节奏；**07** 训练成本；**08** 端侧仿唱；**09** BYOM 竞品；**10** 模型站空间；**11** Hub 落地合同；**12** Hub + 单点 slug 规划。
 
 本夹是 audio 方向专题夹，不是 catalog slug，也不是 `work-tasks/{slug}/`。立项须用户明确「创建 / 实现」后再复制 `_template`。
 
@@ -11,6 +11,7 @@
 **不要做「只剪一段」的薄裁剪器，也不要嵌 Wavacity / iframe audiomass.co。**  
 本站编辑器 **整树复制** [AudioMass](https://github.com/pkalogiros/audiomass)（MIT 原文 + 第三方 NOTICE），包进 `opts` 工具页：十语、金标 HUD、文件帽、同源 vendor。  
 **功能细化做 SEO** = 把每条能力映射到搜法，**吸收进同一 URL**（How / FAQ / Use cases）；禁止一功能一薄页。  
+**上线分期（11）**：S1 先过真编辑器质量杠（剪贴/撤销/过零/预览/导出/HUD）；S2 同 URL 再加包装层补齐（LUFS 可见性、人声降噪提示、变速 HUD）。11 里「禁止 fork AudioMass」已被 **01 第十二轮推翻**（MIT 允许整树 copy；禁止的是外站 iframe 与 Wavacity）。  
 不宣称打败桌面 Audacity 的 VST/插件生态。从零写 EDL **不是** v1。
 
 | 项 | 决定 |
@@ -34,6 +35,8 @@
 | [08-on-device-celebrity-singing.md](./08-on-device-celebrity-singing.md) | **手机端离线仿唱**（SVC 流水线；不依赖云端推理） |
 | [09-byom-singing-app-competitors.md](./09-byom-singing-app-competitors.md) | **BYOM 翻唱 App 竞品**（导模型 / 桌面 RVC / 云 Cover / 非赛道） |
 | [10-voice-model-site-space.md](./10-voice-model-site-space.md) | **模型网站还有没有空间**（Weights 关站后：真空 ≠ 可做货架） |
+| [11-executable-plan.md](./11-executable-plan.md) | **Hub 审查 + 可执行合同**（S1/S2 会话、门禁、停做；引擎句以 01 为准） |
+| [12-slug-hub-and-scene.md](./12-slug-hub-and-scene.md) | **大编辑器都满足 + 单点页只满足**（芯片 vs 独立 slug、P0–P3） |
 
 ## 阅读顺序
 
@@ -47,7 +50,9 @@
 8. **08** — 手机上如何离线把唱歌换成目标音色（原生推理，不是网页 V1）。  
 9. **09** — 用户自备模型的翻唱 App 有哪些竞品、空隙在哪。  
 10. **10** — 网站模型站：需求真空不等于名人货架可做。  
-11. 立项编辑器：`work-tasks/edit-audio-on-waveform/`（或 0b 后改名）。音色迁移是 **另一作业**，未点名不建页。05–10 **不是** 立项范围。
+11. **11** — Hub 怎么落地（S1/S2 会话）。用户点名「按方案执行」后从 11 阶段 A 开工。引擎以 01 第十二轮为准。  
+12. **12** — 哪些需求进 Hub 芯片、哪些才独立 slug；P0–P3 规划。单点页须另口令立项。  
+13. 立项编辑器：`work-tasks/edit-audio-on-waveform/`（或 0b 后改名）。音色迁移是 **另一作业**，未点名不建页。05–10 **不是** 立项范围。
 
 ## 与既有文档的关系
 
