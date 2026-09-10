@@ -42,7 +42,7 @@ const HANDBOOK_DOCS = Object.freeze([
   {
     id: 'worker-r2',
     file: 'ops/worker-r2-ops.md',
-    title: 'Worker + R2 运维（upload / git push / verify）',
+    title: 'Worker + R2 运维（upload / git:save / git:deploy / verify）',
   },
   {
     id: 'inbound-outreach',

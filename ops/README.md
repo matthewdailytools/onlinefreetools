@@ -14,7 +14,7 @@
 ```
 ops/
 ├── README.md              # 本文（运维总览）
-├── worker-r2-ops.md       # Worker + R2：建桶、upload、git push、verify、缓存、回滚
+├── worker-r2-ops.md       # Worker + R2：建桶、upload、git:save / git:deploy、verify、缓存、回滚
 ├── cloudflare-workers-ai-access.md  # Workers AI 免费/付费接入
 ├── prompt-ai-deploy-checklist.md    # S0 Expand/Polish 部署步骤（KV + 冒烟 + 生产）
 ├── lib/
@@ -156,8 +156,8 @@ npx wrangler dev
 | `npm run upload:r2:full` | 强制全量上传远程 R2（S3 优先；含 `_meta/pages-build.json`） |
 | `npm run verify:r2` / `verify:r2:live` | R2 ↔ Worker `PAGES_CACHE_VERSION` 校验；有 S3 凭据时优先用 S3 读取（live 含生产探针） |
 | `npm run deploy` | **生产推荐**：全量 build + lint → hash 增量 upload:r2 → verify → **提示 git:save / git:deploy** |
-| `npm run git:save` | `HEAD` → `origin/save`：只把已 commit 代码放到 GitHub，**不**发 Cloudflare 生产 |
-| `npm run git:deploy` | 当前须为 `main`：`git push origin main`，Cloudflare 拉仓库发 Worker + Assets |
+| `npm run git:save` | **不是 commit**。把已有 `HEAD` 推到 `origin/save`，不发生产。随后不要裸 `git push`（在 `main` 上会发生产）。详见 [`worker-r2-ops.md`](./worker-r2-ops.md) **§4.1** |
+| `npm run git:deploy` | 当前须为 `main`：`git push origin main`，Cloudflare 拉仓库发 Worker + Assets。详见 [`worker-r2-ops.md`](./worker-r2-ops.md) **§4.1** |
 | `npm run deploy:full` | 强制全量 build + 全量 upload + verify |
 | `npm run deploy:skip-upload` | HTML 未变时跳过上传，仍 verify + 提示 push |
 | `npm run deploy:worker-only` | 紧急本机 `wrangler deploy` |
@@ -176,7 +176,9 @@ npx wrangler dev
 
 ```bash
 npm run deploy
-# 等价于：全量 build:site + lint → hash 增量 upload:r2 → verify:r2 →（请 git:save 备份或 git:deploy 上线）
+# 等价于：全量 build:site + lint → hash 增量 upload:r2 → verify:r2
+npm run git:save      # 只备份 origin/save；不是 commit；不要再跟 git push
+npm run git:deploy    # 须在 main：发 Cloudflare
 # git:deploy 且 CF 成功后再：npm run verify:r2:live
 ```
 
@@ -400,7 +402,7 @@ npm run verify:r2:live
 R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run deploy
 ```
 
-**Git 自动部署（Cloudflare 拉 GitHub）**：这是当前 **Worker + Assets** 的默认路径。远端通常**不跑** `predeploy` / **不**灌 R2——须先本地（或 CI）`upload:r2` 与 `upload:r2:og`。`public/vendor/` 必须已提交；**整个 `public/_pages/` 已 gitignore**；`public/og/tools/` 入库 Git 但 `.assetsignore` 排除，不会进 Worker Assets。仅 push、未 upload → **预渲染 HTML 易 404**；OG 图则须 `upload:r2:og` 才能在 `assets.onlinefreetools.org` 访问。
+**Git 自动部署（Cloudflare 拉 GitHub）**：这是当前 **Worker + Assets** 的默认路径。推送请用 [`worker-r2-ops.md`](./worker-r2-ops.md) **§4.1**：`npm run git:save`（备份）或 `npm run git:deploy`（上线）。`git:save` 不是本地 commit；在 `main` 上 `git:save` 后再裸 `git push` 仍会发生产。远端通常**不跑** `predeploy` / **不**灌 R2——须先本地（或 CI）`upload:r2` 与 `upload:r2:og`。`public/vendor/` 必须已提交；**整个 `public/_pages/` 已 gitignore**；`public/og/tools/` 入库 Git 但 `.assetsignore` 排除，不会进 Worker Assets。仅 push、未 upload → **预渲染 HTML 易 404**；OG 图则须 `upload:r2:og` 才能在 `assets.onlinefreetools.org` 访问。
 **部署后建议**：
 
 1. 打开生产首页与 1–2 个**工具页**抽检；确认 `/vendor/bootstrap/bootstrap.min.css` 与 `/vendor/fonts/plus-jakarta-sans.css` 为 **200**
@@ -475,7 +477,7 @@ npm run restart:dev
 
 ```bash
 npm run deploy
-# 或：npm run build:site && npm run upload:r2 && npm run verify:r2 && git push
+# 或：npm run build:site && npm run upload:r2 && npm run verify:r2 && npm run git:deploy
 # CF 成功后：npm run verify:r2:live
 curl -sS https://onlinefreetools.org/api/ops/pages-build
 # 期望 aligned: true
@@ -495,9 +497,9 @@ SOCKS（`ssh -D`）必须用 `socks5h://`，不要写成 `http://127.0.0.1:8888`
 ### `verify:r2` / live 失败
 
 - 缺 `_meta/pages-build.json` → 先 `npm run upload:r2`
-- `pagesCacheVersion` 不一致 → 确认 `wrangler.jsonc` 的 `PAGES_CACHE_VERSION` 与刚上传的清单一致，再 `npm run deploy` + **git push**
+- `pagesCacheVersion` 不一致 → 确认 `wrangler.jsonc` 的 `PAGES_CACHE_VERSION` 与刚上传的清单一致，再 `npm run deploy` + **`npm run git:deploy`**
 - `contentHash` 不一致 → 本地改过 HTML 未重新 upload；再跑 `build:site` + `upload:r2`（需要重传全部对象时用 `upload:r2:full`）
-- live `aligned: false` → Worker（push）与 R2 清单不一致；按 `upload → verify → git push → verify:r2:live` 重发；勿在 CF 未完成时跑 live
+- live `aligned: false` → Worker（`git:deploy`）与 R2 清单不一致；按 `upload → verify → npm run git:deploy → verify:r2:live` 重发；勿在 CF 未完成时跑 live
 - live 过早失败 → 等 Cloudflare Dashboard 部署成功后再 `verify:r2:live`
 
 ### `lint:seo` 失败

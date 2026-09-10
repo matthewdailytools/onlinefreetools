@@ -89,4 +89,5 @@ Do not rely on `[skip ci]` while this Worker is still connected through Cloudfla
 
 [actions]
 - Added `scripts/git-push-github.mjs` and npm scripts `git:save` / `git:deploy`
-- Pointed `scripts/deploy-site.mjs`, `ops/worker-r2-ops.md`, `ops/README.md`, `.cursor/rules/cloudflare-workflow.mdc` at those commands
+- Documented commands in `ops/worker-r2-ops.md` §4.1 (not a local commit; `git:save` then bare `git push` on main still deploys)
+- Synced `ops/README.md`, `ops/prompt-ai-deploy-checklist.md`, `ops/seo/keyword-to-tool-ops.md`, `ops/seo/sitemap-ui.mjs`

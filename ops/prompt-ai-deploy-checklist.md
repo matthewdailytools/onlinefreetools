@@ -87,13 +87,13 @@ curl -s -X POST http://127.0.0.1:8788/api/tools/prompt-template-builder/ai \
 
 ## 4. 生产部署
 
-本站默认 **git push → Cloudflare 拉仓库** 更新 Worker（见 `worker-r2-ops.md`）。
+本站默认 **`npm run git:deploy` → Cloudflare 拉仓库** 更新 Worker（见 `worker-r2-ops.md` §4.1）。只备份用 `npm run git:save`（不是本地 commit；之后不要再裸 `git push`）。
 
 ```bash
 # 若 HTML/工具页也有改动
-npm run deploy          # build + upload R2 + verify；打印 push 提示
+npm run deploy          # build + upload R2 + verify；打印 git:save / git:deploy 提示
 
-git push origin main    # 触发 CF 部署 Worker + Assets
+npm run git:deploy      # 须在 main：触发 CF 部署 Worker + Assets
 ```
 
 - [ ] Cloudflare Dashboard → Worker 部署成功（含新 `ai` + KV binding）
