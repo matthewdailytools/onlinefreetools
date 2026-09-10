@@ -14,7 +14,8 @@
 | 步骤 | 谁做 | 说明 |
 |---|---|---|
 | `npm run deploy` | 本机 | 全量 `predeploy` build + lint → `upload:r2`（HTML hash 增量）→ `upload:r2:og`（OG 图增量）→ `verify:r2`；**不**本机 `wrangler deploy` |
-| `git push` | 本机 → GitHub | Cloudflare **拉仓库**部署 Worker + Assets |
+| `npm run git:save` | 本机 → GitHub | `git push origin HEAD:save`：只备份，**不**发 Cloudflare 生产 |
+| `npm run git:deploy` | 本机 → GitHub | 当前须为 `main`：`git push origin main`，Cloudflare **拉仓库**部署 Worker + Assets |
 | `npm run verify:r2:live` | 本机（CF 成功后） | 生产 `/api/ops/pages-build` 与 R2 对齐 |
 
 紧急本机直发 Worker：`npm run deploy:worker-only`（或 `node scripts/deploy-site.mjs --wrangler-deploy`）。  
@@ -78,7 +79,9 @@ npx wrangler r2 bucket create assets                         # 公开 OG 图；D
 | `npm run upload:r2:local` | 同步到**本地** wrangler 模拟桶（`getPlatformProxy`） |
 | `npm run verify:r2` | 校验 R2 清单与 `PAGES_CACHE_VERSION` / 本地 contentHash 一致；有 S3 凭据时与 `upload:r2` 一样优先走 S3 读取 |
 | `npm run verify:r2:live` | 同上 + 请求生产 `/api/ops/pages-build`（**等 CF 部署完成后再跑**） |
-| `npm run deploy` | 默认：全量 build + lint → upload:r2（hash 增量）→ upload:r2:og（hash 增量）→ verify → **打印 git push 步骤**；默认不 live |
+| `npm run deploy` | 默认：全量 build + lint → upload:r2（hash 增量）→ upload:r2:og（hash 增量）→ verify → **打印 git:save / git:deploy**；默认不 live |
+| `npm run git:save` | `git push origin HEAD:save`：只备份到 GitHub，**不**发 Cloudflare 生产（`--stamp` 推 `save/YYYY-MM-DD-HHMM`） |
+| `npm run git:deploy` | 当前须为 `main`：`git push origin main`，Cloudflare 拉仓库发 Worker + Assets |
 | `npm run deploy:full` | 强制全量 build + 全量 HTML upload + 全量 OG upload + verify |
 | `npm run deploy:skip-upload` | 跳过上传，仍 verify + 提示 push |
 | `npm run stage:tools:changed` | 只 stage 变更/新增工具相关路径；可加 `-- --slug=a,b` |
@@ -266,7 +269,7 @@ npm run build:site
 npm run upload:r2
 npm run verify:r2
 npm run commit:tools:changed -- --slug=image-compress -m "tools: update image compress"
-git push
+npm run git:deploy
 ```
 
 `build:site` / `deploy` 不看 git 工作树，且构建总是全量。编辑工具时仍应把对应 `src/site/tool-catalog.d/{slug}.json` 的 `updatedAt` 改为本次编辑时间（建议 UTC ISO，例如 `2026-08-14T12:00:00.000Z`），用于可见更新时间、sitemap/SEO 元数据和 `commit:tools:changed` 等工具路径辅助。
@@ -377,13 +380,16 @@ curl -sI "https://assets.onlinefreetools.org/og/tools/{slug}.webp"
 # 1) 本机：构建 + lint + 灌 R2 + 校验（不部署 Worker）
 npm run deploy
 
-# 2) 提交并推送（Cloudflare 拉 GitHub → Worker + Assets）
+# 2) 提交后推送 GitHub
 git status   # vendor / wrangler.jsonc / 源码须入库；*.html.gz 不入库
-git push
+npm run git:save      # 只备份：HEAD → origin/save，不上线
+npm run git:deploy    # 发布：须在 main，push origin/main → Cloudflare 发 Worker + Assets
 
-# 3) Dashboard 显示部署成功后
+# 3) 仅 git:deploy 之后：Dashboard 显示部署成功后再
 npm run verify:r2:live
 ```
+
+`git:save` / `git:deploy` 见 [`scripts/git-push-github.mjs`](../scripts/git-push-github.mjs)。Workers Builds **不**认 `[skip ci]`；不要 `git push origin main` 除非要上线。若 Dashboard 开了非生产分支 preview，`origin/save` 可能出预览，但不会切生产。建议关掉 **Builds for non-production branches**。
 
 `npm run deploy` → [`scripts/deploy-site.mjs`](../scripts/deploy-site.mjs)：
 
@@ -391,7 +397,7 @@ npm run verify:r2:live
 2. `upload:r2` — 默认只上传 `.html.gz` hash 不同的对象（S3 优先），成功后写入 R2 `_meta/pages-build.json`（`pagesCacheVersion` + `contentHash` + 全量 `fileHashes`）
 3. `upload:r2:og` — 把变化的 `public/og/tools/*` 同步到公开桶 `assets`（GitHub push **不会**把这些图打进 Worker Assets）
 4. `verify:r2` — R2 清单 ↔ `wrangler.jsonc` 的 `PAGES_CACHE_VERSION` + 本地哈希；抽样 object 存在；有 S3 凭据时优先用 S3 读取，避免与 wrangler 登录账号不一致
-5. **Worker + Assets**：默认 **注释掉** 本机 `wrangler deploy`；打印 **git push** 步骤
+5. **Worker + Assets**：默认 **注释掉** 本机 `wrangler deploy`；打印 **git:save / git:deploy** 步骤
 6. `verify:r2:live` — **默认跳过**；CF 成功后单独跑，或 `node scripts/deploy-site.mjs --live`
 
 可选：
@@ -409,7 +415,7 @@ node scripts/deploy-site.mjs --live             # 假定 CF 已好，立刻 live
 ```bash
 npm run deploy
 npm run commit:tools:changed -- --slug=image-compress -m "tools: update image compress"
-git push
+npm run git:deploy
 # 等 Dashboard 成功
 npm run verify:r2:live
 ```
@@ -421,7 +427,7 @@ npm run build:site
 npm run lint:seo && npm run lint:vendor
 npm run upload:r2
 npm run verify:r2
-git push
+npm run git:deploy
 # 等 Dashboard 成功
 npm run verify:r2:live
 # 紧急：

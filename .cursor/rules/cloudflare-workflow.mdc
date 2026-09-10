@@ -26,7 +26,9 @@ npm run build:site:full    # 同 build:site，保留为显式全量别名
 npm run tool:touch -- --slug=<slug[,slug]> # 工具内容改动后刷新 catalog updatedAt
 npm run upload:r2          # 默认增量上传：按上次成功上传 manifest 的 fileHashes 对比，仅上传 hash 不同的 .html.gz，仍重写 _meta/pages-build.json
 npm run upload:r2:full     # 强制全量上传 public/_pages 下 .html.gz
-npm run deploy             # 默认：全量 build + lint → upload:r2（hash 增量）→ verify → 提示 git push
+npm run deploy             # 默认：全量 build + lint → upload:r2（hash 增量）→ verify → 提示 git:save / git:deploy
+npm run git:save           # HEAD → origin/save：只备份，不发 Cloudflare 生产
+npm run git:deploy         # 当前须为 main：push origin/main，CF 拉仓库发 Worker + Assets
 npm run deploy:full        # 强制全量 build + 全量 R2 upload + verify
 npm run commit:tools:changed -- --slug=<slug> -m "tools: update <slug>" # 只提交目标工具相关路径
 npm run verify:r2          # 校验 R2 ↔ Worker PAGES_CACHE_VERSION
@@ -56,7 +58,7 @@ wrangler dev                 # 本地开发
 
 ## Pages / Git 自动部署
 
-- **Worker + Assets 默认路径**：commit + **git push** → Cloudflare 拉 GitHub（`npm run deploy` 不再本机 `wrangler deploy`）。
+- **Worker + Assets 默认路径**：commit 后 **`npm run git:deploy`**（`git push origin main`）→ Cloudflare 拉 GitHub（`npm run deploy` 不再本机 `wrangler deploy`）。只想把代码放到 GitHub、不上线： **`npm run git:save`**（`git push origin HEAD:save`）。不要用 `[skip ci]`，Workers Builds 不认。非生产分支若开了 preview build，`save` 仍可能出预览、不会切生产。
 - 静态资源在 `public/`；构建产物由 `npm run build:site` 生成。
 - **工具 / taxonomy 等预渲染 HTML 权威源为 R2**；push 前须本地（或 CI）`npm run upload:r2`，否则仅依赖桶里旧对象。构建默认全量；上传默认按上次成功上传 manifest 的 `fileHashes` 增量。排障时可显式跑 `npm run upload:r2:full` / `npm run deploy:full`。
 - **构建不再增量**：`npm run build:site` 每次预渲染所有工具页。编辑任一工具仍应运行 `npm run tool:touch -- --slug=<slug>` 或手动更新 `src/site/tool-catalog.d/{slug}.json` 的 `updatedAt`，用于可见更新时间、sitemap/SEO 元数据和工具提交路径；R2 上传只比较 `.html.gz` 内容 hash。commit/push 只影响 Cloudflare 拉取 Worker/Assets，不作为 R2 上传判断依据。
@@ -72,9 +74,11 @@ wrangler dev                 # 本地开发
 ## 发版前
 
 ```bash
-npm run deploy                 # 全量 build + lint + hash 增量 upload HTML + OG 图 + verify，然后按提示 git push
+npm run deploy                 # 全量 build + lint + hash 增量 upload HTML + OG 图 + verify，然后 git:save 或 git:deploy
 npm run deploy:full            # 需要重建/重传全部 R2 HTML 时使用
 npm run commit:tools:changed -- --slug=<slug[,slug]> -m "tools: update <slug>"
+npm run git:save               # 只备份到 origin/save
+# npm run git:deploy           # 在 main 上才发 Cloudflare
 # 等 Cloudflare 部署成功
 npm run verify:r2:live
 ```

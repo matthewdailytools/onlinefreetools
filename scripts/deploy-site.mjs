@@ -59,8 +59,10 @@ const printGithubDeployNextSteps = () => {
 1. 确认本机改动已 commit（含 wrangler.jsonc / vendor / Worker 源码；*_pages HTML.gz 不入库）
    OG 位图可入库 Git，但 .assetsignore 会排除 og/tools/，CF 部署不会带上这些图
    少量工具改动可用：npm run commit:tools:changed -- --slug=<slug[,slug]> -m "tools: update <slug>"
-2. git push 到 Cloudflare 已绑定的分支
-3. 在 Cloudflare Dashboard 等本次部署成功
+2. 推 GitHub（不要直接 git push main，除非要上线）：
+     npm run git:save      # HEAD → origin/save，只备份，Cloudflare 不发生产
+     npm run git:deploy    # 须在 main：push origin/main，Cloudflare 发 Worker + Assets
+3. 在 Cloudflare Dashboard 等本次部署成功（仅 git:deploy）
 4. 再跑：npm run verify:r2:live
 
 紧急本机直发 Worker（一般不需要）：
