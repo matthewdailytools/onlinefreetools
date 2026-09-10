@@ -33,7 +33,7 @@
 | 意图池运行表 | [keyword-daily-pool.tsv](./keyword-daily-pool.tsv) |
 | **主题词表 / 分析** | [keywords/](./keywords/)（每主题一夹，如 [`keywords/cidr/`](./keywords/cidr/)） |
 | SERP 批次（跨主题试点） | [serp-batches/](./serp-batches/) |
-| GSC 策略交叉引用 | [reviews/2026-08-12/02-next-strategy.md](./reviews/2026-08-12/02-next-strategy.md) |
+| GSC 策略交叉引用 | [reviews/2026-09-10/02-next-strategy.md](./reviews/2026-09-10/02-next-strategy.md)（上轮 [08-12](./reviews/2026-08-12/02-next-strategy.md)） |
 | 合规 / IG | `.cursor/rules/seo-google-policy.mdc` · `tool-i18n-seo.mdc` |
 | 覆盖门禁（写工具时） | `.cursor/skills/tool-coverage-pass/SKILL.md` |
 | 工具立项（仅创建工具时） | `work-tasks/{slug}/` — **不由本事项自动创建** |
@@ -44,7 +44,7 @@
 
 | 字段 | 值 |
 |---|---|
-| 最近更新 | 2026-09-08 |
+| 最近更新 | 2026-09-10 |
 | 最近批次 | 同日用户点名 **N4** `batch-convert-scanned-pdf-to-word-with-ocr` brief（扫描 PDF→一份可编辑 DOCX；相对 A2 / N4-jpg-batch 的 IG 是光栅 OCR + 队列，而非字层或照片）。Text Converter Planner 与 OCR+Scan 权威表仍见下 |
 | 池内 `build` 候选 | OCR N1 + N1-batch + **N4-jpg-batch** 已实现；**N4 扫描 PDF→Word** brief `ready`（页面未实现）；N2–N3、N5 与 T4/T5 **defer**（待 SERP 不占周 `long_gap`） |
 | 本周新建工具页 | `convert-a-jpg-to-text-with-ocr`；`batch-convert-jpg-to-text-with-ocr`；`batch-convert-jpg-to-editable-word-with-ocr`；`batch-convert-scanned-pdf-to-word-with-ocr`（brief only，未占 long_gap KPI） |
@@ -80,6 +80,7 @@
 ### P1 — 与既有页协同
 
 - [ ] 池中 `absorb`：排期改既有 title/FAQ（可写进当轮 GSC todo，结论回写本决策日志）
+- [ ] **2026-09-10 GSC 收割 absorb**（未进词池、直接改现页）：`linkedin-banner-size` id/ru 补像素；`find-and-validate-xml-sitemap` 补 checker；`how-to-calculate-percentage-change` zh 补「计算器」；任务清单见 [`reviews/2026-09-10/03-todo.md`](./reviews/2026-09-10/03-todo.md)
 
 ### P2 — 复盘
 
@@ -169,6 +170,7 @@
 | 2026-09-08 | 用户点名立项 OCR **N1-batch** `batch-convert-jpg-to-text-with-ocr`：`work-tasks/` 00–03，`02=ready`，`coverage:gate --phase=0b`。H1=批量任务句；相对 N1 的 IG 是队列/skip/ZIP/合并 TXT（禁止只加 multiple 换皮）；`jpg to text` 单张仍归 N1。词池 `batch ocr` `build`（仍 `await_serp`，不占周 long_gap）。页面未实现。 | 用户要求立项 batch convert jpg to text with ocr 并与 N1 做信息增益区分 |
 | 2026-09-08 | 用户点名立项 OCR **N4-jpg-batch** `batch-convert-jpg-to-editable-word-with-ocr`：`work-tasks/` 00–03，`02=ready`，`coverage:gate --phase=0b`。H1=批量可编辑 Word 任务句；相对 N1-batch 的 IG 是一份分节 DOCX + Download Word + 默认校对原图（禁止 TXT 改后缀）；相对 `images-to-word` 是 OCR 可编辑正文；`ocr pdf to word` 仍归未建 N4。词池 `build`（`await_serp`，不占周 long_gap）。 | 用户要求立项 batch convert jpg to editable word with ocr 并与其他 OCR 工具做信息增益区分 |
 | 2026-09-08 | 用户点名立项 OCR **N4** `batch-convert-scanned-pdf-to-word-with-ocr`：`work-tasks/` 00–03，`02=ready`，`coverage:gate --phase=0b`。H1=批量扫描 PDF→Word 任务句；相对 A2 的 IG 是光栅 OCR 不是抽字层；相对 N4-jpg-batch 是 PDF 页展开不是照片队列；不另建 `turn-a-scanned-pdf-into-word` doorway。头词 `ocr pdf to word` 只进 FAQ。词池 `build`（`await_serp`，不占周 long_gap）。 | 用户要求立项 batch convert scanned pdf to word with ocr |
+| 2026-09-10 | GSC 7 日效果复盘：**0** 条新 `build`。absorb：id/ru `linkedin-banner-size` title 补 1584×396；en sitemap 页 title 补 checker；zh 百分比变化 title 补「计算器」；compare/sqft/ROI/IP 不拆 URL。俄语楼板配筋查询 **drop/defer**（≠混凝土体积）。Cursor 两篇 People 日志改 title，不 noindex。详见 `reviews/2026-09-10/`。 | 用户要求分析 2026-09-10 GSC 并给优化方案；漏斗结论不得只写在 GSC 03-todo |
 
 ---
 
