@@ -86,9 +86,16 @@ Full numbers, page tables, and checkboxes: `docs/seo/reviews/2026-09-10/`.
 - Window is 7 days, not 28. Do not close the August 20 meta experiment (schema, es volume, en NPV, ru image-merge) from this file alone — those slugs were not the top impression pages this week.
 - Search appearance CSV is empty: expected after FAQ rich results retired in May 2026. Do not add FAQPage schema to chase a SERP feature that no longer exists.
 - IndexNow after copy changes should be incremental (`--since-git` or the touched URLs), never a 10-locale sitewide push.
-- `lint:seo` and `build:site` remain the ship gates if the P0 title edits are implemented in a follow-up session.
+- `lint:seo` and `build:site` remain the ship gates if the remaining title edits ship in a follow-up session.
+
+## Follow-up (2026-09-10 15:11)
+
+The August “impressions + zero clicks → only rewrite title” playbook did **not** produce clicks on the pages it targeted (German IP, ROI, Spanish sqft, Japanese MR). Repeating that playbook on any URL whose title already contains the query is forbidden.
+
+Keep title edits only when all three hold: average position ≤15, the live title is **missing** the scan-word, and that URL has not had this pass yet. That leaves sitemap `checker`, Chinese 计算器 on percentage-change, Cursor log keys, stripping `⇔`, and duplicated zh disclaimers (quality, not the old pattern). Spanish aspect-ratio, Chinese concrete, and LinkedIn banners are the same failure class as Japanese MR — observe or FAQ, do not retitle.
 
 [actions]
 - Wrote `docs/seo/reviews/2026-09-10/01-analysis-review.md`, `02-next-strategy.md`, `03-todo.md`
 - Updated `docs/seo/reviews/README.md` batch table
 - Appended absorb/drop verdicts to `docs/seo/keyword-to-tool-tracker.md`
+- Tightened `02`/`03` so the failed title-only pattern is not reused on already-aligned pages

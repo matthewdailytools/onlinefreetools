@@ -80,7 +80,7 @@
 ### P1 — 与既有页协同
 
 - [ ] 池中 `absorb`：排期改既有 title/FAQ（可写进当轮 GSC todo，结论回写本决策日志）
-- [ ] **2026-09-10 GSC 收割 absorb**（未进词池、直接改现页）：`linkedin-banner-size` id/ru 补像素；`find-and-validate-xml-sitemap` 补 checker；`how-to-calculate-percentage-change` zh 补「计算器」；任务清单见 [`reviews/2026-09-10/03-todo.md`](./reviews/2026-09-10/03-todo.md)
+- [ ] **2026-09-10 GSC 收割 absorb**（过门禁才改 title）：`find-and-validate-xml-sitemap` 补 checker；`how-to-calculate-percentage-change` zh 补「计算器」。**不做** LinkedIn 补像素 / es 宽高比 / zh 混凝土 H1。清单见 [`reviews/2026-09-10/03-todo.md`](./reviews/2026-09-10/03-todo.md)
 
 ### P2 — 复盘
 
@@ -170,7 +170,7 @@
 | 2026-09-08 | 用户点名立项 OCR **N1-batch** `batch-convert-jpg-to-text-with-ocr`：`work-tasks/` 00–03，`02=ready`，`coverage:gate --phase=0b`。H1=批量任务句；相对 N1 的 IG 是队列/skip/ZIP/合并 TXT（禁止只加 multiple 换皮）；`jpg to text` 单张仍归 N1。词池 `batch ocr` `build`（仍 `await_serp`，不占周 long_gap）。页面未实现。 | 用户要求立项 batch convert jpg to text with ocr 并与 N1 做信息增益区分 |
 | 2026-09-08 | 用户点名立项 OCR **N4-jpg-batch** `batch-convert-jpg-to-editable-word-with-ocr`：`work-tasks/` 00–03，`02=ready`，`coverage:gate --phase=0b`。H1=批量可编辑 Word 任务句；相对 N1-batch 的 IG 是一份分节 DOCX + Download Word + 默认校对原图（禁止 TXT 改后缀）；相对 `images-to-word` 是 OCR 可编辑正文；`ocr pdf to word` 仍归未建 N4。词池 `build`（`await_serp`，不占周 long_gap）。 | 用户要求立项 batch convert jpg to editable word with ocr 并与其他 OCR 工具做信息增益区分 |
 | 2026-09-08 | 用户点名立项 OCR **N4** `batch-convert-scanned-pdf-to-word-with-ocr`：`work-tasks/` 00–03，`02=ready`，`coverage:gate --phase=0b`。H1=批量扫描 PDF→Word 任务句；相对 A2 的 IG 是光栅 OCR 不是抽字层；相对 N4-jpg-batch 是 PDF 页展开不是照片队列；不另建 `turn-a-scanned-pdf-into-word` doorway。头词 `ocr pdf to word` 只进 FAQ。词池 `build`（`await_serp`，不占周 long_gap）。 | 用户要求立项 batch convert scanned pdf to word with ocr |
-| 2026-09-10 | GSC 7 日效果复盘：**0** 条新 `build`。absorb：id/ru `linkedin-banner-size` title 补 1584×396；en sitemap 页 title 补 checker；zh 百分比变化 title 补「计算器」；compare/sqft/ROI/IP 不拆 URL。俄语楼板配筋查询 **drop/defer**（≠混凝土体积）。Cursor 两篇 People 日志改 title，不 noindex。详见 `reviews/2026-09-10/`。 | 用户要求分析 2026-09-10 GSC 并给优化方案；漏斗结论不得只写在 GSC 03-todo |
+| 2026-09-10 | GSC 7 日效果复盘：**0** 条新 `build`。08 月「只改 title」在 IP/ROI/sqft/ja MR 上未换来点击 → **停用**对已对齐 title 的页再走同一模式。仍允许缺词一轮：en sitemap 补 checker、zh 百分比变化补「计算器」、Cursor 日志前置键名。**撤回** id/ru LinkedIn 补像素、es 宽高比/zh 混凝土再改 H1。楼板配筋 **drop/defer**。详见 `reviews/2026-09-10/`。 | 用户问失败后是否不该再按旧模式优化；收窄 absorb |
 
 ---
 

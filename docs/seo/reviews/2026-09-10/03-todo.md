@@ -16,28 +16,34 @@
 
 ---
 
-## 待办 — CTR 收割（P0，本周）
+## 待办 — 过门禁才改文案（P0）
 
-改前确认线上已部署；改后 `lint:seo` + `build:site`；IndexNow **只提交改过的 URL**。
+改 title 须同时：排名 ≤15、现行 title **缺**查询扫描词、该 URL 尚未做过前置该主词。改后 `lint:seo` + `build:site`；IndexNow **只提交改过的 URL**。
 
-### 工具页 title / description
+### 允许改 title（缺词，一轮）
 
-- [ ] `es` `how-to-calculate-aspect-ratio`：抽查 Google 真实 snippet；必要时 title 前半加 16:9 或 1920×1080
-- [ ] `zh` `how-to-calculate-percentage-change`：title 纳入「计算器」（对照 de 已出点击）
-- [ ] `zh` `how-to-calculate-payback-period`：去重 description 里重复的免责套话；保持「回收期计算器」前置
-- [ ] `zh` `how-to-calculate-debt-payoff`：同上，去重免责
-- [ ] `zh` `how-to-calculate-concrete`：核对 snippet 是否像计算器；不吸收俄语楼板配筋词
-- [ ] `id` + `ru` `linkedin-banner-size`：title 补 1584×396（查询 ukuran banner linkedin 已字面命中 H1）
-- [ ] `en` `find-and-validate-xml-sitemap`：title 纳入 XML sitemap **checker**（查询排名 1、0 点击；校验 ≠ 生成）
-- [ ] `ja` `square-feet`：title 去掉 `⇔`
-- [ ] 扫描其他已进前十的 `zh` `how-to-calculate-*` description，去掉同一句免责粘贴两次（acceleration / present-value / IRR 等同源句式）
+- [ ] `en` `find-and-validate-xml-sitemap`：title 纳入 XML sitemap **checker**
+- [ ] `zh` `how-to-calculate-percentage-change`：title 纳入「计算器」（仅此一轮）
+- [ ] `ja` `square-feet`：去掉 title 里的 `⇔`（修显示，不堆词）
 
-### 停改 H1、改抽 SERP
+### 允许改 description（质量债，不是再前置主词）
 
-- [ ] 人工打开 Google：`限界収入 求め方` — 记录本站 snippet 是否被改写、是否不像计算器。**禁止**再改 ja MR 的 H1
-- [ ] 人工打开：`sitemap xml checker`、`ukuran banner linkedin`、中文「混凝土计算器 / 回收期」— 对照改前基线，改后 14 天再比 CTR
+- [ ] `zh` `how-to-calculate-payback-period`：去重重复免责
+- [ ] `zh` `how-to-calculate-debt-payoff`：同上
+- [ ] 扫描其他已进前十的 `zh` `how-to-calculate-*` description，去掉同一句免责粘贴两次
 
-### Devlogs（People，可索引）
+### 禁止再改 H1（与 08 月失败同类）
+
+- [ ] **不要**改 `es` `how-to-calculate-aspect-ratio` title（已含 relación de aspecto）
+- [ ] **不要**改 `zh` `how-to-calculate-concrete` H1（已含混凝土计算器）
+- [ ] **不要**改 `id`/`ru` `linkedin-banner-size` title（H1 已是查询原句）
+- [ ] **不要**改 `ja` `how-to-calculate-marginal-revenue` H1
+
+### 只抽 SERP，不改字
+
+- [ ] 人工打开：`限界収入 求め方`、西语 relación de aspecto、中文混凝土计算器、`ukuran banner linkedin` — 记录 snippet 是否被改写、是否不像工具。**不**用抽查结果当再改 title 的许可，除非发现 title 被 Google 整段换成无关文案
+
+### Devlogs（People，可索引；title 缺查询键 = 过门禁）
 
 - [ ] `2026-08-21-23-47-cursor-socks-proxy-settings-json`：HTML title 前置 `cursor.general.disableHttp2` / `http.proxy` / settings.json
 - [ ] `2026-08-06-21-21-cursor-ssh-socks-proxy-setup`：同上簇对齐
@@ -49,8 +55,8 @@
 ## 待办 — 深排名换杠杆（P1，可排在收割之后）
 
 - [ ] `de` `ip-address`：FAQ + Example 补 IPv6（查询 `meine ipv6 adresse`）与 VPN 退出 IP；**不改 H1**
-- [ ] `pt` `how-to-calculate-mean`：若下轮仍 ≤20 且 0 点击，再拧 title（média / calculadora）
-- [ ] `es` `square-feet`：仅当 28 天窗口排名稳 ≤20 且 CTR=0 时再改 title 前 30 字（08-12 门延期）
+- [ ] `pt` `how-to-calculate-mean`：只观察。title 已含 calculadora/média 则 **不**再拧 title
+- [ ] `es` `square-feet`：**取消**「≤20 再改 title」。已含 calculadora，继续观察
 - [ ] `compare-two-text-files-online`：近义查询进 FAQ；禁止新 URL
 
 ---
@@ -67,9 +73,10 @@
 ## 待办 — 观察（P1，建议 2–4 周 + 28 天窗口）
 
 - [ ] 剔 devlogs 后的工具页 CTR 是否 ≥1%
-- [ ] zh 前十计算器是否出现第一次点击
-- [ ] id/ru LinkedIn 补像素后 CTR
-- [ ] ja MR：仅在 snippet 抽查后决定是否动 FAQ，不把「再改 title」当观察项
+- [ ] zh 前十计算器是否出现第一次点击（title 已含「计算器」的页不作为再改 H1 的候选）
+- [ ] id/ru LinkedIn、es 宽高比：0 点击则观察，**不**补像素/不拧 title
+- [ ] sitemap checker / zh 百分比变化：若已改 title，看 14 天 CTR；仍 0 则停用「缺词补词」
+- [ ] ja MR：snippet 抽查后只允许 FAQ，禁止再改 title
 - [ ] de IP：看 IPv6 子查询排名，不看是否进前 20
 - [ ] 关键词漏斗：本 GSC 批 **0** 条新 `build`；楼板配筋 **drop/defer**
 
