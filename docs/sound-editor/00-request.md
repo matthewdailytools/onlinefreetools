@@ -30,6 +30,7 @@
 - **端侧仿唱（第九轮）** → [08-on-device-celebrity-singing.md](./08-on-device-celebrity-singing.md)  
 - **BYOM 竞品（第十轮）** → [09-byom-singing-app-competitors.md](./09-byom-singing-app-competitors.md)  
 - **模型站空间（第十一轮）** → [10-voice-model-site-space.md](./10-voice-model-site-space.md)  
+- **AudioMass 整树复制 + 功能 SEO（第十二轮）** → [01](./01-js-implementation-research.md) / [02](./02-product-design.md)  
 - 目录入口 → [README.md](./README.md)
 
 第三轮：完整波形编辑器，不是薄裁剪器。  
@@ -84,3 +85,11 @@
 
 第十一轮见 [10-voice-model-site-space.md](./10-voice-model-site-space.md)。  
 Weights/Replay 关站后有找模型的真空；可做的是自有模型管道与 ONNX 包装，不是再开名人货架；不要挂上本站。
+
+## 第十二轮
+
+> https://github.com/pkalogiros/audiomass 可以完全copy，并且将功能细化做seo，修改 @docs/sound-editor 文档
+
+第十二轮推翻第三轮「禁止 fork AudioMass 整壳」：MIT 允许整树复制；本站编辑器 **以 AudioMass 为引擎**，再包进 `opts` 工具页。  
+「功能细化做 SEO」= 把 AudioMass 每条能力映射到检索意图，**吸收进同一 URL** 的 How / FAQ / Use cases / 菜单文案；**禁止**一功能一薄页（doorway）。  
+改写：[01](./01-js-implementation-research.md)、[02](./02-product-design.md)、[README](./README.md)；[06](./06-demand-difficulty-cost-roadmap.md) 的 W0 成本随复制下调。
