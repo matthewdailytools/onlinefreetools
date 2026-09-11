@@ -29,7 +29,8 @@ export type ToolTopic =
 	| 'ai-prompt-template-builder'
 	| 'text-compare'
 	| 'security-ids'
-	| 'files-archives';
+	| 'files-archives'
+	| 'sound-editor';
 
 /** 主题展示顺序（顶栏、hub 卡片、侧栏）。 */
 export const TOOL_TOPIC_ORDER: ToolTopic[] = [
@@ -51,6 +52,7 @@ export const TOOL_TOPIC_ORDER: ToolTopic[] = [
 	'text-compare',
 	'security-ids',
 	'files-archives',
+	'sound-editor',
 ];
 
 /** 单主题文案键（label / 页头 / IG / FAQ）。 */

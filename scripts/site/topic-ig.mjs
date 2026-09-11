@@ -429,6 +429,20 @@ export const TOPIC_IG = {
     relatedTopics: ['security-ids', 'dev-data'],
     citations: [],
   },
+  'sound-editor': {
+    localCluster: true,
+    groups: [
+      { id: 'trim', slugs: ['trim-an-audio-clip-and-export'] },
+    ],
+    workflow: ['trim-an-audio-clip-and-export'],
+    relatedTopics: ['files-archives', 'security-ids'],
+    citations: [
+      {
+        id: 'mdn-audiobuffer',
+        href: 'https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer',
+      },
+    ],
+  },
 };
 
 /**

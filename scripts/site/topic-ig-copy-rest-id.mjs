@@ -750,4 +750,32 @@ export const buildIdTopics = (expand) => ({
     ],
     cites: {},
   }),
+  'sound-editor': expand({
+    title: 'Alat potong klip audio lalu ekspor WAV atau MP3',
+    desc: 'Tandai awal dan akhir pada rekaman lokal, lalu ekspor WAV atau MP3 di tab. Berkas tetap di perangkat. Bukan DAW atau perobek YouTube.',
+    intro: 'Pakai rumpun ini jika berkas sudah ada dan Anda hanya butuh potongan lebih pendek untuk dikirim. Editor gelombang penuh belakangan.',
+    tableTitle: 'Potong klip di peramban lalu ekspor',
+    groups: {
+      trim: 'Awal, akhir, dan ekspor',
+    },
+    rows: {
+      'trim-an-audio-clip-and-export': ['Simpan rentang awal–akhir saja lalu unduh WAV atau MP3', 'Berkas audio lokal yang bisa didekode peramban dan waktu yang bisa Anda sebut.', 'Anda butuh DAW banyak trek, kloning suara, ekstrak dari video, atau unduh YouTube tanpa hak.'],
+    },
+    flow: [
+      'Buka pemotong, atur awal dan akhir, potong, lalu ekspor WAV atau MP3 di tab.',
+    ],
+    exampleTitle: 'Bumper podcast versus meja gelombang',
+    exampleBody: 'Memo 30 detik dengan intro 8 detik: mulai setelah bumper, ekspor MP3. Yang mencari editor suara dengan fade dan undo menunggu hub belakangan—jangan anggap pemotong itu studio.',
+    boundary: 'Berkas tetap di perangkat. Batas menolak berkas raksasa sebelum dekode. Bukan pemisah stem, pabrik nada dering M4A, atau perobek siaran.',
+    secondary: {},
+    faq: [
+      { q: 'Ini editor suara daring?', a: 'Belum. Alat pertama hanya memotong awal–akhir lalu ekspor. Hub gelombang slug terpisah nanti.' },
+      { q: 'Saya cari potong mp3. Ada URL lain?', a: 'Tidak. Pekerjaan yang sama: simpan rentang lalu unduh. Kami tidak memecah cutter/trim/crop jadi alamat ekstra.' },
+      { q: 'Apakah berkas diunggah?', a: 'Dekode dan potong berjalan di tab. Kami tidak mengirim berkas ke server untuk pekerjaan ini.' },
+      { q: 'Bisa tarik audio dari video atau YouTube?', a: 'Tidak di pemotong. Ekstrak video pekerjaan lain; merobek siaran tanpa hak di luar cakupan.' },
+    ],
+    cites: {
+      'mdn-audiobuffer': 'MDN: AudioBuffer — sampel yang dipegang peramban di memori',
+    },
+  }),
 });

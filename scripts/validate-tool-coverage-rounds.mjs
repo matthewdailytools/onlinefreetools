@@ -15,6 +15,7 @@ import {
 	isParamEnumTitle,
 	checkCoverageTableFilled,
 	checkIntentReviewFilled,
+	checkSameIntentRelatedKeywordsFilled,
 	hasLocaleBriefCoverageCheck,
 	hasLocaleBriefIntentReviewCheck,
 } from './lib/title-coverage-heuristics.mjs';
@@ -222,6 +223,10 @@ export const validateCoveragePhase = (slug, phase) => {
 			const intent = checkIntentReviewFilled(`${md02}\n${mdNotes}`);
 			if (!intent.skipped && !intent.ok) {
 				errs.push(`${slug}: 02/notes ${intent.reason}`);
+			}
+			const relatedKw = checkSameIntentRelatedKeywordsFilled(`${md02}\n${mdNotes}`);
+			if (!relatedKw.skipped && !relatedKw.ok) {
+				errs.push(`${slug}: 02/notes ${relatedKw.reason}`);
 			}
 			if (
 				/用户意图审查已做/.test(md03) &&

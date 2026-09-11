@@ -26,6 +26,7 @@ description: >-
 ### 1) phase=0b（清单前）
 
 对照 `03` 检索词与用户搜法，写满 `02`「清单前检索覆盖」表（slug / 主词→H1 / 次词→desc·FAQ / 习惯判断 / **优化摘要** / 已回写）。必要时改建议 title（结果/场景向，禁参数枚举）。  
+**同意图相关搜索词（页面生成规则）**：须在 `02` 专节列**全部**同意图相关搜法（相关搜索 / PAA / 搜法簇 / Planner absorb）及落点；生成 title/desc/FAQ/usecase **按表写入**。`03` 每语 3–5 只定 H1 方向，不能代替全表。异意图相关搜索进不吸列。  
 **若本意图 slug 已有 Google / Bing Keyword Planner（Ads）长尾分析**（`docs/seo/keywords/{theme}/*-keyword-planner.md` 等）：须填 `02`「Ads / Keyword Planner 长尾」表——归属长尾**融入文案**且**功能覆盖**对应任务（见 `work-tasks-tool-brief.mdc`「Ads / Keyword Planner 长尾融入」）；仅塞词无能力 → 不合格。  
 写 `03` 多轮行 **`0b`**（日期 YYYY-MM-DD + ≥20 字摘要），勾选「清单前检索覆盖已做」。
 
@@ -73,7 +74,7 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 
 1. 用户会搜什么？主词是否落在 title/H1？是否已落到**实际使用场景**（情境+动作+结果；平台只是例子）？进页默认是否就是该场景？
 2. 副标题是否参数目录腔（控件名顿号/逗号罗列）？
-3. 次要词是否在 **description / FAQ / Use cases** 有落点（勿拆近义 URL；勿做关键词列表）？
+3. 次要词是否在 **description / FAQ / Use cases** 有落点（勿拆近义 URL；勿做关键词列表）？**`02`「同意图相关搜索词」是否已列全**（相关搜索/PAA/搜法簇，不只 03 的 3–5 个）？生成文案是否按表写入？
 4. **本语**检索词是否按当地习惯重跑（非 en 直搬）？
 5. 与 catalog `related` / 邻近工具 H1 是否撞 intent？
 6. 本步是否**改了文案**还是只勾选？（只勾选 → 不合格）
@@ -83,7 +84,8 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 10. **转换类 UI**（写 Page 时）：是否过 [converter-input-ui](../converter-input-ui/SKILL.md)——一种主输入、主按钮行无设置、Download 无产物禁用、高级设置可折叠。
 
 硬性两条（`tool-i18n-localization.mdc`「相关关键词落地」）：① 覆盖词写入 H1/desc/FAQ/usecase；② 每语按搜索习惯重跑。  
-有 Planner 分析时再加：③ 长尾任务有对应功能（`work-tasks-tool-brief.mdc`）。
+另须：`02`「同意图相关搜索词」列全同意图相关搜法，生成页面按该表写入（`03` 3–5 ≠ 全表）。  
+有 Planner 分析时再加：长尾任务有对应功能（`work-tasks-tool-brief.mdc`）。
 
 ## Plan 多工具 todos 模板
 

@@ -123,6 +123,7 @@ const ru: SiteLangDict = {
   topic_text_compare: "Сравнение текста",
   topic_security_ids: "Безопасность и ID",
   topic_files_archives: "Файлы и архивы",
+  topic_sound_editor: "Звуковой редактор",
   // --- end topic labels ---
 
 };

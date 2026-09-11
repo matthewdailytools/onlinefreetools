@@ -60,6 +60,8 @@ const REQUIRED = [
 	'public/vendor/tesseract/lang/chi_sim.traineddata.gz',
 	'public/vendor/tesseract/lang/ara.traineddata.gz',
 	'public/vendor/tesseract/lang/jpn.traineddata.gz',
+	'public/vendor/lamejs/lamejs.iife.js',
+	'public/vendor/lamejs/LICENSE',
 ];
 
 /**

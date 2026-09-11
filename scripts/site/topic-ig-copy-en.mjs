@@ -1716,4 +1716,51 @@ export const topics = {
     ],
     cites: {},
   },
+  'sound-editor': {
+    title: 'Audio trimmer tools to cut a clip and export WAV or MP3',
+    desc: 'Set start and end on a local recording, then export WAV or MP3 in this tab. Files stay on the device. Skip a DAW, stems, or YouTube ripping.',
+    intro:
+      'Use this cluster when you already have an audio file and need a shorter clip to send. A full waveform editor is a later tool, not this first job.',
+    tableTitle: 'Cut a clip in the browser, then export',
+    groups: {
+      trim: 'Start, end, and export',
+    },
+    rows: {
+      'trim-an-audio-clip-and-export': r(
+        'Keep only a start–end range and download WAV or MP3',
+        'A local audio file the browser can decode; start and end times you can name.',
+        'You need a multitrack DAW, voice cloning, video demux, or a YouTube rip.'
+      ),
+    },
+    flow: [
+      'Open the trimmer, set start and end, trim, then export WAV or MP3 in the tab.',
+    ],
+    exampleTitle: 'Podcast bumper vs a waveform hub',
+    exampleBody:
+      'A 30-second memo with an 8-second intro belongs on the trimmer: set start after the bumper, export MP3. Searching “sound editor” for fades, undo, and effects is a later hub slug—do not treat the trimmer as that workstation.',
+    boundary:
+      'Files stay on the device. Caps reject huge files before decode. Not a stem splitter, ringtone M4A factory, or stream ripper.',
+    secondary: {},
+    faq: [
+      {
+        q: 'Is this the same as an online sound editor?',
+        a: 'Not yet. The first tool here only trims start and end, then exports. A waveform hub is a separate later slug.',
+      },
+      {
+        q: 'I searched mp3 cutter or cut mp3. Is that another URL?',
+        a: 'No. Same job: keep a range and download. We do not split cutter/trim/crop into extra addresses.',
+      },
+      {
+        q: 'Does the file upload?',
+        a: 'Decode and slice run in the tab. Nothing is posted to our servers for this job.',
+      },
+      {
+        q: 'Can I pull audio from a video or YouTube?',
+        a: 'Not on the trimmer. Video extract is a different job; ripping streams you do not have rights to is out of scope.',
+      },
+    ],
+    cites: {
+      'mdn-audiobuffer': 'MDN: AudioBuffer — samples the browser holds in memory',
+    },
+  },
 };

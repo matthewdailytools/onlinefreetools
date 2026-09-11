@@ -198,6 +198,7 @@ export const TOOL_SLUGS = [
 	"terraform-cidrsubnet",
 	"text-diff",
 	"timezone-converter",
+	"trim-an-audio-clip-and-export",
 	"turn-pdf-into-editable-document",
 	"turn-pdf-into-word-document",
 	"unit-converter",

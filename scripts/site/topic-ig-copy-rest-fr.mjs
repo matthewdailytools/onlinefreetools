@@ -750,4 +750,32 @@ export const buildFrTopics = (expand) => ({
     ],
     cites: {},
   }),
+  'sound-editor': expand({
+    title: 'Outils pour rogner un extrait audio et exporter WAV ou MP3',
+    desc: 'Fixez début et fin sur un fichier local, puis exportez WAV ou MP3 dans l’onglet. Le fichier reste sur l’appareil. Pas un DAW ni un rippeur.',
+    intro: 'Ouvrez ce groupe si vous avez déjà un fichier et voulez seulement un morceau plus court à envoyer. L’éditeur d’onde complet viendra plus tard.',
+    tableTitle: 'Rognez un extrait dans le navigateur puis exportez',
+    groups: {
+      trim: 'Début, fin et export',
+    },
+    rows: {
+      'trim-an-audio-clip-and-export': ['Garder seulement une plage début–fin et télécharger WAV ou MP3', 'Un audio local que le navigateur sait décoder et des temps que vous pouvez nommer.', 'Vous voulez un DAW multipiste, un clonage de voix, un extrait vidéo ou un rip YouTube.'],
+    },
+    flow: [
+      'Ouvrez le rogneur, réglez début et fin, rognez, puis exportez WAV ou MP3 dans l’onglet.',
+    ],
+    exampleTitle: 'Habillage de podcast contre un hub d’onde',
+    exampleBody: 'Un mémo de 30 s avec 8 s d’habillage : commencez après l’habillage, exportez en MP3. Qui cherche un éditeur audio avec fondus et annuler attend un hub plus tard ; ne prenez pas le rogneur pour ce studio.',
+    boundary: 'Les fichiers restent sur l’appareil. Les plafonds refusent les fichiers énormes avant décodage. Ce n’est pas un séparateur de stems, une usine de sonneries M4A ni un rippeur.',
+    secondary: {},
+    faq: [
+      { q: 'Est-ce un éditeur son en ligne ?', a: 'Pas encore. Le premier outil ne fait que rogner début et fin puis exporter. Le hub d’onde est un autre slug plus tard.' },
+      { q: 'J’ai cherché couper un mp3. Y a-t-il une autre URL ?', a: 'Non. Même travail : garder une plage et télécharger. Nous ne découpons pas cutter/trim/crop en adresses extra.' },
+      { q: 'Le fichier est-il envoyé ?', a: 'Décodage et coupe tournent dans l’onglet. Nous n’envoyons pas le fichier à nos serveurs pour ce travail.' },
+      { q: 'Puis-je extraire l’audio d’une vidéo ou de YouTube ?', a: 'Pas sur le rogneur. Extraire d’une vidéo est un autre métier ; ripper un flux sans droits est hors périmètre.' },
+    ],
+    cites: {
+      'mdn-audiobuffer': 'MDN : AudioBuffer — échantillons que le navigateur garde en mémoire',
+    },
+  }),
 });

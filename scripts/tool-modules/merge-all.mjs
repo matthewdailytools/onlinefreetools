@@ -155,6 +155,7 @@ const TOOL_TOPIC_IDS = new Set([
 	'text-compare',
 	'security-ids',
 	'files-archives',
+	'sound-editor',
 ]);
 
 /**

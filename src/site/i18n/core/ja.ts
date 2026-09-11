@@ -117,6 +117,7 @@ const ja: SiteLangDict = {
   topic_text_compare: "テキスト比較",
   topic_security_ids: "セキュリティ・ID",
   topic_files_archives: "ファイル・アーカイブ",
+  topic_sound_editor: "音声編集",
   // --- end topic labels ---
 
 };

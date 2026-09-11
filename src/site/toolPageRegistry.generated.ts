@@ -198,6 +198,7 @@ import { renderSvgOptimizerPage } from '../pages/svgOptimizerPage';
 import { renderTerraformCidrsubnetPage } from '../pages/terraformCidrsubnetPage';
 import { renderTextDiffPage } from '../pages/textDiffPage';
 import { renderTimezoneConverterPage } from '../pages/timezoneConverterPage';
+import { renderTrimAnAudioClipAndExportPage } from '../pages/trimAnAudioClipAndExportPage';
 import { renderTurnPdfIntoEditableDocumentPage } from '../pages/turnPdfIntoEditableDocumentPage';
 import { renderTurnPdfIntoWordDocumentPage } from '../pages/turnPdfIntoWordDocumentPage';
 import { renderUnitConverterPage } from '../pages/unitConverterPage';
@@ -421,6 +422,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'terraform-cidrsubnet': (lang, defaultLang, enabled) => renderTerraformCidrsubnetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'text-diff': (lang, defaultLang, enabled) => renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled }),
 	'timezone-converter': (lang, defaultLang, enabled) => renderTimezoneConverterPage({ lang, defaultLang, enabledLangs: enabled }),
+	'trim-an-audio-clip-and-export': (lang, defaultLang, enabled) => renderTrimAnAudioClipAndExportPage({ lang, defaultLang, enabledLangs: enabled }),
 	'turn-pdf-into-editable-document': (lang, defaultLang, enabled) => renderTurnPdfIntoEditableDocumentPage({ lang, defaultLang, enabledLangs: enabled }),
 	'turn-pdf-into-word-document': (lang, defaultLang, enabled) => renderTurnPdfIntoWordDocumentPage({ lang, defaultLang, enabledLangs: enabled }),
 	'unit-converter': (lang, defaultLang, enabled) => renderUnitConverterPage({ lang, defaultLang, enabledLangs: enabled }),

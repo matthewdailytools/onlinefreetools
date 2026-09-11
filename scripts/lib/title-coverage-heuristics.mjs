@@ -133,6 +133,53 @@ export const checkIntentReviewFilled = (md) => {
 };
 
 /**
+ * 02「同意图相关搜索词」专节：有则须实质填写（新模板含此节）。
+ * 旧工具无专节则跳过，避免存量 coverage:gate 全红。
+ * @param {string} md
+ * @returns {{ ok: boolean, skipped?: boolean, reason?: string }}
+ */
+export const checkSameIntentRelatedKeywordsFilled = (md) => {
+	if (!md || !/同意图相关搜索/.test(md)) {
+		return { ok: true, skipped: true };
+	}
+	const idx = md.search(/同意图相关搜索/);
+	const section = md.slice(idx, idx + 12000);
+	if (!/\[[xX]\]\s*.*已列全/.test(section)) {
+		return { ok: false, reason: '同意图相关搜索词：未勾选「上表已列全本意图相关搜索」' };
+	}
+	if (!/\[[xX]\]\s*.*按上表写入/.test(section)) {
+		return { ok: false, reason: '同意图相关搜索词：未勾选「生成…时按上表写入」' };
+	}
+	const lines = section.split('\n');
+	/** 非表头、非分隔、首列有搜法的数据行 */
+	const dataRows = lines.filter((line) => {
+		if (!/^\|/.test(line) || /^\|\s*-+/.test(line)) return false;
+		if (/相关搜法|判定|页面生成落点/.test(line)) return false;
+		const cells = line.split('|').map((c) => c.trim()).filter((_, i, arr) => i > 0 && i < arr.length - 1);
+		if (cells.length < 3) return false;
+		const term = cells[0] || '';
+		if (!term || term === '—' || term === '-' || /^absorb 主词/.test(term)) return false;
+		return true;
+	});
+	if (dataRows.length < 3) {
+		return {
+			ok: false,
+			reason: '同意图相关搜索词：数据行过少或仍是模板空行（须 ≥3 条搜法+落点）'
+		};
+	}
+	const withLanding = dataRows.filter((line) =>
+		/H1|desc|FAQ|usecase|Use cases|title|How/i.test(line)
+	);
+	if (withLanding.length < 3) {
+		return { ok: false, reason: '同意图相关搜索词：须为每条标明 H1/desc/FAQ/usecase 落点' };
+	}
+	if (!/(absorb|主词|次词|有意不满足|drop)/i.test(section)) {
+		return { ok: false, reason: '同意图相关搜索词：缺少判定（absorb / 有意不满足 / drop）' };
+	}
+	return { ok: true };
+};
+
+/**
  * 从 03-locale-briefs.md 判断是否勾选清单前覆盖。
  * @param {string} md
  * @returns {boolean}

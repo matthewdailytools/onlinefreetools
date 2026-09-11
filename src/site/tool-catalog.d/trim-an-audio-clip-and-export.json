@@ -1,0 +1,27 @@
+{
+  "slug": "trim-an-audio-clip-and-export",
+  "path": "/tools/trim-an-audio-clip-and-export",
+  "updatedAt": "2026-09-11T00:25:00.000Z",
+  "launchedAt": "2026-09-10T15:40:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_trim_an_audio_clip_and_export_title",
+  "homeTitleKey": "tool_trim_an_audio_clip_and_export_title",
+  "homeDescKey": "tool_trim_an_audio_clip_and_export_desc",
+  "faqPrefix": "tool_trim_an_audio_clip_and_export",
+  "related": [
+    "file-metadata-analyzer",
+    "file-hash"
+  ],
+  "logo": "/icons/tools/trim-an-audio-clip-and-export.svg",
+  "page": {
+    "module": "../pages/trimAnAudioClipAndExportPage",
+    "export": "renderTrimAnAudioClipAndExportPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "data"
+}

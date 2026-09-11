@@ -37,7 +37,7 @@ alwaysApply: false
 
 ## 工程清单
 
-> **生成本清单之前**：必须已完成「清单前检索覆盖优化」与「用户意图审查并优化」——覆盖表（主词→H1、次词落点）+ 意图总判（满足/超出，How 对齐搜索者任务）；见 `tool-i18n-localization.mdc` 步 0b / 0i 与 `work-tasks-tool-brief.mdc`。未完成不得按下表开工。  
+> **生成本清单之前**：必须已完成「清单前检索覆盖优化」与「用户意图审查并优化」——覆盖表（主词→H1、次词落点）+ **`02` 同意图相关搜索全表（页面生成必吸）** + 意图总判（满足/超出，How 对齐搜索者任务）；见 `tool-i18n-localization.mdc` 步 0b / 0i、「同意图相关搜索词」与 `work-tasks-tool-brief.mdc`。未完成不得按下表开工。  
 > **检索覆盖 Skill**：多工具 / 新工具实现时先读并执行 [`.cursor/skills/tool-coverage-pass/SKILL.md`](../skills/tool-coverage-pass/SKILL.md)；分阶段跑 `npm run coverage:gate`。  
 > **Token 效率 Skill（可选）**：单工具实现/ship 且关注上下文成本时，叠加 [`.cursor/skills/tool-token-efficiency/SKILL.md`](../skills/tool-token-efficiency/SKILL.md)——只优化读文件与会话拆分，**不得**跳过覆盖门禁或降低十语质量。  
 > **转换器着陆页 SEO**：convert / compress / screenshot / `*-to-*` 写 title/H1/meta/How 时再读 [`.cursor/skills/converter-serp-landing-seo/SKILL.md`](../skills/converter-serp-landing-seo/SKILL.md)（snippet meta、How=按钮、设置可索引；禁止近义 URL 铺量）。  
@@ -76,7 +76,7 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 `src/index.ts` **无需**再按工具注册路由；`merge:tools` 更新 `toolSlugs.generated.ts`，`build:site` 预渲染 `_pages/{lang}/tools/{slug}.html`。首页卡片由 `build:site` 读合并后的 catalog 生成进 `public/index.html` / `public/{lang}/index.html`，一般不必手改 `content-home.mjs`。
 
 多语言：**按 locale brief 重写**（见 `tool-i18n-localization.mdc`），禁止批量 Translate 直出。  
-文案顺序：① **清单前**优化 slug/title/关键词/desc → ② 写母版 title/description → ③ **生成后再**跑覆盖优化（步 2）→ ④ 逐语重写 → ⑤ 抽查语再优化（步 4）；勿首稿过 lint 即标完成。
+文案顺序：① **清单前**优化 slug/title/关键词/desc，并在 `02` 写全「同意图相关搜索词」→ ② 写母版 title/description（**按该表吸次词**）→ ③ **生成后再**跑覆盖优化（步 2）→ ④ 逐语重写 → ⑤ 抽查语再优化（步 4）；勿首稿过 lint 即标完成。
 
 ## 图标 SVG（易踩坑）
 
@@ -115,7 +115,7 @@ H2 Why choose our {tool name} tools（紧挨 How 之后；见下节）
 H2 Formula / Rules / Algorithm（计算与转换类）
 H2 Example（固定 Input→Output；须与默认样例行为一致）
 H2 Use cases（2–3 条场景；长尾意图优先写此，慎拆 URL）
-H2 FAQ（≥3）
+H2 FAQ（≥3；同意图相关搜法按 `02` 词表落入问答句，禁止页上关键词列表）
 H2 Related tools（catalog related ≥2）
 H2 References（≥1 可点击权威链，YMYL 建议 ≥2）
 Disclaimer（YMYL 必备）
@@ -142,6 +142,8 @@ Disclaimer（YMYL 必备）
 **文案深度**（相对「三步怎么用」）：为何遇到该问题、输入类型差异、失败边界、参数选择、与竞品/其他方法差异。
 
 **可见文案边界**：以上各区只写「用户完成任务需要知道什么」。禁止把 SEO/工程理由（doorway/空壳/薄页/slug/「双向放一页」「不拆 URL」自述）或实现库名当卖点写进正文；理由留 `work-tasks`/`docs`。见 `tool-i18n-localization.mdc` / `tool-i18n-seo.mdc`。
+
+**同意图相关搜索（页面生成）**：生成 How / description / FAQ / Use cases 前，必须对照 `02`「同意图相关搜索词」全表写入落点。`03` 每语 3–5 只定 H1 方向。近义共用自然句；禁止漏吸；禁止把词表贴进页面。
 
 **Tier 2 / WASM**：首屏不拉大块 WASM；点击后懒加载（CWV）。
 

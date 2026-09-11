@@ -118,6 +118,7 @@ const ar: SiteLangDict = {
   topic_text_compare: "مقارنة النص",
   topic_security_ids: "الأمان والمعرّفات",
   topic_files_archives: "الملفات والأرشيف",
+  topic_sound_editor: "محرر الصوت",
   // --- end topic labels ---
 
 };

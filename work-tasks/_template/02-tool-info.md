@@ -75,6 +75,18 @@
 
 > 填完后验收：`npm run coverage:gate -- --slug={tool-slug} --phase=0b`（须绿才可标 `ready` / 勾下方页面模块清单）。
 
+## 同意图相关搜索词（页面生成必吸）
+
+> 规则：`.cursor/rules/tool-i18n-localization.mdc`「同意图相关搜索词」。写 i18n / 勾下方「页面模块清单」前，须列**全部**同意图相关搜法（Google/Bing 相关搜索、PAA、自动完成、方向文档搜法簇、Planner absorb）。`03` 每语 3–5 只定 H1 方向，**不能**代替本表。异意图相关搜索进「不吸」行。页上禁止关键词列表；生成文案时按「落点」自然写入，近义可共用一句。
+
+| 相关搜法（同意图须全部列出） | 判定 | 页面生成落点（H1 / desc / FAQ / usecase） | 近义不拆 URL |
+|---|---|---|---|
+| | absorb 主词 / absorb 次词 / 有意不满足 / drop | | `/…` |
+| | | | |
+
+- [ ] 上表已列全本意图相关搜索（不是只写 03 的 3–5 个主方向词）
+- [ ] 生成 title / description / FAQ / Use cases 时按上表写入，禁止漏词只留本表
+
 ## Ads / Keyword Planner 长尾（有分析时必做）
 
 > 规则：`.cursor/rules/work-tasks-tool-brief.mdc`「Ads / Keyword Planner 长尾融入」。无 Google/Bing Planner 分析则勾「不适用」并跳过本表。

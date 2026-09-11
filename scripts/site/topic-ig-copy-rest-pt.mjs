@@ -750,6 +750,34 @@ export const buildPtTopics = (expand) => ({
     ],
     cites: {},
   }),
+  'sound-editor': expand({
+    title: 'Ferramentas para recortar um trecho de áudio e exportar WAV ou MP3',
+    desc: 'Marque início e fim num ficheiro local e exporte WAV ou MP3 no separador. O ficheiro fica no dispositivo. Não é um DAW nem um ripper.',
+    intro: 'Use o agrupamento se já tem áudio e só quer um recorte mais curto para enviar. O editor de forma de onda completa vem depois.',
+    tableTitle: 'Recorte um trecho no navegador e exporte',
+    groups: {
+      trim: 'Início, fim e exportação',
+    },
+    rows: {
+      'trim-an-audio-clip-and-export': ['Guardar só o intervalo início–fim e descarregar WAV ou MP3', 'Áudio local que o navegador saiba descodificar e tempos que consiga nomear.', 'Precisa de DAW com várias pistas, clonagem de voz, extrair de vídeo ou ripar YouTube.'],
+    },
+    flow: [
+      'Abra o recorte, defina início e fim, recorte, depois exporte WAV ou MP3 no separador.',
+    ],
+    exampleTitle: 'Vinheta de podcast versus um hub de onda',
+    exampleBody: 'Um memo de 30 s com 8 s de vinheta: comece depois da vinheta e exporte MP3. Quem procura um editor de som com fades e desfazer espera um hub posterior; não trate o recorte como esse estúdio.',
+    boundary: 'Os ficheiros ficam no dispositivo. Os limites recusam ficheiros enormes antes da descodificação. Não é separador de stems nem fábrica de toques M4A nem ripper.',
+    secondary: {},
+    faq: [
+      { q: 'Isto é um editor de som online?', a: 'Ainda não. A primeira ferramenta só recorta início e fim e exporta. O hub de onda é outro endereço mais tarde.' },
+      { q: 'Pesquisei cortar mp3. Há outro URL?', a: 'Não. É o mesmo trabalho: ficar com um trecho e descarregar. Não partimos cutter/trim/crop em endereços extra.' },
+      { q: 'O ficheiro é enviado?', a: 'A descodificação e o corte correm no separador. Não enviamos o ficheiro para os nossos servidores neste trabalho.' },
+      { q: 'Posso tirar áudio de um vídeo ou do YouTube?', a: 'Não no recorte. Extrair de vídeo é outro ofício; ripar streams sem direitos fica de fora.' },
+    ],
+    cites: {
+      'mdn-audiobuffer': 'MDN: AudioBuffer — amostras que o navegador guarda em memória',
+    },
+  }),
 });
 
 

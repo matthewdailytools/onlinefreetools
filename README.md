@@ -32,6 +32,7 @@
 - [文件哈希校验](https://onlinefreetools.org/zh/tools/file-hash) - 在浏览器内校验文本或文件的 MD5、SHA 等十六进制摘要
 - [批量计算发版文件校验和](https://onlinefreetools.org/zh/tools/batch-checksum-release-files) - 批量计算发版文件校验和 — SHA-256 表、SUMS 对照、CSV 导出，不打原文件 ZIP；文件留在本机、不上传服务器
 - [文件元数据分析器](https://onlinefreetools.org/zh/tools/file-metadata-analyzer) - 本地查看文件大小、MIME、修改时间，以及图片尺寸或音视频时长；文件留在设备、不上传服务器
+- [裁剪一段音频并导出](https://onlinefreetools.org/zh/tools/trim-an-audio-clip-and-export) - 在本标签页按起点和终点裁剪本地音频，再导出 WAV 或 MP3；文件留在设备、不上传服务器
 - [在线解压 ZIP](https://onlinefreetools.org/zh/tools/unzip-file) - 浏览器内查看 ZIP 文件树、预览文本/图片，并下载单个文件或导出全部，不上传服务器
 - [创建 zip 文件](https://onlinefreetools.org/zh/tools/create-zip-file) - 在浏览器里把多个文件打成 ZIP 下载；可保留文件夹路径；文件留在设备、不上传服务器
 - [压缩包在线解压](https://onlinefreetools.org/zh/tools/archive-extractor) - 浏览器内打开 ZIP、TAR、TAR.GZ 压缩包，预览文件并导出干净 ZIP，不上传服务器
@@ -250,6 +251,7 @@ Below are our available online tools with their links (English version):
 - [File Hash Checker](https://onlinefreetools.org/tools/file-hash) - Verify MD5 and SHA hex digests for pasted text or local files in your browser
 - [Batch checksum release files](https://onlinefreetools.org/tools/batch-checksum-release-files) - Batch checksum release files — SHA-256 table, SHA256SUMS compare, CSV/SUMS export, not a ZIP of the binaries — stays on the device, not uploaded to a server
 - [File metadata analyzer](https://onlinefreetools.org/tools/file-metadata-analyzer) - Inspect local file size, MIME, modified time, plus image dimensions or A/V duration — stays on the device, not uploaded
+- [Trim an audio clip and export](https://onlinefreetools.org/tools/trim-an-audio-clip-and-export) - Trim a local file to start and end times, then export WAV or MP3 in this tab — stays on the device, not uploaded
 - [Unzip File Online](https://onlinefreetools.org/tools/unzip-file) - Inspect ZIP contents, preview text/images, and download one file or export all in your browser — no server upload
 - [Create zip file](https://onlinefreetools.org/tools/create-zip-file) - Pack several files into a ZIP in your browser, keep folder paths when the browser provides them — stays on the device, not uploaded
 - [Archive Extractor Online](https://onlinefreetools.org/tools/archive-extractor) - Open ZIP, TAR, and TAR.GZ archives in your browser, preview files, and export a clean ZIP — no server upload

@@ -133,6 +133,7 @@ const en: SiteLangDict = {
   topic_text_compare: "Text compare",
   topic_security_ids: "Security & IDs",
   topic_files_archives: "Files & archives",
+  topic_sound_editor: "Sound editor",
   // --- end topic labels ---
 
 };

@@ -25,6 +25,7 @@ export const TOOL_TOPIC_ORDER = [
   'text-compare',
   'security-ids',
   'files-archives',
+  'sound-editor',
 ];
 
 /**

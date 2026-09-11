@@ -119,6 +119,7 @@ const id: SiteLangDict = {
   topic_text_compare: "Bandingkan teks",
   topic_security_ids: "Keamanan & ID",
   topic_files_archives: "File & arsip",
+  topic_sound_editor: "Editor suara",
   // --- end topic labels ---
 
 };

@@ -124,6 +124,7 @@ const fr: SiteLangDict = {
   topic_text_compare: "Comparer du texte",
   topic_security_ids: "Sécurité & IDs",
   topic_files_archives: "Fichiers & archives",
+  topic_sound_editor: "Éditeur son",
   // --- end topic labels ---
 
 };

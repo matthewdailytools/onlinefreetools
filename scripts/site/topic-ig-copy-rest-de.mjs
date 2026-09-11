@@ -750,4 +750,32 @@ export const buildDeTopics = (expand) => ({
     ],
     cites: {},
   }),
+  'sound-editor': expand({
+    title: 'Werkzeuge zum Zuschneiden eines Audioclips und Export als WAV oder MP3',
+    desc: 'Setzen Sie Start und Ende auf einer lokalen Aufnahme und exportieren Sie WAV oder MP3 im Tab. Die Datei bleibt auf dem Gerät. Kein DAW und kein Ripper.',
+    intro: 'Nutzen Sie die Gruppe, wenn die Datei schon da ist und nur ein kürzerer Clip raus soll. Der volle Wellenform-Editor kommt später.',
+    tableTitle: 'Clip im Browser zuschneiden und exportieren',
+    groups: {
+      trim: 'Start, Ende und Export',
+    },
+    rows: {
+      'trim-an-audio-clip-and-export': ['Nur den Start–Ende-Bereich behalten und WAV oder MP3 laden', 'Lokale Audiodatei, die der Browser dekodieren kann, plus benennbare Zeiten.', 'Sie brauchen ein Mehrspur-DAW, Stimmklonen, Video-Demux oder YouTube-Rip.'],
+    },
+    flow: [
+      'Öffnen Sie den Zuschnitt, setzen Sie Start und Ende, schneiden Sie zu, exportieren Sie WAV oder MP3 im Tab.',
+    ],
+    exampleTitle: 'Podcast-Jingle gegen Wellenform-Hub',
+    exampleBody: 'Ein 30-s-Memo mit 8 s Jingle: nach dem Jingle starten und MP3 exportieren. Wer einen Sound-Editor mit Fades und Undo sucht, wartet auf den späteren Hub — behandeln Sie den Zuschnitt nicht als Studio.',
+    boundary: 'Dateien bleiben auf dem Gerät. Kappen lehnen riesige Dateien vor dem Dekodieren ab. Kein Stem-Splitter, keine M4A-Klingeltonfabrik, kein Stream-Ripper.',
+    secondary: {},
+    faq: [
+      { q: 'Ist das ein Online-Sound-Editor?', a: 'Noch nicht. Das erste Werkzeug schneidet nur Start und Ende und exportiert. Der Wellenform-Hub ist später ein eigener Slug.' },
+      { q: 'Ich habe nach MP3 schneiden gesucht. Gibt es eine zweite URL?', a: 'Nein. Dieselbe Aufgabe: Bereich behalten und herunterladen. Wir teilen cutter/trim/crop nicht in Extra-Adressen auf.' },
+      { q: 'Wird die Datei hochgeladen?', a: 'Dekodieren und Schneiden laufen im Tab. Für diesen Job senden wir die Datei nicht an unsere Server.' },
+      { q: 'Kann ich Ton aus Video oder YouTube ziehen?', a: 'Nicht im Zuschnitt. Video extrahieren ist ein anderer Job; Streams ohne Rechte liegen außerhalb.' },
+    ],
+    cites: {
+      'mdn-audiobuffer': 'MDN: AudioBuffer — Samples, die der Browser im Speicher hält',
+    },
+  }),
 });

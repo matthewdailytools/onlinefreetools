@@ -1716,6 +1716,53 @@ const topicsEs = {
     ],
     cites: {},
   },
+  'sound-editor': {
+    title: 'Herramientas para recortar un clip de audio y exportar WAV o MP3',
+    desc: 'Marca inicio y fin en un audio local y exporta WAV o MP3 en la pestaña. El archivo no se sube. No es un DAW ni un ripper.',
+    intro:
+      'Ábrelo si ya tienes un archivo y solo quieres un trozo más corto para enviar. El editor de forma de onda completo llega después.',
+    tableTitle: 'Recorta un clip en el navegador y exporta',
+    groups: {
+      trim: 'Inicio, fin y exportación',
+    },
+    rows: {
+      'trim-an-audio-clip-and-export': r(
+        'Conservar solo un tramo inicio–fin y bajar WAV o MP3',
+        'Un audio local que el navegador sepa decodificar y unos tiempos que puedas nombrar.',
+        'Necesitas un DAW de varias pistas, clonar una voz, extraer de vídeo o bajar de YouTube sin derechos.'
+      ),
+    },
+    flow: [
+      'Abre el recortador, fija inicio y fin, recorta y exporta WAV o MP3 en la pestaña.',
+    ],
+    exampleTitle: 'Cabeza de pódcast frente a un hub de onda',
+    exampleBody:
+      'Un memo de 30 s con 8 s de sintonía: recorta después de la sintonía y exporta MP3. Quien busca “editor de audio online” con fundidos y deshacer espera un hub posterior; no trates el recorte como ese estudio.',
+    boundary:
+      'El archivo se queda en el dispositivo. Los topes rechazan ficheros enormes antes de decodificar. No es un separador de pistas ni un ripper.',
+    secondary: {},
+    faq: [
+      {
+        q: '¿Esto es un editor de sonido online?',
+        a: 'Todavía no. La primera herramienta solo recorta inicio y fin y exporta. El hub de onda es otro slug más adelante.',
+      },
+      {
+        q: 'Busqué cortar mp3 o mp3 cutter. ¿Hay otra URL?',
+        a: 'No. Es el mismo trabajo: guardar un tramo y descargar. No partimos cutter/trim/crop en direcciones extra.',
+      },
+      {
+        q: '¿Se sube el archivo?',
+        a: 'La decodificación y el corte corren en la pestaña. No lo enviamos a nuestros servidores para este trabajo.',
+      },
+      {
+        q: '¿Puedo sacar audio de un vídeo o de YouTube?',
+        a: 'No en el recortador. Extraer de vídeo es otro oficio; bajar streams sin derechos queda fuera.',
+      },
+    ],
+    cites: {
+      'mdn-audiobuffer': 'MDN: AudioBuffer — muestras que el navegador guarda en memoria',
+    },
+  },
 };
 
 /**

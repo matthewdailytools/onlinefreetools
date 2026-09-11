@@ -72,6 +72,7 @@
     "predeploy": "npm run build:site && npm run lint:seo && npm run lint:vendor"
   },
   "dependencies": {
+    "@breezystack/lamejs": "1.2.7",
     "@cantoo/pdf-lib": "2.9.1",
     "@fontsource/plus-jakarta-sans": "^5.3.0",
     "@jsquash/avif": "^2.1.1",
