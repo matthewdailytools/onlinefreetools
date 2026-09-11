@@ -79,10 +79,10 @@ export const topicGuideTranslations = {
     "topic_files_archives_guide_body": "Create handoffs: create zip file for modest folder packaging in the browser.\n\nOpen existing archives: unzip file or archive extractor to list or pull contents—watch memory on huge trees.\n\nMagnet links: magnet link decoder to read display name and hash fields from a URI—does not start downloads.\n\nIntegrity cross-links: file hash and metadata tools may list here secondarily when verifying downloads.",
     "topic_files_archives_faq_q4": "Browser zip vs desktop 7-Zip for large repos?",
     "topic_files_archives_faq_a4": "Browser tools hit tab memory limits. Exclude node_modules-scale trees or split archives; use a native archiver for multi-gigabyte jobs or exotic compression formats.",
-    "topic_sound_editor_guide_title": "Trim a clip first; a full waveform editor comes later",
-    "topic_sound_editor_guide_body": "One-shot trim: open Trim an audio clip and export when you only need start and end times, then WAV or MP3. That page is not a DAW.\n\nHead queries such as sound editor or online audio editor belong in this topic FAQ until a waveform hub ships as its own tool slug.\n\nDo not use these tools to rip streams or to clone a voice you do not have rights to.",
+    "topic_sound_editor_guide_title": "Trim a clip or cut silence first; a full waveform editor comes later",
+    "topic_sound_editor_guide_body": "One-shot trim: open Trim an audio clip and export when you only need start and end times, then WAV or MP3. That page is not a DAW.\n\nDead air: open Remove silence from a recording when long pauses should go and the result must stay one file, not a ZIP.\n\nHead queries such as sound editor or online audio editor belong in this topic FAQ until a waveform hub ships as its own tool slug.\n\nDo not use these tools to rip streams or to clone a voice you do not have rights to.",
     "topic_sound_editor_faq_q4": "Is this topic a full online sound editor?",
-    "topic_sound_editor_faq_a4": "Not yet. The first shipped job is trim-and-export. A waveform hub is a later slug. Searching mp3 cutter or cut mp3 should use the trimmer, not a second URL."
+    "topic_sound_editor_faq_a4": "Not yet. Two shipped jobs: trim-and-export, and remove silence into one file. A waveform hub is a later slug. Searching mp3 cutter should use the trimmer; split-on-silence ZIP is a different job."
   },
   "zh": {
     "topic_health_body_guide_title": "按健康问题选工具",
@@ -157,10 +157,10 @@ export const topicGuideTranslations = {
     "topic_files_archives_guide_body": "打包：create zip file（ modest 体量的浏览器打包）。\n\n解压：unzip file、archive extractor——大树注意内存。\n\nMagnet：magnet link decoder 读显示名与 hash，不发起下载。\n\n校验：file hash/metadata 可能次要收录于此。",
     "topic_files_archives_faq_q4": "浏览器 zip 和 7-Zip 怎么选？",
     "topic_files_archives_faq_a4": "浏览器受标签页内存限制；node_modules 级目录请拆分或用桌面 archiver。多 GB 或 exotic 格式用本机工具。",
-    "topic_sound_editor_guide_title": "先裁一段；完整波形编辑器在后",
-    "topic_sound_editor_guide_body": "只要起止点：打开「裁剪一段音频并导出」，导出 WAV 或 MP3。那一页不是宿主。\n\n搜「在线音频编辑」这类头词先看本主题 FAQ；波形工作台是以后另开的工具。\n\n不要用来扒流或克隆无权使用的声音。",
+    "topic_sound_editor_guide_title": "先裁一段或挖掉静音；完整波形编辑器在后",
+    "topic_sound_editor_guide_body": "只要起止点：打开「裁剪一段音频并导出」，导出 WAV 或 MP3。那一页不是宿主。\n\n中间长空白：打开「从一段录音里去掉静音」，结果仍是一个文件，不是 ZIP。\n\n搜「在线音频编辑」这类头词先看本主题 FAQ；波形工作台是以后另开的工具。\n\n不要用来扒流或克隆无权使用的声音。",
     "topic_sound_editor_faq_q4": "这个主题就是完整在线声音编辑器吗？",
-    "topic_sound_editor_faq_a4": "还不是。先交付的是裁剪导出。波形宿主以后另开。搜 mp3 剪切、剪 mp3 用裁剪页，不要第二网址。"
+    "topic_sound_editor_faq_a4": "还不是。已交付两件：裁剪导出，以及挖静音仍一个文件。波形宿主以后另开。搜 mp3 剪切用裁剪页；按静音切 ZIP 是另一作业。"
   },
   "es": {
     "topic_health_body_guide_title": "Qué herramienta encaja con tu pregunta de salud",
@@ -238,7 +238,7 @@ export const topicGuideTranslations = {
     "topic_sound_editor_guide_title": "Primero recorta un clip; el editor de onda llega después",
     "topic_sound_editor_guide_body": "Recorte de una vez: abre Recorta un clip de audio y expórtalo si solo necesitas inicio y fin, luego WAV o MP3. Esa herramienta no es un DAW.\n\nBúsquedas como editor de audio online van en las FAQ del tema hasta que exista un hub de onda.\n\nNo las uses para ripar streams ni clonar voces sin derechos.",
     "topic_sound_editor_faq_q4": "¿Este tema es un editor de sonido completo?",
-    "topic_sound_editor_faq_a4": "Todavía no. El primer trabajo publicado es recortar y exportar. El hub de onda es otro slug. Cortar mp3 debe usar el recortador, no una segunda URL."
+    "topic_sound_editor_faq_a4": "Todavía no. Dos oficios: recortar y exportar, o quitar silencios en un solo archivo. El hub de onda es otro slug. Cortar mp3 usa el recortador; un ZIP por silencios es otro trabajo."
   },
   "ar": {
     "topic_health_body_guide_title": "أي أداة تناسب سؤالك الصحي",
@@ -316,7 +316,7 @@ export const topicGuideTranslations = {
     "topic_sound_editor_guide_title": "قص المقطع أولاً؛ محرر الموجة لاحقًا",
     "topic_sound_editor_guide_body": "قص لمرة واحدة: افتح قص مقطع صوت وتصديره إن أردت البداية والنهاية ثم WAV أو MP3. ليست استوديوًا.\n\nاستعلامات مثل محرر صوت أونلاين تبقى في الأسئلة حتى يظهر عنوان موجة مستقل.\n\nلا تستخدمها لسحب بث أو استنساخ صوت بلا حق.",
     "topic_sound_editor_faq_q4": "هل هذا الموضوع محرر صوت كامل؟",
-    "topic_sound_editor_faq_a4": "ليس بعد. العمل الأول هو القص والتصدير. منصة الموجة لاحقًا. قص mp3 يستخدم القصّاص لا عنوانًا ثانيًا."
+    "topic_sound_editor_faq_a4": "ليس بعد. مهمتان: القص والتصدير، أو إزالة الصمت في ملف واحد. منصة الموجة لاحقًا. قص mp3 يستخدم القصّاص؛ ZIP عند الصمت عمل آخر."
   },
   "pt": {
     "topic_health_body_guide_title": "Qual ferramenta combina com a sua pergunta de saúde",
@@ -394,7 +394,7 @@ export const topicGuideTranslations = {
     "topic_sound_editor_guide_title": "Primeiro recorte um trecho; o editor de onda vem depois",
     "topic_sound_editor_guide_body": "Recorte único: abra Recorte um trecho de áudio e exporte se só precisa de início e fim, depois WAV ou MP3. Não é um DAW.\n\nPesquisas como editor de áudio online ficam nas FAQ até existir um hub de onda.\n\nNão use para ripar streams nem clonar vozes sem direitos.",
     "topic_sound_editor_faq_q4": "Este tema é um editor de som completo?",
-    "topic_sound_editor_faq_a4": "Ainda não. O primeiro trabalho é recortar e exportar. O hub de onda é outro slug. Cortar mp3 deve usar o recorte, não um segundo URL."
+    "topic_sound_editor_faq_a4": "Ainda não. Dois ofícios: recortar e exportar, ou remover silêncios num só ficheiro. O hub de onda é outro slug. Cortar mp3 usa o recorte; ZIP por silêncio é outro trabalho."
   },
   "id": {
     "topic_health_body_guide_title": "Alat mana yang cocok untuk pertanyaan kesehatan Anda",
@@ -472,7 +472,7 @@ export const topicGuideTranslations = {
     "topic_sound_editor_guide_title": "Potong klip dulu; editor gelombang belakangan",
     "topic_sound_editor_guide_body": "Potong sekali jalan: buka Potong klip audio lalu ekspor jika hanya perlu awal dan akhir, lalu WAV atau MP3. Bukan DAW.\n\nPencarian seperti editor audio online masuk FAQ topik sampai ada hub gelombang.\n\nJangan dipakai merobek siaran atau kloning suara tanpa hak.",
     "topic_sound_editor_faq_q4": "Apakah topik ini editor suara lengkap?",
-    "topic_sound_editor_faq_a4": "Belum. Pekerjaan pertama adalah potong-lalu-ekspor. Hub gelombang slug terpisah. Potong mp3 memakai pemotong, bukan URL kedua."
+    "topic_sound_editor_faq_a4": "Belum. Dua tugas: potong lalu ekspor, atau hapus keheningan jadi satu berkas. Hub gelombang slug terpisah. Potong mp3 memakai pemotong; ZIP per jeda pekerjaan lain."
   },
   "fr": {
     "topic_health_body_guide_title": "Quel outil correspond à votre question santé",
@@ -550,7 +550,7 @@ export const topicGuideTranslations = {
     "topic_sound_editor_guide_title": "Rognez d’abord un extrait ; l’éditeur d’onde vient plus tard",
     "topic_sound_editor_guide_body": "Rogner une fois : ouvrez Rognez un extrait audio et exportez-le si vous n’avez besoin que du début et de la fin, puis WAV ou MP3. Ce n’est pas un DAW.\n\nLes requêtes éditeur audio en ligne restent dans la FAQ du thème tant qu’un hub d’onde n’existe pas.\n\nNe les utilisez pas pour ripper un flux ou cloner une voix sans droits.",
     "topic_sound_editor_faq_q4": "Ce thème est-il un éditeur son complet ?",
-    "topic_sound_editor_faq_a4": "Pas encore. Le premier travail livré est rogner puis exporter. Le hub d’onde est un autre slug. Couper un mp3 doit utiliser le rogneur, pas une seconde URL."
+    "topic_sound_editor_faq_a4": "Pas encore. Deux métiers : rogner puis exporter, ou supprimer les silences en un fichier. Le hub d’onde est un autre slug. Couper un mp3 utilise le rogneur ; un ZIP aux silences est un autre travail."
   },
   "ja": {
     "topic_health_body_guide_title": "健康の質問に合うツール",
@@ -628,7 +628,7 @@ export const topicGuideTranslations = {
     "topic_sound_editor_guide_title": "まず切り出し；波形の本編集は後",
     "topic_sound_editor_guide_body": "一度きり切り出し：開始と終了だけなら「音声クリップを切り出して書き出す」を開き、WAV か MP3 にします。DAW ではありません。\n\n「オンライン音声編集」などの頭語は、波形ハブができるまでこのテーマの FAQ に置きます。\n\n配信の無断取得や権利のない声のクローンには使わないでください。",
     "topic_sound_editor_faq_q4": "このテーマは本格的な音声編集ですか？",
-    "topic_sound_editor_faq_a4": "まだ違います。先に出す仕事は切り出しと書き出しです。波形ハブは後のスラッグです。mp3カットは切り出し器を使い、第二 URL は作りません。"
+    "topic_sound_editor_faq_a4": "まだ違います。切り出しと書き出し、無音を切って1本に残す、の2つです。波形ハブは後のスラッグです。mp3カットは切り出し器、無音ZIPは別作業です。"
   },
   "ru": {
     "topic_health_body_guide_title": "Какой инструмент под ваш вопрос о здоровье",
@@ -706,7 +706,7 @@ export const topicGuideTranslations = {
     "topic_sound_editor_guide_title": "Сначала обрежьте фрагмент; волновой редактор позже",
     "topic_sound_editor_guide_body": "Разовая обрезка: откройте «Обрежьте аудиофрагмент и экспортируйте», если нужны только начало и конец, затем WAV или MP3. Это не DAW.\n\nЗапросы вроде online audio editor остаются в FAQ темы, пока нет волнового хаба.\n\nНе используйте инструменты для рипа потоков или клона голоса без прав.",
     "topic_sound_editor_faq_q4": "Эта тема — полный онлайн-редактор звука?",
-    "topic_sound_editor_faq_a4": "Пока нет. Первая поставка — обрезка и экспорт. Волновой хаб — поздний слаг. «Обрезать mp3» должно идти в обрезку, не на второй URL."
+    "topic_sound_editor_faq_a4": "Пока нет. Две задачи: обрезка и экспорт, или удаление тишины в один файл. Волновой хаб — поздний слаг. «Обрезать mp3» — в обрезку; ZIP по тишине — другая работа."
   },
   "de": {
     "topic_health_body_guide_title": "Welches Tool passt zu Ihrer Gesundheitsfrage",
@@ -784,6 +784,6 @@ export const topicGuideTranslations = {
     "topic_sound_editor_guide_title": "Zuerst den Clip zuschneiden; der Wellenform-Editor kommt später",
     "topic_sound_editor_guide_body": "Einmal zuschneiden: öffnen Sie Audioclip zuschneiden und exportieren, wenn nur Start und Ende nötig sind, dann WAV oder MP3. Das ist kein DAW.\n\nKopfanfragen wie Sound-Editor bleiben in den FAQ, bis ein Wellenform-Hub als eigener Slug existiert.\n\nNicht zum Rippen von Streams oder zum Klonen von Stimmen ohne Rechte nutzen.",
     "topic_sound_editor_faq_q4": "Ist dieses Thema ein voller Online-Sound-Editor?",
-    "topic_sound_editor_faq_a4": "Noch nicht. Der erste Job ist Zuschneiden und Export. Der Wellenform-Hub kommt später. MP3 schneiden gehört auf den Zuschnitt, nicht auf eine zweite URL."
+    "topic_sound_editor_faq_a4": "Noch nicht. Zwei Jobs: Zuschneiden und Export, oder Stille entfernen in einer Datei. Der Wellenform-Hub kommt später. MP3 schneiden gehört auf den Zuschnitt; ein Stille-ZIP ist ein anderer Job."
   }
 };

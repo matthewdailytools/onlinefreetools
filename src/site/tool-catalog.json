@@ -4305,6 +4305,28 @@
     "launchedAt": "2026-08-08T21:33:07+08:00"
   },
   {
+    "slug": "remove-silence-from-a-recording",
+    "path": "/tools/remove-silence-from-a-recording",
+    "updatedAt": "2026-09-11T05:46:00.000Z",
+    "launchedAt": "2026-09-11T05:46:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_remove_silence_from_a_recording_title",
+    "homeTitleKey": "tool_remove_silence_from_a_recording_title",
+    "homeDescKey": "tool_remove_silence_from_a_recording_desc",
+    "faqPrefix": "tool_remove_silence_from_a_recording",
+    "related": [
+      "trim-an-audio-clip-and-export",
+      "file-metadata-analyzer"
+    ],
+    "logo": "/icons/tools/remove-silence-from-a-recording.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "data"
+  },
+  {
     "slug": "robots-txt-generator",
     "path": "/tools/robots-txt-generator",
     "updatedAt": "2026-09-05T16:22:07.989Z",
@@ -4690,6 +4712,7 @@
     "homeDescKey": "tool_trim_an_audio_clip_and_export_desc",
     "faqPrefix": "tool_trim_an_audio_clip_and_export",
     "related": [
+      "remove-silence-from-a-recording",
       "file-metadata-analyzer",
       "file-hash"
     ],

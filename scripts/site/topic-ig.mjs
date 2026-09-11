@@ -433,8 +433,9 @@ export const TOPIC_IG = {
     localCluster: true,
     groups: [
       { id: 'trim', slugs: ['trim-an-audio-clip-and-export'] },
+      { id: 'silence', slugs: ['remove-silence-from-a-recording'] },
     ],
-    workflow: ['trim-an-audio-clip-and-export'],
+    workflow: ['trim-an-audio-clip-and-export', 'remove-silence-from-a-recording'],
     relatedTopics: ['files-archives', 'security-ids'],
     citations: [
       {

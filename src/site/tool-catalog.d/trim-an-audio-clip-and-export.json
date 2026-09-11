@@ -12,6 +12,7 @@
   "homeDescKey": "tool_trim_an_audio_clip_and_export_desc",
   "faqPrefix": "tool_trim_an_audio_clip_and_export",
   "related": [
+    "remove-silence-from-a-recording",
     "file-metadata-analyzer",
     "file-hash"
   ],

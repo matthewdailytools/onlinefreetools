@@ -1,0 +1,27 @@
+{
+  "slug": "remove-silence-from-a-recording",
+  "path": "/tools/remove-silence-from-a-recording",
+  "updatedAt": "2026-09-11T05:46:00.000Z",
+  "launchedAt": "2026-09-11T05:46:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_remove_silence_from_a_recording_title",
+  "homeTitleKey": "tool_remove_silence_from_a_recording_title",
+  "homeDescKey": "tool_remove_silence_from_a_recording_desc",
+  "faqPrefix": "tool_remove_silence_from_a_recording",
+  "related": [
+    "trim-an-audio-clip-and-export",
+    "file-metadata-analyzer"
+  ],
+  "logo": "/icons/tools/remove-silence-from-a-recording.svg",
+  "page": {
+    "module": "../pages/removeSilenceFromARecordingPage",
+    "export": "renderRemoveSilenceFromARecordingPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "data"
+}
