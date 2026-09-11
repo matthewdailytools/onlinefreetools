@@ -434,8 +434,9 @@ export const TOPIC_IG = {
     groups: [
       { id: 'trim', slugs: ['trim-an-audio-clip-and-export'] },
       { id: 'silence', slugs: ['remove-silence-from-a-recording'] },
+      { id: 'split', slugs: ['split-a-recording-on-silence'] },
     ],
-    workflow: ['trim-an-audio-clip-and-export', 'remove-silence-from-a-recording'],
+    workflow: ['trim-an-audio-clip-and-export', 'remove-silence-from-a-recording', 'split-a-recording-on-silence'],
     relatedTopics: ['files-archives', 'security-ids'],
     citations: [
       {

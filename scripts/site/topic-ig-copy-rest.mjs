@@ -1717,14 +1717,15 @@ const topicsEs = {
     cites: {},
   },
   'sound-editor': {
-    title: 'Recorta un clip o quita silencios, luego exporta WAV o MP3',
-    desc: 'Marca inicio y fin o corta el aire muerto de un archivo local y exporta WAV o MP3 en la pestaña. Se queda en el dispositivo. No es un DAW, un ZIP ni un ripper.',
+    title: 'Recorta un clip, quita silencios o parte por silencios en un ZIP',
+    desc: 'En la pestaña: guarda un tramo inicio–fin, cose un archivo más corto sin aire muerto, o parte en cada pausa y baja un ZIP. El audio no sale del dispositivo. No es un DAW ni extrae de vídeo o YouTube.',
     intro:
-      'Ábrelo si ya tienes una grabación y quieres un archivo más corto: o un tramo inicio–fin que sepas nombrar, o la misma pista sin pausas largas. El editor de onda completo llega después.',
-    tableTitle: 'Acorta una grabación en el navegador y exporta',
+      'Úsalo si ya tienes una grabación: un tramo que sepas nombrar, la misma pista sin pausas largas en un solo archivo, o cada pausa como clip dentro de un ZIP. El editor de onda completo llega después, no son estos tres oficios.',
+    tableTitle: 'Acorta o parte una grabación en el navegador y exporta',
     groups: {
       trim: 'Inicio, fin y exportación',
       silence: 'Aire muerto, un solo archivo',
+      split: 'Pausas en varios archivos',
     },
     rows: {
       'trim-an-audio-clip-and-export': r(
@@ -1737,21 +1738,27 @@ const topicsEs = {
         'Una grabación local con silencios que sobran, y el resultado debe ser un solo archivo.',
         'Necesitas un ZIP de trozos, un DAW, silenciar vídeo o un rip de YouTube.'
       ),
+      'split-a-recording-on-silence': r(
+        'Cortar en las pausas largas y bajar un ZIP de clips',
+        'Una grabación local cuyos huecos deben ser archivos sueltos, no una pista cosida.',
+        'Necesitas un solo archivo más corto, cortes de igual duración, una cue sheet o un rip de YouTube.'
+      ),
     },
     flow: [
       'Si ya sabes inicio y fin, abre el recortador y exporta WAV o MP3 en la pestaña.',
-      'Si hay pausas largas y el resultado debe ser un archivo, no un ZIP, abre quitar silencios.',
+      'Si hay pausas largas y el resultado debe ser un archivo, abre quitar silencios, no un ZIP.',
+      'Si cada pausa debe ser su propio clip, abre partir por silencios y descarga el ZIP.',
     ],
-    exampleTitle: 'Sintonía, aire muerto y un hub de onda',
+    exampleTitle: 'Sintonía, aire muerto y capítulos por pausa',
     exampleBody:
-      'Un memo de 30 s con 8 s de sintonía: recorta después de la sintonía y exporta MP3. Una entrevista de 20 min con dos huecos largos: quita silencios y deja un archivo más corto, no un ZIP. Quien busca un editor con fundidos espera un hub posterior; no trates estas páginas como ese estudio.',
+      'Un memo de 30 s con 8 s de sintonía: recorta después de la sintonía y exporta MP3. Una entrevista de 20 min con dos huecos: quita silencios si quieres un archivo; ábrela en partir por silencios si cada hueco debe abrir un clip en un ZIP. Quien busca fundidos y deshacer espera un hub posterior, no estos tres oficios.',
     boundary:
-      'El archivo se queda en el dispositivo. Los topes rechazan ficheros enormes antes de decodificar. No es un ZIP por silencios ni un ripper.',
+      'El archivo se queda en el dispositivo. Los topes rechazan ficheros enormes antes de decodificar. No es un separador de stems, una fábrica de tonos, un corte por cue ni un ripper.',
     secondary: {},
     faq: [
       {
         q: '¿Esto es un editor de sonido online?',
-        a: 'Todavía no. Aquí hay dos oficios sueltos: recortar inicio y fin, o quitar silencios y coser un archivo. El hub de onda es otro slug más adelante.',
+        a: 'Todavía no. Hay tres oficios: recortar inicio y fin, quitar silencios y coser un archivo, o partir por silencios en un ZIP. El hub de onda es otro slug más adelante.',
       },
       {
         q: 'Busqué cortar mp3 o mp3 cutter. ¿Hay otra URL?',
@@ -1762,8 +1769,8 @@ const topicsEs = {
         a: 'La decodificación y el corte corren en la pestaña. No lo enviamos a nuestros servidores en estos oficios.',
       },
       {
-        q: '¿Puedo sacar audio de un vídeo, partir por silencios o de YouTube?',
-        a: 'No. Extraer de vídeo, un ZIP en cada pausa y bajar streams sin derechos quedan fuera.',
+        q: '¿Puedo sacar audio de un vídeo o de YouTube?',
+        a: 'No. Extraer de vídeo y bajar streams sin derechos quedan fuera. Partir en cada pausa y bajar un ZIP es el oficio de partir por silencios, aquí mismo.',
       },
     ],
     cites: {

@@ -2,7 +2,7 @@
 
 **日期**：2026-09-10（需求/SEO 重枚举；不再用「同一 JS 控件」当漏斗）  
 **进度核对**：2026-09-11（对照 `origin/save` / 当前 `main`）  
-**状态**：作业全表仍是规划；**S1、S2 已上线**。未点名的行不得建新 `work-tasks/`、不得改 `src/`。  
+**状态**：作业全表仍是规划；**S1、S2、A3 已上线**。未点名的行不得建新 `work-tasks/`、不得改 `src/`。  
 **slug / H1 均为草稿**（已上线行除外）：上线前须跑 0b + SERP；禁止用品类头词当唯一进攻 H1。  
 **权威（本页）**：先按 **用户作业 + 搜索簇** 列全。落地列（Hub / 单点候选 / 一对转换 / defer / drop）是建议，**不是**删行条件。  
 **仍成立的合规**：近义换词空壳 = doorway / scaled content（`cut mp3` 与 `trim audio` 是同一作业）。Google 现行政策高于「多占几个词」。  
@@ -13,20 +13,23 @@
 
 ## 进度（2026-09-11）
 
-声音域 **已经有 2 个已实现工具**：12 表 **S1** `trim-an-audio-clip-and-export`（起止裁剪 → 导出 WAV/MP3）；**S2** `remove-silence-from-a-recording`（挖静音仍一文件 → 导出 WAV/MP3）。**不是** Hub `edit-audio-on-waveform`。上一次若只看未合并的本地 `main`、只搜旧名 `audio-trim`，会误报「0 个工具」。
+声音域 **已经有 3 个已实现工具**：12 表 **S1** `trim-an-audio-clip-and-export`（起止裁剪 → 导出 WAV/MP3）；**S2** `remove-silence-from-a-recording`（挖静音仍一文件 → 导出 WAV/MP3）；**A3** `split-a-recording-on-silence`（按静音切多段 ZIP）。**不是** Hub `edit-audio-on-waveform`。上一次若只看未合并的本地 `main`、只搜旧名 `audio-trim`，会误报「0 个工具」。
 
 | ID | slug | 仓库事实 | 阶段 |
 |---|---|---|---|
 | **S1** | `trim-an-audio-clip-and-export` | `work-tasks/` `02`=`implemented`、`03`=`i18n-done`；catalog `opts`；`src/pages/trimAnAudioClipAndExportPage.ts`；十语；`public/vendor/lamejs/`；主题 `sound-editor` | **已开发完毕**（2026-09-10/11）。验收：https://onlinefreetools.org/tools/trim-an-audio-clip-and-export |
 | **S2** | `remove-silence-from-a-recording` | `work-tasks/` `02`=`implemented`、`03`=`i18n-done`；catalog `opts`；`src/pages/removeSilenceFromARecordingPage.ts`；十语；主题 `sound-editor` | **已开发完毕**（2026-09-11）。验收：https://onlinefreetools.org/tools/remove-silence-from-a-recording |
+| **A3** | `split-a-recording-on-silence` | `work-tasks/` `02`=`implemented`、`03`=`i18n-done`；catalog `opts`；`src/pages/splitARecordingOnSilencePage.ts`；十语；主题 `sound-editor` | **已开发完毕**（2026-09-11）。验收：https://onlinefreetools.org/tools/split-a-recording-on-silence |
 | **H0 / Hub** | `edit-audio-on-waveform` | 无 `work-tasks/`、无 catalog | **未立项**。11 合同仍等「按方案执行」。禁止把 S1 页当成 Hub |
-| **其余 scene / pair** | A1–A8、S3–S38、P1–P6 等 | 无对应 `work-tasks/` | 未口令，不上 |
+| **其余 scene / pair** | A1–A8（A3 除外）、S3–S38、P1–P6 等 | 无对应 `work-tasks/` | 未口令，不上 |
 
 S1 已交付：单文件 dropzone、波形点选起止、**Trim**、**Export WAV** / **Export MP3**（lamejs 点后加载）、金标 HUD（Decode / Trim / Encode）、过零默认开、体积/时长帽、进页 5s 样例自动 Trim。**没有**：录音、淡化命令、EDL 精剪、AudioMass 宿主、降噪/LUFS、视频抽音。
 
 S2 已交付：单文件 dropzone、分窗 RMS 挖静音、**Remove silence**、**Export WAV** / **Export MP3**（lamejs 点后加载）、金标 HUD（Decode / Detect / Cut / Encode）、Speech/Gentle/Tight 预设、体积/时长帽对齐 S1、进页 5s 样例自动去掉静音（约 2.90 s）。**没有**：按静音切 ZIP、视频主输入、降噪、去 um/uh。
 
-S1 related 含已上线的 `remove-silence-from-a-recording`、`file-metadata-analyzer`、`file-hash`。S2 related 含 `trim-an-audio-clip-and-export`、`file-metadata-analyzer`。禁止 related 到未立项的 Hub / A3。
+A3 已交付：单文件 dropzone、同一套 RMS 检测、**Split on silence**（静音中点切开）、**Download ZIP**（JSZip / lamejs 点后加载）、金标 HUD（Decode / Detect / Split / Pack）、Speech/Lecture/Album 预设、最多 50 段拒绝、进页 5s 样例自动切成 1.40 / 2.00 / 1.60 秒三段。**没有**：等时长切、cue 分轨、视频主输入、与 S2 拼一文件混页。
+
+S2 related 含 `trim-an-audio-clip-and-export`、`split-a-recording-on-silence`、`file-metadata-analyzer`。A3 related 含 S2 与 S1。禁止 related 到未立项的 Hub / S3 / S4。
 
 ---
 
@@ -98,7 +101,7 @@ Hub **不是** 05 整座宇宙。分离、TTS、克隆、实时变声、识曲�
 | **H0** | 在波形上精剪口误/结构再导出 | sound editor；online audio editor；waveform editor / 在线音频编辑器；音频编辑 | 头 | `/sound-editor`、`/online-audio-editor` | `edit-audio-on-waveform` | hub |
 | **S1** | 只要起止点，剪掉头尾或留一段 | mp3 cutter；trim audio；cut mp3；crop audio；audio trimmer / 在线剪音频；mp3 剪切；裁剪音频 | 头 | `/cut-mp3`、`/audio-trimmer`、`/crop-audio` | `trim-an-audio-clip-and-export` | hub **且** scene（进页=起止+导出；不是缩小 DAW）。**2026-09-10 已立项并实现** `work-tasks/trim-an-audio-clip-and-export/`，主题 id `sound-editor` |
 | **S2** | 长录音里挖掉静音，**仍一个文件** | remove silence from audio；silence remover / 去除音频静音；去掉空白 | 中 | `/delete-silence` 空壳 | `remove-silence-from-a-recording` | **scene**（结果 1 文件；与 A3 多文件不同）。**2026-09-11 已实现** catalog/`removeSilenceFromARecordingPage.ts`/十语 |
-| **A3** | 按停顿切成多段，打包 ZIP | split audio by silence；split recording on silence / 按静音分割音频 | 中 | 语种/阈值不拆 URL | `split-a-recording-on-silence` | scene |
+| **A3** | 按停顿切成多段，打包 ZIP | split audio by silence；split recording on silence / 按静音分割音频 | 中 | 语种/阈值不拆 URL | `split-a-recording-on-silence` | **scene**。**2026-09-11 已实现** catalog/`splitARecordingOnSilencePage.ts`/十语 |
 | **S3** | 按固定时长切成等长多段 | split audio by duration；split mp3 into parts / 音频按时长切割 | 中 | `/split-mp3` 品类头词不当 URL | `split-an-audio-file-by-duration` | scene |
 | **S4** | 按 cue / 章节表分轨 | cue splitter；split ape cue；split flac cue / cue 分轨 | 长尾 | 各容器不拆 | `split-a-disc-image-with-a-cue-sheet` | scene |
 | **S5** | 无缝循环（游戏/直播垫） | seamless loop；audio loop crossfade；loop audio / 音频无缝循环 | 中 | `/audio-looper` 空壳 | `make-a-seamless-audio-loop` | hub 芯片 **且** scene |
@@ -323,18 +326,20 @@ Hub **不是** 05 整座宇宙。分离、TTS、克隆、实时变声、识曲�
 P0      Hub（11 阶段 A→D；草稿 edit-audio-on-waveform）  未开始
         A1 抽音 POC 可并行                      未开始
 P1      A1 抽音 + A2 拼接                    未开始
-P2      Hub 包装层；A3 或 A4 二选一           未开始
+P2      Hub 包装层；A4 转写（A3 已上线）     未开始
 P3      A5 / A6 / A8 / A7（授权）             未口令
 ```
 
 | 顺序 | 做什么 | 完成标准 | 2026-09-11 |
 |---|---|---|---|
 | **已上线** | 12 **S1** 裁剪导出 | 起止 + Trim + WAV/MP3；十语；`verify:tool` | **完成**（勿再立项同作业 URL） |
+| **已上线** | 12 **S2** 去静音仍一段 | RMS 挖静音拼一文件；十语 | **完成** |
+| **已上线** | 12 **A3** 按静音切 ZIP | 中点切开 + ZIP；十语 | **完成**（2026-09-11） |
 | **P0** | Hub（11 的 S1 包装，**不是** 12 的 S1） | 11 浏览器清单；十语 | **未开始** |
 | **P1** | A1 + A2 | 抽音无波形精剪；拼接是列表 | 未开始 |
-| **P2** | Hub 包装补齐，再 A3 或 A4 | LUFS 可读；A4 隐私诚实 | 未开始 |
+| **P2** | Hub 包装补齐，再 A4 | LUFS 可读；A4 隐私诚实 | 未开始 |
 | **P3** | A5/A6/A8/A7 | 禁止格式矩阵 | 未开始 |
-| **未排** | 本表其余 scene/pair/defer | 用户点名 ID 或 slug 才进 0b | S1/S2 已实现；其余未口令 |
+| **未排** | 本表其余 scene/pair/defer | 用户点名 ID 或 slug 才进 0b | S1/S2/A3 已实现；其余未口令 |
 
 **并行**：只允许 POC 并行。页面 / i18n 必须串行。
 
@@ -360,6 +365,7 @@ P3      A5 / A6 / A8 / A7（授权）             未口令
 - **Hub**：用户说「按方案执行 / 立项」→ 只开 `work-tasks/{hub-slug}/`（11 阶段 A）。**不要**在已上线的 S1 裁剪页上堆 DAW。  
 - **S1 裁剪导出**：已实现，勿再复制 `_template` 做近义 cutter。  
 - **S2 去静音仍一段**：已实现 `remove-silence-from-a-recording`（`02` implemented；十语）。勿再立项近义 silence remover URL；勿做成 A3 切 ZIP，勿与 S1 手裁混 H1。  
+- **A3 按静音切多段 ZIP**：已实现 `split-a-recording-on-silence`（`02` implemented；十语）。勿与 S2 拼一文件混 URL，勿叠等时长切 / cue 分轨。  
 - **某一其它单点**：用户点名本表 ID 或草稿 slug → 单独复制 `_template`，跑 0b。  
 - 本页 **不** 因写全表而建多个 work-tasks，也 **不** 把 scene 候选自动排进实现队列。
 

@@ -1717,14 +1717,15 @@ export const topics = {
     cites: {},
   },
   'sound-editor': {
-    title: 'Trim a clip or remove silence, then export WAV or MP3',
-    desc: 'Trim start and end or cut dead air on a local file, then export WAV or MP3 in this tab. Stays on the device. Not a DAW, ZIP splitter, or YouTube rip.',
+    title: 'Trim a clip, remove silence, or split on silence into a ZIP',
+    desc: 'Trim start and end, cut dead air into one file, or split a recording on silence into a ZIP in this tab. Stays on the device. Not a DAW or YouTube rip.',
     intro:
-      'Use this cluster when you already have a recording and need a shorter file to send: either a named start–end range, or the same file with long pauses cut out. A full waveform editor is a later hub, not these two jobs.',
-    tableTitle: 'Shorten a recording in the browser, then export',
+      'Use this cluster when you already have a recording: keep a named start–end range, stitch one shorter file after cutting pauses, or split at those pauses into a ZIP of clips. A full waveform editor is a later hub, not these three jobs.',
+    tableTitle: 'Shorten or split a recording in the browser, then export',
     groups: {
       trim: 'Start, end, and export',
       silence: 'Dead air, still one file',
+      split: 'Pauses into many files',
     },
     rows: {
       'trim-an-audio-clip-and-export': r(
@@ -1737,21 +1738,27 @@ export const topics = {
         'A local recording with pauses you want gone, still as one file.',
         'You need a ZIP of clips, a DAW, video mute, or a YouTube rip.'
       ),
+      'split-a-recording-on-silence': r(
+        'Cut at long pauses and download a ZIP of clips',
+        'A local recording with gaps you want as separate files, not one stitched track.',
+        'You need one shorter file, equal-duration slices, a cue sheet, or a YouTube rip.'
+      ),
     },
     flow: [
       'Open the trimmer when you already know the start and end, then export WAV or MP3 in the tab.',
       'Open remove silence when long pauses should go and the result must stay one file, not a ZIP.',
+      'Open split on silence when each pause should become its own clip inside a ZIP.',
     ],
-    exampleTitle: 'Podcast bumper vs dead air vs a waveform hub',
+    exampleTitle: 'Podcast bumper vs dead air vs pause chapters',
     exampleBody:
-      'A 30-second memo with an 8-second intro belongs on the trimmer: set start after the bumper, export MP3. A 20-minute interview with two long gaps belongs on remove silence: one shorter file, not a ZIP. Searching “sound editor” for fades, undo, and effects is a later hub slug—do not treat these pages as that workstation.',
+      'A 30-second memo with an 8-second intro belongs on the trimmer: set start after the bumper, export MP3. A 20-minute interview with two long gaps belongs on remove silence if you still want one file. The same interview belongs on split on silence if each gap should start a new clip in a ZIP. Searching “sound editor” for fades and undo is a later hub.',
     boundary:
-      'Files stay on the device. Caps reject huge files before decode. Not a stem splitter, silence-split ZIP, ringtone factory, or stream ripper.',
+      'Files stay on the device. Caps reject huge files before decode. Not a stem splitter, ringtone factory, cue splitter, or stream ripper.',
     secondary: {},
     faq: [
       {
         q: 'Is this the same as an online sound editor?',
-        a: 'Not yet. Two single-job tools live here: trim start and end, or cut silence and stitch one file. A waveform hub is a separate later slug.',
+        a: 'Not yet. Three single-job tools live here: trim start and end, cut silence and stitch one file, or split on silence into a ZIP. A waveform hub is a separate later slug.',
       },
       {
         q: 'I searched mp3 cutter or cut mp3. Is that another URL?',
@@ -1762,8 +1769,8 @@ export const topics = {
         a: 'Decode and cut run in the tab. Nothing is posted to our servers for these jobs.',
       },
       {
-        q: 'Can I pull audio from a video, split on silence, or YouTube?',
-        a: 'No. Video extract, a ZIP of clips at each pause, and ripping streams you do not have rights to are out of scope.',
+        q: 'Can I pull audio from a video or YouTube?',
+        a: 'No. Video extract and ripping streams you do not have rights to are out of scope. Splitting at pauses into a ZIP is the split-on-silence tool in this cluster.',
       },
     ],
     cites: {
