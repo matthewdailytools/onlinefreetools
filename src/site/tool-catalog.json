@@ -4320,7 +4320,7 @@
     "related": [
       "trim-an-audio-clip-and-export",
       "split-a-recording-on-silence",
-      "file-metadata-analyzer"
+      "split-an-audio-file-by-duration"
     ],
     "logo": "/icons/tools/remove-silence-from-a-recording.svg",
     "localProcessing": true,
@@ -4559,10 +4559,33 @@
     "homeDescKey": "tool_split_a_recording_on_silence_desc",
     "faqPrefix": "tool_split_a_recording_on_silence",
     "related": [
+      "split-an-audio-file-by-duration",
       "remove-silence-from-a-recording",
       "trim-an-audio-clip-and-export"
     ],
     "logo": "/icons/tools/split-a-recording-on-silence.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "data"
+  },
+  {
+    "slug": "split-an-audio-file-by-duration",
+    "path": "/tools/split-an-audio-file-by-duration",
+    "updatedAt": "2026-09-11T08:30:00.000Z",
+    "launchedAt": "2026-09-11T08:30:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_split_an_audio_file_by_duration_title",
+    "homeTitleKey": "tool_split_an_audio_file_by_duration_title",
+    "homeDescKey": "tool_split_an_audio_file_by_duration_desc",
+    "faqPrefix": "tool_split_an_audio_file_by_duration",
+    "related": [
+      "split-a-recording-on-silence",
+      "trim-an-audio-clip-and-export"
+    ],
+    "logo": "/icons/tools/split-an-audio-file-by-duration.svg",
     "localProcessing": true,
     "scenario": "media",
     "subject": "data"

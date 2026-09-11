@@ -194,6 +194,7 @@ export const TOOL_SLUGS = [
 	"smart-website-color-scheme",
 	"spf-dkim-dmarc-checker",
 	"split-a-recording-on-silence",
+	"split-an-audio-file-by-duration",
 	"split-pdf",
 	"square-feet",
 	"svg-optimizer",

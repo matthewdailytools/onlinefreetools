@@ -14,7 +14,7 @@
   "related": [
     "trim-an-audio-clip-and-export",
     "split-a-recording-on-silence",
-    "file-metadata-analyzer"
+    "split-an-audio-file-by-duration"
   ],
   "logo": "/icons/tools/remove-silence-from-a-recording.svg",
   "page": {
