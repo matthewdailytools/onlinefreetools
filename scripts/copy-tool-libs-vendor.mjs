@@ -94,6 +94,14 @@ const files = [
 		from: path.join(nm, 'tesseract.js-core', 'tesseract-core-relaxedsimd-lstm.wasm.js'),
 		to: path.join(outRoot, 'tesseract', 'core', 'tesseract-core-relaxedsimd-lstm.wasm.js'),
 	},
+	{
+		from: path.join(nm, '@breezystack', 'lamejs', 'dist', 'lamejs.iife.js'),
+		to: path.join(outRoot, 'lamejs', 'lamejs.iife.js'),
+	},
+	{
+		from: path.join(nm, '@breezystack', 'lamejs', 'LICENSE'),
+		to: path.join(outRoot, 'lamejs', 'LICENSE'),
+	},
 ];
 
 for (const item of files) {
