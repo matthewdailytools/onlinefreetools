@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dev Logs (13/29) | OnlineFreeTools.org</title>
-  <meta name="description" content="Curated project development notes with reusable decisions and fixes, organized by month. (13/29)" />
+  <title>Dev Logs (13/30) | OnlineFreeTools.org</title>
+  <meta name="description" content="Curated project development notes with reusable decisions and fixes, organized by month. (13/30)" />
   
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/page-13.html" />
-  <meta property="og:title" content="Dev Logs (13/29) | OnlineFreeTools.org" />
-  <meta property="og:description" content="Curated project development notes with reusable decisions and fixes, organized by month. (13/29)" />
+  <meta property="og:title" content="Dev Logs (13/30) | OnlineFreeTools.org" />
+  <meta property="og:description" content="Curated project development notes with reusable decisions and fixes, organized by month. (13/30)" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/page-13.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -49,7 +49,7 @@
 </script>
   <link rel="prev" href="https://onlinefreetools.org/devlogs/page-12.html" />
   <link rel="next" href="https://onlinefreetools.org/devlogs/page-14.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs (13/29)","url":"https://onlinefreetools.org/devlogs/page-13.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://onlinefreetools.org/devlogs/"}]}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs (13/30)","url":"https://onlinefreetools.org/devlogs/page-13.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://onlinefreetools.org/devlogs/"}]}}</script>
 </head>
 <body class="is-info-page is-devlog-page">
   
@@ -126,7 +126,7 @@
               <div class="tools-mega-pane-links"><a class="tools-mega-link" href="/tools/archive-extractor" target="_blank" rel="noopener noreferrer">Archive Extractor Online — Open Compressed Files in Your Browser</a><a class="tools-mega-link" href="/tools/create-zip-file" target="_blank" rel="noopener noreferrer">Create zip file</a><a class="tools-mega-link" href="/tools/magnet-link-decoder" target="_blank" rel="noopener noreferrer">Magnet Link Decoder — Parse Info Hash and Trackers Locally</a><a class="tools-mega-link" href="/tools/unzip-file" target="_blank" rel="noopener noreferrer">Unzip File Online — Extract ZIP Files in Your Browser</a></div>
             </div><div class="tools-mega-pane" id="tools-mega-pane-sound-editor" data-topic-id="sound-editor" role="region" hidden>
               <a class="tools-mega-hub" href="/topics/sound-editor">Sound editor →</a>
-              <div class="tools-mega-pane-links"><a class="tools-mega-link" href="/tools/trim-an-audio-clip-and-export" target="_blank" rel="noopener noreferrer">Trim an audio clip and export</a></div>
+              <div class="tools-mega-pane-links"><a class="tools-mega-link" href="/tools/remove-silence-from-a-recording" target="_blank" rel="noopener noreferrer">Remove silence from a recording</a><a class="tools-mega-link" href="/tools/split-a-recording-on-silence" target="_blank" rel="noopener noreferrer">Split a recording on silence</a><a class="tools-mega-link" href="/tools/split-an-audio-file-by-duration" target="_blank" rel="noopener noreferrer">Split an audio file by duration</a><a class="tools-mega-link" href="/tools/trim-an-audio-clip-and-export" target="_blank" rel="noopener noreferrer">Trim an audio clip and export</a></div>
             </div></div>
           </div>
         </li><li class="nav-item"><a class="nav-link" href="/topics">Tool topics</a></li><li class="nav-item"><a class="nav-link" href="/tool-type">Tool types</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
@@ -177,6 +177,42 @@
         <h2 class="h5 text-muted mb-2">2026-08</h2>
         <ul class="list-group shadow-sm">
           
+          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
+            <a href="/devlogs/2026-08-13-07-41-clarify-home-html-path.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>clarify-home-html-path<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
+            <span class="badge text-bg-secondary">2026-08-13</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
+            <a href="/devlogs/2026-08-13-07-30-home-pages-in-static-assets.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>home-pages-in-static-assets<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
+            <span class="badge text-bg-secondary">2026-08-13</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
+            <a href="/devlogs/2026-08-13-07-24-optimize-homepage-perf.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>optimize-homepage-perf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
+            <span class="badge text-bg-secondary">2026-08-13</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
+            <a href="/devlogs/2026-08-13-01-18-analyze-slow-homepage.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>analyze-slow-homepage<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
+            <span class="badge text-bg-secondary">2026-08-13</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
+            <a href="/devlogs/2026-08-13-01-15-todo-incremental-upload-r2.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>todo-incremental-upload-r2<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
+            <span class="badge text-bg-secondary">2026-08-13</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
+            <a href="/devlogs/2026-08-13-01-14-gitignore-entire-pages-tree.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>gitignore-entire-pages-tree<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
+            <span class="badge text-bg-secondary">2026-08-13</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
+            <a href="/devlogs/2026-08-13-01-13-github-pages-html-reasonable.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>github-pages-html-reasonable<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
+            <span class="badge text-bg-secondary">2026-08-13</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
+            <a href="/devlogs/2026-08-13-01-12-how-to-see-worker-bundle-size.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>how-to-see-worker-bundle-size<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
+            <span class="badge text-bg-secondary">2026-08-13</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
+            <a href="/devlogs/2026-08-13-01-08-confirm-r2-architecture-live.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>confirm-r2-architecture-live<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
+            <span class="badge text-bg-secondary">2026-08-13</span>
+          </li>
           <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
             <a href="/devlogs/2026-08-13-00-59-upload-r2-always-full.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>upload-r2-always-full<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
             <span class="badge text-bg-secondary">2026-08-13</span>
@@ -261,48 +297,12 @@
             <a href="/devlogs/2026-08-12-22-54-why-worker-bundle-smaller.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>why-worker-bundle-smaller<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
             <span class="badge text-bg-secondary">2026-08-12</span>
           </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-12-22-52-new-tool-flow-after-r2.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>new-tool-flow-after-r2<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-12-22-30-worker-r2-architecture-refactor.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>worker-r2-architecture-refactor<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-12-21-47-seo-tools-counted-in-124.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>seo-tools-counted-in-124<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-12-21-46-verify-homepage-tool-count-124.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>verify-homepage-tool-count-124<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-12-21-31-sitemap-per-locale-compliance.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>sitemap-per-locale-compliance<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-12-21-18-crawled-not-indexed-drilldown.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>crawled-not-indexed-drilldown<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-12-20-57-gsc-seo-review-2026-08-12.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>gsc-seo-review-2026-08-12<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-12-20-29-compliant-backlink-vs-npm-package.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>compliant-backlink-vs-npm-package<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-12-20-27-sitemap-hreflang-en-vs-per-locale.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>sitemap-hreflang-en-vs-per-locale<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-12</span>
-          </li>
         </ul>
       </div>
       
       <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4" aria-label="Dev Logs">
         <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-12.html" rel="prev">Previous</a>
-        <span class="small text-muted">Page 13 of 29</span>
+        <span class="small text-muted">Page 13 of 30</span>
         <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-14.html" rel="next">Next</a>
       </nav>
     </section>
