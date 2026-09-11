@@ -159,6 +159,7 @@ export const TOOL_SLUGS = [
 	"jwt-decoder",
 	"linkedin-banner-size",
 	"magnet-link-decoder",
+	"make-a-seamless-audio-loop",
 	"make-pdf-fillable",
 	"make-pdf-flipbook",
 	"markdown-to-html",

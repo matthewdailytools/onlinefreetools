@@ -3718,6 +3718,28 @@
     "launchedAt": "2026-08-14T08:10:27+08:00"
   },
   {
+    "slug": "make-a-seamless-audio-loop",
+    "path": "/tools/make-a-seamless-audio-loop",
+    "updatedAt": "2026-09-11T13:20:00.000Z",
+    "launchedAt": "2026-09-11T13:20:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_make_a_seamless_audio_loop_title",
+    "homeTitleKey": "tool_make_a_seamless_audio_loop_title",
+    "homeDescKey": "tool_make_a_seamless_audio_loop_desc",
+    "faqPrefix": "tool_make_a_seamless_audio_loop",
+    "related": [
+      "trim-an-audio-clip-and-export",
+      "split-an-audio-file-by-duration"
+    ],
+    "logo": "/icons/tools/make-a-seamless-audio-loop.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "data"
+  },
+  {
     "slug": "make-pdf-fillable",
     "path": "/tools/make-pdf-fillable",
     "updatedAt": "2026-09-03T23:38:34.286Z",
