@@ -213,14 +213,15 @@ const EN = {
       'Browser tools hit tab memory limits. Exclude node_modules-scale trees or split archives; use a native archiver for multi-gigabyte jobs or exotic compression formats.',
   },
   'sound-editor': {
-    guideTitle: 'Trim a clip first; a full waveform editor comes later',
+    guideTitle: 'Shorten, split, loop, or make a ringtone; a full waveform editor comes later',
     guideBody:
-      'One-shot trim: open Trim an audio clip and export when you only need start and end times, then WAV or MP3. That page is not a DAW.\n\n' +
-      'Head queries such as sound editor or online audio editor belong in this topic FAQ until a waveform hub ships as its own tool slug.\n\n' +
-      'Do not use these tools to rip streams or to clone a voice you do not have rights to.',
+      'One-shot trim: open Trim an audio clip and export when you only need start and end times, then WAV or MP3.\n\n' +
+      'Dead air vs many files: remove silence keeps one file; split on silence, by duration, or with a cue sheet downloads a ZIP.\n\n' +
+      'Loop and ringtone: wrap a seamless cycle, or keep about 30 seconds with fades as MP3. This cluster does not write iPhone M4R.\n\n' +
+      'Head queries such as sound editor belong in this topic FAQ until a waveform hub ships as its own tool slug. Do not rip streams or clone a voice you do not have rights to.',
     faqQ4: 'Is this topic a full online sound editor?',
     faqA4:
-      'Not yet. The first shipped job is trim-and-export. A waveform hub is a later slug. Searching mp3 cutter or cut mp3 should use the trimmer, not a second URL.',
+      'Not yet. Shipped jobs are trim, cut silence, three ZIP splits, a seamless loop, and a 30-second MP3 ringtone. A waveform hub is a later slug. Searching mp3 cutter should use the trimmer; ringtone maker should use the 30-second MP3 page.',
   },
 };
 
@@ -435,14 +436,15 @@ BY_LANG.zh = {
       '浏览器受标签页内存限制；node_modules 级目录请拆分或用桌面 archiver。多 GB 或 exotic 格式用本机工具。',
   },
   'sound-editor': {
-    guideTitle: '先裁一段；完整波形编辑器在后',
+    guideTitle: '先裁短、分轨、循环或铃声；完整波形编辑器在后',
     guideBody:
-      '只要起止点：打开「裁剪一段音频并导出」，导出 WAV 或 MP3。那一页不是宿主。\n\n' +
-      '搜「在线音频编辑」这类头词先看本主题 FAQ；波形工作台是以后另开的工具。\n\n' +
-      '不要用来扒流或克隆无权使用的声音。',
+      '只要起止点：打开「裁剪一段音频并导出」，导出 WAV 或 MP3。\n\n' +
+      '空白 vs 多段：去掉静音仍一个文件；按静音、按固定时长或 cue 分轨则下载 ZIP。\n\n' +
+      '循环与铃声：做成无缝一圈，或框约 30 秒淡化后导出 MP3。本簇不写苹果 M4R。\n\n' +
+      '搜「在线音频编辑」这类头词先看本主题 FAQ；波形工作台是以后另开的工具。不要扒流或克隆无权使用的声音。',
     faqQ4: '这个主题就是完整在线声音编辑器吗？',
     faqA4:
-      '还不是。先交付的是裁剪导出。波形宿主以后另开。搜 mp3 剪切、剪 mp3 用裁剪页，不要第二网址。',
+      '还不是。已上线的是裁剪、挖静音、三种 ZIP 分轨、无缝循环和 30 秒 MP3 铃声。波形宿主以后另开。搜 mp3 剪切用裁剪页；铃声制作用 30 秒 MP3 页。',
   },
 };
 
@@ -654,14 +656,15 @@ BY_LANG.es = {
       'Las herramientas de navegador chocan con límites de memoria de pestaña. Excluye árboles tipo node_modules o divide archivos; usa archivador nativo para trabajos multigigabyte o formatos exóticos.',
   },
   'sound-editor': {
-    guideTitle: 'Primero recorta un clip; el editor de onda llega después',
+    guideTitle: 'Acorta, parte, haz un bucle o un tono; el editor de onda llega después',
     guideBody:
-      'Recorte de una vez: abre Recorta un clip de audio y expórtalo si solo necesitas inicio y fin, luego WAV o MP3. Esa herramienta no es un DAW.\n\n' +
-      'Búsquedas como editor de audio online van en las FAQ del tema hasta que exista un hub de onda.\n\n' +
-      'No las uses para ripar streams ni clonar voces sin derechos.',
+      'Recorte: abre Recorta un clip de audio y expórtalo si solo necesitas inicio y fin, luego WAV o MP3.\n\n' +
+      'Silencio frente a muchos archivos: quitar silencios deja un archivo; partir por silencios, por duración o con cue baja un ZIP.\n\n' +
+      'Bucle y tono: un ciclo sin clic, o unos 30 s con fundidos en MP3. Este grupo no escribe M4R de iPhone.\n\n' +
+      'Búsquedas como editor de audio online van en las FAQ hasta que exista un hub de onda. No ripes streams ni clones voces sin derechos.',
     faqQ4: '¿Este tema es un editor de sonido completo?',
     faqA4:
-      'Todavía no. El primer trabajo publicado es recortar y exportar. El hub de onda es otro slug. Cortar mp3 debe usar el recortador, no una segunda URL.',
+      'Todavía no. Hay recorte, quitar silencios, tres particiones ZIP, un bucle y un tono MP3 de 30 s. El hub de onda es otro slug. Cortar mp3 usa el recortador; creador de tonos usa la página de 30 segundos.',
   },
 };
 
@@ -873,14 +876,15 @@ BY_LANG.ar = {
       'أدوات المتصفح تصطدم بحدود ذاكرة التبويب. استثنِ أشجار node_modules أو قسّم الأرشيفات؛ استخدم archiver أصلي للوظائف multigigabyte أو صيغ ضغط exotic.',
   },
   'sound-editor': {
-    guideTitle: 'قص المقطع أولاً؛ محرر الموجة لاحقًا',
+    guideTitle: 'قصّر أو قسّم أو اعمل حلقة أو نغمة؛ محرر الموجة لاحقًا',
     guideBody:
-      'قص لمرة واحدة: افتح قص مقطع صوت وتصديره إن أردت البداية والنهاية ثم WAV أو MP3. ليست استوديوًا.\n\n' +
-      'استعلامات مثل محرر صوت أونلاين تبقى في الأسئلة حتى يظهر عنوان موجة مستقل.\n\n' +
-      'لا تستخدمها لسحب بث أو استنساخ صوت بلا حق.',
+      'القص: افتح قص مقطع صوت وتصديره إن أردت البداية والنهاية ثم WAV أو MP3.\n\n' +
+      'الصمت مقابل ملفات عدة: إزالة الصمت تُبقي ملفًا واحدًا؛ التقسيم عند الصمت أو بالمدة أو بورقة cue ينزّل ZIP.\n\n' +
+      'الحلقة والنغمة: دورة بلا نقرة، أو نحو 30 ثانية بتفافت كـ MP3. هذه المجموعة لا تكتب M4R.\n\n' +
+      'استعلامات محرر الصوت تبقى في الأسئلة حتى يظهر عنوان موجة مستقل. لا تسحب بثًا ولا تستنسخ صوتًا بلا حق.',
     faqQ4: 'هل هذا الموضوع محرر صوت كامل؟',
     faqA4:
-      'ليس بعد. العمل الأول هو القص والتصدير. منصة الموجة لاحقًا. قص mp3 يستخدم القصّاص لا عنوانًا ثانيًا.',
+      'ليس بعد. هناك القص وإزالة الصمت وثلاثة تقسيمات ZIP وحلقة ونغمة MP3 لـ30 ثانية. منصة الموجة لاحقًا. قص mp3 للقصّاص؛ صانع النغمات لصفحة الثلاثين ثانية.',
   },
 };
 
@@ -1092,14 +1096,15 @@ BY_LANG.pt = {
       'Ferramentas de browser batem em limites de memória de separador. Exclua árvores tipo node_modules ou divida arquivos; use archiver nativo para trabalhos multigigabyte ou formatos exóticos.',
   },
   'sound-editor': {
-    guideTitle: 'Primeiro recorte um trecho; o editor de onda vem depois',
+    guideTitle: 'Encurte, divida, faça loop ou um toque; o editor de onda vem depois',
     guideBody:
-      'Recorte único: abra Recorte um trecho de áudio e exporte se só precisa de início e fim, depois WAV ou MP3. Não é um DAW.\n\n' +
-      'Pesquisas como editor de áudio online ficam nas FAQ até existir um hub de onda.\n\n' +
-      'Não use para ripar streams nem clonar vozes sem direitos.',
+      'Recorte: abra Recorte um trecho de áudio e exporte se só precisa de início e fim, depois WAV ou MP3.\n\n' +
+      'Silêncio vs muitos ficheiros: remover silêncios deixa um ficheiro; dividir nos silêncios, por duração ou com cue descarrega um ZIP.\n\n' +
+      'Loop e toque: um ciclo sem clique, ou uns 30 s com fades em MP3. Este grupo não escreve M4R.\n\n' +
+      'Pesquisas como editor de áudio online ficam nas FAQ até existir um hub de onda. Não ripar streams nem clonar vozes sem direitos.',
     faqQ4: 'Este tema é um editor de som completo?',
     faqA4:
-      'Ainda não. O primeiro trabalho é recortar e exportar. O hub de onda é outro slug. Cortar mp3 deve usar o recorte, não um segundo URL.',
+      'Ainda não. Há recorte, remover silêncios, três divisões ZIP, um loop e um toque MP3 de 30 s. O hub de onda é outro slug. Cortar mp3 usa o recorte; criador de toques usa a página de 30 segundos.',
   },
 };
 
@@ -1311,14 +1316,15 @@ BY_LANG.id = {
       'Alat browser kena limit memori tab. Kecualikan pohon skala node_modules atau split arsip; pakai archiver native untuk pekerjaan multigigabyte atau format kompresi exotic.',
   },
   'sound-editor': {
-    guideTitle: 'Potong klip dulu; editor gelombang belakangan',
+    guideTitle: 'Pendekkan, pecah, loop, atau nada dering; editor gelombang belakangan',
     guideBody:
-      'Potong sekali jalan: buka Potong klip audio lalu ekspor jika hanya perlu awal dan akhir, lalu WAV atau MP3. Bukan DAW.\n\n' +
-      'Pencarian seperti editor audio online masuk FAQ topik sampai ada hub gelombang.\n\n' +
-      'Jangan dipakai merobek siaran atau kloning suara tanpa hak.',
+      'Potong: buka Potong klip audio lalu ekspor jika hanya perlu awal dan akhir, lalu WAV atau MP3.\n\n' +
+      'Jeda vs banyak berkas: hapus jeda menyisakan satu berkas; pecah pada jeda, menurut durasi, atau dengan cue mengunduh ZIP.\n\n' +
+      'Loop dan nada dering: satu putaran tanpa klik, atau sekitar 30 detik dengan fade sebagai MP3. Rumpun ini tidak menulis M4R.\n\n' +
+      'Pencarian editor audio online masuk FAQ sampai ada hub gelombang. Jangan merobek siaran atau kloning suara tanpa hak.',
     faqQ4: 'Apakah topik ini editor suara lengkap?',
     faqA4:
-      'Belum. Pekerjaan pertama adalah potong-lalu-ekspor. Hub gelombang slug terpisah. Potong mp3 memakai pemotong, bukan URL kedua.',
+      'Belum. Ada potong, hapus jeda, tiga pecah ZIP, loop, dan nada dering MP3 30 detik. Hub gelombang slug terpisah. Potong mp3 memakai pemotong; pembuat nada dering memakai halaman 30 detik.',
   },
 };
 
@@ -1530,14 +1536,15 @@ BY_LANG.fr = {
       'Les outils navigateur heurtent limites mémoire d’onglet. Excluez arbres type node_modules ou scindez archives ; utilisez archiver natif pour jobs multigigaoctets ou formats compression exotiques.',
   },
   'sound-editor': {
-    guideTitle: 'Rognez d’abord un extrait ; l’éditeur d’onde vient plus tard',
+    guideTitle: 'Raccourcir, découper, boucler ou une sonnerie ; l’éditeur d’onde vient plus tard',
     guideBody:
-      'Rogner une fois : ouvrez Rognez un extrait audio et exportez-le si vous n’avez besoin que du début et de la fin, puis WAV ou MP3. Ce n’est pas un DAW.\n\n' +
-      'Les requêtes éditeur audio en ligne restent dans la FAQ du thème tant qu’un hub d’onde n’existe pas.\n\n' +
-      'Ne les utilisez pas pour ripper un flux ou cloner une voix sans droits.',
+      'Rogner : ouvrez Rognez un extrait audio et exportez-le si vous n’avez besoin que du début et de la fin, puis WAV ou MP3.\n\n' +
+      'Silences vs plusieurs fichiers : retirer les silences garde un fichier ; découper aux silences, par durée ou avec une cue télécharge un ZIP.\n\n' +
+      'Boucle et sonnerie : un cycle sans clic, ou environ 30 s avec fondus en MP3. Ce groupe n’écrit pas de M4R.\n\n' +
+      'Les requêtes éditeur audio en ligne restent dans la FAQ tant qu’un hub d’onde n’existe pas. Ne rippez pas un flux et ne clonez pas une voix sans droits.',
     faqQ4: 'Ce thème est-il un éditeur son complet ?',
     faqA4:
-      'Pas encore. Le premier travail livré est rogner puis exporter. Le hub d’onde est un autre slug. Couper un mp3 doit utiliser le rogneur, pas une seconde URL.',
+      'Pas encore. Il y a rogner, retirer les silences, trois découpes ZIP, une boucle et une sonnerie MP3 de 30 s. Le hub d’onde est un autre slug. Couper un mp3 utilise le rogneur ; créateur de sonnerie utilise la page des 30 secondes.',
   },
 };
 
@@ -1749,14 +1756,15 @@ BY_LANG.ja = {
       'ブラウザはタブメモリ上限。node_modules 級は除外/分割；多 GB・exotic 形式はネイティブ archiver。',
   },
   'sound-editor': {
-    guideTitle: 'まず切り出し；波形の本編集は後',
+    guideTitle: '短くする、分割、ループ、着信音；波形の本編集は後',
     guideBody:
-      '一度きり切り出し：開始と終了だけなら「音声クリップを切り出して書き出す」を開き、WAV か MP3 にします。DAW ではありません。\n\n' +
-      '「オンライン音声編集」などの頭語は、波形ハブができるまでこのテーマの FAQ に置きます。\n\n' +
-      '配信の無断取得や権利のない声のクローンには使わないでください。',
+      '切り出し：開始と終了だけなら「音声クリップを切り出して書き出す」を開き、WAV か MP3 にします。\n\n' +
+      '無音対複数ファイル：無音削除は1本のまま。無音分割・等秒数・キューはZIPです。\n\n' +
+      'ループと着信音：継ぎ目のない1周、または約30秒のフェード付きMP3。このまとまりはM4Rを書きません。\n\n' +
+      '「オンライン音声編集」などの頭語は波形ハブができるまで FAQ に置きます。配信の無断取得や権利のない声のクローンには使わないでください。',
     faqQ4: 'このテーマは本格的な音声編集ですか？',
     faqA4:
-      'まだ違います。先に出す仕事は切り出しと書き出しです。波形ハブは後のスラッグです。mp3カットは切り出し器を使い、第二 URL は作りません。',
+      'まだ違います。切り出し、無音削除、三種のZIP分割、ループ、30秒のMP3着信音があります。波形ハブは後のスラッグです。mp3カットは切り出し、着信音作成は30秒MP3ページです。',
   },
 };
 
@@ -1968,14 +1976,15 @@ BY_LANG.ru = {
       'Browser tools упираются в tab memory. Исключите node_modules-scale или split; native archiver для multi-GB или exotic formats.',
   },
   'sound-editor': {
-    guideTitle: 'Сначала обрежьте фрагмент; волновой редактор позже',
+    guideTitle: 'Укоротить, разрезать, зациклить или рингтон; волновой редактор позже',
     guideBody:
-      'Разовая обрезка: откройте «Обрежьте аудиофрагмент и экспортируйте», если нужны только начало и конец, затем WAV или MP3. Это не DAW.\n\n' +
-      'Запросы вроде online audio editor остаются в FAQ темы, пока нет волнового хаба.\n\n' +
-      'Не используйте инструменты для рипа потоков или клона голоса без прав.',
+      'Обрезка: откройте «Обрежьте аудиофрагмент и экспортируйте», если нужны только начало и конец, затем WAV или MP3.\n\n' +
+      'Тишина против многих файлов: удаление тишины оставляет один файл; нарезка по паузам, по длительности или по cue скачивает ZIP.\n\n' +
+      'Цикл и рингтон: круг без щелчка или около 30 с с фейдами в MP3. Группа не пишет M4R.\n\n' +
+      'Запросы вроде online audio editor остаются в FAQ, пока нет волнового хаба. Не рипайте потоки и не клонируйте голос без прав.',
     faqQ4: 'Эта тема — полный онлайн-редактор звука?',
     faqA4:
-      'Пока нет. Первая поставка — обрезка и экспорт. Волновой хаб — поздний слаг. «Обрезать mp3» должно идти в обрезку, не на второй URL.',
+      'Пока нет. Есть обрезка, тишина, три ZIP-нарезки, цикл и 30-секундный MP3-рингтон. Волновой хаб — поздний слаг. «Обрезать mp3» — в обрезку; ringtone maker — на страницу 30 секунд.',
   },
 };
 
@@ -2187,14 +2196,15 @@ BY_LANG.de = {
       'Browser-Tools stoßen an Tab-Speicher. node_modules ausschließen oder splitten; native Archiver für Multi-GB oder exotische Formate.',
   },
   'sound-editor': {
-    guideTitle: 'Zuerst den Clip zuschneiden; der Wellenform-Editor kommt später',
+    guideTitle: 'Kürzen, teilen, loopen oder Klingelton; der Wellenform-Editor kommt später',
     guideBody:
-      'Einmal zuschneiden: öffnen Sie Audioclip zuschneiden und exportieren, wenn nur Start und Ende nötig sind, dann WAV oder MP3. Das ist kein DAW.\n\n' +
-      'Kopfanfragen wie Sound-Editor bleiben in den FAQ, bis ein Wellenform-Hub als eigener Slug existiert.\n\n' +
-      'Nicht zum Rippen von Streams oder zum Klonen von Stimmen ohne Rechte nutzen.',
+      'Zuschnitt: öffnen Sie Audioclip zuschneiden und exportieren, wenn nur Start und Ende nötig sind, dann WAV oder MP3.\n\n' +
+      'Stille vs viele Dateien: Stille entfernen lässt eine Datei; Teilen an Stille, nach Dauer oder mit Cue lädt eine ZIP.\n\n' +
+      'Loop und Klingelton: ein Zyklus ohne Klick oder etwa 30 s mit Fades als MP3. Diese Gruppe schreibt kein M4R.\n\n' +
+      'Kopfanfragen wie Sound-Editor bleiben in den FAQ, bis ein Wellenform-Hub existiert. Nicht zum Rippen von Streams oder zum Klonen von Stimmen ohne Rechte nutzen.',
     faqQ4: 'Ist dieses Thema ein voller Online-Sound-Editor?',
     faqA4:
-      'Noch nicht. Der erste Job ist Zuschneiden und Export. Der Wellenform-Hub kommt später. MP3 schneiden gehört auf den Zuschnitt, nicht auf eine zweite URL.',
+      'Noch nicht. Es gibt Zuschnitt, Stille entfernen, drei ZIP-Teilungen, einen Loop und einen 30-s-MP3-Klingelton. Der Wellenform-Hub kommt später. MP3 schneiden gehört auf den Zuschnitt; Klingelton-Maker auf die 30-Sekunden-MP3-Seite.',
   },
 };
 

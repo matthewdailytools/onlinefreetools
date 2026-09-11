@@ -38,6 +38,7 @@
 - [按固定时长把音频切成多段](https://onlinefreetools.org/zh/tools/split-an-audio-file-by-duration) - 在本标签页按固定秒数把本地音频切成等长多段并下载 ZIP，末段留下余数；文件留在设备、不上传服务器
 - [用 cue 表把整轨镜像分轨](https://onlinefreetools.org/zh/tools/split-a-disc-image-with-a-cue-sheet) - 在本标签页按 cue 的 INDEX 01 把整轨镜像切成带曲名的多轨 ZIP；文件留在设备、不上传服务器
 - [把音频做成无缝循环](https://onlinefreetools.org/zh/tools/make-a-seamless-audio-loop) - 在本标签页把本地音频选段做等功率交叉淡化，导出可循环 WAV 或 MP3；文件留在设备、不上传服务器
+- [做成 30 秒 MP3 铃声](https://onlinefreetools.org/zh/tools/make-a-30-second-mp3-ringtone) - 在本标签页把本地歌曲裁成约 30 秒并淡化头尾，导出 MP3 铃声；文件留在设备、不上传服务器
 - [在线解压 ZIP](https://onlinefreetools.org/zh/tools/unzip-file) - 浏览器内查看 ZIP 文件树、预览文本/图片，并下载单个文件或导出全部，不上传服务器
 - [创建 zip 文件](https://onlinefreetools.org/zh/tools/create-zip-file) - 在浏览器里把多个文件打成 ZIP 下载；可保留文件夹路径；文件留在设备、不上传服务器
 - [压缩包在线解压](https://onlinefreetools.org/zh/tools/archive-extractor) - 浏览器内打开 ZIP、TAR、TAR.GZ 压缩包，预览文件并导出干净 ZIP，不上传服务器
@@ -262,6 +263,7 @@ Below are our available online tools with their links (English version):
 - [Split an audio file by duration](https://onlinefreetools.org/tools/split-an-audio-file-by-duration) - Cut a local file into equal-length clips and download a ZIP in this tab; the last clip keeps the remainder — stays on the device, not uploaded
 - [Split a disc image with a cue sheet](https://onlinefreetools.org/tools/split-a-disc-image-with-a-cue-sheet) - Cut a local album image at cue INDEX 01 and download named tracks as a ZIP in this tab — stays on the device, not uploaded
 - [Make a seamless audio loop](https://onlinefreetools.org/tools/make-a-seamless-audio-loop) - Wrap a local clip with an equal-power crossfade so it loops without a click, then export WAV or MP3 in this tab — stays on the device, not uploaded
+- [Make a 30-second MP3 ringtone](https://onlinefreetools.org/tools/make-a-30-second-mp3-ringtone) - Cut a local song to about 30 seconds, fade the edges, then export an MP3 ringtone in this tab — stays on the device, not uploaded
 - [Unzip File Online](https://onlinefreetools.org/tools/unzip-file) - Inspect ZIP contents, preview text/images, and download one file or export all in your browser — no server upload
 - [Create zip file](https://onlinefreetools.org/tools/create-zip-file) - Pack several files into a ZIP in your browser, keep folder paths when the browser provides them — stays on the device, not uploaded
 - [Archive Extractor Online](https://onlinefreetools.org/tools/archive-extractor) - Open ZIP, TAR, and TAR.GZ archives in your browser, preview files, and export a clean ZIP — no server upload

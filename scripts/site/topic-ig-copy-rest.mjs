@@ -1717,15 +1717,17 @@ const topicsEs = {
     cites: {},
   },
   'sound-editor': {
-    title: 'Recorta un clip, quita silencios o parte por silencios en un ZIP',
-    desc: 'En la pestaña: guarda un tramo inicio–fin, cose un archivo más corto sin aire muerto, o parte en cada pausa y baja un ZIP. El audio no sale del dispositivo. No es un DAW ni extrae de vídeo o YouTube.',
+    title: 'Acorta, parte, haz un bucle o un tono MP3 de 30 segundos',
+    desc: 'En la pestaña: acorta, parte en ZIP, haz un bucle sin clic o un tono MP3 de 30 s. El archivo se queda en el dispositivo y no se sube. No es un DAW ni instala M4R.',
     intro:
-      'Úsalo si ya tienes una grabación: un tramo que sepas nombrar, la misma pista sin pausas largas en un solo archivo, o cada pausa como clip dentro de un ZIP. El editor de onda completo llega después, no son estos tres oficios.',
-    tableTitle: 'Acorta o parte una grabación en el navegador y exporta',
+      'Si el archivo ya está en el dispositivo: un tramo inicio–fin, pausas largas fuera en un solo archivo, un ZIP (pausas, segundos iguales u hoja cue), un bucle sin clic, o un tono MP3 de unos 30 s con fundidos. El editor de onda completo llega después, no son estos oficios.',
+    tableTitle: 'Acorta, parte, haz un bucle o un tono en el navegador',
     groups: {
       trim: 'Inicio, fin y exportación',
       silence: 'Aire muerto, un solo archivo',
-      split: 'Pausas en varios archivos',
+      split: 'Varios archivos en un ZIP',
+      loop: 'Un ciclo que puede repetir',
+      ringtone: 'Tono MP3 de unos 30 s con fundidos',
     },
     rows: {
       'trim-an-audio-clip-and-export': r(
@@ -1743,34 +1745,56 @@ const topicsEs = {
         'Una grabación local cuyos huecos deben ser archivos sueltos, no una pista cosida.',
         'Necesitas un solo archivo más corto, cortes de igual duración, una cue sheet o un rip de YouTube.'
       ),
+      'split-an-audio-file-by-duration': r(
+        'Cortar en tramos de igual duración y bajar un ZIP; el último se queda con el resto',
+        'Un archivo local que quieres partir por segundos o minutos, no por silencios ni por cue.',
+        'Necesitas detectar pausas, pistas INDEX 01, un solo archivo cosido o un rip de YouTube.'
+      ),
+      'split-a-disc-image-with-a-cue-sheet': r(
+        'Cortar una imagen de disco en INDEX 01 y bajar pistas con nombre en un ZIP',
+        'Una imagen local más una hoja cue (o texto cue pegado) con tiempos INDEX 01.',
+        'Necesitas cortes por silencio, tramos iguales, decodificar APE o capítulos de YouTube.'
+      ),
+      'make-a-seamless-audio-loop': r(
+        'Cruzar el final con el inicio a potencia constante para que el bucle no haga clic',
+        'Un pad o frase local que vas a repetir en un juego, un directo o un sampler.',
+        'Necesitas un cruce DJ de dos canciones, un tono de 30 s, un DAW o un rip de YouTube.'
+      ),
+      'make-a-30-second-mp3-ringtone': r(
+        'Dejar unos 30 s, fundir los bordes y exportar un tono MP3',
+        'Una canción local tuya; ventana de 30 s con fundido de 0,5 s de entrada y 1,5 s de salida.',
+        'Necesitas M4R de iPhone desde el navegador, un recorte de cualquier duración, un bucle sin costura o un rip de YouTube.'
+      ),
     },
     flow: [
       'Si ya sabes inicio y fin, abre el recortador y exporta WAV o MP3 en la pestaña.',
       'Si hay pausas largas y el resultado debe ser un archivo, abre quitar silencios, no un ZIP.',
-      'Si cada pausa debe ser su propio clip, abre partir por silencios y descarga el ZIP.',
+      'Si necesitas muchos archivos, abre un oficio de partir: pausas, segundos iguales u hoja cue en un ZIP.',
+      'Si el clip debe repetir sin clic, abre el bucle y exporta WAV o MP3.',
+      'Si quieres un tono de unos 30 s con fundidos, abre el tono MP3; este grupo no escribe M4R.',
     ],
-    exampleTitle: 'Sintonía, aire muerto y capítulos por pausa',
+    exampleTitle: 'Sintonía, capítulos, un pad en bucle y un tono de 30 s',
     exampleBody:
-      'Un memo de 30 s con 8 s de sintonía: recorta después de la sintonía y exporta MP3. Una entrevista de 20 min con dos huecos: quita silencios si quieres un archivo; ábrela en partir por silencios si cada hueco debe abrir un clip en un ZIP. Quien busca fundidos y deshacer espera un hub posterior, no estos tres oficios.',
+      'Un memo de 30 s con 8 s de sintonía: recorta. Una entrevista de 20 min con dos huecos: quita silencios si quieres un archivo; parte por silencios si cada hueco abre un clip en el ZIP. Segundos iguales y INDEX 01 son los otros dos ZIP. Un pad de 5 s que debe repetir sin clic: el bucle. Un estribillo para Android: el tono MP3 de 30 s. Quien busca deshacer y varias pistas espera un hub posterior.',
     boundary:
-      'El archivo se queda en el dispositivo. Los topes rechazan ficheros enormes antes de decodificar. No es un separador de stems, una fábrica de tonos, un corte por cue ni un ripper.',
+      'El archivo se queda en el dispositivo y no se sube. Los topes rechazan ficheros enormes antes de decodificar. No es un separador de stems, un escritor M4R, un decodificador APE ni un ripper.',
     secondary: {},
     faq: [
       {
         q: '¿Esto es un editor de sonido online?',
-        a: 'Todavía no. Hay tres oficios: recortar inicio y fin, quitar silencios y coser un archivo, o partir por silencios en un ZIP. El hub de onda es otro slug más adelante.',
+        a: 'Todavía no. Oficios sueltos: recortar, quitar silencios en un archivo, partir de tres modos en ZIP, un bucle sin costura o un tono MP3 de 30 s. El hub de onda es otro slug más adelante.',
       },
       {
-        q: 'Busqué cortar mp3 o mp3 cutter. ¿Hay otra URL?',
-        a: 'No. Es el mismo trabajo que el recortador: guardar un tramo y descargar. No partimos cutter/trim/crop en direcciones extra.',
+        q: 'Busqué cortar mp3 o creador de tonos. ¿Hay otra URL?',
+        a: 'Cortar, recortar y crop son el recortador. Creador de tonos o tono MP3 es la página de 30 segundos. No añadimos direcciones extra para el mismo trabajo.',
       },
       {
         q: '¿Se sube el archivo?',
-        a: 'La decodificación y el corte corren en la pestaña. No lo enviamos a nuestros servidores en estos oficios.',
+        a: 'La decodificación y la exportación corren en la pestaña. El archivo se queda en el dispositivo; no lo enviamos a nuestros servidores en estos oficios.',
       },
       {
-        q: '¿Puedo sacar audio de un vídeo o de YouTube?',
-        a: 'No. Extraer de vídeo y bajar streams sin derechos quedan fuera. Partir en cada pausa y bajar un ZIP es el oficio de partir por silencios, aquí mismo.',
+        q: '¿Puedo sacar audio de YouTube o escribir un M4R de iPhone?',
+        a: 'No. Este grupo no ripa streams ni escribe M4R. Exporta MP3 en la página de tono y usa GarageBand o el Finder si aún necesitas un tono de iPhone.',
       },
     ],
     cites: {

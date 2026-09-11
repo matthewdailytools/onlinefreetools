@@ -2,7 +2,7 @@
 
 **日期**：2026-09-10（需求/SEO 重枚举；不再用「同一 JS 控件」当漏斗）  
 **进度核对**：2026-09-11（对照 `origin/save` / 当前 `main`）  
-**状态**：作业全表仍是规划；**S1、S2、A3、S3、S4、S5 已上线**。未点名的行不得建新 `work-tasks/`、不得改 `src/`。  
+**状态**：作业全表仍是规划；**S1、S2、A3、S3、S4、S5、S6 已上线**。未点名的行不得建新 `work-tasks/`、不得改 `src/`。  
 **slug / H1 均为草稿**（已上线行除外）：上线前须跑 0b + SERP；禁止用品类头词当唯一进攻 H1。  
 **权威（本页）**：先按 **用户作业 + 搜索簇** 列全。落地列（Hub / 单点候选 / 一对转换 / defer / drop）是建议，**不是**删行条件。  
 **仍成立的合规**：近义换词空壳 = doorway / scaled content（`cut mp3` 与 `trim audio` 是同一作业）。Google 现行政策高于「多占几个词」。  
@@ -13,7 +13,7 @@
 
 ## 进度（2026-09-11）
 
-声音域 **已经有 6 个已实现工具**：12 表 **S1** `trim-an-audio-clip-and-export`（起止裁剪 → 导出 WAV/MP3）；**S2** `remove-silence-from-a-recording`（挖静音仍一文件 → 导出 WAV/MP3）；**A3** `split-a-recording-on-silence`（按静音切多段 ZIP）；**S3** `split-an-audio-file-by-duration`（按固定秒数切多段 ZIP）；**S4** `split-a-disc-image-with-a-cue-sheet`（按 cue INDEX 01 分轨 ZIP）；**S5** `make-a-seamless-audio-loop`（选段 + 等功率交叉淡化 → 可循环 WAV/MP3）。**不是** Hub `edit-audio-on-waveform`。上一次若只看未合并的本地 `main`、只搜旧名 `audio-trim`，会误报「0 个工具」。
+声音域 **已经有 7 个已实现工具**：12 表 **S1** `trim-an-audio-clip-and-export`（起止裁剪 → 导出 WAV/MP3）；**S2** `remove-silence-from-a-recording`（挖静音仍一文件 → 导出 WAV/MP3）；**A3** `split-a-recording-on-silence`（按静音切多段 ZIP）；**S3** `split-an-audio-file-by-duration`（按固定秒数切多段 ZIP）；**S4** `split-a-disc-image-with-a-cue-sheet`（按 cue INDEX 01 分轨 ZIP）；**S5** `make-a-seamless-audio-loop`（选段 + 等功率交叉淡化 → 可循环 WAV/MP3）；**S6** `make-a-30-second-mp3-ringtone`（约 30 秒窗 + 淡入淡出 → 导出 MP3 铃声）。**不是** Hub `edit-audio-on-waveform`。上一次若只看未合并的本地 `main`、只搜旧名 `audio-trim`，会误报「0 个工具」。
 
 | ID | slug | 仓库事实 | 阶段 |
 |---|---|---|---|
@@ -23,8 +23,9 @@
 | **S3** | `split-an-audio-file-by-duration` | `work-tasks/` `02`=`implemented`、`03`=`i18n-done`；catalog `opts`；`src/pages/splitAnAudioFileByDurationPage.ts`；十语；主题 `sound-editor` | **已开发完毕**（2026-09-11）。验收：https://onlinefreetools.org/tools/split-an-audio-file-by-duration |
 | **S4** | `split-a-disc-image-with-a-cue-sheet` | `work-tasks/` `02`=`implemented`、`03`=`i18n-done`；catalog `opts`；`src/pages/splitADiscImageWithACueSheetPage.ts`；十语；主题 `sound-editor` | **已开发完毕**（2026-09-11）。验收：https://onlinefreetools.org/tools/split-a-disc-image-with-a-cue-sheet |
 | **S5** | `make-a-seamless-audio-loop` | `work-tasks/` `02`=`implemented`、`03`=`i18n-done`；catalog `opts`；`src/pages/makeASeamlessAudioLoopPage.ts`；十语；主题 `sound-editor` | **已开发完毕**（2026-09-11）。验收：https://onlinefreetools.org/tools/make-a-seamless-audio-loop |
+| **S6** | `make-a-30-second-mp3-ringtone` | `work-tasks/` `02`=`implemented`、`03`=`i18n-done`；catalog `opts`；`src/pages/makeA30SecondMp3RingtonePage.ts`；十语；主题 `sound-editor` | **已开发完毕**（2026-09-11）。验收：https://onlinefreetools.org/tools/make-a-30-second-mp3-ringtone |
 | **H0 / Hub** | `edit-audio-on-waveform` | 无 `work-tasks/`、无 catalog | **未立项**。11 合同仍等「按方案执行」。禁止把 S1 页当成 Hub |
-| **其余 scene / pair** | A1–A8（A3 除外）、S6–S38、P1–P6 等 | 无对应 `work-tasks/` | 未口令，不上 |
+| **其余 scene / pair** | A1–A8（A3 除外）、S7–S38、P1–P6 等 | 无对应 `work-tasks/` | 未口令，不上 |
 
 S1 已交付：单文件 dropzone、波形点选起止、**Trim**、**Export WAV** / **Export MP3**（lamejs 点后加载）、金标 HUD（Decode / Trim / Encode）、过零默认开、体积/时长帽、进页 5s 样例自动 Trim。**没有**：录音、淡化命令、EDL 精剪、AudioMass 宿主、降噪/LUFS、视频抽音。
 
@@ -38,7 +39,9 @@ S4 已交付：镜像+.cue 同一 dropzone（可粘贴 cue）、**Split tracks**
 
 S5 已交付：单文件 dropzone、波形点选起止、**Make loop** 等功率环绕交叉淡化、**Export WAV** / **Export MP3**（lamejs 点后加载）、金标 HUD（Decode / Loop / Encode）、交叉淡化默认 50 ms（芯片 20/50/200/500）、Repeats 默认 1（高级 4/8）、体积/时长帽对齐 S1、进页 5s 样例自动做成约 1.95 s 一圈。**没有**：Hub DAW、两文件 DJ 切歌、铃声 M4A、AI 寻环、十小时循环、YouTube 扒带、BPM 卡拍。
 
-S2 related 含 `trim-an-audio-clip-and-export`、`split-a-recording-on-silence`、`split-an-audio-file-by-duration`。A3 related 含 S3、S4、S2 与 S1。S3 related 含 A3、S4 与 S1。S4 related 含 S3 与 A3。S5 related 含 S1 与 S3。禁止 related 到未立项的 Hub / S6。未改其他工具 related（避免 isolation 反向改分片）。
+S6 已交付：单文件 dropzone、Start + **Duration 默认 30s**（芯片 15/20/30/40）、**Fade in 0.5s / Fade out 1.5s** 线性增益（不缩短时长）、**Make ringtone**、**Export MP3**（lamejs 点后加载；**无 WAV、无 M4R**）、金标 HUD（Decode / Fade / Encode）、选区 >40s 拒绝、体积/时长帽对齐 S1、进页 32s 样例自动做成约 30.00 s。**没有**：iPhone M4R/M4A、任意时长裁剪（S1）、无缝循环（S5）、Hub DAW、YouTube 扒带、写入系统铃声。
+
+S2 related 含 `trim-an-audio-clip-and-export`、`split-a-recording-on-silence`、`split-an-audio-file-by-duration`。A3 related 含 S3、S4、S2 与 S1。S3 related 含 A3、S4 与 S1。S4 related 含 S3 与 A3。S5 related 含 S1 与 S3。S6 related 含 S1 与 S5。禁止 related 到未立项的 Hub。未改其他工具 related（避免 isolation 反向改分片）。
 
 ---
 
@@ -114,7 +117,7 @@ Hub **不是** 05 整座宇宙。分离、TTS、克隆、实时变声、识曲�
 | **S3** | 按固定时长切成等长多段 | split audio by duration；split mp3 into parts / 音频按时长切割 | 中 | `/split-mp3` 品类头词不当 URL | `split-an-audio-file-by-duration` | scene。**2026-09-11 已实现** catalog/`splitAnAudioFileByDurationPage.ts`/十语 |
 | **S4** | 按 cue / 章节表分轨 | cue splitter；split ape cue；split flac cue / cue 分轨 | 长尾 | 各容器不拆 | `split-a-disc-image-with-a-cue-sheet` | **scene**。**2026-09-11 已实现** catalog/`splitADiscImageWithACueSheetPage.ts`/十语 |
 | **S5** | 无缝循环（游戏/直播垫） | seamless loop；audio loop crossfade；loop audio / 音频无缝循环 | 中 | `/audio-looper` 空壳 | `make-a-seamless-audio-loop` | hub 芯片 **且** scene（进页=选段 + 交叉淡化做成无缝循环 + 导出；不是缩小 DAW）。**2026-09-11 已立项并实现** `work-tasks/make-a-seamless-audio-loop/`，主题 id `sound-editor` |
-| **S6** | 手机铃声规格：30s + 淡化 + MP3 | ringtone maker；iphone ringtone；mp3 to ringtone / 铃声制作；手机铃声 | 头 | `/m4a-ringtone` 本站 v1 不做 M4A 就不要许 | `make-a-30-second-mp3-ringtone` | hub 芯片 **且** scene（Rules 写清无 M4A） |
+| **S6** | 手机铃声规格：30s + 淡化 + MP3 | ringtone maker；iphone ringtone；mp3 to ringtone / 铃声制作；手机铃声 | 头 | `/m4a-ringtone` 本站 v1 不做 M4A 就不要许 | `make-a-30-second-mp3-ringtone` | hub 芯片 **且** scene（Rules 写清无 M4A）。**2026-09-11 已立项并实现** `work-tasks/make-a-30-second-mp3-ringtone/`，主题 id `sound-editor` |
 
 ### F2 录
 
@@ -381,6 +384,7 @@ P3      A5 / A6 / A8 / A7（授权）             未口令
 - **S3 按固定时长切多段 ZIP**：已实现 `split-an-audio-file-by-duration`（`02` implemented；十语）。勿与 A3 静音切混 URL，勿叠按体积切。  
 - **S4 按 cue 分轨 ZIP**：已实现 `split-a-disc-image-with-a-cue-sheet`（`02` implemented；十语）。勿与 A3/S3 混 URL，勿叠 YouTube 章节手标，勿宣称浏览器能解 APE。  
 - **S5 无缝循环**：已实现 `make-a-seamless-audio-loop`（`02` implemented；十语）。勿再立项 `/audio-looper` / `/loop-maker` 近义 URL；勿做成两文件 DJ 切歌（M2）或铃声 M4A（S6）；勿堆 Hub 波形 DAW。  
+- **S6 30 秒 MP3 铃声**：已实现 `make-a-30-second-mp3-ringtone`（`02` implemented；十语）。勿再立项 `/ringtone-maker` / `/mp3-to-ringtone` 近义 URL；勿许诺 M4R/M4A；勿与 S1 任意裁剪或 S5 循环混 H1。  
 - **某一其它单点**：用户点名本表 ID 或草稿 slug → 单独复制 `_template`，跑 0b。  
 - 本页 **不** 因写全表而建多个 work-tasks，也 **不** 把 scene 候选自动排进实现队列。
 

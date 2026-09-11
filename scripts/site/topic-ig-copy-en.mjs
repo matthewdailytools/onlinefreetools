@@ -1717,15 +1717,17 @@ export const topics = {
     cites: {},
   },
   'sound-editor': {
-    title: 'Trim a clip, remove silence, or split on silence into a ZIP',
-    desc: 'Trim start and end, cut dead air into one file, or split a recording on silence into a ZIP in this tab. Stays on the device. Not a DAW or YouTube rip.',
+    title: 'Shorten, split, loop, or make a 30-second MP3 ringtone',
+    desc: 'Shorten, split, loop, or make a 30-second MP3 ringtone in this tab. Files stay on the device and are not uploaded. Not a DAW or M4R packager.',
     intro:
-      'Use this cluster when you already have a recording: keep a named start–end range, stitch one shorter file after cutting pauses, or split at those pauses into a ZIP of clips. A full waveform editor is a later hub, not these three jobs.',
-    tableTitle: 'Shorten or split a recording in the browser, then export',
+      'Use this cluster when the file is already on your device: keep a named start–end, cut long pauses into one shorter file, split into a ZIP (pauses, equal seconds, or a cue sheet), wrap a seamless loop, or cut a 30-second MP3 ringtone with fades. A full waveform editor is a later hub, not these jobs.',
+    tableTitle: 'Shorten, split, loop, or make a ringtone in the browser',
     groups: {
       trim: 'Start, end, and export',
       silence: 'Dead air, still one file',
-      split: 'Pauses into many files',
+      split: 'Many files in a ZIP',
+      loop: 'One cycle that can repeat',
+      ringtone: 'Phone-length MP3 with fades',
     },
     rows: {
       'trim-an-audio-clip-and-export': r(
@@ -1743,34 +1745,56 @@ export const topics = {
         'A local recording with gaps you want as separate files, not one stitched track.',
         'You need one shorter file, equal-duration slices, a cue sheet, or a YouTube rip.'
       ),
+      'split-an-audio-file-by-duration': r(
+        'Cut into equal-length clips and download a ZIP; the last clip keeps the remainder',
+        'A local file you want sliced by seconds or minutes, not by silence or a cue sheet.',
+        'You need pause detection, INDEX 01 tracks, one stitched file, or a YouTube rip.'
+      ),
+      'split-a-disc-image-with-a-cue-sheet': r(
+        'Cut an album image at cue INDEX 01 and download named tracks as a ZIP',
+        'A local image plus a cue sheet (or pasted cue text) that lists INDEX 01 times.',
+        'You need silence cuts, equal-duration slices, APE decode, or a YouTube chapter rip.'
+      ),
+      'make-a-seamless-audio-loop': r(
+        'Wrap a region with an equal-power crossfade so it loops without a click',
+        'A local pad or phrase you will loop in a game, stream, or sampler.',
+        'You need two-file DJ transitions, a 30-second ringtone, a DAW, or a YouTube rip.'
+      ),
+      'make-a-30-second-mp3-ringtone': r(
+        'Keep about 30 seconds, fade the edges, and export an MP3 ringtone',
+        'A local song you own; default 30s window with fade in 0.5s and fade out 1.5s.',
+        'You need iPhone M4R from the browser, arbitrary-length trim, a seamless loop, or a YouTube rip.'
+      ),
     },
     flow: [
       'Open the trimmer when you already know the start and end, then export WAV or MP3 in the tab.',
       'Open remove silence when long pauses should go and the result must stay one file, not a ZIP.',
-      'Open split on silence when each pause should become its own clip inside a ZIP.',
+      'Open a split tool when you need many files: pauses, equal seconds, or a cue sheet into a ZIP.',
+      'Open the loop tool when the clip should wrap without a click, then export WAV or MP3.',
+      'Open the ringtone tool when you want about 30 seconds with fades as MP3, not M4R.',
     ],
-    exampleTitle: 'Podcast bumper vs dead air vs pause chapters',
+    exampleTitle: 'Bumper, chapters, a looping pad, and a 30-second ringtone',
     exampleBody:
-      'A 30-second memo with an 8-second intro belongs on the trimmer: set start after the bumper, export MP3. A 20-minute interview with two long gaps belongs on remove silence if you still want one file. The same interview belongs on split on silence if each gap should start a new clip in a ZIP. Searching “sound editor” for fades and undo is a later hub.',
+      'A 30-second memo with an 8-second intro belongs on the trimmer. A 20-minute interview with two long gaps belongs on remove silence if you still want one file, or split on silence if each gap should start a ZIP clip. Equal-second slices and cue INDEX 01 are the other two ZIP jobs. A 5-second pad that must loop without a click belongs on the loop tool. A chorus you will set as an Android ringtone belongs on the 30-second MP3 page. Searching “sound editor” for undo and multitrack is a later hub.',
     boundary:
-      'Files stay on the device. Caps reject huge files before decode. Not a stem splitter, ringtone factory, cue splitter, or stream ripper.',
+      'Files stay on the device and are not uploaded. Caps reject huge files before decode. Not a stem splitter, iPhone M4R writer, APE decoder, or stream ripper.',
     secondary: {},
     faq: [
       {
         q: 'Is this the same as an online sound editor?',
-        a: 'Not yet. Three single-job tools live here: trim start and end, cut silence and stitch one file, or split on silence into a ZIP. A waveform hub is a separate later slug.',
+        a: 'Not yet. These are single jobs: trim, cut silence into one file, split three ways into a ZIP, wrap a seamless loop, or make a 30-second MP3 ringtone. A waveform hub is a separate later slug.',
       },
       {
-        q: 'I searched mp3 cutter or cut mp3. Is that another URL?',
-        a: 'No. Same job as the trimmer: keep a range and download. We do not split cutter/trim/crop into extra addresses.',
+        q: 'I searched mp3 cutter or ringtone maker. Is that another URL?',
+        a: 'Cutter, trim, and crop are the trimmer. Ringtone maker or mp3 to ringtone is the 30-second MP3 page. We do not add extra addresses for those same jobs.',
       },
       {
         q: 'Does the file upload?',
-        a: 'Decode and cut run in the tab. Nothing is posted to our servers for these jobs.',
+        a: 'Decode and export run in the tab. Files stay on the device; they are not posted to our servers for these jobs.',
       },
       {
-        q: 'Can I pull audio from a video or YouTube?',
-        a: 'No. Video extract and ripping streams you do not have rights to are out of scope. Splitting at pauses into a ZIP is the split-on-silence tool in this cluster.',
+        q: 'Can I pull audio from YouTube or write an iPhone M4R?',
+        a: 'No. This cluster does not rip streams or write M4R. Export MP3 from the ringtone page, then use GarageBand or Finder if you still need an iPhone custom tone.',
       },
     ],
     cites: {

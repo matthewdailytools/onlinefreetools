@@ -8361,6 +8361,123 @@ const id: SiteLangDict = {
   tool_magnet_link_decoder_warn_bad_size: 'xl harus berupa panjang byte integer non-negatif.',
   tool_magnet_link_decoder_warn_bad_url: '{key} bukan URL absolut yang valid: {value}',
   tool_magnet_link_decoder_warn_missing_xt: 'Parameter exact-topic xt tidak ditemukan.',
+  tool_make_a_30_second_mp3_ringtone_advanced: 'Pengaturan lanjutan (opsional)',
+  tool_make_a_30_second_mp3_ringtone_article:
+    'Buat nada dering MP3 30 detik di tab ini: buka lagu di perangkat, sisakan sekitar 30 detik, tambah fade masuk dan keluar, ketuk Buat nada dering, lalu Ekspor MP3. Berkas tetap di perangkat, tanpa unggah ke server. Cari pembuat nada dering atau potong lagu jadi nada dering adalah potongan ini, bukan editor gelombang atau pemasang M4R iPhone.',
+  tool_make_a_30_second_mp3_ringtone_bitrate: 'Bitrate MP3',
+  tool_make_a_30_second_mp3_ringtone_bitrate_hint: 'Bawaan 128 kbps. Hanya dipakai saat Ekspor MP3.',
+  tool_make_a_30_second_mp3_ringtone_choose_file: 'Pilih berkas audio',
+  tool_make_a_30_second_mp3_ringtone_clear: 'Hapus',
+  tool_make_a_30_second_mp3_ringtone_desc:
+    'Buat nada dering MP3 30 detik di perangkat: potong lagu lokal, fade ujungnya, lalu ekspor MP3 tanpa unggah ke server.',
+  tool_make_a_30_second_mp3_ringtone_description:
+    'Buat nada dering MP3 30 detik di perangkat: potong lagu lokal, beri fade masuk dan keluar, lalu unduh MP3; berkas tidak diunggah ke server. Langkah: buka berkas, atur Awal dan Durasi (30 dtk; chip 15 / 20 / 30 / 40), fade 0,5 / 1,5 dtk, Buat nada dering, Putar, Ekspor MP3. Contoh: dari 1,00 dtk sampel 32 dtk menjadi sekitar 30,00 dtk. Pembuat nada dering, ringtone 30 detik, potong lagu jadi nada dering, atau nada dering Android pekerjaan yang sama. Bukan editor gelombang; tidak menulis M4R dan tidak mengambil YouTube.',
+  tool_make_a_30_second_mp3_ringtone_disclaimer:
+    'Anda harus berhak mengolah berkas ini. Halaman ini tidak memberi lisensi musik, tidak menulis M4R, dan tidak mengambil siaran.',
+  tool_make_a_30_second_mp3_ringtone_drop_hint: 'Atau jatuhkan WAV, MP3, M4A, atau OGG di sini. Pemrosesan tetap di tab ini.',
+  tool_make_a_30_second_mp3_ringtone_duration: 'Durasi (detik)',
+  tool_make_a_30_second_mp3_ringtone_duration_hint: 'Bawaan 30 detik. Chip mengatur 15 / 20 / 30 / 40 dari Awal saat ini. Lebih dari 40 dtk ditolak.',
+  tool_make_a_30_second_mp3_ringtone_empty: 'Pilih berkas audio dulu.',
+  tool_make_a_30_second_mp3_ringtone_err_caps:
+    'Berkas ini melebihi batas perangkat (sekitar 40 MB / 20 mnt di desktop, 20 MB / 8 mnt di layar sempit). Potong dulu di tempat lain atau pakai berkas lebih pendek.',
+  tool_make_a_30_second_mp3_ringtone_err_decode: 'Peramban ini tidak bisa mendekode berkas itu. Coba WAV atau MP3, atau klip tanpa DRM.',
+  tool_make_a_30_second_mp3_ringtone_err_empty: 'Tidak ada bahan nada dering. Muat berkas atau contoh.',
+  tool_make_a_30_second_mp3_ringtone_err_fade: 'Jumlah fade harus lebih pendek dari Durasi. Turunkan fade atau panjangkan klip.',
+  tool_make_a_30_second_mp3_ringtone_err_lame: 'Encoder MP3 gagal dimuat. Tetap di tab ini dan ketuk lagi Ekspor MP3.',
+  tool_make_a_30_second_mp3_ringtone_err_long: 'Nada dering tidak boleh lebih dari 40 detik. Perpendek Durasi atau geser Awal.',
+  tool_make_a_30_second_mp3_ringtone_err_range: 'Durasi harus setelah Awal, di dalam berkas yang sudah didekode.',
+  tool_make_a_30_second_mp3_ringtone_err_video:
+    'Halaman ini tidak menerima video sebagai input utama. Ekstrak audio dulu, lalu buat nada dering dari suara.',
+  tool_make_a_30_second_mp3_ringtone_example:
+    'Muat contoh membuat nada 32,00 dtk, Awal 1,00 dan Durasi 30, fade 0,5 / 1,5 dtk; Buat nada dering menghasilkan sekitar 30,00 dtk. Ekspor MP3 memakai 128 kbps kecuali Anda mengubah pengaturan lanjutan.',
+  tool_make_a_30_second_mp3_ringtone_example_title: 'Contoh',
+  tool_make_a_30_second_mp3_ringtone_export_mp3: 'Ekspor MP3',
+  tool_make_a_30_second_mp3_ringtone_fade_hint:
+    'Fade masuk 0,5 dtk dan keluar 1,5 dtk secara bawaan agar reff tidak terpotong kasar. Gain linear; berkas tidak dipendekkan.',
+  tool_make_a_30_second_mp3_ringtone_fade_in: 'Fade masuk (dtk)',
+  tool_make_a_30_second_mp3_ringtone_fade_out: 'Fade keluar (dtk)',
+  tool_make_a_30_second_mp3_ringtone_faq_a1:
+    'Tidak. Dekode dan fade berjalan di tab ini. Skrip dimuat dari situs ini. Berkas tidak dikirim ke server kami.',
+  tool_make_a_30_second_mp3_ringtone_faq_a2:
+    'Bukan alat lain. Pembuat nada dering, nada dering mp3, potong lagu jadi nada dering, ringtone 30 detik: sisakan sekitar 30 dtk, fade ujungnya, lalu Ekspor MP3.',
+  tool_make_a_30_second_mp3_ringtone_faq_a3:
+    'Tiga puluh detik adalah panjang nada dering yang biasa. Ada juga 15, 20, dan 40 dtk. Lebih dari 40 dtk ditolak.',
+  tool_make_a_30_second_mp3_ringtone_faq_a4:
+    'Ramp volume linear pada wilayah. Bawaan 0,5 dtk masuk dan 1,5 dtk keluar. Mengubah kekerasan, bukan durasi ekspor. Jumlahnya harus lebih pendek dari Durasi.',
+  tool_make_a_30_second_mp3_ringtone_faq_a5:
+    'Hanya MP3 (128 kbps). Tidak menulis M4R atau M4A. Di Android, MP3 bisa jadi nada dering. iPhone masih butuh GarageBand atau Finder; peramban tidak memasang nada sistem.',
+  tool_make_a_30_second_mp3_ringtone_faq_a6: 'Di Android unduh MP3, salin ke folder nada dering, atau pilih di Pengaturan → Suara.',
+  tool_make_a_30_second_mp3_ringtone_faq_a7:
+    'Bukan. Potong durasi bebas ada di halaman trim. Loop mulus adalah crossfade ujung ke kepala. Bukan editor suara dan tidak mengambil YouTube.',
+  tool_make_a_30_second_mp3_ringtone_faq_a8:
+    'Desktop sekitar 40 MB atau 20 menit. Layar sempit sekitar 20 MB atau 8 menit. Kelebihan ditolak sebelum dekode. Wilayah nada dering maksimal 40 dtk.',
+  tool_make_a_30_second_mp3_ringtone_faq_q1: 'Apakah audio diunggah?',
+  tool_make_a_30_second_mp3_ringtone_faq_q2: 'Saya mencari pembuat nada dering atau potong lagu jadi nada dering. Apakah itu alat lain?',
+  tool_make_a_30_second_mp3_ringtone_faq_q3: 'Mengapa bawaan nada dering 30 detik?',
+  tool_make_a_30_second_mp3_ringtone_faq_q4: 'Bagaimana fade masuk dan keluar bekerja?',
+  tool_make_a_30_second_mp3_ringtone_faq_q5: 'Bisakah membuat nada dering M4R untuk iPhone?',
+  tool_make_a_30_second_mp3_ringtone_faq_q6: 'Bagaimana memasang MP3 ini sebagai nada dering Android?',
+  tool_make_a_30_second_mp3_ringtone_faq_q7: 'Ini pemotong audio, loop, atau editor?',
+  tool_make_a_30_second_mp3_ringtone_faq_q8: 'Seberapa besar berkas yang bisa diproses?',
+  tool_make_a_30_second_mp3_ringtone_how_body:
+    'Sisakan sekitar 30 detik dari lagu lokal, fade ujungnya agar reff tidak terpotong kasar, lalu unduh MP3 tanpa mengunggah berkas.',
+  tool_make_a_30_second_mp3_ringtone_how_item_1: 'Buka berkas audio (atau ketuk Muat contoh).',
+  tool_make_a_30_second_mp3_ringtone_how_item_2:
+    'Seret gelombang atau ketik Awal dan Durasi (30 dtk; chip 15 / 20 / 30 / 40). Ubah fade masuk / keluar jika 0,5 / 1,5 dtk tidak pas.',
+  tool_make_a_30_second_mp3_ringtone_how_item_3: 'Ketuk Buat nada dering.',
+  tool_make_a_30_second_mp3_ringtone_how_item_4: 'Ketuk Putar untuk mendengarnya berulang, lalu Ekspor MP3.',
+  tool_make_a_30_second_mp3_ringtone_how_title: 'Cara kerjanya',
+  tool_make_a_30_second_mp3_ringtone_hud_decode: 'Mendekode berkas di tab ini…',
+  tool_make_a_30_second_mp3_ringtone_hud_decoded: 'Sudah didekode. Atur Awal, Durasi, dan fade, lalu Buat nada dering.',
+  tool_make_a_30_second_mp3_ringtone_hud_elapsed_tpl: '{s} dtk berlalu',
+  tool_make_a_30_second_mp3_ringtone_hud_encode: 'Mengode MP3…',
+  tool_make_a_30_second_mp3_ringtone_hud_fade: 'Menerapkan fade…',
+  tool_make_a_30_second_mp3_ringtone_hud_fail_hint: 'Perbaiki berkas, waktu, atau fade, lalu Buat nada dering lagi.',
+  tool_make_a_30_second_mp3_ringtone_hud_fail_title: 'Buat nada dering berhenti',
+  tool_make_a_30_second_mp3_ringtone_hud_next: 'Selesai. Lanjut: Putar nada dering, lalu Ekspor MP3.',
+  tool_make_a_30_second_mp3_ringtone_hud_next_mp3: 'Selesai. Unduhan MP3 seharusnya mulai.',
+  tool_make_a_30_second_mp3_ringtone_hud_pct_tpl: '{pct}%',
+  tool_make_a_30_second_mp3_ringtone_hud_step_decode: 'Dekode',
+  tool_make_a_30_second_mp3_ringtone_hud_step_encode: 'Kode',
+  tool_make_a_30_second_mp3_ringtone_hud_step_fade: 'Fade',
+  tool_make_a_30_second_mp3_ringtone_hud_title: 'Progres nada dering',
+  tool_make_a_30_second_mp3_ringtone_hud_working: 'Mulai…',
+  tool_make_a_30_second_mp3_ringtone_make: 'Buat nada dering',
+  tool_make_a_30_second_mp3_ringtone_meta_tpl: '{name} · {dur}dtk · {rate} Hz · {ch} ch',
+  tool_make_a_30_second_mp3_ringtone_pause: 'Jeda',
+  tool_make_a_30_second_mp3_ringtone_play: 'Putar',
+  tool_make_a_30_second_mp3_ringtone_preview_hint:
+    'Klik atau seret gelombang untuk Awal dan Durasi. Setelah Buat nada dering, Putar mengulang klip yang sudah di-fade seperti telepon berdering.',
+  tool_make_a_30_second_mp3_ringtone_result_tpl:
+    'Nada dering {dur}dtk dari {start}–{end}dtk, fade masuk {fadeIn}dtk dan keluar {fadeOut}dtk. Ekspor MP3 siap.',
+  tool_make_a_30_second_mp3_ringtone_rules_body:
+    'Wilayah disalin dari Awal + Durasi (maks. 40 dtk). Fade linear hanya mengubah gain. MP3 CBR setelah Ekspor MP3.',
+  tool_make_a_30_second_mp3_ringtone_rules_item_1:
+    'Desktop sekitar 40 MB atau 20 menit; layar sempit sekitar 20 MB atau 8 menit. Kelebihan ditolak. Wilayah nada dering tidak boleh lebih dari 40 dtk.',
+  tool_make_a_30_second_mp3_ringtone_rules_item_2:
+    'Berkas tetap di perangkat; tidak diunggah ke server. Encoder MP3 dimuat dari situs ini hanya setelah Ekspor MP3.',
+  tool_make_a_30_second_mp3_ringtone_rules_item_3: 'Durasi bawaan 30 dtk. Fade masuk 0,5 dtk plus keluar 1,5 dtk harus lebih pendek dari Durasi.',
+  tool_make_a_30_second_mp3_ringtone_rules_item_4: 'Dekode tergantung peramban. DRM, beberapa codec, dan wadah video gagal dengan pesan jelas.',
+  tool_make_a_30_second_mp3_ringtone_rules_item_5:
+    'Tidak menulis M4R/M4A, tidak memasang nada iPhone, tidak memotong tanpa batas 40 dtk, tidak membuat loop mulus, tidak mengambil YouTube.',
+  tool_make_a_30_second_mp3_ringtone_rules_title: 'Aturan yang perlu diantisipasi',
+  tool_make_a_30_second_mp3_ringtone_sample: 'Muat contoh',
+  tool_make_a_30_second_mp3_ringtone_start: 'Awal (detik)',
+  tool_make_a_30_second_mp3_ringtone_status_done: 'Selesai.',
+  tool_make_a_30_second_mp3_ringtone_title: 'Buat nada dering MP3 30 detik',
+  tool_make_a_30_second_mp3_ringtone_usecase_1: 'Potong reff lagu yang Anda miliki menjadi nada dering MP3 30 detik dan pasang di Android.',
+  tool_make_a_30_second_mp3_ringtone_usecase_2: 'Buat alarm lebih pendek dengan chip 15 atau 20 dtk, biarkan fade keluar, lalu Ekspor MP3.',
+  tool_make_a_30_second_mp3_ringtone_usecase_3: 'Ekspor MP3 dulu; jika masih butuh nada iPhone, bawa ke GarageBand. Halaman ini tidak menulis M4R.',
+  tool_make_a_30_second_mp3_ringtone_usecases_title: 'Cocok kapan',
+  tool_make_a_30_second_mp3_ringtone_why_choose_body:
+    'Khusus MP3 sepanjang nada dering, dengan fade yang terdengar dan batas 40 dtk yang tertulis di halaman.',
+  tool_make_a_30_second_mp3_ringtone_why_choose_item_1: 'Dekode dan fade tetap di tab ini; Ekspor MP3 adalah saat pertama encoder dimuat.',
+  tool_make_a_30_second_mp3_ringtone_why_choose_item_2: 'Durasi bawaan 30 dtk, chip 15 / 20 / 40; lebih dari 40 dtk ditolak.',
+  tool_make_a_30_second_mp3_ringtone_why_choose_item_3: 'Fade 0,5 / 1,5 dtk ada di layar pertama, jadi potongan kasar bukan nilai bawaan.',
+  tool_make_a_30_second_mp3_ringtone_why_choose_item_4: 'Halaman tidak berpura-pura menulis M4R atau memasang nada iPhone dari peramban.',
+  tool_make_a_30_second_mp3_ringtone_why_choose_title: 'Mengapa memakai Buat nada dering MP3 30 detik',
+  tool_make_a_30_second_mp3_ringtone_zerocross: 'Rekatkan tepi jendela ke zero crossing terdekat',
+  tool_make_a_30_second_mp3_ringtone_zerocross_hint: 'Nyala secara bawaan. Merapikan potongan sebelum fade. Matikan untuk ketepatan sampel.',
   tool_make_a_seamless_audio_loop_advanced: 'Pengaturan lanjutan (opsional)',
   tool_make_a_seamless_audio_loop_article:
     'Buat loop audio yang mulus di tab ini: buka berkas lokal, tandai Awal dan Akhir, atur crossfade, klik Buat loop, lalu Ekspor WAV atau Ekspor MP3. Ujung dilebur ke awal supaya sambungan tidak klik. Berkas tetap di perangkat dan tidak diunggah ke server.',

@@ -159,6 +159,7 @@ import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage'
 import { renderJwtDecoderPage } from '../pages/jwtDecoderPage';
 import { renderLinkedinBannerSizePage } from '../pages/linkedinBannerSizePage';
 import { renderMagnetLinkDecoderPage } from '../pages/magnetLinkDecoderPage';
+import { renderMakeA30SecondMp3RingtonePage } from '../pages/makeA30SecondMp3RingtonePage';
 import { renderMakeASeamlessAudioLoopPage } from '../pages/makeASeamlessAudioLoopPage';
 import { renderMakePdfFillablePage } from '../pages/makePdfFillablePage';
 import { renderMakePdfFlipbookPage } from '../pages/makePdfFlipbookPage';
@@ -388,6 +389,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'jwt-decoder': (lang, defaultLang, enabled) => renderJwtDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'linkedin-banner-size': (lang, defaultLang, enabled) => renderLinkedinBannerSizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'magnet-link-decoder': (lang, defaultLang, enabled) => renderMagnetLinkDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
+	'make-a-30-second-mp3-ringtone': (lang, defaultLang, enabled) => renderMakeA30SecondMp3RingtonePage({ lang, defaultLang, enabledLangs: enabled }),
 	'make-a-seamless-audio-loop': (lang, defaultLang, enabled) => renderMakeASeamlessAudioLoopPage({ lang, defaultLang, enabledLangs: enabled }),
 	'make-pdf-fillable': (lang, defaultLang, enabled) => renderMakePdfFillablePage({ lang, defaultLang, enabledLangs: enabled }),
 	'make-pdf-flipbook': (lang, defaultLang, enabled) => renderMakePdfFlipbookPage({ lang, defaultLang, enabledLangs: enabled }),

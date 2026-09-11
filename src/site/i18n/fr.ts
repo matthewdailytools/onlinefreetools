@@ -8536,6 +8536,127 @@ const fr: SiteLangDict = {
   tool_magnet_link_decoder_warn_bad_size: 'xl doit être une longueur entière positive ou nulle en bytes.',
   tool_magnet_link_decoder_warn_bad_url: '{key} n’est pas une URL absolue valide : {value}',
   tool_magnet_link_decoder_warn_missing_xt: 'Aucun paramètre exact-topic xt trouvé.',
+  tool_make_a_30_second_mp3_ringtone_advanced: 'Réglages avancés (facultatif)',
+  tool_make_a_30_second_mp3_ringtone_article:
+    'Faire une sonnerie MP3 de 30 secondes dans cet onglet : ouvrez un morceau sur l’appareil, gardez environ 30 s, ajoutez un fondu d’entrée et de sortie, cliquez sur Créer la sonnerie puis Exporter MP3. Le fichier reste sur l’appareil, sans envoi au serveur. Chercher créateur de sonnerie ou sonnerie 30 secondes, c’est cette coupe, pas un éditeur d’onde ni un installeur M4R iPhone.',
+  tool_make_a_30_second_mp3_ringtone_bitrate: 'Débit MP3',
+  tool_make_a_30_second_mp3_ringtone_bitrate_hint: '128 kbit/s par défaut. Utilisé seulement au clic sur Exporter MP3.',
+  tool_make_a_30_second_mp3_ringtone_choose_file: 'Choisir un fichier audio',
+  tool_make_a_30_second_mp3_ringtone_clear: 'Effacer',
+  tool_make_a_30_second_mp3_ringtone_desc:
+    'Faire une sonnerie MP3 de 30 secondes sur l’appareil : coupez un morceau local, fondez les bords, exportez MP3, sans envoi au serveur.',
+  tool_make_a_30_second_mp3_ringtone_description:
+    'Faire une sonnerie MP3 de 30 secondes sur l’appareil : coupez un morceau local, appliquez un fondu d’entrée et de sortie, puis téléchargez le MP3 ; le fichier n’est pas envoyé au serveur. Étapes : ouvrir le fichier, fixer Début et Durée (30 s ; pastilles 15 / 20 / 30 / 40), fondus 0,5 s / 1,5 s, Créer la sonnerie, Lecture, Exporter MP3. Exemple : à partir de 1,00 s d’un ton de 32 s, environ 30,00 s. Créer une sonnerie, sonnerie mp3, couper une chanson en sonnerie ou sonnerie Android, c’est le même travail. Ce n’est pas un éditeur d’onde ; pas de M4R ni de YouTube.',
+  tool_make_a_30_second_mp3_ringtone_disclaimer:
+    'Vous devez avoir le droit de traiter le fichier. La page n’accorde pas de licences, n’écrit pas de M4R et ne récupère pas de flux.',
+  tool_make_a_30_second_mp3_ringtone_drop_hint: 'Ou déposez ici un WAV, MP3, M4A ou OGG. Le traitement reste dans cet onglet.',
+  tool_make_a_30_second_mp3_ringtone_duration: 'Durée (secondes)',
+  tool_make_a_30_second_mp3_ringtone_duration_hint:
+    '30 secondes par défaut. Les pastilles mettent 15 / 20 / 30 / 40 depuis le Début actuel. Au-delà de 40 s, refus.',
+  tool_make_a_30_second_mp3_ringtone_empty: 'Choisissez d’abord un fichier audio.',
+  tool_make_a_30_second_mp3_ringtone_err_caps:
+    'Ce fichier dépasse la limite de cet appareil (environ 40 Mo / 20 min sur bureau, 20 Mo / 8 min sur écran étroit). Raccourcissez-le ailleurs ou prenez un fichier plus court.',
+  tool_make_a_30_second_mp3_ringtone_err_decode: 'Ce navigateur n’a pas pu décoder le fichier. Essayez WAV ou MP3, ou un clip sans DRM.',
+  tool_make_a_30_second_mp3_ringtone_err_empty: 'Rien à transformer en sonnerie. Chargez un fichier ou l’exemple.',
+  tool_make_a_30_second_mp3_ringtone_err_fade: 'La somme des fondus doit être plus courte que la Durée. Baissez les fondus ou allongez le passage.',
+  tool_make_a_30_second_mp3_ringtone_err_lame: 'L’encodeur MP3 n’a pas chargé. Restez dans cet onglet et cliquez à nouveau sur Exporter MP3.',
+  tool_make_a_30_second_mp3_ringtone_err_long: 'Une sonnerie ne peut pas dépasser 40 secondes. Raccourcissez la Durée ou déplacez le Début.',
+  tool_make_a_30_second_mp3_ringtone_err_range: 'La durée doit se situer après le Début, dans le fichier décodé.',
+  tool_make_a_30_second_mp3_ringtone_err_video: 'Cette page n’accepte pas la vidéo comme entrée principale. Extraire l’audio, puis faire la sonnerie.',
+  tool_make_a_30_second_mp3_ringtone_example:
+    'Charger un exemple construit un ton de 32,00 s, Début 1,00 et Durée 30, fondus 0,5 s / 1,5 s ; Créer la sonnerie donne environ 30,00 s. Exporter MP3 utilise 128 kbit/s sauf changement dans les réglages avancés.',
+  tool_make_a_30_second_mp3_ringtone_example_title: 'Exemple',
+  tool_make_a_30_second_mp3_ringtone_export_mp3: 'Exporter MP3',
+  tool_make_a_30_second_mp3_ringtone_fade_hint:
+    'Fondu d’entrée 0,5 s et de sortie 1,5 s par défaut, pour que le refrain ne coupe pas net. Gain linéaire ; le fichier n’est pas raccourci.',
+  tool_make_a_30_second_mp3_ringtone_fade_in: 'Fondu d’entrée (s)',
+  tool_make_a_30_second_mp3_ringtone_fade_out: 'Fondu de sortie (s)',
+  tool_make_a_30_second_mp3_ringtone_faq_a1:
+    'Non. Décodage et fondus dans cet onglet. Les scripts viennent de ce site. Le fichier n’est pas envoyé à nos serveurs.',
+  tool_make_a_30_second_mp3_ringtone_faq_a2:
+    'Non. Créateur de sonnerie, sonnerie mp3, couper une chanson en sonnerie ou sonnerie 30 secondes : garder environ 30 s, fondre les bords, Exporter MP3.',
+  tool_make_a_30_second_mp3_ringtone_faq_a3:
+    'Trente secondes, c’est la durée habituelle d’une sonnerie. Il y a aussi 15, 20 et 40 s. Au-delà de 40 s, refus.',
+  tool_make_a_30_second_mp3_ringtone_faq_a4:
+    'Rampes de volume linéaires sur le passage. Par défaut 0,5 s à l’entrée et 1,5 s à la sortie. Ça change le niveau, pas la durée exportée.',
+  tool_make_a_30_second_mp3_ringtone_faq_a5:
+    'Sortie MP3 uniquement. Pas de M4R ni de M4A. Sur Android, le MP3 sert de sonnerie. Sur iPhone, GarageBand ou le Finder ; le navigateur n’installe pas la sonnerie système.',
+  tool_make_a_30_second_mp3_ringtone_faq_a6:
+    'Sur Android, téléchargez le MP3, copiez-le dans le dossier des sonneries ou choisissez-le dans Réglages → Sons.',
+  tool_make_a_30_second_mp3_ringtone_faq_a7:
+    'Non. Couper à n’importe quelle durée, c’est une autre page. Une boucle sans couture est un fondu enchaîné queue-tête. Pas un éditeur son ni YouTube.',
+  tool_make_a_30_second_mp3_ringtone_faq_a8:
+    'Bureau : environ 40 Mo ou 20 min. Écran étroit : environ 20 Mo ou 8 min. Le trop-plein est refusé avant décodage. Le passage de sonnerie ne dépasse pas 40 s.',
+  tool_make_a_30_second_mp3_ringtone_faq_q1: 'L’audio est-il envoyé ?',
+  tool_make_a_30_second_mp3_ringtone_faq_q2: 'J’ai cherché créateur de sonnerie ou sonnerie mp3. Est-ce un autre outil ?',
+  tool_make_a_30_second_mp3_ringtone_faq_q3: 'Pourquoi 30 secondes par défaut ?',
+  tool_make_a_30_second_mp3_ringtone_faq_q4: 'Comment marchent les fondus de la sonnerie ?',
+  tool_make_a_30_second_mp3_ringtone_faq_q5: 'Puis-je faire une sonnerie M4R iPhone ?',
+  tool_make_a_30_second_mp3_ringtone_faq_q6: 'Comment mettre ce MP3 en sonnerie Android ?',
+  tool_make_a_30_second_mp3_ringtone_faq_q7: 'Est-ce un coupeur audio, une boucle ou un éditeur ?',
+  tool_make_a_30_second_mp3_ringtone_faq_q8: 'Quelle taille de fichier puis-je traiter ?',
+  tool_make_a_30_second_mp3_ringtone_how_body:
+    'Gardez environ 30 secondes d’un morceau local, fondez les bords pour que le refrain ne coupe pas net, puis téléchargez le MP3 sans envoyer le fichier.',
+  tool_make_a_30_second_mp3_ringtone_how_item_1: 'Ouvrez un fichier audio (ou cliquez Charger un exemple).',
+  tool_make_a_30_second_mp3_ringtone_how_item_2:
+    'Faites glisser la forme d’onde ou saisissez Début et Durée (30 s ; pastilles 15 / 20 / 30 / 40). Modifiez les fondus si 0,5 s / 1,5 s ne conviennent pas.',
+  tool_make_a_30_second_mp3_ringtone_how_item_3: 'Cliquez Créer la sonnerie.',
+  tool_make_a_30_second_mp3_ringtone_how_item_4: 'Cliquez Lecture pour l’entendre en boucle, puis Exporter MP3.',
+  tool_make_a_30_second_mp3_ringtone_how_title: 'Comment ça marche',
+  tool_make_a_30_second_mp3_ringtone_hud_decode: 'Décodage du fichier dans cet onglet…',
+  tool_make_a_30_second_mp3_ringtone_hud_decoded: 'Décodé. Réglez Début, Durée et fondus, puis Créer la sonnerie.',
+  tool_make_a_30_second_mp3_ringtone_hud_elapsed_tpl: '{s} s écoulées',
+  tool_make_a_30_second_mp3_ringtone_hud_encode: 'Encodage MP3…',
+  tool_make_a_30_second_mp3_ringtone_hud_fade: 'Application des fondus…',
+  tool_make_a_30_second_mp3_ringtone_hud_fail_hint: 'Corrigez le fichier, les temps ou les fondus, puis Créer la sonnerie à nouveau.',
+  tool_make_a_30_second_mp3_ringtone_hud_fail_title: 'Créer la sonnerie s’est arrêté',
+  tool_make_a_30_second_mp3_ringtone_hud_next: 'Terminé. Suite : Lecture, puis Exporter MP3.',
+  tool_make_a_30_second_mp3_ringtone_hud_next_mp3: 'Terminé. Le téléchargement MP3 devrait commencer.',
+  tool_make_a_30_second_mp3_ringtone_hud_pct_tpl: '{pct} %',
+  tool_make_a_30_second_mp3_ringtone_hud_step_decode: 'Décoder',
+  tool_make_a_30_second_mp3_ringtone_hud_step_encode: 'Encoder',
+  tool_make_a_30_second_mp3_ringtone_hud_step_fade: 'Fondu',
+  tool_make_a_30_second_mp3_ringtone_hud_title: 'Progression de la sonnerie',
+  tool_make_a_30_second_mp3_ringtone_hud_working: 'Démarrage…',
+  tool_make_a_30_second_mp3_ringtone_make: 'Créer la sonnerie',
+  tool_make_a_30_second_mp3_ringtone_meta_tpl: '{name} · {dur}s · {rate} Hz · {ch} ch',
+  tool_make_a_30_second_mp3_ringtone_pause: 'Pause',
+  tool_make_a_30_second_mp3_ringtone_play: 'Lecture',
+  tool_make_a_30_second_mp3_ringtone_preview_hint:
+    'Cliquez ou faites glisser la forme d’onde pour Début et Durée. Après Créer la sonnerie, Lecture répète le clip fondu comme un téléphone qui sonne.',
+  tool_make_a_30_second_mp3_ringtone_result_tpl:
+    'La sonnerie dure {dur}s ({start}–{end}s), entrée {fadeIn}s et sortie {fadeOut}s. Exporter MP3 est prêt.',
+  tool_make_a_30_second_mp3_ringtone_rules_body:
+    'Le passage Début + Durée (max. 40 s) est copié. Les fondus linéaires ne changent que le gain. Le MP3 est en CBR après Exporter MP3.',
+  tool_make_a_30_second_mp3_ringtone_rules_item_1:
+    'Bureau : environ 40 Mo ou 20 min ; écran étroit : environ 20 Mo ou 8 min. Le trop-plein est refusé. Le passage de sonnerie ne dépasse pas 40 s.',
+  tool_make_a_30_second_mp3_ringtone_rules_item_2:
+    'Les fichiers restent sur l’appareil ; ils ne sont pas envoyés au serveur. L’encodeur MP3 se charge depuis ce site seulement après Exporter MP3.',
+  tool_make_a_30_second_mp3_ringtone_rules_item_3: 'Durée par défaut 30 s. 0,5 s d’entrée plus 1,5 s de sortie doivent rester inférieures à la Durée.',
+  tool_make_a_30_second_mp3_ringtone_rules_item_4:
+    'Le décodage dépend du navigateur. DRM, certains codecs et conteneurs vidéo échouent avec un message clair.',
+  tool_make_a_30_second_mp3_ringtone_rules_item_5:
+    'N’écrit pas de M4R/M4A, n’installe pas la sonnerie iPhone, ne coupe pas sans plafond 40 s, ne fait pas de boucle sans couture, ne récupère pas YouTube.',
+  tool_make_a_30_second_mp3_ringtone_rules_title: 'Règles à prévoir',
+  tool_make_a_30_second_mp3_ringtone_sample: 'Charger un exemple',
+  tool_make_a_30_second_mp3_ringtone_start: 'Début (secondes)',
+  tool_make_a_30_second_mp3_ringtone_status_done: 'Terminé.',
+  tool_make_a_30_second_mp3_ringtone_title: 'Faire une sonnerie MP3 de 30 secondes',
+  tool_make_a_30_second_mp3_ringtone_usecase_1: 'Couper le refrain d’un morceau que vous possédez en sonnerie MP3 de 30 s et l’assigner sur Android.',
+  tool_make_a_30_second_mp3_ringtone_usecase_2:
+    'Faire une alarme plus courte avec la pastille 15 ou 20 s, garder le fondu de sortie, puis Exporter MP3.',
+  tool_make_a_30_second_mp3_ringtone_usecase_3:
+    'Exporter d’abord le MP3 ; s’il faut encore une sonnerie iPhone, passez par GarageBand. Cette page n’écrit pas de M4R.',
+  tool_make_a_30_second_mp3_ringtone_usecases_title: 'Quand ça convient',
+  tool_make_a_30_second_mp3_ringtone_why_choose_body:
+    'Conçue pour un seul MP3 de durée sonnerie, avec des fondus audibles et un plafond de 40 s écrit sur la page.',
+  tool_make_a_30_second_mp3_ringtone_why_choose_item_1: 'Décodage et fondus restent dans cet onglet ; Exporter MP3 est le premier chargement de l’encodeur.',
+  tool_make_a_30_second_mp3_ringtone_why_choose_item_2: 'Durée par défaut 30 s, pastilles 15 / 20 / 40 ; au-delà de 40 s, refus.',
+  tool_make_a_30_second_mp3_ringtone_why_choose_item_3: 'Les fondus 0,5 s / 1,5 s sont au premier écran, donc la coupe nette n’est pas la valeur par défaut.',
+  tool_make_a_30_second_mp3_ringtone_why_choose_item_4: 'La page ne prétend pas écrire du M4R ni installer la sonnerie iPhone depuis le navigateur.',
+  tool_make_a_30_second_mp3_ringtone_why_choose_title: 'Pourquoi utiliser Faire une sonnerie MP3 de 30 secondes',
+  tool_make_a_30_second_mp3_ringtone_zerocross: 'Coller les bords de la fenêtre au passage par zéro le plus proche',
+  tool_make_a_30_second_mp3_ringtone_zerocross_hint: 'Activé par défaut. Nettoie la coupe avant les fondus. Désactivez pour une précision d’échantillon.',
   tool_make_a_seamless_audio_loop_advanced: 'Réglages avancés (facultatif)',
   tool_make_a_seamless_audio_loop_article:
     'Faire une boucle audio sans couture dans cet onglet : ouvrez un fichier local, marquez Début et Fin, réglez le fondu enchaîné, cliquez sur Créer la boucle puis Exporter WAV ou Exporter MP3. La fin se fond dans le début pour que le raccord ne claque pas. Le fichier reste sur l’appareil et n’est pas envoyé au serveur.',

@@ -434,9 +434,24 @@ export const TOPIC_IG = {
     groups: [
       { id: 'trim', slugs: ['trim-an-audio-clip-and-export'] },
       { id: 'silence', slugs: ['remove-silence-from-a-recording'] },
-      { id: 'split', slugs: ['split-a-recording-on-silence'] },
+      {
+        id: 'split',
+        slugs: [
+          'split-a-recording-on-silence',
+          'split-an-audio-file-by-duration',
+          'split-a-disc-image-with-a-cue-sheet',
+        ],
+      },
+      { id: 'loop', slugs: ['make-a-seamless-audio-loop'] },
+      { id: 'ringtone', slugs: ['make-a-30-second-mp3-ringtone'] },
     ],
-    workflow: ['trim-an-audio-clip-and-export', 'remove-silence-from-a-recording', 'split-a-recording-on-silence'],
+    workflow: [
+      'trim-an-audio-clip-and-export',
+      'remove-silence-from-a-recording',
+      'split-a-recording-on-silence',
+      'make-a-seamless-audio-loop',
+      'make-a-30-second-mp3-ringtone',
+    ],
     relatedTopics: ['files-archives', 'security-ids'],
     citations: [
       {
