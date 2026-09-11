@@ -193,6 +193,7 @@ import { renderSitemapXmlGeneratorPage } from '../pages/sitemapXmlGeneratorPage'
 import { renderSketchPromptGeneratorPage } from '../pages/sketchPromptGeneratorPage';
 import { renderSmartWebsiteColorSchemePage } from '../pages/smartWebsiteColorSchemePage';
 import { renderSpfDkimDmarcCheckerPage } from '../pages/spfDkimDmarcCheckerPage';
+import { renderSplitADiscImageWithACueSheetPage } from '../pages/splitADiscImageWithACueSheetPage';
 import { renderSplitARecordingOnSilencePage } from '../pages/splitARecordingOnSilencePage';
 import { renderSplitAnAudioFileByDurationPage } from '../pages/splitAnAudioFileByDurationPage';
 import { renderSplitPdfPage } from '../pages/splitPdfPage';
@@ -420,6 +421,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'sketch-prompt-generator': (lang, defaultLang, enabled) => renderSketchPromptGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'smart-website-color-scheme': (lang, defaultLang, enabled) => renderSmartWebsiteColorSchemePage({ lang, defaultLang, enabledLangs: enabled }),
 	'spf-dkim-dmarc-checker': (lang, defaultLang, enabled) => renderSpfDkimDmarcCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
+	'split-a-disc-image-with-a-cue-sheet': (lang, defaultLang, enabled) => renderSplitADiscImageWithACueSheetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'split-a-recording-on-silence': (lang, defaultLang, enabled) => renderSplitARecordingOnSilencePage({ lang, defaultLang, enabledLangs: enabled }),
 	'split-an-audio-file-by-duration': (lang, defaultLang, enabled) => renderSplitAnAudioFileByDurationPage({ lang, defaultLang, enabledLangs: enabled }),
 	'split-pdf': (lang, defaultLang, enabled) => renderSplitPdfPage({ lang, defaultLang, enabledLangs: enabled }),

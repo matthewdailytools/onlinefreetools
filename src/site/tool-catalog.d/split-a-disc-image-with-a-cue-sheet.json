@@ -1,0 +1,27 @@
+{
+  "slug": "split-a-disc-image-with-a-cue-sheet",
+  "path": "/tools/split-a-disc-image-with-a-cue-sheet",
+  "updatedAt": "2026-09-11T12:20:00.000Z",
+  "launchedAt": "2026-09-11T12:20:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_split_a_disc_image_with_a_cue_sheet_title",
+  "homeTitleKey": "tool_split_a_disc_image_with_a_cue_sheet_title",
+  "homeDescKey": "tool_split_a_disc_image_with_a_cue_sheet_desc",
+  "faqPrefix": "tool_split_a_disc_image_with_a_cue_sheet",
+  "related": [
+    "split-an-audio-file-by-duration",
+    "split-a-recording-on-silence"
+  ],
+  "logo": "/icons/tools/split-a-disc-image-with-a-cue-sheet.svg",
+  "page": {
+    "module": "../pages/splitADiscImageWithACueSheetPage",
+    "export": "renderSplitADiscImageWithACueSheetPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "data"
+}

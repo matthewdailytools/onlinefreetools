@@ -4546,6 +4546,28 @@
     "subject": "network"
   },
   {
+    "slug": "split-a-disc-image-with-a-cue-sheet",
+    "path": "/tools/split-a-disc-image-with-a-cue-sheet",
+    "updatedAt": "2026-09-11T12:20:00.000Z",
+    "launchedAt": "2026-09-11T12:20:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_split_a_disc_image_with_a_cue_sheet_title",
+    "homeTitleKey": "tool_split_a_disc_image_with_a_cue_sheet_title",
+    "homeDescKey": "tool_split_a_disc_image_with_a_cue_sheet_desc",
+    "faqPrefix": "tool_split_a_disc_image_with_a_cue_sheet",
+    "related": [
+      "split-an-audio-file-by-duration",
+      "split-a-recording-on-silence"
+    ],
+    "logo": "/icons/tools/split-a-disc-image-with-a-cue-sheet.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "data"
+  },
+  {
     "slug": "split-a-recording-on-silence",
     "path": "/tools/split-a-recording-on-silence",
     "updatedAt": "2026-09-11T07:40:00.000Z",
@@ -4560,6 +4582,7 @@
     "faqPrefix": "tool_split_a_recording_on_silence",
     "related": [
       "split-an-audio-file-by-duration",
+      "split-a-disc-image-with-a-cue-sheet",
       "remove-silence-from-a-recording",
       "trim-an-audio-clip-and-export"
     ],
@@ -4583,6 +4606,7 @@
     "faqPrefix": "tool_split_an_audio_file_by_duration",
     "related": [
       "split-a-recording-on-silence",
+      "split-a-disc-image-with-a-cue-sheet",
       "trim-an-audio-clip-and-export"
     ],
     "logo": "/icons/tools/split-an-audio-file-by-duration.svg",

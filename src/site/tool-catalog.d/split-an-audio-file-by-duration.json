@@ -13,6 +13,7 @@
   "faqPrefix": "tool_split_an_audio_file_by_duration",
   "related": [
     "split-a-recording-on-silence",
+    "split-a-disc-image-with-a-cue-sheet",
     "trim-an-audio-clip-and-export"
   ],
   "logo": "/icons/tools/split-an-audio-file-by-duration.svg",

@@ -193,6 +193,7 @@ export const TOOL_SLUGS = [
 	"sketch-prompt-generator",
 	"smart-website-color-scheme",
 	"spf-dkim-dmarc-checker",
+	"split-a-disc-image-with-a-cue-sheet",
 	"split-a-recording-on-silence",
 	"split-an-audio-file-by-duration",
 	"split-pdf",
