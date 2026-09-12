@@ -31,6 +31,15 @@ const TAGS = {
   'pdf-to-jpg': { scenario: 'documents', subject: 'pdf' },
   'pdf-page-to-image-sizes': { scenario: 'documents', subject: 'pdf' },
 
+  // —— Audio / sound files ——
+  'trim-an-audio-clip-and-export': { scenario: 'media', subject: 'audio' },
+  'remove-silence-from-a-recording': { scenario: 'media', subject: 'audio' },
+  'split-a-recording-on-silence': { scenario: 'media', subject: 'audio' },
+  'split-an-audio-file-by-duration': { scenario: 'media', subject: 'audio' },
+  'split-a-disc-image-with-a-cue-sheet': { scenario: 'media', subject: 'audio' },
+  'make-a-seamless-audio-loop': { scenario: 'media', subject: 'audio' },
+  'make-a-30-second-mp3-ringtone': { scenario: 'media', subject: 'audio' },
+
   // —— Image / media ——
   'add-watermark': { scenario: 'media', subject: 'image' },
   'flip-image': { scenario: 'media', subject: 'image' },

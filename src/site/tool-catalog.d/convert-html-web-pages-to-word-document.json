@@ -27,5 +27,5 @@
   },
   "localProcessing": false,
   "scenario": "documents",
-  "subject": "word"
+  "subject": "text"
 }

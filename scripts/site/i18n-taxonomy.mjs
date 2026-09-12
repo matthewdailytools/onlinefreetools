@@ -62,6 +62,10 @@ export const taxonomyTranslations = {
     "taxonomy_subject_pdf_title": "Tools for pdf",
     "taxonomy_subject_pdf_desc": "Browse free online tools that act on pdf. Each tool appears on only this subject page.",
     "taxonomy_subject_pdf_blurb": "Tools that operate on PDF documents.",
+    "taxonomy_subject_audio": "Audio",
+    "taxonomy_subject_audio_title": "Tools for audio",
+    "taxonomy_subject_audio_desc": "Browse free online tools that act on audio files. Each tool appears on only this type list.",
+    "taxonomy_subject_audio_blurb": "Tools whose primary input is a local sound file such as MP3 or WAV.",
     "taxonomy_subject_text": "Text",
     "taxonomy_subject_text_title": "Tools for text",
     "taxonomy_subject_text_desc": "Browse free online tools that act on text. Each tool appears on only this subject page.",
@@ -88,7 +92,7 @@ export const taxonomyTranslations = {
     "taxonomy_subject_data_blurb": "Tools for tabular or structured data such as CSV/JSON and timestamps.",
     "nav_tool_type": "Tool types",
     "taxonomy_tool_type_title": "Browse tools by type",
-    "taxonomy_tool_type_desc": "Find tools by what they act on—images, PDF, text, numbers, color, network, units, or structured data.",
+    "taxonomy_tool_type_desc": "Find tools by what they act on—images, PDF, audio, text, numbers, color, network, units, or structured data.",
     "taxonomy_tool_type_intro": "Pick a tool type to list tools that operate on that input. One type tag per tool; open the tool from its type page."
   ,
     "taxonomy_scenario_seo": "SEO & webmasters"
@@ -208,6 +212,10 @@ export const taxonomyTranslations = {
     "taxonomy_subject_pdf_title": "工具类型：PDF",
     "taxonomy_subject_pdf_desc": "浏览作用于「PDF」的免费在线工具。每个工具只归属一个工具类型列表页。",
     "taxonomy_subject_pdf_blurb": "以 PDF 文档为操作对象的工具。",
+    "taxonomy_subject_audio": "音频",
+    "taxonomy_subject_audio_title": "工具类型：音频",
+    "taxonomy_subject_audio_desc": "浏览作用于「音频」的免费在线工具。每个工具只归属一个工具类型列表页。",
+    "taxonomy_subject_audio_blurb": "以本地音频文件为主要输入的工具。",
     "taxonomy_subject_text": "文本",
     "taxonomy_subject_text_title": "工具类型：文本",
     "taxonomy_subject_text_desc": "浏览作用于「文本」的免费在线工具。每个工具只归属一个工具类型列表页。",
@@ -234,7 +242,7 @@ export const taxonomyTranslations = {
     "taxonomy_subject_data_blurb": "处理表格或结构化数据（如 CSV/JSON、时间戳）的工具。",
     "nav_tool_type": "工具类型",
     "taxonomy_tool_type_title": "按工具类型浏览工具",
-    "taxonomy_tool_type_desc": "按图片、PDF、文本、数值、颜色、网络、单位或结构化数据等工具类型查找工具。",
+    "taxonomy_tool_type_desc": "按图片、PDF、音频、文本、数值、颜色、网络、单位或结构化数据等工具类型查找工具。",
     "taxonomy_tool_type_intro": "选择工具类型即可列出作用于该类输入的工具。每工具一个类型标签，从对应列表页打开即可。"
   ,
     "taxonomy_scenario_seo": "SEO 与站长"
@@ -354,6 +362,10 @@ export const taxonomyTranslations = {
     "taxonomy_subject_pdf_title": "Tools for pdf",
     "taxonomy_subject_pdf_desc": "Browse free online tools that act on pdf. Each tool appears on only this subject page.",
     "taxonomy_subject_pdf_blurb": "Tools that operate on PDF documents.",
+    "taxonomy_subject_audio": "Audio",
+    "taxonomy_subject_audio_title": "Herramientas de audio",
+    "taxonomy_subject_audio_desc": "Recorta, parte o exporta archivos de sonido en el navegador. Cada herramienta solo entra en esta lista de tipo.",
+    "taxonomy_subject_audio_blurb": "Herramientas cuya entrada principal es un archivo de audio local.",
     "taxonomy_subject_text": "Texto",
     "taxonomy_subject_text_title": "Tools for texto",
     "taxonomy_subject_text_desc": "Browse free online tools that act on texto. Each tool appears on only this subject page.",
@@ -380,7 +392,7 @@ export const taxonomyTranslations = {
     "taxonomy_subject_data_blurb": "Tools for tabular or structured data such as CSV/JSON and timestamps.",
     "nav_tool_type": "Tipos de herramienta",
     "taxonomy_tool_type_title": "Herramientas por tipo",
-    "taxonomy_tool_type_desc": "Find tools by what they act on—images, PDF, text, numbers, color, network, units, or structured data.",
+    "taxonomy_tool_type_desc": "Busca por lo que tocan: imágenes, PDF, audio, texto, números, color, red, unidades o datos.",
     "taxonomy_tool_type_intro": "Pick a tool type to list tools that operate on that input. One type tag per tool; open the tool from its type page."
   ,
     "taxonomy_scenario_seo": "SEO y webmasters"
@@ -500,6 +512,10 @@ export const taxonomyTranslations = {
     "taxonomy_subject_pdf_title": "Tools for pdf",
     "taxonomy_subject_pdf_desc": "Browse free online tools that act on pdf. Each tool appears on only this subject page.",
     "taxonomy_subject_pdf_blurb": "Tools that operate on PDF documents.",
+    "taxonomy_subject_audio": "Áudio",
+    "taxonomy_subject_audio_title": "Ferramentas de áudio",
+    "taxonomy_subject_audio_desc": "Corte, divida ou exporte ficheiros de som no navegador. Cada ferramenta só entra nesta lista de tipo.",
+    "taxonomy_subject_audio_blurb": "Ferramentas cuja entrada principal é um ficheiro de áudio local.",
     "taxonomy_subject_text": "Texto",
     "taxonomy_subject_text_title": "Tools for texto",
     "taxonomy_subject_text_desc": "Browse free online tools that act on texto. Each tool appears on only this subject page.",
@@ -526,7 +542,7 @@ export const taxonomyTranslations = {
     "taxonomy_subject_data_blurb": "Tools for tabular or structured data such as CSV/JSON and timestamps.",
     "nav_tool_type": "Tipos de ferramenta",
     "taxonomy_tool_type_title": "Ferramentas por tipo",
-    "taxonomy_tool_type_desc": "Find tools by what they act on—images, PDF, text, numbers, color, network, units, or structured data.",
+    "taxonomy_tool_type_desc": "Encontre pelo que atuam: imagens, PDF, áudio, texto, números, cor, rede, unidades ou dados estruturados.",
     "taxonomy_tool_type_intro": "Pick a tool type to list tools that operate on that input. One type tag per tool; open the tool from its type page."
   ,
     "taxonomy_scenario_seo": "SEO e webmasters"
@@ -646,6 +662,10 @@ export const taxonomyTranslations = {
     "taxonomy_subject_pdf_title": "Tools for pdf",
     "taxonomy_subject_pdf_desc": "Browse free online tools that act on pdf. Each tool appears on only this subject page.",
     "taxonomy_subject_pdf_blurb": "Tools that operate on PDF documents.",
+    "taxonomy_subject_audio": "Audio",
+    "taxonomy_subject_audio_title": "Outils audio",
+    "taxonomy_subject_audio_desc": "Raccourcissez, découpez ou exportez un fichier son dans l’onglet. Chaque outil n’apparaît que dans cette liste de type.",
+    "taxonomy_subject_audio_blurb": "Outils dont l’entrée principale est un fichier audio local.",
     "taxonomy_subject_text": "Texte",
     "taxonomy_subject_text_title": "Tools for texte",
     "taxonomy_subject_text_desc": "Browse free online tools that act on texte. Each tool appears on only this subject page.",
@@ -672,7 +692,7 @@ export const taxonomyTranslations = {
     "taxonomy_subject_data_blurb": "Tools for tabular or structured data such as CSV/JSON and timestamps.",
     "nav_tool_type": "Types d’outil",
     "taxonomy_tool_type_title": "Outils par type",
-    "taxonomy_tool_type_desc": "Find tools by what they act on—images, PDF, text, numbers, color, network, units, or structured data.",
+    "taxonomy_tool_type_desc": "Trouvez selon l’entrée : images, PDF, audio, texte, nombres, couleur, réseau, unités ou données structurées.",
     "taxonomy_tool_type_intro": "Pick a tool type to list tools that operate on that input. One type tag per tool; open the tool from its type page."
   ,
     "taxonomy_scenario_seo": "SEO & webmasters"
@@ -792,6 +812,10 @@ export const taxonomyTranslations = {
     "taxonomy_subject_pdf_title": "Tools for pdf",
     "taxonomy_subject_pdf_desc": "Browse free online tools that act on pdf. Each tool appears on only this subject page.",
     "taxonomy_subject_pdf_blurb": "Tools that operate on PDF documents.",
+    "taxonomy_subject_audio": "Audio",
+    "taxonomy_subject_audio_title": "Audio-Tools",
+    "taxonomy_subject_audio_desc": "Audio im Tab kürzen, teilen oder exportieren. Jedes Tool steht nur in dieser Typliste.",
+    "taxonomy_subject_audio_blurb": "Tools, deren Haupteingabe eine lokale Audiodatei ist.",
     "taxonomy_subject_text": "Text",
     "taxonomy_subject_text_title": "Tools for text",
     "taxonomy_subject_text_desc": "Browse free online tools that act on text. Each tool appears on only this subject page.",
@@ -818,7 +842,7 @@ export const taxonomyTranslations = {
     "taxonomy_subject_data_blurb": "Tools for tabular or structured data such as CSV/JSON and timestamps.",
     "nav_tool_type": "Tool-Typen",
     "taxonomy_tool_type_title": "Tools nach Typ",
-    "taxonomy_tool_type_desc": "Find tools by what they act on—images, PDF, text, numbers, color, network, units, or structured data.",
+    "taxonomy_tool_type_desc": "Finden Sie Tools nach Eingabe: Bilder, PDF, Audio, Text, Zahlen, Farbe, Netzwerk, Einheiten oder strukturierte Daten.",
     "taxonomy_tool_type_intro": "Pick a tool type to list tools that operate on that input. One type tag per tool; open the tool from its type page."
   ,
     "taxonomy_scenario_seo": "SEO & Webmaster"
@@ -938,6 +962,10 @@ export const taxonomyTranslations = {
     "taxonomy_subject_pdf_title": "Tools for pdf",
     "taxonomy_subject_pdf_desc": "Browse free online tools that act on pdf. Each tool appears on only this subject page.",
     "taxonomy_subject_pdf_blurb": "Tools that operate on PDF documents.",
+    "taxonomy_subject_audio": "Audio",
+    "taxonomy_subject_audio_title": "Alat audio",
+    "taxonomy_subject_audio_desc": "Potong, pecah, atau ekspor berkas suara di peramban. Setiap alat hanya masuk daftar tipe ini.",
+    "taxonomy_subject_audio_blurb": "Alat yang masukannya terutama berkas audio lokal.",
     "taxonomy_subject_text": "Teks",
     "taxonomy_subject_text_title": "Tools for teks",
     "taxonomy_subject_text_desc": "Browse free online tools that act on teks. Each tool appears on only this subject page.",
@@ -964,7 +992,7 @@ export const taxonomyTranslations = {
     "taxonomy_subject_data_blurb": "Tools for tabular or structured data such as CSV/JSON and timestamps.",
     "nav_tool_type": "Jenis alat",
     "taxonomy_tool_type_title": "Alat menurut jenis",
-    "taxonomy_tool_type_desc": "Find tools by what they act on—images, PDF, text, numbers, color, network, units, or structured data.",
+    "taxonomy_tool_type_desc": "Cari menurut masukannya: gambar, PDF, audio, teks, angka, warna, jaringan, satuan, atau data terstruktur.",
     "taxonomy_tool_type_intro": "Pick a tool type to list tools that operate on that input. One type tag per tool; open the tool from its type page."
   ,
     "taxonomy_scenario_seo": "SEO & webmaster"
@@ -1084,6 +1112,10 @@ export const taxonomyTranslations = {
     "taxonomy_subject_pdf_title": "Tools for pdf",
     "taxonomy_subject_pdf_desc": "Browse free online tools that act on pdf. Each tool appears on only this subject page.",
     "taxonomy_subject_pdf_blurb": "Tools that operate on PDF documents.",
+    "taxonomy_subject_audio": "音声",
+    "taxonomy_subject_audio_title": "音声向けツール",
+    "taxonomy_subject_audio_desc": "ブラウザで音声ファイルを切り出し、分割、書き出します。各ツールはこの種類の一覧にだけ出ます。",
+    "taxonomy_subject_audio_blurb": "主な入力が手元の音声ファイルであるツール。",
     "taxonomy_subject_text": "テキスト",
     "taxonomy_subject_text_title": "Tools for テキスト",
     "taxonomy_subject_text_desc": "Browse free online tools that act on テキスト. Each tool appears on only this subject page.",
@@ -1110,7 +1142,7 @@ export const taxonomyTranslations = {
     "taxonomy_subject_data_blurb": "Tools for tabular or structured data such as CSV/JSON and timestamps.",
     "nav_tool_type": "ツールタイプ",
     "taxonomy_tool_type_title": "ツールタイプから探す",
-    "taxonomy_tool_type_desc": "Find tools by what they act on—images, PDF, text, numbers, color, network, units, or structured data.",
+    "taxonomy_tool_type_desc": "画像、PDF、音声、テキスト、数値、色、ネットワーク、単位、構造化データなど、扱う対象から探します。",
     "taxonomy_tool_type_intro": "Pick a tool type to list tools that operate on that input. One type tag per tool; open the tool from its type page."
   ,
     "taxonomy_scenario_seo": "SEO・ウェブマスター"
@@ -1230,6 +1262,10 @@ export const taxonomyTranslations = {
     "taxonomy_subject_pdf_title": "Tools for pdf",
     "taxonomy_subject_pdf_desc": "Browse free online tools that act on pdf. Each tool appears on only this subject page.",
     "taxonomy_subject_pdf_blurb": "Tools that operate on PDF documents.",
+    "taxonomy_subject_audio": "Аудио",
+    "taxonomy_subject_audio_title": "Инструменты для аудио",
+    "taxonomy_subject_audio_desc": "Обрезайте, режьте или экспортируйте звук во вкладке. Каждый инструмент только в этом списке типа.",
+    "taxonomy_subject_audio_blurb": "Инструменты, чей главный вход — локальный аудиофайл.",
     "taxonomy_subject_text": "Текст",
     "taxonomy_subject_text_title": "Tools for текст",
     "taxonomy_subject_text_desc": "Browse free online tools that act on текст. Each tool appears on only this subject page.",
@@ -1256,7 +1292,7 @@ export const taxonomyTranslations = {
     "taxonomy_subject_data_blurb": "Tools for tabular or structured data such as CSV/JSON and timestamps.",
     "nav_tool_type": "Типы инструментов",
     "taxonomy_tool_type_title": "Инструменты по типу",
-    "taxonomy_tool_type_desc": "Find tools by what they act on—images, PDF, text, numbers, color, network, units, or structured data.",
+    "taxonomy_tool_type_desc": "Ищите по объекту: изображения, PDF, аудио, текст, числа, цвет, сеть, единицы или структурированные данные.",
     "taxonomy_tool_type_intro": "Pick a tool type to list tools that operate on that input. One type tag per tool; open the tool from its type page."
   ,
     "taxonomy_scenario_seo": "SEO и вебмастера"
@@ -1376,6 +1412,10 @@ export const taxonomyTranslations = {
     "taxonomy_subject_pdf_title": "Tools for pdf",
     "taxonomy_subject_pdf_desc": "Browse free online tools that act on pdf. Each tool appears on only this subject page.",
     "taxonomy_subject_pdf_blurb": "Tools that operate on PDF documents.",
+    "taxonomy_subject_audio": "صوت",
+    "taxonomy_subject_audio_title": "أدوات الصوت",
+    "taxonomy_subject_audio_desc": "قصّ أو قسّم أو صدّر ملفات الصوت في المتصفح. كل أداة تظهر في قائمة النوع هذه فقط.",
+    "taxonomy_subject_audio_blurb": "أدوات مدخلها الأساسي ملف صوت محلي.",
     "taxonomy_subject_text": "النص",
     "taxonomy_subject_text_title": "Tools for النص",
     "taxonomy_subject_text_desc": "Browse free online tools that act on النص. Each tool appears on only this subject page.",
@@ -1402,7 +1442,7 @@ export const taxonomyTranslations = {
     "taxonomy_subject_data_blurb": "Tools for tabular or structured data such as CSV/JSON and timestamps.",
     "nav_tool_type": "أنواع الأدوات",
     "taxonomy_tool_type_title": "أدوات حسب النوع",
-    "taxonomy_tool_type_desc": "Find tools by what they act on—images, PDF, text, numbers, color, network, units, or structured data.",
+    "taxonomy_tool_type_desc": "ابحث حسب المدخل: صور، PDF، صوت، نص، أرقام، لون، شبكة، وحدات أو بيانات منظمة.",
     "taxonomy_tool_type_intro": "Pick a tool type to list tools that operate on that input. One type tag per tool; open the tool from its type page."
   ,
     "taxonomy_scenario_seo": "SEO ومديرو المواقع"

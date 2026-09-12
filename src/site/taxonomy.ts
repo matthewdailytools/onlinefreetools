@@ -26,7 +26,16 @@ export type ToolScenario =
 	| 'documents';
 
 /** 操作对象（每工具恰好一个）。 */
-export type ToolSubject = 'image' | 'pdf' | 'text' | 'number' | 'color' | 'network' | 'unit' | 'data';
+export type ToolSubject =
+	| 'image'
+	| 'pdf'
+	| 'audio'
+	| 'text'
+	| 'number'
+	| 'color'
+	| 'network'
+	| 'unit'
+	| 'data';
 
 /** 场景展示顺序（列表页 / hub 侧栏）。 */
 export const TOOL_SCENARIO_ORDER: ToolScenario[] = [
@@ -44,10 +53,11 @@ export const TOOL_SCENARIO_ORDER: ToolScenario[] = [
 	'documents',
 ];
 
-/** 操作对象展示顺序。 */
+/** 操作对象展示顺序（audio = 本地声音文件，与 image/pdf 并列）。 */
 export const TOOL_SUBJECT_ORDER: ToolSubject[] = [
 	'image',
 	'pdf',
+	'audio',
 	'text',
 	'number',
 	'color',
@@ -164,6 +174,13 @@ export const SUBJECT_I18N_KEYS: Record<ToolSubject, SubjectI18nKeys> = {
 		titleKey: 'taxonomy_subject_pdf_title',
 		descKey: 'taxonomy_subject_pdf_desc',
 		blurbKey: 'taxonomy_subject_pdf_blurb',
+	},
+	/** 音频文件：本地 MP3/WAV 等，与图片/PDF 并列的操作对象。 */
+	audio: {
+		labelKey: 'taxonomy_subject_audio',
+		titleKey: 'taxonomy_subject_audio_title',
+		descKey: 'taxonomy_subject_audio_desc',
+		blurbKey: 'taxonomy_subject_audio_blurb',
 	},
 	text: {
 		labelKey: 'taxonomy_subject_text',

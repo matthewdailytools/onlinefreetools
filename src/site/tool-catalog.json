@@ -1009,7 +1009,7 @@
     "logo": "/icons/tools/convert-html-web-pages-to-word-document.svg",
     "localProcessing": false,
     "scenario": "documents",
-    "subject": "word"
+    "subject": "text"
   },
   {
     "slug": "convert-pdf-to-dwg",
@@ -3737,7 +3737,7 @@
     "logo": "/icons/tools/make-a-30-second-mp3-ringtone.svg",
     "localProcessing": true,
     "scenario": "media",
-    "subject": "data"
+    "subject": "audio"
   },
   {
     "slug": "make-a-seamless-audio-loop",
@@ -3759,7 +3759,7 @@
     "logo": "/icons/tools/make-a-seamless-audio-loop.svg",
     "localProcessing": true,
     "scenario": "media",
-    "subject": "data"
+    "subject": "audio"
   },
   {
     "slug": "make-pdf-fillable",
@@ -4369,7 +4369,7 @@
     "logo": "/icons/tools/remove-silence-from-a-recording.svg",
     "localProcessing": true,
     "scenario": "media",
-    "subject": "data"
+    "subject": "audio"
   },
   {
     "slug": "robots-txt-generator",
@@ -4609,7 +4609,7 @@
     "logo": "/icons/tools/split-a-disc-image-with-a-cue-sheet.svg",
     "localProcessing": true,
     "scenario": "media",
-    "subject": "data"
+    "subject": "audio"
   },
   {
     "slug": "split-a-recording-on-silence",
@@ -4633,7 +4633,7 @@
     "logo": "/icons/tools/split-a-recording-on-silence.svg",
     "localProcessing": true,
     "scenario": "media",
-    "subject": "data"
+    "subject": "audio"
   },
   {
     "slug": "split-an-audio-file-by-duration",
@@ -4656,7 +4656,7 @@
     "logo": "/icons/tools/split-an-audio-file-by-duration.svg",
     "localProcessing": true,
     "scenario": "media",
-    "subject": "data"
+    "subject": "audio"
   },
   {
     "slug": "split-pdf",
@@ -4833,7 +4833,7 @@
     "logo": "/icons/tools/trim-an-audio-clip-and-export.svg",
     "localProcessing": true,
     "scenario": "media",
-    "subject": "data"
+    "subject": "audio"
   },
   {
     "slug": "turn-pdf-into-editable-document",

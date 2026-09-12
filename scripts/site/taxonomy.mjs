@@ -24,8 +24,18 @@ export const TOOL_SCENARIO_ORDER = [
   'documents',
 ];
 
-/** @type {string[]} */
-export const TOOL_SUBJECT_ORDER = ['image', 'pdf', 'text', 'number', 'color', 'network', 'unit', 'data'];
+/** @type {string[]} 工具类型（操作对象）；audio 为本地声音文件。 */
+export const TOOL_SUBJECT_ORDER = [
+  'image',
+  'pdf',
+  'audio',
+  'text',
+  'number',
+  'color',
+  'network',
+  'unit',
+  'data',
+];
 
 /** @type {Record<string, {labelKey:string,titleKey:string,descKey:string,blurbKey:string}>} */
 export const SCENARIO_I18N_KEYS = Object.fromEntries(
