@@ -10113,6 +10113,7 @@ const ja: SiteLangDict = {
   tool_quadratic_equation_usecase_2: '速算チェック。',
   tool_quadratic_equation_usecase_3: '関連ツールと比較。',
   tool_quadratic_equation_usecases_title: 'こんなときに',
+  tool_record_a_voice_memo_in_the_browser_title: 'ブラウザでボイスメモを録音する',
   tool_remove_silence_from_a_recording_advanced: '詳細設定（任意）',
   tool_remove_silence_from_a_recording_article:
     'このタブで録音から無音を削除します。ファイルを開き、「無音を削除」のあと WAV または MP3 を書き出します。長い間は切り、発話は1本に繋ぎます。ファイルは端末内に留まり、サーバーにはアップロードしません。',

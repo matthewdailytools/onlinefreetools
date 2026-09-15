@@ -185,6 +185,7 @@ export const TOOL_SLUGS = [
 	"product-design-prompt-builder",
 	"prompt-template-builder",
 	"protect-pdf",
+	"record-a-voice-memo-in-the-browser",
 	"remove-silence-from-a-recording",
 	"robots-txt-generator",
 	"rotate-pdf",
