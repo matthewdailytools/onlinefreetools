@@ -27,3 +27,7 @@ Run the full build and SEO/vendor/taxonomy checks, upload through R2 S3 API, ver
 ## Pre-release gate results
 
 Coverage phases 0b, 2, 4 and all passed. Full build generated 223 tools × 10 languages and 2,710 gzip pages including shared pages. Tool HTML wiring, SEO, vendor and taxonomy checks passed. The aggregate verify command reached isolation; sandbox EPERM required rerunning that check outside the sandbox. The rerun identified only the two reviewed sound-roadmap documents. No other tool's editable page, catalog shard or locale shard changed.
+
+## Production cache correction
+
+During the initial rollout checks, the homepage did not yet show S8. Source review identified versioned homepage caching as another rollout consideration. `serveHomeHtml` checks Cache API before fetching Assets, and the cache key uses PAGES_CACHE_VERSION. Reusing 4.68 can preserve that older homepage for its cache lifetime. This release advances the version to 4.69 and refreshes the R2 build metadata before pushing the configuration. Page hashes are unchanged, so the API upload only needs to update metadata. The configuration change is an additional reviewed deployment scope exception.
