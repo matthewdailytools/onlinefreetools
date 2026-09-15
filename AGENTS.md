@@ -57,6 +57,44 @@ must follow them when their trigger conditions match:
   add cloud-drive uploads. Complementary to converter SERP SEO. Hard gate:
   `.cursor/rules/tool-creation.mdc` 「处理中进度必须明显」.
 
+Codex-native adapter skills live under `.agents/skills/`. Each adapter routes
+to the corresponding canonical `.cursor/skills/*/SKILL.md`; do not duplicate
+the canonical workflow in the adapter. Cursor skill files remain the source of
+truth.
+
+## Mandatory Skill Preflight
+
+Before planning, editing, or delegating repository work:
+
+1. Classify every work area in the request.
+2. List every matching repository skill from the trigger matrix below.
+3. Read each matching `SKILL.md` completely, including the canonical Cursor
+   skill referenced by a Codex adapter.
+4. Read all mandatory rules and references selected by those skills.
+5. State in commentary which skills are active and why.
+
+Do not edit files before completing this preflight. If the task expands into a
+new work area, stop and repeat the preflight for the newly applicable skills.
+
+### Skill Trigger Matrix
+
+- Keyword batches, SERP analysis, keyword pools, or absorb/build/defer
+  decisions: **must use `keyword-to-tool-funnel`**.
+- Any new or modified tool, multi-tool plan, coverage gate, title/keyword
+  optimization, or brief marked ready/i18n-done: **must use
+  `tool-coverage-pass`**.
+- Implementing or shipping one tool: **must use `tool-coverage-pass` and
+  `tool-token-efficiency` together**.
+- Converter/compressor/screenshot/batch-convert copy or SERP structure: **must
+  additionally use `converter-serp-landing-seo`**.
+- Converter/compressor/screenshot/batch-convert input UI or interaction: **must
+  additionally use `converter-input-ui`**.
+
+Before reporting completion, state which repository skills were applied, which
+required executable gates ran and their results, and any skipped gate with its
+reason. A prose-only self-check does not replace an executable gate when the
+repository provides one.
+
 ## Verification
 
 Prefer executable gates over prose-only checks.
