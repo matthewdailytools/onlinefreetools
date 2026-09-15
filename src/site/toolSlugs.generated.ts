@@ -186,6 +186,7 @@ export const TOOL_SLUGS = [
 	"prompt-template-builder",
 	"protect-pdf",
 	"record-a-voice-memo-in-the-browser",
+	"record-a-voiceover-with-a-teleprompter",
 	"remove-silence-from-a-recording",
 	"robots-txt-generator",
 	"rotate-pdf",

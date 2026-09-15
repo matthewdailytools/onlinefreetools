@@ -4371,6 +4371,28 @@
     "subject": "audio"
   },
   {
+    "slug": "record-a-voiceover-with-a-teleprompter",
+    "path": "/tools/record-a-voiceover-with-a-teleprompter",
+    "updatedAt": "2026-09-15T12:02:50.961Z",
+    "launchedAt": "2026-09-15T08:43:10.889804Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_record_a_voiceover_with_a_teleprompter_title",
+    "homeTitleKey": "tool_record_a_voiceover_with_a_teleprompter_title",
+    "homeDescKey": "tool_record_a_voiceover_with_a_teleprompter_desc",
+    "faqPrefix": "tool_record_a_voiceover_with_a_teleprompter",
+    "related": [
+      "record-a-voice-memo-in-the-browser",
+      "trim-an-audio-clip-and-export"
+    ],
+    "logo": "/icons/tools/record-a-voiceover-with-a-teleprompter.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "remove-silence-from-a-recording",
     "path": "/tools/remove-silence-from-a-recording",
     "updatedAt": "2026-09-11T07:40:00.000Z",

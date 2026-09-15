@@ -39,6 +39,7 @@
 - [用 cue 表把整轨镜像分轨](https://onlinefreetools.org/zh/tools/split-a-disc-image-with-a-cue-sheet) - 在本标签页按 cue 的 INDEX 01 把整轨镜像切成带曲名的多轨 ZIP；文件留在设备、不上传服务器
 - [把音频做成无缝循环](https://onlinefreetools.org/zh/tools/make-a-seamless-audio-loop) - 在本标签页把本地音频选段做等功率交叉淡化，导出可循环 WAV 或 MP3；文件留在设备、不上传服务器
 - [做成 30 秒 MP3 铃声](https://onlinefreetools.org/zh/tools/make-a-30-second-mp3-ringtone) - 在本标签页把本地歌曲裁成约 30 秒并淡化头尾，导出 MP3 铃声；文件留在设备、不上传服务器
+- [看着提词器录制旁白](https://onlinefreetools.org/zh/tools/record-a-voiceover-with-a-teleprompter) - 先排练滚稿，再边读边录，同步暂停文字与音频，试听后下载；稿件和声音留在设备、不上传服务器
 - [在浏览器录一段语音备忘](https://onlinefreetools.org/zh/tools/record-a-voice-memo-in-the-browser) - 查看麦克风电平，可暂停和继续，停止后试听并下载；音频留在设备、不上传服务器
 - [在线解压 ZIP](https://onlinefreetools.org/zh/tools/unzip-file) - 浏览器内查看 ZIP 文件树、预览文本/图片，并下载单个文件或导出全部，不上传服务器
 - [创建 zip 文件](https://onlinefreetools.org/zh/tools/create-zip-file) - 在浏览器里把多个文件打成 ZIP 下载；可保留文件夹路径；文件留在设备、不上传服务器
@@ -265,6 +266,7 @@ Below are our available online tools with their links (English version):
 - [Split a disc image with a cue sheet](https://onlinefreetools.org/tools/split-a-disc-image-with-a-cue-sheet) - Cut a local album image at cue INDEX 01 and download named tracks as a ZIP in this tab — stays on the device, not uploaded
 - [Make a seamless audio loop](https://onlinefreetools.org/tools/make-a-seamless-audio-loop) - Wrap a local clip with an equal-power crossfade so it loops without a click, then export WAV or MP3 in this tab — stays on the device, not uploaded
 - [Make a 30-second MP3 ringtone](https://onlinefreetools.org/tools/make-a-30-second-mp3-ringtone) - Cut a local song to about 30 seconds, fade the edges, then export an MP3 ringtone in this tab — stays on the device, not uploaded
+- [Record a voiceover with a teleprompter](https://onlinefreetools.org/tools/record-a-voiceover-with-a-teleprompter) - Rehearse a scrolling script, record while reading, pause text and audio together, then listen and download; text and audio stay on your device without upload
 - [Record a voice memo in the browser](https://onlinefreetools.org/tools/record-a-voice-memo-in-the-browser) - Watch the microphone level, pause or resume, then play and download the recording — stays on the device, not uploaded
 - [Unzip File Online](https://onlinefreetools.org/tools/unzip-file) - Inspect ZIP contents, preview text/images, and download one file or export all in your browser — no server upload
 - [Create zip file](https://onlinefreetools.org/tools/create-zip-file) - Pack several files into a ZIP in your browser, keep folder paths when the browser provides them — stays on the device, not uploaded

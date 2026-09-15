@@ -1,7 +1,7 @@
 # Sound editor — 调研与产品设计
 
 **日期**：2026-09-10（第十二轮：AudioMass MIT 整树 + Hub 执行合同）  
-**状态**：Hub 仍未立项、尚未写 `edit-audio-on-waveform` 页面；声音单点 **S1–S7（含 A3）共 8 个工具**已实现，最新为 `record-a-voice-memo-in-the-browser`（主题 id `sound-editor`），Hub 仍须另口令
+**状态**：Hub 仍未立项、尚未写 `edit-audio-on-waveform` 页面；声音单点 **S1–S8（含 A3）共 9 个工具**已实现，最新为 `record-a-voiceover-with-a-teleprompter`（主题 id `sound-editor`），Hub 仍须另口令
 **镜头**：01–04 本站网页编辑器（第十二轮起内核 = AudioMass MIT 整树）；**05** 需求全景；**06** 分层节奏；**07** 训练成本；**08** 端侧仿唱；**09** BYOM 竞品；**10** 模型站空间；**11** Hub 落地合同；**12** 声音单点作业全表（需求+搜法）。
 
 本夹是 audio 方向专题夹，不是 catalog slug。Hub 须用户再点名「创建 / 实现」波形编辑器后再复制 `_template`。S1 裁剪导出已实现，勿把本页做成缩小 DAW。

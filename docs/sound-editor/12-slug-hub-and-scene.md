@@ -13,7 +13,7 @@
 
 ## 进度（2026-09-11）
 
-声音域 **已经有 8 个已实现工具**：12 表 **S1** `trim-an-audio-clip-and-export`（起止裁剪 → 导出 WAV/MP3）；**S2** `remove-silence-from-a-recording`（挖静音仍一文件 → 导出 WAV/MP3）；**A3** `split-a-recording-on-silence`（按静音切多段 ZIP）；**S3** `split-an-audio-file-by-duration`（按固定秒数切多段 ZIP）；**S4** `split-a-disc-image-with-a-cue-sheet`（按 cue INDEX 01 分轨 ZIP）；**S5** `make-a-seamless-audio-loop`（选段 + 等功率交叉淡化 → 可循环 WAV/MP3）；**S6** `make-a-30-second-mp3-ringtone`（约 30 秒窗 + 淡入淡出 → 导出 MP3 铃声）；**S7** `record-a-voice-memo-in-the-browser`（授权麦克风 → 电平/暂停/继续 → 试听并下载浏览器真实格式）。**不是** Hub `edit-audio-on-waveform`。
+声音域 **已经有 9 个已实现工具**：12 表 **S1** `trim-an-audio-clip-and-export`（起止裁剪 → 导出 WAV/MP3）；**S2** `remove-silence-from-a-recording`（挖静音仍一文件 → 导出 WAV/MP3）；**A3** `split-a-recording-on-silence`（按静音切多段 ZIP）；**S3** `split-an-audio-file-by-duration`（按固定秒数切多段 ZIP）；**S4** `split-a-disc-image-with-a-cue-sheet`（按 cue INDEX 01 分轨 ZIP）；**S5** `make-a-seamless-audio-loop`（选段 + 等功率交叉淡化 → 可循环 WAV/MP3）；**S6** `make-a-30-second-mp3-ringtone`（约 30 秒窗 + 淡入淡出 → 导出 MP3 铃声）；**S7** `record-a-voice-memo-in-the-browser`（授权麦克风 → 电平/暂停/继续 → 试听并下载浏览器真实格式）。**S8** `record-a-voiceover-with-a-teleprompter`（稿件排练 → 同步滚稿录音/暂停 → 试听并下载，2026-09-15 已实现）。**不是** Hub `edit-audio-on-waveform`。
 
 | ID | slug | 仓库事实 | 阶段 |
 |---|---|---|---|
@@ -25,8 +25,9 @@
 | **S5** | `make-a-seamless-audio-loop` | `work-tasks/` `02`=`implemented`、`03`=`i18n-done`；catalog `opts`；`src/pages/makeASeamlessAudioLoopPage.ts`；十语；主题 `sound-editor` | **已开发完毕**（2026-09-11）。验收：https://onlinefreetools.org/tools/make-a-seamless-audio-loop |
 | **S6** | `make-a-30-second-mp3-ringtone` | `work-tasks/` `02`=`implemented`、`03`=`i18n-done`；catalog `opts`；`src/pages/makeA30SecondMp3RingtonePage.ts`；十语；主题 `sound-editor` | **已开发完毕**（2026-09-11）。验收：https://onlinefreetools.org/tools/make-a-30-second-mp3-ringtone |
 | **S7** | `record-a-voice-memo-in-the-browser` | `work-tasks/` `02`=`implemented`、`03`=`i18n-done`；catalog `opts`；`src/pages/recordAVoiceMemoInTheBrowserPage.ts`；十语；主题 `sound-editor` | **已开发完毕**（2026-09-15）。验收：https://onlinefreetools.org/tools/record-a-voice-memo-in-the-browser |
+| **S8** | `record-a-voiceover-with-a-teleprompter` | 十语、原生录音、滚稿排练和同步暂停；`opts` | 2026-09-15 已实现 |
 | **H0 / Hub** | `edit-audio-on-waveform` | 无 `work-tasks/`、无 catalog | **未立项**。11 合同仍等「按方案执行」。禁止把 S1 页当成 Hub |
-| **其余 scene / pair** | A1–A8（A3 除外）、S7–S38、P1–P6 等 | 无对应 `work-tasks/` | 未口令，不上 |
+| **其余 scene / pair** | A1–A8（A3 除外）、S9–S38、P1–P6 等 | 无对应 `work-tasks/` | 未口令，不上 |
 
 S1 已交付：单文件 dropzone、波形点选起止、**Trim**、**Export WAV** / **Export MP3**（lamejs 点后加载）、金标 HUD（Decode / Trim / Encode）、过零默认开、体积/时长帽、进页 5s 样例自动 Trim。**没有**：录音、淡化命令、EDL 精剪、AudioMass 宿主、降噪/LUFS、视频抽音。
 
@@ -125,7 +126,7 @@ Hub **不是** 05 整座宇宙。分离、TTS、克隆、实时变声、识曲�
 | ID | 用户作业 | 搜法簇 | 档 | 近义不拆 | 草稿 slug | 落地 |
 |---|---|---|---|---|---|---|
 | **S7** | 浏览器里录一句备忘/试麦，下载 | voice recorder；record audio online；online mic / 在线录音；网页录音 | 头 | `/voice-recorder`、`/online-mic` | `record-a-voice-memo-in-the-browser` | hub **且** scene。**2026-09-15 已立项并实现** `work-tasks/record-a-voice-memo-in-the-browser/`，主题 id `sound-editor` |
-| **S8** | 提词器看着稿录口播 | teleprompter recorder / 提词器录音 | 长尾 | — | `record-a-voiceover-with-a-teleprompter` | scene 或 defer（UI 另一套） |
+| **S8** | 提词器看着稿录口播 | teleprompter recorder / 提词器录音 | 长尾 | — | `record-a-voiceover-with-a-teleprompter` | **scene**，2026-09-15 已立项并实现；独立稿件输入、排练、同步暂停 |
 | **S9** | 系统内录「电脑在播什么」 | stereo mix recorder；internal audio capture / 系统内录 | 中 | — | — | **defer**（浏览器权限弱；多要扩展/原生） |
 
 ### F3 格式、声道、采样率、体积

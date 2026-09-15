@@ -11194,6 +11194,122 @@ const de: SiteLangDict = {
   tool_quadratic_equation_usecase_2: 'Quick sketch.',
   tool_quadratic_equation_usecase_3: 'Algebra drill with related tools.',
   tool_quadratic_equation_usecases_title: 'Wann sinnvoll',
+  tool_record_a_voiceover_with_a_teleprompter_article:
+    'Für einen Podcast-Einstieg oder eine gesprochene Anleitung muss der Text nicht auswendig sitzen. Stelle zuerst ein angenehmes Lauftempo ein. Bei einer Pause hält der Prompter deine Leseposition fest.',
+  tool_record_a_voiceover_with_a_teleprompter_back_top: 'Zum Textanfang',
+  tool_record_a_voiceover_with_a_teleprompter_clear: 'Löschen',
+  tool_record_a_voiceover_with_a_teleprompter_desc:
+    'Lies deinen Sprechtext ab, während du aufnimmst. Probiere das Lauftempo aus, pausiere Text und Ton gemeinsam und lade den fertigen Take herunter.',
+  tool_record_a_voiceover_with_a_teleprompter_description:
+    'Ein Voiceover mit Teleprompter aufnehmen: Sprechtext einfügen, den Textlauf proben und beim Ablesen die eigene Stimme aufnehmen. Danach anhören und herunterladen. Als Beispiel gibt es drei Übungsabsätze und eine 3-sekündige Tonfolge. Text und Audio bleiben auf deinem Gerät im Browser und werden nicht an einen Server übertragen.',
+  tool_record_a_voiceover_with_a_teleprompter_done: 'Aufnahme bereit: {dur} s · {type}',
+  tool_record_a_voiceover_with_a_teleprompter_download: 'Aufnahme herunterladen',
+  tool_record_a_voiceover_with_a_teleprompter_err_device: 'Kein funktionierendes Mikrofon gefunden. Schließen Sie eines an oder aktivieren Sie es.',
+  tool_record_a_voiceover_with_a_teleprompter_err_empty: 'Der Rekorder hat kein Audio geliefert. Prüfen Sie den Eingangspegel.',
+  tool_record_a_voiceover_with_a_teleprompter_err_interrupted:
+    'Die Aufnahme wurde unterbrochen. Falls Audio bereitsteht, lade es herunter und prüfe das Ende vor dem nächsten Versuch.',
+  tool_record_a_voiceover_with_a_teleprompter_err_long: 'Kürze den Text auf höchstens 20.000 Zeichen.',
+  tool_record_a_voiceover_with_a_teleprompter_err_permission: 'Der Mikrofonzugriff wurde nicht erlaubt. Prüfen Sie die Websiteberechtigung und starten Sie erneut.',
+  tool_record_a_voiceover_with_a_teleprompter_err_play:
+    'Wiedergabe nicht gestartet. Probiere den Audioplayer oder öffne die heruntergeladene Datei auf deinem Gerät.',
+  tool_record_a_voiceover_with_a_teleprompter_err_script: 'Füge vor der Probe oder Aufnahme einen Sprechtext ein.',
+  tool_record_a_voiceover_with_a_teleprompter_err_secure:
+    'Der Mikrofonzugriff erfordert HTTPS oder localhost. Öffnen Sie die Seite über eine sichere Verbindung.',
+  tool_record_a_voiceover_with_a_teleprompter_err_support:
+    'Dieser Browser unterstützt keine Mikrofonaufnahme. Versuchen Sie eine aktuelle Version von Chrome, Edge, Firefox oder Safari.',
+  tool_record_a_voiceover_with_a_teleprompter_example:
+    'Beim Öffnen stehen drei Übungsabsätze und eine 3-sekündige WAV-Tonfolge bereit. Proben bewegt den Text ohne Mikrofonfreigabe. Voiceover aufnehmen beginnt am Textanfang und zeichnet deine Stimme auf; die Testtöne werden nicht beigemischt.',
+  tool_record_a_voiceover_with_a_teleprompter_example_title: 'Beispiel',
+  tool_record_a_voiceover_with_a_teleprompter_faq_a1:
+    'Aufgenommen wird nur das Mikrofon. Der Text folgt der gewählten Geschwindigkeit, nicht deinen Wörtern. Kamera, Spracherkennung und automatisches Vorlesen sind nicht enthalten.',
+  tool_record_a_voiceover_with_a_teleprompter_faq_a2:
+    'Pausiere den Take, verringere das Tempo und setze fort. Bei Tempo 0 kannst du mit stehendem Text aufnehmen. Vorheriges Proben hilft, das passende Tempo zu finden.',
+  tool_record_a_voiceover_with_a_teleprompter_faq_a3:
+    'Nein. Der letzte Absatz bleibt sichtbar und das Mikrofon läuft bis Stoppen oder bis zur Grenze von 10 Minuten weiter.',
+  tool_record_a_voiceover_with_a_teleprompter_faq_a4:
+    'Nein, sie bleiben in diesem Tab auf deinem Gerät und werden nicht hochgeladen. Lade Audio vor dem Neuladen, Verlassen oder dem nächsten Take herunter.',
+  tool_record_a_voiceover_with_a_teleprompter_faq_a5:
+    'Der Browser bestimmt das Aufnahmeformat, meist WebM, Ogg oder MP4. Eine andere Dateiendung wäre keine Konvertierung. Prüfe den angezeigten Typ für dein Schnittprogramm.',
+  tool_record_a_voiceover_with_a_teleprompter_faq_a6:
+    'Du brauchst einen nicht leeren Text, HTTPS und ein funktionierendes Mikrofon. Prüfe die Freigaben im Browser und Betriebssystem. Proben funktioniert auch ohne Mikrofonzugriff.',
+  tool_record_a_voiceover_with_a_teleprompter_faq_q1: 'Folgt der Text meiner Stimme oder wird Video aufgenommen?',
+  tool_record_a_voiceover_with_a_teleprompter_faq_q2: 'Was tun, wenn der Text zu schnell läuft?',
+  tool_record_a_voiceover_with_a_teleprompter_faq_q3: 'Endet die Aufnahme am letzten Absatz?',
+  tool_record_a_voiceover_with_a_teleprompter_faq_q4: 'Werden mein Skript und meine Stimme online gespeichert?',
+  tool_record_a_voiceover_with_a_teleprompter_faq_q5: 'Warum bekomme ich keine MP3-Datei?',
+  tool_record_a_voiceover_with_a_teleprompter_faq_q6: 'Warum startet die Aufnahme nicht?',
+  tool_record_a_voiceover_with_a_teleprompter_finishing: 'Audiodatei wird fertiggestellt…',
+  tool_record_a_voiceover_with_a_teleprompter_font_size: 'Schriftgröße',
+  tool_record_a_voiceover_with_a_teleprompter_format: 'Browser-Ausgabe: {type}',
+  tool_record_a_voiceover_with_a_teleprompter_how_body:
+    'Passe den Textlauf an dein Sprechtempo an und nimm anschließend deine eigene Stimme beim Ablesen auf.',
+  tool_record_a_voiceover_with_a_teleprompter_how_item_1: 'Füge deinen Sprechtext ein und teste den Textlauf mit Proben.',
+  tool_record_a_voiceover_with_a_teleprompter_how_item_2:
+    'Passe Tempo und Schrift in den Leseeinstellungen an. Wähle Voiceover aufnehmen und erlaube den Mikrofonzugriff.',
+  tool_record_a_voiceover_with_a_teleprompter_how_item_3:
+    'Lies laut vor. Pause und Fortsetzen steuern Text und Ton gemeinsam; Zum Textanfang setzt nur die Leseposition zurück.',
+  tool_record_a_voiceover_with_a_teleprompter_how_item_4: 'Wähle Stoppen, höre den Take an und lade die Aufnahme vor dem Schließen herunter.',
+  tool_record_a_voiceover_with_a_teleprompter_how_title: 'So funktioniert es',
+  tool_record_a_voiceover_with_a_teleprompter_hud_fail: 'Aufnahme beendet',
+  tool_record_a_voiceover_with_a_teleprompter_hud_paused: 'Text und Ton sind pausiert. Tempo 0 hält nur den Text an, während weiter aufgenommen werden kann.',
+  tool_record_a_voiceover_with_a_teleprompter_hud_permission: 'Warte auf Mikrofonberechtigung…',
+  tool_record_a_voiceover_with_a_teleprompter_hud_ready: 'Take bereit. Anhören und anschließend herunterladen.',
+  tool_record_a_voiceover_with_a_teleprompter_hud_recording: 'Lies deinen Text. Pause hält Aufnahme und Textlauf gemeinsam an.',
+  tool_record_a_voiceover_with_a_teleprompter_hud_sample: 'Die Testtöne lassen sich abspielen oder speichern. Proben bewegt nur den Text.',
+  tool_record_a_voiceover_with_a_teleprompter_hud_step_permission: 'Berechtigung',
+  tool_record_a_voiceover_with_a_teleprompter_hud_step_ready: 'Bereit',
+  tool_record_a_voiceover_with_a_teleprompter_hud_step_recording: 'Aufnahme',
+  tool_record_a_voiceover_with_a_teleprompter_hud_title: 'Voiceover-Aufnahme',
+  tool_record_a_voiceover_with_a_teleprompter_level: 'Mikrofonpegel',
+  tool_record_a_voiceover_with_a_teleprompter_pause: 'Pause',
+  tool_record_a_voiceover_with_a_teleprompter_pause_playback: 'Wiedergabe pausieren',
+  tool_record_a_voiceover_with_a_teleprompter_paused: 'Aufnahme pausiert.',
+  tool_record_a_voiceover_with_a_teleprompter_play: 'Abspielen',
+  tool_record_a_voiceover_with_a_teleprompter_prompt_label: 'Laufender Sprechtext',
+  tool_record_a_voiceover_with_a_teleprompter_ready: 'Füge deinen Text ein oder nutze das Beispiel. Zum Proben ist kein Mikrofonzugriff nötig.',
+  tool_record_a_voiceover_with_a_teleprompter_recording: 'Aufnahme läuft…',
+  tool_record_a_voiceover_with_a_teleprompter_references_title: 'Quellen',
+  tool_record_a_voiceover_with_a_teleprompter_rehearsal_pause: 'Probe pausieren',
+  tool_record_a_voiceover_with_a_teleprompter_rehearsal_status: 'Die Probe läuft. Das Mikrofon ist aus.',
+  tool_record_a_voiceover_with_a_teleprompter_rehearsal_stopped: 'Probe an dieser Stelle pausiert.',
+  tool_record_a_voiceover_with_a_teleprompter_rehearse: 'Proben',
+  tool_record_a_voiceover_with_a_teleprompter_resume: 'Fortsetzen',
+  tool_record_a_voiceover_with_a_teleprompter_rules_body:
+    'Der Text läuft mit festgelegter Geschwindigkeit. Es gibt keine Worterkennung, automatische Sprachanpassung oder synthetische Stimme.',
+  tool_record_a_voiceover_with_a_teleprompter_rules_item_1:
+    'Das Tempo reicht von 0 bis 100 Pixeln pro Sekunde, anfangs 28. Die Schrift reicht von 20 bis 60 Pixeln, anfangs 32. Nach einer Größenänderung das Tempo erneut proben.',
+  tool_record_a_voiceover_with_a_teleprompter_rules_item_2:
+    'Jeder Take beginnt am Textanfang und endet nach höchstens 10 aktiven Minuten. Pausen zählen nicht mit. Beim Tabwechsel wird pausiert; danach manuell fortsetzen.',
+  tool_record_a_voiceover_with_a_teleprompter_rules_item_3:
+    'Heruntergeladen wird das tatsächliche Browserformat wie WebM, Ogg oder MP4 mit passender Endung. Eine MP3-Konvertierung findet nicht statt.',
+  tool_record_a_voiceover_with_a_teleprompter_rules_item_4:
+    'Die Grenze liegt bei 20.000 Zeichen. Neuladen oder Schließen verwirft Text und Aufnahme. Ein neuer Take ersetzt das vorherige Audioergebnis.',
+  tool_record_a_voiceover_with_a_teleprompter_rules_title: 'Textlauf und Aufnahmegrenzen',
+  tool_record_a_voiceover_with_a_teleprompter_sample: 'Beispiel laden',
+  tool_record_a_voiceover_with_a_teleprompter_sample_name: '3 Sekunden Testtöne – keine Lesung des Textes',
+  tool_record_a_voiceover_with_a_teleprompter_sample_script:
+    'Willkommen zur Sprechprobe. Atme kurz durch und lies so, als würdest du jemandem direkt etwas erklären.\n\nMit Proben beginnt der Textlauf. Öffne die Leseeinstellungen, wenn die Schrift zu klein ist oder der Text zu schnell läuft. Dabei bleibt das Mikrofon ausgeschaltet.\n\nErsetze diesen Text durch dein eigenes Skript und wähle Voiceover aufnehmen. Stoppe am Ende, höre dir den Take an und lade ihn herunter. Die drei Testtöne prüfen nur die Wiedergabe; sie lesen dieses Skript nicht vor.',
+  tool_record_a_voiceover_with_a_teleprompter_script_end: 'Textende erreicht. Für eine weitere Probe zum Anfang zurückkehren.',
+  tool_record_a_voiceover_with_a_teleprompter_script_help:
+    'Bis zu 20.000 Zeichen. Text und Ton bleiben auf deinem Gerät, ohne Server-Upload. Lade den Take vor dem Neuladen, Schließen oder einer neuen Aufnahme herunter.',
+  tool_record_a_voiceover_with_a_teleprompter_script_label: 'Sprechtext',
+  tool_record_a_voiceover_with_a_teleprompter_settings: 'Leseeinstellungen',
+  tool_record_a_voiceover_with_a_teleprompter_speed: 'Laufgeschwindigkeit',
+  tool_record_a_voiceover_with_a_teleprompter_start: 'Voiceover aufnehmen',
+  tool_record_a_voiceover_with_a_teleprompter_stop: 'Stoppen',
+  tool_record_a_voiceover_with_a_teleprompter_timer: '{dur} / 10:00',
+  tool_record_a_voiceover_with_a_teleprompter_title: 'Ein Voiceover mit Teleprompter aufnehmen',
+  tool_record_a_voiceover_with_a_teleprompter_usecase_1: 'Einen vorbereiteten Podcast-Einstieg ablesen und den Take anschließend schneiden.',
+  tool_record_a_voiceover_with_a_teleprompter_usecase_2: 'Die Sprecherstimme für ein Tutorial aufnehmen und dabei Absatz für Absatz im Blick behalten.',
+  tool_record_a_voiceover_with_a_teleprompter_usecase_3: 'Einen Vortrag mit Lauftext üben und die eigene Aussprache anhand der Aufnahme prüfen.',
+  tool_record_a_voiceover_with_a_teleprompter_usecases_title: 'Geeignete Anwendungen',
+  tool_record_a_voiceover_with_a_teleprompter_why_choose_body: 'Leseplatz und Aufnahmesteuerung bleiben während der gesamten Sprechprobe zusammen.',
+  tool_record_a_voiceover_with_a_teleprompter_why_choose_item_1: 'Eine Pause hält die Leseposition und zählt nicht zur aufgenommenen Sprechzeit.',
+  tool_record_a_voiceover_with_a_teleprompter_why_choose_item_2: 'Du probst mit demselben Textfenster und Tempo, ohne das Mikrofon freizugeben.',
+  tool_record_a_voiceover_with_a_teleprompter_why_choose_item_3:
+    'Am Textende bleibt der letzte Absatz sichtbar, bis du deinen Satz beendet und die Aufnahme gestoppt hast.',
+  tool_record_a_voiceover_with_a_teleprompter_why_choose_item_4: 'Sprechtext und Audio bleiben im Browser auf deinem Gerät und werden nicht an unsere Server gesendet.',
+  tool_record_a_voiceover_with_a_teleprompter_why_choose_title: 'Warum Ein Voiceover mit Teleprompter aufnehmen nutzen?',
   tool_remove_silence_from_a_recording_advanced: 'Erweiterte Einstellungen (optional)',
   tool_remove_silence_from_a_recording_article:
     'Stille aus einer Aufnahme in diesem Tab entfernen: lokale Datei öffnen, Stille entfernen, WAV oder MP3 exportieren. Totluft wird geschnitten, Sprache bleibt eine kürzere Datei. Kein Server-Upload.',

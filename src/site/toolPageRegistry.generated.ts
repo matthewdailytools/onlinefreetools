@@ -186,6 +186,7 @@ import { renderProductDesignPromptBuilderPage } from '../pages/productDesignProm
 import { renderPromptTemplateBuilderPage } from '../pages/promptTemplateBuilderPage';
 import { renderProtectPdfPage } from '../pages/protectPdfPage';
 import { renderRecordAVoiceMemoInTheBrowserPage } from '../pages/recordAVoiceMemoInTheBrowserPage';
+import { renderRecordAVoiceoverWithATeleprompterPage } from '../pages/recordAVoiceoverWithATeleprompterPage';
 import { renderRemoveSilenceFromARecordingPage } from '../pages/removeSilenceFromARecordingPage';
 import { renderRobotsTxtGeneratorPage } from '../pages/robotsTxtGeneratorPage';
 import { renderRotatePdfPage } from '../pages/rotatePdfPage';
@@ -417,6 +418,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'prompt-template-builder': (lang, defaultLang, enabled) => renderPromptTemplateBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'protect-pdf': (lang, defaultLang, enabled) => renderProtectPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'record-a-voice-memo-in-the-browser': (lang, defaultLang, enabled) => renderRecordAVoiceMemoInTheBrowserPage({ lang, defaultLang, enabledLangs: enabled }),
+	'record-a-voiceover-with-a-teleprompter': (lang, defaultLang, enabled) => renderRecordAVoiceoverWithATeleprompterPage({ lang, defaultLang, enabledLangs: enabled }),
 	'remove-silence-from-a-recording': (lang, defaultLang, enabled) => renderRemoveSilenceFromARecordingPage({ lang, defaultLang, enabledLangs: enabled }),
 	'robots-txt-generator': (lang, defaultLang, enabled) => renderRobotsTxtGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'rotate-pdf': (lang, defaultLang, enabled) => renderRotatePdfPage({ lang, defaultLang, enabledLangs: enabled }),
