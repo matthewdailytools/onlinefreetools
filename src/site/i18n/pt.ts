@@ -3955,6 +3955,81 @@ const pt: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_usecase_2: 'Tirar texto de um print de chat ou de um erro quando não dá para selecionar.',
   tool_convert_a_jpg_to_text_with_ocr_usecase_3: 'Copiar chinês ou inglês impresso de um menu ou manual (não de uma lista à mão).',
   tool_convert_a_jpg_to_text_with_ocr_usecases_title: 'Quando ajuda',
+  tool_convert_a_wav_file_to_mp3_advanced: 'Configurações opcionais',
+  tool_convert_a_wav_file_to_mp3_article:
+    'Gravações exportadas em WAV podem ficar grandes para enviar por mensagem. Faça uma cópia MP3 e confira o tamanho que ela realmente ocupa. Você pode ouvir o resultado antes de baixar. A conversão inclui o áudio inteiro, sem cortes nem efeitos de entrada e saída. Guarde o WAV original para futuras edições.',
+  tool_convert_a_wav_file_to_mp3_bitrate: 'Taxa de bits do MP3',
+  tool_convert_a_wav_file_to_mp3_choose: 'Escolher arquivo WAV',
+  tool_convert_a_wav_file_to_mp3_clear: 'Limpar',
+  tool_convert_a_wav_file_to_mp3_convert: 'Converter para MP3',
+  tool_convert_a_wav_file_to_mp3_decode: 'Decodificar áudio',
+  tool_convert_a_wav_file_to_mp3_desc:
+    'Transforme a gravação inteira em MP3 para compartilhar. O áudio fica no seu dispositivo e não é enviado a servidores.',
+  tool_convert_a_wav_file_to_mp3_description:
+    'Converta WAV para MP3 para enviar uma gravação. Passos: escolher, converter e baixar. O áudio fica no seu dispositivo, sem ser enviado ao servidor.',
+  tool_convert_a_wav_file_to_mp3_done: 'Pronto. Ouça o resultado e clique em Baixar MP3.',
+  tool_convert_a_wav_file_to_mp3_download: 'Baixar MP3',
+  tool_convert_a_wav_file_to_mp3_elapsed: 'Tempo decorrido: {s} s',
+  tool_convert_a_wav_file_to_mp3_empty: 'Escolha um WAV ou carregue o exemplo primeiro.',
+  tool_convert_a_wav_file_to_mp3_encode: 'Gerar MP3',
+  tool_convert_a_wav_file_to_mp3_err_decode: 'O navegador não conseguiu decodificar o áudio. Tente um WAV PCM padrão em um navegador atualizado.',
+  tool_convert_a_wav_file_to_mp3_err_encoder: 'O codificador MP3 não carregou. Confira a conexão e clique novamente em Converter para MP3.',
+  tool_convert_a_wav_file_to_mp3_err_file: 'Arraste apenas um arquivo WAV por vez.',
+  tool_convert_a_wav_file_to_mp3_err_format:
+    'WAV incompatível ou danificado. Use RIFF/WAVE PCM de 8/16/24/32 bits ou ponto flutuante de 32 bits, mono/estéreo. WAV comprimido, extensível e RF64 não são aceitos.',
+  tool_convert_a_wav_file_to_mp3_err_limit: 'O arquivo ultrapassa 40 MiB ou 10 minutos, ou tem canais incompatíveis. Use um WAV mais curto.',
+  tool_convert_a_wav_file_to_mp3_example:
+    'Carregar exemplo gera um WAV PCM estéreo de cinco segundos a 44,1 kHz, cerca de 861 KiB. Em 192 kbps, a saída MP3 ocupa aproximadamente 120 KiB. O exemplo não toca automaticamente.',
+  tool_convert_a_wav_file_to_mp3_example_title: 'Teste com cinco segundos',
+  tool_convert_a_wav_file_to_mp3_failed: 'Não foi possível concluir. Tente um WAV PCM válido e menor.',
+  tool_convert_a_wav_file_to_mp3_faq_a1:
+    'MP3 usa compressão com perda. Mesmo 320 kbps não mantém todos os dados do original. Além disso, um WAV de baixa taxa de amostragem pode ser menor que o MP3 escolhido. Compare os tamanhos antes de baixar.',
+  tool_convert_a_wav_file_to_mp3_faq_a2:
+    'Não. O arquivo é processado no navegador do seu dispositivo e não é enviado ao servidor. A primeira carga da página e do codificador precisa de internet; o uso offline não é garantido.',
+  tool_convert_a_wav_file_to_mp3_faq_a3:
+    'Use um navegador recente com Web Audio no Android, iPhone, Windows ou Mac. Celulares podem ter menos memória disponível. Teste o exemplo; o limite de 40 MiB e dez minutos vale para todos.',
+  tool_convert_a_wav_file_to_mp3_faq_a4:
+    'A extensão não garante áudio PCM padrão. WAV comprimido, extensível, RF64 e gravações multicanal são recusados. Um arquivo corrompido também falha. Exporte novamente como WAV PCM mono ou estéreo.',
+  tool_convert_a_wav_file_to_mp3_faq_a5:
+    'Esta ferramenta recebe um WAV e entrega um MP3 completo. Não aceita conversão inversa, listas ou links de vídeo. Para guardar apenas um trecho, abra a ferramenta de corte de áudio relacionada.',
+  tool_convert_a_wav_file_to_mp3_faq_q1: 'Dá para diminuir o WAV sem perder qualidade?',
+  tool_convert_a_wav_file_to_mp3_faq_q2: 'O áudio sai do meu dispositivo?',
+  tool_convert_a_wav_file_to_mp3_faq_q3: 'Posso converter no celular sem instalar nada?',
+  tool_convert_a_wav_file_to_mp3_faq_q4: 'Por que meu arquivo WAV não abriu?',
+  tool_convert_a_wav_file_to_mp3_faq_q5: 'Converte em lote ou de MP3 para WAV?',
+  tool_convert_a_wav_file_to_mp3_hint: 'Arraste um WAV de até 40 MiB e 10 minutos. PCM mono/estéreo ou ponto flutuante de 32 bits.',
+  tool_convert_a_wav_file_to_mp3_how_body: 'Crie uma cópia MP3 do WAV completo. Se pretende editar depois, mantenha também o arquivo original.',
+  tool_convert_a_wav_file_to_mp3_how_item_1: 'Clique em Escolher arquivo WAV ou use Carregar exemplo para testar cinco segundos de áudio.',
+  tool_convert_a_wav_file_to_mp3_how_item_2: 'Ajuste a taxa de bits nas Configurações opcionais, se necessário, e clique em Converter para MP3.',
+  tool_convert_a_wav_file_to_mp3_how_item_3: 'Ouça a cópia, compare os tamanhos e clique em Baixar MP3.',
+  tool_convert_a_wav_file_to_mp3_how_title: 'Como preparar a gravação para compartilhar',
+  tool_convert_a_wav_file_to_mp3_preview: 'Ouvir o MP3',
+  tool_convert_a_wav_file_to_mp3_progress: 'Andamento da conversão',
+  tool_convert_a_wav_file_to_mp3_read: 'Ler WAV',
+  tool_convert_a_wav_file_to_mp3_result:
+    '{seconds} s de áudio · WAV {input} KiB → MP3 {output} KiB · {kbps} kbps · 44,1 kHz · {channels} canal(is)',
+  tool_convert_a_wav_file_to_mp3_rules_body:
+    'Para estimar bytes, multiplique segundos × kbps × 1000 ÷ 8. O preenchimento da codificação acrescenta um pouco; o tamanho mostrado é o valor real.',
+  tool_convert_a_wav_file_to_mp3_rules_item_1:
+    'Use 128 kbps para economizar espaço em voz, 192 para uso geral ou 320 para mais detalhes musicais. MP3 sempre tem perda. WAVs pequenos podem ficar maiores após a conversão.',
+  tool_convert_a_wav_file_to_mp3_rules_item_2:
+    'A saída tem 44,1 kHz e mantém um ou dois canais. Tags, capa e outros metadados WAV não são copiados. O preenchimento MP3 pode aumentar um pouco a duração reproduzida.',
+  tool_convert_a_wav_file_to_mp3_rules_item_3:
+    'São aceitos RIFF/WAVE PCM de 8/16/24/32 bits e ponto flutuante de 32 bits, entre 8 e 192 kHz. Sem WAV comprimido, extensível, RF64 ou surround. Limites de 40 MiB e dez minutos.',
+  tool_convert_a_wav_file_to_mp3_rules_title: 'Qualidade, tamanho e formatos aceitos',
+  tool_convert_a_wav_file_to_mp3_sample: 'Carregar exemplo',
+  tool_convert_a_wav_file_to_mp3_sample_name: 'exemplo-cinco-segundos',
+  tool_convert_a_wav_file_to_mp3_settings_hint:
+    'O padrão é 192 kbps. 128 ocupa menos espaço; 320 mantém mais detalhes. Saída em 44,1 kHz, com os canais originais.',
+  tool_convert_a_wav_file_to_mp3_title: 'Converter um arquivo WAV para MP3',
+  tool_convert_a_wav_file_to_mp3_usecase_1: 'Diminuir uma gravação WAV do gravador para enviar como anexo.',
+  tool_convert_a_wav_file_to_mp3_usecase_2: 'Mandar o áudio de um ensaio em 320 kbps e manter o WAV para mixagem posterior.',
+  tool_convert_a_wav_file_to_mp3_usecases_title: 'Quando vale usar',
+  tool_convert_a_wav_file_to_mp3_why_choose_item_1: 'Você não precisa marcar um trecho: a conversão mantém a gravação completa, sem aplicar fades.',
+  tool_convert_a_wav_file_to_mp3_why_choose_item_2: 'O MP3 pode ser ouvido antes do download, junto da comparação dos tamanhos reais.',
+  tool_convert_a_wav_file_to_mp3_why_choose_item_3:
+    'O cabeçalho e a duração são verificados antes da decodificação, com aviso claro para arquivos incompatíveis.',
+  tool_convert_a_wav_file_to_mp3_why_choose_title: 'Por que usar Converter um arquivo WAV para MP3',
   tool_convert_html_to_pdf_article: 'Cole HTML ou carregue a URL da página, remova scripts e exporte um PDF A4.',
   tool_convert_html_to_pdf_choose_file: 'Escolher PDF',
   tool_convert_html_to_pdf_choose_files: 'Escolher arquivos',

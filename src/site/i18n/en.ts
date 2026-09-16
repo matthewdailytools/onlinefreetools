@@ -4073,6 +4073,82 @@ const en: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_usecase_2: 'Use an OCR image reader on a chat or error screenshot when you cannot select the pixels.',
   tool_convert_a_jpg_to_text_with_ocr_usecase_3: 'Copy printed Chinese or English from a menu or manual photo (not a handwritten list).',
   tool_convert_a_jpg_to_text_with_ocr_usecases_title: 'Good fits',
+  tool_convert_a_wav_file_to_mp3_advanced: 'Advanced settings (optional)',
+  tool_convert_a_wav_file_to_mp3_article:
+    'A WAV recording can be too large to send comfortably. This converter keeps the complete recording and makes an MP3 at your chosen bitrate. Listen to the encoded file before saving it, and compare its actual size with the original. Keep the WAV as your editing master: MP3 discards audio information, even at 320 kbps.',
+  tool_convert_a_wav_file_to_mp3_bitrate: 'MP3 bitrate',
+  tool_convert_a_wav_file_to_mp3_choose: 'Choose a WAV file',
+  tool_convert_a_wav_file_to_mp3_clear: 'Clear',
+  tool_convert_a_wav_file_to_mp3_convert: 'Convert to MP3',
+  tool_convert_a_wav_file_to_mp3_decode: 'Decode audio',
+  tool_convert_a_wav_file_to_mp3_desc:
+    'Turn a whole WAV recording into a shareable MP3. Files stay on your device and are not uploaded to a server.',
+  tool_convert_a_wav_file_to_mp3_description:
+    'Convert a WAV file to MP3 in three steps: choose a recording, convert, then download. Audio stays on your device, never uploaded to a server.',
+  tool_convert_a_wav_file_to_mp3_done: 'Ready. Preview the result, then Download MP3.',
+  tool_convert_a_wav_file_to_mp3_download: 'Download MP3',
+  tool_convert_a_wav_file_to_mp3_elapsed: '{s}s elapsed',
+  tool_convert_a_wav_file_to_mp3_empty: 'Choose a WAV file or load the sample first.',
+  tool_convert_a_wav_file_to_mp3_encode: 'Encode MP3',
+  tool_convert_a_wav_file_to_mp3_err_decode: 'Your browser could not decode this WAV. Try a standard PCM WAV in a current browser.',
+  tool_convert_a_wav_file_to_mp3_err_encoder: 'The MP3 encoder could not load. Check your connection and click Convert to MP3 again.',
+  tool_convert_a_wav_file_to_mp3_err_file: 'Drop exactly one WAV file.',
+  tool_convert_a_wav_file_to_mp3_err_format:
+    'Unsupported or damaged WAV. Use mono/stereo PCM (8/16/24/32-bit) or 32-bit float RIFF/WAVE. Compressed, extensible and RF64 WAV are not supported.',
+  tool_convert_a_wav_file_to_mp3_err_limit: 'This file exceeds 40 MiB or 10 minutes, or has unsupported channels. Use a shorter WAV file.',
+  tool_convert_a_wav_file_to_mp3_example:
+    'Load sample creates a five-second stereo PCM WAV at 44.1 kHz (about 861 KiB), then encodes the complete audio at 192 kbps to an MP3 of about 120 KiB. The sample does not play automatically.',
+  tool_convert_a_wav_file_to_mp3_example_title: 'Try a real conversion',
+  tool_convert_a_wav_file_to_mp3_failed: 'Conversion stopped. Try a smaller, valid PCM WAV file.',
+  tool_convert_a_wav_file_to_mp3_faq_a1:
+    'No. MP3 is lossy. A higher bitrate can retain more detail, but cannot preserve every original sample or restore missing information. Save your WAV master separately.',
+  tool_convert_a_wav_file_to_mp3_faq_a2:
+    'Files stay in your browser on your device and are not uploaded to a server. The page and encoder need a network connection when first loaded; offline availability is not guaranteed.',
+  tool_convert_a_wav_file_to_mp3_faq_a3:
+    'Use a current browser with Web Audio support. Android and iPhone browsers may have tighter memory limits. No installation is needed; try the built-in sample first. The same 40 MiB and ten-minute limits apply.',
+  tool_convert_a_wav_file_to_mp3_faq_a4:
+    'WAV is a container: compressed or extensible WAV and multichannel recordings are not accepted here. Tiny or low-rate WAV recordings may be smaller than the selected MP3 bitrate. Compare the measured sizes, or choose 128 kbps and convert again.',
+  tool_convert_a_wav_file_to_mp3_faq_a5:
+    'This converter takes one WAV file and produces one MP3. It does not accept playlists, video links or reverse conversion. To keep just a section of a recording, use the related audio trimming tool.',
+  tool_convert_a_wav_file_to_mp3_faq_q1: 'Can I convert WAV to MP3 without losing quality?',
+  tool_convert_a_wav_file_to_mp3_faq_q2: 'Is my WAV uploaded, and can I work offline?',
+  tool_convert_a_wav_file_to_mp3_faq_q3: 'Does this work on Windows, Mac or a phone?',
+  tool_convert_a_wav_file_to_mp3_faq_q4: 'Why did my WAV fail or produce a larger MP3?',
+  tool_convert_a_wav_file_to_mp3_faq_q5: 'Can I convert several files or MP3 back to WAV?',
+  tool_convert_a_wav_file_to_mp3_hint: 'Drop one WAV here. Up to 40 MiB and 10 minutes; mono or stereo PCM / 32-bit float.',
+  tool_convert_a_wav_file_to_mp3_how_body:
+    'Convert the whole recording when you need a smaller file for sharing. Keep the original WAV if you plan to edit it later.',
+  tool_convert_a_wav_file_to_mp3_how_item_1: 'Choose a WAV file, or use Load sample for a five-second demonstration.',
+  tool_convert_a_wav_file_to_mp3_how_item_2: 'Keep 192 kbps or change MP3 bitrate under Advanced settings, then click Convert to MP3.',
+  tool_convert_a_wav_file_to_mp3_how_item_3: 'Listen to the MP3, check the file sizes, and click Download MP3.',
+  tool_convert_a_wav_file_to_mp3_how_title: 'How to turn a WAV recording into MP3',
+  tool_convert_a_wav_file_to_mp3_preview: 'Listen to the MP3',
+  tool_convert_a_wav_file_to_mp3_progress: 'Conversion progress',
+  tool_convert_a_wav_file_to_mp3_read: 'Read WAV',
+  tool_convert_a_wav_file_to_mp3_result:
+    '{seconds}s of audio · WAV {input} KiB → MP3 {output} KiB · {kbps} kbps · 44.1 kHz · {channels} channel(s)',
+  tool_convert_a_wav_file_to_mp3_rules_body:
+    'Approximate MP3 size in bytes = seconds × kbps × 1000 ÷ 8. Padding adds a little overhead, so the displayed output size is the real measurement.',
+  tool_convert_a_wav_file_to_mp3_rules_item_1:
+    'Choose 128 kbps for a smaller speech recording, 192 for general sharing, or 320 for more musical detail. MP3 is always lossy and very small WAV files may grow.',
+  tool_convert_a_wav_file_to_mp3_rules_item_2:
+    'The output uses 44.1 kHz and keeps one or two channels. Tags, cover art and WAV metadata are not copied; encoder padding may slightly increase playback duration.',
+  tool_convert_a_wav_file_to_mp3_rules_item_3:
+    'Accepts standard RIFF/WAVE PCM at 8/16/24/32 bits and 32-bit float, with 8–192 kHz input. Compressed WAV, extensible WAV, RF64, surround audio and files over 40 MiB or 10 minutes are rejected.',
+  tool_convert_a_wav_file_to_mp3_rules_title: 'Bitrate, size and audio limits',
+  tool_convert_a_wav_file_to_mp3_sample: 'Load sample',
+  tool_convert_a_wav_file_to_mp3_sample_name: 'five-second-demo',
+  tool_convert_a_wav_file_to_mp3_settings_hint:
+    '192 kbps by default; 128 makes smaller files, 320 retains more detail. Output is 44.1 kHz with the original channel count.',
+  tool_convert_a_wav_file_to_mp3_title: 'Convert a WAV file to MP3',
+  tool_convert_a_wav_file_to_mp3_usecase_1: 'Send a voice recording exported as WAV to someone who needs a smaller MP3 attachment.',
+  tool_convert_a_wav_file_to_mp3_usecase_2: 'Share a rehearsal mix at 320 kbps while keeping the original WAV for future edits.',
+  tool_convert_a_wav_file_to_mp3_usecases_title: 'When this helps',
+  tool_convert_a_wav_file_to_mp3_why_choose_item_1: 'The complete recording is converted without selecting a trim range or adding fades.',
+  tool_convert_a_wav_file_to_mp3_why_choose_item_2: 'Preview the actual encoded MP3 and compare measured file sizes before downloading.',
+  tool_convert_a_wav_file_to_mp3_why_choose_item_3:
+    'WAV headers and duration are checked before decoding; unsupported files get a visible error instead of a partial download.',
+  tool_convert_a_wav_file_to_mp3_why_choose_title: 'Why choose our Convert a WAV file to MP3 tools',
   tool_convert_html_to_pdf_article: 'Paste HTML or load a page URL, strip scripts, preview the result, and export an A4 PDF.',
   tool_convert_html_to_pdf_choose_file: 'Choose a PDF',
   tool_convert_html_to_pdf_choose_files: 'Choose files',

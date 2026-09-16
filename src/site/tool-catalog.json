@@ -959,6 +959,28 @@
     "subject": "image"
   },
   {
+    "slug": "convert-a-wav-file-to-mp3",
+    "path": "/tools/convert-a-wav-file-to-mp3",
+    "updatedAt": "2026-09-16T03:36:46.256Z",
+    "launchedAt": "2026-09-16T02:32:43.420Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_a_wav_file_to_mp3_title",
+    "homeTitleKey": "tool_convert_a_wav_file_to_mp3_title",
+    "homeDescKey": "tool_convert_a_wav_file_to_mp3_desc",
+    "faqPrefix": "tool_convert_a_wav_file_to_mp3",
+    "related": [
+      "trim-an-audio-clip-and-export",
+      "make-a-30-second-mp3-ringtone"
+    ],
+    "logo": "/icons/tools/convert-a-wav-file-to-mp3.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "convert-html-to-pdf",
     "path": "/tools/convert-html-to-pdf",
     "updatedAt": "2026-09-06T15:29:33.408Z",
