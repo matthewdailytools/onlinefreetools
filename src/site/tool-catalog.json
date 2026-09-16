@@ -981,6 +981,28 @@
     "subject": "audio"
   },
   {
+    "slug": "convert-an-m4a-file-to-mp3",
+    "path": "/tools/convert-an-m4a-file-to-mp3",
+    "updatedAt": "2026-09-16T10:20:27.411Z",
+    "launchedAt": "2026-09-16T08:30:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_an_m4a_file_to_mp3_title",
+    "homeTitleKey": "tool_convert_an_m4a_file_to_mp3_title",
+    "homeDescKey": "tool_convert_an_m4a_file_to_mp3_desc",
+    "faqPrefix": "tool_convert_an_m4a_file_to_mp3",
+    "related": [
+      "convert-a-wav-file-to-mp3",
+      "trim-an-audio-clip-and-export"
+    ],
+    "logo": "/icons/tools/convert-an-m4a-file-to-mp3.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "convert-html-to-pdf",
     "path": "/tools/convert-html-to-pdf",
     "updatedAt": "2026-09-06T15:29:33.408Z",

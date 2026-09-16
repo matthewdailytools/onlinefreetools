@@ -4090,6 +4090,83 @@ const es: SiteLangDict = {
     'La cabecera y la duración del WAV se revisan antes de decodificarlo; los errores se muestran sin generar un archivo incompleto.',
   tool_convert_a_wav_file_to_mp3_why_choose_item_3: 'Se conserva toda la grabación: no hay que marcar un fragmento ni se añaden fundidos.',
   tool_convert_a_wav_file_to_mp3_why_choose_title: 'Por qué usar Pasar un archivo WAV a MP3',
+  tool_convert_an_m4a_file_to_mp3_advanced: 'Ajustes opcionales',
+  tool_convert_an_m4a_file_to_mp3_article:
+    'Si una nota de voz M4A no se abre en el reproductor de quien la recibe, crea una copia MP3. Se convierte la grabación entera y puedes escucharla antes de guardarla. Conserva el original: pasar de AAC a MP3 añade compresión con pérdida, aunque el resultado pese más.',
+  tool_convert_an_m4a_file_to_mp3_bitrate: 'Tasa de bits del MP3',
+  tool_convert_an_m4a_file_to_mp3_choose: 'Elegir M4A o AAC',
+  tool_convert_an_m4a_file_to_mp3_clear: 'Borrar',
+  tool_convert_an_m4a_file_to_mp3_convert: 'Convertir a MP3',
+  tool_convert_an_m4a_file_to_mp3_decode: 'Decodificar',
+  tool_convert_an_m4a_file_to_mp3_desc:
+    'Pasa una grabación M4A o AAC a MP3. El archivo permanece en tu dispositivo y no se envía al servidor.',
+  tool_convert_an_m4a_file_to_mp3_description:
+    'Convierte M4A a MP3 sin enviar la grabación al servidor. Pasos: elegir M4A o AAC, convertir, escuchar y descargar. El archivo permanece en tu dispositivo.',
+  tool_convert_an_m4a_file_to_mp3_done: 'Listo. Escucha el resultado y pulsa Descargar MP3.',
+  tool_convert_an_m4a_file_to_mp3_download: 'Descargar MP3',
+  tool_convert_an_m4a_file_to_mp3_elapsed: 'Tiempo: {s} s',
+  tool_convert_an_m4a_file_to_mp3_empty: 'Elige una grabación o carga el ejemplo.',
+  tool_convert_an_m4a_file_to_mp3_encode: 'Crear MP3',
+  tool_convert_an_m4a_file_to_mp3_err_decode: 'El navegador no puede decodificarlo. Prueba uno actualizado o exporta un M4A AAC sin protección.',
+  tool_convert_an_m4a_file_to_mp3_err_encoder: 'No cargó el codificador MP3. Revisa la conexión y vuelve a Convertir a MP3.',
+  tool_convert_an_m4a_file_to_mp3_err_file: 'Arrastra un único M4A o AAC.',
+  tool_convert_an_m4a_file_to_mp3_err_format:
+    'Audio dañado o incompatible. Usa M4A solo de audio con AAC/ALAC o AAC ADTS. No se aceptan vídeo, pistas protegidas ni MP4 fragmentado.',
+  tool_convert_an_m4a_file_to_mp3_err_limit: 'Más de 40 MiB o diez minutos, o canales distintos de mono/estéreo.',
+  tool_convert_an_m4a_file_to_mp3_err_sample: 'No cargó el ejemplo. Revisa la conexión y pulsa Cargar ejemplo.',
+  tool_convert_an_m4a_file_to_mp3_example:
+    'Al abrir la herramienta se carga desde este sitio un tono AAC M4A estéreo de cinco segundos. A 192 kbps produce unos 120 KiB de MP3. Cargar ejemplo repite la conversión; el sonido no se reproduce automáticamente.',
+  tool_convert_an_m4a_file_to_mp3_example_title: 'Prueba con un M4A de cinco segundos',
+  tool_convert_an_m4a_file_to_mp3_failed: 'No se pudo convertir. Prueba una grabación M4A o AAC más corta y sin protección.',
+  tool_convert_an_m4a_file_to_mp3_faq_a1:
+    'MP3 es un formato con pérdida, incluso a 320 kbps. Si el M4A contiene AAC, puede estar ya comprimido. Elige la tasa escuchando el resultado y conserva el original.',
+  tool_convert_an_m4a_file_to_mp3_faq_a2:
+    'No se sube al servidor; permanece en tu dispositivo y se procesa en el navegador. Hace falta conexión para cargar inicialmente la herramienta, el ejemplo y el codificador. No se garantiza el uso sin internet.',
+  tool_convert_an_m4a_file_to_mp3_faq_a3:
+    'Sí: AAC ADTS y M4A solo de audio con AAC, siempre que el navegador pueda decodificarlo. Algunos M4A contienen ALAC. Cambiar la extensión no cambia el formato.',
+  tool_convert_an_m4a_file_to_mp3_faq_a4:
+    'Puede faltar memoria o compatibilidad con el códec. Se rechazan pistas protegidas, vídeo, MP4 fragmentado y varios canales. Prueba el ejemplo y una grabación corta sin protección en un navegador actualizado.',
+  tool_convert_an_m4a_file_to_mp3_faq_a5:
+    'Solo se convierte una grabación completa por vez. Para un fragmento, usa la herramienta de recorte relacionada. No se aceptan enlaces, vídeos ni listas de reproducción.',
+  tool_convert_an_m4a_file_to_mp3_faq_q1: '¿Pierdo calidad al pasar M4A a MP3?',
+  tool_convert_an_m4a_file_to_mp3_faq_q2: '¿Se envía el archivo a internet?',
+  tool_convert_an_m4a_file_to_mp3_faq_q3: '¿Sirve también para AAC a MP3?',
+  tool_convert_an_m4a_file_to_mp3_faq_q4: '¿Por qué falla en el móvil?',
+  tool_convert_an_m4a_file_to_mp3_faq_q5: '¿Puedo recortar o convertir varios archivos?',
+  tool_convert_an_m4a_file_to_mp3_hint:
+    'Un archivo de hasta 40 MiB y 10 minutos. M4A de audio mono/estéreo o AAC ADTS; compatibilidad según el navegador.',
+  tool_convert_an_m4a_file_to_mp3_how_body:
+    'Obtén una copia compatible con el reproductor del destinatario. Se mantiene la grabación entera, sin tener que marcar un fragmento.',
+  tool_convert_an_m4a_file_to_mp3_how_item_1: 'Pulsa Elegir M4A o AAC, o Cargar ejemplo para probar una grabación M4A real.',
+  tool_convert_an_m4a_file_to_mp3_how_item_2: 'Abre Ajustes opcionales si quieres cambiar la tasa y pulsa Convertir a MP3.',
+  tool_convert_an_m4a_file_to_mp3_how_item_3: 'Escucha el resultado, compara tamaños y pulsa Descargar MP3.',
+  tool_convert_an_m4a_file_to_mp3_how_title: 'De una nota de voz a un MP3 para enviar',
+  tool_convert_an_m4a_file_to_mp3_preview: 'Escuchar el MP3',
+  tool_convert_an_m4a_file_to_mp3_progress: 'Progreso de conversión',
+  tool_convert_an_m4a_file_to_mp3_read: 'Leer grabación',
+  tool_convert_an_m4a_file_to_mp3_result:
+    'Audio decodificado: {seconds} s · Entrada {input} KiB → MP3 {output} KiB · {kbps} kbps · 44,1 kHz · {channels} canal(es)',
+  tool_convert_an_m4a_file_to_mp3_rules_body:
+    'Estimación en bytes: segundos × kbps × 1000 ÷ 8. El relleno del codificador añade algo de espacio; la cifra mostrada es la medida real.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_1:
+    'Prueba 128 kbps para voz, 192 para compartir o 320 para música. Ninguna opción recupera detalles perdidos; el MP3 puede pesar más que el M4A.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_2:
+    'Salida a 44,1 kHz, con uno o dos canales. No se copian portada, etiquetas ni capítulos. El relleno puede alargar ligeramente la reproducción.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_3:
+    'Un M4A solo de audio con AAC/ALAC o AAC ADTS, hasta 40 MiB y diez minutos. El códec debe ser compatible con el navegador. Sin DRM, vídeo, MP4 fragmentado, sonido envolvente ni lotes.',
+  tool_convert_an_m4a_file_to_mp3_rules_title: 'Elegir tamaño y conocer los límites',
+  tool_convert_an_m4a_file_to_mp3_sample: 'Cargar ejemplo',
+  tool_convert_an_m4a_file_to_mp3_sample_name: 'ejemplo-m4a-cinco-segundos',
+  tool_convert_an_m4a_file_to_mp3_settings_hint:
+    'Inicio: 192 kbps. 128 ocupa menos; 320 reserva más datos para codificar. Salida a 44,1 kHz con los canales originales.',
+  tool_convert_an_m4a_file_to_mp3_title: 'Convertir un archivo M4A a MP3',
+  tool_convert_an_m4a_file_to_mp3_usecase_1: 'Enviar una nota de voz del móvil a alguien que necesita un adjunto MP3.',
+  tool_convert_an_m4a_file_to_mp3_usecase_2: 'Pasar una entrevista AAC a MP3 y guardar el original para editarla después.',
+  tool_convert_an_m4a_file_to_mp3_usecases_title: 'Para tus grabaciones',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_1: 'Compruebas el tamaño real y escuchas el MP3 que vas a descargar.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_2: 'El archivo de ejemplo M4A pasa por la misma conversión que tus grabaciones.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_3: 'Se comprueban contenedor y pistas antes de decodificar, y no se recorta el audio admitido.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_title: 'Por qué usar Convertir un archivo M4A a MP3',
   tool_convert_html_to_pdf_article: 'Pega HTML o carga la URL de una página, quita scripts y exporta un PDF A4.',
   tool_convert_html_to_pdf_choose_file: 'Elegir PDF',
   tool_convert_html_to_pdf_choose_files: 'Elegir archivos',

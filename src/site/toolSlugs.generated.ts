@@ -44,6 +44,7 @@ export const TOOL_SLUGS = [
 	"compress-pdf",
 	"convert-a-jpg-to-text-with-ocr",
 	"convert-a-wav-file-to-mp3",
+	"convert-an-m4a-file-to-mp3",
 	"convert-html-to-pdf",
 	"convert-html-web-pages-to-word-document",
 	"convert-pdf-to-dwg",
