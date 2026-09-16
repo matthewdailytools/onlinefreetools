@@ -51,7 +51,7 @@ const resolvePageFile = (modulePath) => {
  * 统计页面源码中出站引用条数。
  * @param {string} code
  */
-const countReferenceHrefs = (code) => {
+const countReferenceHrefs = (code, pageFile = root, seen = new Set()) => {
 	if (!code) return 0;
 	const fromHelper = (code.match(/renderToolReferencesSection\s*\(/g) || []).length;
 	if (fromHelper) {
@@ -63,6 +63,18 @@ const countReferenceHrefs = (code) => {
 	const refsSection = code.match(/id=["']references["'][\s\S]{0,4000}?<\/section>/i);
 	if (refsSection) {
 		return (refsSection[0].match(/href=["']https?:\/\//gi) || []).length;
+	}
+	// Thin entry modules may delegate rendering to a local shared renderer. Follow
+	// direct relative imports once so valid rendered references are not discarded.
+	for (const match of code.matchAll(/from\s+['"](\.\.?\/[^'"]+)['"]/g)) {
+		const base = path.resolve(path.dirname(pageFile), match[1]);
+		for (const ext of ['.ts', '.tsx', '.js', '.mjs']) {
+			const target = base.endsWith(ext) ? base : `${base}${ext}`;
+			if (!fs.existsSync(target) || seen.has(target)) continue;
+			seen.add(target);
+			const nested = countReferenceHrefs(fs.readFileSync(target, 'utf8'), target, seen);
+			if (nested) return nested;
+		}
 	}
 	return 0;
 };
@@ -114,7 +126,7 @@ export const validateToolLinks = () => {
 			continue;
 		}
 		const code = fs.readFileSync(pageFile, 'utf8');
-		const refCount = countReferenceHrefs(code);
+		const refCount = countReferenceHrefs(code, pageFile, new Set([pageFile]));
 		const minRefs = tool.ymyl ? 2 : 1;
 		if (refCount < minRefs) {
 			console.warn(

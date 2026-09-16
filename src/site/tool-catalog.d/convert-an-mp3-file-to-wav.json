@@ -1,0 +1,27 @@
+{
+  "slug": "convert-an-mp3-file-to-wav",
+  "path": "/tools/convert-an-mp3-file-to-wav",
+  "updatedAt": "2026-09-16T12:00:00.000Z",
+  "launchedAt": "2026-09-16T12:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_convert_an_mp3_file_to_wav_title",
+  "homeTitleKey": "tool_convert_an_mp3_file_to_wav_title",
+  "homeDescKey": "tool_convert_an_mp3_file_to_wav_desc",
+  "faqPrefix": "tool_convert_an_mp3_file_to_wav",
+  "related": [
+    "trim-an-audio-clip-and-export",
+    "make-a-30-second-mp3-ringtone"
+  ],
+  "logo": "/icons/tools/convert-an-mp3-file-to-wav.svg",
+  "page": {
+    "module": "../pages/convertAnMp3FileToWavPage",
+    "export": "renderConvertAnMp3FileToWavPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

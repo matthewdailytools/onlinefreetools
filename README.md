@@ -40,6 +40,8 @@
 - [把音频做成无缝循环](https://onlinefreetools.org/zh/tools/make-a-seamless-audio-loop) - 在本标签页把本地音频选段做等功率交叉淡化，导出可循环 WAV 或 MP3；文件留在设备、不上传服务器
 - [做成 30 秒 MP3 铃声](https://onlinefreetools.org/zh/tools/make-a-30-second-mp3-ringtone) - 在本标签页把本地歌曲裁成约 30 秒并淡化头尾，导出 MP3 铃声；文件留在设备、不上传服务器
 - [把 WAV 文件转成 MP3](https://onlinefreetools.org/zh/tools/convert-a-wav-file-to-mp3) - 整段 WAV 转 MP3，选择码率、试听并对比实际文件大小；文件留在设备，不上传服务器
+- [把 MP3 文件转成 WAV](https://onlinefreetools.org/zh/tools/convert-an-mp3-file-to-wav) - 整段 MP3 转 16 位 PCM WAV，选择 44.1 或 48 kHz、试听并对比实际文件大小；文件留在设备，不上传服务器
+- [把 M4A 文件转成 MP3](https://onlinefreetools.org/zh/tools/convert-an-m4a-file-to-mp3) - 将一个 M4A 或 AAC 录音转成 MP3，选择码率、试听并比较实际大小；文件留在设备，不上传服务器
 - [看着提词器录制旁白](https://onlinefreetools.org/zh/tools/record-a-voiceover-with-a-teleprompter) - 先排练滚稿，再边读边录，同步暂停文字与音频，试听后下载；稿件和声音留在设备、不上传服务器
 - [在浏览器录一段语音备忘](https://onlinefreetools.org/zh/tools/record-a-voice-memo-in-the-browser) - 查看麦克风电平，可暂停和继续，停止后试听并下载；音频留在设备、不上传服务器
 - [在线解压 ZIP](https://onlinefreetools.org/zh/tools/unzip-file) - 浏览器内查看 ZIP 文件树、预览文本/图片，并下载单个文件或导出全部，不上传服务器
@@ -268,6 +270,8 @@ Below are our available online tools with their links (English version):
 - [Make a seamless audio loop](https://onlinefreetools.org/tools/make-a-seamless-audio-loop) - Wrap a local clip with an equal-power crossfade so it loops without a click, then export WAV or MP3 in this tab — stays on the device, not uploaded
 - [Make a 30-second MP3 ringtone](https://onlinefreetools.org/tools/make-a-30-second-mp3-ringtone) - Cut a local song to about 30 seconds, fade the edges, then export an MP3 ringtone in this tab — stays on the device, not uploaded
 - [Convert a WAV file to MP3](https://onlinefreetools.org/tools/convert-a-wav-file-to-mp3) - Convert a complete WAV recording, choose bitrate, preview the MP3 and compare actual sizes; files stay on your device without server upload
+- [Convert an MP3 file to WAV](https://onlinefreetools.org/tools/convert-an-mp3-file-to-wav) - Convert a complete MP3 recording to 16-bit PCM WAV, choose 44.1 or 48 kHz, preview the result and compare actual sizes; files stay on your device without server upload
+- [Convert an M4A file to MP3](https://onlinefreetools.org/tools/convert-an-m4a-file-to-mp3) - Convert one M4A or AAC recording to MP3, choose bitrate, preview the result and compare actual sizes; files stay on your device without server upload
 - [Record a voiceover with a teleprompter](https://onlinefreetools.org/tools/record-a-voiceover-with-a-teleprompter) - Rehearse a scrolling script, record while reading, pause text and audio together, then listen and download; text and audio stay on your device without upload
 - [Record a voice memo in the browser](https://onlinefreetools.org/tools/record-a-voice-memo-in-the-browser) - Watch the microphone level, pause or resume, then play and download the recording — stays on the device, not uploaded
 - [Unzip File Online](https://onlinefreetools.org/tools/unzip-file) - Inspect ZIP contents, preview text/images, and download one file or export all in your browser — no server upload

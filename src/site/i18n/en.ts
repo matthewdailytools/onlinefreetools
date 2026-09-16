@@ -4149,6 +4149,158 @@ const en: SiteLangDict = {
   tool_convert_a_wav_file_to_mp3_why_choose_item_3:
     'WAV headers and duration are checked before decoding; unsupported files get a visible error instead of a partial download.',
   tool_convert_a_wav_file_to_mp3_why_choose_title: 'Why choose our Convert a WAV file to MP3 tools',
+  tool_convert_an_m4a_file_to_mp3_advanced: 'Advanced settings (optional)',
+  tool_convert_an_m4a_file_to_mp3_article:
+    'An M4A voice memo can be awkward to share. This page decodes one complete M4A or AAC recording in the browser, creates an MP3 at the selected bitrate, and shows the actual result size. MP3 is lossy; retain the original when you may edit it later.',
+  tool_convert_an_m4a_file_to_mp3_bitrate: 'MP3 bitrate',
+  tool_convert_an_m4a_file_to_mp3_choose: 'Choose an M4A or AAC file',
+  tool_convert_an_m4a_file_to_mp3_clear: 'Clear',
+  tool_convert_an_m4a_file_to_mp3_convert: 'Convert to MP3',
+  tool_convert_an_m4a_file_to_mp3_decode: 'Decode audio',
+  tool_convert_an_m4a_file_to_mp3_desc:
+    'Turn one M4A or AAC recording into an MP3 for sharing. It stays on your device and is never uploaded to a server.',
+  tool_convert_an_m4a_file_to_mp3_description:
+    'Convert an M4A file to MP3 in your browser: choose one M4A or AAC recording, select a bitrate, convert, preview and download the MP3. Audio stays on your device and is not uploaded to a server. AAC to MP3 uses this same converter.',
+  tool_convert_an_m4a_file_to_mp3_done: 'Ready. Preview the result, then Download MP3.',
+  tool_convert_an_m4a_file_to_mp3_download: 'Download MP3',
+  tool_convert_an_m4a_file_to_mp3_elapsed: '{s}s elapsed',
+  tool_convert_an_m4a_file_to_mp3_empty: 'Choose an M4A/AAC file or load the sample first.',
+  tool_convert_an_m4a_file_to_mp3_encode: 'Encode MP3',
+  tool_convert_an_m4a_file_to_mp3_err_decode:
+    'Your browser could not decode this M4A/AAC audio. DRM-protected files and some codecs are not supported.',
+  tool_convert_an_m4a_file_to_mp3_err_encoder: 'The MP3 encoder could not load. Check your connection and click Convert to MP3 again.',
+  tool_convert_an_m4a_file_to_mp3_err_file: 'Drop exactly one M4A or AAC file.',
+  tool_convert_an_m4a_file_to_mp3_err_format:
+    'Unsupported file signature. Choose an M4A/MP4 audio file or an AAC ADTS file, not a video or renamed file.',
+  tool_convert_an_m4a_file_to_mp3_err_limit: 'This file exceeds 40 MiB or 10 minutes, or has unsupported channels.',
+  tool_convert_an_m4a_file_to_mp3_example:
+    'Load sample creates a five-second stereo tone in memory and encodes it at 192 kbps, producing an MP3 of about 120 KiB. It demonstrates the output path; use your own M4A/AAC file to test browser decoding.',
+  tool_convert_an_m4a_file_to_mp3_example_title: 'Try a real MP3 output',
+  tool_convert_an_m4a_file_to_mp3_failed: 'Conversion stopped. Try a smaller M4A/AAC file that this browser can decode.',
+  tool_convert_an_m4a_file_to_mp3_faq_a1:
+    'M4A is commonly an MP4 audio container that often holds AAC. This page accepts M4A/MP4 audio and AAC ADTS signatures when the current browser can decode the contained audio; AAC to MP3 is the same one-file task.',
+  tool_convert_an_m4a_file_to_mp3_faq_a2:
+    'No. Reading, decoding and MP3 encoding happen in your browser on your device. The page and encoder need a connection on first load; offline use is not guaranteed.',
+  tool_convert_an_m4a_file_to_mp3_faq_a3:
+    'A file can be DRM-protected, contain a codec your browser does not decode, be a video, or exceed the size, duration or channel limit. Try a current browser and a shorter non-DRM audio export.',
+  tool_convert_an_m4a_file_to_mp3_faq_a4:
+    'No. MP3 is a lossy output, and a source M4A may already be compressed. A higher bitrate can retain more audible detail but cannot restore original data. Keep the M4A master.',
+  tool_convert_an_m4a_file_to_mp3_faq_a5:
+    'No. This page converts one complete local audio file to one MP3. It does not upload videos, process batches or trim a ringtone; use the related audio trimmer when you only need part of a recording.',
+  tool_convert_an_m4a_file_to_mp3_faq_q1: 'Is M4A the same as AAC, and can this convert AAC to MP3?',
+  tool_convert_an_m4a_file_to_mp3_faq_q2: 'Is my M4A uploaded to a server?',
+  tool_convert_an_m4a_file_to_mp3_faq_q3: 'Why does my M4A fail?',
+  tool_convert_an_m4a_file_to_mp3_faq_q4: 'Does converting M4A to MP3 preserve quality?',
+  tool_convert_an_m4a_file_to_mp3_faq_q5: 'Can I batch convert, use a video, or make a ringtone?',
+  tool_convert_an_m4a_file_to_mp3_hint: 'Drop one M4A or AAC file. Up to 40 MiB and 10 minutes; browser decoding support varies.',
+  tool_convert_an_m4a_file_to_mp3_how_body:
+    'Use this for one complete local recording when you need an MP3 to share. Keep the M4A original if editing matters.',
+  tool_convert_an_m4a_file_to_mp3_how_item_1: 'Choose an M4A or AAC file, or use Load sample to check the MP3 output path.',
+  tool_convert_an_m4a_file_to_mp3_how_item_2: 'Keep 192 kbps or change MP3 bitrate under Advanced settings, then click Convert to MP3.',
+  tool_convert_an_m4a_file_to_mp3_how_item_3: 'Listen to the MP3, compare actual sizes, and click Download MP3.',
+  tool_convert_an_m4a_file_to_mp3_how_title: 'How to convert an M4A recording to MP3',
+  tool_convert_an_m4a_file_to_mp3_preview: 'Listen to the MP3',
+  tool_convert_an_m4a_file_to_mp3_progress: 'Conversion progress',
+  tool_convert_an_m4a_file_to_mp3_read: 'Read audio file',
+  tool_convert_an_m4a_file_to_mp3_result:
+    '{seconds}s of audio · M4A/AAC {input} KiB → MP3 {output} KiB · {kbps} kbps · 44.1 kHz · {channels} channel(s)',
+  tool_convert_an_m4a_file_to_mp3_rules_body:
+    'Approximate MP3 size in bytes is seconds × kbps × 1000 ÷ 8. Encoder padding adds a little overhead, so the result area shows the measured output.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_1:
+    'Use 128 kbps for a smaller spoken memo, 192 for general sharing, or 320 for more detail. MP3 is always lossy and a very small input can grow.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_2:
+    'Output is 44.1 kHz and preserves one or two decoded channels. Tags, cover art and M4A metadata are not copied.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_3:
+    'The page accepts one 40 MiB / ten-minute M4A/MP4 audio or AAC ADTS file. Browser support decides whether its codec decodes; DRM, video, playlists and surround audio are outside scope.',
+  tool_convert_an_m4a_file_to_mp3_rules_title: 'Bitrate, compatibility and limits',
+  tool_convert_an_m4a_file_to_mp3_sample: 'Load sample',
+  tool_convert_an_m4a_file_to_mp3_sample_name: 'five-second-tone',
+  tool_convert_an_m4a_file_to_mp3_settings_hint:
+    '192 kbps is the default. Choose 128 for a smaller speech file or 320 for more musical detail. Output is 44.1 kHz.',
+  tool_convert_an_m4a_file_to_mp3_title: 'Convert an M4A file to MP3',
+  tool_convert_an_m4a_file_to_mp3_usecase_1: 'Share an M4A voice memo as an MP3 attachment while keeping the original recording.',
+  tool_convert_an_m4a_file_to_mp3_usecase_2: 'Turn an AAC recording into an MP3 for a recipient whose player does not accept M4A.',
+  tool_convert_an_m4a_file_to_mp3_usecases_title: 'When this helps',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_1:
+    'The page checks the M4A/MP4 or AAC signature before browser decoding, so a renamed video gets a visible error.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_2: 'Preview the actual encoded MP3 and compare measured input and output sizes before downloading.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_3: 'The complete recording is converted without trimming, fades, cloud upload or a second input mode.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_title: 'Why choose our Convert an M4A file to MP3 tools',
+  tool_convert_an_mp3_file_to_wav_advanced: 'Advanced settings (optional)',
+  tool_convert_an_mp3_file_to_wav_article:
+    'A MP3 recording can be too large to send comfortably. This converter keeps the complete recording and makes an WAV at your chosen bitrate. Listen to the encoded file before saving it, and compare its actual size with the original. Keep the MP3 as your editing master: WAV discards audio information, even at 320 kbps.',
+  tool_convert_an_mp3_file_to_wav_bitrate: 'WAV sample rate',
+  tool_convert_an_mp3_file_to_wav_choose: 'Choose a MP3 file',
+  tool_convert_an_mp3_file_to_wav_clear: 'Clear',
+  tool_convert_an_mp3_file_to_wav_convert: 'Convert to WAV',
+  tool_convert_an_mp3_file_to_wav_decode: 'Decode audio',
+  tool_convert_an_mp3_file_to_wav_desc:
+    'Turn a whole MP3 recording into a shareable WAV. Files stay on your device and are not uploaded to a server.',
+  tool_convert_an_mp3_file_to_wav_description:
+    'Convert an WAV file to MP3 in three steps: choose a recording, convert, then download. Audio stays on your device, never uploaded to a server.',
+  tool_convert_an_mp3_file_to_wav_done: 'Ready. Preview the result, then Download WAV.',
+  tool_convert_an_mp3_file_to_wav_download: 'Download WAV',
+  tool_convert_an_mp3_file_to_wav_elapsed: '{s}s elapsed',
+  tool_convert_an_mp3_file_to_wav_empty: 'Choose a MP3 file or load the sample first.',
+  tool_convert_an_mp3_file_to_wav_encode: 'Encode WAV',
+  tool_convert_an_mp3_file_to_wav_err_decode: 'Your browser could not decode this MP3. Try a standard PCM MP3 in a current browser.',
+  tool_convert_an_mp3_file_to_wav_err_encoder: 'The WAV encoder could not load. Check your connection and click Convert to WAV again.',
+  tool_convert_an_mp3_file_to_wav_err_file: 'Drop exactly one MP3 file.',
+  tool_convert_an_mp3_file_to_wav_err_format:
+    'Unsupported or damaged MP3. Use mono/stereo PCM (8/16/24/32-bit) or 32-bit float RIFF/MP3E. Compressed, extensible and RF64 MP3 are not supported.',
+  tool_convert_an_mp3_file_to_wav_err_limit: 'This file exceeds 40 MiB or 10 minutes, or has unsupported channels. Use a shorter MP3 file.',
+  tool_convert_an_mp3_file_to_wav_example:
+    'Load sample creates a five-second stereo PCM MP3 at 44.1 kHz (about 861 KiB), then encodes the complete audio at 192 kbps to an WAV of about 120 KiB. The sample does not play automatically.',
+  tool_convert_an_mp3_file_to_wav_example_title: 'Try a real conversion',
+  tool_convert_an_mp3_file_to_wav_failed: 'Conversion stopped. Try a smaller, valid PCM MP3 file.',
+  tool_convert_an_mp3_file_to_wav_faq_a1:
+    'No. WAV is lossy. A higher bitrate can retain more detail, but cannot preserve every original sample or restore missing information. Save your MP3 master separately.',
+  tool_convert_an_mp3_file_to_wav_faq_a2:
+    'Files stay in your browser on your device and are not uploaded to a server. The page and encoder need a network connection when first loaded; offline availability is not guaranteed.',
+  tool_convert_an_mp3_file_to_wav_faq_a3:
+    'Use a current browser with Web Audio support. Android and iPhone browsers may have tighter memory limits. No installation is needed; try the built-in sample first. The same 40 MiB and ten-minute limits apply.',
+  tool_convert_an_mp3_file_to_wav_faq_a4:
+    'MP3 is a container: compressed or extensible MP3 and multichannel recordings are not accepted here. Tiny or low-rate MP3 recordings may be smaller than the selected WAV bitrate. Compare the measured sizes, or choose 128 kbps and convert again.',
+  tool_convert_an_mp3_file_to_wav_faq_a5:
+    'This converter takes one MP3 file and produces one WAV. It does not accept playlists, video links or reverse conversion. To keep just a section of a recording, use the related audio trimming tool.',
+  tool_convert_an_mp3_file_to_wav_faq_q1: 'Can I convert MP3 to WAV without losing quality?',
+  tool_convert_an_mp3_file_to_wav_faq_q2: 'Is my MP3 uploaded, and can I work offline?',
+  tool_convert_an_mp3_file_to_wav_faq_q3: 'Does this work on Windows, Mac or a phone?',
+  tool_convert_an_mp3_file_to_wav_faq_q4: 'Why did my MP3 fail or produce a larger WAV?',
+  tool_convert_an_mp3_file_to_wav_faq_q5: 'Can I convert several files or WAV back to MP3?',
+  tool_convert_an_mp3_file_to_wav_hint: 'Drop one MP3 here. Up to 40 MiB and 10 minutes; mono or stereo PCM / 32-bit float.',
+  tool_convert_an_mp3_file_to_wav_how_body:
+    'Convert the whole recording when you need a smaller file for sharing. Keep the original MP3 if you plan to edit it later.',
+  tool_convert_an_mp3_file_to_wav_how_item_1: 'Choose a MP3 file, or use Load sample for a five-second demonstration.',
+  tool_convert_an_mp3_file_to_wav_how_item_2: 'Keep 192 kbps or change WAV bitrate under Advanced settings, then click Convert to WAV.',
+  tool_convert_an_mp3_file_to_wav_how_item_3: 'Listen to the WAV, check the file sizes, and click Download WAV.',
+  tool_convert_an_mp3_file_to_wav_how_title: 'How to turn a MP3 recording into WAV',
+  tool_convert_an_mp3_file_to_wav_preview: 'Listen to the WAV',
+  tool_convert_an_mp3_file_to_wav_progress: 'Conversion progress',
+  tool_convert_an_mp3_file_to_wav_read: 'Read MP3',
+  tool_convert_an_mp3_file_to_wav_result:
+    '{seconds}s of audio · MP3 {input} KiB → WAV {output} KiB · {kbps} kbps · 44.1 kHz · {channels} channel(s)',
+  tool_convert_an_mp3_file_to_wav_rules_body:
+    'Approximate WAV size in bytes = seconds × kbps × 1000 ÷ 8. Padding adds a little overhead, so the displayed output size is the real measurement.',
+  tool_convert_an_mp3_file_to_wav_rules_item_1:
+    'Choose 128 kbps for a smaller speech recording, 192 for general sharing, or 320 for more musical detail. WAV is always lossy and very small MP3 files may grow.',
+  tool_convert_an_mp3_file_to_wav_rules_item_2:
+    'The output uses 44.1 kHz and keeps one or two channels. Tags, cover art and MP3 metadata are not copied; encoder padding may slightly increase playback duration.',
+  tool_convert_an_mp3_file_to_wav_rules_item_3:
+    'Accepts standard RIFF/MP3E PCM at 8/16/24/32 bits and 32-bit float, with 8–192 kHz input. Compressed MP3, extensible MP3, RF64, surround audio and files over 40 MiB or 10 minutes are rejected.',
+  tool_convert_an_mp3_file_to_wav_rules_title: 'Bitrate, size and audio limits',
+  tool_convert_an_mp3_file_to_wav_sample: 'Load sample',
+  tool_convert_an_mp3_file_to_wav_sample_name: 'five-second-demo',
+  tool_convert_an_mp3_file_to_wav_settings_hint: 'Choose 44.1 kHz by default, or 48 kHz. Output is 16-bit PCM WAV with the original channel count.',
+  tool_convert_an_mp3_file_to_wav_title: 'Convert an MP3 file to WAV',
+  tool_convert_an_mp3_file_to_wav_usecase_1: 'Send a voice recording exported as MP3 to someone who needs a smaller WAV attachment.',
+  tool_convert_an_mp3_file_to_wav_usecase_2: 'Share a rehearsal mix at 320 kbps while keeping the original MP3 for future edits.',
+  tool_convert_an_mp3_file_to_wav_usecases_title: 'When this helps',
+  tool_convert_an_mp3_file_to_wav_why_choose_item_1: 'The complete recording is converted without selecting a trim range or adding fades.',
+  tool_convert_an_mp3_file_to_wav_why_choose_item_2: 'Preview the actual encoded WAV and compare measured file sizes before downloading.',
+  tool_convert_an_mp3_file_to_wav_why_choose_item_3:
+    'MP3 headers and duration are checked before decoding; unsupported files get a visible error instead of a partial download.',
+  tool_convert_an_mp3_file_to_wav_why_choose_title: 'Why choose our Convert an WAV file to MP3 tools',
   tool_convert_html_to_pdf_article: 'Paste HTML or load a page URL, strip scripts, preview the result, and export an A4 PDF.',
   tool_convert_html_to_pdf_choose_file: 'Choose a PDF',
   tool_convert_html_to_pdf_choose_files: 'Choose files',

@@ -40,6 +40,7 @@ function changedPaths() {
 	const parts = [
 		`git -c core.quotepath=false diff -z --name-only ${base}...HEAD`,
 		'git -c core.quotepath=false diff -z --name-only',
+		'git -c core.quotepath=false diff --cached -z --name-only',
 		'git -c core.quotepath=false ls-files -z --others --exclude-standard',
 	];
 	/** Windows `execSync` 默认不走 shell，不能用 `;` 串命令，否则 git 会把 `HEAD;` 当成修订名。 */
@@ -59,10 +60,15 @@ function allowlistFor(toolSlug) {
 		`src/site/tool-catalog.d/${toolSlug}.json`,
 		`src/site/i18n/tools/${toolSlug}/`,
 		`public/icons/tools/${toolSlug}.svg`,
+		`public/samples/${toolSlug}.m4a`,
+		`public/samples/${toolSlug}.md`,
 		`scripts/tool-modules/`,
 		`scripts/check-tool-isolation.mjs`,
 		`scripts/validate-tool-page-wiring.mjs`,
 		`scripts/verify-tool.mjs`,
+		`scripts/validate-tool-artifacts.mjs`,
+		`scripts/lib/observed-step.mjs`,
+		`scripts/tests/tool-workflow.test.mjs`,
 		`.cursor/rules/`,
 		`.cursor/skills/`,
 		`dev-logs/`,

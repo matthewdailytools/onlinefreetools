@@ -4082,6 +4082,92 @@ const de: SiteLangDict = {
   tool_convert_a_wav_file_to_mp3_why_choose_item_3:
     'Die gesamte Aufnahme bleibt erhalten; ein Schnittbereich oder eine Überblendung muss nicht eingestellt werden.',
   tool_convert_a_wav_file_to_mp3_why_choose_title: 'Vorteile von Eine WAV-Datei in MP3 umwandeln',
+  tool_convert_an_m4a_file_to_mp3_desc: 'Wandeln Sie eine M4A- oder AAC-Aufnahme in MP3 um, ohne die Datei an einen Server zu senden.',
+  tool_convert_an_m4a_file_to_mp3_description:
+    'Wandeln Sie eine M4A-Datei im Browser in MP3 um: M4A oder AAC auswählen, umwandeln, anhören und herunterladen. Die Datei bleibt auf dem Gerät und wird nicht an einen Server übertragen.',
+  tool_convert_an_m4a_file_to_mp3_title: 'Eine M4A-Datei in MP3 umwandeln',
+  tool_convert_an_mp3_file_to_wav_advanced: 'Optionale Einstellungen',
+  tool_convert_an_mp3_file_to_wav_article:
+    'Eine MP3-Aufnahme ist oft zu groß für einen Anhang. Erstellen Sie eine WAV-Kopie und vergleichen Sie die tatsächlichen Dateigrößen. Die Aufnahme wird vollständig umgewandelt, ohne Schnitt oder Überblendung. Das fertige WAV lässt sich vor dem Download anhören. Bewahren Sie die MP3-Datei für spätere Bearbeitungen auf.',
+  tool_convert_an_mp3_file_to_wav_bitrate: 'WAV-Bitrate',
+  tool_convert_an_mp3_file_to_wav_choose: 'MP3-Datei auswählen',
+  tool_convert_an_mp3_file_to_wav_clear: 'Leeren',
+  tool_convert_an_mp3_file_to_wav_convert: 'In WAV umwandeln',
+  tool_convert_an_mp3_file_to_wav_decode: 'Audio dekodieren',
+  tool_convert_an_mp3_file_to_wav_desc:
+    'Die komplette MP3-Aufnahme als WAV weitergeben. Ihre Datei bleibt auf Ihrem Gerät und wird nicht an einen Server übertragen.',
+  tool_convert_an_mp3_file_to_wav_description:
+    'MP3 in WAV für eine Sprachnachricht umwandeln. Schritte: auswählen, konvertieren, herunterladen. Die Datei bleibt auf Ihrem Gerät, ohne Übertragung an Server.',
+  tool_convert_an_mp3_file_to_wav_done: 'Fertig. Hören Sie das Ergebnis an und wählen Sie WAV herunterladen.',
+  tool_convert_an_mp3_file_to_wav_download: 'WAV herunterladen',
+  tool_convert_an_mp3_file_to_wav_elapsed: 'Verstrichen: {s} s',
+  tool_convert_an_mp3_file_to_wav_empty: 'Wählen Sie eine MP3-Datei oder laden Sie das Beispiel.',
+  tool_convert_an_mp3_file_to_wav_encode: 'WAV erstellen',
+  tool_convert_an_mp3_file_to_wav_err_decode:
+    'Der Browser kann diese Datei nicht dekodieren. Versuchen Sie Standard-PCM-MP3 in einem aktuellen Browser.',
+  tool_convert_an_mp3_file_to_wav_err_encoder:
+    'WAV-Encoder konnte nicht geladen werden. Prüfen Sie die Verbindung und wählen Sie erneut In WAV umwandeln.',
+  tool_convert_an_mp3_file_to_wav_err_file: 'Bitte genau eine MP3-Datei ablegen.',
+  tool_convert_an_mp3_file_to_wav_err_format:
+    'MP3 beschädigt oder nicht unterstützt. Erlaubt sind RIFF/MP3E PCM mit 8/16/24/32 Bit oder 32-Bit-Fließkomma, mono/stereo. Komprimiertes MP3, Extensible-MP3 und RF64 sind ausgeschlossen.',
+  tool_convert_an_mp3_file_to_wav_err_limit:
+    'Mehr als 40 MiB oder 10 Minuten oder eine unzulässige Kanalzahl. Verwenden Sie eine kürzere MP3-Aufnahme.',
+  tool_convert_an_mp3_file_to_wav_example:
+    'Beispiel laden erzeugt fünf Sekunden Stereo-PCM-MP3 bei 44,1 kHz mit rund 861 KiB. Daraus entsteht bei 192 kbps eine WAV-Datei von etwa 120 KiB. Sie wird nicht automatisch abgespielt.',
+  tool_convert_an_mp3_file_to_wav_example_title: 'Fünf Sekunden zum Ausprobieren',
+  tool_convert_an_mp3_file_to_wav_failed: 'Umwandlung fehlgeschlagen. Versuchen Sie eine kleinere, gültige PCM-MP3-Datei.',
+  tool_convert_an_mp3_file_to_wav_faq_a1:
+    '192 kbps ist ein Ausgangspunkt für allgemeines Teilen. Bei Sprache spart 128 Platz; für Musik bietet 320 mehr Details. Keine Einstellung ist verlustfrei. Hören Sie das Ergebnis an und vergleichen Sie die tatsächliche Größe.',
+  tool_convert_an_mp3_file_to_wav_faq_a2:
+    'Ja. Die Datei wird im Browser auf Ihrem Gerät verarbeitet und nicht an einen Server gesendet. Beim ersten Laden brauchen Seite und Encoder eine Verbindung; Offline-Verfügbarkeit wird nicht garantiert.',
+  tool_convert_an_mp3_file_to_wav_faq_a3:
+    'Ein aktueller Browser mit Web Audio genügt unter Android, iPhone, Windows oder Mac. Auf Handys kann der Speicher früher knapp werden. Probieren Sie das Beispiel aus. Es gelten überall 40 MiB und zehn Minuten; eine Installation ist nicht nötig.',
+  tool_convert_an_mp3_file_to_wav_faq_a4:
+    'MP3 ist ein Container. Komprimiertes oder Extensible-MP3, RF64 und Mehrkanalaufnahmen werden hier nicht angenommen. MP3 mit niedriger Abtastrate kann kleiner sein als die gewählte WAV-Ausgabe; testen Sie gegebenenfalls 128 kbps.',
+  tool_convert_an_mp3_file_to_wav_faq_a5:
+    'Hier wird jeweils ein MP3 vollständig in ein WAV umgewandelt. Stapel, Videolinks und die umgekehrte Richtung werden nicht unterstützt. Für einen Ausschnitt nutzen Sie das verlinkte Werkzeug zum Zuschneiden.',
+  tool_convert_an_mp3_file_to_wav_faq_q1: 'Welche Bitrate sollte ich wählen?',
+  tool_convert_an_mp3_file_to_wav_faq_q2: 'Bleibt meine Aufnahme auf dem Gerät?',
+  tool_convert_an_mp3_file_to_wav_faq_q3: 'Funktioniert das auch auf dem Smartphone?',
+  tool_convert_an_mp3_file_to_wav_faq_q4: 'Warum wird MP3 abgelehnt oder als WAV größer?',
+  tool_convert_an_mp3_file_to_wav_faq_q5: 'Sind mehrere Dateien oder WAV zurück nach MP3 möglich?',
+  tool_convert_an_mp3_file_to_wav_hint:
+    'Eine MP3-Datei hier ablegen. Höchstens 40 MiB und 10 Minuten; PCM mono/stereo oder 32-Bit-Fließkomma.',
+  tool_convert_an_mp3_file_to_wav_how_body:
+    'Erzeugen Sie eine WAV-Kopie der gesamten Aufnahme. Für weitere Bearbeitungen behalten Sie zusätzlich das MP3-Original.',
+  tool_convert_an_mp3_file_to_wav_how_item_1: 'Klicken Sie auf MP3-Datei auswählen oder auf Beispiel laden für einen Fünf-Sekunden-Test.',
+  tool_convert_an_mp3_file_to_wav_how_item_2:
+    'Ändern Sie bei Bedarf die Bitrate unter Optionale Einstellungen und klicken Sie auf In WAV umwandeln.',
+  tool_convert_an_mp3_file_to_wav_how_item_3: 'Vergleichen Sie die Dateigrößen, hören Sie kurz hinein und wählen Sie WAV herunterladen.',
+  tool_convert_an_mp3_file_to_wav_how_title: 'Eine Aufnahme zum Weitergeben vorbereiten',
+  tool_convert_an_mp3_file_to_wav_preview: 'WAV probehören',
+  tool_convert_an_mp3_file_to_wav_progress: 'Fortschritt der Umwandlung',
+  tool_convert_an_mp3_file_to_wav_read: 'MP3 lesen',
+  tool_convert_an_mp3_file_to_wav_result:
+    '{seconds} s Audio · MP3 {input} KiB → WAV {output} KiB · {kbps} kbps · 44,1 kHz · {channels} Kanal/Kanäle',
+  tool_convert_an_mp3_file_to_wav_rules_body:
+    'Ungefähre Größe in Byte: Sekunden × kbps × 1000 ÷ 8. Durch Fülldaten beim Kodieren kommt etwas hinzu; die Ergebnisanzeige nennt die gemessene Größe.',
+  tool_convert_an_mp3_file_to_wav_rules_item_1:
+    '128 kbps spart bei Sprache Platz, 192 ist die Vorgabe zum Teilen, 320 bewahrt mehr musikalische Details. WAV bleibt verlustbehaftet. Kleine MP3-Dateien können durch die Umwandlung größer werden.',
+  tool_convert_an_mp3_file_to_wav_rules_item_2:
+    'Die Ausgabe hat 44,1 kHz und übernimmt einen oder zwei Kanäle. Tags und Cover werden nicht übernommen. Die Wiedergabedauer kann durch WAV-Fülldaten geringfügig zunehmen.',
+  tool_convert_an_mp3_file_to_wav_rules_item_3:
+    'Unterstützt werden Standard-RIFF/MP3E mit PCM 8/16/24/32 Bit oder 32-Bit-Fließkomma bei 8–192 kHz. Kein komprimiertes MP3, Extensible-MP3, RF64 oder Surround. Höchstens 40 MiB und zehn Minuten.',
+  tool_convert_an_mp3_file_to_wav_rules_title: 'Bitrate und Dateigröße richtig einschätzen',
+  tool_convert_an_mp3_file_to_wav_sample: 'Beispiel laden',
+  tool_convert_an_mp3_file_to_wav_sample_name: 'fuenf-sekunden-beispiel',
+  tool_convert_an_mp3_file_to_wav_settings_hint:
+    'Vorgabe: 192 kbps. 128 spart Platz, 320 erhält mehr Details. Ausgabe mit 44,1 kHz und ursprünglicher Kanalzahl.',
+  tool_convert_an_mp3_file_to_wav_title: 'Eine MP3-Datei in WAV umwandeln',
+  tool_convert_an_mp3_file_to_wav_usecase_1: 'Eine MP3-Sprachaufnahme als kleineren WAV-Anhang verschicken.',
+  tool_convert_an_mp3_file_to_wav_usecase_2: 'Eine Probe mit 320 kbps teilen und die MP3-Datei für den späteren Schnitt behalten.',
+  tool_convert_an_mp3_file_to_wav_usecases_title: 'Praktische Anlässe',
+  tool_convert_an_mp3_file_to_wav_why_choose_item_1: 'Das Ergebnis zeigt gemessene Dateigrößen und spielt die tatsächlich erzeugte WAV-Datei ab.',
+  tool_convert_an_mp3_file_to_wav_why_choose_item_2:
+    'Dateikopf und Dauer werden vor dem Dekodieren geprüft. Ungeeignete Dateien erhalten eine Fehlermeldung statt eines unvollständigen Downloads.',
+  tool_convert_an_mp3_file_to_wav_why_choose_item_3:
+    'Die gesamte Aufnahme bleibt erhalten; ein Schnittbereich oder eine Überblendung muss nicht eingestellt werden.',
+  tool_convert_an_mp3_file_to_wav_why_choose_title: 'Vorteile von Eine MP3-Datei in WAV umwandeln',
   tool_convert_html_to_pdf_article: 'HTML einfügen oder eine Seiten-URL laden, Skripte entfernen und als A4-PDF speichern.',
   tool_convert_html_to_pdf_choose_file: 'PDF wählen',
   tool_convert_html_to_pdf_choose_files: 'Dateien wählen',

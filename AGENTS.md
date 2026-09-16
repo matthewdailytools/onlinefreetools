@@ -110,6 +110,30 @@ For new or modified tools, do not stop at `npm run merge:tools`; run
 tool pages, sitemap, and vendor chrome are refreshed. New tools must use
 catalog `page.style: "opts"` (not `pair`).
 
+## Delivery and recovery contract
+
+- “立项和实现” authorizes the complete local brief-to-verified-implementation
+  workflow. A/B/C/D are checkpoints, not reasons to end the task or ask the user
+  to authorize the next phase again. Deployment is separate unless requested.
+- Confirm the Git root before editing. A command's working directory does not
+  change the patch tool's base directory. Use resolved paths for patches.
+- Recover from local syntax/patch errors in the same task. Do not substitute
+  scaffolding, copied completion checkboxes, or a plan for implementation.
+- Keep command session IDs and poll to a definitive exit. A yielded command is
+  not a timeout; silence, file timestamps and existing caches prove neither
+  success nor failure. `verify:tool` stores unique-run logs/results under
+  `.cache/verify-tool/`; `running` or missing evidence is not a pass.
+- Mechanical gates do not establish semantic or runtime correctness. Review
+  conversion direction, codec/container claims and settings per locale. Exercise
+  real input → conversion → downloaded output, plus invalid input/retry and
+  automatic sample behavior; record the command/test and actual outcome.
+- Keep local implementation, local verification, remote upload and live-site
+  verification distinct. A prior tool's remote DNS failure is not a dependency
+  of the next tool's local work. A genuine blocker must name the failed command,
+  evidence, remaining work and required external change; never claim completion.
+- See `docs/tool-workflow-reliability.md` for this incident's evidence and the
+  acceptance/recovery checklist.
+
 ## Edit Boundaries
 
 - Keep edits scoped to the user's request and the relevant tool or workflow.

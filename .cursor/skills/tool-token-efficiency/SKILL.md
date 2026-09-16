@@ -42,9 +42,9 @@ description: >-
 
 ---
 
-## 会话拆分（减历史累积 · 不降质量）
+## 阶段检查点（减历史累积 · 不提前结束）
 
-在**阶段边界**开新对话，并把交接物写进 repo（不靠长聊天记状态）：
+A/B/C/D 是同一授权任务的**阶段检查点**。用户要求「立项和实现」时，通过当前 gate 后继续下一阶段，不因阶段结束而交回用户或要求再次确认。把状态与验收证据写进 repo；只有用户要求拆分或运行环境确实中断时才交接到新对话。
 
 | 会话 | 范围 | 交接物（下一会话只读这些） |
 |---|---|---|
@@ -53,7 +53,7 @@ description: >-
 | **C · 他语** | 逐语或每批 ≤3 语、phase=4 | `03` 各语 brief + 已写分片列表 |
 | **D · Ship** | **全量** `build:site`、`lint:tool-page --require-html`、lint、README、首页+工具 URL | `npm run verify:tool -- --slug={slug}` |
 
-同一 slug 的 Page/i18n **仍须串行**（与 coverage Skill 一致）；省 token 靠**拆会话**，不靠并行 slug 实现。
+同一 slug 的 Page/i18n **仍须串行**（与 coverage Skill 一致）；省 token 靠定向读取、短输出和持久化检查点，不靠提前结束实现。语法或补丁失败应在当前任务内修复重试；草稿、复制来的勾选和旧缓存都不能作为完成证据。
 
 ---
 
@@ -146,6 +146,7 @@ npm run verify:tool -- --slug={slug}
 
 - **交付前仍须** `build:site`（当前仓库强制全量预渲染；不可为省时而跳过）。
 - Agent **不要**把 build/lint 的完整 stdout 反复读入上下文。
+- 保留工具返回的 session ID 与退出状态；命令 yield 后继续轮询，不把无输出当失败。`verify:tool` 的独立运行目录记录阶段日志和退出码；只接受本次全部阶段 `passed`，`running` 不是成功。浏览器与实际输出验收仍须另做。
 - 处理失败时：只提取 **与本 slug 相关** 的 WARN/FAIL 行；其他工具的告警记入「无关项，稍后全站修」，**勿**展开读那些工具的分片。
 - `lint:seo` 扫全站是预期行为；**修复范围仍仅限当前 slug**（除非失败行明确指向别 slug 且用户要求修）。
 
@@ -180,7 +181,7 @@ npm run verify:tool -- --slug={slug}
 
 | 想省 token… | 可以 | 不可以 |
 |---|---|---|
-| 拆成 A/B/C/D 四个会话 | ✅ | |
+| A/B/C/D 持久化检查点；用户要求时拆会话 | ✅ | 因阶段结束而停止已授权的完整实现 |
 | 只读 `i18n/tools/{slug}/` | ✅ | 读 `src/site/i18n/en.ts` |
 | Grep + 2 个 related 分片 | ✅ | 读完整 `tool-catalog.json` |
 | 参考 Page 读 100 行 | ✅ | 读 800 行「学习写法」 |

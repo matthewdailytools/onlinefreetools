@@ -44,6 +44,8 @@ import { renderCompareTwoWordDocumentsForDifferencesPage } from '../pages/compar
 import { renderCompressPdfPage } from '../pages/compressPdfPage';
 import { renderConvertAJpgToTextWithOcrPage } from '../pages/convertAJpgToTextWithOcrPage';
 import { renderConvertAWavFileToMp3Page } from '../pages/convertAWavFileToMp3Page';
+import { renderConvertAnM4aFileToMp3Page } from '../pages/convertAnM4aFileToMp3Page';
+import { renderConvertAnMp3FileToWavPage } from '../pages/convertAnMp3FileToWavPage';
 import { renderConvertHtmlToPdfPage } from '../pages/convertHtmlToPdfPage';
 import { renderConvertHtmlWebPagesToWordDocumentPage } from '../pages/convertHtmlWebPagesToWordDocumentPage';
 import { renderConvertPdfToDwgPage } from '../pages/convertPdfToDwgPage';
@@ -277,6 +279,8 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'compress-pdf': (lang, defaultLang, enabled) => renderCompressPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-a-jpg-to-text-with-ocr': (lang, defaultLang, enabled) => renderConvertAJpgToTextWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-a-wav-file-to-mp3': (lang, defaultLang, enabled) => renderConvertAWavFileToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-an-m4a-file-to-mp3': (lang, defaultLang, enabled) => renderConvertAnM4aFileToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-an-mp3-file-to-wav': (lang, defaultLang, enabled) => renderConvertAnMp3FileToWavPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-html-to-pdf': (lang, defaultLang, enabled) => renderConvertHtmlToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-html-web-pages-to-word-document': (lang, defaultLang, enabled) => renderConvertHtmlWebPagesToWordDocumentPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-pdf-to-dwg': (lang, defaultLang, enabled) => renderConvertPdfToDwgPage({ lang, defaultLang, enabledLangs: enabled }),
