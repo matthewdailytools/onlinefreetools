@@ -95,3 +95,14 @@ Status at implementation handoff: implemented locally and verified; deployment f
 - English production URL: https://onlinefreetools.org/tools/reduce-an-mp3-file-size
 
 Status: deployed and production-verified. The original implementation workspace retains its pre-existing local branch and unrelated work; the clean release checkout contains the exact production commit.
+
+## Production release preparation (2026-09-20)
+
+
+- User explicitly requested deployment. Production branch was `ae54b9df` / cache version 4.71, diverged from the implementation workspace.
+- Release checkout: `/mnt/app/onlinefreetools/s10-release-20260920`, based on the actual `origin/main`, carrying only this new tool, its ten locale shards, icon, briefs, development log, README entries and regenerated outputs.
+- Existing production M4A converter is preserved. Unreleased MP3-to-WAV and workflow changes from the original local branch are excluded.
+- Cache version: 4.72. Full verification is rerun against the ordinary production Git baseline, without the implementation workspace's temporary isolation baseline.
+- R2 upload uses full mode to avoid relying on the uploader's local fallback manifest. Remote manifest and uploaded tool bytes will be checked before pushing Worker + Assets.
+
+Release checkout validation passed (exit 0): all nine `verify:tool` stages including ordinary `origin/main` isolation. Evidence: `.cache/verify-tool/reduce-an-mp3-file-size/1789868474645-eeb1208a-97e5-4507-977c-09729b2238f8/report.json`; supervisor exit at 2026-09-20T01:48:33.794Z. Generated-page Chromium core acceptance also passed all 14 cases, exit 0 (`.cache/mp3-size-browser/report-core.json`).

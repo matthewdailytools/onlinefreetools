@@ -75,6 +75,7 @@ function allowlistFor(toolSlug) {
 		`public/devlogs/`,
 		`README.md`,
 		`AGENTS.md`,
+		`wrangler.jsonc`, // release cache version; review its diff before publishing
 		// 新工具加 npm 库时 lockfile 与 package.json 成对出现
 		`package-lock.json`,
 		// 同域 vendor 复制清单与必入库路径（本工具点后加载 WASM）
