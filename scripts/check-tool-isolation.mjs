@@ -113,6 +113,8 @@ function allowlistFor(toolSlug) {
 		`public/de/index.html`,
 		`public/sitemap.xml`,
 		`public/_pages/`,
+		`public/_chrome/`,
+		`src/site/chromeVersion.generated.ts`,
 		`package.json`,
 	];
 }

@@ -4303,6 +4303,84 @@ const en: SiteLangDict = {
   tool_convert_an_mp3_file_to_wav_why_choose_item_3:
     'MP3 headers and duration are checked before decoding; unsupported files get a visible error instead of a partial download.',
   tool_convert_an_mp3_file_to_wav_why_choose_title: 'Why choose our Convert an WAV file to MP3 tools',
+  tool_convert_audio_sample_rate_and_bit_depth_advanced: 'Sample rate and bit depth',
+  tool_convert_audio_sample_rate_and_bit_depth_article:
+    'Delivery specs often ask for 44.1 kHz / 16-bit or 48 kHz WAV. This page resamples the whole clip with OfflineAudioContext, then writes PCM at 16 or 24-bit. It is not an MP3 size compressor and does not promise transparent listening after resampling or quantization.',
+  tool_convert_audio_sample_rate_and_bit_depth_bit_depth: 'Target bit depth',
+  tool_convert_audio_sample_rate_and_bit_depth_choose: 'Choose an audio file',
+  tool_convert_audio_sample_rate_and_bit_depth_clear: 'Clear',
+  tool_convert_audio_sample_rate_and_bit_depth_convert: 'Convert',
+  tool_convert_audio_sample_rate_and_bit_depth_decode: 'Decode',
+  tool_convert_audio_sample_rate_and_bit_depth_desc:
+    'Change a recording to 44.1 or 48 kHz and 16 or 24-bit WAV. Files stay on your device and are not uploaded to a server.',
+  tool_convert_audio_sample_rate_and_bit_depth_description:
+    'Change a recording to 44.1 or 48 kHz and 16 or 24-bit WAV in three steps: convert, preview and download. Files stay on your device and are never uploaded.',
+  tool_convert_audio_sample_rate_and_bit_depth_done: 'Ready. Preview the WAV, then Download WAV.',
+  tool_convert_audio_sample_rate_and_bit_depth_download: 'Download WAV',
+  tool_convert_audio_sample_rate_and_bit_depth_elapsed: '{s}s elapsed',
+  tool_convert_audio_sample_rate_and_bit_depth_empty: 'Choose an audio file or load the sample first.',
+  tool_convert_audio_sample_rate_and_bit_depth_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_convert_audio_sample_rate_and_bit_depth_err_encoder: 'Could not write the WAV. Check the sample rate and bit depth, then try Convert again.',
+  tool_convert_audio_sample_rate_and_bit_depth_err_file: 'Drop exactly one audio file.',
+  tool_convert_audio_sample_rate_and_bit_depth_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_convert_audio_sample_rate_and_bit_depth_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_convert_audio_sample_rate_and_bit_depth_example:
+    'Load sample builds a two-second stereo tone at 48 kHz, then converts it to the default 44.1 kHz / 16-bit WAV. Playback never starts automatically.',
+  tool_convert_audio_sample_rate_and_bit_depth_example_title: 'Try a real conversion',
+  tool_convert_audio_sample_rate_and_bit_depth_failed: 'Conversion failed. Try a smaller, valid audio file.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a1:
+    '44.1 kHz is the classic CD and many podcast delivery rates. 48 kHz is common in video and DAW sessions. Pick the rate your destination asks for; both are available here.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a2:
+    '16-bit PCM is the usual distribution depth. 24-bit stores finer amplitude steps and can help before further editing. Quantization is irreversible either way.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a3:
+    'No. Exporting WAV writes PCM samples from what the browser decoded. Missing detail from a lossy encode cannot be restored.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a4:
+    'No. Decoding, resampling and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a5:
+    'No. This job changes sample rate and PCM bit depth. To shrink an MP3 attachment, use the related Reduce an MP3 file size tool instead.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q1: 'Why choose 44.1 kHz versus 48 kHz?',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q2: 'What does bit depth change?',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q3: 'Does a lossy MP3 become lossless after converting to WAV?',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q4: 'Is my audio uploaded to a server?',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q5: 'Is this the same as compressing an MP3 to save space?',
+  tool_convert_audio_sample_rate_and_bit_depth_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_body: 'Pick target Hz and bit depth, convert the whole clip, then listen before you download the WAV.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_item_1: 'Choose an audio file, or select Load sample for a two-second 48 kHz demonstration.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_item_2: 'Set the target sample rate and bit depth, then click Convert.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_item_3: 'Preview the result, check the source and target Hz/bit line, then click Download WAV.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_title: 'How to convert sample rate and bit depth',
+  tool_convert_audio_sample_rate_and_bit_depth_preview: 'Listen to the WAV',
+  tool_convert_audio_sample_rate_and_bit_depth_progress: 'Conversion progress',
+  tool_convert_audio_sample_rate_and_bit_depth_read: 'Read',
+  tool_convert_audio_sample_rate_and_bit_depth_resample: 'Resample',
+  tool_convert_audio_sample_rate_and_bit_depth_result:
+    '{seconds}s · Source {sourceRate} Hz / {sourceBit} → {targetRate} Hz / {targetBit}-bit · WAV {output} KiB · {channels} channel(s)',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_body:
+    'Resampling changes the time-domain sample points. Writing 16-bit or 24-bit PCM quantizes float samples and is not reversible. Keep the original master.',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_item_1:
+    'Choose 22.05, 44.1, 48 or 96 kHz. Default delivery is 44.1 kHz / 16-bit; 48 kHz is common for video; 24-bit stores more amplitude detail as PCM.',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_item_2:
+    'A lossy source (MP3/M4A) stays lossy history even after WAV export. This page does not restore missing spectrum or guarantee transparent listening.',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_item_3:
+    'Accepts one mono/stereo file up to 40 MiB and ten minutes. Tags are not copied. This is not MP3 file-size compression.',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_title: 'Resampling, quantization and limits',
+  tool_convert_audio_sample_rate_and_bit_depth_sample: 'Load sample',
+  tool_convert_audio_sample_rate_and_bit_depth_sample_name: 'two-second-48k-demo',
+  tool_convert_audio_sample_rate_and_bit_depth_sample_rate: 'Target sample rate',
+  tool_convert_audio_sample_rate_and_bit_depth_settings_hint:
+    'Default is 44.1 kHz and 16-bit PCM WAV. Choose 48 kHz for video work or 24-bit when you need more headroom before another edit.',
+  tool_convert_audio_sample_rate_and_bit_depth_source_float: 'float',
+  tool_convert_audio_sample_rate_and_bit_depth_title: 'Convert audio sample rate and bit depth',
+  tool_convert_audio_sample_rate_and_bit_depth_usecase_1: 'Hand a podcast or voiceover in at 44.1 kHz / 16-bit when the editor asks for that delivery spec.',
+  tool_convert_audio_sample_rate_and_bit_depth_usecase_2: 'Match a 48 kHz session file to 44.1 kHz, or keep 48 kHz and export 24-bit PCM for another pass.',
+  tool_convert_audio_sample_rate_and_bit_depth_usecases_title: 'When this helps',
+  tool_convert_audio_sample_rate_and_bit_depth_why_choose_item_1:
+    'See measured source and target sample rate, float-decoded source bit label, duration and output KiB before you save.',
+  tool_convert_audio_sample_rate_and_bit_depth_why_choose_item_2:
+    'Resample with OfflineAudioContext and export little-endian PCM at 16-bit or 24-bit without uploading the file.',
+  tool_convert_audio_sample_rate_and_bit_depth_why_choose_item_3: 'Changing settings or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_convert_audio_sample_rate_and_bit_depth_why_choose_title: 'Why choose our Convert audio sample rate and bit depth tools',
+  tool_convert_audio_sample_rate_and_bit_depth_write: 'Write',
   tool_convert_html_to_pdf_article: 'Paste HTML or load a page URL, strip scripts, preview the result, and export an A4 PDF.',
   tool_convert_html_to_pdf_choose_file: 'Choose a PDF',
   tool_convert_html_to_pdf_choose_files: 'Choose files',

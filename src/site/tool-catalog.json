@@ -1025,6 +1025,28 @@
     "subject": "audio"
   },
   {
+    "slug": "convert-audio-sample-rate-and-bit-depth",
+    "path": "/tools/convert-audio-sample-rate-and-bit-depth",
+    "updatedAt": "2026-09-20T10:40:08.597Z",
+    "launchedAt": "2026-09-20T10:30:28.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_audio_sample_rate_and_bit_depth_title",
+    "homeTitleKey": "tool_convert_audio_sample_rate_and_bit_depth_title",
+    "homeDescKey": "tool_convert_audio_sample_rate_and_bit_depth_desc",
+    "faqPrefix": "tool_convert_audio_sample_rate_and_bit_depth",
+    "related": [
+      "convert-an-mp3-file-to-wav",
+      "reduce-an-mp3-file-size"
+    ],
+    "logo": "/icons/tools/convert-audio-sample-rate-and-bit-depth.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "convert-html-to-pdf",
     "path": "/tools/convert-html-to-pdf",
     "updatedAt": "2026-09-06T15:29:33.408Z",

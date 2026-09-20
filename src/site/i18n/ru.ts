@@ -4170,6 +4170,82 @@ const ru: SiteLangDict = {
   tool_convert_an_mp3_file_to_wav_why_choose_item_2: 'Можно прослушать готовый WAV и увидеть его фактический размер до скачивания.',
   tool_convert_an_mp3_file_to_wav_why_choose_item_3: 'Вся запись преобразуется целиком: не нужно выделять отрезок, затухание не добавляется.',
   tool_convert_an_mp3_file_to_wav_why_choose_title: 'Зачем использовать «Конвертировать файл MP3 в WAV»',
+  tool_convert_audio_sample_rate_and_bit_depth_advanced: 'Частота дискретизации и разрядность',
+  tool_convert_audio_sample_rate_and_bit_depth_article:
+    'Сдача подкаста часто требует 44,1 кГц / 16 бит или WAV 48 кГц. Страница ресемплирует весь клип и пишет PCM 16 или 24 бит. Это не сжатие размера MP3 и не обещает прозрачное звучание после квантования.',
+  tool_convert_audio_sample_rate_and_bit_depth_bit_depth: 'Целевая разрядность',
+  tool_convert_audio_sample_rate_and_bit_depth_choose: 'Выберите аудиофайл',
+  tool_convert_audio_sample_rate_and_bit_depth_clear: 'Очистить',
+  tool_convert_audio_sample_rate_and_bit_depth_convert: 'Преобразовать',
+  tool_convert_audio_sample_rate_and_bit_depth_decode: 'Декодирование',
+  tool_convert_audio_sample_rate_and_bit_depth_desc:
+    'Измените запись на 44,1 или 48 кГц и WAV 16/24 бит. Файлы остаются на устройстве и не загружаются на сервер.',
+  tool_convert_audio_sample_rate_and_bit_depth_description:
+    'Измените запись на 44,1 или 48 кГц и WAV 16/24 бит за три шага: преобразовать, прослушать, скачать. Файлы остаются на устройстве и не загружаются на сервер.',
+  tool_convert_audio_sample_rate_and_bit_depth_done: 'Готово. Прослушайте WAV, затем Скачать WAV.',
+  tool_convert_audio_sample_rate_and_bit_depth_download: 'Скачать WAV',
+  tool_convert_audio_sample_rate_and_bit_depth_elapsed: 'прошло {s} с',
+  tool_convert_audio_sample_rate_and_bit_depth_empty: 'Сначала выберите аудио или загрузите пример.',
+  tool_convert_audio_sample_rate_and_bit_depth_err_decode: 'Браузер не смог декодировать это аудио. Попробуйте другую корректную запись.',
+  tool_convert_audio_sample_rate_and_bit_depth_err_encoder: 'Не удалось записать WAV. Проверьте частоту и разрядность и снова нажмите Преобразовать.',
+  tool_convert_audio_sample_rate_and_bit_depth_err_file: 'Перетащите ровно один аудиофайл.',
+  tool_convert_audio_sample_rate_and_bit_depth_err_format:
+    'Неподдерживаемое или повреждённое аудио. Нужен файл, который браузер умеет декодировать (WAV, MP3, M4A, AAC или OGG).',
+  tool_convert_audio_sample_rate_and_bit_depth_err_limit: 'Файл не больше 40 МиБ или 10 минут, с одним или двумя каналами.',
+  tool_convert_audio_sample_rate_and_bit_depth_example:
+    'Пример создаёт двухсекундный стереотон на 48 кГц и преобразует его в WAV по умолчанию 44,1 кГц / 16 бит. Автовоспроизведение не запускается.',
+  tool_convert_audio_sample_rate_and_bit_depth_example_title: 'Попробуйте реальное преобразование',
+  tool_convert_audio_sample_rate_and_bit_depth_failed: 'Преобразование не удалось. Попробуйте меньший корректный аудиофайл.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a1:
+    '44,1 кГц — классика CD и многих сдач подкаста. 48 кГц обычен в видео и DAW. Берите частоту назначения; обе доступны здесь.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a2:
+    '16 бит — обычная разрядность дистрибуции. 24 бит хранит более мелкие шаги амплитуды и помогает перед следующим монтажом. Квантование необратимо.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a3:
+    'Нет. Экспорт WAV пишет PCM-сэмплы, которые уже декодировал браузер. Потерянные детали lossy-кодирования не возвращаются.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a4:
+    'Нет. Декодирование, ресемплинг и запись WAV идут в браузере на устройстве. Странице нужна сеть при первой загрузке; офлайн не гарантируется.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a5:
+    'Нет. Здесь меняются частота дискретизации и разрядность PCM. Чтобы уменьшить MP3-вложение, используйте связанный инструмент уменьшения размера MP3.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q1: 'Почему 44,1 кГц, а не 48 кГц?',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q2: 'Что меняет разрядность?',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q3: 'Становится ли lossy MP3 без потерь после WAV?',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q4: 'Загружается ли моё аудио на сервер?',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q5: 'Это то же самое, что сжать размер MP3?',
+  tool_convert_audio_sample_rate_and_bit_depth_hint: 'Перетащите один WAV, MP3, M4A, AAC или OGG. Максимум 40 МиБ и 10 минут; моно или стерео.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_body: 'Выберите целевые Гц и биты, преобразуйте весь клип, прослушайте и только потом скачайте WAV.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_item_1: 'Выберите аудиофайл или загрузите пример — две секунды на 48 кГц.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_item_2: 'Задайте целевую частоту и разрядность, затем нажмите Преобразовать.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_item_3: 'Прослушайте результат, проверьте строку Гц/бит источника и цели, затем Скачать WAV.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_title: 'Как изменить частоту дискретизации и разрядность',
+  tool_convert_audio_sample_rate_and_bit_depth_preview: 'Прослушать WAV',
+  tool_convert_audio_sample_rate_and_bit_depth_progress: 'Ход преобразования',
+  tool_convert_audio_sample_rate_and_bit_depth_read: 'Чтение',
+  tool_convert_audio_sample_rate_and_bit_depth_resample: 'Ресемплинг',
+  tool_convert_audio_sample_rate_and_bit_depth_result:
+    '{seconds} с · Источник {sourceRate} Гц / {sourceBit} → {targetRate} Гц / {targetBit} бит · WAV {output} КиБ · {channels} канал(ов)',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_body:
+    'Ресемплинг меняет временные точки отсчётов. Запись PCM 16/24 бит квантует float необратимо. Сохраняйте мастер.',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_item_1:
+    'Доступны 22,05 / 44,1 / 48 / 96 кГц. Сдача по умолчанию — 44,1 кГц / 16 бит; 48 кГц типичен для видео; 24 бит хранит более тонкую амплитуду.',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_item_2:
+    'Потерянный источник (MP3/M4A) остаётся с потерей после экспорта WAV. Утраченный спектр не возвращается.',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_item_3: 'Один моно/стерео файл до 40 МиБ и десяти минут. Теги не копируются. Это не сжатие размера MP3.',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_title: 'Ресемплинг, квантование и ограничения',
+  tool_convert_audio_sample_rate_and_bit_depth_sample: 'Загрузить пример',
+  tool_convert_audio_sample_rate_and_bit_depth_sample_name: 'демо-две-секунды-48к',
+  tool_convert_audio_sample_rate_and_bit_depth_sample_rate: 'Целевая частота дискретизации',
+  tool_convert_audio_sample_rate_and_bit_depth_settings_hint:
+    'По умолчанию 44,1 кГц и PCM WAV 16 бит. Для видео берите 48 кГц; 24 бит даёт больший запас амплитуды перед следующим монтажом.',
+  tool_convert_audio_sample_rate_and_bit_depth_source_float: 'float',
+  tool_convert_audio_sample_rate_and_bit_depth_title: 'Изменить частоту дискретизации и разрядность аудио',
+  tool_convert_audio_sample_rate_and_bit_depth_usecase_1: 'Сдать подкаст или закадр на 44,1 кГц / 16 бит, когда монтажёр требует эту спецификацию.',
+  tool_convert_audio_sample_rate_and_bit_depth_usecase_2: 'Привести материал сессии 48 кГц к 44,1 кГц или оставить 48 кГц и экспортировать PCM 24 бит.',
+  tool_convert_audio_sample_rate_and_bit_depth_usecases_title: 'Когда это помогает',
+  tool_convert_audio_sample_rate_and_bit_depth_why_choose_item_1: 'Перед сохранением видны частота источника и цели, метка float, длительность и КиБ выхода.',
+  tool_convert_audio_sample_rate_and_bit_depth_why_choose_item_2: 'Ресемплинг через OfflineAudioContext и little-endian PCM 16 или 24 бит без загрузки файла.',
+  tool_convert_audio_sample_rate_and_bit_depth_why_choose_item_3: 'Смена настроек или входа сбрасывает старую загрузку, чтобы не сохранить устаревший WAV.',
+  tool_convert_audio_sample_rate_and_bit_depth_why_choose_title: 'Почему выбрать наши инструменты частоты и разрядности',
+  tool_convert_audio_sample_rate_and_bit_depth_write: 'Запись',
   tool_convert_html_to_pdf_article: 'Вставьте HTML или загрузите URL страницы, уберите скрипты и сохраните A4 PDF.',
   tool_convert_html_to_pdf_choose_file: 'Выбрать PDF',
   tool_convert_html_to_pdf_choose_files: 'Выбрать файлы',

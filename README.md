@@ -40,6 +40,7 @@
 - [把音频做成无缝循环](https://onlinefreetools.org/zh/tools/make-a-seamless-audio-loop) - 在本标签页把本地音频选段做等功率交叉淡化，导出可循环 WAV 或 MP3；文件留在设备、不上传服务器
 - [做成 30 秒 MP3 铃声](https://onlinefreetools.org/zh/tools/make-a-30-second-mp3-ringtone) - 在本标签页把本地歌曲裁成约 30 秒并淡化头尾，导出 MP3 铃声；文件留在设备、不上传服务器
 - [压缩 MP3 文件大小](https://onlinefreetools.org/zh/tools/reduce-an-mp3-file-size) - 降低码率、可选单声道，试听并比较实际体积；文件留在本机，不上传服务器
+- [转换音频采样率与位深](https://onlinefreetools.org/zh/tools/convert-audio-sample-rate-and-bit-depth) - 把录音改成 44.1/48 kHz、16/24 位 WAV，试听后下载；文件留在本机，不上传服务器
 - [把 WAV 文件转成 MP3](https://onlinefreetools.org/zh/tools/convert-a-wav-file-to-mp3) - 整段 WAV 转 MP3，选择码率、试听并对比实际文件大小；文件留在设备，不上传服务器
 - [把 MP3 文件转成 WAV](https://onlinefreetools.org/zh/tools/convert-an-mp3-file-to-wav) - 整段 MP3 转 16 位 PCM WAV，选择 44.1 或 48 kHz、试听并对比实际文件大小；文件留在设备，不上传服务器
 - [把 M4A 文件转成 MP3](https://onlinefreetools.org/zh/tools/convert-an-m4a-file-to-mp3) - 将一个 M4A 或 AAC 录音转成 MP3，选择码率、试听并比较实际大小；文件留在设备，不上传服务器
@@ -271,6 +272,7 @@ Below are our available online tools with their links (English version):
 - [Make a seamless audio loop](https://onlinefreetools.org/tools/make-a-seamless-audio-loop) - Wrap a local clip with an equal-power crossfade so it loops without a click, then export WAV or MP3 in this tab — stays on the device, not uploaded
 - [Make a 30-second MP3 ringtone](https://onlinefreetools.org/tools/make-a-30-second-mp3-ringtone) - Cut a local song to about 30 seconds, fade the edges, then export an MP3 ringtone in this tab — stays on the device, not uploaded
 - [Reduce an MP3 file size](https://onlinefreetools.org/tools/reduce-an-mp3-file-size) - Re-encode at a lower bitrate, preview and compare actual savings; audio stays on your device without server upload
+- [Convert audio sample rate and bit depth](https://onlinefreetools.org/tools/convert-audio-sample-rate-and-bit-depth) - Resample to 44.1/48 kHz and export 16/24-bit WAV, preview then download; audio stays on your device without server upload
 - [Convert a WAV file to MP3](https://onlinefreetools.org/tools/convert-a-wav-file-to-mp3) - Convert a complete WAV recording, choose bitrate, preview the MP3 and compare actual sizes; files stay on your device without server upload
 - [Convert an MP3 file to WAV](https://onlinefreetools.org/tools/convert-an-mp3-file-to-wav) - Convert a complete MP3 recording to 16-bit PCM WAV, choose 44.1 or 48 kHz, preview the result and compare actual sizes; files stay on your device without server upload
 - [Convert an M4A file to MP3](https://onlinefreetools.org/tools/convert-an-m4a-file-to-mp3) - Convert one M4A or AAC recording to MP3, choose bitrate, preview the result and compare actual sizes; files stay on your device without server upload

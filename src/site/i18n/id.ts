@@ -4155,6 +4155,84 @@ const id: SiteLangDict = {
   tool_convert_an_mp3_file_to_wav_why_choose_item_3:
     'Header MP3 dan durasi diperiksa sebelum dekode; file yang tidak sesuai menghasilkan pesan kesalahan, bukan unduhan terpotong.',
   tool_convert_an_mp3_file_to_wav_why_choose_title: 'Alasan memakai Ubah file MP3 menjadi WAV',
+  tool_convert_audio_sample_rate_and_bit_depth_advanced: 'Sample rate dan bit depth',
+  tool_convert_audio_sample_rate_and_bit_depth_article:
+    'Spesifikasi unduhan sering meminta 44,1 kHz / 16-bit atau WAV 48 kHz. Halaman ini meresample seluruh klip lalu menulis PCM 16 atau 24-bit. Ini bukan kompres ukuran MP3 dan tidak menjamin hasil dengar transparan setelah kuantisasi.',
+  tool_convert_audio_sample_rate_and_bit_depth_bit_depth: 'Bit depth target',
+  tool_convert_audio_sample_rate_and_bit_depth_choose: 'Pilih file audio',
+  tool_convert_audio_sample_rate_and_bit_depth_clear: 'Hapus',
+  tool_convert_audio_sample_rate_and_bit_depth_convert: 'Konversi',
+  tool_convert_audio_sample_rate_and_bit_depth_decode: 'Dekode',
+  tool_convert_audio_sample_rate_and_bit_depth_desc:
+    'Ubah rekaman ke 44,1 atau 48 kHz dan WAV 16/24-bit. File tetap di perangkat dan tidak diunggah ke server.',
+  tool_convert_audio_sample_rate_and_bit_depth_description:
+    'Ubah rekaman ke 44,1 atau 48 kHz dan WAV 16/24-bit dalam tiga langkah: konversi, pratinjau, unduh. File tetap di perangkat dan tidak diunggah ke server.',
+  tool_convert_audio_sample_rate_and_bit_depth_done: 'Siap. Dengarkan WAV, lalu Unduh WAV.',
+  tool_convert_audio_sample_rate_and_bit_depth_download: 'Unduh WAV',
+  tool_convert_audio_sample_rate_and_bit_depth_elapsed: '{s}s berlalu',
+  tool_convert_audio_sample_rate_and_bit_depth_empty: 'Pilih audio atau muat sampel terlebih dahulu.',
+  tool_convert_audio_sample_rate_and_bit_depth_err_decode: 'Browser tidak bisa mendekode audio ini. Coba rekaman valid lain.',
+  tool_convert_audio_sample_rate_and_bit_depth_err_encoder: 'Tidak bisa menulis WAV. Periksa sample rate dan bit depth, lalu Konversi lagi.',
+  tool_convert_audio_sample_rate_and_bit_depth_err_file: 'Letakkan tepat satu file audio.',
+  tool_convert_audio_sample_rate_and_bit_depth_err_format:
+    'Audio tidak didukung atau rusak. Gunakan file yang bisa didekode browser (WAV, MP3, M4A, AAC, atau OGG).',
+  tool_convert_audio_sample_rate_and_bit_depth_err_limit: 'Gunakan file maksimal 40 MiB atau 10 menit, dengan satu atau dua kanal.',
+  tool_convert_audio_sample_rate_and_bit_depth_example:
+    'Muat sampel membuat nada stereo dua detik pada 48 kHz, lalu mengonversinya ke WAV default 44,1 kHz / 16-bit. Pemutaran tidak dimulai otomatis.',
+  tool_convert_audio_sample_rate_and_bit_depth_example_title: 'Coba konversi nyata',
+  tool_convert_audio_sample_rate_and_bit_depth_failed: 'Konversi gagal. Coba file audio yang lebih kecil dan valid.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a1:
+    '44,1 kHz klasik untuk CD dan banyak pengiriman podcast. 48 kHz umum di video dan DAW. Pilih yang diminta tujuan; keduanya tersedia di sini.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a2:
+    '16-bit adalah kedalaman distribusi biasa. 24-bit menyimpan langkah amplitudo lebih halus dan membantu sebelum edit berikutnya. Kuantisasi tetap tidak dapat dibalik.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a3:
+    'Tidak. Mengekspor WAV hanya menulis sampel PCM yang sudah didekode browser. Detail yang hilang dari encode lossy tidak kembali.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a4:
+    'Tidak. Dekode, resample, dan penulisan WAV berjalan di browser pada perangkat Anda. Halaman perlu jaringan saat pertama dimuat; penggunaan offline tidak dijamin.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_a5:
+    'Tidak. Pekerjaan ini mengubah sample rate dan bit depth PCM. Untuk mengecilkan lampiran MP3, gunakan alat terkait mengecilkan ukuran MP3.',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q1: 'Mengapa 44,1 kHz versus 48 kHz?',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q2: 'Apa yang diubah bit depth?',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q3: 'Apakah MP3 lossy menjadi lossless setelah ke WAV?',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q4: 'Apakah audio saya diunggah ke server?',
+  tool_convert_audio_sample_rate_and_bit_depth_faq_q5: 'Apakah ini sama dengan mengompres ukuran MP3?',
+  tool_convert_audio_sample_rate_and_bit_depth_hint: 'Letakkan satu WAV, MP3, M4A, AAC, atau OGG. Maksimum 40 MiB dan 10 menit; mono atau stereo.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_body: 'Pilih Hz dan bit target, konversi seluruh klip, dengarkan, lalu unduh WAV.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_item_1: 'Pilih file audio, atau Muat sampel untuk demo dua detik pada 48 kHz.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_item_2: 'Atur sample rate dan bit depth target, lalu klik Konversi.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_item_3: 'Pratinjau hasil, periksa baris Hz/bit sumber dan target, lalu Unduh WAV.',
+  tool_convert_audio_sample_rate_and_bit_depth_how_title: 'Cara mengonversi sample rate dan bit depth',
+  tool_convert_audio_sample_rate_and_bit_depth_preview: 'Dengarkan WAV',
+  tool_convert_audio_sample_rate_and_bit_depth_progress: 'Progres konversi',
+  tool_convert_audio_sample_rate_and_bit_depth_read: 'Baca',
+  tool_convert_audio_sample_rate_and_bit_depth_resample: 'Resample',
+  tool_convert_audio_sample_rate_and_bit_depth_result:
+    '{seconds}s · Sumber {sourceRate} Hz / {sourceBit} → {targetRate} Hz / {targetBit}-bit · WAV {output} KiB · {channels} kanal',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_body:
+    'Resampling mengubah titik sampel domain waktu. Menulis PCM 16/24-bit mengkuantisasi sampel float dan tidak dapat dibalik. Simpan master asli.',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_item_1:
+    'Pilih 22,05, 44,1, 48, atau 96 kHz. Default pengiriman 44,1 kHz / 16-bit; 48 kHz umum untuk video; 24-bit menyimpan detail amplitudo lebih halus.',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_item_2:
+    'Sumber lossy (MP3/M4A) tetap punya riwayat lossy setelah ekspor WAV. Spektrum yang hilang tidak kembali.',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_item_3:
+    'Menerima satu file mono/stereo hingga 40 MiB dan sepuluh menit. Tag tidak disalin. Ini bukan kompres ukuran MP3.',
+  tool_convert_audio_sample_rate_and_bit_depth_rules_title: 'Resampling, kuantisasi, dan batas',
+  tool_convert_audio_sample_rate_and_bit_depth_sample: 'Muat sampel',
+  tool_convert_audio_sample_rate_and_bit_depth_sample_name: 'demo-dua-detik-48k',
+  tool_convert_audio_sample_rate_and_bit_depth_sample_rate: 'Sample rate target',
+  tool_convert_audio_sample_rate_and_bit_depth_settings_hint:
+    'Default: 44,1 kHz dan WAV PCM 16-bit. Pilih 48 kHz untuk video, atau 24-bit jika butuh headroom sebelum edit berikutnya.',
+  tool_convert_audio_sample_rate_and_bit_depth_source_float: 'float',
+  tool_convert_audio_sample_rate_and_bit_depth_title: 'Mengonversi sample rate dan bit depth audio',
+  tool_convert_audio_sample_rate_and_bit_depth_usecase_1: 'Menyerahkan podcast atau voiceover pada 44,1 kHz / 16-bit sesuai spesifikasi editor.',
+  tool_convert_audio_sample_rate_and_bit_depth_usecase_2: 'Menyesuaikan materi sesi 48 kHz ke 44,1 kHz, atau tetap 48 kHz dan mengekspor PCM 24-bit.',
+  tool_convert_audio_sample_rate_and_bit_depth_usecases_title: 'Kapan ini membantu',
+  tool_convert_audio_sample_rate_and_bit_depth_why_choose_item_1: 'Sebelum menyimpan, lihat Hz sumber dan target, label float, durasi, dan KiB keluaran.',
+  tool_convert_audio_sample_rate_and_bit_depth_why_choose_item_2:
+    'Resample dengan OfflineAudioContext dan ekspor PCM little-endian 16 atau 24-bit tanpa mengunggah file.',
+  tool_convert_audio_sample_rate_and_bit_depth_why_choose_item_3: 'Mengubah pengaturan atau input menghapus unduhan lama agar WAV usang tidak tersimpan.',
+  tool_convert_audio_sample_rate_and_bit_depth_why_choose_title: 'Mengapa memilih alat sample rate dan bit depth kami',
+  tool_convert_audio_sample_rate_and_bit_depth_write: 'Tulis',
   tool_convert_html_to_pdf_article: 'Tempel HTML atau muat URL halaman, buang skrip, lalu ekspor PDF A4.',
   tool_convert_html_to_pdf_choose_file: 'Pilih PDF',
   tool_convert_html_to_pdf_choose_files: 'Pilih berkas',
