@@ -4019,10 +4019,82 @@ const ru: SiteLangDict = {
   tool_convert_a_wav_file_to_mp3_why_choose_item_2: 'Можно прослушать готовый MP3 и увидеть его фактический размер до скачивания.',
   tool_convert_a_wav_file_to_mp3_why_choose_item_3: 'Вся запись преобразуется целиком: не нужно выделять отрезок, затухание не добавляется.',
   tool_convert_a_wav_file_to_mp3_why_choose_title: 'Зачем использовать «Конвертировать файл WAV в MP3»',
-  tool_convert_an_m4a_file_to_mp3_desc: 'Преобразуйте запись M4A или AAC в MP3 без отправки файла на сервер.',
+  tool_convert_an_m4a_file_to_mp3_advanced: 'Дополнительные настройки',
+  tool_convert_an_m4a_file_to_mp3_article:
+    'Голосовая заметка M4A может не открыться у получателя. Создайте копию MP3 из всей записи и проверьте звук перед отправкой. Повторное сжатие AAC в MP3 приводит к потерям: больший размер не восстанавливает исходное качество. Оригинал пригодится для монтажа.',
+  tool_convert_an_m4a_file_to_mp3_bitrate: 'Битрейт MP3',
+  tool_convert_an_m4a_file_to_mp3_choose: 'Выбрать M4A или AAC',
+  tool_convert_an_m4a_file_to_mp3_clear: 'Очистить',
+  tool_convert_an_m4a_file_to_mp3_convert: 'Преобразовать в MP3',
+  tool_convert_an_m4a_file_to_mp3_decode: 'Декодирование',
+  tool_convert_an_m4a_file_to_mp3_desc: 'Сделайте MP3 из записи M4A или AAC. Аудио остаётся на вашем устройстве и не отправляется на сервер.',
   tool_convert_an_m4a_file_to_mp3_description:
-    'Конвертируйте файл M4A в MP3 в браузере: выберите M4A или AAC, преобразуйте, прослушайте и скачайте. Файл остаётся на устройстве и не отправляется на сервер.',
+    'Конвертируйте M4A в MP3 без отправки аудио на сервер. Шаги: выбрать M4A или AAC, преобразовать, прослушать и скачать. Файл остаётся на устройстве.',
+  tool_convert_an_m4a_file_to_mp3_done: 'Готово. Прослушайте результат и нажмите «Скачать MP3».',
+  tool_convert_an_m4a_file_to_mp3_download: 'Скачать MP3',
+  tool_convert_an_m4a_file_to_mp3_elapsed: 'Прошло: {s} с',
+  tool_convert_an_m4a_file_to_mp3_empty: 'Сначала выберите запись или загрузите пример.',
+  tool_convert_an_m4a_file_to_mp3_encode: 'Создание MP3',
+  tool_convert_an_m4a_file_to_mp3_err_decode: 'Браузер не смог декодировать звук. Попробуйте свежий браузер или экспорт M4A с AAC без защиты.',
+  tool_convert_an_m4a_file_to_mp3_err_encoder: 'Не удалось загрузить кодировщик MP3. Проверьте соединение и повторите преобразование.',
+  tool_convert_an_m4a_file_to_mp3_err_file: 'Перетащите только один M4A или AAC.',
+  tool_convert_an_m4a_file_to_mp3_err_format:
+    'Файл повреждён или не поддерживается. Нужен M4A только с аудио AAC/ALAC либо AAC ADTS. Видео, защищённые дорожки и фрагментированный MP4 не принимаются.',
+  tool_convert_an_m4a_file_to_mp3_err_limit: 'Превышены 40 MiB или десять минут, либо запись не моно/стерео.',
+  tool_convert_an_m4a_file_to_mp3_err_sample: 'Пример не загрузился. Проверьте соединение и нажмите «Загрузить пример».',
+  tool_convert_an_m4a_file_to_mp3_example:
+    'При открытии с этого сайта загружается пятисекундный стереосигнал AAC M4A. При 192 kbps получается MP3 около 120 KiB. Кнопка «Загрузить пример» повторяет операцию. Автоматического воспроизведения нет.',
+  tool_convert_an_m4a_file_to_mp3_example_title: 'Пять секунд настоящего M4A',
+  tool_convert_an_m4a_file_to_mp3_failed: 'Преобразование не удалось. Попробуйте более короткую M4A или AAC без защиты.',
+  tool_convert_an_m4a_file_to_mp3_faq_a1:
+    'Нет. MP3 — сжатие с потерями даже при 320 kbps. Исходный AAC тоже мог потерять детали. Увеличение выходного битрейта их не восстанавливает, поэтому сохраните M4A.',
+  tool_convert_an_m4a_file_to_mp3_faq_a2:
+    'Возможны нехватка памяти или неподдерживаемый кодек. Защищённые, многоканальные, видео- и фрагментированные файлы отклоняются. Проверьте пример и короткую AAC-запись без защиты в актуальном браузере.',
+  tool_convert_an_m4a_file_to_mp3_faq_a3:
+    'Да, для AAC ADTS и M4A с AAC, если браузер декодирует запись. M4A — контейнер, в нём бывает и ALAC. Переименование расширения не преобразует содержимое.',
+  tool_convert_an_m4a_file_to_mp3_faq_a4:
+    'Нет. Она остаётся на устройстве, декодирование и кодирование выполняет браузер. Для первоначальной загрузки страницы, примера и кодировщика нужен интернет. Работа офлайн не гарантируется.',
+  tool_convert_an_m4a_file_to_mp3_faq_a5:
+    'Здесь один локальный файл целиком превращается в один MP3. Для фрагмента используйте связанный инструмент обрезки. Видео, ссылки и плейлисты не поддерживаются.',
+  tool_convert_an_m4a_file_to_mp3_faq_q1: 'Можно ли получить MP3 без потери качества?',
+  tool_convert_an_m4a_file_to_mp3_faq_q2: 'Почему M4A не конвертируется?',
+  tool_convert_an_m4a_file_to_mp3_faq_q3: 'Подходит ли инструмент для AAC в MP3?',
+  tool_convert_an_m4a_file_to_mp3_faq_q4: 'Запись отправляется на сервер?',
+  tool_convert_an_m4a_file_to_mp3_faq_q5: 'Можно обрезать запись или обработать несколько?',
+  tool_convert_an_m4a_file_to_mp3_hint:
+    'Один файл до 40 MiB и 10 минут. Моно/стерео M4A без видео или AAC ADTS; поддержка кодека зависит от браузера.',
+  tool_convert_an_m4a_file_to_mp3_how_body:
+    'Если нужен именно MP3, преобразуйте запись целиком. Выделять фрагмент не требуется, исходный M4A остаётся у вас.',
+  tool_convert_an_m4a_file_to_mp3_how_item_1: 'Нажмите «Выбрать M4A или AAC» либо «Загрузить пример» для проверки на настоящем M4A.',
+  tool_convert_an_m4a_file_to_mp3_how_item_2: 'При необходимости измените битрейт в дополнительных настройках, затем нажмите «Преобразовать в MP3».',
+  tool_convert_an_m4a_file_to_mp3_how_item_3: 'Послушайте результат, сравните размеры и нажмите «Скачать MP3».',
+  tool_convert_an_m4a_file_to_mp3_how_title: 'Как подготовить запись для получателя',
+  tool_convert_an_m4a_file_to_mp3_preview: 'Прослушать MP3',
+  tool_convert_an_m4a_file_to_mp3_progress: 'Ход преобразования',
+  tool_convert_an_m4a_file_to_mp3_read: 'Чтение записи',
+  tool_convert_an_m4a_file_to_mp3_result:
+    'Декодировано {seconds} с · Вход {input} KiB → MP3 {output} KiB · {kbps} kbps · 44,1 kHz · Каналов: {channels}',
+  tool_convert_an_m4a_file_to_mp3_rules_body:
+    'Примерный размер в байтах: секунды × kbps × 1000 ÷ 8. Кодировщик добавляет немного заполнения, поэтому ориентируйтесь на измеренный размер результата.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_1:
+    'Для речи попробуйте 128 kbps, для обычной отправки 192, для музыки 320. Утраченные детали не вернутся; MP3 может оказаться больше исходного M4A.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_2:
+    'Выход — 44,1 kHz, один или два канала. Теги, обложка и главы не копируются. Заполнение может немного увеличить длительность воспроизведения.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_3:
+    'Один M4A только с AAC/ALAC либо AAC ADTS, максимум 40 MiB и десять минут. Кодек должен поддерживаться браузером. Без DRM, видео, фрагментированного MP4, объёмного звука и пакетной обработки.',
+  tool_convert_an_m4a_file_to_mp3_rules_title: 'Битрейт и ограничения',
+  tool_convert_an_m4a_file_to_mp3_sample: 'Загрузить пример',
+  tool_convert_an_m4a_file_to_mp3_sample_name: 'пример-M4A-пять-секунд',
+  tool_convert_an_m4a_file_to_mp3_settings_hint:
+    'По умолчанию 192 kbps. 128 экономит место, 320 выделяет больше данных на кодирование. Выход 44,1 kHz, исходное моно/стерео.',
   tool_convert_an_m4a_file_to_mp3_title: 'Конвертировать файл M4A в MP3',
+  tool_convert_an_m4a_file_to_mp3_usecase_1: 'Отправить заметку диктофона телефона человеку, которому нужен MP3.',
+  tool_convert_an_m4a_file_to_mp3_usecase_2: 'Подготовить MP3 из интервью AAC, сохранив исходник для будущего монтажа.',
+  tool_convert_an_m4a_file_to_mp3_usecases_title: 'Когда пригодится',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_1: 'Можно прослушать именно созданный MP3 и узнать его размер до скачивания.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_2: 'Встроенный пример M4A проходит то же декодирование и преобразование, что и ваш файл.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_3: 'Контейнер и дорожки проверяются до декодирования; принятая запись преобразуется целиком.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_title: 'Зачем использовать «Конвертировать файл M4A в MP3»',
   tool_convert_an_mp3_file_to_wav_advanced: 'Дополнительные настройки',
   tool_convert_an_mp3_file_to_wav_article:
     'Запись MP3 может оказаться слишком большой для вложения. Создайте копию WAV и сравните фактические размеры файлов. Перед скачиванием можно прослушать именно полученный WAV. Обрабатывается вся запись без обрезки и затухания. Для дальнейшего монтажа сохраните MP3: WAV теряет часть звуковых данных.',
@@ -11318,6 +11390,86 @@ const ru: SiteLangDict = {
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_3: 'Последний абзац остаётся видимым: можно спокойно закончить фразу и затем остановить запись.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_4: 'Текст и звук остаются в браузере на вашем устройстве и не отправляются на наши серверы.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_title: 'Зачем использовать «Запишите озвучку с суфлёром»',
+  tool_reduce_an_mp3_file_size_advanced: 'Настройки сжатия',
+  tool_reduce_an_mp3_file_size_article:
+    'MP3 уже сжат с потерями. Чтобы уменьшить его ещё сильнее, придётся пожертвовать дополнительными деталями звука. Сохраните оригинал: инструмент обрабатывает запись целиком и показывает фактический размер новой копии, даже если она оказалась больше.',
+  tool_reduce_an_mp3_file_size_bitrate: 'Общий битрейт MP3',
+  tool_reduce_an_mp3_file_size_channels: 'Каналы на выходе',
+  tool_reduce_an_mp3_file_size_choose: 'Выбрать файл MP3',
+  tool_reduce_an_mp3_file_size_clear: 'Очистить',
+  tool_reduce_an_mp3_file_size_convert: 'Сжать MP3',
+  tool_reduce_an_mp3_file_size_decode: 'Декодирование аудио',
+  tool_reduce_an_mp3_file_size_desc:
+    'Сожмите MP3 для отправки и сравните размеры. Аудио остаётся на вашем устройстве и не загружается на сервер.',
+  tool_reduce_an_mp3_file_size_description:
+    'Сжать MP3 за три шага: снизьте битрейт, прослушайте и скачайте копию. Файл остаётся на вашем устройстве, без загрузки на сервер.',
+  tool_reduce_an_mp3_file_size_done: 'Готово. Прослушайте, проверьте размер и нажмите «Скачать MP3».',
+  tool_reduce_an_mp3_file_size_download: 'Скачать MP3',
+  tool_reduce_an_mp3_file_size_elapsed: 'Прошло {s} с',
+  tool_reduce_an_mp3_file_size_empty: 'Сначала выберите MP3 или загрузите пример.',
+  tool_reduce_an_mp3_file_size_encode: 'Кодирование MP3',
+  tool_reduce_an_mp3_file_size_err_decode: 'Браузер не смог декодировать этот MP3. Попробуйте другую исправную запись.',
+  tool_reduce_an_mp3_file_size_err_encoder: 'Не удалось загрузить кодировщик MP3. Проверьте подключение и повторите попытку.',
+  tool_reduce_an_mp3_file_size_err_file: 'Перетащите только один файл MP3.',
+  tool_reduce_an_mp3_file_size_err_format:
+    'MP3 повреждён или не поддерживается. Используйте стандартный MPEG Layer III. Свободный формат, смена числа каналов и необычные теги в конце не поддерживаются.',
+  tool_reduce_an_mp3_file_size_err_limit: 'Лимит: 40 MiB, десять минут, один или два канала.',
+  tool_reduce_an_mp3_file_size_example:
+    'Пример создаёт трёхсекундный стерео MP3 при 192 kbps, около 71 KiB, затем сжимает до 128 kbps и примерно 48 KiB. Точные размеры и процент экономии появятся выше. Звук автоматически не включается.',
+  tool_reduce_an_mp3_file_size_example_title: 'Проверка на коротком примере',
+  tool_reduce_an_mp3_file_size_failed: 'Не удалось сжать файл. Попробуйте исправный MP3 меньшего размера.',
+  tool_reduce_an_mp3_file_size_faq_a1:
+    'Не путём снижения битрейта. Это удаляет ещё больше деталей из уже сжатого звука. Сохраните оригинал и прослушайте копию. Здесь меняется размер файла, а не громкость или динамический диапазон.',
+  tool_reduce_an_mp3_file_size_faq_a2:
+    'У исходника уже может быть меньший битрейт. Попробуйте 64 или 96 kbps. Инструмент показывает реальный размер, но не гарантирует точное число МБ или уменьшение файла.',
+  tool_reduce_an_mp3_file_size_faq_a3:
+    'Нет, если общий битрейт одинаков. Для речи моно иногда позволяет выбрать меньший битрейт, но смешивание каналов может изменить звучание.',
+  tool_reduce_an_mp3_file_size_faq_a4:
+    'Нет. Аудио остаётся в браузере на вашем устройстве и не загружается на сервер. Для первой загрузки страницы и кодировщика нужна сеть; работа офлайн не гарантируется.',
+  tool_reduce_an_mp3_file_size_faq_a5:
+    'За один раз обрабатывается один MP3 целиком. Для WAV используйте связанный конвертер в MP3, для фрагментов — инструмент обрезки. Ссылки на видео и пакетная обработка не поддерживаются.',
+  tool_reduce_an_mp3_file_size_faq_q1: 'Можно уменьшить MP3 без потери качества?',
+  tool_reduce_an_mp3_file_size_faq_q2: 'Почему файл стал больше? Можно задать точный размер в МБ?',
+  tool_reduce_an_mp3_file_size_faq_q3: 'Моно занимает вдвое меньше места?',
+  tool_reduce_an_mp3_file_size_faq_q4: 'Запись отправляется на сервер?',
+  tool_reduce_an_mp3_file_size_faq_q5: 'Можно загрузить WAV, видео или несколько записей?',
+  tool_reduce_an_mp3_file_size_hint: 'Перетащите один MP3: до 40 MiB и 10 минут, моно или стерео.',
+  tool_reduce_an_mp3_file_size_how_body:
+    'Оставьте исходную запись отдельно. Создайте копию с меньшим битрейтом и убедитесь, что её размер и качество звука вам подходят.',
+  tool_reduce_an_mp3_file_size_how_item_1: 'Нажмите «Выбрать файл MP3» или «Загрузить пример», чтобы попробовать запись длиной три секунды.',
+  tool_reduce_an_mp3_file_size_how_item_2: 'При необходимости откройте «Настройки сжатия», снизьте битрейт и нажмите «Сжать MP3».',
+  tool_reduce_an_mp3_file_size_how_item_3: 'Прослушайте результат и сравните размеры. Нажмите «Скачать MP3» либо повторите с меньшим битрейтом.',
+  tool_reduce_an_mp3_file_size_how_title: 'Как сжать MP3 перед отправкой',
+  tool_reduce_an_mp3_file_size_keep: 'Сохранить исходные каналы',
+  tool_reduce_an_mp3_file_size_mono: 'Моно (смешать левый и правый)',
+  tool_reduce_an_mp3_file_size_not_smaller:
+    'Копия не стала меньше. Снизьте битрейт или оставьте оригинал, чтобы избежать ещё одного кодирования с потерями.',
+  tool_reduce_an_mp3_file_size_preview: 'Прослушать сжатый MP3',
+  tool_reduce_an_mp3_file_size_progress: 'Ход сжатия',
+  tool_reduce_an_mp3_file_size_read: 'Чтение MP3',
+  tool_reduce_an_mp3_file_size_result: '{seconds} с · Оригинал {input} KiB → MP3 {output} KiB · {kbps} kbps · 44.1 kHz · Каналов: {channels}',
+  tool_reduce_an_mp3_file_size_rules_body:
+    'Примерный размер в байтах = длительность в секундах × kbps × 1000 ÷ 8. Кодировщик добавляет небольшое заполнение; в результате указан измеренный размер.',
+  tool_reduce_an_mp3_file_size_rules_item_1:
+    'Для речи попробуйте 64 или 96 kbps. Для музыки начните со 128 или 192 kbps и оцените на слух. При любом выборе повторное кодирование MP3 вносит потери.',
+  tool_reduce_an_mp3_file_size_rules_item_2:
+    'Моно — среднее левого и правого каналов. При одинаковом общем битрейте размер близок к стерео; для большей экономии снижайте битрейт. Противофазные сигналы при смешивании могут взаимно подавляться.',
+  tool_reduce_an_mp3_file_size_rules_item_3:
+    'На выходе MP3 с частотой 44.1 kHz, без обложки и тегов. Заполнение может немного увеличить длительность. Поддерживается стандартный Layer III, моно/стерео, до 40 MiB и десяти минут; повреждённые файлы, свободный формат и смена каналов отклоняются.',
+  tool_reduce_an_mp3_file_size_rules_title: 'Как выбрать битрейт и каналы',
+  tool_reduce_an_mp3_file_size_sample: 'Загрузить пример',
+  tool_reduce_an_mp3_file_size_sample_name: 'трёхсекундный-пример',
+  tool_reduce_an_mp3_file_size_saved: 'Размер уменьшен на {percent}%.',
+  tool_reduce_an_mp3_file_size_settings_hint:
+    'По умолчанию — 128 kbps с сохранением каналов. Для речи попробуйте 64 или 96 kbps. При одинаковом общем битрейте моно не уменьшает размер вдвое.',
+  tool_reduce_an_mp3_file_size_title: 'Уменьшить размер MP3',
+  tool_reduce_an_mp3_file_size_usecase_1: 'Уменьшить голосовую запись для вложения в письмо, сохранив разговор целиком.',
+  tool_reduce_an_mp3_file_size_usecase_2: 'Отправить запись репетиции по медленному соединению, оставив исходник отдельно.',
+  tool_reduce_an_mp3_file_size_usecases_title: 'Когда это пригодится',
+  tool_reduce_an_mp3_file_size_why_choose_item_1: 'Показывает измеренный размер обеих версий и предупреждает, если новая копия больше.',
+  tool_reduce_an_mp3_file_size_why_choose_item_2: 'Сохраняет всю запись; можно оставить стерео или смешать каналы в моно.',
+  tool_reduce_an_mp3_file_size_why_choose_item_3: 'Даёт прослушать закодированный файл до скачивания.',
+  tool_reduce_an_mp3_file_size_why_choose_title: 'Возможности инструмента «Уменьшить размер MP3»',
   tool_remove_silence_from_a_recording_advanced: 'Дополнительные настройки (по желанию)',
   tool_remove_silence_from_a_recording_article:
     'Удалите тишину из записи на этой вкладке: откройте локальный файл, нажмите Удалить тишину и экспортируйте WAV или MP3. Длинные паузы вырезаются, речь сшивается в один короткий файл, без загрузки на сервер.',

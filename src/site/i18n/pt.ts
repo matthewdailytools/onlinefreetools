@@ -4030,10 +4030,83 @@ const pt: SiteLangDict = {
   tool_convert_a_wav_file_to_mp3_why_choose_item_3:
     'O cabeçalho e a duração são verificados antes da decodificação, com aviso claro para arquivos incompatíveis.',
   tool_convert_a_wav_file_to_mp3_why_choose_title: 'Por que usar Converter um arquivo WAV para MP3',
-  tool_convert_an_m4a_file_to_mp3_desc: 'Converta uma gravação M4A ou AAC em MP3 sem enviar o arquivo ao servidor.',
+  tool_convert_an_m4a_file_to_mp3_advanced: 'Configurações avançadas (opcional)',
+  tool_convert_an_m4a_file_to_mp3_article:
+    'Uma nota de voz M4A pode não abrir no reprodutor de quem a recebe. Crie uma cópia MP3 completa e confira o áudio antes de enviar. Converter AAC em MP3 acrescenta compressão com perdas; guarde o original.',
+  tool_convert_an_m4a_file_to_mp3_bitrate: 'Taxa de bits do MP3',
+  tool_convert_an_m4a_file_to_mp3_choose: 'Escolher arquivo M4A ou AAC',
+  tool_convert_an_m4a_file_to_mp3_clear: 'Limpar',
+  tool_convert_an_m4a_file_to_mp3_convert: 'Converter em MP3',
+  tool_convert_an_m4a_file_to_mp3_decode: 'Decodificando áudio',
+  tool_convert_an_m4a_file_to_mp3_desc:
+    'Transforme uma gravação M4A ou AAC em MP3 no próprio dispositivo, sem enviar seu áudio a um servidor.',
   tool_convert_an_m4a_file_to_mp3_description:
-    'Converta um arquivo M4A para MP3 no navegador: escolha M4A ou AAC, converta, ouça e baixe. O arquivo fica no dispositivo e não é enviado ao servidor.',
-  tool_convert_an_m4a_file_to_mp3_title: 'Converter um arquivo M4A para MP3',
+    'Converter um arquivo M4A em MP3 sem enviar seu áudio: veja os passos, escolha a taxa de bits, ouça o resultado e baixe uma cópia da gravação.',
+  tool_convert_an_m4a_file_to_mp3_done: 'Pronto. Ouça o resultado e baixe o MP3.',
+  tool_convert_an_m4a_file_to_mp3_download: 'Baixar MP3',
+  tool_convert_an_m4a_file_to_mp3_elapsed: 'Tempo decorrido: {s}s',
+  tool_convert_an_m4a_file_to_mp3_empty: 'Escolha uma gravação ou carregue o exemplo.',
+  tool_convert_an_m4a_file_to_mp3_encode: 'Codificando MP3',
+  tool_convert_an_m4a_file_to_mp3_err_decode:
+    'Este navegador não conseguiu decodificar a gravação. Tente um navegador atualizado ou exporte M4A AAC sem proteção.',
+  tool_convert_an_m4a_file_to_mp3_err_encoder: 'Não foi possível carregar o codificador MP3. Confira a conexão e tente converter novamente.',
+  tool_convert_an_m4a_file_to_mp3_err_file: 'Solte exatamente um arquivo M4A ou AAC.',
+  tool_convert_an_m4a_file_to_mp3_err_format:
+    'Áudio incompatível ou danificado. Use M4A apenas de áudio com AAC/ALAC ou AAC ADTS. Vídeo, faixas protegidas e MP4 fragmentado não são aceitos.',
+  tool_convert_an_m4a_file_to_mp3_err_limit: 'A gravação excede 40 MiB ou 10 minutos, ou não é mono/estéreo.',
+  tool_convert_an_m4a_file_to_mp3_err_sample: 'Não foi possível carregar o exemplo. Confira a conexão e tente novamente.',
+  tool_convert_an_m4a_file_to_mp3_example:
+    'Ao abrir, um tom AAC M4A estéreo de cinco segundos é carregado deste site e convertido a 192 kbps, gerando cerca de 120 KiB de MP3. Carregar exemplo repete o teste. A prévia não toca automaticamente.',
+  tool_convert_an_m4a_file_to_mp3_example_title: 'Exemplo com M4A real',
+  tool_convert_an_m4a_file_to_mp3_failed: 'A conversão falhou. Tente uma gravação M4A ou AAC mais curta e sem proteção.',
+  tool_convert_an_m4a_file_to_mp3_faq_a1:
+    'Sim, AAC ADTS e M4A apenas de áudio com AAC, desde que o navegador decodifique. M4A também pode conter ALAC; o suporte depende do navegador. Trocar a extensão não converte o áudio.',
+  tool_convert_an_m4a_file_to_mp3_faq_a2:
+    'Não. A decodificação e a codificação ocorrem no dispositivo. A página, o exemplo e o codificador precisam de conexão para o carregamento inicial; o uso offline não é garantido.',
+  tool_convert_an_m4a_file_to_mp3_faq_a3:
+    'Pode faltar suporte ao codec ou memória. Arquivos protegidos, com vídeo, fragmentados ou multicanais são recusados. Tente uma gravação AAC menor, sem proteção, e o exemplo num navegador atualizado.',
+  tool_convert_an_m4a_file_to_mp3_faq_a4:
+    'Não. MP3 tem perdas, mesmo a 320 kbps. Fontes AAC podem já ter perdido detalhes. Aumentar a taxa de bits não os recupera; guarde o original M4A.',
+  tool_convert_an_m4a_file_to_mp3_faq_a5:
+    'Esta ferramenta converte uma gravação local inteira por vez. Para um trecho, use o cortador de áudio relacionado. Não aceita vídeos, links ou listas de reprodução.',
+  tool_convert_an_m4a_file_to_mp3_faq_q1: 'Também converte AAC em MP3?',
+  tool_convert_an_m4a_file_to_mp3_faq_q2: 'O arquivo é enviado para algum servidor?',
+  tool_convert_an_m4a_file_to_mp3_faq_q3: 'Por que um M4A válido falha?',
+  tool_convert_an_m4a_file_to_mp3_faq_q4: 'A conversão preserva toda a qualidade?',
+  tool_convert_an_m4a_file_to_mp3_faq_q5: 'Posso cortar ou converter vários arquivos?',
+  tool_convert_an_m4a_file_to_mp3_hint:
+    'Um arquivo, até 40 MiB e 10 minutos. M4A de áudio ou AAC ADTS, mono/estéreo; a decodificação depende do navegador.',
+  tool_convert_an_m4a_file_to_mp3_how_body: 'Crie uma cópia da gravação inteira para um reprodutor ou serviço que exige MP3.',
+  tool_convert_an_m4a_file_to_mp3_how_item_1: 'Escolha um M4A ou AAC, ou carregue o exemplo M4A real.',
+  tool_convert_an_m4a_file_to_mp3_how_item_2: 'Mantenha a taxa padrão ou altere as configurações avançadas e clique em Converter em MP3.',
+  tool_convert_an_m4a_file_to_mp3_how_item_3: 'Ouça o resultado, compare os tamanhos medidos e baixe o MP3.',
+  tool_convert_an_m4a_file_to_mp3_how_title: 'Como transformar sua gravação em MP3',
+  tool_convert_an_m4a_file_to_mp3_preview: 'Ouvir o MP3',
+  tool_convert_an_m4a_file_to_mp3_progress: 'Progresso da conversão',
+  tool_convert_an_m4a_file_to_mp3_read: 'Lendo gravação',
+  tool_convert_an_m4a_file_to_mp3_result:
+    '{seconds}s de áudio decodificado · Entrada {input} KiB → MP3 {output} KiB · {kbps} kbps · 44,1 kHz · {channels} canal(is)',
+  tool_convert_an_m4a_file_to_mp3_rules_body:
+    'Tamanho aproximado em bytes = duração em segundos × taxa em kbps × 1000 ÷ 8. O tamanho mostrado é medido; a codificação acrescenta preenchimento.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_1:
+    'Experimente 128 kbps para voz, 192 para uso geral e 320 para música. Nenhuma opção recupera detalhes perdidos. O MP3 pode ficar maior que o M4A.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_2:
+    'Saída a 44,1 kHz com um ou dois canais. Tags, capa e capítulos não são copiados. O preenchimento do codificador pode aumentar um pouco a duração.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_3:
+    'Um M4A de áudio AAC/ALAC ou AAC ADTS, até 40 MiB e 10 minutos. Suporte a codecs varia por navegador. Sem DRM, vídeo, MP4 fragmentado, som multicanal ou lotes.',
+  tool_convert_an_m4a_file_to_mp3_rules_title: 'Taxa de bits e limites',
+  tool_convert_an_m4a_file_to_mp3_sample: 'Carregar exemplo',
+  tool_convert_an_m4a_file_to_mp3_sample_name: 'exemplo-m4a-cinco-segundos',
+  tool_convert_an_m4a_file_to_mp3_settings_hint:
+    'Padrão: 192 kbps. 128 ocupa menos espaço; 320 usa mais dados na codificação. Saída: 44,1 kHz, mantendo os canais mono/estéreo.',
+  tool_convert_an_m4a_file_to_mp3_title: 'Converter um arquivo M4A em MP3',
+  tool_convert_an_m4a_file_to_mp3_usecase_1: 'Enviar uma nota de voz M4A do celular para alguém que precisa de MP3.',
+  tool_convert_an_m4a_file_to_mp3_usecase_2: 'Criar um anexo MP3 de uma entrevista AAC, mantendo o original para edição.',
+  tool_convert_an_m4a_file_to_mp3_usecases_title: 'Quando usar',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_1: 'O exemplo M4A usa a mesma decodificação e conversão do seu arquivo.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_2: 'A prévia permite conferir o áudio convertido antes de salvar.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_3: 'Arquivos com vídeo ou contêineres incompatíveis são recusados antes da decodificação.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_title: 'Por que escolher nossa ferramenta para converter M4A em MP3',
   tool_convert_an_mp3_file_to_wav_advanced: 'Configurações opcionais',
   tool_convert_an_mp3_file_to_wav_article:
     'Gravações exportadas em MP3 podem ficar grandes para enviar por mensagem. Faça uma cópia WAV e confira o tamanho que ela realmente ocupa. Você pode ouvir o resultado antes de baixar. A conversão inclui o áudio inteiro, sem cortes nem efeitos de entrada e saída. Guarde o MP3 original para futuras edições.',
@@ -11441,6 +11514,88 @@ const pt: SiteLangDict = {
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_3: 'O último parágrafo continua visível para você concluir a frase antes de parar.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_4: 'Roteiro e áudio permanecem no navegador do dispositivo e não são enviados aos nossos servidores.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_title: 'Por que usar Grave uma narração com teleprompter',
+  tool_reduce_an_mp3_file_size_advanced: 'Configurações de compressão',
+  tool_reduce_an_mp3_file_size_article:
+    'Antes de comprimir um MP3, guarde o original. O formato já é comprimido com perdas; reduzir mais o tamanho descarta outros detalhes do som. A gravação é mantida inteira e o resultado mostra quanto a cópia realmente ocupa.',
+  tool_reduce_an_mp3_file_size_bitrate: 'Taxa de bits total do MP3',
+  tool_reduce_an_mp3_file_size_channels: 'Canais de saída',
+  tool_reduce_an_mp3_file_size_choose: 'Escolher arquivo MP3',
+  tool_reduce_an_mp3_file_size_clear: 'Limpar',
+  tool_reduce_an_mp3_file_size_convert: 'Comprimir MP3',
+  tool_reduce_an_mp3_file_size_decode: 'Decodificar áudio',
+  tool_reduce_an_mp3_file_size_desc:
+    'Comprima um MP3 pesado para enviar e compare os tamanhos. O áudio fica no seu dispositivo, sem ser enviado ao servidor.',
+  tool_reduce_an_mp3_file_size_description:
+    'Comprima MP3 em três passos: escolha a taxa, ouça o resultado e baixe. O áudio fica no seu dispositivo e não é enviado ao servidor.',
+  tool_reduce_an_mp3_file_size_done: 'Pronto. Ouça, confira o tamanho e clique em Baixar MP3.',
+  tool_reduce_an_mp3_file_size_download: 'Baixar MP3',
+  tool_reduce_an_mp3_file_size_elapsed: '{s} s decorridos',
+  tool_reduce_an_mp3_file_size_empty: 'Escolha um MP3 ou carregue o exemplo primeiro.',
+  tool_reduce_an_mp3_file_size_encode: 'Codificar MP3',
+  tool_reduce_an_mp3_file_size_err_decode: 'O navegador não conseguiu decodificar este MP3. Tente outra gravação válida.',
+  tool_reduce_an_mp3_file_size_err_encoder: 'Não foi possível carregar o codificador MP3. Verifique a conexão e tente novamente.',
+  tool_reduce_an_mp3_file_size_err_file: 'Arraste apenas um arquivo MP3.',
+  tool_reduce_an_mp3_file_size_err_format:
+    'MP3 danificado ou incompatível. Use MPEG Layer III padrão. Fluxos de formato livre, mudanças de canais e tags finais incomuns não são aceitos.',
+  tool_reduce_an_mp3_file_size_err_limit: 'Use até 40 MiB, dez minutos e um ou dois canais.',
+  tool_reduce_an_mp3_file_size_example:
+    'O exemplo gera um MP3 estéreo a 192 kbps, com cerca de 71 KiB, e comprime a gravação de três segundos a 128 kbps, cerca de 48 KiB. Os números reais aparecem acima. Não há reprodução automática.',
+  tool_reduce_an_mp3_file_size_example_title: 'Teste de três segundos',
+  tool_reduce_an_mp3_file_size_failed: 'Não foi possível comprimir. Tente um MP3 válido e menor.',
+  tool_reduce_an_mp3_file_size_faq_a1:
+    'Não baixando a taxa de bits. A nova compressão elimina mais detalhes. Guarde o original e ouça a cópia. O tamanho do arquivo é reduzido; volume e faixa dinâmica não são ajustados.',
+  tool_reduce_an_mp3_file_size_faq_a2:
+    'Não há garantia de tamanho exato nem de redução. Se o original já usa taxa baixa, a cópia pode ficar maior. Tente 64 ou 96 kbps e compare as medidas reais.',
+  tool_reduce_an_mp3_file_size_faq_a3:
+    'Não. Ele fica no navegador do seu dispositivo e não é enviado ao servidor. A primeira carga da ferramenta e do codificador precisa de conexão; uso offline não é garantido.',
+  tool_reduce_an_mp3_file_size_faq_a4:
+    'Não com a mesma taxa de bits total. Para fala, mono pode ajudar a usar taxas menores, mas mistura os dois canais e pode alterar o som.',
+  tool_reduce_an_mp3_file_size_faq_a5:
+    'Aqui é processado um MP3 inteiro por vez. Use o conversor WAV para MP3 relacionado ou o recortador para salvar só um trecho. Links de vídeo e processamento em lote não são aceitos.',
+  tool_reduce_an_mp3_file_size_faq_q1: 'Dá para reduzir MP3 sem perder qualidade?',
+  tool_reduce_an_mp3_file_size_faq_q2: 'Posso definir um tamanho exato em MB?',
+  tool_reduce_an_mp3_file_size_faq_q3: 'O áudio é enviado para algum servidor?',
+  tool_reduce_an_mp3_file_size_faq_q4: 'Mono ocupa metade do estéreo?',
+  tool_reduce_an_mp3_file_size_faq_q5: 'Posso usar WAV, vídeo ou vários arquivos?',
+  tool_reduce_an_mp3_file_size_hint: 'Arraste um MP3 de até 40 MiB e 10 minutos, mono ou estéreo.',
+  tool_reduce_an_mp3_file_size_how_body:
+    'Crie uma cópia com taxa de bits menor e avalie se o som ainda serve para o envio. Preserve a gravação original.',
+  tool_reduce_an_mp3_file_size_how_item_1: 'Clique em Escolher arquivo MP3 ou em Carregar exemplo para testar três segundos de áudio.',
+  tool_reduce_an_mp3_file_size_how_item_2: 'Se necessário, abra Configurações de compressão e reduza a taxa. Clique em Comprimir MP3.',
+  tool_reduce_an_mp3_file_size_how_item_3:
+    'Ouça a cópia, compare os tamanhos e clique em Baixar MP3. Se ainda estiver grande, tente uma taxa menor.',
+  tool_reduce_an_mp3_file_size_how_title: 'Como deixar um MP3 mais leve',
+  tool_reduce_an_mp3_file_size_keep: 'Manter os canais originais',
+  tool_reduce_an_mp3_file_size_mono: 'Mono (misturar esquerda e direita)',
+  tool_reduce_an_mp3_file_size_not_smaller:
+    'A cópia não ficou menor. Reduza a taxa de bits ou mantenha o original para evitar outra codificação com perdas.',
+  tool_reduce_an_mp3_file_size_preview: 'Ouvir o MP3 comprimido',
+  tool_reduce_an_mp3_file_size_progress: 'Progresso da compressão',
+  tool_reduce_an_mp3_file_size_read: 'Ler MP3',
+  tool_reduce_an_mp3_file_size_result:
+    '{seconds} s · Original {input} KiB → MP3 {output} KiB · {kbps} kbps · 44.1 kHz · {channels} canal/canais',
+  tool_reduce_an_mp3_file_size_rules_body:
+    'Estimativa em bytes = segundos × kbps × 1000 ÷ 8. O preenchimento do codificador acrescenta um pouco de espaço; confira a medida real no resultado.',
+  tool_reduce_an_mp3_file_size_rules_item_1:
+    '64 e 96 kbps priorizam economia em gravações de voz. Para música, comece em 128 ou 192 kbps e ouça. Todas as opções aplicam nova compressão com perdas.',
+  tool_reduce_an_mp3_file_size_rules_item_2:
+    'Mono calcula a média dos canais esquerdo e direito. Com a mesma taxa total, o tamanho fica próximo ao estéreo; para reduzir mais, baixe a taxa. Sinais em oposição de fase podem se cancelar na mistura.',
+  tool_reduce_an_mp3_file_size_rules_item_3:
+    'A saída é MP3 de 44.1 kHz, sem capa nem tags. O preenchimento pode aumentar um pouco a duração. Aceita Layer III padrão, mono/estéreo, até 40 MiB e dez minutos; rejeita arquivos danificados, formato livre e mudanças de canais.',
+  tool_reduce_an_mp3_file_size_rules_title: 'Taxa de bits, canais e espaço ocupado',
+  tool_reduce_an_mp3_file_size_sample: 'Carregar exemplo',
+  tool_reduce_an_mp3_file_size_sample_name: 'exemplo-tres-segundos',
+  tool_reduce_an_mp3_file_size_saved: 'O tamanho diminuiu {percent}%.',
+  tool_reduce_an_mp3_file_size_settings_hint:
+    'O padrão é 128 kbps, mantendo os canais. Para voz, experimente 64 ou 96 kbps. Mono não reduz o tamanho pela metade quando a taxa total é a mesma.',
+  tool_reduce_an_mp3_file_size_title: 'Diminuir o tamanho de um MP3',
+  tool_reduce_an_mp3_file_size_usecase_1: 'Enviar uma gravação de voz como anexo de e-mail sem cortar a conversa.',
+  tool_reduce_an_mp3_file_size_usecase_2: 'Compartilhar uma prévia de ensaio em uma conexão lenta, guardando o original em separado.',
+  tool_reduce_an_mp3_file_size_usecases_title: 'Quando vale a pena usar',
+  tool_reduce_an_mp3_file_size_why_choose_item_1: 'A comparação usa tamanhos reais e avisa quando o arquivo fica maior.',
+  tool_reduce_an_mp3_file_size_why_choose_item_2: 'É possível ouvir a versão codificada antes de baixar.',
+  tool_reduce_an_mp3_file_size_why_choose_item_3: 'Você mantém a gravação completa, com os canais originais ou misturados em mono.',
+  tool_reduce_an_mp3_file_size_why_choose_title: 'Vantagens de Diminuir o tamanho de um MP3',
   tool_remove_silence_from_a_recording_advanced: 'Ajustes avançados (opcional)',
   tool_remove_silence_from_a_recording_article:
     'Remova os silêncios de uma gravação nesta aba: abra um arquivo local, clique em Remover silêncios e exporte WAV ou MP3. As pausas longas saem; a fala fica num arquivo mais curto, sem enviar ao servidor.',

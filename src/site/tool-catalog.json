@@ -983,7 +983,7 @@
   {
     "slug": "convert-an-m4a-file-to-mp3",
     "path": "/tools/convert-an-m4a-file-to-mp3",
-    "updatedAt": "2026-09-16T08:30:00.000Z",
+    "updatedAt": "2026-09-16T10:20:27.411Z",
     "launchedAt": "2026-09-16T08:30:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -4454,6 +4454,28 @@
       "trim-an-audio-clip-and-export"
     ],
     "logo": "/icons/tools/record-a-voiceover-with-a-teleprompter.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "reduce-an-mp3-file-size",
+    "path": "/tools/reduce-an-mp3-file-size",
+    "updatedAt": "2026-09-20T01:26:12.582Z",
+    "launchedAt": "2026-09-20T01:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_reduce_an_mp3_file_size_title",
+    "homeTitleKey": "tool_reduce_an_mp3_file_size_title",
+    "homeDescKey": "tool_reduce_an_mp3_file_size_desc",
+    "faqPrefix": "tool_reduce_an_mp3_file_size",
+    "related": [
+      "convert-a-wav-file-to-mp3",
+      "trim-an-audio-clip-and-export"
+    ],
+    "logo": "/icons/tools/reduce-an-mp3-file-size.svg",
     "localProcessing": true,
     "scenario": "media",
     "subject": "audio"

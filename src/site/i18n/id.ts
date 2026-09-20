@@ -4004,10 +4004,82 @@ const id: SiteLangDict = {
   tool_convert_a_wav_file_to_mp3_why_choose_item_3:
     'Header WAV dan durasi diperiksa sebelum dekode; file yang tidak sesuai menghasilkan pesan kesalahan, bukan unduhan terpotong.',
   tool_convert_a_wav_file_to_mp3_why_choose_title: 'Alasan memakai Ubah file WAV menjadi MP3',
-  tool_convert_an_m4a_file_to_mp3_desc: 'Ubah rekaman M4A atau AAC menjadi MP3 tanpa mengunggah file ke server.',
+  tool_convert_an_m4a_file_to_mp3_advanced: 'Pengaturan lanjutan (opsional)',
+  tool_convert_an_m4a_file_to_mp3_article:
+    'Memo suara M4A belum tentu dapat diputar oleh penerimanya. Buat salinan MP3 utuh dan dengarkan sebelum mengirim. AAC ke MP3 menambahkan kompresi lossy; file yang lebih besar tidak berarti kualitas sumber meningkat. Simpan rekaman asli.',
+  tool_convert_an_m4a_file_to_mp3_bitrate: 'Bitrate MP3',
+  tool_convert_an_m4a_file_to_mp3_choose: 'Pilih file M4A atau AAC',
+  tool_convert_an_m4a_file_to_mp3_clear: 'Bersihkan',
+  tool_convert_an_m4a_file_to_mp3_convert: 'Konversi ke MP3',
+  tool_convert_an_m4a_file_to_mp3_decode: 'Mendekode audio',
+  tool_convert_an_m4a_file_to_mp3_desc: 'Ubah satu rekaman M4A atau AAC menjadi MP3 di perangkat Anda, tanpa mengunggah audio ke server.',
   tool_convert_an_m4a_file_to_mp3_description:
-    'Ubah file M4A menjadi MP3 di browser: pilih M4A atau AAC, konversi, dengarkan, lalu unduh. File tetap di perangkat dan tidak dikirim ke server.',
-  tool_convert_an_m4a_file_to_mp3_title: 'Ubah file M4A menjadi MP3',
+    'Konversi file M4A ke MP3 tanpa mengunggah audio. Ikuti langkah memilih rekaman, mengatur bitrate, mendengarkan hasil, lalu mengunduh salinan MP3.',
+  tool_convert_an_m4a_file_to_mp3_done: 'Selesai. Dengarkan hasilnya, lalu unduh MP3.',
+  tool_convert_an_m4a_file_to_mp3_download: 'Unduh MP3',
+  tool_convert_an_m4a_file_to_mp3_elapsed: 'Waktu berlalu: {s} dtk',
+  tool_convert_an_m4a_file_to_mp3_empty: 'Pilih rekaman atau muat contoh terlebih dahulu.',
+  tool_convert_an_m4a_file_to_mp3_encode: 'Mengenkode MP3',
+  tool_convert_an_m4a_file_to_mp3_err_decode:
+    'Browser ini tidak dapat mendekode rekaman. Coba browser terbaru atau ekspor M4A AAC tanpa proteksi dari aplikasi rekaman.',
+  tool_convert_an_m4a_file_to_mp3_err_encoder: 'Encoder MP3 gagal dimuat. Periksa koneksi dan klik Konversi ke MP3 lagi.',
+  tool_convert_an_m4a_file_to_mp3_err_file: 'Seret tepat satu file M4A atau AAC.',
+  tool_convert_an_m4a_file_to_mp3_err_format:
+    'Audio rusak atau tidak didukung. Gunakan M4A khusus audio AAC/ALAC atau AAC ADTS. Video, trek terproteksi, dan MP4 terfragmentasi ditolak.',
+  tool_convert_an_m4a_file_to_mp3_err_limit: 'Rekaman melebihi 40 MiB atau 10 menit, atau bukan mono/stereo.',
+  tool_convert_an_m4a_file_to_mp3_err_sample: 'Contoh gagal dimuat. Periksa koneksi dan coba Muat contoh lagi.',
+  tool_convert_an_m4a_file_to_mp3_example:
+    'Saat dibuka, nada AAC M4A stereo berdurasi lima detik dimuat dari situs ini dan dikonversi pada 192 kbps menjadi MP3 sekitar 120 KiB. Muat contoh mengulangnya. Hasil siap didengarkan tetapi tidak diputar otomatis.',
+  tool_convert_an_m4a_file_to_mp3_example_title: 'Contoh konversi M4A sungguhan',
+  tool_convert_an_m4a_file_to_mp3_failed: 'Konversi gagal. Coba rekaman M4A atau AAC yang lebih pendek dan tanpa proteksi.',
+  tool_convert_an_m4a_file_to_mp3_faq_a1:
+    'Tidak. Dekode dan enkode berlangsung di browser pada perangkat Anda. Pemuatan awal halaman, contoh, dan encoder memerlukan koneksi; akses offline tidak dijamin.',
+  tool_convert_an_m4a_file_to_mp3_faq_a2:
+    'Tidak. MP3 bersifat lossy, termasuk pada 320 kbps. Sumber AAC mungkin sudah kehilangan detail. Bitrate lebih tinggi tidak mengembalikannya. Simpan M4A asli.',
+  tool_convert_an_m4a_file_to_mp3_faq_a3:
+    'Ya, AAC ADTS dan M4A khusus audio berisi AAC yang dapat didekode browser. M4A juga bisa berisi ALAC; dukungannya bergantung pada browser. Mengganti ekstensi tidak mengonversi audio.',
+  tool_convert_an_m4a_file_to_mp3_faq_a4:
+    'Browser mungkin tidak mendukung codec atau kekurangan memori. File terproteksi, video, terfragmentasi, atau multikanal ditolak. Coba AAC tanpa proteksi yang lebih pendek dan contoh bawaan pada browser terbaru.',
+  tool_convert_an_m4a_file_to_mp3_faq_a5:
+    'Alat ini mengonversi satu rekaman lokal utuh menjadi satu MP3. Untuk cuplikan, gunakan pemotong audio terkait. Video, tautan web, dan daftar putar tidak diterima.',
+  tool_convert_an_m4a_file_to_mp3_faq_q1: 'Apakah rekaman saya diunggah?',
+  tool_convert_an_m4a_file_to_mp3_faq_q2: 'Apakah kualitasnya tetap sama?',
+  tool_convert_an_m4a_file_to_mp3_faq_q3: 'Apakah file AAC juga bisa dikonversi?',
+  tool_convert_an_m4a_file_to_mp3_faq_q4: 'Mengapa M4A yang valid gagal?',
+  tool_convert_an_m4a_file_to_mp3_faq_q5: 'Bisakah saya memotong atau memproses banyak rekaman?',
+  tool_convert_an_m4a_file_to_mp3_hint:
+    'Satu file, maksimal 40 MiB dan 10 menit. M4A audio atau AAC ADTS, mono/stereo; dekode bergantung pada browser.',
+  tool_convert_an_m4a_file_to_mp3_how_body: 'Konversi seluruh rekaman untuk pemutar atau layanan yang meminta MP3.',
+  tool_convert_an_m4a_file_to_mp3_how_item_1: 'Pilih file M4A atau AAC, atau muat contoh M4A sungguhan.',
+  tool_convert_an_m4a_file_to_mp3_how_item_2: 'Gunakan bitrate default atau ubah pengaturan lanjutan, lalu klik Konversi ke MP3.',
+  tool_convert_an_m4a_file_to_mp3_how_item_3: 'Dengarkan MP3, bandingkan ukuran file yang terukur, lalu unduh hasilnya.',
+  tool_convert_an_m4a_file_to_mp3_how_title: 'Cara membuat salinan MP3 dari M4A',
+  tool_convert_an_m4a_file_to_mp3_preview: 'Dengarkan MP3',
+  tool_convert_an_m4a_file_to_mp3_progress: 'Progres konversi',
+  tool_convert_an_m4a_file_to_mp3_read: 'Membaca rekaman',
+  tool_convert_an_m4a_file_to_mp3_result:
+    'Audio terdekode {seconds} dtk · Masukan {input} KiB → MP3 {output} KiB · {kbps} kbps · 44,1 kHz · {channels} kanal',
+  tool_convert_an_m4a_file_to_mp3_rules_body:
+    'Perkiraan ukuran MP3 dalam byte = durasi dalam detik × bitrate kbps × 1000 ÷ 8. Ukuran yang ditampilkan adalah hasil pengukuran; enkode menambahkan padding.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_1:
+    'Coba 128 kbps untuk percakapan, 192 untuk berbagi umum, atau 320 untuk musik. Detail yang hilang tidak dapat dipulihkan. MP3 bisa lebih besar daripada M4A asli.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_2:
+    'Keluaran 44,1 kHz dengan satu atau dua kanal. Tag, sampul, dan bab tidak disalin. Padding encoder dapat sedikit menambah durasi pemutaran.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_3:
+    'Satu M4A khusus audio AAC/ALAC atau AAC ADTS, maksimal 40 MiB dan 10 menit. Dukungan codec bergantung pada browser. Tanpa DRM, video, MP4 terfragmentasi, surround, atau konversi massal.',
+  tool_convert_an_m4a_file_to_mp3_rules_title: 'Memilih bitrate dan memahami batas',
+  tool_convert_an_m4a_file_to_mp3_sample: 'Muat contoh',
+  tool_convert_an_m4a_file_to_mp3_sample_name: 'contoh-m4a-lima-detik',
+  tool_convert_an_m4a_file_to_mp3_settings_hint:
+    'Default 192 kbps. 128 menghemat ruang; 320 memakai lebih banyak data untuk enkode. Keluaran 44,1 kHz dengan kanal mono/stereo asli.',
+  tool_convert_an_m4a_file_to_mp3_title: 'Konversi file M4A ke MP3',
+  tool_convert_an_m4a_file_to_mp3_usecase_1: 'Mengirim memo suara M4A dari ponsel kepada penerima yang memerlukan MP3.',
+  tool_convert_an_m4a_file_to_mp3_usecase_2: 'Menyiapkan wawancara AAC sebagai lampiran MP3 sambil menyimpan sumber untuk penyuntingan.',
+  tool_convert_an_m4a_file_to_mp3_usecases_title: 'Berguna untuk',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_1: 'Dengarkan hasil MP3 sebenarnya sebelum menyimpannya.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_2: 'Rekaman diproses di perangkat Anda tanpa unggahan.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_3: 'Contoh M4A melewati proses dekode dan konversi yang sama dengan rekaman Anda.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_title: 'Mengapa memilih alat konversi M4A ke MP3 ini',
   tool_convert_an_mp3_file_to_wav_advanced: 'Pengaturan tambahan',
   tool_convert_an_mp3_file_to_wav_article:
     'Hasil rekaman MP3 sering terlalu besar untuk dikirim sebagai lampiran. Buat salinan WAV, lalu lihat ukuran sebenarnya sebelum mengunduhnya. Seluruh rekaman ikut diproses tanpa pemotongan atau efek fade. WAV membuang sebagian informasi suara, jadi simpan MP3 asli jika masih akan diedit.',
@@ -11282,6 +11354,88 @@ const id: SiteLangDict = {
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_3: 'Paragraf terakhir tetap terlihat agar Anda bisa menyelesaikan kalimat sebelum menghentikan rekaman.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_4: 'Teks dan audio tetap berada di browser perangkat Anda serta tidak dikirim ke server kami.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_title: 'Alasan memakai Rekam narasi dengan teleprompter',
+  tool_reduce_an_mp3_file_size_advanced: 'Pengaturan kompresi',
+  tool_reduce_an_mp3_file_size_article:
+    'MP3 sudah memakai kompresi lossy. Mengecilkannya lagi akan membuang lebih banyak detail suara, jadi simpan file asli. Alat ini memproses seluruh rekaman dan menampilkan ukuran nyata, termasuk saat hasilnya justru lebih besar.',
+  tool_reduce_an_mp3_file_size_bitrate: 'Bitrate total MP3',
+  tool_reduce_an_mp3_file_size_channels: 'Kanal keluaran',
+  tool_reduce_an_mp3_file_size_choose: 'Pilih file MP3',
+  tool_reduce_an_mp3_file_size_clear: 'Kosongkan',
+  tool_reduce_an_mp3_file_size_convert: 'Kompres MP3',
+  tool_reduce_an_mp3_file_size_decode: 'Dekode audio',
+  tool_reduce_an_mp3_file_size_desc:
+    'Kompres MP3 agar lebih mudah dikirim, lalu bandingkan ukurannya. Audio tetap di perangkat Anda dan tidak diunggah ke server.',
+  tool_reduce_an_mp3_file_size_description:
+    'Kompres MP3 dalam tiga langkah: turunkan bitrate, dengarkan, lalu unduh. File tetap di perangkat Anda dan tidak diunggah ke server.',
+  tool_reduce_an_mp3_file_size_done: 'Selesai. Dengarkan, periksa ukurannya, lalu klik Unduh MP3.',
+  tool_reduce_an_mp3_file_size_download: 'Unduh MP3',
+  tool_reduce_an_mp3_file_size_elapsed: 'Waktu berlalu {s} dtk',
+  tool_reduce_an_mp3_file_size_empty: 'Pilih MP3 atau muat contoh terlebih dahulu.',
+  tool_reduce_an_mp3_file_size_encode: 'Enkode MP3',
+  tool_reduce_an_mp3_file_size_err_decode: 'Browser tidak dapat mendekode MP3 ini. Coba rekaman valid lainnya.',
+  tool_reduce_an_mp3_file_size_err_encoder: 'Enkoder MP3 gagal dimuat. Periksa koneksi lalu coba lagi.',
+  tool_reduce_an_mp3_file_size_err_file: 'Tarik satu file MP3 saja.',
+  tool_reduce_an_mp3_file_size_err_format:
+    'MP3 rusak atau tidak didukung. Gunakan MPEG Layer III standar. Format bebas, perubahan susunan kanal, dan tag akhir yang tidak umum tidak didukung.',
+  tool_reduce_an_mp3_file_size_err_limit: 'Batasnya 40 MiB, sepuluh menit, dan satu atau dua kanal.',
+  tool_reduce_an_mp3_file_size_example:
+    'Contoh membuat MP3 stereo tiga detik pada 192 kbps, sekitar 71 KiB, lalu mengompresnya ke 128 kbps, sekitar 48 KiB. Ukuran nyata dan penghematan tampil di atas. Audio tidak diputar otomatis.',
+  tool_reduce_an_mp3_file_size_example_title: 'Lihat hasil dari contoh nyata',
+  tool_reduce_an_mp3_file_size_failed: 'Kompresi gagal. Coba file MP3 valid yang lebih kecil.',
+  tool_reduce_an_mp3_file_size_faq_a1:
+    'Bitrate file asli mungkin sudah lebih rendah. Coba 64 atau 96 kbps. Alat menampilkan ukuran nyata, tetapi tidak menjamin file lebih kecil atau target MB yang tepat.',
+  tool_reduce_an_mp3_file_size_faq_a2:
+    'Tidak dengan menurunkan bitrate. Detail tambahan akan hilang dari rekaman yang sudah lossy. Simpan file asli dan dengarkan hasilnya. Alat ini mengecilkan file, bukan mengatur volume atau rentang dinamis.',
+  tool_reduce_an_mp3_file_size_faq_a3:
+    'Tidak. Audio tetap di browser pada perangkat Anda dan tidak diunggah ke server. Halaman dan enkoder memerlukan koneksi saat pertama dimuat; penggunaan offline tidak dijamin.',
+  tool_reduce_an_mp3_file_size_faq_a4:
+    'Tidak pada bitrate total yang sama. Mono dapat membantu pemakaian bitrate rendah untuk percakapan, tetapi pencampuran kedua kanal bisa mengubah suara.',
+  tool_reduce_an_mp3_file_size_faq_a5:
+    'Hanya satu MP3 utuh per proses. Gunakan konverter WAV ke MP3 terkait untuk WAV, atau alat pemotong untuk menyimpan bagian tertentu. Tautan video dan pemrosesan sekaligus tidak didukung.',
+  tool_reduce_an_mp3_file_size_faq_q1: 'Mengapa hasil kompresi malah lebih besar?',
+  tool_reduce_an_mp3_file_size_faq_q2: 'Bisa kompres MP3 tanpa mengurangi kualitas?',
+  tool_reduce_an_mp3_file_size_faq_q3: 'Apakah audio diunggah ke server?',
+  tool_reduce_an_mp3_file_size_faq_q4: 'Apakah mono membuat ukuran setengahnya?',
+  tool_reduce_an_mp3_file_size_faq_q5: 'Bisa memproses WAV, video, atau banyak file?',
+  tool_reduce_an_mp3_file_size_hint: 'Tarik satu MP3 ke sini. Maksimal 40 MiB dan 10 menit, mono atau stereo.',
+  tool_reduce_an_mp3_file_size_how_body:
+    'Simpan file asli, lalu buat salinan dengan bitrate lebih rendah. Dengarkan hasilnya agar penghematan ukuran tidak mengorbankan kejelasan yang Anda perlukan.',
+  tool_reduce_an_mp3_file_size_how_item_1: 'Klik Pilih file MP3, atau Muat contoh untuk mencoba audio tiga detik.',
+  tool_reduce_an_mp3_file_size_how_item_2: 'Buka Pengaturan kompresi bila perlu, turunkan bitrate, lalu klik Kompres MP3.',
+  tool_reduce_an_mp3_file_size_how_item_3:
+    'Dengarkan hasil dan bandingkan ukuran. Klik Unduh MP3 untuk menyimpan, atau ulangi dengan bitrate lebih rendah.',
+  tool_reduce_an_mp3_file_size_how_title: 'Cara memperkecil MP3 untuk dikirim',
+  tool_reduce_an_mp3_file_size_keep: 'Pertahankan kanal asli',
+  tool_reduce_an_mp3_file_size_mono: 'Mono (gabungkan kiri dan kanan)',
+  tool_reduce_an_mp3_file_size_not_smaller:
+    'Salinan ini tidak lebih kecil. Turunkan bitrate atau gunakan file asli agar tidak kehilangan detail akibat enkode ulang.',
+  tool_reduce_an_mp3_file_size_preview: 'Dengarkan MP3 hasil kompresi',
+  tool_reduce_an_mp3_file_size_progress: 'Progres kompresi',
+  tool_reduce_an_mp3_file_size_read: 'Baca MP3',
+  tool_reduce_an_mp3_file_size_result: '{seconds} dtk · Asli {input} KiB → MP3 {output} KiB · {kbps} kbps · 44.1 kHz · {channels} kanal',
+  tool_reduce_an_mp3_file_size_rules_body:
+    'Perkiraan byte = durasi dalam detik × kbps × 1000 ÷ 8. Padding enkoder menambah sedikit ukuran; hasil menampilkan ukuran sebenarnya.',
+  tool_reduce_an_mp3_file_size_rules_item_1:
+    'Coba 64 atau 96 kbps untuk percakapan. Untuk musik, mulai dari 128 atau 192 kbps lalu dengarkan. Semua pilihan mengompresi ulang dengan kehilangan detail.',
+  tool_reduce_an_mp3_file_size_rules_item_2:
+    'Mono merata-ratakan kanal kiri dan kanan. Pada bitrate total yang sama, ukurannya hampir sama dengan stereo. Turunkan bitrate untuk menghemat lebih banyak. Sinyal berlawanan fase dapat saling meniadakan saat dicampur.',
+  tool_reduce_an_mp3_file_size_rules_item_3:
+    'Keluaran MP3 44.1 kHz tanpa sampul dan tag; padding dapat menambah sedikit durasi. Mendukung Layer III standar mono/stereo hingga 40 MiB dan sepuluh menit; menolak file rusak, format bebas, dan perubahan kanal.',
+  tool_reduce_an_mp3_file_size_rules_title: 'Memilih bitrate dan kanal',
+  tool_reduce_an_mp3_file_size_sample: 'Muat contoh',
+  tool_reduce_an_mp3_file_size_sample_name: 'contoh-tiga-detik',
+  tool_reduce_an_mp3_file_size_saved: 'Ukuran file berkurang {percent}%.',
+  tool_reduce_an_mp3_file_size_settings_hint:
+    'Setelan awal 128 kbps dengan kanal asli. Coba 64 atau 96 kbps untuk suara percakapan. Mono tidak otomatis membagi ukuran menjadi dua pada bitrate total yang sama.',
+  tool_reduce_an_mp3_file_size_title: 'Mengecilkan ukuran file MP3',
+  tool_reduce_an_mp3_file_size_usecase_1: 'Mengecilkan rekaman suara untuk lampiran email tanpa memotong percakapan.',
+  tool_reduce_an_mp3_file_size_usecase_2:
+    'Mengirim cuplikan pratinjau latihan melalui koneksi lambat sambil menyimpan versi asli secara terpisah.',
+  tool_reduce_an_mp3_file_size_usecases_title: 'Kapan digunakan',
+  tool_reduce_an_mp3_file_size_why_choose_item_1: 'Ukuran sebelum dan sesudah diukur langsung; hasil yang lebih besar diberi peringatan.',
+  tool_reduce_an_mp3_file_size_why_choose_item_2: 'Rekaman tetap utuh, dengan pilihan mempertahankan stereo atau mencampur ke mono.',
+  tool_reduce_an_mp3_file_size_why_choose_item_3: 'Pratinjau memutar MP3 yang baru dienkode sebelum Anda mengunduhnya.',
+  tool_reduce_an_mp3_file_size_why_choose_title: 'Keunggulan Mengecilkan ukuran file MP3',
   tool_remove_silence_from_a_recording_advanced: 'Pengaturan lanjutan (opsional)',
   tool_remove_silence_from_a_recording_article:
     'Hapus keheningan dari rekaman di tab ini: buka berkas lokal, klik Hapus keheningan, lalu ekspor WAV atau MP3. Jeda panjang dipotong; suara dijahit jadi satu berkas lebih pendek, tanpa unggah ke server.',

@@ -3856,10 +3856,81 @@ const ar: SiteLangDict = {
   tool_convert_a_wav_file_to_mp3_why_choose_item_2: 'يُحوّل التسجيل كاملًا دون تحديد مقطع أو إضافة تلاشي إلى البداية والنهاية.',
   tool_convert_a_wav_file_to_mp3_why_choose_item_3: 'يُفحص رأس WAV ومدته قبل فك الترميز، وتظهر رسالة واضحة للملف غير المدعوم بدل تنزيل نتيجة ناقصة.',
   tool_convert_a_wav_file_to_mp3_why_choose_title: 'مزايا أداة تحويل ملف WAV إلى MP3',
-  tool_convert_an_m4a_file_to_mp3_desc: 'حوّل تسجيل M4A أو AAC إلى MP3. يبقى الملف على جهازك ولا يُرفع إلى الخادم.',
+  tool_convert_an_m4a_file_to_mp3_advanced: 'إعدادات اختيارية',
+  tool_convert_an_m4a_file_to_mp3_article:
+    'إذا لم يستطع المستلم تشغيل مذكرة صوتية بصيغة M4A، أنشئ نسخة MP3 من التسجيل كاملًا. استمع إليها قبل الإرسال واحتفظ بالأصل للتحرير. إعادة ترميز AAC إلى MP3 تفقد بعض التفاصيل؛ زيادة حجم الملف لا تعني استعادة جودة التسجيل.',
+  tool_convert_an_m4a_file_to_mp3_bitrate: 'معدل بت MP3',
+  tool_convert_an_m4a_file_to_mp3_choose: 'اختيار M4A أو AAC',
+  tool_convert_an_m4a_file_to_mp3_clear: 'مسح',
+  tool_convert_an_m4a_file_to_mp3_convert: 'تحويل إلى MP3',
+  tool_convert_an_m4a_file_to_mp3_decode: 'فك ترميز الصوت',
+  tool_convert_an_m4a_file_to_mp3_desc: 'حوّل تسجيل M4A أو AAC كاملًا إلى MP3. يبقى الصوت على جهازك ولا يُرسل إلى الخادم.',
   tool_convert_an_m4a_file_to_mp3_description:
-    'حوّل ملف M4A إلى MP3 داخل المتصفح: اختر تسجيل M4A أو AAC، حوّل واستمع ونزّل النتيجة. يبقى الملف على جهازك ولا يُرسل إلى الخادم.',
+    'حوّل M4A إلى MP3 مع بقاء الصوت على جهازك دون إرساله إلى الخادم. الخطوات: اختر M4A أو AAC، حوّل الملف، استمع ثم نزّل MP3.',
+  tool_convert_an_m4a_file_to_mp3_done: 'جاهز. استمع إلى النتيجة ثم اضغط تنزيل MP3.',
+  tool_convert_an_m4a_file_to_mp3_download: 'تنزيل MP3',
+  tool_convert_an_m4a_file_to_mp3_elapsed: 'الوقت المنقضي: {s} ثانية',
+  tool_convert_an_m4a_file_to_mp3_empty: 'اختر تسجيلًا أو حمّل المثال أولًا.',
+  tool_convert_an_m4a_file_to_mp3_encode: 'إنشاء MP3',
+  tool_convert_an_m4a_file_to_mp3_err_decode: 'لم يستطع المتصفح فك الترميز. جرّب متصفحًا حديثًا أو صدّر M4A بترميز AAC دون حماية.',
+  tool_convert_an_m4a_file_to_mp3_err_encoder: 'تعذر تحميل مرمّز MP3. تحقق من الاتصال ثم اضغط تحويل إلى MP3 مجددًا.',
+  tool_convert_an_m4a_file_to_mp3_err_file: 'اسحب ملف M4A أو AAC واحدًا فقط.',
+  tool_convert_an_m4a_file_to_mp3_err_format:
+    'صوت تالف أو غير مدعوم. استخدم M4A صوتيًا فقط بترميز AAC/ALAC أو AAC ADTS. الفيديو والمسارات المحمية وMP4 المجزأ غير مقبولة.',
+  tool_convert_an_m4a_file_to_mp3_err_limit: 'التسجيل يتجاوز 40 MiB أو عشر دقائق، أو ليس بقناة أو قناتين.',
+  tool_convert_an_m4a_file_to_mp3_err_sample: 'تعذر تحميل المثال. تحقق من الاتصال واضغط تحميل المثال.',
+  tool_convert_an_m4a_file_to_mp3_example:
+    'عند فتح الأداة يُحمّل من هذا الموقع صوت AAC M4A ثنائي القناة لخمس ثوانٍ، ثم يُحوّل عند 192 kbps إلى MP3 بحجم يقارب 120 KiB. يعيد زر تحميل المثال العملية. لا يبدأ الصوت تلقائيًا.',
+  tool_convert_an_m4a_file_to_mp3_example_title: 'مثال M4A لخمس ثوانٍ',
+  tool_convert_an_m4a_file_to_mp3_failed: 'تعذر التحويل. جرّب تسجيل M4A أو AAC أقصر وغير محمي.',
+  tool_convert_an_m4a_file_to_mp3_faq_a1:
+    'لا. يبقى الملف على جهازك ويُفك ترميزه ويُحوّل داخل المتصفح دون إرساله إلى الخادم. تحتاج الصفحة والمثال والمرمّز إلى اتصال عند التحميل الأول، ولا نضمن العمل دون إنترنت.',
+  tool_convert_an_m4a_file_to_mp3_faq_a2:
+    'لا، حتى عند 320 kbps. MP3 يفقد جزءًا من المعلومات، وقد يكون AAC الأصلي مضغوطًا أصلًا. معدل أعلى لا يعيد البيانات المفقودة؛ احتفظ بملف M4A.',
+  tool_convert_an_m4a_file_to_mp3_faq_a3:
+    'نعم، AAC ADTS وM4A الصوتي الذي يحتوي AAC إذا استطاع المتصفح فك ترميزه. قد يحتوي M4A على ALAC أيضًا. تغيير الامتداد وحده لا يحوّل الصوت.',
+  tool_convert_an_m4a_file_to_mp3_faq_a4:
+    'قد لا يدعم المتصفح الترميز أو لا تتوفر ذاكرة كافية. تُرفض الملفات المحمية والفيديو وMP4 المجزأ والصوت متعدد القنوات. جرّب المثال وتسجيل AAC قصيرًا غير محمي في متصفح حديث.',
+  tool_convert_an_m4a_file_to_mp3_faq_a5:
+    'تعالج الأداة تسجيلًا محليًا كاملًا واحدًا إلى MP3 واحد. للقص استخدم أداة الصوت المرتبطة. لا تُقبل روابط الفيديو أو عناوين الويب أو قوائم التشغيل.',
+  tool_convert_an_m4a_file_to_mp3_faq_q1: 'هل يغادر التسجيل جهازي؟',
+  tool_convert_an_m4a_file_to_mp3_faq_q2: 'هل تحويل M4A إلى MP3 بلا فقد؟',
+  tool_convert_an_m4a_file_to_mp3_faq_q3: 'هل تقبل الأداة AAC أيضًا؟',
+  tool_convert_an_m4a_file_to_mp3_faq_q4: 'لماذا يفشل الملف على هاتفي؟',
+  tool_convert_an_m4a_file_to_mp3_faq_q5: 'هل يمكن القص أو تحويل عدة ملفات؟',
+  tool_convert_an_m4a_file_to_mp3_hint:
+    'ملف واحد حتى 40 MiB و10 دقائق. صوت M4A أحادي أو ثنائي القناة، أو AAC ADTS؛ يعتمد فك الترميز على المتصفح.',
+  tool_convert_an_m4a_file_to_mp3_how_body: 'أنشئ نسخة MP3 عندما يطلبها المستلم أو المشغّل. يشمل التحويل التسجيل كاملًا دون تحديد مقطع.',
+  tool_convert_an_m4a_file_to_mp3_how_item_1: 'اضغط اختيار M4A أو AAC، أو تحميل المثال لتجربة ملف M4A حقيقي.',
+  tool_convert_an_m4a_file_to_mp3_how_item_2: 'غيّر معدل البت عند الحاجة في إعدادات اختيارية ثم اضغط تحويل إلى MP3.',
+  tool_convert_an_m4a_file_to_mp3_how_item_3: 'استمع إلى النتيجة وقارن الحجمين ثم اضغط تنزيل MP3.',
+  tool_convert_an_m4a_file_to_mp3_how_title: 'تجهيز مذكرة صوتية للمشاركة',
+  tool_convert_an_m4a_file_to_mp3_preview: 'الاستماع إلى MP3',
+  tool_convert_an_m4a_file_to_mp3_progress: 'تقدم التحويل',
+  tool_convert_an_m4a_file_to_mp3_read: 'قراءة التسجيل',
+  tool_convert_an_m4a_file_to_mp3_result:
+    'الصوت المفكوك {seconds} ثانية · الإدخال {input} KiB → MP3 {output} KiB · {kbps} kbps · 44.1 kHz · القنوات {channels}',
+  tool_convert_an_m4a_file_to_mp3_rules_body:
+    'الحجم التقريبي بالبايت = الثواني × kbps × 1000 ÷ 8. يضيف الترميز حشوًا بسيطًا؛ تعرض النتيجة الحجم المقاس.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_1:
+    'جرّب 128 kbps للكلام أو 192 للمشاركة المعتادة أو 320 للموسيقى. لا يعيد أي خيار التفاصيل المفقودة، وقد يصبح MP3 أكبر من M4A.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_2:
+    'الخرج 44.1 kHz بقناة أو قناتين. لا تُنسخ الوسوم أو الغلاف أو الفصول. قد يزيد الحشو مدة التشغيل قليلًا.',
+  tool_convert_an_m4a_file_to_mp3_rules_item_3:
+    'ملف M4A صوتي بترميز AAC/ALAC أو AAC ADTS، حتى 40 MiB وعشر دقائق. يلزم دعم المتصفح للترميز. لا DRM أو فيديو أو MP4 مجزأ أو صوت محيطي أو تحويل دفعات.',
+  tool_convert_an_m4a_file_to_mp3_rules_title: 'معدل البت وحدود الملفات',
+  tool_convert_an_m4a_file_to_mp3_sample: 'تحميل المثال',
+  tool_convert_an_m4a_file_to_mp3_sample_name: 'مثال-M4A-خمس-ثوان',
+  tool_convert_an_m4a_file_to_mp3_settings_hint:
+    'الافتراضي 192 kbps. يقل الحجم عند 128، ويخصص 320 بيانات أكثر للترميز. الخرج 44.1 kHz بالقنوات الأصلية.',
   tool_convert_an_m4a_file_to_mp3_title: 'تحويل ملف M4A إلى MP3',
+  tool_convert_an_m4a_file_to_mp3_usecase_1: 'إرسال مذكرة صوتية من الهاتف إلى مستلم لا يقبل إلا MP3.',
+  tool_convert_an_m4a_file_to_mp3_usecase_2: 'تحويل مقابلة مسجلة بصيغة AAC إلى مرفق MP3 مع الاحتفاظ بالأصل للمونتاج.',
+  tool_convert_an_m4a_file_to_mp3_usecases_title: 'متى تحتاجه؟',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_1: 'تعرف حجم MP3 الفعلي وتسمعه قبل تنزيله.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_2: 'تُفحص الحاوية والمسارات قبل فك الترميز، ويُحوّل الصوت المقبول كاملًا.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_item_3: 'يمر مثال M4A المدمج بالخطوات نفسها التي تمر بها تسجيلاتك.',
+  tool_convert_an_m4a_file_to_mp3_why_choose_title: 'مزايا تحويل ملف M4A إلى MP3',
   tool_convert_an_mp3_file_to_wav_advanced: 'إعدادات اختيارية',
   tool_convert_an_mp3_file_to_wav_article:
     'قد يكون تسجيل MP3 كبيرًا لإرساله كمرفق. أنشئ نسخة WAV وقارن حجمها الفعلي بالأصل، ثم استمع إليها قبل التنزيل. يشمل التحويل التسجيل كاملًا دون قص أو تلاشي للصوت. احتفظ بملف MP3 إن كنت ستعدّله لاحقًا، لأن WAV يفقد جزءًا من معلومات الصوت.',
@@ -10908,6 +10979,84 @@ const ar: SiteLangDict = {
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_3: 'يبقى المقطع الأخير ظاهرًا لتُنهي الجملة قبل إيقاف التسجيل بنفسك.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_4: 'يظل النص والصوت في متصفح جهازك ولا يُرسلان إلى خوادمنا.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_title: 'لماذا تستخدم «سجّل تعليقًا صوتيًا باستخدام ملقّن النصوص»؟',
+  tool_reduce_an_mp3_file_size_advanced: 'إعدادات الضغط',
+  tool_reduce_an_mp3_file_size_article:
+    'صيغة MP3 مضغوطة أصلًا مع فقد بعض التفاصيل. تقليل الحجم مرة أخرى يعني فقد تفاصيل إضافية، لذا احتفظ بالأصل. تعالج الأداة التسجيل كاملًا وتعرض حجم النسخة الحقيقي حتى إن كانت أكبر من الملف الأصلي.',
+  tool_reduce_an_mp3_file_size_bitrate: 'معدل البت الإجمالي لملف MP3',
+  tool_reduce_an_mp3_file_size_channels: 'قنوات الإخراج',
+  tool_reduce_an_mp3_file_size_choose: 'اختيار ملف MP3',
+  tool_reduce_an_mp3_file_size_clear: 'مسح',
+  tool_reduce_an_mp3_file_size_convert: 'ضغط MP3',
+  tool_reduce_an_mp3_file_size_decode: 'فك ترميز الصوت',
+  tool_reduce_an_mp3_file_size_desc: 'اضغط ملف MP3 لتسهيل إرساله وقارن الحجم الفعلي. يبقى الصوت على جهازك ولا يُرفع إلى أي خادم.',
+  tool_reduce_an_mp3_file_size_description:
+    'لتقليل حجم MP3، اتبع ثلاث خطوات: خفّض معدل البت واستمع ثم نزّل النسخة. يبقى الصوت على جهازك ولا يُرفع إلى خادم أثناء المعالجة.',
+  tool_reduce_an_mp3_file_size_done: 'اكتملت المعالجة. استمع وقارن الحجم، ثم اضغط تنزيل MP3.',
+  tool_reduce_an_mp3_file_size_download: 'تنزيل MP3',
+  tool_reduce_an_mp3_file_size_elapsed: 'الوقت المنقضي: {s} ثانية',
+  tool_reduce_an_mp3_file_size_empty: 'اختر ملف MP3 أو حمّل المثال أولًا.',
+  tool_reduce_an_mp3_file_size_encode: 'ترميز MP3',
+  tool_reduce_an_mp3_file_size_err_decode: 'تعذّر على المتصفح فك ترميز هذا الملف. جرّب تسجيل MP3 صالحًا آخر.',
+  tool_reduce_an_mp3_file_size_err_encoder: 'تعذّر تحميل مرمّز MP3. تحقّق من الاتصال وحاول مجددًا.',
+  tool_reduce_an_mp3_file_size_err_file: 'اسحب ملف MP3 واحدًا فقط.',
+  tool_reduce_an_mp3_file_size_err_format:
+    'ملف MP3 تالف أو غير مدعوم. استخدم MPEG Layer III القياسي. التدفقات ذات التنسيق الحر وتغيّر القنوات والوسوم الختامية غير المعتادة غير مدعومة.',
+  tool_reduce_an_mp3_file_size_err_limit: 'الحد الأقصى 40 MiB وعشر دقائق وقناة واحدة أو قناتان.',
+  tool_reduce_an_mp3_file_size_example:
+    'يُنشأ تسجيل ستيريو من ثلاث ثوانٍ عند 192 kbps، بحجم يقارب 71 KiB، ثم يُضغط إلى 128 kbps وحوالي 48 KiB. تظهر الأحجام الحقيقية ونسبة التوفير أعلاه. لا يبدأ الصوت تلقائيًا.',
+  tool_reduce_an_mp3_file_size_example_title: 'مثال يمكن مقارنة حجمه',
+  tool_reduce_an_mp3_file_size_failed: 'تعذّر الضغط. جرّب ملف MP3 صالحًا وأصغر حجمًا.',
+  tool_reduce_an_mp3_file_size_faq_a1:
+    'لا. يبقى الصوت داخل المتصفح على جهازك ولا يُرفع إلى خادم. تحتاج الصفحة والمرمّز إلى اتصال عند التحميل الأول، ولا نضمن العمل دون اتصال.',
+  tool_reduce_an_mp3_file_size_faq_a2:
+    'ليس بخفض معدل البت؛ فهذا يحذف مزيدًا من التفاصيل من صوت مضغوط أصلًا. احتفظ بالأصل واستمع إلى النسخة. الأداة تقلّل حجم الملف ولا تضبط مستوى الصوت أو نطاقه الديناميكي.',
+  tool_reduce_an_mp3_file_size_faq_a3:
+    'قد يكون معدل بت الأصل أقل بالفعل. جرّب 64 أو 96 kbps وقارن. نعرض الحجم الفعلي، لكن لا نضمن حجمًا محددًا بالميغابايت أو أن تكون النسخة أصغر.',
+  tool_reduce_an_mp3_file_size_faq_a4:
+    'لا عند ثبات معدل البت الإجمالي. قد تتيح القناة الواحدة استخدام معدل أقل للكلام، لكن مزج اليمين واليسار يمكن أن يغيّر الصوت.',
+  tool_reduce_an_mp3_file_size_faq_a5:
+    'تقبل ملف MP3 واحدًا كاملًا في كل عملية. استخدم محوّل WAV إلى MP3 المرتبط لملفات WAV أو أداة القص للاحتفاظ بجزء فقط. روابط الفيديو والمعالجة الجماعية غير مدعومة.',
+  tool_reduce_an_mp3_file_size_faq_q1: 'هل يُرفع التسجيل إلى خادم؟',
+  tool_reduce_an_mp3_file_size_faq_q2: 'هل يمكن ضغط MP3 دون فقد الجودة؟',
+  tool_reduce_an_mp3_file_size_faq_q3: 'لماذا زاد الحجم؟ وهل يمكن تحديد عدد MB بدقة؟',
+  tool_reduce_an_mp3_file_size_faq_q4: 'هل التحويل إلى قناة واحدة ينصف الحجم؟',
+  tool_reduce_an_mp3_file_size_faq_q5: 'هل تقبل الأداة WAV أو الفيديو أو عدة ملفات؟',
+  tool_reduce_an_mp3_file_size_hint: 'اسحب ملف MP3 واحدًا، بحد أقصى 40 MiB وعشر دقائق، أحادي القناة أو ستيريو.',
+  tool_reduce_an_mp3_file_size_how_body: 'احتفظ بالتسجيل الأصلي وأنشئ نسخة بمعدل بت أقل. تحقّق من الحجم ومن وضوح الصوت قبل الإرسال.',
+  tool_reduce_an_mp3_file_size_how_item_1: 'اضغط اختيار ملف MP3، أو تحميل المثال لتجربة تسجيل مدته ثلاث ثوانٍ.',
+  tool_reduce_an_mp3_file_size_how_item_2: 'افتح إعدادات الضغط عند الحاجة وخفّض معدل البت، ثم اضغط ضغط MP3.',
+  tool_reduce_an_mp3_file_size_how_item_3: 'استمع إلى النتيجة وقارن الحجمين، ثم اضغط تنزيل MP3. إذا بقيت كبيرة، جرّب معدلًا أقل.',
+  tool_reduce_an_mp3_file_size_how_title: 'كيف تصغّر تسجيل MP3 لإرساله',
+  tool_reduce_an_mp3_file_size_keep: 'الإبقاء على القنوات الأصلية',
+  tool_reduce_an_mp3_file_size_mono: 'قناة واحدة (مزج اليمين واليسار)',
+  tool_reduce_an_mp3_file_size_not_smaller: 'هذه النسخة ليست أصغر. خفّض معدل البت أو احتفظ بالأصل لتجنّب فقد إضافي بسبب إعادة الترميز.',
+  tool_reduce_an_mp3_file_size_preview: 'الاستماع إلى MP3 المضغوط',
+  tool_reduce_an_mp3_file_size_progress: 'تقدّم الضغط',
+  tool_reduce_an_mp3_file_size_read: 'قراءة MP3',
+  tool_reduce_an_mp3_file_size_result:
+    '{seconds} ثانية · الأصل {input} KiB ← MP3 {output} KiB · {kbps} kbps · 44.1 kHz · عدد القنوات: {channels}',
+  tool_reduce_an_mp3_file_size_rules_body:
+    'الحجم التقريبي بالبايت = المدة بالثواني × kbps × 1000 ÷ 8. يضيف الترميز حشوًا بسيطًا، لذا تعرض النتيجة الحجم المقاس.',
+  tool_reduce_an_mp3_file_size_rules_item_1:
+    'جرّب 64 أو 96 kbps للكلام، وابدأ بـ128 أو 192 kbps للموسيقى ثم استمع. جميع الخيارات تعيد الترميز مع فقد بعض التفاصيل.',
+  tool_reduce_an_mp3_file_size_rules_item_2:
+    'القناة الواحدة هي متوسط اليمين واليسار. عند معدل بت إجمالي واحد يكون الحجم قريبًا من الستيريو؛ خفض المعدل هو ما يوفّر مساحة إضافية. قد تتلاشى الإشارات المتعاكسة في الطور عند المزج.',
+  tool_reduce_an_mp3_file_size_rules_item_3:
+    'الإخراج MP3 بتردد 44.1 kHz دون صورة غلاف أو وسوم؛ وقد يزيد الحشو المدة قليلًا. يدعم Layer III القياسي بقناة أو قناتين حتى 40 MiB وعشر دقائق؛ تُرفض الملفات التالفة والتنسيق الحر وتغيّر القنوات.',
+  tool_reduce_an_mp3_file_size_rules_title: 'معدل البت والقنوات وحجم الملف',
+  tool_reduce_an_mp3_file_size_sample: 'تحميل المثال',
+  tool_reduce_an_mp3_file_size_sample_name: 'مثال-ثلاث-ثوان',
+  tool_reduce_an_mp3_file_size_saved: 'انخفض حجم الملف بنسبة {percent}٪.',
+  tool_reduce_an_mp3_file_size_settings_hint:
+    'الإعداد الافتراضي 128 kbps مع إبقاء القنوات. جرّب 64 أو 96 kbps للكلام. التحويل إلى قناة واحدة لا ينصف الحجم عند ثبات معدل البت الإجمالي.',
+  tool_reduce_an_mp3_file_size_title: 'تقليل حجم ملف MP3',
+  tool_reduce_an_mp3_file_size_usecase_1: 'إرسال مذكرة صوتية كمرفق بريد أصغر دون حذف أجزاء من المحادثة.',
+  tool_reduce_an_mp3_file_size_usecase_2: 'مشاركة تسجيل تدريب عبر اتصال بطيء مع الاحتفاظ بالنسخة الأصلية على حدة.',
+  tool_reduce_an_mp3_file_size_usecases_title: 'متى يفيدك ذلك؟',
+  tool_reduce_an_mp3_file_size_why_choose_item_1: 'تستمع إلى الملف الناتج فعلًا قبل تنزيله وإرساله.',
+  tool_reduce_an_mp3_file_size_why_choose_item_2: 'تظهر الأحجام المقاسة مع تنبيه واضح إذا أصبحت النسخة أكبر.',
+  tool_reduce_an_mp3_file_size_why_choose_item_3: 'يبقى التسجيل كاملًا، ويمكن إبقاء الستيريو أو مزج القناتين في قناة واحدة.',
+  tool_reduce_an_mp3_file_size_why_choose_title: 'مزايا أداة تقليل حجم ملف MP3',
   tool_remove_silence_from_a_recording_advanced: 'إعدادات متقدمة (اختياري)',
   tool_remove_silence_from_a_recording_article:
     'أزل الصمت من تسجيل في هذا التبويب: افتح ملفًا محليًا، اضغط إزالة الصمت، ثم صدّر WAV أو MP3. تُقطع الوقفات الطويلة وتُخاط الكلام في ملف أقصر، دون رفع إلى خادم.',
