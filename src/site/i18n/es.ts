@@ -11590,6 +11590,88 @@ const es: SiteLangDict = {
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_3: 'El último párrafo queda visible hasta que detengas la toma: puedes terminar la frase con calma.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_4: 'Guion y voz permanecen en el navegador de tu dispositivo; no se envían a nuestros servidores.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_title: 'Por qué usar Graba una locución con teleprompter',
+  tool_reduce_an_mp3_file_size_advanced: 'Ajustes de compresión',
+  tool_reduce_an_mp3_file_size_article:
+    'Para enviar una grabación por correo quizá necesites un archivo menor. Comprimir MP3 implica volver a codificar audio que ya ha perdido información: guarda el original. Aquí se conserva toda la grabación y se comparan los tamaños reales.',
+  tool_reduce_an_mp3_file_size_bitrate: 'Bitrate total del MP3',
+  tool_reduce_an_mp3_file_size_channels: 'Canales de salida',
+  tool_reduce_an_mp3_file_size_choose: 'Elegir archivo MP3',
+  tool_reduce_an_mp3_file_size_clear: 'Borrar',
+  tool_reduce_an_mp3_file_size_convert: 'Comprimir MP3',
+  tool_reduce_an_mp3_file_size_decode: 'Decodificar audio',
+  tool_reduce_an_mp3_file_size_desc:
+    'Comprime un MP3 para enviarlo y comprueba cuánto ocupa. El audio permanece en tu dispositivo y no se sube al servidor.',
+  tool_reduce_an_mp3_file_size_description:
+    'Comprime un MP3 en tres pasos: baja el bitrate, escucha y descarga. El audio queda en tu dispositivo y no se sube al servidor.',
+  tool_reduce_an_mp3_file_size_done: 'Listo. Escucha, compara el tamaño y pulsa Descargar MP3.',
+  tool_reduce_an_mp3_file_size_download: 'Descargar MP3',
+  tool_reduce_an_mp3_file_size_elapsed: '{s} s transcurridos',
+  tool_reduce_an_mp3_file_size_empty: 'Elige un MP3 o carga el ejemplo.',
+  tool_reduce_an_mp3_file_size_encode: 'Codificar MP3',
+  tool_reduce_an_mp3_file_size_err_decode: 'El navegador no pudo leer el audio de este MP3. Prueba otra grabación válida.',
+  tool_reduce_an_mp3_file_size_err_encoder: 'No se pudo cargar el codificador MP3. Revisa la conexión y vuelve a intentarlo.',
+  tool_reduce_an_mp3_file_size_err_file: 'Arrastra un solo archivo MP3.',
+  tool_reduce_an_mp3_file_size_err_format:
+    'MP3 dañado o no compatible. Usa MPEG Layer III estándar; no se admiten flujos de formato libre, cambios de canales ni etiquetas finales poco habituales.',
+  tool_reduce_an_mp3_file_size_err_limit: 'El límite es 40 MiB, diez minutos y uno o dos canales.',
+  tool_reduce_an_mp3_file_size_example:
+    'Se genera un MP3 estéreo de tres segundos a 192 kbps, unos 71 KiB. Al comprimir a 128 kbps queda en unos 48 KiB. Arriba verás la medida exacta y el ahorro; no se reproduce automáticamente.',
+  tool_reduce_an_mp3_file_size_example_title: 'Un ejemplo con tamaños medidos',
+  tool_reduce_an_mp3_file_size_failed: 'No se pudo comprimir. Prueba con un MP3 válido más pequeño.',
+  tool_reduce_an_mp3_file_size_faq_a1:
+    'No con una reducción de bitrate. Se elimina más detalle de un archivo ya comprimido. Conserva el original y escucha la copia; aquí se reduce el tamaño, no el volumen ni el rango dinámico.',
+  tool_reduce_an_mp3_file_size_faq_a2:
+    'No se sube al servidor: se procesa en el navegador de tu dispositivo. La primera carga de la herramienta y el codificador necesita conexión; no se garantiza funcionamiento sin internet.',
+  tool_reduce_an_mp3_file_size_faq_a3:
+    'Quizá el original ya tenga un bitrate menor. Prueba 64 o 96 kbps y compara. Se informa del tamaño real, pero no se garantiza una cifra exacta en MB ni un archivo más pequeño.',
+  tool_reduce_an_mp3_file_size_faq_a4:
+    'No si el bitrate total es igual. Mono puede facilitar el uso de bitrates bajos para voz, pero mezcla ambos canales y puede cambiar el sonido.',
+  tool_reduce_an_mp3_file_size_faq_a5:
+    'Solo un MP3 completo por operación. Para WAV usa el conversor relacionado; para guardar un fragmento, el recortador. No se admiten enlaces de vídeo ni lotes.',
+  tool_reduce_an_mp3_file_size_faq_q1: '¿Se puede comprimir MP3 sin perder calidad?',
+  tool_reduce_an_mp3_file_size_faq_q2: '¿El audio sale de mi dispositivo?',
+  tool_reduce_an_mp3_file_size_faq_q3: '¿Por qué no disminuye? ¿Puedo fijar un máximo en MB?',
+  tool_reduce_an_mp3_file_size_faq_q4: '¿Pasar de estéreo a mono divide el peso entre dos?',
+  tool_reduce_an_mp3_file_size_faq_q5: '¿Acepta WAV, vídeos o varios archivos?',
+  tool_reduce_an_mp3_file_size_hint: 'Arrastra un MP3 de hasta 40 MiB y 10 minutos, mono o estéreo.',
+  tool_reduce_an_mp3_file_size_how_body:
+    'Trabaja sobre una copia: elige un bitrate menor y comprueba tanto el peso como la calidad de escucha.',
+  tool_reduce_an_mp3_file_size_how_item_1: 'Pulsa Elegir archivo MP3 o Cargar ejemplo para probar tres segundos de audio.',
+  tool_reduce_an_mp3_file_size_how_item_2: 'Abre Ajustes de compresión si quieres bajar el bitrate y pulsa Comprimir MP3.',
+  tool_reduce_an_mp3_file_size_how_item_3:
+    'Escucha la copia, revisa los tamaños y pulsa Descargar MP3. Si sigue pesando demasiado, prueba un bitrate inferior.',
+  tool_reduce_an_mp3_file_size_how_title: 'Cómo comprimir un MP3 para enviarlo',
+  tool_reduce_an_mp3_file_size_keep: 'Conservar los canales',
+  tool_reduce_an_mp3_file_size_mono: 'Mono (mezclar izquierda y derecha)',
+  tool_reduce_an_mp3_file_size_not_smaller:
+    'La copia no ocupa menos. Baja el bitrate o conserva el original para evitar otra codificación con pérdidas.',
+  tool_reduce_an_mp3_file_size_preview: 'Escuchar el MP3 comprimido',
+  tool_reduce_an_mp3_file_size_progress: 'Progreso de la compresión',
+  tool_reduce_an_mp3_file_size_read: 'Leer MP3',
+  tool_reduce_an_mp3_file_size_result:
+    '{seconds} s · Original {input} KiB → MP3 {output} KiB · {kbps} kbps · 44.1 kHz · {channels} canal(es)',
+  tool_reduce_an_mp3_file_size_rules_body:
+    'Tamaño aproximado en bytes = segundos × kbps × 1000 ÷ 8. El relleno del codificador añade algo de espacio; el resultado muestra el peso real.',
+  tool_reduce_an_mp3_file_size_rules_item_1:
+    '64 y 96 kbps son opciones para reducir grabaciones de voz. Para música, empieza con 128 o 192 kbps y escucha. Todas las opciones vuelven a comprimir con pérdidas.',
+  tool_reduce_an_mp3_file_size_rules_item_2:
+    'Mono promedia izquierda y derecha. Con el mismo bitrate total ocupa casi lo mismo que estéreo; hay que bajar el bitrate para ahorrar más. Señales en oposición de fase pueden cancelarse.',
+  tool_reduce_an_mp3_file_size_rules_item_3:
+    'Salida MP3 a 44.1 kHz sin carátula ni etiquetas; el relleno puede alargar ligeramente el audio. Solo Layer III estándar mono/estéreo, hasta 40 MiB y diez minutos; se rechazan flujos dañados, libres o con cambios de canales.',
+  tool_reduce_an_mp3_file_size_rules_title: 'Elegir bitrate y canales',
+  tool_reduce_an_mp3_file_size_sample: 'Cargar ejemplo',
+  tool_reduce_an_mp3_file_size_sample_name: 'ejemplo-tres-segundos',
+  tool_reduce_an_mp3_file_size_saved: 'El archivo ocupa un {percent}% menos.',
+  tool_reduce_an_mp3_file_size_settings_hint:
+    'El valor inicial es 128 kbps y conserva los canales. Prueba 64 o 96 kbps para voz. Pasar a mono no reduce el tamaño a la mitad si mantienes el bitrate total.',
+  tool_reduce_an_mp3_file_size_title: 'Reducir el tamaño de un MP3',
+  tool_reduce_an_mp3_file_size_usecase_1: 'Reducir un archivo de voz para adjuntarlo a un correo sin cortar la conversación.',
+  tool_reduce_an_mp3_file_size_usecase_2: 'Enviar una prueba de ensayo con una conexión lenta y guardar aparte la grabación original.',
+  tool_reduce_an_mp3_file_size_usecases_title: 'Cuándo resulta útil',
+  tool_reduce_an_mp3_file_size_why_choose_item_1: 'Puedes escuchar el archivo ya codificado antes de enviarlo.',
+  tool_reduce_an_mp3_file_size_why_choose_item_2: 'La comparación usa bytes reales y avisa si la copia resulta mayor.',
+  tool_reduce_an_mp3_file_size_why_choose_item_3: 'Permite conservar el estéreo o mezclar la voz a mono sin recortar la duración.',
+  tool_reduce_an_mp3_file_size_why_choose_title: 'Qué ofrece Reducir el tamaño de un MP3',
   tool_remove_silence_from_a_recording_advanced: 'Ajustes avanzados (opcional)',
   tool_remove_silence_from_a_recording_article:
     'Elimina los silencios de una grabación en esta pestaña: abre un archivo local, pulsa Quitar silencios y exporta WAV o MP3. El aire muerto se corta y el habla queda en un solo archivo más corto, sin subir al servidor.',

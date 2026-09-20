@@ -10906,6 +10906,84 @@ const ar: SiteLangDict = {
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_3: 'يبقى المقطع الأخير ظاهرًا لتُنهي الجملة قبل إيقاف التسجيل بنفسك.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_4: 'يظل النص والصوت في متصفح جهازك ولا يُرسلان إلى خوادمنا.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_title: 'لماذا تستخدم «سجّل تعليقًا صوتيًا باستخدام ملقّن النصوص»؟',
+  tool_reduce_an_mp3_file_size_advanced: 'إعدادات الضغط',
+  tool_reduce_an_mp3_file_size_article:
+    'صيغة MP3 مضغوطة أصلًا مع فقد بعض التفاصيل. تقليل الحجم مرة أخرى يعني فقد تفاصيل إضافية، لذا احتفظ بالأصل. تعالج الأداة التسجيل كاملًا وتعرض حجم النسخة الحقيقي حتى إن كانت أكبر من الملف الأصلي.',
+  tool_reduce_an_mp3_file_size_bitrate: 'معدل البت الإجمالي لملف MP3',
+  tool_reduce_an_mp3_file_size_channels: 'قنوات الإخراج',
+  tool_reduce_an_mp3_file_size_choose: 'اختيار ملف MP3',
+  tool_reduce_an_mp3_file_size_clear: 'مسح',
+  tool_reduce_an_mp3_file_size_convert: 'ضغط MP3',
+  tool_reduce_an_mp3_file_size_decode: 'فك ترميز الصوت',
+  tool_reduce_an_mp3_file_size_desc: 'اضغط ملف MP3 لتسهيل إرساله وقارن الحجم الفعلي. يبقى الصوت على جهازك ولا يُرفع إلى أي خادم.',
+  tool_reduce_an_mp3_file_size_description:
+    'لتقليل حجم MP3، اتبع ثلاث خطوات: خفّض معدل البت واستمع ثم نزّل النسخة. يبقى الصوت على جهازك ولا يُرفع إلى خادم أثناء المعالجة.',
+  tool_reduce_an_mp3_file_size_done: 'اكتملت المعالجة. استمع وقارن الحجم، ثم اضغط تنزيل MP3.',
+  tool_reduce_an_mp3_file_size_download: 'تنزيل MP3',
+  tool_reduce_an_mp3_file_size_elapsed: 'الوقت المنقضي: {s} ثانية',
+  tool_reduce_an_mp3_file_size_empty: 'اختر ملف MP3 أو حمّل المثال أولًا.',
+  tool_reduce_an_mp3_file_size_encode: 'ترميز MP3',
+  tool_reduce_an_mp3_file_size_err_decode: 'تعذّر على المتصفح فك ترميز هذا الملف. جرّب تسجيل MP3 صالحًا آخر.',
+  tool_reduce_an_mp3_file_size_err_encoder: 'تعذّر تحميل مرمّز MP3. تحقّق من الاتصال وحاول مجددًا.',
+  tool_reduce_an_mp3_file_size_err_file: 'اسحب ملف MP3 واحدًا فقط.',
+  tool_reduce_an_mp3_file_size_err_format:
+    'ملف MP3 تالف أو غير مدعوم. استخدم MPEG Layer III القياسي. التدفقات ذات التنسيق الحر وتغيّر القنوات والوسوم الختامية غير المعتادة غير مدعومة.',
+  tool_reduce_an_mp3_file_size_err_limit: 'الحد الأقصى 40 MiB وعشر دقائق وقناة واحدة أو قناتان.',
+  tool_reduce_an_mp3_file_size_example:
+    'يُنشأ تسجيل ستيريو من ثلاث ثوانٍ عند 192 kbps، بحجم يقارب 71 KiB، ثم يُضغط إلى 128 kbps وحوالي 48 KiB. تظهر الأحجام الحقيقية ونسبة التوفير أعلاه. لا يبدأ الصوت تلقائيًا.',
+  tool_reduce_an_mp3_file_size_example_title: 'مثال يمكن مقارنة حجمه',
+  tool_reduce_an_mp3_file_size_failed: 'تعذّر الضغط. جرّب ملف MP3 صالحًا وأصغر حجمًا.',
+  tool_reduce_an_mp3_file_size_faq_a1:
+    'لا. يبقى الصوت داخل المتصفح على جهازك ولا يُرفع إلى خادم. تحتاج الصفحة والمرمّز إلى اتصال عند التحميل الأول، ولا نضمن العمل دون اتصال.',
+  tool_reduce_an_mp3_file_size_faq_a2:
+    'ليس بخفض معدل البت؛ فهذا يحذف مزيدًا من التفاصيل من صوت مضغوط أصلًا. احتفظ بالأصل واستمع إلى النسخة. الأداة تقلّل حجم الملف ولا تضبط مستوى الصوت أو نطاقه الديناميكي.',
+  tool_reduce_an_mp3_file_size_faq_a3:
+    'قد يكون معدل بت الأصل أقل بالفعل. جرّب 64 أو 96 kbps وقارن. نعرض الحجم الفعلي، لكن لا نضمن حجمًا محددًا بالميغابايت أو أن تكون النسخة أصغر.',
+  tool_reduce_an_mp3_file_size_faq_a4:
+    'لا عند ثبات معدل البت الإجمالي. قد تتيح القناة الواحدة استخدام معدل أقل للكلام، لكن مزج اليمين واليسار يمكن أن يغيّر الصوت.',
+  tool_reduce_an_mp3_file_size_faq_a5:
+    'تقبل ملف MP3 واحدًا كاملًا في كل عملية. استخدم محوّل WAV إلى MP3 المرتبط لملفات WAV أو أداة القص للاحتفاظ بجزء فقط. روابط الفيديو والمعالجة الجماعية غير مدعومة.',
+  tool_reduce_an_mp3_file_size_faq_q1: 'هل يُرفع التسجيل إلى خادم؟',
+  tool_reduce_an_mp3_file_size_faq_q2: 'هل يمكن ضغط MP3 دون فقد الجودة؟',
+  tool_reduce_an_mp3_file_size_faq_q3: 'لماذا زاد الحجم؟ وهل يمكن تحديد عدد MB بدقة؟',
+  tool_reduce_an_mp3_file_size_faq_q4: 'هل التحويل إلى قناة واحدة ينصف الحجم؟',
+  tool_reduce_an_mp3_file_size_faq_q5: 'هل تقبل الأداة WAV أو الفيديو أو عدة ملفات؟',
+  tool_reduce_an_mp3_file_size_hint: 'اسحب ملف MP3 واحدًا، بحد أقصى 40 MiB وعشر دقائق، أحادي القناة أو ستيريو.',
+  tool_reduce_an_mp3_file_size_how_body: 'احتفظ بالتسجيل الأصلي وأنشئ نسخة بمعدل بت أقل. تحقّق من الحجم ومن وضوح الصوت قبل الإرسال.',
+  tool_reduce_an_mp3_file_size_how_item_1: 'اضغط اختيار ملف MP3، أو تحميل المثال لتجربة تسجيل مدته ثلاث ثوانٍ.',
+  tool_reduce_an_mp3_file_size_how_item_2: 'افتح إعدادات الضغط عند الحاجة وخفّض معدل البت، ثم اضغط ضغط MP3.',
+  tool_reduce_an_mp3_file_size_how_item_3: 'استمع إلى النتيجة وقارن الحجمين، ثم اضغط تنزيل MP3. إذا بقيت كبيرة، جرّب معدلًا أقل.',
+  tool_reduce_an_mp3_file_size_how_title: 'كيف تصغّر تسجيل MP3 لإرساله',
+  tool_reduce_an_mp3_file_size_keep: 'الإبقاء على القنوات الأصلية',
+  tool_reduce_an_mp3_file_size_mono: 'قناة واحدة (مزج اليمين واليسار)',
+  tool_reduce_an_mp3_file_size_not_smaller: 'هذه النسخة ليست أصغر. خفّض معدل البت أو احتفظ بالأصل لتجنّب فقد إضافي بسبب إعادة الترميز.',
+  tool_reduce_an_mp3_file_size_preview: 'الاستماع إلى MP3 المضغوط',
+  tool_reduce_an_mp3_file_size_progress: 'تقدّم الضغط',
+  tool_reduce_an_mp3_file_size_read: 'قراءة MP3',
+  tool_reduce_an_mp3_file_size_result:
+    '{seconds} ثانية · الأصل {input} KiB ← MP3 {output} KiB · {kbps} kbps · 44.1 kHz · عدد القنوات: {channels}',
+  tool_reduce_an_mp3_file_size_rules_body:
+    'الحجم التقريبي بالبايت = المدة بالثواني × kbps × 1000 ÷ 8. يضيف الترميز حشوًا بسيطًا، لذا تعرض النتيجة الحجم المقاس.',
+  tool_reduce_an_mp3_file_size_rules_item_1:
+    'جرّب 64 أو 96 kbps للكلام، وابدأ بـ128 أو 192 kbps للموسيقى ثم استمع. جميع الخيارات تعيد الترميز مع فقد بعض التفاصيل.',
+  tool_reduce_an_mp3_file_size_rules_item_2:
+    'القناة الواحدة هي متوسط اليمين واليسار. عند معدل بت إجمالي واحد يكون الحجم قريبًا من الستيريو؛ خفض المعدل هو ما يوفّر مساحة إضافية. قد تتلاشى الإشارات المتعاكسة في الطور عند المزج.',
+  tool_reduce_an_mp3_file_size_rules_item_3:
+    'الإخراج MP3 بتردد 44.1 kHz دون صورة غلاف أو وسوم؛ وقد يزيد الحشو المدة قليلًا. يدعم Layer III القياسي بقناة أو قناتين حتى 40 MiB وعشر دقائق؛ تُرفض الملفات التالفة والتنسيق الحر وتغيّر القنوات.',
+  tool_reduce_an_mp3_file_size_rules_title: 'معدل البت والقنوات وحجم الملف',
+  tool_reduce_an_mp3_file_size_sample: 'تحميل المثال',
+  tool_reduce_an_mp3_file_size_sample_name: 'مثال-ثلاث-ثوان',
+  tool_reduce_an_mp3_file_size_saved: 'انخفض حجم الملف بنسبة {percent}٪.',
+  tool_reduce_an_mp3_file_size_settings_hint:
+    'الإعداد الافتراضي 128 kbps مع إبقاء القنوات. جرّب 64 أو 96 kbps للكلام. التحويل إلى قناة واحدة لا ينصف الحجم عند ثبات معدل البت الإجمالي.',
+  tool_reduce_an_mp3_file_size_title: 'تقليل حجم ملف MP3',
+  tool_reduce_an_mp3_file_size_usecase_1: 'إرسال مذكرة صوتية كمرفق بريد أصغر دون حذف أجزاء من المحادثة.',
+  tool_reduce_an_mp3_file_size_usecase_2: 'مشاركة تسجيل تدريب عبر اتصال بطيء مع الاحتفاظ بالنسخة الأصلية على حدة.',
+  tool_reduce_an_mp3_file_size_usecases_title: 'متى يفيدك ذلك؟',
+  tool_reduce_an_mp3_file_size_why_choose_item_1: 'تستمع إلى الملف الناتج فعلًا قبل تنزيله وإرساله.',
+  tool_reduce_an_mp3_file_size_why_choose_item_2: 'تظهر الأحجام المقاسة مع تنبيه واضح إذا أصبحت النسخة أكبر.',
+  tool_reduce_an_mp3_file_size_why_choose_item_3: 'يبقى التسجيل كاملًا، ويمكن إبقاء الستيريو أو مزج القناتين في قناة واحدة.',
+  tool_reduce_an_mp3_file_size_why_choose_title: 'مزايا أداة تقليل حجم ملف MP3',
   tool_remove_silence_from_a_recording_advanced: 'إعدادات متقدمة (اختياري)',
   tool_remove_silence_from_a_recording_article:
     'أزل الصمت من تسجيل في هذا التبويب: افتح ملفًا محليًا، اضغط إزالة الصمت، ثم صدّر WAV أو MP3. تُقطع الوقفات الطويلة وتُخاط الكلام في ملف أقصر، دون رفع إلى خادم.',

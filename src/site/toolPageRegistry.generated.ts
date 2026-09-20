@@ -189,6 +189,7 @@ import { renderPromptTemplateBuilderPage } from '../pages/promptTemplateBuilderP
 import { renderProtectPdfPage } from '../pages/protectPdfPage';
 import { renderRecordAVoiceMemoInTheBrowserPage } from '../pages/recordAVoiceMemoInTheBrowserPage';
 import { renderRecordAVoiceoverWithATeleprompterPage } from '../pages/recordAVoiceoverWithATeleprompterPage';
+import { renderReduceAnMp3FileSizePage } from '../pages/reduceAnMp3FileSizePage';
 import { renderRemoveSilenceFromARecordingPage } from '../pages/removeSilenceFromARecordingPage';
 import { renderRobotsTxtGeneratorPage } from '../pages/robotsTxtGeneratorPage';
 import { renderRotatePdfPage } from '../pages/rotatePdfPage';
@@ -423,6 +424,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'protect-pdf': (lang, defaultLang, enabled) => renderProtectPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'record-a-voice-memo-in-the-browser': (lang, defaultLang, enabled) => renderRecordAVoiceMemoInTheBrowserPage({ lang, defaultLang, enabledLangs: enabled }),
 	'record-a-voiceover-with-a-teleprompter': (lang, defaultLang, enabled) => renderRecordAVoiceoverWithATeleprompterPage({ lang, defaultLang, enabledLangs: enabled }),
+	'reduce-an-mp3-file-size': (lang, defaultLang, enabled) => renderReduceAnMp3FileSizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'remove-silence-from-a-recording': (lang, defaultLang, enabled) => renderRemoveSilenceFromARecordingPage({ lang, defaultLang, enabledLangs: enabled }),
 	'robots-txt-generator': (lang, defaultLang, enabled) => renderRobotsTxtGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'rotate-pdf': (lang, defaultLang, enabled) => renderRotatePdfPage({ lang, defaultLang, enabledLangs: enabled }),

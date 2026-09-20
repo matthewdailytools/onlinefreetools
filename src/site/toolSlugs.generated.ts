@@ -189,6 +189,7 @@ export const TOOL_SLUGS = [
 	"protect-pdf",
 	"record-a-voice-memo-in-the-browser",
 	"record-a-voiceover-with-a-teleprompter",
+	"reduce-an-mp3-file-size",
 	"remove-silence-from-a-recording",
 	"robots-txt-generator",
 	"rotate-pdf",

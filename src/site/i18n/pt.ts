@@ -11439,6 +11439,88 @@ const pt: SiteLangDict = {
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_3: 'O último parágrafo continua visível para você concluir a frase antes de parar.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_4: 'Roteiro e áudio permanecem no navegador do dispositivo e não são enviados aos nossos servidores.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_title: 'Por que usar Grave uma narração com teleprompter',
+  tool_reduce_an_mp3_file_size_advanced: 'Configurações de compressão',
+  tool_reduce_an_mp3_file_size_article:
+    'Antes de comprimir um MP3, guarde o original. O formato já é comprimido com perdas; reduzir mais o tamanho descarta outros detalhes do som. A gravação é mantida inteira e o resultado mostra quanto a cópia realmente ocupa.',
+  tool_reduce_an_mp3_file_size_bitrate: 'Taxa de bits total do MP3',
+  tool_reduce_an_mp3_file_size_channels: 'Canais de saída',
+  tool_reduce_an_mp3_file_size_choose: 'Escolher arquivo MP3',
+  tool_reduce_an_mp3_file_size_clear: 'Limpar',
+  tool_reduce_an_mp3_file_size_convert: 'Comprimir MP3',
+  tool_reduce_an_mp3_file_size_decode: 'Decodificar áudio',
+  tool_reduce_an_mp3_file_size_desc:
+    'Comprima um MP3 pesado para enviar e compare os tamanhos. O áudio fica no seu dispositivo, sem ser enviado ao servidor.',
+  tool_reduce_an_mp3_file_size_description:
+    'Comprima MP3 em três passos: escolha a taxa, ouça o resultado e baixe. O áudio fica no seu dispositivo e não é enviado ao servidor.',
+  tool_reduce_an_mp3_file_size_done: 'Pronto. Ouça, confira o tamanho e clique em Baixar MP3.',
+  tool_reduce_an_mp3_file_size_download: 'Baixar MP3',
+  tool_reduce_an_mp3_file_size_elapsed: '{s} s decorridos',
+  tool_reduce_an_mp3_file_size_empty: 'Escolha um MP3 ou carregue o exemplo primeiro.',
+  tool_reduce_an_mp3_file_size_encode: 'Codificar MP3',
+  tool_reduce_an_mp3_file_size_err_decode: 'O navegador não conseguiu decodificar este MP3. Tente outra gravação válida.',
+  tool_reduce_an_mp3_file_size_err_encoder: 'Não foi possível carregar o codificador MP3. Verifique a conexão e tente novamente.',
+  tool_reduce_an_mp3_file_size_err_file: 'Arraste apenas um arquivo MP3.',
+  tool_reduce_an_mp3_file_size_err_format:
+    'MP3 danificado ou incompatível. Use MPEG Layer III padrão. Fluxos de formato livre, mudanças de canais e tags finais incomuns não são aceitos.',
+  tool_reduce_an_mp3_file_size_err_limit: 'Use até 40 MiB, dez minutos e um ou dois canais.',
+  tool_reduce_an_mp3_file_size_example:
+    'O exemplo gera um MP3 estéreo a 192 kbps, com cerca de 71 KiB, e comprime a gravação de três segundos a 128 kbps, cerca de 48 KiB. Os números reais aparecem acima. Não há reprodução automática.',
+  tool_reduce_an_mp3_file_size_example_title: 'Teste de três segundos',
+  tool_reduce_an_mp3_file_size_failed: 'Não foi possível comprimir. Tente um MP3 válido e menor.',
+  tool_reduce_an_mp3_file_size_faq_a1:
+    'Não baixando a taxa de bits. A nova compressão elimina mais detalhes. Guarde o original e ouça a cópia. O tamanho do arquivo é reduzido; volume e faixa dinâmica não são ajustados.',
+  tool_reduce_an_mp3_file_size_faq_a2:
+    'Não há garantia de tamanho exato nem de redução. Se o original já usa taxa baixa, a cópia pode ficar maior. Tente 64 ou 96 kbps e compare as medidas reais.',
+  tool_reduce_an_mp3_file_size_faq_a3:
+    'Não. Ele fica no navegador do seu dispositivo e não é enviado ao servidor. A primeira carga da ferramenta e do codificador precisa de conexão; uso offline não é garantido.',
+  tool_reduce_an_mp3_file_size_faq_a4:
+    'Não com a mesma taxa de bits total. Para fala, mono pode ajudar a usar taxas menores, mas mistura os dois canais e pode alterar o som.',
+  tool_reduce_an_mp3_file_size_faq_a5:
+    'Aqui é processado um MP3 inteiro por vez. Use o conversor WAV para MP3 relacionado ou o recortador para salvar só um trecho. Links de vídeo e processamento em lote não são aceitos.',
+  tool_reduce_an_mp3_file_size_faq_q1: 'Dá para reduzir MP3 sem perder qualidade?',
+  tool_reduce_an_mp3_file_size_faq_q2: 'Posso definir um tamanho exato em MB?',
+  tool_reduce_an_mp3_file_size_faq_q3: 'O áudio é enviado para algum servidor?',
+  tool_reduce_an_mp3_file_size_faq_q4: 'Mono ocupa metade do estéreo?',
+  tool_reduce_an_mp3_file_size_faq_q5: 'Posso usar WAV, vídeo ou vários arquivos?',
+  tool_reduce_an_mp3_file_size_hint: 'Arraste um MP3 de até 40 MiB e 10 minutos, mono ou estéreo.',
+  tool_reduce_an_mp3_file_size_how_body:
+    'Crie uma cópia com taxa de bits menor e avalie se o som ainda serve para o envio. Preserve a gravação original.',
+  tool_reduce_an_mp3_file_size_how_item_1: 'Clique em Escolher arquivo MP3 ou em Carregar exemplo para testar três segundos de áudio.',
+  tool_reduce_an_mp3_file_size_how_item_2: 'Se necessário, abra Configurações de compressão e reduza a taxa. Clique em Comprimir MP3.',
+  tool_reduce_an_mp3_file_size_how_item_3:
+    'Ouça a cópia, compare os tamanhos e clique em Baixar MP3. Se ainda estiver grande, tente uma taxa menor.',
+  tool_reduce_an_mp3_file_size_how_title: 'Como deixar um MP3 mais leve',
+  tool_reduce_an_mp3_file_size_keep: 'Manter os canais originais',
+  tool_reduce_an_mp3_file_size_mono: 'Mono (misturar esquerda e direita)',
+  tool_reduce_an_mp3_file_size_not_smaller:
+    'A cópia não ficou menor. Reduza a taxa de bits ou mantenha o original para evitar outra codificação com perdas.',
+  tool_reduce_an_mp3_file_size_preview: 'Ouvir o MP3 comprimido',
+  tool_reduce_an_mp3_file_size_progress: 'Progresso da compressão',
+  tool_reduce_an_mp3_file_size_read: 'Ler MP3',
+  tool_reduce_an_mp3_file_size_result:
+    '{seconds} s · Original {input} KiB → MP3 {output} KiB · {kbps} kbps · 44.1 kHz · {channels} canal/canais',
+  tool_reduce_an_mp3_file_size_rules_body:
+    'Estimativa em bytes = segundos × kbps × 1000 ÷ 8. O preenchimento do codificador acrescenta um pouco de espaço; confira a medida real no resultado.',
+  tool_reduce_an_mp3_file_size_rules_item_1:
+    '64 e 96 kbps priorizam economia em gravações de voz. Para música, comece em 128 ou 192 kbps e ouça. Todas as opções aplicam nova compressão com perdas.',
+  tool_reduce_an_mp3_file_size_rules_item_2:
+    'Mono calcula a média dos canais esquerdo e direito. Com a mesma taxa total, o tamanho fica próximo ao estéreo; para reduzir mais, baixe a taxa. Sinais em oposição de fase podem se cancelar na mistura.',
+  tool_reduce_an_mp3_file_size_rules_item_3:
+    'A saída é MP3 de 44.1 kHz, sem capa nem tags. O preenchimento pode aumentar um pouco a duração. Aceita Layer III padrão, mono/estéreo, até 40 MiB e dez minutos; rejeita arquivos danificados, formato livre e mudanças de canais.',
+  tool_reduce_an_mp3_file_size_rules_title: 'Taxa de bits, canais e espaço ocupado',
+  tool_reduce_an_mp3_file_size_sample: 'Carregar exemplo',
+  tool_reduce_an_mp3_file_size_sample_name: 'exemplo-tres-segundos',
+  tool_reduce_an_mp3_file_size_saved: 'O tamanho diminuiu {percent}%.',
+  tool_reduce_an_mp3_file_size_settings_hint:
+    'O padrão é 128 kbps, mantendo os canais. Para voz, experimente 64 ou 96 kbps. Mono não reduz o tamanho pela metade quando a taxa total é a mesma.',
+  tool_reduce_an_mp3_file_size_title: 'Diminuir o tamanho de um MP3',
+  tool_reduce_an_mp3_file_size_usecase_1: 'Enviar uma gravação de voz como anexo de e-mail sem cortar a conversa.',
+  tool_reduce_an_mp3_file_size_usecase_2: 'Compartilhar uma prévia de ensaio em uma conexão lenta, guardando o original em separado.',
+  tool_reduce_an_mp3_file_size_usecases_title: 'Quando vale a pena usar',
+  tool_reduce_an_mp3_file_size_why_choose_item_1: 'A comparação usa tamanhos reais e avisa quando o arquivo fica maior.',
+  tool_reduce_an_mp3_file_size_why_choose_item_2: 'É possível ouvir a versão codificada antes de baixar.',
+  tool_reduce_an_mp3_file_size_why_choose_item_3: 'Você mantém a gravação completa, com os canais originais ou misturados em mono.',
+  tool_reduce_an_mp3_file_size_why_choose_title: 'Vantagens de Diminuir o tamanho de um MP3',
   tool_remove_silence_from_a_recording_advanced: 'Ajustes avançados (opcional)',
   tool_remove_silence_from_a_recording_article:
     'Remova os silêncios de uma gravação nesta aba: abra um arquivo local, clique em Remover silêncios e exporte WAV ou MP3. As pausas longas saem; a fala fica num arquivo mais curto, sem enviar ao servidor.',

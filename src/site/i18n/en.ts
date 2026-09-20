@@ -11802,6 +11802,88 @@ const en: SiteLangDict = {
   tool_record_a_voiceover_with_a_teleprompter_why_choose_item_4:
     'Your script and microphone audio stay in this browser on your device and are not sent to our servers.',
   tool_record_a_voiceover_with_a_teleprompter_why_choose_title: 'Why choose our Record a voiceover with a teleprompter tools',
+  tool_reduce_an_mp3_file_size_advanced: 'Compression settings',
+  tool_reduce_an_mp3_file_size_article:
+    'An MP3 is already compressed. Making it smaller means discarding more audio detail, so keep the original and listen before sending the new copy. This MP3 compressor keeps the whole recording and measures the output instead of promising a fixed saving.',
+  tool_reduce_an_mp3_file_size_bitrate: 'Total MP3 bitrate',
+  tool_reduce_an_mp3_file_size_channels: 'Output channels',
+  tool_reduce_an_mp3_file_size_choose: 'Choose an MP3 file',
+  tool_reduce_an_mp3_file_size_clear: 'Clear',
+  tool_reduce_an_mp3_file_size_convert: 'Compress MP3',
+  tool_reduce_an_mp3_file_size_decode: 'Decode audio',
+  tool_reduce_an_mp3_file_size_desc:
+    'Compress an MP3 for sharing and compare the actual sizes. Files stay on your device and are not uploaded to a server.',
+  tool_reduce_an_mp3_file_size_description:
+    'Compress an MP3 in three steps: lower bitrate, preview and download. Audio stays on your device and is never uploaded to a server.',
+  tool_reduce_an_mp3_file_size_done: 'Ready. Listen, check the size, then Download MP3.',
+  tool_reduce_an_mp3_file_size_download: 'Download MP3',
+  tool_reduce_an_mp3_file_size_elapsed: '{s}s elapsed',
+  tool_reduce_an_mp3_file_size_empty: 'Choose an MP3 or load the sample first.',
+  tool_reduce_an_mp3_file_size_encode: 'Encode MP3',
+  tool_reduce_an_mp3_file_size_err_decode: 'The browser could not decode this MP3. Try another valid recording.',
+  tool_reduce_an_mp3_file_size_err_encoder: 'The MP3 encoder could not load. Check your connection and try again.',
+  tool_reduce_an_mp3_file_size_err_file: 'Drop exactly one MP3 file.',
+  tool_reduce_an_mp3_file_size_err_format:
+    'Unsupported or damaged MP3. Use a standard MPEG Layer III file. Free-format streams, changing channel layouts and unusual trailing tags are not supported.',
+  tool_reduce_an_mp3_file_size_err_limit: 'Use an MP3 no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_reduce_an_mp3_file_size_example:
+    'The sample generates a three-second stereo MP3 at 192 kbps (about 71 KiB), then compresses it at 128 kbps (about 48 KiB). Actual byte counts and savings appear above. Playback never starts automatically.',
+  tool_reduce_an_mp3_file_size_example_title: 'Compare a real sample',
+  tool_reduce_an_mp3_file_size_failed: 'Compression failed. Try a smaller, valid MP3 file.',
+  tool_reduce_an_mp3_file_size_faq_a1:
+    'No. Lowering bitrate removes more detail from an already lossy recording. Keep the original and audition the new file. This reduces file size, not loudness or dynamic range.',
+  tool_reduce_an_mp3_file_size_faq_a2:
+    'The source may already use a lower bitrate. Try 64 or 96 kbps and compare again. This tool shows the real output size but does not guarantee an exact MB target or a smaller file.',
+  tool_reduce_an_mp3_file_size_faq_a3:
+    'Not at the same total bitrate. Mono shares the bit budget across one channel and can make lower bitrates more practical for speech. Mixing left and right may change the sound, so listen first.',
+  tool_reduce_an_mp3_file_size_faq_a4:
+    'No. Audio stays in your browser on your device and is not uploaded to a server. Loading the page and encoder requires a connection the first time; offline availability is not guaranteed.',
+  tool_reduce_an_mp3_file_size_faq_a5:
+    'This tool accepts one MP3 and keeps its full length. Use the related WAV-to-MP3 converter for WAV, or the trimming tool to remove sections. Video URLs and batch jobs are not supported.',
+  tool_reduce_an_mp3_file_size_faq_q1: 'Can I compress MP3 without losing quality?',
+  tool_reduce_an_mp3_file_size_faq_q2: 'Why is the result larger, and can I set an exact MB limit?',
+  tool_reduce_an_mp3_file_size_faq_q3: 'Does converting stereo MP3 to mono halve its size?',
+  tool_reduce_an_mp3_file_size_faq_q4: 'Is my audio uploaded to a server?',
+  tool_reduce_an_mp3_file_size_faq_q5: 'Can I use WAV, video links or multiple files?',
+  tool_reduce_an_mp3_file_size_hint: 'Drop one MP3 here. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_reduce_an_mp3_file_size_how_body:
+    'Keep a copy of the original, then lower the bitrate until the file is small enough and still sounds acceptable.',
+  tool_reduce_an_mp3_file_size_how_item_1: 'Choose an MP3 file, or select Load sample for a three-second demonstration.',
+  tool_reduce_an_mp3_file_size_how_item_2: 'Open Compression settings if needed, choose a lower bitrate, and click Compress MP3.',
+  tool_reduce_an_mp3_file_size_how_item_3:
+    'Listen to the compressed MP3 and compare the sizes. Click Download MP3 to save it, or lower the bitrate and retry.',
+  tool_reduce_an_mp3_file_size_how_title: 'How to make an MP3 smaller',
+  tool_reduce_an_mp3_file_size_keep: 'Keep original channels',
+  tool_reduce_an_mp3_file_size_mono: 'Mono (mix left and right)',
+  tool_reduce_an_mp3_file_size_not_smaller: 'This copy is not smaller. Try a lower bitrate, or keep the original to avoid another lossy encode.',
+  tool_reduce_an_mp3_file_size_preview: 'Listen to the compressed MP3',
+  tool_reduce_an_mp3_file_size_progress: 'Compression progress',
+  tool_reduce_an_mp3_file_size_read: 'Read MP3',
+  tool_reduce_an_mp3_file_size_result:
+    '{seconds}s · Original {input} KiB → MP3 {output} KiB · {kbps} kbps · 44.1 kHz · {channels} channel(s)',
+  tool_reduce_an_mp3_file_size_rules_body:
+    'Approximate output bytes = duration in seconds × kbps × 1000 ÷ 8. Encoder padding adds overhead; the result shows the measured size.',
+  tool_reduce_an_mp3_file_size_rules_item_1:
+    '64 and 96 kbps prioritize size for speech. Start at 128 or 192 kbps for music and judge by listening. Re-encoding an MP3 is lossy at every setting.',
+  tool_reduce_an_mp3_file_size_rules_item_2:
+    'Mono averages the left and right channels. At the same total bitrate, mono and stereo have similar file sizes; lower the bitrate to save more. Opposite-phase signals can cancel in mono.',
+  tool_reduce_an_mp3_file_size_rules_item_3:
+    'Output is 44.1 kHz MP3. Cover art and tags are not copied; padding can add a little duration. Standard Layer III mono/stereo files up to 40 MiB and ten minutes are supported; malformed, free-format and changing-layout streams are rejected.',
+  tool_reduce_an_mp3_file_size_rules_title: 'Bitrate, mono and file size',
+  tool_reduce_an_mp3_file_size_sample: 'Load sample',
+  tool_reduce_an_mp3_file_size_sample_name: 'three-second-demo',
+  tool_reduce_an_mp3_file_size_saved: 'File size reduced by {percent}%.',
+  tool_reduce_an_mp3_file_size_settings_hint:
+    '128 kbps keeps stereo by default. Try 64 or 96 kbps for speech. Mono does not halve the size at the same total bitrate.',
+  tool_reduce_an_mp3_file_size_title: 'Reduce an MP3 file size',
+  tool_reduce_an_mp3_file_size_usecase_1: 'Make a voice memo small enough for an email attachment without cutting the conversation.',
+  tool_reduce_an_mp3_file_size_usecase_2:
+    'Send a rehearsal preview over a slow connection while keeping the higher-quality original separately.',
+  tool_reduce_an_mp3_file_size_usecases_title: 'Smaller files for everyday sharing',
+  tool_reduce_an_mp3_file_size_why_choose_item_1: 'See actual input and output sizes, including a warning when re-encoding makes the file larger.',
+  tool_reduce_an_mp3_file_size_why_choose_item_2: 'Listen to the encoded result before committing to a smaller attachment.',
+  tool_reduce_an_mp3_file_size_why_choose_item_3: 'Keep stereo for music or mix both channels to mono for a speech recording; no content is trimmed.',
+  tool_reduce_an_mp3_file_size_why_choose_title: 'Why choose our Reduce an MP3 file size tools',
   tool_references_title: 'References',
   tool_related_title: 'Related tools',
   tool_remove_silence_from_a_recording_advanced: 'Advanced settings (optional)',
