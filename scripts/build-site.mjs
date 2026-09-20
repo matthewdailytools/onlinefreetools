@@ -17,7 +17,7 @@ import { getTaxonomyHubPageModel, getTaxonomyLeafPageModel } from './site/pages/
 import { getTopicsHubPageModel, getTopicsLeafPageModel } from './site/pages/topics.mjs';
 import { buildToolPageNavItems } from './site/nav.mjs';
 import { TOOL_CATALOG } from './site/tool-catalog.mjs';
-import { markToolSlugsGenerated } from './lib/changed-tools.mjs';
+import { markToolSlugsGenerated, resolveTargetToolSlugs, wantsChangedTools } from './lib/changed-tools.mjs';
 import {
   TOOL_SCENARIO_ORDER,
   TOOL_SUBJECT_ORDER,
@@ -719,19 +719,22 @@ const assertLangHomeAssets = async (langs) => {
 const main = async () => {
   const langs = siteConfig.enabledLangs || [siteConfig.defaultLang];
   const argv = process.argv.slice(2);
-  if (
-    argv.some(
-      (arg) =>
-        arg === '--changed-tools' ||
-        arg === '--changed' ||
-        arg === '--incremental' ||
-        arg.startsWith('--slug') ||
-        arg.startsWith('--slugs')
-    )
-  ) {
-    console.warn('[build-site] full build is enforced; ignoring incremental tool selection flags');
+  const forceFullTools = argv.includes('--full') || argv.includes('--all');
+  const targets = forceFullTools
+    ? { slugs: [], source: 'all', changedPaths: [] }
+    : resolveTargetToolSlugs(argv, { requireTargets: false });
+  const { spawnSync } = await import('node:child_process');
+
+  if (!forceFullTools && wantsChangedTools(argv) && !targets.slugs.length) {
+    console.log('[build-site] shared pages + chrome only; no changed tool slugs to prerender');
+  } else if (!forceFullTools && targets.slugs.length) {
+    console.log(
+      `[build-site] incremental tool pages: ${targets.slugs.length} tools x ${langs.length} langs (mode=${targets.source})`
+    );
+  } else {
+    console.log(`[build-site] full tool pages: ${TOOL_CATALOG.length} tools x ${langs.length} langs`);
   }
-  console.log(`[build-site] full tool pages: ${TOOL_CATALOG.length} tools x ${langs.length} langs`);
+
   for (const lang of langs) {
     await buildHome(lang);
     await buildAbout(lang);
@@ -745,10 +748,27 @@ const main = async () => {
   await buildDevLogs();
   await buildSitemap();
 
-  // 工具页预渲染 → public/_pages/{lang}/tools/{slug}.html（Worker 不再 SSR）
-  const { spawnSync } = await import('node:child_process');
+  // 共享工具侧栏 chrome → public/_chrome/{lang}/tool-sidebar.html（随 Assets 发布，不进 R2 工具页）
+  console.log('[build-site] build tool sidebar chrome ...');
+  const chrome = spawnSync(process.execPath, [path.join(root, 'scripts', 'build-tool-chrome.mjs')], {
+    cwd: root,
+    stdio: 'inherit',
+    env: process.env,
+  });
+  if (chrome.status !== 0) {
+    throw new Error('build-tool-chrome failed');
+  }
+
+  // 工具页预渲染 → public/_pages/{lang}/tools/{slug}.html（侧栏为占位；Worker 边缘注入）
   const prerenderArgs = [path.join(root, 'scripts', 'prerender-tool-pages.mjs')];
-  console.log('[build-site] prerender tool pages (all) ...');
+  if (forceFullTools || (!targets.slugs.length && !wantsChangedTools(argv))) {
+    prerenderArgs.push('--full');
+  } else if (targets.slugs.length) {
+    prerenderArgs.push(`--slug=${targets.slugs.join(',')}`);
+  } else {
+    prerenderArgs.push('--changed-tools');
+  }
+  console.log(`[build-site] prerender tool pages (${prerenderArgs.slice(1).join(' ')}) ...`);
   const prerender = spawnSync(process.execPath, prerenderArgs, {
     cwd: root,
     stdio: 'inherit',
@@ -759,7 +779,15 @@ const main = async () => {
   }
 
   console.log('[build-site] gzip _pages HTML ...');
-  const gzip = spawnSync(process.execPath, [path.join(root, 'scripts', 'gzip-pages.mjs')], {
+  const gzipArgs = [path.join(root, 'scripts', 'gzip-pages.mjs')];
+  if (forceFullTools || (!targets.slugs.length && !wantsChangedTools(argv))) {
+    // 全量：不传 slug，gzip 全部 _pages
+  } else if (targets.slugs.length) {
+    gzipArgs.push(`--slug=${targets.slugs.join(',')}`);
+  } else {
+    gzipArgs.push('--changed-tools');
+  }
+  const gzip = spawnSync(process.execPath, gzipArgs, {
     cwd: root,
     stdio: 'inherit',
     env: process.env,
@@ -768,9 +796,14 @@ const main = async () => {
     throw new Error('gzip-pages failed');
   }
 
-  const generatedToolSlugs = TOOL_CATALOG.map((tool) => tool.slug);
-  markToolSlugsGenerated(generatedToolSlugs);
-  console.log(`[build-site] wrote tool generation state slugs=${generatedToolSlugs.length}`);
+  const generatedToolSlugs =
+    forceFullTools || (!targets.slugs.length && !wantsChangedTools(argv))
+      ? TOOL_CATALOG.map((tool) => tool.slug)
+      : targets.slugs;
+  if (generatedToolSlugs.length) {
+    markToolSlugsGenerated(generatedToolSlugs);
+    console.log(`[build-site] wrote tool generation state slugs=${generatedToolSlugs.length}`);
+  }
 
   console.log(`Built site for langs: ${langs.join(', ')}`);
 };

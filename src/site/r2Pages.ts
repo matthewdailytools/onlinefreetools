@@ -4,21 +4,42 @@
  * - **首页**：Assets 常规路径（`/index.html`、`/{lang}/index.html`）优先；
  *   miss 时回退 R2 `_pages/{lang}/index.html.gz`。
  * - **其它页**：Cache API → R2（gzip）→ 未命中 404；不回退 Assets。
+ * - **工具页侧栏**：R2 正文含占位；出站时从 Assets `_chrome/{lang}/tool-sidebar.html` 注入（SEO 仍见全量内链）。
  *
  * R2 仅存 gzip；对外始终返回未压缩 HTML。
  * R2 key：`_pages/{lang}/…/*.html.gz`（见 docs/worker+R2架构/design.md）。
  */
 
+import { CHROME_CACHE_VERSION } from './chromeVersion.generated';
+import {
+	composeToolPageWithSidebarChrome,
+	extractToolSidebarChromeRequest,
+	langFromPagesAssetPath,
+	toolSidebarChromeAssetPath,
+} from './toolChrome';
+
 /** Worker 绑定中与页面存储相关的环境字段。 */
 export type PagesBindings = {
 	/** 存放 gzip HTML 的 R2 桶。 */
 	PAGES_BUCKET: R2Bucket;
-	/** 静态资源（css/js/vendor + 常规路径首页 `index.html` / `{lang}/index.html`）。 */
+	/** 静态资源（css/js/vendor + 常规路径首页 `index.html` / `{lang}/index.html` + `_chrome/`）。 */
 	ASSETS: Fetcher;
 	/** 可选：发版时递增，使 Cache API key 失效。 */
 	PAGES_CACHE_VERSION?: string;
 	/** 可选：R2 key 前缀（如 `builds/abc/`），默认空。 */
 	PAGES_R2_PREFIX?: string;
+};
+
+/**
+ * 组合 HTML Cache API 版本串（页面发版 + 侧栏 chrome 内容指纹）。
+ * chrome 变更不必重传全部工具页，但须使已组合缓存失效。
+ * @param pagesCacheVersion wrangler PAGES_CACHE_VERSION
+ */
+export const buildCombinedHtmlCacheVersion = (pagesCacheVersion?: string): string => {
+	const pages = String(pagesCacheVersion || '').trim();
+	const chrome = String(CHROME_CACHE_VERSION || '').trim();
+	if (pages && chrome) return `${pages}+c${chrome}`;
+	return pages || (chrome ? `c${chrome}` : '');
 };
 
 /** HTML 边缘缓存时长（秒，s-maxage）。 */
@@ -74,7 +95,10 @@ export const deleteHtmlCacheForUrl = async (opts: {
 	if (target.origin !== base.origin) {
 		throw new Error('cross-origin cache purge is not allowed');
 	}
-	const cacheKey = buildHtmlCacheKey(new Request(target.toString(), { method: 'GET' }), env.PAGES_CACHE_VERSION || '');
+	const cacheKey = buildHtmlCacheKey(
+		new Request(target.toString(), { method: 'GET' }),
+		buildCombinedHtmlCacheVersion(env.PAGES_CACHE_VERSION)
+	);
 	const deleted = await caches.default.delete(cacheKey);
 	return { url: target.toString(), cacheKey: cacheKey.url, deleted };
 };
@@ -182,7 +206,7 @@ export const serveHomeHtml = async (opts: {
 	r2HtmlPath: string;
 }): Promise<Response> => {
 	const { request, env, ctx, assetHtmlPath, r2HtmlPath } = opts;
-	const cacheVersion = env.PAGES_CACHE_VERSION || '';
+	const cacheVersion = buildCombinedHtmlCacheVersion(env.PAGES_CACHE_VERSION);
 	const cacheKey = buildHtmlCacheKey(request, cacheVersion);
 
 	try {
@@ -218,7 +242,7 @@ export const servePrerenderedHtml = async (opts: {
 	assetHtmlPath: string;
 }): Promise<Response> => {
 	const { request, env, ctx, assetHtmlPath } = opts;
-	const cacheVersion = env.PAGES_CACHE_VERSION || '';
+	const cacheVersion = buildCombinedHtmlCacheVersion(env.PAGES_CACHE_VERSION);
 	const cacheKey = buildHtmlCacheKey(request, cacheVersion);
 
 	try {
@@ -247,9 +271,48 @@ export const servePrerenderedHtml = async (opts: {
 	}
 
 	const plain = await gunzipToArrayBuffer(gzipBytes);
-	const res = identityHtmlResponse(plain, etag);
+	const composed = await maybeComposeToolSidebarChrome({
+		env,
+		request,
+		assetHtmlPath,
+		plainHtml: plain,
+	});
+	const res = identityHtmlResponse(composed.body, etag);
 	ctx.waitUntil(caches.default.put(cacheKey, res.clone()).catch(() => undefined));
 	return res;
+};
+
+/**
+ * 若页面含工具侧栏 chrome 占位，则从 Assets 取共享目录并组合；否则原样返回。
+ * @param opts.env Worker 绑定
+ * @param opts.request 入站请求（拼 Assets URL）
+ * @param opts.assetHtmlPath 用于推断语言的内部路径
+ * @param opts.plainHtml gunzip 后的明文字节
+ */
+const maybeComposeToolSidebarChrome = async (opts: {
+	env: PagesBindings;
+	request: Request;
+	assetHtmlPath: string;
+	plainHtml: ArrayBuffer;
+}): Promise<{ body: string | ArrayBuffer }> => {
+	const text = new TextDecoder('utf-8').decode(opts.plainHtml);
+	const chromeReq = extractToolSidebarChromeRequest(text);
+	if (!chromeReq) return { body: opts.plainHtml };
+
+	const lang = langFromPagesAssetPath(opts.assetHtmlPath, 'en');
+	const chromePath = toolSidebarChromeAssetPath(lang);
+	const chromeRes = await fetchAssetHtml({
+		env: opts.env,
+		request: opts.request,
+		assetHtmlPath: chromePath,
+	});
+	if (!chromeRes) {
+		// Assets 缺 chrome 时仍返回正文（侧栏空），避免整页 404
+		return { body: text };
+	}
+	const chromeInner = await chromeRes.text();
+	const composed = composeToolPageWithSidebarChrome(text, chromeInner, chromeReq);
+	return { body: composed };
 };
 
 /** @deprecated 保留导出，避免外部引用断裂；对外已不再协商 gzip 预压缩体。 */
@@ -261,6 +324,7 @@ export const clientAcceptsGzip = (request: Request): boolean => {
 
 export default {
 	assetHtmlPathToR2Key,
+	buildCombinedHtmlCacheVersion,
 	deleteHtmlCacheForUrl,
 	clientAcceptsGzip,
 	isLangHomeAssetPath,

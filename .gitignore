@@ -176,6 +176,7 @@ public/sitemap.filtered.xml
 .wrangler/
 
 # Worker+R2：预渲染 `_pages` 不入库（生产靠 upload:r2）
+# 工具侧栏 chrome 在 `public/_chrome/`（入库进 Assets，Worker 边缘注入）
 # 首页在常规路径 `public/index.html` 与 `public/{lang}/index.html`（入库进 Assets）
 .cache/
 public/_pages/

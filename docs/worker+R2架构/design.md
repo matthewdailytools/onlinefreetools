@@ -23,6 +23,8 @@
 - `_pages/{lang}/tool-type/…` 同理
 - `_pages/{lang}/tools/{slug}.html.gz`
 
+工具页侧栏目录不进 R2 正文：预渲染为 `<!--CHROME:tool-sidebar-->` 占位；完整手风琴在 **Assets** `public/_chrome/{lang}/tool-sidebar.html`，Worker 出站时注入（见 `src/site/toolChrome.ts`）。新增工具只需更新 chrome + 新工具页 + 首页/sitemap，不必因菜单多一条链接而重传全部工具页。
+
 示例：公开 `/tools/text-diff` 与 `/en/tools/text-diff` → `_pages/en/tools/text-diff.html.gz`。
 
 ## 公开 URL → 存储路径
@@ -66,8 +68,10 @@
 
 ```bash
 cp .env.example .env        # 首次：填 R2_ACCOUNT_ID / R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY（见 ops §3.1）
-npm run build:site          # 全量：静态共享页刷新，并预渲染所有工具页 + gzip
-npm run build:site:full     # 同 build:site，保留为显式全量别名
+npm run build:site          # 默认全量：共享页 + chrome + 全部工具页 + gzip
+npm run build:site:full     # 同 build:site（显式 --full）
+npm run build:site:changed  # 共享页 + chrome + 仅 updatedAt 变更的工具页
+npm run build:chrome        # 仅重建 Assets 侧栏目录（菜单/catalog 变更时）
 npm run tool:touch -- --slug=<slug> # 工具内容改动后刷新 catalog updatedAt
 npm run upload:r2           # 默认 hash 增量：按上次成功上传 manifest 的 fileHashes，只上传变化 .html.gz；仍重写 meta
 npm run upload:r2:og        # 增量同步 public/og/tools → 公开桶 assets（自定义域 assets.onlinefreetools.org）
@@ -78,7 +82,7 @@ npm run deploy:full         # 强制全量 build + 全量 upload + verify
 # CF 成功后：npm run verify:r2:live
 ```
 
-远程上传：有 `.env` S3 凭据时进程内并发 `PutObject`；否则回退逐文件 `wrangler r2 object put`（慢）。`_meta/pages-build.json` 现为 **schemaVersion 4**（含上次成功上传的全量 `fileHashes`，供 hash 增量上传）；Worker 探针仍只读 `pagesCacheVersion` / `contentHash`。构建默认全量；R2 上传不看 git 或 `updatedAt`，只比较本地 `.html.gz` 内容 hash 与上次上传 manifest。
+远程上传：有 `.env` S3 凭据时进程内并发 `PutObject`；否则回退逐文件 `wrangler r2 object put`（慢）。`_meta/pages-build.json` 现为 **schemaVersion 4**（含上次成功上传的全量 `fileHashes`，供 hash 增量上传）；Worker 探针仍只读 `pagesCacheVersion` / `contentHash`。工具页正文与侧栏目录解耦后：catalog/菜单变更主要改 Assets `_chrome/`（随 `git:deploy`），R2 仅上传正文真正变化的 `.html.gz`。Cache API key = `PAGES_CACHE_VERSION` + `CHROME_CACHE_VERSION`（构建写入 `src/site/chromeVersion.generated.ts`）。
 
 `predeploy` 含 `build:site` + lint。运维操作与凭据获取：[`ops/worker-r2-ops.md`](../../ops/worker-r2-ops.md)（尤其 **§3.1**）。
 
