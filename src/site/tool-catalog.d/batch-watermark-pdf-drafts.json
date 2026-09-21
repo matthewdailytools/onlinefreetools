@@ -1,0 +1,29 @@
+{
+  "slug": "batch-watermark-pdf-drafts",
+  "path": "/tools/batch-watermark-pdf-drafts",
+  "updatedAt": "2026-09-21T11:30:21.432Z",
+  "launchedAt": "2026-09-21T11:30:21.432Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_watermark_pdf_drafts_title",
+  "homeTitleKey": "tool_batch_watermark_pdf_drafts_title",
+  "homeDescKey": "tool_batch_watermark_pdf_drafts_desc",
+  "faqPrefix": "tool_batch_watermark_pdf_drafts",
+  "related": [
+    "pdf-watermark",
+    "merge-pdf",
+    "compress-pdf"
+  ],
+  "logo": "/icons/tools/batch-watermark-pdf-drafts.svg",
+  "page": {
+    "module": "../pages/batchWatermarkPdfDraftsPage",
+    "export": "renderBatchWatermarkPdfDraftsPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

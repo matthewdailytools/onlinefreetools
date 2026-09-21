@@ -9,6 +9,11 @@
 ## 工具清单 / Tools List
 以下是我们提供的在线工具及其链接（中文版）：
 
+- [扫描 PDF 转 TXT](https://onlinefreetools.org/zh/tools/extract-text-from-a-scanned-pdf) - 逐页 OCR、校对文字后下载
+- [批量清除照片 EXIF](https://onlinefreetools.org/zh/tools/bulk-strip-photo-exif) - PNG 净图与逐文件 CSV 报告打包
+- [批量给 PDF 添加水印](https://onlinefreetools.org/zh/tools/batch-watermark-pdf-drafts) - 同一模板适配不同尺寸页面，失败跳过
+- [批量优化 SVG 图标](https://onlinefreetools.org/zh/tools/bulk-optimize-svg-icon-set) - 体积对比、预览与内部引用检查
+
 - [在线查看 HTTP 响应头](https://onlinefreetools.org/zh/tools/website-headers) - 从边缘检查公开网址的 HTTP 响应头，含 Cache-Control / X-Robots-Tag / 重定向链的人话解读
 - [我的 IP 地址是什么？](https://onlinefreetools.org/zh/tools/ip-address) - 查看边缘节点看到的公网 IP，并说明代理/VPN 局限
 - [Markdown ↔ HTML](https://onlinefreetools.org/zh/tools/markdown-to-html) - 浏览器内 Markdown 与 HTML 双向转换：预览、安全清理与导出
@@ -246,6 +251,11 @@
 - [梯度计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-gradient) - 计算多元标量函数的梯度 ∇f（偏导向量）
 
 Below are our available online tools with their links (English version):
+
+- [Extract text from a scanned PDF](https://onlinefreetools.org/tools/extract-text-from-a-scanned-pdf) - OCR pages, edit recognized text and download TXT
+- [Bulk remove photo EXIF](https://onlinefreetools.org/tools/bulk-strip-photo-exif) - Clean PNG copies and a per-file CSV report in a ZIP
+- [Batch watermark PDF drafts](https://onlinefreetools.org/tools/batch-watermark-pdf-drafts) - One text template fitted to mixed page sizes, with failure reporting
+- [Batch optimize SVG icons](https://onlinefreetools.org/tools/bulk-optimize-svg-icon-set) - Conservative cleanup, byte comparisons, previews and internal reference checks
 
 - [Check HTTP Response Headers](https://onlinefreetools.org/tools/website-headers) - Inspect response headers from the edge, with plain-language reads of Cache-Control, X-Robots-Tag and redirect chains
 - [What Is My IP Address?](https://onlinefreetools.org/tools/ip-address) - See the public IP our edge observes, with proxy/VPN limits explained

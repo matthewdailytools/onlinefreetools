@@ -26,6 +26,7 @@ import { renderBatchConvertWebPagesToJpgPage } from '../pages/batchConvertWebPag
 import { renderBatchConvertWebPagesToPdfPage } from '../pages/batchConvertWebPagesToPdfPage';
 import { renderBatchConvertWebPagesToPngPage } from '../pages/batchConvertWebPagesToPngPage';
 import { renderBatchTrimTheSameIntroFromAudioFilesPage } from '../pages/batchTrimTheSameIntroFromAudioFilesPage';
+import { renderBatchWatermarkPdfDraftsPage } from '../pages/batchWatermarkPdfDraftsPage';
 import { renderBatchWatermarkProductPhotosPage } from '../pages/batchWatermarkProductPhotosPage';
 import { renderBoostBassOnAnMp3Page } from '../pages/boostBassOnAnMp3Page';
 import { renderBrandColorTokenPackPage } from '../pages/brandColorTokenPackPage';
@@ -36,6 +37,8 @@ import { renderBulkConvertImagesToJpgPage } from '../pages/bulkConvertImagesToJp
 import { renderBulkConvertImagesToPngPage } from '../pages/bulkConvertImagesToPngPage';
 import { renderBulkConvertImagesToWebpPage } from '../pages/bulkConvertImagesToWebpPage';
 import { renderBulkConvertWavFilesToMp3Page } from '../pages/bulkConvertWavFilesToMp3Page';
+import { renderBulkOptimizeSvgIconSetPage } from '../pages/bulkOptimizeSvgIconSetPage';
+import { renderBulkStripPhotoExifPage } from '../pages/bulkStripPhotoExifPage';
 import { renderChangeAudioSpeedWithoutChangingPitchPage } from '../pages/changeAudioSpeedWithoutChangingPitchPage';
 import { renderChatgptExportToMarkdownPage } from '../pages/chatgptExportToMarkdownPage';
 import { renderCheckPdfACompliancePage } from '../pages/checkPdfACompliancePage';
@@ -86,6 +89,7 @@ import { renderExcelCompareFilesPage } from '../pages/excelCompareFilesPage';
 import { renderExcelFormulasCheatSheetPage } from '../pages/excelFormulasCheatSheetPage';
 import { renderExtractAudioFromAVideoFilePage } from '../pages/extractAudioFromAVideoFilePage';
 import { renderExtractCoverArtFromAnMp3Page } from '../pages/extractCoverArtFromAnMp3Page';
+import { renderExtractTextFromAScannedPdfPage } from '../pages/extractTextFromAScannedPdfPage';
 import { renderExtractTextFromPdfPage } from '../pages/extractTextFromPdfPage';
 import { renderFadeInAndFadeOutAnAudioClipPage } from '../pages/fadeInAndFadeOutAnAudioClipPage';
 import { renderFileHashPage } from '../pages/fileHashPage';
@@ -309,6 +313,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'batch-convert-web-pages-to-pdf': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-web-pages-to-png': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToPngPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-trim-the-same-intro-from-audio-files': (lang, defaultLang, enabled) => renderBatchTrimTheSameIntroFromAudioFilesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-watermark-pdf-drafts': (lang, defaultLang, enabled) => renderBatchWatermarkPdfDraftsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-watermark-product-photos': (lang, defaultLang, enabled) => renderBatchWatermarkProductPhotosPage({ lang, defaultLang, enabledLangs: enabled }),
 	'boost-bass-on-an-mp3': (lang, defaultLang, enabled) => renderBoostBassOnAnMp3Page({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-color-token-pack': (lang, defaultLang, enabled) => renderBrandColorTokenPackPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -319,6 +324,8 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'bulk-convert-images-to-png': (lang, defaultLang, enabled) => renderBulkConvertImagesToPngPage({ lang, defaultLang, enabledLangs: enabled }),
 	'bulk-convert-images-to-webp': (lang, defaultLang, enabled) => renderBulkConvertImagesToWebpPage({ lang, defaultLang, enabledLangs: enabled }),
 	'bulk-convert-wav-files-to-mp3': (lang, defaultLang, enabled) => renderBulkConvertWavFilesToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
+	'bulk-optimize-svg-icon-set': (lang, defaultLang, enabled) => renderBulkOptimizeSvgIconSetPage({ lang, defaultLang, enabledLangs: enabled }),
+	'bulk-strip-photo-exif': (lang, defaultLang, enabled) => renderBulkStripPhotoExifPage({ lang, defaultLang, enabledLangs: enabled }),
 	'change-audio-speed-without-changing-pitch': (lang, defaultLang, enabled) => renderChangeAudioSpeedWithoutChangingPitchPage({ lang, defaultLang, enabledLangs: enabled }),
 	'chatgpt-export-to-markdown': (lang, defaultLang, enabled) => renderChatgptExportToMarkdownPage({ lang, defaultLang, enabledLangs: enabled }),
 	'check-pdf-a-compliance': (lang, defaultLang, enabled) => renderCheckPdfACompliancePage({ lang, defaultLang, enabledLangs: enabled }),
@@ -369,6 +376,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'excel-formulas-cheat-sheet': (lang, defaultLang, enabled) => renderExcelFormulasCheatSheetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'extract-audio-from-a-video-file': (lang, defaultLang, enabled) => renderExtractAudioFromAVideoFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'extract-cover-art-from-an-mp3': (lang, defaultLang, enabled) => renderExtractCoverArtFromAnMp3Page({ lang, defaultLang, enabledLangs: enabled }),
+	'extract-text-from-a-scanned-pdf': (lang, defaultLang, enabled) => renderExtractTextFromAScannedPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'extract-text-from-pdf': (lang, defaultLang, enabled) => renderExtractTextFromPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'fade-in-and-fade-out-an-audio-clip': (lang, defaultLang, enabled) => renderFadeInAndFadeOutAnAudioClipPage({ lang, defaultLang, enabledLangs: enabled }),
 	'file-hash': (lang, defaultLang, enabled) => renderFileHashPage({ lang, defaultLang, enabledLangs: enabled }),

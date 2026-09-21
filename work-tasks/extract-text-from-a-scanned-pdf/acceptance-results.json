@@ -1,0 +1,142 @@
+{
+  "scope": "Four user-requested tools; local implementation only",
+  "browserSuite": [
+    "PASS OCR: real raster PDF → recognized editable TXT → downloaded bytes; no automatic OCR; invalid PDF, retry and page-range rejection.",
+    "PASS photos: actual ZIP/CSV; GPS+EXIF JPEG, orientation and pixel equality; PNG text metadata and alpha; WebP; animation and corrupt-file skips; formula-safe CSV; retry and count limit.",
+    "PASS watermark: real PDF render verifies 3 mixed/rotated/offset-crop pages and centered red pixels; ZIP duplicates, bad/encrypted skip, Unicode, settings invalidation, all-failed and retry.",
+    "PASS SVG: real ZIP and pixel-identical sample; gradient/clip/mask/use/ARIA references; text whitespace; 10 malformed/unsafe/reference failures; all-failed, retry, no-saving fallback, stylesheet preservation."
+  ],
+  "svgFollowup": [
+    "PASS SVG: real ZIP and pixel-identical sample; gradient/clip/mask/use/ARIA references; text whitespace; 10 malformed/unsafe/reference failures; all-failed, retry, byte-exact BOM fallback, stylesheet preservation."
+  ],
+  "locales": "PASS 40 localized pages: native labels, references, automatic samples / OCR exception, no page errors, 390px viewport without page overflow.",
+  "scopedGates": [
+    {
+      "slug": "extract-text-from-a-scanned-pdf",
+      "script": "validate-tool-artifacts.mjs",
+      "status": 0,
+      "error": null,
+      "stdout": "[artifacts] OK slug=extract-text-from-a-scanned-pdf (inventory only)\n",
+      "stderr": ""
+    },
+    {
+      "slug": "extract-text-from-a-scanned-pdf",
+      "script": "validate-tool-coverage-rounds.mjs",
+      "status": 0,
+      "error": null,
+      "stdout": "coverage:gate OK slug=extract-text-from-a-scanned-pdf phase=all\n",
+      "stderr": ""
+    },
+    {
+      "slug": "extract-text-from-a-scanned-pdf",
+      "script": "validate-tool-page-wiring.mjs",
+      "status": 0,
+      "error": null,
+      "stdout": "lint:tool-page OK (1 slug(s), require-html)\n",
+      "stderr": ""
+    },
+    {
+      "slug": "bulk-strip-photo-exif",
+      "script": "validate-tool-artifacts.mjs",
+      "status": 0,
+      "error": null,
+      "stdout": "[artifacts] OK slug=bulk-strip-photo-exif (inventory only)\n",
+      "stderr": ""
+    },
+    {
+      "slug": "bulk-strip-photo-exif",
+      "script": "validate-tool-coverage-rounds.mjs",
+      "status": 0,
+      "error": null,
+      "stdout": "coverage:gate OK slug=bulk-strip-photo-exif phase=all\n",
+      "stderr": ""
+    },
+    {
+      "slug": "bulk-strip-photo-exif",
+      "script": "validate-tool-page-wiring.mjs",
+      "status": 0,
+      "error": null,
+      "stdout": "lint:tool-page OK (1 slug(s), require-html)\n",
+      "stderr": ""
+    },
+    {
+      "slug": "batch-watermark-pdf-drafts",
+      "script": "validate-tool-artifacts.mjs",
+      "status": 0,
+      "error": null,
+      "stdout": "[artifacts] OK slug=batch-watermark-pdf-drafts (inventory only)\n",
+      "stderr": ""
+    },
+    {
+      "slug": "batch-watermark-pdf-drafts",
+      "script": "validate-tool-coverage-rounds.mjs",
+      "status": 0,
+      "error": null,
+      "stdout": "coverage:gate OK slug=batch-watermark-pdf-drafts phase=all\n",
+      "stderr": ""
+    },
+    {
+      "slug": "batch-watermark-pdf-drafts",
+      "script": "validate-tool-page-wiring.mjs",
+      "status": 0,
+      "error": null,
+      "stdout": "lint:tool-page OK (1 slug(s), require-html)\n",
+      "stderr": ""
+    },
+    {
+      "slug": "bulk-optimize-svg-icon-set",
+      "script": "validate-tool-artifacts.mjs",
+      "status": 0,
+      "error": null,
+      "stdout": "[artifacts] OK slug=bulk-optimize-svg-icon-set (inventory only)\n",
+      "stderr": ""
+    },
+    {
+      "slug": "bulk-optimize-svg-icon-set",
+      "script": "validate-tool-coverage-rounds.mjs",
+      "status": 0,
+      "error": null,
+      "stdout": "coverage:gate OK slug=bulk-optimize-svg-icon-set phase=all\n",
+      "stderr": ""
+    },
+    {
+      "slug": "bulk-optimize-svg-icon-set",
+      "script": "validate-tool-page-wiring.mjs",
+      "status": 0,
+      "error": null,
+      "stdout": "lint:tool-page OK (1 slug(s), require-html)\n",
+      "stderr": ""
+    }
+  ],
+  "fullVerification": {
+    "command": "npm run verify",
+    "exitCode": 1,
+    "build": "passed; 2780 tool pages",
+    "seo": "passed",
+    "vendor": "passed",
+    "taxonomy": "failed on the same four pre-existing video subjects as HEAD"
+  },
+  "baselineTaxonomyErrors": [
+    {
+      "slug": "add-an-audio-track-to-a-video",
+      "subject": "video",
+      "scenario": "media"
+    },
+    {
+      "slug": "make-a-waveform-video-from-audio",
+      "subject": "video",
+      "scenario": "media"
+    },
+    {
+      "slug": "remove-the-audio-track-from-a-video",
+      "subject": "video",
+      "scenario": "media"
+    },
+    {
+      "slug": "replace-the-audio-in-a-video-file",
+      "subject": "video",
+      "scenario": "media"
+    }
+  ],
+  "deployment": "not performed"
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "bulk-optimize-svg-icon-set",
+  "path": "/tools/bulk-optimize-svg-icon-set",
+  "updatedAt": "2026-09-21T11:30:21.432Z",
+  "launchedAt": "2026-09-21T11:30:21.432Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "secondaryTopics": [],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_bulk_optimize_svg_icon_set_title",
+  "homeTitleKey": "tool_bulk_optimize_svg_icon_set_title",
+  "homeDescKey": "tool_bulk_optimize_svg_icon_set_desc",
+  "faqPrefix": "tool_bulk_optimize_svg_icon_set",
+  "related": [
+    "svg-optimizer",
+    "image-optimizer",
+    "image-format-converter"
+  ],
+  "logo": "/icons/tools/bulk-optimize-svg-icon-set.svg",
+  "page": {
+    "module": "../pages/bulkOptimizeSvgIconSetPage",
+    "export": "renderBulkOptimizeSvgIconSetPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

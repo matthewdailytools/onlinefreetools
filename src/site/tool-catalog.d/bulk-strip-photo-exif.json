@@ -1,0 +1,29 @@
+{
+  "slug": "bulk-strip-photo-exif",
+  "path": "/tools/bulk-strip-photo-exif",
+  "updatedAt": "2026-09-21T11:30:21.432Z",
+  "launchedAt": "2026-09-21T11:30:21.432Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "secondaryTopics": [],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_bulk_strip_photo_exif_title",
+  "homeTitleKey": "tool_bulk_strip_photo_exif_title",
+  "homeDescKey": "tool_bulk_strip_photo_exif_desc",
+  "faqPrefix": "tool_bulk_strip_photo_exif",
+  "related": [
+    "image-exif",
+    "image-format-converter",
+    "image-optimizer"
+  ],
+  "logo": "/icons/tools/bulk-strip-photo-exif.svg",
+  "page": {
+    "module": "../pages/bulkStripPhotoExifPage",
+    "export": "renderBulkStripPhotoExifPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

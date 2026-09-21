@@ -1,0 +1,15 @@
+/** Mobile acceptance of all ten locales; build pages before running. */
+import {createServer} from 'node:http';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {chromium} from 'playwright-core';
+import assert from 'node:assert/strict';
+const root=process.cwd(),langs=['en','zh','es','ar','pt','id','fr','ja','ru','de'];
+const slugs=['extract-text-from-a-scanned-pdf','bulk-strip-photo-exif','batch-watermark-pdf-drafts','bulk-optimize-svg-icon-set'];
+const types={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.wasm':'application/wasm','.css':'text/css','.svg':'image/svg+xml'};
+const server=createServer(async(req,res)=>{try{const p=new URL(req.url,'http://local').pathname,f=path.join(root,'public',p);const b=await fs.readFile(f);res.writeHead(200,{'Content-Type':types[path.extname(f)]||'application/octet-stream'});res.end(b);}catch{res.writeHead(404);res.end();}});await new Promise(r=>server.listen(0,'127.0.0.1',r));
+const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE||path.join(root,'.cache/playwright/chromium-1148/chrome-linux/chrome'),headless:true,args:['--no-sandbox']});
+try{const page=await browser.newPage({viewport:{width:390,height:844}});const errors=[];page.on('pageerror',e=>errors.push(e.message));const base='http://127.0.0.1:'+server.address().port;await page.route('**/*',r=>new URL(r.request().url()).origin===base?r.continue():r.abort());
+for(const slug of (process.argv[2]?[process.argv[2]]:slugs))for(const lang of (process.argv[3]?[process.argv[3]]:langs)){await page.goto(base+'/_pages/'+lang+'/tools/'+slug+'.html');await page.waitForTimeout(80);assert.ok((await page.locator('h1').innerText()).length>4);assert.doesNotMatch(await page.locator('#workbench').innerText(),/tool_[a-z_]+/);if(slug!=='extract-text-from-a-scanned-pdf')await page.waitForFunction(()=>!document.getElementById('download').disabled,{},{timeout:30000});else assert.equal(await page.evaluate(()=>!!window.Tesseract),false);assert.equal(await page.locator('#references a[href^="https://"]').count()>0,true);const width=await page.evaluate(()=>({w:innerWidth,scroll:document.documentElement.scrollWidth}));if(width.scroll>width.w+1){await page.screenshot({path:'.cache/four-tools/overflow.png',fullPage:true});console.log(await page.evaluate(()=>[...document.querySelectorAll('body *')].filter(e=>e.getBoundingClientRect().right>innerWidth+1&&getComputedStyle(e).position!=='fixed').map(e=>({tag:e.tagName,cls:e.className,text:e.textContent.slice(0,70),right:e.getBoundingClientRect().right})).slice(-15)));}assert.ok(width.scroll<=width.w+1,slug+' '+lang+' overflows viewport');if(['zh','ar'].includes(lang))await page.screenshot({path:'.cache/four-tools/'+slug+'-'+lang+'-mobile.png',fullPage:true});}
+assert.deepEqual(errors,[]);console.log('PASS 40 localized pages: native labels, references, automatic samples / OCR exception, no page errors, 390px viewport without page overflow.');
+}finally{await browser.close();await new Promise(r=>server.close(r));}

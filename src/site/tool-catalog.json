@@ -546,6 +546,30 @@
     "subject": "audio"
   },
   {
+    "slug": "batch-watermark-pdf-drafts",
+    "path": "/tools/batch-watermark-pdf-drafts",
+    "updatedAt": "2026-09-21T11:30:21.432Z",
+    "launchedAt": "2026-09-21T11:30:21.432Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_watermark_pdf_drafts_title",
+    "homeTitleKey": "tool_batch_watermark_pdf_drafts_title",
+    "homeDescKey": "tool_batch_watermark_pdf_drafts_desc",
+    "faqPrefix": "tool_batch_watermark_pdf_drafts",
+    "related": [
+      "pdf-watermark",
+      "merge-pdf",
+      "compress-pdf"
+    ],
+    "logo": "/icons/tools/batch-watermark-pdf-drafts.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
     "slug": "batch-watermark-product-photos",
     "path": "/tools/batch-watermark-product-photos",
     "updatedAt": "2026-09-03T09:55:00.000Z",
@@ -775,6 +799,54 @@
     "localProcessing": true,
     "scenario": "media",
     "subject": "audio"
+  },
+  {
+    "slug": "bulk-optimize-svg-icon-set",
+    "path": "/tools/bulk-optimize-svg-icon-set",
+    "updatedAt": "2026-09-21T11:30:21.432Z",
+    "launchedAt": "2026-09-21T11:30:21.432Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "secondaryTopics": [],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_bulk_optimize_svg_icon_set_title",
+    "homeTitleKey": "tool_bulk_optimize_svg_icon_set_title",
+    "homeDescKey": "tool_bulk_optimize_svg_icon_set_desc",
+    "faqPrefix": "tool_bulk_optimize_svg_icon_set",
+    "related": [
+      "svg-optimizer",
+      "image-optimizer",
+      "image-format-converter"
+    ],
+    "logo": "/icons/tools/bulk-optimize-svg-icon-set.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
+    "slug": "bulk-strip-photo-exif",
+    "path": "/tools/bulk-strip-photo-exif",
+    "updatedAt": "2026-09-21T11:30:21.432Z",
+    "launchedAt": "2026-09-21T11:30:21.432Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "secondaryTopics": [],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_bulk_strip_photo_exif_title",
+    "homeTitleKey": "tool_bulk_strip_photo_exif_title",
+    "homeDescKey": "tool_bulk_strip_photo_exif_desc",
+    "faqPrefix": "tool_bulk_strip_photo_exif",
+    "related": [
+      "image-exif",
+      "image-format-converter",
+      "image-optimizer"
+    ],
+    "logo": "/icons/tools/bulk-strip-photo-exif.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "change-audio-speed-without-changing-pitch",
@@ -1954,6 +2026,30 @@
     "localProcessing": true,
     "scenario": "media",
     "subject": "audio"
+  },
+  {
+    "slug": "extract-text-from-a-scanned-pdf",
+    "path": "/tools/extract-text-from-a-scanned-pdf",
+    "updatedAt": "2026-09-21T11:30:21.432Z",
+    "launchedAt": "2026-09-21T11:30:21.432Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_extract_text_from_a_scanned_pdf_title",
+    "homeTitleKey": "tool_extract_text_from_a_scanned_pdf_title",
+    "homeDescKey": "tool_extract_text_from_a_scanned_pdf_desc",
+    "faqPrefix": "tool_extract_text_from_a_scanned_pdf",
+    "related": [
+      "batch-convert-scanned-pdf-to-word-with-ocr",
+      "extract-text-from-pdf",
+      "batch-convert-jpg-to-editable-word-with-ocr"
+    ],
+    "logo": "/icons/tools/extract-text-from-a-scanned-pdf.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "extract-text-from-pdf",

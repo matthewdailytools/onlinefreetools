@@ -1,0 +1,29 @@
+{
+  "slug": "extract-text-from-a-scanned-pdf",
+  "path": "/tools/extract-text-from-a-scanned-pdf",
+  "updatedAt": "2026-09-21T11:30:21.432Z",
+  "launchedAt": "2026-09-21T11:30:21.432Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_extract_text_from_a_scanned_pdf_title",
+  "homeTitleKey": "tool_extract_text_from_a_scanned_pdf_title",
+  "homeDescKey": "tool_extract_text_from_a_scanned_pdf_desc",
+  "faqPrefix": "tool_extract_text_from_a_scanned_pdf",
+  "related": [
+    "batch-convert-scanned-pdf-to-word-with-ocr",
+    "extract-text-from-pdf",
+    "batch-convert-jpg-to-editable-word-with-ocr"
+  ],
+  "logo": "/icons/tools/extract-text-from-a-scanned-pdf.svg",
+  "page": {
+    "module": "../pages/extractTextFromAScannedPdfPage",
+    "export": "renderExtractTextFromAScannedPdfPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}
