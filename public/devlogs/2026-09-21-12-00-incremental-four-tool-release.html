@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dev Logs | OnlineFreeTools.org</title>
-  <meta name="description" content="Curated project development notes with reusable decisions and fixes, organized by month." />
-  
-  <link rel="canonical" href="https://onlinefreetools.org/devlogs/" />
-  <meta property="og:title" content="Dev Logs | OnlineFreeTools.org" />
-  <meta property="og:description" content="Curated project development notes with reusable decisions and fixes, organized by month." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://onlinefreetools.org/devlogs/" />
+  <title>Prepare the four-tool release with incremental R2 upload and pages cache version 4.77. | Dev Logs</title>
+  <meta name="description" content="Prepare the four-tool release with incremental R2 upload and pages cache version 4.77." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-09-21-12-00-incremental-four-tool-release.html" />
+  <meta property="og:title" content="Prepare the four-tool release with incremental R2 upload and pages cache version 4.77. | Dev Logs" />
+  <meta property="og:description" content="Prepare the four-tool release with incremental R2 upload and pages cache version 4.77." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-09-21-12-00-incremental-four-tool-release.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
@@ -47,8 +47,8 @@
   else window.addEventListener('load', schedule, { once: true });
 })();
 </script>
-  <link rel="next" href="https://onlinefreetools.org/devlogs/page-2.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs","url":"https://onlinefreetools.org/devlogs/","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://onlinefreetools.org/devlogs/"}]}}</script>
+  
+  
 </head>
 <body class="is-info-page is-devlog-page">
   
@@ -162,150 +162,39 @@
       <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/"><span class="sidebar-tool-label">Home</span></a></div>
     </aside>
     <main id="content" class="p-4">
-    <section>
-      <header class="devlog-page-head mb-3">
-        <a class="btn btn-outline-secondary btn-sm devlog-back flex-shrink-0" href="/">Back to Home</a>
-        <h1 class="devlog-title">Dev Logs</h1>
-        <p class="devlog-lead text-muted mb-0">
-          Browse Q&A and implementation notes by month.
-          <a class="ms-1 text-decoration-none" href="https://github.com/matthewdailytools/onlinefreetools" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </p>
-      </header>
-      
-      <div class="mb-4">
-        <h2 class="h5 text-muted mb-2">2026-09</h2>
-        <ul class="list-group shadow-sm">
-          
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-21-tool-backlog-priority-review.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>tool-backlog-priority-review<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-21</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-21-12-00-incremental-four-tool-release.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>incremental-four-tool-release<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-21</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-21-11-05-four-local-file-tools.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>four-local-file-tools<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-21</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-20-19-47-remove-mains-hum-from-a-recording.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>remove-mains-hum-from-a-recording<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary"></span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-20-01-00-reduce-mp3-file-size.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>reduce-mp3-file-size<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-20</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-16-12-15-m4a-mp3-release-acceptance.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>m4a-mp3-release-acceptance<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-16</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-16-10-22-p3-runtime-repair-and-environment-blockers.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>p3-runtime-repair-and-environment-blockers<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-16</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-16-08-10-tool-workflow-reliability.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>tool-workflow-reliability<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-16</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-16-04-00-wav-to-mp3-production-release.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>wav-to-mp3-production-release<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-16</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-16-03-00-wav-to-mp3-converter.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>wav-to-mp3-converter<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-16</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-15-12-02-record-voiceover-with-teleprompter.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>record-voiceover-with-teleprompter<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-15</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-15-04-10-record-a-voice-memo-in-the-browser.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>record-a-voice-memo-in-the-browser<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-15</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-15-03-15-codex-cursor-skill-adapters.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>codex-cursor-skill-adapters<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-15</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-12-10-26-tool-type-audio.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>tool-type-audio<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-12-01-06-sound-editor-topic-seven-jobs.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>sound-editor-topic-seven-jobs<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-11-23-28-make-a-30-second-mp3-ringtone.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>make-a-30-second-mp3-ringtone<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-11</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-11-22-14-make-a-seamless-audio-loop.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>make-a-seamless-audio-loop<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-11</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-11-20-43-split-a-disc-image-with-a-cue-sheet.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>split-a-disc-image-with-a-cue-sheet<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-11</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-11-17-55-split-audio-file-by-duration.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>split-audio-file-by-duration<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-11</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-11-16-22-split-a-recording-on-silence-brief-and-implement.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>split-a-recording-on-silence-brief-and-implement<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-11</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-11-15-14-remove-silence-from-a-recording-implement.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>remove-silence-from-a-recording-implement<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-11</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-11-13-17-remove-silence-from-a-recording-brief.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>remove-silence-from-a-recording-brief<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-11</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-11-11-45-trim-export-already-shipped.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>trim-export-already-shipped<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-11</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-11-11-40-audio-slug-progress-into-doc-12.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>audio-slug-progress-into-doc-12<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-11</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-11-08-36-same-intent-related-search-page-rules.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>same-intent-related-search-page-rules<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-11</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-11-08-25-trim-clip-same-intent-keywords.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>trim-clip-same-intent-keywords<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-11</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-11-02-52-trim-clip-preview-and-intro.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>trim-clip-preview-and-intro<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-11</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-11-00-02-trim-audio-clip-implement.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>trim-audio-clip-implement<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-11</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-10-23-27-trim-audio-clip-brief.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>trim-audio-clip-brief<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-10</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-09-10-21-03-drop-weekly-capacity-from-doc-12.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>drop-weekly-capacity-from-doc-12<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-09-10</span>
-          </li>
-        </ul>
-      </div>
-      
-      <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4" aria-label="Dev Logs">
-        <span class="btn btn-outline-secondary btn-sm disabled" aria-disabled="true">Previous</span>
-        <span class="small text-muted">Page 1 of 30</span>
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-2.html" rel="next">Next</a>
-      </nav>
-    </section>
-  </main>
+      <section class="mb-3">
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Prepare the four-tool release with incremental R2 upload and pages cache version 4.77.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/extract-text-from-a-scanned-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>extract-text-from-a-scanned-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/bulk-strip-photo-exif"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>bulk-strip-photo-exif<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-watermark-pdf-drafts"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-watermark-pdf-drafts<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/bulk-optimize-svg-icon-set"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>bulk-optimize-svg-icon-set<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-21 12:00
+Summary: Prepare the four-tool release with incremental R2 upload and pages cache version 4.77.
+Visibility: project</p>
+<p>[question]
+增量 deploy and upload r2</p>
+<h2>Tool links (English)</h2>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/extract-text-from-a-scanned-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>extract-text-from-a-scanned-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/bulk-strip-photo-exif"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>bulk-strip-photo-exif<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-watermark-pdf-drafts"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-watermark-pdf-drafts<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/bulk-optimize-svg-icon-set"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>bulk-optimize-svg-icon-set<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
+<p>[try to solve]</p>
+<p>The release reuses the completed full build and its accepted browser outputs.
+The previous run passed all 12 new-tool gates, 40 localized mobile pages, SEO and
+vendor checks. The four existing invalid video taxonomy subjects remain a separate
+baseline issue; they are not part of the deployment script&#39;s preflight checks.</p>
+<p>The source release commit is c8f1fa4f. The production branch was synchronized with
+origin/main before committing. PAGES_CACHE_VERSION moves from 4.76 to 4.77.
+No new full build or forced full R2 upload is requested for this release.</p>
+<p>The R2 manifest comparison selects 530 changed objects from 3260 local compressed
+pages, reusing 2730 unchanged objects. The release sequence is changed HTML upload,
+changed OG asset upload, R2 content-hash/version verification, then main-branch push
+for Cloudflare Worker and Assets publication. The Worker must not be pushed before
+R2 verification succeeds.</p>
+<p>Live acceptance checks compare /api/ops/pages-build with version 4.77 and inspect
+all 40 localized tool pages, the four new icons and homepage links. Local generated
+pages, R2 upload, Git push and a live Worker response are separate milestones.</p>
+</article>
+      </section>
+    </main>
   </div>
   
   <footer class="site-footer border-top text-center py-3">
