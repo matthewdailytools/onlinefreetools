@@ -1,0 +1,27 @@
+{
+  "slug": "shift-a-recording-toward-a-higher-or-lower-voice",
+  "path": "/tools/shift-a-recording-toward-a-higher-or-lower-voice",
+  "updatedAt": "2026-09-20T22:30:00.000Z",
+  "launchedAt": "2026-09-20T22:30:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_shift_a_recording_toward_a_higher_or_lower_voice_title",
+  "homeTitleKey": "tool_shift_a_recording_toward_a_higher_or_lower_voice_title",
+  "homeDescKey": "tool_shift_a_recording_toward_a_higher_or_lower_voice_desc",
+  "faqPrefix": "tool_shift_a_recording_toward_a_higher_or_lower_voice",
+  "related": [
+    "apply-a-toy-voice-effect-to-a-recording",
+    "shift-the-pitch-of-a-song"
+  ],
+  "logo": "/icons/tools/shift-a-recording-toward-a-higher-or-lower-voice.svg",
+  "page": {
+    "module": "../pages/shiftARecordingTowardAHigherOrLowerVoicePage",
+    "export": "renderShiftARecordingTowardAHigherOrLowerVoicePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

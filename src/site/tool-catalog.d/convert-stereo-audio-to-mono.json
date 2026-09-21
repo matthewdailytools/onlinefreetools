@@ -1,0 +1,28 @@
+{
+  "slug": "convert-stereo-audio-to-mono",
+  "path": "/tools/convert-stereo-audio-to-mono",
+  "updatedAt": "2026-09-20T12:00:00.000Z",
+  "launchedAt": "2026-09-20T12:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_convert_stereo_audio_to_mono_title",
+  "homeTitleKey": "tool_convert_stereo_audio_to_mono_title",
+  "homeDescKey": "tool_convert_stereo_audio_to_mono_desc",
+  "faqPrefix": "tool_convert_stereo_audio_to_mono",
+  "related": [
+    "convert-audio-sample-rate-and-bit-depth",
+    "reduce-an-mp3-file-size",
+    "split-stereo-into-left-and-right-files"
+  ],
+  "logo": "/icons/tools/convert-stereo-audio-to-mono.svg",
+  "page": {
+    "module": "../pages/convertStereoAudioToMonoPage",
+    "export": "renderConvertStereoAudioToMonoPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

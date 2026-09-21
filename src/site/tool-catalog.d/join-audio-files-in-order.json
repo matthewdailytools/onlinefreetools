@@ -1,0 +1,27 @@
+{
+  "slug": "join-audio-files-in-order",
+  "path": "/tools/join-audio-files-in-order",
+  "updatedAt": "2026-09-20T22:43:28.000Z",
+  "launchedAt": "2026-09-20T22:43:28.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_join_audio_files_in_order_title",
+  "homeTitleKey": "tool_join_audio_files_in_order_title",
+  "homeDescKey": "tool_join_audio_files_in_order_desc",
+  "faqPrefix": "tool_join_audio_files_in_order",
+  "related": [
+    "extract-audio-from-a-video-file",
+    "trim-an-audio-clip-and-export"
+  ],
+  "logo": "/icons/tools/join-audio-files-in-order.svg",
+  "page": {
+    "module": "../pages/joinAudioFilesInOrderPage",
+    "export": "renderJoinAudioFilesInOrderPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

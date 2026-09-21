@@ -1,0 +1,27 @@
+{
+  "slug": "mix-a-voiceover-with-background-music",
+  "path": "/tools/mix-a-voiceover-with-background-music",
+  "updatedAt": "2026-09-20T22:50:00.000Z",
+  "launchedAt": "2026-09-20T22:50:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_mix_a_voiceover_with_background_music_title",
+  "homeTitleKey": "tool_mix_a_voiceover_with_background_music_title",
+  "homeDescKey": "tool_mix_a_voiceover_with_background_music_desc",
+  "faqPrefix": "tool_mix_a_voiceover_with_background_music",
+  "related": [
+    "join-audio-files-in-order",
+    "extract-audio-from-a-video-file"
+  ],
+  "logo": "/icons/tools/mix-a-voiceover-with-background-music.svg",
+  "page": {
+    "module": "../pages/mixAVoiceoverWithBackgroundMusicPage",
+    "export": "renderMixAVoiceoverWithBackgroundMusicPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

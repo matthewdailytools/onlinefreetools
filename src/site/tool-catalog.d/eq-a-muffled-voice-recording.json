@@ -1,0 +1,30 @@
+{
+  "slug": "eq-a-muffled-voice-recording",
+  "path": "/tools/eq-a-muffled-voice-recording",
+  "updatedAt": "2026-09-20T18:00:00.000Z",
+  "launchedAt": "2026-09-20T18:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_eq_a_muffled_voice_recording_title",
+  "homeTitleKey": "tool_eq_a_muffled_voice_recording_title",
+  "homeDescKey": "tool_eq_a_muffled_voice_recording_desc",
+  "faqPrefix": "tool_eq_a_muffled_voice_recording",
+  "related": [
+    "limit-peaks-so-a-file-does-not-clip",
+    "compress-dynamic-range-of-a-voice-recording",
+    "boost-bass-on-an-mp3",
+    "remove-mains-hum-from-a-recording",
+    "de-ess-a-voiceover"
+  ],
+  "logo": "/icons/tools/eq-a-muffled-voice-recording.svg",
+  "page": {
+    "module": "../pages/eqAMuffledVoiceRecordingPage",
+    "export": "renderEqAMuffledVoiceRecordingPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

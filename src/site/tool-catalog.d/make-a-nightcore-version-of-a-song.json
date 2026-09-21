@@ -1,0 +1,27 @@
+{
+  "slug": "make-a-nightcore-version-of-a-song",
+  "path": "/tools/make-a-nightcore-version-of-a-song",
+  "updatedAt": "2026-09-20T22:00:00.000Z",
+  "launchedAt": "2026-09-20T22:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_make_a_nightcore_version_of_a_song_title",
+  "homeTitleKey": "tool_make_a_nightcore_version_of_a_song_title",
+  "homeDescKey": "tool_make_a_nightcore_version_of_a_song_desc",
+  "faqPrefix": "tool_make_a_nightcore_version_of_a_song",
+  "related": [
+    "shift-the-pitch-of-a-song",
+    "change-audio-speed-without-changing-pitch"
+  ],
+  "logo": "/icons/tools/make-a-nightcore-version-of-a-song.svg",
+  "page": {
+    "module": "../pages/makeANightcoreVersionOfASongPage",
+    "export": "renderMakeANightcoreVersionOfASongPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

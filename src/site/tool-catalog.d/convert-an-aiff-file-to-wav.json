@@ -1,0 +1,27 @@
+{
+  "slug": "convert-an-aiff-file-to-wav",
+  "path": "/tools/convert-an-aiff-file-to-wav",
+  "updatedAt": "2026-09-21T00:00:00.000Z",
+  "launchedAt": "2026-09-21T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_convert_an_aiff_file_to_wav_title",
+  "homeTitleKey": "tool_convert_an_aiff_file_to_wav_title",
+  "homeDescKey": "tool_convert_an_aiff_file_to_wav_desc",
+  "faqPrefix": "tool_convert_an_aiff_file_to_wav",
+  "related": [
+    "convert-an-mp3-file-to-wav",
+    "convert-a-flac-file-to-mp3"
+  ],
+  "logo": "/icons/tools/convert-an-aiff-file-to-wav.svg",
+  "page": {
+    "module": "../pages/convertAnAiffFileToWavPage",
+    "export": "renderConvertAnAiffFileToWavPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

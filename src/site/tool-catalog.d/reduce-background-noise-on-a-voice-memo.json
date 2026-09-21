@@ -1,0 +1,28 @@
+{
+  "slug": "reduce-background-noise-on-a-voice-memo",
+  "path": "/tools/reduce-background-noise-on-a-voice-memo",
+  "updatedAt": "2026-09-20T19:30:16.000Z",
+  "launchedAt": "2026-09-20T19:30:16.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_reduce_background_noise_on_a_voice_memo_title",
+  "homeTitleKey": "tool_reduce_background_noise_on_a_voice_memo_title",
+  "homeDescKey": "tool_reduce_background_noise_on_a_voice_memo_desc",
+  "faqPrefix": "tool_reduce_background_noise_on_a_voice_memo",
+  "related": [
+    "fade-in-and-fade-out-an-audio-clip",
+    "eq-a-muffled-voice-recording",
+    "remove-mains-hum-from-a-recording"
+  ],
+  "logo": "/icons/tools/reduce-background-noise-on-a-voice-memo.svg",
+  "page": {
+    "module": "../pages/reduceBackgroundNoiseOnAVoiceMemoPage",
+    "export": "renderReduceBackgroundNoiseOnAVoiceMemoPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

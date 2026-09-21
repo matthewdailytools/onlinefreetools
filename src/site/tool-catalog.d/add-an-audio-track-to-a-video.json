@@ -1,0 +1,27 @@
+{
+  "slug": "add-an-audio-track-to-a-video",
+  "path": "/tools/add-an-audio-track-to-a-video",
+  "updatedAt": "2026-09-21T00:10:00.000Z",
+  "launchedAt": "2026-09-21T00:10:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_add_an_audio_track_to_a_video_title",
+  "homeTitleKey": "tool_add_an_audio_track_to_a_video_title",
+  "homeDescKey": "tool_add_an_audio_track_to_a_video_desc",
+  "faqPrefix": "tool_add_an_audio_track_to_a_video",
+  "related": [
+    "remove-the-audio-track-from-a-video",
+    "extract-audio-from-a-video-file"
+  ],
+  "logo": "/icons/tools/add-an-audio-track-to-a-video.svg",
+  "page": {
+    "module": "../pages/addAnAudioTrackToAVideoPage",
+    "export": "renderAddAnAudioTrackToAVideoPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

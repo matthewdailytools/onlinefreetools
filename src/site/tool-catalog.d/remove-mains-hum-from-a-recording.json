@@ -1,0 +1,27 @@
+{
+  "slug": "remove-mains-hum-from-a-recording",
+  "path": "/tools/remove-mains-hum-from-a-recording",
+  "updatedAt": "2026-09-20T19:46:53.000Z",
+  "launchedAt": "2026-09-20T19:46:53.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_remove_mains_hum_from_a_recording_title",
+  "homeTitleKey": "tool_remove_mains_hum_from_a_recording_title",
+  "homeDescKey": "tool_remove_mains_hum_from_a_recording_desc",
+  "faqPrefix": "tool_remove_mains_hum_from_a_recording",
+  "related": [
+    "reduce-background-noise-on-a-voice-memo",
+    "eq-a-muffled-voice-recording"
+  ],
+  "logo": "/icons/tools/remove-mains-hum-from-a-recording.svg",
+  "page": {
+    "module": "../pages/removeMainsHumFromARecordingPage",
+    "export": "renderRemoveMainsHumFromARecordingPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

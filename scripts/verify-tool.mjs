@@ -5,7 +5,7 @@
  * Usage:
  *   npm run verify:tool -- --slug=image-compress
  *
- * Runs inventory → coverage → source wiring → merge → full build → HTML smoke
+ * Runs inventory → coverage → source wiring → merge → prerender+gzip (slug) → HTML smoke
  * → SEO lint → vendor lint → tool isolation, with per-run evidence.
  *
  * Invokes `node scripts/…` directly (not `npm run`) so Windows does not depend
@@ -80,7 +80,12 @@ await runStep('tool-page wiring (source)', [
 
 await runStep('merge:tools', [path.join('scripts', 'tool-modules', 'merge-all.mjs')]);
 
-await runStep('site build', [path.join('scripts', 'build-site.mjs'), '--full']);
+/** 单工具门禁：只预渲染本 slug（避免 --full 在低内存机上 OOM/换页卡死）。 */
+await runStep('prerender tool pages', [
+	path.join('scripts', 'prerender-tool-pages.mjs'),
+	`--slug=${slug}`,
+]);
+await runStep('gzip tool pages', [path.join('scripts', 'gzip-pages.mjs'), `--slug=${slug}`]);
 
 await runStep('tool-page HTML smoke', [
 	path.join('scripts', 'validate-tool-page-wiring.mjs'),

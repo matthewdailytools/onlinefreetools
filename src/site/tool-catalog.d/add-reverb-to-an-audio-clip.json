@@ -1,0 +1,27 @@
+{
+  "slug": "add-reverb-to-an-audio-clip",
+  "path": "/tools/add-reverb-to-an-audio-clip",
+  "updatedAt": "2026-09-20T23:45:00.000Z",
+  "launchedAt": "2026-09-20T23:45:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_add_reverb_to_an_audio_clip_title",
+  "homeTitleKey": "tool_add_reverb_to_an_audio_clip_title",
+  "homeDescKey": "tool_add_reverb_to_an_audio_clip_desc",
+  "faqPrefix": "tool_add_reverb_to_an_audio_clip",
+  "related": [
+    "shift-a-recording-toward-a-higher-or-lower-voice",
+    "make-a-slowed-and-reverb-clip"
+  ],
+  "logo": "/icons/tools/add-reverb-to-an-audio-clip.svg",
+  "page": {
+    "module": "../pages/addReverbToAnAudioClipPage",
+    "export": "renderAddReverbToAnAudioClipPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

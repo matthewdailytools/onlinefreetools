@@ -1,5 +1,27 @@
 [
   {
+    "slug": "add-an-audio-track-to-a-video",
+    "path": "/tools/add-an-audio-track-to-a-video",
+    "updatedAt": "2026-09-21T00:10:00.000Z",
+    "launchedAt": "2026-09-21T00:10:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_add_an_audio_track_to_a_video_title",
+    "homeTitleKey": "tool_add_an_audio_track_to_a_video_title",
+    "homeDescKey": "tool_add_an_audio_track_to_a_video_desc",
+    "faqPrefix": "tool_add_an_audio_track_to_a_video",
+    "related": [
+      "remove-the-audio-track-from-a-video",
+      "extract-audio-from-a-video-file"
+    ],
+    "logo": "/icons/tools/add-an-audio-track-to-a-video.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
+  },
+  {
     "slug": "add-digital-signature-to-pdf",
     "path": "/tools/add-digital-signature-to-pdf",
     "updatedAt": "2026-09-06T07:14:26.928Z",
@@ -23,6 +45,28 @@
     "localProcessing": true,
     "scenario": "documents",
     "subject": "pdf"
+  },
+  {
+    "slug": "add-reverb-to-an-audio-clip",
+    "path": "/tools/add-reverb-to-an-audio-clip",
+    "updatedAt": "2026-09-20T23:45:00.000Z",
+    "launchedAt": "2026-09-20T23:45:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_add_reverb_to_an_audio_clip_title",
+    "homeTitleKey": "tool_add_reverb_to_an_audio_clip_title",
+    "homeDescKey": "tool_add_reverb_to_an_audio_clip_desc",
+    "faqPrefix": "tool_add_reverb_to_an_audio_clip",
+    "related": [
+      "shift-a-recording-toward-a-higher-or-lower-voice",
+      "make-a-slowed-and-reverb-clip"
+    ],
+    "logo": "/icons/tools/add-reverb-to-an-audio-clip.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "add-text-to-pdf-file",
@@ -168,6 +212,28 @@
     "localProcessing": true,
     "scenario": "media",
     "subject": "image"
+  },
+  {
+    "slug": "apply-a-toy-voice-effect-to-a-recording",
+    "path": "/tools/apply-a-toy-voice-effect-to-a-recording",
+    "updatedAt": "2026-09-20T22:14:00.000Z",
+    "launchedAt": "2026-09-20T22:14:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_apply_a_toy_voice_effect_to_a_recording_title",
+    "homeTitleKey": "tool_apply_a_toy_voice_effect_to_a_recording_title",
+    "homeDescKey": "tool_apply_a_toy_voice_effect_to_a_recording_desc",
+    "faqPrefix": "tool_apply_a_toy_voice_effect_to_a_recording",
+    "related": [
+      "reverse-an-audio-file",
+      "shift-the-pitch-of-a-song"
+    ],
+    "logo": "/icons/tools/apply-a-toy-voice-effect-to-a-recording.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "archive-extractor",
@@ -458,6 +524,28 @@
     "subject": "image"
   },
   {
+    "slug": "batch-trim-the-same-intro-from-audio-files",
+    "path": "/tools/batch-trim-the-same-intro-from-audio-files",
+    "updatedAt": "2026-09-21T00:32:00.000Z",
+    "launchedAt": "2026-09-21T00:32:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_trim_the_same_intro_from_audio_files_title",
+    "homeTitleKey": "tool_batch_trim_the_same_intro_from_audio_files_title",
+    "homeDescKey": "tool_batch_trim_the_same_intro_from_audio_files_desc",
+    "faqPrefix": "tool_batch_trim_the_same_intro_from_audio_files",
+    "related": [
+      "trim-an-audio-clip-and-export",
+      "bulk-convert-wav-files-to-mp3"
+    ],
+    "logo": "/icons/tools/batch-trim-the-same-intro-from-audio-files.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "batch-watermark-product-photos",
     "path": "/tools/batch-watermark-product-photos",
     "updatedAt": "2026-09-03T09:55:00.000Z",
@@ -478,6 +566,28 @@
     "localProcessing": true,
     "scenario": "media",
     "subject": "image"
+  },
+  {
+    "slug": "boost-bass-on-an-mp3",
+    "path": "/tools/boost-bass-on-an-mp3",
+    "updatedAt": "2026-09-20T19:00:00.000Z",
+    "launchedAt": "2026-09-20T19:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_boost_bass_on_an_mp3_title",
+    "homeTitleKey": "tool_boost_bass_on_an_mp3_title",
+    "homeDescKey": "tool_boost_bass_on_an_mp3_desc",
+    "faqPrefix": "tool_boost_bass_on_an_mp3",
+    "related": [
+      "eq-a-muffled-voice-recording",
+      "make-a-quiet-recording-louder"
+    ],
+    "logo": "/icons/tools/boost-bass-on-an-mp3.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "brand-color-token-pack",
@@ -643,6 +753,50 @@
     "localProcessing": true,
     "scenario": "media",
     "subject": "image"
+  },
+  {
+    "slug": "bulk-convert-wav-files-to-mp3",
+    "path": "/tools/bulk-convert-wav-files-to-mp3",
+    "updatedAt": "2026-09-21T00:00:00.000Z",
+    "launchedAt": "2026-09-21T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_bulk_convert_wav_files_to_mp3_title",
+    "homeTitleKey": "tool_bulk_convert_wav_files_to_mp3_title",
+    "homeDescKey": "tool_bulk_convert_wav_files_to_mp3_desc",
+    "faqPrefix": "tool_bulk_convert_wav_files_to_mp3",
+    "related": [
+      "convert-a-wav-file-to-mp3",
+      "convert-a-flac-file-to-mp3"
+    ],
+    "logo": "/icons/tools/bulk-convert-wav-files-to-mp3.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "change-audio-speed-without-changing-pitch",
+    "path": "/tools/change-audio-speed-without-changing-pitch",
+    "updatedAt": "2026-09-20T20:48:30.000Z",
+    "launchedAt": "2026-09-20T20:48:30.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_change_audio_speed_without_changing_pitch_title",
+    "homeTitleKey": "tool_change_audio_speed_without_changing_pitch_title",
+    "homeDescKey": "tool_change_audio_speed_without_changing_pitch_desc",
+    "faqPrefix": "tool_change_audio_speed_without_changing_pitch",
+    "related": [
+      "de-ess-a-voiceover",
+      "fade-in-and-fade-out-an-audio-clip"
+    ],
+    "logo": "/icons/tools/change-audio-speed-without-changing-pitch.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "chatgpt-export-to-markdown",
@@ -910,6 +1064,28 @@
     "subject": "text"
   },
   {
+    "slug": "compress-dynamic-range-of-a-voice-recording",
+    "path": "/tools/compress-dynamic-range-of-a-voice-recording",
+    "updatedAt": "2026-09-20T12:00:00.000Z",
+    "launchedAt": "2026-09-20T12:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_compress_dynamic_range_of_a_voice_recording_title",
+    "homeTitleKey": "tool_compress_dynamic_range_of_a_voice_recording_title",
+    "homeDescKey": "tool_compress_dynamic_range_of_a_voice_recording_desc",
+    "faqPrefix": "tool_compress_dynamic_range_of_a_voice_recording",
+    "related": [
+      "eq-a-muffled-voice-recording",
+      "limit-peaks-so-a-file-does-not-clip"
+    ],
+    "logo": "/icons/tools/compress-dynamic-range-of-a-voice-recording.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "compress-pdf",
     "path": "/tools/compress-pdf",
     "updatedAt": "2026-09-05T12:58:23.264Z",
@@ -931,6 +1107,28 @@
     "scenario": "documents",
     "subject": "pdf",
     "launchedAt": "2026-08-08T21:33:07+08:00"
+  },
+  {
+    "slug": "convert-a-flac-file-to-mp3",
+    "path": "/tools/convert-a-flac-file-to-mp3",
+    "updatedAt": "2026-09-20T23:59:00.000Z",
+    "launchedAt": "2026-09-20T23:59:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_a_flac_file_to_mp3_title",
+    "homeTitleKey": "tool_convert_a_flac_file_to_mp3_title",
+    "homeDescKey": "tool_convert_a_flac_file_to_mp3_desc",
+    "faqPrefix": "tool_convert_a_flac_file_to_mp3",
+    "related": [
+      "convert-a-wav-file-to-mp3",
+      "convert-an-m4a-file-to-mp3"
+    ],
+    "logo": "/icons/tools/convert-a-flac-file-to-mp3.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "convert-a-jpg-to-text-with-ocr",
@@ -973,9 +1171,32 @@
     "faqPrefix": "tool_convert_a_wav_file_to_mp3",
     "related": [
       "trim-an-audio-clip-and-export",
+      "extract-audio-from-a-video-file",
       "make-a-30-second-mp3-ringtone"
     ],
     "logo": "/icons/tools/convert-a-wav-file-to-mp3.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "convert-an-aiff-file-to-wav",
+    "path": "/tools/convert-an-aiff-file-to-wav",
+    "updatedAt": "2026-09-21T00:00:00.000Z",
+    "launchedAt": "2026-09-21T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_an_aiff_file_to_wav_title",
+    "homeTitleKey": "tool_convert_an_aiff_file_to_wav_title",
+    "homeDescKey": "tool_convert_an_aiff_file_to_wav_desc",
+    "faqPrefix": "tool_convert_an_aiff_file_to_wav",
+    "related": [
+      "convert-an-mp3-file-to-wav",
+      "convert-a-flac-file-to-mp3"
+    ],
+    "logo": "/icons/tools/convert-an-aiff-file-to-wav.svg",
     "localProcessing": true,
     "scenario": "media",
     "subject": "audio"
@@ -1020,6 +1241,28 @@
       "make-a-30-second-mp3-ringtone"
     ],
     "logo": "/icons/tools/convert-an-mp3-file-to-wav.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "convert-an-ogg-file-to-mp3",
+    "path": "/tools/convert-an-ogg-file-to-mp3",
+    "updatedAt": "2026-09-20T23:59:00.000Z",
+    "launchedAt": "2026-09-20T23:59:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_an_ogg_file_to_mp3_title",
+    "homeTitleKey": "tool_convert_an_ogg_file_to_mp3_title",
+    "homeDescKey": "tool_convert_an_ogg_file_to_mp3_desc",
+    "faqPrefix": "tool_convert_an_ogg_file_to_mp3",
+    "related": [
+      "convert-a-flac-file-to-mp3",
+      "convert-an-m4a-file-to-mp3"
+    ],
+    "logo": "/icons/tools/convert-an-ogg-file-to-mp3.svg",
     "localProcessing": true,
     "scenario": "media",
     "subject": "audio"
@@ -1148,6 +1391,29 @@
     "localProcessing": true,
     "scenario": "documents",
     "subject": "pdf"
+  },
+  {
+    "slug": "convert-stereo-audio-to-mono",
+    "path": "/tools/convert-stereo-audio-to-mono",
+    "updatedAt": "2026-09-20T12:00:00.000Z",
+    "launchedAt": "2026-09-20T12:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_stereo_audio_to_mono_title",
+    "homeTitleKey": "tool_convert_stereo_audio_to_mono_title",
+    "homeDescKey": "tool_convert_stereo_audio_to_mono_desc",
+    "faqPrefix": "tool_convert_stereo_audio_to_mono",
+    "related": [
+      "convert-audio-sample-rate-and-bit-depth",
+      "reduce-an-mp3-file-size",
+      "split-stereo-into-left-and-right-files"
+    ],
+    "logo": "/icons/tools/convert-stereo-audio-to-mono.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "convert-word-document-to-pdf",
@@ -1337,6 +1603,28 @@
     "launchedAt": "2026-08-08T21:33:07+08:00"
   },
   {
+    "slug": "crossfade-two-audio-files",
+    "path": "/tools/crossfade-two-audio-files",
+    "updatedAt": "2026-09-20T23:10:00.000Z",
+    "launchedAt": "2026-09-20T23:10:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_crossfade_two_audio_files_title",
+    "homeTitleKey": "tool_crossfade_two_audio_files_title",
+    "homeDescKey": "tool_crossfade_two_audio_files_desc",
+    "faqPrefix": "tool_crossfade_two_audio_files",
+    "related": [
+      "mix-a-voiceover-with-background-music",
+      "join-audio-files-in-order"
+    ],
+    "logo": "/icons/tools/crossfade-two-audio-files.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "csv-json",
     "path": "/tools/csv-json",
     "updatedAt": "2026-09-06T09:37:59.139Z",
@@ -1386,6 +1674,28 @@
     "subject": "text"
   },
   {
+    "slug": "de-ess-a-voiceover",
+    "path": "/tools/de-ess-a-voiceover",
+    "updatedAt": "2026-09-20T20:27:15.000Z",
+    "launchedAt": "2026-09-20T20:27:15.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_de_ess_a_voiceover_title",
+    "homeTitleKey": "tool_de_ess_a_voiceover_title",
+    "homeDescKey": "tool_de_ess_a_voiceover_desc",
+    "faqPrefix": "tool_de_ess_a_voiceover",
+    "related": [
+      "remove-clicks-from-a-recording",
+      "eq-a-muffled-voice-recording"
+    ],
+    "logo": "/icons/tools/de-ess-a-voiceover.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "domain-lookup",
     "path": "/tools/domain-lookup",
     "updatedAt": "2026-09-02T13:06:44.000Z",
@@ -1409,6 +1719,50 @@
     "scenario": "seo",
     "subject": "network",
     "launchedAt": "2026-08-08T21:33:07+08:00"
+  },
+  {
+    "slug": "edit-audio-on-waveform",
+    "path": "/tools/edit-audio-on-waveform",
+    "updatedAt": "2026-09-21T02:00:00.000Z",
+    "launchedAt": "2026-09-21T02:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_edit_audio_on_waveform_title",
+    "homeTitleKey": "tool_edit_audio_on_waveform_title",
+    "homeDescKey": "tool_edit_audio_on_waveform_desc",
+    "faqPrefix": "tool_edit_audio_on_waveform",
+    "related": [
+      "trim-an-audio-clip-and-export",
+      "make-a-seamless-audio-loop"
+    ],
+    "logo": "/icons/tools/edit-audio-on-waveform.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "edit-mp3-title-and-cover-art",
+    "path": "/tools/edit-mp3-title-and-cover-art",
+    "updatedAt": "2026-09-21T00:17:00.000Z",
+    "launchedAt": "2026-09-21T00:17:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_edit_mp3_title_and_cover_art_title",
+    "homeTitleKey": "tool_edit_mp3_title_and_cover_art_title",
+    "homeDescKey": "tool_edit_mp3_title_and_cover_art_desc",
+    "faqPrefix": "tool_edit_mp3_title_and_cover_art",
+    "related": [
+      "bulk-convert-wav-files-to-mp3",
+      "convert-a-wav-file-to-mp3"
+    ],
+    "logo": "/icons/tools/edit-mp3-title-and-cover-art.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "edit-pdf-form-fields",
@@ -1461,6 +1815,53 @@
     "subject": "pdf"
   },
   {
+    "slug": "embed-lyrics-in-an-mp3",
+    "path": "/tools/embed-lyrics-in-an-mp3",
+    "updatedAt": "2026-09-21T00:31:00.000Z",
+    "launchedAt": "2026-09-21T00:31:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_embed_lyrics_in_an_mp3_title",
+    "homeTitleKey": "tool_embed_lyrics_in_an_mp3_title",
+    "homeDescKey": "tool_embed_lyrics_in_an_mp3_desc",
+    "faqPrefix": "tool_embed_lyrics_in_an_mp3",
+    "related": [
+      "edit-mp3-title-and-cover-art",
+      "extract-cover-art-from-an-mp3"
+    ],
+    "logo": "/icons/tools/embed-lyrics-in-an-mp3.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "eq-a-muffled-voice-recording",
+    "path": "/tools/eq-a-muffled-voice-recording",
+    "updatedAt": "2026-09-20T18:00:00.000Z",
+    "launchedAt": "2026-09-20T18:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_eq_a_muffled_voice_recording_title",
+    "homeTitleKey": "tool_eq_a_muffled_voice_recording_title",
+    "homeDescKey": "tool_eq_a_muffled_voice_recording_desc",
+    "faqPrefix": "tool_eq_a_muffled_voice_recording",
+    "related": [
+      "limit-peaks-so-a-file-does-not-clip",
+      "compress-dynamic-range-of-a-voice-recording",
+      "boost-bass-on-an-mp3",
+      "remove-mains-hum-from-a-recording",
+      "de-ess-a-voiceover"
+    ],
+    "logo": "/icons/tools/eq-a-muffled-voice-recording.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "excel-compare-files",
     "path": "/tools/excel-compare-files",
     "updatedAt": "2026-09-05T13:52:22.893Z",
@@ -1510,6 +1911,51 @@
     "subject": "data"
   },
   {
+    "slug": "extract-audio-from-a-video-file",
+    "path": "/tools/extract-audio-from-a-video-file",
+    "updatedAt": "2026-09-21T01:00:00.000Z",
+    "launchedAt": "2026-09-20T22:33:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_extract_audio_from_a_video_file_title",
+    "homeTitleKey": "tool_extract_audio_from_a_video_file_title",
+    "homeDescKey": "tool_extract_audio_from_a_video_file_desc",
+    "faqPrefix": "tool_extract_audio_from_a_video_file",
+    "related": [
+      "add-an-audio-track-to-a-video",
+      "trim-an-audio-clip-and-export",
+      "make-a-waveform-video-from-audio"
+    ],
+    "logo": "/icons/tools/extract-audio-from-a-video-file.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "extract-cover-art-from-an-mp3",
+    "path": "/tools/extract-cover-art-from-an-mp3",
+    "updatedAt": "2026-09-21T00:30:00.000Z",
+    "launchedAt": "2026-09-21T00:30:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_extract_cover_art_from_an_mp3_title",
+    "homeTitleKey": "tool_extract_cover_art_from_an_mp3_title",
+    "homeDescKey": "tool_extract_cover_art_from_an_mp3_desc",
+    "faqPrefix": "tool_extract_cover_art_from_an_mp3",
+    "related": [
+      "edit-mp3-title-and-cover-art",
+      "file-metadata-analyzer"
+    ],
+    "logo": "/icons/tools/extract-cover-art-from-an-mp3.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "extract-text-from-pdf",
     "path": "/tools/extract-text-from-pdf",
     "updatedAt": "2026-09-06T09:37:59.139Z",
@@ -1535,6 +1981,28 @@
     "localProcessing": true,
     "scenario": "documents",
     "subject": "pdf"
+  },
+  {
+    "slug": "fade-in-and-fade-out-an-audio-clip",
+    "path": "/tools/fade-in-and-fade-out-an-audio-clip",
+    "updatedAt": "2026-09-20T19:16:32.000Z",
+    "launchedAt": "2026-09-20T19:16:32.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_fade_in_and_fade_out_an_audio_clip_title",
+    "homeTitleKey": "tool_fade_in_and_fade_out_an_audio_clip_title",
+    "homeDescKey": "tool_fade_in_and_fade_out_an_audio_clip_desc",
+    "faqPrefix": "tool_fade_in_and_fade_out_an_audio_clip",
+    "related": [
+      "boost-bass-on-an-mp3",
+      "change-audio-speed-without-changing-pitch"
+    ],
+    "logo": "/icons/tools/fade-in-and-fade-out-an-audio-clip.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "file-hash",
@@ -1680,6 +2148,50 @@
     "scenario": "media",
     "subject": "image",
     "launchedAt": "2026-08-08T14:22:36+08:00"
+  },
+  {
+    "slug": "generate-a-sine-tone-at-a-frequency",
+    "path": "/tools/generate-a-sine-tone-at-a-frequency",
+    "updatedAt": "2026-09-20T23:20:00.000Z",
+    "launchedAt": "2026-09-20T23:20:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_generate_a_sine_tone_at_a_frequency_title",
+    "homeTitleKey": "tool_generate_a_sine_tone_at_a_frequency_title",
+    "homeDescKey": "tool_generate_a_sine_tone_at_a_frequency_desc",
+    "faqPrefix": "tool_generate_a_sine_tone_at_a_frequency",
+    "related": [
+      "mix-binaural-beats-for-focus",
+      "generate-dtmf-touch-tones"
+    ],
+    "logo": "/icons/tools/generate-a-sine-tone-at-a-frequency.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "generate-dtmf-touch-tones",
+    "path": "/tools/generate-dtmf-touch-tones",
+    "updatedAt": "2026-09-20T23:40:00.000Z",
+    "launchedAt": "2026-09-20T23:40:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_generate_dtmf_touch_tones_title",
+    "homeTitleKey": "tool_generate_dtmf_touch_tones_title",
+    "homeDescKey": "tool_generate_dtmf_touch_tones_desc",
+    "faqPrefix": "tool_generate_dtmf_touch_tones",
+    "related": [
+      "generate-a-sine-tone-at-a-frequency",
+      "make-a-short-ui-notification-sound"
+    ],
+    "logo": "/icons/tools/generate-dtmf-touch-tones.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "how-to-calculate-acceleration",
@@ -3684,6 +4196,28 @@
     "subject": "network"
   },
   {
+    "slug": "join-audio-files-in-order",
+    "path": "/tools/join-audio-files-in-order",
+    "updatedAt": "2026-09-20T22:43:28.000Z",
+    "launchedAt": "2026-09-20T22:43:28.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_join_audio_files_in_order_title",
+    "homeTitleKey": "tool_join_audio_files_in_order_title",
+    "homeDescKey": "tool_join_audio_files_in_order_desc",
+    "faqPrefix": "tool_join_audio_files_in_order",
+    "related": [
+      "extract-audio-from-a-video-file",
+      "trim-an-audio-clip-and-export"
+    ],
+    "logo": "/icons/tools/join-audio-files-in-order.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "json-diff-checker-online",
     "path": "/tools/json-diff-checker-online",
     "updatedAt": "2026-09-05T13:52:22.743Z",
@@ -3758,6 +4292,28 @@
     "launchedAt": "2026-08-08T19:34:20+08:00"
   },
   {
+    "slug": "limit-peaks-so-a-file-does-not-clip",
+    "path": "/tools/limit-peaks-so-a-file-does-not-clip",
+    "updatedAt": "2026-09-20T12:00:00.000Z",
+    "launchedAt": "2026-09-20T12:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_limit_peaks_so_a_file_does_not_clip_title",
+    "homeTitleKey": "tool_limit_peaks_so_a_file_does_not_clip_title",
+    "homeDescKey": "tool_limit_peaks_so_a_file_does_not_clip_desc",
+    "faqPrefix": "tool_limit_peaks_so_a_file_does_not_clip",
+    "related": [
+      "eq-a-muffled-voice-recording",
+      "compress-dynamic-range-of-a-voice-recording"
+    ],
+    "logo": "/icons/tools/limit-peaks-so-a-file-does-not-clip.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "linkedin-banner-size",
     "path": "/tools/linkedin-banner-size",
     "updatedAt": "2026-09-01T05:55:00.000Z",
@@ -3828,9 +4384,54 @@
     "subject": "audio"
   },
   {
+    "slug": "make-a-nightcore-version-of-a-song",
+    "path": "/tools/make-a-nightcore-version-of-a-song",
+    "updatedAt": "2026-09-20T22:00:00.000Z",
+    "launchedAt": "2026-09-20T22:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_make_a_nightcore_version_of_a_song_title",
+    "homeTitleKey": "tool_make_a_nightcore_version_of_a_song_title",
+    "homeDescKey": "tool_make_a_nightcore_version_of_a_song_desc",
+    "faqPrefix": "tool_make_a_nightcore_version_of_a_song",
+    "related": [
+      "shift-the-pitch-of-a-song",
+      "change-audio-speed-without-changing-pitch"
+    ],
+    "logo": "/icons/tools/make-a-nightcore-version-of-a-song.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "make-a-quiet-recording-louder",
+    "path": "/tools/make-a-quiet-recording-louder",
+    "updatedAt": "2026-09-20T12:00:00.000Z",
+    "launchedAt": "2026-09-20T12:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_make_a_quiet_recording_louder_title",
+    "homeTitleKey": "tool_make_a_quiet_recording_louder_title",
+    "homeDescKey": "tool_make_a_quiet_recording_louder_desc",
+    "faqPrefix": "tool_make_a_quiet_recording_louder",
+    "related": [
+      "convert-audio-sample-rate-and-bit-depth",
+      "convert-stereo-audio-to-mono",
+      "boost-bass-on-an-mp3"
+    ],
+    "logo": "/icons/tools/make-a-quiet-recording-louder.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "make-a-seamless-audio-loop",
     "path": "/tools/make-a-seamless-audio-loop",
-    "updatedAt": "2026-09-11T13:20:00.000Z",
+    "updatedAt": "2026-09-21T02:00:00.000Z",
     "launchedAt": "2026-09-11T13:20:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -3842,9 +4443,100 @@
     "faqPrefix": "tool_make_a_seamless_audio_loop",
     "related": [
       "trim-an-audio-clip-and-export",
-      "split-an-audio-file-by-duration"
+      "split-an-audio-file-by-duration",
+      "edit-audio-on-waveform"
     ],
     "logo": "/icons/tools/make-a-seamless-audio-loop.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "make-a-short-ui-notification-sound",
+    "path": "/tools/make-a-short-ui-notification-sound",
+    "updatedAt": "2026-09-20T23:55:00.000Z",
+    "launchedAt": "2026-09-20T23:55:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_make_a_short_ui_notification_sound_title",
+    "homeTitleKey": "tool_make_a_short_ui_notification_sound_title",
+    "homeDescKey": "tool_make_a_short_ui_notification_sound_desc",
+    "faqPrefix": "tool_make_a_short_ui_notification_sound",
+    "related": [
+      "generate-dtmf-touch-tones",
+      "generate-a-sine-tone-at-a-frequency"
+    ],
+    "logo": "/icons/tools/make-a-short-ui-notification-sound.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "make-a-slowed-and-reverb-clip",
+    "path": "/tools/make-a-slowed-and-reverb-clip",
+    "updatedAt": "2026-09-20T23:00:00.000Z",
+    "launchedAt": "2026-09-20T23:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_make_a_slowed_and_reverb_clip_title",
+    "homeTitleKey": "tool_make_a_slowed_and_reverb_clip_title",
+    "homeDescKey": "tool_make_a_slowed_and_reverb_clip_desc",
+    "faqPrefix": "tool_make_a_slowed_and_reverb_clip",
+    "related": [
+      "add-reverb-to-an-audio-clip",
+      "make-a-nightcore-version-of-a-song"
+    ],
+    "logo": "/icons/tools/make-a-slowed-and-reverb-clip.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "make-a-waveform-video-from-audio",
+    "path": "/tools/make-a-waveform-video-from-audio",
+    "updatedAt": "2026-09-21T02:00:00.000Z",
+    "launchedAt": "2026-09-21T01:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_make_a_waveform_video_from_audio_title",
+    "homeTitleKey": "tool_make_a_waveform_video_from_audio_title",
+    "homeDescKey": "tool_make_a_waveform_video_from_audio_desc",
+    "faqPrefix": "tool_make_a_waveform_video_from_audio",
+    "related": [
+      "extract-audio-from-a-video-file",
+      "trim-an-audio-clip-and-export",
+      "transcribe-an-audio-file-to-text",
+      "make-srt-subtitles-from-an-audio-file"
+    ],
+    "logo": "/icons/tools/make-a-waveform-video-from-audio.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
+  },
+  {
+    "slug": "make-an-8d-panning-version-of-a-song",
+    "path": "/tools/make-an-8d-panning-version-of-a-song",
+    "updatedAt": "2026-09-20T23:30:00.000Z",
+    "launchedAt": "2026-09-20T23:30:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_make_an_8d_panning_version_of_a_song_title",
+    "homeTitleKey": "tool_make_an_8d_panning_version_of_a_song_title",
+    "homeDescKey": "tool_make_an_8d_panning_version_of_a_song_desc",
+    "faqPrefix": "tool_make_an_8d_panning_version_of_a_song",
+    "related": [
+      "make-a-slowed-and-reverb-clip",
+      "make-a-nightcore-version-of-a-song"
+    ],
+    "logo": "/icons/tools/make-an-8d-panning-version-of-a-song.svg",
     "localProcessing": true,
     "scenario": "media",
     "subject": "audio"
@@ -3900,6 +4592,28 @@
     "subject": "pdf"
   },
   {
+    "slug": "make-srt-subtitles-from-an-audio-file",
+    "path": "/tools/make-srt-subtitles-from-an-audio-file",
+    "updatedAt": "2026-09-21T01:20:00.000Z",
+    "launchedAt": "2026-09-21T01:20:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_make_srt_subtitles_from_an_audio_file_title",
+    "homeTitleKey": "tool_make_srt_subtitles_from_an_audio_file_title",
+    "homeDescKey": "tool_make_srt_subtitles_from_an_audio_file_desc",
+    "faqPrefix": "tool_make_srt_subtitles_from_an_audio_file",
+    "related": [
+      "transcribe-an-audio-file-to-text",
+      "make-a-waveform-video-from-audio"
+    ],
+    "logo": "/icons/tools/make-srt-subtitles-from-an-audio-file.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "markdown-to-html",
     "path": "/tools/markdown-to-html",
     "updatedAt": "2026-09-06T09:37:59.139Z",
@@ -3927,6 +4641,28 @@
     "scenario": "developer",
     "subject": "text",
     "launchedAt": "2026-01-11T14:02:02+08:00"
+  },
+  {
+    "slug": "match-podcast-loudness-to-minus-16-lufs",
+    "path": "/tools/match-podcast-loudness-to-minus-16-lufs",
+    "updatedAt": "2026-09-20T12:00:00.000Z",
+    "launchedAt": "2026-09-20T12:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_match_podcast_loudness_to_minus_16_lufs_title",
+    "homeTitleKey": "tool_match_podcast_loudness_to_minus_16_lufs_title",
+    "homeDescKey": "tool_match_podcast_loudness_to_minus_16_lufs_desc",
+    "faqPrefix": "tool_match_podcast_loudness_to_minus_16_lufs",
+    "related": [
+      "normalize-an-audio-file-to-peak",
+      "compress-dynamic-range-of-a-voice-recording"
+    ],
+    "logo": "/icons/tools/match-podcast-loudness-to-minus-16-lufs.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "measuring-magnetic-fields",
@@ -4044,6 +4780,72 @@
     "localProcessing": false,
     "scenario": "developer",
     "subject": "text"
+  },
+  {
+    "slug": "mix-a-voiceover-with-background-music",
+    "path": "/tools/mix-a-voiceover-with-background-music",
+    "updatedAt": "2026-09-20T22:50:00.000Z",
+    "launchedAt": "2026-09-20T22:50:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_mix_a_voiceover_with_background_music_title",
+    "homeTitleKey": "tool_mix_a_voiceover_with_background_music_title",
+    "homeDescKey": "tool_mix_a_voiceover_with_background_music_desc",
+    "faqPrefix": "tool_mix_a_voiceover_with_background_music",
+    "related": [
+      "join-audio-files-in-order",
+      "extract-audio-from-a-video-file"
+    ],
+    "logo": "/icons/tools/mix-a-voiceover-with-background-music.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "mix-binaural-beats-for-focus",
+    "path": "/tools/mix-binaural-beats-for-focus",
+    "updatedAt": "2026-09-20T23:50:00.000Z",
+    "launchedAt": "2026-09-20T23:50:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_mix_binaural_beats_for_focus_title",
+    "homeTitleKey": "tool_mix_binaural_beats_for_focus_title",
+    "homeDescKey": "tool_mix_binaural_beats_for_focus_desc",
+    "faqPrefix": "tool_mix_binaural_beats_for_focus",
+    "related": [
+      "generate-a-sine-tone-at-a-frequency",
+      "make-a-short-ui-notification-sound"
+    ],
+    "logo": "/icons/tools/mix-binaural-beats-for-focus.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "normalize-an-audio-file-to-peak",
+    "path": "/tools/normalize-an-audio-file-to-peak",
+    "updatedAt": "2026-09-20T12:00:00.000Z",
+    "launchedAt": "2026-09-20T12:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_normalize_an_audio_file_to_peak_title",
+    "homeTitleKey": "tool_normalize_an_audio_file_to_peak_title",
+    "homeDescKey": "tool_normalize_an_audio_file_to_peak_desc",
+    "faqPrefix": "tool_normalize_an_audio_file_to_peak",
+    "related": [
+      "limit-peaks-so-a-file-does-not-clip",
+      "compress-dynamic-range-of-a-voice-recording"
+    ],
+    "logo": "/icons/tools/normalize-an-audio-file-to-peak.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "on-page-seo-checker",
@@ -4439,7 +5241,7 @@
   {
     "slug": "record-a-voice-memo-in-the-browser",
     "path": "/tools/record-a-voice-memo-in-the-browser",
-    "updatedAt": "2026-09-15T03:30:00.000Z",
+    "updatedAt": "2026-09-21T01:10:00.000Z",
     "launchedAt": "2026-09-15T03:30:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -4451,7 +5253,8 @@
     "faqPrefix": "tool_record_a_voice_memo_in_the_browser",
     "related": [
       "trim-an-audio-clip-and-export",
-      "make-a-30-second-mp3-ringtone"
+      "make-a-30-second-mp3-ringtone",
+      "transcribe-an-audio-file-to-text"
     ],
     "logo": "/icons/tools/record-a-voice-memo-in-the-browser.svg",
     "localProcessing": true,
@@ -4503,6 +5306,74 @@
     "subject": "audio"
   },
   {
+    "slug": "reduce-background-noise-on-a-voice-memo",
+    "path": "/tools/reduce-background-noise-on-a-voice-memo",
+    "updatedAt": "2026-09-20T19:30:16.000Z",
+    "launchedAt": "2026-09-20T19:30:16.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_reduce_background_noise_on_a_voice_memo_title",
+    "homeTitleKey": "tool_reduce_background_noise_on_a_voice_memo_title",
+    "homeDescKey": "tool_reduce_background_noise_on_a_voice_memo_desc",
+    "faqPrefix": "tool_reduce_background_noise_on_a_voice_memo",
+    "related": [
+      "fade-in-and-fade-out-an-audio-clip",
+      "eq-a-muffled-voice-recording",
+      "remove-mains-hum-from-a-recording"
+    ],
+    "logo": "/icons/tools/reduce-background-noise-on-a-voice-memo.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "remove-clicks-from-a-recording",
+    "path": "/tools/remove-clicks-from-a-recording",
+    "updatedAt": "2026-09-20T20:02:45.000Z",
+    "launchedAt": "2026-09-20T20:02:45.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_remove_clicks_from_a_recording_title",
+    "homeTitleKey": "tool_remove_clicks_from_a_recording_title",
+    "homeDescKey": "tool_remove_clicks_from_a_recording_desc",
+    "faqPrefix": "tool_remove_clicks_from_a_recording",
+    "related": [
+      "remove-mains-hum-from-a-recording",
+      "reduce-background-noise-on-a-voice-memo",
+      "de-ess-a-voiceover"
+    ],
+    "logo": "/icons/tools/remove-clicks-from-a-recording.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "remove-mains-hum-from-a-recording",
+    "path": "/tools/remove-mains-hum-from-a-recording",
+    "updatedAt": "2026-09-20T19:46:53.000Z",
+    "launchedAt": "2026-09-20T19:46:53.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_remove_mains_hum_from_a_recording_title",
+    "homeTitleKey": "tool_remove_mains_hum_from_a_recording_title",
+    "homeDescKey": "tool_remove_mains_hum_from_a_recording_desc",
+    "faqPrefix": "tool_remove_mains_hum_from_a_recording",
+    "related": [
+      "reduce-background-noise-on-a-voice-memo",
+      "eq-a-muffled-voice-recording"
+    ],
+    "logo": "/icons/tools/remove-mains-hum-from-a-recording.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "remove-silence-from-a-recording",
     "path": "/tools/remove-silence-from-a-recording",
     "updatedAt": "2026-09-11T07:40:00.000Z",
@@ -4521,6 +5392,72 @@
       "split-an-audio-file-by-duration"
     ],
     "logo": "/icons/tools/remove-silence-from-a-recording.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "remove-the-audio-track-from-a-video",
+    "path": "/tools/remove-the-audio-track-from-a-video",
+    "updatedAt": "2026-09-20T23:00:00.000Z",
+    "launchedAt": "2026-09-20T23:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_remove_the_audio_track_from_a_video_title",
+    "homeTitleKey": "tool_remove_the_audio_track_from_a_video_title",
+    "homeDescKey": "tool_remove_the_audio_track_from_a_video_desc",
+    "faqPrefix": "tool_remove_the_audio_track_from_a_video",
+    "related": [
+      "add-an-audio-track-to-a-video",
+      "extract-audio-from-a-video-file"
+    ],
+    "logo": "/icons/tools/remove-the-audio-track-from-a-video.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
+  },
+  {
+    "slug": "replace-the-audio-in-a-video-file",
+    "path": "/tools/replace-the-audio-in-a-video-file",
+    "updatedAt": "2026-09-21T00:20:00.000Z",
+    "launchedAt": "2026-09-21T00:20:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_replace_the_audio_in_a_video_file_title",
+    "homeTitleKey": "tool_replace_the_audio_in_a_video_file_title",
+    "homeDescKey": "tool_replace_the_audio_in_a_video_file_desc",
+    "faqPrefix": "tool_replace_the_audio_in_a_video_file",
+    "related": [
+      "add-an-audio-track-to-a-video",
+      "remove-the-audio-track-from-a-video"
+    ],
+    "logo": "/icons/tools/replace-the-audio-in-a-video-file.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
+  },
+  {
+    "slug": "reverse-an-audio-file",
+    "path": "/tools/reverse-an-audio-file",
+    "updatedAt": "2026-09-20T23:45:00.000Z",
+    "launchedAt": "2026-09-20T23:45:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_reverse_an_audio_file_title",
+    "homeTitleKey": "tool_reverse_an_audio_file_title",
+    "homeDescKey": "tool_reverse_an_audio_file_desc",
+    "faqPrefix": "tool_reverse_an_audio_file",
+    "related": [
+      "make-an-8d-panning-version-of-a-song",
+      "fade-in-and-fade-out-an-audio-clip"
+    ],
+    "logo": "/icons/tools/reverse-an-audio-file.svg",
     "localProcessing": true,
     "scenario": "media",
     "subject": "audio"
@@ -4597,6 +5534,50 @@
     "scenario": "seo",
     "subject": "data",
     "launchedAt": "2026-08-09T21:03:55+08:00"
+  },
+  {
+    "slug": "shift-a-recording-toward-a-higher-or-lower-voice",
+    "path": "/tools/shift-a-recording-toward-a-higher-or-lower-voice",
+    "updatedAt": "2026-09-20T22:30:00.000Z",
+    "launchedAt": "2026-09-20T22:30:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_shift_a_recording_toward_a_higher_or_lower_voice_title",
+    "homeTitleKey": "tool_shift_a_recording_toward_a_higher_or_lower_voice_title",
+    "homeDescKey": "tool_shift_a_recording_toward_a_higher_or_lower_voice_desc",
+    "faqPrefix": "tool_shift_a_recording_toward_a_higher_or_lower_voice",
+    "related": [
+      "apply-a-toy-voice-effect-to-a-recording",
+      "shift-the-pitch-of-a-song"
+    ],
+    "logo": "/icons/tools/shift-a-recording-toward-a-higher-or-lower-voice.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "shift-the-pitch-of-a-song",
+    "path": "/tools/shift-the-pitch-of-a-song",
+    "updatedAt": "2026-09-20T21:20:00.000Z",
+    "launchedAt": "2026-09-20T21:20:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_shift_the_pitch_of_a_song_title",
+    "homeTitleKey": "tool_shift_the_pitch_of_a_song_title",
+    "homeDescKey": "tool_shift_the_pitch_of_a_song_desc",
+    "faqPrefix": "tool_shift_the_pitch_of_a_song",
+    "related": [
+      "change-audio-speed-without-changing-pitch",
+      "boost-bass-on-an-mp3"
+    ],
+    "logo": "/icons/tools/shift-the-pitch-of-a-song.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "short-drama-prompt-generator",
@@ -4836,6 +5817,28 @@
     "launchedAt": "2026-08-08T19:55:35+08:00"
   },
   {
+    "slug": "split-stereo-into-left-and-right-files",
+    "path": "/tools/split-stereo-into-left-and-right-files",
+    "updatedAt": "2026-09-20T13:30:00.000Z",
+    "launchedAt": "2026-09-20T13:30:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_split_stereo_into_left_and_right_files_title",
+    "homeTitleKey": "tool_split_stereo_into_left_and_right_files_title",
+    "homeDescKey": "tool_split_stereo_into_left_and_right_files_desc",
+    "faqPrefix": "tool_split_stereo_into_left_and_right_files",
+    "related": [
+      "convert-stereo-audio-to-mono",
+      "convert-audio-sample-rate-and-bit-depth"
+    ],
+    "logo": "/icons/tools/split-stereo-into-left-and-right-files.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "square-feet",
     "path": "/tools/square-feet",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -4967,9 +5970,32 @@
     "launchedAt": "2026-08-08T19:34:20+08:00"
   },
   {
+    "slug": "transcribe-an-audio-file-to-text",
+    "path": "/tools/transcribe-an-audio-file-to-text",
+    "updatedAt": "2026-09-21T02:00:00.000Z",
+    "launchedAt": "2026-09-21T01:10:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_transcribe_an_audio_file_to_text_title",
+    "homeTitleKey": "tool_transcribe_an_audio_file_to_text_title",
+    "homeDescKey": "tool_transcribe_an_audio_file_to_text_desc",
+    "faqPrefix": "tool_transcribe_an_audio_file_to_text",
+    "related": [
+      "make-a-waveform-video-from-audio",
+      "record-a-voice-memo-in-the-browser",
+      "make-srt-subtitles-from-an-audio-file"
+    ],
+    "logo": "/icons/tools/transcribe-an-audio-file-to-text.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "trim-an-audio-clip-and-export",
     "path": "/tools/trim-an-audio-clip-and-export",
-    "updatedAt": "2026-09-11T00:25:00.000Z",
+    "updatedAt": "2026-09-21T02:00:00.000Z",
     "launchedAt": "2026-09-10T15:40:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -4981,8 +6007,10 @@
     "faqPrefix": "tool_trim_an_audio_clip_and_export",
     "related": [
       "remove-silence-from-a-recording",
-      "file-metadata-analyzer",
-      "file-hash"
+      "extract-audio-from-a-video-file",
+      "convert-a-wav-file-to-mp3",
+      "make-a-waveform-video-from-audio",
+      "edit-audio-on-waveform"
     ],
     "logo": "/icons/tools/trim-an-audio-clip-and-export.svg",
     "localProcessing": true,

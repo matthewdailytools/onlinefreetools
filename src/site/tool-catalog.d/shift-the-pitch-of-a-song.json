@@ -1,0 +1,27 @@
+{
+  "slug": "shift-the-pitch-of-a-song",
+  "path": "/tools/shift-the-pitch-of-a-song",
+  "updatedAt": "2026-09-20T21:20:00.000Z",
+  "launchedAt": "2026-09-20T21:20:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_shift_the_pitch_of_a_song_title",
+  "homeTitleKey": "tool_shift_the_pitch_of_a_song_title",
+  "homeDescKey": "tool_shift_the_pitch_of_a_song_desc",
+  "faqPrefix": "tool_shift_the_pitch_of_a_song",
+  "related": [
+    "change-audio-speed-without-changing-pitch",
+    "boost-bass-on-an-mp3"
+  ],
+  "logo": "/icons/tools/shift-the-pitch-of-a-song.svg",
+  "page": {
+    "module": "../pages/shiftThePitchOfASongPage",
+    "export": "renderShiftThePitchOfASongPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

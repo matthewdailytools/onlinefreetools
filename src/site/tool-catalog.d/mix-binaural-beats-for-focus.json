@@ -1,0 +1,27 @@
+{
+  "slug": "mix-binaural-beats-for-focus",
+  "path": "/tools/mix-binaural-beats-for-focus",
+  "updatedAt": "2026-09-20T23:50:00.000Z",
+  "launchedAt": "2026-09-20T23:50:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_mix_binaural_beats_for_focus_title",
+  "homeTitleKey": "tool_mix_binaural_beats_for_focus_title",
+  "homeDescKey": "tool_mix_binaural_beats_for_focus_desc",
+  "faqPrefix": "tool_mix_binaural_beats_for_focus",
+  "related": [
+    "generate-a-sine-tone-at-a-frequency",
+    "make-a-short-ui-notification-sound"
+  ],
+  "logo": "/icons/tools/mix-binaural-beats-for-focus.svg",
+  "page": {
+    "module": "../pages/mixBinauralBeatsForFocusPage",
+    "export": "renderMixBinauralBeatsForFocusPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

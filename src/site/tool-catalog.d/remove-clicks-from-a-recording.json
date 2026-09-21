@@ -1,0 +1,28 @@
+{
+  "slug": "remove-clicks-from-a-recording",
+  "path": "/tools/remove-clicks-from-a-recording",
+  "updatedAt": "2026-09-20T20:02:45.000Z",
+  "launchedAt": "2026-09-20T20:02:45.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_remove_clicks_from_a_recording_title",
+  "homeTitleKey": "tool_remove_clicks_from_a_recording_title",
+  "homeDescKey": "tool_remove_clicks_from_a_recording_desc",
+  "faqPrefix": "tool_remove_clicks_from_a_recording",
+  "related": [
+    "remove-mains-hum-from-a-recording",
+    "reduce-background-noise-on-a-voice-memo",
+    "de-ess-a-voiceover"
+  ],
+  "logo": "/icons/tools/remove-clicks-from-a-recording.svg",
+  "page": {
+    "module": "../pages/removeClicksFromARecordingPage",
+    "export": "renderRemoveClicksFromARecordingPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

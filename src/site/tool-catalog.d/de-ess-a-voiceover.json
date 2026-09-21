@@ -1,0 +1,27 @@
+{
+  "slug": "de-ess-a-voiceover",
+  "path": "/tools/de-ess-a-voiceover",
+  "updatedAt": "2026-09-20T20:27:15.000Z",
+  "launchedAt": "2026-09-20T20:27:15.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_de_ess_a_voiceover_title",
+  "homeTitleKey": "tool_de_ess_a_voiceover_title",
+  "homeDescKey": "tool_de_ess_a_voiceover_desc",
+  "faqPrefix": "tool_de_ess_a_voiceover",
+  "related": [
+    "remove-clicks-from-a-recording",
+    "eq-a-muffled-voice-recording"
+  ],
+  "logo": "/icons/tools/de-ess-a-voiceover.svg",
+  "page": {
+    "module": "../pages/deEssAVoiceoverPage",
+    "export": "renderDeEssAVoiceoverPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

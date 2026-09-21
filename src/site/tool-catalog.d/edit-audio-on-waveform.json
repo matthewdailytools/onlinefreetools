@@ -1,0 +1,27 @@
+{
+  "slug": "edit-audio-on-waveform",
+  "path": "/tools/edit-audio-on-waveform",
+  "updatedAt": "2026-09-21T02:00:00.000Z",
+  "launchedAt": "2026-09-21T02:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_edit_audio_on_waveform_title",
+  "homeTitleKey": "tool_edit_audio_on_waveform_title",
+  "homeDescKey": "tool_edit_audio_on_waveform_desc",
+  "faqPrefix": "tool_edit_audio_on_waveform",
+  "related": [
+    "trim-an-audio-clip-and-export",
+    "make-a-seamless-audio-loop"
+  ],
+  "logo": "/icons/tools/edit-audio-on-waveform.svg",
+  "page": {
+    "module": "../pages/editAudioOnWaveformPage",
+    "export": "renderEditAudioOnWaveformPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

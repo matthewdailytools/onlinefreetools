@@ -1,0 +1,27 @@
+{
+  "slug": "reverse-an-audio-file",
+  "path": "/tools/reverse-an-audio-file",
+  "updatedAt": "2026-09-20T23:45:00.000Z",
+  "launchedAt": "2026-09-20T23:45:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_reverse_an_audio_file_title",
+  "homeTitleKey": "tool_reverse_an_audio_file_title",
+  "homeDescKey": "tool_reverse_an_audio_file_desc",
+  "faqPrefix": "tool_reverse_an_audio_file",
+  "related": [
+    "make-an-8d-panning-version-of-a-song",
+    "fade-in-and-fade-out-an-audio-clip"
+  ],
+  "logo": "/icons/tools/reverse-an-audio-file.svg",
+  "page": {
+    "module": "../pages/reverseAnAudioFilePage",
+    "export": "renderReverseAnAudioFilePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

@@ -13,6 +13,7 @@
   "faqPrefix": "tool_convert_a_wav_file_to_mp3",
   "related": [
     "trim-an-audio-clip-and-export",
+    "extract-audio-from-a-video-file",
     "make-a-30-second-mp3-ringtone"
   ],
   "logo": "/icons/tools/convert-a-wav-file-to-mp3.svg",

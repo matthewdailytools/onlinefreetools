@@ -1,0 +1,27 @@
+{
+  "slug": "split-stereo-into-left-and-right-files",
+  "path": "/tools/split-stereo-into-left-and-right-files",
+  "updatedAt": "2026-09-20T13:30:00.000Z",
+  "launchedAt": "2026-09-20T13:30:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_split_stereo_into_left_and_right_files_title",
+  "homeTitleKey": "tool_split_stereo_into_left_and_right_files_title",
+  "homeDescKey": "tool_split_stereo_into_left_and_right_files_desc",
+  "faqPrefix": "tool_split_stereo_into_left_and_right_files",
+  "related": [
+    "convert-stereo-audio-to-mono",
+    "convert-audio-sample-rate-and-bit-depth"
+  ],
+  "logo": "/icons/tools/split-stereo-into-left-and-right-files.svg",
+  "page": {
+    "module": "../pages/splitStereoIntoLeftAndRightFilesPage",
+    "export": "renderSplitStereoIntoLeftAndRightFilesPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

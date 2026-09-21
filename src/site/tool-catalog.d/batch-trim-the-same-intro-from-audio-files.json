@@ -1,0 +1,27 @@
+{
+  "slug": "batch-trim-the-same-intro-from-audio-files",
+  "path": "/tools/batch-trim-the-same-intro-from-audio-files",
+  "updatedAt": "2026-09-21T00:32:00.000Z",
+  "launchedAt": "2026-09-21T00:32:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_trim_the_same_intro_from_audio_files_title",
+  "homeTitleKey": "tool_batch_trim_the_same_intro_from_audio_files_title",
+  "homeDescKey": "tool_batch_trim_the_same_intro_from_audio_files_desc",
+  "faqPrefix": "tool_batch_trim_the_same_intro_from_audio_files",
+  "related": [
+    "trim-an-audio-clip-and-export",
+    "bulk-convert-wav-files-to-mp3"
+  ],
+  "logo": "/icons/tools/batch-trim-the-same-intro-from-audio-files.svg",
+  "page": {
+    "module": "../pages/batchTrimTheSameIntroFromAudioFilesPage",
+    "export": "renderBatchTrimTheSameIntroFromAudioFilesPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

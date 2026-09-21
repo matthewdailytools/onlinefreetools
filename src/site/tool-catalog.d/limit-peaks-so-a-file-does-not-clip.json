@@ -1,0 +1,27 @@
+{
+  "slug": "limit-peaks-so-a-file-does-not-clip",
+  "path": "/tools/limit-peaks-so-a-file-does-not-clip",
+  "updatedAt": "2026-09-20T12:00:00.000Z",
+  "launchedAt": "2026-09-20T12:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_limit_peaks_so_a_file_does_not_clip_title",
+  "homeTitleKey": "tool_limit_peaks_so_a_file_does_not_clip_title",
+  "homeDescKey": "tool_limit_peaks_so_a_file_does_not_clip_desc",
+  "faqPrefix": "tool_limit_peaks_so_a_file_does_not_clip",
+  "related": [
+    "eq-a-muffled-voice-recording",
+    "compress-dynamic-range-of-a-voice-recording"
+  ],
+  "logo": "/icons/tools/limit-peaks-so-a-file-does-not-clip.svg",
+  "page": {
+    "module": "../pages/limitPeaksSoAFileDoesNotClipPage",
+    "export": "renderLimitPeaksSoAFileDoesNotClipPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

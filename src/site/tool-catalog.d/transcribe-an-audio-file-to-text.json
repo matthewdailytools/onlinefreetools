@@ -1,0 +1,28 @@
+{
+  "slug": "transcribe-an-audio-file-to-text",
+  "path": "/tools/transcribe-an-audio-file-to-text",
+  "updatedAt": "2026-09-21T02:00:00.000Z",
+  "launchedAt": "2026-09-21T01:10:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_transcribe_an_audio_file_to_text_title",
+  "homeTitleKey": "tool_transcribe_an_audio_file_to_text_title",
+  "homeDescKey": "tool_transcribe_an_audio_file_to_text_desc",
+  "faqPrefix": "tool_transcribe_an_audio_file_to_text",
+  "related": [
+    "make-a-waveform-video-from-audio",
+    "record-a-voice-memo-in-the-browser",
+    "make-srt-subtitles-from-an-audio-file"
+  ],
+  "logo": "/icons/tools/transcribe-an-audio-file-to-text.svg",
+  "page": {
+    "module": "../pages/transcribeAnAudioFileToTextPage",
+    "export": "renderTranscribeAnAudioFileToTextPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

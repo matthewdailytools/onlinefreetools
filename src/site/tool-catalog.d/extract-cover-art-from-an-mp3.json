@@ -1,0 +1,27 @@
+{
+  "slug": "extract-cover-art-from-an-mp3",
+  "path": "/tools/extract-cover-art-from-an-mp3",
+  "updatedAt": "2026-09-21T00:30:00.000Z",
+  "launchedAt": "2026-09-21T00:30:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_extract_cover_art_from_an_mp3_title",
+  "homeTitleKey": "tool_extract_cover_art_from_an_mp3_title",
+  "homeDescKey": "tool_extract_cover_art_from_an_mp3_desc",
+  "faqPrefix": "tool_extract_cover_art_from_an_mp3",
+  "related": [
+    "edit-mp3-title-and-cover-art",
+    "file-metadata-analyzer"
+  ],
+  "logo": "/icons/tools/extract-cover-art-from-an-mp3.svg",
+  "page": {
+    "module": "../pages/extractCoverArtFromAnMp3Page",
+    "export": "renderExtractCoverArtFromAnMp3Page",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

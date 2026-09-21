@@ -1,7 +1,7 @@
 {
   "slug": "record-a-voice-memo-in-the-browser",
   "path": "/tools/record-a-voice-memo-in-the-browser",
-  "updatedAt": "2026-09-15T03:30:00.000Z",
+  "updatedAt": "2026-09-21T01:10:00.000Z",
   "launchedAt": "2026-09-15T03:30:00.000Z",
   "category": "developer",
   "primaryTopic": "sound-editor",
@@ -13,7 +13,8 @@
   "faqPrefix": "tool_record_a_voice_memo_in_the_browser",
   "related": [
     "trim-an-audio-clip-and-export",
-    "make-a-30-second-mp3-ringtone"
+    "make-a-30-second-mp3-ringtone",
+    "transcribe-an-audio-file-to-text"
   ],
   "logo": "/icons/tools/record-a-voice-memo-in-the-browser.svg",
   "page": {

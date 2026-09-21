@@ -1,0 +1,27 @@
+{
+  "slug": "crossfade-two-audio-files",
+  "path": "/tools/crossfade-two-audio-files",
+  "updatedAt": "2026-09-20T23:10:00.000Z",
+  "launchedAt": "2026-09-20T23:10:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_crossfade_two_audio_files_title",
+  "homeTitleKey": "tool_crossfade_two_audio_files_title",
+  "homeDescKey": "tool_crossfade_two_audio_files_desc",
+  "faqPrefix": "tool_crossfade_two_audio_files",
+  "related": [
+    "mix-a-voiceover-with-background-music",
+    "join-audio-files-in-order"
+  ],
+  "logo": "/icons/tools/crossfade-two-audio-files.svg",
+  "page": {
+    "module": "../pages/crossfadeTwoAudioFilesPage",
+    "export": "renderCrossfadeTwoAudioFilesPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

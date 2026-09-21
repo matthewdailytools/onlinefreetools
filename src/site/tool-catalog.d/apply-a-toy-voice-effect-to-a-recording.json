@@ -1,0 +1,27 @@
+{
+  "slug": "apply-a-toy-voice-effect-to-a-recording",
+  "path": "/tools/apply-a-toy-voice-effect-to-a-recording",
+  "updatedAt": "2026-09-20T22:14:00.000Z",
+  "launchedAt": "2026-09-20T22:14:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_apply_a_toy_voice_effect_to_a_recording_title",
+  "homeTitleKey": "tool_apply_a_toy_voice_effect_to_a_recording_title",
+  "homeDescKey": "tool_apply_a_toy_voice_effect_to_a_recording_desc",
+  "faqPrefix": "tool_apply_a_toy_voice_effect_to_a_recording",
+  "related": [
+    "reverse-an-audio-file",
+    "shift-the-pitch-of-a-song"
+  ],
+  "logo": "/icons/tools/apply-a-toy-voice-effect-to-a-recording.svg",
+  "page": {
+    "module": "../pages/applyAToyVoiceEffectToARecordingPage",
+    "export": "renderApplyAToyVoiceEffectToARecordingPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

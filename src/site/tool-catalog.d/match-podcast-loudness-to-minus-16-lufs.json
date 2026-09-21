@@ -1,0 +1,27 @@
+{
+  "slug": "match-podcast-loudness-to-minus-16-lufs",
+  "path": "/tools/match-podcast-loudness-to-minus-16-lufs",
+  "updatedAt": "2026-09-20T12:00:00.000Z",
+  "launchedAt": "2026-09-20T12:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_match_podcast_loudness_to_minus_16_lufs_title",
+  "homeTitleKey": "tool_match_podcast_loudness_to_minus_16_lufs_title",
+  "homeDescKey": "tool_match_podcast_loudness_to_minus_16_lufs_desc",
+  "faqPrefix": "tool_match_podcast_loudness_to_minus_16_lufs",
+  "related": [
+    "normalize-an-audio-file-to-peak",
+    "compress-dynamic-range-of-a-voice-recording"
+  ],
+  "logo": "/icons/tools/match-podcast-loudness-to-minus-16-lufs.svg",
+  "page": {
+    "module": "../pages/matchPodcastLoudnessToMinus16LufsPage",
+    "export": "renderMatchPodcastLoudnessToMinus16LufsPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

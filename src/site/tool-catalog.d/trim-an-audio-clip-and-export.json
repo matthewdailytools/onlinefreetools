@@ -1,7 +1,7 @@
 {
   "slug": "trim-an-audio-clip-and-export",
   "path": "/tools/trim-an-audio-clip-and-export",
-  "updatedAt": "2026-09-11T00:25:00.000Z",
+  "updatedAt": "2026-09-21T02:00:00.000Z",
   "launchedAt": "2026-09-10T15:40:00.000Z",
   "category": "developer",
   "primaryTopic": "sound-editor",
@@ -13,8 +13,10 @@
   "faqPrefix": "tool_trim_an_audio_clip_and_export",
   "related": [
     "remove-silence-from-a-recording",
-    "file-metadata-analyzer",
-    "file-hash"
+    "extract-audio-from-a-video-file",
+    "convert-a-wav-file-to-mp3",
+    "make-a-waveform-video-from-audio",
+    "edit-audio-on-waveform"
   ],
   "logo": "/icons/tools/trim-an-audio-clip-and-export.svg",
   "page": {

@@ -44,6 +44,12 @@
 - [把 WAV 文件转成 MP3](https://onlinefreetools.org/zh/tools/convert-a-wav-file-to-mp3) - 整段 WAV 转 MP3，选择码率、试听并对比实际文件大小；文件留在设备，不上传服务器
 - [把 MP3 文件转成 WAV](https://onlinefreetools.org/zh/tools/convert-an-mp3-file-to-wav) - 整段 MP3 转 16 位 PCM WAV，选择 44.1 或 48 kHz、试听并对比实际文件大小；文件留在设备，不上传服务器
 - [把 M4A 文件转成 MP3](https://onlinefreetools.org/zh/tools/convert-an-m4a-file-to-mp3) - 将一个 M4A 或 AAC 录音转成 MP3，选择码率、试听并比较实际大小；文件留在设备，不上传服务器
+- [给 MP3 增强低音](https://onlinefreetools.org/zh/tools/boost-bass-on-an-mp3) - 用轻柔/适中/强烈低架式预设抬升偏薄低音，试听后下载 16 位 WAV；文件留在本机，不上传服务器
+- [给音频剪辑加淡入淡出](https://onlinefreetools.org/zh/tools/fade-in-and-fade-out-an-audio-clip) - 用 0.5–3 秒芯片与线性或等功率曲线柔化头尾，试听后下载 16 位 WAV；文件留在本机，不上传服务器
+- [混合专注用双耳节拍](https://onlinefreetools.org/zh/tools/mix-binaural-beats-for-focus) - 用载波与节拍差合成左右略不同的立体声 WAV，供耳机氛围聆听；仅娱乐用途、不宣称疗效；文件留在本机，不上传服务器
+- [给视频添加一条音轨](https://onlinefreetools.org/zh/tools/add-an-audio-track-to-a-video) - 把本地音频合并到本地视频画面（常为 WebM 重编码），预览后下载；不做 YouTube 代抓；文件留在本机，不上传服务器
+- [给人声备忘录降低背景噪音](https://onlinefreetools.org/zh/tools/reduce-background-noise-on-a-voice-memo) - 用轻度/适中/强烈的高通加噪声底门控压低风扇或空调稳态嘶声，试听后下载 16 位 WAV；文件留在本机，不上传服务器
+- [从录音中去除市电嗡嗡](https://onlinefreetools.org/zh/tools/remove-mains-hum-from-a-recording) - 用 50/60 Hz 陷波及可选谐波切掉市电嗡嗡，试听后下载 16 位 WAV；文件留在本机，不上传服务器
 - [看着提词器录制旁白](https://onlinefreetools.org/zh/tools/record-a-voiceover-with-a-teleprompter) - 先排练滚稿，再边读边录，同步暂停文字与音频，试听后下载；稿件和声音留在设备、不上传服务器
 - [在浏览器录一段语音备忘](https://onlinefreetools.org/zh/tools/record-a-voice-memo-in-the-browser) - 查看麦克风电平，可暂停和继续，停止后试听并下载；音频留在设备、不上传服务器
 - [在线解压 ZIP](https://onlinefreetools.org/zh/tools/unzip-file) - 浏览器内查看 ZIP 文件树、预览文本/图片，并下载单个文件或导出全部，不上传服务器
@@ -276,6 +282,12 @@ Below are our available online tools with their links (English version):
 - [Convert a WAV file to MP3](https://onlinefreetools.org/tools/convert-a-wav-file-to-mp3) - Convert a complete WAV recording, choose bitrate, preview the MP3 and compare actual sizes; files stay on your device without server upload
 - [Convert an MP3 file to WAV](https://onlinefreetools.org/tools/convert-an-mp3-file-to-wav) - Convert a complete MP3 recording to 16-bit PCM WAV, choose 44.1 or 48 kHz, preview the result and compare actual sizes; files stay on your device without server upload
 - [Convert an M4A file to MP3](https://onlinefreetools.org/tools/convert-an-m4a-file-to-mp3) - Convert one M4A or AAC recording to MP3, choose bitrate, preview the result and compare actual sizes; files stay on your device without server upload
+- [Boost bass on an MP3](https://onlinefreetools.org/tools/boost-bass-on-an-mp3) - Lift thin low end with Mild, Medium or Strong low-shelf presets, preview, then download 16-bit WAV; audio stays on your device without server upload
+- [Fade in and fade out an audio clip](https://onlinefreetools.org/tools/fade-in-and-fade-out-an-audio-clip) - Soften abrupt starts and stops with 0.5–3 s chips and linear or equal-power curves, preview, then download 16-bit WAV; audio stays on your device without server upload
+- [Mix binaural beats for focus](https://onlinefreetools.org/tools/mix-binaural-beats-for-focus) - Mix left/right tones with a beat difference into a stereo WAV for headphone ambient listening; entertainment only—not treatment; audio stays on your device without server upload
+- [Add an audio track to a video](https://onlinefreetools.org/tools/add-an-audio-track-to-a-video) - Merge a local soundtrack onto a local video (often WebM re-encode), preview, then download; no YouTube download; files stay on your device without server upload
+- [Reduce background noise on a voice memo](https://onlinefreetools.org/tools/reduce-background-noise-on-a-voice-memo) - Cut steady fan or AC hiss with Light, Medium or Strong high-pass + noise-floor gate presets, preview, then download 16-bit WAV; audio stays on your device without server upload
+- [Remove mains hum from a recording](https://onlinefreetools.org/tools/remove-mains-hum-from-a-recording) - Cut 50 or 60 Hz electrical hum with notch filters and optional harmonics, preview, then download 16-bit WAV; audio stays on your device without server upload
 - [Record a voiceover with a teleprompter](https://onlinefreetools.org/tools/record-a-voiceover-with-a-teleprompter) - Rehearse a scrolling script, record while reading, pause text and audio together, then listen and download; text and audio stay on your device without upload
 - [Record a voice memo in the browser](https://onlinefreetools.org/tools/record-a-voice-memo-in-the-browser) - Watch the microphone level, pause or resume, then play and download the recording — stays on the device, not uploaded
 - [Unzip File Online](https://onlinefreetools.org/tools/unzip-file) - Inspect ZIP contents, preview text/images, and download one file or export all in your browser — no server upload

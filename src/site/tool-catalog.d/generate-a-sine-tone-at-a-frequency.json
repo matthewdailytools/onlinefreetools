@@ -1,0 +1,27 @@
+{
+  "slug": "generate-a-sine-tone-at-a-frequency",
+  "path": "/tools/generate-a-sine-tone-at-a-frequency",
+  "updatedAt": "2026-09-20T23:20:00.000Z",
+  "launchedAt": "2026-09-20T23:20:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_generate_a_sine_tone_at_a_frequency_title",
+  "homeTitleKey": "tool_generate_a_sine_tone_at_a_frequency_title",
+  "homeDescKey": "tool_generate_a_sine_tone_at_a_frequency_desc",
+  "faqPrefix": "tool_generate_a_sine_tone_at_a_frequency",
+  "related": [
+    "mix-binaural-beats-for-focus",
+    "generate-dtmf-touch-tones"
+  ],
+  "logo": "/icons/tools/generate-a-sine-tone-at-a-frequency.svg",
+  "page": {
+    "module": "../pages/generateASineToneAtAFrequencyPage",
+    "export": "renderGenerateASineToneAtAFrequencyPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

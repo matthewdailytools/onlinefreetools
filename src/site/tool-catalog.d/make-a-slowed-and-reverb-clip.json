@@ -1,0 +1,27 @@
+{
+  "slug": "make-a-slowed-and-reverb-clip",
+  "path": "/tools/make-a-slowed-and-reverb-clip",
+  "updatedAt": "2026-09-20T23:00:00.000Z",
+  "launchedAt": "2026-09-20T23:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_make_a_slowed_and_reverb_clip_title",
+  "homeTitleKey": "tool_make_a_slowed_and_reverb_clip_title",
+  "homeDescKey": "tool_make_a_slowed_and_reverb_clip_desc",
+  "faqPrefix": "tool_make_a_slowed_and_reverb_clip",
+  "related": [
+    "add-reverb-to-an-audio-clip",
+    "make-a-nightcore-version-of-a-song"
+  ],
+  "logo": "/icons/tools/make-a-slowed-and-reverb-clip.svg",
+  "page": {
+    "module": "../pages/makeASlowedAndReverbClipPage",
+    "export": "renderMakeASlowedAndReverbClipPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

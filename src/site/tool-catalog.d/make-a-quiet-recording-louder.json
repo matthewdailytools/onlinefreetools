@@ -1,0 +1,28 @@
+{
+  "slug": "make-a-quiet-recording-louder",
+  "path": "/tools/make-a-quiet-recording-louder",
+  "updatedAt": "2026-09-20T12:00:00.000Z",
+  "launchedAt": "2026-09-20T12:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_make_a_quiet_recording_louder_title",
+  "homeTitleKey": "tool_make_a_quiet_recording_louder_title",
+  "homeDescKey": "tool_make_a_quiet_recording_louder_desc",
+  "faqPrefix": "tool_make_a_quiet_recording_louder",
+  "related": [
+    "convert-audio-sample-rate-and-bit-depth",
+    "convert-stereo-audio-to-mono",
+    "boost-bass-on-an-mp3"
+  ],
+  "logo": "/icons/tools/make-a-quiet-recording-louder.svg",
+  "page": {
+    "module": "../pages/makeAQuietRecordingLouderPage",
+    "export": "renderMakeAQuietRecordingLouderPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

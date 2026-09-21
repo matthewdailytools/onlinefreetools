@@ -1,0 +1,27 @@
+{
+  "slug": "compress-dynamic-range-of-a-voice-recording",
+  "path": "/tools/compress-dynamic-range-of-a-voice-recording",
+  "updatedAt": "2026-09-20T12:00:00.000Z",
+  "launchedAt": "2026-09-20T12:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_compress_dynamic_range_of_a_voice_recording_title",
+  "homeTitleKey": "tool_compress_dynamic_range_of_a_voice_recording_title",
+  "homeDescKey": "tool_compress_dynamic_range_of_a_voice_recording_desc",
+  "faqPrefix": "tool_compress_dynamic_range_of_a_voice_recording",
+  "related": [
+    "eq-a-muffled-voice-recording",
+    "limit-peaks-so-a-file-does-not-clip"
+  ],
+  "logo": "/icons/tools/compress-dynamic-range-of-a-voice-recording.svg",
+  "page": {
+    "module": "../pages/compressDynamicRangeOfAVoiceRecordingPage",
+    "export": "renderCompressDynamicRangeOfAVoiceRecordingPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

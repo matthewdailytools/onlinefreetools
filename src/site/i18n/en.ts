@@ -120,6 +120,92 @@ const en: SiteLangDict = {
   tool_acceleration_v0_ph: 'e.g. 0',
   tool_acceleration_v_label: 'Final velocity v',
   tool_acceleration_v_ph: 'e.g. 10',
+  tool_add_an_audio_track_to_a_video_advanced: 'Merge notes',
+  tool_add_an_audio_track_to_a_video_article:
+    'Silent or weakly voiced clips often need a new soundtrack before sharing. This page lets you open a local video and a local audio file, capture video frames without the original audio tracks, decode the soundtrack in AudioContext, combine tracks, re-encode with MediaRecorder, then download—often WebM depending on the browser. Output length follows the video; longer audio is cut to match, shorter audio ends early. It does not download YouTube or other URLs, does not only mute without adding sound, and does not extract audio as a standalone file. Success depends on whether your browser can play both files and support MediaRecorder with audio. Keep the originals; the download is a new file. Work runs on your device.',
+  tool_add_an_audio_track_to_a_video_audio_label: 'Audio: {name}',
+  tool_add_an_audio_track_to_a_video_choose_audio: 'Choose an audio file',
+  tool_add_an_audio_track_to_a_video_choose_video: 'Choose a video file',
+  tool_add_an_audio_track_to_a_video_clear: 'Clear',
+  tool_add_an_audio_track_to_a_video_convert: 'Add audio',
+  tool_add_an_audio_track_to_a_video_decode: 'Decode',
+  tool_add_an_audio_track_to_a_video_desc:
+    'Add an audio track to a local video by merging picture with a soundtrack, then download. On-device only—no YouTube download.',
+  tool_add_an_audio_track_to_a_video_description:
+    'Add an audio track to a local video in the browser by merging picture with a chosen soundtrack, then download the result. Steps: Choose a video and an audio file, Add audio, preview, download. Example: mute clip plus a short WAV bed. Uses captureStream plus MediaRecorder—often WebM; not lossless remux. Never uploaded. No YouTube download.',
+  tool_add_an_audio_track_to_a_video_done: 'Ready. Preview the merged video, then Download video.',
+  tool_add_an_audio_track_to_a_video_download: 'Download video',
+  tool_add_an_audio_track_to_a_video_elapsed: '{s}s elapsed',
+  tool_add_an_audio_track_to_a_video_empty: 'Choose a local video and an audio file, or load the sample first.',
+  tool_add_an_audio_track_to_a_video_empty_state:
+    'No files yet. Drop a local video and a soundtrack, or click Load sample. This tool merges audio onto picture—it does not mute-only, does not extract audio alone, and does not download YouTube.',
+  tool_add_an_audio_track_to_a_video_err_decode: 'The browser could not decode the video or audio. Try another container or a shorter clip.',
+  tool_add_an_audio_track_to_a_video_err_encoder: 'MediaRecorder could not write a merged video. Try Chrome/Edge or shorter WebM/MP4 plus WAV/MP3.',
+  tool_add_an_audio_track_to_a_video_err_file: 'Choose one supported local video and one audio file.',
+  tool_add_an_audio_track_to_a_video_err_format:
+    'Unsupported or unplayable files. Use common video/audio types your browser can decode. No YouTube URLs.',
+  tool_add_an_audio_track_to_a_video_err_limit: 'Use a local video up to 80 MiB / about 3 minutes, and audio up to 40 MiB.',
+  tool_add_an_audio_track_to_a_video_example:
+    'Load sample builds a short canvas video and a simple tone, then Add audio runs automatically. You should see picture with the new soundtrack. Playback never starts by itself—press play if you want to watch.',
+  tool_add_an_audio_track_to_a_video_example_title: 'Try a short silent clip plus a tone bed',
+  tool_add_an_audio_track_to_a_video_failed: 'Could not merge audio onto this video. Try shorter files your browser can play.',
+  tool_add_an_audio_track_to_a_video_faq_a1: 'No. Only local files you already have. There is no YouTube downloader and no remote fetch.',
+  tool_add_an_audio_track_to_a_video_faq_a2: 'No. Mute/remove is a different job. This page attaches a new soundtrack to the picture.',
+  tool_add_an_audio_track_to_a_video_faq_a3:
+    'No. Extracting audio from a video is a different tool. Here the result is a video file with merged sound.',
+  tool_add_an_audio_track_to_a_video_faq_a4:
+    'Usually not. Browsers typically re-encode with MediaRecorder, often to WebM. Quality and container can change.',
+  tool_add_an_audio_track_to_a_video_faq_a5:
+    'No. Decode and recording run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_add_an_audio_track_to_a_video_faq_a6:
+    'The merge follows video duration. Extra audio past the end of the picture is not kept in the download.',
+  tool_add_an_audio_track_to_a_video_faq_q1: 'Can it download YouTube or paste a URL?',
+  tool_add_an_audio_track_to_a_video_faq_q2: 'Is this the same as removing audio from a video?',
+  tool_add_an_audio_track_to_a_video_faq_q3: 'Does it extract audio as a separate download?',
+  tool_add_an_audio_track_to_a_video_faq_q4: 'Will the output be the same MP4 as my source?',
+  tool_add_an_audio_track_to_a_video_faq_q5: 'Is anything uploaded to a server?',
+  tool_add_an_audio_track_to_a_video_faq_q6: 'What if my audio is longer than the video?',
+  tool_add_an_audio_track_to_a_video_hint_audio: 'Drop or choose a local WAV, MP3, M4A or similar your browser can decode. Up to 40 MiB.',
+  tool_add_an_audio_track_to_a_video_hint_video:
+    'Drop or choose a local MP4, WebM, MOV or M4V your browser can play. Up to 80 MiB and about 3 minutes. No YouTube or URL paste.',
+  tool_add_an_audio_track_to_a_video_how_body:
+    'Choose a local video and audio file, run Add audio, preview the merge, then download—without uploading and without YouTube download.',
+  tool_add_an_audio_track_to_a_video_how_item_1: 'Choose a local video file and a local audio file (or Load sample). Do not paste YouTube links.',
+  tool_add_an_audio_track_to_a_video_how_item_2: 'Click Add audio and wait for Read → Decode → Merge → Write to finish.',
+  tool_add_an_audio_track_to_a_video_how_item_3: 'Preview the result. You should hear the new soundtrack with the picture.',
+  tool_add_an_audio_track_to_a_video_how_item_4: 'Check the result line, then click Download video.',
+  tool_add_an_audio_track_to_a_video_how_title: 'How to add an audio track to a video',
+  tool_add_an_audio_track_to_a_video_merge: 'Merge',
+  tool_add_an_audio_track_to_a_video_preview: 'Preview merged video',
+  tool_add_an_audio_track_to_a_video_progress: 'Add-audio progress',
+  tool_add_an_audio_track_to_a_video_read: 'Read',
+  tool_add_an_audio_track_to_a_video_result: '{seconds}s · with audio · {mime} · {output} KiB',
+  tool_add_an_audio_track_to_a_video_rules_body:
+    'Each run drops original audio tracks, attaches your soundtrack, and re-encodes with MediaRecorder. Output is often WebM. This is not YouTube download, not mute-only, and not audio extract.',
+  tool_add_an_audio_track_to_a_video_rules_item_1:
+    'One local video up to 80 MiB and about three minutes, plus one local audio up to 40 MiB. Playback/decode must succeed first.',
+  tool_add_an_audio_track_to_a_video_rules_item_2:
+    'Output length follows the video. Longer audio is truncated; shorter audio ends before the picture does.',
+  tool_add_an_audio_track_to_a_video_rules_item_3: 'No YouTube, podcast URL, or remote download. Paste is not supported.',
+  tool_add_an_audio_track_to_a_video_rules_item_4:
+    'Containers and codecs may change versus the source. Keep originals; the download is a new re-encoded file.',
+  tool_add_an_audio_track_to_a_video_rules_title: 'Merge rules and honest browser limits',
+  tool_add_an_audio_track_to_a_video_sample: 'Load sample',
+  tool_add_an_audio_track_to_a_video_sample_name: 'add-audio-sample',
+  tool_add_an_audio_track_to_a_video_settings_hint:
+    'Browsers usually re-encode via MediaRecorder after dropping the original audio tracks and attaching your soundtrack. Output is often WebM, not a lossless remux of the original MP4. This page never downloads YouTube.',
+  tool_add_an_audio_track_to_a_video_title: 'Add an audio track to a video',
+  tool_add_an_audio_track_to_a_video_usecase_1: 'You have a silent screen recording and a WAV bed—merge them here, then download for sharing.',
+  tool_add_an_audio_track_to_a_video_usecase_2:
+    'You want to replace a weak built-in track with a clearer local soundtrack without installing a desktop editor.',
+  tool_add_an_audio_track_to_a_video_usecases_title: 'When this helps',
+  tool_add_an_audio_track_to_a_video_video_label: 'Video: {name}',
+  tool_add_an_audio_track_to_a_video_why_choose_item_1: 'See duration, MIME type and output KiB before you save.',
+  tool_add_an_audio_track_to_a_video_why_choose_item_2: 'One clear merge job with honest MediaRecorder limits—not a fake lossless remux promise.',
+  tool_add_an_audio_track_to_a_video_why_choose_item_3: 'Reading and recording run on your device; the page does not upload your files to process them.',
+  tool_add_an_audio_track_to_a_video_why_choose_item_4: 'Changing either file clears the old download so you never save a stale merge by mistake.',
+  tool_add_an_audio_track_to_a_video_why_choose_title: 'Why choose our Add an audio track to a video tools',
+  tool_add_an_audio_track_to_a_video_write: 'Write',
   tool_add_digital_signature_to_pdf_apply: 'Mark & preview',
   tool_add_digital_signature_to_pdf_article:
     'Stamp a visible integrity box with SHA-256 prefix. Files stay on your device; not uploaded to a server.',
@@ -185,6 +271,91 @@ const en: SiteLangDict = {
   tool_add_digital_signature_to_pdf_warn_large: 'Large file — may be slow.',
   tool_add_digital_signature_to_pdf_x_label: 'X',
   tool_add_digital_signature_to_pdf_y_label: 'Y',
+  tool_add_reverb_to_an_audio_clip_advanced: 'Reverb preset',
+  tool_add_reverb_to_an_audio_clip_article:
+    'Voice-overs, music stems and short clips often need space without changing tempo or pitch. This page runs a multi-tap feedback delay (convolution-lite) so Room feels close, Hall feels larger, and Echo adds clearer repeats—unlike slowed and reverb that also stretches and lowers pitch, and unlike a voice-height shifter that moves pitch while aiming to keep length. Soft peak protection keeps the WAV under full scale. Heavy Hall or long Echo can sound muddy or ringy; this is a pragmatic browser path, not a measured impulse-response suite. Channel count stays 1 or 2. Keep the original; the download is a new 16-bit WAV. Work runs on your device.',
+  tool_add_reverb_to_an_audio_clip_choose: 'Choose an audio file',
+  tool_add_reverb_to_an_audio_clip_clear: 'Clear',
+  tool_add_reverb_to_an_audio_clip_convert: 'Add reverb',
+  tool_add_reverb_to_an_audio_clip_decode: 'Decode',
+  tool_add_reverb_to_an_audio_clip_desc:
+    'Add reverb or echo to an audio clip with Room, Hall or Echo presets, then download a 16-bit WAV. On-device only.',
+  tool_add_reverb_to_an_audio_clip_description:
+    'Add reverb to an audio clip with Room, Hall or Echo feedback-delay presets, then download a 16-bit WAV. Steps: Add reverb, preview, download. Example: load the sample. Reverb-only—tempo and pitch stay; not slowed+reverb. Audio stays on your device; never uploaded.',
+  tool_add_reverb_to_an_audio_clip_done: 'Ready. Preview the reverberated WAV, then Download WAV.',
+  tool_add_reverb_to_an_audio_clip_download: 'Download WAV',
+  tool_add_reverb_to_an_audio_clip_elapsed: '{s}s elapsed',
+  tool_add_reverb_to_an_audio_clip_empty: 'Choose an audio file or load the sample first.',
+  tool_add_reverb_to_an_audio_clip_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_add_reverb_to_an_audio_clip_err_encoder: 'Could not write the reverberated WAV. Check the preset, then try Add reverb again.',
+  tool_add_reverb_to_an_audio_clip_err_file: 'Drop exactly one audio file.',
+  tool_add_reverb_to_an_audio_clip_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_add_reverb_to_an_audio_clip_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_add_reverb_to_an_audio_clip_err_preset: 'Pick Room, Hall or Echo.',
+  tool_add_reverb_to_an_audio_clip_err_silence: 'Level is essentially silence—nothing to process. Try a recording with audible level.',
+  tool_add_reverb_to_an_audio_clip_example:
+    'Load sample builds a three-second harmonic tone, then Add reverb at Room automatically. Playback never starts by itself—press play on the preview if you want to hear the spacious take.',
+  tool_add_reverb_to_an_audio_clip_example_title: 'Try a real reverberated clip',
+  tool_add_reverb_to_an_audio_clip_failed: 'Reverb failed. Try a smaller, valid audio file.',
+  tool_add_reverb_to_an_audio_clip_faq_a1:
+    'No. Slowed and reverb also stretches tempo and lowers pitch before adding space. This page leaves speed and pitch alone and only adds reverb or echo. Use Make a slowed and reverb clip for that aesthetic.',
+  tool_add_reverb_to_an_audio_clip_faq_a2:
+    'Room uses shorter delay taps for close reflections. Hall lengthens taps, wet level and tail for a larger space. Echo spaces taps further so repeats are easier to hear.',
+  tool_add_reverb_to_an_audio_clip_faq_a3:
+    'No. Only spatial wet signal is mixed in. Output can be a little longer because of the reverb tail. For pitch height without toy colors use Shift a recording toward a higher or lower voice.',
+  tool_add_reverb_to_an_audio_clip_faq_a4:
+    'No. This is a pragmatic browser feedback-delay path, not a measured impulse-response suite. Prefer Room when mud or ringing shows.',
+  tool_add_reverb_to_an_audio_clip_faq_a5:
+    'No. Decoding, reverb and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_add_reverb_to_an_audio_clip_faq_a6:
+    'No. This page only adds space. For higher or lower voice height use Shift a recording toward a higher or lower voice; for slowed+reverb use Make a slowed and reverb clip.',
+  tool_add_reverb_to_an_audio_clip_faq_q1: 'Is this the same as slowed and reverb?',
+  tool_add_reverb_to_an_audio_clip_faq_q2: 'What is the difference between Room, Hall and Echo?',
+  tool_add_reverb_to_an_audio_clip_faq_q3: 'Does tempo or pitch change?',
+  tool_add_reverb_to_an_audio_clip_faq_q4: 'Will studio IR reverb quality be perfect?',
+  tool_add_reverb_to_an_audio_clip_faq_q5: 'Is my audio uploaded to a server?',
+  tool_add_reverb_to_an_audio_clip_faq_q6: 'Can I get chipmunk or higher-voice effects here?',
+  tool_add_reverb_to_an_audio_clip_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_add_reverb_to_an_audio_clip_how_body:
+    'Pick a Room, Hall or Echo preset, run feedback-delay reverb, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_add_reverb_to_an_audio_clip_how_item_1: 'Choose an audio file, or select Load sample for a three-second pitched tone demo.',
+  tool_add_reverb_to_an_audio_clip_how_item_2: 'Open Reverb preset and pick Room, Hall or Echo (default Room).',
+  tool_add_reverb_to_an_audio_clip_how_item_3: 'Click Add reverb and wait for Read → Decode → Reverb → Write to finish.',
+  tool_add_reverb_to_an_audio_clip_how_item_4: 'Preview that space was added while tempo stays, check the result line, then click Download WAV.',
+  tool_add_reverb_to_an_audio_clip_how_title: 'How to add reverb to an audio clip',
+  tool_add_reverb_to_an_audio_clip_preset_echo: 'Echo',
+  tool_add_reverb_to_an_audio_clip_preset_hall: 'Hall',
+  tool_add_reverb_to_an_audio_clip_preset_label: 'Space preset (tempo and pitch unchanged)',
+  tool_add_reverb_to_an_audio_clip_preset_room: 'Room',
+  tool_add_reverb_to_an_audio_clip_preview: 'Listen to the reverberated WAV',
+  tool_add_reverb_to_an_audio_clip_progress: 'Reverb progress',
+  tool_add_reverb_to_an_audio_clip_read: 'Read',
+  tool_add_reverb_to_an_audio_clip_result: '{seconds}s → {outSeconds}s · {preset} · WAV {output} KiB',
+  tool_add_reverb_to_an_audio_clip_reverb: 'Reverb',
+  tool_add_reverb_to_an_audio_clip_rules_body:
+    'Each run mixes a multi-tap feedback delay with a short tail while leaving tempo and pitch alone. Soft peak protection keeps the WAV under full scale. Hall and Echo can muddy dense mixes—quality is limited compared with studio impulse responses. Pages that also slow the clip must not claim this reverb-only job.',
+  tool_add_reverb_to_an_audio_clip_rules_item_1: 'Presets are Room (default), Hall and Echo. Output length grows slightly with the reverb tail.',
+  tool_add_reverb_to_an_audio_clip_rules_item_2:
+    'This is browser delay-feedback reverb only. It is not slowed+reverb, not a voice-height pitch tool, and not a measured IR library.',
+  tool_add_reverb_to_an_audio_clip_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_add_reverb_to_an_audio_clip_rules_item_4: 'One file up to 40 MiB and ten minutes. If the take sounds muddy, try Room instead of Hall or Echo.',
+  tool_add_reverb_to_an_audio_clip_rules_title: 'Room, Hall, Echo and honest browser limits',
+  tool_add_reverb_to_an_audio_clip_sample: 'Load sample',
+  tool_add_reverb_to_an_audio_clip_sample_name: 'three-second-reverb-demo',
+  tool_add_reverb_to_an_audio_clip_settings_hint:
+    'Default Room adds short, close reflections. Hall lengthens the tail for a larger space. Echo spaces the taps further for clearer repeats. This is delay-feedback reverb only—not slowed+reverb, not a voice-height pitch move.',
+  tool_add_reverb_to_an_audio_clip_title: 'Add reverb to an audio clip',
+  tool_add_reverb_to_an_audio_clip_usecase_1: 'A dry voice-over that needs a little room air—pick Room, Add reverb, download WAV.',
+  tool_add_reverb_to_an_audio_clip_usecase_2: 'A short music stem that needs hall space or clearer echo repeats without slowing the clip.',
+  tool_add_reverb_to_an_audio_clip_usecases_title: 'When this helps',
+  tool_add_reverb_to_an_audio_clip_why_choose_item_1: 'See input seconds, output seconds, preset name and output KiB before you save.',
+  tool_add_reverb_to_an_audio_clip_why_choose_item_2: 'Three clear space jobs—Room, Hall and Echo—not a crowded DAW send rack.',
+  tool_add_reverb_to_an_audio_clip_why_choose_item_3:
+    'Decoding, reverb and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_add_reverb_to_an_audio_clip_why_choose_item_4: 'Changing the preset or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_add_reverb_to_an_audio_clip_why_choose_title: 'Why choose our Add reverb to an audio clip tools',
+  tool_add_reverb_to_an_audio_clip_write: 'Write',
   tool_add_text_to_pdf_file_apply: 'Add & preview',
   tool_add_text_to_pdf_file_article:
     'Stamp the same text at explicit X/Y coordinates on every PDF page, preview the result, and download a new copy.',
@@ -697,6 +868,91 @@ const en: SiteLangDict = {
   tool_apple_touch_icon_usecase_3:
     'Small favicon PNG 32 for browsers that still ask for a square PNG, without renaming this page a generator.',
   tool_apple_touch_icon_usecases_title: 'Good fits',
+  tool_apply_a_toy_voice_effect_to_a_recording_advanced: 'Toy effect',
+  tool_apply_a_toy_voice_effect_to_a_recording_article:
+    'Toy voice changers are for playful helium, giant, robot and telephone colors—not for copying a celebrity or claiming a gender change. This page decodes your recording, runs one of four browser presets, and exports a 16-bit PCM WAV. Chipmunk and giant resample (pitch and duration move together). Robot uses ring modulation. Telephone narrows the band like a landline. It is not speaker cloning, not a gender converter, and not a karaoke semitone tool that restores length. Keep the original. Work runs on your device.',
+  tool_apply_a_toy_voice_effect_to_a_recording_choose: 'Choose an audio file',
+  tool_apply_a_toy_voice_effect_to_a_recording_clear: 'Clear',
+  tool_apply_a_toy_voice_effect_to_a_recording_convert: 'Apply',
+  tool_apply_a_toy_voice_effect_to_a_recording_decode: 'Decode',
+  tool_apply_a_toy_voice_effect_to_a_recording_desc:
+    'Apply chipmunk, giant, robot or telephone toy voice effects, then download a 16-bit WAV. On-device only.',
+  tool_apply_a_toy_voice_effect_to_a_recording_description:
+    'Apply a toy voice effect—chipmunk, giant, robot or telephone—then download a 16-bit WAV. Steps: Apply, preview, download. Example: load the sample. Fun presets only—not a celebrity voice clone, not gender shift, not duration-kept pitch shift. Audio stays on your device; never uploaded.',
+  tool_apply_a_toy_voice_effect_to_a_recording_done: 'Ready. Preview the toy-voice WAV, then Download WAV.',
+  tool_apply_a_toy_voice_effect_to_a_recording_download: 'Download WAV',
+  tool_apply_a_toy_voice_effect_to_a_recording_effect: 'Effect',
+  tool_apply_a_toy_voice_effect_to_a_recording_effect_label: 'Preset (toy colors only)',
+  tool_apply_a_toy_voice_effect_to_a_recording_elapsed: '{s}s elapsed',
+  tool_apply_a_toy_voice_effect_to_a_recording_empty: 'Choose an audio file or load the sample first.',
+  tool_apply_a_toy_voice_effect_to_a_recording_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_apply_a_toy_voice_effect_to_a_recording_err_encoder: 'Could not write the toy-voice WAV. Check the preset, then try Apply again.',
+  tool_apply_a_toy_voice_effect_to_a_recording_err_file: 'Drop exactly one audio file.',
+  tool_apply_a_toy_voice_effect_to_a_recording_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_apply_a_toy_voice_effect_to_a_recording_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_apply_a_toy_voice_effect_to_a_recording_err_preset: 'Pick Chipmunk, Giant, Robot or Telephone.',
+  tool_apply_a_toy_voice_effect_to_a_recording_err_silence: 'Level is essentially silence—nothing to process. Try a recording with audible level.',
+  tool_apply_a_toy_voice_effect_to_a_recording_example:
+    'Load sample builds a three-second harmonic tone, then Apply with Chipmunk automatically. Playback never starts by itself—press play on the preview if you want to hear the helium-style take.',
+  tool_apply_a_toy_voice_effect_to_a_recording_example_title: 'Try a real toy-voice clip',
+  tool_apply_a_toy_voice_effect_to_a_recording_failed: 'Toy voice effect failed. Try a smaller, valid audio file.',
+  tool_apply_a_toy_voice_effect_to_a_recording_faq_a1:
+    'No. This page only applies toy signal effects (resample, ring modulation, telephone band). It does not learn, copy or impersonate a specific person’s voice.',
+  tool_apply_a_toy_voice_effect_to_a_recording_faq_a2:
+    'No. We do not claim gender conversion. Chipmunk/giant only move pitch playfully with duration. A separate higher/lower voice page may exist later without gender claims.',
+  tool_apply_a_toy_voice_effect_to_a_recording_faq_a3:
+    'No. Semitone pitch shift with duration aimed preserved is a different job. Use Shift the pitch of a song for that. Chipmunk/giant here deliberately change length with pitch.',
+  tool_apply_a_toy_voice_effect_to_a_recording_faq_a4:
+    'Chipmunk raises pitch and shortens the clip. Telephone keeps length but narrows frequencies like a landline. Robot adds a metallic ring-mod color; Giant lowers pitch and lengthens.',
+  tool_apply_a_toy_voice_effect_to_a_recording_faq_a5: 'Not on this page. Drop or choose a file, then Apply. Real-time mic routing is out of scope.',
+  tool_apply_a_toy_voice_effect_to_a_recording_faq_a6:
+    'No. Decoding, effect and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For reverse use Reverse an audio file; for duration-kept pitch use Shift the pitch of a song.',
+  tool_apply_a_toy_voice_effect_to_a_recording_faq_q1: 'Is this a celebrity or AI voice clone?',
+  tool_apply_a_toy_voice_effect_to_a_recording_faq_q2: 'Is this a male-to-female or gender voice changer?',
+  tool_apply_a_toy_voice_effect_to_a_recording_faq_q3: 'Is this the same as shifting pitch while keeping duration?',
+  tool_apply_a_toy_voice_effect_to_a_recording_faq_q4: 'What do Chipmunk and Telephone do?',
+  tool_apply_a_toy_voice_effect_to_a_recording_faq_q5: 'Can I use a live microphone?',
+  tool_apply_a_toy_voice_effect_to_a_recording_faq_q6: 'Is my audio uploaded to a server?',
+  tool_apply_a_toy_voice_effect_to_a_recording_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_apply_a_toy_voice_effect_to_a_recording_how_body: 'Pick a toy preset, run the effect, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_apply_a_toy_voice_effect_to_a_recording_how_item_1: 'Choose an audio file, or select Load sample for a three-second spoken-tone demo.',
+  tool_apply_a_toy_voice_effect_to_a_recording_how_item_2: 'Open Toy effect and pick Chipmunk, Giant, Robot or Telephone (default Chipmunk).',
+  tool_apply_a_toy_voice_effect_to_a_recording_how_item_3: 'Click Apply and wait for Read → Decode → Effect → Write to finish.',
+  tool_apply_a_toy_voice_effect_to_a_recording_how_item_4: 'Preview the playful color, check the result line, then click Download WAV.',
+  tool_apply_a_toy_voice_effect_to_a_recording_how_title: 'How to apply a toy voice effect to a recording',
+  tool_apply_a_toy_voice_effect_to_a_recording_preset_chipmunk: 'Chipmunk',
+  tool_apply_a_toy_voice_effect_to_a_recording_preset_giant: 'Giant',
+  tool_apply_a_toy_voice_effect_to_a_recording_preset_robot: 'Robot',
+  tool_apply_a_toy_voice_effect_to_a_recording_preset_telephone: 'Telephone',
+  tool_apply_a_toy_voice_effect_to_a_recording_preview: 'Listen to the toy-voice WAV',
+  tool_apply_a_toy_voice_effect_to_a_recording_progress: 'Toy voice progress',
+  tool_apply_a_toy_voice_effect_to_a_recording_read: 'Read',
+  tool_apply_a_toy_voice_effect_to_a_recording_result: '{seconds}s → {outSeconds}s · {preset} · WAV {output} KiB',
+  tool_apply_a_toy_voice_effect_to_a_recording_rules_body:
+    'Each run applies one toy preset. Chipmunk/giant resample (duration moves with pitch). Robot ring-modulates. Telephone band-limits. Soft peak protection keeps the WAV under full scale. This is not voice cloning and not studio formant morphing.',
+  tool_apply_a_toy_voice_effect_to_a_recording_rules_item_1: 'Presets are Chipmunk, Giant, Robot and Telephone. Default is Chipmunk.',
+  tool_apply_a_toy_voice_effect_to_a_recording_rules_item_2:
+    'This is a browser toy effect. It is not a celebrity or AI voice clone, not a gender-claim shifter, and not a duration-kept semitone tool.',
+  tool_apply_a_toy_voice_effect_to_a_recording_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_apply_a_toy_voice_effect_to_a_recording_rules_item_4:
+    'One file up to 40 MiB and ten minutes. Strong effects can sound brittle on percussion—prefer short voice clips.',
+  tool_apply_a_toy_voice_effect_to_a_recording_rules_title: 'Toy presets, honest limits and no cloning',
+  tool_apply_a_toy_voice_effect_to_a_recording_sample: 'Load sample',
+  tool_apply_a_toy_voice_effect_to_a_recording_sample_name: 'three-second-toy-voice-demo',
+  tool_apply_a_toy_voice_effect_to_a_recording_settings_hint:
+    'Default Chipmunk raises pitch and shortens length. Giant lowers pitch and lengthens. Robot ring-modulates. Telephone band-limits like a phone. These are toy filters—not a voice clone of a person.',
+  tool_apply_a_toy_voice_effect_to_a_recording_title: 'Apply a toy voice effect to a recording',
+  tool_apply_a_toy_voice_effect_to_a_recording_usecase_1: 'A short meme or kids clip that needs a chipmunk or helium color—Apply, download WAV.',
+  tool_apply_a_toy_voice_effect_to_a_recording_usecase_2: 'A playful robot or telephone gag for a message—not a celebrity clone, not a gender claim.',
+  tool_apply_a_toy_voice_effect_to_a_recording_usecases_title: 'When this helps',
+  tool_apply_a_toy_voice_effect_to_a_recording_why_choose_item_1: 'See input seconds, output seconds, preset name and output KiB before you save.',
+  tool_apply_a_toy_voice_effect_to_a_recording_why_choose_item_2: 'Four clear toy colors—chipmunk, giant, robot, telephone—not a crowded DAW rack.',
+  tool_apply_a_toy_voice_effect_to_a_recording_why_choose_item_3:
+    'Decoding, effect and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_apply_a_toy_voice_effect_to_a_recording_why_choose_item_4: 'Changing the preset or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_apply_a_toy_voice_effect_to_a_recording_why_choose_title: 'Why choose our Apply a toy voice effect to a recording tools',
+  tool_apply_a_toy_voice_effect_to_a_recording_write: 'Write',
   tool_archive_extractor_article:
     'Open ZIP, TAR, and TAR.GZ archives in your browser, inspect the file tree, preview common text or image entries, and export supported contents as a clean ZIP. Your archive stays on your device and is not uploaded to a server.',
   tool_archive_extractor_choose_file: 'Choose archive',
@@ -1903,6 +2159,84 @@ const en: SiteLangDict = {
   tool_batch_convert_web_pages_to_png_wait_hint:
     'Extra seconds after images start loading so remote pictures can finish. Default is 1. Raise it if a PNG shows empty image boxes.',
   tool_batch_convert_web_pages_to_png_wait_label: 'Load wait (sec)',
+  tool_batch_trim_the_same_intro_from_audio_files_advanced: 'About batch trim (optional)',
+  tool_batch_trim_the_same_intro_from_audio_files_article:
+    'Podcast batches often share the same bumper. This page applies one intro length to a queue, exports trimmed 16-bit WAV files, and zips them with lazy JSZip. It is not a single-file waveform editor—use the related trim page for precise handles. Bulk WAV→MP3 sits nearby for encoding after trim. Work stays on-device.',
+  tool_batch_trim_the_same_intro_from_audio_files_choose: 'Choose audio files',
+  tool_batch_trim_the_same_intro_from_audio_files_clear: 'Clear',
+  tool_batch_trim_the_same_intro_from_audio_files_convert: 'Trim to ZIP',
+  tool_batch_trim_the_same_intro_from_audio_files_decode: 'Decode audio',
+  tool_batch_trim_the_same_intro_from_audio_files_desc:
+    'Cut the same intro length from many local audio files and download a ZIP of WAV clips. Files stay on your device.',
+  tool_batch_trim_the_same_intro_from_audio_files_description:
+    'Batch trim the same intro from audio files in the browser without uploading. Steps: add several clips, set shared intro seconds, Trim to ZIP, download. Example: two four-second sample tones drop the first second into a ZIP of two WAVs. Decodes with decodeAudioData, writes 16-bit WAV, packs with lazy JSZip. Files stay on your device—never uploaded.',
+  tool_batch_trim_the_same_intro_from_audio_files_done: 'Ready. Download the ZIP of trimmed WAVs.',
+  tool_batch_trim_the_same_intro_from_audio_files_download: 'Download ZIP',
+  tool_batch_trim_the_same_intro_from_audio_files_elapsed: 'Elapsed: {s}s',
+  tool_batch_trim_the_same_intro_from_audio_files_empty: 'Add at least one audio file or load the sample first.',
+  tool_batch_trim_the_same_intro_from_audio_files_empty_state: 'No files yet. Drop audio clips or load the sample.',
+  tool_batch_trim_the_same_intro_from_audio_files_err_decode: 'This browser could not decode a file. Try a shorter clip or another browser.',
+  tool_batch_trim_the_same_intro_from_audio_files_err_file: 'Add audio files the browser can decode.',
+  tool_batch_trim_the_same_intro_from_audio_files_err_format: 'Unsupported or damaged audio. Need mono/stereo that decodeAudioData can open.',
+  tool_batch_trim_the_same_intro_from_audio_files_err_intro: 'Intro must be > 0 and leave at least ~0.05s of audio. Short files fail this check.',
+  tool_batch_trim_the_same_intro_from_audio_files_err_limit: 'A recording exceeds 40 MiB or about 10 minutes, or is not mono/stereo.',
+  tool_batch_trim_the_same_intro_from_audio_files_err_too_many: 'Queue limit is 20 files.',
+  tool_batch_trim_the_same_intro_from_audio_files_err_zip: 'Could not build the ZIP. Check memory and try fewer files.',
+  tool_batch_trim_the_same_intro_from_audio_files_example:
+    'On opening, two four-second mono tones load with intro 1s and Trim to ZIP runs, packing two ~3s WAVs. Load sample repeats it.',
+  tool_batch_trim_the_same_intro_from_audio_files_example_title: 'A real batch intro example',
+  tool_batch_trim_the_same_intro_from_audio_files_failed: 'Batch trim failed. Remove damaged files or shorten the intro.',
+  tool_batch_trim_the_same_intro_from_audio_files_faq_a1: 'No. Decode, trim and ZIP run in the browser on your device.',
+  tool_batch_trim_the_same_intro_from_audio_files_faq_a2: 'No. This page uses one shared intro. For per-file ranges, use Trim an audio clip and export.',
+  tool_batch_trim_the_same_intro_from_audio_files_faq_a3:
+    'Batch trim here writes lossless 16-bit WAV for editing. Use the related bulk WAV→MP3 tool afterward if you need MP3.',
+  tool_batch_trim_the_same_intro_from_audio_files_faq_a4: 'That file fails individually. Successful files still appear in the ZIP when others succeed.',
+  tool_batch_trim_the_same_intro_from_audio_files_faq_a5:
+    'Single-file trim offers waveform handles and export choices. This page is multi-file same-intro → WAV ZIP.',
+  tool_batch_trim_the_same_intro_from_audio_files_faq_q1: 'Is my audio uploaded?',
+  tool_batch_trim_the_same_intro_from_audio_files_faq_q2: 'Can each file have a different intro?',
+  tool_batch_trim_the_same_intro_from_audio_files_faq_q3: 'Why WAV instead of MP3?',
+  tool_batch_trim_the_same_intro_from_audio_files_faq_q4: 'What if one file is shorter than the intro?',
+  tool_batch_trim_the_same_intro_from_audio_files_faq_q5: 'How is this different from single-file trim?',
+  tool_batch_trim_the_same_intro_from_audio_files_field_intro: 'Intro seconds to remove (shared)',
+  tool_batch_trim_the_same_intro_from_audio_files_hint:
+    'Up to 20 files. Each up to 40 MiB and about 10 minutes. Browser-decodable audio (WAV, MP3, and similar).',
+  tool_batch_trim_the_same_intro_from_audio_files_how_body: 'Remove one shared bumper length from many clips and download WAV ZIP.',
+  tool_batch_trim_the_same_intro_from_audio_files_how_item_1: 'Add several audio files, or click Load sample for two demo tones.',
+  tool_batch_trim_the_same_intro_from_audio_files_how_item_2: 'Set the shared intro seconds (default 1), then click Trim to ZIP.',
+  tool_batch_trim_the_same_intro_from_audio_files_how_item_3: 'Watch Read → Decode → Trim → Pack for each file in the HUD.',
+  tool_batch_trim_the_same_intro_from_audio_files_how_item_4: 'Download the ZIP of trimmed WAV files. Failures are counted honestly.',
+  tool_batch_trim_the_same_intro_from_audio_files_how_title: 'How to batch trim the same intro from audio files',
+  tool_batch_trim_the_same_intro_from_audio_files_intro_hint: 'The same start offset is applied to every file. Files shorter than this intro fail individually.',
+  tool_batch_trim_the_same_intro_from_audio_files_list_label: 'File queue',
+  tool_batch_trim_the_same_intro_from_audio_files_pack: 'Pack ZIP',
+  tool_batch_trim_the_same_intro_from_audio_files_partial: 'OK {ok}, failed {fail} · intro {intro}s · ZIP still includes successes ({output} KiB)',
+  tool_batch_trim_the_same_intro_from_audio_files_preview: 'Batch result',
+  tool_batch_trim_the_same_intro_from_audio_files_progress: 'Batch trim progress',
+  tool_batch_trim_the_same_intro_from_audio_files_queue_count: '{n} file(s) in queue',
+  tool_batch_trim_the_same_intro_from_audio_files_read: 'Read file',
+  tool_batch_trim_the_same_intro_from_audio_files_remove: 'Remove',
+  tool_batch_trim_the_same_intro_from_audio_files_result: 'Packed {n} WAV files · intro {intro}s · ZIP {output} KiB',
+  tool_batch_trim_the_same_intro_from_audio_files_rules_body: 'Output duration ≈ original − intro. Short files shorter than intro fail per item.',
+  tool_batch_trim_the_same_intro_from_audio_files_rules_item_1: 'Every file uses the same intro seconds. Per-file different starts need the single-file trim page.',
+  tool_batch_trim_the_same_intro_from_audio_files_rules_item_2: 'Exports 16-bit PCM WAV only in this ZIP. Re-encode to MP3 with the related bulk tool if needed.',
+  tool_batch_trim_the_same_intro_from_audio_files_rules_item_3: 'Up to 20 files; each ≤ 40 MiB and ~10 minutes; mono/stereo. No YouTube download.',
+  tool_batch_trim_the_same_intro_from_audio_files_rules_item_4: 'Files stay on your device. Offline use is not guaranteed after the page loads.',
+  tool_batch_trim_the_same_intro_from_audio_files_rules_title: 'Shared intro, WAV ZIP and limits',
+  tool_batch_trim_the_same_intro_from_audio_files_sample: 'Load sample',
+  tool_batch_trim_the_same_intro_from_audio_files_sample_name: 'four-second-intro-demo',
+  tool_batch_trim_the_same_intro_from_audio_files_settings_hint:
+    'Output is always 16-bit PCM WAV in a ZIP. Per-file start/end handles and MP3 batch encode are other tools.',
+  tool_batch_trim_the_same_intro_from_audio_files_title: 'Batch trim the same intro from audio files',
+  tool_batch_trim_the_same_intro_from_audio_files_trim: 'Trim intro',
+  tool_batch_trim_the_same_intro_from_audio_files_usecase_1: 'Strip the same bumper from a week of voice notes before editing.',
+  tool_batch_trim_the_same_intro_from_audio_files_usecase_2: 'Prepare a batch of interview takes that share the same countdown intro.',
+  tool_batch_trim_the_same_intro_from_audio_files_usecases_title: 'Useful for',
+  tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_1: 'One intro length applies to the whole queue—no retyping per file.',
+  tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_2: 'The sample proves decode, trim, and lazy JSZip in one path.',
+  tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_3: 'Partial failures still deliver successful WAVs in the ZIP.',
+  tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_4: 'Processing stays on your device; single-file trim and WAV→MP3 sit nearby.',
+  tool_batch_trim_the_same_intro_from_audio_files_why_choose_title: 'Why choose our Batch trim the same intro tools',
   tool_batch_watermark_product_photos_anchor_bc: 'Bottom',
   tool_batch_watermark_product_photos_anchor_bl: 'Bottom left',
   tool_batch_watermark_product_photos_anchor_br: 'Bottom right',
@@ -2167,6 +2501,92 @@ const en: SiteLangDict = {
   tool_body_fat_usecases_title: 'When to use it',
   tool_body_fat_waist_label: 'Waist circumference (cm)',
   tool_body_fat_waist_ph: 'e.g. 86',
+  tool_boost_bass_on_an_mp3_advanced: 'Bass boost presets',
+  tool_boost_bass_on_an_mp3_article:
+    'Phone exports and compressed tracks often sound thin: kick and bass body sit too quiet under the midrange. This page runs one BiquadFilter lowshelf in OfflineAudioContext with Mild (+4 dB), Medium (+8 dB) or Strong (+12 dB) around 100 Hz. That deepens low end without a ten-band graphic EQ or a three-band muffled-voice preset chain. Soft peak protection scales the buffer if the boost would clip. Channel count stays 1 or 2. Keep the original master; the download is a new 16-bit WAV. Work runs in the browser on your device.',
+  tool_boost_bass_on_an_mp3_boost: 'Boost',
+  tool_boost_bass_on_an_mp3_choose: 'Choose an audio file',
+  tool_boost_bass_on_an_mp3_clear: 'Clear',
+  tool_boost_bass_on_an_mp3_convert: 'Boost',
+  tool_boost_bass_on_an_mp3_decode: 'Decode',
+  tool_boost_bass_on_an_mp3_desc:
+    'Lift thin low end with Mild, Medium or Strong low-shelf presets, then download a 16-bit WAV. On-device only.',
+  tool_boost_bass_on_an_mp3_description:
+    'Boost bass on an MP3 with Mild, Medium or Strong low-shelf presets. Steps: Boost, preview, download WAV. Example: load the thin-bass sample. Bass shelf only—not a full muffled-voice EQ, not whole-file loudness gain. Audio stays on your device; never uploaded.',
+  tool_boost_bass_on_an_mp3_done: 'Ready. Preview the bass-boosted WAV, then Download WAV.',
+  tool_boost_bass_on_an_mp3_download: 'Download WAV',
+  tool_boost_bass_on_an_mp3_elapsed: '{s}s elapsed',
+  tool_boost_bass_on_an_mp3_empty: 'Choose an audio file or load the sample first.',
+  tool_boost_bass_on_an_mp3_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_boost_bass_on_an_mp3_err_encoder: 'Could not write the bass-boosted WAV. Check the preset, then try Boost again.',
+  tool_boost_bass_on_an_mp3_err_file: 'Drop exactly one audio file.',
+  tool_boost_bass_on_an_mp3_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_boost_bass_on_an_mp3_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_boost_bass_on_an_mp3_err_silence: 'Level is essentially silence—nothing to boost. Try a recording with audible level.',
+  tool_boost_bass_on_an_mp3_example:
+    'Load sample builds a two-second thin tone with weak lows and brighter mids, then Boost at Medium automatically. Playback never starts by itself—press play on the preview if you want to hear the deeper result.',
+  tool_boost_bass_on_an_mp3_example_title: 'Try a real bass boost',
+  tool_boost_bass_on_an_mp3_failed: 'Boost failed. Try a smaller, valid audio file.',
+  tool_boost_bass_on_an_mp3_faq_a1:
+    'No. That tool runs three-band Clarity/Warmth/Presence presets for muffled speech. This page only lifts bass with a lowshelf. For multi-band muffled EQ, use EQ a muffled voice recording.',
+  tool_boost_bass_on_an_mp3_faq_a2:
+    'Not as a flat gain. It boosts low frequencies on a shelf; mids and highs stay mostly as they were. For whole-file amplification, use Make a quiet recording louder.',
+  tool_boost_bass_on_an_mp3_faq_a3:
+    'They set lowshelf gain around 100 Hz: roughly +4, +8 and +12 dB. Soft peak protection prevents clipping after stronger boosts.',
+  tool_boost_bass_on_an_mp3_faq_a4:
+    'Yes. Any browser-decodable audio (WAV, MP3, M4A, AAC, OGG) works. The download is always a 16-bit WAV.',
+  tool_boost_bass_on_an_mp3_faq_a5:
+    'After the filter, soft peak protection scales the buffer if peaks would exceed about −0.2 dBFS, so the WAV stays safe.',
+  tool_boost_bass_on_an_mp3_faq_a6:
+    'No. Decoding, bass boost and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For muffled speech EQ, use EQ a muffled voice recording; for overall level, use Make a quiet recording louder.',
+  tool_boost_bass_on_an_mp3_faq_q1: 'Is this the same as EQ a muffled voice recording?',
+  tool_boost_bass_on_an_mp3_faq_q2: 'Does this make the whole file louder?',
+  tool_boost_bass_on_an_mp3_faq_q3: 'What do Mild, Medium and Strong do?',
+  tool_boost_bass_on_an_mp3_faq_q4: 'The slug says MP3—can I use WAV or M4A?',
+  tool_boost_bass_on_an_mp3_faq_q5: 'What if Strong makes peaks too hot?',
+  tool_boost_bass_on_an_mp3_faq_q6: 'Is my audio uploaded to a server?',
+  tool_boost_bass_on_an_mp3_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_boost_bass_on_an_mp3_how_body:
+    'Pick a low-shelf strength, deepen the bass, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_boost_bass_on_an_mp3_how_item_1: 'Choose an audio file, or select Load sample for a two-second thin-bass demonstration.',
+  tool_boost_bass_on_an_mp3_how_item_2: 'Open Bass boost presets and pick Mild, Medium (default) or Strong.',
+  tool_boost_bass_on_an_mp3_how_item_3: 'Click Boost and wait for Read → Decode → Boost → Write to finish.',
+  tool_boost_bass_on_an_mp3_how_item_4: 'Preview the result, check the preset and peaks, then click Download WAV.',
+  tool_boost_bass_on_an_mp3_how_title: 'How to boost bass on an MP3',
+  tool_boost_bass_on_an_mp3_preset_label: 'Low-shelf strength',
+  tool_boost_bass_on_an_mp3_preset_medium: 'Medium',
+  tool_boost_bass_on_an_mp3_preset_mild: 'Mild',
+  tool_boost_bass_on_an_mp3_preset_strong: 'Strong',
+  tool_boost_bass_on_an_mp3_preview: 'Listen to the bass-boosted WAV',
+  tool_boost_bass_on_an_mp3_progress: 'Boost progress',
+  tool_boost_bass_on_an_mp3_read: 'Read',
+  tool_boost_bass_on_an_mp3_result: '{seconds}s · {preset} · peak {peakBefore} → {peakAfter} · WAV {output} KiB',
+  tool_boost_bass_on_an_mp3_rules_body:
+    'Each preset is one lowshelf Biquad around 100 Hz. Mild is gentle, Medium is the default punch, Strong is heavier. Soft peak protection scales the result if the boost would clip.',
+  tool_boost_bass_on_an_mp3_rules_item_1:
+    'Mild about +4 dB, Medium about +8 dB, Strong about +12 dB on a 100 Hz lowshelf. Mid and high bands are not reshaped like a full EQ.',
+  tool_boost_bass_on_an_mp3_rules_item_2:
+    'This is bass shelf only. It does not run Clarity/Warmth/Presence multi-band EQ, and it does not raise the whole file by a fixed dB gain.',
+  tool_boost_bass_on_an_mp3_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_boost_bass_on_an_mp3_rules_item_4:
+    'One file up to 40 MiB and ten minutes. Soft peak protection may reduce overall level after Strong boosts so the WAV stays under digital full scale.',
+  tool_boost_bass_on_an_mp3_rules_title: 'Mild, Medium, Strong and limits',
+  tool_boost_bass_on_an_mp3_sample: 'Load sample',
+  tool_boost_bass_on_an_mp3_sample_name: 'two-second-thin-bass-demo',
+  tool_boost_bass_on_an_mp3_settings_hint:
+    'Default Medium adds about +8 dB on a 100 Hz lowshelf. Mild is gentler; Strong is heavier. Soft peak protection keeps the WAV from clipping after the boost.',
+  tool_boost_bass_on_an_mp3_title: 'Boost bass on an MP3',
+  tool_boost_bass_on_an_mp3_usecase_1: 'A phone MP3 whose kick feels hollow—pick Medium, Boost, download WAV.',
+  tool_boost_bass_on_an_mp3_usecase_2: 'A track that needs thicker low end without opening a full equalizer or raising overall loudness.',
+  tool_boost_bass_on_an_mp3_usecases_title: 'When this helps',
+  tool_boost_bass_on_an_mp3_why_choose_item_1: 'See preset name, peak before/after and output KiB before you save.',
+  tool_boost_bass_on_an_mp3_why_choose_item_2: 'Three clear low-shelf strengths—one bass job, not a buried ten-band toy or muffled-voice EQ chain.',
+  tool_boost_bass_on_an_mp3_why_choose_item_3:
+    'Decoding, lowshelf boost and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_boost_bass_on_an_mp3_why_choose_item_4: 'Changing the preset or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_boost_bass_on_an_mp3_why_choose_title: 'Why choose our Boost bass on an MP3 tools',
+  tool_boost_bass_on_an_mp3_write: 'Write',
   tool_brand_color_token_pack_article:
     'One brand base color becomes a full token pack: HEX, RGB, HSL, OKLCH, a 50–950 scale, per-step black/white text pairs, and copyable CSS variables or JSON — all in your browser.',
   tool_brand_color_token_pack_bad_hex: 'Enter a valid 3- or 6-digit HEX color (e.g. #2563EB).',
@@ -2851,6 +3271,86 @@ const en: SiteLangDict = {
   tool_bulk_convert_images_to_webp_warn_anim: 'Animated files: only the first frame is saved as a still WebP.',
   tool_bulk_convert_images_to_webp_warn_edge: 'A file is wider or taller than 8192 px — expect it to be slow.',
   tool_bulk_convert_images_to_webp_warn_large: 'A file is larger than 25 MB — this tab may run out of memory.',
+  tool_bulk_convert_wav_files_to_mp3_advanced: 'Advanced settings (optional)',
+  tool_bulk_convert_wav_files_to_mp3_article:
+    'Folders of WAV exports are awkward to share. This page queues several local WAV files, decodes each in the browser, encodes MP3 with lamejs, and packs a ZIP with JSZip. MP3 is lossy—keep the WAV masters. For one file use the related single WAV converter; FLAC is a different page. Work stays on-device.',
+  tool_bulk_convert_wav_files_to_mp3_bitrate: 'MP3 bitrate (all files)',
+  tool_bulk_convert_wav_files_to_mp3_choose: 'Choose WAV files',
+  tool_bulk_convert_wav_files_to_mp3_clear: 'Clear',
+  tool_bulk_convert_wav_files_to_mp3_convert: 'Convert to ZIP',
+  tool_bulk_convert_wav_files_to_mp3_decode: 'Decode audio',
+  tool_bulk_convert_wav_files_to_mp3_desc:
+    'Convert several local WAV recordings into MP3 files packed in one ZIP. Your audio stays on your device and is not uploaded to a server.',
+  tool_bulk_convert_wav_files_to_mp3_description:
+    'Bulk convert WAV files to MP3 in the browser without uploading. Steps: add several WAV files, pick a bitrate, Convert to ZIP, download. Example: two five-second stereo tones become two MP3s in one ZIP at 192 kbps. Uses decodeAudioData and lamejs per file, then JSZip. Files stay on your device—never uploaded.',
+  tool_bulk_convert_wav_files_to_mp3_done: 'Ready. Download the ZIP of MP3 files.',
+  tool_bulk_convert_wav_files_to_mp3_download: 'Download ZIP',
+  tool_bulk_convert_wav_files_to_mp3_elapsed: 'Elapsed: {s}s',
+  tool_bulk_convert_wav_files_to_mp3_empty: 'Add at least one WAV or load the sample first.',
+  tool_bulk_convert_wav_files_to_mp3_empty_state: 'No files yet. Drop WAV files here or load the sample.',
+  tool_bulk_convert_wav_files_to_mp3_encode: 'Encode MP3',
+  tool_bulk_convert_wav_files_to_mp3_err_decode: 'This browser could not decode a WAV file. Try a shorter clip or another browser.',
+  tool_bulk_convert_wav_files_to_mp3_err_encoder: 'The MP3 encoder could not load. Check the connection and click Convert to ZIP again.',
+  tool_bulk_convert_wav_files_to_mp3_err_file: 'Add WAV files only.',
+  tool_bulk_convert_wav_files_to_mp3_err_format:
+    'Unsupported or damaged audio. Use PCM WAV (RIFF/WAVE). Video and non-WAV containers are not accepted.',
+  tool_bulk_convert_wav_files_to_mp3_err_limit: 'A recording exceeds 40 MiB or 10 minutes, or is not mono/stereo.',
+  tool_bulk_convert_wav_files_to_mp3_err_too_many: 'At most 20 WAV files per batch.',
+  tool_bulk_convert_wav_files_to_mp3_err_zip: 'The ZIP packer could not load or build the archive. Try again.',
+  tool_bulk_convert_wav_files_to_mp3_example:
+    'On opening, two five-second stereo WAV tones load and convert at 192 kbps into one ZIP. Load sample repeats it. Playback of individual MP3s is not auto-started; download the ZIP to listen locally.',
+  tool_bulk_convert_wav_files_to_mp3_example_title: 'A real batch conversion example',
+  tool_bulk_convert_wav_files_to_mp3_failed: 'Conversion failed. Remove damaged files or try shorter WAV clips.',
+  tool_bulk_convert_wav_files_to_mp3_faq_a1: 'No. MP3 encoding is lossy even at 320 kbps. Keep the WAV masters if you need lossless quality later.',
+  tool_bulk_convert_wav_files_to_mp3_faq_a2:
+    'No. Decoding, encoding and ZIP packing run in the browser on your device. Initial page and library loading need a connection; offline availability is not guaranteed.',
+  tool_bulk_convert_wav_files_to_mp3_faq_a3:
+    'This page is for WAV only. Use the related single-file FLAC converter for FLAC, or other format pages—there is no format matrix on this site.',
+  tool_bulk_convert_wav_files_to_mp3_faq_a4:
+    'Successful files are still packed into the ZIP. The result line shows how many failed so you can fix or remove them and retry.',
+  tool_bulk_convert_wav_files_to_mp3_faq_a5:
+    'You can, but the related Convert a WAV file to MP3 page is simpler for one file with preview playback.',
+  tool_bulk_convert_wav_files_to_mp3_faq_q1: 'Is batch WAV to MP3 lossless?',
+  tool_bulk_convert_wav_files_to_mp3_faq_q2: 'Is my recording uploaded?',
+  tool_bulk_convert_wav_files_to_mp3_faq_q3: 'Can I batch-convert FLAC or OGG here?',
+  tool_bulk_convert_wav_files_to_mp3_faq_q4: 'What if one file fails?',
+  tool_bulk_convert_wav_files_to_mp3_faq_q5: 'Should I use this for a single WAV?',
+  tool_bulk_convert_wav_files_to_mp3_hint: 'Up to 20 WAV files. Each file up to 40 MiB and 10 minutes. Mono or stereo PCM WAV.',
+  tool_bulk_convert_wav_files_to_mp3_how_body: 'Turn a small folder of WAV clips into one ZIP of MP3 files without uploading.',
+  tool_bulk_convert_wav_files_to_mp3_how_item_1: 'Choose several WAV files, or click Load sample for two short demonstration tones.',
+  tool_bulk_convert_wav_files_to_mp3_how_item_2: 'Keep the default bitrate or open Advanced settings, then click Convert to ZIP.',
+  tool_bulk_convert_wav_files_to_mp3_how_item_3: 'Watch Read → Decode → Encode for each file, then Pack ZIP.',
+  tool_bulk_convert_wav_files_to_mp3_how_item_4: 'Download the ZIP. Failed files are skipped with a count in the result line.',
+  tool_bulk_convert_wav_files_to_mp3_how_title: 'How to bulk convert WAV files to MP3',
+  tool_bulk_convert_wav_files_to_mp3_list_label: 'File queue',
+  tool_bulk_convert_wav_files_to_mp3_pack: 'Pack ZIP',
+  tool_bulk_convert_wav_files_to_mp3_partial: '{ok} succeeded, {fail} failed · {kbps} kbps — download still includes successful files',
+  tool_bulk_convert_wav_files_to_mp3_preview: 'Batch result',
+  tool_bulk_convert_wav_files_to_mp3_progress: 'Conversion progress',
+  tool_bulk_convert_wav_files_to_mp3_queue_count: '{n} file(s) in queue',
+  tool_bulk_convert_wav_files_to_mp3_read: 'Read recording',
+  tool_bulk_convert_wav_files_to_mp3_remove: 'Remove',
+  tool_bulk_convert_wav_files_to_mp3_result: '{n} MP3 file(s) packed · {kbps} kbps · ZIP {output} KiB',
+  tool_bulk_convert_wav_files_to_mp3_rules_body: 'MP3 is lossy. Approximate bytes ≈ duration × kbps × 1000 ÷ 8 per file; ZIP adds a little overhead.',
+  tool_bulk_convert_wav_files_to_mp3_rules_item_1: 'Try 128 kbps for speech, 192 for general sharing or 320 for music. None restores lost WAV detail.',
+  tool_bulk_convert_wav_files_to_mp3_rules_item_2: 'Output is 44.1 kHz with one or two channels. WAV metadata and cover art are not copied.',
+  tool_bulk_convert_wav_files_to_mp3_rules_item_3:
+    'At most 20 files; each at most 40 MiB and 10 minutes. No DRM, video, surround, FLAC batch or format matrix.',
+  tool_bulk_convert_wav_files_to_mp3_rules_item_4: 'For one WAV only, use the related Convert a WAV file to MP3 page instead of this batch tool.',
+  tool_bulk_convert_wav_files_to_mp3_rules_title: 'Batch limits and honest quality notes',
+  tool_bulk_convert_wav_files_to_mp3_sample: 'Load sample',
+  tool_bulk_convert_wav_files_to_mp3_sample_name: 'five-second-wav-demo',
+  tool_bulk_convert_wav_files_to_mp3_settings_hint:
+    '192 kbps by default for the whole batch. 128 saves space; 320 uses more space. Output: 44.1 kHz, original mono/stereo channels. Tags are not copied.',
+  tool_bulk_convert_wav_files_to_mp3_title: 'Bulk convert WAV files to MP3',
+  tool_bulk_convert_wav_files_to_mp3_usecase_1: 'Share a folder of WAV voice memos as a ZIP of MP3 attachments.',
+  tool_bulk_convert_wav_files_to_mp3_usecase_2: 'Batch-convert short studio WAV exports before uploading to a player that prefers MP3.',
+  tool_bulk_convert_wav_files_to_mp3_usecases_title: 'Useful for',
+  tool_bulk_convert_wav_files_to_mp3_why_choose_item_1: 'The built-in two-file sample runs the same decode, encode and ZIP path as your queue.',
+  tool_bulk_convert_wav_files_to_mp3_why_choose_item_2: 'You see how many files succeeded before saving the archive.',
+  tool_bulk_convert_wav_files_to_mp3_why_choose_item_3: 'JSZip and lamejs load only when you convert—not on every page view.',
+  tool_bulk_convert_wav_files_to_mp3_why_choose_item_4: 'Processing stays on your device; related single-file WAV and FLAC converters are nearby.',
+  tool_bulk_convert_wav_files_to_mp3_why_choose_title: 'Why choose our Bulk convert WAV files to MP3 tools',
   tool_cagr_article:
     'CAGR is the constant annual rate that takes a beginning value to an ending value over a number of years, assuming compounding once per year. Use it for rough multi-year growth comparisons; it is not a forecast and ignores cash flows mid-period.',
   tool_cagr_begin_label: 'Beginning value',
@@ -2908,6 +3408,93 @@ const en: SiteLangDict = {
   tool_category_developer: 'Developer tools',
   tool_category_image: 'Image editing tools',
   tool_category_pdf: 'PDF tools',
+  tool_change_audio_speed_without_changing_pitch_advanced: 'Speed',
+  tool_change_audio_speed_without_changing_pitch_article:
+    'Practice tracks and edit timing often need a different tempo without sounding chipmunked or dredged. This page runs a waveform-similarity overlap-add (WSOLA) stretch in your browser: analysis hops scale with speed while synthesis hops stay fixed, and a short search window aligns frames before overlap-add. It is not HTMLMediaElement playbackRate (which shifts pitch), not a dedicated pitch-shift job, and not a nightcore one-click that speeds and raises pitch together. Extremely slow or fast stretches—and hard percussion—can show mild wobble at splice points. Channel count stays 1 or 2. Keep the original; the download is a new 16-bit WAV. Work runs on your device.',
+  tool_change_audio_speed_without_changing_pitch_choose: 'Choose an audio file',
+  tool_change_audio_speed_without_changing_pitch_clear: 'Clear',
+  tool_change_audio_speed_without_changing_pitch_convert: 'Stretch',
+  tool_change_audio_speed_without_changing_pitch_custom_label: 'Custom speed (0.5–2.0)',
+  tool_change_audio_speed_without_changing_pitch_decode: 'Decode',
+  tool_change_audio_speed_without_changing_pitch_desc:
+    'Time-stretch audio with WSOLA so tempo changes while pitch stays roughly the same, then download a 16-bit WAV. On-device only.',
+  tool_change_audio_speed_without_changing_pitch_description:
+    'Change audio speed without changing pitch using WSOLA time-stretch overlap-add. Steps: Stretch, preview, download WAV. Example: load the sample. Honest browser time-stretch—not pitch shift, not nightcore. Audio stays on your device; never uploaded.',
+  tool_change_audio_speed_without_changing_pitch_done: 'Ready. Preview the time-stretched WAV, then Download WAV.',
+  tool_change_audio_speed_without_changing_pitch_download: 'Download WAV',
+  tool_change_audio_speed_without_changing_pitch_elapsed: '{s}s elapsed',
+  tool_change_audio_speed_without_changing_pitch_empty: 'Choose an audio file or load the sample first.',
+  tool_change_audio_speed_without_changing_pitch_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_change_audio_speed_without_changing_pitch_err_encoder: 'Could not write the stretched WAV. Check speed, then try Stretch again.',
+  tool_change_audio_speed_without_changing_pitch_err_file: 'Drop exactly one audio file.',
+  tool_change_audio_speed_without_changing_pitch_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_change_audio_speed_without_changing_pitch_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_change_audio_speed_without_changing_pitch_err_silence: 'Level is essentially silence—nothing to stretch. Try a recording with audible level.',
+  tool_change_audio_speed_without_changing_pitch_err_speed: 'Pick a preset or enter a custom speed between 0.5 and 2.0.',
+  tool_change_audio_speed_without_changing_pitch_example:
+    'Load sample builds a three-second harmonic tone, then Stretch at 0.75× automatically. Playback never starts by itself—press play on the preview if you want to hear the longer, same-pitch take.',
+  tool_change_audio_speed_without_changing_pitch_example_title: 'Try a real pitched clip',
+  tool_change_audio_speed_without_changing_pitch_failed: 'Stretch failed. Try a smaller, valid audio file.',
+  tool_change_audio_speed_without_changing_pitch_faq_a1:
+    'No. A pitch-shift job changes musical pitch (and may keep duration). This page changes tempo with WSOLA while aiming to keep pitch. Pitch-only shifting is a separate tool job.',
+  tool_change_audio_speed_without_changing_pitch_faq_a2:
+    'No. Nightcore typically speeds up and raises pitch together. This page only time-stretches for speed; it does not apply a nightcore pitch lift.',
+  tool_change_audio_speed_without_changing_pitch_faq_a3:
+    'No. Plain playbackRate would shift pitch with speed. This page implements WSOLA overlap-add time-stretch so pitch is preserved as much as a simple browser stretch allows.',
+  tool_change_audio_speed_without_changing_pitch_faq_a4:
+    '0.75× makes the clip longer and slower; 1.5× makes it shorter and faster. Both target the same pitch band via WSOLA, unlike naive rate change.',
+  tool_change_audio_speed_without_changing_pitch_faq_a5:
+    'Strong percussion and extreme ratios can show mild wobble at frame joins. Try a milder speed closer to 1.0× if artifacts bother you.',
+  tool_change_audio_speed_without_changing_pitch_faq_a6:
+    'No. Decoding, stretch and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For sibilance use De-ess a voiceover; for fades use Fade in and fade out an audio clip.',
+  tool_change_audio_speed_without_changing_pitch_faq_q1: 'Is this the same as changing pitch or key?',
+  tool_change_audio_speed_without_changing_pitch_faq_q2: 'Is this a nightcore maker?',
+  tool_change_audio_speed_without_changing_pitch_faq_q3: 'Does the browser just change playbackRate?',
+  tool_change_audio_speed_without_changing_pitch_faq_q4: 'What do the 0.75× and 1.5× presets do?',
+  tool_change_audio_speed_without_changing_pitch_faq_q5: 'Will drums or sharp edits sound perfect?',
+  tool_change_audio_speed_without_changing_pitch_faq_q6: 'Is my audio uploaded to a server?',
+  tool_change_audio_speed_without_changing_pitch_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_change_audio_speed_without_changing_pitch_how_body: 'Pick a speed, run WSOLA time-stretch, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_change_audio_speed_without_changing_pitch_how_item_1: 'Choose an audio file, or select Load sample for a three-second pitched tone demo.',
+  tool_change_audio_speed_without_changing_pitch_how_item_2: 'Open Speed and pick 0.75×, 0.9×, 1.25×, 1.5×, or Custom (default 0.75×).',
+  tool_change_audio_speed_without_changing_pitch_how_item_3: 'Click Stretch and wait for Read → Decode → Stretch → Write to finish.',
+  tool_change_audio_speed_without_changing_pitch_how_item_4: 'Preview that pitch stays while duration changes, check the result line, then click Download WAV.',
+  tool_change_audio_speed_without_changing_pitch_how_title: 'How to change audio speed without changing pitch',
+  tool_change_audio_speed_without_changing_pitch_preview: 'Listen to the time-stretched WAV',
+  tool_change_audio_speed_without_changing_pitch_progress: 'Stretch progress',
+  tool_change_audio_speed_without_changing_pitch_read: 'Read',
+  tool_change_audio_speed_without_changing_pitch_result: '{seconds}s → {outSeconds}s · {speed}× · WAV {output} KiB',
+  tool_change_audio_speed_without_changing_pitch_rules_body:
+    'Each run time-stretches with waveform-similarity overlap-add so speed changes while pitch aims to stay. Soft peak protection keeps the WAV under full scale. Extreme ratios or sharp drums may show light artifacts.',
+  tool_change_audio_speed_without_changing_pitch_rules_item_1: 'Presets are 0.75×, 0.9×, 1.25× and 1.5×. Custom allows 0.5–2.0. Default is 0.75×.',
+  tool_change_audio_speed_without_changing_pitch_rules_item_2:
+    'This is browser WSOLA time-stretch. It is not playbackRate pitch-shift, not a pitch-only shifter, and not nightcore.',
+  tool_change_audio_speed_without_changing_pitch_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_change_audio_speed_without_changing_pitch_rules_item_4: 'One file up to 40 MiB and ten minutes. If splices flutter, try a milder ratio closer to 1.0×.',
+  tool_change_audio_speed_without_changing_pitch_rules_title: 'WSOLA speed, pitch preservation and honest browser limits',
+  tool_change_audio_speed_without_changing_pitch_sample: 'Load sample',
+  tool_change_audio_speed_without_changing_pitch_sample_name: 'three-second-pitch-demo',
+  tool_change_audio_speed_without_changing_pitch_settings_hint:
+    'Default 0.75× slows the take for practice while aiming to keep pitch. 1.25× and 1.5× shorten without a chipmunk effect. Custom accepts 0.5–2.0. This is WSOLA time-stretch—not playbackRate pitch change.',
+  tool_change_audio_speed_without_changing_pitch_speed_075: '0.75×',
+  tool_change_audio_speed_without_changing_pitch_speed_090: '0.9×',
+  tool_change_audio_speed_without_changing_pitch_speed_125: '1.25×',
+  tool_change_audio_speed_without_changing_pitch_speed_150: '1.5×',
+  tool_change_audio_speed_without_changing_pitch_speed_custom: 'Custom',
+  tool_change_audio_speed_without_changing_pitch_speed_label: 'Playback speed (pitch preserved)',
+  tool_change_audio_speed_without_changing_pitch_stretch: 'Stretch',
+  tool_change_audio_speed_without_changing_pitch_title: 'Change audio speed without changing pitch',
+  tool_change_audio_speed_without_changing_pitch_usecase_1: 'A practice song that is too fast—pick 0.75×, Stretch, download WAV.',
+  tool_change_audio_speed_without_changing_pitch_usecase_2: 'A clip that needs a slight speed-up for timing without nightcore pitch rise.',
+  tool_change_audio_speed_without_changing_pitch_usecases_title: 'When this helps',
+  tool_change_audio_speed_without_changing_pitch_why_choose_item_1: 'See input seconds, output seconds, speed and output KiB before you save.',
+  tool_change_audio_speed_without_changing_pitch_why_choose_item_2: 'One clear time-stretch job—WSOLA tempo change, not buried DAW tempo maps.',
+  tool_change_audio_speed_without_changing_pitch_why_choose_item_3:
+    'Decoding, stretch and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_change_audio_speed_without_changing_pitch_why_choose_item_4: 'Changing speed or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_change_audio_speed_without_changing_pitch_why_choose_title: 'Why choose our Change audio speed without changing pitch tools',
+  tool_change_audio_speed_without_changing_pitch_write: 'Write',
   tool_chatgpt_export_to_markdown_article:
     'Turn a ChatGPT export into Markdown on this page. Paste or drop the JSON, get readable turns, and optionally switch to JSON or CSV. Claude exports work on the same canvas. Files stay on your device and are not uploaded to a server.',
   tool_chatgpt_export_to_markdown_choose_file: 'Choose file',
@@ -3750,6 +4337,98 @@ const en: SiteLangDict = {
   tool_compound_interest_usecases_title: 'When to use it',
   tool_compound_interest_years_label: 'Time (years)',
   tool_compound_interest_years_placeholder: 'e.g. 10',
+  tool_compress_dynamic_range_of_a_voice_recording_advanced: 'Compressor settings',
+  tool_compress_dynamic_range_of_a_voice_recording_article:
+    'Uneven voice takes often jump from whispers to peaks. This page runs a soft-knee (light/medium) or hard-knee (heavy) peak-envelope compressor in pure JavaScript: light ≈ −18 dB / 2:1, medium ≈ −24 dB / 3:1 (default), heavy ≈ −30 dB / 6:1. Optional makeup restores overall level after peaks are tamed, with soft peak protect before writing 16-bit WAV. Loud moments are reduced more than soft ones—that is dynamic-range compression, not shrinking an MP3 to save bytes (do not confuse Chinese/English “compress”), not a fixed whole-file dB boost, not peak dBFS normalize, and not podcast LUFS matching. Channel count stays 1 or 2. Keep the original master; the download is a new file. Work runs in the browser on your device.',
+  tool_compress_dynamic_range_of_a_voice_recording_choose: 'Choose an audio file',
+  tool_compress_dynamic_range_of_a_voice_recording_clear: 'Clear',
+  tool_compress_dynamic_range_of_a_voice_recording_compress: 'Compress',
+  tool_compress_dynamic_range_of_a_voice_recording_convert: 'Compress',
+  tool_compress_dynamic_range_of_a_voice_recording_decode: 'Decode',
+  tool_compress_dynamic_range_of_a_voice_recording_desc:
+    'Flatten uneven voice peaks with light/medium/heavy presets and optional makeup, then download a 16-bit WAV. On-device only.',
+  tool_compress_dynamic_range_of_a_voice_recording_description:
+    'Compress the dynamic range of a voice recording with light, medium or heavy threshold/ratio presets and optional makeup gain. Steps: compress, preview, download WAV. Example: load the uneven sample. Dynamics reshaping—not MP3 size compress, not fixed dB gain, not peak or LUFS normalize. Audio stays on your device; never uploaded.',
+  tool_compress_dynamic_range_of_a_voice_recording_done: 'Ready. Preview the compressed WAV, then Download WAV.',
+  tool_compress_dynamic_range_of_a_voice_recording_download: 'Download WAV',
+  tool_compress_dynamic_range_of_a_voice_recording_elapsed: '{s}s elapsed',
+  tool_compress_dynamic_range_of_a_voice_recording_empty: 'Choose an audio file or load the sample first.',
+  tool_compress_dynamic_range_of_a_voice_recording_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_compress_dynamic_range_of_a_voice_recording_err_encoder: 'Could not write the compressed WAV. Check the preset and makeup, then try Compress again.',
+  tool_compress_dynamic_range_of_a_voice_recording_err_file: 'Drop exactly one audio file.',
+  tool_compress_dynamic_range_of_a_voice_recording_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_compress_dynamic_range_of_a_voice_recording_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_compress_dynamic_range_of_a_voice_recording_err_silence: 'Level is essentially silence—nothing to compress. Try a recording with audible level.',
+  tool_compress_dynamic_range_of_a_voice_recording_example:
+    'Load sample builds a two-second 440 Hz tone with loud and soft bursts, then Compress at Medium with Makeup On automatically. Playback never starts by itself—press play on the preview if you want to hear the flatter dynamics.',
+  tool_compress_dynamic_range_of_a_voice_recording_example_title: 'Try a real dynamic-range compress',
+  tool_compress_dynamic_range_of_a_voice_recording_failed: 'Compress failed. Try a smaller, valid audio file.',
+  tool_compress_dynamic_range_of_a_voice_recording_faq_a1:
+    'No. “Compress” here means dynamic-range compression (threshold/ratio), not reducing bitrate or bytes. For smaller MP3 files, use Reduce an MP3 file size. In Chinese, 压缩人声动态 ≠ 压缩 MP3 体积.',
+  tool_compress_dynamic_range_of_a_voice_recording_faq_a2:
+    'No. Fixed gain multiplies the whole clip by one dB amount. Here loud parts are reduced more than soft parts. For uniform boost, use Make a quiet recording louder.',
+  tool_compress_dynamic_range_of_a_voice_recording_faq_a3:
+    'No. Peak normalize scales so the absolute peak hits a dBFS target. LUFS matching aims at integrated loudness. This page reshapes dynamics with a compressor. Use Normalize an audio file to peak or Match podcast loudness to −16 LUFS for those jobs.',
+  tool_compress_dynamic_range_of_a_voice_recording_faq_a4:
+    'They set threshold, ratio and knee. Light ≈ −18 dB / 2:1 soft; Medium ≈ −24 / 3:1 soft; Heavy ≈ −30 / 6:1 hard. Makeup On/Off is separate.',
+  tool_compress_dynamic_range_of_a_voice_recording_faq_a5:
+    'Usually yes—compression can make the average quieter; makeup restores level with soft peak protect. Turn Off when you only want quieter peaks without a post-boost.',
+  tool_compress_dynamic_range_of_a_voice_recording_faq_a6:
+    'No. Decoding, compression and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For loudness or gain jobs, use Match podcast loudness to −16 LUFS or Make a quiet recording louder.',
+  tool_compress_dynamic_range_of_a_voice_recording_faq_q1: 'Is this the same as compressing / shrinking an MP3 file size?',
+  tool_compress_dynamic_range_of_a_voice_recording_faq_q2: 'Is this the same as making a quiet recording louder with fixed dB gain?',
+  tool_compress_dynamic_range_of_a_voice_recording_faq_q3: 'Is this peak normalize or podcast LUFS matching?',
+  tool_compress_dynamic_range_of_a_voice_recording_faq_q4: 'What do Light, Medium and Heavy change?',
+  tool_compress_dynamic_range_of_a_voice_recording_faq_q5: 'Should I leave Makeup On?',
+  tool_compress_dynamic_range_of_a_voice_recording_faq_q6: 'Is my audio uploaded to a server?',
+  tool_compress_dynamic_range_of_a_voice_recording_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_compress_dynamic_range_of_a_voice_recording_how_body:
+    'Pick an intensity preset, choose optional makeup, compress dynamics, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_compress_dynamic_range_of_a_voice_recording_how_item_1: 'Choose a voice recording, or select Load sample for a two-second uneven tone demonstration.',
+  tool_compress_dynamic_range_of_a_voice_recording_how_item_2:
+    'Open Compressor settings and pick Light, Medium (default), or Heavy; leave Makeup On unless you want only peak control.',
+  tool_compress_dynamic_range_of_a_voice_recording_how_item_3: 'Click Compress and wait for Read → Decode → Compress → Write to finish.',
+  tool_compress_dynamic_range_of_a_voice_recording_how_item_4: 'Preview the result, check preset and makeup, then click Download WAV.',
+  tool_compress_dynamic_range_of_a_voice_recording_how_title: 'How to compress dynamic range of a voice recording',
+  tool_compress_dynamic_range_of_a_voice_recording_makeup_label: 'Makeup gain',
+  tool_compress_dynamic_range_of_a_voice_recording_makeup_off: 'Off',
+  tool_compress_dynamic_range_of_a_voice_recording_makeup_on: 'On',
+  tool_compress_dynamic_range_of_a_voice_recording_preset_heavy: 'Heavy',
+  tool_compress_dynamic_range_of_a_voice_recording_preset_label: 'Intensity preset',
+  tool_compress_dynamic_range_of_a_voice_recording_preset_light: 'Light',
+  tool_compress_dynamic_range_of_a_voice_recording_preset_medium: 'Medium',
+  tool_compress_dynamic_range_of_a_voice_recording_preview: 'Listen to the compressed WAV',
+  tool_compress_dynamic_range_of_a_voice_recording_progress: 'Compress progress',
+  tool_compress_dynamic_range_of_a_voice_recording_read: 'Read',
+  tool_compress_dynamic_range_of_a_voice_recording_result: '{seconds}s · {preset} · makeup {makeup} · WAV {output} KiB',
+  tool_compress_dynamic_range_of_a_voice_recording_rules_body:
+    'A peak-envelope compressor reduces gain when the level crosses the threshold, by the chosen ratio (soft knee on Light/Medium; hard knee on Heavy). Makeup multiplies afterward; soft peak protect keeps samples under ~0.99. That reshapes loud vs soft parts—unlike fixed whole-file gain, peak normalize, LUFS match, or MP3 bitrate shrink.',
+  tool_compress_dynamic_range_of_a_voice_recording_rules_item_1:
+    'Medium (−24 dB, 3:1, soft knee) is the default. Light is milder; Heavy uses a lower threshold, higher ratio and hard knee.',
+  tool_compress_dynamic_range_of_a_voice_recording_rules_item_2:
+    'Makeup defaults On and restores overall level after peaks are tamed. Turn Off if you only want quieter peaks without makeup lift.',
+  tool_compress_dynamic_range_of_a_voice_recording_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_compress_dynamic_range_of_a_voice_recording_rules_item_4:
+    'One file up to 40 MiB and ten minutes. This is not MP3 size compression, not fixed-gain amplify, not peak normalize, and not LUFS matching.',
+  tool_compress_dynamic_range_of_a_voice_recording_rules_title: 'Threshold, ratio, makeup and limits',
+  tool_compress_dynamic_range_of_a_voice_recording_sample: 'Load sample',
+  tool_compress_dynamic_range_of_a_voice_recording_sample_name: 'two-second-uneven-voice-demo',
+  tool_compress_dynamic_range_of_a_voice_recording_settings_hint:
+    'Light (−18 dB, 2:1, soft knee) is mild. Medium (−24 dB, 3:1, soft knee) suits most voiceovers. Heavy (−30 dB, 6:1, hard knee) squeezes peaks harder. Makeup (default On) restores overall level after compression with soft peak protect.',
+  tool_compress_dynamic_range_of_a_voice_recording_title: 'Compress dynamic range of a voice recording',
+  tool_compress_dynamic_range_of_a_voice_recording_usecase_1: 'A voiceover that jumps from quiet phrases to loud peaks—pick Medium, compress, download WAV.',
+  tool_compress_dynamic_range_of_a_voice_recording_usecase_2:
+    'An interview track you want more even before loudness matching, without shrinking an MP3 for file size.',
+  tool_compress_dynamic_range_of_a_voice_recording_usecases_title: 'When this helps',
+  tool_compress_dynamic_range_of_a_voice_recording_why_choose_item_1: 'See preset, makeup state and output KiB before you save.',
+  tool_compress_dynamic_range_of_a_voice_recording_why_choose_item_2: 'Three clear voice intensity presets—one dynamics job, not a buried MP3-size / gain / normalize wall.',
+  tool_compress_dynamic_range_of_a_voice_recording_why_choose_item_3:
+    'Decoding, compression and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_compress_dynamic_range_of_a_voice_recording_why_choose_item_4:
+    'Changing the preset, makeup or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_compress_dynamic_range_of_a_voice_recording_why_choose_title: 'Why choose our Compress dynamic range of a voice recording tools',
+  tool_compress_dynamic_range_of_a_voice_recording_write: 'Write',
   tool_compress_pdf_article:
     'Shrink PDF file size in your browser by re-rendering pages as JPEG and rebuilding the document—files stay on your device, not on a server. This is honest, limited compression, not cloud-grade re-encoding.',
   tool_compress_pdf_choose_file: 'Choose PDF',
@@ -3977,6 +4656,83 @@ const en: SiteLangDict = {
   tool_contribution_margin_usecases_title: 'When to use it',
   tool_contribution_margin_vc_label: 'Variable cost per unit',
   tool_contribution_margin_vc_ph: 'e.g. 30',
+  tool_convert_a_flac_file_to_mp3_advanced: 'Advanced settings (optional)',
+  tool_convert_a_flac_file_to_mp3_article:
+    'Archived music or voice often lives as FLAC. Players and chat apps still ask for MP3. This page opens one local FLAC, asks the browser to decode it, then encodes MP3 with lamejs on your device. FLAC decode support varies by browser; when decode fails you see a clear message instead of a silent hang. Keep the FLAC master—MP3 is lossy. Related WAV and M4A converters sit nearby. Work stays on-device.',
+  tool_convert_a_flac_file_to_mp3_bitrate: 'MP3 bitrate',
+  tool_convert_a_flac_file_to_mp3_choose: 'Choose a FLAC file',
+  tool_convert_a_flac_file_to_mp3_clear: 'Clear',
+  tool_convert_a_flac_file_to_mp3_convert: 'Convert to MP3',
+  tool_convert_a_flac_file_to_mp3_decode: 'Decode audio',
+  tool_convert_a_flac_file_to_mp3_desc:
+    'Turn one local FLAC recording into MP3. Your audio stays on your device and is not uploaded to a server.',
+  tool_convert_a_flac_file_to_mp3_description:
+    'Convert a FLAC file to MP3 in the browser without uploading. Steps: Choose a FLAC, Convert to MP3, preview, download. Example: five-second stereo tone sample at 192 kbps. Browser FLAC support varies—decode failures show a clear error. Never uploaded.',
+  tool_convert_a_flac_file_to_mp3_done: 'Ready. Listen to the result, then Download MP3.',
+  tool_convert_a_flac_file_to_mp3_download: 'Download MP3',
+  tool_convert_a_flac_file_to_mp3_elapsed: 'Elapsed: {s}s',
+  tool_convert_a_flac_file_to_mp3_empty: 'Choose a FLAC or load the sample first.',
+  tool_convert_a_flac_file_to_mp3_encode: 'Encode MP3',
+  tool_convert_a_flac_file_to_mp3_err_decode:
+    'This browser could not decode the FLAC. Support varies—try Chrome/Firefox, or export WAV/M4A from your app and use the related converters.',
+  tool_convert_a_flac_file_to_mp3_err_encoder: 'The MP3 encoder could not load. Check the connection and click Convert to MP3 again.',
+  tool_convert_a_flac_file_to_mp3_err_file: 'Drop exactly one FLAC file.',
+  tool_convert_a_flac_file_to_mp3_err_format:
+    'Unsupported or damaged audio. Use a FLAC file (fLaC header). Video, DRM and non-FLAC containers are not accepted.',
+  tool_convert_a_flac_file_to_mp3_err_limit: 'The recording exceeds 40 MiB or 10 minutes, or is not mono/stereo.',
+  tool_convert_a_flac_file_to_mp3_err_sample: 'The sample could not load. Check the connection and try Load sample again.',
+  tool_convert_a_flac_file_to_mp3_example:
+    'On opening, a five-second stereo FLAC tone loads from this site and converts at 192 kbps. Load sample repeats it. Playback never starts by itself.',
+  tool_convert_a_flac_file_to_mp3_example_title: 'A real FLAC conversion example',
+  tool_convert_a_flac_file_to_mp3_failed: 'Conversion failed. Try a shorter unprotected FLAC, or another browser if decode failed.',
+  tool_convert_a_flac_file_to_mp3_faq_a1: 'No. MP3 encoding is lossy even at 320 kbps. Keep the FLAC master if you need lossless quality later.',
+  tool_convert_a_flac_file_to_mp3_faq_a2:
+    'Browser FLAC support varies. Some environments lack a decoder or hit memory limits. Try a current Chrome or Firefox, a shorter file, or export WAV/M4A and use the related converters.',
+  tool_convert_a_flac_file_to_mp3_faq_a3:
+    'No. Decoding and encoding run in the browser on your device. Initial page, sample and encoder loading need a connection; offline availability is not guaranteed.',
+  tool_convert_a_flac_file_to_mp3_faq_a4:
+    'This page is for FLAC. Use the related Convert an OGG file to MP3 or Convert an M4A file to MP3 pages for those formats.',
+  tool_convert_a_flac_file_to_mp3_faq_a5:
+    'This tool converts one complete local FLAC to one MP3. It does not trim, accept playlists or upload to a server.',
+  tool_convert_a_flac_file_to_mp3_faq_q1: 'Is FLAC to MP3 lossless?',
+  tool_convert_a_flac_file_to_mp3_faq_q2: 'Why does a valid FLAC fail to decode?',
+  tool_convert_a_flac_file_to_mp3_faq_q3: 'Is my recording uploaded?',
+  tool_convert_a_flac_file_to_mp3_faq_q4: 'Can I convert OGG or M4A here?',
+  tool_convert_a_flac_file_to_mp3_faq_q5: 'Can I trim or batch-convert?',
+  tool_convert_a_flac_file_to_mp3_hint: 'One file, up to 40 MiB and 10 minutes. Mono/stereo FLAC; decoding depends on your browser.',
+  tool_convert_a_flac_file_to_mp3_how_body: 'Create an MP3 copy of a whole FLAC for a player that requests MP3—without uploading the file.',
+  tool_convert_a_flac_file_to_mp3_how_item_1: 'Choose a FLAC file, or click Load sample for a real FLAC demonstration.',
+  tool_convert_a_flac_file_to_mp3_how_item_2: 'Keep the default bitrate or open Advanced settings, then click Convert to MP3.',
+  tool_convert_a_flac_file_to_mp3_how_item_3: 'Wait for Read → Decode → Encode. If decode fails, the page shows a clear browser-support message.',
+  tool_convert_a_flac_file_to_mp3_how_item_4: 'Listen to the MP3, compare measured sizes, then click Download MP3.',
+  tool_convert_a_flac_file_to_mp3_how_title: 'How to convert a FLAC file to MP3',
+  tool_convert_a_flac_file_to_mp3_preview: 'Listen to the MP3',
+  tool_convert_a_flac_file_to_mp3_progress: 'Conversion progress',
+  tool_convert_a_flac_file_to_mp3_read: 'Read recording',
+  tool_convert_a_flac_file_to_mp3_result:
+    '{seconds}s decoded audio · Input {input} KiB → MP3 {output} KiB · {kbps} kbps · 44.1 kHz · {channels} channel(s)',
+  tool_convert_a_flac_file_to_mp3_rules_body:
+    'Approximate MP3 bytes ≈ duration × kbps × 1000 ÷ 8. Measured size is shown; padding may add a little.',
+  tool_convert_a_flac_file_to_mp3_rules_item_1:
+    'Try 128 kbps for speech, 192 for general sharing or 320 for music. None restores detail already lost—or adds detail FLAC had that MP3 drops.',
+  tool_convert_a_flac_file_to_mp3_rules_item_2: 'Output is 44.1 kHz with one or two channels. Tags and cover art are not copied.',
+  tool_convert_a_flac_file_to_mp3_rules_item_3:
+    'One FLAC, at most 40 MiB and 10 minutes. Codec support varies by browser. No DRM, video, surround or batch.',
+  tool_convert_a_flac_file_to_mp3_rules_item_4: 'If decode fails, keep the FLAC and try another browser or convert via WAV/M4A related tools.',
+  tool_convert_a_flac_file_to_mp3_rules_title: 'Bitrate, quality and honest limits',
+  tool_convert_a_flac_file_to_mp3_sample: 'Load sample',
+  tool_convert_a_flac_file_to_mp3_sample_name: 'five-second-flac-demo',
+  tool_convert_a_flac_file_to_mp3_settings_hint:
+    '192 kbps by default. 128 saves space; 320 uses more space for encoding detail. Output: 44.1 kHz, original mono/stereo channels.',
+  tool_convert_a_flac_file_to_mp3_title: 'Convert a FLAC file to MP3',
+  tool_convert_a_flac_file_to_mp3_usecase_1: 'Share a FLAC archive track with someone whose player only opens MP3.',
+  tool_convert_a_flac_file_to_mp3_usecase_2: 'Make an MP3 attachment from a lossless voice memo while keeping the FLAC master.',
+  tool_convert_a_flac_file_to_mp3_usecases_title: 'Useful for',
+  tool_convert_a_flac_file_to_mp3_why_choose_item_1: 'The built-in FLAC sample runs through the same decode and MP3 path as your file.',
+  tool_convert_a_flac_file_to_mp3_why_choose_item_2: 'You hear the actual output and see input/output KiB before saving.',
+  tool_convert_a_flac_file_to_mp3_why_choose_item_3: 'Decode failures are explicit—browser FLAC support varies and we do not hide that.',
+  tool_convert_a_flac_file_to_mp3_why_choose_item_4: 'Processing stays on your device; related WAV and M4A converters are one click away.',
+  tool_convert_a_flac_file_to_mp3_why_choose_title: 'Why choose our Convert a FLAC file to MP3 tools',
   tool_convert_a_jpg_to_text_with_ocr_advanced: 'Advanced settings (optional)',
   tool_convert_a_jpg_to_text_with_ocr_article:
     'Drop a printed JPG or screenshot, run Convert in this tab, then copy the text or download a .txt file. Chinese and English are the default language chips; Arabic and Japanese load extra packs when you pick them.',
@@ -4149,6 +4905,83 @@ const en: SiteLangDict = {
   tool_convert_a_wav_file_to_mp3_why_choose_item_3:
     'WAV headers and duration are checked before decoding; unsupported files get a visible error instead of a partial download.',
   tool_convert_a_wav_file_to_mp3_why_choose_title: 'Why choose our Convert a WAV file to MP3 tools',
+  tool_convert_an_aiff_file_to_wav_advanced: 'Advanced settings (optional)',
+  tool_convert_an_aiff_file_to_wav_article:
+    'Logic Pro and older Mac tools often export AIFF or CAF. Many editors and players prefer WAV. This page opens one local AIFF/CAF, asks the browser to decode it, then writes 16-bit PCM WAV on your device. Decode support varies; when decode fails you see a clear message. The PCM path is lossless relative to decoded samples—keep the original if you need the source container.',
+  tool_convert_an_aiff_file_to_wav_bitrate: 'WAV sample rate',
+  tool_convert_an_aiff_file_to_wav_choose: 'Choose an AIFF or CAF file',
+  tool_convert_an_aiff_file_to_wav_clear: 'Clear',
+  tool_convert_an_aiff_file_to_wav_convert: 'Convert to WAV',
+  tool_convert_an_aiff_file_to_wav_decode: 'Decode audio',
+  tool_convert_an_aiff_file_to_wav_desc:
+    'Turn one local AIFF or CAF recording into WAV. Your audio stays on your device and is not uploaded to a server.',
+  tool_convert_an_aiff_file_to_wav_description:
+    'Convert an AIFF file to WAV in the browser without uploading. Steps: choose AIFF/CAF, pick sample rate, Convert to WAV, preview and download. Example: five-second stereo AIFF tone at 44.1 kHz becomes 16-bit PCM WAV. Browser decode varies; clear error if decode fails. Files stay on your device.',
+  tool_convert_an_aiff_file_to_wav_done: 'Ready. Listen to the result, then Download WAV.',
+  tool_convert_an_aiff_file_to_wav_download: 'Download WAV',
+  tool_convert_an_aiff_file_to_wav_elapsed: 'Elapsed: {s}s',
+  tool_convert_an_aiff_file_to_wav_empty: 'Choose an AIFF/CAF file or load the sample first.',
+  tool_convert_an_aiff_file_to_wav_encode: 'Encode WAV',
+  tool_convert_an_aiff_file_to_wav_err_decode:
+    'This browser could not decode the AIFF or CAF. Support varies—try Chrome/Firefox or export a shorter unprotected file.',
+  tool_convert_an_aiff_file_to_wav_err_encoder: 'The WAV writer could not finish. Check the connection and click Convert to WAV again.',
+  tool_convert_an_aiff_file_to_wav_err_file: 'Drop exactly one AIFF or CAF file.',
+  tool_convert_an_aiff_file_to_wav_err_format:
+    'Unsupported or damaged audio. Use AIFF/CAF your browser can decode. Video, DRM and non-AIFF containers are not accepted.',
+  tool_convert_an_aiff_file_to_wav_err_limit: 'The recording exceeds 40 MiB or 10 minutes, or is not mono/stereo.',
+  tool_convert_an_aiff_file_to_wav_err_sample: 'The sample could not load. Check the connection and try Load sample again.',
+  tool_convert_an_aiff_file_to_wav_example:
+    'On opening, a five-second stereo AIFF tone loads from this site and converts to 16-bit WAV at 44.1 kHz. Load sample repeats it. Playback never starts by itself.',
+  tool_convert_an_aiff_file_to_wav_example_title: 'A real AIFF conversion example',
+  tool_convert_an_aiff_file_to_wav_failed: 'Conversion failed. Try a shorter AIFF/CAF file or another browser if decode failed.',
+  tool_convert_an_aiff_file_to_wav_faq_a1:
+    'Yes. Drop a .caf file if your browser can decode it—the same Convert to WAV control handles AIFF and CAF.',
+  tool_convert_an_aiff_file_to_wav_faq_a2:
+    'Decoded samples are written as 16-bit PCM without another lossy codec. That is lossless for the decoded waveform, but browser decode support varies and metadata is not copied.',
+  tool_convert_an_aiff_file_to_wav_faq_a3:
+    'No. Decoding and WAV writing run in the browser on your device. Initial page and sample loading need a connection; offline availability is not guaranteed.',
+  tool_convert_an_aiff_file_to_wav_faq_a4:
+    'No. This page is AIFF/CAF → WAV only. For MP3, use the related Convert a FLAC file to MP3 or Convert an M4A file to MP3 pages.',
+  tool_convert_an_aiff_file_to_wav_faq_a5:
+    'Browser AIFF/CAF decode support varies. Some environments lack a decoder or hit memory limits. Try a current browser, a shorter file, or export WAV from your app.',
+  tool_convert_an_aiff_file_to_wav_faq_q1: 'Can I convert CAF files here?',
+  tool_convert_an_aiff_file_to_wav_faq_q2: 'Is AIFF to WAV lossless?',
+  tool_convert_an_aiff_file_to_wav_faq_q3: 'Is my recording uploaded?',
+  tool_convert_an_aiff_file_to_wav_faq_q4: 'Can I get MP3 output here?',
+  tool_convert_an_aiff_file_to_wav_faq_q5: 'Why does a valid AIFF fail to decode?',
+  tool_convert_an_aiff_file_to_wav_hint:
+    'Drop one .aiff, .aif or .caf file. Up to 40 MiB and 10 minutes; mono or stereo. Decoding depends on your browser.',
+  tool_convert_an_aiff_file_to_wav_how_body: 'Create a WAV copy of a whole AIFF or CAF for an editor that expects WAV—without uploading the file.',
+  tool_convert_an_aiff_file_to_wav_how_item_1: 'Choose an AIFF/CAF file, or click Load sample for a real AIFF demonstration.',
+  tool_convert_an_aiff_file_to_wav_how_item_2: 'Keep 44.1 kHz or pick 48 kHz under Advanced settings, then click Convert to WAV.',
+  tool_convert_an_aiff_file_to_wav_how_item_3: 'Wait for Read → Decode → Encode. If decode fails, the page shows a clear browser-support message.',
+  tool_convert_an_aiff_file_to_wav_how_item_4: 'Listen to the WAV, compare measured sizes, then click Download WAV.',
+  tool_convert_an_aiff_file_to_wav_how_title: 'How to convert an AIFF file to WAV',
+  tool_convert_an_aiff_file_to_wav_preview: 'Listen to the WAV',
+  tool_convert_an_aiff_file_to_wav_progress: 'Conversion progress',
+  tool_convert_an_aiff_file_to_wav_read: 'Read recording',
+  tool_convert_an_aiff_file_to_wav_result: '{seconds}s decoded audio · Input {input} KiB → WAV {output} KiB · {kbps} Hz · {channels} channel(s)',
+  tool_convert_an_aiff_file_to_wav_rules_body: 'WAV size ≈ seconds × sample rate × channels × 2 bytes (16-bit PCM). Measured size is shown.',
+  tool_convert_an_aiff_file_to_wav_rules_item_1:
+    'Pick 44.1 kHz for most music workflows or 48 kHz for video-aligned audio. PCM export does not apply MP3-style loss.',
+  tool_convert_an_aiff_file_to_wav_rules_item_2: 'Output is 16-bit PCM with one or two channels. Tags and metadata are not copied.',
+  tool_convert_an_aiff_file_to_wav_rules_item_3:
+    'One AIFF/CAF, at most 40 MiB and 10 minutes. Codec support varies by browser. No DRM, video, surround or batch.',
+  tool_convert_an_aiff_file_to_wav_rules_item_4: 'This page outputs WAV only—not MP3. For MP3 out, use the related FLAC or M4A converters.',
+  tool_convert_an_aiff_file_to_wav_rules_title: 'Sample rate, PCM path and honest limits',
+  tool_convert_an_aiff_file_to_wav_sample: 'Load sample',
+  tool_convert_an_aiff_file_to_wav_sample_name: 'five-second-aiff-demo',
+  tool_convert_an_aiff_file_to_wav_settings_hint:
+    '44.1 kHz by default, or 48 kHz. Output is 16-bit PCM WAV with the original mono/stereo channel count.',
+  tool_convert_an_aiff_file_to_wav_title: 'Convert an AIFF file to WAV',
+  tool_convert_an_aiff_file_to_wav_usecase_1: 'Open a Logic or GarageBand AIFF export in a Windows editor that prefers WAV.',
+  tool_convert_an_aiff_file_to_wav_usecase_2: 'Convert a CAF voice memo to WAV while keeping the original container.',
+  tool_convert_an_aiff_file_to_wav_usecases_title: 'Useful for',
+  tool_convert_an_aiff_file_to_wav_why_choose_item_1: 'The built-in AIFF sample runs through the same decode and WAV path as your file.',
+  tool_convert_an_aiff_file_to_wav_why_choose_item_2: 'You hear the actual output and see input/output KiB before saving.',
+  tool_convert_an_aiff_file_to_wav_why_choose_item_3: 'Decode failures are explicit—browser AIFF/CAF support varies and we do not hide that.',
+  tool_convert_an_aiff_file_to_wav_why_choose_item_4: 'Processing stays on your device; related MP3→WAV and FLAC→MP3 converters are one click away.',
+  tool_convert_an_aiff_file_to_wav_why_choose_title: 'Why choose our Convert an AIFF file to WAV tools',
   tool_convert_an_m4a_file_to_mp3_advanced: 'Advanced settings (optional)',
   tool_convert_an_m4a_file_to_mp3_article:
     'A voice memo saved as M4A may not open in the recipient’s player. Make a complete MP3 copy and listen before sending it. Changing AAC to MP3 adds another lossy encoding step; a larger file does not mean better source quality. Keep the original recording.',
@@ -4303,6 +5136,87 @@ const en: SiteLangDict = {
   tool_convert_an_mp3_file_to_wav_why_choose_item_3:
     'MP3 headers and duration are checked before decoding; unsupported files get a visible error instead of a partial download.',
   tool_convert_an_mp3_file_to_wav_why_choose_title: 'Why choose our Convert an WAV file to MP3 tools',
+  tool_convert_an_ogg_file_to_mp3_advanced: 'Advanced settings (optional)',
+  tool_convert_an_ogg_file_to_mp3_article:
+    'Voice notes and game audio often arrive as OGG Vorbis or Opus. Recipients may still need MP3. This page converts one complete local OGG container—Vorbis or Opus—into an MP3 you can preview. Encoding to MP3 is another lossy step, so keep the original. Success depends on whether your browser can decode that OGG stream.',
+  tool_convert_an_ogg_file_to_mp3_bitrate: 'MP3 bitrate',
+  tool_convert_an_ogg_file_to_mp3_choose: 'Choose an OGG or Opus file',
+  tool_convert_an_ogg_file_to_mp3_clear: 'Clear',
+  tool_convert_an_ogg_file_to_mp3_convert: 'Convert to MP3',
+  tool_convert_an_ogg_file_to_mp3_decode: 'Decode audio',
+  tool_convert_an_ogg_file_to_mp3_desc:
+    'Turn one local OGG or Opus recording into MP3. Your audio stays on your device and is not uploaded to a server.',
+  tool_convert_an_ogg_file_to_mp3_description:
+    'Convert an OGG file to MP3 in the browser without uploading. Steps: choose an OGG or Opus file, pick bitrate, Convert to MP3, preview and download. Example: a five-second stereo Opus-in-OGG tone becomes about 120 KiB of MP3 at 192 kbps. Uses decodeAudioData when your browser can decode OGG/Opus, then lamejs; you get a clear error if decode fails. Files stay on your device.',
+  tool_convert_an_ogg_file_to_mp3_done: 'Ready. Listen to the result, then Download MP3.',
+  tool_convert_an_ogg_file_to_mp3_download: 'Download MP3',
+  tool_convert_an_ogg_file_to_mp3_elapsed: 'Elapsed: {s}s',
+  tool_convert_an_ogg_file_to_mp3_empty: 'Choose an OGG or Opus file or load the sample first.',
+  tool_convert_an_ogg_file_to_mp3_encode: 'Encode MP3',
+  tool_convert_an_ogg_file_to_mp3_err_decode:
+    'This browser could not decode the OGG or Opus stream. Try a current browser or a shorter unprotected file.',
+  tool_convert_an_ogg_file_to_mp3_err_encoder: 'The MP3 encoder could not load. Check the connection and click Convert to MP3 again.',
+  tool_convert_an_ogg_file_to_mp3_err_file: 'Drop exactly one OGG or Opus file.',
+  tool_convert_an_ogg_file_to_mp3_err_format:
+    'Unsupported or damaged OGG. Use an OggS container with Vorbis or Opus audio. Video-only OGG, Speex-only and playlists are not accepted here.',
+  tool_convert_an_ogg_file_to_mp3_err_limit: 'The recording exceeds 40 MiB or 10 minutes, or is not mono/stereo.',
+  tool_convert_an_ogg_file_to_mp3_err_sample: 'The sample could not load. Check the connection and try Load sample again.',
+  tool_convert_an_ogg_file_to_mp3_example:
+    'On open, a five-second stereo Opus-in-OGG tone loads from this site and converts at 192 kbps to about 120 KiB of MP3. Load sample repeats it. The result is ready to preview but does not play automatically.',
+  tool_convert_an_ogg_file_to_mp3_example_title: 'A real OGG conversion example',
+  tool_convert_an_ogg_file_to_mp3_failed: 'Conversion failed. Try a shorter OGG or Opus file your browser can decode.',
+  tool_convert_an_ogg_file_to_mp3_faq_a1:
+    'Yes. Opus inside an OGG container (and .opus files your browser treats as OGG) use the same Convert to MP3 control. Renaming the extension alone does not convert audio.',
+  tool_convert_an_ogg_file_to_mp3_faq_a2:
+    'Your file stays on your device. Decoding and encoding run in the browser without uploading it to a server. Initial page, sample and encoder loading need a connection; offline availability is not guaranteed.',
+  tool_convert_an_ogg_file_to_mp3_faq_a3:
+    'The browser may lack Vorbis/Opus decode support or memory. Video-only OGG and multichannel files are rejected. Try the built-in sample in a current browser first.',
+  tool_convert_an_ogg_file_to_mp3_faq_a4:
+    'No. Both OGG/Opus sources and MP3 output are lossy codecs. A higher MP3 bitrate cannot restore detail already discarded.',
+  tool_convert_an_ogg_file_to_mp3_faq_a5:
+    'This page converts one complete local OGG/Opus file to one MP3. It does not offer a format matrix, playlists, video links or batch folders.',
+  tool_convert_an_ogg_file_to_mp3_faq_q1: 'Can I also convert Opus to MP3?',
+  tool_convert_an_ogg_file_to_mp3_faq_q2: 'Is my recording uploaded? Can I work offline?',
+  tool_convert_an_ogg_file_to_mp3_faq_q3: 'Why does a valid OGG fail on my phone?',
+  tool_convert_an_ogg_file_to_mp3_faq_q4: 'Is OGG to MP3 lossless?',
+  tool_convert_an_ogg_file_to_mp3_faq_q5: 'Can I convert several files or OGG to WAV here?',
+  tool_convert_an_ogg_file_to_mp3_hint:
+    'Drop one .ogg, .oga or .opus file. Up to 40 MiB and 10 minutes; mono or stereo. Decoding depends on your browser.',
+  tool_convert_an_ogg_file_to_mp3_how_body: 'Create an MP3 copy of a whole OGG or Opus file when the recipient’s player expects MP3.',
+  tool_convert_an_ogg_file_to_mp3_how_item_1: 'Choose an OGG or Opus file, or click Load sample for a real OGG demonstration.',
+  tool_convert_an_ogg_file_to_mp3_how_item_2: 'Keep the default bitrate or open Advanced settings, then click Convert to MP3.',
+  tool_convert_an_ogg_file_to_mp3_how_item_3: 'Wait for Read → Decode → Encode. If decode fails, you will see a clear browser-support error.',
+  tool_convert_an_ogg_file_to_mp3_how_item_4: 'Listen to the MP3, compare measured sizes, then click Download MP3.',
+  tool_convert_an_ogg_file_to_mp3_how_title: 'How to convert an OGG recording to MP3',
+  tool_convert_an_ogg_file_to_mp3_preview: 'Listen to the MP3',
+  tool_convert_an_ogg_file_to_mp3_progress: 'Conversion progress',
+  tool_convert_an_ogg_file_to_mp3_read: 'Read recording',
+  tool_convert_an_ogg_file_to_mp3_result:
+    '{seconds}s decoded audio · Input {input} KiB → MP3 {output} KiB · {kbps} kbps · 44.1 kHz · {channels} channel(s)',
+  tool_convert_an_ogg_file_to_mp3_rules_body:
+    'Approximate MP3 bytes ≈ seconds × kbps × 1000 ÷ 8. The displayed size is measured; encoder padding adds a little.',
+  tool_convert_an_ogg_file_to_mp3_rules_item_1:
+    'Try 128 kbps for speech, 192 for general sharing, or 320 for more musical detail. MP3 is lossy relative to the OGG/Opus source.',
+  tool_convert_an_ogg_file_to_mp3_rules_item_2:
+    'Output is 44.1 kHz with one or two channels. Tags are not copied. Playback may be slightly longer due to encoder padding.',
+  tool_convert_an_ogg_file_to_mp3_rules_item_3:
+    'One OGG/Opus file up to 40 MiB and 10 minutes. Codec support varies by browser. No video-only OGG, surround, DRM or batch jobs.',
+  tool_convert_an_ogg_file_to_mp3_rules_item_4:
+    'Opus-to-MP3 searches are handled on this same page—no separate URL. For FLAC or M4A, use the related converters.',
+  tool_convert_an_ogg_file_to_mp3_rules_title: 'Bitrate, Opus absorption and limits',
+  tool_convert_an_ogg_file_to_mp3_sample: 'Load sample',
+  tool_convert_an_ogg_file_to_mp3_sample_name: 'five-second-ogg-demo',
+  tool_convert_an_ogg_file_to_mp3_settings_hint:
+    '192 kbps by default. 128 saves space; 320 uses more space for encoding detail. Output: 44.1 kHz, original mono/stereo channels.',
+  tool_convert_an_ogg_file_to_mp3_title: 'Convert an OGG file to MP3',
+  tool_convert_an_ogg_file_to_mp3_usecase_1: 'Send a game or chat OGG clip to someone whose player expects MP3.',
+  tool_convert_an_ogg_file_to_mp3_usecase_2: 'Convert an Opus voice note into an MP3 attachment while keeping the original.',
+  tool_convert_an_ogg_file_to_mp3_usecases_title: 'Useful for',
+  tool_convert_an_ogg_file_to_mp3_why_choose_item_1: 'The built-in Opus-in-OGG sample runs through the same decode and MP3 path as your file.',
+  tool_convert_an_ogg_file_to_mp3_why_choose_item_2: 'You hear the actual output and see measured input/output sizes before saving.',
+  tool_convert_an_ogg_file_to_mp3_why_choose_item_3: 'OggS containers are checked first; unsupported streams fail early instead of a broken download.',
+  tool_convert_an_ogg_file_to_mp3_why_choose_item_4: 'Processing stays on your device—the page does not upload your recording to convert it.',
+  tool_convert_an_ogg_file_to_mp3_why_choose_title: 'Why choose our Convert an OGG file to MP3 tools',
   tool_convert_audio_sample_rate_and_bit_depth_advanced: 'Sample rate and bit depth',
   tool_convert_audio_sample_rate_and_bit_depth_article:
     'Delivery specs often ask for 44.1 kHz / 16-bit or 48 kHz WAV. This page resamples the whole clip with OfflineAudioContext, then writes PCM at 16 or 24-bit. It is not an MP3 size compressor and does not promise transparent listening after resampling or quantization.',
@@ -4668,6 +5582,92 @@ const en: SiteLangDict = {
   tool_convert_pdf_to_pdf_a_usecases_title: 'Good fits',
   tool_convert_pdf_to_pdf_a_warn_large: 'Large file — may be slow.',
   tool_convert_pdf_to_pdf_a_warn_pdflib: 'PDF builder failed to load. Retry on a desktop browser.',
+  tool_convert_stereo_audio_to_mono_advanced: 'Output channel mode',
+  tool_convert_stereo_audio_to_mono_article:
+    'Upload portals, voice memo apps, and some hardware still ask for a single-channel file. This page takes one stereo (or mono) clip your browser can decode, then builds a 16-bit mono WAV: Mix averages left and right, Left only keeps the left track, Right only keeps the right. Mixing can soften hard-panned parts and, in rare phase-opposed takes, cancel energy—listen before you keep the result. This is not sample-rate or bit-depth conversion, not MP3 size compression, and not splitting stereo into two downloadable files. The original file is never overwritten; work stays in the browser.',
+  tool_convert_stereo_audio_to_mono_choose: 'Choose an audio file',
+  tool_convert_stereo_audio_to_mono_clear: 'Clear',
+  tool_convert_stereo_audio_to_mono_convert: 'Convert',
+  tool_convert_stereo_audio_to_mono_decode: 'Decode',
+  tool_convert_stereo_audio_to_mono_desc:
+    'Mix a stereo clip to mono WAV, or keep only the left or right channel. Processing stays on your device.',
+  tool_convert_stereo_audio_to_mono_description:
+    'Mix a stereo recording to mono WAV—average both channels, or keep left/right only. Steps: convert, preview, download. Example: load the stereo sample. Audio stays on your device; never uploaded.',
+  tool_convert_stereo_audio_to_mono_done: 'Ready. Preview the mono WAV, then Download WAV.',
+  tool_convert_stereo_audio_to_mono_download: 'Download WAV',
+  tool_convert_stereo_audio_to_mono_elapsed: '{s}s elapsed',
+  tool_convert_stereo_audio_to_mono_empty: 'Choose an audio file or load the sample first.',
+  tool_convert_stereo_audio_to_mono_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_convert_stereo_audio_to_mono_err_encoder: 'Could not write the mono WAV. Check the output mode, then try Convert again.',
+  tool_convert_stereo_audio_to_mono_err_file: 'Drop exactly one audio file.',
+  tool_convert_stereo_audio_to_mono_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_convert_stereo_audio_to_mono_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_convert_stereo_audio_to_mono_example:
+    'Load sample builds a two-second stereo tone (440 Hz left, 660 Hz right), then Mix to mono automatically. Playback never starts by itself—press play on the preview if you want to hear the blend.',
+  tool_convert_stereo_audio_to_mono_example_title: 'Try a real conversion',
+  tool_convert_stereo_audio_to_mono_failed: 'Conversion failed. Try a smaller, valid audio file.',
+  tool_convert_stereo_audio_to_mono_faq_a1:
+    'It averages each sample of the left and right channels ((L+R)/2) into one mono track, then writes 16-bit PCM WAV. Extreme pans get quieter; phase-opposed audio can thin out—preview before you download.',
+  tool_convert_stereo_audio_to_mono_faq_a2:
+    'Yes if your browser can decode it. The export is always 16-bit mono WAV. A lossy source stays lossy history; WAV export does not restore missing detail.',
+  tool_convert_stereo_audio_to_mono_faq_a3:
+    'No. This job changes channel layout to mono. To change Hz or PCM bit depth, use the related Convert audio sample rate and bit depth tool.',
+  tool_convert_stereo_audio_to_mono_faq_a4:
+    'No. Shrinking MP3 bitrate is a different job—use Reduce an MP3 file size. Mono here is about channels, not file-size targets.',
+  tool_convert_stereo_audio_to_mono_faq_a5:
+    'Not on this page. Left only or Right only exports one mono file. Splitting stereo into two downloads is a separate planned job, not this converter.',
+  tool_convert_stereo_audio_to_mono_faq_a6:
+    'No. Decoding, mixing and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_convert_stereo_audio_to_mono_faq_q1: 'What does Mix to mono do to left and right?',
+  tool_convert_stereo_audio_to_mono_faq_q2: 'Can I convert an MP3 or M4A to mono WAV?',
+  tool_convert_stereo_audio_to_mono_faq_q3: 'Is this the same as changing sample rate or bit depth?',
+  tool_convert_stereo_audio_to_mono_faq_q4: 'Is this the same as compressing an MP3 to save space?',
+  tool_convert_stereo_audio_to_mono_faq_q5: 'Can I download left and right as two separate files?',
+  tool_convert_stereo_audio_to_mono_faq_q6: 'Is my audio uploaded to a server?',
+  tool_convert_stereo_audio_to_mono_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_convert_stereo_audio_to_mono_how_body:
+    'Pick how channels should collapse, convert the whole clip, listen, then download a 16-bit mono WAV—without uploading the file.',
+  tool_convert_stereo_audio_to_mono_how_item_1:
+    'Choose a stereo or mono audio file, or select Load sample for a two-second stereo tone demonstration.',
+  tool_convert_stereo_audio_to_mono_how_item_2: 'Open Output channel mode and pick Mix to mono (default), Left only, or Right only.',
+  tool_convert_stereo_audio_to_mono_how_item_3: 'Click Convert and wait for Read → Decode → Mix → Write to finish.',
+  tool_convert_stereo_audio_to_mono_how_item_4: 'Preview the mono result, confirm the source-channel and mode line, then click Download WAV.',
+  tool_convert_stereo_audio_to_mono_how_title: 'How to convert stereo audio to mono',
+  tool_convert_stereo_audio_to_mono_mix: 'Mix',
+  tool_convert_stereo_audio_to_mono_mode_left: 'Left only',
+  tool_convert_stereo_audio_to_mono_mode_mix: 'Mix to mono',
+  tool_convert_stereo_audio_to_mono_mode_right: 'Right only',
+  tool_convert_stereo_audio_to_mono_output_mode: 'How to build the mono file',
+  tool_convert_stereo_audio_to_mono_preview: 'Listen to the mono WAV',
+  tool_convert_stereo_audio_to_mono_progress: 'Conversion progress',
+  tool_convert_stereo_audio_to_mono_read: 'Read',
+  tool_convert_stereo_audio_to_mono_result: '{seconds}s · Source {sourceChannels} ch → {mode} · mono WAV {output} KiB',
+  tool_convert_stereo_audio_to_mono_result_mono: '{seconds}s · Already mono ({sourceChannels} ch) · {mode} → mono WAV copy {output} KiB',
+  tool_convert_stereo_audio_to_mono_rules_body:
+    'Mix averages left and right sample-by-sample. Left only or Right only discards the other side in the export. Neither step restores what you threw away—keep the original master.',
+  tool_convert_stereo_audio_to_mono_rules_item_1:
+    'Default Mix to mono uses (L+R)/2. Hard-panned instruments get quieter; opposing-phase content can cancel. Always preview.',
+  tool_convert_stereo_audio_to_mono_rules_item_2: 'Left only and Right only write that channel as mono. The discarded side is not in the download.',
+  tool_convert_stereo_audio_to_mono_rules_item_3:
+    'Already-mono files still Convert to a 16-bit mono WAV copy; the result line says the source was already mono.',
+  tool_convert_stereo_audio_to_mono_rules_item_4:
+    'One file up to 40 MiB and ten minutes, one or two channels. Tags are not copied. This is not sample-rate conversion, MP3 size compression, or splitting L/R into two files.',
+  tool_convert_stereo_audio_to_mono_rules_title: 'Mixing, discarding a channel and limits',
+  tool_convert_stereo_audio_to_mono_sample: 'Load sample',
+  tool_convert_stereo_audio_to_mono_sample_name: 'two-second-stereo-demo',
+  tool_convert_stereo_audio_to_mono_settings_hint:
+    'Default Mix averages both channels. Left only or Right only discards the other side permanently in the download—keep the original master if you may need it again.',
+  tool_convert_stereo_audio_to_mono_title: 'Convert stereo audio to mono',
+  tool_convert_stereo_audio_to_mono_usecase_1: 'Hand a stereo voice memo or podcast bed to a form that only accepts mono upload.',
+  tool_convert_stereo_audio_to_mono_usecase_2: 'Keep only the left (or right) interview mic when the other side is noise or silence.',
+  tool_convert_stereo_audio_to_mono_usecases_title: 'When this helps',
+  tool_convert_stereo_audio_to_mono_why_choose_item_1: 'See measured duration, source channel count, chosen mode and output KiB before you save.',
+  tool_convert_stereo_audio_to_mono_why_choose_item_2: 'Mix averages L+R, or keep one side only—three clear modes instead of a buried format matrix.',
+  tool_convert_stereo_audio_to_mono_why_choose_item_3: 'Decoding and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_convert_stereo_audio_to_mono_why_choose_item_4:
+    'Changing the mode or the input clears the old download so you never save a stale mono WAV by mistake.',
+  tool_convert_stereo_audio_to_mono_why_choose_title: 'Why choose our Convert stereo audio to mono tools',
+  tool_convert_stereo_audio_to_mono_write: 'Write',
   tool_convert_word_document_to_pdf_article: 'Convert a Word .docx to PDF in this tab. Files stay on your device; not uploaded to a server.',
   tool_convert_word_document_to_pdf_choose_file: 'Choose a Word file (.docx)',
   tool_convert_word_document_to_pdf_choose_files: 'Choose files',
@@ -5131,6 +6131,101 @@ const en: SiteLangDict = {
   tool_crop_pdf_usecases_title: 'Good fits',
   tool_crop_pdf_warn_large: 'File larger than ~25 MB — cropping may be slow or fail in some browsers.',
   tool_crop_pdf_warn_pdflib: 'PDF library failed to load. Check your network and retry.',
+  tool_crossfade_two_audio_files_a_label: 'First: {name}',
+  tool_crossfade_two_audio_files_advanced: 'Crossfade settings',
+  tool_crossfade_two_audio_files_article:
+    'DJ-style song changes and podcast segment handoffs often need one clip to fade out while the next fades in. This page lets you drop two local audio files, pick a crossfade length with chips, choose equal-power (default) or linear curves, decode both in the browser, align sample rate and channels, then blend the tail of the first into the head of the second into one 16-bit PCM WAV. It does not hard-cut join clips end-to-end, does not overlay both tracks for their full lengths, and does not wrap a single clip into a seamless loop—those are different jobs. Success depends on browser decode support. Channels stay one or two. Keep the originals; the download is a new file. Work runs on your device.',
+  tool_crossfade_two_audio_files_b_label: 'Second: {name}',
+  tool_crossfade_two_audio_files_choose_a: 'Add first clip',
+  tool_crossfade_two_audio_files_choose_b: 'Add second clip',
+  tool_crossfade_two_audio_files_clear: 'Clear',
+  tool_crossfade_two_audio_files_convert: 'Crossfade',
+  tool_crossfade_two_audio_files_crossfade: 'Crossfade',
+  tool_crossfade_two_audio_files_curve_equal: 'Equal-power',
+  tool_crossfade_two_audio_files_curve_label: 'Fade curve',
+  tool_crossfade_two_audio_files_curve_linear: 'Linear',
+  tool_crossfade_two_audio_files_decode: 'Decode',
+  tool_crossfade_two_audio_files_desc:
+    'Crossfade two local songs or clips with a duration chip, then download one 16-bit WAV. On-device only—not a hard-cut join.',
+  tool_crossfade_two_audio_files_description:
+    'Crossfade two local songs or clips in the browser with duration chips and equal-power (or linear) curves, then download one 16-bit WAV. Steps: Add first clip, add second, pick fade length, Crossfade, preview, download. Example: load two short sample tones. Transition only—not hard-cut join, not overlay mix. Never uploaded.',
+  tool_crossfade_two_audio_files_done: 'Ready. Preview the crossfaded WAV, then Download WAV.',
+  tool_crossfade_two_audio_files_download: 'Download WAV',
+  tool_crossfade_two_audio_files_elapsed: '{s}s elapsed',
+  tool_crossfade_two_audio_files_empty: 'Add two audio clips, or load the sample first.',
+  tool_crossfade_two_audio_files_empty_state:
+    'No clips yet. Add a first and second clip, or click Load sample for two short tones. This tool crossfades a transition—it does not hard-cut join or overlay both tracks fully.',
+  tool_crossfade_two_audio_files_err_decode: 'The browser could not decode one of the files. Try another encoding.',
+  tool_crossfade_two_audio_files_err_encoder: 'Could not write the crossfaded WAV. Try Crossfade again.',
+  tool_crossfade_two_audio_files_err_fade: 'Crossfade must be shorter than both clips. Pick a shorter duration chip or use longer files.',
+  tool_crossfade_two_audio_files_err_file: 'Add both a first and a second audio file.',
+  tool_crossfade_two_audio_files_err_format: 'Unsupported or damaged audio. Use WAV, MP3, M4A, AAC or OGG files your browser can decode.',
+  tool_crossfade_two_audio_files_err_limit: 'Use files up to 40 MiB each, mono or stereo, with output length under 20 minutes.',
+  tool_crossfade_two_audio_files_example:
+    'Load sample adds a 440 Hz tone and a 660 Hz tone (about 2.2 s each), sets a 1 s equal-power fade, then Crossfade runs automatically. You should hear one pitch blend into the other. Playback never starts by itself—press play on the preview if you want to hear it.',
+  tool_crossfade_two_audio_files_example_title: 'Try two short tones',
+  tool_crossfade_two_audio_files_fade_label: 'Crossfade duration',
+  tool_crossfade_two_audio_files_failed: 'Crossfade failed. Try shorter clips or a shorter fade.',
+  tool_crossfade_two_audio_files_faq_a1:
+    'No. Joining places clips with a hard cut. This page overlaps the end of the first with the start of the second so they fade together.',
+  tool_crossfade_two_audio_files_faq_a2:
+    'No. Overlay mix keeps both tracks playing together for their full lengths. Crossfade is only a short transition between two clips.',
+  tool_crossfade_two_audio_files_faq_a3:
+    'Equal-power uses sine/cosine gains so perceived loudness stays steadier through the overlap. Linear ramps can dip in the middle.',
+  tool_crossfade_two_audio_files_faq_a4:
+    'Crossfade fails with a clear error. Pick a shorter duration chip or use longer files so the fade fits inside both clips.',
+  tool_crossfade_two_audio_files_faq_a5:
+    'No. Reading, decoding and writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_crossfade_two_audio_files_faq_a6:
+    'Output length equals the sum of both clip lengths minus the crossfade length, because the overlap is mixed once.',
+  tool_crossfade_two_audio_files_faq_q1: 'Is this the same as joining audio files end-to-end?',
+  tool_crossfade_two_audio_files_faq_q2: 'Is this the same as mixing a voiceover over background music?',
+  tool_crossfade_two_audio_files_faq_q3: 'Why prefer equal-power?',
+  tool_crossfade_two_audio_files_faq_q4: 'What if my fade chip is longer than a clip?',
+  tool_crossfade_two_audio_files_faq_q5: 'Is my audio uploaded to a server?',
+  tool_crossfade_two_audio_files_faq_q6: 'How long is the output?',
+  tool_crossfade_two_audio_files_hint_a: 'Drop or choose the clip that plays first. WAV, MP3, M4A, AAC or OGG. Up to 40 MiB; mono or stereo.',
+  tool_crossfade_two_audio_files_hint_b: 'Drop or choose the clip that follows. Up to 40 MiB. Output length stays under 20 minutes.',
+  tool_crossfade_two_audio_files_how_body:
+    'Add two clips, pick a fade length and curve, run Crossfade, listen, then download one 16-bit WAV—without uploading the files.',
+  tool_crossfade_two_audio_files_how_item_1: 'Add a local first clip and a local second clip (or Load sample for two short tones).',
+  tool_crossfade_two_audio_files_how_item_2: 'Choose a crossfade duration chip (1, 2, 3 or 5 seconds) and equal-power or linear curve.',
+  tool_crossfade_two_audio_files_how_item_3: 'Click Crossfade and wait for Read → Decode → Crossfade → Write to finish.',
+  tool_crossfade_two_audio_files_how_item_4: 'Preview the transition, check the result line, then click Download WAV.',
+  tool_crossfade_two_audio_files_how_title: 'How to crossfade two audio files',
+  tool_crossfade_two_audio_files_preview: 'Listen to the crossfaded WAV',
+  tool_crossfade_two_audio_files_progress: 'Crossfade progress',
+  tool_crossfade_two_audio_files_read: 'Read',
+  tool_crossfade_two_audio_files_result: '{seconds}s · fade {fade}s · {curve} · {channels} ch · {rate} Hz · WAV {output} KiB',
+  tool_crossfade_two_audio_files_rules_body:
+    'Each run overlaps the end of the first clip with the start of the second. Sample rates align to the first clip. Export is 16-bit WAV. This is not hard-cut join, not overlay mix, and not a seamless loop wrap.',
+  tool_crossfade_two_audio_files_rules_item_1:
+    'Two local audio files, each up to 40 MiB. Output length stays under twenty minutes. Channels stay one or two.',
+  tool_crossfade_two_audio_files_rules_item_2:
+    'This page crossfades a transition. It does not hard-cut join clips end-to-end, and it does not overlay both tracks for their full lengths.',
+  tool_crossfade_two_audio_files_rules_item_3:
+    'Equal-power is the default curve for steadier perceived loudness; linear is available when you want a straight ramp.',
+  tool_crossfade_two_audio_files_rules_item_4:
+    'The fade must be shorter than both clips. Tags are not copied. Originals are never overwritten. Success depends on browser decode support.',
+  tool_crossfade_two_audio_files_rules_title: 'Crossfade rules and honest browser limits',
+  tool_crossfade_two_audio_files_sample: 'Load sample',
+  tool_crossfade_two_audio_files_sample_name: 'crossfade-tone',
+  tool_crossfade_two_audio_files_settings_hint:
+    'The first clip fades out while the second fades in over the chosen length. Equal-power is preferred for constant loudness. This is a transition—not a hard-cut join and not a full-length overlay mix.',
+  tool_crossfade_two_audio_files_title: 'Crossfade two audio files',
+  tool_crossfade_two_audio_files_usecase_1: 'Two songs need a DJ-style handoff—add both, pick 2–5 s equal-power, Crossfade, download WAV.',
+  tool_crossfade_two_audio_files_usecase_2:
+    'Podcast segments should meet softly instead of a hard cut—use a 1 s fade between takes without uploading to an online editor.',
+  tool_crossfade_two_audio_files_usecases_title: 'When this helps',
+  tool_crossfade_two_audio_files_why_choose_item_1: 'See output duration, fade length, curve name, channel count, sample rate and KiB before you save.',
+  tool_crossfade_two_audio_files_why_choose_item_2:
+    'One clear transition job—tail into head—with honest limits when a clip cannot decode or the fade is too long.',
+  tool_crossfade_two_audio_files_why_choose_item_3:
+    'Reading, decoding and writing run on your device; the page does not upload your clips to process them.',
+  tool_crossfade_two_audio_files_why_choose_item_4:
+    'Changing either file, the duration chip or the curve clears the old download so you never save a stale WAV by mistake.',
+  tool_crossfade_two_audio_files_why_choose_title: 'Why choose our Crossfade two audio files tools',
+  tool_crossfade_two_audio_files_write: 'Write',
   tool_csv_json_article:
     'Bidirectional CSV ↔ JSON with explicit type-inference, delimiter and quoting rules, plus how nested JSON flattens to columns.',
   tool_csv_json_clear: 'Clear',
@@ -5394,6 +6489,92 @@ const en: SiteLangDict = {
   tool_date_difference_usecase_3: 'Compare with age for calendar age.',
   tool_date_difference_usecases_title: 'When to use it',
   tool_date_difference_weeksOut_label: 'Weeks',
+  tool_de_ess_a_voiceover_advanced: 'Sensitivity',
+  tool_de_ess_a_voiceover_article:
+    'Harsh S and SH consonants spray energy into a narrow high band that makes voiceovers sound piercing. This page measures that sibilant-band energy against the full envelope, then dynamically blends in a high-shelf cut only where the ratio rises—an honest browser de-esser approximation. It is not a multi-band muffled-voice EQ, not broadband fan-hiss denoise, and not short click/pop interpolation. Strong sensitivity can dull bright consonants. Channel count stays 1 or 2. Keep the original file; the download is a new 16-bit WAV. Work runs in the browser on your device.',
+  tool_de_ess_a_voiceover_choose: 'Choose an audio file',
+  tool_de_ess_a_voiceover_clear: 'Clear',
+  tool_de_ess_a_voiceover_convert: 'De-ess',
+  tool_de_ess_a_voiceover_decode: 'Decode',
+  tool_de_ess_a_voiceover_deess: 'De-ess',
+  tool_de_ess_a_voiceover_desc:
+    'Soften harsh sibilance with dynamic high-shelf reduction driven by sibilant-band energy, then download a 16-bit WAV. On-device only.',
+  tool_de_ess_a_voiceover_description:
+    'De-ess a voiceover with sibilant-band energy detection and dynamic high-shelf attenuation. Steps: De-ess, preview, download WAV. Example: load the sibilant sample. Honest browser de-esser approx—not full EQ, not broadband denoise, not declick. Audio stays on your device; never uploaded.',
+  tool_de_ess_a_voiceover_done: 'Ready. Preview the de-essed WAV, then Download WAV.',
+  tool_de_ess_a_voiceover_download: 'Download WAV',
+  tool_de_ess_a_voiceover_elapsed: '{s}s elapsed',
+  tool_de_ess_a_voiceover_empty: 'Choose an audio file or load the sample first.',
+  tool_de_ess_a_voiceover_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_de_ess_a_voiceover_err_encoder: 'Could not write the de-essed WAV. Check sensitivity, then try De-ess again.',
+  tool_de_ess_a_voiceover_err_file: 'Drop exactly one audio file.',
+  tool_de_ess_a_voiceover_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_de_ess_a_voiceover_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_de_ess_a_voiceover_err_silence: 'Level is essentially silence—nothing to de-ess. Try a recording with audible level.',
+  tool_de_ess_a_voiceover_example:
+    'Load sample builds a three-second speech-like tone with four synthetic sibilance bursts, then De-ess at Medium automatically. Playback never starts by itself—press play on the preview if you want to hear the softened take.',
+  tool_de_ess_a_voiceover_example_title: 'Try a real sibilant clip',
+  tool_de_ess_a_voiceover_failed: 'De-ess failed. Try a smaller, valid audio file.',
+  tool_de_ess_a_voiceover_faq_a1:
+    'No. That page applies static Clarity/Warmth/Presence tone presets across low, mid and high bands. This page only attenuates when sibilant-band energy rises. Use EQ a muffled voice recording for overall muffled tone.',
+  tool_de_ess_a_voiceover_faq_a2:
+    'No. Steady fan or AC hiss needs broadband denoise. Use Reduce background noise on a voice memo for that job.',
+  tool_de_ess_a_voiceover_faq_a3:
+    'No. Short impulsive pops need median spike repair. Use Remove clicks from a recording for clicks and pops.',
+  tool_de_ess_a_voiceover_faq_a4:
+    'They change how high the sibilant-to-full energy ratio must rise before attenuation, and how deep the high-shelf cut can blend in. Medium is the default balance.',
+  tool_de_ess_a_voiceover_faq_a5:
+    'It can soften bright consonants that look like sibilance. If air or presence feels missing, switch to Light and run De-ess again.',
+  tool_de_ess_a_voiceover_faq_a6:
+    'No. Decoding, de-ess and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For muffled tone use EQ a muffled voice recording; for clicks use Remove clicks from a recording.',
+  tool_de_ess_a_voiceover_faq_q1: 'Is this the same as EQ a muffled voice recording?',
+  tool_de_ess_a_voiceover_faq_q2: 'Does this reduce background noise on a voice memo?',
+  tool_de_ess_a_voiceover_faq_q3: 'Is this remove clicks from a recording?',
+  tool_de_ess_a_voiceover_faq_q4: 'What do Light, Medium and Strong change?',
+  tool_de_ess_a_voiceover_faq_q5: 'Will Strong make speech dull?',
+  tool_de_ess_a_voiceover_faq_q6: 'Is my audio uploaded to a server?',
+  tool_de_ess_a_voiceover_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_de_ess_a_voiceover_how_body:
+    'Pick a sensitivity, run dynamic sibilance reduction, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_de_ess_a_voiceover_how_item_1: 'Choose an audio file, or select Load sample for a three-second clip with synthetic sibilance bursts.',
+  tool_de_ess_a_voiceover_how_item_2: 'Open Sensitivity and pick Light, Medium or Strong (default Medium).',
+  tool_de_ess_a_voiceover_how_item_3: 'Click De-ess and wait for Read → Decode → De-ess → Write to finish.',
+  tool_de_ess_a_voiceover_how_item_4: 'Preview the softer S sounds, check the attenuated-frame percent, then click Download WAV.',
+  tool_de_ess_a_voiceover_how_title: 'How to de-ess a voiceover',
+  tool_de_ess_a_voiceover_preview: 'Listen to the de-essed WAV',
+  tool_de_ess_a_voiceover_progress: 'De-ess progress',
+  tool_de_ess_a_voiceover_read: 'Read',
+  tool_de_ess_a_voiceover_result: '{seconds}s · {sensitivity} · {active}% frames attenuated · WAV {output} KiB',
+  tool_de_ess_a_voiceover_rules_body:
+    'Each run detects energy in a sibilant bandpass against the full envelope, then blends a high-shelf cut only where that ratio rises. True harsh S/SH bursts improve most; steady fan hiss needs denoise elsewhere. Soft peak protection keeps the WAV under full scale.',
+  tool_de_ess_a_voiceover_rules_item_1:
+    'Light, Medium and Strong change the ratio threshold, max blend and shelf cut depth. Default is Medium.',
+  tool_de_ess_a_voiceover_rules_item_2:
+    'This is a browser dynamic high-shelf de-esser approx. It is not multi-band muffled EQ, not broadband denoise, and not declick.',
+  tool_de_ess_a_voiceover_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_de_ess_a_voiceover_rules_item_4:
+    'One file up to 40 MiB and ten minutes. Strong may dull bright consonants; try Light if air feels missing.',
+  tool_de_ess_a_voiceover_rules_title: 'Sibilant band, sensitivity and honest browser limits',
+  tool_de_ess_a_voiceover_sample: 'Load sample',
+  tool_de_ess_a_voiceover_sample_name: 'three-second-sibilance-demo',
+  tool_de_ess_a_voiceover_sens_label: 'De-ess sensitivity',
+  tool_de_ess_a_voiceover_sens_light: 'Light',
+  tool_de_ess_a_voiceover_sens_medium: 'Medium',
+  tool_de_ess_a_voiceover_sens_strong: 'Strong',
+  tool_de_ess_a_voiceover_settings_hint:
+    'Default Medium balances obvious sibilance against natural air. Light trims only sharper bursts. Strong catches denser hiss but may soften bright consonants.',
+  tool_de_ess_a_voiceover_title: 'De-ess a voiceover',
+  tool_de_ess_a_voiceover_usecase_1: 'A voiceover with piercing S sounds—pick Medium, De-ess, download WAV.',
+  tool_de_ess_a_voiceover_usecase_2: 'A narration pass before you EQ muffled tone or declick mouth pops elsewhere.',
+  tool_de_ess_a_voiceover_usecases_title: 'When this helps',
+  tool_de_ess_a_voiceover_why_choose_item_1: 'See sensitivity, attenuated-frame percent and output KiB before you save.',
+  tool_de_ess_a_voiceover_why_choose_item_2: 'One clear de-ess job—dynamic high-shelf on sibilance, not a buried DAW rack.',
+  tool_de_ess_a_voiceover_why_choose_item_3:
+    'Decoding, de-ess and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_de_ess_a_voiceover_why_choose_item_4: 'Changing sensitivity or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_de_ess_a_voiceover_why_choose_title: 'Why choose our De-ess a voiceover tools',
+  tool_de_ess_a_voiceover_write: 'Write',
   tool_debt_payoff_article: 'Debt payoff months',
   tool_debt_payoff_calculate: 'Calculate',
   tool_debt_payoff_clear: 'Clear',
@@ -5599,6 +6780,179 @@ const en: SiteLangDict = {
   tool_domain_lookup_usecase_2: 'Renewal or handoff: check registrar, status, and expiration events (contacts may be redacted).',
   tool_domain_lookup_usecase_3: 'Mail setup: inspect MX and related TXT snippets (not a full deliverability audit).',
   tool_domain_lookup_usecases_title: 'When to use it',
+  tool_edit_audio_on_waveform_advanced: 'Advanced settings (optional)',
+  tool_edit_audio_on_waveform_article:
+    'People searching for a sound editor or online audio editor often expect a full DAW. This hub keeps a single timeline: load one file, see a simple waveform, mark a region, Trim, and Download WAV in the tab. Chips deep-link to shipped scene tools for a dedicated trimmer, seamless loops, fades, and stereo-to-mono. No multi-track mixer, no effect rack, no Pro Tools clone. Files stay on your device.',
+  tool_edit_audio_on_waveform_chip_fade: 'Fade in and fade out',
+  tool_edit_audio_on_waveform_chip_loop: 'Seamless audio loop',
+  tool_edit_audio_on_waveform_chip_mono: 'Stereo to mono',
+  tool_edit_audio_on_waveform_chip_trim: 'Trim clip and export',
+  tool_edit_audio_on_waveform_chips_label: 'More scene tools',
+  tool_edit_audio_on_waveform_choose_file: 'Choose an audio file',
+  tool_edit_audio_on_waveform_clear: 'Clear',
+  tool_edit_audio_on_waveform_desc:
+    'Open a local file, select a region on a simple waveform, Trim, then Download WAV—or jump to scene tools. Lightweight hub, not a full DAW.',
+  tool_edit_audio_on_waveform_description:
+    'Edit audio on a waveform in your browser: open one local file, select a start–end region on a simple canvas waveform, Trim, then Download WAV—on-device, not uploaded. Steps: Choose a file (or Load sample), drag the waveform (or type Start and End), Trim, Download WAV. Example: keep 1.00–3.00s of a 5s sample as WAV. Scene chips open trim-export, seamless loop, fade in/out, and stereo-to-mono tools. This is a lightweight waveform trimmer hub—not Pro Tools or a multi-track DAW. Searches for sound editor or online audio editor land here with honest scope.',
+  tool_edit_audio_on_waveform_drop_hint: 'Or drop a WAV, MP3, M4A, or OGG here. Processing stays in this tab.',
+  tool_edit_audio_on_waveform_empty: 'Choose an audio file first.',
+  tool_edit_audio_on_waveform_end: 'End (seconds)',
+  tool_edit_audio_on_waveform_err_caps:
+    'This file is over the size or duration cap for this device (about 40 MB / 20 min on desktop, 20 MB / 8 min on a narrow screen).',
+  tool_edit_audio_on_waveform_err_decode: 'This browser could not decode that file. Try WAV or MP3, or a clip without DRM.',
+  tool_edit_audio_on_waveform_err_empty: 'Nothing to trim. Load a file or the sample first.',
+  tool_edit_audio_on_waveform_err_range: 'End must be after Start, inside the decoded duration.',
+  tool_edit_audio_on_waveform_err_video: 'This page does not accept video as the main input. Extract audio first.',
+  tool_edit_audio_on_waveform_example:
+    'Load sample builds a 5.00-second tone, sets Start 1.00 and End 3.00, then Trim keeps about 2.00 seconds so Download WAV is ready.',
+  tool_edit_audio_on_waveform_example_title: 'Try the sample region',
+  tool_edit_audio_on_waveform_export_wav: 'Download WAV',
+  tool_edit_audio_on_waveform_faq_a1:
+    'No. This is a lightweight waveform trimmer hub: one file, a simple canvas waveform, Trim, and Download WAV, plus chips to scene tools. It is not Pro Tools, not multi-track, and not an AudioMass clone.',
+  tool_edit_audio_on_waveform_faq_a2: 'No. Decode, slice, and WAV write run in this tab. The file is not posted to our servers for editing.',
+  tool_edit_audio_on_waveform_faq_a3:
+    'That scene page focuses on start–end export (including MP3). This hub adds a waveform-first entry, Download WAV as the main in-page path, and chips to other scene tools.',
+  tool_edit_audio_on_waveform_faq_a4:
+    'They open shipped single-job tools: trim-and-export, seamless loop, fade in/out, and stereo-to-mono—without pretending this page is a full workstation.',
+  tool_edit_audio_on_waveform_faq_a5: 'Not on this page. Multi-track mixing and effect racks are out of scope for this lightweight hub.',
+  tool_edit_audio_on_waveform_faq_a6:
+    'About 40 MB / 20 minutes on desktop, or 20 MB / 8 minutes on a narrow screen. Over-cap files are refused.',
+  tool_edit_audio_on_waveform_faq_q1: 'Is this Pro Tools or a full DAW?',
+  tool_edit_audio_on_waveform_faq_q2: 'Is my audio uploaded?',
+  tool_edit_audio_on_waveform_faq_q3: 'How is this different from Trim an audio clip and export?',
+  tool_edit_audio_on_waveform_faq_q4: 'What do the scene chips do?',
+  tool_edit_audio_on_waveform_faq_q5: 'Can I edit multiple tracks with effects?',
+  tool_edit_audio_on_waveform_faq_q6: 'How large a file can I open?',
+  tool_edit_audio_on_waveform_how_body:
+    'Load one file, mark a region on the waveform, Trim, then Download WAV—or open a scene chip for a specialized job.',
+  tool_edit_audio_on_waveform_how_item_1: 'Choose a local audio file (or click Load sample).',
+  tool_edit_audio_on_waveform_how_item_2: 'Click or drag the waveform (or type Start and End) to mark the part to keep.',
+  tool_edit_audio_on_waveform_how_item_3: 'Click Trim to slice the selection in this tab.',
+  tool_edit_audio_on_waveform_how_item_4: 'Click Download WAV, or use a scene chip for loop, fade, mono, or a dedicated trimmer.',
+  tool_edit_audio_on_waveform_how_title: 'How to edit audio on a waveform',
+  tool_edit_audio_on_waveform_hud_decode: 'Decoding audio…',
+  tool_edit_audio_on_waveform_hud_decoded: 'Decoded. Set Start and End, then Trim.',
+  tool_edit_audio_on_waveform_hud_elapsed_tpl: '{s}s elapsed',
+  tool_edit_audio_on_waveform_hud_fail_hint: 'Fix the file or times, then Trim again.',
+  tool_edit_audio_on_waveform_hud_fail_title: 'Stopped',
+  tool_edit_audio_on_waveform_hud_next: 'Finished. Next step: Download WAV (or use a scene chip).',
+  tool_edit_audio_on_waveform_hud_pct_tpl: '{pct}%',
+  tool_edit_audio_on_waveform_hud_read: 'Reading the file in this tab…',
+  tool_edit_audio_on_waveform_hud_render: 'Rendering the selected region…',
+  tool_edit_audio_on_waveform_hud_step_decode: 'Decode',
+  tool_edit_audio_on_waveform_hud_step_read: 'Read',
+  tool_edit_audio_on_waveform_hud_step_render: 'Render',
+  tool_edit_audio_on_waveform_hud_step_write: 'Write',
+  tool_edit_audio_on_waveform_hud_title: 'Waveform hub progress',
+  tool_edit_audio_on_waveform_hud_working: 'Starting…',
+  tool_edit_audio_on_waveform_hud_write: 'Writing WAV…',
+  tool_edit_audio_on_waveform_meta_tpl: '{name} · {dur}s · {rate} Hz · {ch} ch',
+  tool_edit_audio_on_waveform_pause: 'Pause',
+  tool_edit_audio_on_waveform_play: 'Play',
+  tool_edit_audio_on_waveform_preview_hint: 'Click or drag the waveform to set Start and End. Play previews that range.',
+  tool_edit_audio_on_waveform_result_tpl: 'Kept {dur}s ({start}–{end}s). Download WAV is ready.',
+  tool_edit_audio_on_waveform_rules_body:
+    'One file, one selection, optional zero-cross snap, then 16-bit PCM WAV. Scene chips leave this page for specialized jobs. This is not a full DAW.',
+  tool_edit_audio_on_waveform_rules_item_1: 'Desktop cap about 40 MB / 20 minutes; narrow screens about 20 MB / 8 minutes.',
+  tool_edit_audio_on_waveform_rules_item_2: 'Files stay on your device; they are not uploaded to our servers for editing.',
+  tool_edit_audio_on_waveform_rules_item_3: 'Decode depends on the browser. DRM and video containers fail with a clear error.',
+  tool_edit_audio_on_waveform_rules_item_4: 'No multi-track mixer, effect rack, or Pro Tools feature set in v1—use chips for focused jobs.',
+  tool_edit_audio_on_waveform_rules_title: 'Rules for this waveform hub',
+  tool_edit_audio_on_waveform_sample: 'Load sample',
+  tool_edit_audio_on_waveform_start: 'Start (seconds)',
+  tool_edit_audio_on_waveform_status_done: 'Done.',
+  tool_edit_audio_on_waveform_title: 'Edit audio on a waveform',
+  tool_edit_audio_on_waveform_trim: 'Trim',
+  tool_edit_audio_on_waveform_usecase_1: 'You want a quick waveform view and a start–end crop to WAV without installing a DAW.',
+  tool_edit_audio_on_waveform_usecase_2: 'You need a hub entry point, then jump to seamless loop, fade, or mono via chips.',
+  tool_edit_audio_on_waveform_usecase_3: 'You searched for an online sound editor but only need a lightweight trimmer hub with honest limits.',
+  tool_edit_audio_on_waveform_usecases_title: 'When this helps',
+  tool_edit_audio_on_waveform_why_choose_item_1: 'In-tab decode, waveform selection, and WAV write—no upload for processing.',
+  tool_edit_audio_on_waveform_why_choose_item_2: 'Honest scope: lightweight hub, not Pro Tools or a multi-track DAW.',
+  tool_edit_audio_on_waveform_why_choose_item_3: 'Scene chips deep-link to shipped trim, loop, fade, and mono tools.',
+  tool_edit_audio_on_waveform_why_choose_item_4: 'Caps refuse oversized files instead of silently truncating them.',
+  tool_edit_audio_on_waveform_why_choose_title: 'Why choose our Edit audio on a waveform tools',
+  tool_edit_audio_on_waveform_zerocross: 'Snap cuts to nearby zero crossings',
+  tool_edit_audio_on_waveform_zerocross_hint: 'Reduces clicks at the splice. Turn off only if you need exact sample edges.',
+  tool_edit_mp3_title_and_cover_art_advanced: 'About ID3 support (optional)',
+  tool_edit_mp3_title_and_cover_art_article:
+    'Players show missing titles and blank covers. This page rewrites ID3v2.3 title, artist, album and optional APIC cover on a local MP3 without decoding PCM or running lamejs on your track. Existing complex frames may be dropped when tags are rewritten. Keep a copy if you need rare frames. Related batch WAV→MP3 and single WAV→MP3 pages sit nearby. Work stays on-device.',
+  tool_edit_mp3_title_and_cover_art_choose: 'Choose an MP3 file',
+  tool_edit_mp3_title_and_cover_art_clear: 'Clear',
+  tool_edit_mp3_title_and_cover_art_convert: 'Apply tags',
+  tool_edit_mp3_title_and_cover_art_cover_clear: 'Clear cover',
+  tool_edit_mp3_title_and_cover_art_cover_hint: 'JPEG or PNG, up to 2 MiB. Leave empty to write text tags only. Clear removes the selected image.',
+  tool_edit_mp3_title_and_cover_art_cover_none: 'No cover selected',
+  tool_edit_mp3_title_and_cover_art_cover_ready: 'Cover ready to embed',
+  tool_edit_mp3_title_and_cover_art_desc:
+    'Change an MP3 title, artist, album and optional cover without re-encoding the audio. Files stay on your device.',
+  tool_edit_mp3_title_and_cover_art_description:
+    'Edit MP3 title and cover art in the browser without uploading or re-encoding. Steps: choose an MP3, edit title/artist/album, optional JPEG/PNG cover, Apply tags, preview and download. Example: the sample MP3 receives a demo title and tiny cover while Layer III frames stay intact. Writes ID3v2.3 locally—complex existing tags may be simplified. Never uploaded.',
+  tool_edit_mp3_title_and_cover_art_done: 'Ready. Listen, then Download MP3.',
+  tool_edit_mp3_title_and_cover_art_download: 'Download MP3',
+  tool_edit_mp3_title_and_cover_art_elapsed: 'Elapsed: {s}s',
+  tool_edit_mp3_title_and_cover_art_empty: 'Choose an MP3 or load the sample first.',
+  tool_edit_mp3_title_and_cover_art_err_cover: 'Cover must be JPEG or PNG and at most 2 MiB.',
+  tool_edit_mp3_title_and_cover_art_err_encoder: 'The sample encoder could not load. Check the connection and try Load sample again.',
+  tool_edit_mp3_title_and_cover_art_err_file: 'Drop exactly one MP3 file.',
+  tool_edit_mp3_title_and_cover_art_err_format:
+    'Unsupported or damaged MP3. Need Layer III frames after any ID3 header. Video and DRM are not accepted.',
+  tool_edit_mp3_title_and_cover_art_err_limit: 'The file exceeds 40 MiB or about 10 minutes, or is not mono/stereo MPEG audio.',
+  tool_edit_mp3_title_and_cover_art_example:
+    'On opening, a three-second mono tone MP3 loads with demo title, artist, album and a tiny JPEG cover. Load sample repeats it. Playback never starts by itself.',
+  tool_edit_mp3_title_and_cover_art_example_title: 'A real tagging example',
+  tool_edit_mp3_title_and_cover_art_failed: 'Tag write failed. Try a shorter unprotected MP3.',
+  tool_edit_mp3_title_and_cover_art_faq_a1: 'No. Layer III frames are copied unchanged. Only the ID3 tag block is rewritten.',
+  tool_edit_mp3_title_and_cover_art_faq_a2:
+    'ID3v2.3 for title, artist, album and optional cover. We do not promise full ID3v2.4, unsync, lyrics or ReplayGain support.',
+  tool_edit_mp3_title_and_cover_art_faq_a3:
+    'No. Tag writing runs in the browser on your device. Loading the page (and the sample encoder) needs a connection; offline use is not guaranteed.',
+  tool_edit_mp3_title_and_cover_art_faq_a4: 'This page embeds or replaces cover art while writing tags. It is not a dedicated extract-only tool.',
+  tool_edit_mp3_title_and_cover_art_faq_a5:
+    'Size reduction re-encodes audio at a lower bitrate. This page only changes metadata and optional cover.',
+  tool_edit_mp3_title_and_cover_art_faq_q1: 'Does this re-encode my MP3?',
+  tool_edit_mp3_title_and_cover_art_faq_q2: 'Which ID3 version do you write?',
+  tool_edit_mp3_title_and_cover_art_faq_q3: 'Is my file uploaded?',
+  tool_edit_mp3_title_and_cover_art_faq_q4: 'Can I extract cover art only?',
+  tool_edit_mp3_title_and_cover_art_faq_q5: 'How is this different from Reduce an MP3 file size?',
+  tool_edit_mp3_title_and_cover_art_field_album: 'Album',
+  tool_edit_mp3_title_and_cover_art_field_artist: 'Artist',
+  tool_edit_mp3_title_and_cover_art_field_cover: 'Cover art (optional)',
+  tool_edit_mp3_title_and_cover_art_field_title: 'Title',
+  tool_edit_mp3_title_and_cover_art_hint: 'One MP3, up to 40 MiB and about 10 minutes. Tags rewrite without re-encoding audio frames.',
+  tool_edit_mp3_title_and_cover_art_how_body: 'Update display metadata for a local MP3 without changing the sound itself.',
+  tool_edit_mp3_title_and_cover_art_how_item_1: 'Choose an MP3, or click Load sample for a short tagged demo.',
+  tool_edit_mp3_title_and_cover_art_how_item_2: 'Edit Title, Artist and Album. Optionally pick a JPEG/PNG cover.',
+  tool_edit_mp3_title_and_cover_art_how_item_3: 'Click Apply tags and wait for Read → Write ID3 tags.',
+  tool_edit_mp3_title_and_cover_art_how_item_4: 'Listen to confirm playback, then Download MP3 with the new tags.',
+  tool_edit_mp3_title_and_cover_art_how_title: 'How to edit MP3 title and cover art',
+  tool_edit_mp3_title_and_cover_art_preview: 'Listen to the tagged MP3',
+  tool_edit_mp3_title_and_cover_art_progress: 'Tag write progress',
+  tool_edit_mp3_title_and_cover_art_read: 'Read MP3 frames',
+  tool_edit_mp3_title_and_cover_art_result: 'Title “{title}” · {seconds}s audio unchanged · Input {input} KiB → Output {output} KiB',
+  tool_edit_mp3_title_and_cover_art_rules_body: 'Tag size adds a few KiB. Playback length should match the original audio frames.',
+  tool_edit_mp3_title_and_cover_art_rules_item_1:
+    'We write ID3v2.3 text frames and optional APIC. Older or exotic frames may be removed when rewriting.',
+  tool_edit_mp3_title_and_cover_art_rules_item_2: 'PCM is not re-encoded. To shrink file size, use a bitrate tool instead of this page.',
+  tool_edit_mp3_title_and_cover_art_rules_item_3:
+    'One MP3, at most 40 MiB and about 10 minutes. Cover JPEG/PNG ≤ 2 MiB. No lyrics, ReplayGain or batch tagging.',
+  tool_edit_mp3_title_and_cover_art_rules_item_4:
+    'Files stay on your device and are not uploaded. Keep a backup if you need complex tags preserved bit-for-bit.',
+  tool_edit_mp3_title_and_cover_art_rules_title: 'ID3 honesty, covers and limits',
+  tool_edit_mp3_title_and_cover_art_sample: 'Load sample',
+  tool_edit_mp3_title_and_cover_art_sample_name: 'three-second-tag-demo',
+  tool_edit_mp3_title_and_cover_art_settings_hint:
+    'This tool writes ID3v2.3 (TIT2, TPE1, TALB, optional APIC). It strips the previous ID3 block and does not re-encode audio. ID3v2.4-only features, unsynchronisation tricks, lyrics and ReplayGain are out of scope.',
+  tool_edit_mp3_title_and_cover_art_title: 'Edit MP3 title and cover art',
+  tool_edit_mp3_title_and_cover_art_usecase_1: 'Give a podcast export a readable title and artist before sharing.',
+  tool_edit_mp3_title_and_cover_art_usecase_2: 'Add album art to a personal MP3 so phone players show a cover.',
+  tool_edit_mp3_title_and_cover_art_usecases_title: 'Useful for',
+  tool_edit_mp3_title_and_cover_art_why_choose_item_1: 'Audio frames are copied as-is—no lamejs re-encode of your track.',
+  tool_edit_mp3_title_and_cover_art_why_choose_item_2: 'The sample demonstrates title plus cover through the same write path.',
+  tool_edit_mp3_title_and_cover_art_why_choose_item_3: 'Limits and ID3v2.3 scope are stated up front instead of silent failures.',
+  tool_edit_mp3_title_and_cover_art_why_choose_item_4: 'Processing stays on your device; related WAV→MP3 tools are one click away.',
+  tool_edit_mp3_title_and_cover_art_why_choose_title: 'Why choose our Edit MP3 title and cover art tools',
+  tool_edit_mp3_title_and_cover_art_write: 'Write ID3 tags',
   tool_edit_pdf_form_fields_apply: 'Apply edits',
   tool_edit_pdf_form_fields_article:
     'List AcroForm field names, rename them, or remove unused boxes, then download. Typing answers belongs on Fill out a PDF form.',
@@ -5719,6 +7073,77 @@ const en: SiteLangDict = {
   tool_edit_pdf_text_online_usecases_title: 'Good fits',
   tool_edit_pdf_text_online_warn_large: 'Large file — may be slow.',
   tool_edit_pdf_text_online_warn_pdflib: 'PDF builder failed to load. Retry on a desktop browser.',
+  tool_embed_lyrics_in_an_mp3_advanced: 'About USLT support (optional)',
+  tool_embed_lyrics_in_an_mp3_article:
+    'Many players show lyrics from the USLT frame. This page strips the old ID3 block, writes an ID3v2.3 unsynced lyrics frame, and copies MPEG frames unchanged—same rewrite style as the title/cover editor. Synced karaoke timestamps are not supported. Related cover extract and tag editor sit nearby. Work stays on-device.',
+  tool_embed_lyrics_in_an_mp3_choose: 'Choose an MP3 file',
+  tool_embed_lyrics_in_an_mp3_clear: 'Clear',
+  tool_embed_lyrics_in_an_mp3_convert: 'Apply lyrics',
+  tool_embed_lyrics_in_an_mp3_desc: 'Write unsynced lyrics into an MP3 ID3 tag without re-encoding the audio. Files stay on your device.',
+  tool_embed_lyrics_in_an_mp3_desc_placeholder: 'e.g. Lyrics',
+  tool_embed_lyrics_in_an_mp3_description:
+    'Embed unsynced lyrics (USLT) in an MP3 in the browser without uploading or re-encoding. Steps: choose an MP3, paste lyrics, set a three-letter language, Apply lyrics, preview and download. Example: the sample MP3 receives demo lyrics while Layer III frames stay intact. Writes ID3v2.3 USLT locally—synced LRC/karaoke is out of scope. Never uploaded.',
+  tool_embed_lyrics_in_an_mp3_done: 'Ready. Listen, then Download MP3.',
+  tool_embed_lyrics_in_an_mp3_download: 'Download MP3',
+  tool_embed_lyrics_in_an_mp3_elapsed: 'Elapsed: {s}s',
+  tool_embed_lyrics_in_an_mp3_empty: 'Choose an MP3 or load the sample first.',
+  tool_embed_lyrics_in_an_mp3_err_encoder: 'The sample encoder could not load. Check the connection and try Load sample again.',
+  tool_embed_lyrics_in_an_mp3_err_file: 'Drop exactly one MP3 file.',
+  tool_embed_lyrics_in_an_mp3_err_format: 'Unsupported or damaged MP3. Need Layer III frames after any ID3 header.',
+  tool_embed_lyrics_in_an_mp3_err_lang: 'Language must be exactly three letters (ISO 639-2 style), e.g. eng.',
+  tool_embed_lyrics_in_an_mp3_err_limit: 'The file exceeds 40 MiB or about 10 minutes.',
+  tool_embed_lyrics_in_an_mp3_err_lyrics: 'Paste non-empty lyrics under 32,000 characters (plain text, not LRC timing).',
+  tool_embed_lyrics_in_an_mp3_example:
+    'On opening, a three-second mono tone MP3 loads with demo English lyrics and Apply runs. Load sample repeats it. Playback never starts by itself.',
+  tool_embed_lyrics_in_an_mp3_example_title: 'A real lyrics example',
+  tool_embed_lyrics_in_an_mp3_failed: 'Lyrics write failed. Try a shorter unprotected MP3.',
+  tool_embed_lyrics_in_an_mp3_faq_a1: 'No. Layer III frames are copied unchanged. Only the ID3 block is rewritten with USLT.',
+  tool_embed_lyrics_in_an_mp3_faq_a2: 'No. This page writes unsynced USLT text only. Timed karaoke is out of scope.',
+  tool_embed_lyrics_in_an_mp3_faq_a3: 'No. Tag writing runs in the browser on your device.',
+  tool_embed_lyrics_in_an_mp3_faq_a4: 'A three-letter code such as eng, spa, or zho. Invalid codes are rejected.',
+  tool_embed_lyrics_in_an_mp3_faq_a5: 'Cover extract only reads APIC images. This page writes lyrics tags and downloads a new MP3.',
+  tool_embed_lyrics_in_an_mp3_faq_q1: 'Does this re-encode my MP3?',
+  tool_embed_lyrics_in_an_mp3_faq_q2: 'Are synced LRC lyrics supported?',
+  tool_embed_lyrics_in_an_mp3_faq_q3: 'Is my file uploaded?',
+  tool_embed_lyrics_in_an_mp3_faq_q4: 'What language code should I use?',
+  tool_embed_lyrics_in_an_mp3_faq_q5: 'How is this different from extracting cover art?',
+  tool_embed_lyrics_in_an_mp3_field_desc: 'Descriptor (optional)',
+  tool_embed_lyrics_in_an_mp3_field_lang: 'Language code',
+  tool_embed_lyrics_in_an_mp3_field_lyrics: 'Lyrics (unsynced)',
+  tool_embed_lyrics_in_an_mp3_hint: 'One MP3, up to 40 MiB and about 10 minutes. Lyrics rewrite without re-encoding audio frames.',
+  tool_embed_lyrics_in_an_mp3_how_body: 'Add unsynced lyrics metadata without changing the sound.',
+  tool_embed_lyrics_in_an_mp3_how_item_1: 'Choose an MP3, or click Load sample for a short demo with sample lyrics.',
+  tool_embed_lyrics_in_an_mp3_how_item_2: 'Paste lyrics, keep or edit the three-letter language, optional descriptor.',
+  tool_embed_lyrics_in_an_mp3_how_item_3: 'Click Apply lyrics and wait for Read → Write USLT tag.',
+  tool_embed_lyrics_in_an_mp3_how_item_4: 'Listen to confirm playback, then Download MP3 with the lyrics tag.',
+  tool_embed_lyrics_in_an_mp3_how_title: 'How to embed lyrics in an MP3',
+  tool_embed_lyrics_in_an_mp3_lyrics_hint: 'Plain text only, up to about 32,000 characters. Line breaks are kept. Not timed LRC.',
+  tool_embed_lyrics_in_an_mp3_preview: 'Listen to the tagged MP3',
+  tool_embed_lyrics_in_an_mp3_progress: 'Lyrics write progress',
+  tool_embed_lyrics_in_an_mp3_read: 'Read MP3 frames',
+  tool_embed_lyrics_in_an_mp3_result:
+    '{chars} characters · lang {lang} · {seconds}s audio unchanged · Input {input} KiB → Output {output} KiB',
+  tool_embed_lyrics_in_an_mp3_rules_body: 'Tag size grows with lyric length. Playback length should match the original frames.',
+  tool_embed_lyrics_in_an_mp3_rules_item_1: 'We write ID3v2.3 USLT only. Older or exotic frames may be removed when rewriting.',
+  tool_embed_lyrics_in_an_mp3_rules_item_2: 'PCM is not re-encoded. Synced timestamps and karaoke are not supported.',
+  tool_embed_lyrics_in_an_mp3_rules_item_3: 'One MP3, at most 40 MiB and about 10 minutes. Lyrics ≤ ~32k characters. No batch.',
+  tool_embed_lyrics_in_an_mp3_rules_item_4: 'Files stay on your device. Keep a backup if you need complex tags preserved bit-for-bit.',
+  tool_embed_lyrics_in_an_mp3_rules_title: 'USLT honesty, language and limits',
+  tool_embed_lyrics_in_an_mp3_sample: 'Load sample',
+  tool_embed_lyrics_in_an_mp3_sample_lyrics: 'Demo line one\\nDemo line two\\nUnsynced lyrics sample.',
+  tool_embed_lyrics_in_an_mp3_sample_name: 'three-second-lyrics-demo',
+  tool_embed_lyrics_in_an_mp3_settings_hint:
+    'Writes ID3v2.3 USLT (unsynced). Previous ID3 is replaced. Synced lyrics, karaoke, and full ID3v2.4 feature sets are out of scope.',
+  tool_embed_lyrics_in_an_mp3_title: 'Embed lyrics in an MP3',
+  tool_embed_lyrics_in_an_mp3_usecase_1: 'Attach a transcript or lyric sheet to a podcast MP3 for players that read USLT.',
+  tool_embed_lyrics_in_an_mp3_usecase_2: 'Add plain lyrics to a personal track without re-encoding.',
+  tool_embed_lyrics_in_an_mp3_usecases_title: 'Useful for',
+  tool_embed_lyrics_in_an_mp3_why_choose_item_1: 'Audio frames are copied as-is—no lamejs re-encode of your track.',
+  tool_embed_lyrics_in_an_mp3_why_choose_item_2: 'The sample demonstrates USLT through the same write path.',
+  tool_embed_lyrics_in_an_mp3_why_choose_item_3: 'Synced LRC and karaoke are clearly out of scope instead of fake promises.',
+  tool_embed_lyrics_in_an_mp3_why_choose_item_4: 'Processing stays on your device; related tag and cover tools are nearby.',
+  tool_embed_lyrics_in_an_mp3_why_choose_title: 'Why choose our Embed lyrics in an MP3 tools',
+  tool_embed_lyrics_in_an_mp3_write: 'Write USLT tag',
   tool_emi_article:
     'EMI spreads a fixed loan into equal periodic payments of principal plus interest. This page uses the standard reducing-balance formula, shows early schedule rows, and keeps mortgage, auto, and personal-loan scenarios on one URL.',
   tool_emi_calculate: 'Calculate',
@@ -5801,6 +7226,92 @@ const en: SiteLangDict = {
   tool_emi_usecases_title: 'When to use it',
   tool_emi_years_label: 'Tenure (years)',
   tool_emi_years_placeholder: 'e.g. 5',
+  tool_eq_a_muffled_voice_recording_advanced: 'EQ presets',
+  tool_eq_a_muffled_voice_recording_article:
+    'Phone calls, masked speech and distant mics often sound muffled: too much mud below a few hundred hertz and not enough clarity in the speech band. This page runs three BiquadFilter stages in OfflineAudioContext—lowshelf, peaking and highshelf—as named presets. Clarity cuts mud and lifts speech presence; Warmth gently boosts body and softens harsh highs; Presence focuses mid-high presence and air. That is tonal EQ for a muffled voice, not a single-band bass booster, not background-noise reduction, and not a de-esser that only tames sibilance. Channel count stays 1 or 2. Keep the original master; the download is a new 16-bit WAV. Work runs in the browser on your device.',
+  tool_eq_a_muffled_voice_recording_choose: 'Choose an audio file',
+  tool_eq_a_muffled_voice_recording_clear: 'Clear',
+  tool_eq_a_muffled_voice_recording_convert: 'EQ',
+  tool_eq_a_muffled_voice_recording_decode: 'Decode',
+  tool_eq_a_muffled_voice_recording_desc:
+    'Open a dull voice with Clarity, Warmth or Presence three-band presets, then download a 16-bit WAV. On-device only.',
+  tool_eq_a_muffled_voice_recording_description:
+    'EQ a muffled voice recording with Clarity, Warmth or Presence three-band presets. Steps: EQ, preview, download WAV. Example: load the muffled sample. Tone shaping only—not a bass-only booster, not noise reduction, not a de-esser. Audio stays on your device; never uploaded.',
+  tool_eq_a_muffled_voice_recording_done: 'Ready. Preview the EQ’d WAV, then Download WAV.',
+  tool_eq_a_muffled_voice_recording_download: 'Download WAV',
+  tool_eq_a_muffled_voice_recording_elapsed: '{s}s elapsed',
+  tool_eq_a_muffled_voice_recording_empty: 'Choose an audio file or load the sample first.',
+  tool_eq_a_muffled_voice_recording_eq: 'EQ',
+  tool_eq_a_muffled_voice_recording_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_eq_a_muffled_voice_recording_err_encoder: 'Could not write the EQ’d WAV. Check the preset, then try EQ again.',
+  tool_eq_a_muffled_voice_recording_err_file: 'Drop exactly one audio file.',
+  tool_eq_a_muffled_voice_recording_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_eq_a_muffled_voice_recording_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_eq_a_muffled_voice_recording_err_silence: 'Level is essentially silence—nothing to EQ. Try a recording with audible level.',
+  tool_eq_a_muffled_voice_recording_example:
+    'Load sample builds a two-second dull tone with strong lows and weak highs, then EQ at Clarity automatically. Playback never starts by itself—press play on the preview if you want to hear the clearer result.',
+  tool_eq_a_muffled_voice_recording_example_title: 'Try a real muffled EQ',
+  tool_eq_a_muffled_voice_recording_failed: 'EQ failed. Try a smaller, valid audio file.',
+  tool_eq_a_muffled_voice_recording_faq_a1:
+    'No. A bass booster mainly lifts low frequencies. This page offers three multi-band voice presets for muffled speech. Bass-only boosting is a different job (Boost bass on an MP3 when that tool is available).',
+  tool_eq_a_muffled_voice_recording_faq_a2:
+    'No. EQ reshapes tone; it does not suppress fans, hiss or room noise. For denoise, use a dedicated noise-reduction tool when available (Reduce background noise on a voice memo).',
+  tool_eq_a_muffled_voice_recording_faq_a3:
+    'No. A de-esser targets harsh sibilance (S/Sh). These presets shape overall muffled tone across low, mid and high bands. Use De-ess a voiceover for sibilance.',
+  tool_eq_a_muffled_voice_recording_faq_a4:
+    'Clarity cuts mud and opens speech. Warmth adds low body and softens harsh highs. Presence lifts mid-high presence and air. Soft peak protection prevents clipping after boosts.',
+  tool_eq_a_muffled_voice_recording_faq_a5:
+    'After the filter chain, soft peak protection scales the buffer if peaks would exceed about −0.2 dBFS, so the WAV stays safe. For dedicated peak limiting, use Limit peaks so a file does not clip.',
+  tool_eq_a_muffled_voice_recording_faq_a6:
+    'No. Decoding, EQ and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For dynamics after EQ, use Compress dynamic range of a voice recording or Limit peaks so a file does not clip.',
+  tool_eq_a_muffled_voice_recording_faq_q1: 'Is this the same as a bass booster?',
+  tool_eq_a_muffled_voice_recording_faq_q2: 'Does this remove background noise?',
+  tool_eq_a_muffled_voice_recording_faq_q3: 'Is this a de-esser?',
+  tool_eq_a_muffled_voice_recording_faq_q4: 'What do Clarity, Warmth and Presence do?',
+  tool_eq_a_muffled_voice_recording_faq_q5: 'What if EQ makes the file hotter?',
+  tool_eq_a_muffled_voice_recording_faq_q6: 'Is my audio uploaded to a server?',
+  tool_eq_a_muffled_voice_recording_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_eq_a_muffled_voice_recording_how_body:
+    'Pick a three-band preset, reshape the tone, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_eq_a_muffled_voice_recording_how_item_1: 'Choose an audio file, or select Load sample for a two-second muffled-voice demonstration.',
+  tool_eq_a_muffled_voice_recording_how_item_2: 'Open EQ presets and pick Clarity (default), Warmth or Presence.',
+  tool_eq_a_muffled_voice_recording_how_item_3: 'Click EQ and wait for Read → Decode → EQ → Write to finish.',
+  tool_eq_a_muffled_voice_recording_how_item_4: 'Preview the result, check the preset and peaks, then click Download WAV.',
+  tool_eq_a_muffled_voice_recording_how_title: 'How to EQ a muffled voice recording',
+  tool_eq_a_muffled_voice_recording_preset_clarity: 'Clarity',
+  tool_eq_a_muffled_voice_recording_preset_label: 'Voice EQ preset',
+  tool_eq_a_muffled_voice_recording_preset_presence: 'Presence',
+  tool_eq_a_muffled_voice_recording_preset_warmth: 'Warmth',
+  tool_eq_a_muffled_voice_recording_preview: 'Listen to the EQ’d WAV',
+  tool_eq_a_muffled_voice_recording_progress: 'EQ progress',
+  tool_eq_a_muffled_voice_recording_read: 'Read',
+  tool_eq_a_muffled_voice_recording_result: '{seconds}s · {preset} · peak {peakBefore} → {peakAfter} · WAV {output} KiB',
+  tool_eq_a_muffled_voice_recording_rules_body:
+    'Each preset is three Biquad stages (lowshelf, peaking, highshelf). Clarity opens muffled speech; Warmth adds body; Presence lifts presence and air. Soft peak protection scales the result if boosts would clip.',
+  tool_eq_a_muffled_voice_recording_rules_item_1:
+    'Default Clarity cuts muddy lows and boosts speech clarity. Warmth lifts low body and softens harsh highs. Presence focuses mid-high presence.',
+  tool_eq_a_muffled_voice_recording_rules_item_2:
+    'This is tonal EQ only. It does not remove fan noise, does not solo bass boost, and does not target sibilance like a de-esser.',
+  tool_eq_a_muffled_voice_recording_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_eq_a_muffled_voice_recording_rules_item_4:
+    'One file up to 40 MiB and ten minutes. Soft peak protection may reduce overall level after strong boosts so the WAV stays under digital full scale.',
+  tool_eq_a_muffled_voice_recording_rules_title: 'Clarity, Warmth, Presence and limits',
+  tool_eq_a_muffled_voice_recording_sample: 'Load sample',
+  tool_eq_a_muffled_voice_recording_sample_name: 'two-second-muffled-voice-demo',
+  tool_eq_a_muffled_voice_recording_settings_hint:
+    'Default Clarity cuts mud and opens speech. Warmth adds body with softer highs. Presence lifts mid-high presence and air. Soft peak protection keeps the WAV from clipping after boosts.',
+  tool_eq_a_muffled_voice_recording_title: 'EQ a muffled voice recording',
+  tool_eq_a_muffled_voice_recording_usecase_1: 'A phone or masked take that sounds boxed-in—pick Clarity, EQ, download WAV.',
+  tool_eq_a_muffled_voice_recording_usecase_2: 'A podcast voice that needs warmer body or more presence without running a full DAW EQ.',
+  tool_eq_a_muffled_voice_recording_usecases_title: 'When this helps',
+  tool_eq_a_muffled_voice_recording_why_choose_item_1: 'See preset name, peak before/after and output KiB before you save.',
+  tool_eq_a_muffled_voice_recording_why_choose_item_2: 'Three clear voice presets—one muffled-EQ job, not a buried ten-band toy or bass-only wall.',
+  tool_eq_a_muffled_voice_recording_why_choose_item_3:
+    'Decoding, Biquad EQ and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_eq_a_muffled_voice_recording_why_choose_item_4: 'Changing the preset or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_eq_a_muffled_voice_recording_why_choose_title: 'Why choose our EQ a muffled voice recording tools',
+  tool_eq_a_muffled_voice_recording_write: 'Write',
   tool_excel_compare_files_article:
     'Choose two spreadsheets and compare the current sheet cell by cell. Empty cells count as blank strings. Files stay on your device and are not uploaded.',
   tool_excel_compare_files_clear: 'Clear',
@@ -5975,6 +7486,158 @@ const en: SiteLangDict = {
   tool_exponent_usecase_2: 'Check scientific-notation scale factors.',
   tool_exponent_usecase_3: 'Cross-check logs with inverse powers.',
   tool_exponent_usecases_title: 'When to use it',
+  tool_extract_audio_from_a_video_file_advanced: 'Export format',
+  tool_extract_audio_from_a_video_file_article:
+    'Phone clips, screen recordings and camera files often carry the voice-over or BGM you want without the picture. This page reads a local video container, asks the browser to decode the audio track with decodeAudioData, then writes a 16-bit WAV or an MP3 via lamejs. It does not fetch YouTube or any remote URL, does not mute a video into a silent MP4, and does not trim on a waveform—those are different jobs. Success depends on whether your browser can decode that container and codec; exotic codecs may fail with a clear error. Channel count stays one or two. Keep the original; the download is a new audio file. Work runs on your device.',
+  tool_extract_audio_from_a_video_file_bitrate: 'MP3 bitrate',
+  tool_extract_audio_from_a_video_file_choose: 'Choose a video file',
+  tool_extract_audio_from_a_video_file_clear: 'Clear',
+  tool_extract_audio_from_a_video_file_convert: 'Extract',
+  tool_extract_audio_from_a_video_file_decode: 'Decode',
+  tool_extract_audio_from_a_video_file_desc:
+    'Extract the audio track from a local video file, then download WAV or MP3. On-device only—not YouTube URL download.',
+  tool_extract_audio_from_a_video_file_description:
+    'Extract the audio track from a local video file in the browser, then download WAV or MP3. Steps: Extract, preview, download. Example: load a short sample clip, or drop your own MP4/WebM/MOV. Local file only—not YouTube URL download. Never uploaded.',
+  tool_extract_audio_from_a_video_file_done: 'Ready. Preview the audio, then download WAV or MP3.',
+  tool_extract_audio_from_a_video_file_download: 'Download',
+  tool_extract_audio_from_a_video_file_download_mp3: 'Download MP3',
+  tool_extract_audio_from_a_video_file_download_wav: 'Download WAV',
+  tool_extract_audio_from_a_video_file_elapsed: '{s}s elapsed',
+  tool_extract_audio_from_a_video_file_empty: 'Choose a video file or load the sample first.',
+  tool_extract_audio_from_a_video_file_empty_state:
+    'No file loaded yet. Drop a local MP4, WebM or MOV, or click Load sample. This tool does not accept YouTube or other URLs.',
+  tool_extract_audio_from_a_video_file_err_decode: 'The browser could not decode audio from this video. Try another container or a shorter clip.',
+  tool_extract_audio_from_a_video_file_err_encoder: 'Could not write the audio file. Check the format, then try Extract again.',
+  tool_extract_audio_from_a_video_file_err_file: 'Drop exactly one video file.',
+  tool_extract_audio_from_a_video_file_err_format: 'Unsupported or damaged video. Use an MP4, WebM or MOV your browser can decode.',
+  tool_extract_audio_from_a_video_file_err_limit: 'Use a file no larger than 80 MiB or 10 minutes, with one or two audio channels.',
+  tool_extract_audio_from_a_video_file_err_sample: 'Could not build a sample video in this browser. Drop your own local video file instead.',
+  tool_extract_audio_from_a_video_file_example:
+    'Load sample builds a short synthetic WebM with a tone when MediaRecorder is available, then Extract runs automatically. Playback never starts by itself—press play on the preview if you want to hear it. Prefer dropping your own MP4 when the sample cannot be built.',
+  tool_extract_audio_from_a_video_file_example_title: 'Try a real extract',
+  tool_extract_audio_from_a_video_file_extract: 'Extract',
+  tool_extract_audio_from_a_video_file_failed: 'Extract failed. Try a smaller video your browser can decode.',
+  tool_extract_audio_from_a_video_file_faq_a1:
+    'No. This page only accepts a local video file you drop or choose. It does not download from YouTube or other URLs. Save the video to your device first, then extract here.',
+  tool_extract_audio_from_a_video_file_faq_a2:
+    'Similar goal, different honesty: many converters imply URL fetch. Here the browser decodes your local file and writes WAV or MP3 on your device. If your browser cannot decode the container, extraction fails with a clear error.',
+  tool_extract_audio_from_a_video_file_faq_a3:
+    'No. This page extracts the audio track into an audio file. It does not export a muted video. That is a different job.',
+  tool_extract_audio_from_a_video_file_faq_a4:
+    'Common MP4, WebM and MOV files often work when the browser can decode them. Support varies by browser and codec. WebM/MOV audio variants are handled on this same page—no separate URL.',
+  tool_extract_audio_from_a_video_file_faq_a5:
+    'No. Reading, decoding and writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_extract_audio_from_a_video_file_faq_a6:
+    'Not on this page. Download the WAV or MP3, then use Trim an audio clip and export for start/end cuts. For WAV→MP3 only, use Convert a WAV file to MP3.',
+  tool_extract_audio_from_a_video_file_faq_q1: 'Can I paste a YouTube URL or any link?',
+  tool_extract_audio_from_a_video_file_faq_q2: 'Is this the same as converting MP4 to MP3 online?',
+  tool_extract_audio_from_a_video_file_faq_q3: 'Does this remove audio from a video (mute / silent MP4)?',
+  tool_extract_audio_from_a_video_file_faq_q4: 'Which video formats work?',
+  tool_extract_audio_from_a_video_file_faq_q5: 'Is my video uploaded to a server?',
+  tool_extract_audio_from_a_video_file_faq_q6: 'Can I trim the audio after extracting?',
+  tool_extract_audio_from_a_video_file_format_label: 'Output format',
+  tool_extract_audio_from_a_video_file_format_mp3: 'MP3',
+  tool_extract_audio_from_a_video_file_format_wav: 'WAV (16-bit)',
+  tool_extract_audio_from_a_video_file_hint:
+    'Drop one MP4, WebM or MOV your browser can decode. Maximum 80 MiB and 10 minutes; mono or stereo audio track.',
+  tool_extract_audio_from_a_video_file_how_body:
+    'Drop a local video, pick WAV or MP3, run Extract, listen, then download—without uploading the file or pasting a URL.',
+  tool_extract_audio_from_a_video_file_how_item_1:
+    'Choose a local video (MP4, WebM or MOV), or select Load sample for a short synthetic clip when the browser supports it.',
+  tool_extract_audio_from_a_video_file_how_item_2: 'Open Export format and pick WAV (default) or MP3; set MP3 bitrate if needed.',
+  tool_extract_audio_from_a_video_file_how_item_3: 'Click Extract and wait for Read → Decode → Extract → Write to finish.',
+  tool_extract_audio_from_a_video_file_how_item_4: 'Preview the track, check the result line, then click Download WAV or Download MP3.',
+  tool_extract_audio_from_a_video_file_how_title: 'How to extract audio from a video file',
+  tool_extract_audio_from_a_video_file_preview: 'Listen to the extracted audio',
+  tool_extract_audio_from_a_video_file_progress: 'Extract progress',
+  tool_extract_audio_from_a_video_file_read: 'Read',
+  tool_extract_audio_from_a_video_file_result: '{seconds}s · {channels} ch · {rate} Hz · {format} {output} KiB',
+  tool_extract_audio_from_a_video_file_rules_body:
+    'Each run reads one local video file and asks the browser to decode its audio track. Export is 16-bit WAV or MP3. Containers and codecs your browser cannot decode will fail clearly. This is not YouTube-to-MP3, not mute-video export, and not waveform trim.',
+  tool_extract_audio_from_a_video_file_rules_item_1: 'Input is one local video up to 80 MiB and ten minutes. Output keeps one or two channels.',
+  tool_extract_audio_from_a_video_file_rules_item_2: 'No URL or YouTube download. Paste links are not accepted; bring a file from your device.',
+  tool_extract_audio_from_a_video_file_rules_item_3: 'Success depends on browser container support (often MP4/WebM/MOV). Exotic codecs may fail.',
+  tool_extract_audio_from_a_video_file_rules_item_4:
+    'Tags are not copied. The original video is never overwritten. For trimming the exported audio, use the trim tool.',
+  tool_extract_audio_from_a_video_file_rules_title: 'Local video only and honest browser limits',
+  tool_extract_audio_from_a_video_file_sample: 'Load sample',
+  tool_extract_audio_from_a_video_file_sample_name: 'short-video-audio-demo',
+  tool_extract_audio_from_a_video_file_settings_hint:
+    'Default WAV is uncompressed 16-bit PCM. Choose MP3 for a smaller shareable file; bitrate applies only to MP3. This page never downloads from a URL or YouTube.',
+  tool_extract_audio_from_a_video_file_title: 'Extract audio from a video file',
+  tool_extract_audio_from_a_video_file_usecase_1: 'You only need the voice-over or BGM from a phone clip—Extract, then download WAV or MP3.',
+  tool_extract_audio_from_a_video_file_usecase_2:
+    'A screen recording should become a shareable audio file without uploading the video to a converter site.',
+  tool_extract_audio_from_a_video_file_usecases_title: 'When this helps',
+  tool_extract_audio_from_a_video_file_why_choose_item_1: 'See duration, channel count, sample rate, format and output KiB before you save.',
+  tool_extract_audio_from_a_video_file_why_choose_item_2: 'One clear job—local video to audio—with honest limits when the browser cannot decode a container.',
+  tool_extract_audio_from_a_video_file_why_choose_item_3: 'Decoding and writing run on your device; the page does not upload your video to process it.',
+  tool_extract_audio_from_a_video_file_why_choose_item_4: 'Changing the format or the input clears the old download so you never save a stale file by mistake.',
+  tool_extract_audio_from_a_video_file_why_choose_title: 'Why choose our Extract audio from a video file tools',
+  tool_extract_audio_from_a_video_file_write: 'Write',
+  tool_extract_cover_art_from_an_mp3_advanced: 'About APIC support (optional)',
+  tool_extract_cover_art_from_an_mp3_article:
+    'Players show blank art when the APIC frame is missing or hard to reach. This page reads ID3v2, finds the first APIC picture, and lets you download JPEG or PNG. Audio frames are not rewritten. Use the related tag editor to embed a cover, or batch WAV→MP3 nearby. Work stays on-device.',
+  tool_extract_cover_art_from_an_mp3_choose: 'Choose an MP3 file',
+  tool_extract_cover_art_from_an_mp3_clear: 'Clear',
+  tool_extract_cover_art_from_an_mp3_convert: 'Extract cover',
+  tool_extract_cover_art_from_an_mp3_desc: 'Pull the album cover image out of an MP3 APIC tag. Files stay on your device and are never uploaded.',
+  tool_extract_cover_art_from_an_mp3_description:
+    'Extract cover art from an MP3 in the browser without uploading. Steps: choose an MP3, Extract cover, preview the image, Download cover as JPEG or PNG. Example: the sample tagged MP3 yields a tiny demo JPEG while audio frames are only scanned, not rewritten. Parses ID3v2 APIC locally—missing covers fail clearly. Never uploaded.',
+  tool_extract_cover_art_from_an_mp3_done: 'Ready. Preview, then Download cover.',
+  tool_extract_cover_art_from_an_mp3_download: 'Download cover',
+  tool_extract_cover_art_from_an_mp3_elapsed: 'Elapsed: {s}s',
+  tool_extract_cover_art_from_an_mp3_empty: 'Choose an MP3 or load the sample first.',
+  tool_extract_cover_art_from_an_mp3_err_cover: 'No usable APIC cover found. Embed a cover first, or try another MP3.',
+  tool_extract_cover_art_from_an_mp3_err_encoder: 'The sample encoder could not load. Check the connection and try Load sample again.',
+  tool_extract_cover_art_from_an_mp3_err_file: 'Drop exactly one MP3 file.',
+  tool_extract_cover_art_from_an_mp3_err_format: 'Unsupported or damaged MP3. Need Layer III frames after any ID3 header.',
+  tool_extract_cover_art_from_an_mp3_err_limit: 'The file exceeds 40 MiB or about 10 minutes.',
+  tool_extract_cover_art_from_an_mp3_example:
+    'On opening, a three-second mono MP3 with a tiny JPEG APIC loads and Extract runs. Load sample repeats it. Playback of the image is a still preview only.',
+  tool_extract_cover_art_from_an_mp3_example_title: 'A real extract example',
+  tool_extract_cover_art_from_an_mp3_extract: 'Extract APIC cover',
+  tool_extract_cover_art_from_an_mp3_failed: 'Extract failed. Try an MP3 that already has cover art.',
+  tool_extract_cover_art_from_an_mp3_faq_a1: 'No. APIC parsing runs in the browser on your device.',
+  tool_extract_cover_art_from_an_mp3_faq_a2: 'You get a clear error. Use the related Edit MP3 title and cover art page to embed one first.',
+  tool_extract_cover_art_from_an_mp3_faq_a3: 'No. Frames are scanned for validation only; the download is the image, not a new MP3.',
+  tool_extract_cover_art_from_an_mp3_faq_a4: 'Whatever the APIC MIME declares—commonly JPEG or PNG. Extension follows the MIME.',
+  tool_extract_cover_art_from_an_mp3_faq_a5: 'This page only extracts. Editing title/artist/album/cover writing is the related A6 tool.',
+  tool_extract_cover_art_from_an_mp3_faq_q1: 'Is my MP3 uploaded?',
+  tool_extract_cover_art_from_an_mp3_faq_q2: 'What if there is no cover?',
+  tool_extract_cover_art_from_an_mp3_faq_q3: 'Does this change the audio?',
+  tool_extract_cover_art_from_an_mp3_faq_q4: 'Which image formats are supported?',
+  tool_extract_cover_art_from_an_mp3_faq_q5: 'How is this different from editing tags?',
+  tool_extract_cover_art_from_an_mp3_hint: 'One MP3, up to 40 MiB and about 10 minutes. Needs an ID3v2 APIC cover frame.',
+  tool_extract_cover_art_from_an_mp3_how_body: 'Save the embedded album picture without changing the audio.',
+  tool_extract_cover_art_from_an_mp3_how_item_1: 'Choose an MP3, or click Load sample for a tagged demo with a tiny cover.',
+  tool_extract_cover_art_from_an_mp3_how_item_2: 'Click Extract cover and wait for Read → Extract APIC cover.',
+  tool_extract_cover_art_from_an_mp3_how_item_3: 'Check the preview and MIME type shown in the result line.',
+  tool_extract_cover_art_from_an_mp3_how_item_4: 'Click Download cover to save JPEG or PNG on your device.',
+  tool_extract_cover_art_from_an_mp3_how_title: 'How to extract cover art from an MP3',
+  tool_extract_cover_art_from_an_mp3_preview: 'Cover preview',
+  tool_extract_cover_art_from_an_mp3_progress: 'Extract progress',
+  tool_extract_cover_art_from_an_mp3_read: 'Read MP3 tags',
+  tool_extract_cover_art_from_an_mp3_result: '{mime} · {kib} KiB cover · Source MP3 {input} KiB',
+  tool_extract_cover_art_from_an_mp3_rules_body: 'Only the first usable APIC frame is exported. Audio bytes are not rewritten.',
+  tool_extract_cover_art_from_an_mp3_rules_item_1: 'We read ID3v2 APIC. Exotic encodings or compressed frames may be rejected.',
+  tool_extract_cover_art_from_an_mp3_rules_item_2: 'Audio is not re-encoded. To edit title or embed a cover, use the related tag page.',
+  tool_extract_cover_art_from_an_mp3_rules_item_3: 'One MP3, at most 40 MiB and about 10 minutes. No batch extract matrix.',
+  tool_extract_cover_art_from_an_mp3_rules_item_4: 'Files stay on your device. Offline use is not guaranteed after the page loads.',
+  tool_extract_cover_art_from_an_mp3_rules_title: 'APIC honesty and limits',
+  tool_extract_cover_art_from_an_mp3_sample: 'Load sample',
+  tool_extract_cover_art_from_an_mp3_sample_name: 'three-second-cover-demo',
+  tool_extract_cover_art_from_an_mp3_settings_hint:
+    'Reads ID3v2.3/2.4 APIC only. Compressed or unsynchronised frames may fail. This page does not edit title tags or embed lyrics.',
+  tool_extract_cover_art_from_an_mp3_title: 'Extract cover art from an MP3',
+  tool_extract_cover_art_from_an_mp3_usecase_1: 'Save podcast or album art as a standalone image for a thumbnail.',
+  tool_extract_cover_art_from_an_mp3_usecase_2: 'Check whether an MP3 already carries a cover before sharing.',
+  tool_extract_cover_art_from_an_mp3_usecases_title: 'Useful for',
+  tool_extract_cover_art_from_an_mp3_why_choose_item_1: 'APIC parsing stays local—no upload of your music library.',
+  tool_extract_cover_art_from_an_mp3_why_choose_item_2: 'The sample proves the same extract path with a known tiny JPEG.',
+  tool_extract_cover_art_from_an_mp3_why_choose_item_3: 'Missing covers fail clearly instead of silent empty downloads.',
+  tool_extract_cover_art_from_an_mp3_why_choose_item_4: 'Related tag editor and WAV→MP3 tools sit one click away.',
+  tool_extract_cover_art_from_an_mp3_why_choose_title: 'Why choose our Extract cover art from an MP3 tools',
   tool_extract_text_from_pdf_article:
     'Extract selectable text from every PDF page, inspect page and character counts, then copy it or download a plain-text file.',
   tool_extract_text_from_pdf_choose_file: 'Choose a PDF',
@@ -6035,6 +7698,95 @@ const en: SiteLangDict = {
   tool_extract_text_from_pdf_usecase_3: 'Privacy-sensitive files that must stay on device',
   tool_extract_text_from_pdf_usecases_title: 'Good fits',
   tool_extract_text_from_pdf_warn_large: 'Large file — may be slow.',
+  tool_fade_in_and_fade_out_an_audio_clip_advanced: 'Fade settings',
+  tool_fade_in_and_fade_out_an_audio_clip_article:
+    'Hard cuts at the start or end of a clip click on speakers and feel abrupt in video timelines. This page applies a fade-in envelope at the head and a fade-out envelope at the tail. Pick 0.5, 1, 2 or 3 seconds for each end, then choose Linear (straight gain ramp) or Equal-power (sine/cosine ramps that keep perceived loudness steadier). If fade-in plus fade-out would exceed the clip length, both sides shrink proportionally so the middle still exists. This is edge fading on one clip—not wrapping the tail into the head for a seamless loop, not limiting peaks, and not equalizing tone. Channel count stays 1 or 2. Keep the original file; the download is a new 16-bit WAV. Work runs in the browser on your device.',
+  tool_fade_in_and_fade_out_an_audio_clip_choose: 'Choose an audio file',
+  tool_fade_in_and_fade_out_an_audio_clip_clear: 'Clear',
+  tool_fade_in_and_fade_out_an_audio_clip_convert: 'Fade',
+  tool_fade_in_and_fade_out_an_audio_clip_curve_equal: 'Equal-power',
+  tool_fade_in_and_fade_out_an_audio_clip_curve_label: 'Curve',
+  tool_fade_in_and_fade_out_an_audio_clip_curve_linear: 'Linear',
+  tool_fade_in_and_fade_out_an_audio_clip_decode: 'Decode',
+  tool_fade_in_and_fade_out_an_audio_clip_desc:
+    'Soften abrupt starts and stops with 0.5–3 s fade chips and linear or equal-power curves, then download a 16-bit WAV. On-device only.',
+  tool_fade_in_and_fade_out_an_audio_clip_description:
+    'Fade in and fade out an audio clip with 0.5, 1, 2 or 3 second chips at each end and a linear or equal-power curve. Steps: Fade, preview, download WAV. Example: load the abrupt sample. Edge fades only—not a seamless loop wrap crossfade, not a limiter or EQ. Audio stays on your device; never uploaded.',
+  tool_fade_in_and_fade_out_an_audio_clip_done: 'Ready. Preview the faded WAV, then Download WAV.',
+  tool_fade_in_and_fade_out_an_audio_clip_download: 'Download WAV',
+  tool_fade_in_and_fade_out_an_audio_clip_elapsed: '{s}s elapsed',
+  tool_fade_in_and_fade_out_an_audio_clip_empty: 'Choose an audio file or load the sample first.',
+  tool_fade_in_and_fade_out_an_audio_clip_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_fade_in_and_fade_out_an_audio_clip_err_encoder: 'Could not write the faded WAV. Check the fade settings, then try Fade again.',
+  tool_fade_in_and_fade_out_an_audio_clip_err_file: 'Drop exactly one audio file.',
+  tool_fade_in_and_fade_out_an_audio_clip_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_fade_in_and_fade_out_an_audio_clip_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_fade_in_and_fade_out_an_audio_clip_err_short: 'Clip is too short to fade meaningfully. Use a file longer than about 50 ms.',
+  tool_fade_in_and_fade_out_an_audio_clip_err_silence: 'Level is essentially silence—nothing to fade. Try a recording with audible level.',
+  tool_fade_in_and_fade_out_an_audio_clip_example:
+    'Load sample builds a four-second tone that starts and stops abruptly, then Fade at 1 s / 1 s Equal-power automatically. Playback never starts by itself—press play on the preview if you want to hear the soft edges.',
+  tool_fade_in_and_fade_out_an_audio_clip_example_title: 'Try a real edge fade',
+  tool_fade_in_and_fade_out_an_audio_clip_fade: 'Fade',
+  tool_fade_in_and_fade_out_an_audio_clip_fade_in_label: 'Fade in',
+  tool_fade_in_and_fade_out_an_audio_clip_fade_out_label: 'Fade out',
+  tool_fade_in_and_fade_out_an_audio_clip_failed: 'Fade failed. Try a smaller, valid audio file.',
+  tool_fade_in_and_fade_out_an_audio_clip_faq_a1:
+    'No. That tool wraps the selected tail into the head with a crossfade so the join loops cleanly. This page only softens the start and end of one clip. For seamless looping, use Make a seamless audio loop.',
+  tool_fade_in_and_fade_out_an_audio_clip_faq_a2:
+    'No. It only multiplies samples by a fade envelope. For peak limiting use Limit peaks so a file does not clip; for bass shelf use Boost bass on an MP3; for muffled speech EQ use EQ a muffled voice recording.',
+  tool_fade_in_and_fade_out_an_audio_clip_faq_a3:
+    'Linear ramps gain in a straight line. Equal-power uses sine for fade-in and the matching cosine shape for fade-out so loudness feels smoother. Default is Equal-power.',
+  tool_fade_in_and_fade_out_an_audio_clip_faq_a4:
+    'Both ends shrink in proportion so fade-in plus fade-out never exceeds the clip length. The result line shows the actual seconds applied.',
+  tool_fade_in_and_fade_out_an_audio_clip_faq_a5:
+    'Chips always set both ends; use the shortest chip (0.5 s) on the end you barely want to touch, or trim first with Trim an audio clip and export, then fade.',
+  tool_fade_in_and_fade_out_an_audio_clip_faq_a6:
+    'No. Decoding, fades and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For seamless loops use Make a seamless audio loop; for cutting length use Trim an audio clip and export.',
+  tool_fade_in_and_fade_out_an_audio_clip_faq_q1: 'Is this the same as Make a seamless audio loop?',
+  tool_fade_in_and_fade_out_an_audio_clip_faq_q2: 'Does this limit peaks or equalize tone?',
+  tool_fade_in_and_fade_out_an_audio_clip_faq_q3: 'What is Equal-power versus Linear?',
+  tool_fade_in_and_fade_out_an_audio_clip_faq_q4: 'What if 3 s in plus 3 s out is longer than my clip?',
+  tool_fade_in_and_fade_out_an_audio_clip_faq_q5: 'Can I fade only one end?',
+  tool_fade_in_and_fade_out_an_audio_clip_faq_q6: 'Is my audio uploaded to a server?',
+  tool_fade_in_and_fade_out_an_audio_clip_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_fade_in_and_fade_out_an_audio_clip_how_body:
+    'Pick fade-in and fade-out lengths, choose a curve, apply, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_fade_in_and_fade_out_an_audio_clip_how_item_1: 'Choose an audio file, or select Load sample for a four-second abrupt demonstration.',
+  tool_fade_in_and_fade_out_an_audio_clip_how_item_2: 'Open Fade settings and pick fade-in and fade-out chips (0.5 / 1 / 2 / 3 s). Default is 1 s each.',
+  tool_fade_in_and_fade_out_an_audio_clip_how_item_3: 'Choose Linear or Equal-power (default), click Fade, and wait for Read → Decode → Fade → Write.',
+  tool_fade_in_and_fade_out_an_audio_clip_how_item_4: 'Preview the soft start and soft end, check the result line, then click Download WAV.',
+  tool_fade_in_and_fade_out_an_audio_clip_how_title: 'How to fade in and fade out an audio clip',
+  tool_fade_in_and_fade_out_an_audio_clip_preview: 'Listen to the faded WAV',
+  tool_fade_in_and_fade_out_an_audio_clip_progress: 'Fade progress',
+  tool_fade_in_and_fade_out_an_audio_clip_read: 'Read',
+  tool_fade_in_and_fade_out_an_audio_clip_result: '{seconds}s · in {fadeIn}s · out {fadeOut}s · {curve} · WAV {output} KiB',
+  tool_fade_in_and_fade_out_an_audio_clip_rules_body:
+    'Fade-in rises from silence at the head; fade-out falls to silence at the tail. Linear uses a straight ramp; Equal-power uses sine/cosine ramps. Overlapping requests shrink proportionally.',
+  tool_fade_in_and_fade_out_an_audio_clip_rules_item_1: 'Each end offers 0.5, 1, 2 or 3 seconds. Defaults are 1 s in and 1 s out with Equal-power.',
+  tool_fade_in_and_fade_out_an_audio_clip_rules_item_2:
+    'This fades the edges of one clip. It does not wrap the tail into the head for a seamless loop, and it does not limit peaks or reshape EQ bands.',
+  tool_fade_in_and_fade_out_an_audio_clip_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_fade_in_and_fade_out_an_audio_clip_rules_item_4:
+    'One file up to 40 MiB and ten minutes. If fade-in plus fade-out exceeds length, both sides scale down so a middle region remains.',
+  tool_fade_in_and_fade_out_an_audio_clip_rules_title: 'Fade lengths, curves and limits',
+  tool_fade_in_and_fade_out_an_audio_clip_sample: 'Load sample',
+  tool_fade_in_and_fade_out_an_audio_clip_sample_name: 'four-second-abrupt-demo',
+  tool_fade_in_and_fade_out_an_audio_clip_settings_hint:
+    'Default is 1 s in, 1 s out, Equal-power. Shorter chips suit drums; longer chips suit pads and speech. If both ends would overlap past the clip length, they shrink together.',
+  tool_fade_in_and_fade_out_an_audio_clip_title: 'Fade in and fade out an audio clip',
+  tool_fade_in_and_fade_out_an_audio_clip_usecase_1: 'A voiceover or music bed that clicks at the cut points—pick 1 s / 1 s, Fade, download WAV.',
+  tool_fade_in_and_fade_out_an_audio_clip_usecase_2:
+    'A clip that needs soft edges before you trim elsewhere or drop it on a timeline—without building a seamless loop.',
+  tool_fade_in_and_fade_out_an_audio_clip_usecases_title: 'When this helps',
+  tool_fade_in_and_fade_out_an_audio_clip_why_choose_item_1: 'See fade-in, fade-out, curve name and output KiB before you save.',
+  tool_fade_in_and_fade_out_an_audio_clip_why_choose_item_2:
+    'Clear duration chips and two curves—one edge-fade job, not a buried seamless-loop wrap or a limiter/EQ chain.',
+  tool_fade_in_and_fade_out_an_audio_clip_why_choose_item_3:
+    'Decoding, envelope fades and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_fade_in_and_fade_out_an_audio_clip_why_choose_item_4: 'Changing chips, curve or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_fade_in_and_fade_out_an_audio_clip_why_choose_title: 'Why choose our Fade in and fade out an audio clip tools',
+  tool_fade_in_and_fade_out_an_audio_clip_write: 'Write',
   tool_faq_title: 'Frequently asked questions',
   tool_feedback_body: 'Something unclear, broken, or missing? Draft a message below — we read every note about these tools.',
   tool_feedback_cta: 'Open in email app',
@@ -6466,6 +8218,159 @@ const en: SiteLangDict = {
   tool_flip_image_warn_animation: 'Animated GIF: only the first frame is used.',
   tool_flip_image_warn_edge: 'Edge exceeds ~8192 px — some browsers may fail.',
   tool_flip_image_warn_large: 'Large file (>25 MB) — may be slow.',
+  tool_generate_a_sine_tone_at_a_frequency_advanced: 'Tone notes',
+  tool_generate_a_sine_tone_at_a_frequency_article:
+    'Tuning references, speaker checks and simple signal tests often need a clean sine at a known Hertz value. This page lets you type a frequency, tap presets such as 220, 440, 880 or 1000 Hz, pick a duration chip, synthesize a mono sine in the browser at 44.1 kHz, then download a 16-bit PCM WAV. It does not generate white, pink or brown noise, does not dial DTMF touch tones, and does not process an uploaded recording—those are different jobs. Keep the file if you need a reusable reference. Work runs on your device.',
+  tool_generate_a_sine_tone_at_a_frequency_clear: 'Clear',
+  tool_generate_a_sine_tone_at_a_frequency_convert: 'Generate',
+  tool_generate_a_sine_tone_at_a_frequency_desc:
+    'Generate a sine tone at a chosen frequency with Hz input and presets, then download a 16-bit WAV. On-device only—not noise.',
+  tool_generate_a_sine_tone_at_a_frequency_description:
+    'Generate a sine tone at a chosen frequency in the browser with Hz input and presets, then download a 16-bit WAV. Steps: Enter Hz or tap a preset, pick duration, Generate, preview, download. Example: 440 Hz for 2 seconds. Sine only—not noise, not DTMF. Never uploaded.',
+  tool_generate_a_sine_tone_at_a_frequency_done: 'Ready. Preview the sine WAV, then Download WAV.',
+  tool_generate_a_sine_tone_at_a_frequency_download: 'Download WAV',
+  tool_generate_a_sine_tone_at_a_frequency_dur_label: 'Duration',
+  tool_generate_a_sine_tone_at_a_frequency_elapsed: '{s}s elapsed',
+  tool_generate_a_sine_tone_at_a_frequency_empty: 'Enter a frequency or tap Load sample first.',
+  tool_generate_a_sine_tone_at_a_frequency_empty_state:
+    'Set a frequency (or tap a preset), pick a duration, then Generate—or Load sample for 440 Hz / 2 s. This tool makes a sine tone—not noise and not DTMF.',
+  tool_generate_a_sine_tone_at_a_frequency_err_encoder: 'Could not write the sine WAV. Try Generate again.',
+  tool_generate_a_sine_tone_at_a_frequency_err_hz: 'Enter a frequency between 20 and 20000 Hz.',
+  tool_generate_a_sine_tone_at_a_frequency_err_limit: 'Duration must be between 0 and 30 seconds.',
+  tool_generate_a_sine_tone_at_a_frequency_example:
+    'Load sample sets 440 Hz and 2 seconds, then Generate runs automatically. You should hear a steady A4-like tone. Playback never starts by itself—press play on the preview if you want to hear it.',
+  tool_generate_a_sine_tone_at_a_frequency_example_title: 'Try 440 Hz for 2 seconds',
+  tool_generate_a_sine_tone_at_a_frequency_failed: 'Generate failed. Check the frequency and duration.',
+  tool_generate_a_sine_tone_at_a_frequency_faq_a1: 'No. This page synthesizes a single sine at one frequency. Noise generators are a different job.',
+  tool_generate_a_sine_tone_at_a_frequency_faq_a2: 'No. DTMF needs paired frequencies. This tool only makes one sine at a time.',
+  tool_generate_a_sine_tone_at_a_frequency_faq_a3: 'Enter 20–20000 Hz. Presets cover common test and music pitches such as 220, 440, 880 and 1000 Hz.',
+  tool_generate_a_sine_tone_at_a_frequency_faq_a4: 'Tiny fades at the start and end reduce click noise when the tone begins or stops abruptly.',
+  tool_generate_a_sine_tone_at_a_frequency_faq_a5:
+    'No. Synthesis and writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_generate_a_sine_tone_at_a_frequency_faq_a6: 'A mono 16-bit PCM WAV at 44.1 kHz. It is a new file you can keep as a reusable reference tone.',
+  tool_generate_a_sine_tone_at_a_frequency_faq_q1: 'Is this a white/pink/brown noise generator?',
+  tool_generate_a_sine_tone_at_a_frequency_faq_q2: 'Can it make DTMF dial tones?',
+  tool_generate_a_sine_tone_at_a_frequency_faq_q3: 'What range of Hertz is allowed?',
+  tool_generate_a_sine_tone_at_a_frequency_faq_q4: 'Why are there short fades?',
+  tool_generate_a_sine_tone_at_a_frequency_faq_q5: 'Is anything uploaded to a server?',
+  tool_generate_a_sine_tone_at_a_frequency_faq_q6: 'What format is the download?',
+  tool_generate_a_sine_tone_at_a_frequency_how_body:
+    'Enter Hz or tap a preset, pick duration, Generate, listen, then download one 16-bit WAV—without uploading files.',
+  tool_generate_a_sine_tone_at_a_frequency_how_item_1: 'Type a frequency in Hz (20–20000) or tap a preset chip such as 440 Hz.',
+  tool_generate_a_sine_tone_at_a_frequency_how_item_2: 'Choose a duration chip (1, 2, 3 or 5 seconds).',
+  tool_generate_a_sine_tone_at_a_frequency_how_item_3: 'Click Generate and wait for Synth → Write to finish.',
+  tool_generate_a_sine_tone_at_a_frequency_how_item_4: 'Preview the tone, check the result line, then click Download WAV.',
+  tool_generate_a_sine_tone_at_a_frequency_how_title: 'How to generate a sine tone at a frequency',
+  tool_generate_a_sine_tone_at_a_frequency_hz_hint: 'Enter 20–20000 Hz, or tap a preset below. Default 440 Hz (A4).',
+  tool_generate_a_sine_tone_at_a_frequency_hz_label: 'Frequency (Hz)',
+  tool_generate_a_sine_tone_at_a_frequency_preset_label: 'Frequency presets',
+  tool_generate_a_sine_tone_at_a_frequency_preview: 'Listen to the sine WAV',
+  tool_generate_a_sine_tone_at_a_frequency_progress: 'Generate progress',
+  tool_generate_a_sine_tone_at_a_frequency_result: '{hz} Hz · {seconds}s · mono · {rate} Hz · WAV {output} KiB',
+  tool_generate_a_sine_tone_at_a_frequency_rules_body:
+    'Each run synthesizes a mono sine at 44.1 kHz with short edge fades. Export is 16-bit WAV. This is not a noise generator, not DTMF, and not a file uploader.',
+  tool_generate_a_sine_tone_at_a_frequency_rules_item_1: 'Frequency stays between 20 and 20000 Hz. Duration stays at or under 30 seconds. Output is mono.',
+  tool_generate_a_sine_tone_at_a_frequency_rules_item_2:
+    'This page makes a sine tone. It does not make white/pink/brown noise, and it does not dial DTMF tones.',
+  tool_generate_a_sine_tone_at_a_frequency_rules_item_3: 'Presets are shortcuts into the same Hz field—editing the field updates which chip looks selected.',
+  tool_generate_a_sine_tone_at_a_frequency_rules_item_4: 'Short fades reduce clicks at the edges. The download is a new file; nothing is uploaded.',
+  tool_generate_a_sine_tone_at_a_frequency_rules_title: 'Sine tone rules and honest browser limits',
+  tool_generate_a_sine_tone_at_a_frequency_sample: 'Load sample',
+  tool_generate_a_sine_tone_at_a_frequency_sample_name: 'sine-tone',
+  tool_generate_a_sine_tone_at_a_frequency_settings_hint:
+    'Output is a mono 16-bit WAV at 44.1 kHz with short fades to avoid clicks. This is a sine tone generator—not a noise generator and not a DTMF dialer.',
+  tool_generate_a_sine_tone_at_a_frequency_synth: 'Synth',
+  tool_generate_a_sine_tone_at_a_frequency_title: 'Generate a sine tone at a frequency',
+  tool_generate_a_sine_tone_at_a_frequency_usecase_1: 'You need an A4 reference tone—set 440 Hz, 2 s, Generate, download WAV for headphones or a tuner.',
+  tool_generate_a_sine_tone_at_a_frequency_usecase_2: 'You want a 1000 Hz test tone to check speakers without installing a desktop signal generator.',
+  tool_generate_a_sine_tone_at_a_frequency_usecases_title: 'When this helps',
+  tool_generate_a_sine_tone_at_a_frequency_why_choose_item_1: 'See exact Hertz, duration, sample rate and output KiB before you save.',
+  tool_generate_a_sine_tone_at_a_frequency_why_choose_item_2: 'One clear sine job—with honest limits when Hz is out of range.',
+  tool_generate_a_sine_tone_at_a_frequency_why_choose_item_3: 'Synthesis and writing run on your device; nothing is uploaded to process the tone.',
+  tool_generate_a_sine_tone_at_a_frequency_why_choose_item_4: 'Changing Hz, a preset or duration clears the old download so you never save a stale WAV by mistake.',
+  tool_generate_a_sine_tone_at_a_frequency_why_choose_title: 'Why choose our Generate a sine tone at a frequency tools',
+  tool_generate_a_sine_tone_at_a_frequency_write: 'Write',
+  tool_generate_dtmf_touch_tones_advanced: 'DTMF notes',
+  tool_generate_dtmf_touch_tones_article:
+    'IVR tests, phone-tone demos and documentation often need a clean DTMF sequence at ITU-T row and column frequencies. This page lets you tap a 0–9 * # A–D keypad or type a sequence, choose tone and gap duration chips, synthesize dual-tone bursts in the browser at 44.1 kHz, then download a 16-bit PCM WAV. It does not make a single sine at one Hertz value, does not craft short UI notification beeps, and does not place a real phone call—those are different jobs. Keep the file if you need a reusable reference. Work runs on your device.',
+  tool_generate_dtmf_touch_tones_backspace: 'Backspace',
+  tool_generate_dtmf_touch_tones_clear: 'Clear',
+  tool_generate_dtmf_touch_tones_convert: 'Generate',
+  tool_generate_dtmf_touch_tones_desc:
+    'Build a DTMF keypad sequence with standard dual-tone frequencies, then download a 16-bit WAV. On-device only—not a single sine.',
+  tool_generate_dtmf_touch_tones_description:
+    'Generate DTMF touch tones from a keypad sequence in the browser with standard row/column frequencies, then download a 16-bit WAV. Steps: Tap keys or type a sequence, pick tone and gap duration, Generate, preview, download. Example: 123#. Dual-tone DTMF only—not a single sine, not a UI beep. Never uploaded.',
+  tool_generate_dtmf_touch_tones_done: 'Ready. Preview the DTMF WAV, then Download WAV.',
+  tool_generate_dtmf_touch_tones_download: 'Download WAV',
+  tool_generate_dtmf_touch_tones_elapsed: '{s}s elapsed',
+  tool_generate_dtmf_touch_tones_empty: 'Enter a sequence or tap Load sample first.',
+  tool_generate_dtmf_touch_tones_empty_state:
+    'Tap the keypad or type a sequence, pick tone and gap lengths, then Generate—or Load sample for 123#. This tool makes DTMF dual tones—not a single sine and not a UI beep.',
+  tool_generate_dtmf_touch_tones_err_encoder: 'Could not write the DTMF WAV. Try Generate again.',
+  tool_generate_dtmf_touch_tones_err_limit: 'Tone and gap durations must stay within the chip ranges (up to 500 ms).',
+  tool_generate_dtmf_touch_tones_err_seq: 'Enter a sequence using 0–9, *, #, A–D (at least one key).',
+  tool_generate_dtmf_touch_tones_example:
+    'Load sample sets 123# with 100 ms tones and 50 ms gaps, then Generate runs automatically. You should hear four dual-tone bursts. Playback never starts by itself—press play on the preview if you want to hear it.',
+  tool_generate_dtmf_touch_tones_example_title: 'Try the sequence 123#',
+  tool_generate_dtmf_touch_tones_failed: 'Generate failed. Check the sequence and durations.',
+  tool_generate_dtmf_touch_tones_faq_a1:
+    'No. DTMF uses two frequencies at once (row + column). For one sine at a chosen Hertz value, use the sine tone tool instead.',
+  tool_generate_dtmf_touch_tones_faq_a2:
+    'No. This page only synthesizes DTMF dual tones from a keypad sequence. UI click/chime presets are a different job.',
+  tool_generate_dtmf_touch_tones_faq_a3: 'ITU-T Q.23 pairs: lows 697/770/852/941 Hz and highs 1209/1336/1477/1633 Hz, mapped by key.',
+  tool_generate_dtmf_touch_tones_faq_a4:
+    'No. It only writes an audio file in your browser. It cannot place calls or talk to a telephone network.',
+  tool_generate_dtmf_touch_tones_faq_a5:
+    'No. Synthesis and writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_generate_dtmf_touch_tones_faq_a6: 'A mono 16-bit PCM WAV at 44.1 kHz. It is a new file you can keep as a reusable DTMF reference.',
+  tool_generate_dtmf_touch_tones_faq_q1: 'Is this a single sine tone generator?',
+  tool_generate_dtmf_touch_tones_faq_q2: 'Can it make short UI notification beeps?',
+  tool_generate_dtmf_touch_tones_faq_q3: 'Which frequencies are used?',
+  tool_generate_dtmf_touch_tones_faq_q4: 'Does this dial a real phone number?',
+  tool_generate_dtmf_touch_tones_faq_q5: 'Is anything uploaded to a server?',
+  tool_generate_dtmf_touch_tones_faq_q6: 'What format is the download?',
+  tool_generate_dtmf_touch_tones_gap_dur_label: 'Gap between tones',
+  tool_generate_dtmf_touch_tones_how_body:
+    'Build a keypad sequence, pick tone and gap durations, Generate, listen, then download one 16-bit WAV—without uploading files.',
+  tool_generate_dtmf_touch_tones_how_item_1: 'Tap the keypad or type a sequence with 0–9, *, #, A–D (for example 123#).',
+  tool_generate_dtmf_touch_tones_how_item_2: 'Choose a tone duration chip and a gap duration chip.',
+  tool_generate_dtmf_touch_tones_how_item_3: 'Click Generate and wait for Synth → Write to finish.',
+  tool_generate_dtmf_touch_tones_how_item_4: 'Preview the dual tones, check the result line, then click Download WAV.',
+  tool_generate_dtmf_touch_tones_how_title: 'How to generate DTMF touch tones',
+  tool_generate_dtmf_touch_tones_keypad_label: 'Keypad',
+  tool_generate_dtmf_touch_tones_preview: 'Listen to the DTMF WAV',
+  tool_generate_dtmf_touch_tones_progress: 'Generate progress',
+  tool_generate_dtmf_touch_tones_result: '{seq} · {count} keys · {seconds}s · mono · {rate} Hz · WAV {output} KiB',
+  tool_generate_dtmf_touch_tones_rules_body:
+    'Each run synthesizes dual-tone bursts at ITU-T Q.23 frequencies with short edge fades and silence gaps. Export is 16-bit WAV. This is not a single-sine generator, not a UI beep maker, and not a real dialer.',
+  tool_generate_dtmf_touch_tones_rules_item_1:
+    'Sequences stay within 64 keys using 0–9, *, #, A–D. Tone and gap chips stay within the offered millisecond ranges. Output is mono.',
+  tool_generate_dtmf_touch_tones_rules_item_2:
+    'This page makes DTMF dual tones. It does not make a single sine at one frequency, and it does not craft short UI notification sounds.',
+  tool_generate_dtmf_touch_tones_rules_item_3:
+    'Standard low/high frequency pairs follow ITU-T Q.23. Letter keys A–D use the fourth column (1633 Hz).',
+  tool_generate_dtmf_touch_tones_rules_item_4:
+    'Short fades reduce clicks between tones. The download is a new file; nothing is uploaded and no phone call is placed.',
+  tool_generate_dtmf_touch_tones_rules_title: 'DTMF rules and honest browser limits',
+  tool_generate_dtmf_touch_tones_sample: 'Load sample',
+  tool_generate_dtmf_touch_tones_sample_name: 'dtmf-sample',
+  tool_generate_dtmf_touch_tones_seq_hint: 'Use 0–9, *, #, A–D (up to 64 keys). Tap the keypad or type, then Generate.',
+  tool_generate_dtmf_touch_tones_seq_label: 'DTMF sequence',
+  tool_generate_dtmf_touch_tones_settings_hint:
+    'Output is a mono 16-bit WAV at 44.1 kHz using ITU-T Q.23 low/high frequency pairs. This is a DTMF generator—not a single-sine tone tool and not a UI notification beep maker. It never dials a real phone line.',
+  tool_generate_dtmf_touch_tones_synth: 'Synth',
+  tool_generate_dtmf_touch_tones_title: 'Generate DTMF touch tones',
+  tool_generate_dtmf_touch_tones_tone_dur_label: 'Tone duration',
+  tool_generate_dtmf_touch_tones_usecase_1:
+    'You need a DTMF clip for an IVR or telephony demo—type the digits, Generate, download WAV for docs or tests.',
+  tool_generate_dtmf_touch_tones_usecase_2: 'You want a reproducible touch-tone sequence without installing a desktop signal generator.',
+  tool_generate_dtmf_touch_tones_usecases_title: 'When this helps',
+  tool_generate_dtmf_touch_tones_why_choose_item_1: 'See the exact sequence, key count, duration, sample rate and output KiB before you save.',
+  tool_generate_dtmf_touch_tones_why_choose_item_2: 'One clear DTMF job—with honest limits when the sequence is empty or invalid.',
+  tool_generate_dtmf_touch_tones_why_choose_item_3: 'Synthesis and writing run on your device; nothing is uploaded to process the tones.',
+  tool_generate_dtmf_touch_tones_why_choose_item_4: 'Changing the sequence or durations clears the old download so you never save a stale WAV by mistake.',
+  tool_generate_dtmf_touch_tones_why_choose_title: 'Why choose our Generate DTMF touch tones tools',
+  tool_generate_dtmf_touch_tones_write: 'Write',
   tool_gpa_article:
     'A weighted GPA multiplies each course grade point by its credits, sums those products, and divides by total credits. This page uses a common 4.0 scale (A=4.0, B=3.0). Your school may use plus/minus steps, a 5.0 weighted scale, or another system.',
   tool_gpa_calculate: 'Calculate',
@@ -8560,6 +10465,95 @@ const en: SiteLangDict = {
   tool_irr_usecase_2: 'Compare with NPV at a hurdle rate.',
   tool_irr_usecase_3: 'Sketch before talking to an advisor — not a substitute.',
   tool_irr_usecases_title: 'When to use it',
+  tool_join_audio_files_in_order_advanced: 'Join notes',
+  tool_join_audio_files_in_order_article:
+    'Podcast takes, voice memos and song sections often need to become one continuous file. This page lets you drop several local audio files, reorder them in a list, decode each clip in the browser, align sample rate and channel count, then concatenate samples in that order into a single 16-bit PCM WAV. It does not stack tracks on top of each other (overlay mix), does not crossfade between songs, and does not extract audio from video—those are different jobs. Success depends on whether your browser can decode each container. Channel count stays one or two. Keep the originals; the download is a new file. Work runs on your device.',
+  tool_join_audio_files_in_order_choose: 'Add audio files',
+  tool_join_audio_files_in_order_clear: 'Clear',
+  tool_join_audio_files_in_order_convert: 'Join',
+  tool_join_audio_files_in_order_decode: 'Decode',
+  tool_join_audio_files_in_order_desc:
+    'Join multiple local audio clips end-to-end in list order, then download one 16-bit WAV. On-device only—not overlay mix.',
+  tool_join_audio_files_in_order_description:
+    'Join multiple local audio files end-to-end in list order in the browser, then download one 16-bit WAV. Steps: Add clips, reorder if needed, Join, preview, download. Example: load two short sample tones. Concatenate only—not overlay mix, not crossfade. Never uploaded.',
+  tool_join_audio_files_in_order_done: 'Ready. Preview the joined WAV, then Download WAV.',
+  tool_join_audio_files_in_order_download: 'Download WAV',
+  tool_join_audio_files_in_order_elapsed: '{s}s elapsed',
+  tool_join_audio_files_in_order_empty: 'Add at least two audio files or load the sample first.',
+  tool_join_audio_files_in_order_empty_state:
+    'No clips yet. Drop several local audio files, or click Load sample for two short tones. This tool concatenates in list order—it does not mix tracks on top of each other.',
+  tool_join_audio_files_in_order_err_decode: 'The browser could not decode one of the files. Remove it or try another encoding.',
+  tool_join_audio_files_in_order_err_encoder: 'Could not write the joined WAV. Try Join again.',
+  tool_join_audio_files_in_order_err_file: 'Add at least two supported audio files.',
+  tool_join_audio_files_in_order_err_format: 'Unsupported or damaged audio. Use WAV, MP3, M4A, AAC or OGG files your browser can decode.',
+  tool_join_audio_files_in_order_err_limit: 'Use up to 20 files, 40 MiB each, mono or stereo, with total joined length under 20 minutes.',
+  tool_join_audio_files_in_order_example:
+    'Load sample adds two short WAV tones (different pitches) to the queue, then Join runs automatically. You should hear tone A then tone B with no overlap. Playback never starts by itself—press play on the preview if you want to hear it.',
+  tool_join_audio_files_in_order_example_title: 'Try two short tones',
+  tool_join_audio_files_in_order_failed: 'Join failed. Try fewer, shorter, valid audio files.',
+  tool_join_audio_files_in_order_faq_a1:
+    'No. Overlay mix plays clips at the same time (for example voice over music). This page only places them one after another in list order.',
+  tool_join_audio_files_in_order_faq_a2: 'No. There is no crossfade or DJ transition. Clips meet end-to-end. Crossfade is a different job.',
+  tool_join_audio_files_in_order_faq_a3:
+    'Yes. Use Up and Down on each row, or Remove a clip and add it again. Join always follows the list from top to bottom.',
+  tool_join_audio_files_in_order_faq_a4:
+    'Later clips are aligned to the first clip’s sample rate before concatenation. Channel count is kept to mono or stereo.',
+  tool_join_audio_files_in_order_faq_a5:
+    'No. Reading, decoding and writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_join_audio_files_in_order_faq_a6:
+    'Extract the track first with Extract audio from a video file, then add the exported audio here. This page does not accept video containers as join inputs.',
+  tool_join_audio_files_in_order_faq_q1: 'Is this the same as mixing or overlaying two tracks?',
+  tool_join_audio_files_in_order_faq_q2: 'Does it crossfade between songs?',
+  tool_join_audio_files_in_order_faq_q3: 'Can I change the join order?',
+  tool_join_audio_files_in_order_faq_q4: 'What if files have different sample rates?',
+  tool_join_audio_files_in_order_faq_q5: 'Is my audio uploaded to a server?',
+  tool_join_audio_files_in_order_faq_q6: 'Can I join audio extracted from a video?',
+  tool_join_audio_files_in_order_hint:
+    'Drop or choose multiple WAV, MP3, M4A, AAC or OGG files. Add more anytime. Up to 20 clips, 40 MiB each, 20 minutes total after join; mono or stereo.',
+  tool_join_audio_files_in_order_how_body:
+    'Add several local clips, set the order, run Join, listen, then download one 16-bit WAV—without uploading the files.',
+  tool_join_audio_files_in_order_how_item_1: 'Add two or more audio files (or Load sample for two short tones). Drop again to append more clips.',
+  tool_join_audio_files_in_order_how_item_2: 'Use Up / Down / Remove in the list so the join order matches what you want to hear.',
+  tool_join_audio_files_in_order_how_item_3: 'Click Join and wait for Read → Decode → Join → Write to finish.',
+  tool_join_audio_files_in_order_how_item_4: 'Preview the continuous track, check the result line, then click Download WAV.',
+  tool_join_audio_files_in_order_how_title: 'How to join audio files in order',
+  tool_join_audio_files_in_order_join: 'Join',
+  tool_join_audio_files_in_order_list_label: 'Join order',
+  tool_join_audio_files_in_order_move_down: 'Down',
+  tool_join_audio_files_in_order_move_up: 'Up',
+  tool_join_audio_files_in_order_preview: 'Listen to the joined WAV',
+  tool_join_audio_files_in_order_progress: 'Join progress',
+  tool_join_audio_files_in_order_queue_count: '{n} file(s) in queue',
+  tool_join_audio_files_in_order_read: 'Read',
+  tool_join_audio_files_in_order_remove: 'Remove',
+  tool_join_audio_files_in_order_result: '{files} files · {seconds}s · {channels} ch · {rate} Hz · WAV {output} KiB',
+  tool_join_audio_files_in_order_rules_body:
+    'Each run joins clips end-to-end in list order. Sample rates are aligned to the first clip. Export is 16-bit WAV. This is not overlay mix, not crossfade, and not video-to-audio extract.',
+  tool_join_audio_files_in_order_rules_item_1:
+    'Two to twenty local audio files, each up to 40 MiB. Joined length stays under twenty minutes. Channels stay one or two.',
+  tool_join_audio_files_in_order_rules_item_2:
+    'This page concatenates. It does not stack voice over music at the same time, and it does not crossfade song transitions.',
+  tool_join_audio_files_in_order_rules_item_3:
+    'Tags are not copied. Original files are never overwritten. Success depends on browser decode support per file.',
+  tool_join_audio_files_in_order_rules_item_4:
+    'After joining, use Trim an audio clip and export for start/end cuts. For video sources, extract audio first.',
+  tool_join_audio_files_in_order_rules_title: 'Concatenate rules and honest browser limits',
+  tool_join_audio_files_in_order_sample: 'Load sample',
+  tool_join_audio_files_in_order_sample_name: 'join-tone',
+  tool_join_audio_files_in_order_settings_hint:
+    'Clips are joined end-to-end in list order. Different sample rates are aligned to the first clip. This is concatenate only—not overlay mix and not crossfade.',
+  tool_join_audio_files_in_order_title: 'Join audio files in order',
+  tool_join_audio_files_in_order_usecase_1: 'Several voice-memo takes should become one continuous track—add in order, Join, download WAV.',
+  tool_join_audio_files_in_order_usecase_2:
+    'Song sections or podcast chapters saved as separate files need one export without uploading to a joiner site.',
+  tool_join_audio_files_in_order_usecases_title: 'When this helps',
+  tool_join_audio_files_in_order_why_choose_item_1: 'See file count, duration, channel count, sample rate and output KiB before you save.',
+  tool_join_audio_files_in_order_why_choose_item_2: 'One clear concatenate job—list order end-to-end—with honest limits when a clip cannot decode.',
+  tool_join_audio_files_in_order_why_choose_item_3:
+    'Reading, decoding and writing run on your device; the page does not upload your clips to process them.',
+  tool_join_audio_files_in_order_why_choose_item_4: 'Changing the queue clears the old download so you never save a stale WAV by mistake.',
+  tool_join_audio_files_in_order_why_choose_title: 'Why choose our Join audio files in order tools',
+  tool_join_audio_files_in_order_write: 'Write',
   tool_json_diff_checker_online_array_as_set: 'Ignore array order (duplicates still count)',
   tool_json_diff_checker_online_article:
     'Paste two JSON values and list path-level adds, deletes, and changes. Key order is ignored by default. Paste stays on your device and is not uploaded. YAML and XML are not parsed here.',
@@ -8758,6 +10752,99 @@ const en: SiteLangDict = {
   tool_jwt_decoder_usecase_3: 'Learning: see how header alg/typ and payload claims map to the three JWS segments.',
   tool_jwt_decoder_usecases_title: 'Good fits',
   tool_last_updated: 'Last updated:',
+  tool_limit_peaks_so_a_file_does_not_clip_advanced: 'Limiter settings',
+  tool_limit_peaks_so_a_file_does_not_clip_article:
+    'Delivery and mix templates often forbid samples that slam into digital full scale. This page applies a ceiling limiter in pure JavaScript: choose −0.1 or −1 dBFS (default −1) and Soft (gentle knee) or Brickwall (hard clamp). Samples under the knee or ceiling pass unchanged—nothing is boosted. That is peak limiting to prevent clipping, not dynamic-range compression that reshapes loud vs soft over time, not peak normalize that scales the whole clip to hit a target, not a fixed whole-file dB boost, and not podcast LUFS matching. Channel count stays 1 or 2. Keep the original master; the download is a new 16-bit WAV. Work runs in the browser on your device.',
+  tool_limit_peaks_so_a_file_does_not_clip_ceiling_label: 'Ceiling (dBFS)',
+  tool_limit_peaks_so_a_file_does_not_clip_choose: 'Choose an audio file',
+  tool_limit_peaks_so_a_file_does_not_clip_clear: 'Clear',
+  tool_limit_peaks_so_a_file_does_not_clip_convert: 'Limit',
+  tool_limit_peaks_so_a_file_does_not_clip_decode: 'Decode',
+  tool_limit_peaks_so_a_file_does_not_clip_desc:
+    'Cap hot peaks at −0.1 or −1 dBFS with soft or brickwall limiting, then download a 16-bit WAV. On-device only.',
+  tool_limit_peaks_so_a_file_does_not_clip_description:
+    'Limit peaks so a file does not clip with −0.1 or −1 dBFS ceilings and soft or brickwall modes. Steps: limit, preview, download WAV. Example: load the hot sample. Peak limiting only—not a compressor, not peak normalize, not fixed dB gain, not LUFS. Audio stays on your device; never uploaded.',
+  tool_limit_peaks_so_a_file_does_not_clip_done: 'Ready. Preview the limited WAV, then Download WAV.',
+  tool_limit_peaks_so_a_file_does_not_clip_download: 'Download WAV',
+  tool_limit_peaks_so_a_file_does_not_clip_elapsed: '{s}s elapsed',
+  tool_limit_peaks_so_a_file_does_not_clip_empty: 'Choose an audio file or load the sample first.',
+  tool_limit_peaks_so_a_file_does_not_clip_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_limit_peaks_so_a_file_does_not_clip_err_encoder: 'Could not write the limited WAV. Check the ceiling and mode, then try Limit again.',
+  tool_limit_peaks_so_a_file_does_not_clip_err_file: 'Drop exactly one audio file.',
+  tool_limit_peaks_so_a_file_does_not_clip_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_limit_peaks_so_a_file_does_not_clip_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_limit_peaks_so_a_file_does_not_clip_err_silence: 'Level is essentially silence—nothing to limit. Try a recording with audible level.',
+  tool_limit_peaks_so_a_file_does_not_clip_example:
+    'Load sample builds a two-second 440 Hz tone with hot bursts above full scale, then Limit at −1 dBFS Soft automatically. Playback never starts by itself—press play on the preview if you want to hear the capped peaks.',
+  tool_limit_peaks_so_a_file_does_not_clip_example_title: 'Try a real peak limit',
+  tool_limit_peaks_so_a_file_does_not_clip_failed: 'Limit failed. Try a smaller, valid audio file.',
+  tool_limit_peaks_so_a_file_does_not_clip_faq_a1:
+    'No. Peak normalize scales the whole clip so the absolute peak hits a target (it can boost quiet material). This limiter only attenuates samples over the ceiling. For peak normalize, use Normalize an audio file to peak.',
+  tool_limit_peaks_so_a_file_does_not_clip_faq_a2:
+    'No. A compressor uses threshold/ratio over time to reshape loud vs soft. Here only peaks above the ceiling (or soft knee) are capped. For voice dynamics, use Compress dynamic range of a voice recording.',
+  tool_limit_peaks_so_a_file_does_not_clip_faq_a3:
+    'No. Fixed gain multiplies everything by one amount. LUFS matching aims at integrated loudness. This page only prevents clipping at a ceiling. Use Make a quiet recording louder or Match podcast loudness to −16 LUFS for those jobs.',
+  tool_limit_peaks_so_a_file_does_not_clip_faq_a4:
+    'Soft starts a gentle knee below the ceiling so peaks curve in. Brickwall hard-clamps every sample at ±ceiling with no knee.',
+  tool_limit_peaks_so_a_file_does_not_clip_faq_a5:
+    'You can still click Limit. Peaks pass through and the result line reports that nothing was over the limit.',
+  tool_limit_peaks_so_a_file_does_not_clip_faq_a6:
+    'No. Decoding, limiting and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For compressor or peak-normalize jobs, use Compress dynamic range of a voice recording or Normalize an audio file to peak.',
+  tool_limit_peaks_so_a_file_does_not_clip_faq_q1: 'Is this the same as peak normalize?',
+  tool_limit_peaks_so_a_file_does_not_clip_faq_q2: 'Is this a dynamic compressor?',
+  tool_limit_peaks_so_a_file_does_not_clip_faq_q3: 'Is this fixed dB gain or LUFS matching?',
+  tool_limit_peaks_so_a_file_does_not_clip_faq_q4: 'What is the difference between Soft and Brickwall?',
+  tool_limit_peaks_so_a_file_does_not_clip_faq_q5: 'What if my file never exceeds the ceiling?',
+  tool_limit_peaks_so_a_file_does_not_clip_faq_q6: 'Is my audio uploaded to a server?',
+  tool_limit_peaks_so_a_file_does_not_clip_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_limit_peaks_so_a_file_does_not_clip_how_body:
+    'Pick a ceiling and mode, limit only the peaks that exceed it, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_limit_peaks_so_a_file_does_not_clip_how_item_1: 'Choose an audio file, or select Load sample for a two-second hot-peaks demonstration.',
+  tool_limit_peaks_so_a_file_does_not_clip_how_item_2: 'Open Limiter settings and pick −0.1 or −1 dBFS (default −1) and Soft (default) or Brickwall.',
+  tool_limit_peaks_so_a_file_does_not_clip_how_item_3: 'Click Limit and wait for Read → Decode → Limit → Write to finish.',
+  tool_limit_peaks_so_a_file_does_not_clip_how_item_4: 'Preview the result, check whether peaks were limited, then click Download WAV.',
+  tool_limit_peaks_so_a_file_does_not_clip_how_title: 'How to limit peaks so a file does not clip',
+  tool_limit_peaks_so_a_file_does_not_clip_limit: 'Limit',
+  tool_limit_peaks_so_a_file_does_not_clip_limited_no: 'no',
+  tool_limit_peaks_so_a_file_does_not_clip_limited_yes: 'yes',
+  tool_limit_peaks_so_a_file_does_not_clip_mode_brickwall: 'Brickwall',
+  tool_limit_peaks_so_a_file_does_not_clip_mode_label: 'Limiter mode',
+  tool_limit_peaks_so_a_file_does_not_clip_mode_soft: 'Soft',
+  tool_limit_peaks_so_a_file_does_not_clip_preview: 'Listen to the limited WAV',
+  tool_limit_peaks_so_a_file_does_not_clip_progress: 'Limit progress',
+  tool_limit_peaks_so_a_file_does_not_clip_read: 'Read',
+  tool_limit_peaks_so_a_file_does_not_clip_result:
+    '{seconds}s · Ceiling {ceiling} dBFS · {mode} · limited · peak {peakBefore} → {peakAfter} · WAV {output} KiB',
+  tool_limit_peaks_so_a_file_does_not_clip_result_passthrough:
+    '{seconds}s · Ceiling {ceiling} dBFS · {mode} · no peaks over limit · peak {peakBefore} → {peakAfter} · WAV {output} KiB',
+  tool_limit_peaks_so_a_file_does_not_clip_rules_body:
+    'A limiter attenuates samples that exceed the ceiling (or soft knee). Soft starts gently below the ceiling; Brickwall hard-clamps. Samples under the limit are never boosted—unlike peak normalize, which scales the whole clip up or down to hit a target peak.',
+  tool_limit_peaks_so_a_file_does_not_clip_rules_item_1:
+    'Default −1 dBFS Soft leaves modest headroom with a gentle knee. −0.1 is hotter. Brickwall never lets a sample exceed the ceiling.',
+  tool_limit_peaks_so_a_file_does_not_clip_rules_item_2:
+    'If nothing exceeds the limit, peaks pass through unchanged and the result line says so. No makeup gain is applied.',
+  tool_limit_peaks_so_a_file_does_not_clip_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_limit_peaks_so_a_file_does_not_clip_rules_item_4:
+    'One file up to 40 MiB and ten minutes. This is not a dynamic compressor, not peak normalize, not fixed-gain amplify, and not LUFS matching.',
+  tool_limit_peaks_so_a_file_does_not_clip_rules_title: 'Ceiling, Soft vs Brickwall and limits',
+  tool_limit_peaks_so_a_file_does_not_clip_sample: 'Load sample',
+  tool_limit_peaks_so_a_file_does_not_clip_sample_name: 'two-second-hot-peaks-demo',
+  tool_limit_peaks_so_a_file_does_not_clip_settings_hint:
+    'Default −1 dBFS Soft starts a gentle knee below the ceiling. −0.1 is hotter. Brickwall hard-clamps every sample at the ceiling. Material under the limit is never boosted.',
+  tool_limit_peaks_so_a_file_does_not_clip_title: 'Limit peaks so a file does not clip',
+  tool_limit_peaks_so_a_file_does_not_clip_usecase_1: 'A mix that occasionally spikes into clipping—pick Soft −1, limit, download WAV.',
+  tool_limit_peaks_so_a_file_does_not_clip_usecase_2:
+    'A delivery that forbids peaks above a ceiling after you already set overall level, without running a full compressor.',
+  tool_limit_peaks_so_a_file_does_not_clip_usecases_title: 'When this helps',
+  tool_limit_peaks_so_a_file_does_not_clip_why_choose_item_1: 'See ceiling, mode, peak before/after and output KiB before you save.',
+  tool_limit_peaks_so_a_file_does_not_clip_why_choose_item_2: 'Two clear ceilings and Soft/Brickwall—one limiter job, not a buried normalize/compressor/gain wall.',
+  tool_limit_peaks_so_a_file_does_not_clip_why_choose_item_3:
+    'Decoding, limiting and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_limit_peaks_so_a_file_does_not_clip_why_choose_item_4:
+    'Changing the ceiling, mode or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_limit_peaks_so_a_file_does_not_clip_why_choose_title: 'Why choose our Limit peaks so a file does not clip tools',
+  tool_limit_peaks_so_a_file_does_not_clip_write: 'Write',
   tool_linkedin_banner_size_article:
     'Cover-fill a photo to LinkedIn banner size 1584×396, preview the avatar overlap, and download a JPEG. Optional chips export Facebook cover, X header, and YouTube channel art. Files stay on your device and are not uploaded to a server.',
   tool_linkedin_banner_size_choose_image: 'Choose image',
@@ -9118,6 +11205,182 @@ const en: SiteLangDict = {
   tool_make_a_30_second_mp3_ringtone_why_choose_title: 'Why choose our Make a 30-second MP3 ringtone tools',
   tool_make_a_30_second_mp3_ringtone_zerocross: 'Snap the window edges to a nearby zero crossing',
   tool_make_a_30_second_mp3_ringtone_zerocross_hint: 'On by default. Helps the cut before the fades. Turn off for sample-accurate edges.',
+  tool_make_a_nightcore_version_of_a_song_advanced: 'Nightcore rate',
+  tool_make_a_nightcore_version_of_a_song_article:
+    'Nightcore is the classic fan edit that runs a song faster and higher in one move. This page resamples by a nightcore ratio so tempo rises and pitch rises together, shortening the clip—unlike a WSOLA speed-only stretch that aims to keep pitch, and unlike a semitone pitch shift that restores duration. Presets start at 1.25× (about +4 semitones). Hard percussion or very high ratios can sound thin or sharp; this is a pragmatic browser nightcore path, not a studio remix suite. Channel count stays 1 or 2. Keep the original; the download is a new 16-bit WAV. Work runs on your device.',
+  tool_make_a_nightcore_version_of_a_song_choose: 'Choose an audio file',
+  tool_make_a_nightcore_version_of_a_song_clear: 'Clear',
+  tool_make_a_nightcore_version_of_a_song_convert: 'Nightcore',
+  tool_make_a_nightcore_version_of_a_song_custom_label: 'Custom ratio (1.1–1.8)',
+  tool_make_a_nightcore_version_of_a_song_decode: 'Decode',
+  tool_make_a_nightcore_version_of_a_song_desc: 'Speed up and raise pitch together for a nightcore take, then download a 16-bit WAV. On-device only.',
+  tool_make_a_nightcore_version_of_a_song_description:
+    'Make a nightcore version of a song by speeding up and raising pitch together with browser resample. Steps: Nightcore, preview, download WAV. Example: load the sample. Honest speed+pitch combo—not tempo-only stretch, not pitch-only keep-length. Audio stays on your device; never uploaded.',
+  tool_make_a_nightcore_version_of_a_song_done: 'Ready. Preview the nightcore WAV, then Download WAV.',
+  tool_make_a_nightcore_version_of_a_song_download: 'Download WAV',
+  tool_make_a_nightcore_version_of_a_song_elapsed: '{s}s elapsed',
+  tool_make_a_nightcore_version_of_a_song_empty: 'Choose an audio file or load the sample first.',
+  tool_make_a_nightcore_version_of_a_song_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_make_a_nightcore_version_of_a_song_err_encoder: 'Could not write the nightcore WAV. Check the ratio, then try Nightcore again.',
+  tool_make_a_nightcore_version_of_a_song_err_file: 'Drop exactly one audio file.',
+  tool_make_a_nightcore_version_of_a_song_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_make_a_nightcore_version_of_a_song_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_make_a_nightcore_version_of_a_song_err_silence: 'Level is essentially silence—nothing to nightcore. Try a recording with audible level.',
+  tool_make_a_nightcore_version_of_a_song_err_speed: 'Pick a preset or enter a custom ratio between 1.1 and 1.8.',
+  tool_make_a_nightcore_version_of_a_song_example:
+    'Load sample builds a three-second harmonic tone, then Nightcore at 1.25× automatically. Playback never starts by itself—press play on the preview if you want to hear the faster, higher take.',
+  tool_make_a_nightcore_version_of_a_song_example_title: 'Try a real pitched clip',
+  tool_make_a_nightcore_version_of_a_song_failed: 'Nightcore failed. Try a smaller, valid audio file.',
+  tool_make_a_nightcore_version_of_a_song_faq_a1:
+    'No. Speed-without-pitch uses WSOLA so tempo changes while pitch aims to stay. Nightcore speeds up and raises pitch together. Use Change audio speed without changing pitch for tempo-only work.',
+  tool_make_a_nightcore_version_of_a_song_faq_a2:
+    'No. Pitch-shift keep-length changes musical pitch then restores duration. This page shortens the clip as pitch rises. Use Shift the pitch of a song for key-only transpose.',
+  tool_make_a_nightcore_version_of_a_song_faq_a3:
+    'No. This is a pragmatic browser resample. High ratios and hard percussion can sound thin or sharp. Prefer milder ratios when artifacts show.',
+  tool_make_a_nightcore_version_of_a_song_faq_a4:
+    '1.25× is a classic nightcore lift (~+3.9 semitones). 1.5× goes faster and higher (~+7 semitones). Both shorten duration as pitch rises.',
+  tool_make_a_nightcore_version_of_a_song_faq_a5:
+    'Nightcore is one ratio that moves tempo and pitch together. Semitones are the approximate pitch lift from 12·log2(ratio) so you can see the combo at a glance.',
+  tool_make_a_nightcore_version_of_a_song_faq_a6:
+    'No. Decoding, nightcore and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For tempo-only stretch use Change audio speed without changing pitch; for key-only transpose use Shift the pitch of a song.',
+  tool_make_a_nightcore_version_of_a_song_faq_q1: 'Is this the same as changing speed without changing pitch?',
+  tool_make_a_nightcore_version_of_a_song_faq_q2: 'Is this the same as shifting pitch while keeping duration?',
+  tool_make_a_nightcore_version_of_a_song_faq_q3: 'Will studio remix quality be perfect?',
+  tool_make_a_nightcore_version_of_a_song_faq_q4: 'What do the 1.25× and 1.5× presets do?',
+  tool_make_a_nightcore_version_of_a_song_faq_q5: 'Why does the result line show both speed and semitones?',
+  tool_make_a_nightcore_version_of_a_song_faq_q6: 'Is my audio uploaded to a server?',
+  tool_make_a_nightcore_version_of_a_song_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_make_a_nightcore_version_of_a_song_how_body:
+    'Pick a nightcore ratio, run resample that speeds and raises pitch together, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_make_a_nightcore_version_of_a_song_how_item_1: 'Choose an audio file, or select Load sample for a three-second pitched tone demo.',
+  tool_make_a_nightcore_version_of_a_song_how_item_2: 'Open Nightcore rate and pick 1.25×, 1.35×, 1.5×, or Custom (default 1.25×).',
+  tool_make_a_nightcore_version_of_a_song_how_item_3: 'Click Nightcore and wait for Read → Decode → Nightcore → Write to finish.',
+  tool_make_a_nightcore_version_of_a_song_how_item_4:
+    'Preview that the take is faster and higher, check the result line (speed and ~semitones), then click Download WAV.',
+  tool_make_a_nightcore_version_of_a_song_how_title: 'How to make a nightcore version of a song',
+  tool_make_a_nightcore_version_of_a_song_nightcore: 'Nightcore',
+  tool_make_a_nightcore_version_of_a_song_preview: 'Listen to the nightcore WAV',
+  tool_make_a_nightcore_version_of_a_song_progress: 'Nightcore progress',
+  tool_make_a_nightcore_version_of_a_song_read: 'Read',
+  tool_make_a_nightcore_version_of_a_song_result: '{seconds}s → {outSeconds}s · {speed}× · ~{semitones} st · WAV {output} KiB',
+  tool_make_a_nightcore_version_of_a_song_rules_body:
+    'Each run resamples by the nightcore ratio so the clip plays faster and higher together. Soft peak protection keeps the WAV under full scale. High ratios or sharp drums may sound thin—quality is limited compared with studio remix tools.',
+  tool_make_a_nightcore_version_of_a_song_rules_item_1: 'Presets are 1.25×, 1.35× and 1.5×. Custom allows 1.1–1.8. Default is 1.25×.',
+  tool_make_a_nightcore_version_of_a_song_rules_item_2:
+    'This is browser resample speed+pitch. It is not WSOLA tempo-only, not pitch-only keep-length, and not voice cloning.',
+  tool_make_a_nightcore_version_of_a_song_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_make_a_nightcore_version_of_a_song_rules_item_4:
+    'One file up to 40 MiB and ten minutes. If the take sounds too sharp, try a milder ratio closer to 1.1×.',
+  tool_make_a_nightcore_version_of_a_song_rules_title: 'Nightcore ratio, speed+pitch combo and honest browser limits',
+  tool_make_a_nightcore_version_of_a_song_sample: 'Load sample',
+  tool_make_a_nightcore_version_of_a_song_sample_name: 'three-second-nightcore-demo',
+  tool_make_a_nightcore_version_of_a_song_settings_hint:
+    'Default 1.25× is a classic nightcore lift: faster and higher (~+3.9 st). 1.35× and 1.5× push harder. Custom accepts 1.1–1.8. This is resample speed+pitch—not WSOLA tempo-only, not pitch-only keep-length.',
+  tool_make_a_nightcore_version_of_a_song_speed_125: '1.25×',
+  tool_make_a_nightcore_version_of_a_song_speed_135: '1.35×',
+  tool_make_a_nightcore_version_of_a_song_speed_150: '1.5×',
+  tool_make_a_nightcore_version_of_a_song_speed_custom: 'Custom',
+  tool_make_a_nightcore_version_of_a_song_speed_label: 'Speed + pitch together (nightcore ratio)',
+  tool_make_a_nightcore_version_of_a_song_title: 'Make a nightcore version of a song',
+  tool_make_a_nightcore_version_of_a_song_usecase_1: 'A pop or anime track for a classic nightcore edit—pick 1.25×, Nightcore, download WAV.',
+  tool_make_a_nightcore_version_of_a_song_usecase_2: 'A short clip that needs both speed and pitch lift—not tempo-only practice, not key-only transpose.',
+  tool_make_a_nightcore_version_of_a_song_usecases_title: 'When this helps',
+  tool_make_a_nightcore_version_of_a_song_why_choose_item_1: 'See input seconds, output seconds, speed, approximate semitones and output KiB before you save.',
+  tool_make_a_nightcore_version_of_a_song_why_choose_item_2: 'One clear nightcore job—speed and pitch rise together, not buried DAW automation.',
+  tool_make_a_nightcore_version_of_a_song_why_choose_item_3:
+    'Decoding, nightcore and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_make_a_nightcore_version_of_a_song_why_choose_item_4: 'Changing the ratio or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_make_a_nightcore_version_of_a_song_why_choose_title: 'Why choose our Make a nightcore version of a song tools',
+  tool_make_a_nightcore_version_of_a_song_write: 'Write',
+  tool_make_a_quiet_recording_louder_advanced: 'Gain settings',
+  tool_make_a_quiet_recording_louder_amplify: 'Amplify',
+  tool_make_a_quiet_recording_louder_article:
+    'Voice memos and interview takes often sit too low for comfortable playback. This page multiplies the whole clip by a chosen dB gain (default a gentle +6 dB), then—if the boosted peak would hit full scale—scales everything down so samples stay within ±1 before writing 16-bit WAV. That is uniform gain with honest peak protect, not peak normalize to 0 dBFS, not LUFS loudness matching, not a dynamic compressor that squeezes loud and soft parts differently, and not shrinking an MP3 to save bytes. Keep the original master; the download is a new file. Work runs in the browser on your device.',
+  tool_make_a_quiet_recording_louder_choose: 'Choose an audio file',
+  tool_make_a_quiet_recording_louder_clear: 'Clear',
+  tool_make_a_quiet_recording_louder_convert: 'Amplify',
+  tool_make_a_quiet_recording_louder_decode: 'Decode',
+  tool_make_a_quiet_recording_louder_desc:
+    'Amplify a quiet clip with dB gain presets and peak protect, then download a 16-bit WAV. On-device only.',
+  tool_make_a_quiet_recording_louder_description:
+    'Make a quiet recording louder with dB gain presets or a custom slider, then peak-protect before export. Steps: amplify, preview, download WAV. Example: load the quiet sample. Whole-file gain—not peak/LUFS normalize, not a compressor, not MP3 size shrink. Audio stays on your device; never uploaded.',
+  tool_make_a_quiet_recording_louder_done: 'Ready. Preview the louder WAV, then Download WAV.',
+  tool_make_a_quiet_recording_louder_download: 'Download WAV',
+  tool_make_a_quiet_recording_louder_elapsed: '{s}s elapsed',
+  tool_make_a_quiet_recording_louder_empty: 'Choose an audio file or load the sample first.',
+  tool_make_a_quiet_recording_louder_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_make_a_quiet_recording_louder_err_encoder: 'Could not write the louder WAV. Check the gain setting, then try Amplify again.',
+  tool_make_a_quiet_recording_louder_err_file: 'Drop exactly one audio file.',
+  tool_make_a_quiet_recording_louder_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_make_a_quiet_recording_louder_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_make_a_quiet_recording_louder_example:
+    'Load sample builds a two-second quiet 440 Hz tone, then Amplify at +6 dB automatically. Playback never starts by itself—press play on the preview if you want to hear the boost.',
+  tool_make_a_quiet_recording_louder_example_title: 'Try a real amplify',
+  tool_make_a_quiet_recording_louder_failed: 'Amplify failed. Try a smaller, valid audio file.',
+  tool_make_a_quiet_recording_louder_faq_a1:
+    'No. You choose a fixed dB gain. Peak protect only scales back if that gain would clip—it does not auto-raise every file to full scale. Peak normalize is a different planned job.',
+  tool_make_a_quiet_recording_louder_faq_a2:
+    'No. There is no LUFS or integrated-loudness target here—only uniform gain plus peak protect. Loudness matching is a separate planned job.',
+  tool_make_a_quiet_recording_louder_faq_a3:
+    'No. Soft and loud parts stay in the same ratio (until global peak protect). A compressor that reshapes dynamics is a different planned job—do not confuse that with MP3 “compress” for file size.',
+  tool_make_a_quiet_recording_louder_faq_a4:
+    'No. Export is 16-bit WAV for the louder copy. Reducing MP3 bitrate/size is a different tool (Reduce an MP3 file size).',
+  tool_make_a_quiet_recording_louder_faq_a5:
+    'Little headroom means peak protect will cut the effective gain toward 0 dB. The result line shows requested vs effective dB so you can see the limit.',
+  tool_make_a_quiet_recording_louder_faq_a6:
+    'No. Decoding, amplify and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For sample-rate or mono jobs, use Convert audio sample rate and bit depth or Convert stereo audio to mono.',
+  tool_make_a_quiet_recording_louder_faq_q1: 'Is this the same as normalizing audio to peak 0 dBFS?',
+  tool_make_a_quiet_recording_louder_faq_q2: 'Does this match podcast loudness / LUFS?',
+  tool_make_a_quiet_recording_louder_faq_q3: 'Is this a dynamic compressor or limiter?',
+  tool_make_a_quiet_recording_louder_faq_q4: 'Will this shrink an MP3 to save space?',
+  tool_make_a_quiet_recording_louder_faq_q5: 'What if my recording is already loud?',
+  tool_make_a_quiet_recording_louder_faq_q6: 'Is my audio uploaded to a server?',
+  tool_make_a_quiet_recording_louder_gain_custom: 'Custom gain (0–24 dB)',
+  tool_make_a_quiet_recording_louder_gain_label: 'Gain presets',
+  tool_make_a_quiet_recording_louder_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_make_a_quiet_recording_louder_how_body:
+    'Pick a gain, amplify the whole clip with peak protect, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_make_a_quiet_recording_louder_how_item_1: 'Choose a quiet audio file, or select Load sample for a two-second soft tone demonstration.',
+  tool_make_a_quiet_recording_louder_how_item_2:
+    'Open Gain settings and pick a preset (+3 / +6 / +9 / +12 dB) or drag the custom slider (default +6 dB).',
+  tool_make_a_quiet_recording_louder_how_item_3: 'Click Amplify and wait for Read → Decode → Amplify → Write to finish.',
+  tool_make_a_quiet_recording_louder_how_item_4: 'Preview the result, check gain and peak numbers, then click Download WAV.',
+  tool_make_a_quiet_recording_louder_how_title: 'How to make a quiet recording louder',
+  tool_make_a_quiet_recording_louder_preview: 'Listen to the louder WAV',
+  tool_make_a_quiet_recording_louder_progress: 'Amplify progress',
+  tool_make_a_quiet_recording_louder_read: 'Read',
+  tool_make_a_quiet_recording_louder_result: '{seconds}s · Gain {gainDb} dB · peak {peakBefore} → {peakAfter} · WAV {output} KiB',
+  tool_make_a_quiet_recording_louder_result_clipped:
+    '{seconds}s · Requested {gainDb} dB · effective {effectiveDb} dB (peak protect) · peak {peakBefore} → {peakAfter} · WAV {output} KiB',
+  tool_make_a_quiet_recording_louder_rules_body:
+    'Gain multiplies every sample by 10^(dB/20). If the boosted peak would exceed ±1, the page scales the whole clip down and reports effective dB. That is not the same as targeting peak 0 dBFS or a LUFS loudness number.',
+  tool_make_a_quiet_recording_louder_rules_item_1:
+    'Default +6 dB is a mild whole-file boost. Higher presets (+9 / +12) need more headroom; already-loud takes may barely move after peak protect.',
+  tool_make_a_quiet_recording_louder_rules_item_2:
+    'Peak protect keeps samples within ±1 by proportional scale-down after gain. Soft clipping of individual samples is not a separate mode—protect is global.',
+  tool_make_a_quiet_recording_louder_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_make_a_quiet_recording_louder_rules_item_4:
+    'One file up to 40 MiB and ten minutes. This is not peak/LUFS normalize, not a dynamic compressor, not MP3 size compression, and not sample-rate conversion.',
+  tool_make_a_quiet_recording_louder_rules_title: 'Gain, peak protect and limits',
+  tool_make_a_quiet_recording_louder_sample: 'Load sample',
+  tool_make_a_quiet_recording_louder_sample_name: 'two-second-quiet-demo',
+  tool_make_a_quiet_recording_louder_settings_hint:
+    'Default +6 dB is a mild boost. After gain, if the peak would exceed full scale, the page scales the clip down and the result line shows the effective dB. Already-loud files have little headroom.',
+  tool_make_a_quiet_recording_louder_title: 'Make a quiet recording louder',
+  tool_make_a_quiet_recording_louder_usecase_1: 'A phone voice memo recorded too quietly for comfortable replay—boost +6 dB and download WAV.',
+  tool_make_a_quiet_recording_louder_usecase_2:
+    'An interview track that sits low overall, when you want the same ratio louder without chasing a LUFS target.',
+  tool_make_a_quiet_recording_louder_usecases_title: 'When this helps',
+  tool_make_a_quiet_recording_louder_why_choose_item_1:
+    'See measured duration, requested (and effective) gain dB, peak before/after and output KiB before you save.',
+  tool_make_a_quiet_recording_louder_why_choose_item_2: 'Presets plus a custom dB slider—one clear amplify job, not a buried normalize/compressor wall.',
+  tool_make_a_quiet_recording_louder_why_choose_item_3:
+    'Decoding, gain and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_make_a_quiet_recording_louder_why_choose_item_4: 'Changing gain or the input clears the old download so you never save a stale louder WAV by mistake.',
+  tool_make_a_quiet_recording_louder_why_choose_title: 'Why choose our Make a quiet recording louder tools',
+  tool_make_a_quiet_recording_louder_write: 'Write',
   tool_make_a_seamless_audio_loop_advanced: 'Advanced settings (optional)',
   tool_make_a_seamless_audio_loop_article:
     'Make a seamless audio loop in this tab: open a local file, mark Start and End, set Crossfade, click Make loop, then Export WAV or Export MP3. Equal-power wrap blends the tail into the head so the join is less likely to click. Files stay on your device. An audio looper or loop maker job is this one loop, not a full waveform editor.',
@@ -9241,6 +11504,352 @@ const en: SiteLangDict = {
   tool_make_a_seamless_audio_loop_why_choose_title: 'Why choose our Make a seamless audio loop tools',
   tool_make_a_seamless_audio_loop_zerocross: 'Snap Start and End to a nearby zero crossing',
   tool_make_a_seamless_audio_loop_zerocross_hint: 'On by default. Helps the region edges before the wrap. Turn off for sample-accurate edges.',
+  tool_make_a_short_ui_notification_sound_advanced: 'UI sound notes',
+  tool_make_a_short_ui_notification_sound_article:
+    'Product prototypes, demos and lightweight apps often need a tiny click, success chime, alert beep, error buzz or ping. This page lets you pick a preset chip, choose a short duration, synthesize a mono cue in the browser at 44.1 kHz, then download a 16-bit PCM WAV. It does not dial DTMF touch tones, does not generate a long single-frequency sine for speaker tests, and does not cut ringtone loops—those are different jobs. Keep the file if you need a reusable UI cue. Work runs on your device.',
+  tool_make_a_short_ui_notification_sound_clear: 'Clear',
+  tool_make_a_short_ui_notification_sound_convert: 'Generate',
+  tool_make_a_short_ui_notification_sound_desc:
+    'Make a short UI notification or click sound with simple presets, then download a 16-bit WAV. On-device only—not DTMF.',
+  tool_make_a_short_ui_notification_sound_description:
+    'Make a short UI notification or click sound in the browser with simple presets, then download a 16-bit WAV. Steps: Pick a preset, choose length, Generate, preview, download. Example: Success chime. Short UI beeps only—not DTMF, not a long sine test tone. Never uploaded.',
+  tool_make_a_short_ui_notification_sound_done: 'Ready. Preview the UI WAV, then Download WAV.',
+  tool_make_a_short_ui_notification_sound_download: 'Download WAV',
+  tool_make_a_short_ui_notification_sound_dur_label: 'Length',
+  tool_make_a_short_ui_notification_sound_elapsed: '{s}s elapsed',
+  tool_make_a_short_ui_notification_sound_empty: 'Pick a preset or tap Load sample first.',
+  tool_make_a_short_ui_notification_sound_empty_state:
+    'Pick a preset, choose a short length, then Generate—or Load sample for Success at 200 ms. This tool makes short UI cues—not DTMF and not a long sine test tone.',
+  tool_make_a_short_ui_notification_sound_err_encoder: 'Could not write the UI WAV. Try Generate again.',
+  tool_make_a_short_ui_notification_sound_err_limit: 'Length must stay within the chip ranges (up to 800 ms).',
+  tool_make_a_short_ui_notification_sound_err_preset: 'Choose one of the preset chips.',
+  tool_make_a_short_ui_notification_sound_example:
+    'Load sample selects Success and 200 ms, then Generate runs automatically. You should hear a short two-note chime. Playback never starts by itself—press play on the preview if you want to hear it.',
+  tool_make_a_short_ui_notification_sound_example_title: 'Try the Success preset at 200 ms',
+  tool_make_a_short_ui_notification_sound_failed: 'Generate failed. Check the preset and length.',
+  tool_make_a_short_ui_notification_sound_faq_a1: 'No. DTMF uses paired telephone frequencies in a keypad sequence. This page only makes short UI cues.',
+  tool_make_a_short_ui_notification_sound_faq_a2:
+    'No. For a sustained single-frequency sine, use the sine tone generator instead. This tool stays on short UI presets.',
+  tool_make_a_short_ui_notification_sound_faq_a3:
+    'Soft click, Success, Alert, Error and Ping—each a short synthetic shape you can lengthen slightly with the duration chips.',
+  tool_make_a_short_ui_notification_sound_faq_a4: 'Chips cover roughly 120–450 ms. The page is for short UI feedback, not full ringtones or music beds.',
+  tool_make_a_short_ui_notification_sound_faq_a5:
+    'No. Synthesis and writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_make_a_short_ui_notification_sound_faq_a6: 'A mono 16-bit PCM WAV at 44.1 kHz. It is a new file you can keep as a reusable UI notification cue.',
+  tool_make_a_short_ui_notification_sound_faq_q1: 'Is this a DTMF dial-tone generator?',
+  tool_make_a_short_ui_notification_sound_faq_q2: 'Can it make a long sine tone at a chosen Hertz?',
+  tool_make_a_short_ui_notification_sound_faq_q3: 'What presets are available?',
+  tool_make_a_short_ui_notification_sound_faq_q4: 'How long can the sound be?',
+  tool_make_a_short_ui_notification_sound_faq_q5: 'Is anything uploaded to a server?',
+  tool_make_a_short_ui_notification_sound_faq_q6: 'What format is the download?',
+  tool_make_a_short_ui_notification_sound_how_body:
+    'Pick a preset, choose length, Generate, listen, then download one 16-bit WAV—without uploading files.',
+  tool_make_a_short_ui_notification_sound_how_item_1: 'Tap a preset chip such as Soft click, Success, Alert, Error or Ping.',
+  tool_make_a_short_ui_notification_sound_how_item_2: 'Choose a short length chip (120–450 ms).',
+  tool_make_a_short_ui_notification_sound_how_item_3: 'Click Generate and wait for Synth → Write to finish.',
+  tool_make_a_short_ui_notification_sound_how_item_4: 'Preview the cue, check the result line, then click Download WAV.',
+  tool_make_a_short_ui_notification_sound_how_title: 'How to make a short UI notification sound',
+  tool_make_a_short_ui_notification_sound_preset_alert: 'Alert',
+  tool_make_a_short_ui_notification_sound_preset_error: 'Error',
+  tool_make_a_short_ui_notification_sound_preset_label: 'Preset',
+  tool_make_a_short_ui_notification_sound_preset_ping: 'Ping',
+  tool_make_a_short_ui_notification_sound_preset_soft: 'Soft click',
+  tool_make_a_short_ui_notification_sound_preset_success: 'Success',
+  tool_make_a_short_ui_notification_sound_preview: 'Listen to the UI WAV',
+  tool_make_a_short_ui_notification_sound_progress: 'Generate progress',
+  tool_make_a_short_ui_notification_sound_result: '{preset} · {ms}ms · {seconds}s · mono · {rate} Hz · WAV {output} KiB',
+  tool_make_a_short_ui_notification_sound_rules_body:
+    'Each run synthesizes a short mono cue from a preset at 44.1 kHz. Export is 16-bit WAV. This is not DTMF, not a long sine frequency generator, and not a ringtone trimmer.',
+  tool_make_a_short_ui_notification_sound_rules_item_1:
+    'Presets stay on the chip list. Length stays within the offered millisecond chips. Output is mono and short.',
+  tool_make_a_short_ui_notification_sound_rules_item_2:
+    'This page makes short UI notification sounds. It does not dial DTMF sequences, and it does not make a long single-frequency sine for speaker tests.',
+  tool_make_a_short_ui_notification_sound_rules_item_3:
+    'Presets are synthetic sketches (click, two-note success, pulsed alert, buzz, decaying ping)—not licensed stock packs.',
+  tool_make_a_short_ui_notification_sound_rules_item_4: 'The download is a new file; nothing is uploaded. Keep volumes modest when previewing on headphones.',
+  tool_make_a_short_ui_notification_sound_rules_title: 'UI notification rules and honest browser limits',
+  tool_make_a_short_ui_notification_sound_sample: 'Load sample',
+  tool_make_a_short_ui_notification_sound_sample_name: 'ui-notify-sample',
+  tool_make_a_short_ui_notification_sound_settings_hint:
+    'Output is a mono 16-bit WAV at 44.1 kHz. Presets are short synthetic cues for UI feedback—not DTMF dial tones and not a long sine frequency generator.',
+  tool_make_a_short_ui_notification_sound_synth: 'Synth',
+  tool_make_a_short_ui_notification_sound_title: 'Make a short UI notification sound',
+  tool_make_a_short_ui_notification_sound_usecase_1:
+    'You need a tiny success or click cue for a prototype—pick a preset, Generate, download WAV for mocks or demos.',
+  tool_make_a_short_ui_notification_sound_usecase_2: 'You want a reusable alert or ping without hunting a stock library or installing a desktop synth.',
+  tool_make_a_short_ui_notification_sound_usecases_title: 'When this helps',
+  tool_make_a_short_ui_notification_sound_why_choose_item_1: 'See the preset name, length, sample rate and output KiB before you save.',
+  tool_make_a_short_ui_notification_sound_why_choose_item_2: 'One clear short-UI-cue job—with honest limits when length is out of range.',
+  tool_make_a_short_ui_notification_sound_why_choose_item_3: 'Synthesis and writing run on your device; nothing is uploaded to process the sound.',
+  tool_make_a_short_ui_notification_sound_why_choose_item_4: 'Changing the preset or length clears the old download so you never save a stale WAV by mistake.',
+  tool_make_a_short_ui_notification_sound_why_choose_title: 'Why choose our Make a short UI notification sound tools',
+  tool_make_a_short_ui_notification_sound_write: 'Write',
+  tool_make_a_slowed_and_reverb_clip_advanced: 'Slow + reverb settings',
+  tool_make_a_slowed_and_reverb_clip_article:
+    'Slowed and reverb is the fan aesthetic that stretches a song slower and lower, then wraps it in space. This page resamples below 1× so tempo falls and pitch falls together, then applies a multi-tap feedback delay (convolution-lite) with a short tail—unlike WSOLA tempo-only stretch without reverb, unlike nightcore that speeds up and raises pitch, and unlike a reverb-only effect that leaves tempo alone. Default 0.8× with Medium reverb is a classic vibe. Very low ratios or Heavy reverb can sound muddy; this is a pragmatic browser path, not a studio IR suite. Channel count stays 1 or 2. Keep the original; the download is a new 16-bit WAV. Work runs on your device.',
+  tool_make_a_slowed_and_reverb_clip_choose: 'Choose an audio file',
+  tool_make_a_slowed_and_reverb_clip_clear: 'Clear',
+  tool_make_a_slowed_and_reverb_clip_convert: 'Slowed reverb',
+  tool_make_a_slowed_and_reverb_clip_custom_label: 'Custom ratio (0.55–0.95)',
+  tool_make_a_slowed_and_reverb_clip_decode: 'Decode',
+  tool_make_a_slowed_and_reverb_clip_desc:
+    'Slow a clip and add reverb for the classic slowed+reverb feel, then download a 16-bit WAV. On-device only.',
+  tool_make_a_slowed_and_reverb_clip_description:
+    'Make a slowed and reverb clip by slowing with pitch drop and adding feedback-delay reverb in the browser. Steps: Slowed reverb, preview, download WAV. Example: load the sample. Honest slow+reverb combo—not tempo-only stretch, not nightcore speed-up, not reverb-only. Audio stays on your device; never uploaded.',
+  tool_make_a_slowed_and_reverb_clip_done: 'Ready. Preview the slowed+reverb WAV, then Download WAV.',
+  tool_make_a_slowed_and_reverb_clip_download: 'Download WAV',
+  tool_make_a_slowed_and_reverb_clip_elapsed: '{s}s elapsed',
+  tool_make_a_slowed_and_reverb_clip_empty: 'Choose an audio file or load the sample first.',
+  tool_make_a_slowed_and_reverb_clip_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_make_a_slowed_and_reverb_clip_err_encoder: 'Could not write the slowed+reverb WAV. Check settings, then try Slowed reverb again.',
+  tool_make_a_slowed_and_reverb_clip_err_file: 'Drop exactly one audio file.',
+  tool_make_a_slowed_and_reverb_clip_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_make_a_slowed_and_reverb_clip_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_make_a_slowed_and_reverb_clip_err_silence: 'Level is essentially silence—nothing to process. Try a recording with audible level.',
+  tool_make_a_slowed_and_reverb_clip_err_speed: 'Pick a slow preset or enter a custom ratio between 0.55 and 0.95.',
+  tool_make_a_slowed_and_reverb_clip_example:
+    'Load sample builds a three-second harmonic tone, then Slowed reverb at 0.8× with Medium automatically. Playback never starts by itself—press play on the preview if you want to hear the slower, lower, spacious take.',
+  tool_make_a_slowed_and_reverb_clip_example_title: 'Try a real pitched clip',
+  tool_make_a_slowed_and_reverb_clip_failed: 'Slowed reverb failed. Try a smaller, valid audio file.',
+  tool_make_a_slowed_and_reverb_clip_faq_a1:
+    'No. Speed-without-pitch uses WSOLA so tempo changes while pitch aims to stay, with no reverb. This page slows with pitch drop and adds reverb. Use Change audio speed without changing pitch for tempo-only work.',
+  tool_make_a_slowed_and_reverb_clip_faq_a2:
+    'No. Nightcore speeds up and raises pitch together. This page slows down, lowers pitch and adds reverb. Use Make a nightcore version of a song for the opposite aesthetic.',
+  tool_make_a_slowed_and_reverb_clip_faq_a3:
+    'No. Reverb-only leaves tempo and pitch alone. Slowed+reverb always includes the slow step. Use Add reverb to an audio clip for Room, Hall or Echo without slowing.',
+  tool_make_a_slowed_and_reverb_clip_faq_a4:
+    '0.8× is a classic slow lift (~−3.9 semitones) that lengthens the clip. Heavy raises wet level and feedback for a longer, thicker space after the slow step.',
+  tool_make_a_slowed_and_reverb_clip_faq_a5:
+    'No. This is a pragmatic browser feedback-delay path, not a measured impulse-response suite. Prefer Soft or a milder ratio when mud shows.',
+  tool_make_a_slowed_and_reverb_clip_faq_a6:
+    'No. Decoding, slow, reverb and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For tempo-only stretch use Change audio speed without changing pitch; for speed-up+pitch-up use Make a nightcore version of a song.',
+  tool_make_a_slowed_and_reverb_clip_faq_q1: 'Is this the same as changing speed without changing pitch?',
+  tool_make_a_slowed_and_reverb_clip_faq_q2: 'Is this the same as nightcore?',
+  tool_make_a_slowed_and_reverb_clip_faq_q3: 'Is this the same as adding reverb only?',
+  tool_make_a_slowed_and_reverb_clip_faq_q4: 'What do the 0.8× and Heavy presets do?',
+  tool_make_a_slowed_and_reverb_clip_faq_q5: 'Will studio IR reverb quality be perfect?',
+  tool_make_a_slowed_and_reverb_clip_faq_q6: 'Is my audio uploaded to a server?',
+  tool_make_a_slowed_and_reverb_clip_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_make_a_slowed_and_reverb_clip_how_body:
+    'Pick a slow ratio and reverb amount, run resample that slows and lowers pitch, add feedback reverb, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_make_a_slowed_and_reverb_clip_how_item_1: 'Choose an audio file, or select Load sample for a three-second pitched tone demo.',
+  tool_make_a_slowed_and_reverb_clip_how_item_2:
+    'Open Slow + reverb settings and pick 0.75× / 0.8× / 0.85× (or Custom) plus Soft / Medium / Heavy (default 0.8× + Medium).',
+  tool_make_a_slowed_and_reverb_clip_how_item_3: 'Click Slowed reverb and wait for Read → Decode → Slow → Reverb → Write to finish.',
+  tool_make_a_slowed_and_reverb_clip_how_item_4: 'Preview that the take is slower, lower and spacious, check the result line, then click Download WAV.',
+  tool_make_a_slowed_and_reverb_clip_how_title: 'How to make a slowed and reverb clip',
+  tool_make_a_slowed_and_reverb_clip_preview: 'Listen to the slowed and reverb WAV',
+  tool_make_a_slowed_and_reverb_clip_progress: 'Slowed reverb progress',
+  tool_make_a_slowed_and_reverb_clip_read: 'Read',
+  tool_make_a_slowed_and_reverb_clip_result: '{seconds}s → {outSeconds}s · {speed}× · ~{semitones} st · {reverb} · WAV {output} KiB',
+  tool_make_a_slowed_and_reverb_clip_reverb: 'Reverb',
+  tool_make_a_slowed_and_reverb_clip_reverb_heavy: 'Heavy',
+  tool_make_a_slowed_and_reverb_clip_reverb_label: 'Reverb amount',
+  tool_make_a_slowed_and_reverb_clip_reverb_medium: 'Medium',
+  tool_make_a_slowed_and_reverb_clip_reverb_soft: 'Soft',
+  tool_make_a_slowed_and_reverb_clip_rules_body:
+    'Each run resamples below 1× so the clip plays slower and lower, then mixes a feedback-delay reverb with a short tail. Soft peak protection keeps the WAV under full scale. Very low ratios or Heavy reverb may sound muddy—quality is limited compared with studio impulse responses. Pages that only slow audio without reverb must not claim slowed+reverb.',
+  tool_make_a_slowed_and_reverb_clip_rules_item_1:
+    'Slow presets are 0.75×, 0.8× and 0.85×. Custom allows 0.55–0.95. Default is 0.8×. Reverb Soft / Medium / Heavy; default Medium.',
+  tool_make_a_slowed_and_reverb_clip_rules_item_2:
+    'This is browser resample slow+pitch plus delay-feedback reverb. It is not WSOLA tempo-only, not nightcore speed-up, not reverb-only, and not voice cloning.',
+  tool_make_a_slowed_and_reverb_clip_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_make_a_slowed_and_reverb_clip_rules_item_4:
+    'One file up to 40 MiB and ten minutes. If the take sounds too muddy, try a milder ratio closer to 0.9× or Soft reverb.',
+  tool_make_a_slowed_and_reverb_clip_rules_title: 'Slow ratio, reverb and honest browser limits',
+  tool_make_a_slowed_and_reverb_clip_sample: 'Load sample',
+  tool_make_a_slowed_and_reverb_clip_sample_name: 'three-second-slowed-reverb-demo',
+  tool_make_a_slowed_and_reverb_clip_settings_hint:
+    'Default 0.8× slows and lowers pitch (~−3.9 st) then Medium reverb adds space. 0.75× and Heavy push further. Custom accepts 0.55–0.95. This is resample slow+pitch plus delay feedback—not WSOLA tempo-only, not nightcore, not reverb-only.',
+  tool_make_a_slowed_and_reverb_clip_slow: 'Slow',
+  tool_make_a_slowed_and_reverb_clip_speed_075: '0.75×',
+  tool_make_a_slowed_and_reverb_clip_speed_080: '0.8×',
+  tool_make_a_slowed_and_reverb_clip_speed_085: '0.85×',
+  tool_make_a_slowed_and_reverb_clip_speed_custom: 'Custom',
+  tool_make_a_slowed_and_reverb_clip_speed_label: 'Slow ratio (speed + pitch down together)',
+  tool_make_a_slowed_and_reverb_clip_title: 'Make a slowed and reverb clip',
+  tool_make_a_slowed_and_reverb_clip_usecase_1: 'A pop or R&B clip for a classic slowed+reverb edit—pick 0.8× + Medium, Slowed reverb, download WAV.',
+  tool_make_a_slowed_and_reverb_clip_usecase_2:
+    'A short clip that needs both slow and space—not tempo-only practice, not nightcore, not dry reverb alone.',
+  tool_make_a_slowed_and_reverb_clip_usecases_title: 'When this helps',
+  tool_make_a_slowed_and_reverb_clip_why_choose_item_1:
+    'See input seconds, output seconds, slow ratio, approximate semitones, reverb amount and output KiB before you save.',
+  tool_make_a_slowed_and_reverb_clip_why_choose_item_2: 'One clear slowed+reverb job—slow and space together, not buried DAW automation.',
+  tool_make_a_slowed_and_reverb_clip_why_choose_item_3:
+    'Decoding, slow, reverb and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_make_a_slowed_and_reverb_clip_why_choose_item_4:
+    'Changing the ratio, reverb or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_make_a_slowed_and_reverb_clip_why_choose_title: 'Why choose our Make a slowed and reverb clip tools',
+  tool_make_a_slowed_and_reverb_clip_write: 'Write',
+  tool_make_a_waveform_video_from_audio_advanced: 'Waveform video notes',
+  tool_make_a_waveform_video_from_audio_article:
+    'Podcast clips and voice notes often need a shareable video with a moving waveform. This page decodes local audio in AudioContext, draws peaks on a canvas, captures the canvas stream, mixes the soundtrack through a MediaStreamDestination, and records with MediaRecorder—usually WebM depending on the browser. It does not download YouTube, does not burn burned-in lyrics karaoke, and does not promise MP4 or ProRes. Success depends on decode plus MediaRecorder support. Keep the original audio; the download is a new re-encoded video. Work runs on your device.',
+  tool_make_a_waveform_video_from_audio_choose: 'Choose an audio file',
+  tool_make_a_waveform_video_from_audio_clear: 'Clear',
+  tool_make_a_waveform_video_from_audio_convert: 'Make video',
+  tool_make_a_waveform_video_from_audio_decode: 'Decode',
+  tool_make_a_waveform_video_from_audio_desc:
+    'Turn a local audio file into an audiogram-style waveform video in this tab, then download WebM. On-device only.',
+  tool_make_a_waveform_video_from_audio_description:
+    'Make a waveform video from audio in the browser: decode a local file, draw an audiogram-style waveform on canvas, record with MediaRecorder, then download. Steps: Choose audio, Make video, preview, download. Example: Load sample builds a short tone and records a moving waveform clip. Output is usually WebM—not MP4 remux, not a desktop NLE. Never uploaded.',
+  tool_make_a_waveform_video_from_audio_done: 'Ready. Preview the waveform video, then Download video.',
+  tool_make_a_waveform_video_from_audio_download: 'Download video',
+  tool_make_a_waveform_video_from_audio_draw: 'Draw',
+  tool_make_a_waveform_video_from_audio_elapsed: '{s}s elapsed',
+  tool_make_a_waveform_video_from_audio_empty: 'Choose a local audio file, or load the sample first.',
+  tool_make_a_waveform_video_from_audio_empty_state:
+    'No audio yet. Drop a local track or click Load sample. This tool draws a waveform video—it does not extract audio from video, does not trim clips alone, and does not download YouTube.',
+  tool_make_a_waveform_video_from_audio_err_decode: 'The browser could not decode this audio. Try another container or a shorter clip.',
+  tool_make_a_waveform_video_from_audio_err_encoder: 'MediaRecorder could not write a waveform video. Try Chrome/Edge or a shorter WAV/MP3.',
+  tool_make_a_waveform_video_from_audio_err_file: 'Choose one supported local audio file.',
+  tool_make_a_waveform_video_from_audio_err_format: 'Unsupported or undecodable audio. Use common types your browser can decode. No YouTube URLs.',
+  tool_make_a_waveform_video_from_audio_err_limit: 'Use a local audio file up to 40 MiB and about 3 minutes.',
+  tool_make_a_waveform_video_from_audio_example:
+    'Load sample builds a short sine tone WAV, then Make video runs automatically. You should see bars move with the playhead. Playback never starts by itself—press play if you want to watch.',
+  tool_make_a_waveform_video_from_audio_example_title: 'Try a short tone as a waveform clip',
+  tool_make_a_waveform_video_from_audio_failed: 'Could not build a waveform video. Try a shorter file your browser can decode, or Chrome/Edge.',
+  tool_make_a_waveform_video_from_audio_faq_a1: 'No. Only local files you already have. There is no YouTube downloader and no remote fetch.',
+  tool_make_a_waveform_video_from_audio_faq_a2:
+    'Usually not. Most browsers record WebM via MediaRecorder. If MP4 is listed as supported, it may be used—but WebM is the common result. This is not a lossless remux.',
+  tool_make_a_waveform_video_from_audio_faq_a3:
+    'No. Extracting audio is a different tool. Here the input is audio and the output is a waveform video.',
+  tool_make_a_waveform_video_from_audio_faq_a4:
+    'No dedicated trim UI. Use the related Trim an audio clip and export page first, then make a waveform video from the trimmed file.',
+  tool_make_a_waveform_video_from_audio_faq_a5:
+    'No. Decode and recording run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_make_a_waveform_video_from_audio_faq_a6:
+    'MediaRecorder and canvas.captureStream must be available, and the audio must decode. Try Chrome or Edge, or a shorter WAV/MP3.',
+  tool_make_a_waveform_video_from_audio_faq_q1: 'Can it download YouTube or paste a URL?',
+  tool_make_a_waveform_video_from_audio_faq_q2: 'Will the output be MP4?',
+  tool_make_a_waveform_video_from_audio_faq_q3: 'Is this the same as extracting audio from a video?',
+  tool_make_a_waveform_video_from_audio_faq_q4: 'Can I trim the clip here?',
+  tool_make_a_waveform_video_from_audio_faq_q5: 'Is anything uploaded to a server?',
+  tool_make_a_waveform_video_from_audio_faq_q6: 'Why does recording fail on my browser?',
+  tool_make_a_waveform_video_from_audio_file_label: 'Audio: {name}',
+  tool_make_a_waveform_video_from_audio_hint:
+    'Drop or choose a local WAV, MP3, M4A, OGG or similar your browser can decode. Up to 40 MiB and about 3 minutes.',
+  tool_make_a_waveform_video_from_audio_how_body:
+    'Choose a local audio file, run Make video, preview the audiogram-style clip, then download—without uploading.',
+  tool_make_a_waveform_video_from_audio_how_item_1: 'Choose a local audio file (or Load sample). Do not paste YouTube links.',
+  tool_make_a_waveform_video_from_audio_how_item_2: 'Click Make video and wait for Read → Decode → Draw → Write to finish.',
+  tool_make_a_waveform_video_from_audio_how_item_3: 'Preview the result. You should see a moving waveform with the soundtrack.',
+  tool_make_a_waveform_video_from_audio_how_item_4: 'Check the result line, then click Download video.',
+  tool_make_a_waveform_video_from_audio_how_title: 'How to make a waveform video from audio',
+  tool_make_a_waveform_video_from_audio_preview: 'Preview waveform video',
+  tool_make_a_waveform_video_from_audio_progress: 'Waveform video progress',
+  tool_make_a_waveform_video_from_audio_read: 'Read',
+  tool_make_a_waveform_video_from_audio_result: '{seconds}s · waveform · {mime} · {output} KiB',
+  tool_make_a_waveform_video_from_audio_rules_body:
+    'Each run decodes audio, animates a canvas waveform, and re-encodes with MediaRecorder. Output is often WebM. This is not YouTube download, not extract-audio, and not a trim-only export.',
+  tool_make_a_waveform_video_from_audio_rules_item_1: 'One local audio file up to 40 MiB and about three minutes. Decode must succeed first.',
+  tool_make_a_waveform_video_from_audio_rules_item_2:
+    'Output length follows the audio. Longer files may fail the limit; keep clips short for reliable recording.',
+  tool_make_a_waveform_video_from_audio_rules_item_3: 'No YouTube, podcast URL, or remote download. Paste is not supported.',
+  tool_make_a_waveform_video_from_audio_rules_item_4:
+    'Containers and codecs are browser-chosen (often WebM). Keep originals; the download is a new re-encoded file.',
+  tool_make_a_waveform_video_from_audio_rules_title: 'Waveform video rules and honest browser limits',
+  tool_make_a_waveform_video_from_audio_sample: 'Load sample',
+  tool_make_a_waveform_video_from_audio_sample_name: 'waveform-video-sample',
+  tool_make_a_waveform_video_from_audio_settings_hint:
+    'Browsers record canvas frames plus audio with MediaRecorder. Output is often WebM (VP8/VP9 + Opus). This is not a lossless remux and not an MP4 guarantee. No YouTube download. Colors and layout are fixed for a clear audiogram look.',
+  tool_make_a_waveform_video_from_audio_title: 'Make a waveform video from audio',
+  tool_make_a_waveform_video_from_audio_usecase_1: 'You have a podcast bite as MP3 and need a simple waveform video for social sharing.',
+  tool_make_a_waveform_video_from_audio_usecase_2: 'You want an audiogram-style preview from a voice memo without installing a desktop editor.',
+  tool_make_a_waveform_video_from_audio_usecases_title: 'When this helps',
+  tool_make_a_waveform_video_from_audio_why_choose_item_1: 'See duration, MIME type and output KiB before you save.',
+  tool_make_a_waveform_video_from_audio_why_choose_item_2: 'One clear audiogram job with honest MediaRecorder and WebM limits—not a fake MP4 remux promise.',
+  tool_make_a_waveform_video_from_audio_why_choose_item_3: 'Decode and recording run on your device; the page does not upload your files to process them.',
+  tool_make_a_waveform_video_from_audio_why_choose_item_4: 'Changing the file clears the old download so you never save a stale recording by mistake.',
+  tool_make_a_waveform_video_from_audio_why_choose_title: 'Why choose our Make a waveform video from audio tools',
+  tool_make_a_waveform_video_from_audio_write: 'Write',
+  tool_make_an_8d_panning_version_of_a_song_advanced: '8D pan settings',
+  tool_make_an_8d_panning_version_of_a_song_article:
+    '“8D audio” as fans share it is usually a mid signal swept left and right with a slow sine so headphones feel like the sound circles. This page collapses mono or stereo input to a mid, applies constant-power autopan with a chosen period, and always exports stereo 16-bit WAV. It is not cinema surround, Ambisonics, or measured HRTF. Default 5s cycle is a classic sweep; 3s feels faster and 8s calmer. Keep the original file. Work runs on your device.',
+  tool_make_an_8d_panning_version_of_a_song_choose: 'Choose an audio file',
+  tool_make_an_8d_panning_version_of_a_song_clear: 'Clear',
+  tool_make_an_8d_panning_version_of_a_song_convert: '8D pan',
+  tool_make_an_8d_panning_version_of_a_song_custom_label: 'Custom period (2–20 s)',
+  tool_make_an_8d_panning_version_of_a_song_decode: 'Decode',
+  tool_make_an_8d_panning_version_of_a_song_desc:
+    'Auto-pan L/R over time for an 8D-style headphone sweep, then download stereo 16-bit WAV. On-device only.',
+  tool_make_an_8d_panning_version_of_a_song_description:
+    'Make an 8D panning version of a song by auto-panning left and right over time in the browser, then download stereo 16-bit WAV. Steps: 8D pan, preview, download. Example: load the sample. Honest headphone sweep—not true 3D surround or HRTF. Audio stays on your device; never uploaded.',
+  tool_make_an_8d_panning_version_of_a_song_done: 'Ready. Preview the stereo 8D WAV, then Download WAV.',
+  tool_make_an_8d_panning_version_of_a_song_download: 'Download WAV',
+  tool_make_an_8d_panning_version_of_a_song_elapsed: '{s}s elapsed',
+  tool_make_an_8d_panning_version_of_a_song_empty: 'Choose an audio file or load the sample first.',
+  tool_make_an_8d_panning_version_of_a_song_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_make_an_8d_panning_version_of_a_song_err_encoder: 'Could not write the 8D WAV. Check settings, then try 8D pan again.',
+  tool_make_an_8d_panning_version_of_a_song_err_file: 'Drop exactly one audio file.',
+  tool_make_an_8d_panning_version_of_a_song_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_make_an_8d_panning_version_of_a_song_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_make_an_8d_panning_version_of_a_song_err_period: 'Pick a period preset or enter a custom value between 2 and 20 seconds.',
+  tool_make_an_8d_panning_version_of_a_song_err_silence: 'Level is essentially silence—nothing to process. Try a recording with audible level.',
+  tool_make_an_8d_panning_version_of_a_song_example:
+    'Load sample builds a three-second tone, then 8D pan at 5s automatically. Playback never starts by itself—press play on the preview if you want to hear the sweep.',
+  tool_make_an_8d_panning_version_of_a_song_example_title: 'Try a real pitched clip',
+  tool_make_an_8d_panning_version_of_a_song_failed: '8D pan failed. Try a smaller, valid audio file.',
+  tool_make_an_8d_panning_version_of_a_song_faq_a1:
+    'No. It is a mid signal auto-panned L/R with constant-power gains for a headphone “circle” feel. It does not decode Dolby, Ambisonics or measured HRTF.',
+  tool_make_an_8d_panning_version_of_a_song_faq_a2:
+    'No. Slowed+reverb slows pitch and adds space. This page only pans over time. Use Make a slowed and reverb clip for that aesthetic.',
+  tool_make_an_8d_panning_version_of_a_song_faq_a3:
+    'No. Nightcore speeds up and raises pitch. This page keeps tempo and pitch and only moves the image. Use Make a nightcore version of a song for nightcore.',
+  tool_make_an_8d_panning_version_of_a_song_faq_a4:
+    'Every five seconds the mid signal completes one full left↔right↔left cycle. Shorter periods feel busier; longer periods feel calmer.',
+  tool_make_an_8d_panning_version_of_a_song_faq_a5:
+    'No. This is a pragmatic browser autopan path. Prefer headphones; speakers may show less of the effect.',
+  tool_make_an_8d_panning_version_of_a_song_faq_a6:
+    'No. Decoding, pan and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For slowed+reverb use Make a slowed and reverb clip; for nightcore use Make a nightcore version of a song.',
+  tool_make_an_8d_panning_version_of_a_song_faq_q1: 'Is this true 3D surround or HRTF?',
+  tool_make_an_8d_panning_version_of_a_song_faq_q2: 'Is this the same as slowed and reverb?',
+  tool_make_an_8d_panning_version_of_a_song_faq_q3: 'Is this the same as nightcore?',
+  tool_make_an_8d_panning_version_of_a_song_faq_q4: 'What does the 5s period do?',
+  tool_make_an_8d_panning_version_of_a_song_faq_q5: 'Will cinema surround quality be perfect?',
+  tool_make_an_8d_panning_version_of_a_song_faq_q6: 'Is my audio uploaded to a server?',
+  tool_make_an_8d_panning_version_of_a_song_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo in, stereo out.',
+  tool_make_an_8d_panning_version_of_a_song_how_body:
+    'Pick a sweep period, run mid + sine autopan, listen on headphones, then download a stereo 16-bit WAV—without uploading the file.',
+  tool_make_an_8d_panning_version_of_a_song_how_item_1: 'Choose an audio file, or select Load sample for a three-second pitched tone demo.',
+  tool_make_an_8d_panning_version_of_a_song_how_item_2: 'Open 8D pan settings and pick 8s / 5s / 3s (or Custom 2–20s). Default is 5s.',
+  tool_make_an_8d_panning_version_of_a_song_how_item_3: 'Click 8D pan and wait for Read → Decode → Pan → Write to finish.',
+  tool_make_an_8d_panning_version_of_a_song_how_item_4: 'Preview the left↔right sweep on headphones, check the result line, then click Download WAV.',
+  tool_make_an_8d_panning_version_of_a_song_how_title: 'How to make an 8D panning version',
+  tool_make_an_8d_panning_version_of_a_song_pan: 'Pan',
+  tool_make_an_8d_panning_version_of_a_song_period_3: '3s',
+  tool_make_an_8d_panning_version_of_a_song_period_5: '5s',
+  tool_make_an_8d_panning_version_of_a_song_period_8: '8s',
+  tool_make_an_8d_panning_version_of_a_song_period_custom: 'Custom',
+  tool_make_an_8d_panning_version_of_a_song_period_label: 'Full L↔R sweep period',
+  tool_make_an_8d_panning_version_of_a_song_preview: 'Listen to the 8D panning WAV',
+  tool_make_an_8d_panning_version_of_a_song_progress: '8D pan progress',
+  tool_make_an_8d_panning_version_of_a_song_read: 'Read',
+  tool_make_an_8d_panning_version_of_a_song_result: '{seconds}s · period {period}s · stereo WAV {output} KiB',
+  tool_make_an_8d_panning_version_of_a_song_rules_body:
+    'Each run builds a mid signal, then applies constant-power left/right gains from a sine LFO. Output is always stereo 16-bit WAV. Soft peak protection keeps levels under full scale. This is a pragmatic headphone sweep, not cinema 3D or HRTF.',
+  tool_make_an_8d_panning_version_of_a_song_rules_item_1: 'Period presets are 8s, 5s and 3s. Custom allows 2–20 seconds. Default is 5s.',
+  tool_make_an_8d_panning_version_of_a_song_rules_item_2:
+    'This is browser mid + autopan. It is not true surround decode, not slowed+reverb, not nightcore, and not voice cloning.',
+  tool_make_an_8d_panning_version_of_a_song_rules_item_3:
+    'Input may be mono or stereo; export is always stereo. Tags are not copied. The original file is never overwritten.',
+  tool_make_an_8d_panning_version_of_a_song_rules_item_4: 'One file up to 40 MiB and ten minutes. Prefer headphones to hear the sweep clearly.',
+  tool_make_an_8d_panning_version_of_a_song_rules_title: 'Pan period and honest browser limits',
+  tool_make_an_8d_panning_version_of_a_song_sample: 'Load sample',
+  tool_make_an_8d_panning_version_of_a_song_sample_name: 'three-second-8d-pan-demo',
+  tool_make_an_8d_panning_version_of_a_song_settings_hint:
+    'Default 5s moves the mid signal left↔right once every five seconds with constant-power gains. Shorter periods feel busier. This is headphone autopan—not true 3D, not reverb, not nightcore.',
+  tool_make_an_8d_panning_version_of_a_song_title: 'Make an 8D panning version of a song',
+  tool_make_an_8d_panning_version_of_a_song_usecase_1: 'A short song or loop for a classic headphone 8D edit—pick 5s, 8D pan, download WAV.',
+  tool_make_an_8d_panning_version_of_a_song_usecase_2: 'A clip that needs motion left↔right—not slowed+reverb, not nightcore, not reverse.',
+  tool_make_an_8d_panning_version_of_a_song_usecases_title: 'When this helps',
+  tool_make_an_8d_panning_version_of_a_song_why_choose_item_1: 'See input seconds, sweep period and output KiB before you save.',
+  tool_make_an_8d_panning_version_of_a_song_why_choose_item_2: 'One clear 8D-style pan job—not buried DAW automation.',
+  tool_make_an_8d_panning_version_of_a_song_why_choose_item_3:
+    'Decoding, pan and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_make_an_8d_panning_version_of_a_song_why_choose_item_4: 'Changing the period or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_make_an_8d_panning_version_of_a_song_why_choose_title: 'Why choose our Make an 8D panning version tools',
+  tool_make_an_8d_panning_version_of_a_song_write: 'Write',
   tool_make_pdf_fillable_add_field: 'Add field',
   tool_make_pdf_fillable_add_n_fields: 'Add N fields',
   tool_make_pdf_fillable_article:
@@ -9360,6 +11969,105 @@ const en: SiteLangDict = {
   tool_make_pdf_flipbook_usecase_3: 'Privacy-sensitive files that must stay on device',
   tool_make_pdf_flipbook_usecases_title: 'Good fits',
   tool_make_pdf_flipbook_warn_large: 'Large file — may be slow.',
+  tool_make_srt_subtitles_from_an_audio_file_advanced: 'Honest limits',
+  tool_make_srt_subtitles_from_an_audio_file_article:
+    'People search for audio to srt and generate subtitles from audio expecting Whisper-class timed captions. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses Web Speech API SpeechRecognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), stamps cues from recognition timing, and formats standard SRT—or you can dictate live with the mic. If SpeechRecognition is missing, the page says so clearly. Output is editable SRT you can download—not plain TXT only, and not burned into video. Related tools cover plain transcription and waveform video. Keep expectations honest: cue times and accuracy vary by browser.',
+  tool_make_srt_subtitles_from_an_audio_file_choose: 'Choose an audio file',
+  tool_make_srt_subtitles_from_an_audio_file_clear: 'Clear',
+  tool_make_srt_subtitles_from_an_audio_file_convert: 'Make SRT while playing',
+  tool_make_srt_subtitles_from_an_audio_file_decode: 'Decode',
+  tool_make_srt_subtitles_from_an_audio_file_desc:
+    'Build timed SRT subtitles from local speech with browser SpeechRecognition when available—or dictate with the mic. Not a Whisper clone.',
+  tool_make_srt_subtitles_from_an_audio_file_description:
+    'Make SRT subtitles from an audio file in the browser using SpeechRecognition when your browser provides it. Steps: Choose a local audio file, pick a recognition language, Make SRT while playing (speakers + mic loopback) or Dictate with mic, edit the SRT preview, download .srt. Example: Load sample opens a short tone and runs the playthrough path—real speech needs a voice recording or the mic button. Cue times are best-effort from recognition timing, not frame-perfect forced alignment. This is not a cloud Whisper clone and does not load a huge wasm ASR model. Many browsers cannot reliably subtitle uploaded files offline. The page does not upload your file for server-side ASR.',
+  tool_make_srt_subtitles_from_an_audio_file_done: 'Ready. Edit the SRT if needed, then Download SRT.',
+  tool_make_srt_subtitles_from_an_audio_file_download: 'Download SRT',
+  tool_make_srt_subtitles_from_an_audio_file_elapsed: '{s}s elapsed',
+  tool_make_srt_subtitles_from_an_audio_file_empty: 'Choose a local audio file, or use Dictate with mic.',
+  tool_make_srt_subtitles_from_an_audio_file_empty_state:
+    'No SRT yet. Drop a voice recording and Make SRT while playing, or click Dictate with mic. Not a Whisper clone—browser SpeechRecognition only, with honest timing limits.',
+  tool_make_srt_subtitles_from_an_audio_file_err_decode: 'The browser could not decode this audio file.',
+  tool_make_srt_subtitles_from_an_audio_file_err_file: 'Choose one local audio file, or use Dictate with mic.',
+  tool_make_srt_subtitles_from_an_audio_file_err_format: 'Unsupported audio type. Use a common format your browser can decode.',
+  tool_make_srt_subtitles_from_an_audio_file_err_limit: 'Use audio up to about 40 MiB and 3 minutes.',
+  tool_make_srt_subtitles_from_an_audio_file_err_permission: 'Microphone or speech permission was denied. Allow access or use another browser.',
+  tool_make_srt_subtitles_from_an_audio_file_err_unsupported: 'SpeechRecognition is unavailable in this browser.',
+  tool_make_srt_subtitles_from_an_audio_file_example:
+    'Load sample attaches a short tone WAV and runs Make SRT while playing. A tone will not produce words—use a real voice file or Dictate with mic to see cues. Playback never auto-starts after a finished SRT.',
+  tool_make_srt_subtitles_from_an_audio_file_example_title: 'Try the sample playthrough path',
+  tool_make_srt_subtitles_from_an_audio_file_failed: 'Could not build SRT. Try Dictate with mic, another browser, or a clearer voice recording.',
+  tool_make_srt_subtitles_from_an_audio_file_faq_a1:
+    'No. It does not ship a Whisper wasm model and does not upload your file to our servers for ASR. It uses the browser SpeechRecognition API when available. Vendor speech services may still apply to microphone audio—see browser privacy docs.',
+  tool_make_srt_subtitles_from_an_audio_file_faq_a2:
+    'They are best-effort estimates from when final recognition results arrive (AudioContext clock while playing, or session elapsed time for mic)—not frame-perfect forced alignment like desktop Whisper pipelines.',
+  tool_make_srt_subtitles_from_an_audio_file_faq_a3:
+    'Most browsers listen via the microphone, not a private WebAudio tap. Playthrough needs the mic to hear the speakers, plus permission. If that fails, use Dictate with mic.',
+  tool_make_srt_subtitles_from_an_audio_file_faq_a4:
+    'That page downloads plain TXT without cue times. This page formats numbered SRT cues with start/end times for players and editors that expect .srt.',
+  tool_make_srt_subtitles_from_an_audio_file_faq_a5:
+    'This page does not upload the file for processing. SpeechRecognition may use the microphone and a browser vendor service. Keep sensitive material offline if that is unacceptable.',
+  tool_make_srt_subtitles_from_an_audio_file_faq_a6:
+    'No. It only downloads a .srt sidecar. For a waveform-style video from audio, see the related waveform video tool—not burned-in captions.',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q1: 'Is this a Whisper clone or cloud ASR upload?',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q2: 'How accurate are the SRT timestamps?',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q3: 'Why did my uploaded file produce little or no text?',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q4: 'How is this different from Transcribe an audio file to text?',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q5: 'Is my audio uploaded?',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q6: 'Can this burn subtitles into a video file?',
+  tool_make_srt_subtitles_from_an_audio_file_file_label: 'Audio: {name}',
+  tool_make_srt_subtitles_from_an_audio_file_hint:
+    'Optional local WAV, MP3 or M4A up to about 40 MiB / 3 minutes. File subtitling depends on browser SpeechRecognition and often needs speakers plus microphone permission.',
+  tool_make_srt_subtitles_from_an_audio_file_how_body:
+    'Use browser speech recognition on a local file playthrough or live mic dictation, stamp cues, then download .srt.',
+  tool_make_srt_subtitles_from_an_audio_file_how_item_1: 'Choose a local voice recording (or Load sample), and pick a recognition language.',
+  tool_make_srt_subtitles_from_an_audio_file_how_item_2:
+    'Click Make SRT while playing, allow microphone if prompted, and keep speakers audible—or click Dictate with mic instead.',
+  tool_make_srt_subtitles_from_an_audio_file_how_item_3:
+    'Watch interim text; finals become numbered SRT cues with estimated start/end times. Press Stop when dictating.',
+  tool_make_srt_subtitles_from_an_audio_file_how_item_4: 'Edit the SRT preview if needed, then Download SRT.',
+  tool_make_srt_subtitles_from_an_audio_file_how_title: 'How to make SRT subtitles from an audio file',
+  tool_make_srt_subtitles_from_an_audio_file_interim_label: 'Interim (live)',
+  tool_make_srt_subtitles_from_an_audio_file_lang_hint: 'Passed to SpeechRecognition.lang. Pick the language spoken in the recording or into the mic.',
+  tool_make_srt_subtitles_from_an_audio_file_lang_label: 'Recognition language',
+  tool_make_srt_subtitles_from_an_audio_file_listen: 'Listen',
+  tool_make_srt_subtitles_from_an_audio_file_mic: 'Dictate with mic',
+  tool_make_srt_subtitles_from_an_audio_file_preview: 'SRT preview',
+  tool_make_srt_subtitles_from_an_audio_file_progress: 'Subtitle progress',
+  tool_make_srt_subtitles_from_an_audio_file_read: 'Read',
+  tool_make_srt_subtitles_from_an_audio_file_result: '{cues} cues · {chars} characters',
+  tool_make_srt_subtitles_from_an_audio_file_rules_body:
+    'This page uses Web Speech API SpeechRecognition when present. It is not offline Whisper. Cue times come from recognition timing clocks. File upload subtitling is best-effort and may fall back to live mic.',
+  tool_make_srt_subtitles_from_an_audio_file_rules_item_1:
+    'SpeechRecognition must exist. Otherwise the unsupported banner stays visible and primary actions stay disabled.',
+  tool_make_srt_subtitles_from_an_audio_file_rules_item_2:
+    'Recognition typically uses the microphone. Playing a file does not guarantee a private decode→subtitle path.',
+  tool_make_srt_subtitles_from_an_audio_file_rules_item_3: 'Optional file up to about 40 MiB / 3 minutes. Output is standard SRT—not burned-in video captions.',
+  tool_make_srt_subtitles_from_an_audio_file_rules_item_4:
+    'This page does not upload your file for server-side Whisper. Browser vendors may still send mic audio to their speech service—check your browser privacy settings.',
+  tool_make_srt_subtitles_from_an_audio_file_rules_title: 'SRT rules and honest browser limits',
+  tool_make_srt_subtitles_from_an_audio_file_sample: 'Load sample',
+  tool_make_srt_subtitles_from_an_audio_file_sample_name: 'srt-sample',
+  tool_make_srt_subtitles_from_an_audio_file_settings_hint:
+    'SpeechRecognition usually listens to the microphone—not a private WebAudio tap. Playing a file may work only if the mic hears the speakers. Cue times are estimated from when finals arrive, not Whisper forced alignment. This is not Whisper and does not download a large model.',
+  tool_make_srt_subtitles_from_an_audio_file_status_listening:
+    'Playback finished with little or no text. SpeechRecognition often needs the microphone to hear the speakers—try Dictate with mic, raise volume, or allow mic access.',
+  tool_make_srt_subtitles_from_an_audio_file_status_mic: 'Listening to the microphone… speak clearly, then Stop. Cue times use session elapsed time.',
+  tool_make_srt_subtitles_from_an_audio_file_status_playing: 'Playing the file and building timed cues via SpeechRecognition (mic path)…',
+  tool_make_srt_subtitles_from_an_audio_file_status_unsupported:
+    'This browser does not expose SpeechRecognition / webkitSpeechRecognition. Try Chrome or Edge, or use a different device. True offline Whisper-style ASR is not bundled here.',
+  tool_make_srt_subtitles_from_an_audio_file_stop: 'Stop',
+  tool_make_srt_subtitles_from_an_audio_file_title: 'Make SRT subtitles from an audio file',
+  tool_make_srt_subtitles_from_an_audio_file_usecase_1:
+    'You want a rough timed .srt for a short voice note in a Chromium browser without installing desktop software.',
+  tool_make_srt_subtitles_from_an_audio_file_usecase_2:
+    'File loopback fails, so you dictate the same content live with the mic and download SRT with session-relative times.',
+  tool_make_srt_subtitles_from_an_audio_file_usecases_title: 'When this helps',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_1: 'Clear dual path: file playthrough attempt plus mic dictation fallback, both emitting .srt.',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_2: 'Honest copy: not Whisper, no huge wasm model, timing is best-effort and stated up front.',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_3: 'You can edit the SRT before downloading.',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_4: 'Nearby tools cover plain TXT transcription and waveform video without forcing a hub editor.',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_title: 'Why choose our Make SRT subtitles from an audio file tools',
+  tool_make_srt_subtitles_from_an_audio_file_write: 'Write SRT',
   tool_marginal_revenue_article:
     'Marginal revenue is the change in total revenue from a change in quantity sold. This calculator shows the discrete two-point derivation step by step for coursework and rough product checks.',
   tool_marginal_revenue_calculate: 'Calculate MR',
@@ -9526,6 +12234,93 @@ const en: SiteLangDict = {
   tool_markup_usecase_2: 'Sanity-check a pricing sheet before talking to finance.',
   tool_markup_usecase_3: 'Contrast with gross-margin when stakeholders mix the terms.',
   tool_markup_usecases_title: 'When to use it',
+  tool_match_podcast_loudness_to_minus_16_lufs_advanced: 'Loudness target',
+  tool_match_podcast_loudness_to_minus_16_lufs_article:
+    'Podcast hosts and many platforms aim near −16 LUFS (YouTube/Spotify-style targets often sit around −14). This page estimates integrated loudness with a simplified ITU-R BS.1770-style K-weighting and gated mean in pure JavaScript, then applies uniform gain so the measured value moves toward your chip (−16 default, or −14 / −24). Soft true-peak protect keeps samples under about 0.99 full scale if the requested gain would clip. Numbers are approximate LUFS for browser use—not a calibrated broadcast meter. That is loudness matching, not peak normalize to a dBFS target, not picking a fixed dB boost, and not a dynamic compressor. Channel count stays 1 or 2. Keep the original master; the download is a new 16-bit WAV. Work runs in the browser on your device.',
+  tool_match_podcast_loudness_to_minus_16_lufs_choose: 'Choose an audio file',
+  tool_match_podcast_loudness_to_minus_16_lufs_clear: 'Clear',
+  tool_match_podcast_loudness_to_minus_16_lufs_convert: 'Match',
+  tool_match_podcast_loudness_to_minus_16_lufs_decode: 'Decode',
+  tool_match_podcast_loudness_to_minus_16_lufs_desc:
+    'Match podcast loudness toward −16, −14 or −24 approx. LUFS, then download a 16-bit WAV. On-device only.',
+  tool_match_podcast_loudness_to_minus_16_lufs_description:
+    'Match podcast loudness toward −16 LUFS (−14 / −24 chips). Steps: convert, preview, download WAV. Example: load the quiet sample. Browser approximate integrated loudness (K-weight + gated mean)—not peak normalize, not fixed dB gain, not a compressor. Audio stays on your device; never uploaded.',
+  tool_match_podcast_loudness_to_minus_16_lufs_done: 'Ready. Preview the matched WAV, then Download WAV.',
+  tool_match_podcast_loudness_to_minus_16_lufs_download: 'Download WAV',
+  tool_match_podcast_loudness_to_minus_16_lufs_elapsed: '{s}s elapsed',
+  tool_match_podcast_loudness_to_minus_16_lufs_empty: 'Choose an audio file or load the sample first.',
+  tool_match_podcast_loudness_to_minus_16_lufs_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_match_podcast_loudness_to_minus_16_lufs_err_encoder: 'Could not write the matched WAV. Check the loudness target, then try Match again.',
+  tool_match_podcast_loudness_to_minus_16_lufs_err_file: 'Drop exactly one audio file.',
+  tool_match_podcast_loudness_to_minus_16_lufs_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_match_podcast_loudness_to_minus_16_lufs_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_match_podcast_loudness_to_minus_16_lufs_err_silence: 'Level is essentially silence—nothing to match. Try a recording with audible level.',
+  tool_match_podcast_loudness_to_minus_16_lufs_example:
+    'Load sample builds a two-second quiet 440 Hz tone, then Match at −16 approximate LUFS automatically. Playback never starts by itself—press play on the preview if you want to hear the matched result.',
+  tool_match_podcast_loudness_to_minus_16_lufs_example_title: 'Try a real loudness match',
+  tool_match_podcast_loudness_to_minus_16_lufs_failed: 'Match failed. Try a smaller, valid audio file.',
+  tool_match_podcast_loudness_to_minus_16_lufs_faq_a1:
+    'No. Peak normalize scales so the absolute peak hits a dBFS target. This page measures approximate integrated loudness and gains toward a LUFS chip. For peak work, use Normalize an audio file to peak.',
+  tool_match_podcast_loudness_to_minus_16_lufs_faq_a2:
+    'No. Fixed gain multiplies by a chosen dB amount without measuring LUFS. Here the gain is derived from measured ≈LUFS versus your target. For a chosen dB boost, use Make a quiet recording louder.',
+  tool_match_podcast_loudness_to_minus_16_lufs_faq_a3:
+    'No. Soft and loud parts stay in the same ratio (until global peak protect). A compressor that reshapes dynamics is a different planned job—do not confuse that with MP3 “compress” for file size.',
+  tool_match_podcast_loudness_to_minus_16_lufs_faq_a4:
+    'It is an on-device approximation (K-weight + gated mean), clearly labeled approximate LUFS. It is useful for matching levels in the browser, not a substitute for a calibrated broadcast loudness meter.',
+  tool_match_podcast_loudness_to_minus_16_lufs_faq_a5:
+    'The clip already sits near full scale. Soft peak protect keeps samples under ~0.99 and the result line shows requested vs effective dB so you can see the limit.',
+  tool_match_podcast_loudness_to_minus_16_lufs_faq_a6:
+    'No. Decoding, measure, match and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For peak or fixed-gain jobs, use Normalize an audio file to peak or Make a quiet recording louder.',
+  tool_match_podcast_loudness_to_minus_16_lufs_faq_q1: 'Is this the same as normalizing audio to peak?',
+  tool_match_podcast_loudness_to_minus_16_lufs_faq_q2: 'Is this the same as making a quiet recording louder with fixed dB gain?',
+  tool_match_podcast_loudness_to_minus_16_lufs_faq_q3: 'Is this a dynamic compressor or limiter?',
+  tool_match_podcast_loudness_to_minus_16_lufs_faq_q4: 'How accurate is the LUFS number?',
+  tool_match_podcast_loudness_to_minus_16_lufs_faq_q5: 'What if peak protect reduces my gain?',
+  tool_match_podcast_loudness_to_minus_16_lufs_faq_q6: 'Is my audio uploaded to a server?',
+  tool_match_podcast_loudness_to_minus_16_lufs_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_match_podcast_loudness_to_minus_16_lufs_how_body:
+    'Pick a target, measure approximate integrated loudness, apply gain with soft peak protect, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_match_podcast_loudness_to_minus_16_lufs_how_item_1: 'Choose an audio file, or select Load sample for a two-second quiet tone demonstration.',
+  tool_match_podcast_loudness_to_minus_16_lufs_how_item_2: 'Open Loudness target and pick −16 (default), −14, or −24 approximate LUFS.',
+  tool_match_podcast_loudness_to_minus_16_lufs_how_item_3: 'Click Match and wait for Read → Decode → Measure → Match → Write to finish.',
+  tool_match_podcast_loudness_to_minus_16_lufs_how_item_4: 'Preview the result, check measured/target/gain, then click Download WAV.',
+  tool_match_podcast_loudness_to_minus_16_lufs_how_title: 'How to match podcast loudness to −16 LUFS',
+  tool_match_podcast_loudness_to_minus_16_lufs_match: 'Match',
+  tool_match_podcast_loudness_to_minus_16_lufs_measure: 'Measure',
+  tool_match_podcast_loudness_to_minus_16_lufs_preview: 'Listen to the matched WAV',
+  tool_match_podcast_loudness_to_minus_16_lufs_progress: 'Match progress',
+  tool_match_podcast_loudness_to_minus_16_lufs_read: 'Read',
+  tool_match_podcast_loudness_to_minus_16_lufs_result: '{seconds}s · ≈{measured} → {target} LUFS · gain {gainDb} dB · WAV {output} KiB',
+  tool_match_podcast_loudness_to_minus_16_lufs_result_protect:
+    '{seconds}s · ≈{measured} → {target} LUFS · requested {requestedGainDb} dB · effective {gainDb} dB (peak protect) · WAV {output} KiB',
+  tool_match_podcast_loudness_to_minus_16_lufs_rules_body:
+    'The page estimates integrated loudness with K-weighting and a gated mean (simplified BS.1770-style), labels it approximate LUFS, then multiplies the whole clip by 10^(gainDb/20). Soft peak protect scales back if the boosted peak would exceed ~0.99. That is not peak normalize to a dBFS number and not a fixed blind dB boost chosen without measuring loudness.',
+  tool_match_podcast_loudness_to_minus_16_lufs_rules_item_1:
+    'Default −16 LUFS fits many podcast deliveries. −14 is hotter; −24 is quieter. Treat readings as approximate—not a certified meter.',
+  tool_match_podcast_loudness_to_minus_16_lufs_rules_item_2:
+    'If requested gain would clip, peak protect reduces effective gain. The result line shows requested vs effective dB when that happens.',
+  tool_match_podcast_loudness_to_minus_16_lufs_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_match_podcast_loudness_to_minus_16_lufs_rules_item_4:
+    'One file up to 40 MiB and ten minutes. This is not peak normalize, not fixed-gain amplify, not a dynamic compressor, and not MP3 size compression.',
+  tool_match_podcast_loudness_to_minus_16_lufs_rules_title: 'Approximate LUFS, gain and peak protect',
+  tool_match_podcast_loudness_to_minus_16_lufs_sample: 'Load sample',
+  tool_match_podcast_loudness_to_minus_16_lufs_sample_name: 'two-second-quiet-lufs-demo',
+  tool_match_podcast_loudness_to_minus_16_lufs_settings_hint:
+    'Default −16 suits many podcast deliveries. −14 is hotter (YouTube/Spotify-style). −24 is quieter for dialogue beds. Readings are approximate LUFS in the browser—not a lab-calibrated meter. Soft peak protect may reduce effective gain if true peak would clip.',
+  tool_match_podcast_loudness_to_minus_16_lufs_target_label: 'Target (approximate LUFS)',
+  tool_match_podcast_loudness_to_minus_16_lufs_title: 'Match podcast loudness to −16 LUFS',
+  tool_match_podcast_loudness_to_minus_16_lufs_usecase_1: 'A podcast episode that feels too quiet for a −16 LUFS delivery—match at −16 and download WAV.',
+  tool_match_podcast_loudness_to_minus_16_lufs_usecase_2:
+    'A YouTube or Spotify-bound voice track you want nearer −14 without peak-normalizing or running a compressor.',
+  tool_match_podcast_loudness_to_minus_16_lufs_usecases_title: 'When this helps',
+  tool_match_podcast_loudness_to_minus_16_lufs_why_choose_item_1: 'See measured ≈LUFS, target, gain dB and output KiB before you save.',
+  tool_match_podcast_loudness_to_minus_16_lufs_why_choose_item_2: 'Three clear platform-style targets—one loudness-match job, not a buried peak/gain/compressor wall.',
+  tool_match_podcast_loudness_to_minus_16_lufs_why_choose_item_3:
+    'Decoding, measure, match and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_match_podcast_loudness_to_minus_16_lufs_why_choose_item_4: 'Changing the target or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_match_podcast_loudness_to_minus_16_lufs_why_choose_title: 'Why choose our Match podcast loudness to −16 LUFS tools',
+  tool_match_podcast_loudness_to_minus_16_lufs_write: 'Write',
   tool_mean_article: 'Means',
   tool_mean_calculate: 'Calculate',
   tool_mean_clear: 'Clear',
@@ -9970,6 +12765,266 @@ const en: SiteLangDict = {
     'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
   tool_midjourney_prompt_builder_usecase_4: 'Keep sensitive draft text local — only opt into AI when you accept the consent modal.',
   tool_midjourney_prompt_builder_usecases_title: 'Good fits',
+  tool_mix_a_voiceover_with_background_music_advanced: 'Mix notes',
+  tool_mix_a_voiceover_with_background_music_article:
+    'Podcast intros and short videos often need a spoken take and a music bed heard together. This page lets you drop a local voiceover and a local background clip, set relative gains, optionally duck the bed when the voice is active, decode both in the browser, align sample rate and channels, then mix samples into one 16-bit PCM WAV. It does not place clips end-to-end (concatenate), does not crossfade song transitions, and does not pull audio from video—those are different jobs. Success depends on browser decode support. Channels stay one or two. Keep the originals; the download is a new file. Work runs on your device.',
+  tool_mix_a_voiceover_with_background_music_bed_gain: 'Background gain',
+  tool_mix_a_voiceover_with_background_music_bed_label: 'Background: {name}',
+  tool_mix_a_voiceover_with_background_music_choose_bed: 'Add background music',
+  tool_mix_a_voiceover_with_background_music_choose_voice: 'Add voiceover',
+  tool_mix_a_voiceover_with_background_music_clear: 'Clear',
+  tool_mix_a_voiceover_with_background_music_convert: 'Mix',
+  tool_mix_a_voiceover_with_background_music_decode: 'Decode',
+  tool_mix_a_voiceover_with_background_music_desc:
+    'Mix a local voiceover with background music so both play at once, then download one 16-bit WAV. On-device only—not concatenate.',
+  tool_mix_a_voiceover_with_background_music_description:
+    'Mix a local voiceover with background music in the browser—both play at once—with voice and bed gain sliders and optional simple ducking, then download one 16-bit WAV. Steps: Add voice, add bed, set gains, Mix, preview, download. Example: load two short sample tones. Overlay only—not concatenate, not crossfade. Never uploaded.',
+  tool_mix_a_voiceover_with_background_music_done: 'Ready. Preview the mixed WAV, then Download WAV.',
+  tool_mix_a_voiceover_with_background_music_download: 'Download WAV',
+  tool_mix_a_voiceover_with_background_music_duck: 'Duck background when voice is active',
+  tool_mix_a_voiceover_with_background_music_duck_hint:
+    'Simple energy ducking: when the voiceover is louder, the bed is reduced. Not a studio sidechain compressor.',
+  tool_mix_a_voiceover_with_background_music_elapsed: '{s}s elapsed',
+  tool_mix_a_voiceover_with_background_music_empty: 'Add a voiceover and a background clip, or load the sample first.',
+  tool_mix_a_voiceover_with_background_music_empty_state:
+    'No clips yet. Add a voiceover and background music, or click Load sample for two short tones. This tool overlays tracks—it does not join them end-to-end.',
+  tool_mix_a_voiceover_with_background_music_err_decode: 'The browser could not decode one of the files. Try another encoding.',
+  tool_mix_a_voiceover_with_background_music_err_encoder: 'Could not write the mixed WAV. Try Mix again.',
+  tool_mix_a_voiceover_with_background_music_err_file: 'Add both a voiceover and a background audio file.',
+  tool_mix_a_voiceover_with_background_music_err_format: 'Unsupported or damaged audio. Use WAV, MP3, M4A, AAC or OGG files your browser can decode.',
+  tool_mix_a_voiceover_with_background_music_err_limit: 'Use files up to 40 MiB each, mono or stereo, with mixed length under 20 minutes.',
+  tool_mix_a_voiceover_with_background_music_example:
+    'Load sample adds a short voice-like tone and a lower bed tone, then Mix runs automatically. You should hear both at once. Playback never starts by itself—press play on the preview if you want to hear it.',
+  tool_mix_a_voiceover_with_background_music_example_title: 'Try two short tones',
+  tool_mix_a_voiceover_with_background_music_failed: 'Mix failed. Try shorter, valid audio files.',
+  tool_mix_a_voiceover_with_background_music_faq_a1:
+    'No. Joining places clips one after another. This page plays voice and bed at the same time (overlay mix).',
+  tool_mix_a_voiceover_with_background_music_faq_a2: 'No. There is no crossfade or DJ transition. Crossfade is a different job.',
+  tool_mix_a_voiceover_with_background_music_faq_a3:
+    'They scale voiceover and background levels before mixing. 100% is unity gain for that track; lower values make it quieter.',
+  tool_mix_a_voiceover_with_background_music_faq_a4:
+    'When enabled, short windows where the voiceover energy is high reduce the bed gain. It is a simple browser approximation, not a full compressor.',
+  tool_mix_a_voiceover_with_background_music_faq_a5:
+    'No. Reading, decoding and writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_mix_a_voiceover_with_background_music_faq_a6:
+    'The mix lasts as long as the longer clip. The shorter track is padded with silence for the remaining time.',
+  tool_mix_a_voiceover_with_background_music_faq_q1: 'Is this the same as joining audio files end-to-end?',
+  tool_mix_a_voiceover_with_background_music_faq_q2: 'Does it crossfade between songs?',
+  tool_mix_a_voiceover_with_background_music_faq_q3: 'What do the gain sliders do?',
+  tool_mix_a_voiceover_with_background_music_faq_q4: 'How does ducking work?',
+  tool_mix_a_voiceover_with_background_music_faq_q5: 'Is my audio uploaded to a server?',
+  tool_mix_a_voiceover_with_background_music_faq_q6: 'What if the clips have different lengths?',
+  tool_mix_a_voiceover_with_background_music_hint_bed: 'Drop or choose one background clip. Up to 40 MiB. Mixed length stays under 20 minutes.',
+  tool_mix_a_voiceover_with_background_music_hint_voice: 'Drop or choose one WAV, MP3, M4A, AAC or OGG voiceover. Up to 40 MiB; mono or stereo.',
+  tool_mix_a_voiceover_with_background_music_how_body:
+    'Add a voiceover and a bed, set gains, optionally duck, run Mix, listen, then download one 16-bit WAV—without uploading the files.',
+  tool_mix_a_voiceover_with_background_music_how_item_1: 'Add a local voiceover file and a local background music file (or Load sample for two short tones).',
+  tool_mix_a_voiceover_with_background_music_how_item_2:
+    'Set Voiceover gain and Background gain. Optionally enable ducking so the bed dips when the voice is active.',
+  tool_mix_a_voiceover_with_background_music_how_item_3: 'Click Mix and wait for Read → Decode → Mix → Write to finish.',
+  tool_mix_a_voiceover_with_background_music_how_item_4: 'Preview the overlay mix, check the result line, then click Download WAV.',
+  tool_mix_a_voiceover_with_background_music_how_title: 'How to mix a voiceover with background music',
+  tool_mix_a_voiceover_with_background_music_mix: 'Mix',
+  tool_mix_a_voiceover_with_background_music_preview: 'Listen to the mixed WAV',
+  tool_mix_a_voiceover_with_background_music_progress: 'Mix progress',
+  tool_mix_a_voiceover_with_background_music_read: 'Read',
+  tool_mix_a_voiceover_with_background_music_result: '{seconds}s · {channels} ch · {rate} Hz · voice {voice}% · bed {bed}% · WAV {output} KiB',
+  tool_mix_a_voiceover_with_background_music_rules_body:
+    'Each run stacks voice and bed on the same timeline. Sample rates align to the voiceover. Export is 16-bit WAV. This is not concatenate, not crossfade, and not video-to-audio extract.',
+  tool_mix_a_voiceover_with_background_music_rules_item_1:
+    'Two local audio files, each up to 40 MiB. Mixed length stays under twenty minutes. Channels stay one or two.',
+  tool_mix_a_voiceover_with_background_music_rules_item_2: 'This page overlays. It does not join clips end-to-end, and it does not crossfade song transitions.',
+  tool_mix_a_voiceover_with_background_music_rules_item_3: 'Optional ducking is a simple energy gate on the bed—not a studio-grade sidechain compressor.',
+  tool_mix_a_voiceover_with_background_music_rules_item_4:
+    'Tags are not copied. Originals are never overwritten. Success depends on browser decode support per file.',
+  tool_mix_a_voiceover_with_background_music_rules_title: 'Overlay mix rules and honest browser limits',
+  tool_mix_a_voiceover_with_background_music_sample: 'Load sample',
+  tool_mix_a_voiceover_with_background_music_sample_name: 'mix-tone',
+  tool_mix_a_voiceover_with_background_music_settings_hint:
+    'Both clips play at the same time. Sample rates align to the voiceover. This is overlay mix only—not concatenate and not crossfade.',
+  tool_mix_a_voiceover_with_background_music_title: 'Mix a voiceover with background music',
+  tool_mix_a_voiceover_with_background_music_usecase_1:
+    'A spoken take needs a quiet music bed underneath—add both, lower bed gain or enable ducking, Mix, download WAV.',
+  tool_mix_a_voiceover_with_background_music_usecase_2:
+    'You already extracted audio from a video and want to layer a new voiceover without uploading to an online mixer.',
+  tool_mix_a_voiceover_with_background_music_usecases_title: 'When this helps',
+  tool_mix_a_voiceover_with_background_music_voice_gain: 'Voiceover gain',
+  tool_mix_a_voiceover_with_background_music_voice_label: 'Voiceover: {name}',
+  tool_mix_a_voiceover_with_background_music_why_choose_item_1: 'See duration, channel count, sample rate, gain percentages and output KiB before you save.',
+  tool_mix_a_voiceover_with_background_music_why_choose_item_2: 'One clear overlay job—voice and bed at once—with honest limits when a clip cannot decode.',
+  tool_mix_a_voiceover_with_background_music_why_choose_item_3:
+    'Reading, decoding and writing run on your device; the page does not upload your clips to process them.',
+  tool_mix_a_voiceover_with_background_music_why_choose_item_4: 'Changing either file or the gains clears the old download so you never save a stale WAV by mistake.',
+  tool_mix_a_voiceover_with_background_music_why_choose_title: 'Why choose our Mix a voiceover with background music tools',
+  tool_mix_a_voiceover_with_background_music_write: 'Write',
+  tool_mix_binaural_beats_for_focus_advanced: 'Binaural notes',
+  tool_mix_binaural_beats_for_focus_article:
+    'People looking for binaural beats for a focus session often want a simple stereo file they can keep. This page lets you set a carrier frequency for the left ear and a slightly higher frequency for the right ear so the difference is the beat rate, pick a duration, synthesize stereo PCM in the browser at 44.1 kHz, then download a 16-bit WAV. Use headphones—the left/right difference is the point. Presets only change Hertz values; they are ambient shortcuts, not medical protocols. This page does not claim therapeutic efficacy, does not diagnose or treat any condition, and is for entertainment or personal ambient listening only. It is not a mono sine generator and not a UI notification beep maker. Work runs on your device.',
+  tool_mix_binaural_beats_for_focus_beat_hint: 'Right ear plays carrier + this value. Keep the difference between 1 and 40 Hz.',
+  tool_mix_binaural_beats_for_focus_beat_label: 'Beat difference (Hz)',
+  tool_mix_binaural_beats_for_focus_carrier_hint: 'Left channel frequency, 80–500 Hz typical. Default 200 Hz.',
+  tool_mix_binaural_beats_for_focus_carrier_label: 'Carrier (left ear, Hz)',
+  tool_mix_binaural_beats_for_focus_clear: 'Clear',
+  tool_mix_binaural_beats_for_focus_convert: 'Mix',
+  tool_mix_binaural_beats_for_focus_desc:
+    'Mix binaural beats for focus from a carrier and beat difference, then download a stereo WAV. On-device only—entertainment ambient, not treatment.',
+  tool_mix_binaural_beats_for_focus_description:
+    'Mix binaural beats for focus from a carrier and beat difference in the browser, then download a stereo 16-bit WAV. Steps: Set carrier and beat Hz or tap a preset, pick duration, Mix, preview on headphones, download. Example: 200 Hz carrier with a 10 Hz difference for 10 seconds. Entertainment and ambient focus sound only—not medical treatment. Never uploaded.',
+  tool_mix_binaural_beats_for_focus_done: 'Ready. Preview on headphones, then Download WAV.',
+  tool_mix_binaural_beats_for_focus_download: 'Download WAV',
+  tool_mix_binaural_beats_for_focus_dur_label: 'Duration',
+  tool_mix_binaural_beats_for_focus_elapsed: '{s}s elapsed',
+  tool_mix_binaural_beats_for_focus_empty: 'Set carrier and beat Hz or tap Load sample first.',
+  tool_mix_binaural_beats_for_focus_empty_state:
+    'Set a carrier and beat difference (or tap a preset), pick a duration, then Mix—or Load sample for 200 Hz / 10 Hz / 10 s. Use headphones. Entertainment ambient only—not medical treatment.',
+  tool_mix_binaural_beats_for_focus_err_beat: 'Enter a beat difference between 1 and 40 Hz (right = carrier + beat).',
+  tool_mix_binaural_beats_for_focus_err_carrier: 'Enter a carrier between 80 and 1000 Hz.',
+  tool_mix_binaural_beats_for_focus_err_encoder: 'Could not write the stereo WAV. Try Mix again.',
+  tool_mix_binaural_beats_for_focus_err_limit: 'Duration must be between 0 and 120 seconds.',
+  tool_mix_binaural_beats_for_focus_example:
+    'Load sample sets 200 Hz carrier, 10 Hz difference and 10 seconds, then Mix runs automatically. You should hear a steady stereo pair on headphones. Playback never starts by itself—press play if you want to listen.',
+  tool_mix_binaural_beats_for_focus_example_title: 'Try 200 Hz carrier with a 10 Hz beat for 10 seconds',
+  tool_mix_binaural_beats_for_focus_failed: 'Mix failed. Check carrier, beat difference and duration.',
+  tool_mix_binaural_beats_for_focus_faq_a1:
+    'No. This page makes entertainment and personal ambient focus sound only. It does not diagnose, treat or cure any condition and makes no therapeutic efficacy claims.',
+  tool_mix_binaural_beats_for_focus_faq_a2:
+    'Yes for the intended left/right difference. On speakers the channels mix and the beat effect is reduced or lost.',
+  tool_mix_binaural_beats_for_focus_faq_a3:
+    'No. A sine tone page makes one frequency in mono. This page always writes stereo with two slightly different frequencies.',
+  tool_mix_binaural_beats_for_focus_faq_a4:
+    'They only set the beat difference in Hertz (for example 4, 10 or 16 Hz). They are not medical protocols and do not promise sleep or focus outcomes.',
+  tool_mix_binaural_beats_for_focus_faq_a5:
+    'No. Synthesis and writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_mix_binaural_beats_for_focus_faq_a6: 'A stereo 16-bit PCM WAV at 44.1 kHz. It is a new file you can keep as a reusable ambient clip.',
+  tool_mix_binaural_beats_for_focus_faq_q1: 'Is this medical treatment or therapy?',
+  tool_mix_binaural_beats_for_focus_faq_q2: 'Do I need headphones?',
+  tool_mix_binaural_beats_for_focus_faq_q3: 'Is this the same as a mono sine tone generator?',
+  tool_mix_binaural_beats_for_focus_faq_q4: 'What do the ambient presets mean?',
+  tool_mix_binaural_beats_for_focus_faq_q5: 'Is anything uploaded to a server?',
+  tool_mix_binaural_beats_for_focus_faq_q6: 'What format is the download?',
+  tool_mix_binaural_beats_for_focus_how_body:
+    'Set carrier and beat Hz, pick duration, Mix, listen on headphones, then download one stereo WAV—without uploading files and without therapy claims.',
+  tool_mix_binaural_beats_for_focus_how_item_1:
+    'Enter a carrier Hz for the left ear (or keep the default 200 Hz) and a beat difference for the right ear.',
+  tool_mix_binaural_beats_for_focus_how_item_2:
+    'Optionally tap an ambient beat preset (4, 10 or 16 Hz difference)—presets only change numbers, not medical protocols.',
+  tool_mix_binaural_beats_for_focus_how_item_3: 'Choose a duration chip, click Mix, and wait for Synth → Write to finish.',
+  tool_mix_binaural_beats_for_focus_how_item_4: 'Preview on headphones, check the result line, then click Download WAV.',
+  tool_mix_binaural_beats_for_focus_how_title: 'How to mix binaural beats for focus',
+  tool_mix_binaural_beats_for_focus_preset_label: 'Ambient beat presets',
+  tool_mix_binaural_beats_for_focus_preview: 'Listen to the binaural WAV',
+  tool_mix_binaural_beats_for_focus_progress: 'Mix progress',
+  tool_mix_binaural_beats_for_focus_result: 'L {left} Hz · R {right} Hz · beat {beat} Hz · {seconds}s · stereo · {rate} Hz · WAV {output} KiB',
+  tool_mix_binaural_beats_for_focus_rules_body:
+    'Each run synthesizes left = carrier and right = carrier + beat at 44.1 kHz with short edge fades. Export is stereo 16-bit WAV. This is entertainment/ambient only—not medical treatment—and not a mono sine or UI beep tool.',
+  tool_mix_binaural_beats_for_focus_rules_item_1:
+    'Carrier stays between 80 and 1000 Hz. Beat difference stays between 1 and 40 Hz. Duration stays at or under 120 seconds. Output is stereo.',
+  tool_mix_binaural_beats_for_focus_rules_item_2:
+    'Headphones are required for a true left/right difference. Speakers sum channels and hide the beat effect.',
+  tool_mix_binaural_beats_for_focus_rules_item_3:
+    'This page does not claim medical, sleep, or therapeutic efficacy. Labels are ambient shortcuts only—not treatment protocols.',
+  tool_mix_binaural_beats_for_focus_rules_item_4:
+    'Short fades reduce clicks. The download is a new file; nothing is uploaded. This is not a mono sine generator and not a UI notification sound.',
+  tool_mix_binaural_beats_for_focus_rules_title: 'Binaural rules and honest limits',
+  tool_mix_binaural_beats_for_focus_sample: 'Load sample',
+  tool_mix_binaural_beats_for_focus_sample_name: 'binaural-focus',
+  tool_mix_binaural_beats_for_focus_settings_hint:
+    'Output is a stereo 16-bit WAV at 44.1 kHz with short fades. Headphones required for the left/right difference. Entertainment and ambient focus sound only—not medical treatment or therapy.',
+  tool_mix_binaural_beats_for_focus_synth: 'Synth',
+  tool_mix_binaural_beats_for_focus_title: 'Mix binaural beats for focus',
+  tool_mix_binaural_beats_for_focus_usecase_1:
+    'You want a reusable ambient focus WAV—set carrier and beat, Mix, download, and keep the file for headphones.',
+  tool_mix_binaural_beats_for_focus_usecase_2: 'You need a quick stereo beat demo without installing a desktop tone app or trusting therapy claims.',
+  tool_mix_binaural_beats_for_focus_usecases_title: 'When this helps',
+  tool_mix_binaural_beats_for_focus_why_choose_item_1: 'See left Hz, right Hz, beat difference, duration and output KiB before you save.',
+  tool_mix_binaural_beats_for_focus_why_choose_item_2: 'One clear stereo binaural job with honest YMYL limits—entertainment ambient, not treatment.',
+  tool_mix_binaural_beats_for_focus_why_choose_item_3: 'Synthesis and writing run on your device; nothing is uploaded to process the tones.',
+  tool_mix_binaural_beats_for_focus_why_choose_item_4: 'Changing carrier, beat or duration clears the old download so you never save a stale WAV by mistake.',
+  tool_mix_binaural_beats_for_focus_why_choose_title: 'Why choose our Mix binaural beats for focus tools',
+  tool_mix_binaural_beats_for_focus_write: 'Write',
+  tool_normalize_an_audio_file_to_peak_advanced: 'Peak target',
+  tool_normalize_an_audio_file_to_peak_article:
+    'Delivery portals and mix templates often want a peak near full scale with a little headroom. This page scans every sample for the absolute peak, then multiplies the whole clip so that peak lands on your chosen target (−0.1, −1, or −3 dBFS; default −1). Soft and loud moments keep the same ratio—only the overall scale changes. That is peak normalize, not picking a fixed dB gain (Make a quiet recording louder), not matching podcast LUFS, not a dynamic compressor, and not shrinking an MP3 to save bytes. Channel count stays 1 or 2. Keep the original master; the download is a new 16-bit WAV. Work runs in the browser on your device.',
+  tool_normalize_an_audio_file_to_peak_choose: 'Choose an audio file',
+  tool_normalize_an_audio_file_to_peak_clear: 'Clear',
+  tool_normalize_an_audio_file_to_peak_convert: 'Normalize',
+  tool_normalize_an_audio_file_to_peak_decode: 'Decode',
+  tool_normalize_an_audio_file_to_peak_desc: 'Peak-normalize a clip to −0.1, −1 or −3 dBFS, then download a 16-bit WAV. On-device only.',
+  tool_normalize_an_audio_file_to_peak_description:
+    'Normalize an audio file to a target peak (−1 dBFS default). Steps: convert, preview, download WAV. Example: load the quiet sample. Scales the whole clip so the absolute peak hits your dBFS target—not fixed gain, not LUFS, not a compressor, not MP3 size shrink. Audio stays on your device; never uploaded.',
+  tool_normalize_an_audio_file_to_peak_done: 'Ready. Preview the normalized WAV, then Download WAV.',
+  tool_normalize_an_audio_file_to_peak_download: 'Download WAV',
+  tool_normalize_an_audio_file_to_peak_elapsed: '{s}s elapsed',
+  tool_normalize_an_audio_file_to_peak_empty: 'Choose an audio file or load the sample first.',
+  tool_normalize_an_audio_file_to_peak_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_normalize_an_audio_file_to_peak_err_encoder: 'Could not write the normalized WAV. Check the peak target, then try Normalize again.',
+  tool_normalize_an_audio_file_to_peak_err_file: 'Drop exactly one audio file.',
+  tool_normalize_an_audio_file_to_peak_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_normalize_an_audio_file_to_peak_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_normalize_an_audio_file_to_peak_err_silence: 'Peak is essentially silence—nothing to normalize. Try a recording with audible level.',
+  tool_normalize_an_audio_file_to_peak_example:
+    'Load sample builds a two-second quiet 440 Hz tone, then Normalize at −1 dBFS automatically. Playback never starts by itself—press play on the preview if you want to hear the scaled result.',
+  tool_normalize_an_audio_file_to_peak_example_title: 'Try a real peak normalize',
+  tool_normalize_an_audio_file_to_peak_failed: 'Normalize failed. Try a smaller, valid audio file.',
+  tool_normalize_an_audio_file_to_peak_faq_a1:
+    'No. Fixed gain multiplies by a chosen dB amount. Peak normalize scales whatever is needed so the absolute peak hits your target. For a chosen dB boost, use Make a quiet recording louder.',
+  tool_normalize_an_audio_file_to_peak_faq_a2:
+    'No. There is no LUFS or integrated-loudness target here—only peak leveling. Loudness matching is a separate planned job.',
+  tool_normalize_an_audio_file_to_peak_faq_a3:
+    'No. Soft and loud parts stay in the same ratio. A compressor that reshapes dynamics is a different planned job—do not confuse that with MP3 “compress” for file size.',
+  tool_normalize_an_audio_file_to_peak_faq_a4:
+    'No. Export is 16-bit WAV for the normalized copy. Reducing MP3 bitrate/size is a different tool (Reduce an MP3 file size).',
+  tool_normalize_an_audio_file_to_peak_faq_a5:
+    'You can still click Normalize. Scale will be near 1.0 and the result line shows peak before and after so you can confirm.',
+  tool_normalize_an_audio_file_to_peak_faq_a6:
+    'No. Decoding, peak normalize and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For gain or mono jobs, use Make a quiet recording louder or Convert stereo audio to mono.',
+  tool_normalize_an_audio_file_to_peak_faq_q1: 'Is this the same as making a quiet recording louder with fixed dB gain?',
+  tool_normalize_an_audio_file_to_peak_faq_q2: 'Does this match podcast loudness / LUFS?',
+  tool_normalize_an_audio_file_to_peak_faq_q3: 'Is this a dynamic compressor or limiter?',
+  tool_normalize_an_audio_file_to_peak_faq_q4: 'Will this shrink an MP3 to save space?',
+  tool_normalize_an_audio_file_to_peak_faq_q5: 'What if my file is already near the target peak?',
+  tool_normalize_an_audio_file_to_peak_faq_q6: 'Is my audio uploaded to a server?',
+  tool_normalize_an_audio_file_to_peak_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_normalize_an_audio_file_to_peak_how_body:
+    'Pick a peak target, scale the whole clip so the absolute peak hits it, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_normalize_an_audio_file_to_peak_how_item_1: 'Choose an audio file, or select Load sample for a two-second quiet tone demonstration.',
+  tool_normalize_an_audio_file_to_peak_how_item_2: 'Open Peak target and pick −0.1, −1 (default), or −3 dBFS.',
+  tool_normalize_an_audio_file_to_peak_how_item_3: 'Click Normalize and wait for Read → Decode → Normalize → Write to finish.',
+  tool_normalize_an_audio_file_to_peak_how_item_4: 'Preview the result, check peak before/after, then click Download WAV.',
+  tool_normalize_an_audio_file_to_peak_how_title: 'How to normalize an audio file to peak',
+  tool_normalize_an_audio_file_to_peak_normalize: 'Normalize',
+  tool_normalize_an_audio_file_to_peak_preview: 'Listen to the normalized WAV',
+  tool_normalize_an_audio_file_to_peak_progress: 'Normalize progress',
+  tool_normalize_an_audio_file_to_peak_read: 'Read',
+  tool_normalize_an_audio_file_to_peak_result: '{seconds}s · Target {targetDb} dBFS · peak {peakBefore} → {peakAfter} · WAV {output} KiB',
+  tool_normalize_an_audio_file_to_peak_rules_body:
+    'The page finds the absolute peak across channels, then multiplies every sample by (targetLinear / peak), where targetLinear = 10^(dBFS/20). Soft and loud parts stay in the same ratio. That is not a fixed dB boost and not a LUFS loudness match.',
+  tool_normalize_an_audio_file_to_peak_rules_item_1: 'Default −1 dBFS leaves modest headroom. −0.1 is hotter; −3 leaves more room for later processing.',
+  tool_normalize_an_audio_file_to_peak_rules_item_2:
+    'Files already near the target still convert. The result line always shows peak before and after so you can verify.',
+  tool_normalize_an_audio_file_to_peak_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_normalize_an_audio_file_to_peak_rules_item_4:
+    'One file up to 40 MiB and ten minutes. This is not fixed-gain amplify, not LUFS normalize, not a dynamic compressor, and not MP3 size compression.',
+  tool_normalize_an_audio_file_to_peak_rules_title: 'Peak target, scaling and limits',
+  tool_normalize_an_audio_file_to_peak_sample: 'Load sample',
+  tool_normalize_an_audio_file_to_peak_sample_name: 'two-second-quiet-peak-demo',
+  tool_normalize_an_audio_file_to_peak_settings_hint:
+    'Default −1 dBFS leaves a little headroom under full scale. −0.1 is hotter; −3 is safer for later processing. Files already near the target still convert—the result line shows peak before and after.',
+  tool_normalize_an_audio_file_to_peak_target_label: 'Target peak (dBFS)',
+  tool_normalize_an_audio_file_to_peak_title: 'Normalize an audio file to peak',
+  tool_normalize_an_audio_file_to_peak_usecase_1:
+    'A delivery that asks for peaks near full scale with a little headroom—normalize to −1 dBFS and download WAV.',
+  tool_normalize_an_audio_file_to_peak_usecase_2:
+    'Several takes at different levels that you want to align by peak before editing, without chasing a LUFS number.',
+  tool_normalize_an_audio_file_to_peak_usecases_title: 'When this helps',
+  tool_normalize_an_audio_file_to_peak_why_choose_item_1: 'See measured duration, target dBFS, peak before/after and output KiB before you save.',
+  tool_normalize_an_audio_file_to_peak_why_choose_item_2: 'Three clear peak targets—one peak-normalize job, not a buried gain/LUFS/compressor wall.',
+  tool_normalize_an_audio_file_to_peak_why_choose_item_3:
+    'Decoding, peak scan and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_normalize_an_audio_file_to_peak_why_choose_item_4: 'Changing the target or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_normalize_an_audio_file_to_peak_why_choose_title: 'Why choose our Normalize an audio file to peak tools',
+  tool_normalize_an_audio_file_to_peak_write: 'Write',
   tool_npv_article:
     'Net present value (NPV) discounts future cash flows back to today at a chosen annual rate, then subtracts the initial investment. A positive NPV means the discounted inflows exceed the outflow under your assumptions; it is not a forecast or a buy recommendation.',
   tool_npv_calculate: 'Calculate',
@@ -12037,8 +15092,268 @@ const en: SiteLangDict = {
   tool_reduce_an_mp3_file_size_why_choose_item_2: 'Listen to the encoded result before committing to a smaller attachment.',
   tool_reduce_an_mp3_file_size_why_choose_item_3: 'Keep stereo for music or mix both channels to mono for a speech recording; no content is trimmed.',
   tool_reduce_an_mp3_file_size_why_choose_title: 'Why choose our Reduce an MP3 file size tools',
+  tool_reduce_background_noise_on_a_voice_memo_advanced: 'Denoise strength',
+  tool_reduce_background_noise_on_a_voice_memo_article:
+    'Voice memos often sit on a steady fan, air-conditioner or room hiss that masks speech. This page applies a high-pass to drop rumble, estimates a noise floor from quiet frames, then gently gates samples near that floor. Light, Medium and Strong trade how aggressively quiet frames are attenuated. That is an honest browser approximation for steady background noise—not cloud Adobe Enhance Speech, not a narrow 50/60 Hz hum notch, and not a three-band muffled-voice EQ. Music and drums can sound dulled. Channel count stays 1 or 2. Keep the original file; the download is a new 16-bit WAV. Work runs in the browser on your device.',
+  tool_reduce_background_noise_on_a_voice_memo_choose: 'Choose an audio file',
+  tool_reduce_background_noise_on_a_voice_memo_clear: 'Clear',
+  tool_reduce_background_noise_on_a_voice_memo_convert: 'Denoise',
+  tool_reduce_background_noise_on_a_voice_memo_decode: 'Decode',
+  tool_reduce_background_noise_on_a_voice_memo_denoise: 'Denoise',
+  tool_reduce_background_noise_on_a_voice_memo_desc:
+    'Cut steady fan or AC hiss on a voice memo with Light, Medium or Strong high-pass + noise-floor gate presets, then download a 16-bit WAV. On-device approx only.',
+  tool_reduce_background_noise_on_a_voice_memo_description:
+    'Reduce background noise on a voice memo with Light, Medium or Strong high-pass plus noise-floor gate presets. Steps: Denoise, preview, download WAV. Example: load the hissy sample. Browser approx for steady hiss—not Adobe Enhance Speech, not 50/60 Hz dehum, not muffled EQ. Audio stays on your device; never uploaded.',
+  tool_reduce_background_noise_on_a_voice_memo_done: 'Ready. Preview the denoised WAV, then Download WAV.',
+  tool_reduce_background_noise_on_a_voice_memo_download: 'Download WAV',
+  tool_reduce_background_noise_on_a_voice_memo_elapsed: '{s}s elapsed',
+  tool_reduce_background_noise_on_a_voice_memo_empty: 'Choose an audio file or load the sample first.',
+  tool_reduce_background_noise_on_a_voice_memo_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_reduce_background_noise_on_a_voice_memo_err_encoder: 'Could not write the denoised WAV. Check the strength, then try Denoise again.',
+  tool_reduce_background_noise_on_a_voice_memo_err_file: 'Drop exactly one audio file.',
+  tool_reduce_background_noise_on_a_voice_memo_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_reduce_background_noise_on_a_voice_memo_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_reduce_background_noise_on_a_voice_memo_err_silence: 'Level is essentially silence—nothing to denoise. Try a recording with audible level.',
+  tool_reduce_background_noise_on_a_voice_memo_example:
+    'Load sample builds a three-second speech-like tone under steady hiss, then Denoise at Medium automatically. Playback never starts by itself—press play on the preview if you want to hear the quieter bed.',
+  tool_reduce_background_noise_on_a_voice_memo_example_title: 'Try a real hissy memo',
+  tool_reduce_background_noise_on_a_voice_memo_failed: 'Denoise failed. Try a smaller, valid audio file.',
+  tool_reduce_background_noise_on_a_voice_memo_faq_a1:
+    'No. Cloud enhance tools rebuild speech with large models. This page only high-passes and gently gates to a noise floor in your browser. Results are modest and honest—not studio AI clarity.',
+  tool_reduce_background_noise_on_a_voice_memo_faq_a2:
+    'Not as a dedicated dehum job. Steady broadband hiss and rumble improve most. For a narrow 50/60 Hz electrical hum notch, use Remove mains hum from a recording.',
+  tool_reduce_background_noise_on_a_voice_memo_faq_a3:
+    'No. That page reshapes tone with Clarity, Warmth or Presence bands. This page reduces steady background noise. For muffled tone after denoise, use EQ a muffled voice recording.',
+  tool_reduce_background_noise_on_a_voice_memo_faq_a4:
+    'It can. Strong attenuates quiet frames harder and may thin consonants or dull drums. Prefer Medium for most memos; use Light when speech is already soft.',
+  tool_reduce_background_noise_on_a_voice_memo_faq_a5:
+    'They raise the high-pass cutoff slightly and lower how much gain remains when a frame sits near the estimated noise floor. Default is Medium.',
+  tool_reduce_background_noise_on_a_voice_memo_faq_a6:
+    'No. Decoding, denoise and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For soft edges use Fade in and fade out an audio clip; for muffled tone use EQ a muffled voice recording.',
+  tool_reduce_background_noise_on_a_voice_memo_faq_q1: 'Is this the same as Adobe Enhance Speech?',
+  tool_reduce_background_noise_on_a_voice_memo_faq_q2: 'Does this remove 50/60 Hz mains hum?',
+  tool_reduce_background_noise_on_a_voice_memo_faq_q3: 'Is this the same as EQ a muffled voice recording?',
+  tool_reduce_background_noise_on_a_voice_memo_faq_q4: 'Will Strong ruin speech or music?',
+  tool_reduce_background_noise_on_a_voice_memo_faq_q5: 'What do Light, Medium and Strong change?',
+  tool_reduce_background_noise_on_a_voice_memo_faq_q6: 'Is my audio uploaded to a server?',
+  tool_reduce_background_noise_on_a_voice_memo_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_reduce_background_noise_on_a_voice_memo_how_body:
+    'Pick a strength, run the high-pass and noise-floor gate, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_reduce_background_noise_on_a_voice_memo_how_item_1: 'Choose an audio file, or select Load sample for a three-second hissy voice-memo demonstration.',
+  tool_reduce_background_noise_on_a_voice_memo_how_item_2: 'Open Denoise strength and pick Light, Medium (default) or Strong.',
+  tool_reduce_background_noise_on_a_voice_memo_how_item_3: 'Click Denoise and wait for Read → Decode → Denoise → Write to finish.',
+  tool_reduce_background_noise_on_a_voice_memo_how_item_4: 'Preview the quieter bed, check the result line, then click Download WAV.',
+  tool_reduce_background_noise_on_a_voice_memo_how_title: 'How to reduce background noise on a voice memo',
+  tool_reduce_background_noise_on_a_voice_memo_preset_label: 'Noise reduction strength',
+  tool_reduce_background_noise_on_a_voice_memo_preset_light: 'Light',
+  tool_reduce_background_noise_on_a_voice_memo_preset_medium: 'Medium',
+  tool_reduce_background_noise_on_a_voice_memo_preset_strong: 'Strong',
+  tool_reduce_background_noise_on_a_voice_memo_preview: 'Listen to the denoised WAV',
+  tool_reduce_background_noise_on_a_voice_memo_progress: 'Denoise progress',
+  tool_reduce_background_noise_on_a_voice_memo_read: 'Read',
+  tool_reduce_background_noise_on_a_voice_memo_result: '{seconds}s · {preset} · noise floor {floor} · WAV {output} KiB',
+  tool_reduce_background_noise_on_a_voice_memo_rules_body:
+    'Each strength runs a high-pass, estimates a noise floor from quiet frames, then gently gates near that floor. Steady fan or AC hiss improves most; speech consonants and music can thin. Soft peak protection keeps the WAV under full scale.',
+  tool_reduce_background_noise_on_a_voice_memo_rules_item_1: 'Light, Medium and Strong change high-pass cutoff and how far quiet frames drop. Default is Medium.',
+  tool_reduce_background_noise_on_a_voice_memo_rules_item_2:
+    'This is a browser approximation. It is not Adobe Enhance Speech, not a 50/60 Hz hum notch, and not muffled-voice EQ.',
+  tool_reduce_background_noise_on_a_voice_memo_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_reduce_background_noise_on_a_voice_memo_rules_item_4:
+    'One file up to 40 MiB and ten minutes. Strong may leave artifacts; if speech sounds hollow, step back to Light or Medium.',
+  tool_reduce_background_noise_on_a_voice_memo_rules_title: 'Strength, noise floor and honest browser limits',
+  tool_reduce_background_noise_on_a_voice_memo_sample: 'Load sample',
+  tool_reduce_background_noise_on_a_voice_memo_sample_name: 'three-second-hissy-voice-memo-demo',
+  tool_reduce_background_noise_on_a_voice_memo_settings_hint:
+    'Default Medium balances speech and steady hiss. Light is gentler when speech is soft. Strong attenuates quiet frames more and may thin consonants. This is a high-pass plus noise-floor gate—not machine-learning enhance.',
+  tool_reduce_background_noise_on_a_voice_memo_title: 'Reduce background noise on a voice memo',
+  tool_reduce_background_noise_on_a_voice_memo_usecase_1: 'A phone voice memo with fan or AC hiss under the talk—pick Medium, Denoise, download WAV.',
+  tool_reduce_background_noise_on_a_voice_memo_usecase_2: 'A quick field note that needs less room hiss before you fade edges or EQ tone elsewhere.',
+  tool_reduce_background_noise_on_a_voice_memo_usecases_title: 'When this helps',
+  tool_reduce_background_noise_on_a_voice_memo_why_choose_item_1: 'See strength name, estimated noise floor and output KiB before you save.',
+  tool_reduce_background_noise_on_a_voice_memo_why_choose_item_2: 'Three clear strengths—one memo denoise job, not a buried DAW rack or a cloud Enhance upsell.',
+  tool_reduce_background_noise_on_a_voice_memo_why_choose_item_3:
+    'Decoding, high-pass, noise-floor gate and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_reduce_background_noise_on_a_voice_memo_why_choose_item_4: 'Changing strength or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_reduce_background_noise_on_a_voice_memo_why_choose_title: 'Why choose our Reduce background noise on a voice memo tools',
+  tool_reduce_background_noise_on_a_voice_memo_write: 'Write',
   tool_references_title: 'References',
   tool_related_title: 'Related tools',
+  tool_remove_clicks_from_a_recording_advanced: 'Sensitivity',
+  tool_remove_clicks_from_a_recording_article:
+    'Mouth pops, cable taps and vinyl crackle show up as brief impulsive spikes against otherwise smooth speech or music. This page compares each sample to a local median, flags short outliers, and replaces those spans with linear interpolation between clean neighbors. That targets transient clicks—not fan hiss broadband denoise, not 50/60 Hz mains notches, and not a de-esser for sustained sibilance. Strong sensitivity can nick drum hits. Channel count stays 1 or 2. Keep the original file; the download is a new 16-bit WAV. Work runs in the browser on your device.',
+  tool_remove_clicks_from_a_recording_choose: 'Choose an audio file',
+  tool_remove_clicks_from_a_recording_clear: 'Clear',
+  tool_remove_clicks_from_a_recording_convert: 'Declick',
+  tool_remove_clicks_from_a_recording_declick: 'Declick',
+  tool_remove_clicks_from_a_recording_decode: 'Decode',
+  tool_remove_clicks_from_a_recording_desc:
+    'Repair short clicks and pops with median spike detection and interpolation, then download a 16-bit WAV. On-device only.',
+  tool_remove_clicks_from_a_recording_description:
+    'Remove clicks from a recording with median spike detection and short interpolation. Steps: Declick, preview, download WAV. Example: load the clicky sample. Honest browser spike repair—not broadband denoise, not mains dehum, not de-ess. Audio stays on your device; never uploaded.',
+  tool_remove_clicks_from_a_recording_done: 'Ready. Preview the declicked WAV, then Download WAV.',
+  tool_remove_clicks_from_a_recording_download: 'Download WAV',
+  tool_remove_clicks_from_a_recording_elapsed: '{s}s elapsed',
+  tool_remove_clicks_from_a_recording_empty: 'Choose an audio file or load the sample first.',
+  tool_remove_clicks_from_a_recording_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_remove_clicks_from_a_recording_err_encoder: 'Could not write the declicked WAV. Check sensitivity, then try Declick again.',
+  tool_remove_clicks_from_a_recording_err_file: 'Drop exactly one audio file.',
+  tool_remove_clicks_from_a_recording_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_remove_clicks_from_a_recording_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_remove_clicks_from_a_recording_err_silence: 'Level is essentially silence—nothing to declick. Try a recording with audible level.',
+  tool_remove_clicks_from_a_recording_example:
+    'Load sample builds a three-second speech-like tone with five synthetic clicks, then Declick at Medium automatically. Playback never starts by itself—press play on the preview if you want to hear the repaired take.',
+  tool_remove_clicks_from_a_recording_example_title: 'Try a real clicky clip',
+  tool_remove_clicks_from_a_recording_failed: 'Declick failed. Try a smaller, valid audio file.',
+  tool_remove_clicks_from_a_recording_faq_a1:
+    'No. That page high-passes and gates steady fan or AC hiss. This page repairs short impulsive spikes. Use Reduce background noise on a voice memo for broadband hiss.',
+  tool_remove_clicks_from_a_recording_faq_a2: 'No. Electrical hum needs narrow notches. Use Remove mains hum from a recording for 50/60 Hz dehum.',
+  tool_remove_clicks_from_a_recording_faq_a3:
+    'No. Sustained S and SH sounds need a de-ess job. Use De-ess a voiceover for sibilance. This page only interpolates short click/pop spikes.',
+  tool_remove_clicks_from_a_recording_faq_a4:
+    'They change how aggressively samples that deviate from a local median are marked as spikes and how long a repaired span may be. Medium is the default balance.',
+  tool_remove_clicks_from_a_recording_faq_a5:
+    'It can soften very sharp transients that look like clicks. If drums or plucks feel dull, switch to Light and run Declick again.',
+  tool_remove_clicks_from_a_recording_faq_a6:
+    'No. Decoding, spike repair and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For broadband hiss use Reduce background noise on a voice memo; for mains hum use Remove mains hum from a recording.',
+  tool_remove_clicks_from_a_recording_faq_q1: 'Is this the same as reduce background noise on a voice memo?',
+  tool_remove_clicks_from_a_recording_faq_q2: 'Does this remove 50/60 Hz mains hum?',
+  tool_remove_clicks_from_a_recording_faq_q3: 'Is this a de-esser for sibilance?',
+  tool_remove_clicks_from_a_recording_faq_q4: 'What do Light, Medium and Strong change?',
+  tool_remove_clicks_from_a_recording_faq_q5: 'Will Strong ruin drum hits?',
+  tool_remove_clicks_from_a_recording_faq_q6: 'Is my audio uploaded to a server?',
+  tool_remove_clicks_from_a_recording_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_remove_clicks_from_a_recording_how_body: 'Pick a sensitivity, run spike repair, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_remove_clicks_from_a_recording_how_item_1: 'Choose an audio file, or select Load sample for a three-second clip with synthetic clicks.',
+  tool_remove_clicks_from_a_recording_how_item_2: 'Open Sensitivity and pick Light, Medium or Strong (default Medium).',
+  tool_remove_clicks_from_a_recording_how_item_3: 'Click Declick and wait for Read → Decode → Declick → Write to finish.',
+  tool_remove_clicks_from_a_recording_how_item_4: 'Preview the quieter spikes, check the repaired count, then click Download WAV.',
+  tool_remove_clicks_from_a_recording_how_title: 'How to remove clicks from a recording',
+  tool_remove_clicks_from_a_recording_preview: 'Listen to the declicked WAV',
+  tool_remove_clicks_from_a_recording_progress: 'Declick progress',
+  tool_remove_clicks_from_a_recording_read: 'Read',
+  tool_remove_clicks_from_a_recording_result: '{seconds}s · {sensitivity} · {clicks} spikes repaired · WAV {output} KiB',
+  tool_remove_clicks_from_a_recording_rules_body:
+    'Each run flags samples that deviate from a local median beyond a sensitivity threshold, then interpolates only short spans. True impulsive clicks improve most; steady hiss needs denoise elsewhere. Soft peak protection keeps the WAV under full scale.',
+  tool_remove_clicks_from_a_recording_rules_item_1:
+    'Light, Medium and Strong change how far a sample must sit from the local median and how long a spike may be. Default is Medium.',
+  tool_remove_clicks_from_a_recording_rules_item_2:
+    'This is a browser median/interpolation repair. It is not broadband denoise, not mains dehum, and not a de-esser.',
+  tool_remove_clicks_from_a_recording_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_remove_clicks_from_a_recording_rules_item_4:
+    'One file up to 40 MiB and ten minutes. Dense music transients may be thinned on Strong; try Light if drums feel soft.',
+  tool_remove_clicks_from_a_recording_rules_title: 'Spike length, sensitivity and honest browser limits',
+  tool_remove_clicks_from_a_recording_sample: 'Load sample',
+  tool_remove_clicks_from_a_recording_sample_name: 'three-second-clicks-demo',
+  tool_remove_clicks_from_a_recording_sens_label: 'Detection sensitivity',
+  tool_remove_clicks_from_a_recording_sens_light: 'Light',
+  tool_remove_clicks_from_a_recording_sens_medium: 'Medium',
+  tool_remove_clicks_from_a_recording_sens_strong: 'Strong',
+  tool_remove_clicks_from_a_recording_settings_hint:
+    'Default Medium balances obvious pops against safe speech. Light repairs fewer spikes. Strong catches denser crackle but may soften sharp transients.',
+  tool_remove_clicks_from_a_recording_title: 'Remove clicks from a recording',
+  tool_remove_clicks_from_a_recording_usecase_1: 'A voice memo with mouth pops or cable taps—pick Medium, Declick, download WAV.',
+  tool_remove_clicks_from_a_recording_usecase_2: 'A transfer with sparse vinyl crackle before you denoise broadband hiss or notch mains hum elsewhere.',
+  tool_remove_clicks_from_a_recording_usecases_title: 'When this helps',
+  tool_remove_clicks_from_a_recording_why_choose_item_1: 'See sensitivity, repaired spike count and output KiB before you save.',
+  tool_remove_clicks_from_a_recording_why_choose_item_2: 'One clear declick job—short median spike repair, not a buried DAW rack.',
+  tool_remove_clicks_from_a_recording_why_choose_item_3:
+    'Decoding, spike repair and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_remove_clicks_from_a_recording_why_choose_item_4: 'Changing sensitivity or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_remove_clicks_from_a_recording_why_choose_title: 'Why choose our Remove clicks from a recording tools',
+  tool_remove_clicks_from_a_recording_write: 'Write',
+  tool_remove_mains_hum_from_a_recording_advanced: 'Mains frequency and harmonics',
+  tool_remove_mains_hum_from_a_recording_article:
+    'Recordings near power supplies, dimmers or poorly grounded gear often pick up a steady 50 or 60 Hz mains hum, sometimes with audible harmonics. This page chains BiquadFilter notch stages in OfflineAudioContext at the chosen fundamental and, optionally, the 2nd through 5th harmonics below Nyquist. That targets narrow electrical tones—not fan hiss broadband denoise, not click/pop repair, and not a three-band muffled-voice EQ. Music bass near the notch can thin slightly. Channel count stays 1 or 2. Keep the original file; the download is a new 16-bit WAV. Work runs in the browser on your device.',
+  tool_remove_mains_hum_from_a_recording_choose: 'Choose an audio file',
+  tool_remove_mains_hum_from_a_recording_clear: 'Clear',
+  tool_remove_mains_hum_from_a_recording_convert: 'Dehum',
+  tool_remove_mains_hum_from_a_recording_decode: 'Decode',
+  tool_remove_mains_hum_from_a_recording_dehum: 'Dehum',
+  tool_remove_mains_hum_from_a_recording_desc:
+    'Cut 50 or 60 Hz electrical hum with notch filters and optional harmonics, then download a 16-bit WAV. On-device only.',
+  tool_remove_mains_hum_from_a_recording_description:
+    'Remove mains hum from a recording with 50 or 60 Hz notch filters and optional 2nd–5th harmonics. Steps: Dehum, preview, download WAV. Example: load the humming sample. Narrow notches for electrical hum—not broadband denoise, not declick, not muffled EQ. Audio stays on your device; never uploaded.',
+  tool_remove_mains_hum_from_a_recording_done: 'Ready. Preview the dehummed WAV, then Download WAV.',
+  tool_remove_mains_hum_from_a_recording_download: 'Download WAV',
+  tool_remove_mains_hum_from_a_recording_elapsed: '{s}s elapsed',
+  tool_remove_mains_hum_from_a_recording_empty: 'Choose an audio file or load the sample first.',
+  tool_remove_mains_hum_from_a_recording_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_remove_mains_hum_from_a_recording_err_encoder: 'Could not write the dehummed WAV. Check frequency and harmonics, then try Dehum again.',
+  tool_remove_mains_hum_from_a_recording_err_file: 'Drop exactly one audio file.',
+  tool_remove_mains_hum_from_a_recording_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_remove_mains_hum_from_a_recording_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_remove_mains_hum_from_a_recording_err_silence: 'Level is essentially silence—nothing to dehum. Try a recording with audible level.',
+  tool_remove_mains_hum_from_a_recording_example:
+    'Load sample builds a three-second speech-like tone under 50 Hz hum plus harmonics, then Dehum at 50 Hz with harmonics automatically. Playback never starts by itself—press play on the preview if you want to hear the quieter bed.',
+  tool_remove_mains_hum_from_a_recording_example_title: 'Try a real humming clip',
+  tool_remove_mains_hum_from_a_recording_failed: 'Dehum failed. Try a smaller, valid audio file.',
+  tool_remove_mains_hum_from_a_recording_faq_a1:
+    'No. That page high-passes and gates steady fan or AC hiss. This page notches narrow 50/60 Hz electrical tones. Use Reduce background noise on a voice memo for broadband hiss.',
+  tool_remove_mains_hum_from_a_recording_faq_a2:
+    'No. Clicks, mouth pops and vinyl crackle need a declick job. This page only notches mains fundamentals and optional harmonics.',
+  tool_remove_mains_hum_from_a_recording_faq_a3:
+    'No. That page reshapes tone with Clarity, Warmth or Presence bands. This page removes electrical hum. For muffled tone after dehum, use EQ a muffled voice recording.',
+  tool_remove_mains_hum_from_a_recording_faq_a4:
+    'Match your power grid. Most of Europe, Asia, Africa and Australia use 50 Hz. North America and parts of Japan and South America use 60 Hz. Wrong Hz leaves the hum mostly untouched.',
+  tool_remove_mains_hum_from_a_recording_faq_a5:
+    'It adds notches at two to five times the fundamental when those frequencies sit under Nyquist. Buzz often has harmonics; Fundamental only is gentler on nearby bass.',
+  tool_remove_mains_hum_from_a_recording_faq_a6:
+    'No. Decoding, notch filtering and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For broadband hiss use Reduce background noise on a voice memo; for muffled tone use EQ a muffled voice recording.',
+  tool_remove_mains_hum_from_a_recording_faq_q1: 'Is this the same as reduce background noise on a voice memo?',
+  tool_remove_mains_hum_from_a_recording_faq_q2: 'Does this remove clicks and pops?',
+  tool_remove_mains_hum_from_a_recording_faq_q3: 'Is this the same as EQ a muffled voice recording?',
+  tool_remove_mains_hum_from_a_recording_faq_q4: 'Should I pick 50 Hz or 60 Hz?',
+  tool_remove_mains_hum_from_a_recording_faq_q5: 'What does Include harmonics do?',
+  tool_remove_mains_hum_from_a_recording_faq_q6: 'Is my audio uploaded to a server?',
+  tool_remove_mains_hum_from_a_recording_harmonics_label: 'Harmonics',
+  tool_remove_mains_hum_from_a_recording_harmonics_off: 'Fundamental only',
+  tool_remove_mains_hum_from_a_recording_harmonics_on: 'Include harmonics',
+  tool_remove_mains_hum_from_a_recording_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_remove_mains_hum_from_a_recording_how_body:
+    'Pick 50 or 60 Hz, choose harmonics, run the notches, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_remove_mains_hum_from_a_recording_how_item_1: 'Choose an audio file, or select Load sample for a three-second humming demonstration.',
+  tool_remove_mains_hum_from_a_recording_how_item_2: 'Open Mains frequency and harmonics: pick 50 or 60 Hz, then Fundamental only or Include harmonics.',
+  tool_remove_mains_hum_from_a_recording_how_item_3: 'Click Dehum and wait for Read → Decode → Dehum → Write to finish.',
+  tool_remove_mains_hum_from_a_recording_how_item_4: 'Preview the quieter electrical bed, check the result line, then click Download WAV.',
+  tool_remove_mains_hum_from_a_recording_how_title: 'How to remove mains hum from a recording',
+  tool_remove_mains_hum_from_a_recording_hz_50: '50 Hz',
+  tool_remove_mains_hum_from_a_recording_hz_60: '60 Hz',
+  tool_remove_mains_hum_from_a_recording_hz_label: 'Mains frequency',
+  tool_remove_mains_hum_from_a_recording_preview: 'Listen to the dehummed WAV',
+  tool_remove_mains_hum_from_a_recording_progress: 'Dehum progress',
+  tool_remove_mains_hum_from_a_recording_read: 'Read',
+  tool_remove_mains_hum_from_a_recording_result: '{seconds}s · {hz} Hz · {harmonics} · {notches} notches · WAV {output} KiB',
+  tool_remove_mains_hum_from_a_recording_rules_body:
+    'Each run chains narrow notch filters at the chosen fundamental and, if enabled, harmonics 2–5 below Nyquist. True mains tones improve most; broadband hiss needs denoise elsewhere. Soft peak protection keeps the WAV under full scale.',
+  tool_remove_mains_hum_from_a_recording_rules_item_1:
+    '50 Hz or 60 Hz sets the fundamental. Include harmonics adds notches at 2×–5× that frequency when under Nyquist. Defaults are 50 Hz with harmonics.',
+  tool_remove_mains_hum_from_a_recording_rules_item_2:
+    'This is a browser notch chain. It is not broadband denoise, not click/pop repair, and not muffled-voice EQ.',
+  tool_remove_mains_hum_from_a_recording_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_remove_mains_hum_from_a_recording_rules_item_4:
+    'One file up to 40 MiB and ten minutes. Bass near the notch can thin; if lows sound hollow, try Fundamental only.',
+  tool_remove_mains_hum_from_a_recording_rules_title: 'Notch frequency, harmonics and honest browser limits',
+  tool_remove_mains_hum_from_a_recording_sample: 'Load sample',
+  tool_remove_mains_hum_from_a_recording_sample_name: 'three-second-mains-hum-demo',
+  tool_remove_mains_hum_from_a_recording_settings_hint:
+    'Default 50 Hz with harmonics notches the fundamental plus 2nd–5th harmonics under Nyquist. Pick 60 Hz for North America and similar grids. Fundamental only is gentler on nearby bass.',
+  tool_remove_mains_hum_from_a_recording_title: 'Remove mains hum from a recording',
+  tool_remove_mains_hum_from_a_recording_usecase_1:
+    'A voice note with steady electrical buzz from a charger or dimmer—pick your grid Hz, Dehum, download WAV.',
+  tool_remove_mains_hum_from_a_recording_usecase_2:
+    'A field recording that needs the mains tone gone before you denoise broadband hiss or EQ muffled speech elsewhere.',
+  tool_remove_mains_hum_from_a_recording_usecases_title: 'When this helps',
+  tool_remove_mains_hum_from_a_recording_why_choose_item_1: 'See mains Hz, harmonics mode, notch count and output KiB before you save.',
+  tool_remove_mains_hum_from_a_recording_why_choose_item_2: 'One clear dehum job—50/60 Hz notches with optional harmonics, not a buried DAW rack.',
+  tool_remove_mains_hum_from_a_recording_why_choose_item_3:
+    'Decoding, notch filtering and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_remove_mains_hum_from_a_recording_why_choose_item_4:
+    'Changing frequency, harmonics or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_remove_mains_hum_from_a_recording_why_choose_title: 'Why choose our Remove mains hum from a recording tools',
+  tool_remove_mains_hum_from_a_recording_write: 'Write',
   tool_remove_silence_from_a_recording_advanced: 'Advanced settings (optional)',
   tool_remove_silence_from_a_recording_article:
     'Remove silence from a recording in this tab: open a local file, click Remove silence, then Export WAV or Export MP3. Dead air and long pauses are cut; speech is stitched into one shorter file. The file stays on your device.',
@@ -12161,6 +15476,252 @@ const en: SiteLangDict = {
   tool_remove_silence_from_a_recording_why_choose_item_4:
     'Over-size or over-length files are refused before decode instead of a 1 GB promise that can crash the tab.',
   tool_remove_silence_from_a_recording_why_choose_title: 'Why choose our Remove silence from a recording tools',
+  tool_remove_the_audio_track_from_a_video_advanced: 'Mute notes',
+  tool_remove_the_audio_track_from_a_video_article:
+    'Short clips sometimes need picture only so you can add a new soundtrack later. This page lets you open a local video, capture its video frames without audio tracks, re-encode with MediaRecorder, then download a muted file—often WebM depending on the browser. It does not download YouTube or other URLs, does not extract the soundtrack as an audio file, and does not promise bit-identical MP4 remux without re-encoding. Success depends on whether your browser can play the container and support MediaRecorder. Keep the original; the download is a new file. Work runs on your device.',
+  tool_remove_the_audio_track_from_a_video_capture: 'Capture',
+  tool_remove_the_audio_track_from_a_video_choose: 'Choose a video file',
+  tool_remove_the_audio_track_from_a_video_clear: 'Clear',
+  tool_remove_the_audio_track_from_a_video_convert: 'Remove audio',
+  tool_remove_the_audio_track_from_a_video_desc:
+    'Mute a local video in the browser and download a clip without audio. On-device only—no YouTube download.',
+  tool_remove_the_audio_track_from_a_video_description:
+    'Remove the audio track from a local video in the browser and download a muted clip. Steps: Choose a video, Remove audio, preview, download. Example: load a short sample with tone. Uses captureStream without audio tracks and MediaRecorder—often WebM output; not lossless remux. Never uploaded. No YouTube download.',
+  tool_remove_the_audio_track_from_a_video_done: 'Ready. Preview the muted video, then Download muted video.',
+  tool_remove_the_audio_track_from_a_video_download: 'Download muted video',
+  tool_remove_the_audio_track_from_a_video_elapsed: '{s}s elapsed',
+  tool_remove_the_audio_track_from_a_video_empty: 'Choose a local video or load the sample first.',
+  tool_remove_the_audio_track_from_a_video_empty_state:
+    'No video yet. Drop a local file, or click Load sample for a short clip with tone. This tool mutes picture-only output—it does not extract audio and does not download YouTube.',
+  tool_remove_the_audio_track_from_a_video_err_decode: 'The browser could not play this video. Try another container or a shorter clip.',
+  tool_remove_the_audio_track_from_a_video_err_encoder: 'MediaRecorder could not write a muted video. Try Chrome/Edge or a shorter WebM/MP4.',
+  tool_remove_the_audio_track_from_a_video_err_file: 'Choose a supported local video file.',
+  tool_remove_the_audio_track_from_a_video_err_format: 'Unsupported or unplayable video. Use MP4, WebM, MOV or M4V your browser can decode. No YouTube URLs.',
+  tool_remove_the_audio_track_from_a_video_err_limit: 'Use a local video up to 80 MiB and about 3 minutes long.',
+  tool_remove_the_audio_track_from_a_video_example:
+    'Load sample builds a short WebM with a tone, then Remove audio runs. The preview should show picture with silence. Playback never starts by itself—press play if you want to check.',
+  tool_remove_the_audio_track_from_a_video_example_title: 'Try a short sample clip',
+  tool_remove_the_audio_track_from_a_video_failed: 'Could not mute this video. Try a shorter clip your browser can play.',
+  tool_remove_the_audio_track_from_a_video_faq_a1: 'No. This page only accepts local video files. It never downloads YouTube or other remote media.',
+  tool_remove_the_audio_track_from_a_video_faq_a2:
+    'Usually not. Browsers re-encode with MediaRecorder after capturing video-only tracks. Output is often WebM and quality may differ.',
+  tool_remove_the_audio_track_from_a_video_faq_a3:
+    'No. Extract audio keeps the soundtrack as an audio file. This page keeps the picture and removes sound.',
+  tool_remove_the_audio_track_from_a_video_faq_a4:
+    'The browser must be able to play the file and support MediaRecorder for a video MIME type. Try a shorter MP4/WebM or another browser.',
+  tool_remove_the_audio_track_from_a_video_faq_a5:
+    'No. Reading and recording run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_remove_the_audio_track_from_a_video_faq_a6:
+    'Prepare audio separately—for example Mix a voiceover with background music—then use a video editor that can attach a new track. This page only removes audio.',
+  tool_remove_the_audio_track_from_a_video_faq_q1: 'Can I paste a YouTube link?',
+  tool_remove_the_audio_track_from_a_video_faq_q2: 'Is the output the same MP4 with audio stripped losslessly?',
+  tool_remove_the_audio_track_from_a_video_faq_q3: 'Is this the same as extracting audio?',
+  tool_remove_the_audio_track_from_a_video_faq_q4: 'Why did mute fail on my file?',
+  tool_remove_the_audio_track_from_a_video_faq_q5: 'Is my video uploaded to a server?',
+  tool_remove_the_audio_track_from_a_video_faq_q6: 'How do I add new music after muting?',
+  tool_remove_the_audio_track_from_a_video_file_label: 'Video: {name}',
+  tool_remove_the_audio_track_from_a_video_hint:
+    'Drop or choose a local MP4, WebM, MOV or M4V your browser can play. Up to 80 MiB and about 3 minutes. No YouTube or URL paste.',
+  tool_remove_the_audio_track_from_a_video_how_body:
+    'Choose a local video, run Remove audio, preview the silent clip, then download—without uploading and without YouTube download.',
+  tool_remove_the_audio_track_from_a_video_how_item_1: 'Choose a local video file (or Load sample for a short clip with tone). Do not paste YouTube links.',
+  tool_remove_the_audio_track_from_a_video_how_item_2: 'Click Remove audio and wait for Read → Capture → Record → Write to finish.',
+  tool_remove_the_audio_track_from_a_video_how_item_3: 'Preview the muted result. Playback should have picture with no soundtrack.',
+  tool_remove_the_audio_track_from_a_video_how_item_4: 'Check the result line, then click Download muted video.',
+  tool_remove_the_audio_track_from_a_video_how_title: 'How to remove the audio track from a video',
+  tool_remove_the_audio_track_from_a_video_preview: 'Preview muted video',
+  tool_remove_the_audio_track_from_a_video_progress: 'Mute progress',
+  tool_remove_the_audio_track_from_a_video_read: 'Read',
+  tool_remove_the_audio_track_from_a_video_record: 'Record',
+  tool_remove_the_audio_track_from_a_video_result: '{seconds}s · muted · {mime} · {output} KiB',
+  tool_remove_the_audio_track_from_a_video_rules_body:
+    'Each run captures video without audio tracks and re-encodes with MediaRecorder. Output is often WebM. This is not YouTube download, not audio extract, and not guaranteed lossless remux.',
+  tool_remove_the_audio_track_from_a_video_rules_item_1: 'One local video up to 80 MiB and about three minutes. Playback must succeed in your browser first.',
+  tool_remove_the_audio_track_from_a_video_rules_item_2:
+    'Audio tracks are dropped from the captured stream. Containers and codecs may change versus the source.',
+  tool_remove_the_audio_track_from_a_video_rules_item_3: 'No YouTube, podcast URL, or remote download. Paste is not supported.',
+  tool_remove_the_audio_track_from_a_video_rules_item_4:
+    'To keep the soundtrack as a file instead, use Extract audio from a video file. To layer new music later, use Mix a voiceover with background music.',
+  tool_remove_the_audio_track_from_a_video_rules_title: 'Mute rules and honest browser limits',
+  tool_remove_the_audio_track_from_a_video_sample: 'Load sample',
+  tool_remove_the_audio_track_from_a_video_sample_name: 'mute-sample',
+  tool_remove_the_audio_track_from_a_video_settings_hint:
+    'Browsers usually re-encode via MediaRecorder after dropping audio tracks. Output is often WebM, not a lossless remux of the original MP4. This page never downloads YouTube.',
+  tool_remove_the_audio_track_from_a_video_title: 'Remove the audio track from a video',
+  tool_remove_the_audio_track_from_a_video_usecase_1: 'A phone clip needs a silent master before you add a new voiceover or bed elsewhere.',
+  tool_remove_the_audio_track_from_a_video_usecase_2: 'You want picture-only output for social upload without shipping the original room audio.',
+  tool_remove_the_audio_track_from_a_video_usecases_title: 'When this helps',
+  tool_remove_the_audio_track_from_a_video_why_choose_item_1: 'See duration, muted status, MIME type and output KiB before you save.',
+  tool_remove_the_audio_track_from_a_video_why_choose_item_2: 'One clear mute job with honest MediaRecorder limits—not a fake lossless remux promise.',
+  tool_remove_the_audio_track_from_a_video_why_choose_item_3: 'Reading and recording run on your device; the page does not upload your video to process it.',
+  tool_remove_the_audio_track_from_a_video_why_choose_item_4: 'Changing the file clears the old download so you never save a stale muted clip by mistake.',
+  tool_remove_the_audio_track_from_a_video_why_choose_title: 'Why choose our Remove the audio track from a video tools',
+  tool_remove_the_audio_track_from_a_video_write: 'Write',
+  tool_replace_the_audio_in_a_video_file_advanced: 'Replace notes',
+  tool_replace_the_audio_in_a_video_file_article:
+    'Wrong BGM or a weak built-in track often needs a full soundtrack swap before sharing. This page opens a local video and a local replacement audio file, drops the original audio tracks, captures picture, decodes the new soundtrack in AudioContext, re-encodes with MediaRecorder, then downloads—often WebM depending on the browser. Output length follows the video; longer audio is cut to match, shorter audio ends early. It does not download YouTube or other URLs, does not only mute without adding sound, and is not framed as “add audio to a silent clip” alone. Success depends on whether your browser can play both files and support MediaRecorder with audio. Keep the originals; the download is a new file. Work runs on your device.',
+  tool_replace_the_audio_in_a_video_file_audio_label: 'New audio: {name}',
+  tool_replace_the_audio_in_a_video_file_choose_audio: 'Choose a new audio file',
+  tool_replace_the_audio_in_a_video_file_choose_video: 'Choose a video file',
+  tool_replace_the_audio_in_a_video_file_clear: 'Clear',
+  tool_replace_the_audio_in_a_video_file_convert: 'Replace audio',
+  tool_replace_the_audio_in_a_video_file_decode: 'Decode',
+  tool_replace_the_audio_in_a_video_file_desc:
+    'Replace a local video’s soundtrack with another audio file, then download. On-device only—no YouTube download.',
+  tool_replace_the_audio_in_a_video_file_description:
+    'Replace the soundtrack of a local video with another audio file in the browser, then download. Steps: Choose a video and a new audio file, Replace audio, preview, download. Example: clip with an old tone swapped for a new WAV. Uses captureStream plus MediaRecorder—often WebM; not lossless remux. Never uploaded. No YouTube download.',
+  tool_replace_the_audio_in_a_video_file_done: 'Ready. Preview the video with the new soundtrack, then Download video.',
+  tool_replace_the_audio_in_a_video_file_download: 'Download video',
+  tool_replace_the_audio_in_a_video_file_elapsed: '{s}s elapsed',
+  tool_replace_the_audio_in_a_video_file_empty: 'Choose a local video and a new audio file, or load the sample first.',
+  tool_replace_the_audio_in_a_video_file_empty_state:
+    'No files yet. Drop a local video and a replacement soundtrack, or click Load sample. This tool swaps the soundtrack—it does not mute-only, and does not download YouTube.',
+  tool_replace_the_audio_in_a_video_file_err_decode: 'The browser could not decode the video or audio. Try another container or a shorter clip.',
+  tool_replace_the_audio_in_a_video_file_err_encoder:
+    'MediaRecorder could not write a replaced-audio video. Try Chrome/Edge or shorter WebM/MP4 plus WAV/MP3.',
+  tool_replace_the_audio_in_a_video_file_err_file: 'Choose one supported local video and one new audio file.',
+  tool_replace_the_audio_in_a_video_file_err_format:
+    'Unsupported or unplayable files. Use common video/audio types your browser can decode. No YouTube URLs.',
+  tool_replace_the_audio_in_a_video_file_err_limit: 'Use a local video up to 80 MiB / about 3 minutes, and audio up to 40 MiB.',
+  tool_replace_the_audio_in_a_video_file_example:
+    'Load sample builds a short video that already has an old tone, plus a higher new tone, then Replace audio runs automatically. You should hear the new soundtrack with the picture. Playback never starts by itself—press play if you want to watch.',
+  tool_replace_the_audio_in_a_video_file_example_title: 'Try swapping an old tone for a new one',
+  tool_replace_the_audio_in_a_video_file_failed: 'Could not replace the audio on this video. Try shorter files your browser can play.',
+  tool_replace_the_audio_in_a_video_file_faq_a1: 'No. Only local files you already have. There is no YouTube downloader and no remote fetch.',
+  tool_replace_the_audio_in_a_video_file_faq_a2: 'No. Mute/remove leaves a silent video. This page attaches a new soundtrack in place of the old one.',
+  tool_replace_the_audio_in_a_video_file_faq_a3:
+    'Adding often targets silent or weakly voiced clips. This page’s job is explicitly to replace the existing soundtrack with another file.',
+  tool_replace_the_audio_in_a_video_file_faq_a4:
+    'Usually not. Browsers typically re-encode with MediaRecorder, often to WebM. Quality and container can change.',
+  tool_replace_the_audio_in_a_video_file_faq_a5:
+    'No. Decode and recording run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_replace_the_audio_in_a_video_file_faq_a6:
+    'The swap follows video duration. Extra audio past the end of the picture is not kept in the download.',
+  tool_replace_the_audio_in_a_video_file_faq_q1: 'Can it download YouTube or paste a URL?',
+  tool_replace_the_audio_in_a_video_file_faq_q2: 'Is this the same as removing audio from a video?',
+  tool_replace_the_audio_in_a_video_file_faq_q3: 'How is this different from adding an audio track to a video?',
+  tool_replace_the_audio_in_a_video_file_faq_q4: 'Will the output be the same MP4 as my source?',
+  tool_replace_the_audio_in_a_video_file_faq_q5: 'Is anything uploaded to a server?',
+  tool_replace_the_audio_in_a_video_file_faq_q6: 'What if my new audio is longer than the video?',
+  tool_replace_the_audio_in_a_video_file_hint_audio:
+    'Drop or choose a local WAV, MP3, M4A or similar your browser can decode. Up to 40 MiB. This becomes the new soundtrack.',
+  tool_replace_the_audio_in_a_video_file_hint_video:
+    'Drop or choose a local MP4, WebM, MOV or M4V your browser can play. Up to 80 MiB and about 3 minutes. No YouTube or URL paste.',
+  tool_replace_the_audio_in_a_video_file_how_body:
+    'Choose a local video and a new audio file, run Replace audio, preview the swap, then download—without uploading and without YouTube download.',
+  tool_replace_the_audio_in_a_video_file_how_item_1:
+    'Choose a local video file and a local replacement audio file (or Load sample). Do not paste YouTube links.',
+  tool_replace_the_audio_in_a_video_file_how_item_2: 'Click Replace audio and wait for Read → Decode → Replace → Write to finish.',
+  tool_replace_the_audio_in_a_video_file_how_item_3: 'Preview the result. You should hear the new soundtrack instead of the old one.',
+  tool_replace_the_audio_in_a_video_file_how_item_4: 'Check the result line, then click Download video.',
+  tool_replace_the_audio_in_a_video_file_how_title: 'How to replace the audio in a video file',
+  tool_replace_the_audio_in_a_video_file_merge: 'Replace',
+  tool_replace_the_audio_in_a_video_file_preview: 'Preview replaced soundtrack',
+  tool_replace_the_audio_in_a_video_file_progress: 'Replace-audio progress',
+  tool_replace_the_audio_in_a_video_file_read: 'Read',
+  tool_replace_the_audio_in_a_video_file_result: '{seconds}s · replaced audio · {mime} · {output} KiB',
+  tool_replace_the_audio_in_a_video_file_rules_body:
+    'Each run drops original audio tracks, attaches your new soundtrack, and re-encodes with MediaRecorder. Output is often WebM. This is not YouTube download and not mute-only.',
+  tool_replace_the_audio_in_a_video_file_rules_item_1:
+    'One local video up to 80 MiB and about three minutes, plus one local audio up to 40 MiB. Playback/decode must succeed first.',
+  tool_replace_the_audio_in_a_video_file_rules_item_2:
+    'Output length follows the video. Longer audio is truncated; shorter audio ends before the picture does.',
+  tool_replace_the_audio_in_a_video_file_rules_item_3: 'No YouTube, podcast URL, or remote download. Paste is not supported.',
+  tool_replace_the_audio_in_a_video_file_rules_item_4:
+    'Containers and codecs may change versus the source. Keep originals; the download is a new re-encoded file.',
+  tool_replace_the_audio_in_a_video_file_rules_title: 'Replace rules and honest browser limits',
+  tool_replace_the_audio_in_a_video_file_sample: 'Load sample',
+  tool_replace_the_audio_in_a_video_file_sample_name: 'replace-audio-sample',
+  tool_replace_the_audio_in_a_video_file_settings_hint:
+    'Browsers usually re-encode via MediaRecorder after dropping the original audio tracks and attaching your new soundtrack. Output is often WebM, not a lossless remux of the original MP4. This page never downloads YouTube.',
+  tool_replace_the_audio_in_a_video_file_title: 'Replace the audio in a video file',
+  tool_replace_the_audio_in_a_video_file_usecase_1: 'You recorded with the wrong BGM and have a better local WAV—swap it here, then download for sharing.',
+  tool_replace_the_audio_in_a_video_file_usecase_2:
+    'You want to replace a weak built-in track with a clearer local soundtrack without installing a desktop editor.',
+  tool_replace_the_audio_in_a_video_file_usecases_title: 'When this helps',
+  tool_replace_the_audio_in_a_video_file_video_label: 'Video: {name}',
+  tool_replace_the_audio_in_a_video_file_why_choose_item_1: 'See duration, MIME type and output KiB before you save.',
+  tool_replace_the_audio_in_a_video_file_why_choose_item_2: 'One clear soundtrack-swap job with honest MediaRecorder limits—not a fake lossless remux promise.',
+  tool_replace_the_audio_in_a_video_file_why_choose_item_3: 'Reading and recording run on your device; the page does not upload your files to process them.',
+  tool_replace_the_audio_in_a_video_file_why_choose_item_4: 'Changing either file clears the old download so you never save a stale swap by mistake.',
+  tool_replace_the_audio_in_a_video_file_why_choose_title: 'Why choose our Replace the audio in a video file tools',
+  tool_replace_the_audio_in_a_video_file_write: 'Write',
+  tool_reverse_an_audio_file_advanced: 'Reverse notes',
+  tool_reverse_an_audio_file_article:
+    'Reversing audio flips the timeline so the end becomes the start. This page decodes your file, reverses each channel’s samples, and writes a 16-bit PCM WAV with the same duration and sample rate. Channel count stays 1 or 2. It does not change speed or pitch on purpose, add 8D panning, or apply fades. Keep the original. Work runs on your device.',
+  tool_reverse_an_audio_file_choose: 'Choose an audio file',
+  tool_reverse_an_audio_file_clear: 'Clear',
+  tool_reverse_an_audio_file_convert: 'Reverse',
+  tool_reverse_an_audio_file_decode: 'Decode',
+  tool_reverse_an_audio_file_desc: 'Flip sample order to play a clip backwards, then download a 16-bit WAV. On-device only.',
+  tool_reverse_an_audio_file_description:
+    'Reverse an audio file by flipping sample order in the browser, then download a 16-bit WAV. Steps: Reverse, preview, download. Example: load the sample. Duration stays the same—not 8D pan, not fade in/out. Audio stays on your device; never uploaded.',
+  tool_reverse_an_audio_file_done: 'Ready. Preview the reversed WAV, then Download WAV.',
+  tool_reverse_an_audio_file_download: 'Download WAV',
+  tool_reverse_an_audio_file_elapsed: '{s}s elapsed',
+  tool_reverse_an_audio_file_empty: 'Choose an audio file or load the sample first.',
+  tool_reverse_an_audio_file_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_reverse_an_audio_file_err_encoder: 'Could not write the reversed WAV. Try Reverse again.',
+  tool_reverse_an_audio_file_err_file: 'Drop exactly one audio file.',
+  tool_reverse_an_audio_file_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_reverse_an_audio_file_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_reverse_an_audio_file_err_silence: 'Level is essentially silence—nothing to process. Try a recording with audible level.',
+  tool_reverse_an_audio_file_example:
+    'Load sample builds a three-second rising tone, then Reverse automatically. After reverse the pitch falls instead of rises. Playback never starts by itself—press play on the preview if you want to hear it.',
+  tool_reverse_an_audio_file_example_title: 'Try a rising-tone clip',
+  tool_reverse_an_audio_file_failed: 'Reverse failed. Try a smaller, valid audio file.',
+  tool_reverse_an_audio_file_faq_a1: 'No. Sample order flips, but length and sample rate stay the same.',
+  tool_reverse_an_audio_file_faq_a2:
+    'No. 8D moves left/right over time. This page only reverses the timeline. Use Make an 8D panning version of a song for that effect.',
+  tool_reverse_an_audio_file_faq_a3:
+    'No. Fade shapes the start and end levels. Reverse flips the whole timeline. Use Fade in and fade out an audio clip for fades.',
+  tool_reverse_an_audio_file_faq_a4: 'Yes. Each channel is reversed independently. Mono stays mono; stereo stays stereo.',
+  tool_reverse_an_audio_file_faq_a5:
+    'Not on this page. Reverse applies to the whole decoded buffer. Trim first elsewhere if you need a region.',
+  tool_reverse_an_audio_file_faq_a6:
+    'No. Decoding, reverse and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For 8D use Make an 8D panning version of a song; for fades use Fade in and fade out an audio clip.',
+  tool_reverse_an_audio_file_faq_q1: 'Does reverse change the duration?',
+  tool_reverse_an_audio_file_faq_q2: 'Is this the same as 8D panning?',
+  tool_reverse_an_audio_file_faq_q3: 'Is this the same as fade in and fade out?',
+  tool_reverse_an_audio_file_faq_q4: 'Will stereo stay stereo?',
+  tool_reverse_an_audio_file_faq_q5: 'Can I reverse only part of a file?',
+  tool_reverse_an_audio_file_faq_q6: 'Is my audio uploaded to a server?',
+  tool_reverse_an_audio_file_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_reverse_an_audio_file_how_body: 'Choose a file, reverse sample order, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_reverse_an_audio_file_how_item_1: 'Choose an audio file, or select Load sample for a three-second rising-tone demo.',
+  tool_reverse_an_audio_file_how_item_2: 'Optionally open Reverse notes to confirm duration stays the same.',
+  tool_reverse_an_audio_file_how_item_3: 'Click Reverse and wait for Read → Decode → Reverse → Write to finish.',
+  tool_reverse_an_audio_file_how_item_4: 'Preview that the end is now the start, check the result line, then click Download WAV.',
+  tool_reverse_an_audio_file_how_title: 'How to reverse an audio file',
+  tool_reverse_an_audio_file_preview: 'Listen to the reversed WAV',
+  tool_reverse_an_audio_file_progress: 'Reverse progress',
+  tool_reverse_an_audio_file_read: 'Read',
+  tool_reverse_an_audio_file_result: '{seconds}s · {channels} ch · WAV {output} KiB',
+  tool_reverse_an_audio_file_reverse: 'Reverse',
+  tool_reverse_an_audio_file_rules_body:
+    'Each run reverses sample order per channel. Duration and sample rate stay the same. Soft handling keeps PCM in range. This is sample reverse only—not time-stretch, not 8D, not fade.',
+  tool_reverse_an_audio_file_rules_item_1: 'One file up to 40 MiB and ten minutes with one or two channels.',
+  tool_reverse_an_audio_file_rules_item_2:
+    'This is browser sample reverse. It is not 8D panning, not fade in/out, not nightcore, and not voice cloning.',
+  tool_reverse_an_audio_file_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_reverse_an_audio_file_rules_item_4: 'If the take is silent after reverse, check that the input had audible level.',
+  tool_reverse_an_audio_file_rules_title: 'Reverse rules and honest browser limits',
+  tool_reverse_an_audio_file_sample: 'Load sample',
+  tool_reverse_an_audio_file_sample_name: 'three-second-reverse-demo',
+  tool_reverse_an_audio_file_settings_hint:
+    'Reverse flips sample order only. Duration and sample rate stay the same. This is not 8D panning and not fade in/out.',
+  tool_reverse_an_audio_file_title: 'Reverse an audio file',
+  tool_reverse_an_audio_file_usecase_1: 'A short effect or music sting that should play backwards—Reverse, download WAV.',
+  tool_reverse_an_audio_file_usecase_2: 'Check a reverb tail by hearing the end first—not 8D sweep, not fade envelopes.',
+  tool_reverse_an_audio_file_usecases_title: 'When this helps',
+  tool_reverse_an_audio_file_why_choose_item_1: 'See seconds, channel count and output KiB before you save.',
+  tool_reverse_an_audio_file_why_choose_item_2: 'One clear reverse job—not buried DAW automation.',
+  tool_reverse_an_audio_file_why_choose_item_3:
+    'Decoding, reverse and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_reverse_an_audio_file_why_choose_item_4: 'Changing the input clears the old download so you never save a stale WAV by mistake.',
+  tool_reverse_an_audio_file_why_choose_title: 'Why choose our Reverse an audio file tools',
+  tool_reverse_an_audio_file_write: 'Write',
   tool_robots_agent_add: 'Add custom agent',
   tool_robots_agent_remove: 'Remove agent',
   tool_robots_agents_hint: 'Tick the crawlers to include, then add paths for each group.',
@@ -12689,6 +16250,184 @@ const en: SiteLangDict = {
   tool_share_native: 'Share…',
   tool_share_networks_label: 'Share on',
   tool_share_title: 'Share this tool',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_advanced: 'Voice height',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_article:
+    'Voice-over drafts and narration clips sometimes need to sound a little higher or lower without changing how long the take runs. This page resamples by 2^(semitones/12) to move pitch, then runs waveform-similarity overlap-add (WSOLA) so duration aims to match the original. It does not turn a voice into a specific gender, not chipmunk or robot toy colors, and not a karaoke semitone tool framed for songs. Large intervals or hard consonants can show mild metallic wobble—this is a pragmatic browser shifter, not studio formant morphing. Channel count stays 1 or 2. Keep the original; the download is a new 16-bit WAV. Work runs on your device.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_choose: 'Choose an audio file',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_clear: 'Clear',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_convert: 'Shift',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_decode: 'Decode',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_desc:
+    'Shift a recording toward a higher or lower voice while aiming to keep duration, then download a 16-bit WAV. On-device only.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_description:
+    'Shift a recording toward a higher or lower voice while aiming to keep duration, using resample plus WSOLA time correction. Steps: Shift, preview, download WAV. Example: load the sample. Honest pitch move only—not a gender conversion claim, not toy chipmunk/robot presets. Audio stays on your device; never uploaded.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_done: 'Ready. Preview the shifted WAV, then Download WAV.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_download: 'Download WAV',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_elapsed: '{s}s elapsed',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_empty: 'Choose an audio file or load the sample first.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_err_encoder: 'Could not write the shifted WAV. Check the preset, then try Shift again.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_err_file: 'Drop exactly one audio file.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_err_preset: 'Pick Higher, Much higher, Lower or Much lower.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_err_silence: 'Level is essentially silence—nothing to shift. Try a recording with audible level.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_example:
+    'Load sample builds a three-second harmonic tone, then Shift at Higher automatically. Playback never starts by itself—press play on the preview if you want to hear the lifted, same-length take.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_example_title: 'Try a real voice-height clip',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_failed: 'Voice-height shift failed. Try a smaller, valid audio file.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a1:
+    'No. This page only shifts pitch higher or lower while aiming to keep duration. It does not promise male-to-female or female-to-male conversion, and it does not morph formants like studio gender tools.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a2:
+    'No. Toy presets deliberately change pitch and often length for playful colors. Use Apply a toy voice effect to a recording for chipmunk, giant, robot or telephone. This page aims to keep duration while moving pitch.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a3:
+    'Similar math, different framing. Shift the pitch of a song targets karaoke keys with semitone chips. This page uses voice-height presets for spoken or vocal recordings—not a song transpose workflow.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a4:
+    'Higher raises pitch by about four semitones; Much lower drops by about seven. Both aim to keep duration close to the original after WSOLA correction.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a5:
+    'It aims to match the source length after WSOLA correction. Tiny sample-level differences can remain; check the result line for measured seconds.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a6:
+    'No. Decoding, shift and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For toy colors use Apply a toy voice effect to a recording; for song semitones use Shift the pitch of a song.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q1: 'Does this turn a voice into a specific gender?',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q2: 'Is this the same as toy chipmunk or robot voice effects?',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q3: 'Is this the same as shifting the pitch of a song?',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q4: 'What do Higher and Much lower presets do?',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q5: 'Does duration stay exactly identical?',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q6: 'Is my audio uploaded to a server?',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_how_body:
+    'Pick a voice-height preset, run resample plus WSOLA correction, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_how_item_1: 'Choose an audio file, or select Load sample for a three-second spoken-tone demo.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_how_item_2: 'Open Voice height and pick Higher, Much higher, Lower or Much lower (default Higher).',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_how_item_3: 'Click Shift and wait for Read → Decode → Shift → Write to finish.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_how_item_4: 'Preview that pitch moved while duration stays close, check the result line, then click Download WAV.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_how_title: 'How to shift a recording toward a higher or lower voice',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_preset_higher: 'Higher',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_preset_lower: 'Lower',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_preset_much_higher: 'Much higher',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_preset_much_lower: 'Much lower',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_preview: 'Listen to the voice-height shifted WAV',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_progress: 'Voice-height shift progress',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_read: 'Read',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_result: '{seconds}s → {outSeconds}s · {preset} · WAV {output} KiB',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_rules_body:
+    'Each run resamples by the preset semitone ratio, then WSOLA-stretches so length aims to match the source. Soft peak protection keeps the WAV under full scale. Wide intervals or sharp consonants may show light artifacts—quality is limited compared with studio formant tools.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_rules_item_1: 'Presets are Higher (+4 st), Much higher (+7), Lower (−4) and Much lower (−7). Default is Higher.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_rules_item_2:
+    'This is browser resample plus WSOLA. It is not toy chipmunk/robot, not a gender-claim converter, and not a song karaoke semitone tool.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_rules_item_4:
+    'One file up to 40 MiB and ten minutes. If artifacts bother you, try a milder preset closer to the original pitch.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_rules_title: 'Voice-height presets, duration aim and honest browser limits',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_sample: 'Load sample',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_sample_name: 'three-second-voice-height-demo',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_settings_hint:
+    'Default Higher moves pitch up about four semitones while aiming to keep length. Much higher is a bolder lift; Lower and Much lower move down. This is resample plus WSOLA—not toy chipmunk/robot, not a gender converter, and not a song karaoke pitch tool.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_shift: 'Shift',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_title: 'Shift a recording toward a higher or lower voice',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_1: 'A narration that sits a little low—pick Higher, Shift, download WAV.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_2:
+    'A short voice clip that needs a noticeably lower tone without changing length like a toy giant effect.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecases_title: 'When this helps',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_voice_label: 'Voice height preset (duration preserved)',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_why_choose_item_1: 'See input seconds, output seconds, preset name and output KiB before you save.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_why_choose_item_2: 'Four clear voice-height steps—not toy chipmunk colors and not a crowded DAW pitch map.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_why_choose_item_3:
+    'Decoding, shift and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_why_choose_item_4: 'Changing the preset or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_why_choose_title: 'Why choose our Shift a recording toward a higher or lower voice tools',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_write: 'Write',
+  tool_shift_the_pitch_of_a_song_advanced: 'Pitch',
+  tool_shift_the_pitch_of_a_song_article:
+    'Karaoke keys and practice tracks often need a lower or higher key without changing how long the clip runs. This page resamples by 2^(semitones/12) to move pitch, then runs a waveform-similarity overlap-add (WSOLA) stretch so duration aims to match the original. It is not a speed-only time-stretch job, not plain playbackRate as the final answer, and not a nightcore one-click that speeds and raises pitch together. Large intervals or hard percussion can show mild metallic wobble—this is a pragmatic browser shifter, not a studio phase vocoder. Channel count stays 1 or 2. Keep the original; the download is a new 16-bit WAV. Work runs on your device.',
+  tool_shift_the_pitch_of_a_song_choose: 'Choose an audio file',
+  tool_shift_the_pitch_of_a_song_clear: 'Clear',
+  tool_shift_the_pitch_of_a_song_convert: 'Shift',
+  tool_shift_the_pitch_of_a_song_custom_label: 'Custom semitones (−12 to +12)',
+  tool_shift_the_pitch_of_a_song_decode: 'Decode',
+  tool_shift_the_pitch_of_a_song_desc:
+    'Transpose a song by semitones while aiming to keep duration, then download a 16-bit WAV. On-device only.',
+  tool_shift_the_pitch_of_a_song_description:
+    'Shift the pitch of a song by semitones while aiming to keep duration, using resample plus WSOLA time correction. Steps: Shift, preview, download WAV. Example: load the sample. Honest browser pitch shift—not speed-only stretch, not nightcore. Audio stays on your device; never uploaded.',
+  tool_shift_the_pitch_of_a_song_done: 'Ready. Preview the pitch-shifted WAV, then Download WAV.',
+  tool_shift_the_pitch_of_a_song_download: 'Download WAV',
+  tool_shift_the_pitch_of_a_song_elapsed: '{s}s elapsed',
+  tool_shift_the_pitch_of_a_song_empty: 'Choose an audio file or load the sample first.',
+  tool_shift_the_pitch_of_a_song_err_decode: 'The browser could not decode this audio. Try another valid recording.',
+  tool_shift_the_pitch_of_a_song_err_encoder: 'Could not write the pitch-shifted WAV. Check semitones, then try Shift again.',
+  tool_shift_the_pitch_of_a_song_err_file: 'Drop exactly one audio file.',
+  tool_shift_the_pitch_of_a_song_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_shift_the_pitch_of_a_song_err_limit: 'Use a file no larger than 40 MiB or 10 minutes, with one or two channels.',
+  tool_shift_the_pitch_of_a_song_err_semitones: 'Pick a preset or enter a whole-number custom shift between −12 and +12.',
+  tool_shift_the_pitch_of_a_song_err_silence: 'Level is essentially silence—nothing to shift. Try a recording with audible level.',
+  tool_shift_the_pitch_of_a_song_example:
+    'Load sample builds a three-second harmonic tone, then Shift at −2 automatically. Playback never starts by itself—press play on the preview if you want to hear the lower-key, same-length take.',
+  tool_shift_the_pitch_of_a_song_example_title: 'Try a real pitched clip',
+  tool_shift_the_pitch_of_a_song_failed: 'Pitch shift failed. Try a smaller, valid audio file.',
+  tool_shift_the_pitch_of_a_song_faq_a1:
+    'No. Speed-without-pitch changes tempo with WSOLA while aiming to keep pitch. This page changes musical pitch while aiming to keep duration. Use Change audio speed without changing pitch for tempo-only work.',
+  tool_shift_the_pitch_of_a_song_faq_a2:
+    'No. Nightcore typically speeds up and raises pitch together. This page only shifts pitch and restores length; it does not apply a nightcore speed lift.',
+  tool_shift_the_pitch_of_a_song_faq_a3:
+    'No. This is a pragmatic browser path (resample then WSOLA). Large jumps and hard percussion can sound metallic or wobbly. Prefer smaller semitone steps when artifacts show.',
+  tool_shift_the_pitch_of_a_song_faq_a4:
+    '−2 lowers pitch by two semitones; +3 raises by three. Both aim to keep duration close to the original, unlike plain playbackRate.',
+  tool_shift_the_pitch_of_a_song_faq_a5:
+    'It aims to match the source length after WSOLA correction. Tiny sample-level differences can remain; check the result line for measured seconds.',
+  tool_shift_the_pitch_of_a_song_faq_a6:
+    'No. Decoding, shift and WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed. For tempo-only stretch use Change audio speed without changing pitch; for low-end lift use Boost bass on an MP3.',
+  tool_shift_the_pitch_of_a_song_faq_q1: 'Is this the same as changing speed without changing pitch?',
+  tool_shift_the_pitch_of_a_song_faq_q2: 'Is this a nightcore maker?',
+  tool_shift_the_pitch_of_a_song_faq_q3: 'Will studio-grade pitch shift quality be perfect?',
+  tool_shift_the_pitch_of_a_song_faq_q4: 'What do the −2 and +3 presets do?',
+  tool_shift_the_pitch_of_a_song_faq_q5: 'Does duration stay exactly identical?',
+  tool_shift_the_pitch_of_a_song_faq_q6: 'Is my audio uploaded to a server?',
+  tool_shift_the_pitch_of_a_song_hint: 'Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.',
+  tool_shift_the_pitch_of_a_song_how_body:
+    'Pick semitones, run resample plus WSOLA correction, listen, then download a 16-bit WAV—without uploading the file.',
+  tool_shift_the_pitch_of_a_song_how_item_1: 'Choose an audio file, or select Load sample for a three-second pitched tone demo.',
+  tool_shift_the_pitch_of_a_song_how_item_2: 'Open Pitch and pick −2, −1, +1, +2, +3, or Custom (default −2).',
+  tool_shift_the_pitch_of_a_song_how_item_3: 'Click Shift and wait for Read → Decode → Shift → Write to finish.',
+  tool_shift_the_pitch_of_a_song_how_item_4: 'Preview that pitch moved while duration stays close, check the result line, then click Download WAV.',
+  tool_shift_the_pitch_of_a_song_how_title: 'How to shift the pitch of a song',
+  tool_shift_the_pitch_of_a_song_pitch_label: 'Semitone transpose (duration preserved)',
+  tool_shift_the_pitch_of_a_song_preview: 'Listen to the pitch-shifted WAV',
+  tool_shift_the_pitch_of_a_song_progress: 'Pitch-shift progress',
+  tool_shift_the_pitch_of_a_song_read: 'Read',
+  tool_shift_the_pitch_of_a_song_result: '{seconds}s → {outSeconds}s · {semitones} st · WAV {output} KiB',
+  tool_shift_the_pitch_of_a_song_rules_body:
+    'Each run resamples by the semitone ratio, then WSOLA-stretches so length aims to match the source. Soft peak protection keeps the WAV under full scale. Wide intervals or sharp drums may show light artifacts—quality is limited compared with studio tools.',
+  tool_shift_the_pitch_of_a_song_rules_item_1: 'Presets are −2, −1, +1, +2 and +3. Custom allows whole semitones −12 to +12. Default is −2.',
+  tool_shift_the_pitch_of_a_song_rules_item_2:
+    'This is browser resample plus WSOLA. It is not speed-only time-stretch, not nightcore, and not voice cloning.',
+  tool_shift_the_pitch_of_a_song_rules_item_3:
+    'Channel count stays 1 or 2 in the export. Tags are not copied. The original file is never overwritten.',
+  tool_shift_the_pitch_of_a_song_rules_item_4: 'One file up to 40 MiB and ten minutes. If artifacts bother you, try a milder interval closer to 0.',
+  tool_shift_the_pitch_of_a_song_rules_title: 'Semitone shift, duration aim and honest browser limits',
+  tool_shift_the_pitch_of_a_song_sample: 'Load sample',
+  tool_shift_the_pitch_of_a_song_sample_name: 'three-second-pitch-demo',
+  tool_shift_the_pitch_of_a_song_settings_hint:
+    'Default −2 lowers the key for accompaniment while aiming to keep length. +1 to +3 raise pitch. Custom accepts whole semitones from −12 to +12. This is resample plus WSOLA—not speed-only stretch, not nightcore.',
+  tool_shift_the_pitch_of_a_song_shift: 'Shift',
+  tool_shift_the_pitch_of_a_song_st_custom: 'Custom',
+  tool_shift_the_pitch_of_a_song_st_m1: '−1',
+  tool_shift_the_pitch_of_a_song_st_m2: '−2',
+  tool_shift_the_pitch_of_a_song_st_p1: '+1',
+  tool_shift_the_pitch_of_a_song_st_p2: '+2',
+  tool_shift_the_pitch_of_a_song_st_p3: '+3',
+  tool_shift_the_pitch_of_a_song_title: 'Shift the pitch of a song',
+  tool_shift_the_pitch_of_a_song_usecase_1: 'An accompaniment that sits too high—pick −2, Shift, download WAV.',
+  tool_shift_the_pitch_of_a_song_usecase_2: 'A short clip that needs +1 or +2 without speeding up like nightcore.',
+  tool_shift_the_pitch_of_a_song_usecases_title: 'When this helps',
+  tool_shift_the_pitch_of_a_song_why_choose_item_1: 'See input seconds, output seconds, semitone offset and output KiB before you save.',
+  tool_shift_the_pitch_of_a_song_why_choose_item_2:
+    'One clear transpose job—semitone pitch shift with duration aimed preserved, not buried DAW pitch maps.',
+  tool_shift_the_pitch_of_a_song_why_choose_item_3:
+    'Decoding, shift and WAV writing run on your device; the page does not upload your recording to process it.',
+  tool_shift_the_pitch_of_a_song_why_choose_item_4: 'Changing semitones or the input clears the old download so you never save a stale WAV by mistake.',
+  tool_shift_the_pitch_of_a_song_why_choose_title: 'Why choose our Shift the pitch of a song tools',
+  tool_shift_the_pitch_of_a_song_write: 'Write',
   tool_short_drama_prompt_generator_ai_consent_body:
     'This optional step sends your current draft to Cloudflare Workers AI for inference. It is not sent to OpenAI, Google, Anthropic, or DeepSeek from our servers. Local assembly still works without AI.',
   tool_short_drama_prompt_generator_ai_consent_cancel: 'Cancel',
@@ -13746,6 +17485,99 @@ const en: SiteLangDict = {
   tool_split_pdf_usecases_title: 'Good fits',
   tool_split_pdf_warn_large: 'File larger than ~25 MB — split may be slow or fail in some browsers.',
   tool_split_pdf_warn_pdflib: 'PDF library failed to load. Check your network and retry.',
+  tool_split_stereo_into_left_and_right_files_advanced: 'Output mode',
+  tool_split_stereo_into_left_and_right_files_article:
+    'Editors often need the left and right tracks as separate mono files, or need to fix headphones that play the wrong side. This page takes one stereo clip your browser can decode, then either packs two 16-bit mono WAVs into a ZIP (Split to files) or writes one stereo WAV with left and right swapped (Swap L-R). It does not mix both sides into a single mono file—that is a different job. Sample rate and MP3 size compression are also separate tools. Work stays in the browser; the original file is never overwritten.',
+  tool_split_stereo_into_left_and_right_files_choose: 'Choose an audio file',
+  tool_split_stereo_into_left_and_right_files_clear: 'Clear',
+  tool_split_stereo_into_left_and_right_files_convert: 'Convert',
+  tool_split_stereo_into_left_and_right_files_decode: 'Decode',
+  tool_split_stereo_into_left_and_right_files_desc:
+    'Split a stereo clip into left and right mono WAV files in a ZIP, or swap the channels. Processing stays on your device.',
+  tool_split_stereo_into_left_and_right_files_description:
+    'Split stereo into left/right mono WAVs (ZIP) or swap L-R. Steps: convert, preview, download. Example: load the stereo sample. Stays on-device; never uploaded.',
+  tool_split_stereo_into_left_and_right_files_done_split: 'Ready. Preview the left channel, then Download ZIP for both mono WAVs.',
+  tool_split_stereo_into_left_and_right_files_done_swap: 'Ready. Preview the swapped stereo WAV, then Download WAV.',
+  tool_split_stereo_into_left_and_right_files_download_wav: 'Download WAV',
+  tool_split_stereo_into_left_and_right_files_download_zip: 'Download ZIP',
+  tool_split_stereo_into_left_and_right_files_elapsed: '{s}s elapsed',
+  tool_split_stereo_into_left_and_right_files_empty: 'Choose an audio file or load the sample first.',
+  tool_split_stereo_into_left_and_right_files_err_decode: 'The browser could not decode this audio. Try another valid stereo recording.',
+  tool_split_stereo_into_left_and_right_files_err_encoder: 'Could not write the output. Check the mode, then try Convert again.',
+  tool_split_stereo_into_left_and_right_files_err_file: 'Drop exactly one audio file.',
+  tool_split_stereo_into_left_and_right_files_err_format: 'Unsupported or damaged audio. Use a file your browser can decode (WAV, MP3, M4A, AAC or OGG).',
+  tool_split_stereo_into_left_and_right_files_err_limit: 'Use a stereo file no larger than 40 MiB or 10 minutes.',
+  tool_split_stereo_into_left_and_right_files_err_mono: 'This file has only one channel. To keep or mix mono, use Convert stereo audio to mono instead.',
+  tool_split_stereo_into_left_and_right_files_err_zip: 'Could not build the ZIP. Reload the page and try Download ZIP again.',
+  tool_split_stereo_into_left_and_right_files_example:
+    'Load sample builds a two-second stereo tone (440 Hz left, 660 Hz right), then Split to files automatically. Playback never starts by itself—press play to hear the left preview.',
+  tool_split_stereo_into_left_and_right_files_example_title: 'Try a real conversion',
+  tool_split_stereo_into_left_and_right_files_failed: 'Conversion failed. Try a smaller, valid stereo audio file.',
+  tool_split_stereo_into_left_and_right_files_faq_a1:
+    'Two 16-bit mono WAV files: one for the left channel and one for the right. Filenames include left and right so you can tell them apart.',
+  tool_split_stereo_into_left_and_right_files_faq_a2:
+    'No. Mixing or keeping one side as a single mono file is Convert stereo audio to mono. This page exports two files or swaps sides.',
+  tool_split_stereo_into_left_and_right_files_faq_a3:
+    'It writes one stereo WAV where the former right channel becomes left and vice versa. Use it when monitoring showed the sides reversed.',
+  tool_split_stereo_into_left_and_right_files_faq_a4:
+    'No. Split and Swap need two channels. For mono work, use the related Convert stereo audio to mono tool.',
+  tool_split_stereo_into_left_and_right_files_faq_a5:
+    'No. Sample rate and bit depth are a different tool. Shrinking MP3 bitrate is Reduce an MP3 file size.',
+  tool_split_stereo_into_left_and_right_files_faq_a6:
+    'No. Decoding, splitting or swapping, and ZIP/WAV writing run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',
+  tool_split_stereo_into_left_and_right_files_faq_q1: 'What is inside the ZIP after Split to files?',
+  tool_split_stereo_into_left_and_right_files_faq_q2: 'Is this the same as converting stereo to mono?',
+  tool_split_stereo_into_left_and_right_files_faq_q3: 'What does Swap L-R change?',
+  tool_split_stereo_into_left_and_right_files_faq_q4: 'Can I use a mono MP3 here?',
+  tool_split_stereo_into_left_and_right_files_faq_q5: 'Is this the same as changing sample rate or compressing MP3 size?',
+  tool_split_stereo_into_left_and_right_files_faq_q6: 'Is my audio uploaded to a server?',
+  tool_split_stereo_into_left_and_right_files_hint: 'Drop one stereo WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; two channels required.',
+  tool_split_stereo_into_left_and_right_files_how_body:
+    'Pick Split or Swap, convert the whole clip, listen, then download a ZIP of two mono WAVs or one swapped stereo WAV—without uploading the file.',
+  tool_split_stereo_into_left_and_right_files_how_item_1: 'Choose a stereo audio file, or select Load sample for a two-second stereo tone demonstration.',
+  tool_split_stereo_into_left_and_right_files_how_item_2: 'Open Output mode and pick Split to files (default) or Swap L-R.',
+  tool_split_stereo_into_left_and_right_files_how_item_3: 'Click Convert and wait for Read → Decode → Split or Swap → Write to finish.',
+  tool_split_stereo_into_left_and_right_files_how_item_4: 'Preview the result, confirm the mode and size line, then click Download ZIP or Download WAV.',
+  tool_split_stereo_into_left_and_right_files_how_title: 'How to split stereo into left and right files',
+  tool_split_stereo_into_left_and_right_files_left_name: 'left',
+  tool_split_stereo_into_left_and_right_files_mode_split: 'Split to files',
+  tool_split_stereo_into_left_and_right_files_mode_swap: 'Swap L-R',
+  tool_split_stereo_into_left_and_right_files_output_mode: 'How to handle the channels',
+  tool_split_stereo_into_left_and_right_files_preview: 'Listen to the result',
+  tool_split_stereo_into_left_and_right_files_progress: 'Conversion progress',
+  tool_split_stereo_into_left_and_right_files_read: 'Read',
+  tool_split_stereo_into_left_and_right_files_result_split: '{seconds}s · Source {sourceChannels} ch → {mode} · ZIP {output} KiB (left + right mono WAV)',
+  tool_split_stereo_into_left_and_right_files_result_swap: '{seconds}s · Source {sourceChannels} ch → {mode} · stereo WAV {output} KiB',
+  tool_split_stereo_into_left_and_right_files_right_name: 'right',
+  tool_split_stereo_into_left_and_right_files_rules_body:
+    'Split writes each channel as its own mono WAV inside a ZIP. Swap exchanges left and right in one stereo WAV. Neither mixes the sides into a single mono file.',
+  tool_split_stereo_into_left_and_right_files_rules_item_1:
+    'Split to files needs a two-channel source. Mono files are rejected with a clear error—use the related mono converter if you only need one channel.',
+  tool_split_stereo_into_left_and_right_files_rules_item_2:
+    'Swap L-R keeps both channels but flips their positions. Preview before you download if the wiring was already correct.',
+  tool_split_stereo_into_left_and_right_files_rules_item_3:
+    'In Split mode the on-page preview plays the left mono track; the ZIP still contains both left and right.',
+  tool_split_stereo_into_left_and_right_files_rules_item_4:
+    'One stereo file up to 40 MiB and ten minutes. Tags are not copied. This is not mixing to mono, sample-rate conversion, or MP3 size compression.',
+  tool_split_stereo_into_left_and_right_files_rules_title: 'Splitting, swapping and limits',
+  tool_split_stereo_into_left_and_right_files_sample: 'Load sample',
+  tool_split_stereo_into_left_and_right_files_sample_name: 'two-second-stereo-demo',
+  tool_split_stereo_into_left_and_right_files_settings_hint:
+    'Default Split packs left.wav and right.wav into a ZIP. Swap L-R exports one stereo WAV with the sides exchanged—use that when the recording was wired backwards.',
+  tool_split_stereo_into_left_and_right_files_split: 'Split',
+  tool_split_stereo_into_left_and_right_files_swap: 'Swap',
+  tool_split_stereo_into_left_and_right_files_title: 'Split stereo into left and right files',
+  tool_split_stereo_into_left_and_right_files_usecase_1: 'Hand an editor separate left and right mono WAVs from a stereo interview or dual-mic take.',
+  tool_split_stereo_into_left_and_right_files_usecase_2: 'Fix a stereo export that was wired backwards by swapping L-R before you publish.',
+  tool_split_stereo_into_left_and_right_files_usecases_title: 'When this helps',
+  tool_split_stereo_into_left_and_right_files_why_choose_item_1: 'See measured duration, source channels, mode and output KiB before you save.',
+  tool_split_stereo_into_left_and_right_files_why_choose_item_2:
+    'Split packs both mono WAVs into one ZIP; Swap exports a corrected stereo file—two clear jobs on one page.',
+  tool_split_stereo_into_left_and_right_files_why_choose_item_3: 'Decoding and writing run on your device; the page does not upload your recording to process it.',
+  tool_split_stereo_into_left_and_right_files_why_choose_item_4:
+    'Changing the mode or the input clears the old download so you never save a stale ZIP or WAV by mistake.',
+  tool_split_stereo_into_left_and_right_files_why_choose_title: 'Why choose our Split stereo into left and right files tools',
+  tool_split_stereo_into_left_and_right_files_write: 'Write',
   tool_squarefeet_article:
     'Estimate rectangular floor area from length and width, then convert between square feet and square meters. Built for apartment listings, flooring take-offs, and paint estimates — not a property valuation tool. This page only converts planar area; it does not define living vs gross floor area.',
   tool_squarefeet_calculate: 'Convert area',
@@ -14236,6 +18068,102 @@ const en: SiteLangDict = {
   tool_tip_usecase_2: 'Split a shared bill after tip.',
   tool_tip_usecase_3: 'Pair with VAT/discount for receipt drills.',
   tool_tip_usecases_title: 'When to use it',
+  tool_transcribe_an_audio_file_to_text_advanced: 'Honest limits',
+  tool_transcribe_an_audio_file_to_text_article:
+    'People search for audio to text and speech to text expecting a Whisper-class transcript. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses the Web Speech API SpeechRecognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), or you can dictate live with the mic. If SpeechRecognition is missing, the page says so clearly. Output is plain text you can edit and download as TXT—not timed SRT. Related tools cover waveform video and voice memos. Keep expectations honest: accuracy and file support vary by browser.',
+  tool_transcribe_an_audio_file_to_text_choose: 'Choose an audio file',
+  tool_transcribe_an_audio_file_to_text_clear: 'Clear',
+  tool_transcribe_an_audio_file_to_text_convert: 'Transcribe while playing',
+  tool_transcribe_an_audio_file_to_text_decode: 'Decode',
+  tool_transcribe_an_audio_file_to_text_desc:
+    'Turn local speech into editable text with the browser SpeechRecognition API when available—or dictate with the mic. Not a Whisper clone.',
+  tool_transcribe_an_audio_file_to_text_description:
+    'Transcribe an audio file to text in the browser using SpeechRecognition when your browser provides it. Steps: Choose a local audio file, pick a recognition language, Transcribe while playing (speakers + mic loopback) or Dictate with mic, edit the transcript, download TXT. Example: Load sample opens a short tone and runs the playthrough path—real speech needs a voice recording or the mic button. This is not a cloud Whisper clone and does not load a huge wasm ASR model. Many browsers cannot reliably transcribe uploaded files offline; results depend on the browser engine. The page does not upload your file for server-side ASR.',
+  tool_transcribe_an_audio_file_to_text_done: 'Ready. Edit the text if needed, then Download TXT.',
+  tool_transcribe_an_audio_file_to_text_download: 'Download TXT',
+  tool_transcribe_an_audio_file_to_text_elapsed: '{s}s elapsed',
+  tool_transcribe_an_audio_file_to_text_empty: 'Choose a local audio file, or use Dictate with mic.',
+  tool_transcribe_an_audio_file_to_text_empty_state:
+    'No transcript yet. Drop a voice recording and Transcribe while playing, or click Dictate with mic. Not a Whisper clone—browser SpeechRecognition only, with honest limits.',
+  tool_transcribe_an_audio_file_to_text_err_decode: 'The browser could not decode this audio file.',
+  tool_transcribe_an_audio_file_to_text_err_file: 'Choose one local audio file, or use Dictate with mic.',
+  tool_transcribe_an_audio_file_to_text_err_format: 'Unsupported audio type. Use a common format your browser can decode.',
+  tool_transcribe_an_audio_file_to_text_err_limit: 'Use audio up to about 40 MiB and 3 minutes.',
+  tool_transcribe_an_audio_file_to_text_err_permission: 'Microphone or speech permission was denied. Allow access or use another browser.',
+  tool_transcribe_an_audio_file_to_text_err_unsupported: 'SpeechRecognition is unavailable in this browser.',
+  tool_transcribe_an_audio_file_to_text_example:
+    'Load sample attaches a short tone WAV and runs Transcribe while playing. A tone will not produce words—use a real voice file or Dictate with mic to see text. Playback never auto-starts after a finished transcript.',
+  tool_transcribe_an_audio_file_to_text_example_title: 'Try the sample playthrough path',
+  tool_transcribe_an_audio_file_to_text_failed: 'Could not transcribe. Try Dictate with mic, another browser, or a clearer voice recording.',
+  tool_transcribe_an_audio_file_to_text_faq_a1:
+    'No. It does not ship a Whisper wasm model and does not upload your file to our servers for ASR. It uses the browser SpeechRecognition API when available. Vendor speech services may still apply to microphone audio—see browser privacy docs.',
+  tool_transcribe_an_audio_file_to_text_faq_a2:
+    'Most browsers listen via the microphone, not a private WebAudio tap. Playthrough needs the mic to hear the speakers, plus permission. If that fails, use Dictate with mic.',
+  tool_transcribe_an_audio_file_to_text_faq_a3:
+    'Chromium-based browsers with webkitSpeechRecognition are the most common. Safari/Firefox support varies. If unsupported, the page shows a clear message.',
+  tool_transcribe_an_audio_file_to_text_faq_a4:
+    'Not on this page. Output is editable plain text (TXT). For timed SubRip (.srt), use Make SRT subtitles from an audio file.',
+  tool_transcribe_an_audio_file_to_text_faq_a5:
+    'This page does not upload the file for processing. SpeechRecognition may use the microphone and a browser vendor service. Keep sensitive material offline if that is unacceptable.',
+  tool_transcribe_an_audio_file_to_text_faq_a6:
+    'Voice memo captures audio for download. This page aims for text. Use the memo tool when you need a recording, and this one when you need a transcript.',
+  tool_transcribe_an_audio_file_to_text_faq_q1: 'Is this a Whisper clone or cloud ASR upload?',
+  tool_transcribe_an_audio_file_to_text_faq_q2: 'Why did my uploaded file produce little or no text?',
+  tool_transcribe_an_audio_file_to_text_faq_q3: 'Which browsers work best?',
+  tool_transcribe_an_audio_file_to_text_faq_q4: 'Can I get SRT subtitles with timestamps?',
+  tool_transcribe_an_audio_file_to_text_faq_q5: 'Is my audio uploaded?',
+  tool_transcribe_an_audio_file_to_text_faq_q6: 'How is this different from recording a voice memo?',
+  tool_transcribe_an_audio_file_to_text_file_label: 'Audio: {name}',
+  tool_transcribe_an_audio_file_to_text_hint:
+    'Optional local WAV, MP3 or M4A up to about 40 MiB / 3 minutes. File transcription depends on browser SpeechRecognition and often needs speakers plus microphone permission.',
+  tool_transcribe_an_audio_file_to_text_how_body: 'Use browser speech recognition on a local file playthrough or live mic dictation, then download TXT.',
+  tool_transcribe_an_audio_file_to_text_how_item_1: 'Choose a local voice recording (or Load sample), and pick a recognition language.',
+  tool_transcribe_an_audio_file_to_text_how_item_2:
+    'Click Transcribe while playing, allow microphone if prompted, and keep speakers audible—or click Dictate with mic instead.',
+  tool_transcribe_an_audio_file_to_text_how_item_3: 'Watch interim text appear; finals collect in the transcript box. Press Stop when dictating.',
+  tool_transcribe_an_audio_file_to_text_how_item_4: 'Edit the text if needed, then Download TXT.',
+  tool_transcribe_an_audio_file_to_text_how_title: 'How to transcribe an audio file to text',
+  tool_transcribe_an_audio_file_to_text_interim_label: 'Interim (live)',
+  tool_transcribe_an_audio_file_to_text_lang_hint: 'Passed to SpeechRecognition.lang. Pick the language spoken in the recording or into the mic.',
+  tool_transcribe_an_audio_file_to_text_lang_label: 'Recognition language',
+  tool_transcribe_an_audio_file_to_text_listen: 'Listen',
+  tool_transcribe_an_audio_file_to_text_mic: 'Dictate with mic',
+  tool_transcribe_an_audio_file_to_text_preview: 'Transcript',
+  tool_transcribe_an_audio_file_to_text_progress: 'Transcription progress',
+  tool_transcribe_an_audio_file_to_text_read: 'Read',
+  tool_transcribe_an_audio_file_to_text_result: '{chars} characters · {words} words',
+  tool_transcribe_an_audio_file_to_text_rules_body:
+    'This page uses Web Speech API SpeechRecognition when present. It is not offline Whisper. File upload transcription is best-effort and may fall back to live mic.',
+  tool_transcribe_an_audio_file_to_text_rules_item_1:
+    'SpeechRecognition must exist. Otherwise the unsupported banner stays visible and primary actions stay disabled.',
+  tool_transcribe_an_audio_file_to_text_rules_item_2:
+    'Recognition typically uses the microphone. Playing a file does not guarantee a private decode→text path.',
+  tool_transcribe_an_audio_file_to_text_rules_item_3: 'Optional file up to about 40 MiB / 3 minutes. Output is plain TXT, not SRT subtitles.',
+  tool_transcribe_an_audio_file_to_text_rules_item_4:
+    'This page does not upload your file for server-side Whisper. Browser vendors may still send mic audio to their speech service—check your browser privacy settings.',
+  tool_transcribe_an_audio_file_to_text_rules_title: 'Transcription rules and honest browser limits',
+  tool_transcribe_an_audio_file_to_text_sample: 'Load sample',
+  tool_transcribe_an_audio_file_to_text_sample_name: 'transcribe-sample',
+  tool_transcribe_an_audio_file_to_text_settings_hint:
+    'SpeechRecognition usually listens to the microphone—not a private WebAudio tap. Playing a file may work only if the mic hears the speakers. Many browsers lack reliable file ASR. This is not Whisper and does not download a large model.',
+  tool_transcribe_an_audio_file_to_text_status_listening:
+    'Playback finished with little or no text. SpeechRecognition often needs the microphone to hear the speakers—try Dictate with mic, raise volume, or allow mic access.',
+  tool_transcribe_an_audio_file_to_text_status_mic: 'Listening to the microphone… speak clearly, then Stop.',
+  tool_transcribe_an_audio_file_to_text_status_playing: 'Playing the file and listening via SpeechRecognition (mic path)…',
+  tool_transcribe_an_audio_file_to_text_status_unsupported:
+    'This browser does not expose SpeechRecognition / webkitSpeechRecognition. Try Chrome or Edge, or use a different device. True offline Whisper-style ASR is not bundled here.',
+  tool_transcribe_an_audio_file_to_text_stop: 'Stop',
+  tool_transcribe_an_audio_file_to_text_title: 'Transcribe an audio file to text',
+  tool_transcribe_an_audio_file_to_text_usecase_1:
+    'You want a rough transcript of a short voice note in a Chromium browser without installing desktop software.',
+  tool_transcribe_an_audio_file_to_text_usecase_2: 'File loopback fails, so you dictate the same content live with the mic and download TXT.',
+  tool_transcribe_an_audio_file_to_text_usecases_title: 'When this helps',
+  tool_transcribe_an_audio_file_to_text_why_choose_item_1: 'Clear dual path: file playthrough attempt plus mic dictation fallback.',
+  tool_transcribe_an_audio_file_to_text_why_choose_item_2: 'Honest copy: not Whisper, no huge wasm model, browser limits stated up front.',
+  tool_transcribe_an_audio_file_to_text_why_choose_item_3: 'You can edit the transcript before downloading TXT.',
+  tool_transcribe_an_audio_file_to_text_why_choose_item_4: 'Nearby tools cover waveform video and voice memos without forcing a hub editor.',
+  tool_transcribe_an_audio_file_to_text_why_choose_title: 'Why choose our Transcribe an audio file to text tools',
+  tool_transcribe_an_audio_file_to_text_write: 'Write',
   tool_triangle_area_areaOut_label: 'Area',
   tool_triangle_area_article: 'Triangle area',
   tool_triangle_area_base_label: 'Base',

@@ -3,13 +3,16 @@
  * Source of truth: src/site/tool-catalog.d/{slug}.json → page.module / page.export / page.style
  */
 import type { SiteLang } from './i18n';
+import { renderAddAnAudioTrackToAVideoPage } from '../pages/addAnAudioTrackToAVideoPage';
 import { renderAddDigitalSignatureToPdfPage } from '../pages/addDigitalSignatureToPdfPage';
+import { renderAddReverbToAnAudioClipPage } from '../pages/addReverbToAnAudioClipPage';
 import { renderAddTextToPdfFilePage } from '../pages/addTextToPdfFilePage';
 import { renderAddWatermarkPage } from '../pages/addWatermarkPage';
 import { renderAddWwwToDnsPage } from '../pages/addWwwToDnsPage';
 import { renderAmazonMainImageSizePage } from '../pages/amazonMainImageSizePage';
 import { renderAndroidPromptBuilderPage } from '../pages/androidPromptBuilderPage';
 import { renderAppleTouchIconPage } from '../pages/appleTouchIconPage';
+import { renderApplyAToyVoiceEffectToARecordingPage } from '../pages/applyAToyVoiceEffectToARecordingPage';
 import { renderArchiveExtractorPage } from '../pages/archiveExtractorPage';
 import { renderAwsVpcCidrPlannerPage } from '../pages/awsVpcCidrPlannerPage';
 import { renderBase64Page } from '../pages/base64Page';
@@ -22,7 +25,9 @@ import { renderBatchConvertWebPagesToExcelPage } from '../pages/batchConvertWebP
 import { renderBatchConvertWebPagesToJpgPage } from '../pages/batchConvertWebPagesToJpgPage';
 import { renderBatchConvertWebPagesToPdfPage } from '../pages/batchConvertWebPagesToPdfPage';
 import { renderBatchConvertWebPagesToPngPage } from '../pages/batchConvertWebPagesToPngPage';
+import { renderBatchTrimTheSameIntroFromAudioFilesPage } from '../pages/batchTrimTheSameIntroFromAudioFilesPage';
 import { renderBatchWatermarkProductPhotosPage } from '../pages/batchWatermarkProductPhotosPage';
+import { renderBoostBassOnAnMp3Page } from '../pages/boostBassOnAnMp3Page';
 import { renderBrandColorTokenPackPage } from '../pages/brandColorTokenPackPage';
 import { renderBrandStyleGuidePage } from '../pages/brandStyleGuidePage';
 import { renderBulkCompressPngImagesPage } from '../pages/bulkCompressPngImagesPage';
@@ -30,6 +35,8 @@ import { renderBulkCompressProductPhotosPage } from '../pages/bulkCompressProduc
 import { renderBulkConvertImagesToJpgPage } from '../pages/bulkConvertImagesToJpgPage';
 import { renderBulkConvertImagesToPngPage } from '../pages/bulkConvertImagesToPngPage';
 import { renderBulkConvertImagesToWebpPage } from '../pages/bulkConvertImagesToWebpPage';
+import { renderBulkConvertWavFilesToMp3Page } from '../pages/bulkConvertWavFilesToMp3Page';
+import { renderChangeAudioSpeedWithoutChangingPitchPage } from '../pages/changeAudioSpeedWithoutChangingPitchPage';
 import { renderChatgptExportToMarkdownPage } from '../pages/chatgptExportToMarkdownPage';
 import { renderCheckPdfACompliancePage } from '../pages/checkPdfACompliancePage';
 import { renderCheckRobotsTxtUrlBlockedPage } from '../pages/checkRobotsTxtUrlBlockedPage';
@@ -41,16 +48,21 @@ import { renderCombineFilesIntoOnePdfPage } from '../pages/combineFilesIntoOnePd
 import { renderCompareTwoPdfsPage } from '../pages/compareTwoPdfsPage';
 import { renderCompareTwoTextFilesOnlinePage } from '../pages/compareTwoTextFilesOnlinePage';
 import { renderCompareTwoWordDocumentsForDifferencesPage } from '../pages/compareTwoWordDocumentsForDifferencesPage';
+import { renderCompressDynamicRangeOfAVoiceRecordingPage } from '../pages/compressDynamicRangeOfAVoiceRecordingPage';
 import { renderCompressPdfPage } from '../pages/compressPdfPage';
+import { renderConvertAFlacFileToMp3Page } from '../pages/convertAFlacFileToMp3Page';
 import { renderConvertAJpgToTextWithOcrPage } from '../pages/convertAJpgToTextWithOcrPage';
 import { renderConvertAWavFileToMp3Page } from '../pages/convertAWavFileToMp3Page';
+import { renderConvertAnAiffFileToWavPage } from '../pages/convertAnAiffFileToWavPage';
 import { renderConvertAnM4aFileToMp3Page } from '../pages/convertAnM4aFileToMp3Page';
 import { renderConvertAnMp3FileToWavPage } from '../pages/convertAnMp3FileToWavPage';
+import { renderConvertAnOggFileToMp3Page } from '../pages/convertAnOggFileToMp3Page';
 import { renderConvertAudioSampleRateAndBitDepthPage } from '../pages/convertAudioSampleRateAndBitDepthPage';
 import { renderConvertHtmlToPdfPage } from '../pages/convertHtmlToPdfPage';
 import { renderConvertHtmlWebPagesToWordDocumentPage } from '../pages/convertHtmlWebPagesToWordDocumentPage';
 import { renderConvertPdfToDwgPage } from '../pages/convertPdfToDwgPage';
 import { renderConvertPdfToPdfAPage } from '../pages/convertPdfToPdfAPage';
+import { renderConvertStereoAudioToMonoPage } from '../pages/convertStereoAudioToMonoPage';
 import { renderConvertWordDocumentToPdfPage } from '../pages/convertWordDocumentToPdfPage';
 import { renderCoreWebVitalsCheckerPage } from '../pages/coreWebVitalsCheckerPage';
 import { renderCreateBudgetSpreadsheetPage } from '../pages/createBudgetSpreadsheetPage';
@@ -59,20 +71,31 @@ import { renderCreateInvoiceSpreadsheetPage } from '../pages/createInvoiceSpread
 import { renderCreatePdfFormPage } from '../pages/createPdfFormPage';
 import { renderCreateZipFilePage } from '../pages/createZipFilePage';
 import { renderCropPdfPage } from '../pages/cropPdfPage';
+import { renderCrossfadeTwoAudioFilesPage } from '../pages/crossfadeTwoAudioFilesPage';
 import { renderCsvJsonPage } from '../pages/csvJsonPage';
 import { renderCurlToFetchPage } from '../pages/curlToFetchPage';
+import { renderDeEssAVoiceoverPage } from '../pages/deEssAVoiceoverPage';
 import { renderDomainLookupPage } from '../pages/domainLookupPage';
+import { renderEditAudioOnWaveformPage } from '../pages/editAudioOnWaveformPage';
+import { renderEditMp3TitleAndCoverArtPage } from '../pages/editMp3TitleAndCoverArtPage';
 import { renderEditPdfFormFieldsPage } from '../pages/editPdfFormFieldsPage';
 import { renderEditPdfTextOnlinePage } from '../pages/editPdfTextOnlinePage';
+import { renderEmbedLyricsInAnMp3Page } from '../pages/embedLyricsInAnMp3Page';
+import { renderEqAMuffledVoiceRecordingPage } from '../pages/eqAMuffledVoiceRecordingPage';
 import { renderExcelCompareFilesPage } from '../pages/excelCompareFilesPage';
 import { renderExcelFormulasCheatSheetPage } from '../pages/excelFormulasCheatSheetPage';
+import { renderExtractAudioFromAVideoFilePage } from '../pages/extractAudioFromAVideoFilePage';
+import { renderExtractCoverArtFromAnMp3Page } from '../pages/extractCoverArtFromAnMp3Page';
 import { renderExtractTextFromPdfPage } from '../pages/extractTextFromPdfPage';
+import { renderFadeInAndFadeOutAnAudioClipPage } from '../pages/fadeInAndFadeOutAnAudioClipPage';
 import { renderFileHashPage } from '../pages/fileHashPage';
 import { renderFileMetadataAnalyzerPage } from '../pages/fileMetadataAnalyzerPage';
 import { renderFillOutPdfFormPage } from '../pages/fillOutPdfFormPage';
 import { renderFilmPromptBuilderPage } from '../pages/filmPromptBuilderPage';
 import { renderFindAndValidateXmlSitemapPage } from '../pages/findAndValidateXmlSitemapPage';
 import { renderFlipImagePage } from '../pages/flipImagePage';
+import { renderGenerateASineToneAtAFrequencyPage } from '../pages/generateASineToneAtAFrequencyPage';
+import { renderGenerateDtmfTouchTonesPage } from '../pages/generateDtmfTouchTonesPage';
 import { renderHowToCalculateAccelerationPage } from '../pages/howToCalculateAccelerationPage';
 import { renderHowToCalculateAgePage } from '../pages/howToCalculateAgePage';
 import { renderHowToCalculateAspectRatioPage } from '../pages/howToCalculateAspectRatioPage';
@@ -158,21 +181,34 @@ import { renderIpAddressPage } from '../pages/ipAddressPage';
 import { renderIpRangeToCidrPage } from '../pages/ipRangeToCidrPage';
 import { renderIphoneAppStoreScreenshotPage } from '../pages/iphoneAppStoreScreenshotPage';
 import { renderIpv6CidrPage } from '../pages/ipv6CidrPage';
+import { renderJoinAudioFilesInOrderPage } from '../pages/joinAudioFilesInOrderPage';
 import { renderJsonDiffCheckerOnlinePage } from '../pages/jsonDiffCheckerOnlinePage';
 import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage';
 import { renderJwtDecoderPage } from '../pages/jwtDecoderPage';
+import { renderLimitPeaksSoAFileDoesNotClipPage } from '../pages/limitPeaksSoAFileDoesNotClipPage';
 import { renderLinkedinBannerSizePage } from '../pages/linkedinBannerSizePage';
 import { renderMagnetLinkDecoderPage } from '../pages/magnetLinkDecoderPage';
 import { renderMakeA30SecondMp3RingtonePage } from '../pages/makeA30SecondMp3RingtonePage';
+import { renderMakeANightcoreVersionOfASongPage } from '../pages/makeANightcoreVersionOfASongPage';
+import { renderMakeAQuietRecordingLouderPage } from '../pages/makeAQuietRecordingLouderPage';
 import { renderMakeASeamlessAudioLoopPage } from '../pages/makeASeamlessAudioLoopPage';
+import { renderMakeAShortUiNotificationSoundPage } from '../pages/makeAShortUiNotificationSoundPage';
+import { renderMakeASlowedAndReverbClipPage } from '../pages/makeASlowedAndReverbClipPage';
+import { renderMakeAWaveformVideoFromAudioPage } from '../pages/makeAWaveformVideoFromAudioPage';
+import { renderMakeAn8dPanningVersionOfASongPage } from '../pages/makeAn8dPanningVersionOfASongPage';
 import { renderMakePdfFillablePage } from '../pages/makePdfFillablePage';
 import { renderMakePdfFlipbookPage } from '../pages/makePdfFlipbookPage';
+import { renderMakeSrtSubtitlesFromAnAudioFilePage } from '../pages/makeSrtSubtitlesFromAnAudioFilePage';
 import { renderMarkdownToHtmlPage } from '../pages/markdownToHtmlPage';
+import { renderMatchPodcastLoudnessToMinus16LufsPage } from '../pages/matchPodcastLoudnessToMinus16LufsPage';
 import { renderMeasuringMagneticFieldsPage } from '../pages/measuringMagneticFieldsPage';
 import { renderMergePdfPage } from '../pages/mergePdfPage';
 import { renderMetaSerpPreviewPage } from '../pages/metaSerpPreviewPage';
 import { renderMetaTagGeneratorPage } from '../pages/metaTagGeneratorPage';
 import { renderMidjourneyPromptBuilderPage } from '../pages/midjourneyPromptBuilderPage';
+import { renderMixAVoiceoverWithBackgroundMusicPage } from '../pages/mixAVoiceoverWithBackgroundMusicPage';
+import { renderMixBinauralBeatsForFocusPage } from '../pages/mixBinauralBeatsForFocusPage';
+import { renderNormalizeAnAudioFileToPeakPage } from '../pages/normalizeAnAudioFileToPeakPage';
 import { renderOnPageSeoCheckerPage } from '../pages/onPageSeoCheckerPage';
 import { renderOpenGraphImageSizePage } from '../pages/openGraphImageSizePage';
 import { renderOpenGraphPreviewPage } from '../pages/openGraphPreviewPage';
@@ -192,10 +228,18 @@ import { renderProtectPdfPage } from '../pages/protectPdfPage';
 import { renderRecordAVoiceMemoInTheBrowserPage } from '../pages/recordAVoiceMemoInTheBrowserPage';
 import { renderRecordAVoiceoverWithATeleprompterPage } from '../pages/recordAVoiceoverWithATeleprompterPage';
 import { renderReduceAnMp3FileSizePage } from '../pages/reduceAnMp3FileSizePage';
+import { renderReduceBackgroundNoiseOnAVoiceMemoPage } from '../pages/reduceBackgroundNoiseOnAVoiceMemoPage';
+import { renderRemoveClicksFromARecordingPage } from '../pages/removeClicksFromARecordingPage';
+import { renderRemoveMainsHumFromARecordingPage } from '../pages/removeMainsHumFromARecordingPage';
 import { renderRemoveSilenceFromARecordingPage } from '../pages/removeSilenceFromARecordingPage';
+import { renderRemoveTheAudioTrackFromAVideoPage } from '../pages/removeTheAudioTrackFromAVideoPage';
+import { renderReplaceTheAudioInAVideoFilePage } from '../pages/replaceTheAudioInAVideoFilePage';
+import { renderReverseAnAudioFilePage } from '../pages/reverseAnAudioFilePage';
 import { renderRobotsTxtGeneratorPage } from '../pages/robotsTxtGeneratorPage';
 import { renderRotatePdfPage } from '../pages/rotatePdfPage';
 import { renderSchemaJsonldGeneratorPage } from '../pages/schemaJsonldGeneratorPage';
+import { renderShiftARecordingTowardAHigherOrLowerVoicePage } from '../pages/shiftARecordingTowardAHigherOrLowerVoicePage';
+import { renderShiftThePitchOfASongPage } from '../pages/shiftThePitchOfASongPage';
 import { renderShortDramaPromptGeneratorPage } from '../pages/shortDramaPromptGeneratorPage';
 import { renderSignPdfDocumentPage } from '../pages/signPdfDocumentPage';
 import { renderSitemapXmlGeneratorPage } from '../pages/sitemapXmlGeneratorPage';
@@ -206,11 +250,13 @@ import { renderSplitADiscImageWithACueSheetPage } from '../pages/splitADiscImage
 import { renderSplitARecordingOnSilencePage } from '../pages/splitARecordingOnSilencePage';
 import { renderSplitAnAudioFileByDurationPage } from '../pages/splitAnAudioFileByDurationPage';
 import { renderSplitPdfPage } from '../pages/splitPdfPage';
+import { renderSplitStereoIntoLeftAndRightFilesPage } from '../pages/splitStereoIntoLeftAndRightFilesPage';
 import { renderSquareFeetPage } from '../pages/squareFeetPage';
 import { renderSvgOptimizerPage } from '../pages/svgOptimizerPage';
 import { renderTerraformCidrsubnetPage } from '../pages/terraformCidrsubnetPage';
 import { renderTextDiffPage } from '../pages/textDiffPage';
 import { renderTimezoneConverterPage } from '../pages/timezoneConverterPage';
+import { renderTranscribeAnAudioFileToTextPage } from '../pages/transcribeAnAudioFileToTextPage';
 import { renderTrimAnAudioClipAndExportPage } from '../pages/trimAnAudioClipAndExportPage';
 import { renderTurnPdfIntoEditableDocumentPage } from '../pages/turnPdfIntoEditableDocumentPage';
 import { renderTurnPdfIntoWordDocumentPage } from '../pages/turnPdfIntoWordDocumentPage';
@@ -240,13 +286,16 @@ export type ToolPageRenderFn = (
 
 /** slug → render function for registerToolPage */
 export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
+	'add-an-audio-track-to-a-video': (lang, defaultLang, enabled) => renderAddAnAudioTrackToAVideoPage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-digital-signature-to-pdf': (lang, defaultLang, enabled) => renderAddDigitalSignatureToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'add-reverb-to-an-audio-clip': (lang, defaultLang, enabled) => renderAddReverbToAnAudioClipPage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-text-to-pdf-file': (lang, defaultLang, enabled) => renderAddTextToPdfFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-watermark': (lang, defaultLang, enabled) => renderAddWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-www-to-dns': (lang, defaultLang, enabled) => renderAddWwwToDnsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'amazon-main-image-size': (lang, defaultLang, enabled) => renderAmazonMainImageSizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'android-prompt-builder': (lang, defaultLang, enabled) => renderAndroidPromptBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'apple-touch-icon': (lang, defaultLang, enabled) => renderAppleTouchIconPage({ lang, defaultLang, enabledLangs: enabled }),
+	'apply-a-toy-voice-effect-to-a-recording': (lang, defaultLang, enabled) => renderApplyAToyVoiceEffectToARecordingPage({ lang, defaultLang, enabledLangs: enabled }),
 	'archive-extractor': (lang, defaultLang, enabled) => renderArchiveExtractorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'aws-vpc-cidr-planner': (lang, defaultLang, enabled) => renderAwsVpcCidrPlannerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'base64': (lang, defaultLang, enabled) => renderBase64Page({ lang, defaultLang, enabledLangs: enabled }),
@@ -259,7 +308,9 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'batch-convert-web-pages-to-jpg': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToJpgPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-web-pages-to-pdf': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-web-pages-to-png': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToPngPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-trim-the-same-intro-from-audio-files': (lang, defaultLang, enabled) => renderBatchTrimTheSameIntroFromAudioFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-watermark-product-photos': (lang, defaultLang, enabled) => renderBatchWatermarkProductPhotosPage({ lang, defaultLang, enabledLangs: enabled }),
+	'boost-bass-on-an-mp3': (lang, defaultLang, enabled) => renderBoostBassOnAnMp3Page({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-color-token-pack': (lang, defaultLang, enabled) => renderBrandColorTokenPackPage({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-style-guide': (lang, defaultLang, enabled) => renderBrandStyleGuidePage({ lang, defaultLang, enabledLangs: enabled }),
 	'bulk-compress-png-images': (lang, defaultLang, enabled) => renderBulkCompressPngImagesPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -267,6 +318,8 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'bulk-convert-images-to-jpg': (lang, defaultLang, enabled) => renderBulkConvertImagesToJpgPage({ lang, defaultLang, enabledLangs: enabled }),
 	'bulk-convert-images-to-png': (lang, defaultLang, enabled) => renderBulkConvertImagesToPngPage({ lang, defaultLang, enabledLangs: enabled }),
 	'bulk-convert-images-to-webp': (lang, defaultLang, enabled) => renderBulkConvertImagesToWebpPage({ lang, defaultLang, enabledLangs: enabled }),
+	'bulk-convert-wav-files-to-mp3': (lang, defaultLang, enabled) => renderBulkConvertWavFilesToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
+	'change-audio-speed-without-changing-pitch': (lang, defaultLang, enabled) => renderChangeAudioSpeedWithoutChangingPitchPage({ lang, defaultLang, enabledLangs: enabled }),
 	'chatgpt-export-to-markdown': (lang, defaultLang, enabled) => renderChatgptExportToMarkdownPage({ lang, defaultLang, enabledLangs: enabled }),
 	'check-pdf-a-compliance': (lang, defaultLang, enabled) => renderCheckPdfACompliancePage({ lang, defaultLang, enabledLangs: enabled }),
 	'check-robots-txt-url-blocked': (lang, defaultLang, enabled) => renderCheckRobotsTxtUrlBlockedPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -278,16 +331,21 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'compare-two-pdfs': (lang, defaultLang, enabled) => renderCompareTwoPdfsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'compare-two-text-files-online': (lang, defaultLang, enabled) => renderCompareTwoTextFilesOnlinePage({ lang, defaultLang, enabledLangs: enabled }),
 	'compare-two-word-documents-for-differences': (lang, defaultLang, enabled) => renderCompareTwoWordDocumentsForDifferencesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'compress-dynamic-range-of-a-voice-recording': (lang, defaultLang, enabled) => renderCompressDynamicRangeOfAVoiceRecordingPage({ lang, defaultLang, enabledLangs: enabled }),
 	'compress-pdf': (lang, defaultLang, enabled) => renderCompressPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-a-flac-file-to-mp3': (lang, defaultLang, enabled) => renderConvertAFlacFileToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-a-jpg-to-text-with-ocr': (lang, defaultLang, enabled) => renderConvertAJpgToTextWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-a-wav-file-to-mp3': (lang, defaultLang, enabled) => renderConvertAWavFileToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-an-aiff-file-to-wav': (lang, defaultLang, enabled) => renderConvertAnAiffFileToWavPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-an-m4a-file-to-mp3': (lang, defaultLang, enabled) => renderConvertAnM4aFileToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-an-mp3-file-to-wav': (lang, defaultLang, enabled) => renderConvertAnMp3FileToWavPage({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-an-ogg-file-to-mp3': (lang, defaultLang, enabled) => renderConvertAnOggFileToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-audio-sample-rate-and-bit-depth': (lang, defaultLang, enabled) => renderConvertAudioSampleRateAndBitDepthPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-html-to-pdf': (lang, defaultLang, enabled) => renderConvertHtmlToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-html-web-pages-to-word-document': (lang, defaultLang, enabled) => renderConvertHtmlWebPagesToWordDocumentPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-pdf-to-dwg': (lang, defaultLang, enabled) => renderConvertPdfToDwgPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-pdf-to-pdf-a': (lang, defaultLang, enabled) => renderConvertPdfToPdfAPage({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-stereo-audio-to-mono': (lang, defaultLang, enabled) => renderConvertStereoAudioToMonoPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-word-document-to-pdf': (lang, defaultLang, enabled) => renderConvertWordDocumentToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'core-web-vitals-checker': (lang, defaultLang, enabled) => renderCoreWebVitalsCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'create-budget-spreadsheet': (lang, defaultLang, enabled) => renderCreateBudgetSpreadsheetPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -296,20 +354,31 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'create-pdf-form': (lang, defaultLang, enabled) => renderCreatePdfFormPage({ lang, defaultLang, enabledLangs: enabled }),
 	'create-zip-file': (lang, defaultLang, enabled) => renderCreateZipFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'crop-pdf': (lang, defaultLang, enabled) => renderCropPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'crossfade-two-audio-files': (lang, defaultLang, enabled) => renderCrossfadeTwoAudioFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'csv-json': (lang, defaultLang, enabled) => renderCsvJsonPage({ lang, defaultLang, enabledLangs: enabled }),
 	'curl-to-fetch': (lang, defaultLang, enabled) => renderCurlToFetchPage({ lang, defaultLang, enabledLangs: enabled }),
+	'de-ess-a-voiceover': (lang, defaultLang, enabled) => renderDeEssAVoiceoverPage({ lang, defaultLang, enabledLangs: enabled }),
 	'domain-lookup': (lang, defaultLang, _enabled) => renderDomainLookupPage(lang, defaultLang),
+	'edit-audio-on-waveform': (lang, defaultLang, enabled) => renderEditAudioOnWaveformPage({ lang, defaultLang, enabledLangs: enabled }),
+	'edit-mp3-title-and-cover-art': (lang, defaultLang, enabled) => renderEditMp3TitleAndCoverArtPage({ lang, defaultLang, enabledLangs: enabled }),
 	'edit-pdf-form-fields': (lang, defaultLang, enabled) => renderEditPdfFormFieldsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'edit-pdf-text-online': (lang, defaultLang, enabled) => renderEditPdfTextOnlinePage({ lang, defaultLang, enabledLangs: enabled }),
+	'embed-lyrics-in-an-mp3': (lang, defaultLang, enabled) => renderEmbedLyricsInAnMp3Page({ lang, defaultLang, enabledLangs: enabled }),
+	'eq-a-muffled-voice-recording': (lang, defaultLang, enabled) => renderEqAMuffledVoiceRecordingPage({ lang, defaultLang, enabledLangs: enabled }),
 	'excel-compare-files': (lang, defaultLang, enabled) => renderExcelCompareFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'excel-formulas-cheat-sheet': (lang, defaultLang, enabled) => renderExcelFormulasCheatSheetPage({ lang, defaultLang, enabledLangs: enabled }),
+	'extract-audio-from-a-video-file': (lang, defaultLang, enabled) => renderExtractAudioFromAVideoFilePage({ lang, defaultLang, enabledLangs: enabled }),
+	'extract-cover-art-from-an-mp3': (lang, defaultLang, enabled) => renderExtractCoverArtFromAnMp3Page({ lang, defaultLang, enabledLangs: enabled }),
 	'extract-text-from-pdf': (lang, defaultLang, enabled) => renderExtractTextFromPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'fade-in-and-fade-out-an-audio-clip': (lang, defaultLang, enabled) => renderFadeInAndFadeOutAnAudioClipPage({ lang, defaultLang, enabledLangs: enabled }),
 	'file-hash': (lang, defaultLang, enabled) => renderFileHashPage({ lang, defaultLang, enabledLangs: enabled }),
 	'file-metadata-analyzer': (lang, defaultLang, enabled) => renderFileMetadataAnalyzerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'fill-out-pdf-form': (lang, defaultLang, enabled) => renderFillOutPdfFormPage({ lang, defaultLang, enabledLangs: enabled }),
 	'film-prompt-builder': (lang, defaultLang, enabled) => renderFilmPromptBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'find-and-validate-xml-sitemap': (lang, defaultLang, enabled) => renderFindAndValidateXmlSitemapPage({ lang, defaultLang, enabledLangs: enabled }),
 	'flip-image': (lang, defaultLang, enabled) => renderFlipImagePage({ lang, defaultLang, enabledLangs: enabled }),
+	'generate-a-sine-tone-at-a-frequency': (lang, defaultLang, enabled) => renderGenerateASineToneAtAFrequencyPage({ lang, defaultLang, enabledLangs: enabled }),
+	'generate-dtmf-touch-tones': (lang, defaultLang, enabled) => renderGenerateDtmfTouchTonesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-acceleration': (lang, defaultLang, enabled) => renderHowToCalculateAccelerationPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-age': (lang, defaultLang, enabled) => renderHowToCalculateAgePage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-aspect-ratio': (lang, defaultLang, enabled) => renderHowToCalculateAspectRatioPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -395,21 +464,34 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'ip-range-to-cidr': (lang, defaultLang, enabled) => renderIpRangeToCidrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'iphone-app-store-screenshot': (lang, defaultLang, enabled) => renderIphoneAppStoreScreenshotPage({ lang, defaultLang, enabledLangs: enabled }),
 	'ipv6-cidr': (lang, defaultLang, enabled) => renderIpv6CidrPage({ lang, defaultLang, enabledLangs: enabled }),
+	'join-audio-files-in-order': (lang, defaultLang, enabled) => renderJoinAudioFilesInOrderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'json-diff-checker-online': (lang, defaultLang, enabled) => renderJsonDiffCheckerOnlinePage({ lang, defaultLang, enabledLangs: enabled }),
 	'json-schema-validator': (lang, defaultLang, enabled) => renderJsonSchemaValidatorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'jwt-decoder': (lang, defaultLang, enabled) => renderJwtDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
+	'limit-peaks-so-a-file-does-not-clip': (lang, defaultLang, enabled) => renderLimitPeaksSoAFileDoesNotClipPage({ lang, defaultLang, enabledLangs: enabled }),
 	'linkedin-banner-size': (lang, defaultLang, enabled) => renderLinkedinBannerSizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'magnet-link-decoder': (lang, defaultLang, enabled) => renderMagnetLinkDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'make-a-30-second-mp3-ringtone': (lang, defaultLang, enabled) => renderMakeA30SecondMp3RingtonePage({ lang, defaultLang, enabledLangs: enabled }),
+	'make-a-nightcore-version-of-a-song': (lang, defaultLang, enabled) => renderMakeANightcoreVersionOfASongPage({ lang, defaultLang, enabledLangs: enabled }),
+	'make-a-quiet-recording-louder': (lang, defaultLang, enabled) => renderMakeAQuietRecordingLouderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'make-a-seamless-audio-loop': (lang, defaultLang, enabled) => renderMakeASeamlessAudioLoopPage({ lang, defaultLang, enabledLangs: enabled }),
+	'make-a-short-ui-notification-sound': (lang, defaultLang, enabled) => renderMakeAShortUiNotificationSoundPage({ lang, defaultLang, enabledLangs: enabled }),
+	'make-a-slowed-and-reverb-clip': (lang, defaultLang, enabled) => renderMakeASlowedAndReverbClipPage({ lang, defaultLang, enabledLangs: enabled }),
+	'make-a-waveform-video-from-audio': (lang, defaultLang, enabled) => renderMakeAWaveformVideoFromAudioPage({ lang, defaultLang, enabledLangs: enabled }),
+	'make-an-8d-panning-version-of-a-song': (lang, defaultLang, enabled) => renderMakeAn8dPanningVersionOfASongPage({ lang, defaultLang, enabledLangs: enabled }),
 	'make-pdf-fillable': (lang, defaultLang, enabled) => renderMakePdfFillablePage({ lang, defaultLang, enabledLangs: enabled }),
 	'make-pdf-flipbook': (lang, defaultLang, enabled) => renderMakePdfFlipbookPage({ lang, defaultLang, enabledLangs: enabled }),
+	'make-srt-subtitles-from-an-audio-file': (lang, defaultLang, enabled) => renderMakeSrtSubtitlesFromAnAudioFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'markdown-to-html': (lang, defaultLang, enabled) => renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled }),
+	'match-podcast-loudness-to-minus-16-lufs': (lang, defaultLang, enabled) => renderMatchPodcastLoudnessToMinus16LufsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'measuring-magnetic-fields': (lang, defaultLang, enabled) => renderMeasuringMagneticFieldsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'merge-pdf': (lang, defaultLang, enabled) => renderMergePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'meta-serp-preview': (lang, defaultLang, enabled) => renderMetaSerpPreviewPage({ lang, defaultLang, enabledLangs: enabled }),
 	'meta-tag-generator': (lang, defaultLang, enabled) => renderMetaTagGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'midjourney-prompt-builder': (lang, defaultLang, enabled) => renderMidjourneyPromptBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
+	'mix-a-voiceover-with-background-music': (lang, defaultLang, enabled) => renderMixAVoiceoverWithBackgroundMusicPage({ lang, defaultLang, enabledLangs: enabled }),
+	'mix-binaural-beats-for-focus': (lang, defaultLang, enabled) => renderMixBinauralBeatsForFocusPage({ lang, defaultLang, enabledLangs: enabled }),
+	'normalize-an-audio-file-to-peak': (lang, defaultLang, enabled) => renderNormalizeAnAudioFileToPeakPage({ lang, defaultLang, enabledLangs: enabled }),
 	'on-page-seo-checker': (lang, defaultLang, enabled) => renderOnPageSeoCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'open-graph-image-size': (lang, defaultLang, enabled) => renderOpenGraphImageSizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'open-graph-preview': (lang, defaultLang, enabled) => renderOpenGraphPreviewPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -429,10 +511,18 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'record-a-voice-memo-in-the-browser': (lang, defaultLang, enabled) => renderRecordAVoiceMemoInTheBrowserPage({ lang, defaultLang, enabledLangs: enabled }),
 	'record-a-voiceover-with-a-teleprompter': (lang, defaultLang, enabled) => renderRecordAVoiceoverWithATeleprompterPage({ lang, defaultLang, enabledLangs: enabled }),
 	'reduce-an-mp3-file-size': (lang, defaultLang, enabled) => renderReduceAnMp3FileSizePage({ lang, defaultLang, enabledLangs: enabled }),
+	'reduce-background-noise-on-a-voice-memo': (lang, defaultLang, enabled) => renderReduceBackgroundNoiseOnAVoiceMemoPage({ lang, defaultLang, enabledLangs: enabled }),
+	'remove-clicks-from-a-recording': (lang, defaultLang, enabled) => renderRemoveClicksFromARecordingPage({ lang, defaultLang, enabledLangs: enabled }),
+	'remove-mains-hum-from-a-recording': (lang, defaultLang, enabled) => renderRemoveMainsHumFromARecordingPage({ lang, defaultLang, enabledLangs: enabled }),
 	'remove-silence-from-a-recording': (lang, defaultLang, enabled) => renderRemoveSilenceFromARecordingPage({ lang, defaultLang, enabledLangs: enabled }),
+	'remove-the-audio-track-from-a-video': (lang, defaultLang, enabled) => renderRemoveTheAudioTrackFromAVideoPage({ lang, defaultLang, enabledLangs: enabled }),
+	'replace-the-audio-in-a-video-file': (lang, defaultLang, enabled) => renderReplaceTheAudioInAVideoFilePage({ lang, defaultLang, enabledLangs: enabled }),
+	'reverse-an-audio-file': (lang, defaultLang, enabled) => renderReverseAnAudioFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'robots-txt-generator': (lang, defaultLang, enabled) => renderRobotsTxtGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'rotate-pdf': (lang, defaultLang, enabled) => renderRotatePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'schema-jsonld-generator': (lang, defaultLang, enabled) => renderSchemaJsonldGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
+	'shift-a-recording-toward-a-higher-or-lower-voice': (lang, defaultLang, enabled) => renderShiftARecordingTowardAHigherOrLowerVoicePage({ lang, defaultLang, enabledLangs: enabled }),
+	'shift-the-pitch-of-a-song': (lang, defaultLang, enabled) => renderShiftThePitchOfASongPage({ lang, defaultLang, enabledLangs: enabled }),
 	'short-drama-prompt-generator': (lang, defaultLang, enabled) => renderShortDramaPromptGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'sign-pdf-document': (lang, defaultLang, enabled) => renderSignPdfDocumentPage({ lang, defaultLang, enabledLangs: enabled }),
 	'sitemap-xml-generator': (lang, defaultLang, enabled) => renderSitemapXmlGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -443,11 +533,13 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'split-a-recording-on-silence': (lang, defaultLang, enabled) => renderSplitARecordingOnSilencePage({ lang, defaultLang, enabledLangs: enabled }),
 	'split-an-audio-file-by-duration': (lang, defaultLang, enabled) => renderSplitAnAudioFileByDurationPage({ lang, defaultLang, enabledLangs: enabled }),
 	'split-pdf': (lang, defaultLang, enabled) => renderSplitPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'split-stereo-into-left-and-right-files': (lang, defaultLang, enabled) => renderSplitStereoIntoLeftAndRightFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'square-feet': (lang, defaultLang, enabled) => renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'svg-optimizer': (lang, defaultLang, enabled) => renderSvgOptimizerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'terraform-cidrsubnet': (lang, defaultLang, enabled) => renderTerraformCidrsubnetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'text-diff': (lang, defaultLang, enabled) => renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled }),
 	'timezone-converter': (lang, defaultLang, enabled) => renderTimezoneConverterPage({ lang, defaultLang, enabledLangs: enabled }),
+	'transcribe-an-audio-file-to-text': (lang, defaultLang, enabled) => renderTranscribeAnAudioFileToTextPage({ lang, defaultLang, enabledLangs: enabled }),
 	'trim-an-audio-clip-and-export': (lang, defaultLang, enabled) => renderTrimAnAudioClipAndExportPage({ lang, defaultLang, enabledLangs: enabled }),
 	'turn-pdf-into-editable-document': (lang, defaultLang, enabled) => renderTurnPdfIntoEditableDocumentPage({ lang, defaultLang, enabledLangs: enabled }),
 	'turn-pdf-into-word-document': (lang, defaultLang, enabled) => renderTurnPdfIntoWordDocumentPage({ lang, defaultLang, enabledLangs: enabled }),

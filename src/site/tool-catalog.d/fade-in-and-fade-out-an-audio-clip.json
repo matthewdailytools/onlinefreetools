@@ -1,0 +1,27 @@
+{
+  "slug": "fade-in-and-fade-out-an-audio-clip",
+  "path": "/tools/fade-in-and-fade-out-an-audio-clip",
+  "updatedAt": "2026-09-20T19:16:32.000Z",
+  "launchedAt": "2026-09-20T19:16:32.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_fade_in_and_fade_out_an_audio_clip_title",
+  "homeTitleKey": "tool_fade_in_and_fade_out_an_audio_clip_title",
+  "homeDescKey": "tool_fade_in_and_fade_out_an_audio_clip_desc",
+  "faqPrefix": "tool_fade_in_and_fade_out_an_audio_clip",
+  "related": [
+    "boost-bass-on-an-mp3",
+    "change-audio-speed-without-changing-pitch"
+  ],
+  "logo": "/icons/tools/fade-in-and-fade-out-an-audio-clip.svg",
+  "page": {
+    "module": "../pages/fadeInAndFadeOutAnAudioClipPage",
+    "export": "renderFadeInAndFadeOutAnAudioClipPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

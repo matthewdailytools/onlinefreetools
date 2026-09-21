@@ -1,0 +1,27 @@
+{
+  "slug": "edit-mp3-title-and-cover-art",
+  "path": "/tools/edit-mp3-title-and-cover-art",
+  "updatedAt": "2026-09-21T00:17:00.000Z",
+  "launchedAt": "2026-09-21T00:17:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_edit_mp3_title_and_cover_art_title",
+  "homeTitleKey": "tool_edit_mp3_title_and_cover_art_title",
+  "homeDescKey": "tool_edit_mp3_title_and_cover_art_desc",
+  "faqPrefix": "tool_edit_mp3_title_and_cover_art",
+  "related": [
+    "bulk-convert-wav-files-to-mp3",
+    "convert-a-wav-file-to-mp3"
+  ],
+  "logo": "/icons/tools/edit-mp3-title-and-cover-art.svg",
+  "page": {
+    "module": "../pages/editMp3TitleAndCoverArtPage",
+    "export": "renderEditMp3TitleAndCoverArtPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

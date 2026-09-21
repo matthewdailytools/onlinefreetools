@@ -1,0 +1,27 @@
+{
+  "slug": "remove-the-audio-track-from-a-video",
+  "path": "/tools/remove-the-audio-track-from-a-video",
+  "updatedAt": "2026-09-20T23:00:00.000Z",
+  "launchedAt": "2026-09-20T23:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_remove_the_audio_track_from_a_video_title",
+  "homeTitleKey": "tool_remove_the_audio_track_from_a_video_title",
+  "homeDescKey": "tool_remove_the_audio_track_from_a_video_desc",
+  "faqPrefix": "tool_remove_the_audio_track_from_a_video",
+  "related": [
+    "add-an-audio-track-to-a-video",
+    "extract-audio-from-a-video-file"
+  ],
+  "logo": "/icons/tools/remove-the-audio-track-from-a-video.svg",
+  "page": {
+    "module": "../pages/removeTheAudioTrackFromAVideoPage",
+    "export": "renderRemoveTheAudioTrackFromAVideoPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

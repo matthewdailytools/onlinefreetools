@@ -1,0 +1,27 @@
+{
+  "slug": "generate-dtmf-touch-tones",
+  "path": "/tools/generate-dtmf-touch-tones",
+  "updatedAt": "2026-09-20T23:40:00.000Z",
+  "launchedAt": "2026-09-20T23:40:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_generate_dtmf_touch_tones_title",
+  "homeTitleKey": "tool_generate_dtmf_touch_tones_title",
+  "homeDescKey": "tool_generate_dtmf_touch_tones_desc",
+  "faqPrefix": "tool_generate_dtmf_touch_tones",
+  "related": [
+    "generate-a-sine-tone-at-a-frequency",
+    "make-a-short-ui-notification-sound"
+  ],
+  "logo": "/icons/tools/generate-dtmf-touch-tones.svg",
+  "page": {
+    "module": "../pages/generateDtmfTouchTonesPage",
+    "export": "renderGenerateDtmfTouchTonesPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

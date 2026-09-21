@@ -1,0 +1,27 @@
+{
+  "slug": "make-a-short-ui-notification-sound",
+  "path": "/tools/make-a-short-ui-notification-sound",
+  "updatedAt": "2026-09-20T23:55:00.000Z",
+  "launchedAt": "2026-09-20T23:55:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_make_a_short_ui_notification_sound_title",
+  "homeTitleKey": "tool_make_a_short_ui_notification_sound_title",
+  "homeDescKey": "tool_make_a_short_ui_notification_sound_desc",
+  "faqPrefix": "tool_make_a_short_ui_notification_sound",
+  "related": [
+    "generate-dtmf-touch-tones",
+    "generate-a-sine-tone-at-a-frequency"
+  ],
+  "logo": "/icons/tools/make-a-short-ui-notification-sound.svg",
+  "page": {
+    "module": "../pages/makeAShortUiNotificationSoundPage",
+    "export": "renderMakeAShortUiNotificationSoundPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

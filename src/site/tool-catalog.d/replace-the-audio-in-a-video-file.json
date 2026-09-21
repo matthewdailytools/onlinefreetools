@@ -1,0 +1,27 @@
+{
+  "slug": "replace-the-audio-in-a-video-file",
+  "path": "/tools/replace-the-audio-in-a-video-file",
+  "updatedAt": "2026-09-21T00:20:00.000Z",
+  "launchedAt": "2026-09-21T00:20:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_replace_the_audio_in_a_video_file_title",
+  "homeTitleKey": "tool_replace_the_audio_in_a_video_file_title",
+  "homeDescKey": "tool_replace_the_audio_in_a_video_file_desc",
+  "faqPrefix": "tool_replace_the_audio_in_a_video_file",
+  "related": [
+    "add-an-audio-track-to-a-video",
+    "remove-the-audio-track-from-a-video"
+  ],
+  "logo": "/icons/tools/replace-the-audio-in-a-video-file.svg",
+  "page": {
+    "module": "../pages/replaceTheAudioInAVideoFilePage",
+    "export": "renderReplaceTheAudioInAVideoFilePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}
