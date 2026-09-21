@@ -60,6 +60,7 @@ const fr: SiteLangDict = {
   tool_change_audio_speed_without_changing_pitch_usecases_title: "Quand cela aide",
   tool_change_audio_speed_without_changing_pitch_usecase_1: "Chanson d’entraînement trop rapide—choisissez 0.75×, Étirement, téléchargez le WAV.",
   tool_change_audio_speed_without_changing_pitch_usecase_2: "Clip à accélérer légèrement pour le timing sans montée de hauteur nightcore.",
+  tool_change_audio_speed_without_changing_pitch_usecase_3: "Il faut caler une VO dans une vidéo plus courte sans voix trop aiguë.",
   tool_change_audio_speed_without_changing_pitch_faq_q1: "Est-ce la même chose que changer la hauteur ou la tonalité ?",
   tool_change_audio_speed_without_changing_pitch_faq_a1: "Non. Un pitch shift change la hauteur musicale (durée parfois inchangée). Cette page change le tempo avec WSOLA en visant la hauteur. Le pitch-only est un autre travail.",
   tool_change_audio_speed_without_changing_pitch_faq_q2: "Est-ce un créateur nightcore ?",

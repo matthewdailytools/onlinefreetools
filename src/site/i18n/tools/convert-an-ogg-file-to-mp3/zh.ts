@@ -7,7 +7,7 @@ import type { SiteLangDict } from '../../../types';
 const zh: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_title: '把 OGG 文件转成 MP3',
   tool_convert_an_ogg_file_to_mp3_desc: '整段本地 OGG 或 Opus 转成 MP3。音频留在设备上，不上传服务器。',
-  tool_convert_an_ogg_file_to_mp3_description: '把 OGG 文件转成 MP3，也覆盖 Opus 转 MP3。步骤：选择一个 OGG 或 Opus 文件，按需调整码率，点击“转成 MP3”，试听后下载。示例：五秒双声道 Opus-in-OGG 音调在 192 kbps 下约得到 120 KiB 的 MP3。浏览器能解码时用 decodeAudioData，再用 lamejs；失败会给出明确错误。处理在设备上完成，音频不上传服务器。',
+  tool_convert_an_ogg_file_to_mp3_description: '把 OGG 文件转成 MP3，也覆盖 Opus 转 MP3。步骤：选择一个 OGG 或 Opus 文件，按需调整码率，点击“转成 MP3”，试听后下载。示例：五秒双声道 Opus-in-OGG 音调在 192 kbps 下约得到 120 KiB 的 MP3。浏览器能解码时用 浏览器解码，再用 浏览器内 MP3 编码；失败会给出明确错误。处理在设备上完成，音频不上传服务器。',
   tool_convert_an_ogg_file_to_mp3_article: '游戏音效和语音消息常以 OGG Vorbis 或 Opus 保存，收件人却可能只要 MP3。本页把一个完整的本地 OGG（含 Opus）转成可试听的 MP3。再编码为 MP3 仍属有损，请保留原件。能否成功取决于浏览器能否解码该流。',
   tool_convert_an_ogg_file_to_mp3_choose: '选择 OGG 或 Opus 文件',
   tool_convert_an_ogg_file_to_mp3_hint: '每次一个 .ogg、.oga 或 .opus，最多 40 MiB、10 分钟；单/双声道。解码能力取决于浏览器。',
@@ -57,6 +57,7 @@ const zh: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_usecases_title: '适合哪些录音',
   tool_convert_an_ogg_file_to_mp3_usecase_1: '把游戏或聊天里的 OGG 片段转成 MP3 发给只认 MP3 的人。',
   tool_convert_an_ogg_file_to_mp3_usecase_2: '把 Opus 语音备忘转成附件，原件另存。',
+  tool_convert_an_ogg_file_to_mp3_usecase_3: '语音备忘是 OGG/Opus，剪辑软件只收 MP3。',
   tool_convert_an_ogg_file_to_mp3_faq_q1: 'Opus 转 MP3 也能用吗？',
   tool_convert_an_ogg_file_to_mp3_faq_a1: '能。OGG 容器内的 Opus（以及浏览器按 OGG 处理的 .opus）用同一“转成 MP3”按钮。仅改扩展名不会转换。',
   tool_convert_an_ogg_file_to_mp3_faq_q2: '音频会上传吗？断网还能用吗？',

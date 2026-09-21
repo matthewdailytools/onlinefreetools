@@ -62,6 +62,7 @@ const de: SiteLangDict = {
   tool_add_reverb_to_an_audio_clip_usecases_title: "Wann das hilft",
   tool_add_reverb_to_an_audio_clip_usecase_1: "Trockenes Voiceover braucht etwas Raumluft—Raum wählen, Hall hinzufügen, WAV laden.",
   tool_add_reverb_to_an_audio_clip_usecase_2: "Kurzer Stem braucht Hallenraum oder klarere Echos, ohne zu verlangsamen.",
+  tool_add_reverb_to_an_audio_clip_usecase_3: "Du willst einen kurzen Raum- oder Hall-Schweif auf trockener Stimme ohne DAW.",
   tool_add_reverb_to_an_audio_clip_faq_q1: "Ist das dasselbe wie Slowed and Reverb?",
   tool_add_reverb_to_an_audio_clip_faq_a1: "Nein. Slowed and Reverb dehnt Tempo und senkt Tonhöhe vor dem Raum. Diese Seite lässt Tempo und Tonhöhe und fügt nur Hall oder Echo hinzu. Für diese Ästhetik Make a slowed and reverb clip nutzen.",
   tool_add_reverb_to_an_audio_clip_faq_q2: "Unterschied zwischen Raum, Halle und Echo?",

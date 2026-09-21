@@ -8,10 +8,8 @@ const en: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_title: 'Add an audio track to a video',
   tool_add_an_audio_track_to_a_video_desc:
     'Add an audio track to a local video by merging picture with a soundtrack, then download. On-device only—no YouTube download.',
-  tool_add_an_audio_track_to_a_video_description:
-    'Add an audio track to a local video in the browser by merging picture with a chosen soundtrack, then download the result. Steps: Choose a video and an audio file, Add audio, preview, download. Example: mute clip plus a short WAV bed. Uses captureStream plus MediaRecorder—often WebM; not lossless remux. Never uploaded. No YouTube download.',
-  tool_add_an_audio_track_to_a_video_article:
-    'Silent or weakly voiced clips often need a new soundtrack before sharing. This page lets you open a local video and a local audio file, capture video frames without the original audio tracks, decode the soundtrack in AudioContext, combine tracks, re-encode with MediaRecorder, then download—often WebM depending on the browser. Output length follows the video; longer audio is cut to match, shorter audio ends early. It does not download YouTube or other URLs, does not only mute without adding sound, and does not extract audio as a standalone file. Success depends on whether your browser can play both files and support MediaRecorder with audio. Keep the originals; the download is a new file. Work runs on your device.',
+  tool_add_an_audio_track_to_a_video_description: 'Add an audio track to a local video in the browser by merging picture with a chosen soundtrack, then download the result. Steps: Choose a video and an audio file, Add audio, preview, download. Example: mute clip plus a short WAV bed. Uses captureStream plus browser media recording—often WebM; not lossless remux. Never uploaded. No YouTube download.',
+  tool_add_an_audio_track_to_a_video_article: 'Silent or weakly voiced clips often need a new soundtrack before sharing. This page lets you open a local video and a local audio file, capture video frames without the original audio tracks, decode the soundtrack in the browser audio engine, combine tracks, re-encode with browser media recording, then download—often WebM depending on the browser. Output length follows the video; longer audio is cut to match, shorter audio ends early. It does not download YouTube or other URLs, does not only mute without adding sound, and does not extract audio as a standalone file. Success depends on whether your browser can play both files and support browser media recording with audio. Keep the originals; the download is a new file. Work runs on your device.',
   tool_add_an_audio_track_to_a_video_choose_video: 'Choose a video file',
   tool_add_an_audio_track_to_a_video_hint_video:
     'Drop or choose a local MP4, WebM, MOV or M4V your browser can play. Up to 80 MiB and about 3 minutes. No YouTube or URL paste.',
@@ -24,7 +22,7 @@ const en: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_clear: 'Clear',
   tool_add_an_audio_track_to_a_video_advanced: 'Merge notes',
   tool_add_an_audio_track_to_a_video_settings_hint:
-    'Browsers usually re-encode via MediaRecorder after dropping the original audio tracks and attaching your soundtrack. Output is often WebM, not a lossless remux of the original MP4. This page never downloads YouTube.',
+    'Browsers usually re-encode via browser media recording after dropping the original audio tracks and attaching your soundtrack. Output is often WebM, not a lossless remux of the original MP4. This page never downloads YouTube.',
   tool_add_an_audio_track_to_a_video_progress: 'Add-audio progress',
   tool_add_an_audio_track_to_a_video_read: 'Read',
   tool_add_an_audio_track_to_a_video_decode: 'Decode',
@@ -50,7 +48,7 @@ const en: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_err_decode:
     'The browser could not decode the video or audio. Try another container or a shorter clip.',
   tool_add_an_audio_track_to_a_video_err_encoder:
-    'MediaRecorder could not write a merged video. Try Chrome/Edge or shorter WebM/MP4 plus WAV/MP3.',
+    'browser media recording could not write a merged video. Try Chrome/Edge or shorter WebM/MP4 plus WAV/MP3.',
   tool_add_an_audio_track_to_a_video_how_title: 'How to add an audio track to a video',
   tool_add_an_audio_track_to_a_video_how_body:
     'Choose a local video and audio file, run Add audio, preview the merge, then download—without uploading and without YouTube download.',
@@ -66,14 +64,14 @@ const en: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_why_choose_item_1:
     'See duration, MIME type and output KiB before you save.',
   tool_add_an_audio_track_to_a_video_why_choose_item_2:
-    'One clear merge job with honest MediaRecorder limits—not a fake lossless remux promise.',
+    'One clear merge job with honest browser media recording limits—not a fake lossless remux promise.',
   tool_add_an_audio_track_to_a_video_why_choose_item_3:
     'Reading and recording run on your device; the page does not upload your files to process them.',
   tool_add_an_audio_track_to_a_video_why_choose_item_4:
     'Changing either file clears the old download so you never save a stale merge by mistake.',
   tool_add_an_audio_track_to_a_video_rules_title: 'Merge rules and honest browser limits',
   tool_add_an_audio_track_to_a_video_rules_body:
-    'Each run drops original audio tracks, attaches your soundtrack, and re-encodes with MediaRecorder. Output is often WebM. This is not YouTube download, not mute-only, and not audio extract.',
+    'Each run drops original audio tracks, attaches your soundtrack, and re-encodes with browser media recording. Output is often WebM. This is not YouTube download, not mute-only, and not audio extract.',
   tool_add_an_audio_track_to_a_video_rules_item_1:
     'One local video up to 80 MiB and about three minutes, plus one local audio up to 40 MiB. Playback/decode must succeed first.',
   tool_add_an_audio_track_to_a_video_rules_item_2:
@@ -90,6 +88,7 @@ const en: SiteLangDict = {
     'You have a silent screen recording and a WAV bed—merge them here, then download for sharing.',
   tool_add_an_audio_track_to_a_video_usecase_2:
     'You want to replace a weak built-in track with a clearer local soundtrack without installing a desktop editor.',
+  tool_add_an_audio_track_to_a_video_usecase_3: 'You have a silent screen recording and a separate voiceover to combine before upload.',
   tool_add_an_audio_track_to_a_video_faq_q1: 'Can it download YouTube or paste a URL?',
   tool_add_an_audio_track_to_a_video_faq_a1:
     'No. Only local files you already have. There is no YouTube downloader and no remote fetch.',
@@ -101,7 +100,7 @@ const en: SiteLangDict = {
     'No. Extracting audio from a video is a different tool. Here the result is a video file with merged sound.',
   tool_add_an_audio_track_to_a_video_faq_q4: 'Will the output be the same MP4 as my source?',
   tool_add_an_audio_track_to_a_video_faq_a4:
-    'Usually not. Browsers typically re-encode with MediaRecorder, often to WebM. Quality and container can change.',
+    'Usually not. Browsers typically re-encode with browser media recording, often to WebM. Quality and container can change.',
   tool_add_an_audio_track_to_a_video_faq_q5: 'Is anything uploaded to a server?',
   tool_add_an_audio_track_to_a_video_faq_a5:
     'No. Decode and recording run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',

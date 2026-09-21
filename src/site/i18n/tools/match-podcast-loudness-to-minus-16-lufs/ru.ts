@@ -60,6 +60,7 @@ const ru: SiteLangDict = {
   tool_match_podcast_loudness_to_minus_16_lufs_usecases_title: "Когда это помогает",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_1: "Эпизод подкаста слишком тих для сдачи −16 LUFS—выровняйте к −16 и скачайте WAV.",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_2: "Голосовая дорожка для YouTube/Spotify ближе к −14 без пиковой нормализации и компрессора.",
+  tool_match_podcast_loudness_to_minus_16_lufs_usecase_3: "Громкость эпизода плавает — целимся примерно в −16 LUFS.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q1: "Это то же, что нормализовать к пику?",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_a1: "Нет. Пиковая нормализация масштабирует, пока абсолютный пик не попадёт в dBFS. Здесь измеряется приближённая интегральная громкость и gain к чипу LUFS. Для пика: Нормализовать аудиофайл по пику.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q2: "Это то же, что сделать тихую запись громче фиксированным dB-gain?",

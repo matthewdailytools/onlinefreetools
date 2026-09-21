@@ -65,6 +65,7 @@ const pt: SiteLangDict = {
   tool_crossfade_two_audio_files_usecases_title: 'Quando ajuda',
   tool_crossfade_two_audio_files_usecase_1: 'Duas músicas precisam de uma passagem estilo DJ—adicione ambas, 2–5 s equal-power, Crossfade, baixe WAV.',
   tool_crossfade_two_audio_files_usecase_2: 'Segmentos de podcast devem encontrar-se suaves—use 1 s entre takes sem editor online.',
+  tool_crossfade_two_audio_files_usecase_3: 'Duas secções precisam de sobreposição curta para o emenda não ser corte seco.',
   tool_crossfade_two_audio_files_faq_q1: 'É o mesmo que juntar ficheiros de áudio ponta a ponta?',
   tool_crossfade_two_audio_files_faq_a1: 'Não. Juntar corta a seco. Esta página sobrepõe o fim do primeiro com o início do segundo.',
   tool_crossfade_two_audio_files_faq_q2: 'É o mesmo que misturar uma locução sobre música?',

@@ -67,6 +67,7 @@ const ja: SiteLangDict = {
   tool_reduce_background_noise_on_a_voice_memo_usecases_title: "役立つ場面",
   tool_reduce_background_noise_on_a_voice_memo_usecase_1: "スマホメモの下にファン／空調のヒスがある—標準で低減し WAV を保存。",
   tool_reduce_background_noise_on_a_voice_memo_usecase_2: "フェードやこもった声 EQ の前に部屋のヒスを軽く抑えたいとき。",
+  tool_reduce_background_noise_on_a_voice_memo_usecase_3: "ファン/エアコンの定常ノイズを、ソフトゲートで隙間から下げたい。",
   tool_reduce_background_noise_on_a_voice_memo_faq_q1: "Adobe Enhance Speech と同じですか？",
   tool_reduce_background_noise_on_a_voice_memo_faq_a1:
     "違います。クラウド Enhance は大規模モデルで声を再構築します。本ページはブラウザ内のハイパスとフロアゲートだけです。控えめな近似です。",

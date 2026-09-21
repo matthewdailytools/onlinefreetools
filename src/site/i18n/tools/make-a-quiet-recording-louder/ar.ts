@@ -59,6 +59,7 @@ const ar: SiteLangDict = {
   tool_make_a_quiet_recording_louder_usecases_title: "متى يساعد هذا",
   tool_make_a_quiet_recording_louder_usecase_1: "مذكرة صوتية على الهاتف سُجلت هادئة جدا—ارفع +6 dB ونزّل WAV.",
   tool_make_a_quiet_recording_louder_usecase_2: "مسار مقابلة ضعيف إجمالا، عندما تريد النسبة نفسها أعلى دون مطاردة هدف LUFS.",
+  tool_make_a_quiet_recording_louder_usecase_3: "ملاحظة هادئة من الهاتف تحتاج رفعًا مع حماية للقمم.",
   tool_make_a_quiet_recording_louder_faq_q1: "هل هذا مثل تطبيع الصوت إلى ذروة 0 dBFS؟",
   tool_make_a_quiet_recording_louder_faq_a1: "لا. تختار كسب dB ثابتا. حماية الذروة تُرجع فقط إذا كان ذلك الكسب سيقطع الإشارة—ولا ترفع كل ملف تلقائيا إلى المقياس الكامل. تطبيع الذروة مهمة مخططة أخرى.",
   tool_make_a_quiet_recording_louder_faq_q2: "هل يطابق علو صوت البودكاست / LUFS؟",

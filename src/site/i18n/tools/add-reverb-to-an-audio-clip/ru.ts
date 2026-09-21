@@ -62,6 +62,7 @@ const ru: SiteLangDict = {
   tool_add_reverb_to_an_audio_clip_usecases_title: "Когда это помогает",
   tool_add_reverb_to_an_audio_clip_usecase_1: "Сухая озвучка нужна чуть воздуха комнаты—выберите Комната, Добавить реверб, скачайте WAV.",
   tool_add_reverb_to_an_audio_clip_usecase_2: "Короткий стем нуждается в пространстве зала или более ясном эхо без замедления.",
+  tool_add_reverb_to_an_audio_clip_usecase_3: "Нужен короткий хвост комнаты/холла на сухом голосе без DAW.",
   tool_add_reverb_to_an_audio_clip_faq_q1: "Это то же, что slowed and reverb?",
   tool_add_reverb_to_an_audio_clip_faq_a1: "Нет. Slowed and reverb также растягивает темп и понижает высоту перед пространством. Эта страница оставляет скорость и высоту и добавляет только реверб или эхо. Для той эстетики используйте Make a slowed and reverb clip.",
   tool_add_reverb_to_an_audio_clip_faq_q2: "Чем отличаются Комната, Зал и Эхо?",

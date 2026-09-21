@@ -63,6 +63,7 @@ const ar: SiteLangDict = {
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecases_title: "متى يساعد",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_1: "تعليق صوتي منخفض قليلًا—«أعلى»، إزاحة، تنزيل WAV.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_2: "مقطع صوتي قصير يحتاج نغمة أخفض بوضوح دون تغيير المدة كعملاق لعب.",
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_3: "التعليق يحتاج طابعًا أعلى أو أعمق قليلًا دون مجموعة تصحيح كاملة.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q1: "هل يحوّل هذا الصوت إلى جنس محدد؟",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a1: "لا. يُزيح النغمة للأعلى أو الأسفل مع محاولة الحفاظ على المدة فقط. لا وعد ذكر-أنثى ولا morphing formants استوديو.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q2: "هل هذا مثل تأثيرات السنجاب أو الروبوت؟",

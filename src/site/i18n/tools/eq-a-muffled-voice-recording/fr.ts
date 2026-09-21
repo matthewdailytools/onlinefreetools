@@ -10,8 +10,7 @@ const fr: SiteLangDict = {
     "Ouvrez une voix étouffée avec Clarity, Warmth ou Presence (trois bandes), puis téléchargez un WAV 16 bits. Sur l’appareil uniquement.",
   tool_eq_a_muffled_voice_recording_description:
     "Égaliser un enregistrement vocal étouffé avec les presets trois bandes Clarity, Warmth ou Presence. Étapes : EQ, préécouter, télécharger le WAV. Exemple : chargez l’échantillon étouffé. Mise en forme tonale seulement—pas un boost de basses seul, pas de réduction de bruit, pas un de-esser. L’audio reste sur votre appareil ; jamais envoyé.",
-  tool_eq_a_muffled_voice_recording_article:
-    "Appels, masques et micros éloignés sonnent souvent étouffés : trop de boue sous quelques centaines de hertz et trop peu de clarté dans la bande vocale. Cette page enchaîne trois BiquadFilter dans OfflineAudioContext—lowshelf, peaking, highshelf—en presets nommés. Clarity coupe la boue et ouvre la voix ; Warmth ajoute du corps et adoucit les aigus durs ; Presence relève la présence médio-aiguë et l’air. C’est un EQ tonal pour voix étouffée, pas un booster de basses monobande, pas une réduction de bruit de fond, pas un de-esser de sibilance. Canaux 1 ou 2. Gardez le master ; le téléchargement est un nouveau WAV 16 bits. Traitement dans le navigateur.",
+  tool_eq_a_muffled_voice_recording_article: "Appels, masques et micros éloignés sonnent souvent étouffés : trop de boue sous quelques centaines de hertz et trop peu de clarté dans la bande vocale. Cette page enchaîne trois EQ filter dans on-device audio processing—lowshelf, peaking, highshelf—en presets nommés. Clarity coupe la boue et ouvre la voix ; Warmth ajoute du corps et adoucit les aigus durs ; Presence relève la présence médio-aiguë et l’air. C’est un EQ tonal pour voix étouffée, pas un booster de basses monobande, pas une réduction de bruit de fond, pas un de-esser de sibilance. Canaux 1 ou 2. Gardez le master ; le téléchargement est un nouveau WAV 16 bits. Traitement dans le navigateur.",
   tool_eq_a_muffled_voice_recording_choose: "Choisir un fichier audio",
   tool_eq_a_muffled_voice_recording_hint: "Déposez un WAV, MP3, M4A, AAC ou OGG. Maximum 40 MiB et 10 minutes ; mono ou stéréo.",
   tool_eq_a_muffled_voice_recording_convert: "EQ",
@@ -54,11 +53,11 @@ const fr: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_why_choose_item_1: "Voyez le nom du preset, les crêtes avant/après et les KiB de sortie avant d’enregistrer.",
   tool_eq_a_muffled_voice_recording_why_choose_item_2: "Trois presets voix clairs—un job d’EQ étouffé, pas un jouet à dix bandes ni des basses seules.",
   tool_eq_a_muffled_voice_recording_why_choose_item_3:
-    "Décodage, EQ Biquad et écriture WAV sur votre appareil ; la page n’envoie pas l’enregistrement.",
+    "Décodage, EQ EQ et écriture WAV sur votre appareil ; la page n’envoie pas l’enregistrement.",
   tool_eq_a_muffled_voice_recording_why_choose_item_4: "Changer le preset ou l’entrée efface l’ancien téléchargement pour éviter un WAV périmé.",
   tool_eq_a_muffled_voice_recording_rules_title: "Clarity, Warmth, Presence et limites",
   tool_eq_a_muffled_voice_recording_rules_body:
-    "Chaque preset = trois étages Biquad (lowshelf, peaking, highshelf). Clarity ouvre la voix étouffée ; Warmth ajoute du corps ; Presence relève présence et air. Protection de pics douce si les boosts écrêteraient.",
+    "Chaque preset = trois étages EQ (lowshelf, peaking, highshelf). Clarity ouvre la voix étouffée ; Warmth ajoute du corps ; Presence relève présence et air. Protection de pics douce si les boosts écrêteraient.",
   tool_eq_a_muffled_voice_recording_rules_item_1:
     "Clarity par défaut coupe les graves boueux et ouvre la clarté vocale. Warmth relève le corps grave et adoucit les aigus durs. Presence cible la présence médio-aiguë.",
   tool_eq_a_muffled_voice_recording_rules_item_2:
@@ -72,6 +71,7 @@ const fr: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_usecases_title: "Quand cela aide",
   tool_eq_a_muffled_voice_recording_usecase_1: "Prise téléphone ou masque étouffée—choisir Clarity, EQ, télécharger le WAV.",
   tool_eq_a_muffled_voice_recording_usecase_2: "Voix de podcast qui a besoin de plus de corps ou de présence sans EQ DAW complet.",
+  tool_eq_a_muffled_voice_recording_usecase_3: "Une prise lointaine ou masquée sonne sourde ; il faut plus de présence vocale.",
   tool_eq_a_muffled_voice_recording_faq_q1: "Est-ce la même chose qu’un boost de basses ?",
   tool_eq_a_muffled_voice_recording_faq_a1:
     "Non. Un boost de basses élève surtout les basses fréquences. Cette page propose trois presets multibandes pour voix étouffée. Les basses seules sont un autre job (Boost bass on an MP3, quand disponible).",

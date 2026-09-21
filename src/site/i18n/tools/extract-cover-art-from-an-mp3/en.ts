@@ -53,6 +53,7 @@ const en: SiteLangDict = {
   tool_extract_cover_art_from_an_mp3_usecases_title: 'Useful for',
   tool_extract_cover_art_from_an_mp3_usecase_1: 'Save podcast or album art as a standalone image for a thumbnail.',
   tool_extract_cover_art_from_an_mp3_usecase_2: 'Check whether an MP3 already carries a cover before sharing.',
+  tool_extract_cover_art_from_an_mp3_usecase_3: 'You need the embedded album art as an image file without re-encoding the track.',
   tool_extract_cover_art_from_an_mp3_faq_q1: 'Is my MP3 uploaded?',
   tool_extract_cover_art_from_an_mp3_faq_a1: 'No. APIC parsing runs in the browser on your device.',
   tool_extract_cover_art_from_an_mp3_faq_q2: 'What if there is no cover?',

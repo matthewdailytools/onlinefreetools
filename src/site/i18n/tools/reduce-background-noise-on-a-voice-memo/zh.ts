@@ -67,6 +67,7 @@ const zh: SiteLangDict = {
   tool_reduce_background_noise_on_a_voice_memo_usecases_title: "什么时候有用",
   tool_reduce_background_noise_on_a_voice_memo_usecase_1: "手机备忘录底下有风扇或空调嘶声——选适中，降噪，下载 WAV。",
   tool_reduce_background_noise_on_a_voice_memo_usecase_2: "野外速记想先压房间嘶声，再去做淡入淡出或闷声 EQ。",
+  tool_reduce_background_noise_on_a_voice_memo_usecase_3: "风扇或空调底噪稳定，希望压低间隙噪声。",
   tool_reduce_background_noise_on_a_voice_memo_faq_q1: "这和 Adobe Enhance Speech 一样吗？",
   tool_reduce_background_noise_on_a_voice_memo_faq_a1:
     "不一样。云端 Enhance 用大模型重建人声。本页只在浏览器里做高通与噪声底门控。效果克制、诚实——不是工作室级 AI 清晰度。",

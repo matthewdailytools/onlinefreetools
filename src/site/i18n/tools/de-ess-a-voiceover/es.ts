@@ -61,6 +61,7 @@ const es: SiteLangDict = {
   tool_de_ess_a_voiceover_usecases_title: "Cuándo ayuda",
   tool_de_ess_a_voiceover_usecase_1: "Una locución con S penetrantes: elige Media, Desesibilizar, descarga WAV.",
   tool_de_ess_a_voiceover_usecase_2: "Una narración antes de ecualizar tono apagado o quitar clics de boca en otra herramienta.",
+  tool_de_ess_a_voiceover_usecase_3: "Las “s” chirriantes molestan con auriculares tras una toma brillante.",
   tool_de_ess_a_voiceover_faq_q1: "¿Es lo mismo que ecualizar una grabación de voz apagada?",
   tool_de_ess_a_voiceover_faq_a1: "No. Esa página aplica presets estáticos Clarity/Warmth/Presence. Esta solo atenúa cuando sube la energía sibilante. Usa Ecualizar una grabación de voz apagada para el tono general.",
   tool_de_ess_a_voiceover_faq_q2: "¿Reduce el ruido de fondo de una nota de voz?",

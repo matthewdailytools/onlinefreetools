@@ -57,6 +57,7 @@ const ar: SiteLangDict = {
   tool_make_a_short_ui_notification_sound_usecases_title: "متى يساعد هذا",
   tool_make_a_short_ui_notification_sound_usecase_1: "تحتاج إشارة نجاح أو نقرة صغيرة لنموذج أولي—اختر إعداداً، توليد، نزّل WAV للعروض.",
   tool_make_a_short_ui_notification_sound_usecase_2: "تريد تنبيهاً أو ping قابلاً لإعادة الاستخدام دون البحث في مكتبة مواد أو تثبيت مركب سطح مكتب.",
+  tool_make_a_short_ui_notification_sound_usecase_3: "تحتاج نقرة أو جرس WAV قصيرًا لنموذج تطبيق.",
   tool_make_a_short_ui_notification_sound_faq_q1: "هل هذا مولّد نغمات اتصال DTMF؟",
   tool_make_a_short_ui_notification_sound_faq_a1: "لا. DTMF يستخدم ترددات هاتف مزدوجة في تسلسل لوحة. هذه الصفحة تصنع فقط إشارات واجهة قصيرة.",
   tool_make_a_short_ui_notification_sound_faq_q2: "هل يمكنه صنع جيب طويل عند هرتز مختار؟",

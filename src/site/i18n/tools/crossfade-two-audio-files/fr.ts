@@ -65,6 +65,7 @@ const fr: SiteLangDict = {
   tool_crossfade_two_audio_files_usecases_title: 'Quand cela aide',
   tool_crossfade_two_audio_files_usecase_1: 'Deux chansons ont besoin d’un enchaînement DJ—ajoutez les deux, 2–5 s equal-power, fondu, téléchargez WAV.',
   tool_crossfade_two_audio_files_usecase_2: 'Des segments de podcast doivent se rencontrer en douceur—1 s entre prises, sans éditeur en ligne.',
+  tool_crossfade_two_audio_files_usecase_3: 'Deux sections ont besoin d’un court chevauchement pour éviter une coupe sèche.',
   tool_crossfade_two_audio_files_faq_q1: 'Est-ce la même chose que joindre des fichiers bout à bout ?',
   tool_crossfade_two_audio_files_faq_a1: 'Non. Joindre coupe net. Cette page chevauche la fin du premier avec le début du second.',
   tool_crossfade_two_audio_files_faq_q2: 'Est-ce la même chose que mixer une voix off sur une musique ?',

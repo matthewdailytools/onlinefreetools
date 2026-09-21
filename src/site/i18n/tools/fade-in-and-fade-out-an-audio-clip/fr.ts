@@ -92,6 +92,7 @@ const fr: SiteLangDict = {
     "Une voix off ou un lit musical qui clique aux coupes—choisissez 1 s / 1 s, Fondu, téléchargez le WAV.",
   tool_fade_in_and_fade_out_an_audio_clip_usecase_2:
     "Un clip qui a besoin de bords doux avant un découpage ailleurs ou une timeline—sans construire une boucle seamless.",
+  tool_fade_in_and_fade_out_an_audio_clip_usecase_3: "Une sonnerie ou un jingle démarre et finit trop sec ; il faut des fondus.",
   tool_fade_in_and_fade_out_an_audio_clip_faq_q1: "Est-ce la même chose que Faire une boucle audio seamless ?",
   tool_fade_in_and_fade_out_an_audio_clip_faq_a1:
     "Non. Cet outil enveloppe la queue sélectionnée dans la tête avec un crossfade pour une jointure qui boucle proprement. Cette page adoucit seulement le début et la fin d’un clip. Pour les boucles seamless, utilisez Faire une boucle audio seamless.",

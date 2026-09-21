@@ -8,10 +8,8 @@ const es: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_title: 'Añadir una pista de audio a un vídeo',
   tool_add_an_audio_track_to_a_video_desc:
     'Fusiona una banda sonora local con un vídeo local y descarga el resultado. Solo en el dispositivo—sin descarga de YouTube.',
-  tool_add_an_audio_track_to_a_video_description:
-    'Añade una pista de audio a un vídeo local en el navegador fusionando imagen y banda sonora, luego descarga. Pasos: elige vídeo y audio, Añadir audio, previsualiza, descarga. Ejemplo: clip mudo más un WAV corto. Usa captureStream y MediaRecorder—a menudo WebM; no es remux sin pérdida. Nunca se sube. Sin descarga de YouTube.',
-  tool_add_an_audio_track_to_a_video_article:
-    'Los clips mudos o con voz débil suelen necesitar una banda nueva antes de compartir. Esta página abre un vídeo y un audio locales, captura fotogramas sin las pistas originales, decodifica la banda en AudioContext, combina y reencodea con MediaRecorder—a menudo WebM según el navegador. La duración sigue al vídeo; el audio más largo se corta y el más corto termina antes. No descarga YouTube ni otras URL, no solo silencia sin añadir sonido y no extrae audio como archivo aparte. El éxito depende de poder reproducir ambos archivos y de MediaRecorder con audio. Conserva los originales. Todo corre en tu dispositivo.',
+  tool_add_an_audio_track_to_a_video_description: 'Añade una pista de audio a un vídeo local en el navegador fusionando imagen y banda sonora, luego descarga. Pasos: elige vídeo y audio, Añadir audio, previsualiza, descarga. Ejemplo: clip mudo más un WAV corto. Usa captureStream y browser media recording—a menudo WebM; no es remux sin pérdida. Nunca se sube. Sin descarga de YouTube.',
+  tool_add_an_audio_track_to_a_video_article: 'Los clips mudos o con voz débil suelen necesitar una banda nueva antes de compartir. Esta página abre un vídeo y un audio locales, captura fotogramas sin las pistas originales, decodifica la banda en the browser audio engine, combina y reencodea con browser media recording—a menudo WebM según el navegador. La duración sigue al vídeo; el audio más largo se corta y el más corto termina antes. No descarga YouTube ni otras URL, no solo silencia sin añadir sonido y no extrae audio como archivo aparte. El éxito depende de poder reproducir ambos archivos y de browser media recording con audio. Conserva los originales. Todo corre en tu dispositivo.',
   tool_add_an_audio_track_to_a_video_choose_video: 'Elegir un archivo de vídeo',
   tool_add_an_audio_track_to_a_video_hint_video:
     'Suelta o elige un MP4, WebM, MOV o M4V local que el navegador pueda reproducir. Hasta 80 MiB y unos 3 minutos. Sin YouTube ni pegar URL.',
@@ -24,7 +22,7 @@ const es: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_clear: 'Borrar',
   tool_add_an_audio_track_to_a_video_advanced: 'Notas de fusión',
   tool_add_an_audio_track_to_a_video_settings_hint:
-    'Los navegadores suelen reencodear con MediaRecorder tras quitar el audio original y adjuntar tu banda. La salida suele ser WebM, no remux sin pérdida del MP4. Esta página nunca descarga YouTube.',
+    'Los navegadores suelen reencodear con browser media recording tras quitar el audio original y adjuntar tu banda. La salida suele ser WebM, no remux sin pérdida del MP4. Esta página nunca descarga YouTube.',
   tool_add_an_audio_track_to_a_video_progress: 'Progreso de añadir audio',
   tool_add_an_audio_track_to_a_video_read: 'Leer',
   tool_add_an_audio_track_to_a_video_decode: 'Decodificar',
@@ -50,7 +48,7 @@ const es: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_err_decode:
     'El navegador no pudo decodificar el vídeo o el audio. Prueba otro contenedor o un clip más corto.',
   tool_add_an_audio_track_to_a_video_err_encoder:
-    'MediaRecorder no pudo escribir el vídeo fusionado. Prueba Chrome/Edge o WebM/MP4 más cortos más WAV/MP3.',
+    'browser media recording no pudo escribir el vídeo fusionado. Prueba Chrome/Edge o WebM/MP4 más cortos más WAV/MP3.',
   tool_add_an_audio_track_to_a_video_how_title: 'Cómo añadir una pista de audio a un vídeo',
   tool_add_an_audio_track_to_a_video_how_body:
     'Elige vídeo y audio locales, pulsa Añadir audio, previsualiza y descarga—sin subir y sin descarga de YouTube.',
@@ -66,14 +64,14 @@ const es: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_why_choose_item_1:
     'Ves duración, tipo MIME y KiB de salida antes de guardar.',
   tool_add_an_audio_track_to_a_video_why_choose_item_2:
-    'Un trabajo de fusión claro con límites honestos de MediaRecorder—sin fingir remux sin pérdida.',
+    'Un trabajo de fusión claro con límites honestos de browser media recording—sin fingir remux sin pérdida.',
   tool_add_an_audio_track_to_a_video_why_choose_item_3:
     'Lectura y grabación en tu dispositivo; la página no sube tus archivos para procesarlos.',
   tool_add_an_audio_track_to_a_video_why_choose_item_4:
     'Cambiar cualquiera de los archivos borra la descarga anterior para no guardar una fusión obsoleta.',
   tool_add_an_audio_track_to_a_video_rules_title: 'Reglas de fusión y límites honestos del navegador',
   tool_add_an_audio_track_to_a_video_rules_body:
-    'Cada ejecución quita el audio original, adjunta tu banda y reencodea con MediaRecorder. La salida suele ser WebM. No es descarga de YouTube, no es solo silenciar y no es extracción de audio.',
+    'Cada ejecución quita el audio original, adjunta tu banda y reencodea con browser media recording. La salida suele ser WebM. No es descarga de YouTube, no es solo silenciar y no es extracción de audio.',
   tool_add_an_audio_track_to_a_video_rules_item_1:
     'Un vídeo local de hasta 80 MiB y unos tres minutos, más un audio local de hasta 40 MiB. Primero debe poder reproducirse/decodificarse.',
   tool_add_an_audio_track_to_a_video_rules_item_2:
@@ -90,6 +88,7 @@ const es: SiteLangDict = {
     'Tienes una captura de pantalla muda y un WAV base—fúndelos aquí y descarga para compartir.',
   tool_add_an_audio_track_to_a_video_usecase_2:
     'Quieres sustituir una pista débil por una banda local más clara sin instalar un editor de escritorio.',
+  tool_add_an_audio_track_to_a_video_usecase_3: 'Tienes una captura de pantalla muda y una voz en off aparte para unir antes de subir.',
   tool_add_an_audio_track_to_a_video_faq_q1: '¿Puede descargar YouTube o pegar una URL?',
   tool_add_an_audio_track_to_a_video_faq_a1:
     'No. Solo archivos locales que ya tengas. No hay descargador de YouTube ni obtención remota.',
@@ -101,7 +100,7 @@ const es: SiteLangDict = {
     'No. Extraer audio de un vídeo es otra herramienta. Aquí el resultado es un vídeo con sonido fusionado.',
   tool_add_an_audio_track_to_a_video_faq_q4: '¿La salida será el mismo MP4 que el origen?',
   tool_add_an_audio_track_to_a_video_faq_a4:
-    'Normalmente no. Los navegadores reencodean con MediaRecorder, a menudo a WebM. Calidad y contenedor pueden cambiar.',
+    'Normalmente no. Los navegadores reencodean con browser media recording, a menudo a WebM. Calidad y contenedor pueden cambiar.',
   tool_add_an_audio_track_to_a_video_faq_q5: '¿Se sube algo a un servidor?',
   tool_add_an_audio_track_to_a_video_faq_a5:
     'No. Decodificación y grabación corren en tu navegador. La página necesita red al cargar; no se garantiza uso sin conexión.',

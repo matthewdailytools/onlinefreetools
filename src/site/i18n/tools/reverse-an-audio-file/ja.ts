@@ -56,6 +56,7 @@ const ja: SiteLangDict = {
   tool_reverse_an_audio_file_usecases_title: "向いている場面",
   tool_reverse_an_audio_file_usecase_1: "後ろから再生したい短い効果音やスティング—リバース、WAV保存。",
   tool_reverse_an_audio_file_usecase_2: "残響の尾を先に聴いて確認—8D掃引でもフェード包絡でもない。",
+  tool_reverse_an_audio_file_usecase_3: "短いサンプルを逆再生して、トランジションや効果にしたい。",
   tool_reverse_an_audio_file_faq_q1: "リバースで長さは変わりますか？",
   tool_reverse_an_audio_file_faq_a1: "いいえ。サンプル順は反転しますが、長さとサンプルレートは同じです。",
   tool_reverse_an_audio_file_faq_q2: "8Dパンと同じですか？",

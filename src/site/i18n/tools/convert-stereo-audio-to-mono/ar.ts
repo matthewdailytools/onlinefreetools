@@ -61,6 +61,7 @@ const ar: SiteLangDict = {
   tool_convert_stereo_audio_to_mono_usecases_title: "متى يفيد هذا",
   tool_convert_stereo_audio_to_mono_usecase_1: "تسليم مذكرة صوتية استريو أو طبقة بودكاست لنموذج يقبل الرفع الأحادي فقط.",
   tool_convert_stereo_audio_to_mono_usecase_2: "الإبقاء على ميكروفون المقابلة الأيسر (أو الأيمن) فقط عندما يكون الجانب الآخر ضوضاء أو صمتًا.",
+  tool_convert_stereo_audio_to_mono_usecase_3: "مقابلة ستيريو يجب أن تصبح أحادية لمسار IVR أو سماعة واحدة.",
   tool_convert_stereo_audio_to_mono_faq_q1: "ماذا يفعل «مزج إلى أحادي» باليسار واليمين؟",
   tool_convert_stereo_audio_to_mono_faq_a1: "يوسّط كل عيّنة من القناتين اليسرى واليمنى ((L+R)/2) في مسار أحادي واحد، ثم يكتب WAV PCM بـ 16 بت. التموضع المتطرف يخفت؛ الصوت متعاكس الطور قد يرقّ—استمع قبل التنزيل.",
   tool_convert_stereo_audio_to_mono_faq_q2: "هل يمكن تحويل MP3 أو M4A إلى WAV أحادي؟",

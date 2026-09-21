@@ -56,6 +56,7 @@ const pt: SiteLangDict = {
   tool_generate_dtmf_touch_tones_usecases_title: "Quando isso ajuda",
   tool_generate_dtmf_touch_tones_usecase_1: "Você precisa de um clipe DTMF para demo IVR ou telefonia—digite os dígitos, Gerar, baixe WAV para docs ou testes.",
   tool_generate_dtmf_touch_tones_usecase_2: "Você quer uma sequência touch-tone reproduzível sem instalar um gerador de sinais de desktop.",
+  tool_generate_dtmf_touch_tones_usecase_3: "Tem de gerar bipes de teclado para uma demo de IVR.",
   tool_generate_dtmf_touch_tones_faq_q1: "Isto é um gerador de tom seno único?",
   tool_generate_dtmf_touch_tones_faq_a1: "Não. DTMF usa duas frequências ao mesmo tempo (linha + coluna). Para um seno a um Hertz escolhido, use a ferramenta de tom seno.",
   tool_generate_dtmf_touch_tones_faq_q2: "Pode fazer bipes curtos de notificação de UI?",

@@ -58,6 +58,7 @@ const es: SiteLangDict = {
   tool_normalize_an_audio_file_to_peak_usecases_title: "Cuándo ayuda",
   tool_normalize_an_audio_file_to_peak_usecase_1: "Una entrega que pide picos cerca de escala completa con margen—normaliza a −1 dBFS y descarga WAV.",
   tool_normalize_an_audio_file_to_peak_usecase_2: "Varias tomas a distintos niveles que quieres alinear por pico antes de editar, sin perseguir un número LUFS.",
+  tool_normalize_an_audio_file_to_peak_usecase_3: "Las tomas tienen picos distintos y quieres un objetivo de pico coherente.",
   tool_normalize_an_audio_file_to_peak_faq_q1: "¿Es lo mismo que subir el volumen con ganancia dB fija?",
   tool_normalize_an_audio_file_to_peak_faq_a1: "No. La ganancia fija multiplica por un dB elegido. Normalizar al pico escala lo necesario para que el pico absoluto alcance tu objetivo. Para un boost dB fijo, usa Hacer más alta una grabación baja.",
   tool_normalize_an_audio_file_to_peak_faq_q2: "¿Iguala la sonoridad de podcast / LUFS?",

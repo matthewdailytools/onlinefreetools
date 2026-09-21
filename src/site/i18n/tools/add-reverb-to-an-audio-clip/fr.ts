@@ -62,6 +62,7 @@ const fr: SiteLangDict = {
   tool_add_reverb_to_an_audio_clip_usecases_title: "Quand cela aide",
   tool_add_reverb_to_an_audio_clip_usecase_1: "Voix sèche qui a besoin d’un peu d’air de salle—choisir Salle, Ajouter la réverbération, télécharger le WAV.",
   tool_add_reverb_to_an_audio_clip_usecase_2: "Piste courte qui veut de l’espace de grande salle ou des échos plus nets sans ralentir.",
+  tool_add_reverb_to_an_audio_clip_usecase_3: "Vous voulez une courte queue de salle ou hall sur une voix sèche sans ouvrir un DAW.",
   tool_add_reverb_to_an_audio_clip_faq_q1: "Est-ce la même chose que slowed and reverb ?",
   tool_add_reverb_to_an_audio_clip_faq_a1: "Non. Slowed and reverb étire aussi le tempo et abaisse la hauteur avant l’espace. Cette page laisse vitesse et hauteur et n’ajoute que réverbération ou écho. Utilisez Make a slowed and reverb clip pour cette esthétique.",
   tool_add_reverb_to_an_audio_clip_faq_q2: "Différence entre Salle, Grande salle et Écho ?",

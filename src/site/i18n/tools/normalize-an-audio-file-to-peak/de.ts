@@ -58,6 +58,7 @@ const de: SiteLangDict = {
   tool_normalize_an_audio_file_to_peak_usecases_title: "Wann das hilft",
   tool_normalize_an_audio_file_to_peak_usecase_1: "Abgabe will Peaks nahe Vollaussteuerung mit Headroom—auf −1 dBFS normalisieren und WAV laden.",
   tool_normalize_an_audio_file_to_peak_usecase_2: "Mehrere Takes mit unterschiedlichen Pegeln per Peak angleichen, ohne eine LUFS-Zahl zu jagen.",
+  tool_normalize_an_audio_file_to_peak_usecase_3: "Takes mit unterschiedlichen Peaks sollen ein gemeinsames Peak-Ziel haben.",
   tool_normalize_an_audio_file_to_peak_faq_q1: "Ist das dasselbe wie lauter machen mit festem dB-Gain?",
   tool_normalize_an_audio_file_to_peak_faq_a1: "Nein. Fester Gain multipliziert um gewählte dB. Peak-Normalisieren skaliert so, dass der Absolute Peak Ihr Ziel trifft. Für festen dB-Boost: Eine leise Aufnahme lauter machen.",
   tool_normalize_an_audio_file_to_peak_faq_q2: "Passt das Podcast-Lautheit / LUFS an?",

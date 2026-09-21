@@ -91,6 +91,7 @@ const de: SiteLangDict = {
     "Voiceover oder Musikbett knackt an Schnittpunkten—1 s / 1 s wählen, Überblenden, WAV laden.",
   tool_fade_in_and_fade_out_an_audio_clip_usecase_2:
     "Clip braucht weiche Kanten vor dem Zuschneiden oder der Timeline—ohne nahtlosen Loop zu bauen.",
+  tool_fade_in_and_fade_out_an_audio_clip_usecase_3: "Klingelton oder Bumper startet und endet abrupt und braucht weiche Kanten.",
   tool_fade_in_and_fade_out_an_audio_clip_faq_q1: "Ist das dasselbe wie Nahtlosen Audio-Loop erzeugen?",
   tool_fade_in_and_fade_out_an_audio_clip_faq_a1:
     "Nein. Dort wird das gewählte Ende in den Anfang mit Crossfade gewickelt, damit die Naht sauber loopt. Hier werden nur Start und Ende eines Clips weich. Für nahtlose Loops jene Seite nutzen.",

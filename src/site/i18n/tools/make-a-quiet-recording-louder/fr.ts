@@ -59,6 +59,7 @@ const fr: SiteLangDict = {
   tool_make_a_quiet_recording_louder_usecases_title: "Quand cela aide",
   tool_make_a_quiet_recording_louder_usecase_1: "Un mémo vocal trop bas sur le téléphone—montez +6 dB et téléchargez le WAV.",
   tool_make_a_quiet_recording_louder_usecase_2: "Une piste d’interview globalement faible, quand vous voulez le même ratio plus fort sans viser un LUFS.",
+  tool_make_a_quiet_recording_louder_usecase_3: "Une memo trop faible doit être amplifiée avec protection de pics.",
   tool_make_a_quiet_recording_louder_faq_q1: "Est-ce la même chose que normaliser au pic 0 dBFS ?",
   tool_make_a_quiet_recording_louder_faq_a1: "Non. Vous choisissez un gain dB fixe. La protection de crête ne réduit que si ce gain clipperait—elle ne monte pas automatiquement chaque fichier au plein niveau. La normalisation de pic est un autre travail prévu.",
   tool_make_a_quiet_recording_louder_faq_q2: "Cela aligne-t-il la sonie podcast / LUFS ?",

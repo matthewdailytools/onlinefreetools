@@ -60,6 +60,7 @@ const ja: SiteLangDict = {
   tool_match_podcast_loudness_to_minus_16_lufs_usecases_title: "こんなときに",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_1: "−16 LUFS 納品には静かすぎるポッドキャスト回—−16 で合わせて WAV を保存。",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_2: "YouTube / Spotify 向けボイスを −14 近くにしたいが、ピーク正規化やコンプレッサーは使いたくないとき。",
+  tool_match_podcast_loudness_to_minus_16_lufs_usecase_3: "回によって音量がぶれるので、だいたい−16 LUFSに寄せたい。",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q1: "ピーク正規化と同じですか？",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_a1: "違います。ピーク正規化は絶対ピークを目標 dBFS に合わせます。ここでは近似の統合ラウドネスを測り LUFS チップへゲインします。ピーク作業は「音声ファイルをピーク正規化する」を使ってください。",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q2: "固定 dB ゲインで小さく録音を大きくするのと同じですか？",

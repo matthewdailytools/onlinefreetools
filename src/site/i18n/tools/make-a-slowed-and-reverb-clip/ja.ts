@@ -68,6 +68,7 @@ const ja: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_usecases_title: "役立つ場面",
   tool_make_a_slowed_and_reverb_clip_usecase_1: "ポップやR&Bの定番slowed+reverb—0.8×＋中→実行→WAV保存。",
   tool_make_a_slowed_and_reverb_clip_usecase_2: "遅い＋空間が必要な短いクリップ—テンポのみ練習でもナイトコアでもドライリバーブのみでもない。",
+  tool_make_a_slowed_and_reverb_clip_usecase_3: "SNS用に、スロー＋リバーブ感のフレーズが欲しい。",
   tool_make_a_slowed_and_reverb_clip_faq_q1: "ピッチを変えずに速度だけ変えるのと同じ？",
   tool_make_a_slowed_and_reverb_clip_faq_a1: "違います。速度のみはWSOLAでピッチ維持を狙い、リバーブはありません。本ページは減速でピッチも下がりリバーブを足します。テンポのみは「ピッチを変えずに音声速度を変える」を使ってください。",
   tool_make_a_slowed_and_reverb_clip_faq_q2: "ナイトコアと同じ？",

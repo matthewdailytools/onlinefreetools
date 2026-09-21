@@ -59,6 +59,7 @@ const zh: SiteLangDict = {
   tool_make_a_quiet_recording_louder_usecases_title: "适用场景",
   tool_make_a_quiet_recording_louder_usecase_1: "手机备忘录录得太轻、回放听不清——选 +6 dB 放大后下载 WAV。",
   tool_make_a_quiet_recording_louder_usecase_2: "采访轨整体偏弱，只想同比例变响，而不追 LUFS 响度目标。",
+  tool_make_a_quiet_recording_louder_usecase_3: "手机备忘音量太小，需要在防削波前提下推响。",
   tool_make_a_quiet_recording_louder_faq_q1: "这和把音频峰值归一化到 0 dBFS 是一回事吗？",
   tool_make_a_quiet_recording_louder_faq_a1: "不是。你选择固定的 dB 增益。峰值保护只在该增益会削波时回缩——不会自动把每个文件拉满。峰值归一化是另一项计划中的作业。",
   tool_make_a_quiet_recording_louder_faq_q2: "这会匹配播客响度 / LUFS 吗？",

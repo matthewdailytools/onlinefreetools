@@ -77,6 +77,7 @@ const ar: SiteLangDict = {
   tool_compress_dynamic_range_of_a_voice_recording_usecases_title: "متى يفيد ذلك",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_1: "تعليق صوتي يقفز من جمل هادئة إلى ذروات عالية—اختر بودكاست واضغط ونزّل WAV.",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_2: "مقابلة تريدها أكثر انتظامًا قبل مطابقة الجهارة، دون تصغير MP3 للحجم.",
+  tool_compress_dynamic_range_of_a_voice_recording_usecase_3: "همسات وقمم في نفس التسجيل وتريد مستوى استماع أكثر توازنًا.",
   tool_compress_dynamic_range_of_a_voice_recording_faq_q1: "هل هذا مثل ضغط / تصغير حجم ملف MP3؟",
   tool_compress_dynamic_range_of_a_voice_recording_faq_a1:
     "لا. «ضغط» هنا يعني المدى الديناميكي (عتبة/نسبة)، لا معدل البت أو البايتات. لملفات MP3 أصغر استخدم Reduce an MP3 file size. بالصينية: 压缩人声动态 ≠ 压缩 MP3 体积.",

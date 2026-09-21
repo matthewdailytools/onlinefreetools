@@ -76,6 +76,7 @@ const en: SiteLangDict = {
   tool_limit_peaks_so_a_file_does_not_clip_usecases_title: "When this helps",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_1: "A mix that occasionally spikes into clipping—pick Soft −1, limit, download WAV.",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_2: "A delivery that forbids peaks above a ceiling after you already set overall level, without running a full compressor.",
+  tool_limit_peaks_so_a_file_does_not_clip_usecase_3: "A hot export clips on peaks and you want a safety ceiling before publish.",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q1: "Is this the same as peak normalize?",
   tool_limit_peaks_so_a_file_does_not_clip_faq_a1:
     "No. Peak normalize scales the whole clip so the absolute peak hits a target (it can boost quiet material). This limiter only attenuates samples over the ceiling. For peak normalize, use Normalize an audio file to peak.",

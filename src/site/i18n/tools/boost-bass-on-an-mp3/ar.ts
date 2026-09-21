@@ -10,8 +10,7 @@ const ar: SiteLangDict = {
     "كثّف الباس الضعيف بإعدادات Mild أو Medium أو Strong (low-shelf) ثم نزّل WAV بـ 16 بت. على الجهاز فقط.",
   tool_boost_bass_on_an_mp3_description:
     "تعزيز الباس في ملف MP3 بإعدادات Mild وMedium وStrong بنمط low-shelf. الخطوات: تعزيز، معاينة، تنزيل WAV. مثال: حمّل عيّنة الباس الضعيف. باس low-shelf فقط—ليس معادلًا متعدد النطاقات كاملًا، وليس مضخّم مستوى لكل الملف. يبقى الصوت على جهازك؛ لا يُرفع أبدًا.",
-  tool_boost_bass_on_an_mp3_article:
-    "تصديرات الهاتف وسماعات الحاسوب المحمول غالبًا تترك الضربة والباس رفيعين: وسط كافٍ ووزن أقل تحت نحو 100 هرتز. تشغّل هذه الصفحة مرحلة BiquadFilter lowshelf واحدة في OfflineAudioContext. Mild لطيف؛ Medium (الافتراضي) رفع يومي؛ Strong أقوى. حماية الذروة الناعمة تقيس النتيجة إن كان التعزيز سيقطع. هذا تعزيز باس—ليس EQ ثلاثي النطاق Clarity/Warmth/Presence للصوت المكتوم، ولا كسب dB مسطح يرفع كل الترددات. يبقى عدد القنوات 1 أو 2. احتفظ بالنسخة الأصلية؛ التنزيل WAV جديد بـ 16 بت. العمل في المتصفح على جهازك.",
+  tool_boost_bass_on_an_mp3_article: "تصديرات الهاتف وسماعات الحاسوب المحمول غالبًا تترك الضربة والباس رفيعين: وسط كافٍ ووزن أقل تحت نحو 100 هرتز. تشغّل هذه الصفحة مرحلة lowshelf EQ واحدة في on-device audio processing. Mild لطيف؛ Medium (الافتراضي) رفع يومي؛ Strong أقوى. حماية الذروة الناعمة تقيس النتيجة إن كان التعزيز سيقطع. هذا تعزيز باس—ليس EQ ثلاثي النطاق Clarity/Warmth/Presence للصوت المكتوم، ولا كسب dB مسطح يرفع كل الترددات. يبقى عدد القنوات 1 أو 2. احتفظ بالنسخة الأصلية؛ التنزيل WAV جديد بـ 16 بت. العمل في المتصفح على جهازك.",
   tool_boost_bass_on_an_mp3_choose: "اختر ملف صوت",
   tool_boost_bass_on_an_mp3_hint: "أسقط ملف WAV أو MP3 أو M4A أو AAC أو OGG واحدًا. بحد أقصى 40 ميبيبايت و10 دقائق؛ أحادي أو استريو.",
   tool_boost_bass_on_an_mp3_convert: "تعزيز",
@@ -58,7 +57,7 @@ const ar: SiteLangDict = {
   tool_boost_bass_on_an_mp3_why_choose_item_4: "تغيير الإعداد أو الإدخال يمسح التنزيل القديم كي لا تحفظ WAV قديمًا بالخطأ.",
   tool_boost_bass_on_an_mp3_rules_title: "Mild وMedium وStrong والحدود",
   tool_boost_bass_on_an_mp3_rules_body:
-    "كل إعداد مرحلة lowshelf Biquad واحدة. Mild لطيف؛ Medium الرفع اليومي؛ Strong أثقل. حماية الذروة تقيس إن كان التعزيز سيقطع.",
+    "كل إعداد مرحلة lowshelf EQ واحدة. Mild لطيف؛ Medium الرفع اليومي؛ Strong أثقل. حماية الذروة تقيس إن كان التعزيز سيقطع.",
   tool_boost_bass_on_an_mp3_rules_item_1:
     "Medium الافتراضي lowshelf قرب 90 هرتز بنحو +8 dB. Mild نحو +4؛ Strong نحو +12 مع رفّ أدنى قليلًا.",
   tool_boost_bass_on_an_mp3_rules_item_2:
@@ -72,6 +71,7 @@ const ar: SiteLangDict = {
   tool_boost_bass_on_an_mp3_usecases_title: "متى يفيد ذلك",
   tool_boost_bass_on_an_mp3_usecase_1: "تصدير MP3 يبدو رفيعًا على السماعات—اختر Medium، عزّز، نزّل WAV.",
   tool_boost_bass_on_an_mp3_usecase_2: "مقطع يحتاج وزن ضربة أعمق دون فتح EQ رسومي كامل أو رفع المزيج كله.",
+  tool_boost_bass_on_an_mp3_usecase_3: "ملف MP3 من الهاتف يبدو نحيفًا على الحاسوب وتريد ضربات أوضح لا أوساط أعلى.",
   tool_boost_bass_on_an_mp3_faq_q1: "هل هذا مثل معادلة تسجيل صوت مكتوم؟",
   tool_boost_bass_on_an_mp3_faq_a1:
     "لا. تلك الصفحة تستخدم إعدادات Clarity/Warmth/Presence ثلاثية النطاق للكلام المكتوم. هذه ترفع الترددات المنخفضة فقط بـ lowshelf. لمعادلة الصوت المكتوم استخدم معادلة تسجيل صوت مكتوم.",

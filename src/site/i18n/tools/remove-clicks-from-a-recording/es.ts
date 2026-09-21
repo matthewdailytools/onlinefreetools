@@ -61,6 +61,7 @@ const es: SiteLangDict = {
   tool_remove_clicks_from_a_recording_usecases_title: "Cuándo ayuda",
   tool_remove_clicks_from_a_recording_usecase_1: "Un memo de voz con pops de boca o toques de cable—elige Media, Quitar clics, descarga WAV.",
   tool_remove_clicks_from_a_recording_usecase_2: "Una transferencia con crepitado de vinilo disperso antes de denoise o dehum en otra página.",
+  tool_remove_clicks_from_a_recording_usecase_3: "Clicks de boca y pops de edición distraen en una VO limpia.",
   tool_remove_clicks_from_a_recording_faq_q1: "¿Es lo mismo que reducir el ruido de fondo de un memo de voz?",
   tool_remove_clicks_from_a_recording_faq_a1: "No. Esa página aplica paso alto y puerta al siseo estable. Esta repara picos impulsivos cortos. Usa Reducir el ruido de fondo de un memo de voz para siseo de banda ancha.",
   tool_remove_clicks_from_a_recording_faq_q2: "¿Quita el zumbido de red 50/60 Hz?",

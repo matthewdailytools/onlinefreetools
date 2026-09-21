@@ -56,6 +56,7 @@ const ru: SiteLangDict = {
   tool_reverse_an_audio_file_usecases_title: "Когда это помогает",
   tool_reverse_an_audio_file_usecase_1: "Короткий эффект или музыкальный sting, который должен играть назад—Реверс, скачайте WAV.",
   tool_reverse_an_audio_file_usecase_2: "Проверить хвост реверба, услышав конец первым—не 8D-разгон, не огибающие фейда.",
+  tool_reverse_an_audio_file_usecase_3: "Короткий сэмпл нужно проиграть назад для перехода или эффекта.",
   tool_reverse_an_audio_file_faq_q1: "Меняет ли реверс длительность?",
   tool_reverse_an_audio_file_faq_a1: "Нет. Порядок сэмплов переворачивается, но длина и частота дискретизации остаются прежними.",
   tool_reverse_an_audio_file_faq_q2: "Это то же, что 8D-пан?",

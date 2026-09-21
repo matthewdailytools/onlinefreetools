@@ -54,6 +54,7 @@ const pt: SiteLangDict = {
   tool_generate_a_sine_tone_at_a_frequency_usecases_title: 'Quando ajuda',
   tool_generate_a_sine_tone_at_a_frequency_usecase_1: 'Precisa de uma referência A4—440 Hz, 2 s, Gerar, baixe WAV.',
   tool_generate_a_sine_tone_at_a_frequency_usecase_2: 'Quer um tom de teste de 1000 Hz para verificar altifalantes sem gerador de secretária.',
+  tool_generate_a_sine_tone_at_a_frequency_usecase_3: 'Precisa de um tom de calibração a um Hz escolhido para testar equipamento.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q1: 'É um gerador de ruído branco/rosa/castanho?',
   tool_generate_a_sine_tone_at_a_frequency_faq_a1: 'Não. Esta página sintetiza um único seno. O ruído é outro trabalho.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q2: 'Pode fazer tons DTMF?',

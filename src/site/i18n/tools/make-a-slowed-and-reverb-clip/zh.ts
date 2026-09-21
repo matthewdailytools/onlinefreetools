@@ -69,6 +69,7 @@ const zh: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_usecases_title: "适用场景",
   tool_make_a_slowed_and_reverb_clip_usecase_1: "流行或 R&B 短片段做经典 slowed+reverb——选 0.8× + 中，点 Slowed 混响，下载 WAV。",
   tool_make_a_slowed_and_reverb_clip_usecase_2: "既要减速又要空间感的短剪辑——不是练歌只变速，不是夜核，也不是干混响 alone。",
+  tool_make_a_slowed_and_reverb_clip_usecase_3: "社交剪辑需要一段慢放加混响的乐句。",
   tool_make_a_slowed_and_reverb_clip_faq_q1: "这和变速不变调一样吗？",
   tool_make_a_slowed_and_reverb_clip_faq_a1: "不一样。变速不变调用 WSOLA 改速度并尽量保音高，且不加混响。本页减速时音高一起下降并加混响。只改速度请用「变速而不改变音高」。",
   tool_make_a_slowed_and_reverb_clip_faq_q2: "这和夜核一样吗？",

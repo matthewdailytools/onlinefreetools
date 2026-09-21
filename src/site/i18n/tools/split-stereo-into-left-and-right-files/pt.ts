@@ -67,6 +67,7 @@ const pt: SiteLangDict = {
   tool_split_stereo_into_left_and_right_files_usecases_title: "Quando isso ajuda",
   tool_split_stereo_into_left_and_right_files_usecase_1: "Entregar a um editor WAV mono esquerdo e direito separados de uma entrevista estéreo ou take de dois micros.",
   tool_split_stereo_into_left_and_right_files_usecase_2: "Corrigir um export estéreo cabeado ao contrário trocando E-D antes de publicar.",
+  tool_split_stereo_into_left_and_right_files_usecase_3: "Uma entrevista estéreo deve virar ficheiros mono esquerdo e direito.",
   tool_split_stereo_into_left_and_right_files_faq_q1: "O que há dentro do ZIP após Separar em arquivos?",
   tool_split_stereo_into_left_and_right_files_faq_a1: "Dois arquivos WAV mono de 16 bits: um para o canal esquerdo e um para o direito. Os nomes incluem left e right para distingui-los.",
   tool_split_stereo_into_left_and_right_files_faq_q2: "É o mesmo que converter estéreo para mono?",

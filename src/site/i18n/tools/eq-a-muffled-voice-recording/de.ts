@@ -10,8 +10,7 @@ const de: SiteLangDict = {
     "Öffne eine dumpfe Stimme mit Clarity-, Warmth- oder Presence-Drei-Band-Presets und lade eine 16-Bit-WAV. Nur auf dem Gerät.",
   tool_eq_a_muffled_voice_recording_description:
     "Eine dumpfe Sprachaufnahme entzerrern mit Clarity-, Warmth- oder Presence-Drei-Band-Presets. Schritte: EQ, Vorschau, WAV herunterladen. Beispiel: dumpfe Probe laden. Nur Klangformung—kein reiner Bass-Booster, keine Rauschunterdrückung, kein De-Esser. Audio bleibt auf dem Gerät; wird nie hochgeladen.",
-  tool_eq_a_muffled_voice_recording_article:
-    "Telefon, Maske und ferne Mikros klingen oft dumpf: zu viel Matsch unter einigen hundert Hertz und zu wenig Klarheit im Sprachband. Diese Seite verkettet drei BiquadFilter in OfflineAudioContext—Lowshelf, Peaking, Highshelf—als benannte Presets. Clarity schneidet Matsch und öffnet Sprache; Warmth gibt Körper und weicht harte Höhen ab; Presence hebt mittlere Höhen und Luft. Das ist tonales EQ für dumpfe Stimme, kein Einband-Bass-Booster, keine Hintergrund-Rauschunterdrückung und kein De-Esser nur gegen Zischlaute. Kanäle bleiben 1 oder 2. Master behalten; Download ist eine neue 16-Bit-WAV. Arbeit läuft im Browser.",
+  tool_eq_a_muffled_voice_recording_article: "Telefon, Maske und ferne Mikros klingen oft dumpf: zu viel Matsch unter einigen hundert Hertz und zu wenig Klarheit im Sprachband. Diese Seite verkettet drei EQ filter in on-device audio processing—Lowshelf, Peaking, Highshelf—als benannte Presets. Clarity schneidet Matsch und öffnet Sprache; Warmth gibt Körper und weicht harte Höhen ab; Presence hebt mittlere Höhen und Luft. Das ist tonales EQ für dumpfe Stimme, kein Einband-Bass-Booster, keine Hintergrund-Rauschunterdrückung und kein De-Esser nur gegen Zischlaute. Kanäle bleiben 1 oder 2. Master behalten; Download ist eine neue 16-Bit-WAV. Arbeit läuft im Browser.",
   tool_eq_a_muffled_voice_recording_choose: "Audiodatei wählen",
   tool_eq_a_muffled_voice_recording_hint: "Eine WAV, MP3, M4A, AAC oder OGG. Maximal 40 MiB und 10 Minuten; mono oder stereo.",
   tool_eq_a_muffled_voice_recording_convert: "EQ",
@@ -54,11 +53,11 @@ const de: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_why_choose_item_1: "Preset-Name, Peak vor/nach und Ausgabe-KiB vor dem Speichern sehen.",
   tool_eq_a_muffled_voice_recording_why_choose_item_2: "Drei klare Stimm-Presets—ein Dumpf-EQ-Job, kein Zehnband-Spielzeug und kein reiner Bass.",
   tool_eq_a_muffled_voice_recording_why_choose_item_3:
-    "Dekodierung, Biquad-EQ und WAV-Schreiben laufen auf dem Gerät; die Seite lädt die Aufnahme nicht hoch.",
+    "Dekodierung, EQ-EQ und WAV-Schreiben laufen auf dem Gerät; die Seite lädt die Aufnahme nicht hoch.",
   tool_eq_a_muffled_voice_recording_why_choose_item_4: "Preset- oder Eingabewechsel löscht den alten Download, damit keine veraltete WAV gespeichert wird.",
   tool_eq_a_muffled_voice_recording_rules_title: "Clarity, Warmth, Presence und Grenzen",
   tool_eq_a_muffled_voice_recording_rules_body:
-    "Jedes Preset sind drei Biquad-Stufen (Lowshelf, Peaking, Highshelf). Clarity öffnet dumpfe Sprache; Warmth gibt Körper; Presence hebt Präsenz und Luft. Soft-Peak-Schutz skaliert bei Clip-Gefahr.",
+    "Jedes Preset sind drei EQ-Stufen (Lowshelf, Peaking, Highshelf). Clarity öffnet dumpfe Sprache; Warmth gibt Körper; Presence hebt Präsenz und Luft. Soft-Peak-Schutz skaliert bei Clip-Gefahr.",
   tool_eq_a_muffled_voice_recording_rules_item_1:
     "Standard Clarity schneidet matschige Bässe und öffnet Sprachklarheit. Warmth hebt Tiefkörper und weicht harte Höhen ab. Presence fokussiert mittlere Höhen.",
   tool_eq_a_muffled_voice_recording_rules_item_2:
@@ -72,6 +71,7 @@ const de: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_usecases_title: "Wann das hilft",
   tool_eq_a_muffled_voice_recording_usecase_1: "Telefon- oder Masken-Take klingt kastig—Clarity wählen, EQ, WAV laden.",
   tool_eq_a_muffled_voice_recording_usecase_2: "Podcast-Stimme braucht wärmeren Körper oder mehr Präsenz ohne volles DAW-EQ.",
+  tool_eq_a_muffled_voice_recording_usecase_3: "Eine dumpfe Fern- oder Maskenaufnahme braucht mehr Sprachpräsenz.",
   tool_eq_a_muffled_voice_recording_faq_q1: "Ist das dasselbe wie ein Bass-Booster?",
   tool_eq_a_muffled_voice_recording_faq_a1:
     "Nein. Ein Bass-Booster hebt vor allem tiefe Frequenzen. Diese Seite bietet drei Mehrband-Stimm-Presets für dumpfe Sprache. Reiner Bass ist ein anderer Job (Boost bass on an MP3, wenn verfügbar).",

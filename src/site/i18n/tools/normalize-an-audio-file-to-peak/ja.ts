@@ -58,6 +58,7 @@ const ja: SiteLangDict = {
   tool_normalize_an_audio_file_to_peak_usecases_title: "こんなときに",
   tool_normalize_an_audio_file_to_peak_usecase_1: "納品でフルスケール近く＋少し余裕のピークが要るとき—−1 dBFS に正規化して WAV を保存。",
   tool_normalize_an_audio_file_to_peak_usecase_2: "レベルが違う複数テイクを、LUFS ではなくピークで先に揃えたいとき。",
+  tool_normalize_an_audio_file_to_peak_usecase_3: "テイクごとのピーク差を、同じピーク目標に揃えたい。",
   tool_normalize_an_audio_file_to_peak_faq_q1: "固定 dB ゲインで小さく録音を大きくするのと同じですか？",
   tool_normalize_an_audio_file_to_peak_faq_a1: "違います。固定ゲインは選んだ dB 倍、ピーク正規化は絶対ピークが目標に届くよう必要な倍率を掛けます。固定 dB なら「小さな録音を大きくする」を使ってください。",
   tool_normalize_an_audio_file_to_peak_faq_q2: "ポッドキャストのラウドネス / LUFS に合わせますか？",

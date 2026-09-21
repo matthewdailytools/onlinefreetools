@@ -60,6 +60,7 @@ const id: SiteLangDict = {
   tool_embed_lyrics_in_an_mp3_usecases_title: 'Berguna untuk',
   tool_embed_lyrics_in_an_mp3_usecase_1: 'Lampirkan transkrip ke podcast MP3 via USLT.',
   tool_embed_lyrics_in_an_mp3_usecase_2: 'Tambah lirik polos tanpa encode ulang.',
+  tool_embed_lyrics_in_an_mp3_usecase_3: 'Anda ingin lirik di dalam MP3 agar pemutar menampilkannya offline.',
   tool_embed_lyrics_in_an_mp3_faq_q1: 'Apakah di-encode ulang?',
   tool_embed_lyrics_in_an_mp3_faq_a1: 'Tidak. Hanya menulis ulang ID3 dengan USLT.',
   tool_embed_lyrics_in_an_mp3_faq_q2: 'LRC tersinkron?',

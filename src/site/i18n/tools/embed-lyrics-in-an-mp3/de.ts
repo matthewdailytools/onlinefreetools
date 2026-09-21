@@ -60,6 +60,7 @@ const de: SiteLangDict = {
   tool_embed_lyrics_in_an_mp3_usecases_title: 'Nützlich für',
   tool_embed_lyrics_in_an_mp3_usecase_1: 'Transkript an Podcast-MP3 mit USLT hängen.',
   tool_embed_lyrics_in_an_mp3_usecase_2: 'Plain Lyrics ohne Neuencodierung hinzufügen.',
+  tool_embed_lyrics_in_an_mp3_usecase_3: 'Du willst Lyrics in der MP3, damit Player sie offline zeigen.',
   tool_embed_lyrics_in_an_mp3_faq_q1: 'Wird neu encodiert?',
   tool_embed_lyrics_in_an_mp3_faq_a1: 'Nein. Nur ID3 mit USLT wird geschrieben.',
   tool_embed_lyrics_in_an_mp3_faq_q2: 'Synchrones LRC?',

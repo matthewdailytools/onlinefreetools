@@ -64,6 +64,7 @@ const de: SiteLangDict = {
   tool_apply_a_toy_voice_effect_to_a_recording_usecases_title: "Wann es hilft",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_1: "Kurzes Meme oder Kinderclip mit Chipmunk- oder Heliumfarbe—Anwenden, WAV herunterladen.",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_2: "Verspielter Roboter- oder Telefon-Gag für eine Nachricht—kein Promi-Klon, keine Geschlechtsbehauptung.",
+  tool_apply_a_toy_voice_effect_to_a_recording_usecase_3: "Für ein kurzes Meme brauchst du eine spielerische Chipmunk- oder tiefe Spielzeugstimme.",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q1: "Ist das ein Promi- oder KI-Stimmenklon?",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_a1: "Nein. Diese Seite wendet nur Spielzeug-Signaleffekte an (Resampling, Ringmodulation, Telefonband). Sie lernt, kopiert oder imitiert nicht die Stimme einer bestimmten Person.",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q2: "Ist das ein Mann-zu-Frau- oder Geschlechts-Stimmenwechsler?",

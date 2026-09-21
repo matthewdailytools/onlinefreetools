@@ -64,6 +64,7 @@ const fr: SiteLangDict = {
   tool_make_a_nightcore_version_of_a_song_usecases_title: "Quand cela aide",
   tool_make_a_nightcore_version_of_a_song_usecase_1: "Titre pop ou anime pour un nightcore classique—choisissez 1.25×, Nightcore, téléchargez le WAV.",
   tool_make_a_nightcore_version_of_a_song_usecase_2: "Clip court qui a besoin d’un lift vitesse et hauteur—pas tempo-only de pratique, pas transpose seule.",
+  tool_make_a_nightcore_version_of_a_song_usecase_3: "Un titre a besoin du feeling nightcore plus rapide et aigu pour un edit court.",
   tool_make_a_nightcore_version_of_a_song_faq_q1: "Est-ce la même chose que changer la vitesse sans changer la hauteur ?",
   tool_make_a_nightcore_version_of_a_song_faq_a1: "Non. La vitesse-sans-hauteur utilise WSOLA pour changer le tempo en visant la hauteur. Le nightcore accélère et monte la hauteur ensemble. Utilisez Changer la vitesse audio sans changer la hauteur pour le tempo seul.",
   tool_make_a_nightcore_version_of_a_song_faq_q2: "Est-ce la même chose que décaler la hauteur en gardant la durée ?",

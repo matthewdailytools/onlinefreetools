@@ -9,8 +9,7 @@ const zh: SiteLangDict = {
   tool_boost_bass_on_an_mp3_desc: "用轻柔、适中或强烈低架式预设加厚偏薄低音，再下载 16 位 WAV。全程本机处理。",
   tool_boost_bass_on_an_mp3_description:
     "给 MP3 增强低音：用轻柔、适中或强烈低架式（lowshelf）预设抬升低频。步骤：增强低音、试听、下载 WAV。示例：加载偏薄低音样例即可体验。只做低音架式增强——不是闷声三频段均衡，也不是整段音量放大。音频始终留在本机，绝不上传到服务器。",
-  tool_boost_bass_on_an_mp3_article:
-    "手机导出的 MP3 和笔记本喇叭常让底鼓、贝斯发虚：中频够，约 100 Hz 以下却不够沉。本页在 OfflineAudioContext 里跑一节 BiquadFilter lowshelf：轻柔温和抬升；适中（默认）适合日常曲目；强烈推得更沉。若增强后会削波，软峰值保护会等比回缩。这是低音增强——不是 Clarity/Warmth/Presence 闷声三频段 EQ，也不是整段同 dB 变响。导出走道保持 1 或 2。请保留母带；下载是新的 16 位 WAV。处理在浏览器本机完成。",
+  tool_boost_bass_on_an_mp3_article: "手机导出的 MP3 和笔记本喇叭常让底鼓、贝斯发虚：中频够，约 100 Hz 以下却不够沉。本页在 本机音频处理 里跑一节 均衡器滤镜 lowshelf：轻柔温和抬升；适中（默认）适合日常曲目；强烈推得更沉。若增强后会削波，软峰值保护会等比回缩。这是低音增强——不是 Clarity/Warmth/Presence 闷声三频段 EQ，也不是整段同 dB 变响。导出走道保持 1 或 2。请保留母带；下载是新的 16 位 WAV。处理在浏览器本机完成。",
   tool_boost_bass_on_an_mp3_choose: "选择音频文件",
   tool_boost_bass_on_an_mp3_hint: "拖入一个 WAV、MP3、M4A、AAC 或 OGG。最多 40 MiB、10 分钟；单声道或立体声均可。",
   tool_boost_bass_on_an_mp3_convert: "增强低音",
@@ -55,7 +54,7 @@ const zh: SiteLangDict = {
   tool_boost_bass_on_an_mp3_why_choose_item_4: "改预设或换输入会清空旧下载，避免误存过期的 WAV。",
   tool_boost_bass_on_an_mp3_rules_title: "轻柔、适中、强烈与限制",
   tool_boost_bass_on_an_mp3_rules_body:
-    "每档都是一节 lowshelf Biquad。轻柔温和；适中为日常抬升；强烈更沉。若增强会削波，软峰值保护会回缩。",
+    "每档都是一节 lowshelf 均衡器。轻柔温和；适中为日常抬升；强烈更沉。若增强会削波，软峰值保护会回缩。",
   tool_boost_bass_on_an_mp3_rules_item_1:
     "默认「适中」约在 90 Hz、约 +8 dB。轻柔约 +4 dB；强烈约 +12 dB，架点略低。",
   tool_boost_bass_on_an_mp3_rules_item_2:
@@ -69,6 +68,7 @@ const zh: SiteLangDict = {
   tool_boost_bass_on_an_mp3_usecases_title: "适用场景",
   tool_boost_bass_on_an_mp3_usecase_1: "导出的 MP3 在喇叭上发薄——选「适中」增强后下载 WAV。",
   tool_boost_bass_on_an_mp3_usecase_2: "想加厚底鼓重量，又不想开全段图形均衡或把整首曲调大。",
+  tool_boost_bass_on_an_mp3_usecase_3: "手机导出的曲子在笔记本上发虚，只想加强底鼓而不是整轨推响。",
   tool_boost_bass_on_an_mp3_faq_q1: "这和「给人声闷录音做均衡」是一回事吗？",
   tool_boost_bass_on_an_mp3_faq_a1:
     "不是。那一页用 Clarity/Warmth/Presence 三频段预设扫闷人声。本页只用 lowshelf 抬升低频。闷声 EQ 请用「给人声闷录音做均衡」。",

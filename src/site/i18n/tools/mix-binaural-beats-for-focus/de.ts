@@ -82,6 +82,7 @@ const de: SiteLangDict = {
     'Du willst eine wiederverwendbare Ambient-Fokus-WAV: Träger und Beat setzen, Mischen, herunterladen und für Kopfhörer behalten.',
   tool_mix_binaural_beats_for_focus_usecase_2:
     'Du brauchst eine schnelle Stereo-Beat-Demo ohne Desktop-Ton-App und ohne Therapieversprechen.',
+  tool_mix_binaural_beats_for_focus_usecase_3: 'Du willst ein kurzes Stereo-Fokusbett aus Carrier und Beat-Hz nur mit Kopfhörern.',
   tool_mix_binaural_beats_for_focus_faq_q1: 'Ist das medizinische Behandlung oder Therapie?',
   tool_mix_binaural_beats_for_focus_faq_a1:
     'Nein. Diese Seite erzeugt nur Unterhaltungs- und persönlichen Ambient-Fokusklang. Sie diagnostiziert, behandelt oder heilt keine Erkrankung und behauptet keine therapeutische Wirksamkeit.',

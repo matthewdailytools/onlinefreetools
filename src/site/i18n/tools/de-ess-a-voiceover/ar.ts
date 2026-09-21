@@ -61,6 +61,7 @@ const ar: SiteLangDict = {
   tool_de_ess_a_voiceover_usecases_title: "متى يفيد ذلك",
   tool_de_ess_a_voiceover_usecase_1: "تعليق بصوت S حاد—اختر متوسط، أزل الصفير، نزّل WAV.",
   tool_de_ess_a_voiceover_usecase_2: "سرد قبل معادلة نبرة مكتومة أو إزالة نقرات الفم في أداة أخرى.",
+  tool_de_ess_a_voiceover_usecase_3: "أصوات «س» الحادة تزعج على السماعات بعد تسجيل لامع.",
   tool_de_ess_a_voiceover_faq_q1: "هل هذا مثل معادلة تسجيل صوت مكتوم؟",
   tool_de_ess_a_voiceover_faq_a1: "لا. تلك الصفحة تطبق إعدادات Clarity/Warmth/Presence الثابتة. هذه تخمّد فقط عند ارتفاع طاقة الصفير. استخدم معادلة تسجيل صوت مكتوم للنبرة العامة.",
   tool_de_ess_a_voiceover_faq_q2: "هل يقلل ضوضاء خلفية مذكرة صوتية؟",

@@ -54,6 +54,7 @@ const de: SiteLangDict = {
   tool_generate_a_sine_tone_at_a_frequency_usecases_title: 'Wann das hilft',
   tool_generate_a_sine_tone_at_a_frequency_usecase_1: 'A4-Referenzton nötig—440 Hz, 2 s, Erzeugen, WAV laden.',
   tool_generate_a_sine_tone_at_a_frequency_usecase_2: '1000-Hz-Testton für Lautsprecher ohne Desktop-Signalgenerator.',
+  tool_generate_a_sine_tone_at_a_frequency_usecase_3: 'Du brauchst einen Kalibrierton bei gewähltem Hz für einen Gerätecheck.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q1: 'Ist das ein Weiß-/Rosa-/Braunrausch-Generator?',
   tool_generate_a_sine_tone_at_a_frequency_faq_a1: 'Nein. Diese Seite synthetisiert einen einzelnen Sinus. Rauschen ist ein anderer Job.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q2: 'Kann es DTMF-Wähltöne erzeugen?',

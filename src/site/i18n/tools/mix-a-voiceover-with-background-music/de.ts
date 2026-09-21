@@ -63,6 +63,7 @@ const de: SiteLangDict = {
   tool_mix_a_voiceover_with_background_music_usecases_title: "Wann das hilft",
   tool_mix_a_voiceover_with_background_music_usecase_1: "Gesprochene Aufnahme braucht leises Musikbett—beide hinzufügen, Bed senken oder ducken, mischen, laden.",
   tool_mix_a_voiceover_with_background_music_usecase_2: "Audio aus Video extrahiert und neues Voiceover darüber legen, ohne Online-Mixer.",
+  tool_mix_a_voiceover_with_background_music_usecase_3: "Eine trockene VO braucht leisere Bettmusik darunter ohne volle Konsole.",
   tool_mix_a_voiceover_with_background_music_faq_q1: "Ist das dasselbe wie Audiodateien aneinanderreihen?",
   tool_mix_a_voiceover_with_background_music_faq_a1: "Nein. Aneinanderreihen setzt Clips hintereinander. Hier laufen Stimme und Bett gleichzeitig.",
   tool_mix_a_voiceover_with_background_music_faq_q2: "Gibt es Crossfade zwischen Songs?",

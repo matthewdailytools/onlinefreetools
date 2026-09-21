@@ -56,6 +56,7 @@ const ar: SiteLangDict = {
   tool_reverse_an_audio_file_usecases_title: "متى يساعد هذا",
   tool_reverse_an_audio_file_usecase_1: "تأثير قصير أو لمسة موسيقية يجب تشغيلها للخلف—عكس، نزّل WAV.",
   tool_reverse_an_audio_file_usecase_2: "فحص ذيل صدى بسماع النهاية أولًا—ليس مسح 8D ولا أغلفة تلاشي.",
+  tool_reverse_an_audio_file_usecase_3: "عينة قصيرة يجب تشغيلها بالعكس لانتقال أو تأثير.",
   tool_reverse_an_audio_file_faq_q1: "هل يغيّر العكس المدة؟",
   tool_reverse_an_audio_file_faq_a1: "لا. يُقلب ترتيب العينات، لكن الطول ومعدل العينات يبقيان كما هما.",
   tool_reverse_an_audio_file_faq_q2: "هل هذا نفس بان 8D؟",

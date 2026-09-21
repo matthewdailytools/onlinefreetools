@@ -61,6 +61,7 @@ const ja: SiteLangDict = {
   tool_remove_clicks_from_a_recording_usecases_title: "こんなときに",
   tool_remove_clicks_from_a_recording_usecase_1: "口のポップやケーブルタップがあるボイスメモ—中を選び、クリック除去、WAVを保存。",
   tool_remove_clicks_from_a_recording_usecase_2: "疎らなレコードクラックルの転写のあと、別ページでヒス除去や市電ハム除去をする前に。",
+  tool_remove_clicks_from_a_recording_usecase_3: "口のクリックや編集ポップが、きれいなVOを邪魔する。",
   tool_remove_clicks_from_a_recording_faq_q1: "ボイスメモの背景ノイズ低減と同じですか？",
   tool_remove_clicks_from_a_recording_faq_a1: "違います。あちらは定常ファン／エアコンヒスをハイパスとゲートで抑えます。こちらは短い衝撃スパイクを直します。広域ヒスはボイスメモの背景ノイズを低減するを使ってください。",
   tool_remove_clicks_from_a_recording_faq_q2: "50/60 Hz の市電ハムも取れますか？",

@@ -53,6 +53,7 @@ const ar: SiteLangDict = {
   tool_extract_cover_art_from_an_mp3_usecases_title: 'مفيد لـ',
   tool_extract_cover_art_from_an_mp3_usecase_1: 'حفظ غلاف بودكاست كصورة مصغرة.',
   tool_extract_cover_art_from_an_mp3_usecase_2: 'التحقق من وجود غلاف قبل المشاركة.',
+  tool_extract_cover_art_from_an_mp3_usecase_3: 'تحتاج الغلاف المضمّن كصورة دون إعادة ترميز المقطع.',
   tool_extract_cover_art_from_an_mp3_faq_q1: 'هل يُرفع ملفي؟',
   tool_extract_cover_art_from_an_mp3_faq_a1: 'لا. تحليل APIC في المتصفح.',
   tool_extract_cover_art_from_an_mp3_faq_q2: 'ماذا لو لم يوجد غلاف؟',

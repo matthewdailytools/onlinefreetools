@@ -54,6 +54,7 @@ const fr: SiteLangDict = {
   tool_generate_a_sine_tone_at_a_frequency_usecases_title: 'Quand cela aide',
   tool_generate_a_sine_tone_at_a_frequency_usecase_1: 'Vous avez besoin d’une référence A4—440 Hz, 2 s, Générer, téléchargez WAV.',
   tool_generate_a_sine_tone_at_a_frequency_usecase_2: 'Vous voulez un ton de test 1000 Hz pour vérifier des enceintes sans générateur de bureau.',
+  tool_generate_a_sine_tone_at_a_frequency_usecase_3: 'Il faut un ton de calibration à un Hz donné pour vérifier le matériel.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q1: 'Est-ce un générateur de bruit blanc/rose/brun ?',
   tool_generate_a_sine_tone_at_a_frequency_faq_a1: 'Non. Cette page synthétise une seule sinusoïde. Le bruit est un autre travail.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q2: 'Peut-elle faire des tonalités DTMF ?',

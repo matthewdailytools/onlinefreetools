@@ -56,6 +56,7 @@ const id: SiteLangDict = {
   tool_reverse_an_audio_file_usecases_title: "Kapan ini membantu",
   tool_reverse_an_audio_file_usecase_1: "Efek pendek atau sting musik yang harus diputar mundur—Balik, unduh WAV.",
   tool_reverse_an_audio_file_usecase_2: "Periksa ekor reverb dengan mendengar akhir lebih dulu—bukan sapuan 8D, bukan amplop fade.",
+  tool_reverse_an_audio_file_usecase_3: "Sampel pendek harus diputar mundur untuk transisi atau efek.",
   tool_reverse_an_audio_file_faq_q1: "Apakah pembalikan mengubah durasi?",
   tool_reverse_an_audio_file_faq_a1: "Tidak. Urutan sampel dibalik, tetapi panjang dan laju sampel tetap sama.",
   tool_reverse_an_audio_file_faq_q2: "Apakah sama dengan pan 8D?",

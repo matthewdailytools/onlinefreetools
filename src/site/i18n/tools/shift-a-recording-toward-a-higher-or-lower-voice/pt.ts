@@ -63,6 +63,7 @@ const pt: SiteLangDict = {
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecases_title: "Quando ajuda",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_1: "Uma locução um pouco grave—Mais aguda, Deslocar, baixar WAV.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_2: "Um clipe curto que precisa de tom mais grave sem mudar a duração como um gigante de brinquedo.",
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_3: "Uma VO precisa de carácter um pouco mais agudo ou grave sem suite completa.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q1: "Isso transforma a voz em um gênero específico?",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a1: "Não. Apenas desloca o tom para cima ou para baixo mantendo a duração. Sem promessa homem-mulher nem morfologia de formantes de estúdio.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q2: "É igual a efeitos de esquilo ou robô?",

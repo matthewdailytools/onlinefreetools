@@ -57,6 +57,7 @@ const zh: SiteLangDict = {
   tool_generate_dtmf_touch_tones_usecases_title: '适用场景',
   tool_generate_dtmf_touch_tones_usecase_1: '需要 IVR 或电话演示用的 DTMF 片段——输入数字、生成、下载 WAV 供文档或测试。',
   tool_generate_dtmf_touch_tones_usecase_2: '想得到可复现的触摸音序列，又不想安装桌面信号发生器。',
+  tool_generate_dtmf_touch_tones_usecase_3: 'IVR 演示需要生成电话键盘按键音。',
   tool_generate_dtmf_touch_tones_faq_q1: '这是单正弦音调发生器吗？',
   tool_generate_dtmf_touch_tones_faq_a1: '不是。DTMF 同时使用两个频率（行+列）。若只要某一赫兹的单正弦，请用正弦音调工具。',
   tool_generate_dtmf_touch_tones_faq_q2: '能做短 UI 通知提示音吗？',

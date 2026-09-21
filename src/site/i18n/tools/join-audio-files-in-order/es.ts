@@ -89,6 +89,7 @@ const es: SiteLangDict = {
     'Varias notas de voz deben ser una pista continua—añade en orden, Une, descarga WAV.',
   tool_join_audio_files_in_order_usecase_2:
     'Secciones de canción o capítulos de podcast guardados por separado necesitan una exportación sin subirlos a un sitio de unión.',
+  tool_join_audio_files_in_order_usecase_3: 'Varios WAV por capítulos deben ser un solo archivo continuo.',
   tool_join_audio_files_in_order_faq_q1: '¿Es lo mismo que mezclar o superponer dos pistas?',
   tool_join_audio_files_in_order_faq_a1:
     'No. La mezcla superpuesta reproduce clips a la vez (por ejemplo voz sobre música). Esta página solo los coloca uno detrás de otro en orden de lista.',

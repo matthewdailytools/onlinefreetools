@@ -53,6 +53,7 @@ const id: SiteLangDict = {
   tool_extract_cover_art_from_an_mp3_usecases_title: 'Berguna untuk',
   tool_extract_cover_art_from_an_mp3_usecase_1: 'Simpan sampul podcast sebagai thumbnail.',
   tool_extract_cover_art_from_an_mp3_usecase_2: 'Cek apakah MP3 sudah punya sampul.',
+  tool_extract_cover_art_from_an_mp3_usecase_3: 'Butuh cover tertanam sebagai gambar tanpa encode ulang trek.',
   tool_extract_cover_art_from_an_mp3_faq_q1: 'Apakah MP3 saya diunggah?',
   tool_extract_cover_art_from_an_mp3_faq_a1: 'Tidak. Penguraian APIC di browser.',
   tool_extract_cover_art_from_an_mp3_faq_q2: 'Jika tidak ada sampul?',

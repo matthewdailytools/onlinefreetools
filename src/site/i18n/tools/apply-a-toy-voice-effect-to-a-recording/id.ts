@@ -64,6 +64,7 @@ const id: SiteLangDict = {
   tool_apply_a_toy_voice_effect_to_a_recording_usecases_title: "Kapan berguna",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_1: "Meme pendek atau klip anak yang butuh warna chipmunk atau helium—Terapkan, unduh WAV.",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_2: "Gag robot atau telepon playful untuk pesan—bukan klon selebriti, bukan klaim gender.",
+  tool_apply_a_toy_voice_effect_to_a_recording_usecase_3: "Perlu suara mainan chipmunk atau dalam untuk meme pendek.",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q1: "Apakah ini klon suara selebriti atau AI?",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_a1: "Tidak. Halaman ini hanya menerapkan efek sinyal mainan (resample, modulasi cincin, pita telepon). Tidak belajar, menyalin, atau meniru suara orang tertentu.",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q2: "Apakah ini pengubah suara pria-ke-wanita atau gender?",

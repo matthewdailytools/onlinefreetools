@@ -56,6 +56,7 @@ const id: SiteLangDict = {
   tool_generate_dtmf_touch_tones_usecases_title: "Kapan ini membantu",
   tool_generate_dtmf_touch_tones_usecase_1: "Anda butuh klip DTMF untuk demo IVR atau telepon—ketik digit, Hasilkan, unduh WAV untuk dokumen atau uji.",
   tool_generate_dtmf_touch_tones_usecase_2: "Anda ingin urutan touch-tone yang dapat direproduksi tanpa memasang generator sinyal desktop.",
+  tool_generate_dtmf_touch_tones_usecase_3: "Harus membuat bip keypad untuk demo IVR.",
   tool_generate_dtmf_touch_tones_faq_q1: "Apakah ini generator nada sine tunggal?",
   tool_generate_dtmf_touch_tones_faq_a1: "Tidak. DTMF memakai dua frekuensi sekaligus (baris + kolom). Untuk satu sine pada Hertz pilihan, gunakan alat nada sine.",
   tool_generate_dtmf_touch_tones_faq_q2: "Bisakah membuat bip notifikasi UI singkat?",

@@ -10,8 +10,7 @@ const de: SiteLangDict = {
     "Schneiden Sie 50- oder 60-Hz-Netzbrummen mit Notch-Filtern und optionalen Obertönen, dann laden Sie eine 16-Bit-WAV herunter. Nur auf dem Gerät.",
   tool_remove_mains_hum_from_a_recording_description:
     "Entfernen Sie Netzbrummen aus einer Aufnahme mit 50- oder 60-Hz-Notch-Filtern und optionalen 2.–5. Obertönen. Schritte: Entbrummen, Vorschau, WAV herunterladen. Beispiel: laden Sie die brummende Probe. Schmale Notches für Netzbrummen—kein Breitband-Denoise, kein Declick, kein dumpfes Sprach-EQ. Audio bleibt auf Ihrem Gerät; wird nie hochgeladen.",
-  tool_remove_mains_hum_from_a_recording_article:
-    "Aufnahmen nahe Netzteilen, Dimmern oder schlecht geerdeten Geräten fangen oft ein stetiges 50- oder 60-Hz-Netzbrummen ein, manchmal mit Obertönen. Diese Seite verkettet BiquadFilter-Notches in OfflineAudioContext auf der gewählten Grundfrequenz und optional den 2.–5. Harmonischen unter Nyquist. Das zielt auf schmale elektrische Töne—nicht auf Lüfterrauschen-Denoise, nicht auf Klickreparatur und nicht auf ein Drei-Band-EQ für dumpfe Stimme. Bass nahe dem Notch kann etwas dünner werden. Kanalzahl bleibt 1 oder 2. Behalten Sie das Original; der Download ist eine neue 16-Bit-WAV. Die Arbeit läuft im Browser auf Ihrem Gerät.",
+  tool_remove_mains_hum_from_a_recording_article: "Aufnahmen nahe Netzteilen, Dimmern oder schlecht geerdeten Geräten fangen oft ein stetiges 50- oder 60-Hz-Netzbrummen ein, manchmal mit Obertönen. Diese Seite verkettet EQ filter-Notches in on-device audio processing auf der gewählten Grundfrequenz und optional den 2.–5. Harmonischen unter Nyquist. Das zielt auf schmale elektrische Töne—nicht auf Lüfterrauschen-Denoise, nicht auf Klickreparatur und nicht auf ein Drei-Band-EQ für dumpfe Stimme. Bass nahe dem Notch kann etwas dünner werden. Kanalzahl bleibt 1 oder 2. Behalten Sie das Original; der Download ist eine neue 16-Bit-WAV. Die Arbeit läuft im Browser auf Ihrem Gerät.",
   tool_remove_mains_hum_from_a_recording_choose: "Audiodatei wählen",
   tool_remove_mains_hum_from_a_recording_hint: "Eine WAV-, MP3-, M4A-, AAC- oder OGG-Datei ablegen. Maximal 40 MiB und 10 Minuten; Mono oder Stereo.",
   tool_remove_mains_hum_from_a_recording_convert: "Entbrummen",
@@ -70,6 +69,7 @@ const de: SiteLangDict = {
   tool_remove_mains_hum_from_a_recording_usecases_title: "Wann das hilft",
   tool_remove_mains_hum_from_a_recording_usecase_1: "Eine Sprachnotiz mit stetigem Netzbrummen von Ladegerät oder Dimmer—wählen Sie Ihre Netz-Hz, Entbrummen, WAV herunterladen.",
   tool_remove_mains_hum_from_a_recording_usecase_2: "Eine Feldaufnahme, bei der der Netzton weg muss, bevor Sie Breitband-Rauschen denoisen oder dumpfe Sprache EQ-en.",
+  tool_remove_mains_hum_from_a_recording_usecase_3: "Ein 50/60-Hz-Brumm von Netzteilen ist unter dem Take hörbar.",
   tool_remove_mains_hum_from_a_recording_faq_q1: "Ist das dasselbe wie Hintergrundgeräusche einer Sprachnotiz reduzieren?",
   tool_remove_mains_hum_from_a_recording_faq_a1:
     "Nein. Jene Seite highpasst und gatet stetiges Lüfter- oder Klimarauschen. Diese Seite notcht schmale 50/60-Hz-Netztöne. Nutzen Sie Hintergrundgeräusche einer Sprachnotiz reduzieren für Breitband-Rauschen.",

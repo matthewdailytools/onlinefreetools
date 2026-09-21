@@ -92,6 +92,7 @@ const es: SiteLangDict = {
     "Una voz en off o cama musical que hace clic en los cortes—elige 1 s / 1 s, Fundir, descarga WAV.",
   tool_fade_in_and_fade_out_an_audio_clip_usecase_2:
     "Un clip que necesita bordes suaves antes de recortar o colocar en la línea de tiempo—sin construir un bucle sin costura.",
+  tool_fade_in_and_fade_out_an_audio_clip_usecase_3: "Un tono o bumper empieza y termina de golpe y necesita bordes suaves.",
   tool_fade_in_and_fade_out_an_audio_clip_faq_q1: "¿Es lo mismo que Hacer un bucle de audio sin costuras?",
   tool_fade_in_and_fade_out_an_audio_clip_faq_a1:
     "No. Esa herramienta envuelve la cola seleccionada en la cabeza con un cruce para que el empalme ciclique limpio. Esta página solo suaviza el inicio y el final de un clip. Para bucles sin costura, usa Hacer un bucle de audio sin costuras.",

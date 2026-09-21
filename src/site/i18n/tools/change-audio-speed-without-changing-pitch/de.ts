@@ -60,6 +60,7 @@ const de: SiteLangDict = {
   tool_change_audio_speed_without_changing_pitch_usecases_title: "Wann das hilft",
   tool_change_audio_speed_without_changing_pitch_usecase_1: "Übungssong zu schnell—0.75× wählen, Strecken, WAV herunterladen.",
   tool_change_audio_speed_without_changing_pitch_usecase_2: "Clip braucht leichte Beschleunigung ohne Nightcore-Pitch-Anhebung.",
+  tool_change_audio_speed_without_changing_pitch_usecase_3: "Eine VO muss in ein kürzeres Video passen, ohne Chipmunk-Stimme.",
   tool_change_audio_speed_without_changing_pitch_faq_q1: "Ist das dasselbe wie Tonhöhe oder Tonart ändern?",
   tool_change_audio_speed_without_changing_pitch_faq_a1: "Nein. Pitch-Shift ändert die musikalische Tonhöhe (Dauer ggf. gleich). Diese Seite ändert Tempo per WSOLA und zielt auf Tonhöhenerhalt. Pitch-only ist ein anderer Job.",
   tool_change_audio_speed_without_changing_pitch_faq_q2: "Ist das ein Nightcore-Maker?",

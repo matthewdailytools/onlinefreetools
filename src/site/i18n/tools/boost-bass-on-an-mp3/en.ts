@@ -11,8 +11,7 @@ const en: SiteLangDict = {
     "Lift thin low end with Mild, Medium or Strong low-shelf presets, then download a 16-bit WAV. On-device only.",
   tool_boost_bass_on_an_mp3_description:
     "Boost bass on an MP3 with Mild, Medium or Strong low-shelf presets. Steps: Boost, preview, download WAV. Example: load the thin-bass sample. Bass shelf only—not a full muffled-voice EQ, not whole-file loudness gain. Audio stays on your device; never uploaded.",
-  tool_boost_bass_on_an_mp3_article:
-    "Phone exports and compressed tracks often sound thin: kick and bass body sit too quiet under the midrange. This page runs one BiquadFilter lowshelf in OfflineAudioContext with Mild (+4 dB), Medium (+8 dB) or Strong (+12 dB) around 100 Hz. That deepens low end without a ten-band graphic EQ or a three-band muffled-voice preset chain. Soft peak protection scales the buffer if the boost would clip. Channel count stays 1 or 2. Keep the original master; the download is a new 16-bit WAV. Work runs in the browser on your device.",
+  tool_boost_bass_on_an_mp3_article: "Phone exports and compressed tracks often sound thin: kick and bass body sit too quiet under the midrange. This page runs one lowshelf EQ in on-device processing with Mild (+4 dB), Medium (+8 dB) or Strong (+12 dB) around 100 Hz. That deepens low end without a ten-band graphic EQ or a three-band muffled-voice preset chain. Soft peak protection scales the buffer if the boost would clip. Channel count stays 1 or 2. Keep the original master; the download is a new 16-bit WAV. Work runs in the browser on your device.",
   tool_boost_bass_on_an_mp3_choose: "Choose an audio file",
   tool_boost_bass_on_an_mp3_hint: "Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.",
   tool_boost_bass_on_an_mp3_convert: "Boost",
@@ -59,7 +58,7 @@ const en: SiteLangDict = {
   tool_boost_bass_on_an_mp3_why_choose_item_4: "Changing the preset or the input clears the old download so you never save a stale WAV by mistake.",
   tool_boost_bass_on_an_mp3_rules_title: "Mild, Medium, Strong and limits",
   tool_boost_bass_on_an_mp3_rules_body:
-    "Each preset is one lowshelf Biquad around 100 Hz. Mild is gentle, Medium is the default punch, Strong is heavier. Soft peak protection scales the result if the boost would clip.",
+    "Each preset is one lowshelf EQ around 100 Hz. Mild is gentle, Medium is the default punch, Strong is heavier. Soft peak protection scales the result if the boost would clip.",
   tool_boost_bass_on_an_mp3_rules_item_1:
     "Mild about +4 dB, Medium about +8 dB, Strong about +12 dB on a 100 Hz lowshelf. Mid and high bands are not reshaped like a full EQ.",
   tool_boost_bass_on_an_mp3_rules_item_2:
@@ -73,6 +72,7 @@ const en: SiteLangDict = {
   tool_boost_bass_on_an_mp3_usecases_title: "When this helps",
   tool_boost_bass_on_an_mp3_usecase_1: "A phone MP3 whose kick feels hollow—pick Medium, Boost, download WAV.",
   tool_boost_bass_on_an_mp3_usecase_2: "A track that needs thicker low end without opening a full equalizer or raising overall loudness.",
+  tool_boost_bass_on_an_mp3_usecase_3: "A phone export sounds thin on laptop speakers and you only want a stronger kick, not louder mids.",
   tool_boost_bass_on_an_mp3_faq_q1: "Is this the same as EQ a muffled voice recording?",
   tool_boost_bass_on_an_mp3_faq_a1:
     "No. That tool runs three-band Clarity/Warmth/Presence presets for muffled speech. This page only lifts bass with a lowshelf. For multi-band muffled EQ, use EQ a muffled voice recording.",
@@ -82,7 +82,7 @@ const en: SiteLangDict = {
   tool_boost_bass_on_an_mp3_faq_q3: "What do Mild, Medium and Strong do?",
   tool_boost_bass_on_an_mp3_faq_a3:
     "They set lowshelf gain around 100 Hz: roughly +4, +8 and +12 dB. Soft peak protection prevents clipping after stronger boosts.",
-  tool_boost_bass_on_an_mp3_faq_q4: "The slug says MP3—can I use WAV or M4A?",
+  tool_boost_bass_on_an_mp3_faq_q4: "The name mentions MP3—can I use WAV or M4A?",
   tool_boost_bass_on_an_mp3_faq_a4:
     "Yes. Any browser-decodable audio (WAV, MP3, M4A, AAC, OGG) works. The download is always a 16-bit WAV.",
   tool_boost_bass_on_an_mp3_faq_q5: "What if Strong makes peaks too hot?",

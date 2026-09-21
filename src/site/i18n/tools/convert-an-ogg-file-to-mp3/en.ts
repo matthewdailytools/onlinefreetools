@@ -7,7 +7,7 @@ import type { SiteLangDict } from '../../../types';
 const en: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_title: 'Convert an OGG file to MP3',
   tool_convert_an_ogg_file_to_mp3_desc: 'Turn one local OGG or Opus recording into MP3. Your audio stays on your device and is not uploaded to a server.',
-  tool_convert_an_ogg_file_to_mp3_description: 'Convert an OGG file to MP3 in the browser without uploading. Steps: choose an OGG or Opus file, pick bitrate, Convert to MP3, preview and download. Example: a five-second stereo Opus-in-OGG tone becomes about 120 KiB of MP3 at 192 kbps. Uses decodeAudioData when your browser can decode OGG/Opus, then lamejs; you get a clear error if decode fails. Files stay on your device.',
+  tool_convert_an_ogg_file_to_mp3_description: 'Convert an OGG file to MP3 in the browser without uploading. Steps: choose an OGG or Opus file, pick bitrate, Convert to MP3, preview and download. Example: a five-second stereo Opus-in-OGG tone becomes about 120 KiB of MP3 at 192 kbps. Uses browser decoding when your browser can decode OGG/Opus, then in-browser MP3 encoding; you get a clear error if decode fails. Files stay on your device.',
   tool_convert_an_ogg_file_to_mp3_article: 'Voice notes and game audio often arrive as OGG Vorbis or Opus. Recipients may still need MP3. This page converts one complete local OGG container—Vorbis or Opus—into an MP3 you can preview. Encoding to MP3 is another lossy step, so keep the original. Success depends on whether your browser can decode that OGG stream.',
   tool_convert_an_ogg_file_to_mp3_choose: 'Choose an OGG or Opus file',
   tool_convert_an_ogg_file_to_mp3_hint: 'Drop one .ogg, .oga or .opus file. Up to 40 MiB and 10 minutes; mono or stereo. Decoding depends on your browser.',
@@ -57,6 +57,7 @@ const en: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_usecases_title: 'Useful for',
   tool_convert_an_ogg_file_to_mp3_usecase_1: 'Send a game or chat OGG clip to someone whose player expects MP3.',
   tool_convert_an_ogg_file_to_mp3_usecase_2: 'Convert an Opus voice note into an MP3 attachment while keeping the original.',
+  tool_convert_an_ogg_file_to_mp3_usecase_3: 'A voice note arrived as OGG/Opus and the editor only accepts MP3.',
   tool_convert_an_ogg_file_to_mp3_faq_q1: 'Can I also convert Opus to MP3?',
   tool_convert_an_ogg_file_to_mp3_faq_a1: 'Yes. Opus inside an OGG container (and .opus files your browser treats as OGG) use the same Convert to MP3 control. Renaming the extension alone does not convert audio.',
   tool_convert_an_ogg_file_to_mp3_faq_q2: 'Is my recording uploaded? Can I work offline?',

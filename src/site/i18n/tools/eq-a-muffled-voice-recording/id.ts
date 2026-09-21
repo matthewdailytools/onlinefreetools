@@ -10,8 +10,7 @@ const id: SiteLangDict = {
     "Buka suara teredam dengan preset Clarity, Warmth, atau Presence tiga pita, lalu unduh WAV 16-bit. Hanya di perangkat.",
   tool_eq_a_muffled_voice_recording_description:
     "EQ rekaman suara yang teredam dengan preset Clarity, Warmth, atau Presence tiga pita. Langkah: EQ, pratinjau, unduh WAV. Contoh: muat sampel teredam. Hanya pembentukan nada—bukan booster bass saja, bukan noise reduction, bukan de-esser. Audio tetap di perangkat Anda; tidak pernah diunggah.",
-  tool_eq_a_muffled_voice_recording_article:
-    "Panggilan, masker, dan mikrofon jauh sering terdengar teredam: terlalu banyak lumpur di bawah beberapa ratus hertz dan kurang kejelasan di pita bicara. Halaman ini menjalankan tiga tahap BiquadFilter di OfflineAudioContext—lowshelf, peaking, dan highshelf—sebagai preset bernama. Clarity memotong lumpur dan membuka presence bicara; Warmth menaikkan body dan melembutkan high tajam; Presence memfokuskan presence mid-high dan air. Itu adalah EQ tonal untuk suara teredam, bukan booster satu pita bass, bukan pengurangan noise latar, dan bukan de-esser hanya untuk sibilance. Saluran tetap 1 atau 2. Simpan master; unduhan adalah WAV 16-bit baru. Kerja berjalan di browser pada perangkat Anda.",
+  tool_eq_a_muffled_voice_recording_article: "Panggilan, masker, dan mikrofon jauh sering terdengar teredam: terlalu banyak lumpur di bawah beberapa ratus hertz dan kurang kejelasan di pita bicara. Halaman ini menjalankan tiga tahap EQ filter di on-device audio processing—lowshelf, peaking, dan highshelf—sebagai preset bernama. Clarity memotong lumpur dan membuka presence bicara; Warmth menaikkan body dan melembutkan high tajam; Presence memfokuskan presence mid-high dan air. Itu adalah EQ tonal untuk suara teredam, bukan booster satu pita bass, bukan pengurangan noise latar, dan bukan de-esser hanya untuk sibilance. Saluran tetap 1 atau 2. Simpan master; unduhan adalah WAV 16-bit baru. Kerja berjalan di browser pada perangkat Anda.",
   tool_eq_a_muffled_voice_recording_choose: "Pilih berkas audio",
   tool_eq_a_muffled_voice_recording_hint: "Jatuhkan satu WAV, MP3, M4A, AAC, atau OGG. Maksimum 40 MiB dan 10 menit; mono atau stereo.",
   tool_eq_a_muffled_voice_recording_convert: "EQ",
@@ -54,11 +53,11 @@ const id: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_why_choose_item_1: "Lihat nama preset, puncak sebelum/sesudah, dan KiB keluaran sebelum menyimpan.",
   tool_eq_a_muffled_voice_recording_why_choose_item_2: "Tiga preset suara jelas—satu pekerjaan EQ teredam, bukan mainan sepuluh pita atau bass saja.",
   tool_eq_a_muffled_voice_recording_why_choose_item_3:
-    "Dekode, EQ Biquad, dan penulisan WAV berjalan di perangkat Anda; halaman tidak mengunggah rekaman untuk diproses.",
+    "Dekode, EQ EQ, dan penulisan WAV berjalan di perangkat Anda; halaman tidak mengunggah rekaman untuk diproses.",
   tool_eq_a_muffled_voice_recording_why_choose_item_4: "Mengubah preset atau input menghapus unduhan lama agar tidak menyimpan WAV usang.",
   tool_eq_a_muffled_voice_recording_rules_title: "Clarity, Warmth, Presence, dan batas",
   tool_eq_a_muffled_voice_recording_rules_body:
-    "Setiap preset adalah tiga tahap Biquad (lowshelf, peaking, highshelf). Clarity membuka bicara teredam; Warmth menambah body; Presence menaikkan presence dan air. Soft peak protection menskalakan jika boost akan clipping.",
+    "Setiap preset adalah tiga tahap EQ (lowshelf, peaking, highshelf). Clarity membuka bicara teredam; Warmth menambah body; Presence menaikkan presence dan air. Soft peak protection menskalakan jika boost akan clipping.",
   tool_eq_a_muffled_voice_recording_rules_item_1:
     "Clarity bawaan memotong low berlumpur dan menaikkan kejernihan bicara. Warmth menaikkan body low dan melembutkan high tajam. Presence memfokuskan presence mid-high.",
   tool_eq_a_muffled_voice_recording_rules_item_2:
@@ -72,6 +71,7 @@ const id: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_usecases_title: "Kapan ini membantu",
   tool_eq_a_muffled_voice_recording_usecase_1: "Take telepon atau masker yang terdengar seperti di kotak—pilih Clarity, EQ, unduh WAV.",
   tool_eq_a_muffled_voice_recording_usecase_2: "Suara podcast butuh body lebih hangat atau lebih presence tanpa membuka EQ DAW penuh.",
+  tool_eq_a_muffled_voice_recording_usecase_3: "Take jauh atau bermasker terdengar buram dan butuh kehadiran suara lebih jelas.",
   tool_eq_a_muffled_voice_recording_faq_q1: "Apakah ini sama dengan bass booster?",
   tool_eq_a_muffled_voice_recording_faq_a1:
     "Tidak. Bass booster terutama menaikkan frekuensi rendah. Halaman ini menawarkan tiga preset suara multiband untuk bicara teredam. Boost bass saja adalah pekerjaan lain (Boost bass on an MP3 saat tersedia).",

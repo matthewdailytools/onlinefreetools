@@ -65,6 +65,7 @@ const id: SiteLangDict = {
   tool_crossfade_two_audio_files_usecases_title: 'Kapan ini membantu',
   tool_crossfade_two_audio_files_usecase_1: 'Dua lagu butuh handoff gaya DJ—tambah keduanya, 2–5 dtk equal-power, Crossfade, unduh WAV.',
   tool_crossfade_two_audio_files_usecase_2: 'Segmen podcast harus bertemu lembut—gunakan 1 dtk antar take tanpa mengunggah editor daring.',
+  tool_crossfade_two_audio_files_usecase_3: 'Dua bagian lagu perlu overlap singkat agar sambungan tidak potong keras.',
   tool_crossfade_two_audio_files_faq_q1: 'Apakah ini sama dengan menyambung berkas audio ujung ke ujung?',
   tool_crossfade_two_audio_files_faq_a1: 'Tidak. Sambung memotong keras. Halaman ini menumpuk ujung pertama dengan awal kedua.',
   tool_crossfade_two_audio_files_faq_q2: 'Apakah ini sama dengan mencampur voiceover di atas musik?',

@@ -63,6 +63,7 @@ const id: SiteLangDict = {
   tool_limit_peaks_so_a_file_does_not_clip_usecases_title: "Kapan ini membantu",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_1: "Mix yang kadang clipping—pilih Soft −1, batasi, unduh WAV.",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_2: "Pengiriman yang melarang puncak di atas langit-langit setelah level keseluruhan ditetapkan, tanpa kompresor penuh.",
+  tool_limit_peaks_so_a_file_does_not_clip_usecase_3: "Ekspor panas clip di puncak; Anda ingin langit-langit aman sebelum terbit.",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q1: "Apakah sama dengan normalisasi puncak?",
   tool_limit_peaks_so_a_file_does_not_clip_faq_a1: "Tidak. Normalisasi puncak menskala seluruh klip agar puncak absolut mengenai target (bisa menaikkan materi tenang). Limiter ini hanya meredam sampel di atas langit-langit. Untuk normalisasi, gunakan Normalisasi file audio ke puncak.",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q2: "Apakah kompresor dinamis?",

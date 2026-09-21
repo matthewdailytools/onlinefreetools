@@ -67,6 +67,7 @@ const zh: SiteLangDict = {
   tool_mix_binaural_beats_for_focus_usecases_title: '适用场景',
   tool_mix_binaural_beats_for_focus_usecase_1: '需要可复用的专注氛围 WAV：设频率、混合、下载后用耳机听。',
   tool_mix_binaural_beats_for_focus_usecase_2: '想快速做立体声节拍演示，又不想装桌面软件或听信疗效宣传。',
+  tool_mix_binaural_beats_for_focus_usecase_3: '想用载频与拍频差生成短双耳节拍，仅供耳机氛围收听。',
   tool_mix_binaural_beats_for_focus_faq_q1: '这是医疗或治疗吗？',
   tool_mix_binaural_beats_for_focus_faq_a1: '不是。本页只做娱乐与个人专注氛围音，不诊断、不治疗、不宣称疗效。',
   tool_mix_binaural_beats_for_focus_faq_q2: '一定要用耳机吗？',

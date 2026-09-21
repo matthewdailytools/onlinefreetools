@@ -60,6 +60,7 @@ const id: SiteLangDict = {
   tool_change_audio_speed_without_changing_pitch_usecases_title: "Kapan ini membantu",
   tool_change_audio_speed_without_changing_pitch_usecase_1: "Lagu latihan terlalu cepat—pilih 0.75×, Stretch, unduh WAV.",
   tool_change_audio_speed_without_changing_pitch_usecase_2: "Klip yang perlu sedikit dipercepat untuk timing tanpa naik pitch nightcore.",
+  tool_change_audio_speed_without_changing_pitch_usecase_3: "VO harus muat di slot video lebih pendek tanpa suara chipmunk.",
   tool_change_audio_speed_without_changing_pitch_faq_q1: "Apakah sama dengan mengubah pitch atau kunci?",
   tool_change_audio_speed_without_changing_pitch_faq_a1: "Tidak. Pitch shift mengubah pitch musikal (durasi mungkin sama). Halaman ini mengubah tempo dengan WSOLA sambil menjaga pitch. Pitch-only adalah pekerjaan terpisah.",
   tool_change_audio_speed_without_changing_pitch_faq_q2: "Apakah ini pembuat nightcore?",

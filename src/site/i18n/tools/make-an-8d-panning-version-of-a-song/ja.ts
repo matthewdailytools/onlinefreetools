@@ -63,6 +63,7 @@ const ja: SiteLangDict = {
   tool_make_an_8d_panning_version_of_a_song_usecases_title: "向いている場面",
   tool_make_an_8d_panning_version_of_a_song_usecase_1: "短い曲やループの定番ヘッドホン8D—5秒を選び、8Dパン、WAV保存。",
   tool_make_an_8d_panning_version_of_a_song_usecase_2: "左右の動きが欲しいクリップ—slowed+reverbでもナイトコアでもリバースでもない。",
+  tool_make_an_8d_panning_version_of_a_song_usecase_3: "ヘッドホン向けに回るステレオパンが欲しく、モノリミックスではない。",
   tool_make_an_8d_panning_version_of_a_song_faq_q1: "真の3DサラウンドやHRTFですか？",
   tool_make_an_8d_panning_version_of_a_song_faq_a1: "いいえ。ミッドを定電力ゲインで左右オートパンし、ヘッドホンの「円」感を出すだけです。DolbyやAmbisonics、実測HRTFは復号しません。",
   tool_make_an_8d_panning_version_of_a_song_faq_q2: "slowed and reverbと同じですか？",

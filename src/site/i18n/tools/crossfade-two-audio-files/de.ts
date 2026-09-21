@@ -65,6 +65,7 @@ const de: SiteLangDict = {
   tool_crossfade_two_audio_files_usecases_title: 'Wann das hilft',
   tool_crossfade_two_audio_files_usecase_1: 'Zwei Songs brauchen einen DJ-Übergang—beide hinzufügen, 2–5 s Equal-Power, Crossfade, WAV laden.',
   tool_crossfade_two_audio_files_usecase_2: 'Podcast-Abschnitte sollen weich treffen—1 s Fade zwischen Takes, ohne Online-Editor-Upload.',
+  tool_crossfade_two_audio_files_usecase_3: 'Zwei Abschnitte brauchen kurze Überlappung statt eines harten Schnitts.',
   tool_crossfade_two_audio_files_faq_q1: 'Ist das dasselbe wie Audiodateien end-to-end zu joinen?',
   tool_crossfade_two_audio_files_faq_a1: 'Nein. Joinen ist ein Hartschnitt. Diese Seite überlappt Ende und Anfang zum gemeinsamen Faden.',
   tool_crossfade_two_audio_files_faq_q2: 'Ist das dasselbe wie Voiceover über Musik zu mischen?',

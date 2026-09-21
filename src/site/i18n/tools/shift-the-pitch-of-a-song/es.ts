@@ -66,6 +66,7 @@ const es: SiteLangDict = {
   tool_shift_the_pitch_of_a_song_usecases_title: "Cuándo ayuda",
   tool_shift_the_pitch_of_a_song_usecase_1: "Un acompañamiento demasiado agudo—elija −2, Transponer, descargue WAV.",
   tool_shift_the_pitch_of_a_song_usecase_2: "Un clip corto que necesita +1 o +2 sin acelerar como nightcore.",
+  tool_shift_the_pitch_of_a_song_usecase_3: "Un karaoke o cover necesita unos semitonos arriba o abajo manteniendo la duración.",
   tool_shift_the_pitch_of_a_song_faq_q1: "¿Es lo mismo que cambiar la velocidad sin cambiar el tono?",
   tool_shift_the_pitch_of_a_song_faq_a1: "No. Cambiar velocidad sin tono altera el tempo con WSOLA intentando conservar el tono. Esta página cambia el tono musical intentando conservar la duración. Use Cambiar velocidad de audio sin cambiar tono para solo tempo.",
   tool_shift_the_pitch_of_a_song_faq_q2: "¿Es un generador nightcore?",

@@ -60,6 +60,7 @@ const ru: SiteLangDict = {
   tool_change_audio_speed_without_changing_pitch_usecases_title: "Когда это помогает",
   tool_change_audio_speed_without_changing_pitch_usecase_1: "Учебная песня слишком быстрая—выберите 0.75×, Растянуть, скачать WAV.",
   tool_change_audio_speed_without_changing_pitch_usecase_2: "Клип нужно чуть ускорить по таймингу без подъёма высоты nightcore.",
+  tool_change_audio_speed_without_changing_pitch_usecase_3: "Нужно уместить VO в более короткий ролик без «беличьего» голоса.",
   tool_change_audio_speed_without_changing_pitch_faq_q1: "Это то же самое, что менять высоту или тональность?",
   tool_change_audio_speed_without_changing_pitch_faq_a1: "Нет. Pitch-shift меняет музыкальную высоту (длительность может остаться). Эта страница меняет темп через WSOLA, стремясь сохранить высоту. Только высота — отдельная задача.",
   tool_change_audio_speed_without_changing_pitch_faq_q2: "Это nightcore-мейкер?",

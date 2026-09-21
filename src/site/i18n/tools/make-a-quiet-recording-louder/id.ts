@@ -59,6 +59,7 @@ const id: SiteLangDict = {
   tool_make_a_quiet_recording_louder_usecases_title: "Kapan ini membantu",
   tool_make_a_quiet_recording_louder_usecase_1: "Memo suara ponsel yang terlalu pelan untuk diputar nyaman—naikkan +6 dB dan unduh WAV.",
   tool_make_a_quiet_recording_louder_usecase_2: "Trek wawancara yang secara keseluruhan lemah, saat Anda ingin rasio yang sama lebih keras tanpa mengejar target LUFS.",
+  tool_make_a_quiet_recording_louder_usecase_3: "Memo pelan dari ponsel perlu gain dengan proteksi puncak.",
   tool_make_a_quiet_recording_louder_faq_q1: "Apakah ini sama dengan menormalisasi audio ke peak 0 dBFS?",
   tool_make_a_quiet_recording_louder_faq_a1: "Tidak. Anda memilih gain dB tetap. Proteksi puncak hanya menurunkan jika gain itu akan clip—tidak otomatis menaikkan setiap file ke skala penuh. Normalisasi peak adalah pekerjaan terencana lain.",
   tool_make_a_quiet_recording_louder_faq_q2: "Apakah ini menyamai loudness podcast / LUFS?",

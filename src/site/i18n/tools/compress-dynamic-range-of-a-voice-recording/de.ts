@@ -82,6 +82,7 @@ const de: SiteLangDict = {
   tool_compress_dynamic_range_of_a_voice_recording_usecases_title: "Wann das hilft",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_1: "Voiceover mit ruhigen Phrasen und lauten Peaks—Podcast wählen, komprimieren, WAV laden.",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_2: "Interview gleichmäßiger machen vor Loudness-Match, ohne MP3 wegen Größe zu schrumpfen.",
+  tool_compress_dynamic_range_of_a_voice_recording_usecase_3: "Flüstern und Peaks kämpfen in einem Take; du willst gleichmäßigeres Hören.",
   tool_compress_dynamic_range_of_a_voice_recording_faq_q1: "Ist das dasselbe wie MP3-Dateigröße komprimieren/verkleinern?",
   tool_compress_dynamic_range_of_a_voice_recording_faq_a1:
     "Nein. „Komprimieren“ meint hier Dynamikumfang (Schwelle/Ratio), nicht Bitrate/Bytes. Für kleinere MP3: Reduce an MP3 file size. Chinesisch: 压缩人声动态 ≠ 压缩 MP3 体积.",

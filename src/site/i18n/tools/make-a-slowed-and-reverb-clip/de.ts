@@ -68,6 +68,7 @@ const de: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_usecases_title: "Wann das hilft",
   tool_make_a_slowed_and_reverb_clip_usecase_1: "Pop- oder R&B-Clip für klassischen Slowed+Reverb-Edit—0.8× + Mittel, Slowed Reverb, WAV laden.",
   tool_make_a_slowed_and_reverb_clip_usecase_2: "Kurzer Clip, der langsam und Raum braucht—kein Tempo-only, kein Nightcore, kein trockener Hall allein.",
+  tool_make_a_slowed_and_reverb_clip_usecase_3: "Ein Songsnippet soll slowed-and-reverb für Social Edits klingen.",
   tool_make_a_slowed_and_reverb_clip_faq_q1: "Ist das dasselbe wie Tempo ändern ohne Tonhöhe zu ändern?",
   tool_make_a_slowed_and_reverb_clip_faq_a1: "Nein. Tempo-ohne-Tonhöhe nutzt WSOLA ohne Hall. Diese Seite verlangsamt mit Tonhöhenabfall und fügt Hall hinzu. Für nur Tempo: Audio-Geschwindigkeit ohne Tonhöhenänderung ändern.",
   tool_make_a_slowed_and_reverb_clip_faq_q2: "Ist das dasselbe wie Nightcore?",

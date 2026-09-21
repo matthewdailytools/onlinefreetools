@@ -56,6 +56,7 @@ const ar: SiteLangDict = {
   tool_generate_dtmf_touch_tones_usecases_title: "متى يساعد هذا",
   tool_generate_dtmf_touch_tones_usecase_1: "تحتاج مقطع DTMF لعرض IVR أو هاتف—اكتب الأرقام، توليد، نزّل WAV للمستندات أو الاختبارات.",
   tool_generate_dtmf_touch_tones_usecase_2: "تريد تسلسل نغمات لمسية قابلاً للتكرار دون تثبيت مولّد إشارات سطح مكتب.",
+  tool_generate_dtmf_touch_tones_usecase_3: "يجب إنشاء نغمات لوحة الهاتف لعرض IVR.",
   tool_generate_dtmf_touch_tones_faq_q1: "هل هذا مولّد نغمة جيب مفرد؟",
   tool_generate_dtmf_touch_tones_faq_a1: "لا. DTMF يستخدم ترددين معاً (صف + عمود). لنغمة جيب عند هرتز مختار استخدم أداة النغمة الجيبية.",
   tool_generate_dtmf_touch_tones_faq_q2: "هل يمكنه صنع صفارات إشعار واجهة قصيرة؟",

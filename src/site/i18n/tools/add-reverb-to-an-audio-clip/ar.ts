@@ -62,6 +62,7 @@ const ar: SiteLangDict = {
   tool_add_reverb_to_an_audio_clip_usecases_title: "متى يفيد ذلك",
   tool_add_reverb_to_an_audio_clip_usecase_1: "تعليق جاف يحتاج قليلًا من هواء الغرفة—اختر غرفة، إضافة صدى، نزّل WAV.",
   tool_add_reverb_to_an_audio_clip_usecase_2: "مسار قصير يحتاج مساحة قاعة أو ارتدادات أوضح دون إبطاء.",
+  tool_add_reverb_to_an_audio_clip_usecase_3: "تريد ذيل غرفة أو قاعة قصيرًا على صوت جاف دون فتح محطة عمل.",
   tool_add_reverb_to_an_audio_clip_faq_q1: "هل هذا مثل slowed and reverb؟",
   tool_add_reverb_to_an_audio_clip_faq_a1: "لا. Slowed and reverb يمدّد الإيقاع ويخفض الطبقة قبل إضافة المساحة. هذه الصفحة تترك السرعة والطبقة وتضيف صدى أو ارتدادًا فقط. استخدم Make a slowed and reverb clip لتلك الجمالية.",
   tool_add_reverb_to_an_audio_clip_faq_q2: "ما الفرق بين غرفة وقاعة وصدى؟",

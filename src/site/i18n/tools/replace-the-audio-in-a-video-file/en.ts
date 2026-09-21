@@ -8,10 +8,8 @@ const en: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_title: 'Replace the audio in a video file',
   tool_replace_the_audio_in_a_video_file_desc:
     'Replace a local video’s soundtrack with another audio file, then download. On-device only—no YouTube download.',
-  tool_replace_the_audio_in_a_video_file_description:
-    'Replace the soundtrack of a local video with another audio file in the browser, then download. Steps: Choose a video and a new audio file, Replace audio, preview, download. Example: clip with an old tone swapped for a new WAV. Uses captureStream plus MediaRecorder—often WebM; not lossless remux. Never uploaded. No YouTube download.',
-  tool_replace_the_audio_in_a_video_file_article:
-    'Wrong BGM or a weak built-in track often needs a full soundtrack swap before sharing. This page opens a local video and a local replacement audio file, drops the original audio tracks, captures picture, decodes the new soundtrack in AudioContext, re-encodes with MediaRecorder, then downloads—often WebM depending on the browser. Output length follows the video; longer audio is cut to match, shorter audio ends early. It does not download YouTube or other URLs, does not only mute without adding sound, and is not framed as “add audio to a silent clip” alone. Success depends on whether your browser can play both files and support MediaRecorder with audio. Keep the originals; the download is a new file. Work runs on your device.',
+  tool_replace_the_audio_in_a_video_file_description: 'Replace the soundtrack of a local video with another audio file in the browser, then download. Steps: Choose a video and a new audio file, Replace audio, preview, download. Example: clip with an old tone swapped for a new WAV. Uses captureStream plus browser media recording—often WebM; not lossless remux. Never uploaded. No YouTube download.',
+  tool_replace_the_audio_in_a_video_file_article: 'Wrong BGM or a weak built-in track often needs a full soundtrack swap before sharing. This page opens a local video and a local replacement audio file, drops the original audio tracks, captures picture, decodes the new soundtrack in the browser audio engine, re-encodes with browser media recording, then downloads—often WebM depending on the browser. Output length follows the video; longer audio is cut to match, shorter audio ends early. It does not download YouTube or other URLs, does not only mute without adding sound, and is not framed as “add audio to a silent clip” alone. Success depends on whether your browser can play both files and support browser media recording with audio. Keep the originals; the download is a new file. Work runs on your device.',
   tool_replace_the_audio_in_a_video_file_choose_video: 'Choose a video file',
   tool_replace_the_audio_in_a_video_file_hint_video:
     'Drop or choose a local MP4, WebM, MOV or M4V your browser can play. Up to 80 MiB and about 3 minutes. No YouTube or URL paste.',
@@ -24,7 +22,7 @@ const en: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_clear: 'Clear',
   tool_replace_the_audio_in_a_video_file_advanced: 'Replace notes',
   tool_replace_the_audio_in_a_video_file_settings_hint:
-    'Browsers usually re-encode via MediaRecorder after dropping the original audio tracks and attaching your new soundtrack. Output is often WebM, not a lossless remux of the original MP4. This page never downloads YouTube.',
+    'Browsers usually re-encode via browser media recording after dropping the original audio tracks and attaching your new soundtrack. Output is often WebM, not a lossless remux of the original MP4. This page never downloads YouTube.',
   tool_replace_the_audio_in_a_video_file_progress: 'Replace-audio progress',
   tool_replace_the_audio_in_a_video_file_read: 'Read',
   tool_replace_the_audio_in_a_video_file_decode: 'Decode',
@@ -50,7 +48,7 @@ const en: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_err_decode:
     'The browser could not decode the video or audio. Try another container or a shorter clip.',
   tool_replace_the_audio_in_a_video_file_err_encoder:
-    'MediaRecorder could not write a replaced-audio video. Try Chrome/Edge or shorter WebM/MP4 plus WAV/MP3.',
+    'browser media recording could not write a replaced-audio video. Try Chrome/Edge or shorter WebM/MP4 plus WAV/MP3.',
   tool_replace_the_audio_in_a_video_file_how_title: 'How to replace the audio in a video file',
   tool_replace_the_audio_in_a_video_file_how_body:
     'Choose a local video and a new audio file, run Replace audio, preview the swap, then download—without uploading and without YouTube download.',
@@ -66,14 +64,14 @@ const en: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_why_choose_item_1:
     'See duration, MIME type and output KiB before you save.',
   tool_replace_the_audio_in_a_video_file_why_choose_item_2:
-    'One clear soundtrack-swap job with honest MediaRecorder limits—not a fake lossless remux promise.',
+    'One clear soundtrack-swap job with honest browser media recording limits—not a fake lossless remux promise.',
   tool_replace_the_audio_in_a_video_file_why_choose_item_3:
     'Reading and recording run on your device; the page does not upload your files to process them.',
   tool_replace_the_audio_in_a_video_file_why_choose_item_4:
     'Changing either file clears the old download so you never save a stale swap by mistake.',
   tool_replace_the_audio_in_a_video_file_rules_title: 'Replace rules and honest browser limits',
   tool_replace_the_audio_in_a_video_file_rules_body:
-    'Each run drops original audio tracks, attaches your new soundtrack, and re-encodes with MediaRecorder. Output is often WebM. This is not YouTube download and not mute-only.',
+    'Each run drops original audio tracks, attaches your new soundtrack, and re-encodes with browser media recording. Output is often WebM. This is not YouTube download and not mute-only.',
   tool_replace_the_audio_in_a_video_file_rules_item_1:
     'One local video up to 80 MiB and about three minutes, plus one local audio up to 40 MiB. Playback/decode must succeed first.',
   tool_replace_the_audio_in_a_video_file_rules_item_2:
@@ -90,6 +88,7 @@ const en: SiteLangDict = {
     'You recorded with the wrong BGM and have a better local WAV—swap it here, then download for sharing.',
   tool_replace_the_audio_in_a_video_file_usecase_2:
     'You want to replace a weak built-in track with a clearer local soundtrack without installing a desktop editor.',
+  tool_replace_the_audio_in_a_video_file_usecase_3: 'Wrong BGM must be swapped for a new track while keeping the picture.',
   tool_replace_the_audio_in_a_video_file_faq_q1: 'Can it download YouTube or paste a URL?',
   tool_replace_the_audio_in_a_video_file_faq_a1:
     'No. Only local files you already have. There is no YouTube downloader and no remote fetch.',
@@ -101,7 +100,7 @@ const en: SiteLangDict = {
     'Adding often targets silent or weakly voiced clips. This page’s job is explicitly to replace the existing soundtrack with another file.',
   tool_replace_the_audio_in_a_video_file_faq_q4: 'Will the output be the same MP4 as my source?',
   tool_replace_the_audio_in_a_video_file_faq_a4:
-    'Usually not. Browsers typically re-encode with MediaRecorder, often to WebM. Quality and container can change.',
+    'Usually not. Browsers typically re-encode with browser media recording, often to WebM. Quality and container can change.',
   tool_replace_the_audio_in_a_video_file_faq_q5: 'Is anything uploaded to a server?',
   tool_replace_the_audio_in_a_video_file_faq_a5:
     'No. Decode and recording run in your browser on your device. The page needs a network connection when first loaded; offline availability is not guaranteed.',

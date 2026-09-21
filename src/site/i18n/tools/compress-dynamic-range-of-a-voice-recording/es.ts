@@ -74,6 +74,7 @@ const es: SiteLangDict = {
   tool_compress_dynamic_range_of_a_voice_recording_usecases_title: "Cuándo ayuda",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_1: "Una voz en off que salta de frases quietas a picos fuertes—elige Podcast, comprime y descarga WAV.",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_2: "Una entrevista que quieres más pareja antes de igualar loudness, sin reducir un MP3 por tamaño.",
+  tool_compress_dynamic_range_of_a_voice_recording_usecase_3: "Susurros y picos pelean en una toma y quieres un nivel de escucha más pareja.",
   tool_compress_dynamic_range_of_a_voice_recording_faq_q1: "¿Es lo mismo que comprimir / reducir el tamaño de un MP3?",
   tool_compress_dynamic_range_of_a_voice_recording_faq_a1:
     "No. Aquí «comprimir» es rango dinámico (umbral/ratio), no bajar bitrate o bytes. Para MP3 más pequeños usa Reduce an MP3 file size. En chino, 压缩人声动态 ≠ 压缩 MP3 体积.",

@@ -56,6 +56,7 @@ const ru: SiteLangDict = {
   tool_generate_dtmf_touch_tones_usecases_title: "Когда это помогает",
   tool_generate_dtmf_touch_tones_usecase_1: "Нужен DTMF-клип для IVR или телефонного демо—введите цифры, Сгенерировать, скачайте WAV для документов или тестов.",
   tool_generate_dtmf_touch_tones_usecase_2: "Нужна воспроизводимая touch-tone последовательность без установки настольного генератора сигналов.",
+  tool_generate_dtmf_touch_tones_usecase_3: "Нужны бипы клавиатуры для демо IVR.",
   tool_generate_dtmf_touch_tones_faq_q1: "Это генератор одиночного синусоидального тона?",
   tool_generate_dtmf_touch_tones_faq_a1: "Нет. DTMF использует две частоты сразу (строка + столбец). Для одной синусоиды на выбранном герце используйте инструмент синусоидального тона.",
   tool_generate_dtmf_touch_tones_faq_q2: "Может ли он делать короткие UI-уведомления?",

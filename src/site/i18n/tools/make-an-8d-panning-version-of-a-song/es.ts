@@ -63,6 +63,7 @@ const es: SiteLangDict = {
   tool_make_an_8d_panning_version_of_a_song_usecases_title: "Cuándo ayuda",
   tool_make_an_8d_panning_version_of_a_song_usecase_1: "Una canción corta o un loop para un edit 8D clásico en auriculares—elige 5s, Paneo 8D, descarga WAV.",
   tool_make_an_8d_panning_version_of_a_song_usecase_2: "Un clip que necesita movimiento I↔D—no slowed+reverb, no nightcore, no reverse.",
+  tool_make_an_8d_panning_version_of_a_song_usecase_3: "Quieres un paneo estéreo giratorio para auriculares, no un remix mono.",
   tool_make_an_8d_panning_version_of_a_song_faq_q1: "¿Es surround 3D real o HRTF?",
   tool_make_an_8d_panning_version_of_a_song_faq_a1: "No. Es una señal mid autopaneada I/D con ganancias de potencia constante para una sensación de «círculo» en auriculares. No decodifica Dolby, Ambisonics ni HRTF medido.",
   tool_make_an_8d_panning_version_of_a_song_faq_q2: "¿Es lo mismo que slowed and reverb?",

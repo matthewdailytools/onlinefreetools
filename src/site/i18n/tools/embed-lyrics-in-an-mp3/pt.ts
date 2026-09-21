@@ -60,6 +60,7 @@ const pt: SiteLangDict = {
   tool_embed_lyrics_in_an_mp3_usecases_title: 'Útil para',
   tool_embed_lyrics_in_an_mp3_usecase_1: 'Anexar transcrição a um podcast MP3 via USLT.',
   tool_embed_lyrics_in_an_mp3_usecase_2: 'Adicionar letras simples sem recodificar.',
+  tool_embed_lyrics_in_an_mp3_usecase_3: 'Quer letras dentro do MP3 para ver offline.',
   tool_embed_lyrics_in_an_mp3_faq_q1: 'Recodifica?',
   tool_embed_lyrics_in_an_mp3_faq_a1: 'Não. Só reescreve o ID3 com USLT.',
   tool_embed_lyrics_in_an_mp3_faq_q2: 'LRC sincronizado?',

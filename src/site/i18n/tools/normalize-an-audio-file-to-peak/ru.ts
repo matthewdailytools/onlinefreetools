@@ -58,6 +58,7 @@ const ru: SiteLangDict = {
   tool_normalize_an_audio_file_to_peak_usecases_title: "Когда это помогает",
   tool_normalize_an_audio_file_to_peak_usecase_1: "Сдача требует пики близко к полной шкале с запасом—нормализуйте до −1 dBFS и скачайте WAV.",
   tool_normalize_an_audio_file_to_peak_usecase_2: "Несколько дублей разного уровня, которые хотите выровнять по пику перед монтажом, не гоняясь за числом LUFS.",
+  tool_normalize_an_audio_file_to_peak_usecase_3: "Дубли с разной пиковой громкостью — выровнять по одному пику.",
   tool_normalize_an_audio_file_to_peak_faq_q1: "Это то же самое, что сделать громче фиксированным dB-gain?",
   tool_normalize_an_audio_file_to_peak_faq_a1: "Нет. Фиксированный gain умножает на выбранные dB. Пиковая нормализация масштабирует так, чтобы абсолютный пик попал в цель. Для фиксированного dB-усиления используйте Сделать тихую запись громче.",
   tool_normalize_an_audio_file_to_peak_faq_q2: "Это выравнивает громкость подкаста / LUFS?",

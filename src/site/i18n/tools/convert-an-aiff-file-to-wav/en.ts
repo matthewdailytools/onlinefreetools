@@ -56,6 +56,7 @@ const en: SiteLangDict = {
   tool_convert_an_aiff_file_to_wav_usecases_title: 'Useful for',
   tool_convert_an_aiff_file_to_wav_usecase_1: 'Open a Logic or GarageBand AIFF export in a Windows editor that prefers WAV.',
   tool_convert_an_aiff_file_to_wav_usecase_2: 'Convert a CAF voice memo to WAV while keeping the original container.',
+  tool_convert_an_aiff_file_to_wav_usecase_3: 'A Logic bounce as AIFF must become WAV for a Windows collaborator.',
   tool_convert_an_aiff_file_to_wav_faq_q1: 'Can I convert CAF files here?',
   tool_convert_an_aiff_file_to_wav_faq_a1: 'Yes. Drop a .caf file if your browser can decode it—the same Convert to WAV control handles AIFF and CAF.',
   tool_convert_an_aiff_file_to_wav_faq_q2: 'Is AIFF to WAV lossless?',

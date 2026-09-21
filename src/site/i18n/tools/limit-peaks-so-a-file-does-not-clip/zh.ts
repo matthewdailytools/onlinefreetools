@@ -71,6 +71,7 @@ const zh: SiteLangDict = {
   tool_limit_peaks_so_a_file_does_not_clip_usecases_title: "适用场景",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_1: "混音偶发撞上削波——选软膝 −1，限制后下载 WAV。",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_2: "整体电平已定，交稿仍要求峰值不超过天花板，又不想跑整段动态压缩。",
+  tool_limit_peaks_so_a_file_does_not_clip_usecase_3: "导出峰值过热，上线前需要安全限幅。",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q1: "这和峰值归一化是一回事吗？",
   tool_limit_peaks_so_a_file_does_not_clip_faq_a1:
     "不是。峰值归一化会把整段缩放，使绝对峰值命中目标（可能抬升安静素材）。本限制器只衰减超过天花板的样本。峰值归一化请用「将音频文件峰值归一化」。",

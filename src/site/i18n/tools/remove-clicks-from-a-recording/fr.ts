@@ -61,6 +61,7 @@ const fr: SiteLangDict = {
   tool_remove_clicks_from_a_recording_usecases_title: "Quand cela aide",
   tool_remove_clicks_from_a_recording_usecase_1: "Mémo vocal avec pops de bouche ou taps de câble—choisissez Moyenne, Décliquer, téléchargez le WAV.",
   tool_remove_clicks_from_a_recording_usecase_2: "Transfert avec craquement vinyle épars avant débruitage ou déhum ailleurs.",
+  tool_remove_clicks_from_a_recording_usecase_3: "Clics de bouche et pops de montage distraient sur une VO propre.",
   tool_remove_clicks_from_a_recording_faq_q1: "Est-ce la même chose que réduire le bruit de fond d’un mémo vocal ?",
   tool_remove_clicks_from_a_recording_faq_a1: "Non. Cette page-là passe-haut et porte un sifflement stable. Ici on répare de courts pics impulsifs. Pour un sifflement large bande, utilisez Réduire le bruit de fond d’un mémo vocal.",
   tool_remove_clicks_from_a_recording_faq_q2: "Cela retire-t-il le ronflement secteur 50/60 Hz ?",

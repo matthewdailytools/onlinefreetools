@@ -63,6 +63,7 @@ const ru: SiteLangDict = {
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecases_title: "Когда это помогает",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_1: "Озвучка чуть низкая—Выше, Сдвинуть, скачать WAV.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_2: "Короткий голосовой клип нуждается в заметно более низком тоне без изменения длины как у игрушечного гиганта.",
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_3: "VO чуть выше/ниже по характеру, без полного pitch‑набора.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q1: "Превращает ли это голос в конкретный пол?",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a1: "Нет. Только сдвигает высоту вверх или вниз, сохраняя длительность. Без обещания муж→жен и без студийного formant morphing.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q2: "Это то же, что chipmunk или robot?",

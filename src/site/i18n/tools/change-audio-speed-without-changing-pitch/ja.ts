@@ -60,6 +60,7 @@ const ja: SiteLangDict = {
   tool_change_audio_speed_without_changing_pitch_usecases_title: "こんなときに",
   tool_change_audio_speed_without_changing_pitch_usecase_1: "練習曲が速すぎる——0.75× を選び、ストレッチ、WAVを保存。",
   tool_change_audio_speed_without_changing_pitch_usecase_2: "ナイトコア昇調なしで少しだけ加速してタイミングを合わせたい。",
+  tool_change_audio_speed_without_changing_pitch_usecase_3: "短い動画枠にVOを収めたいが、チップマンク声にはしたくない。",
   tool_change_audio_speed_without_changing_pitch_faq_q1: "ピッチやキーを変えるのと同じですか？",
   tool_change_audio_speed_without_changing_pitch_faq_a1: "いいえ。ピッチシフトは音高を変え（長さは保つ場合あり）、本ページは WSOLA でテンポを変え音高維持を目指します。ピッチのみは別作業です。",
   tool_change_audio_speed_without_changing_pitch_faq_q2: "ナイトコアメーカーですか？",

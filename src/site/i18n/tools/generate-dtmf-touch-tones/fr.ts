@@ -56,6 +56,7 @@ const fr: SiteLangDict = {
   tool_generate_dtmf_touch_tones_usecases_title: "Quand cela aide",
   tool_generate_dtmf_touch_tones_usecase_1: "Vous avez besoin d’un clip DTMF pour une démo IVR ou téléphonique—saisissez les chiffres, Générer, téléchargez le WAV pour docs ou tests.",
   tool_generate_dtmf_touch_tones_usecase_2: "Vous voulez une séquence touch-tone reproductible sans installer un générateur de signaux de bureau.",
+  tool_generate_dtmf_touch_tones_usecase_3: "Il faut générer des bips clavier pour une démo IVR.",
   tool_generate_dtmf_touch_tones_faq_q1: "Est-ce un générateur de ton sinus unique ?",
   tool_generate_dtmf_touch_tones_faq_a1: "Non. Le DTMF utilise deux fréquences à la fois (ligne + colonne). Pour un sinus à un Hertz choisi, utilisez l’outil de ton sinus.",
   tool_generate_dtmf_touch_tones_faq_q2: "Peut-il faire de courts bips de notification UI ?",

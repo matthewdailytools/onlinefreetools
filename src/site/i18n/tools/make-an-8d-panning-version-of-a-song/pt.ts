@@ -63,6 +63,7 @@ const pt: SiteLangDict = {
   tool_make_an_8d_panning_version_of_a_song_usecases_title: "Quando ajuda",
   tool_make_an_8d_panning_version_of_a_song_usecase_1: "Música curta ou loop para um edit 8D clássico em fones—escolha 5s, Pan 8D, baixe WAV.",
   tool_make_an_8d_panning_version_of_a_song_usecase_2: "Clipe que precisa de movimento E↔D—não slowed+reverb, não nightcore, não reverse.",
+  tool_make_an_8d_panning_version_of_a_song_usecase_3: "Quer um pan estéreo rotativo para auscultadores, não um remix mono.",
   tool_make_an_8d_panning_version_of_a_song_faq_q1: "É surround 3D real ou HRTF?",
   tool_make_an_8d_panning_version_of_a_song_faq_a1: "Não. É um mid autopaneado E/D com ganhos de potência constante para uma sensação de «círculo» nos fones. Não decodifica Dolby, Ambisonics nem HRTF medido.",
   tool_make_an_8d_panning_version_of_a_song_faq_q2: "É o mesmo que slowed and reverb?",

@@ -65,6 +65,7 @@ const zh: SiteLangDict = {
   tool_mix_a_voiceover_with_background_music_usecases_title: "适用场景",
   tool_mix_a_voiceover_with_background_music_usecase_1: "口播下方需要安静配乐——加入两轨、降低垫乐增益或开启闪避，混合后下载 WAV。",
   tool_mix_a_voiceover_with_background_music_usecase_2: "已从视频抽出音轨，想再叠新口播，又不想上传到在线混音站。",
+  tool_mix_a_voiceover_with_background_music_usecase_3: "干声口播下面要垫更轻的背景乐，不想开完整混音台。",
   tool_mix_a_voiceover_with_background_music_faq_q1: "这和把音频首尾拼接一样吗？",
   tool_mix_a_voiceover_with_background_music_faq_a1: "不一样。拼接是一段接一段。本页让口播与垫乐同时出声（叠加混音）。",
   tool_mix_a_voiceover_with_background_music_faq_q2: "会做歌曲之间的交叉淡化吗？",

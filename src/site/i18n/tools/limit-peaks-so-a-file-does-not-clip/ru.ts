@@ -74,6 +74,7 @@ const ru: SiteLangDict = {
   tool_limit_peaks_so_a_file_does_not_clip_usecases_title: "Когда это помогает",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_1: "Микс почти готов, но отдельные пики рискуют клипповать при экспорте—выберите −1 Soft, ограничьте, скачайте WAV.",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_2: "Голосовой тейк уже сжат, нужен только финальный потолок перед сдачей.",
+  tool_limit_peaks_so_a_file_does_not_clip_usecase_3: "Экспорт клипит на пиках — нужен потолок перед публикацией.",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q1: "Это то же самое, что компрессор динамического диапазона?",
   tool_limit_peaks_so_a_file_does_not_clip_faq_a1:
     "Нет. Компрессор использует порог/отношение (часто makeup) для неровной динамики. Эта страница только ограничивает пики потолком. Для динамики голоса используйте Сжать динамический диапазон голосовой записи.",

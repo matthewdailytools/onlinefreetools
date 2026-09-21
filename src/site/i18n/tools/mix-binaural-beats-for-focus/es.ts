@@ -82,6 +82,7 @@ const es: SiteLangDict = {
     'Quieres un WAV ambiental de concentración reutilizable: define portadora y ritmo, Mezclar, descarga y guarda el archivo para auriculares.',
   tool_mix_binaural_beats_for_focus_usecase_2:
     'Necesitas una demo rápida de ritmo estéreo sin instalar una app de tonos ni confiar en afirmaciones de terapia.',
+  tool_mix_binaural_beats_for_focus_usecase_3: 'Quieres un ambiente estéreo corto de carrier y beat Hz solo con auriculares.',
   tool_mix_binaural_beats_for_focus_faq_q1: '¿Es esto tratamiento médico o terapia?',
   tool_mix_binaural_beats_for_focus_faq_a1:
     'No. Esta página solo crea sonido de entretenimiento y ambiente personal de concentración. No diagnostica, trata ni cura ninguna condición y no afirma eficacia terapéutica.',

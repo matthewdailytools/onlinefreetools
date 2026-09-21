@@ -91,6 +91,7 @@ const pt: SiteLangDict = {
     "Narração ou cama musical que clica nos cortes—escolha 1 s / 1 s, Aplicar, baixe WAV.",
   tool_fade_in_and_fade_out_an_audio_clip_usecase_2:
     "Clipe que precisa de bordas suaves antes de cortar em outro lugar ou ir à timeline—sem montar um loop sem costura.",
+  tool_fade_in_and_fade_out_an_audio_clip_usecase_3: "Um toque ou bumper começa e acaba de repente e precisa de bordas suaves.",
   tool_fade_in_and_fade_out_an_audio_clip_faq_q1: "É o mesmo que Fazer um loop de áudio sem costura?",
   tool_fade_in_and_fade_out_an_audio_clip_faq_a1:
     "Não. Aquela ferramenta envolve a cauda selecionada na cabeça com crossfade para a junta circular limpa. Esta página só suaviza o início e o fim de um clipe. Para loops sem costura, use Fazer um loop de áudio sem costura.",

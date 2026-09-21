@@ -65,6 +65,7 @@ const ru: SiteLangDict = {
   tool_crossfade_two_audio_files_usecases_title: 'Когда это помогает',
   tool_crossfade_two_audio_files_usecase_1: 'Двум песням нужен DJ-переход—добавьте обе, 2–5 с equal-power, кроссфейд, скачайте WAV.',
   tool_crossfade_two_audio_files_usecase_2: 'Сегменты подкаста должны встречаться мягко—1 с между дублями без онлайн-редактора.',
+  tool_crossfade_two_audio_files_usecase_3: 'Два фрагмента нужно слегка перекрыть, чтобы стык не был резким.',
   tool_crossfade_two_audio_files_faq_q1: 'Это то же самое, что склеить аудиофайлы конец к концу?',
   tool_crossfade_two_audio_files_faq_a1: 'Нет. Склейка — жёсткий рез. Эта страница накладывает конец первого на начало второго.',
   tool_crossfade_two_audio_files_faq_q2: 'Это то же самое, что смешать закадр с музыкой?',

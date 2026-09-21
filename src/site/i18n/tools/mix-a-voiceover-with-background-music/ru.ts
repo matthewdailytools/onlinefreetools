@@ -63,6 +63,7 @@ const ru: SiteLangDict = {
   tool_mix_a_voiceover_with_background_music_usecases_title: "Когда это помогает",
   tool_mix_a_voiceover_with_background_music_usecase_1: "Разговорной дорожке нужна тихая подложка—добавьте обе, снизьте фон или включите дакинг, смешайте, скачайте.",
   tool_mix_a_voiceover_with_background_music_usecase_2: "Уже извлекли звук из видео и хотите новый закадр сверху без онлайн-микшера.",
+  tool_mix_a_voiceover_with_background_music_usecase_3: "Под сухую VO нужна тише фоновая музыка без полного микшера.",
   tool_mix_a_voiceover_with_background_music_faq_q1: "Это то же самое, что склеить аудиофайлы по порядку?",
   tool_mix_a_voiceover_with_background_music_faq_a1: "Нет. Склейка ставит клипы друг за другом. Здесь голос и подложка звучат одновременно.",
   tool_mix_a_voiceover_with_background_music_faq_q2: "Есть ли кроссфейд между песнями?",

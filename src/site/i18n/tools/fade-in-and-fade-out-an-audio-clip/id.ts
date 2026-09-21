@@ -91,6 +91,7 @@ const id: SiteLangDict = {
     "Voiceover atau music bed yang berklik di potongan—pilih 1 dtk / 1 dtk, Fade, unduh WAV.",
   tool_fade_in_and_fade_out_an_audio_clip_usecase_2:
     "Klip yang butuh tepi lembut sebelum dipotong di tempat lain atau dimasukkan timeline—tanpa membangun loop mulus.",
+  tool_fade_in_and_fade_out_an_audio_clip_usecase_3: "Nada dering atau bumper mulai/akhir mendadak dan butuh tepi lembut.",
   tool_fade_in_and_fade_out_an_audio_clip_faq_q1: "Apakah sama dengan Membuat loop audio mulus?",
   tool_fade_in_and_fade_out_an_audio_clip_faq_a1:
     "Tidak. Alat itu membungkus ekor terpilih ke kepala dengan crossfade agar sambungan loop bersih. Halaman ini hanya menghaluskan awal dan akhir satu klip. Untuk loop mulus, gunakan Membuat loop audio mulus.",

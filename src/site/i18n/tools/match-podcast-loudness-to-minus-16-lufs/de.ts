@@ -60,6 +60,7 @@ const de: SiteLangDict = {
   tool_match_podcast_loudness_to_minus_16_lufs_usecases_title: "Wann das hilft",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_1: "Podcast-Folge zu leise für −16-LUFS-Abgabe—auf −16 abstimmen und WAV speichern.",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_2: "YouTube-/Spotify-Sprachspur näher an −14, ohne Peak-Normalisierung oder Kompressor.",
+  tool_match_podcast_loudness_to_minus_16_lufs_usecase_3: "Die Episoden-Lautheit schwankt; du willst etwa −16 LUFS vor dem Host-Upload.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q1: "Ist das dasselbe wie Peak-Normalisierung?",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_a1: "Nein. Peak-Normalisierung skaliert, bis der Absolutpeak ein dBFS-Ziel trifft. Hier wird ungefähre integrierte Lautheit gemessen und zum LUFS-Chip gegaint. Für Peak: Eine Audiodatei auf Peak normalisieren.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q2: "Ist das dasselbe wie eine leise Aufnahme mit festem dB-Gain lauter machen?",

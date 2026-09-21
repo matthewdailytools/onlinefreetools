@@ -64,6 +64,7 @@ const fr: SiteLangDict = {
   tool_apply_a_toy_voice_effect_to_a_recording_usecases_title: "Quand c’est utile",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_1: "Un mème court ou clip enfant avec couleur chipmunk ou hélium—Appliquer, télécharger le WAV.",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_2: "Un gag robot ou téléphone pour un message—pas un clone de célébrité, pas de revendication de genre.",
+  tool_apply_a_toy_voice_effect_to_a_recording_usecase_3: "Il faut une voix jouet type chipmunk ou grave pour un meme court.",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q1: "Est-ce un clone de voix de célébrité ou d’IA ?",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_a1: "Non. Cette page n’applique que des effets signal jouets (resampling, modulation en anneau, bande téléphone). Elle n’apprend pas, ne copie pas et n’imite pas la voix d’une personne précise.",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q2: "Est-ce un changeur de voix homme-femme ou de genre ?",

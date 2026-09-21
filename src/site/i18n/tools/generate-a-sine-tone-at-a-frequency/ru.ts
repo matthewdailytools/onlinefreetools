@@ -54,6 +54,7 @@ const ru: SiteLangDict = {
   tool_generate_a_sine_tone_at_a_frequency_usecases_title: 'Когда это помогает',
   tool_generate_a_sine_tone_at_a_frequency_usecase_1: 'Нужен опорный тон A4—440 Гц, 2 с, Сгенерировать, скачайте WAV.',
   tool_generate_a_sine_tone_at_a_frequency_usecase_2: 'Нужен тестовый тон 1000 Гц для проверки колонок без настольного генератора.',
+  tool_generate_a_sine_tone_at_a_frequency_usecase_3: 'Нужен калибровочный тон на заданных Гц для проверки техники.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q1: 'Это генератор белого/розового/коричневого шума?',
   tool_generate_a_sine_tone_at_a_frequency_faq_a1: 'Нет. Эта страница синтезирует один синус. Шум — другая задача.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q2: 'Может ли она делать тоны DTMF?',

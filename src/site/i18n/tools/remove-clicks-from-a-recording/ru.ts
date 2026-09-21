@@ -61,6 +61,7 @@ const ru: SiteLangDict = {
   tool_remove_clicks_from_a_recording_usecases_title: "Когда это помогает",
   tool_remove_clicks_from_a_recording_usecase_1: "Голосовая заметка с ротовыми щелчками или касаниями кабеля—выберите Среднюю, Убрать щелчки, скачайте WAV.",
   tool_remove_clicks_from_a_recording_usecase_2: "Перенос с редким треском винила перед denoise или dehum в другом месте.",
+  tool_remove_clicks_from_a_recording_usecase_3: "Щелчки рта и поп‑клики монтажа мешают чистой VO.",
   tool_remove_clicks_from_a_recording_faq_q1: "Это то же, что снизить фоновый шум в голосовой заметке?",
   tool_remove_clicks_from_a_recording_faq_a1: "Нет. Та страница фильтрует и гейтит устойчивый шип вентилятора/кондиционера. Эта чинит короткие импульсные пики. Для широкополосного шипа используйте Снизить фоновый шум в голосовой заметке.",
   tool_remove_clicks_from_a_recording_faq_q2: "Это убирает сетевой гул 50/60 Гц?",

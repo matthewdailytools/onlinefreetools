@@ -63,6 +63,7 @@ const ru: SiteLangDict = {
   tool_make_an_8d_panning_version_of_a_song_usecases_title: "Когда это помогает",
   tool_make_an_8d_panning_version_of_a_song_usecase_1: "Короткая песня или луп для классического 8D-эдита в наушниках—выберите 5с, 8D-пан, скачайте WAV.",
   tool_make_an_8d_panning_version_of_a_song_usecase_2: "Клип, которому нужно движение Л↔П—не slowed+reverb, не nightcore, не reverse.",
+  tool_make_an_8d_panning_version_of_a_song_usecase_3: "Нужен вращающийся стереопанорамер для наушников, не моно‑ремикс.",
   tool_make_an_8d_panning_version_of_a_song_faq_q1: "Это настоящее 3D-окружение или HRTF?",
   tool_make_an_8d_panning_version_of_a_song_faq_a1: "Нет. Mid автопанируется Л/П усилениями постоянной мощности для ощущения «круга» в наушниках. Не декодирует Dolby, Ambisonics или измеренный HRTF.",
   tool_make_an_8d_panning_version_of_a_song_faq_q2: "Это то же, что slowed and reverb?",

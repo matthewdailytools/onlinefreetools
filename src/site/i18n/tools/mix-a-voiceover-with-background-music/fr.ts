@@ -63,6 +63,7 @@ const fr: SiteLangDict = {
   tool_mix_a_voiceover_with_background_music_usecases_title: "Quand cela aide",
   tool_mix_a_voiceover_with_background_music_usecase_1: "Une prise parlée a besoin d’un lit doux—ajoutez les deux, baissez le lit ou activez le ducking, mixez, téléchargez.",
   tool_mix_a_voiceover_with_background_music_usecase_2: "Audio déjà extrait d’une vidéo et nouvelle voix off par-dessus sans mixer en ligne.",
+  tool_mix_a_voiceover_with_background_music_usecase_3: "Une VO sèche a besoin d’une musique de fond plus basse sans console complète.",
   tool_mix_a_voiceover_with_background_music_faq_q1: "Est-ce la même chose que joindre des fichiers bout à bout ?",
   tool_mix_a_voiceover_with_background_music_faq_a1: "Non. Joindre place les clips l’un après l’autre. Ici voix et lit jouent ensemble.",
   tool_mix_a_voiceover_with_background_music_faq_q2: "Y a-t-il un crossfade entre chansons ?",

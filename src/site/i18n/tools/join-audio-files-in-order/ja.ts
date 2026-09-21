@@ -88,6 +88,7 @@ const ja: SiteLangDict = {
     '複数のボイスメモを 1 本の連続トラックにしたい—順に追加、結合、WAV 保存。',
   tool_join_audio_files_in_order_usecase_2:
     '曲の区間やポッドキャスト章が別ファイルのとき、結合サイトへ上げずに 1 本書き出したい。',
+  tool_join_audio_files_in_order_usecase_3: '章ごとのWAVをプレイリスト順の1本にしたい。',
   tool_join_audio_files_in_order_faq_q1: '2 本を同時に重ねるミックスと同じですか？',
   tool_join_audio_files_in_order_faq_a1:
     '違います。重ね合わせは同時再生（例：声＋BGM）です。本ページはリスト順に 1 本ずつつなげます。',

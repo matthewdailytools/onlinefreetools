@@ -63,6 +63,7 @@ const zh: SiteLangDict = {
   tool_apply_a_toy_voice_effect_to_a_recording_usecases_title: "适用场景",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_1: "短视频或儿童片段需要松鼠/氦气音色——应用，下载 WAV。",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_2: "留言里的机器人或电话彩蛋——不是名人克隆，不是性别主张。",
+  tool_apply_a_toy_voice_effect_to_a_recording_usecase_3: "短视频或表情包需要一点玩具/卡通变声效果。",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q1: "这是名人或 AI 语音克隆吗？",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_a1: "不是。本页只应用玩具信号效果（重采样、环形调制、电话限带）。不会学习、复制或冒充某个人的声音。",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q2: "这是男变女或性别变声器吗？",

@@ -58,6 +58,7 @@ const en: SiteLangDict = {
   tool_reverse_an_audio_file_usecases_title: "When this helps",
   tool_reverse_an_audio_file_usecase_1: "A short effect or music sting that should play backwards—Reverse, download WAV.",
   tool_reverse_an_audio_file_usecase_2: "Check a reverb tail by hearing the end first—not 8D sweep, not fade envelopes.",
+  tool_reverse_an_audio_file_usecase_3: "A short sample should play backwards for a transition or effect.",
   tool_reverse_an_audio_file_faq_q1: "Does reverse change the duration?",
   tool_reverse_an_audio_file_faq_a1: "No. Sample order flips, but length and sample rate stay the same.",
   tool_reverse_an_audio_file_faq_q2: "Is this the same as 8D panning?",

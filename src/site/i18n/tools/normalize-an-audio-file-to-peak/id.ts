@@ -58,6 +58,7 @@ const id: SiteLangDict = {
   tool_normalize_an_audio_file_to_peak_usecases_title: "Kapan ini membantu",
   tool_normalize_an_audio_file_to_peak_usecase_1: "Penyerahan yang meminta peak dekat full scale dengan headroom—normalisasi ke −1 dBFS dan unduh WAV.",
   tool_normalize_an_audio_file_to_peak_usecase_2: "Beberapa take level berbeda yang ingin diselaraskan berdasarkan peak sebelum edit, tanpa mengejar angka LUFS.",
+  tool_normalize_an_audio_file_to_peak_usecase_3: "Take dengan puncak berbeda ingin target puncak yang konsisten.",
   tool_normalize_an_audio_file_to_peak_faq_q1: "Apakah ini sama dengan menaikkan volume dengan gain dB tetap?",
   tool_normalize_an_audio_file_to_peak_faq_a1: "Tidak. Gain tetap mengalikan dengan dB pilihan. Peak normalize menskala seperlunya agar peak absolut mengenai target. Untuk boost dB tetap, gunakan Membuat rekaman pelan lebih keras.",
   tool_normalize_an_audio_file_to_peak_faq_q2: "Apakah ini menyelaraskan loudness podcast / LUFS?",

@@ -8,10 +8,8 @@ const id: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_title: 'Tambahkan trek audio ke video',
   tool_add_an_audio_track_to_a_video_desc:
     'Gabungkan soundtrack lokal dengan video lokal, lalu unduh. Hanya di perangkat—tanpa unduhan YouTube.',
-  tool_add_an_audio_track_to_a_video_description:
-    'Tambahkan trek audio ke video lokal di peramban dengan menggabungkan gambar dan soundtrack pilihan, lalu unduh. Langkah: pilih video dan audio, Tambah audio, pratinjau, unduh. Contoh: klip bisu plus WAV pendek. Menggunakan captureStream dan MediaRecorder—sering WebM; bukan remux tanpa rugi. Tidak pernah diunggah. Tanpa unduhan YouTube.',
-  tool_add_an_audio_track_to_a_video_article:
-    'Klip bisu atau bersuara lemah sering butuh soundtrack baru sebelum dibagikan. Halaman ini membuka video dan audio lokal, menangkap bingkai tanpa trek asli, mendekode soundtrack di AudioContext, menggabungkan, lalu merekam ulang dengan MediaRecorder—sering WebM tergantung peramban. Durasi mengikuti video; audio lebih panjang dipotong, yang lebih pendek berakhir lebih awal. Tidak mengunduh YouTube atau URL lain, bukan hanya membisukan tanpa menambah suara, dan bukan mengekstrak audio sebagai berkas terpisah. Keberhasilan bergantung pada kemampuan memutar kedua berkas dan MediaRecorder dengan audio. Simpan aslinya. Semua berjalan di perangkat Anda.',
+  tool_add_an_audio_track_to_a_video_description: 'Tambahkan trek audio ke video lokal di peramban dengan menggabungkan gambar dan soundtrack pilihan, lalu unduh. Langkah: pilih video dan audio, Tambah audio, pratinjau, unduh. Contoh: klip bisu plus WAV pendek. Menggunakan captureStream dan browser media recording—sering WebM; bukan remux tanpa rugi. Tidak pernah diunggah. Tanpa unduhan YouTube.',
+  tool_add_an_audio_track_to_a_video_article: 'Klip bisu atau bersuara lemah sering butuh soundtrack baru sebelum dibagikan. Halaman ini membuka video dan audio lokal, menangkap bingkai tanpa trek asli, mendekode soundtrack di the browser audio engine, menggabungkan, lalu merekam ulang dengan browser media recording—sering WebM tergantung peramban. Durasi mengikuti video; audio lebih panjang dipotong, yang lebih pendek berakhir lebih awal. Tidak mengunduh YouTube atau URL lain, bukan hanya membisukan tanpa menambah suara, dan bukan mengekstrak audio sebagai berkas terpisah. Keberhasilan bergantung pada kemampuan memutar kedua berkas dan browser media recording dengan audio. Simpan aslinya. Semua berjalan di perangkat Anda.',
   tool_add_an_audio_track_to_a_video_choose_video: 'Pilih berkas video',
   tool_add_an_audio_track_to_a_video_hint_video:
     'Jatuhkan atau pilih MP4, WebM, MOV, atau M4V lokal yang dapat diputar peramban. Hingga 80 MiB dan sekitar 3 menit. Tanpa YouTube atau tempel URL.',
@@ -24,7 +22,7 @@ const id: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_clear: 'Bersihkan',
   tool_add_an_audio_track_to_a_video_advanced: 'Catatan gabungan',
   tool_add_an_audio_track_to_a_video_settings_hint:
-    'Peramban biasanya merekam ulang lewat MediaRecorder setelah membuang trek asli dan menempel soundtrack Anda. Keluaran sering WebM, bukan remux tanpa rugi. Halaman ini tidak pernah mengunduh YouTube.',
+    'Peramban biasanya merekam ulang lewat browser media recording setelah membuang trek asli dan menempel soundtrack Anda. Keluaran sering WebM, bukan remux tanpa rugi. Halaman ini tidak pernah mengunduh YouTube.',
   tool_add_an_audio_track_to_a_video_progress: 'Progres tambah audio',
   tool_add_an_audio_track_to_a_video_read: 'Baca',
   tool_add_an_audio_track_to_a_video_decode: 'Dekode',
@@ -50,7 +48,7 @@ const id: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_err_decode:
     'Peramban tidak dapat mendekode video atau audio. Coba wadah lain atau klip lebih pendek.',
   tool_add_an_audio_track_to_a_video_err_encoder:
-    'MediaRecorder tidak dapat menulis video gabungan. Coba Chrome/Edge atau WebM/MP4 lebih pendek plus WAV/MP3.',
+    'browser media recording tidak dapat menulis video gabungan. Coba Chrome/Edge atau WebM/MP4 lebih pendek plus WAV/MP3.',
   tool_add_an_audio_track_to_a_video_how_title: 'Cara menambahkan trek audio ke video',
   tool_add_an_audio_track_to_a_video_how_body:
     'Pilih video dan audio lokal, jalankan Tambah audio, pratinjau, lalu unduh—tanpa unggah dan tanpa YouTube.',
@@ -66,14 +64,14 @@ const id: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_why_choose_item_1:
     'Lihat durasi, tipe MIME, dan KiB keluaran sebelum menyimpan.',
   tool_add_an_audio_track_to_a_video_why_choose_item_2:
-    'Satu pekerjaan gabung yang jelas dengan batas MediaRecorder yang jujur—bukan janji remux tanpa rugi palsu.',
+    'Satu pekerjaan gabung yang jelas dengan batas browser media recording yang jujur—bukan janji remux tanpa rugi palsu.',
   tool_add_an_audio_track_to_a_video_why_choose_item_3:
     'Pembacaan dan perekaman di perangkat Anda; halaman tidak mengunggah berkas untuk diproses.',
   tool_add_an_audio_track_to_a_video_why_choose_item_4:
     'Mengganti salah satu berkas menghapus unduhan lama agar tidak menyimpan gabungan usang.',
   tool_add_an_audio_track_to_a_video_rules_title: 'Aturan gabung dan batas jujur peramban',
   tool_add_an_audio_track_to_a_video_rules_body:
-    'Setiap proses membuang trek asli, menempel soundtrack Anda, dan merekam ulang dengan MediaRecorder. Keluaran sering WebM. Bukan unduhan YouTube, bukan hanya bisu, bukan ekstrak audio.',
+    'Setiap proses membuang trek asli, menempel soundtrack Anda, dan merekam ulang dengan browser media recording. Keluaran sering WebM. Bukan unduhan YouTube, bukan hanya bisu, bukan ekstrak audio.',
   tool_add_an_audio_track_to_a_video_rules_item_1:
     'Satu video lokal hingga 80 MiB dan sekitar tiga menit, plus satu audio lokal hingga 40 MiB. Putar/dekode harus berhasil dulu.',
   tool_add_an_audio_track_to_a_video_rules_item_2:
@@ -90,6 +88,7 @@ const id: SiteLangDict = {
     'Rekaman layar bisu dan dasar WAV—gabungkan di sini, lalu unduh untuk dibagikan.',
   tool_add_an_audio_track_to_a_video_usecase_2:
     'Ganti trek bawaan yang lemah dengan soundtrack lokal yang lebih jelas tanpa memasang editor desktop.',
+  tool_add_an_audio_track_to_a_video_usecase_3: 'Anda punya rekaman layar tanpa suara dan voiceover terpisah untuk digabung sebelum unggah.',
   tool_add_an_audio_track_to_a_video_faq_q1: 'Bisakah mengunduh YouTube atau menempel URL?',
   tool_add_an_audio_track_to_a_video_faq_a1:
     'Tidak. Hanya berkas lokal yang sudah Anda miliki. Tidak ada pengunduh YouTube dan tidak ada ambil jarak jauh.',
@@ -101,7 +100,7 @@ const id: SiteLangDict = {
     'Tidak. Mengekstrak audio dari video adalah alat lain. Di sini hasilnya adalah berkas video dengan suara gabungan.',
   tool_add_an_audio_track_to_a_video_faq_q4: 'Apakah keluaran akan sama MP4 dengan sumber?',
   tool_add_an_audio_track_to_a_video_faq_a4:
-    'Biasanya tidak. Peramban umumnya merekam ulang dengan MediaRecorder, sering ke WebM. Kualitas dan wadah dapat berubah.',
+    'Biasanya tidak. Peramban umumnya merekam ulang dengan browser media recording, sering ke WebM. Kualitas dan wadah dapat berubah.',
   tool_add_an_audio_track_to_a_video_faq_q5: 'Apakah ada yang diunggah ke server?',
   tool_add_an_audio_track_to_a_video_faq_a5:
     'Tidak. Dekode dan perekaman berjalan di peramban pada perangkat Anda. Halaman butuh jaringan saat pertama dimuat; offline tidak dijamin.',

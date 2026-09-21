@@ -75,6 +75,7 @@ const ja: SiteLangDict = {
   tool_compress_dynamic_range_of_a_voice_recording_usecases_title: "役立つ場面",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_1: "小声とピークが飛ぶナレーション——ポッドキャストで圧縮して WAV を保存。",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_2: "ラウドネス合わせの前にインタビューを均一にしたいが、MP3 を容量のために縮めたくないとき。",
+  tool_compress_dynamic_range_of_a_voice_recording_usecase_3: "ささやきとピークが同居し、聴きやすいレベルに揃えたい。",
   tool_compress_dynamic_range_of_a_voice_recording_faq_q1: "MP3 の容量を「圧縮」して小さくするのと同じですか？",
   tool_compress_dynamic_range_of_a_voice_recording_faq_a1:
     "違います。ここでの圧縮はダイナミックレンジ（スレ／レシオ）であり、ビットレートやバイト削減ではありません。小さい MP3 には Reduce an MP3 file size を。中国語でも「圧縮人声動態 ≠ 圧縮 MP3 体積」です。",

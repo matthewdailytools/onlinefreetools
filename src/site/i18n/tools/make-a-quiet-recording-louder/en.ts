@@ -60,6 +60,7 @@ const en: SiteLangDict = {
   tool_make_a_quiet_recording_louder_usecases_title: "When this helps",
   tool_make_a_quiet_recording_louder_usecase_1: "A phone voice memo recorded too quietly for comfortable replay—boost +6 dB and download WAV.",
   tool_make_a_quiet_recording_louder_usecase_2: "An interview track that sits low overall, when you want the same ratio louder without chasing a LUFS target.",
+  tool_make_a_quiet_recording_louder_usecase_3: "A soft phone memo is too quiet on speakers and needs gain with peak safety.",
   tool_make_a_quiet_recording_louder_faq_q1: "Is this the same as normalizing audio to peak 0 dBFS?",
   tool_make_a_quiet_recording_louder_faq_a1: "No. You choose a fixed dB gain. Peak protect only scales back if that gain would clip—it does not auto-raise every file to full scale. Peak normalize is a different planned job.",
   tool_make_a_quiet_recording_louder_faq_q2: "Does this match podcast loudness / LUFS?",

@@ -61,6 +61,7 @@ const zh: SiteLangDict = {
   tool_convert_stereo_audio_to_mono_usecases_title: "适用场景",
   tool_convert_stereo_audio_to_mono_usecase_1: "把立体声语音备忘录或播客底轨交给只接受单声道上传的交稿表单。",
   tool_convert_stereo_audio_to_mono_usecase_2: "访谈一侧有噪声或静音时，只保留左（或右）麦克风轨。",
+  tool_convert_stereo_audio_to_mono_usecase_3: "立体声采访要变成单声道，方便电话或单扬声器播放。",
   tool_convert_stereo_audio_to_mono_faq_q1: "「混合为单声道」对左右声道做了什么？",
   tool_convert_stereo_audio_to_mono_faq_a1: "它把每个左右样本取平均 ((L+R)/2) 合成一条单声道轨，再写成 16 位 PCM WAV。极端声像会变轻；相位相反的音频可能变薄——下载前请先试听。",
   tool_convert_stereo_audio_to_mono_faq_q2: "可以把 MP3 或 M4A 转成单声道 WAV 吗？",

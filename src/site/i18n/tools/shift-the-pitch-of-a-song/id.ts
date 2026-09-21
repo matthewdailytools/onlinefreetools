@@ -66,6 +66,7 @@ const id: SiteLangDict = {
   tool_shift_the_pitch_of_a_song_usecases_title: "Kapan ini membantu",
   tool_shift_the_pitch_of_a_song_usecase_1: "Iringan terlalu tinggi—pilih −2, Geser, unduh WAV.",
   tool_shift_the_pitch_of_a_song_usecase_2: "Klip pendek butuh +1 atau +2 tanpa dipercepat seperti nightcore.",
+  tool_shift_the_pitch_of_a_song_usecase_3: "Karaoke atau cover perlu beberapa semitone naik/turun dengan durasi dijaga.",
   tool_shift_the_pitch_of_a_song_faq_q1: "Apakah ini sama dengan mengubah kecepatan tanpa mengubah pitch?",
   tool_shift_the_pitch_of_a_song_faq_a1: "Tidak. Kecepatan-tanpa-pitch mengubah tempo dengan WSOLA sambil menjaga pitch. Halaman ini mengubah pitch musikal sambil menjaga durasi. Gunakan Ubah kecepatan audio tanpa mengubah pitch untuk kerja tempo saja.",
   tool_shift_the_pitch_of_a_song_faq_q2: "Apakah ini pembuat nightcore?",

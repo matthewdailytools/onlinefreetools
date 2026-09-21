@@ -55,6 +55,7 @@ const en: SiteLangDict = {
   tool_generate_a_sine_tone_at_a_frequency_usecases_title: 'When this helps',
   tool_generate_a_sine_tone_at_a_frequency_usecase_1: 'You need an A4 reference tone—set 440 Hz, 2 s, Generate, download WAV for headphones or a tuner.',
   tool_generate_a_sine_tone_at_a_frequency_usecase_2: 'You want a 1000 Hz test tone to check speakers without installing a desktop signal generator.',
+  tool_generate_a_sine_tone_at_a_frequency_usecase_3: 'You need a calibration tone at a chosen Hz for a quick gear check.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q1: 'Is this a white/pink/brown noise generator?',
   tool_generate_a_sine_tone_at_a_frequency_faq_a1: 'No. This page synthesizes a single sine at one frequency. Noise generators are a different job.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q2: 'Can it make DTMF dial tones?',

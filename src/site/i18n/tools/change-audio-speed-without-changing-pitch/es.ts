@@ -60,6 +60,7 @@ const es: SiteLangDict = {
   tool_change_audio_speed_without_changing_pitch_usecases_title: "Cuándo ayuda",
   tool_change_audio_speed_without_changing_pitch_usecase_1: "Una canción de práctica demasiado rápida: elija 0.75×, Estirar, descargar WAV.",
   tool_change_audio_speed_without_changing_pitch_usecase_2: "Un clip que necesita un poco más de velocidad sin el subidón de tono nightcore.",
+  tool_change_audio_speed_without_changing_pitch_usecase_3: "Debes encajar una VO en un vídeo más corto sin voz de ardilla.",
   tool_change_audio_speed_without_changing_pitch_faq_q1: "¿Es lo mismo que cambiar el tono o la tonalidad?",
   tool_change_audio_speed_without_changing_pitch_faq_a1: "No. Un pitch shift cambia el tono musical (y puede conservar la duración). Esta página cambia el tempo con WSOLA aspirando a conservar el tono. El pitch-only es otro trabajo.",
   tool_change_audio_speed_without_changing_pitch_faq_q2: "¿Es un creador de nightcore?",

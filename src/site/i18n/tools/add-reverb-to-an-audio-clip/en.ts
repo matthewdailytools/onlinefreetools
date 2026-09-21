@@ -63,6 +63,7 @@ const en: SiteLangDict = {
   tool_add_reverb_to_an_audio_clip_usecases_title: "When this helps",
   tool_add_reverb_to_an_audio_clip_usecase_1: "A dry voice-over that needs a little room air—pick Room, Add reverb, download WAV.",
   tool_add_reverb_to_an_audio_clip_usecase_2: "A short music stem that needs hall space or clearer echo repeats without slowing the clip.",
+  tool_add_reverb_to_an_audio_clip_usecase_3: "You want a short room or hall tail on a dry vocal without opening a DAW.",
   tool_add_reverb_to_an_audio_clip_faq_q1: "Is this the same as slowed and reverb?",
   tool_add_reverb_to_an_audio_clip_faq_a1: "No. Slowed and reverb also stretches tempo and lowers pitch before adding space. This page leaves speed and pitch alone and only adds reverb or echo. Use Make a slowed and reverb clip for that aesthetic.",
   tool_add_reverb_to_an_audio_clip_faq_q2: "What is the difference between Room, Hall and Echo?",

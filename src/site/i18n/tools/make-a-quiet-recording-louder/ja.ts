@@ -59,6 +59,7 @@ const ja: SiteLangDict = {
   tool_make_a_quiet_recording_louder_usecases_title: "こんなときに",
   tool_make_a_quiet_recording_louder_usecase_1: "スマホのボイスメモが小さすぎて聞きづらいとき—+6 dB で増幅して WAV を保存。",
   tool_make_a_quiet_recording_louder_usecase_2: "インタビュー全体が弱く、LUFS 目標を追わず同じ比率で大きくしたいとき。",
+  tool_make_a_quiet_recording_louder_usecase_3: "小さいスマホメモを、ピーク保護つきで大きくしたい。",
   tool_make_a_quiet_recording_louder_faq_q1: "ピーク 0 dBFS へのノーマライズと同じですか？",
   tool_make_a_quiet_recording_louder_faq_a1: "違います。固定の dB ゲインを選びます。ピーク保護は、そのゲインがクリップする場合にだけ縮小し、すべてのファイルをフルスケールまで自動上昇させません。ピーク正規化は別の予定作業です。",
   tool_make_a_quiet_recording_louder_faq_q2: "ポッドキャストのラウドネス / LUFS に合わせますか？",

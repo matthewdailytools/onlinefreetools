@@ -56,6 +56,7 @@ const pt: SiteLangDict = {
   tool_reverse_an_audio_file_usecases_title: "Quando ajuda",
   tool_reverse_an_audio_file_usecase_1: "Efeito curto ou sting musical que deve tocar de trás pra frente—Reverter, baixe WAV.",
   tool_reverse_an_audio_file_usecase_2: "Checar uma cauda de reverb ouvindo o fim primeiro—não varredura 8D, não envelopes de fade.",
+  tool_reverse_an_audio_file_usecase_3: "Uma amostra curta deve tocar ao contrário para transição ou efeito.",
   tool_reverse_an_audio_file_faq_q1: "Reverter muda a duração?",
   tool_reverse_an_audio_file_faq_a1: "Não. A ordem das amostras vira, mas o comprimento e a taxa de amostragem permanecem.",
   tool_reverse_an_audio_file_faq_q2: "É o mesmo que pan 8D?",

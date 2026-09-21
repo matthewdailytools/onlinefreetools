@@ -66,6 +66,7 @@ const ar: SiteLangDict = {
   tool_shift_the_pitch_of_a_song_usecases_title: "متى يساعد هذا",
   tool_shift_the_pitch_of_a_song_usecase_1: "مرافقة أعلى من اللازم—اختر −2، أزِح، نزّل WAV.",
   tool_shift_the_pitch_of_a_song_usecase_2: "مقطع قصير يحتاج +1 أو +2 دون تسريع نايت كور.",
+  tool_shift_the_pitch_of_a_song_usecase_3: "كاريوكي أو غطاء يحتاج بضعة نصف نغمات صعودًا/هبوطًا مع الحفاظ على المدة.",
   tool_shift_the_pitch_of_a_song_faq_q1: "هل هذا مثل تغيير السرعة دون تغيير الطبقة؟",
   tool_shift_the_pitch_of_a_song_faq_a1: "لا. السرعة-دون-الطبقة تغيّر الإيقاع بـ WSOLA مع السعي للإبقاء على الطبقة. هذه الصفحة تغيّر الطبقة الموسيقية مع السعي للإبقاء على المدة. استخدم تغيير سرعة الصوت دون تغيير الطبقة للإيقاع فقط.",
   tool_shift_the_pitch_of_a_song_faq_q2: "هل هذا صانع نايت كور؟",

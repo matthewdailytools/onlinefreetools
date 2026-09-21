@@ -54,6 +54,7 @@ const ar: SiteLangDict = {
   tool_generate_a_sine_tone_at_a_frequency_usecases_title: 'متى يفيد',
   tool_generate_a_sine_tone_at_a_frequency_usecase_1: 'تحتاج مرجع A4—440 هرتز، ثانيتان، توليد، نزّل WAV.',
   tool_generate_a_sine_tone_at_a_frequency_usecase_2: 'تريد نغمة اختبار 1000 هرتز لفحص السماعات دون مولّد سطح مكتب.',
+  tool_generate_a_sine_tone_at_a_frequency_usecase_3: 'تحتاج نغمة معايرة بتردد محدد لفحص الجهاز.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q1: 'هل هذا مولّد ضوضاء بيضاء/وردية/بنية؟',
   tool_generate_a_sine_tone_at_a_frequency_faq_a1: 'لا. هذه الصفحة تولّف جيباً واحداً. الضوضاء عمل آخر.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q2: 'هل يمكنها صنع نغمات DTMF؟',

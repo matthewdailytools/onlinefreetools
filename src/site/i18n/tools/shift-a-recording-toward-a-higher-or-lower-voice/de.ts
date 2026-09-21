@@ -63,6 +63,7 @@ const de: SiteLangDict = {
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecases_title: "Wann das hilft",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_1: "Voice-over etwas zu tief—Höher wählen, Verschieben, WAV herunterladen.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_2: "Kurzer Sprachclip braucht tieferen Ton ohne Längenänderung wie ein Spielzeug-Riese.",
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_3: "Eine VO braucht etwas höhere oder tiefere Farbe ohne volle Pitch-Suite.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q1: "Verwandelt das die Stimme in ein bestimmtes Geschlecht?",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a1: "Nein. Nur Tonhöhe höher oder tiefer bei angestrebter gleicher Dauer. Kein Mann-zu-Frau-Versprechen, kein Studio-Formant-Morphing.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q2: "Ist das wie Chipmunk- oder Robot-Spieleffekte?",

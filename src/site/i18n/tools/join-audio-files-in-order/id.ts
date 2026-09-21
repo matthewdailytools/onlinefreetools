@@ -89,6 +89,7 @@ const id: SiteLangDict = {
     'Beberapa memo suara harus menjadi satu trek berkelanjutan—tambah berurutan, Gabungkan, unduh WAV.',
   tool_join_audio_files_in_order_usecase_2:
     'Bagian lagu atau bab podcast yang tersimpan terpisah perlu satu ekspor tanpa diunggah ke situs joiner.',
+  tool_join_audio_files_in_order_usecase_3: 'Beberapa WAV bab harus jadi satu file berurutan.',
   tool_join_audio_files_in_order_faq_q1: 'Apakah ini sama dengan mencampur atau menumpuk dua trek?',
   tool_join_audio_files_in_order_faq_a1:
     'Tidak. Overlay mix memutar klip bersamaan (misalnya suara di atas musik). Halaman ini hanya menempatkannya satu demi satu sesuai urutan daftar.',

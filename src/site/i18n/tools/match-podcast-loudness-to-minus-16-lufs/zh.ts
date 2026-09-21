@@ -60,6 +60,7 @@ const zh: SiteLangDict = {
   tool_match_podcast_loudness_to_minus_16_lufs_usecases_title: "适用场景",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_1: "播客整集偏安静、交稿要约 −16 LUFS——选 −16 对齐后下载 WAV。",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_2: "投向 YouTube/Spotify 的口播想靠近 −14，又不想峰值归一化或上压缩器。",
+  tool_match_podcast_loudness_to_minus_16_lufs_usecase_3: "单集响度漂忽，上传前想对齐到大约 −16 LUFS。",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q1: "这和峰值归一化一样吗？",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_a1: "不一样。峰值归一化是把绝对峰值拉到目标 dBFS。本页测量近似综合响度并按 LUFS 芯片增益。峰值作业请用「将音频文件峰值归一化」。",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q2: "这和固定 dB 增益把录音调大声一样吗？",

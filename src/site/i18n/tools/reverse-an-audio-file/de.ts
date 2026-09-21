@@ -56,6 +56,7 @@ const de: SiteLangDict = {
   tool_reverse_an_audio_file_usecases_title: "Wann das hilft",
   tool_reverse_an_audio_file_usecase_1: "Kurzer Effekt oder Musik-Sting, der rückwärts laufen soll—Umkehren, WAV laden.",
   tool_reverse_an_audio_file_usecase_2: "Hallschweif prüfen, indem das Ende zuerst kommt—kein 8D-Sweep, keine Fade-Hüllkurven.",
+  tool_reverse_an_audio_file_usecase_3: "Ein kurzes Sample soll rückwärts für Übergang oder Effekt laufen.",
   tool_reverse_an_audio_file_faq_q1: "Ändert Umkehren die Dauer?",
   tool_reverse_an_audio_file_faq_a1: "Nein. Die Sample-Reihenfolge dreht sich, aber Länge und Abtastrate bleiben gleich.",
   tool_reverse_an_audio_file_faq_q2: "Ist das dasselbe wie 8D-Pan?",

@@ -67,6 +67,7 @@ const en: SiteLangDict = {
   tool_crossfade_two_audio_files_usecases_title: 'When this helps',
   tool_crossfade_two_audio_files_usecase_1: 'Two songs need a DJ-style handoff—add both, pick 2–5 s equal-power, Crossfade, download WAV.',
   tool_crossfade_two_audio_files_usecase_2: 'Podcast segments should meet softly instead of a hard cut—use a 1 s fade between takes without uploading to an online editor.',
+  tool_crossfade_two_audio_files_usecase_3: 'Two song sections need a short overlap so the join is not a hard cut.',
   tool_crossfade_two_audio_files_faq_q1: 'Is this the same as joining audio files end-to-end?',
   tool_crossfade_two_audio_files_faq_a1: 'No. Joining places clips with a hard cut. This page overlaps the end of the first with the start of the second so they fade together.',
   tool_crossfade_two_audio_files_faq_q2: 'Is this the same as mixing a voiceover over background music?',

@@ -54,6 +54,7 @@ const ja: SiteLangDict = {
   tool_generate_a_sine_tone_at_a_frequency_usecases_title: 'こんなときに',
   tool_generate_a_sine_tone_at_a_frequency_usecase_1: 'A4参照音が必要—440 Hz・2秒で生成しWAV保存。',
   tool_generate_a_sine_tone_at_a_frequency_usecase_2: '1000 Hzのテスト音でスピーカーを確認。デスクトップ信号発生器は不要。',
+  tool_generate_a_sine_tone_at_a_frequency_usecase_3: '機材チェック用に、指定Hzの校正トーンが欲しい。',
   tool_generate_a_sine_tone_at_a_frequency_faq_q1: '白/ピンク/ブラウンノイズ発生器ですか？',
   tool_generate_a_sine_tone_at_a_frequency_faq_a1: 'いいえ。単一周波数の正弦だけです。ノイズは別作業です。',
   tool_generate_a_sine_tone_at_a_frequency_faq_q2: 'DTMFダイヤルトーンは作れますか？',

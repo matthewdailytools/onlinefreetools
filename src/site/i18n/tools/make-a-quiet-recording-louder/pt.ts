@@ -59,6 +59,7 @@ const pt: SiteLangDict = {
   tool_make_a_quiet_recording_louder_usecases_title: "Quando isto ajuda",
   tool_make_a_quiet_recording_louder_usecase_1: "Uma nota de voz do telemóvel gravada demasiado baixa—suba +6 dB e baixe WAV.",
   tool_make_a_quiet_recording_louder_usecase_2: "Uma faixa de entrevista globalmente fraca, quando quer a mesma proporção mais alta sem perseguir um alvo LUFS.",
+  tool_make_a_quiet_recording_louder_usecase_3: "Uma nota baixa do telemóvel precisa de ganho com proteção de picos.",
   tool_make_a_quiet_recording_louder_faq_q1: "É o mesmo que normalizar o áudio ao pico 0 dBFS?",
   tool_make_a_quiet_recording_louder_faq_a1: "Não. Escolhe um ganho dB fixo. A proteção de pico só reduz se esse ganho clipar—não sobe automaticamente cada ficheiro à escala completa. Normalizar de pico é outro trabalho planeado.",
   tool_make_a_quiet_recording_louder_faq_q2: "Isto iguala a loudness de podcast / LUFS?",

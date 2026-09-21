@@ -67,6 +67,7 @@ const de: SiteLangDict = {
   tool_split_stereo_into_left_and_right_files_usecases_title: "Wann das hilft",
   tool_split_stereo_into_left_and_right_files_usecase_1: "Einem Editor getrennte linke und rechte Mono-WAVs aus einem Stereo-Interview oder Dual-Mic-Take geben.",
   tool_split_stereo_into_left_and_right_files_usecase_2: "Einen falsch verdrahteten Stereo-Export vor der Veröffentlichung mit L-R tauschen korrigieren.",
+  tool_split_stereo_into_left_and_right_files_usecase_3: "Ein Stereo-Interview soll getrennte Links-/Rechts-Mono-Dateien werden.",
   tool_split_stereo_into_left_and_right_files_faq_q1: "Was steckt nach In Dateien aufteilen in der ZIP?",
   tool_split_stereo_into_left_and_right_files_faq_a1: "Zwei 16-Bit-Mono-WAV-Dateien: eine für den linken und eine für den rechten Kanal. Dateinamen enthalten left und right zur Unterscheidung.",
   tool_split_stereo_into_left_and_right_files_faq_q2: "Ist das dasselbe wie Stereo zu Mono umwandeln?",

@@ -82,6 +82,7 @@ const ja: SiteLangDict = {
     '再利用できる集中用の雰囲気 WAV が欲しいとき：キャリアとビートを設定、ミックス、保存してヘッドホンで聴く。',
   tool_mix_binaural_beats_for_focus_usecase_2:
     'デスクトップのトーンアプリを入れず、治療主張にも頼らず、素早くステレオ・ビートのデモが欲しいとき。',
+  tool_mix_binaural_beats_for_focus_usecase_3: 'キャリアとビート差から、ヘッドホン専用の短いステレオ集中ベッドが欲しい。',
   tool_mix_binaural_beats_for_focus_faq_q1: 'これは医療や治療ですか？',
   tool_mix_binaural_beats_for_focus_faq_a1:
     'いいえ。娯楽と個人向けの集中用雰囲気音のみです。診断・治療・治癒は行わず、治療効果も主張しません。',

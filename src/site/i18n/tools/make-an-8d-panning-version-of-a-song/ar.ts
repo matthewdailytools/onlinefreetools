@@ -63,6 +63,7 @@ const ar: SiteLangDict = {
   tool_make_an_8d_panning_version_of_a_song_usecases_title: "متى يساعد هذا",
   tool_make_an_8d_panning_version_of_a_song_usecase_1: "أغنية قصيرة أو حلقة لتعديل 8D كلاسيكي على السماعات—اختر 5ث، بان 8D، نزّل WAV.",
   tool_make_an_8d_panning_version_of_a_song_usecase_2: "مقطع يحتاج حركة ي↔ش—ليس slowed+reverb ولا نايت كور ولا عكس.",
+  tool_make_an_8d_panning_version_of_a_song_usecase_3: "تريد تحريك بانوراما ستيريو دوارًا للسماعات لا مزيجًا أحاديًا.",
   tool_make_an_8d_panning_version_of_a_song_faq_q1: "هل هذا محيط ثلاثي الأبعاد حقيقي أو HRTF؟",
   tool_make_an_8d_panning_version_of_a_song_faq_a1: "لا. إشارة وسط تُبان تلقائيًا ي/ش بمكاسب قوة ثابتة لإحساس «دائرة» على السماعات. لا يفك ترميز دولبي أو Ambisonics أو HRTF مقيس.",
   tool_make_an_8d_panning_version_of_a_song_faq_q2: "هل هذا نفس slowed and reverb؟",

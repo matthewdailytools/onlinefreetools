@@ -58,6 +58,7 @@ const ar: SiteLangDict = {
   tool_normalize_an_audio_file_to_peak_usecases_title: "متى يساعد ذلك",
   tool_normalize_an_audio_file_to_peak_usecase_1: "تسليم يطلب ذروات قرب المقياس الكامل مع هامش—طبّع إلى −1 dBFS ونزّل WAV.",
   tool_normalize_an_audio_file_to_peak_usecase_2: "عدة تسجيلات بمستويات مختلفة تريد محاذاتها بالذروة قبل التحرير دون مطاردة رقم LUFS.",
+  tool_normalize_an_audio_file_to_peak_usecase_3: "تسجيلات بقمم مختلفة تريد هدف ذروة موحّدًا.",
   tool_normalize_an_audio_file_to_peak_faq_q1: "هل هذا مثل رفع الصوت بكسب dB ثابت؟",
   tool_normalize_an_audio_file_to_peak_faq_a1: "لا. الكسب الثابت يضاعف بـ dB مختار. تطبيع الذروة يوسّع بما يلزم حتى تصل الذروة المطلقة للهدف. لتعزيز dB ثابت استخدم جعل تسجيل هادئ أعلى صوتًا.",
   tool_normalize_an_audio_file_to_peak_faq_q2: "هل يطابق علو صوت البودكاست / LUFS؟",

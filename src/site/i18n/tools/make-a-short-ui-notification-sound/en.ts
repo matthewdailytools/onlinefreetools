@@ -58,6 +58,7 @@ const en: SiteLangDict = {
   tool_make_a_short_ui_notification_sound_usecases_title: 'When this helps',
   tool_make_a_short_ui_notification_sound_usecase_1: 'You need a tiny success or click cue for a prototype—pick a preset, Generate, download WAV for mocks or demos.',
   tool_make_a_short_ui_notification_sound_usecase_2: 'You want a reusable alert or ping without hunting a stock library or installing a desktop synth.',
+  tool_make_a_short_ui_notification_sound_usecase_3: 'You need a tiny click or chime WAV for an app prototype.',
   tool_make_a_short_ui_notification_sound_faq_q1: 'Is this a DTMF dial-tone generator?',
   tool_make_a_short_ui_notification_sound_faq_a1: 'No. DTMF uses paired telephone frequencies in a keypad sequence. This page only makes short UI cues.',
   tool_make_a_short_ui_notification_sound_faq_q2: 'Can it make a long sine tone at a chosen Hertz?',

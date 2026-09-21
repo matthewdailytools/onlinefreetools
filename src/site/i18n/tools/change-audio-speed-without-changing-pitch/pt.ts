@@ -60,6 +60,7 @@ const pt: SiteLangDict = {
   tool_change_audio_speed_without_changing_pitch_usecases_title: "Quando ajuda",
   tool_change_audio_speed_without_changing_pitch_usecase_1: "Música de prática rápida demais—escolha 0.75×, Esticar, baixar WAV.",
   tool_change_audio_speed_without_changing_pitch_usecase_2: "Clipe que precisa de leve aceleração de timing sem subida de tom nightcore.",
+  tool_change_audio_speed_without_changing_pitch_usecase_3: "Tem de encaixar uma VO num vídeo mais curto sem voz de esquilo.",
   tool_change_audio_speed_without_changing_pitch_faq_q1: "É o mesmo que mudar o tom ou a tonalidade?",
   tool_change_audio_speed_without_changing_pitch_faq_a1: "Não. Pitch shift muda o tom musical (duração às vezes igual). Esta página muda o tempo com WSOLA mirando preservar o tom. Pitch-only é outro trabalho.",
   tool_change_audio_speed_without_changing_pitch_faq_q2: "É um criador de nightcore?",

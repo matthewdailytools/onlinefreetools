@@ -67,6 +67,7 @@ const ru: SiteLangDict = {
   tool_split_stereo_into_left_and_right_files_usecases_title: "Когда это помогает",
   tool_split_stereo_into_left_and_right_files_usecase_1: "Отдать монтажёру отдельные левый и правый моно WAV из стереоинтервью или дубль с двумя микрофонами.",
   tool_split_stereo_into_left_and_right_files_usecase_2: "Исправить стереоэкспорт с перепутанной разводкой, поменяв Л-П перед публикацией.",
+  tool_split_stereo_into_left_and_right_files_usecase_3: "Стерео‑интервью — в отдельные mono‑файлы левого и правого каналов.",
   tool_split_stereo_into_left_and_right_files_faq_q1: "Что внутри ZIP после «Разделить на файлы»?",
   tool_split_stereo_into_left_and_right_files_faq_a1: "Два 16-битных моно WAV: один для левого канала и один для правого. Имена содержат left и right, чтобы их различать.",
   tool_split_stereo_into_left_and_right_files_faq_q2: "Это то же самое, что преобразовать стерео в моно?",

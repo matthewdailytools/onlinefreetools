@@ -66,6 +66,7 @@ const fr: SiteLangDict = {
   tool_shift_the_pitch_of_a_song_usecases_title: "Quand cela aide",
   tool_shift_the_pitch_of_a_song_usecase_1: "Accompagnement trop aigu—choisissez −2, Décaler, téléchargez le WAV.",
   tool_shift_the_pitch_of_a_song_usecase_2: "Clip à monter de +1 ou +2 sans accélérer comme un nightcore.",
+  tool_shift_the_pitch_of_a_song_usecase_3: "Un karaoké ou cover doit monter ou descendre de quelques demi-tons en gardant la durée.",
   tool_shift_the_pitch_of_a_song_faq_q1: "Est-ce la même chose que changer la vitesse sans changer la hauteur ?",
   tool_shift_the_pitch_of_a_song_faq_a1: "Non. La vitesse-sans-hauteur change le tempo avec WSOLA en visant la hauteur. Cette page change la hauteur musicale en visant la durée. Utilisez Changer la vitesse audio sans changer la hauteur pour le tempo seul.",
   tool_shift_the_pitch_of_a_song_faq_q2: "Est-ce un créateur nightcore ?",

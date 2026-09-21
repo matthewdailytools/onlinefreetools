@@ -92,6 +92,7 @@ const ja: SiteLangDict = {
     "切点でクリックするナレーションや音楽ベッド—1秒／1秒でフェードしてWAVを保存。",
   tool_fade_in_and_fade_out_an_audio_clip_usecase_2:
     "他で切る前やタイムラインに載せる前に柔らかい端が欲しいとき—シームレスループにする必要はありません。",
+  tool_fade_in_and_fade_out_an_audio_clip_usecase_3: "着信音やバンパーの開始/終了が唐突なので、フェードが欲しい。",
   tool_fade_in_and_fade_out_an_audio_clip_faq_q1: "「オーディオをシームレスループにする」と同じですか？",
   tool_fade_in_and_fade_out_an_audio_clip_faq_a1:
     "違います。あちらは選んだ尾を頭にクロスフェードして接合をきれいにループします。こちらは1本の起止を柔らかくするだけです。シームレスループにはそのツールを使ってください。",

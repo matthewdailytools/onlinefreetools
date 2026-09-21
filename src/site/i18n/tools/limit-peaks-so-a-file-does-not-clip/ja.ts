@@ -63,6 +63,7 @@ const ja: SiteLangDict = {
   tool_limit_peaks_so_a_file_does_not_clip_usecases_title: "役立つ場面",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_1: "たまにクリップするミックス—ソフト −1 を選び、制限して WAV を保存。",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_2: "全体レベルは決まっているが、天井超過は禁止で、フルコンプは不要な納品。",
+  tool_limit_peaks_so_a_file_does_not_clip_usecase_3: "書き出しがピークでクリップするので、公開前に天井をかけたい。",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q1: "ピーク正規化と同じですか？",
   tool_limit_peaks_so_a_file_does_not_clip_faq_a1: "いいえ。ピーク正規化は絶対ピークが目標に達するよう全体をスケールします（静かな素材を上げることがあります）。このリミッターは天井超過だけ減衰します。ピーク正規化は「音声ファイルをピーク正規化する」を使ってください。",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q2: "ダイナミックコンプレッサーですか？",

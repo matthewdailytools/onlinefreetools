@@ -68,6 +68,7 @@ const ar: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_usecases_title: "متى يساعد هذا",
   tool_make_a_slowed_and_reverb_clip_usecase_1: "مقطع بوب أو R&B لتعديل slowed+reverb كلاسيكي—0.8× + متوسط، Slowed reverb، نزّل WAV.",
   tool_make_a_slowed_and_reverb_clip_usecase_2: "مقطع قصير يحتاج إبطاءً وفضاءً—ليس سرعة تدريب فقط، ولا نايت كور، ولا صدى جاف وحده.",
+  tool_make_a_slowed_and_reverb_clip_usecase_3: "مقطع يجب أن يبدو مبطأ مع صدى لتحرير اجتماعي.",
   tool_make_a_slowed_and_reverb_clip_faq_q1: "هل هذا مثل تغيير السرعة دون تغيير الطبقة؟",
   tool_make_a_slowed_and_reverb_clip_faq_a1: "لا. السرعة دون طبقة تستخدم WSOLA بلا صدى. هذه الصفحة تبطئ مع خفض الطبقة وتضيف صدى. استخدم تغيير سرعة الصوت دون تغيير الطبقة للسرعة فقط.",
   tool_make_a_slowed_and_reverb_clip_faq_q2: "هل هذا مثل نايت كور؟",

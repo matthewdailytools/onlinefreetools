@@ -8,10 +8,8 @@ const zh: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_title: "给人声闷录音做均衡",
   tool_eq_a_muffled_voice_recording_desc:
     "用清晰度、温暖感或在场感三频段预设打开闷声人声，然后下载 16-bit WAV。仅在本机处理。",
-  tool_eq_a_muffled_voice_recording_description:
-    "用清晰度、温暖感或在场感三频段 Biquad 预设给人声闷录音做均衡，打开电话与口罩录音的闷声。步骤：均衡、试听、下载 16 位 WAV。示例：加载闷声样例即可体验。只做音色整形——不是仅低音增强、不是降噪、不是去齿音。音频始终留在本机，绝不会上传。",
-  tool_eq_a_muffled_voice_recording_article:
-    "电话、口罩与远距离麦克风常听起来闷：几百赫兹以下泥感过重，语音带清晰度不足。本页在 OfflineAudioContext 中串联三节 BiquadFilter——低频架、峰值、高频架——收成命名预设。清晰度削泥并抬升语音存在感；温暖感轻抬体感并柔化刺耳高频；在场感聚焦中高存在感与空气感。这是闷人声的音色 EQ，不是单频低音增强、不是背景降噪、不是只压齿音的去齿音。声道保持 1 或 2。保留原母带；下载是新的 16-bit WAV。处理在浏览器本机完成。",
+  tool_eq_a_muffled_voice_recording_description: "用清晰度、温暖感或在场感三频段 均衡器 预设给人声闷录音做均衡，打开电话与口罩录音的闷声。步骤：均衡、试听、下载 16 位 WAV。示例：加载闷声样例即可体验。只做音色整形——不是仅低音增强、不是降噪、不是去齿音。音频始终留在本机，绝不会上传。",
+  tool_eq_a_muffled_voice_recording_article: "电话、口罩与远距离麦克风常听起来闷：几百赫兹以下泥感过重，语音带清晰度不足。本页在 本机音频处理 中串联三节 均衡器滤镜——低频架、峰值、高频架——收成命名预设。清晰度削泥并抬升语音存在感；温暖感轻抬体感并柔化刺耳高频；在场感聚焦中高存在感与空气感。这是闷人声的音色 EQ，不是单频低音增强、不是背景降噪、不是只压齿音的去齿音。声道保持 1 或 2。保留原母带；下载是新的 16-bit WAV。处理在浏览器本机完成。",
   tool_eq_a_muffled_voice_recording_choose: "选择音频文件",
   tool_eq_a_muffled_voice_recording_hint: "拖入一个 WAV、MP3、M4A、AAC 或 OGG。最大 40 MiB、10 分钟；单声道或立体声。",
   tool_eq_a_muffled_voice_recording_convert: "均衡",
@@ -54,11 +52,11 @@ const zh: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_why_choose_item_1: "保存前可看到预设名、峰值前后与输出 KiB。",
   tool_eq_a_muffled_voice_recording_why_choose_item_2: "三个人声预设——一个闷声 EQ 作业，不是埋藏的十段玩具或仅低音墙。",
   tool_eq_a_muffled_voice_recording_why_choose_item_3:
-    "解码、Biquad EQ 与 WAV 写入在本机运行；页面不会上传录音来处理。",
+    "解码、均衡器 EQ 与 WAV 写入在本机运行；页面不会上传录音来处理。",
   tool_eq_a_muffled_voice_recording_why_choose_item_4: "更改预设或输入会清除旧下载，避免误存过期 WAV。",
   tool_eq_a_muffled_voice_recording_rules_title: "清晰度、温暖感、在场感与限制",
   tool_eq_a_muffled_voice_recording_rules_body:
-    "每个预设为三节 Biquad（低频架、峰值、高频架）。清晰度打开闷声；温暖感加体感；在场感抬存在感与空气感。软峰值保护在提升可能削波时缩放结果。",
+    "每个预设为三节 均衡器（低频架、峰值、高频架）。清晰度打开闷声；温暖感加体感；在场感抬存在感与空气感。软峰值保护在提升可能削波时缩放结果。",
   tool_eq_a_muffled_voice_recording_rules_item_1:
     "默认清晰度削减浑浊低频并抬升语音清晰度。温暖感抬低频体并柔化刺耳高频。在场感聚焦中高存在感。",
   tool_eq_a_muffled_voice_recording_rules_item_2:
@@ -72,6 +70,7 @@ const zh: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_usecases_title: "适用场景",
   tool_eq_a_muffled_voice_recording_usecase_1: "电话或口罩录音发闷、像在盒子里——选清晰度，均衡，下载 WAV。",
   tool_eq_a_muffled_voice_recording_usecase_2: "播客人声需要更暖体感或更多在场感，又不想开完整 DAW EQ。",
+  tool_eq_a_muffled_voice_recording_usecase_3: "口罩或远距离录音发闷，需要更清晰的人声存在感。",
   tool_eq_a_muffled_voice_recording_faq_q1: "这和低音增强一样吗？",
   tool_eq_a_muffled_voice_recording_faq_a1:
     "不一样。低音增强主要抬低频。本页提供三个多频段人声预设处理闷声。仅低音增强是另一作业（上线后见「给 MP3 增强低音」）。",

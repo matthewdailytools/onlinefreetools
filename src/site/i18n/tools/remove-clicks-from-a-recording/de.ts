@@ -61,6 +61,7 @@ const de: SiteLangDict = {
   tool_remove_clicks_from_a_recording_usecases_title: "Wann es hilft",
   tool_remove_clicks_from_a_recording_usecase_1: "Sprachnotiz mit Mund-Pops oder Kabeltipps—Mittel wählen, Entklicken, WAV herunterladen.",
   tool_remove_clicks_from_a_recording_usecase_2: "Transfer mit spärlichem Vinylknistern, bevor Sie woanders Denoise oder Dehum nutzen.",
+  tool_remove_clicks_from_a_recording_usecase_3: "Mundklicks und Edit-Pops stören eine sonst saubere VO.",
   tool_remove_clicks_from_a_recording_faq_q1: "Ist das dasselbe wie Hintergrundgeräusche in einer Sprachnotiz reduzieren?",
   tool_remove_clicks_from_a_recording_faq_a1: "Nein. Jene Seite filtert und gated stetiges Lüfter-/AC-Rauschen. Diese repariert kurze Impulsspitzen. Für Breitbandrauschen Nutzen Sie Hintergrundgeräusche in einer Sprachnotiz reduzieren.",
   tool_remove_clicks_from_a_recording_faq_q2: "Entfernt das 50/60-Hz-Netzbrummen?",

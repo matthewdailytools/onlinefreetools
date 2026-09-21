@@ -89,6 +89,7 @@ const fr: SiteLangDict = {
     'Plusieurs mémos vocaux doivent devenir une piste continue—ajoutez dans l’ordre, Joindre, téléchargez le WAV.',
   tool_join_audio_files_in_order_usecase_2:
     'Sections de chanson ou chapitres de podcast en fichiers séparés nécessitent un export sans les envoyer vers un site de jointure.',
+  tool_join_audio_files_in_order_usecase_3: 'Plusieurs WAV par chapitres doivent devenir un fichier continu.',
   tool_join_audio_files_in_order_faq_q1: 'Est-ce la même chose que mixer ou superposer deux pistes ?',
   tool_join_audio_files_in_order_faq_a1:
     'Non. Le mix superposé joue les clips en même temps (par ex. voix sur musique). Cette page les place seulement l’un après l’autre selon la liste.',

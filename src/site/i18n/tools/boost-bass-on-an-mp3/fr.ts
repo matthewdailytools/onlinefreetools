@@ -10,8 +10,7 @@ const fr: SiteLangDict = {
     "Épaississez des basses fines avec Mild, Medium ou Strong (low-shelf), puis téléchargez un WAV 16 bits. Sur l’appareil uniquement.",
   tool_boost_bass_on_an_mp3_description:
     "Renforcer les basses d’un MP3 avec les presets low-shelf Mild, Medium ou Strong. Étapes : renforcer, préécouter, télécharger le WAV. Exemple : charger l’échantillon de basses fines. Basses low-shelf seulement—pas un égaliseur multibande complet, pas un amplificateur de volume sur tout le fichier. L’audio reste sur votre appareil ; jamais téléversé.",
-  tool_boost_bass_on_an_mp3_article:
-    "Les exports téléphone et les enceintes d’ordinateur laissent souvent kick et basse minces : assez de médiums, trop peu de poids sous ~100 Hz. Cette page exécute une étape BiquadFilter lowshelf dans OfflineAudioContext. Mild est doux ; Medium (défaut) le relèvement quotidien ; Strong pousse plus fort. La protection de crête douce met à l’échelle si le boost clipperait. C’est un boost de basses—pas l’EQ trois bandes Clarity/Warmth/Presence pour voix étouffée, ni un gain dB plat sur tout. Canaux 1 ou 2. Gardez le master ; le téléchargement est un nouveau WAV 16 bits. Traitement dans le navigateur.",
+  tool_boost_bass_on_an_mp3_article: "Les exports téléphone et les enceintes d’ordinateur laissent souvent kick et basse minces : assez de médiums, trop peu de poids sous ~100 Hz. Cette page exécute une étape lowshelf EQ dans on-device audio processing. Mild est doux ; Medium (défaut) le relèvement quotidien ; Strong pousse plus fort. La protection de crête douce met à l’échelle si le boost clipperait. C’est un boost de basses—pas l’EQ trois bandes Clarity/Warmth/Presence pour voix étouffée, ni un gain dB plat sur tout. Canaux 1 ou 2. Gardez le master ; le téléchargement est un nouveau WAV 16 bits. Traitement dans le navigateur.",
   tool_boost_bass_on_an_mp3_choose: "Choisir un fichier audio",
   tool_boost_bass_on_an_mp3_hint: "Déposez un WAV, MP3, M4A, AAC ou OGG. Maximum 40 MiB et 10 minutes ; mono ou stéréo.",
   tool_boost_bass_on_an_mp3_convert: "Renforcer",
@@ -58,7 +57,7 @@ const fr: SiteLangDict = {
   tool_boost_bass_on_an_mp3_why_choose_item_4: "Changer le preset ou l’entrée efface l’ancien téléchargement pour éviter un WAV obsolète.",
   tool_boost_bass_on_an_mp3_rules_title: "Mild, Medium, Strong et limites",
   tool_boost_bass_on_an_mp3_rules_body:
-    "Chaque preset est une étape lowshelf Biquad. Mild est doux ; Medium le relèvement quotidien ; Strong plus lourd. Protection de crête si le boost clipperait.",
+    "Chaque preset est une étape lowshelf EQ. Mild est doux ; Medium le relèvement quotidien ; Strong plus lourd. Protection de crête si le boost clipperait.",
   tool_boost_bass_on_an_mp3_rules_item_1:
     "Medium (défaut) : lowshelf vers 90 Hz à environ +8 dB. Mild ~+4 dB ; Strong ~+12 dB avec shelf un peu plus bas.",
   tool_boost_bass_on_an_mp3_rules_item_2:
@@ -72,6 +71,7 @@ const fr: SiteLangDict = {
   tool_boost_bass_on_an_mp3_usecases_title: "Quand cela aide",
   tool_boost_bass_on_an_mp3_usecase_1: "Un export MP3 mince sur enceintes—choisissez Medium, Renforcer, téléchargez le WAV.",
   tool_boost_bass_on_an_mp3_usecase_2: "Une piste qui a besoin de plus de poids de kick sans EQ graphique complet ni mix plus fort.",
+  tool_boost_bass_on_an_mp3_usecase_3: "Un MP3 du téléphone sonne mince sur l’ordinateur et vous voulez surtout plus de kick.",
   tool_boost_bass_on_an_mp3_faq_q1: "Est-ce la même chose qu’égaliser un enregistrement vocal étouffé ?",
   tool_boost_bass_on_an_mp3_faq_a1:
     "Non. Cette page-là utilise Clarity/Warmth/Presence à trois bandes pour la parole étouffée. Ici, seul un lowshelf relève les graves. Pour l’EQ voix étouffée : Égaliser un enregistrement vocal étouffé.",

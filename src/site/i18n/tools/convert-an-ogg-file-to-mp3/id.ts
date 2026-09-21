@@ -6,7 +6,7 @@ import type { SiteLangDict } from '../../../types';
 const id: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_title: 'Ubah berkas OGG menjadi MP3',
   tool_convert_an_ogg_file_to_mp3_desc: 'Ubah rekaman OGG atau Opus lokal menjadi MP3. Audio tetap di perangkat dan tidak diunggah ke server.',
-  tool_convert_an_ogg_file_to_mp3_description: 'Ubah OGG ke MP3 di browser tanpa unggah. Langkah: pilih OGG/Opus, pilih bitrate, Ubah ke MP3, dengarkan, unduh. Contoh: nada Opus-in-OGG stereo lima detik ~120 KiB MP3 pada 192 kbps. decodeAudioData lalu lamejs; error jelas jika gagal. Berkas di perangkat.',
+  tool_convert_an_ogg_file_to_mp3_description: 'Ubah OGG ke MP3 di browser tanpa unggah. Langkah: pilih OGG/Opus, pilih bitrate, Ubah ke MP3, dengarkan, unduh. Contoh: nada Opus-in-OGG stereo lima detik ~120 KiB MP3 pada 192 kbps. browser decoding lalu in-browser MP3 encoding; error jelas jika gagal. Berkas di perangkat.',
   tool_convert_an_ogg_file_to_mp3_article: 'Memo suara dan audio game sering OGG Vorbis atau Opus, tetapi penerima mungkin butuh MP3. Halaman ini mengonversi satu kontainer OGG lokal utuh — Vorbis atau Opus — menjadi MP3 yang bisa didengar. MP3 menambah lossy; simpan aslinya.',
   tool_convert_an_ogg_file_to_mp3_choose: 'Pilih berkas OGG atau Opus',
   tool_convert_an_ogg_file_to_mp3_hint: 'Satu .ogg, .oga atau .opus, hingga 40 MiB dan 10 menit; mono/stereo. Dekode bergantung browser.',
@@ -56,6 +56,7 @@ const id: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_usecases_title: 'Berguna untuk',
   tool_convert_an_ogg_file_to_mp3_usecase_1: 'Kirim klip OGG game/chat ke yang butuh MP3.',
   tool_convert_an_ogg_file_to_mp3_usecase_2: 'Memo Opus jadi lampiran MP3 sambil simpan asli.',
+  tool_convert_an_ogg_file_to_mp3_usecase_3: 'Catatan suara datang sebagai OGG/Opus dan editor hanya menerima MP3.',
   tool_convert_an_ogg_file_to_mp3_faq_q1: 'Opus ke MP3 juga?',
   tool_convert_an_ogg_file_to_mp3_faq_a1: 'Ya. Opus di OGG (dan .opus diperlakukan OGG) pakai Ubah ke MP3 yang sama. Ganti ekstensi saja tidak mengonversi.',
   tool_convert_an_ogg_file_to_mp3_faq_q2: 'Apakah rekaman diunggah?',

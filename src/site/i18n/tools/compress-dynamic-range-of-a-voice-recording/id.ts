@@ -84,6 +84,7 @@ const id: SiteLangDict = {
   tool_compress_dynamic_range_of_a_voice_recording_usecases_title: "Kapan ini membantu",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_1: "Voice-over yang loncat dari frasa pelan ke puncak keras—pilih Podcast, kompres, unduh WAV.",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_2: "Wawancara yang ingin lebih rata sebelum penyesuaian loudness, tanpa mengecilkan MP3 demi ukuran.",
+  tool_compress_dynamic_range_of_a_voice_recording_usecase_3: "Bisikan dan puncak bertarung dalam satu take; Anda ingin level dengaran lebih rata.",
   tool_compress_dynamic_range_of_a_voice_recording_faq_q1: "Apakah sama dengan mengompres / mengecilkan ukuran file MP3?",
   tool_compress_dynamic_range_of_a_voice_recording_faq_a1:
     "Tidak. “Kompres” di sini berarti rentang dinamis (ambang/rasio), bukan bitrate atau byte. Untuk MP3 lebih kecil gunakan Reduce an MP3 file size. Dalam bahasa Tionghoa: 压缩人声动态 ≠ 压缩 MP3 体积.",

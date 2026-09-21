@@ -68,6 +68,7 @@ const pt: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_usecases_title: "Quando isso ajuda",
   tool_make_a_slowed_and_reverb_clip_usecase_1: "Clipe pop ou R&B para edit clássico slowed+reverb—0.8× + Médio, Slowed reverb, baixar WAV.",
   tool_make_a_slowed_and_reverb_clip_usecase_2: "Clipe curto que precisa de lento e espaço—não só tempo de prática, não nightcore, não reverb seco sozinho.",
+  tool_make_a_slowed_and_reverb_clip_usecase_3: "Um trecho deve soar slowed-and-reverb para uma edição social.",
   tool_make_a_slowed_and_reverb_clip_faq_q1: "É o mesmo que mudar a velocidade sem mudar o tom?",
   tool_make_a_slowed_and_reverb_clip_faq_a1: "Não. Velocidade-sem-tom usa WSOLA sem reverb. Esta página desacelera com queda de tom e adiciona reverb. Use Alterar a velocidade do áudio sem alterar o tom para só tempo.",
   tool_make_a_slowed_and_reverb_clip_faq_q2: "É o mesmo que nightcore?",

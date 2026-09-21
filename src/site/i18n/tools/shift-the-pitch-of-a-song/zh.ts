@@ -66,6 +66,7 @@ const zh: SiteLangDict = {
   tool_shift_the_pitch_of_a_song_usecases_title: "适用场景",
   tool_shift_the_pitch_of_a_song_usecase_1: "伴奏偏高——选 −2，变调，下载 WAV。",
   tool_shift_the_pitch_of_a_song_usecase_2: "短片段需要 +1 或 +2，但不想像夜核那样加速。",
+  tool_shift_the_pitch_of_a_song_usecase_3: "伴奏或翻唱需要升降几个半音并尽量保持时长。",
   tool_shift_the_pitch_of_a_song_faq_q1: "这和「变速不变调」是一回事吗？",
   tool_shift_the_pitch_of_a_song_faq_a1: "不是。变速不变调用 WSOLA 改节奏并尽量保留音高。本页改音高并尽量保留时长。只改速度请用「改变音频速度且不改变音高」。",
   tool_shift_the_pitch_of_a_song_faq_q2: "这是夜核生成器吗？",

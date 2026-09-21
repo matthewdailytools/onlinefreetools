@@ -8,10 +8,8 @@ const ja: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_title: '動画に音声トラックを追加する',
   tool_add_an_audio_track_to_a_video_desc:
     'ローカルの動画にローカル音声を合成して保存。端末内のみ—YouTube の取得はしません。',
-  tool_add_an_audio_track_to_a_video_description:
-    'ブラウザでローカル動画に音声トラックを追加し、映像と選んだサウンドトラックを合成して保存します。手順：動画と音声を選ぶ → 音声を追加 → プレビュー → 保存。例：無音クリップ＋短い WAV。captureStream と MediaRecorder を使用—多くは WebM。ロスレス remux ではありません。アップロードなし。YouTube 取得なし。',
-  tool_add_an_audio_track_to_a_video_article:
-    '無音や声が弱いクリップは、共有前に新しいサウンドトラックが必要になることがあります。このページではローカル動画とローカル音声を開き、元の音声トラックを外してフレームをキャプチャし、AudioContext でサウンドをデコードして MediaRecorder で再エンコード—ブラウザにより多くは WebM。出力尺は動画に合わせ、長い音声は切れ、短い音声は映像より先に終わります。YouTube や URL の取得はせず、ミュートだけでも音声抽出だけでもありません。両方の再生と音声付き MediaRecorder が条件です。原本は残し、ダウンロードは新しいファイル。処理は端末内です。',
+  tool_add_an_audio_track_to_a_video_description: 'ブラウザでローカル動画に音声トラックを追加し、映像と選んだサウンドトラックを合成して保存します。手順：動画と音声を選ぶ → 音声を追加 → プレビュー → 保存。例：無音クリップ＋短い WAV。captureStream と browser media recording を使用—多くは WebM。ロスレス remux ではありません。アップロードなし。YouTube 取得なし。',
+  tool_add_an_audio_track_to_a_video_article: '無音や声が弱いクリップは、共有前に新しいサウンドトラックが必要になることがあります。このページではローカル動画とローカル音声を開き、元の音声トラックを外してフレームをキャプチャし、the browser audio engine でサウンドをデコードして browser media recording で再エンコード—ブラウザにより多くは WebM。出力尺は動画に合わせ、長い音声は切れ、短い音声は映像より先に終わります。YouTube や URL の取得はせず、ミュートだけでも音声抽出だけでもありません。両方の再生と音声付き browser media recording が条件です。原本は残し、ダウンロードは新しいファイル。処理は端末内です。',
   tool_add_an_audio_track_to_a_video_choose_video: '動画ファイルを選ぶ',
   tool_add_an_audio_track_to_a_video_hint_video:
     'ブラウザで再生できるローカル MP4 / WebM / MOV / M4V をドロップまたは選択。最大約 80 MiB・約 3 分。YouTube や URL 貼り付けは不可。',
@@ -24,7 +22,7 @@ const ja: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_clear: 'クリア',
   tool_add_an_audio_track_to_a_video_advanced: '合成の注意',
   tool_add_an_audio_track_to_a_video_settings_hint:
-    'ブラウザは通常、元の音声を外してあなたのサウンドを付けたあと MediaRecorder で再エンコードします。出力は多く WebM で、元 MP4 のロスレス remux ではありません。YouTube は取得しません。',
+    'ブラウザは通常、元の音声を外してあなたのサウンドを付けたあと browser media recording で再エンコードします。出力は多く WebM で、元 MP4 のロスレス remux ではありません。YouTube は取得しません。',
   tool_add_an_audio_track_to_a_video_progress: '音声追加の進捗',
   tool_add_an_audio_track_to_a_video_read: '読み込み',
   tool_add_an_audio_track_to_a_video_decode: 'デコード',
@@ -50,7 +48,7 @@ const ja: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_err_decode:
     'ブラウザが動画または音声をデコードできませんでした。別のコンテナか短いクリップを試してください。',
   tool_add_an_audio_track_to_a_video_err_encoder:
-    'MediaRecorder が合成動画を書けませんでした。Chrome/Edge、または短い WebM/MP4 と WAV/MP3 を試してください。',
+    'browser media recording が合成動画を書けませんでした。Chrome/Edge、または短い WebM/MP4 と WAV/MP3 を試してください。',
   tool_add_an_audio_track_to_a_video_how_title: '動画に音声トラックを追加する方法',
   tool_add_an_audio_track_to_a_video_how_body:
     'ローカルの動画と音声を選び、「音声を追加」→ プレビュー → 保存。アップロードも YouTube 取得もしません。',
@@ -66,14 +64,14 @@ const ja: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_why_choose_item_1:
     '保存前に長さ・MIME タイプ・出力 KiB を確認できます。',
   tool_add_an_audio_track_to_a_video_why_choose_item_2:
-    '合成ジョブは明確で、MediaRecorder の制限を正直に示します—偽のロスレス remux 約束はありません。',
+    '合成ジョブは明確で、browser media recording の制限を正直に示します—偽のロスレス remux 約束はありません。',
   tool_add_an_audio_track_to_a_video_why_choose_item_3:
     '読み込みと録画は端末内。処理のためにファイルをアップロードしません。',
   tool_add_an_audio_track_to_a_video_why_choose_item_4:
     'どちらかのファイルを変えると古いダウンロードが消え、古い合成を誤保存しません。',
   tool_add_an_audio_track_to_a_video_rules_title: '合成ルールと正直なブラウザ制限',
   tool_add_an_audio_track_to_a_video_rules_body:
-    '毎回、元の音声を外し、あなたのサウンドを付け、MediaRecorder で再エンコードします。出力は多く WebM。YouTube 取得でもミュートのみでも音声抽出でもありません。',
+    '毎回、元の音声を外し、あなたのサウンドを付け、browser media recording で再エンコードします。出力は多く WebM。YouTube 取得でもミュートのみでも音声抽出でもありません。',
   tool_add_an_audio_track_to_a_video_rules_item_1:
     'ローカル動画は約 80 MiB・約 3 分まで、ローカル音声は約 40 MiB まで。先に再生/デコードできる必要があります。',
   tool_add_an_audio_track_to_a_video_rules_item_2:
@@ -90,6 +88,7 @@ const ja: SiteLangDict = {
     '無音の画面録画と WAV ベッドがある—ここで合成して共有用に保存。',
   tool_add_an_audio_track_to_a_video_usecase_2:
     '弱い内蔵トラックを、デスクトップ編集ソフトなしでより明瞭なローカル音声に差し替えたい。',
+  tool_add_an_audio_track_to_a_video_usecase_3: '無音の画面録画と別撮りナレーションを、アップロード前に一本化したい。',
   tool_add_an_audio_track_to_a_video_faq_q1: 'YouTube の取得や URL の貼り付けはできますか？',
   tool_add_an_audio_track_to_a_video_faq_a1:
     'できません。手元のローカルファイルのみ。YouTube ダウンローダーもリモート取得もありません。',
@@ -101,7 +100,7 @@ const ja: SiteLangDict = {
     'しません。動画からの音声抽出は別ツールです。ここでの結果は合成済み音声付きの動画です。',
   tool_add_an_audio_track_to_a_video_faq_q4: '出力は元と同じ MP4 になりますか？',
   tool_add_an_audio_track_to_a_video_faq_a4:
-    '通常はなりません。ブラウザは MediaRecorder で再エンコードし、多くは WebM になります。画質とコンテナは変わり得ます。',
+    '通常はなりません。ブラウザは browser media recording で再エンコードし、多くは WebM になります。画質とコンテナは変わり得ます。',
   tool_add_an_audio_track_to_a_video_faq_q5: 'サーバーへアップロードされますか？',
   tool_add_an_audio_track_to_a_video_faq_a5:
     'されません。デコードと録画は端末のブラウザ内です。初回読み込みにはネットワークが必要で、オフライン動作は保証しません。',

@@ -53,6 +53,7 @@ const zh: SiteLangDict = {
   tool_extract_cover_art_from_an_mp3_usecases_title: '适用场景',
   tool_extract_cover_art_from_an_mp3_usecase_1: '把播客或专辑封面另存为缩略图。',
   tool_extract_cover_art_from_an_mp3_usecase_2: '分享前确认 MP3 是否已带封面。',
+  tool_extract_cover_art_from_an_mp3_usecase_3: '需要把内嵌封面另存成图片，又不想重编码音频。',
   tool_extract_cover_art_from_an_mp3_faq_q1: '会上传我的 MP3 吗？',
   tool_extract_cover_art_from_an_mp3_faq_a1: '不会。APIC 解析在浏览器本机完成。',
   tool_extract_cover_art_from_an_mp3_faq_q2: '没有封面怎么办？',

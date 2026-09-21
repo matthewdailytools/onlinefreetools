@@ -66,6 +66,7 @@ const zh: SiteLangDict = {
   tool_crossfade_two_audio_files_usecases_title: '适用场景',
   tool_crossfade_two_audio_files_usecase_1: '两首歌需要 DJ 式交接——加上两段，选 2–5 秒等功率，交叉淡化，下载 WAV。',
   tool_crossfade_two_audio_files_usecase_2: '播客段落想柔和衔接而不是硬切——在两段 take 之间用 1 秒淡化，无需上传在线编辑器。',
+  tool_crossfade_two_audio_files_usecase_3: '两段音乐衔接处需要短交叉淡化，避免硬切。',
   tool_crossfade_two_audio_files_faq_q1: '这和把音频首尾拼接是一回事吗？',
   tool_crossfade_two_audio_files_faq_a1: '不是。拼接是硬切相接。本页让第一段尾部与第二段头部重叠，一起淡入淡出。',
   tool_crossfade_two_audio_files_faq_q2: '这和把口播叠在背景音乐上一样吗？',

@@ -66,6 +66,7 @@ const ja: SiteLangDict = {
   tool_shift_the_pitch_of_a_song_usecases_title: "こんなときに",
   tool_shift_the_pitch_of_a_song_usecase_1: "伴奏が高い—−2 を選び、シフト、WAVを保存。",
   tool_shift_the_pitch_of_a_song_usecase_2: "短いクリップを +1 や +2 したいが nightcore のように加速したくない。",
+  tool_shift_the_pitch_of_a_song_usecase_3: "カラオケやカバーを数半音上げ下げし、尺はだいたい保ちたい。",
   tool_shift_the_pitch_of_a_song_faq_q1: "音高を変えずに速度を変えるのと同じですか？",
   tool_shift_the_pitch_of_a_song_faq_a1: "いいえ。速度だけのページは WSOLA でテンポを変えピッチを保ちます。本ページは音高を変え長さを保ちます。テンポだけなら「音高を変えずに音声の速度を変える」を使ってください。",
   tool_shift_the_pitch_of_a_song_faq_q2: "nightcore メーカーですか？",

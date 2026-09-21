@@ -63,6 +63,7 @@ const fr: SiteLangDict = {
   tool_make_an_8d_panning_version_of_a_song_usecases_title: "Quand ça aide",
   tool_make_an_8d_panning_version_of_a_song_usecase_1: "Courte chanson ou boucle pour un edit 8D casque classique—choisissez 5s, Pan 8D, téléchargez WAV.",
   tool_make_an_8d_panning_version_of_a_song_usecase_2: "Clip qui a besoin de mouvement G↔D—pas slowed+reverb, pas nightcore, pas reverse.",
+  tool_make_an_8d_panning_version_of_a_song_usecase_3: "Vous voulez un panoramique stéréo tournant au casque, pas un remix mono.",
   tool_make_an_8d_panning_version_of_a_song_faq_q1: "Est-ce du vrai surround 3D ou HRTF ?",
   tool_make_an_8d_panning_version_of_a_song_faq_a1: "Non. Signal mid autopanné G/D avec gains à puissance constante pour une sensation de « cercle » au casque. Pas de décodage Dolby, Ambisonics ou HRTF mesuré.",
   tool_make_an_8d_panning_version_of_a_song_faq_q2: "Est-ce la même chose que slowed and reverb ?",

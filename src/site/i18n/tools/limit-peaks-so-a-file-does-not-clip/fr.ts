@@ -63,6 +63,7 @@ const fr: SiteLangDict = {
   tool_limit_peaks_so_a_file_does_not_clip_usecases_title: "Quand cela aide",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_1: "Un mix qui clippe parfois—choisir Soft −1, limiter, télécharger WAV.",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_2: "Une livraison qui interdit les pics au-dessus d’un plafond après réglage du niveau global, sans compresseur complet.",
+  tool_limit_peaks_so_a_file_does_not_clip_usecase_3: "Une exportation sature sur les pics ; vous voulez un plafond avant publication.",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q1: "Est-ce la même chose que normaliser au pic ?",
   tool_limit_peaks_so_a_file_does_not_clip_faq_a1: "Non. La normalisation de crête scale tout le clip pour que le pic absolu atteigne une cible (peut monter le calme). Ce limiteur n’atténue que les échantillons au-dessus du plafond. Pour normaliser, utilisez Normaliser un fichier audio au pic.",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q2: "Est-ce un compresseur dynamique ?",

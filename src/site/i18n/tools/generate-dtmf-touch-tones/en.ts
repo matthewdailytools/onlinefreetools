@@ -57,6 +57,7 @@ const en: SiteLangDict = {
   tool_generate_dtmf_touch_tones_usecases_title: 'When this helps',
   tool_generate_dtmf_touch_tones_usecase_1: 'You need a DTMF clip for an IVR or telephony demo—type the digits, Generate, download WAV for docs or tests.',
   tool_generate_dtmf_touch_tones_usecase_2: 'You want a reproducible touch-tone sequence without installing a desktop signal generator.',
+  tool_generate_dtmf_touch_tones_usecase_3: 'You must produce keypad beeps for an IVR demo or support guide.',
   tool_generate_dtmf_touch_tones_faq_q1: 'Is this a single sine tone generator?',
   tool_generate_dtmf_touch_tones_faq_a1: 'No. DTMF uses two frequencies at once (row + column). For one sine at a chosen Hertz value, use the sine tone tool instead.',
   tool_generate_dtmf_touch_tones_faq_q2: 'Can it make short UI notification beeps?',

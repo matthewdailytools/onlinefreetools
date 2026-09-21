@@ -62,6 +62,7 @@ const es: SiteLangDict = {
   tool_add_reverb_to_an_audio_clip_usecases_title: "Cuándo ayuda",
   tool_add_reverb_to_an_audio_clip_usecase_1: "Una voz seca que necesita un poco de aire de sala—elige Sala, Añadir reverberación, descarga WAV.",
   tool_add_reverb_to_an_audio_clip_usecase_2: "Una pista corta que necesita espacio de sala grande o ecos más claros sin ralentizar.",
+  tool_add_reverb_to_an_audio_clip_usecase_3: "Quieres una cola corta de sala o hall en una voz seca sin abrir un DAW.",
   tool_add_reverb_to_an_audio_clip_faq_q1: "¿Es lo mismo que slowed and reverb?",
   tool_add_reverb_to_an_audio_clip_faq_a1: "No. Slowed and reverb también estira el tempo y baja el tono antes de añadir espacio. Esta página deja velocidad y tono y solo añade reverberación o eco. Usa Make a slowed and reverb clip para esa estética.",
   tool_add_reverb_to_an_audio_clip_faq_q2: "¿Qué diferencia hay entre Sala, Sala grande y Eco?",

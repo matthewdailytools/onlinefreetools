@@ -58,6 +58,7 @@ const zh: SiteLangDict = {
   tool_normalize_an_audio_file_to_peak_usecases_title: "适用场景",
   tool_normalize_an_audio_file_to_peak_usecase_1: "交稿要求峰值接近满幅并留一点余量——归一化到 −1 dBFS 再下载 WAV。",
   tool_normalize_an_audio_file_to_peak_usecase_2: "多条电平不一的 take，想先按峰值对齐再剪辑，又不想追 LUFS 数字。",
+  tool_normalize_an_audio_file_to_peak_usecase_3: "多条素材峰值高低不一，想统一到同一峰值目标。",
   tool_normalize_an_audio_file_to_peak_faq_q1: "这和用固定 dB 增益把安静录音调大声一样吗？",
   tool_normalize_an_audio_file_to_peak_faq_a1: "不一样。固定增益按选定 dB 倍数放大；峰值归一化会算出所需比例，使绝对峰值命中目标。若要固定 dB 提升，请用「把安静的录音调大声」。",
   tool_normalize_an_audio_file_to_peak_faq_q2: "这会按播客响度 / LUFS 对齐吗？",

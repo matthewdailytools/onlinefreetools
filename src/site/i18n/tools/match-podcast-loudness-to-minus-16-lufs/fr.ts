@@ -60,6 +60,7 @@ const fr: SiteLangDict = {
   tool_match_podcast_loudness_to_minus_16_lufs_usecases_title: "Quand cela aide",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_1: "Un épisode podcast trop bas pour une livraison −16 LUFS—alignez à −16 et téléchargez le WAV.",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_2: "Une piste voix YouTube/Spotify à rapprocher de −14 sans normaliser au pic ni utiliser un compresseur.",
+  tool_match_podcast_loudness_to_minus_16_lufs_usecase_3: "La loudness de l’épisode varie ; vous visez environ −16 LUFS.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q1: "Est-ce la même chose que normaliser au pic ?",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_a1: "Non. Normaliser au pic fait atteindre un dBFS au pic absolu. Ici on mesure une sonie intégrée approximative et on gagne vers une puce LUFS. Pour le pic : Normaliser un fichier audio au pic.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q2: "Est-ce la même chose qu’amplifier avec un gain dB fixe ?",

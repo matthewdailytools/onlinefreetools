@@ -10,8 +10,7 @@ const es: SiteLangDict = {
     "Abre una voz apagada con Clarity, Warmth o Presence (tres bandas) y descarga un WAV de 16 bits. Solo en el dispositivo.",
   tool_eq_a_muffled_voice_recording_description:
     "Ecualizar una grabación de voz apagada con presets de tres bandas Clarity, Warmth o Presence. Pasos: ecualizar, previsualizar, descargar WAV. Ejemplo: carga la muestra apagada. Solo tono—no es refuerzo solo de graves, no es reducción de ruido, no es de-esser. El audio permanece en tu dispositivo; nunca se sube.",
-  tool_eq_a_muffled_voice_recording_article:
-    "Llamadas, mascarillas y micros lejanos suelen sonar apagados: demasiado barro bajo unos cientos de hercios y poca claridad en la banda de voz. Esta página encadena tres BiquadFilter en OfflineAudioContext—lowshelf, peaking y highshelf—como presets con nombre. Clarity corta el barro y abre la voz; Warmth aporta cuerpo y suaviza agudos duros; Presence eleva presencia media-alta y aire. Es EQ tonal para voz apagada, no un refuerzo solo de graves, no reducción de ruido de fondo ni un de-esser de sibilantes. Se mantienen 1 o 2 canales. Conserva el máster; la descarga es un WAV nuevo de 16 bits. Todo corre en el navegador.",
+  tool_eq_a_muffled_voice_recording_article: "Llamadas, mascarillas y micros lejanos suelen sonar apagados: demasiado barro bajo unos cientos de hercios y poca claridad en la banda de voz. Esta página encadena tres EQ filter en on-device audio processing—lowshelf, peaking y highshelf—como presets con nombre. Clarity corta el barro y abre la voz; Warmth aporta cuerpo y suaviza agudos duros; Presence eleva presencia media-alta y aire. Es EQ tonal para voz apagada, no un refuerzo solo de graves, no reducción de ruido de fondo ni un de-esser de sibilantes. Se mantienen 1 o 2 canales. Conserva el máster; la descarga es un WAV nuevo de 16 bits. Todo corre en el navegador.",
   tool_eq_a_muffled_voice_recording_choose: "Elige un archivo de audio",
   tool_eq_a_muffled_voice_recording_hint: "Suelta un WAV, MP3, M4A, AAC u OGG. Máximo 40 MiB y 10 minutos; mono o estéreo.",
   tool_eq_a_muffled_voice_recording_convert: "EQ",
@@ -54,11 +53,11 @@ const es: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_why_choose_item_1: "Ves el preset, picos antes/después y KiB de salida antes de guardar.",
   tool_eq_a_muffled_voice_recording_why_choose_item_2: "Tres presets claros de voz—un trabajo de EQ apagado, no un juguete de diez bandas ni solo graves.",
   tool_eq_a_muffled_voice_recording_why_choose_item_3:
-    "La decodificación, el EQ Biquad y la escritura WAV ocurren en tu dispositivo; la página no sube la grabación.",
+    "La decodificación, el EQ EQ y la escritura WAV ocurren en tu dispositivo; la página no sube la grabación.",
   tool_eq_a_muffled_voice_recording_why_choose_item_4: "Cambiar el preset o la entrada borra la descarga anterior para no guardar un WAV obsoleto.",
   tool_eq_a_muffled_voice_recording_rules_title: "Clarity, Warmth, Presence y límites",
   tool_eq_a_muffled_voice_recording_rules_body:
-    "Cada preset son tres etapas Biquad (lowshelf, peaking, highshelf). Clarity abre la voz apagada; Warmth aporta cuerpo; Presence eleva presencia y aire. La protección de picos escala el resultado si los boosts recortarían.",
+    "Cada preset son tres etapas EQ (lowshelf, peaking, highshelf). Clarity abre la voz apagada; Warmth aporta cuerpo; Presence eleva presencia y aire. La protección de picos escala el resultado si los boosts recortarían.",
   tool_eq_a_muffled_voice_recording_rules_item_1:
     "Clarity por defecto corta graves fangosos y abre la claridad de voz. Warmth eleva el cuerpo grave y suaviza agudos duros. Presence enfoca la presencia media-alta.",
   tool_eq_a_muffled_voice_recording_rules_item_2:
@@ -72,6 +71,7 @@ const es: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_usecases_title: "Cuándo ayuda",
   tool_eq_a_muffled_voice_recording_usecase_1: "Una toma de teléfono o mascarilla que suena encajonada—elige Clarity, EQ, descarga WAV.",
   tool_eq_a_muffled_voice_recording_usecase_2: "Una voz de podcast que necesita más cuerpo o presencia sin abrir un EQ completo de DAW.",
+  tool_eq_a_muffled_voice_recording_usecase_3: "Una toma lejana o con mascarilla suena turbia y necesitas más presencia de voz.",
   tool_eq_a_muffled_voice_recording_faq_q1: "¿Es lo mismo que un refuerzo de graves?",
   tool_eq_a_muffled_voice_recording_faq_a1:
     "No. Un refuerzo de graves principalmente eleva bajas frecuencias. Esta página ofrece tres presets multibanda para voz apagada. El refuerzo solo de graves es otro trabajo (Boost bass on an MP3 cuando esté disponible).",

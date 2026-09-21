@@ -57,6 +57,7 @@ const es: SiteLangDict = {
   tool_make_a_short_ui_notification_sound_usecases_title: "Cuándo ayuda",
   tool_make_a_short_ui_notification_sound_usecase_1: "Necesitas un clic o éxito diminuto para un prototipo—elige preset, Generar, descarga WAV para mocks o demos.",
   tool_make_a_short_ui_notification_sound_usecase_2: "Quieres una alerta o ping reutilizable sin buscar una biblioteca de stock ni instalar un sintetizador de escritorio.",
+  tool_make_a_short_ui_notification_sound_usecase_3: "Necesitas un clic o campanilla WAV corto para un prototipo de app.",
   tool_make_a_short_ui_notification_sound_faq_q1: "¿Es un generador de tonos DTMF?",
   tool_make_a_short_ui_notification_sound_faq_a1: "No. DTMF usa frecuencias telefónicas emparejadas en una secuencia de teclado. Esta página solo hace señales cortas de UI.",
   tool_make_a_short_ui_notification_sound_faq_q2: "¿Puede hacer un seno largo a un Hertz elegido?",

@@ -59,6 +59,7 @@ const en: SiteLangDict = {
   tool_normalize_an_audio_file_to_peak_usecases_title: "When this helps",
   tool_normalize_an_audio_file_to_peak_usecase_1: "A delivery that asks for peaks near full scale with a little headroom—normalize to −1 dBFS and download WAV.",
   tool_normalize_an_audio_file_to_peak_usecase_2: "Several takes at different levels that you want to align by peak before editing, without chasing a LUFS number.",
+  tool_normalize_an_audio_file_to_peak_usecase_3: "Takes sit at different peak levels and you want a consistent peak target.",
   tool_normalize_an_audio_file_to_peak_faq_q1: "Is this the same as making a quiet recording louder with fixed dB gain?",
   tool_normalize_an_audio_file_to_peak_faq_a1: "No. Fixed gain multiplies by a chosen dB amount. Peak normalize scales whatever is needed so the absolute peak hits your target. For a chosen dB boost, use Make a quiet recording louder.",
   tool_normalize_an_audio_file_to_peak_faq_q2: "Does this match podcast loudness / LUFS?",

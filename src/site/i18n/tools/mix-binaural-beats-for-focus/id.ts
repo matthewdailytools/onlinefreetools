@@ -82,6 +82,7 @@ const id: SiteLangDict = {
     'Anda ingin WAV ambient fokus yang bisa dipakai ulang—atur carrier dan beat, Campur, unduh, dan simpan file untuk headphone.',
   tool_mix_binaural_beats_for_focus_usecase_2:
     'Anda butuh demo beat stereo cepat tanpa memasang aplikasi nada desktop atau mempercayai klaim terapi.',
+  tool_mix_binaural_beats_for_focus_usecase_3: 'Anda ingin bed fokus stereo singkat dari carrier dan beat Hz hanya dengan headphone.',
   tool_mix_binaural_beats_for_focus_faq_q1: 'Apakah ini pengobatan medis atau terapi?',
   tool_mix_binaural_beats_for_focus_faq_a1:
     'Tidak. Halaman ini hanya membuat suara hiburan dan ambient fokus pribadi. Tidak mendiagnosis, mengobati, atau menyembuhkan kondisi apa pun dan tidak mengklaim efikasi terapeutik.',

@@ -61,6 +61,7 @@ const ru: SiteLangDict = {
   tool_de_ess_a_voiceover_usecases_title: "Когда это помогает",
   tool_de_ess_a_voiceover_usecase_1: "Закадр с пронзительными С—выберите Средняя, Деэссер, скачайте WAV.",
   tool_de_ess_a_voiceover_usecase_2: "Нарратив перед EQ глухого тона или удалением щелчков рта в другом инструменте.",
+  tool_de_ess_a_voiceover_usecase_3: "Резкие «с» режут в наушниках после яркой записи.",
   tool_de_ess_a_voiceover_faq_q1: "Это то же, что эквалайзер глухой голосовой записи?",
   tool_de_ess_a_voiceover_faq_a1: "Нет. Та страница применяет статические пресеты Clarity/Warmth/Presence. Эта ослабляет только при росте сибилянтной энергии. Для общего глухого тона используйте Эквалайзер глухой голосовой записи.",
   tool_de_ess_a_voiceover_faq_q2: "Это снижает фоновый шум голосовой заметки?",

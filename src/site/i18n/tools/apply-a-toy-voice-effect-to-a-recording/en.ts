@@ -64,6 +64,7 @@ const en: SiteLangDict = {
   tool_apply_a_toy_voice_effect_to_a_recording_usecases_title: "When this helps",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_1: "A short meme or kids clip that needs a chipmunk or helium color—Apply, download WAV.",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_2: "A playful robot or telephone gag for a message—not a celebrity clone, not a gender claim.",
+  tool_apply_a_toy_voice_effect_to_a_recording_usecase_3: "You need a playful chipmunk or deep toy voice for a short meme clip.",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q1: "Is this a celebrity or AI voice clone?",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_a1: "No. This page only applies toy signal effects (resample, ring modulation, telephone band). It does not learn, copy or impersonate a specific person’s voice.",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q2: "Is this a male-to-female or gender voice changer?",

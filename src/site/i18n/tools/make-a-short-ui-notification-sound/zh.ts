@@ -58,6 +58,7 @@ const zh: SiteLangDict = {
   tool_make_a_short_ui_notification_sound_usecases_title: '适用场景',
   tool_make_a_short_ui_notification_sound_usecase_1: '原型需要极短成功或点击反馈——选预设、生成、下载 WAV 用于演示。',
   tool_make_a_short_ui_notification_sound_usecase_2: '想要可复用的警示或 ping，又不想翻素材库或装桌面合成器。',
+  tool_make_a_short_ui_notification_sound_usecase_3: '应用原型需要短促提示音 WAV。',
   tool_make_a_short_ui_notification_sound_faq_q1: '这是 DTMF 拨号音发生器吗？',
   tool_make_a_short_ui_notification_sound_faq_a1: '不是。DTMF 使用成对电话频率的键盘序列。本页只做短 UI 提示。',
   tool_make_a_short_ui_notification_sound_faq_q2: '能做某一赫兹的长正弦吗？',

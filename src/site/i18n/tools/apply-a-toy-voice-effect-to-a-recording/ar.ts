@@ -64,6 +64,7 @@ const ar: SiteLangDict = {
   tool_apply_a_toy_voice_effect_to_a_recording_usecases_title: "متى يساعد",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_1: "ميم قصير أو مقطع أطفال يحتاج لون سنجاب أو هيليوم—تطبيق، تنزيل WAV.",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_2: "مقلب روبوت أو هاتف لرسالة—ليس استنساخ مشهور، ولا ادعاء جنس.",
+  tool_apply_a_toy_voice_effect_to_a_recording_usecase_3: "تحتاج صوت لعبة مرح عالي أو عميق لمقطع ميم قصير.",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q1: "هل هذا استنساخ صوت مشهور أو ذكاء اصطناعي؟",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_a1: "لا. هذه الصفحة تطبّق فقط تأثيرات إشارة لعبية (إعادة أخذ عينات، تعديل حلقة، نطاق هاتف). لا تتعلّم ولا تنسخ ولا تتظاهر بصوت شخص معيّن.",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q2: "هل هذا محوّل صوت ذكر إلى أنثى أو جنس؟",

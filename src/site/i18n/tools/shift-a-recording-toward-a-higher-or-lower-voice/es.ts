@@ -63,6 +63,7 @@ const es: SiteLangDict = {
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecases_title: "Cuándo ayuda",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_1: "Una locución un poco grave—elige Más aguda, Desplazar, descarga WAV.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_2: "Un clip corto que necesita tono más grave sin cambiar la duración como un gigante de juguete.",
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_3: "Una VO necesita un carácter un poco más agudo o grave sin suite de corrección.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q1: "¿Convierte la voz en un género concreto?",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a1: "No. Solo desplaza el tono hacia arriba o abajo manteniendo la duración. No promete conversión de hombre a mujer ni morfología de formantes de estudio.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q2: "¿Es lo mismo que efectos de ardilla o robot?",

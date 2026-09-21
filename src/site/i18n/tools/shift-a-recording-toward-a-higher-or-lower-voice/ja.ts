@@ -63,6 +63,7 @@ const ja: SiteLangDict = {
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecases_title: "役立つ場面",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_1: "ナレーションが少し低い—高めを選びシフト、WAV を保存。",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_2: "短いボイスを玩具巨人のように長さを変えず、 noticeably 低いトーンに。",
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_3: "VOを少し高め/低めのキャラにしたいが、本格ピッチ補正一式は不要。",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q1: "特定の性別の声になりますか？",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a1: "いいえ。長さをできるだけ保ちながらピッチを上下に移すだけです。男女変換を約束せず、スタジオのフォルマント変形も行いません。",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q2: "リスやロボットの玩具効果と同じですか？",

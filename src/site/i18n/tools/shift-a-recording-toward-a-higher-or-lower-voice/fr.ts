@@ -63,6 +63,7 @@ const fr: SiteLangDict = {
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecases_title: "Quand cela aide",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_1: "Une voix off un peu grave—Plus aiguë, Décaler, télécharger le WAV.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_2: "Un court clip vocal plus grave sans changer la durée comme un géant jouet.",
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_3: "Une VO a besoin d’un caractère un peu plus aigu ou grave sans suite complète.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q1: "Est-ce que cela transforme la voix en genre précis ?",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a1: "Non. Seulement décaler la hauteur en visant à garder la durée. Pas de promesse homme-femme ni morphing de formants studio.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q2: "Est-ce comme les effets chipmunk ou robot ?",

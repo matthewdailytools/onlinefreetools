@@ -11,8 +11,7 @@ const en: SiteLangDict = {
     "Cut 50 or 60 Hz electrical hum with notch filters and optional harmonics, then download a 16-bit WAV. On-device only.",
   tool_remove_mains_hum_from_a_recording_description:
     "Remove mains hum from a recording with 50 or 60 Hz notch filters and optional 2nd–5th harmonics. Steps: Dehum, preview, download WAV. Example: load the humming sample. Narrow notches for electrical hum—not broadband denoise, not declick, not muffled EQ. Audio stays on your device; never uploaded.",
-  tool_remove_mains_hum_from_a_recording_article:
-    "Recordings near power supplies, dimmers or poorly grounded gear often pick up a steady 50 or 60 Hz mains hum, sometimes with audible harmonics. This page chains BiquadFilter notch stages in OfflineAudioContext at the chosen fundamental and, optionally, the 2nd through 5th harmonics below Nyquist. That targets narrow electrical tones—not fan hiss broadband denoise, not click/pop repair, and not a three-band muffled-voice EQ. Music bass near the notch can thin slightly. Channel count stays 1 or 2. Keep the original file; the download is a new 16-bit WAV. Work runs in the browser on your device.",
+  tool_remove_mains_hum_from_a_recording_article: "Recordings near power supplies, dimmers or poorly grounded gear often pick up a steady 50 or 60 Hz mains hum, sometimes with audible harmonics. This page chains EQ filter notch stages in on-device audio processing at the chosen fundamental and, optionally, the 2nd through 5th harmonics below Nyquist. That targets narrow electrical tones—not fan hiss broadband denoise, not click/pop repair, and not a three-band muffled-voice EQ. Music bass near the notch can thin slightly. Channel count stays 1 or 2. Keep the original file; the download is a new 16-bit WAV. Work runs in the browser on your device.",
   tool_remove_mains_hum_from_a_recording_choose: "Choose an audio file",
   tool_remove_mains_hum_from_a_recording_hint: "Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.",
   tool_remove_mains_hum_from_a_recording_convert: "Dehum",
@@ -91,6 +90,7 @@ const en: SiteLangDict = {
     "A voice note with steady electrical buzz from a charger or dimmer—pick your grid Hz, Dehum, download WAV.",
   tool_remove_mains_hum_from_a_recording_usecase_2:
     "A field recording that needs the mains tone gone before you denoise broadband hiss or EQ muffled speech elsewhere.",
+  tool_remove_mains_hum_from_a_recording_usecase_3: "A 50/60 Hz buzz from power gear is audible under the take.",
   tool_remove_mains_hum_from_a_recording_faq_q1: "Is this the same as reduce background noise on a voice memo?",
   tool_remove_mains_hum_from_a_recording_faq_a1:
     "No. That page high-passes and gates steady fan or AC hiss. This page notches narrow 50/60 Hz electrical tones. Use Reduce background noise on a voice memo for broadband hiss.",

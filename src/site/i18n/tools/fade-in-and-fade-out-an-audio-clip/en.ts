@@ -92,6 +92,7 @@ const en: SiteLangDict = {
     "A voiceover or music bed that clicks at the cut points—pick 1 s / 1 s, Fade, download WAV.",
   tool_fade_in_and_fade_out_an_audio_clip_usecase_2:
     "A clip that needs soft edges before you trim elsewhere or drop it on a timeline—without building a seamless loop.",
+  tool_fade_in_and_fade_out_an_audio_clip_usecase_3: "A ringtone or bumper starts and ends abruptly and needs soft edges.",
   tool_fade_in_and_fade_out_an_audio_clip_faq_q1: "Is this the same as Make a seamless audio loop?",
   tool_fade_in_and_fade_out_an_audio_clip_faq_a1:
     "No. That tool wraps the selected tail into the head with a crossfade so the join loops cleanly. This page only softens the start and end of one clip. For seamless looping, use Make a seamless audio loop.",

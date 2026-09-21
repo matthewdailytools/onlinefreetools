@@ -63,6 +63,7 @@ const id: SiteLangDict = {
   tool_mix_a_voiceover_with_background_music_usecases_title: "Kapan membantu",
   tool_mix_a_voiceover_with_background_music_usecase_1: "Rekaman bicara butuh bed lembut—tambah keduanya, turunkan bed atau aktifkan ducking, campur, unduh.",
   tool_mix_a_voiceover_with_background_music_usecase_2: "Sudah ekstrak audio dari video dan ingin voiceover baru di atas tanpa mixer daring.",
+  tool_mix_a_voiceover_with_background_music_usecase_3: "VO kering perlu musik latar lebih pelan di bawah tanpa mixer penuh.",
   tool_mix_a_voiceover_with_background_music_faq_q1: "Apakah sama dengan menyambung file audio berurutan?",
   tool_mix_a_voiceover_with_background_music_faq_a1: "Tidak. Menyambung menempatkan klip satu demi satu. Halaman ini memutar suara dan bed bersamaan.",
   tool_mix_a_voiceover_with_background_music_faq_q2: "Apakah ada crossfade antar lagu?",

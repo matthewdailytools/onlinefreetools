@@ -60,6 +60,7 @@ const es: SiteLangDict = {
   tool_match_podcast_loudness_to_minus_16_lufs_usecases_title: "Cuándo ayuda",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_1: "Un episodio de podcast demasiado bajo para una entrega a −16 LUFS—iguala a −16 y descarga WAV.",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_2: "Una pista de voz para YouTube o Spotify que quieres acercar a −14 sin normalizar al pico ni usar un compresor.",
+  tool_match_podcast_loudness_to_minus_16_lufs_usecase_3: "La sonoridad del episodio varía y quieres un objetivo aproximado de −16 LUFS.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q1: "¿Es lo mismo que normalizar al pico?",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_a1: "No. Normalizar al pico escala para que el pico absoluto alcance un dBFS. Aquí se mide sonoridad integrada aproximada y se gana hacia un chip LUFS. Para pico, usa Normalizar un archivo de audio al pico.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q2: "¿Es lo mismo que hacer más alta una grabación con ganancia dB fija?",

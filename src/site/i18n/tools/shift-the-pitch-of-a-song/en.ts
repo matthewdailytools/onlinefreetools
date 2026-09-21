@@ -67,6 +67,7 @@ const en: SiteLangDict = {
   tool_shift_the_pitch_of_a_song_usecases_title: "When this helps",
   tool_shift_the_pitch_of_a_song_usecase_1: "An accompaniment that sits too high—pick −2, Shift, download WAV.",
   tool_shift_the_pitch_of_a_song_usecase_2: "A short clip that needs +1 or +2 without speeding up like nightcore.",
+  tool_shift_the_pitch_of_a_song_usecase_3: "A karaoke or cover needs a few semitones up or down with duration kept.",
   tool_shift_the_pitch_of_a_song_faq_q1: "Is this the same as changing speed without changing pitch?",
   tool_shift_the_pitch_of_a_song_faq_a1: "No. Speed-without-pitch changes tempo with WSOLA while aiming to keep pitch. This page changes musical pitch while aiming to keep duration. Use Change audio speed without changing pitch for tempo-only work.",
   tool_shift_the_pitch_of_a_song_faq_q2: "Is this a nightcore maker?",

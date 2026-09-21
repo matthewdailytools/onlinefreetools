@@ -66,6 +66,7 @@ const en: SiteLangDict = {
   tool_change_audio_speed_without_changing_pitch_usecases_title: "When this helps",
   tool_change_audio_speed_without_changing_pitch_usecase_1: "A practice song that is too fast—pick 0.75×, Stretch, download WAV.",
   tool_change_audio_speed_without_changing_pitch_usecase_2: "A clip that needs a slight speed-up for timing without nightcore pitch rise.",
+  tool_change_audio_speed_without_changing_pitch_usecase_3: "You must fit a VO into a shorter video slot without sounding chipmunked.",
   tool_change_audio_speed_without_changing_pitch_faq_q1: "Is this the same as changing pitch or key?",
   tool_change_audio_speed_without_changing_pitch_faq_a1: "No. A pitch-shift job changes musical pitch (and may keep duration). This page changes tempo with WSOLA while aiming to keep pitch. Pitch-only shifting is a separate tool job.",
   tool_change_audio_speed_without_changing_pitch_faq_q2: "Is this a nightcore maker?",

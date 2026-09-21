@@ -10,8 +10,7 @@ const ja: SiteLangDict = {
     "Clarity / Warmth / Presence の3バンドプリセットでこもった声を開き、16-bit WAV をダウンロード。端末内のみ。",
   tool_eq_a_muffled_voice_recording_description:
     "こもったボイス録音をEQする：Clarity・Warmth・Presence の3バンドプリセット。手順：EQ、プレビュー、WAV を保存。例：こもったサンプルを読み込む。音色整形のみ—低音ブースト専用ではなく、ノイズ除去でもディエッサーでもありません。音声は端末に留まり、アップロードしません。",
-  tool_eq_a_muffled_voice_recording_article:
-    "電話・マスク・遠いマイクは、数百ヘルツ以下の濁りと声帯域の不足でこもって聞こえます。本ページは OfflineAudioContext で lowshelf / peaking / highshelf の3段 BiquadFilter をプリセットとして実行します。Clarity は濁りを切り声を開き、Warmth はボディを足して鋭い高域を抑え、Presence は中高域の存在感とエアを上げます。こもった声のトーンEQであり、単帯域の低音ブースト、背景ノイズ除去、歯擦音だけを抑えるディエッサーではありません。チャンネルは1〜2。マスターは残し、ダウンロードは新しい16-bit WAV。処理はブラウザ内です。",
+  tool_eq_a_muffled_voice_recording_article: "電話・マスク・遠いマイクは、数百ヘルツ以下の濁りと声帯域の不足でこもって聞こえます。本ページは on-device audio processing で lowshelf / peaking / highshelf の3段 EQ filter をプリセットとして実行します。Clarity は濁りを切り声を開き、Warmth はボディを足して鋭い高域を抑え、Presence は中高域の存在感とエアを上げます。こもった声のトーンEQであり、単帯域の低音ブースト、背景ノイズ除去、歯擦音だけを抑えるディエッサーではありません。チャンネルは1〜2。マスターは残し、ダウンロードは新しい16-bit WAV。処理はブラウザ内です。",
   tool_eq_a_muffled_voice_recording_choose: "音声ファイルを選ぶ",
   tool_eq_a_muffled_voice_recording_hint: "WAV / MP3 / M4A / AAC / OGG を1つ。最大 40 MiB・10分。モノラルまたはステレオ。",
   tool_eq_a_muffled_voice_recording_convert: "EQ",
@@ -54,11 +53,11 @@ const ja: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_why_choose_item_1: "保存前にプリセット名・ピーク前後・出力 KiB が見えます。",
   tool_eq_a_muffled_voice_recording_why_choose_item_2: "声向け3プリセット—こもった声EQ専用で、10バンド玩具や低音だけの壁ではありません。",
   tool_eq_a_muffled_voice_recording_why_choose_item_3:
-    "デコード・Biquad EQ・WAV書き出しは端末内。ページは処理のために録音をアップロードしません。",
+    "デコード・EQ EQ・WAV書き出しは端末内。ページは処理のために録音をアップロードしません。",
   tool_eq_a_muffled_voice_recording_why_choose_item_4: "プリセットや入力を変えると古いダウンロードは破棄され、古いWAVの誤保存を防ぎます。",
   tool_eq_a_muffled_voice_recording_rules_title: "Clarity / Warmth / Presence と制限",
   tool_eq_a_muffled_voice_recording_rules_body:
-    "各プリセットは Biquad 3段（lowshelf / peaking / highshelf）。Clarity はこもった声を開き、Warmth はボディ、Presence は存在感とエア。ブーストでクリップしそうならソフトピーク保護でスケールします。",
+    "各プリセットは EQ 3段（lowshelf / peaking / highshelf）。Clarity はこもった声を開き、Warmth はボディ、Presence は存在感とエア。ブーストでクリップしそうならソフトピーク保護でスケールします。",
   tool_eq_a_muffled_voice_recording_rules_item_1:
     "既定 Clarity は濁った低域を切り声の明瞭度を上げます。Warmth は低域ボディを足し鋭い高域を柔らかく。Presence は中高域の存在感に焦点。",
   tool_eq_a_muffled_voice_recording_rules_item_2:
@@ -72,6 +71,7 @@ const ja: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_usecases_title: "こんなときに",
   tool_eq_a_muffled_voice_recording_usecase_1: "電話やマスクでこもったテイク—Clarity を選び EQ して WAV を保存。",
   tool_eq_a_muffled_voice_recording_usecase_2: "フルDAWのEQを開かずに、ポッドキャスト声に暖かさや存在感が欲しいとき。",
+  tool_eq_a_muffled_voice_recording_usecase_3: "遠い/マスク越しの収録がこもっており、声の存在感を出したい。",
   tool_eq_a_muffled_voice_recording_faq_q1: "低音ブーストと同じですか？",
   tool_eq_a_muffled_voice_recording_faq_a1:
     "違います。低音ブーストは主に低域を上げます。本ページはこもった声向けの多バンド3プリセットです。低音専用は別作業です（Boost bass on an MP3、公開時）。",

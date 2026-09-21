@@ -61,6 +61,7 @@ const en: SiteLangDict = {
   tool_convert_stereo_audio_to_mono_usecases_title: "When this helps",
   tool_convert_stereo_audio_to_mono_usecase_1: "Hand a stereo voice memo or podcast bed to a form that only accepts mono upload.",
   tool_convert_stereo_audio_to_mono_usecase_2: "Keep only the left (or right) interview mic when the other side is noise or silence.",
+  tool_convert_stereo_audio_to_mono_usecase_3: "A stereo interview must become mono for a phone IVR or single-speaker embed.",
   tool_convert_stereo_audio_to_mono_faq_q1: "What does Mix to mono do to left and right?",
   tool_convert_stereo_audio_to_mono_faq_a1: "It averages each sample of the left and right channels ((L+R)/2) into one mono track, then writes 16-bit PCM WAV. Extreme pans get quieter; phase-opposed audio can thin out—preview before you download.",
   tool_convert_stereo_audio_to_mono_faq_q2: "Can I convert an MP3 or M4A to mono WAV?",

@@ -89,6 +89,7 @@ const pt: SiteLangDict = {
     'Várias notas de voz devem virar uma faixa contínua—adicione por ordem, Juntar, descarregue WAV.',
   tool_join_audio_files_in_order_usecase_2:
     'Secções de música ou capítulos de podcast em ficheiros separados precisam de uma exportação sem enviar a um site de junção.',
+  tool_join_audio_files_in_order_usecase_3: 'Vários WAV por capítulos devem virar um ficheiro contínuo.',
   tool_join_audio_files_in_order_faq_q1: 'É o mesmo que misturar ou sobrepor duas faixas?',
   tool_join_audio_files_in_order_faq_a1:
     'Não. A mistura sobreposta toca clips ao mesmo tempo (por exemplo voz sobre música). Esta página só os coloca um após o outro na ordem da lista.',

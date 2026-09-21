@@ -64,6 +64,7 @@ const ja: SiteLangDict = {
   tool_apply_a_toy_voice_effect_to_a_recording_usecases_title: "こんなときに",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_1: "短いミームや子ども向けクリップにチップマンク／ヘリウム色が欲しい—適用して WAV を保存。",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_2: "メッセージ用のロボットや電話ギャグ—有名人クローンでも性別主張でもありません。",
+  tool_apply_a_toy_voice_effect_to_a_recording_usecase_3: "短いミーム用に、おもちゃっぽい甲高い声や低い声が欲しい。",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q1: "有名人や AI の声クローンですか？",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_a1: "いいえ。本ページはトイ信号効果（リサンプル、リング変調、電話帯域）のみを適用します。特定人物の声を学習・コピー・なりすますことはありません。",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q2: "男性→女性など性別のボイスチェンジャーですか？",

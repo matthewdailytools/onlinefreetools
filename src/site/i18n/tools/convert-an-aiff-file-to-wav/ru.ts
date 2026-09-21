@@ -56,6 +56,7 @@ const ru: SiteLangDict = {
   tool_convert_an_aiff_file_to_wav_usecases_title: 'Полезно для',
   tool_convert_an_aiff_file_to_wav_usecase_1: 'Экспорт Logic для Windows-редактора.',
   tool_convert_an_aiff_file_to_wav_usecase_2: 'CAF-заметка в WAV.',
+  tool_convert_an_aiff_file_to_wav_usecase_3: 'Bounce Logic в AIFF нужно отдать Windows‑коллеге как WAV.',
   tool_convert_an_aiff_file_to_wav_faq_q1: 'CAF тоже?',
   tool_convert_an_aiff_file_to_wav_faq_a1: 'Да. .caf если браузер декодирует.',
   tool_convert_an_aiff_file_to_wav_faq_q2: 'Без потерь?',

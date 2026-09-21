@@ -61,6 +61,7 @@ const pt: SiteLangDict = {
   tool_de_ess_a_voiceover_usecases_title: "Quando ajuda",
   tool_de_ess_a_voiceover_usecase_1: "Locução com S penetrantes—escolha Média, De-essar, baixe WAV.",
   tool_de_ess_a_voiceover_usecase_2: "Narração antes de equalizar tom abafado ou remover cliques de boca noutro sítio.",
+  tool_de_ess_a_voiceover_usecase_3: "Os “s” estridentes incomodam nos auscultadores após uma take brilhante.",
   tool_de_ess_a_voiceover_faq_q1: "É o mesmo que equalizar uma gravação de voz abafada?",
   tool_de_ess_a_voiceover_faq_a1: "Não. Essa página aplica presets estáticos Clarity/Warmth/Presence. Esta só atenua quando a energia sibilante sobe. Use Equalizar uma gravação de voz abafada para o tom geral.",
   tool_de_ess_a_voiceover_faq_q2: "Isto reduz o ruído de fundo num memorando de voz?",

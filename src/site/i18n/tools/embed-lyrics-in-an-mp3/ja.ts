@@ -60,6 +60,7 @@ const ja: SiteLangDict = {
   tool_embed_lyrics_in_an_mp3_usecases_title: '用途',
   tool_embed_lyrics_in_an_mp3_usecase_1: 'USLT対応プレーヤー向けにポッドキャストへ原稿を付与。',
   tool_embed_lyrics_in_an_mp3_usecase_2: '再エンコードせずプレーン歌詞を追加。',
+  tool_embed_lyrics_in_an_mp3_usecase_3: 'オフライン再生でも歌詞が出るよう、MP3に埋め込みたい。',
   tool_embed_lyrics_in_an_mp3_faq_q1: '再エンコードしますか？',
   tool_embed_lyrics_in_an_mp3_faq_a1: 'いいえ。ID3にUSLTを書くだけです。',
   tool_embed_lyrics_in_an_mp3_faq_q2: '同期LRCは？',

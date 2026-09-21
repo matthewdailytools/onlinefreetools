@@ -56,6 +56,7 @@ const pt: SiteLangDict = {
   tool_convert_an_aiff_file_to_wav_usecases_title: 'Útil para',
   tool_convert_an_aiff_file_to_wav_usecase_1: 'Export Logic para editor Windows.',
   tool_convert_an_aiff_file_to_wav_usecase_2: 'Memo CAF em WAV.',
+  tool_convert_an_aiff_file_to_wav_usecase_3: 'Um bounce do Logic em AIFF precisa ser WAV para um colaborador no Windows.',
   tool_convert_an_aiff_file_to_wav_faq_q1: 'CAF também?',
   tool_convert_an_aiff_file_to_wav_faq_a1: 'Sim. .caf se o navegador decodifica.',
   tool_convert_an_aiff_file_to_wav_faq_q2: 'Sem perda?',

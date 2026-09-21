@@ -61,6 +61,7 @@ const pt: SiteLangDict = {
   tool_remove_clicks_from_a_recording_usecases_title: "Quando ajuda",
   tool_remove_clicks_from_a_recording_usecase_1: "Memo de voz com pops de boca ou toques de cabo—escolha Média, Remover cliques, baixe WAV.",
   tool_remove_clicks_from_a_recording_usecase_2: "Transferência com crepitação de vinil esparsa antes de denoise ou dehum noutro lugar.",
+  tool_remove_clicks_from_a_recording_usecase_3: "Clicks de boca e pops de edição distraem numa VO limpa.",
   tool_remove_clicks_from_a_recording_faq_q1: "É o mesmo que reduzir o ruído de fundo de um memo de voz?",
   tool_remove_clicks_from_a_recording_faq_a1: "Não. Essa página aplica passa-alta e gate a chiado estável. Esta repara picos impulsivos curtos. Use Reduzir o ruído de fundo de um memo de voz para chiado de banda larga.",
   tool_remove_clicks_from_a_recording_faq_q2: "Isto remove o zumbido da rede 50/60 Hz?",

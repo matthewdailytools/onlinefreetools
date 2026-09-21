@@ -67,6 +67,7 @@ const id: SiteLangDict = {
   tool_split_stereo_into_left_and_right_files_usecases_title: "Kapan ini membantu",
   tool_split_stereo_into_left_and_right_files_usecase_1: "Menyerahkan ke editor WAV mono kiri dan kanan terpisah dari wawancara stereo atau take dual-mic.",
   tool_split_stereo_into_left_and_right_files_usecase_2: "Memperbaiki ekspor stereo yang dikabelkan terbalik dengan menukar L-R sebelum memublikasikan.",
+  tool_split_stereo_into_left_and_right_files_usecase_3: "Wawancara stereo harus jadi file mono kiri dan kanan.",
   tool_split_stereo_into_left_and_right_files_faq_q1: "Apa isi ZIP setelah Pisah ke file?",
   tool_split_stereo_into_left_and_right_files_faq_a1: "Dua file WAV mono 16-bit: satu untuk saluran kiri dan satu untuk kanan. Nama file memuat left dan right agar mudah dibedakan.",
   tool_split_stereo_into_left_and_right_files_faq_q2: "Apakah ini sama dengan mengonversi stereo ke mono?",

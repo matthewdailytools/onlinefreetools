@@ -60,6 +60,7 @@ const id: SiteLangDict = {
   tool_match_podcast_loudness_to_minus_16_lufs_usecases_title: "Kapan ini membantu",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_1: "Episode podcast terlalu pelan untuk pengiriman −16 LUFS—samakan ke −16 dan unduh WAV.",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_2: "Trek suara YouTube/Spotify yang ingin dekat −14 tanpa normalisasi peak atau kompresor.",
+  tool_match_podcast_loudness_to_minus_16_lufs_usecase_3: "Loudness episode bergeser; Anda ingin target sekitar −16 LUFS.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q1: "Apakah sama dengan menormalisasi ke peak?",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_a1: "Tidak. Normalisasi peak menskalakan agar peak absolut mencapai target dBFS. Di sini loudness terintegrasi perkiraan diukur dan digain menuju chip LUFS. Untuk peak, gunakan Menormalisasi file audio ke peak.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q2: "Apakah sama dengan membuat rekaman pelan lebih keras dengan gain dB tetap?",

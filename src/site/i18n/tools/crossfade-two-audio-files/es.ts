@@ -65,6 +65,7 @@ const es: SiteLangDict = {
   tool_crossfade_two_audio_files_usecases_title: 'Cuándo ayuda',
   tool_crossfade_two_audio_files_usecase_1: 'Dos canciones necesitan un cambio estilo DJ—añade ambas, elige 2–5 s equal-power, fundido, descarga WAV.',
   tool_crossfade_two_audio_files_usecase_2: 'Segmentos de podcast deben encontrarse suave—usa 1 s entre tomas sin subir a un editor en línea.',
+  tool_crossfade_two_audio_files_usecase_3: 'Dos secciones necesitan un solape corto para que el empalme no sea un corte seco.',
   tool_crossfade_two_audio_files_faq_q1: '¿Es lo mismo que unir archivos de audio a tope?',
   tool_crossfade_two_audio_files_faq_a1: 'No. Unir corta en seco. Esta página solapa el final del primero con el inicio del segundo.',
   tool_crossfade_two_audio_files_faq_q2: '¿Es lo mismo que mezclar una locución sobre música?',

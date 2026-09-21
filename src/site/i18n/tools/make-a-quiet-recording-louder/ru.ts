@@ -59,6 +59,7 @@ const ru: SiteLangDict = {
   tool_make_a_quiet_recording_louder_usecases_title: "Когда это помогает",
   tool_make_a_quiet_recording_louder_usecase_1: "Голосовая заметка с телефона записана слишком тихо—поднимите +6 дБ и скачайте WAV.",
   tool_make_a_quiet_recording_louder_usecase_2: "Дорожка интервью в целом слабая, когда нужно то же соотношение громче без цели LUFS.",
+  tool_make_a_quiet_recording_louder_usecase_3: "Тихую заметку с телефона нужно усилить с защитой пиков.",
   tool_make_a_quiet_recording_louder_faq_q1: "Это то же самое, что нормализовать аудио к пику 0 dBFS?",
   tool_make_a_quiet_recording_louder_faq_a1: "Нет. Вы выбираете фиксированное усиление в дБ. Защита пика уменьшает только если это усиление клипнет—она не поднимает автоматически каждый файл до полной шкалы. Пиковая нормализация — другая запланированная задача.",
   tool_make_a_quiet_recording_louder_faq_q2: "Это выравнивает громкость подкаста / LUFS?",

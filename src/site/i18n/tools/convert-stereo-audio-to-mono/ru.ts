@@ -61,6 +61,7 @@ const ru: SiteLangDict = {
   tool_convert_stereo_audio_to_mono_usecases_title: "Когда это помогает",
   tool_convert_stereo_audio_to_mono_usecase_1: "Сдать стереоголосовую заметку или подложку подкаста в форму, которая принимает только моно-загрузку.",
   tool_convert_stereo_audio_to_mono_usecase_2: "Оставить только левый (или правый) микрофон интервью, когда другая сторона — шум или тишина.",
+  tool_convert_stereo_audio_to_mono_usecase_3: "Стерео‑интервью нужно в моно для IVR или одного динамика.",
   tool_convert_stereo_audio_to_mono_faq_q1: "Что делает «Смешать в моно» с левым и правым?",
   tool_convert_stereo_audio_to_mono_faq_a1: "Оно усредняет каждый отсчёт левого и правого каналов ((L+R)/2) в одну монодорожку и пишет 16-битный PCM WAV. Крайние панорамы тише; противофазное аудио может поредеть—прослушайте перед скачиванием.",
   tool_convert_stereo_audio_to_mono_faq_q2: "Можно ли преобразовать MP3 или M4A в моно WAV?",

@@ -61,6 +61,7 @@ const zh: SiteLangDict = {
   tool_de_ess_a_voiceover_usecases_title: "适用场景",
   tool_de_ess_a_voiceover_usecase_1: "配音里 S 音刺耳——选中、去齿音、下载 WAV。",
   tool_de_ess_a_voiceover_usecase_2: "旁白先压齿音，再去做闷声 EQ 或去口喷咔哒。",
+  tool_de_ess_a_voiceover_usecase_3: "耳机里齿音过刺，需要压一点“s”声。",
   tool_de_ess_a_voiceover_faq_q1: "这和给人声闷录音做均衡一样吗？",
   tool_de_ess_a_voiceover_faq_a1: "不一样。那一页用清晰/温暖/存在感静态预设整形低中高。本页只在齿音频段能量升高时衰减。闷声音色请用给人声闷录音做均衡。",
   tool_de_ess_a_voiceover_faq_q2: "这能给人声备忘录降低背景噪音吗？",

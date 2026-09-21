@@ -11,8 +11,7 @@ const en: SiteLangDict = {
     "Open a dull voice with Clarity, Warmth or Presence three-band presets, then download a 16-bit WAV. On-device only.",
   tool_eq_a_muffled_voice_recording_description:
     "EQ a muffled voice recording with Clarity, Warmth or Presence three-band presets. Steps: EQ, preview, download WAV. Example: load the muffled sample. Tone shaping only—not a bass-only booster, not noise reduction, not a de-esser. Audio stays on your device; never uploaded.",
-  tool_eq_a_muffled_voice_recording_article:
-    "Phone calls, masked speech and distant mics often sound muffled: too much mud below a few hundred hertz and not enough clarity in the speech band. This page runs three BiquadFilter stages in OfflineAudioContext—lowshelf, peaking and highshelf—as named presets. Clarity cuts mud and lifts speech presence; Warmth gently boosts body and softens harsh highs; Presence focuses mid-high presence and air. That is tonal EQ for a muffled voice, not a single-band bass booster, not background-noise reduction, and not a de-esser that only tames sibilance. Channel count stays 1 or 2. Keep the original master; the download is a new 16-bit WAV. Work runs in the browser on your device.",
+  tool_eq_a_muffled_voice_recording_article: "Phone calls, masked speech and distant mics often sound muffled: too much mud below a few hundred hertz and not enough clarity in the speech band. This page runs three EQ filter stages in on-device audio processing—lowshelf, peaking and highshelf—as named presets. Clarity cuts mud and lifts speech presence; Warmth gently boosts body and softens harsh highs; Presence focuses mid-high presence and air. That is tonal EQ for a muffled voice, not a single-band bass booster, not background-noise reduction, and not a de-esser that only tames sibilance. Channel count stays 1 or 2. Keep the original master; the download is a new 16-bit WAV. Work runs in the browser on your device.",
   tool_eq_a_muffled_voice_recording_choose: "Choose an audio file",
   tool_eq_a_muffled_voice_recording_hint: "Drop one WAV, MP3, M4A, AAC or OGG. Maximum 40 MiB and 10 minutes; mono or stereo.",
   tool_eq_a_muffled_voice_recording_convert: "EQ",
@@ -55,11 +54,11 @@ const en: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_why_choose_item_1: "See preset name, peak before/after and output KiB before you save.",
   tool_eq_a_muffled_voice_recording_why_choose_item_2: "Three clear voice presets—one muffled-EQ job, not a buried ten-band toy or bass-only wall.",
   tool_eq_a_muffled_voice_recording_why_choose_item_3:
-    "Decoding, Biquad EQ and WAV writing run on your device; the page does not upload your recording to process it.",
+    "Decoding, EQ EQ and WAV writing run on your device; the page does not upload your recording to process it.",
   tool_eq_a_muffled_voice_recording_why_choose_item_4: "Changing the preset or the input clears the old download so you never save a stale WAV by mistake.",
   tool_eq_a_muffled_voice_recording_rules_title: "Clarity, Warmth, Presence and limits",
   tool_eq_a_muffled_voice_recording_rules_body:
-    "Each preset is three Biquad stages (lowshelf, peaking, highshelf). Clarity opens muffled speech; Warmth adds body; Presence lifts presence and air. Soft peak protection scales the result if boosts would clip.",
+    "Each preset is three EQ stages (lowshelf, peaking, highshelf). Clarity opens muffled speech; Warmth adds body; Presence lifts presence and air. Soft peak protection scales the result if boosts would clip.",
   tool_eq_a_muffled_voice_recording_rules_item_1:
     "Default Clarity cuts muddy lows and boosts speech clarity. Warmth lifts low body and softens harsh highs. Presence focuses mid-high presence.",
   tool_eq_a_muffled_voice_recording_rules_item_2:
@@ -73,6 +72,7 @@ const en: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_usecases_title: "When this helps",
   tool_eq_a_muffled_voice_recording_usecase_1: "A phone or masked take that sounds boxed-in—pick Clarity, EQ, download WAV.",
   tool_eq_a_muffled_voice_recording_usecase_2: "A podcast voice that needs warmer body or more presence without running a full DAW EQ.",
+  tool_eq_a_muffled_voice_recording_usecase_3: "A masked or distant phone take sounds muddy and you need clearer speech presence.",
   tool_eq_a_muffled_voice_recording_faq_q1: "Is this the same as a bass booster?",
   tool_eq_a_muffled_voice_recording_faq_a1:
     "No. A bass booster mainly lifts low frequencies. This page offers three multi-band voice presets for muffled speech. Bass-only boosting is a different job (Boost bass on an MP3 when that tool is available).",

@@ -67,6 +67,7 @@ const pt: SiteLangDict = {
   tool_reduce_background_noise_on_a_voice_memo_usecases_title: "Quando ajuda",
   tool_reduce_background_noise_on_a_voice_memo_usecase_1: "Memo do telefone com ventilador ou AC—escolha Medium, reduza, baixe WAV.",
   tool_reduce_background_noise_on_a_voice_memo_usecase_2: "Nota rápida que precisa de menos chiado antes de fades ou EQ em outro lugar.",
+  tool_reduce_background_noise_on_a_voice_memo_usecase_3: "Ventoinha ou ar condicionado constante fica sob a voz e um gate suave deve silenciar os intervalos.",
   tool_reduce_background_noise_on_a_voice_memo_faq_q1: "É o mesmo que Adobe Enhance Speech?",
   tool_reduce_background_noise_on_a_voice_memo_faq_a1:
     "Não. Enhance na nuvem reconstrói a fala com modelos grandes. Aqui só passa-alta e gate de piso no navegador—resultado modesto e honesto.",

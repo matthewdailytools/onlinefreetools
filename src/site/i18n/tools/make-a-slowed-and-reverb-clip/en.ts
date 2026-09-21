@@ -70,6 +70,7 @@ const en: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_usecases_title: "When this helps",
   tool_make_a_slowed_and_reverb_clip_usecase_1: "A pop or R&B clip for a classic slowed+reverb edit—pick 0.8× + Medium, Slowed reverb, download WAV.",
   tool_make_a_slowed_and_reverb_clip_usecase_2: "A short clip that needs both slow and space—not tempo-only practice, not nightcore, not dry reverb alone.",
+  tool_make_a_slowed_and_reverb_clip_usecase_3: "A song snippet should feel slowed-and-reverb for a social edit.",
   tool_make_a_slowed_and_reverb_clip_faq_q1: "Is this the same as changing speed without changing pitch?",
   tool_make_a_slowed_and_reverb_clip_faq_a1: "No. Speed-without-pitch uses WSOLA so tempo changes while pitch aims to stay, with no reverb. This page slows with pitch drop and adds reverb. Use Change audio speed without changing pitch for tempo-only work.",
   tool_make_a_slowed_and_reverb_clip_faq_q2: "Is this the same as nightcore?",

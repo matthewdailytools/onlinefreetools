@@ -67,6 +67,7 @@ const ru: SiteLangDict = {
   tool_reduce_background_noise_on_a_voice_memo_usecases_title: "Когда это помогает",
   tool_reduce_background_noise_on_a_voice_memo_usecase_1: "Телефонная заметка с шипом вентилятора или кондиционера—Medium, подавить шум, скачать WAV.",
   tool_reduce_background_noise_on_a_voice_memo_usecase_2: "Полевая заметка, где нужно меньше комнатного шипа перед фейдами или EQ в другом месте.",
+  tool_reduce_background_noise_on_a_voice_memo_usecase_3: "Стабильный шум вентилятора/кондиционера под речью — мягкий гейт для пауз.",
   tool_reduce_background_noise_on_a_voice_memo_faq_q1: "Это то же, что Adobe Enhance Speech?",
   tool_reduce_background_noise_on_a_voice_memo_faq_a1:
     "Нет. Облачный Enhance пересобирает речь большими моделями. Здесь только ФВЧ и гейт по полу в браузере—скромный и честный результат.",

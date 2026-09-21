@@ -119,7 +119,7 @@ const de: SiteLangDict = {
   tool_acceleration_v_ph: 'z. B. 10',
   tool_add_an_audio_track_to_a_video_advanced: 'Hinweise zur Zusammenführung',
   tool_add_an_audio_track_to_a_video_article:
-    'Stumme oder schwach vertonte Clips brauchen oft einen neuen Soundtrack vor dem Teilen. Diese Seite öffnet lokales Video und lokales Audio, erfasst Frames ohne Originalton, dekodiert den Soundtrack im AudioContext, kombiniert und kodiert mit MediaRecorder neu—oft WebM je nach Browser. Die Länge folgt dem Video; längeres Audio wird gekürzt, kürzeres endet früher. Kein YouTube- oder URL-Download, nicht nur Stummschalten ohne neuen Ton und keine reine Audio-Extraktion. Erfolg hängt davon ab, ob der Browser beide Dateien abspielen und MediaRecorder mit Audio kann. Originale behalten; der Download ist eine neue Datei. Alles läuft auf Ihrem Gerät.',
+    'Stumme oder schwach vertonte Clips brauchen oft einen neuen Soundtrack vor dem Teilen. Diese Seite öffnet lokales Video und lokales Audio, erfasst Frames ohne Originalton, dekodiert den Soundtrack im the browser audio engine, kombiniert und kodiert mit browser media recording neu—oft WebM je nach Browser. Die Länge folgt dem Video; längeres Audio wird gekürzt, kürzeres endet früher. Kein YouTube- oder URL-Download, nicht nur Stummschalten ohne neuen Ton und keine reine Audio-Extraktion. Erfolg hängt davon ab, ob der Browser beide Dateien abspielen und browser media recording mit Audio kann. Originale behalten; der Download ist eine neue Datei. Alles läuft auf Ihrem Gerät.',
   tool_add_an_audio_track_to_a_video_audio_label: 'Audio: {name}',
   tool_add_an_audio_track_to_a_video_choose_audio: 'Audiodatei wählen',
   tool_add_an_audio_track_to_a_video_choose_video: 'Videodatei wählen',
@@ -129,7 +129,7 @@ const de: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_desc:
     'Lokalen Soundtrack mit lokalem Video zusammenführen und herunterladen. Nur auf dem Gerät—kein YouTube-Download.',
   tool_add_an_audio_track_to_a_video_description:
-    'Fügen Sie im Browser einer lokalen Videodatei eine Audiospur hinzu: Bild und gewählten Soundtrack zusammenführen, dann herunterladen. Schritte: Video und Audio wählen, Audio hinzufügen, Vorschau, Download. Beispiel: stummer Clip plus kurzes WAV. Nutzt captureStream und MediaRecorder—oft WebM; kein verlustfreies Remux. Nie hochgeladen. Kein YouTube-Download.',
+    'Fügen Sie im Browser einer lokalen Videodatei eine Audiospur hinzu: Bild und gewählten Soundtrack zusammenführen, dann herunterladen. Schritte: Video und Audio wählen, Audio hinzufügen, Vorschau, Download. Beispiel: stummer Clip plus kurzes WAV. Nutzt captureStream und browser media recording—oft WebM; kein verlustfreies Remux. Nie hochgeladen. Kein YouTube-Download.',
   tool_add_an_audio_track_to_a_video_done: 'Fertig. Zusammengeführtes Video prüfen, dann herunterladen.',
   tool_add_an_audio_track_to_a_video_download: 'Herunterladen',
   tool_add_an_audio_track_to_a_video_elapsed: '{s}s vergangen',
@@ -138,7 +138,7 @@ const de: SiteLangDict = {
     'Noch keine Dateien. Lokales Video und Soundtrack ablegen oder Beispiel laden. Dieses Tool legt Audio aufs Bild—nicht nur stumm, nicht nur extrahieren, kein YouTube-Download.',
   tool_add_an_audio_track_to_a_video_err_decode: 'Browser konnte Video oder Audio nicht dekodieren. Anderen Container oder kürzeren Clip versuchen.',
   tool_add_an_audio_track_to_a_video_err_encoder:
-    'MediaRecorder konnte kein zusammengeführtes Video schreiben. Chrome/Edge oder kürzeres WebM/MP4 plus WAV/MP3 versuchen.',
+    'browser media recording konnte kein zusammengeführtes Video schreiben. Chrome/Edge oder kürzeres WebM/MP4 plus WAV/MP3 versuchen.',
   tool_add_an_audio_track_to_a_video_err_file: 'Je eine unterstützte lokale Video- und Audiodatei wählen.',
   tool_add_an_audio_track_to_a_video_err_format:
     'Nicht unterstützte oder nicht abspielbare Dateien. Gängige Video-/Audiotypen nutzen, die der Browser dekodieren kann. Keine YouTube-URLs.',
@@ -152,7 +152,7 @@ const de: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_faq_a3:
     'Nein. Audio aus Video extrahieren ist ein anderes Tool. Hier entsteht eine Videodatei mit zusammengeführtem Ton.',
   tool_add_an_audio_track_to_a_video_faq_a4:
-    'Meist nicht. Browser kodieren typischerweise mit MediaRecorder neu, oft zu WebM. Qualität und Container können sich ändern.',
+    'Meist nicht. Browser kodieren typischerweise mit browser media recording neu, oft zu WebM. Qualität und Container können sich ändern.',
   tool_add_an_audio_track_to_a_video_faq_a5:
     'Nein. Dekodierung und Aufnahme laufen im Browser auf Ihrem Gerät. Beim ersten Laden braucht die Seite Netz; Offline-Nutzung ist nicht garantiert.',
   tool_add_an_audio_track_to_a_video_faq_a6: 'Der Merge folgt der Videodauer. Audio hinter dem Bildende bleibt nicht im Download.',
@@ -178,7 +178,7 @@ const de: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_read: 'Lesen',
   tool_add_an_audio_track_to_a_video_result: '{seconds}s · mit Audio · {mime} · {output} KiB',
   tool_add_an_audio_track_to_a_video_rules_body:
-    'Jeder Lauf entfernt Originalton, hängt Ihren Soundtrack an und kodiert mit MediaRecorder neu. Ausgabe oft WebM. Kein YouTube-Download, nicht nur stumm, keine Audio-Extraktion.',
+    'Jeder Lauf entfernt Originalton, hängt Ihren Soundtrack an und kodiert mit browser media recording neu. Ausgabe oft WebM. Kein YouTube-Download, nicht nur stumm, keine Audio-Extraktion.',
   tool_add_an_audio_track_to_a_video_rules_item_1:
     'Ein lokales Video bis 80 MiB und etwa drei Minuten plus ein lokales Audio bis 40 MiB. Wiedergabe/Dekodierung muss zuerst gelingen.',
   tool_add_an_audio_track_to_a_video_rules_item_2: 'Ausgabelänge folgt dem Video. Längeres Audio wird gekürzt; kürzeres endet vor dem Bild.',
@@ -189,15 +189,17 @@ const de: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_sample: 'Beispiel laden',
   tool_add_an_audio_track_to_a_video_sample_name: 'audio-hinzufuegen-beispiel',
   tool_add_an_audio_track_to_a_video_settings_hint:
-    'Browser kodieren meist mit MediaRecorder neu, nachdem Originalton entfernt und Ihr Soundtrack angehängt wurde. Ausgabe oft WebM, kein verlustfreies Remux der Original-MP4. Diese Seite lädt nie YouTube herunter.',
+    'Browser kodieren meist mit browser media recording neu, nachdem Originalton entfernt und Ihr Soundtrack angehängt wurde. Ausgabe oft WebM, kein verlustfreies Remux der Original-MP4. Diese Seite lädt nie YouTube herunter.',
   tool_add_an_audio_track_to_a_video_title: 'Eine Audiospur zu einem Video hinzufügen',
   tool_add_an_audio_track_to_a_video_usecase_1: 'Stumme Bildschirmaufnahme und WAV-Bett—hier zusammenführen und zum Teilen herunterladen.',
   tool_add_an_audio_track_to_a_video_usecase_2:
     'Schwache eingebaute Spur durch klareren lokalen Soundtrack ersetzen, ohne Desktop-Editor zu installieren.',
+  tool_add_an_audio_track_to_a_video_usecase_3: 'Du hast eine stumme Bildschirmaufnahme und eine separate Spur zum Zusammenfügen vor dem Upload.',
   tool_add_an_audio_track_to_a_video_usecases_title: 'Wann das hilft',
   tool_add_an_audio_track_to_a_video_video_label: 'Video: {name}',
   tool_add_an_audio_track_to_a_video_why_choose_item_1: 'Dauer, MIME-Typ und Ausgabe-KiB vor dem Speichern sichtbar.',
-  tool_add_an_audio_track_to_a_video_why_choose_item_2: 'Ein klarer Merge-Job mit ehrlichen MediaRecorder-Grenzen—kein vorgetäuschtes verlustfreies Remux.',
+  tool_add_an_audio_track_to_a_video_why_choose_item_2:
+    'Ein klarer Merge-Job mit ehrlichen browser media recording-Grenzen—kein vorgetäuschtes verlustfreies Remux.',
   tool_add_an_audio_track_to_a_video_why_choose_item_3: 'Lesen und Aufnehmen laufen auf Ihrem Gerät; die Seite lädt Dateien nicht zum Verarbeiten hoch.',
   tool_add_an_audio_track_to_a_video_why_choose_item_4: 'Wechsel einer Datei löscht den alten Download, damit kein veralteter Merge gespeichert wird.',
   tool_add_an_audio_track_to_a_video_why_choose_title: 'Warum unsere Tools zum Hinzufügen einer Audiospur',
@@ -342,6 +344,7 @@ const de: SiteLangDict = {
   tool_add_reverb_to_an_audio_clip_title: 'Einem Audioclip Hall hinzufügen',
   tool_add_reverb_to_an_audio_clip_usecase_1: 'Trockenes Voiceover braucht etwas Raumluft—Raum wählen, Hall hinzufügen, WAV laden.',
   tool_add_reverb_to_an_audio_clip_usecase_2: 'Kurzer Stem braucht Hallenraum oder klarere Echos, ohne zu verlangsamen.',
+  tool_add_reverb_to_an_audio_clip_usecase_3: 'Du willst einen kurzen Raum- oder Hall-Schweif auf trockener Stimme ohne DAW.',
   tool_add_reverb_to_an_audio_clip_usecases_title: 'Wann das hilft',
   tool_add_reverb_to_an_audio_clip_why_choose_item_1: 'Vor dem Speichern siehst du Eingabe-/Ausgabesekunden, Preset und KiB.',
   tool_add_reverb_to_an_audio_clip_why_choose_item_2: 'Drei klare Raumjobs—Raum, Halle, Echo—kein überfülltes DAW-Send-Rack.',
@@ -920,6 +923,7 @@ const de: SiteLangDict = {
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_1: 'Kurzes Meme oder Kinderclip mit Chipmunk- oder Heliumfarbe—Anwenden, WAV herunterladen.',
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_2:
     'Verspielter Roboter- oder Telefon-Gag für eine Nachricht—kein Promi-Klon, keine Geschlechtsbehauptung.',
+  tool_apply_a_toy_voice_effect_to_a_recording_usecase_3: 'Für ein kurzes Meme brauchst du eine spielerische Chipmunk- oder tiefe Spielzeugstimme.',
   tool_apply_a_toy_voice_effect_to_a_recording_usecases_title: 'Wann es hilft',
   tool_apply_a_toy_voice_effect_to_a_recording_why_choose_item_1: 'Eingabe-Sekunden, Ausgabe-Sekunden, Preset-Name und Ausgabe-KiB vor dem Speichern sehen.',
   tool_apply_a_toy_voice_effect_to_a_recording_why_choose_item_2: 'Vier klare Spielzeugfarben—Chipmunk, Riese, Roboter, Telefon—kein überladenes DAW-Rack.',
@@ -2120,14 +2124,14 @@ const de: SiteLangDict = {
   tool_batch_convert_web_pages_to_png_wait_label: 'Ladewartezeit (s)',
   tool_batch_trim_the_same_intro_from_audio_files_advanced: 'Über Batch-Trim (optional)',
   tool_batch_trim_the_same_intro_from_audio_files_article:
-    'Podcast-Batches teilen oft denselben Bumper. Diese Seite wendet eine Intro-Länge auf die Warteschlange an, schreibt 16-bit-WAV und zippt mit lazy JSZip. Kein Einzel-Wellenform-Editor. Arbeit lokal.',
+    'Podcast-Batches teilen oft denselben Bumper. Diese Seite wendet eine Intro-Länge auf die Warteschlange an, schreibt 16-bit-WAV und zippt mit lazy ZIP packaging. Kein Einzel-Wellenform-Editor. Arbeit lokal.',
   tool_batch_trim_the_same_intro_from_audio_files_choose: 'Audiodateien wählen',
   tool_batch_trim_the_same_intro_from_audio_files_clear: 'Leeren',
   tool_batch_trim_the_same_intro_from_audio_files_convert: 'Zu ZIP trimmen',
   tool_batch_trim_the_same_intro_from_audio_files_decode: 'Audio dekodieren',
   tool_batch_trim_the_same_intro_from_audio_files_desc: 'Dieselbe Intro-Länge von vielen lokalen Audios schneiden und WAV-ZIP laden.',
   tool_batch_trim_the_same_intro_from_audio_files_description:
-    'Batch-Trim desselben Intros im Browser ohne Upload. Schritte: Dateien hinzufügen, gemeinsame Sekunden, Zu ZIP trimmen, herunterladen. Beispiel: zwei 4-Sekunden-Töne verlieren die erste Sekunde in einem ZIP mit zwei WAVs. decodeAudioData, 16-bit-WAV, lazy JSZip. Dateien bleiben lokal.',
+    'Batch-Trim desselben Intros im Browser ohne Upload. Schritte: Dateien hinzufügen, gemeinsame Sekunden, Zu ZIP trimmen, herunterladen. Beispiel: zwei 4-Sekunden-Töne verlieren die erste Sekunde in einem ZIP mit zwei WAVs. browser decoding, 16-bit-WAV, lazy ZIP packaging. Dateien bleiben lokal.',
   tool_batch_trim_the_same_intro_from_audio_files_done: 'Fertig. ZIP der gekürzten WAVs herunterladen.',
   tool_batch_trim_the_same_intro_from_audio_files_download: 'ZIP herunterladen',
   tool_batch_trim_the_same_intro_from_audio_files_elapsed: 'Vergangen: {s}s',
@@ -2184,9 +2188,10 @@ const de: SiteLangDict = {
   tool_batch_trim_the_same_intro_from_audio_files_trim: 'Intro kürzen',
   tool_batch_trim_the_same_intro_from_audio_files_usecase_1: 'Denselben Bumper von Wochen-Voicenotes entfernen.',
   tool_batch_trim_the_same_intro_from_audio_files_usecase_2: 'Interview-Takes mit gleichem Countdown vorbereiten.',
+  tool_batch_trim_the_same_intro_from_audio_files_usecase_3: 'Mehrere Podcasts starten mit demselben 8-Sekunden-Bumper, den du einmal abschneiden willst.',
   tool_batch_trim_the_same_intro_from_audio_files_usecases_title: 'Nützlich für',
   tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_1: 'Ein Intro für die ganze Queue.',
-  tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_2: 'Beispiel beweist Decode/Trim/JSZip.',
+  tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_2: 'Beispiel beweist Decode/Trim/ZIP packaging.',
   tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_3: 'Teilfehler liefern trotzdem OK-WAVs.',
   tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_4: 'Lokal; Einzel-Trim und WAV→MP3 nah.',
   tool_batch_trim_the_same_intro_from_audio_files_why_choose_title: 'Warum Gleichen Intro von Audios kürzen',
@@ -2459,7 +2464,7 @@ const de: SiteLangDict = {
   tool_body_fat_waist_ph: 'z. B. 86',
   tool_boost_bass_on_an_mp3_advanced: 'Bass-Presets',
   tool_boost_bass_on_an_mp3_article:
-    'Handy-Exports und Laptop-Lautsprecher lassen Kick und Basslinie oft dünn: genug Mitten, zu wenig Gewicht unter ~100 Hz. Diese Seite führt eine BiquadFilter-Lowshelf-Stufe in OfflineAudioContext aus. Mild ist sanft; Medium (Standard) der Alltagslift; Strong drückt stärker. Soft-Peak-Schutz skaliert, wenn der Boost clippen würde. Das ist Bass-Boost—kein Clarity/Warmth/Presence-Drei-Band-EQ für dumpfe Stimme und kein flacher dB-Gain für alles. Kanäle bleiben 1 oder 2. Master behalten; Download ist neues 16-Bit-WAV. Arbeit läuft im Browser.',
+    'Handy-Exports und Laptop-Lautsprecher lassen Kick und Basslinie oft dünn: genug Mitten, zu wenig Gewicht unter ~100 Hz. Diese Seite führt eine EQ filter-Lowshelf-Stufe in on-device audio processing aus. Mild ist sanft; Medium (Standard) der Alltagslift; Strong drückt stärker. Soft-Peak-Schutz skaliert, wenn der Boost clippen würde. Das ist Bass-Boost—kein Clarity/Warmth/Presence-Drei-Band-EQ für dumpfe Stimme und kein flacher dB-Gain für alles. Kanäle bleiben 1 oder 2. Master behalten; Download ist neues 16-Bit-WAV. Arbeit läuft im Browser.',
   tool_boost_bass_on_an_mp3_boost: 'Anheben',
   tool_boost_bass_on_an_mp3_choose: 'Audiodatei wählen',
   tool_boost_bass_on_an_mp3_clear: 'Leeren',
@@ -2518,7 +2523,7 @@ const de: SiteLangDict = {
   tool_boost_bass_on_an_mp3_read: 'Lesen',
   tool_boost_bass_on_an_mp3_result: '{seconds}s · {preset} · Peak {peakBefore} → {peakAfter} · WAV {output} KiB',
   tool_boost_bass_on_an_mp3_rules_body:
-    'Jedes Preset ist eine Lowshelf-Biquad-Stufe. Mild sanft; Medium Alltagslift; Strong stärker. Soft-Peak-Schutz skaliert bei drohendem Clipping.',
+    'Jedes Preset ist eine Lowshelf-EQ-Stufe. Mild sanft; Medium Alltagslift; Strong stärker. Soft-Peak-Schutz skaliert bei drohendem Clipping.',
   tool_boost_bass_on_an_mp3_rules_item_1:
     'Standard Medium: Lowshelf ~90 Hz bei etwa +8 dB. Mild ~+4 dB; Strong ~+12 dB mit etwas tieferem Shelf.',
   tool_boost_bass_on_an_mp3_rules_item_2:
@@ -2534,6 +2539,7 @@ const de: SiteLangDict = {
   tool_boost_bass_on_an_mp3_title: 'Bass in einer MP3 anheben',
   tool_boost_bass_on_an_mp3_usecase_1: 'MP3-Export klingt auf Lautsprechern dünn—Medium wählen, Anheben, WAV laden.',
   tool_boost_bass_on_an_mp3_usecase_2: 'Track braucht mehr Kick-Gewicht ohne volles Grafik-EQ oder lautere Gesamtmischung.',
+  tool_boost_bass_on_an_mp3_usecase_3: 'Ein Handy-MP3 klingt auf dem Laptop dünn; du willst nur mehr Kick, nicht lautere Mitten.',
   tool_boost_bass_on_an_mp3_usecases_title: 'Wann das hilft',
   tool_boost_bass_on_an_mp3_why_choose_item_1: 'Preset-Name, Peak vorher/nachher und Ausgabe-KiB vor dem Speichern sehen.',
   tool_boost_bass_on_an_mp3_why_choose_item_2: 'Drei klare Low-Shelf-Presets—ein Bass-Job, kein vergrabenes Zehnband-EQ oder flache Lautstärke-Wand.',
@@ -3224,7 +3230,7 @@ const de: SiteLangDict = {
   tool_bulk_convert_images_to_webp_warn_large: 'Eine Datei ist größer als 25 MB — diesem Tab kann der Speicher ausgehen.',
   tool_bulk_convert_wav_files_to_mp3_advanced: 'Advanced settings (optional)',
   tool_bulk_convert_wav_files_to_mp3_article:
-    'Folders of WAV exports are awkward to share. This page queues several local WAV files, decodes each in the browser, encodes MP3 with lamejs, and packs a ZIP with JSZip. MP3 is lossy—keep the WAV masters. For one file use the related single WAV converter; FLAC is a different page. Work stays on-device.',
+    'Folders of WAV exports are awkward to share. This page queues several local WAV files, decodes each in the browser, encodes MP3 with in-browser MP3 encoding, and packs a ZIP with ZIP packaging. MP3 is lossy—keep the WAV masters. For one file use the related single WAV converter; FLAC is a different page. Work stays on-device.',
   tool_bulk_convert_wav_files_to_mp3_bitrate: 'MP3 bitrate (all files)',
   tool_bulk_convert_wav_files_to_mp3_choose: 'WAV-Dateien wählen',
   tool_bulk_convert_wav_files_to_mp3_clear: 'Leeren',
@@ -3232,7 +3238,7 @@ const de: SiteLangDict = {
   tool_bulk_convert_wav_files_to_mp3_decode: 'Decode audio',
   tool_bulk_convert_wav_files_to_mp3_desc: 'Mehrere lokale WAV-Dateien in MP3 umwandeln und als ZIP laden. Audio bleibt auf dem Gerät.',
   tool_bulk_convert_wav_files_to_mp3_description:
-    'Wandeln Sie WAV-Dateien stapelweise im Browser in MP3 um – ohne Upload. Schritte: mehrere WAV hinzufügen, Bitrate wählen, In ZIP umwandeln, herunterladen. Beispiel: zwei fünfsekündige Stereotöne → zwei MP3 in einem ZIP bei 192 kbps. Pro Datei decodeAudioData und lamejs, danach JSZip. Dateien bleiben auf dem Gerät.',
+    'Wandeln Sie WAV-Dateien stapelweise im Browser in MP3 um – ohne Upload. Schritte: mehrere WAV hinzufügen, Bitrate wählen, In ZIP umwandeln, herunterladen. Beispiel: zwei fünfsekündige Stereotöne → zwei MP3 in einem ZIP bei 192 kbps. Pro Datei browser decoding und in-browser MP3 encoding, danach ZIP packaging. Dateien bleiben auf dem Gerät.',
   tool_bulk_convert_wav_files_to_mp3_done: 'Ready. Download the ZIP of MP3 files.',
   tool_bulk_convert_wav_files_to_mp3_download: 'ZIP herunterladen',
   tool_bulk_convert_wav_files_to_mp3_elapsed: 'Elapsed: {s}s',
@@ -3295,10 +3301,11 @@ const de: SiteLangDict = {
   tool_bulk_convert_wav_files_to_mp3_title: 'WAV-Dateien stapelweise in MP3 umwandeln',
   tool_bulk_convert_wav_files_to_mp3_usecase_1: 'Share a folder of WAV voice memos as a ZIP of MP3 attachments.',
   tool_bulk_convert_wav_files_to_mp3_usecase_2: 'Batch-convert short studio WAV exports before uploading to a player that prefers MP3.',
+  tool_bulk_convert_wav_files_to_mp3_usecase_3: 'Nach der Session hast du viele WAVs und brauchst ein ZIP teilbarer MP3s.',
   tool_bulk_convert_wav_files_to_mp3_usecases_title: 'Nützlich für',
   tool_bulk_convert_wav_files_to_mp3_why_choose_item_1: 'The built-in two-file sample runs the same decode, encode and ZIP path as your queue.',
   tool_bulk_convert_wav_files_to_mp3_why_choose_item_2: 'You see how many files succeeded before saving the archive.',
-  tool_bulk_convert_wav_files_to_mp3_why_choose_item_3: 'JSZip and lamejs load only when you convert—not on every page view.',
+  tool_bulk_convert_wav_files_to_mp3_why_choose_item_3: 'ZIP packaging and in-browser MP3 encoding load only when you convert—not on every page view.',
   tool_bulk_convert_wav_files_to_mp3_why_choose_item_4: 'Processing stays on your device; related single-file WAV and FLAC converters are nearby.',
   tool_bulk_convert_wav_files_to_mp3_why_choose_title: 'Warum unsere Stapel-WAV-zu-MP3-Tools',
   tool_cagr_article:
@@ -3432,6 +3439,7 @@ const de: SiteLangDict = {
   tool_change_audio_speed_without_changing_pitch_title: 'Audiogeschwindigkeit ändern ohne Tonhöhe',
   tool_change_audio_speed_without_changing_pitch_usecase_1: 'Übungssong zu schnell—0.75× wählen, Strecken, WAV herunterladen.',
   tool_change_audio_speed_without_changing_pitch_usecase_2: 'Clip braucht leichte Beschleunigung ohne Nightcore-Pitch-Anhebung.',
+  tool_change_audio_speed_without_changing_pitch_usecase_3: 'Eine VO muss in ein kürzeres Video passen, ohne Chipmunk-Stimme.',
   tool_change_audio_speed_without_changing_pitch_usecases_title: 'Wann das hilft',
   tool_change_audio_speed_without_changing_pitch_why_choose_item_1: 'Eingabe-/Ausgabesekunden, Speed und KiB vor dem Speichern sehen.',
   tool_change_audio_speed_without_changing_pitch_why_choose_item_2: 'Ein klarer Time-Stretch-Job—WSOLA-Tempo, keine vergrabenen DAW-Maps.',
@@ -4344,6 +4352,7 @@ const de: SiteLangDict = {
   tool_compress_dynamic_range_of_a_voice_recording_title: 'Dynamikumfang einer Sprachaufnahme komprimieren',
   tool_compress_dynamic_range_of_a_voice_recording_usecase_1: 'Voiceover mit ruhigen Phrasen und lauten Peaks—Podcast wählen, komprimieren, WAV laden.',
   tool_compress_dynamic_range_of_a_voice_recording_usecase_2: 'Interview gleichmäßiger machen vor Loudness-Match, ohne MP3 wegen Größe zu schrumpfen.',
+  tool_compress_dynamic_range_of_a_voice_recording_usecase_3: 'Flüstern und Peaks kämpfen in einem Take; du willst gleichmäßigeres Hören.',
   tool_compress_dynamic_range_of_a_voice_recording_usecases_title: 'Wann das hilft',
   tool_compress_dynamic_range_of_a_voice_recording_why_choose_item_1: 'Preset, Schwelle, Ratio, Makeup, Peaks und Ausgabe-KiB vor dem Speichern sehen.',
   tool_compress_dynamic_range_of_a_voice_recording_why_choose_item_2: 'Drei klare Sprach-Presets—ein Dynamik-Job, keine MP3-Größe/Gain/Normalisieren-Wand.',
@@ -4577,7 +4586,7 @@ const de: SiteLangDict = {
   tool_convert_a_flac_file_to_mp3_desc:
     'Wandeln Sie eine lokale FLAC-Aufnahme in MP3 um. Die Audiodaten bleiben auf dem Gerät und werden nicht hochgeladen.',
   tool_convert_a_flac_file_to_mp3_description:
-    'Wandeln Sie eine FLAC-Datei im Browser in MP3 um – ohne Upload. Schritte: FLAC wählen, Bitrate wählen, In MP3 umwandeln, anhören und herunterladen. Beispiel: ein fünfsekündiger Stereo-FLAC-Ton wird bei 192 kbps zu etwa 120 KiB MP3. Nutzt decodeAudioData, wenn der Browser FLAC unterstützt, danach lamejs; ohne FLAC-Dekodierung erscheint eine klare Fehlermeldung. Dateien bleiben auf dem Gerät.',
+    'Wandeln Sie eine FLAC-Datei im Browser in MP3 um – ohne Upload. Schritte: FLAC wählen, Bitrate wählen, In MP3 umwandeln, anhören und herunterladen. Beispiel: ein fünfsekündiger Stereo-FLAC-Ton wird bei 192 kbps zu etwa 120 KiB MP3. Nutzt browser decoding, wenn der Browser FLAC unterstützt, danach in-browser MP3 encoding; ohne FLAC-Dekodierung erscheint eine klare Fehlermeldung. Dateien bleiben auf dem Gerät.',
   tool_convert_a_flac_file_to_mp3_done: 'Fertig. Ergebnis anhören und MP3 herunterladen.',
   tool_convert_a_flac_file_to_mp3_download: 'MP3 herunterladen',
   tool_convert_a_flac_file_to_mp3_elapsed: 'Vergangene Zeit: {s} s',
@@ -4596,7 +4605,7 @@ const de: SiteLangDict = {
   tool_convert_a_flac_file_to_mp3_faq_a1: 'Nein. FLAC ist verlustfrei; MP3 verliert immer Daten. Master behalten.',
   tool_convert_a_flac_file_to_mp3_faq_a2:
     'Datei bleibt auf dem Gerät. Seite und Encoder brauchen beim Laden Netz; Offline ist nicht garantiert.',
-  tool_convert_a_flac_file_to_mp3_faq_a3: 'decodeAudioData muss FLAC unterstützen. Aktuellen Browser und das Beispiel testen.',
+  tool_convert_a_flac_file_to_mp3_faq_a3: 'browser decoding muss FLAC unterstützen. Aktuellen Browser und das Beispiel testen.',
   tool_convert_a_flac_file_to_mp3_faq_a4: 'Nein. Nur FLAC → MP3. Keine Formatmatrix auf dieser Seite.',
   tool_convert_a_flac_file_to_mp3_faq_a5: 'Ein vollständiges FLAC → ein MP3. Keine Playlists, Videolinks oder Batches.',
   tool_convert_a_flac_file_to_mp3_faq_q1: 'Ist FLAC zu MP3 verlustfrei?',
@@ -4631,6 +4640,7 @@ const de: SiteLangDict = {
   tool_convert_a_flac_file_to_mp3_title: 'Eine FLAC-Datei in MP3 umwandeln',
   tool_convert_a_flac_file_to_mp3_usecase_1: 'Verlustfreies Archiv als MP3 teilen, wenn der Empfänger kein FLAC öffnet.',
   tool_convert_a_flac_file_to_mp3_usecase_2: 'Kleinere Anlage aus einem FLAC-Probe nehmen und das Original behalten.',
+  tool_convert_a_flac_file_to_mp3_usecase_3: 'Ein Archiv-FLAC soll chat-freundliches MP3 werden.',
   tool_convert_a_flac_file_to_mp3_usecases_title: 'Wofür es hilft',
   tool_convert_a_flac_file_to_mp3_why_choose_item_1: 'Das FLAC-Beispiel nutzt denselben Dekodier- und MP3-Pfad.',
   tool_convert_a_flac_file_to_mp3_why_choose_item_2: 'Sie hören die echte Ausgabe und sehen gemessene Größen vor dem Speichern.',
@@ -4875,6 +4885,7 @@ const de: SiteLangDict = {
   tool_convert_an_aiff_file_to_wav_title: 'Eine AIFF-Datei in WAV umwandeln',
   tool_convert_an_aiff_file_to_wav_usecase_1: 'Logic-AIFF-Export in Windows-Editor mit WAV öffnen.',
   tool_convert_an_aiff_file_to_wav_usecase_2: 'CAF-Sprachnotiz als WAV, Original behalten.',
+  tool_convert_an_aiff_file_to_wav_usecase_3: 'Ein Logic-Bounce als AIFF muss WAV für einen Windows-Partner werden.',
   tool_convert_an_aiff_file_to_wav_usecases_title: 'Nützlich für',
   tool_convert_an_aiff_file_to_wav_why_choose_item_1: 'Eingebautes AIFF-Beispiel nutzt denselben Dekodier- und WAV-Pfad.',
   tool_convert_an_aiff_file_to_wav_why_choose_item_2: 'Echte Ausgabe anhören und KiB vor dem Speichern sehen.',
@@ -5052,7 +5063,7 @@ const de: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_desc:
     'Wandeln Sie eine lokale OGG- oder Opus-Aufnahme in MP3 um. Die Audiodaten bleiben auf dem Gerät und werden nicht hochgeladen.',
   tool_convert_an_ogg_file_to_mp3_description:
-    'Wandeln Sie eine OGG-Datei im Browser in MP3 um – ohne Upload. Schritte: OGG/Opus wählen, Bitrate wählen, In MP3 umwandeln, anhören und herunterladen. Beispiel: ein fünfsekündiger Stereo-Opus-in-OGG-Ton wird bei 192 kbps zu etwa 120 KiB MP3. Nutzt decodeAudioData, wenn der Browser OGG/Opus dekodieren kann, danach lamejs; klare Fehlermeldung bei Misserfolg. Dateien bleiben auf dem Gerät.',
+    'Wandeln Sie eine OGG-Datei im Browser in MP3 um – ohne Upload. Schritte: OGG/Opus wählen, Bitrate wählen, In MP3 umwandeln, anhören und herunterladen. Beispiel: ein fünfsekündiger Stereo-Opus-in-OGG-Ton wird bei 192 kbps zu etwa 120 KiB MP3. Nutzt browser decoding, wenn der Browser OGG/Opus dekodieren kann, danach in-browser MP3 encoding; klare Fehlermeldung bei Misserfolg. Dateien bleiben auf dem Gerät.',
   tool_convert_an_ogg_file_to_mp3_done: 'Fertig. Ergebnis anhören und MP3 herunterladen.',
   tool_convert_an_ogg_file_to_mp3_download: 'MP3 herunterladen',
   tool_convert_an_ogg_file_to_mp3_elapsed: 'Vergangene Zeit: {s} s',
@@ -5107,6 +5118,7 @@ const de: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_title: 'Eine OGG-Datei in MP3 umwandeln',
   tool_convert_an_ogg_file_to_mp3_usecase_1: 'Einen Spiel- oder Chat-OGG-Clip als MP3 senden.',
   tool_convert_an_ogg_file_to_mp3_usecase_2: 'Eine Opus-Sprachnotiz als MP3-Anhang speichern und das Original behalten.',
+  tool_convert_an_ogg_file_to_mp3_usecase_3: 'Eine Sprachnotiz kam als OGG/Opus; der Editor akzeptiert nur MP3.',
   tool_convert_an_ogg_file_to_mp3_usecases_title: 'Wofür es hilft',
   tool_convert_an_ogg_file_to_mp3_why_choose_item_1: 'Das Opus-in-OGG-Beispiel nutzt denselben Dekodier- und MP3-Pfad.',
   tool_convert_an_ogg_file_to_mp3_why_choose_item_2: 'Sie hören die echte Ausgabe und sehen gemessene Größen vor dem Speichern.',
@@ -5562,6 +5574,7 @@ const de: SiteLangDict = {
     'Eine Stereo-Sprachnotiz oder Podcast-Unterlage an ein Formular übergeben, das nur Mono-Upload akzeptiert.',
   tool_convert_stereo_audio_to_mono_usecase_2:
     'Nur das linke (oder rechte) Interview-Mikro behalten, wenn die andere Seite Rauschen oder Stille ist.',
+  tool_convert_stereo_audio_to_mono_usecase_3: 'Ein Stereo-Interview muss Mono für IVR oder einen Lautsprecher werden.',
   tool_convert_stereo_audio_to_mono_usecases_title: 'Wann das hilft',
   tool_convert_stereo_audio_to_mono_why_choose_item_1: 'Vor dem Speichern sehen Sie gemessene Dauer, Quellkanäle, gewählten Modus und Ausgabe-KiB.',
   tool_convert_stereo_audio_to_mono_why_choose_item_2: 'Mischen mittelt L+R oder behält nur eine Seite—drei klare Modi statt einer versteckten Formatmatrix.',
@@ -6098,6 +6111,7 @@ const de: SiteLangDict = {
   tool_crossfade_two_audio_files_title: 'Zwei Audiodateien crossfaden',
   tool_crossfade_two_audio_files_usecase_1: 'Zwei Songs brauchen einen DJ-Übergang—beide hinzufügen, 2–5 s Equal-Power, Crossfade, WAV laden.',
   tool_crossfade_two_audio_files_usecase_2: 'Podcast-Abschnitte sollen weich treffen—1 s Fade zwischen Takes, ohne Online-Editor-Upload.',
+  tool_crossfade_two_audio_files_usecase_3: 'Zwei Abschnitte brauchen kurze Überlappung statt eines harten Schnitts.',
   tool_crossfade_two_audio_files_usecases_title: 'Wann das hilft',
   tool_crossfade_two_audio_files_why_choose_item_1: 'Dauer, Fade, Kurve, Kanäle, Rate und KiB vor dem Speichern sehen.',
   tool_crossfade_two_audio_files_why_choose_item_2: 'Ein klarer Übergangsjob—Ende in Anfang—mit ehrlichen Grenzen bei Dekodierfehlern.',
@@ -6432,6 +6446,7 @@ const de: SiteLangDict = {
   tool_de_ess_a_voiceover_title: 'Voiceover de-essen',
   tool_de_ess_a_voiceover_usecase_1: 'Voiceover mit stechenden S-Lauten—Mittel wählen, De-essen, WAV laden.',
   tool_de_ess_a_voiceover_usecase_2: 'Narration vor Dumpf-EQ oder Mundklick-Declick anderswo zuerst de-essen.',
+  tool_de_ess_a_voiceover_usecase_3: 'Harte S-Laute nerven auf Kopfhörern nach einer hellen Aufnahme.',
   tool_de_ess_a_voiceover_usecases_title: 'Wann das hilft',
   tool_de_ess_a_voiceover_why_choose_item_1: 'Vor dem Speichern Empfindlichkeit, gedämpfte Frame-% und Ausgabe-KiB sehen.',
   tool_de_ess_a_voiceover_why_choose_item_2: 'Ein klarer De-Ess-Job—dynamisches Highshelf auf Sibilanz, kein vergrabener DAW-Rack.',
@@ -6734,7 +6749,7 @@ const de: SiteLangDict = {
   tool_edit_audio_on_waveform_why_choose_item_2: 'Honest scope: lightweight hub, not Pro Tools or a multi-track DAW.',
   tool_edit_audio_on_waveform_why_choose_item_3: 'Scene chips deep-link to shipped trim, loop, fade, and mono tools.',
   tool_edit_audio_on_waveform_why_choose_item_4: 'Caps refuse oversized files instead of silently truncating them.',
-  tool_edit_audio_on_waveform_why_choose_title: 'Why choose our Edit audio on a waveform tools',
+  tool_edit_audio_on_waveform_why_choose_title: 'Warum unsere Audio-auf-Wellenform-Bearbeitungswerkzeuge',
   tool_edit_audio_on_waveform_zerocross: 'Snap cuts to nearby zero crossings',
   tool_edit_audio_on_waveform_zerocross_hint: 'Reduces clicks at the splice. Turn off only if you need exact sample edges.',
   tool_edit_mp3_title_and_cover_art_advanced: 'Über ID3-Unterstützung (optional)',
@@ -6804,8 +6819,9 @@ const de: SiteLangDict = {
   tool_edit_mp3_title_and_cover_art_title: 'MP3-Titel und Cover bearbeiten',
   tool_edit_mp3_title_and_cover_art_usecase_1: 'Podcast-Export mit lesbarem Titel und Interpreten versehen.',
   tool_edit_mp3_title_and_cover_art_usecase_2: 'Cover hinzufügen, damit das Handy es zeigt.',
+  tool_edit_mp3_title_and_cover_art_usecase_3: 'Eine fertige MP3 spielt ohne Titel und Cover auf dem Handy.',
   tool_edit_mp3_title_and_cover_art_usecases_title: 'Nützlich für',
-  tool_edit_mp3_title_and_cover_art_why_choose_item_1: 'Audioframes werden unverändert kopiert—kein lamejs-Reencode.',
+  tool_edit_mp3_title_and_cover_art_why_choose_item_1: 'Audioframes werden unverändert kopiert—kein in-browser MP3 encoding-Reencode.',
   tool_edit_mp3_title_and_cover_art_why_choose_item_2: 'Das Beispiel zeigt Titel und Cover auf demselben Pfad.',
   tool_edit_mp3_title_and_cover_art_why_choose_item_3: 'Limits und ID3v2.3-Umfang sind klar benannt.',
   tool_edit_mp3_title_and_cover_art_why_choose_item_4: 'Lokal; verwandte WAV→MP3-Tools einen Klick entfernt.',
@@ -6992,6 +7008,7 @@ const de: SiteLangDict = {
   tool_embed_lyrics_in_an_mp3_title: 'Lyrics in eine MP3 einbetten',
   tool_embed_lyrics_in_an_mp3_usecase_1: 'Transkript an Podcast-MP3 mit USLT hängen.',
   tool_embed_lyrics_in_an_mp3_usecase_2: 'Plain Lyrics ohne Neuencodierung hinzufügen.',
+  tool_embed_lyrics_in_an_mp3_usecase_3: 'Du willst Lyrics in der MP3, damit Player sie offline zeigen.',
   tool_embed_lyrics_in_an_mp3_usecases_title: 'Nützlich für',
   tool_embed_lyrics_in_an_mp3_why_choose_item_1: 'Audioframes unverändert kopiert.',
   tool_embed_lyrics_in_an_mp3_why_choose_item_2: 'Beispiel zeigt denselben USLT-Pfad.',
@@ -7079,7 +7096,7 @@ const de: SiteLangDict = {
   tool_emi_years_placeholder: 'z. B. 5',
   tool_eq_a_muffled_voice_recording_advanced: 'EQ-Presets',
   tool_eq_a_muffled_voice_recording_article:
-    'Telefon, Maske und ferne Mikros klingen oft dumpf: zu viel Matsch unter einigen hundert Hertz und zu wenig Klarheit im Sprachband. Diese Seite verkettet drei BiquadFilter in OfflineAudioContext—Lowshelf, Peaking, Highshelf—als benannte Presets. Clarity schneidet Matsch und öffnet Sprache; Warmth gibt Körper und weicht harte Höhen ab; Presence hebt mittlere Höhen und Luft. Das ist tonales EQ für dumpfe Stimme, kein Einband-Bass-Booster, keine Hintergrund-Rauschunterdrückung und kein De-Esser nur gegen Zischlaute. Kanäle bleiben 1 oder 2. Master behalten; Download ist eine neue 16-Bit-WAV. Arbeit läuft im Browser.',
+    'Telefon, Maske und ferne Mikros klingen oft dumpf: zu viel Matsch unter einigen hundert Hertz und zu wenig Klarheit im Sprachband. Diese Seite verkettet drei EQ filter in on-device audio processing—Lowshelf, Peaking, Highshelf—als benannte Presets. Clarity schneidet Matsch und öffnet Sprache; Warmth gibt Körper und weicht harte Höhen ab; Presence hebt mittlere Höhen und Luft. Das ist tonales EQ für dumpfe Stimme, kein Einband-Bass-Booster, keine Hintergrund-Rauschunterdrückung und kein De-Esser nur gegen Zischlaute. Kanäle bleiben 1 oder 2. Master behalten; Download ist eine neue 16-Bit-WAV. Arbeit läuft im Browser.',
   tool_eq_a_muffled_voice_recording_choose: 'Audiodatei wählen',
   tool_eq_a_muffled_voice_recording_clear: 'Leeren',
   tool_eq_a_muffled_voice_recording_convert: 'EQ',
@@ -7138,7 +7155,7 @@ const de: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_read: 'Lesen',
   tool_eq_a_muffled_voice_recording_result: '{seconds}s · {preset} · Peak {peakBefore} → {peakAfter} · WAV {output} KiB',
   tool_eq_a_muffled_voice_recording_rules_body:
-    'Jedes Preset sind drei Biquad-Stufen (Lowshelf, Peaking, Highshelf). Clarity öffnet dumpfe Sprache; Warmth gibt Körper; Presence hebt Präsenz und Luft. Soft-Peak-Schutz skaliert bei Clip-Gefahr.',
+    'Jedes Preset sind drei EQ-Stufen (Lowshelf, Peaking, Highshelf). Clarity öffnet dumpfe Sprache; Warmth gibt Körper; Presence hebt Präsenz und Luft. Soft-Peak-Schutz skaliert bei Clip-Gefahr.',
   tool_eq_a_muffled_voice_recording_rules_item_1:
     'Standard Clarity schneidet matschige Bässe und öffnet Sprachklarheit. Warmth hebt Tiefkörper und weicht harte Höhen ab. Presence fokussiert mittlere Höhen.',
   tool_eq_a_muffled_voice_recording_rules_item_2:
@@ -7154,11 +7171,11 @@ const de: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_title: 'Eine dumpfe Sprachaufnahme entzerrern',
   tool_eq_a_muffled_voice_recording_usecase_1: 'Telefon- oder Masken-Take klingt kastig—Clarity wählen, EQ, WAV laden.',
   tool_eq_a_muffled_voice_recording_usecase_2: 'Podcast-Stimme braucht wärmeren Körper oder mehr Präsenz ohne volles DAW-EQ.',
+  tool_eq_a_muffled_voice_recording_usecase_3: 'Eine dumpfe Fern- oder Maskenaufnahme braucht mehr Sprachpräsenz.',
   tool_eq_a_muffled_voice_recording_usecases_title: 'Wann das hilft',
   tool_eq_a_muffled_voice_recording_why_choose_item_1: 'Preset-Name, Peak vor/nach und Ausgabe-KiB vor dem Speichern sehen.',
   tool_eq_a_muffled_voice_recording_why_choose_item_2: 'Drei klare Stimm-Presets—ein Dumpf-EQ-Job, kein Zehnband-Spielzeug und kein reiner Bass.',
-  tool_eq_a_muffled_voice_recording_why_choose_item_3:
-    'Dekodierung, Biquad-EQ und WAV-Schreiben laufen auf dem Gerät; die Seite lädt die Aufnahme nicht hoch.',
+  tool_eq_a_muffled_voice_recording_why_choose_item_3: 'Dekodierung, EQ-EQ und WAV-Schreiben laufen auf dem Gerät; die Seite lädt die Aufnahme nicht hoch.',
   tool_eq_a_muffled_voice_recording_why_choose_item_4: 'Preset- oder Eingabewechsel löscht den alten Download, damit keine veraltete WAV gespeichert wird.',
   tool_eq_a_muffled_voice_recording_why_choose_title: 'Warum unsere Tools zum Entzerrern einer dumpfen Sprachaufnahme',
   tool_eq_a_muffled_voice_recording_write: 'Schreiben',
@@ -7336,7 +7353,7 @@ const de: SiteLangDict = {
   tool_exponent_usecases_title: 'Wann sinnvoll',
   tool_extract_audio_from_a_video_file_advanced: 'Exportformat',
   tool_extract_audio_from_a_video_file_article:
-    'Handyclips, Bildschirmaufnahmen und Kameradateien enthalten oft Voice-over oder BGM ohne Bildbedarf. Diese Seite liest einen lokalen Video-Container, lässt den Browser die Spur mit decodeAudioData dekodieren und schreibt 16-Bit-WAV oder MP3 per lamejs. Kein YouTube-/URL-Abruf, kein stummes MP4, kein Wellenform-Trim. Erfolg hängt von der Browser-Dekodierung ab; exotische Codecs scheitern klar. Kanäle: eins oder zwei. Original behalten; Download ist eine neue Audiodatei. Verarbeitung lokal.',
+    'Handyclips, Bildschirmaufnahmen und Kameradateien enthalten oft Voice-over oder BGM ohne Bildbedarf. Diese Seite liest einen lokalen Video-Container, lässt den Browser die Spur mit browser decoding dekodieren und schreibt 16-Bit-WAV oder MP3 per in-browser MP3 encoding. Kein YouTube-/URL-Abruf, kein stummes MP4, kein Wellenform-Trim. Erfolg hängt von der Browser-Dekodierung ab; exotische Codecs scheitern klar. Kanäle: eins oder zwei. Original behalten; Download ist eine neue Audiodatei. Verarbeitung lokal.',
   tool_extract_audio_from_a_video_file_bitrate: 'MP3-Bitrate',
   tool_extract_audio_from_a_video_file_choose: 'Videodatei wählen',
   tool_extract_audio_from_a_video_file_clear: 'Löschen',
@@ -7363,7 +7380,7 @@ const de: SiteLangDict = {
   tool_extract_audio_from_a_video_file_err_limit: 'Datei max. 80 MiB oder 10 Minuten, mit ein oder zwei Audiokanälen.',
   tool_extract_audio_from_a_video_file_err_sample: 'Beispielvideo in diesem Browser nicht erstellbar. Eigene lokale Datei ablegen.',
   tool_extract_audio_from_a_video_file_example:
-    'Beispiel laden erzeugt bei MediaRecorder ein kurzes synthetisches WebM mit Ton und startet Extrahieren. Wiedergabe startet nicht von selbst. Wenn kein Sample möglich: eigenes MP4 ablegen.',
+    'Beispiel laden erzeugt bei browser media recording ein kurzes synthetisches WebM mit Ton und startet Extrahieren. Wiedergabe startet nicht von selbst. Wenn kein Sample möglich: eigenes MP4 ablegen.',
   tool_extract_audio_from_a_video_file_example_title: 'Echte Extraktion testen',
   tool_extract_audio_from_a_video_file_extract: 'Extrahieren',
   tool_extract_audio_from_a_video_file_failed: 'Extraktion fehlgeschlagen. Kleineres, dekodierbares Video versuchen.',
@@ -7413,6 +7430,7 @@ const de: SiteLangDict = {
   tool_extract_audio_from_a_video_file_title: 'Audio aus einer Videodatei extrahieren',
   tool_extract_audio_from_a_video_file_usecase_1: 'Nur Voice-over oder BGM aus einem Handyclip—Extrahieren, dann WAV oder MP3.',
   tool_extract_audio_from_a_video_file_usecase_2: 'Bildschirmaufnahme soll Audio werden, ohne Upload zu einem Converter.',
+  tool_extract_audio_from_a_video_file_usecase_3: 'Du brauchst nur VO oder BGM aus einem Kameraclip als WAV oder MP3.',
   tool_extract_audio_from_a_video_file_usecases_title: 'Wann das hilft',
   tool_extract_audio_from_a_video_file_why_choose_item_1: 'Dauer, Kanäle, Abtastrate, Format und Ausgabe-KiB vor dem Speichern sichtbar.',
   tool_extract_audio_from_a_video_file_why_choose_item_2: 'Ein klarer Job—lokales Video zu Audio—mit ehrlichen Grenzen bei Dekodierfehlern.',
@@ -7476,6 +7494,7 @@ const de: SiteLangDict = {
   tool_extract_cover_art_from_an_mp3_title: 'Cover aus einer MP3 extrahieren',
   tool_extract_cover_art_from_an_mp3_usecase_1: 'Podcast-Cover als Thumbnail speichern.',
   tool_extract_cover_art_from_an_mp3_usecase_2: 'Vor dem Teilen prüfen, ob Cover vorhanden ist.',
+  tool_extract_cover_art_from_an_mp3_usecase_3: 'Du brauchst das eingebettete Cover als Bild ohne Neu-Encoding.',
   tool_extract_cover_art_from_an_mp3_usecases_title: 'Nützlich für',
   tool_extract_cover_art_from_an_mp3_why_choose_item_1: 'APIC lokal, keine Bibliothek-Uploads.',
   tool_extract_cover_art_from_an_mp3_why_choose_item_2: 'Beispiel beweist denselben Pfad.',
@@ -7617,6 +7636,7 @@ const de: SiteLangDict = {
   tool_fade_in_and_fade_out_an_audio_clip_title: 'Audio-Clip ein- und ausblenden',
   tool_fade_in_and_fade_out_an_audio_clip_usecase_1: 'Voiceover oder Musikbett knackt an Schnittpunkten—1 s / 1 s wählen, Überblenden, WAV laden.',
   tool_fade_in_and_fade_out_an_audio_clip_usecase_2: 'Clip braucht weiche Kanten vor dem Zuschneiden oder der Timeline—ohne nahtlosen Loop zu bauen.',
+  tool_fade_in_and_fade_out_an_audio_clip_usecase_3: 'Klingelton oder Bumper startet und endet abrupt und braucht weiche Kanten.',
   tool_fade_in_and_fade_out_an_audio_clip_usecases_title: 'Wann das hilft',
   tool_fade_in_and_fade_out_an_audio_clip_why_choose_item_1: 'Vor dem Speichern Ein-/Ausblendsekunden, Kurvenname und Ausgabe-KiB sehen.',
   tool_fade_in_and_fade_out_an_audio_clip_why_choose_item_2:
@@ -8113,6 +8133,7 @@ const de: SiteLangDict = {
   tool_generate_a_sine_tone_at_a_frequency_title: 'Einen Sinuston bei einer Frequenz erzeugen',
   tool_generate_a_sine_tone_at_a_frequency_usecase_1: 'A4-Referenzton nötig—440 Hz, 2 s, Erzeugen, WAV laden.',
   tool_generate_a_sine_tone_at_a_frequency_usecase_2: '1000-Hz-Testton für Lautsprecher ohne Desktop-Signalgenerator.',
+  tool_generate_a_sine_tone_at_a_frequency_usecase_3: 'Du brauchst einen Kalibrierton bei gewähltem Hz für einen Gerätecheck.',
   tool_generate_a_sine_tone_at_a_frequency_usecases_title: 'Wann das hilft',
   tool_generate_a_sine_tone_at_a_frequency_why_choose_item_1: 'Exakte Hertz, Dauer, Rate und KiB vor dem Speichern sehen.',
   tool_generate_a_sine_tone_at_a_frequency_why_choose_item_2: 'Ein klarer Sinus-Job mit ehrlichen Grenzen bei ungültigem Hz.',
@@ -8190,6 +8211,7 @@ const de: SiteLangDict = {
   tool_generate_dtmf_touch_tones_usecase_1:
     'Sie brauchen einen DTMF-Clip für IVR oder Telefon-Demo—Ziffern eingeben, Erzeugen, WAV für Docs/Tests herunterladen.',
   tool_generate_dtmf_touch_tones_usecase_2: 'Sie wollen eine reproduzierbare Touch-Tone-Sequenz ohne Desktop-Signalgenerator.',
+  tool_generate_dtmf_touch_tones_usecase_3: 'Du musst Tastenpiepser für eine IVR-Demo erzeugen.',
   tool_generate_dtmf_touch_tones_usecases_title: 'Wann das hilft',
   tool_generate_dtmf_touch_tones_why_choose_item_1: 'Sehen Sie Sequenz, Tastenzahl, Dauer, Samplerate und KiB vor dem Speichern.',
   tool_generate_dtmf_touch_tones_why_choose_item_2: 'Ein klarer DTMF-Job—mit ehrlichen Grenzen bei leerer oder ungültiger Sequenz.',
@@ -10306,6 +10328,7 @@ const de: SiteLangDict = {
     'Mehrere Sprachnotizen sollen eine durchgehende Spur werden—der Reihe nach hinzufügen, Verbinden, WAV laden.',
   tool_join_audio_files_in_order_usecase_2:
     'Songabschnitte oder Podcast-Kapitel als Einzeldateien brauchen einen Export ohne Upload zu einem Joiner.',
+  tool_join_audio_files_in_order_usecase_3: 'Kapitel-WAVs sollen eine durchgehende Datei in Playlist-Reihenfolge werden.',
   tool_join_audio_files_in_order_usecases_title: 'Wann das hilft',
   tool_join_audio_files_in_order_why_choose_item_1: 'Dateianzahl, Dauer, Kanäle, Abtastrate und Ausgabe-KiB vor dem Speichern sehen.',
   tool_join_audio_files_in_order_why_choose_item_2:
@@ -10594,6 +10617,7 @@ const de: SiteLangDict = {
   tool_limit_peaks_so_a_file_does_not_clip_title: 'Peaks begrenzen, damit eine Datei nicht clipt',
   tool_limit_peaks_so_a_file_does_not_clip_usecase_1: 'Mix mit gelegentlichem Clipping—Soft −1 wählen, begrenzen, WAV laden.',
   tool_limit_peaks_so_a_file_does_not_clip_usecase_2: 'Lieferung verbietet Peaks über Ceiling nach gesetztem Gesamtpegel, ohne vollen Kompressor.',
+  tool_limit_peaks_so_a_file_does_not_clip_usecase_3: 'Ein heißer Export clippt an Peaks; du willst eine Sicherheitsgrenze vor dem Publish.',
   tool_limit_peaks_so_a_file_does_not_clip_usecases_title: 'Wann das hilft',
   tool_limit_peaks_so_a_file_does_not_clip_why_choose_item_1: 'Ceiling, Modus, Peak vorher/nachher und Ausgabe-KiB vor dem Speichern sehen.',
   tool_limit_peaks_so_a_file_does_not_clip_why_choose_item_2: 'Zwei klare Ceilings und Soft/Brickwall—ein Limiter-Job, keine Normalisieren/Kompressor/Gain-Wand.',
@@ -11040,6 +11064,7 @@ const de: SiteLangDict = {
   tool_make_a_nightcore_version_of_a_song_title: 'Eine Nightcore-Version eines Songs machen',
   tool_make_a_nightcore_version_of_a_song_usecase_1: 'Pop- oder Anime-Track für klassischen Nightcore—1.25× wählen, Nightcore, WAV herunterladen.',
   tool_make_a_nightcore_version_of_a_song_usecase_2: 'Kurzer Clip braucht Tempo- und Pitch-Lift—nicht Tempo-only-Übung, nicht nur Transposition.',
+  tool_make_a_nightcore_version_of_a_song_usecase_3: 'Ein Track braucht das klassische schnellere, höhere Nightcore-Feeling für einen kurzen Edit.',
   tool_make_a_nightcore_version_of_a_song_usecases_title: 'Wann das hilft',
   tool_make_a_nightcore_version_of_a_song_why_choose_item_1: 'Vor dem Speichern Eingabe-/Ausgabesekunden, Tempo, ungefähre Halbtöne und KiB sehen.',
   tool_make_a_nightcore_version_of_a_song_why_choose_item_2: 'Eine klare Nightcore-Aufgabe—Tempo und Tonhöhe steigen zusammen, keine versteckten DAW-Automationen.',
@@ -11127,6 +11152,7 @@ const de: SiteLangDict = {
   tool_make_a_quiet_recording_louder_title: 'Eine leise Aufnahme lauter machen',
   tool_make_a_quiet_recording_louder_usecase_1: 'Eine Handy-Sprachnotiz zu leise aufgenommen—+6 dB verstärken und WAV herunterladen.',
   tool_make_a_quiet_recording_louder_usecase_2: 'Eine insgesamt schwache Interviewspur, wenn Sie dasselbe Verhältnis lauter wollen ohne LUFS-Ziel.',
+  tool_make_a_quiet_recording_louder_usecase_3: 'Eine leise Handymemo braucht Gain mit Peak-Schutz.',
   tool_make_a_quiet_recording_louder_usecases_title: 'Wann das hilft',
   tool_make_a_quiet_recording_louder_why_choose_item_1:
     'Sie sehen gemessene Dauer, angefragten (und effektiven) Gain in dB, Peak vorher/nachher und Ausgabe-KiB vor dem Speichern.',
@@ -11338,6 +11364,7 @@ const de: SiteLangDict = {
   tool_make_a_short_ui_notification_sound_usecase_1:
     'Sie brauchen einen winzigen Erfolgs- oder Klick-Cue für einen Prototyp—Preset wählen, Erzeugen, WAV für Mocks/Demos herunterladen.',
   tool_make_a_short_ui_notification_sound_usecase_2: 'Sie wollen einen wiederverwendbaren Alert oder Ping ohne Stock-Bibliothek oder Desktop-Synth.',
+  tool_make_a_short_ui_notification_sound_usecase_3: 'Du brauchst einen kurzen Klick- oder Glocken-WAV für einen App-Prototyp.',
   tool_make_a_short_ui_notification_sound_usecases_title: 'Wann das hilft',
   tool_make_a_short_ui_notification_sound_why_choose_item_1: 'Sehen Sie Preset-Name, Länge, Samplerate und KiB vor dem Speichern.',
   tool_make_a_short_ui_notification_sound_why_choose_item_2: 'Ein klarer Kurz-UI-Cue-Job—mit ehrlichen Grenzen bei ungültiger Länge.',
@@ -11431,6 +11458,7 @@ const de: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_usecase_1: 'Pop- oder R&B-Clip für klassischen Slowed+Reverb-Edit—0.8× + Mittel, Slowed Reverb, WAV laden.',
   tool_make_a_slowed_and_reverb_clip_usecase_2:
     'Kurzer Clip, der langsam und Raum braucht—kein Tempo-only, kein Nightcore, kein trockener Hall allein.',
+  tool_make_a_slowed_and_reverb_clip_usecase_3: 'Ein Songsnippet soll slowed-and-reverb für Social Edits klingen.',
   tool_make_a_slowed_and_reverb_clip_usecases_title: 'Wann das hilft',
   tool_make_a_slowed_and_reverb_clip_why_choose_item_1: 'Eingabe-/Ausgabesekunden, Ratio, Halbtöne, Hall und Ausgabe-KiB vor dem Speichern sehen.',
   tool_make_a_slowed_and_reverb_clip_why_choose_item_2: 'Ein klarer Slowed+Reverb-Job—langsam und Raum zusammen, nicht versteckte DAW-Automation.',
@@ -11441,7 +11469,7 @@ const de: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_write: 'Schreiben',
   tool_make_a_waveform_video_from_audio_advanced: 'Hinweise zum Wellenform-Video',
   tool_make_a_waveform_video_from_audio_article:
-    'Podcast-Ausschnitte brauchen oft ein teilbares Video mit bewegter Wellenform. Diese Seite dekodiert lokales Audio, zeichnet Peaks auf Canvas, erfasst den Stream, mischt den Soundtrack und nimmt mit MediaRecorder auf—meist WebM. Kein YouTube-Download, kein MP4-Versprechen. Original behalten. Arbeit auf dem Gerät.',
+    'Podcast-Ausschnitte brauchen oft ein teilbares Video mit bewegter Wellenform. Diese Seite dekodiert lokales Audio, zeichnet Peaks auf Canvas, erfasst den Stream, mischt den Soundtrack und nimmt mit browser media recording auf—meist WebM. Kein YouTube-Download, kein MP4-Versprechen. Original behalten. Arbeit auf dem Gerät.',
   tool_make_a_waveform_video_from_audio_choose: 'Audiodatei wählen',
   tool_make_a_waveform_video_from_audio_clear: 'Leeren',
   tool_make_a_waveform_video_from_audio_convert: 'Video erstellen',
@@ -11449,7 +11477,7 @@ const de: SiteLangDict = {
   tool_make_a_waveform_video_from_audio_desc:
     'Lokales Audio in diesem Tab zu einem Audiogram-Wellenform-Video machen und WebM herunterladen. Nur auf dem Gerät.',
   tool_make_a_waveform_video_from_audio_description:
-    'Erstellen Sie im Browser ein Wellenform-Video aus Audio: lokale Datei dekodieren, Audiogram-Wellenform auf Canvas zeichnen, mit MediaRecorder aufnehmen, dann herunterladen. Schritte: Audio wählen, Video erstellen, Vorschau, Download. Beispiel: Beispiel laden erzeugt einen kurzen Ton und nimmt einen Clip mit bewegter Welle auf. Ausgabe meist WebM—kein MP4-Remux, kein Desktop-NLE. Nie hochgeladen.',
+    'Erstellen Sie im Browser ein Wellenform-Video aus Audio: lokale Datei dekodieren, Audiogram-Wellenform auf Canvas zeichnen, mit browser media recording aufnehmen, dann herunterladen. Schritte: Audio wählen, Video erstellen, Vorschau, Download. Beispiel: Beispiel laden erzeugt einen kurzen Ton und nimmt einen Clip mit bewegter Welle auf. Ausgabe meist WebM—kein MP4-Remux, kein Desktop-NLE. Nie hochgeladen.',
   tool_make_a_waveform_video_from_audio_done: 'Fertig. Wellenform-Video prüfen, dann herunterladen.',
   tool_make_a_waveform_video_from_audio_download: 'Video herunterladen',
   tool_make_a_waveform_video_from_audio_draw: 'Zeichnen',
@@ -11458,7 +11486,7 @@ const de: SiteLangDict = {
   tool_make_a_waveform_video_from_audio_empty_state:
     'Noch kein Audio. Lokale Spur ablegen oder Beispiel laden. Zeichnet ein Wellenform-Video—keine Audio-Extraktion, kein reines Trimmen, kein YouTube.',
   tool_make_a_waveform_video_from_audio_err_decode: 'Browser konnte Audio nicht dekodieren. Anderen Container oder kürzeren Clip versuchen.',
-  tool_make_a_waveform_video_from_audio_err_encoder: 'MediaRecorder konnte kein Video schreiben. Chrome/Edge oder kürzeres WAV/MP3.',
+  tool_make_a_waveform_video_from_audio_err_encoder: 'browser media recording konnte kein Video schreiben. Chrome/Edge oder kürzeres WAV/MP3.',
   tool_make_a_waveform_video_from_audio_err_file: 'Eine unterstützte lokale Audiodatei wählen.',
   tool_make_a_waveform_video_from_audio_err_format: 'Nicht unterstützt oder nicht dekodierbar. Keine YouTube-URLs.',
   tool_make_a_waveform_video_from_audio_err_limit: 'Lokales Audio bis 40 MiB und etwa 3 Minuten.',
@@ -11467,11 +11495,12 @@ const de: SiteLangDict = {
   tool_make_a_waveform_video_from_audio_example_title: 'Kurzen Ton als Wellen-Clip testen',
   tool_make_a_waveform_video_from_audio_failed: 'Wellenform-Video fehlgeschlagen. Kürzere Datei oder Chrome/Edge versuchen.',
   tool_make_a_waveform_video_from_audio_faq_a1: 'Nein. Nur lokale Dateien. Kein YouTube-Downloader.',
-  tool_make_a_waveform_video_from_audio_faq_a2: 'Meist WebM über MediaRecorder. Kein verlustfreies Remux.',
+  tool_make_a_waveform_video_from_audio_faq_a2: 'Meist WebM über browser media recording. Kein verlustfreies Remux.',
   tool_make_a_waveform_video_from_audio_faq_a3: 'Nein. Extraktion ist ein anderes Tool. Hier: Audio rein, Wellenform-Video raus.',
   tool_make_a_waveform_video_from_audio_faq_a4: 'Keine Trim-UI. Zuerst die verwandte Trim-Seite nutzen.',
   tool_make_a_waveform_video_from_audio_faq_a5: 'Nein. Verarbeitung im Browser. Erster Seitenaufruf braucht Netz.',
-  tool_make_a_waveform_video_from_audio_faq_a6: 'MediaRecorder und canvas.captureStream nötig, plus Dekodierung. Chrome/Edge oder kürzeres WAV/MP3.',
+  tool_make_a_waveform_video_from_audio_faq_a6:
+    'browser media recording und canvas.captureStream nötig, plus Dekodierung. Chrome/Edge oder kürzeres WAV/MP3.',
   tool_make_a_waveform_video_from_audio_faq_q1: 'Kann es YouTube laden oder eine URL einfügen?',
   tool_make_a_waveform_video_from_audio_faq_q2: 'Wird die Ausgabe MP4?',
   tool_make_a_waveform_video_from_audio_faq_q3: 'Ist das Audio aus Video extrahieren?',
@@ -11491,7 +11520,7 @@ const de: SiteLangDict = {
   tool_make_a_waveform_video_from_audio_read: 'Lesen',
   tool_make_a_waveform_video_from_audio_result: '{seconds}s · Welle · {mime} · {output} KiB',
   tool_make_a_waveform_video_from_audio_rules_body:
-    'Jeder Lauf dekodiert, animiert die Canvas-Welle und re-encodiert mit MediaRecorder. Oft WebM. Kein YouTube, keine Extraktion, kein reines Trim.',
+    'Jeder Lauf dekodiert, animiert die Canvas-Welle und re-encodiert mit browser media recording. Oft WebM. Kein YouTube, keine Extraktion, kein reines Trim.',
   tool_make_a_waveform_video_from_audio_rules_item_1: 'Eine lokale Audiodatei bis 40 MiB und etwa drei Minuten. Dekodierung zuerst.',
   tool_make_a_waveform_video_from_audio_rules_item_2: 'Länge folgt dem Audio. Kurze Clips sind zuverlässiger.',
   tool_make_a_waveform_video_from_audio_rules_item_3: 'Kein YouTube, Podcast-URL oder Remote-Download.',
@@ -11500,13 +11529,14 @@ const de: SiteLangDict = {
   tool_make_a_waveform_video_from_audio_sample: 'Beispiel laden',
   tool_make_a_waveform_video_from_audio_sample_name: 'wellenform-video-beispiel',
   tool_make_a_waveform_video_from_audio_settings_hint:
-    'Browser nehmen Canvas plus Audio mit MediaRecorder auf. Oft WebM. Kein verlustfreies Remux, keine MP4-Garantie. Kein YouTube.',
+    'Browser nehmen Canvas plus Audio mit browser media recording auf. Oft WebM. Kein verlustfreies Remux, keine MP4-Garantie. Kein YouTube.',
   tool_make_a_waveform_video_from_audio_title: 'Ein Wellenform-Video aus Audio erstellen',
   tool_make_a_waveform_video_from_audio_usecase_1: 'Podcast-MP3-Schnipsel als einfaches Wellenform-Video für Social Media.',
   tool_make_a_waveform_video_from_audio_usecase_2: 'Audiogram-Vorschau aus Sprachnotiz ohne Desktop-Editor.',
+  tool_make_a_waveform_video_from_audio_usecase_3: 'Ein Podcast-Clip braucht ein einfaches Wellenform-Video für Social Posts.',
   tool_make_a_waveform_video_from_audio_usecases_title: 'Wann das hilft',
   tool_make_a_waveform_video_from_audio_why_choose_item_1: 'Dauer, MIME und KiB vor dem Speichern sichtbar.',
-  tool_make_a_waveform_video_from_audio_why_choose_item_2: 'Klarer Audiogram-Job mit ehrlichen MediaRecorder-/WebM-Grenzen.',
+  tool_make_a_waveform_video_from_audio_why_choose_item_2: 'Klarer Audiogram-Job mit ehrlichen browser media recording-/WebM-Grenzen.',
   tool_make_a_waveform_video_from_audio_why_choose_item_3: 'Dekodieren und Aufnehmen auf dem Gerät; keine Upload-Verarbeitung.',
   tool_make_a_waveform_video_from_audio_why_choose_item_4: 'Dateiwechsel löscht den alten Download.',
   tool_make_a_waveform_video_from_audio_why_choose_title: 'Warum unsere Wellenform-Video-Tools',
@@ -11589,6 +11619,7 @@ const de: SiteLangDict = {
   tool_make_an_8d_panning_version_of_a_song_title: 'Eine 8D-Panning-Version eines Songs machen',
   tool_make_an_8d_panning_version_of_a_song_usecase_1: 'Kurzer Song oder Loop für klassischen Kopfhörer-8D-Edit—5s wählen, 8D-Pan, WAV laden.',
   tool_make_an_8d_panning_version_of_a_song_usecase_2: 'Clip braucht L↔R-Bewegung—nicht Slowed+Reverb, nicht Nightcore, nicht Reverse.',
+  tool_make_an_8d_panning_version_of_a_song_usecase_3: 'Du willst rotierendes Stereopanning für Kopfhörer, kein Mono-Remix.',
   tool_make_an_8d_panning_version_of_a_song_usecases_title: 'Wann das hilft',
   tool_make_an_8d_panning_version_of_a_song_why_choose_item_1: 'Siehst Eingabesekunden, Sweep-Periode und Ausgabe-KiB vor dem Speichern.',
   tool_make_an_8d_panning_version_of_a_song_why_choose_item_2: 'Ein klarer 8D-artiger Pan-Job—nicht in DAW-Automation versteckt.',
@@ -11709,42 +11740,42 @@ const de: SiteLangDict = {
   tool_make_pdf_flipbook_warn_large: 'Large file — may be slow.',
   tool_make_srt_subtitles_from_an_audio_file_advanced: 'Honest limits',
   tool_make_srt_subtitles_from_an_audio_file_article:
-    'People search for audio to srt and generate subtitles from audio expecting Whisper-class timed captions. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses Web Speech API SpeechRecognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), stamps cues from recognition timing, and formats standard SRT—or you can dictate live with the mic. If SpeechRecognition is missing, the page says so clearly. Output is editable SRT you can download—not plain TXT only, and not burned into video. Related tools cover plain transcription and waveform video. Keep expectations honest: cue times and accuracy vary by browser.',
+    'People search for audio to srt and generate subtitles from audio expecting large-model-class timed captions. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses browser speech recognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), stamps cues from recognition timing, and formats standard SRT—or you can dictate live with the mic. If browser speech recognition is missing, the page says so clearly. Output is editable SRT you can download—not plain TXT only, and not burned into video. Related tools cover plain transcription and waveform video. Keep expectations honest: cue times and accuracy vary by browser.',
   tool_make_srt_subtitles_from_an_audio_file_choose: 'Choose an audio file',
   tool_make_srt_subtitles_from_an_audio_file_clear: 'Leeren',
   tool_make_srt_subtitles_from_an_audio_file_convert: 'SRT beim Abspielen erstellen',
   tool_make_srt_subtitles_from_an_audio_file_decode: 'Decode',
   tool_make_srt_subtitles_from_an_audio_file_desc:
-    'Erstellen Sie zeitgestempelte SRT-Untertitel aus lokaler Sprache mit SpeechRecognition des Browsers—oder diktieren Sie per Mikrofon. Kein Whisper-Klon.',
+    'Erstellen Sie zeitgestempelte SRT-Untertitel aus lokaler Sprache mit browser speech recognition des Browsers—oder diktieren Sie per Mikrofon. Kein a large speech model-Klon.',
   tool_make_srt_subtitles_from_an_audio_file_description:
-    'Erstellen Sie SRT-Untertitel aus einer Audiodatei im Browser mit SpeechRecognition, falls vorhanden. Schritte: lokale Audiodatei wählen, Sprache wählen, SRT beim Abspielen oder Mit Mikrofon diktieren, Vorschau bearbeiten, .srt herunterladen. Beispiel: Beispiel laden öffnet einen kurzen Ton und den Abspielpfad—echte Sprache braucht eine Aufnahme oder das Mikrofon. Cue-Zeiten sind Schätzungen beim Eintreffen finaler Ergebnisse, keine framegenaue Whisper-Ausrichtung. Kein Whisper-Klon und kein großes wasm-Modell. Viele Browser können hochgeladene Dateien nicht zuverlässig offline untertiteln. Diese Seite lädt Ihre Datei nicht für Server-ASR hoch.',
+    'Erstellen Sie SRT-Untertitel aus einer Audiodatei im Browser mit browser speech recognition, falls vorhanden. Schritte: lokale Audiodatei wählen, Sprache wählen, SRT beim Abspielen oder Mit Mikrofon diktieren, Vorschau bearbeiten, .srt herunterladen. Beispiel: Beispiel laden öffnet einen kurzen Ton und den Abspielpfad—echte Sprache braucht eine Aufnahme oder das Mikrofon. Cue-Zeiten sind Schätzungen beim Eintreffen finaler Ergebnisse, keine framegenaue a large speech model-Ausrichtung. Kein a large speech model-Klon und kein großes offline model-Modell. Viele Browser können hochgeladene Dateien nicht zuverlässig offline untertiteln. Diese Seite lädt Ihre Datei nicht für Server-ASR hoch.',
   tool_make_srt_subtitles_from_an_audio_file_done: 'Ready. Edit the SRT if needed, then Download SRT.',
   tool_make_srt_subtitles_from_an_audio_file_download: 'SRT herunterladen',
   tool_make_srt_subtitles_from_an_audio_file_elapsed: '{s}s elapsed',
   tool_make_srt_subtitles_from_an_audio_file_empty: 'Choose a local audio file, or use Dictate with mic.',
   tool_make_srt_subtitles_from_an_audio_file_empty_state:
-    'No SRT yet. Drop a voice recording and Make SRT while playing, or click Dictate with mic. Not a Whisper clone—browser SpeechRecognition only, with honest timing limits.',
+    'No SRT yet. Drop a voice recording and Make SRT while playing, or click Dictate with mic. Not a a large speech model clone—browser browser speech recognition only, with honest timing limits.',
   tool_make_srt_subtitles_from_an_audio_file_err_decode: 'The browser could not decode this audio file.',
   tool_make_srt_subtitles_from_an_audio_file_err_file: 'Choose one local audio file, or use Dictate with mic.',
   tool_make_srt_subtitles_from_an_audio_file_err_format: 'Unsupported audio type. Use a common format your browser can decode.',
   tool_make_srt_subtitles_from_an_audio_file_err_limit: 'Use audio up to about 40 MiB and 3 minutes.',
   tool_make_srt_subtitles_from_an_audio_file_err_permission: 'Microphone or speech permission was denied. Allow access or use another browser.',
-  tool_make_srt_subtitles_from_an_audio_file_err_unsupported: 'SpeechRecognition is unavailable in this browser.',
+  tool_make_srt_subtitles_from_an_audio_file_err_unsupported: 'browser speech recognition is unavailable in this browser.',
   tool_make_srt_subtitles_from_an_audio_file_example:
     'Load sample attaches a short tone WAV and runs Make SRT while playing. A tone will not produce words—use a real voice file or Dictate with mic to see cues. Playback never auto-starts after a finished SRT.',
   tool_make_srt_subtitles_from_an_audio_file_example_title: 'Try the sample playthrough path',
   tool_make_srt_subtitles_from_an_audio_file_failed: 'Could not build SRT. Try Dictate with mic, another browser, or a clearer voice recording.',
   tool_make_srt_subtitles_from_an_audio_file_faq_a1:
-    'Nein. Kein Whisper-wasm und kein Upload zu unseren Servern für ASR. Nutzt SpeechRecognition des Browsers, wenn verfügbar.',
+    'Nein. Kein a large speech model-offline model und kein Upload zu unseren Servern für ASR. Nutzt browser speech recognition des Browsers, wenn verfügbar.',
   tool_make_srt_subtitles_from_an_audio_file_faq_a2: 'Schätzungen anhand des Zeitpunkts finaler Erkennungsergebnisse—keine framegenaue Zwangsausrichtung.',
   tool_make_srt_subtitles_from_an_audio_file_faq_a3:
     'Most browsers listen via the microphone, not a private WebAudio tap. Playthrough needs the mic to hear the speakers, plus permission. If that fails, use Dictate with mic.',
   tool_make_srt_subtitles_from_an_audio_file_faq_a4: 'Jene Seite lädt TXT ohne Zeiten. Diese formatiert nummerierte SRT-Cues mit Start und Ende.',
   tool_make_srt_subtitles_from_an_audio_file_faq_a5:
-    'This page does not upload the file for processing. SpeechRecognition may use the microphone and a browser vendor service. Keep sensitive material offline if that is unacceptable.',
+    'This page does not upload the file for processing. browser speech recognition may use the microphone and a browser vendor service. Keep sensitive material offline if that is unacceptable.',
   tool_make_srt_subtitles_from_an_audio_file_faq_a6:
     'No. It only downloads a .srt sidecar. For a waveform-style video from audio, see the related waveform video tool—not burned-in captions.',
-  tool_make_srt_subtitles_from_an_audio_file_faq_q1: 'Ist das ein Whisper-Klon oder Cloud-ASR-Upload?',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q1: 'Ist das ein a large speech model-Klon oder Cloud-ASR-Upload?',
   tool_make_srt_subtitles_from_an_audio_file_faq_q2: 'Wie genau sind die SRT-Zeitstempel?',
   tool_make_srt_subtitles_from_an_audio_file_faq_q3: 'Why did my uploaded file produce little or no text?',
   tool_make_srt_subtitles_from_an_audio_file_faq_q4: 'Unterschied zu „Eine Audiodatei in Text umwandeln“?',
@@ -11752,7 +11783,7 @@ const de: SiteLangDict = {
   tool_make_srt_subtitles_from_an_audio_file_faq_q6: 'Can this burn subtitles into a video file?',
   tool_make_srt_subtitles_from_an_audio_file_file_label: 'Audio: {name}',
   tool_make_srt_subtitles_from_an_audio_file_hint:
-    'Optional local WAV, MP3 or M4A up to about 40 MiB / 3 minutes. File subtitling depends on browser SpeechRecognition and often needs speakers plus microphone permission.',
+    'Optional local WAV, MP3 or M4A up to about 40 MiB / 3 minutes. File subtitling depends on browser browser speech recognition and often needs speakers plus microphone permission.',
   tool_make_srt_subtitles_from_an_audio_file_how_body:
     'Use browser speech recognition on a local file playthrough or live mic dictation, stamp cues, then download .srt.',
   tool_make_srt_subtitles_from_an_audio_file_how_item_1: 'Choose a local voice recording (or Load sample), and pick a recognition language.',
@@ -11763,7 +11794,8 @@ const de: SiteLangDict = {
   tool_make_srt_subtitles_from_an_audio_file_how_item_4: 'Edit the SRT preview if needed, then Download SRT.',
   tool_make_srt_subtitles_from_an_audio_file_how_title: 'So erstellen Sie SRT-Untertitel aus einer Audiodatei',
   tool_make_srt_subtitles_from_an_audio_file_interim_label: 'Interim (live)',
-  tool_make_srt_subtitles_from_an_audio_file_lang_hint: 'Passed to SpeechRecognition.lang. Pick the language spoken in the recording or into the mic.',
+  tool_make_srt_subtitles_from_an_audio_file_lang_hint:
+    'Passed to browser speech recognition.lang. Pick the language spoken in the recording or into the mic.',
   tool_make_srt_subtitles_from_an_audio_file_lang_label: 'Recognition language',
   tool_make_srt_subtitles_from_an_audio_file_listen: 'Listen',
   tool_make_srt_subtitles_from_an_audio_file_mic: 'Mit Mikrofon diktieren',
@@ -11772,37 +11804,39 @@ const de: SiteLangDict = {
   tool_make_srt_subtitles_from_an_audio_file_read: 'Read',
   tool_make_srt_subtitles_from_an_audio_file_result: '{cues} cues · {chars} characters',
   tool_make_srt_subtitles_from_an_audio_file_rules_body:
-    'This page uses Web Speech API SpeechRecognition when present. It is not offline Whisper. Cue times come from recognition timing clocks. File upload subtitling is best-effort and may fall back to live mic.',
+    'This page uses browser speech recognition when present. It is not an offline large speech model. Cue times come from recognition timing clocks. File upload subtitling is best-effort and may fall back to live mic.',
   tool_make_srt_subtitles_from_an_audio_file_rules_item_1:
-    'SpeechRecognition must exist. Otherwise the unsupported banner stays visible and primary actions stay disabled.',
+    'browser speech recognition must exist. Otherwise the unsupported banner stays visible and primary actions stay disabled.',
   tool_make_srt_subtitles_from_an_audio_file_rules_item_2:
     'Recognition typically uses the microphone. Playing a file does not guarantee a private decode→subtitle path.',
   tool_make_srt_subtitles_from_an_audio_file_rules_item_3: 'Optional file up to about 40 MiB / 3 minutes. Output is standard SRT—not burned-in video captions.',
   tool_make_srt_subtitles_from_an_audio_file_rules_item_4:
-    'This page does not upload your file for server-side Whisper. Browser vendors may still send mic audio to their speech service—check your browser privacy settings.',
+    'This page does not upload your file for server-side speech recognition. Browser vendors may still send mic audio to their speech service—check your browser privacy settings.',
   tool_make_srt_subtitles_from_an_audio_file_rules_title: 'SRT rules and honest browser limits',
   tool_make_srt_subtitles_from_an_audio_file_sample: 'Beispiel laden',
   tool_make_srt_subtitles_from_an_audio_file_sample_name: 'srt-sample',
   tool_make_srt_subtitles_from_an_audio_file_settings_hint:
-    'SpeechRecognition usually listens to the microphone—not a private WebAudio tap. Playing a file may work only if the mic hears the speakers. Cue times are estimated from when finals arrive, not Whisper forced alignment. This is not Whisper and does not download a large model.',
+    'browser speech recognition usually listens to the microphone—not a private WebAudio tap. Playing a file may work only if the mic hears the speakers. Cue times are estimated from when finals arrive, not a large speech model forced alignment. This is not a large speech model and does not download a large model.',
   tool_make_srt_subtitles_from_an_audio_file_status_listening:
-    'Playback finished with little or no text. SpeechRecognition often needs the microphone to hear the speakers—try Dictate with mic, raise volume, or allow mic access.',
+    'Playback finished with little or no text. browser speech recognition often needs the microphone to hear the speakers—try Dictate with mic, raise volume, or allow mic access.',
   tool_make_srt_subtitles_from_an_audio_file_status_mic: 'Listening to the microphone… speak clearly, then Stop. Cue times use session elapsed time.',
-  tool_make_srt_subtitles_from_an_audio_file_status_playing: 'Playing the file and building timed cues via SpeechRecognition (mic path)…',
+  tool_make_srt_subtitles_from_an_audio_file_status_playing: 'Playing the file and building timed cues via browser speech recognition (mic path)…',
   tool_make_srt_subtitles_from_an_audio_file_status_unsupported:
-    'This browser does not expose SpeechRecognition / webkitSpeechRecognition. Try Chrome or Edge, or use a different device. True offline Whisper-style ASR is not bundled here.',
+    'This browser does not expose browser speech recognition / webkitbrowser speech recognition. Try Chrome or Edge, or use a different device. True offline a large speech model-style ASR is not bundled here.',
   tool_make_srt_subtitles_from_an_audio_file_stop: 'Stopp',
   tool_make_srt_subtitles_from_an_audio_file_title: 'SRT-Untertitel aus einer Audiodatei erstellen',
   tool_make_srt_subtitles_from_an_audio_file_usecase_1:
     'You want a rough timed .srt for a short voice note in a Chromium browser without installing desktop software.',
   tool_make_srt_subtitles_from_an_audio_file_usecase_2:
     'File loopback fails, so you dictate the same content live with the mic and download SRT with session-relative times.',
+  tool_make_srt_subtitles_from_an_audio_file_usecase_3: 'Du brauchst ein Start-SRT aus Spracherkennung zum Nachbearbeiten.',
   tool_make_srt_subtitles_from_an_audio_file_usecases_title: 'When this helps',
   tool_make_srt_subtitles_from_an_audio_file_why_choose_item_1: 'Clear dual path: file playthrough attempt plus mic dictation fallback, both emitting .srt.',
-  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_2: 'Honest copy: not Whisper, no huge wasm model, timing is best-effort and stated up front.',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_2:
+    'Honest copy: not a large speech model, no huge offline model model, timing is best-effort and stated up front.',
   tool_make_srt_subtitles_from_an_audio_file_why_choose_item_3: 'You can edit the SRT before downloading.',
   tool_make_srt_subtitles_from_an_audio_file_why_choose_item_4: 'Nearby tools cover plain TXT transcription and waveform video without forcing a hub editor.',
-  tool_make_srt_subtitles_from_an_audio_file_why_choose_title: 'Why choose our Make SRT subtitles from an audio file tools',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_title: 'Warum unsere SRT-Untertitel-aus-Audiodatei-Tools',
   tool_make_srt_subtitles_from_an_audio_file_write: 'Write SRT',
   tool_marginal_revenue_article:
     'Grenzerlös ist die Änderung des Gesamterlöses bei Mengenänderung. Dieser Rechner zeigt die diskrete Ableitung zwischen zwei Punkten.',
@@ -12036,6 +12070,7 @@ const de: SiteLangDict = {
   tool_match_podcast_loudness_to_minus_16_lufs_title: 'Podcast-Lautheit auf −16 LUFS abstimmen',
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_1: 'Podcast-Folge zu leise für −16-LUFS-Abgabe—auf −16 abstimmen und WAV speichern.',
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_2: 'YouTube-/Spotify-Sprachspur näher an −14, ohne Peak-Normalisierung oder Kompressor.',
+  tool_match_podcast_loudness_to_minus_16_lufs_usecase_3: 'Die Episoden-Lautheit schwankt; du willst etwa −16 LUFS vor dem Host-Upload.',
   tool_match_podcast_loudness_to_minus_16_lufs_usecases_title: 'Wann das hilft',
   tool_match_podcast_loudness_to_minus_16_lufs_why_choose_item_1: 'Gemessene ≈LUFS, Ziel, Gain dB und Ausgabe-KiB vor dem Speichern sehen.',
   tool_match_podcast_loudness_to_minus_16_lufs_why_choose_item_2: 'Drei klare plattformnahe Ziele—ein Lautheitsjob, keine Peak/Gain/Kompressor-Wand.',
@@ -12566,6 +12601,7 @@ const de: SiteLangDict = {
   tool_mix_a_voiceover_with_background_music_usecase_1:
     'Gesprochene Aufnahme braucht leises Musikbett—beide hinzufügen, Bed senken oder ducken, mischen, laden.',
   tool_mix_a_voiceover_with_background_music_usecase_2: 'Audio aus Video extrahiert und neues Voiceover darüber legen, ohne Online-Mixer.',
+  tool_mix_a_voiceover_with_background_music_usecase_3: 'Eine trockene VO braucht leisere Bettmusik darunter ohne volle Konsole.',
   tool_mix_a_voiceover_with_background_music_usecases_title: 'Wann das hilft',
   tool_mix_a_voiceover_with_background_music_voice_gain: 'Voiceover-Gain',
   tool_mix_a_voiceover_with_background_music_voice_label: 'Voiceover: {name}',
@@ -12653,6 +12689,7 @@ const de: SiteLangDict = {
   tool_mix_binaural_beats_for_focus_usecase_1:
     'Du willst eine wiederverwendbare Ambient-Fokus-WAV: Träger und Beat setzen, Mischen, herunterladen und für Kopfhörer behalten.',
   tool_mix_binaural_beats_for_focus_usecase_2: 'Du brauchst eine schnelle Stereo-Beat-Demo ohne Desktop-Ton-App und ohne Therapieversprechen.',
+  tool_mix_binaural_beats_for_focus_usecase_3: 'Du willst ein kurzes Stereo-Fokusbett aus Carrier und Beat-Hz nur mit Kopfhörern.',
   tool_mix_binaural_beats_for_focus_usecases_title: 'Wann das hilft',
   tool_mix_binaural_beats_for_focus_why_choose_item_1: 'Vor dem Speichern siehst du linke Hz, rechte Hz, Beat-Differenz, Dauer und Ausgabe-KiB.',
   tool_mix_binaural_beats_for_focus_why_choose_item_2: 'Ein klarer Stereo-Binaural-Job mit ehrlichen YMYL-Grenzen—Unterhaltungs-Ambient, keine Behandlung.',
@@ -12733,6 +12770,7 @@ const de: SiteLangDict = {
   tool_normalize_an_audio_file_to_peak_title: 'Eine Audiodatei auf Peak normalisieren',
   tool_normalize_an_audio_file_to_peak_usecase_1: 'Abgabe will Peaks nahe Vollaussteuerung mit Headroom—auf −1 dBFS normalisieren und WAV laden.',
   tool_normalize_an_audio_file_to_peak_usecase_2: 'Mehrere Takes mit unterschiedlichen Pegeln per Peak angleichen, ohne eine LUFS-Zahl zu jagen.',
+  tool_normalize_an_audio_file_to_peak_usecase_3: 'Takes mit unterschiedlichen Peaks sollen ein gemeinsames Peak-Ziel haben.',
   tool_normalize_an_audio_file_to_peak_usecases_title: 'Wann das hilft',
   tool_normalize_an_audio_file_to_peak_why_choose_item_1: 'Dauer, Ziel-dBFS, Peak vorher/nachher und Ausgabe-KiB vor dem Speichern sehen.',
   tool_normalize_an_audio_file_to_peak_why_choose_item_2: 'Drei klare Peak-Ziele—ein Peak-Normalisieren-Job, keine Gain/LUFS/Kompressor-Wand.',
@@ -14751,6 +14789,7 @@ const de: SiteLangDict = {
   tool_reduce_background_noise_on_a_voice_memo_title: 'Hintergrundgeräusche einer Sprachnotiz reduzieren',
   tool_reduce_background_noise_on_a_voice_memo_usecase_1: 'Telefonnotiz mit Lüfter- oder Klima-Zischen—Medium, Entrauschen, WAV laden.',
   tool_reduce_background_noise_on_a_voice_memo_usecase_2: 'Feldnotiz mit weniger Raumrauschen, bevor Fades oder EQ woanders folgen.',
+  tool_reduce_background_noise_on_a_voice_memo_usecase_3: 'Stetiges Lüfter-/AC-Rauschen unter der Stimme; ein weiches Gate soll Lücken beruhigen.',
   tool_reduce_background_noise_on_a_voice_memo_usecases_title: 'Wann das hilft',
   tool_reduce_background_noise_on_a_voice_memo_why_choose_item_1: 'Stärkename, geschätzter Rauschboden und Ausgabe-KiB vor dem Speichern.',
   tool_reduce_background_noise_on_a_voice_memo_why_choose_item_2: 'Drei klare Stärken—ein Memo-Denoise-Job, kein DAW-Rack und kein Cloud-Enhance-Upsell.',
@@ -14836,6 +14875,7 @@ const de: SiteLangDict = {
   tool_remove_clicks_from_a_recording_title: 'Klicks aus einer Aufnahme entfernen',
   tool_remove_clicks_from_a_recording_usecase_1: 'Sprachnotiz mit Mund-Pops oder Kabeltipps—Mittel wählen, Entklicken, WAV herunterladen.',
   tool_remove_clicks_from_a_recording_usecase_2: 'Transfer mit spärlichem Vinylknistern, bevor Sie woanders Denoise oder Dehum nutzen.',
+  tool_remove_clicks_from_a_recording_usecase_3: 'Mundklicks und Edit-Pops stören eine sonst saubere VO.',
   tool_remove_clicks_from_a_recording_usecases_title: 'Wann es hilft',
   tool_remove_clicks_from_a_recording_why_choose_item_1: 'Sehen Sie Empfindlichkeit, reparierte Spitzen und Ausgabe-KiB vor dem Speichern.',
   tool_remove_clicks_from_a_recording_why_choose_item_2: 'Ein klarer Declick-Job—kurze Median-Reparatur, kein verstecktes DAW-Rack.',
@@ -14847,7 +14887,7 @@ const de: SiteLangDict = {
   tool_remove_clicks_from_a_recording_write: 'Schreiben',
   tool_remove_mains_hum_from_a_recording_advanced: 'Netzfrequenz und Obertöne',
   tool_remove_mains_hum_from_a_recording_article:
-    'Aufnahmen nahe Netzteilen, Dimmern oder schlecht geerdeten Geräten fangen oft ein stetiges 50- oder 60-Hz-Netzbrummen ein, manchmal mit Obertönen. Diese Seite verkettet BiquadFilter-Notches in OfflineAudioContext auf der gewählten Grundfrequenz und optional den 2.–5. Harmonischen unter Nyquist. Das zielt auf schmale elektrische Töne—nicht auf Lüfterrauschen-Denoise, nicht auf Klickreparatur und nicht auf ein Drei-Band-EQ für dumpfe Stimme. Bass nahe dem Notch kann etwas dünner werden. Kanalzahl bleibt 1 oder 2. Behalten Sie das Original; der Download ist eine neue 16-Bit-WAV. Die Arbeit läuft im Browser auf Ihrem Gerät.',
+    'Aufnahmen nahe Netzteilen, Dimmern oder schlecht geerdeten Geräten fangen oft ein stetiges 50- oder 60-Hz-Netzbrummen ein, manchmal mit Obertönen. Diese Seite verkettet EQ filter-Notches in on-device audio processing auf der gewählten Grundfrequenz und optional den 2.–5. Harmonischen unter Nyquist. Das zielt auf schmale elektrische Töne—nicht auf Lüfterrauschen-Denoise, nicht auf Klickreparatur und nicht auf ein Drei-Band-EQ für dumpfe Stimme. Bass nahe dem Notch kann etwas dünner werden. Kanalzahl bleibt 1 oder 2. Behalten Sie das Original; der Download ist eine neue 16-Bit-WAV. Die Arbeit läuft im Browser auf Ihrem Gerät.',
   tool_remove_mains_hum_from_a_recording_choose: 'Audiodatei wählen',
   tool_remove_mains_hum_from_a_recording_clear: 'Löschen',
   tool_remove_mains_hum_from_a_recording_convert: 'Entbrummen',
@@ -14931,6 +14971,7 @@ const de: SiteLangDict = {
     'Eine Sprachnotiz mit stetigem Netzbrummen von Ladegerät oder Dimmer—wählen Sie Ihre Netz-Hz, Entbrummen, WAV herunterladen.',
   tool_remove_mains_hum_from_a_recording_usecase_2:
     'Eine Feldaufnahme, bei der der Netzton weg muss, bevor Sie Breitband-Rauschen denoisen oder dumpfe Sprache EQ-en.',
+  tool_remove_mains_hum_from_a_recording_usecase_3: 'Ein 50/60-Hz-Brumm von Netzteilen ist unter dem Take hörbar.',
   tool_remove_mains_hum_from_a_recording_usecases_title: 'Wann das hilft',
   tool_remove_mains_hum_from_a_recording_why_choose_item_1: 'Sehen Sie Netz-Hz, Obertonmodus, Notch-Anzahl und Ausgabe-KiB vor dem Speichern.',
   tool_remove_mains_hum_from_a_recording_why_choose_item_2: 'Ein klarer Entbrumm-Job—50/60-Hz-Notches mit optionalen Obertönen, kein vergrabenes DAW-Rack.',
@@ -15059,7 +15100,7 @@ const de: SiteLangDict = {
   tool_remove_silence_from_a_recording_why_choose_title: 'Warum Stille aus einer Aufnahme entfernen nutzen',
   tool_remove_the_audio_track_from_a_video_advanced: 'Stumm-Hinweise',
   tool_remove_the_audio_track_from_a_video_article:
-    'Kurze Clips brauchen manchmal nur Bild, damit später eine neue Spur dran kann. Diese Seite öffnet ein lokales Video, erfasst Frames ohne Audiospuren, re-encodiert mit MediaRecorder und lädt eine stumme Datei—oft WebM je nach Browser. Sie lädt kein YouTube, extrahiert keine Soundtrack-Audiodatei und verspricht kein bitgleiches MP4-Remux. Erfolg hängt von Wiedergabe und MediaRecorder ab. Original behalten. Arbeit auf dem Gerät.',
+    'Kurze Clips brauchen manchmal nur Bild, damit später eine neue Spur dran kann. Diese Seite öffnet ein lokales Video, erfasst Frames ohne Audiospuren, re-encodiert mit browser media recording und lädt eine stumme Datei—oft WebM je nach Browser. Sie lädt kein YouTube, extrahiert keine Soundtrack-Audiodatei und verspricht kein bitgleiches MP4-Remux. Erfolg hängt von Wiedergabe und browser media recording ab. Original behalten. Arbeit auf dem Gerät.',
   tool_remove_the_audio_track_from_a_video_capture: 'Erfassen',
   tool_remove_the_audio_track_from_a_video_choose: 'Videodatei wählen',
   tool_remove_the_audio_track_from_a_video_clear: 'Leeren',
@@ -15067,7 +15108,7 @@ const de: SiteLangDict = {
   tool_remove_the_audio_track_from_a_video_desc:
     'Stummschalten eines lokalen Videos im Browser und Download eines Clips ohne Audio. Nur auf dem Gerät—kein YouTube-Download.',
   tool_remove_the_audio_track_from_a_video_description:
-    'Entferne die Audiospur aus einem lokalen Video im Browser und lade einen stummen Clip herunter. Schritte: Video wählen, Audio entfernen, Vorschau, Download. Beispiel: kurze Probe mit Ton laden. Nutzt captureStream ohne Audiospuren und MediaRecorder—oft WebM; kein verlustfreies Remux. Nie hochgeladen. Kein YouTube-Download.',
+    'Entferne die Audiospur aus einem lokalen Video im Browser und lade einen stummen Clip herunter. Schritte: Video wählen, Audio entfernen, Vorschau, Download. Beispiel: kurze Probe mit Ton laden. Nutzt captureStream ohne Audiospuren und browser media recording—oft WebM; kein verlustfreies Remux. Nie hochgeladen. Kein YouTube-Download.',
   tool_remove_the_audio_track_from_a_video_done: 'Fertig. Stummes Video ansehen, dann herunterladen.',
   tool_remove_the_audio_track_from_a_video_download: 'Stummes Video herunterladen',
   tool_remove_the_audio_track_from_a_video_elapsed: '{s}s vergangen',
@@ -15075,7 +15116,8 @@ const de: SiteLangDict = {
   tool_remove_the_audio_track_from_a_video_empty_state:
     'Noch kein Video. Lokale Datei ablegen oder Beispiel laden. Diese Seite stummschaltet—keine Audio-Extraktion, kein YouTube.',
   tool_remove_the_audio_track_from_a_video_err_decode: 'Browser konnte dieses Video nicht abspielen. Anderen Container oder kürzeren Clip versuchen.',
-  tool_remove_the_audio_track_from_a_video_err_encoder: 'MediaRecorder konnte kein stummes Video schreiben. Chrome/Edge oder kürzeres WebM/MP4 versuchen.',
+  tool_remove_the_audio_track_from_a_video_err_encoder:
+    'browser media recording konnte kein stummes Video schreiben. Chrome/Edge oder kürzeres WebM/MP4 versuchen.',
   tool_remove_the_audio_track_from_a_video_err_file: 'Unterstütztes lokales Video wählen.',
   tool_remove_the_audio_track_from_a_video_err_format: 'Nicht unterstützt oder nicht abspielbar. MP4, WebM, MOV oder M4V. Keine YouTube-URLs.',
   tool_remove_the_audio_track_from_a_video_err_limit: 'Lokales Video bis 80 MiB und etwa 3 Minuten.',
@@ -15085,10 +15127,10 @@ const de: SiteLangDict = {
   tool_remove_the_audio_track_from_a_video_failed: 'Stummschalten fehlgeschlagen. Kürzeren abspielbaren Clip versuchen.',
   tool_remove_the_audio_track_from_a_video_faq_a1: 'Nein. Nur lokale Videodateien. Nie YouTube oder andere Remote-Medien.',
   tool_remove_the_audio_track_from_a_video_faq_a2:
-    'Meist nicht. Browser re-encodieren mit MediaRecorder nach Video-only-Capture. Oft WebM; Qualität kann abweichen.',
+    'Meist nicht. Browser re-encodieren mit browser media recording nach Video-only-Capture. Oft WebM; Qualität kann abweichen.',
   tool_remove_the_audio_track_from_a_video_faq_a3: 'Nein. Extrahieren speichert den Soundtrack als Audio. Diese Seite behält das Bild und entfernt Ton.',
   tool_remove_the_audio_track_from_a_video_faq_a4:
-    'Browser muss die Datei abspielen und MediaRecorder für ein Video-MIME unterstützen. Kürzeres MP4/WebM oder anderen Browser versuchen.',
+    'Browser muss die Datei abspielen und browser media recording für ein Video-MIME unterstützen. Kürzeres MP4/WebM oder anderen Browser versuchen.',
   tool_remove_the_audio_track_from_a_video_faq_a5: 'Nein. Alles im Browser. Netz beim ersten Laden nötig; Offline nicht garantiert.',
   tool_remove_the_audio_track_from_a_video_faq_a6:
     'Audio separat vorbereiten—z. B. Voiceover mit Musik mischen—dann Videoeditor mit neuer Spur. Diese Seite entfernt nur Audio.',
@@ -15114,7 +15156,7 @@ const de: SiteLangDict = {
   tool_remove_the_audio_track_from_a_video_record: 'Aufnehmen',
   tool_remove_the_audio_track_from_a_video_result: '{seconds}s · stumm · {mime} · {output} KiB',
   tool_remove_the_audio_track_from_a_video_rules_body:
-    'Jeder Lauf erfasst Video ohne Audiospuren und re-encodiert mit MediaRecorder. Ausgabe oft WebM. Kein YouTube-Download, keine Audio-Extraktion, kein garantiertes Remux.',
+    'Jeder Lauf erfasst Video ohne Audiospuren und re-encodiert mit browser media recording. Ausgabe oft WebM. Kein YouTube-Download, keine Audio-Extraktion, kein garantiertes Remux.',
   tool_remove_the_audio_track_from_a_video_rules_item_1: 'Ein lokales Video bis 80 MiB und etwa drei Minuten. Muss zuerst im Browser abspielbar sein.',
   tool_remove_the_audio_track_from_a_video_rules_item_2: 'Audiospuren werden aus dem Capture-Stream entfernt. Container und Codec können sich ändern.',
   tool_remove_the_audio_track_from_a_video_rules_item_3: 'Kein YouTube, Podcast-URL oder Remote-Download. Einfügen nicht unterstützt.',
@@ -15124,20 +15166,21 @@ const de: SiteLangDict = {
   tool_remove_the_audio_track_from_a_video_sample: 'Beispiel laden',
   tool_remove_the_audio_track_from_a_video_sample_name: 'stumm-probe',
   tool_remove_the_audio_track_from_a_video_settings_hint:
-    'Browser re-encodieren meist mit MediaRecorder nach dem Entfernen der Audiospuren. Ausgabe oft WebM, kein verlustfreies Remux. Diese Seite lädt nie YouTube.',
+    'Browser re-encodieren meist mit browser media recording nach dem Entfernen der Audiospuren. Ausgabe oft WebM, kein verlustfreies Remux. Diese Seite lädt nie YouTube.',
   tool_remove_the_audio_track_from_a_video_title: 'Audiospur aus einem Video entfernen',
   tool_remove_the_audio_track_from_a_video_usecase_1: 'Handy-Clip braucht stummen Master, bevor anderswo neues Voiceover oder Bett dazu kommt.',
   tool_remove_the_audio_track_from_a_video_usecase_2: 'Nur Bild für Social Upload ohne originales Raum-Audio.',
+  tool_remove_the_audio_track_from_a_video_usecase_3: 'Du brauchst stummes Bild, um später eine neue Spur zu legen.',
   tool_remove_the_audio_track_from_a_video_usecases_title: 'Wann das hilft',
   tool_remove_the_audio_track_from_a_video_why_choose_item_1: 'Dauer, Stumm-Status, MIME und Ausgabe-KiB vor dem Speichern sehen.',
-  tool_remove_the_audio_track_from_a_video_why_choose_item_2: 'Klarer Stumm-Job mit ehrlichen MediaRecorder-Grenzen—kein falsches Remux-Versprechen.',
+  tool_remove_the_audio_track_from_a_video_why_choose_item_2: 'Klarer Stumm-Job mit ehrlichen browser media recording-Grenzen—kein falsches Remux-Versprechen.',
   tool_remove_the_audio_track_from_a_video_why_choose_item_3: 'Lesen und Aufnehmen auf dem Gerät; die Seite lädt dein Video nicht hoch.',
   tool_remove_the_audio_track_from_a_video_why_choose_item_4: 'Dateiwechel löscht den alten Download, damit kein veralteter Clip gespeichert wird.',
   tool_remove_the_audio_track_from_a_video_why_choose_title: 'Warum unsere Tools zum Entfernen der Audiospur',
   tool_remove_the_audio_track_from_a_video_write: 'Schreiben',
   tool_replace_the_audio_in_a_video_file_advanced: 'Hinweise zum Ersetzen',
   tool_replace_the_audio_in_a_video_file_article:
-    'Falsche BGM oder eine schwache Spur braucht oft einen kompletten Soundtrack-Tausch vor dem Teilen. Diese Seite öffnet lokales Video und Ersatz-Audio, entfernt Originalton, erfasst Bild, dekodiert den neuen Soundtrack im AudioContext, kodiert mit MediaRecorder neu und lädt herunter—oft WebM je nach Browser. Länge folgt dem Video; längeres Audio wird gekürzt, kürzeres endet früher. Kein YouTube- oder URL-Download, nicht nur Stummschalten ohne neuen Ton und nicht nur „Audio zu stummem Clip hinzufügen“. Erfolg hängt von Wiedergabe beider Dateien und MediaRecorder mit Audio ab. Originale behalten. Alles läuft auf Ihrem Gerät.',
+    'Falsche BGM oder eine schwache Spur braucht oft einen kompletten Soundtrack-Tausch vor dem Teilen. Diese Seite öffnet lokales Video und Ersatz-Audio, entfernt Originalton, erfasst Bild, dekodiert den neuen Soundtrack im the browser audio engine, kodiert mit browser media recording neu und lädt herunter—oft WebM je nach Browser. Länge folgt dem Video; längeres Audio wird gekürzt, kürzeres endet früher. Kein YouTube- oder URL-Download, nicht nur Stummschalten ohne neuen Ton und nicht nur „Audio zu stummem Clip hinzufügen“. Erfolg hängt von Wiedergabe beider Dateien und browser media recording mit Audio ab. Originale behalten. Alles läuft auf Ihrem Gerät.',
   tool_replace_the_audio_in_a_video_file_audio_label: 'Neues Audio: {name}',
   tool_replace_the_audio_in_a_video_file_choose_audio: 'Neue Audiodatei wählen',
   tool_replace_the_audio_in_a_video_file_choose_video: 'Videodatei wählen',
@@ -15147,7 +15190,7 @@ const de: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_desc:
     'Ersetzen Sie den Soundtrack eines lokalen Videos durch eine andere Audiodatei und laden Sie herunter. Nur auf dem Gerät—kein YouTube-Download.',
   tool_replace_the_audio_in_a_video_file_description:
-    'Ersetzen Sie im Browser den Soundtrack eines lokalen Videos durch eine andere Audiodatei und laden Sie herunter. Schritte: Video und neues Audio wählen, Audio ersetzen, Vorschau, Download. Beispiel: Clip mit altem Ton gegen neues WAV tauschen. Nutzt captureStream und MediaRecorder—oft WebM; kein verlustfreies Remux. Nie hochgeladen. Kein YouTube-Download.',
+    'Ersetzen Sie im Browser den Soundtrack eines lokalen Videos durch eine andere Audiodatei und laden Sie herunter. Schritte: Video und neues Audio wählen, Audio ersetzen, Vorschau, Download. Beispiel: Clip mit altem Ton gegen neues WAV tauschen. Nutzt captureStream und browser media recording—oft WebM; kein verlustfreies Remux. Nie hochgeladen. Kein YouTube-Download.',
   tool_replace_the_audio_in_a_video_file_done: 'Fertig. Video mit neuem Soundtrack prüfen, dann herunterladen.',
   tool_replace_the_audio_in_a_video_file_download: 'Herunterladen',
   tool_replace_the_audio_in_a_video_file_elapsed: '{s}s vergangen',
@@ -15156,7 +15199,7 @@ const de: SiteLangDict = {
     'Noch keine Dateien. Lokales Video und Ersatz-Soundtrack ablegen oder Beispiel laden. Dieses Tool tauscht den Soundtrack—nicht nur stumm und kein YouTube-Download.',
   tool_replace_the_audio_in_a_video_file_err_decode: 'Browser konnte Video oder Audio nicht dekodieren. Anderen Container oder kürzeren Clip versuchen.',
   tool_replace_the_audio_in_a_video_file_err_encoder:
-    'MediaRecorder konnte kein Video mit ersetztem Audio schreiben. Chrome/Edge oder kürzeres WebM/MP4 plus WAV/MP3 versuchen.',
+    'browser media recording konnte kein Video mit ersetztem Audio schreiben. Chrome/Edge oder kürzeres WebM/MP4 plus WAV/MP3 versuchen.',
   tool_replace_the_audio_in_a_video_file_err_file: 'Je eine unterstützte lokale Videodatei und eine neue Audiodatei wählen.',
   tool_replace_the_audio_in_a_video_file_err_format:
     'Nicht unterstützte oder nicht abspielbare Dateien. Gängige Video-/Audiotypen nutzen. Keine YouTube-URLs.',
@@ -15171,7 +15214,7 @@ const de: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_faq_a3:
     'Hinzufügen zielt oft auf stumme oder schwach vertonte Clips. Hier geht es ausdrücklich darum, den vorhandenen Soundtrack durch eine andere Datei zu ersetzen.',
   tool_replace_the_audio_in_a_video_file_faq_a4:
-    'Meist nicht. Browser kodieren typischerweise mit MediaRecorder neu, oft zu WebM. Qualität und Container können sich ändern.',
+    'Meist nicht. Browser kodieren typischerweise mit browser media recording neu, oft zu WebM. Qualität und Container können sich ändern.',
   tool_replace_the_audio_in_a_video_file_faq_a5:
     'Nein. Dekodierung und Aufnahme laufen im Browser auf Ihrem Gerät. Beim ersten Laden braucht die Seite Netz; Offline-Nutzung ist nicht garantiert.',
   tool_replace_the_audio_in_a_video_file_faq_a6: 'Der Tausch folgt der Videodauer. Audio hinter dem Bildende bleibt nicht im Download.',
@@ -15197,7 +15240,7 @@ const de: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_read: 'Lesen',
   tool_replace_the_audio_in_a_video_file_result: '{seconds}s · Audio ersetzt · {mime} · {output} KiB',
   tool_replace_the_audio_in_a_video_file_rules_body:
-    'Jeder Lauf entfernt Originalton, hängt Ihren neuen Soundtrack an und kodiert mit MediaRecorder neu. Ausgabe oft WebM. Kein YouTube-Download und nicht nur stumm.',
+    'Jeder Lauf entfernt Originalton, hängt Ihren neuen Soundtrack an und kodiert mit browser media recording neu. Ausgabe oft WebM. Kein YouTube-Download und nicht nur stumm.',
   tool_replace_the_audio_in_a_video_file_rules_item_1:
     'Ein lokales Video bis 80 MiB und etwa drei Minuten plus ein lokales Audio bis 40 MiB. Wiedergabe/Dekodierung zuerst.',
   tool_replace_the_audio_in_a_video_file_rules_item_2: 'Ausgabelänge folgt dem Video. Längeres Audio wird gekürzt; kürzeres endet vor dem Bild.',
@@ -15208,17 +15251,18 @@ const de: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_sample: 'Beispiel laden',
   tool_replace_the_audio_in_a_video_file_sample_name: 'audio-ersetzen-beispiel',
   tool_replace_the_audio_in_a_video_file_settings_hint:
-    'Browser kodieren meist mit MediaRecorder neu, nachdem Originalton entfernt und Ihr neuer Soundtrack angehängt wurde. Ausgabe oft WebM, kein verlustfreies Remux. Diese Seite lädt nie YouTube herunter.',
+    'Browser kodieren meist mit browser media recording neu, nachdem Originalton entfernt und Ihr neuer Soundtrack angehängt wurde. Ausgabe oft WebM, kein verlustfreies Remux. Diese Seite lädt nie YouTube herunter.',
   tool_replace_the_audio_in_a_video_file_title: 'Audio in einer Videodatei ersetzen',
   tool_replace_the_audio_in_a_video_file_usecase_1:
     'Falsche BGM aufgenommen und besseres lokales WAV vorhanden—hier tauschen und zum Teilen herunterladen.',
   tool_replace_the_audio_in_a_video_file_usecase_2:
     'Schwache eingebaute Spur durch klareren lokalen Soundtrack ersetzen, ohne Desktop-Editor zu installieren.',
+  tool_replace_the_audio_in_a_video_file_usecase_3: 'Falsches BGM muss getauscht werden, das Bild bleibt.',
   tool_replace_the_audio_in_a_video_file_usecases_title: 'Wann das hilft',
   tool_replace_the_audio_in_a_video_file_video_label: 'Video: {name}',
   tool_replace_the_audio_in_a_video_file_why_choose_item_1: 'Dauer, MIME-Typ und Ausgabe-KiB vor dem Speichern sichtbar.',
   tool_replace_the_audio_in_a_video_file_why_choose_item_2:
-    'Ein klarer Soundtrack-Tausch mit ehrlichen MediaRecorder-Grenzen—kein vorgetäuschtes verlustfreies Remux.',
+    'Ein klarer Soundtrack-Tausch mit ehrlichen browser media recording-Grenzen—kein vorgetäuschtes verlustfreies Remux.',
   tool_replace_the_audio_in_a_video_file_why_choose_item_3: 'Lesen und Aufnehmen laufen auf Ihrem Gerät; Dateien werden nicht hochgeladen.',
   tool_replace_the_audio_in_a_video_file_why_choose_item_4: 'Wechsel einer Datei löscht den alten Download, damit kein veralteter Tausch gespeichert wird.',
   tool_replace_the_audio_in_a_video_file_why_choose_title: 'Warum unsere Tools zum Ersetzen von Video-Audio',
@@ -15290,6 +15334,7 @@ const de: SiteLangDict = {
   tool_reverse_an_audio_file_title: 'Eine Audiodatei umkehren',
   tool_reverse_an_audio_file_usecase_1: 'Kurzer Effekt oder Musik-Sting, der rückwärts laufen soll—Umkehren, WAV laden.',
   tool_reverse_an_audio_file_usecase_2: 'Hallschweif prüfen, indem das Ende zuerst kommt—kein 8D-Sweep, keine Fade-Hüllkurven.',
+  tool_reverse_an_audio_file_usecase_3: 'Ein kurzes Sample soll rückwärts für Übergang oder Effekt laufen.',
   tool_reverse_an_audio_file_usecases_title: 'Wann das hilft',
   tool_reverse_an_audio_file_why_choose_item_1: 'Siehst Sekunden, Kanalzahl und Ausgabe-KiB vor dem Speichern.',
   tool_reverse_an_audio_file_why_choose_item_2: 'Ein klarer Umkehr-Job—nicht in DAW-Automation versteckt.',
@@ -15893,6 +15938,7 @@ const de: SiteLangDict = {
   tool_shift_a_recording_toward_a_higher_or_lower_voice_title: 'Eine Aufnahme zu einer höheren oder tieferen Stimme verschieben',
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_1: 'Voice-over etwas zu tief—Höher wählen, Verschieben, WAV herunterladen.',
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_2: 'Kurzer Sprachclip braucht tieferen Ton ohne Längenänderung wie ein Spielzeug-Riese.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_3: 'Eine VO braucht etwas höhere oder tiefere Farbe ohne volle Pitch-Suite.',
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecases_title: 'Wann das hilft',
   tool_shift_a_recording_toward_a_higher_or_lower_voice_voice_label: 'Stimmlagen-Preset (Dauer erhalten)',
   tool_shift_a_recording_toward_a_higher_or_lower_voice_why_choose_item_1: 'Eingabe-/Ausgabesekunden, Presetname und KiB vor dem Speichern sehen.',
@@ -15980,6 +16026,7 @@ const de: SiteLangDict = {
   tool_shift_the_pitch_of_a_song_title: 'Die Tonhöhe eines Songs verschieben',
   tool_shift_the_pitch_of_a_song_usecase_1: 'Begleitung zu hoch—−2 wählen, Verschieben, WAV herunterladen.',
   tool_shift_the_pitch_of_a_song_usecase_2: 'Kurzer Clip braucht +1 oder +2 ohne Nightcore-Beschleunigung.',
+  tool_shift_the_pitch_of_a_song_usecase_3: 'Karaoke oder Cover braucht ein paar Halbtöne hoch/tief bei gehaltener Dauer.',
   tool_shift_the_pitch_of_a_song_usecases_title: 'Wann das hilft',
   tool_shift_the_pitch_of_a_song_why_choose_item_1: 'Eingabe-/Ausgabesekunden, Halbtonoffset und KiB vor dem Speichern sehen.',
   tool_shift_the_pitch_of_a_song_why_choose_item_2: 'Ein klarer Transpositionsjob—Halbton-Pitch mit angestrebter Dauer, keine versteckten DAW-Maps.',
@@ -17139,6 +17186,7 @@ const de: SiteLangDict = {
   tool_split_stereo_into_left_and_right_files_usecase_1:
     'Einem Editor getrennte linke und rechte Mono-WAVs aus einem Stereo-Interview oder Dual-Mic-Take geben.',
   tool_split_stereo_into_left_and_right_files_usecase_2: 'Einen falsch verdrahteten Stereo-Export vor der Veröffentlichung mit L-R tauschen korrigieren.',
+  tool_split_stereo_into_left_and_right_files_usecase_3: 'Ein Stereo-Interview soll getrennte Links-/Rechts-Mono-Dateien werden.',
   tool_split_stereo_into_left_and_right_files_usecases_title: 'Wann das hilft',
   tool_split_stereo_into_left_and_right_files_why_choose_item_1: 'Sie sehen gemessene Dauer, Quellkanäle, Modus und Ausgabe-KiB vor dem Speichern.',
   tool_split_stereo_into_left_and_right_files_why_choose_item_2:
@@ -17621,44 +17669,44 @@ const de: SiteLangDict = {
   tool_tip_usecases_title: 'Wann sinnvoll',
   tool_transcribe_an_audio_file_to_text_advanced: 'Honest limits',
   tool_transcribe_an_audio_file_to_text_article:
-    'People search for audio to text and speech to text expecting a Whisper-class transcript. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses the Web Speech API SpeechRecognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), or you can dictate live with the mic. If SpeechRecognition is missing, the page says so clearly. Output is plain text you can edit and download as TXT—not timed SRT. Related tools cover waveform video and voice memos. Keep expectations honest: accuracy and file support vary by browser.',
+    'People search for audio to text and speech to text expecting a large-model-class transcript. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses the browser speech recognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), or you can dictate live with the mic. If browser speech recognition is missing, the page says so clearly. Output is plain text you can edit and download as TXT—not timed SRT. Related tools cover waveform video and voice memos. Keep expectations honest: accuracy and file support vary by browser.',
   tool_transcribe_an_audio_file_to_text_choose: 'Choose an audio file',
   tool_transcribe_an_audio_file_to_text_clear: 'Leeren',
   tool_transcribe_an_audio_file_to_text_convert: 'Beim Abspielen transkribieren',
   tool_transcribe_an_audio_file_to_text_decode: 'Decode',
   tool_transcribe_an_audio_file_to_text_desc:
-    'Lokale Sprache mit SpeechRecognition des Browsers in bearbeitbaren Text verwandeln—oder per Mikrofon diktieren. Kein Whisper-Klon.',
+    'Lokale Sprache mit browser speech recognition des Browsers in bearbeitbaren Text verwandeln—oder per Mikrofon diktieren. Kein a large speech model-Klon.',
   tool_transcribe_an_audio_file_to_text_description:
-    'Transkribieren Sie eine Audiodatei im Browser mit SpeechRecognition, falls vorhanden. Schritte: lokale Audiodatei wählen, Sprache wählen, Beim Abspielen transkribieren oder Mit Mikrofon diktieren, bearbeiten, TXT herunterladen. Beispiel: Beispiel laden öffnet einen kurzen Ton und die Abspielpfad—echte Sprache braucht eine Aufnahme oder das Mikrofon. Kein Whisper-Klon und kein großes wasm-Modell. Viele Browser können hochgeladene Dateien nicht zuverlässig offline transkribieren. Diese Seite lädt Ihre Datei nicht für Server-ASR hoch.',
+    'Transkribieren Sie eine Audiodatei im Browser mit browser speech recognition, falls vorhanden. Schritte: lokale Audiodatei wählen, Sprache wählen, Beim Abspielen transkribieren oder Mit Mikrofon diktieren, bearbeiten, TXT herunterladen. Beispiel: Beispiel laden öffnet einen kurzen Ton und die Abspielpfad—echte Sprache braucht eine Aufnahme oder das Mikrofon. Kein a large speech model-Klon und kein großes offline model-Modell. Viele Browser können hochgeladene Dateien nicht zuverlässig offline transkribieren. Diese Seite lädt Ihre Datei nicht für Server-ASR hoch.',
   tool_transcribe_an_audio_file_to_text_done: 'Ready. Edit the text if needed, then Download TXT.',
   tool_transcribe_an_audio_file_to_text_download: 'TXT herunterladen',
   tool_transcribe_an_audio_file_to_text_elapsed: '{s}s elapsed',
   tool_transcribe_an_audio_file_to_text_empty: 'Choose a local audio file, or use Dictate with mic.',
   tool_transcribe_an_audio_file_to_text_empty_state:
-    'No transcript yet. Drop a voice recording and Transcribe while playing, or click Dictate with mic. Not a Whisper clone—browser SpeechRecognition only, with honest limits.',
+    'No transcript yet. Drop a voice recording and Transcribe while playing, or click Dictate with mic. Not a a large speech model clone—browser browser speech recognition only, with honest limits.',
   tool_transcribe_an_audio_file_to_text_err_decode: 'The browser could not decode this audio file.',
   tool_transcribe_an_audio_file_to_text_err_file: 'Choose one local audio file, or use Dictate with mic.',
   tool_transcribe_an_audio_file_to_text_err_format: 'Unsupported audio type. Use a common format your browser can decode.',
   tool_transcribe_an_audio_file_to_text_err_limit: 'Use audio up to about 40 MiB and 3 minutes.',
   tool_transcribe_an_audio_file_to_text_err_permission: 'Microphone or speech permission was denied. Allow access or use another browser.',
-  tool_transcribe_an_audio_file_to_text_err_unsupported: 'SpeechRecognition is unavailable in this browser.',
+  tool_transcribe_an_audio_file_to_text_err_unsupported: 'browser speech recognition is unavailable in this browser.',
   tool_transcribe_an_audio_file_to_text_example:
     'Load sample attaches a short tone WAV and runs Transcribe while playing. A tone will not produce words—use a real voice file or Dictate with mic to see text. Playback never auto-starts after a finished transcript.',
   tool_transcribe_an_audio_file_to_text_example_title: 'Try the sample playthrough path',
   tool_transcribe_an_audio_file_to_text_failed: 'Could not transcribe. Try Dictate with mic, another browser, or a clearer voice recording.',
   tool_transcribe_an_audio_file_to_text_faq_a1:
-    'Nein. Kein Whisper-wasm und kein Upload zu unseren Servern für ASR. Nutzt SpeechRecognition des Browsers, wenn verfügbar.',
+    'Nein. Kein a large speech model-offline model und kein Upload zu unseren Servern für ASR. Nutzt browser speech recognition des Browsers, wenn verfügbar.',
   tool_transcribe_an_audio_file_to_text_faq_a2:
     'Most browsers listen via the microphone, not a private WebAudio tap. Playthrough needs the mic to hear the speakers, plus permission. If that fails, use Dictate with mic.',
   tool_transcribe_an_audio_file_to_text_faq_a3:
-    'Chromium-based browsers with webkitSpeechRecognition are the most common. Safari/Firefox support varies. If unsupported, the page shows a clear message.',
+    'Chromium-based browsers with webkitbrowser speech recognition are the most common. Safari/Firefox support varies. If unsupported, the page shows a clear message.',
   tool_transcribe_an_audio_file_to_text_faq_a4:
     'Not on this page. Output is editable plain text (TXT). A dedicated subtitle scene would be a different tool.',
   tool_transcribe_an_audio_file_to_text_faq_a5:
-    'This page does not upload the file for processing. SpeechRecognition may use the microphone and a browser vendor service. Keep sensitive material offline if that is unacceptable.',
+    'This page does not upload the file for processing. browser speech recognition may use the microphone and a browser vendor service. Keep sensitive material offline if that is unacceptable.',
   tool_transcribe_an_audio_file_to_text_faq_a6:
     'Voice memo captures audio for download. This page aims for text. Use the memo tool when you need a recording, and this one when you need a transcript.',
-  tool_transcribe_an_audio_file_to_text_faq_q1: 'Ist das ein Whisper-Klon oder Cloud-ASR-Upload?',
+  tool_transcribe_an_audio_file_to_text_faq_q1: 'Ist das ein a large speech model-Klon oder Cloud-ASR-Upload?',
   tool_transcribe_an_audio_file_to_text_faq_q2: 'Why did my uploaded file produce little or no text?',
   tool_transcribe_an_audio_file_to_text_faq_q3: 'Which browsers work best?',
   tool_transcribe_an_audio_file_to_text_faq_q4: 'Can I get SRT subtitles with timestamps?',
@@ -17666,7 +17714,7 @@ const de: SiteLangDict = {
   tool_transcribe_an_audio_file_to_text_faq_q6: 'How is this different from recording a voice memo?',
   tool_transcribe_an_audio_file_to_text_file_label: 'Audio: {name}',
   tool_transcribe_an_audio_file_to_text_hint:
-    'Optional local WAV, MP3 or M4A up to about 40 MiB / 3 minutes. File transcription depends on browser SpeechRecognition and often needs speakers plus microphone permission.',
+    'Optional local WAV, MP3 or M4A up to about 40 MiB / 3 minutes. File transcription depends on browser browser speech recognition and often needs speakers plus microphone permission.',
   tool_transcribe_an_audio_file_to_text_how_body: 'Use browser speech recognition on a local file playthrough or live mic dictation, then download TXT.',
   tool_transcribe_an_audio_file_to_text_how_item_1: 'Choose a local voice recording (or Load sample), and pick a recognition language.',
   tool_transcribe_an_audio_file_to_text_how_item_2:
@@ -17675,7 +17723,8 @@ const de: SiteLangDict = {
   tool_transcribe_an_audio_file_to_text_how_item_4: 'Edit the text if needed, then Download TXT.',
   tool_transcribe_an_audio_file_to_text_how_title: 'So wandeln Sie eine Audiodatei in Text um',
   tool_transcribe_an_audio_file_to_text_interim_label: 'Interim (live)',
-  tool_transcribe_an_audio_file_to_text_lang_hint: 'Passed to SpeechRecognition.lang. Pick the language spoken in the recording or into the mic.',
+  tool_transcribe_an_audio_file_to_text_lang_hint:
+    'Passed to browser speech recognition.lang. Pick the language spoken in the recording or into the mic.',
   tool_transcribe_an_audio_file_to_text_lang_label: 'Recognition language',
   tool_transcribe_an_audio_file_to_text_listen: 'Listen',
   tool_transcribe_an_audio_file_to_text_mic: 'Mit Mikrofon diktieren',
@@ -17684,36 +17733,37 @@ const de: SiteLangDict = {
   tool_transcribe_an_audio_file_to_text_read: 'Read',
   tool_transcribe_an_audio_file_to_text_result: '{chars} characters · {words} words',
   tool_transcribe_an_audio_file_to_text_rules_body:
-    'This page uses Web Speech API SpeechRecognition when present. It is not offline Whisper. File upload transcription is best-effort and may fall back to live mic.',
+    'This page uses browser speech recognition when present. It is not an offline large speech model. File upload transcription is best-effort and may fall back to live mic.',
   tool_transcribe_an_audio_file_to_text_rules_item_1:
-    'SpeechRecognition must exist. Otherwise the unsupported banner stays visible and primary actions stay disabled.',
+    'browser speech recognition must exist. Otherwise the unsupported banner stays visible and primary actions stay disabled.',
   tool_transcribe_an_audio_file_to_text_rules_item_2:
     'Recognition typically uses the microphone. Playing a file does not guarantee a private decode→text path.',
   tool_transcribe_an_audio_file_to_text_rules_item_3: 'Optional file up to about 40 MiB / 3 minutes. Output is plain TXT, not SRT subtitles.',
   tool_transcribe_an_audio_file_to_text_rules_item_4:
-    'This page does not upload your file for server-side Whisper. Browser vendors may still send mic audio to their speech service—check your browser privacy settings.',
+    'This page does not upload your file for server-side speech recognition. Browser vendors may still send mic audio to their speech service—check your browser privacy settings.',
   tool_transcribe_an_audio_file_to_text_rules_title: 'Transcription rules and honest browser limits',
   tool_transcribe_an_audio_file_to_text_sample: 'Beispiel laden',
   tool_transcribe_an_audio_file_to_text_sample_name: 'transcribe-sample',
   tool_transcribe_an_audio_file_to_text_settings_hint:
-    'SpeechRecognition usually listens to the microphone—not a private WebAudio tap. Playing a file may work only if the mic hears the speakers. Many browsers lack reliable file ASR. This is not Whisper and does not download a large model.',
+    'browser speech recognition usually listens to the microphone—not a private WebAudio tap. Playing a file may work only if the mic hears the speakers. Many browsers lack reliable file ASR. This is not a large speech model and does not download a large model.',
   tool_transcribe_an_audio_file_to_text_status_listening:
-    'Playback finished with little or no text. SpeechRecognition often needs the microphone to hear the speakers—try Dictate with mic, raise volume, or allow mic access.',
+    'Playback finished with little or no text. browser speech recognition often needs the microphone to hear the speakers—try Dictate with mic, raise volume, or allow mic access.',
   tool_transcribe_an_audio_file_to_text_status_mic: 'Listening to the microphone… speak clearly, then Stop.',
-  tool_transcribe_an_audio_file_to_text_status_playing: 'Playing the file and listening via SpeechRecognition (mic path)…',
+  tool_transcribe_an_audio_file_to_text_status_playing: 'Playing the file and listening via browser speech recognition (mic path)…',
   tool_transcribe_an_audio_file_to_text_status_unsupported:
-    'This browser does not expose SpeechRecognition / webkitSpeechRecognition. Try Chrome or Edge, or use a different device. True offline Whisper-style ASR is not bundled here.',
+    'This browser does not expose browser speech recognition / webkitbrowser speech recognition. Try Chrome or Edge, or use a different device. True offline a large speech model-style ASR is not bundled here.',
   tool_transcribe_an_audio_file_to_text_stop: 'Stopp',
   tool_transcribe_an_audio_file_to_text_title: 'Eine Audiodatei in Text umwandeln',
   tool_transcribe_an_audio_file_to_text_usecase_1:
     'You want a rough transcript of a short voice note in a Chromium browser without installing desktop software.',
   tool_transcribe_an_audio_file_to_text_usecase_2: 'File loopback fails, so you dictate the same content live with the mic and download TXT.',
+  tool_transcribe_an_audio_file_to_text_usecase_3: 'Du brauchst einen Transkript-Entwurf aus der Browser-Erkennung zum Notieren.',
   tool_transcribe_an_audio_file_to_text_usecases_title: 'When this helps',
   tool_transcribe_an_audio_file_to_text_why_choose_item_1: 'Clear dual path: file playthrough attempt plus mic dictation fallback.',
-  tool_transcribe_an_audio_file_to_text_why_choose_item_2: 'Honest copy: not Whisper, no huge wasm model, browser limits stated up front.',
+  tool_transcribe_an_audio_file_to_text_why_choose_item_2: 'Honest copy: not a large speech model, no huge offline model model, browser limits stated up front.',
   tool_transcribe_an_audio_file_to_text_why_choose_item_3: 'You can edit the transcript before downloading TXT.',
   tool_transcribe_an_audio_file_to_text_why_choose_item_4: 'Nearby tools cover waveform video and voice memos without forcing a hub editor.',
-  tool_transcribe_an_audio_file_to_text_why_choose_title: 'Why choose our Transcribe an audio file to text tools',
+  tool_transcribe_an_audio_file_to_text_why_choose_title: 'Warum unsere Audiodatei-in-Text-Umwandlungswerkzeuge',
   tool_transcribe_an_audio_file_to_text_write: 'Write',
   tool_triangle_area_areaOut_label: 'Fläche',
   tool_triangle_area_article: 'Dreiecksflächen-Rechner',

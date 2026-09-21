@@ -63,6 +63,7 @@ const ar: SiteLangDict = {
   tool_mix_a_voiceover_with_background_music_usecases_title: "متى يفيد ذلك",
   tool_mix_a_voiceover_with_background_music_usecase_1: "تسجيل كلام يحتاج طبقة هادئة—أضف الاثنين، اخفض الطبقة أو فعّل الوميض، امزج، نزّل.",
   tool_mix_a_voiceover_with_background_music_usecase_2: "استخرجت صوتًا من فيديو وتريد تعليقًا جديدًا فوقه دون رافع مزج عبر الإنترنت.",
+  tool_mix_a_voiceover_with_background_music_usecase_3: "تعليق جاف يحتاج موسيقى خلفية أهدأ دون خلاط كامل.",
   tool_mix_a_voiceover_with_background_music_faq_q1: "هل هذا مثل وصل ملفات الصوت واحدًا تلو الآخر؟",
   tool_mix_a_voiceover_with_background_music_faq_a1: "لا. الوصل يضع المقاطع متتالية. هذه الصفحة تشغّل الصوت والطبقة معًا.",
   tool_mix_a_voiceover_with_background_music_faq_q2: "هل يوجد تقاطع تلاشي بين الأغاني؟",

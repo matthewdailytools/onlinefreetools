@@ -61,6 +61,7 @@ const es: SiteLangDict = {
   tool_convert_stereo_audio_to_mono_usecases_title: "Cuándo ayuda",
   tool_convert_stereo_audio_to_mono_usecase_1: "Entregar una nota de voz estéreo o una cama de podcast a un formulario que solo acepta subida mono.",
   tool_convert_stereo_audio_to_mono_usecase_2: "Conservar solo el micrófono izquierdo (o derecho) de una entrevista cuando el otro lado es ruido o silencio.",
+  tool_convert_stereo_audio_to_mono_usecase_3: "Una entrevista estéreo debe ser mono para IVR o un solo altavoz.",
   tool_convert_stereo_audio_to_mono_faq_q1: "¿Qué hace Mezclar a mono con izquierda y derecha?",
   tool_convert_stereo_audio_to_mono_faq_a1: "Promedia cada muestra de los canales izquierdo y derecho ((L+R)/2) en una pista mono y escribe WAV PCM de 16 bits. Los panes extremos suenan más bajos; el audio en fase opuesta puede adelgazarse—escucha antes de descargar.",
   tool_convert_stereo_audio_to_mono_faq_q2: "¿Puedo convertir un MP3 o M4A a WAV mono?",

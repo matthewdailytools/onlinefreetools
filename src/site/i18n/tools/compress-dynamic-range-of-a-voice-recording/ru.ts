@@ -84,6 +84,7 @@ const ru: SiteLangDict = {
   tool_compress_dynamic_range_of_a_voice_recording_usecases_title: "Когда это помогает",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_1: "Закадр, который прыгает от тихих фраз к громким пикам—выберите Подкаст, сожмите, скачайте WAV.",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_2: "Интервью, которое хотите выровнять перед громкостью LUFS, не уменьшая MP3 ради размера.",
+  tool_compress_dynamic_range_of_a_voice_recording_usecase_3: "Шёпот и пики в одном дубле — выровнять громкость прослушивания.",
   tool_compress_dynamic_range_of_a_voice_recording_faq_q1: "Это то же, что сжать / уменьшить размер MP3-файла?",
   tool_compress_dynamic_range_of_a_voice_recording_faq_a1:
     "Нет. Здесь «сжать» — динамический диапазон (порог/соотношение), не битрейт или байты. Для меньших MP3 используйте Reduce an MP3 file size. По-китайски: 压缩人声动态 ≠ 压缩 MP3 体积.",

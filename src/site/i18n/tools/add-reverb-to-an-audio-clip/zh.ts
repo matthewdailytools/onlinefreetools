@@ -62,6 +62,7 @@ const zh: SiteLangDict = {
   tool_add_reverb_to_an_audio_clip_usecases_title: "适用场景",
   tool_add_reverb_to_an_audio_clip_usecase_1: "干旁白需要一点房间气——选房间，加混响，下载 WAV。",
   tool_add_reverb_to_an_audio_clip_usecase_2: "短音轨需要大厅空间或更清晰回声拍，又不想减速。",
+  tool_add_reverb_to_an_audio_clip_usecase_3: "干声口播想加一点房间或大厅尾音，又不想打开整套宿主。",
   tool_add_reverb_to_an_audio_clip_faq_q1: "这和慢歌加混响是一回事吗？",
   tool_add_reverb_to_an_audio_clip_faq_a1: "不是。慢歌混响会先拉慢并降调再加空间。本页不改速度与音高，只加混响或回声。若要那种审美，请用「制作 slowed and reverb 剪辑」。",
   tool_add_reverb_to_an_audio_clip_faq_q2: "房间、大厅和回声有什么区别？",

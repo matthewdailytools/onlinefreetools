@@ -62,6 +62,7 @@ const en: SiteLangDict = {
   tool_remove_clicks_from_a_recording_usecases_title: "When this helps",
   tool_remove_clicks_from_a_recording_usecase_1: "A voice memo with mouth pops or cable taps—pick Medium, Declick, download WAV.",
   tool_remove_clicks_from_a_recording_usecase_2: "A transfer with sparse vinyl crackle before you denoise broadband hiss or notch mains hum elsewhere.",
+  tool_remove_clicks_from_a_recording_usecase_3: "Mouth clicks and edit pops distract on an otherwise clean VO.",
   tool_remove_clicks_from_a_recording_faq_q1: "Is this the same as reduce background noise on a voice memo?",
   tool_remove_clicks_from_a_recording_faq_a1: "No. That page high-passes and gates steady fan or AC hiss. This page repairs short impulsive spikes. Use Reduce background noise on a voice memo for broadband hiss.",
   tool_remove_clicks_from_a_recording_faq_q2: "Does this remove 50/60 Hz mains hum?",

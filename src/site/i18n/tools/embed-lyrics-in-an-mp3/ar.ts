@@ -60,6 +60,7 @@ const ar: SiteLangDict = {
   tool_embed_lyrics_in_an_mp3_usecases_title: 'مفيد لـ',
   tool_embed_lyrics_in_an_mp3_usecase_1: 'إرفاق نص لبودكاست MP3 عبر USLT.',
   tool_embed_lyrics_in_an_mp3_usecase_2: 'إضافة كلمات عادية دون إعادة ترميز.',
+  tool_embed_lyrics_in_an_mp3_usecase_3: 'تريد كلمات الأغنية داخل MP3 لتظهر دون اتصال.',
   tool_embed_lyrics_in_an_mp3_faq_q1: 'هل يُعاد الترميز؟',
   tool_embed_lyrics_in_an_mp3_faq_a1: 'لا. يُعاد كتابة ID3 مع USLT فقط.',
   tool_embed_lyrics_in_an_mp3_faq_q2: 'هل يدعم LRC المتزامن؟',

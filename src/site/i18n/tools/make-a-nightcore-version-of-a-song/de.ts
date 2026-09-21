@@ -64,6 +64,7 @@ const de: SiteLangDict = {
   tool_make_a_nightcore_version_of_a_song_usecases_title: "Wann das hilft",
   tool_make_a_nightcore_version_of_a_song_usecase_1: "Pop- oder Anime-Track für klassischen Nightcore—1.25× wählen, Nightcore, WAV herunterladen.",
   tool_make_a_nightcore_version_of_a_song_usecase_2: "Kurzer Clip braucht Tempo- und Pitch-Lift—nicht Tempo-only-Übung, nicht nur Transposition.",
+  tool_make_a_nightcore_version_of_a_song_usecase_3: "Ein Track braucht das klassische schnellere, höhere Nightcore-Feeling für einen kurzen Edit.",
   tool_make_a_nightcore_version_of_a_song_faq_q1: "Ist das dasselbe wie Tempo ändern ohne Tonhöhe zu ändern?",
   tool_make_a_nightcore_version_of_a_song_faq_a1: "Nein. Tempo-ohne-Tonhöhe nutzt WSOLA, damit Tempo sich ändert und Tonhöhe bleiben soll. Nightcore beschleunigt und hebt Tonhöhe zusammen. Für nur Tempo: Audio-Geschwindigkeit ohne Tonhöhenänderung ändern.",
   tool_make_a_nightcore_version_of_a_song_faq_q2: "Ist das dasselbe wie Tonhöhe verschieben bei erhaltener Dauer?",

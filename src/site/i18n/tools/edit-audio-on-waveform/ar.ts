@@ -58,7 +58,7 @@ const ar: SiteLangDict = {
   tool_edit_audio_on_waveform_how_item_2: 'Click or drag the waveform (or type Start and End) to mark the part to keep.',
   tool_edit_audio_on_waveform_how_item_3: 'Click Trim to slice the selection in this tab.',
   tool_edit_audio_on_waveform_how_item_4: 'Click Download WAV, or use a scene chip for loop, fade, mono, or a dedicated trimmer.',
-  tool_edit_audio_on_waveform_why_choose_title: 'Why choose our Edit audio on a waveform tools',
+  tool_edit_audio_on_waveform_why_choose_title: 'لماذا تختار أدواتنا لتحرير الصوت على شكل موجة',
   tool_edit_audio_on_waveform_why_choose_item_1: 'In-tab decode, waveform selection, and WAV write—no upload for processing.',
   tool_edit_audio_on_waveform_why_choose_item_2: 'Honest scope: lightweight hub, not Pro Tools or a multi-track DAW.',
   tool_edit_audio_on_waveform_why_choose_item_3: 'Scene chips deep-link to shipped trim, loop, fade, and mono tools.',

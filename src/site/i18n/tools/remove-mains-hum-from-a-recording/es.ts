@@ -10,8 +10,7 @@ const es: SiteLangDict = {
     "Corta el zumbido eléctrico de 50 o 60 Hz con filtros notch y armónicos opcionales; luego descarga un WAV de 16 bits. Solo en el dispositivo.",
   tool_remove_mains_hum_from_a_recording_description:
     "Quita el zumbido de red de una grabación con filtros notch de 50 o 60 Hz y armónicos 2.º–5.º opcionales. Pasos: Quitar zumbido, previsualizar, descargar WAV. Ejemplo: carga la muestra con zumbido. Notch estrechos para zumbido eléctrico—no denoise de banda ancha, no declick, no EQ de voz apagada. El audio permanece en tu dispositivo; nunca se sube.",
-  tool_remove_mains_hum_from_a_recording_article:
-    "Las grabaciones cerca de fuentes, atenuadores o equipos mal conectados a tierra a menudo captan un zumbido estable de 50 o 60 Hz, a veces con armónicos. Esta página encadena etapas notch BiquadFilter en OfflineAudioContext en el fundamental elegido y, opcionalmente, los armónicos 2.º a 5.º bajo Nyquist. Ataca tonos eléctricos estrechos—no denoise de silbido de ventilador, no reparación de clics y no EQ de tres bandas para voz apagada. El bajo cerca del notch puede adelgazarse un poco. Los canales siguen en 1 o 2. Conserva el original; la descarga es un WAV de 16 bits nuevo. Todo corre en el navegador en tu dispositivo.",
+  tool_remove_mains_hum_from_a_recording_article: "Las grabaciones cerca de fuentes, atenuadores o equipos mal conectados a tierra a menudo captan un zumbido estable de 50 o 60 Hz, a veces con armónicos. Esta página encadena etapas notch EQ filter en on-device audio processing en el fundamental elegido y, opcionalmente, los armónicos 2.º a 5.º bajo Nyquist. Ataca tonos eléctricos estrechos—no denoise de silbido de ventilador, no reparación de clics y no EQ de tres bandas para voz apagada. El bajo cerca del notch puede adelgazarse un poco. Los canales siguen en 1 o 2. Conserva el original; la descarga es un WAV de 16 bits nuevo. Todo corre en el navegador en tu dispositivo.",
   tool_remove_mains_hum_from_a_recording_choose: "Elige un archivo de audio",
   tool_remove_mains_hum_from_a_recording_hint: "Suelta un WAV, MP3, M4A, AAC u OGG. Máximo 40 MiB y 10 minutos; mono o estéreo.",
   tool_remove_mains_hum_from_a_recording_convert: "Quitar zumbido",
@@ -70,6 +69,7 @@ const es: SiteLangDict = {
   tool_remove_mains_hum_from_a_recording_usecases_title: "Cuándo ayuda",
   tool_remove_mains_hum_from_a_recording_usecase_1: "Una nota de voz con zumbido eléctrico estable de un cargador o atenuador—elige los Hz de tu red, Quitar zumbido, descarga WAV.",
   tool_remove_mains_hum_from_a_recording_usecase_2: "Una toma de campo que necesita quitar el tono de red antes de denoising de silbido o EQ de voz apagada en otro sitio.",
+  tool_remove_mains_hum_from_a_recording_usecase_3: "Se oye un zumbido de 50/60 Hz de la corriente bajo la toma.",
   tool_remove_mains_hum_from_a_recording_faq_q1: "¿Es lo mismo que reducir el ruido de fondo de un memo de voz?",
   tool_remove_mains_hum_from_a_recording_faq_a1:
     "No. Esa página aplica paso alto y puerta al silbido de ventilador o aire acondicionado. Esta página aplica notch a tonos eléctricos estrechos de 50/60 Hz. Usa Reducir el ruido de fondo de un memo de voz para silbido de banda ancha.",

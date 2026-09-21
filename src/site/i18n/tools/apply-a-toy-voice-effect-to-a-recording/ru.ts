@@ -64,6 +64,7 @@ const ru: SiteLangDict = {
   tool_apply_a_toy_voice_effect_to_a_recording_usecases_title: "Когда это полезно",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_1: "Короткий мем или детский клип с оттенком бурундука или гелия—Применить, скачать WAV.",
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_2: "Игривая шутка робота или телефона для сообщения—не клон знаменитости, не заявление о поле.",
+  tool_apply_a_toy_voice_effect_to_a_recording_usecase_3: "Для короткого мема нужна игрушечная высокая или низкая речь.",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q1: "Это клон голоса знаменитости или ИИ?",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_a1: "Нет. Страница применяет только игрушечные сигнальные эффекты (ресемплинг, кольцевая модуляция, телефонная полоса). Не обучается, не копирует и не имитирует голос конкретного человека.",
   tool_apply_a_toy_voice_effect_to_a_recording_faq_q2: "Это сменщик голоса мужской-женский или по полу?",

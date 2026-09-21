@@ -10,8 +10,7 @@ const de: SiteLangDict = {
     "Dünnen Tiefbass mit Mild-, Medium- oder Strong-Low-Shelf-Presets anheben und 16-Bit-WAV laden. Nur auf dem Gerät.",
   tool_boost_bass_on_an_mp3_description:
     "Bass in einer MP3 anheben mit Mild-, Medium- oder Strong-Low-Shelf-Presets. Schritte: Anheben, anhören, WAV herunterladen. Beispiel: dünne Bass-Probe laden. Nur Low-Shelf-Bass—kein volles Mehrband-EQ, kein Datei-weiter Volume-Booster. Audio bleibt auf dem Gerät; wird nie hochgeladen.",
-  tool_boost_bass_on_an_mp3_article:
-    "Handy-Exports und Laptop-Lautsprecher lassen Kick und Basslinie oft dünn: genug Mitten, zu wenig Gewicht unter ~100 Hz. Diese Seite führt eine BiquadFilter-Lowshelf-Stufe in OfflineAudioContext aus. Mild ist sanft; Medium (Standard) der Alltagslift; Strong drückt stärker. Soft-Peak-Schutz skaliert, wenn der Boost clippen würde. Das ist Bass-Boost—kein Clarity/Warmth/Presence-Drei-Band-EQ für dumpfe Stimme und kein flacher dB-Gain für alles. Kanäle bleiben 1 oder 2. Master behalten; Download ist neues 16-Bit-WAV. Arbeit läuft im Browser.",
+  tool_boost_bass_on_an_mp3_article: "Handy-Exports und Laptop-Lautsprecher lassen Kick und Basslinie oft dünn: genug Mitten, zu wenig Gewicht unter ~100 Hz. Diese Seite führt eine EQ filter-Lowshelf-Stufe in on-device audio processing aus. Mild ist sanft; Medium (Standard) der Alltagslift; Strong drückt stärker. Soft-Peak-Schutz skaliert, wenn der Boost clippen würde. Das ist Bass-Boost—kein Clarity/Warmth/Presence-Drei-Band-EQ für dumpfe Stimme und kein flacher dB-Gain für alles. Kanäle bleiben 1 oder 2. Master behalten; Download ist neues 16-Bit-WAV. Arbeit läuft im Browser.",
   tool_boost_bass_on_an_mp3_choose: "Audiodatei wählen",
   tool_boost_bass_on_an_mp3_hint: "Eine WAV-, MP3-, M4A-, AAC- oder OGG-Datei. Max. 40 MiB und 10 Minuten; mono oder stereo.",
   tool_boost_bass_on_an_mp3_convert: "Anheben",
@@ -58,7 +57,7 @@ const de: SiteLangDict = {
   tool_boost_bass_on_an_mp3_why_choose_item_4: "Preset- oder Eingabewechsel löscht den alten Download, damit kein veraltetes WAV gespeichert wird.",
   tool_boost_bass_on_an_mp3_rules_title: "Mild, Medium, Strong und Grenzen",
   tool_boost_bass_on_an_mp3_rules_body:
-    "Jedes Preset ist eine Lowshelf-Biquad-Stufe. Mild sanft; Medium Alltagslift; Strong stärker. Soft-Peak-Schutz skaliert bei drohendem Clipping.",
+    "Jedes Preset ist eine Lowshelf-EQ-Stufe. Mild sanft; Medium Alltagslift; Strong stärker. Soft-Peak-Schutz skaliert bei drohendem Clipping.",
   tool_boost_bass_on_an_mp3_rules_item_1:
     "Standard Medium: Lowshelf ~90 Hz bei etwa +8 dB. Mild ~+4 dB; Strong ~+12 dB mit etwas tieferem Shelf.",
   tool_boost_bass_on_an_mp3_rules_item_2:
@@ -72,6 +71,7 @@ const de: SiteLangDict = {
   tool_boost_bass_on_an_mp3_usecases_title: "Wann das hilft",
   tool_boost_bass_on_an_mp3_usecase_1: "MP3-Export klingt auf Lautsprechern dünn—Medium wählen, Anheben, WAV laden.",
   tool_boost_bass_on_an_mp3_usecase_2: "Track braucht mehr Kick-Gewicht ohne volles Grafik-EQ oder lautere Gesamtmischung.",
+  tool_boost_bass_on_an_mp3_usecase_3: "Ein Handy-MP3 klingt auf dem Laptop dünn; du willst nur mehr Kick, nicht lautere Mitten.",
   tool_boost_bass_on_an_mp3_faq_q1: "Ist das dasselbe wie eine dumpfe Sprachaufnahme entzerrern?",
   tool_boost_bass_on_an_mp3_faq_a1:
     "Nein. Jene Seite nutzt Clarity/Warmth/Presence-Drei-Band-Presets für dumpfe Sprache. Diese hebt nur Tiefen per Lowshelf. Für dumpfes Stimmen-EQ: Eine dumpfe Sprachaufnahme entzerrern.",

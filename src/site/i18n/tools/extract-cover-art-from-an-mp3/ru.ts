@@ -53,6 +53,7 @@ const ru: SiteLangDict = {
   tool_extract_cover_art_from_an_mp3_usecases_title: 'Полезно для',
   tool_extract_cover_art_from_an_mp3_usecase_1: 'Сохранить обложку подкаста как миниатюру.',
   tool_extract_cover_art_from_an_mp3_usecase_2: 'Проверить наличие обложки перед отправкой.',
+  tool_extract_cover_art_from_an_mp3_usecase_3: 'Нужна встроенная обложка картинкой без перекодирования трека.',
   tool_extract_cover_art_from_an_mp3_faq_q1: 'Загружается ли мой MP3?',
   tool_extract_cover_art_from_an_mp3_faq_a1: 'Нет. Разбор APIC в браузере.',
   tool_extract_cover_art_from_an_mp3_faq_q2: 'Если обложки нет?',

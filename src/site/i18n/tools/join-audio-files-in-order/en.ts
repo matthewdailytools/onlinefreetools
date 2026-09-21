@@ -90,6 +90,7 @@ const en: SiteLangDict = {
     'Several voice-memo takes should become one continuous track—add in order, Join, download WAV.',
   tool_join_audio_files_in_order_usecase_2:
     'Song sections or podcast chapters saved as separate files need one export without uploading to a joiner site.',
+  tool_join_audio_files_in_order_usecase_3: 'Chapter WAVs should become one continuous file in playlist order.',
   tool_join_audio_files_in_order_faq_q1: 'Is this the same as mixing or overlaying two tracks?',
   tool_join_audio_files_in_order_faq_a1:
     'No. Overlay mix plays clips at the same time (for example voice over music). This page only places them one after another in list order.',

@@ -89,6 +89,7 @@ const de: SiteLangDict = {
     'Mehrere Sprachnotizen sollen eine durchgehende Spur werden—der Reihe nach hinzufügen, Verbinden, WAV laden.',
   tool_join_audio_files_in_order_usecase_2:
     'Songabschnitte oder Podcast-Kapitel als Einzeldateien brauchen einen Export ohne Upload zu einem Joiner.',
+  tool_join_audio_files_in_order_usecase_3: 'Kapitel-WAVs sollen eine durchgehende Datei in Playlist-Reihenfolge werden.',
   tool_join_audio_files_in_order_faq_q1: 'Ist das dasselbe wie Mischen oder Überlagern zweier Spuren?',
   tool_join_audio_files_in_order_faq_a1:
     'Nein. Overlay spielt Clips gleichzeitig (z. B. Stimme über Musik). Diese Seite setzt sie nur nacheinander in Listenreihenfolge.',

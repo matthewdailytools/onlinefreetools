@@ -57,6 +57,7 @@ const id: SiteLangDict = {
   tool_make_a_short_ui_notification_sound_usecases_title: "Kapan ini membantu",
   tool_make_a_short_ui_notification_sound_usecase_1: "Anda butuh cue sukses atau klik kecil untuk prototipe—pilih preset, Hasilkan, unduh WAV untuk mock atau demo.",
   tool_make_a_short_ui_notification_sound_usecase_2: "Anda ingin peringatan atau ping yang dapat digunakan ulang tanpa mencari pustaka stok atau memasang synth desktop.",
+  tool_make_a_short_ui_notification_sound_usecase_3: "Butuh klik atau chime WAV pendek untuk prototipe app.",
   tool_make_a_short_ui_notification_sound_faq_q1: "Apakah ini generator nada dial DTMF?",
   tool_make_a_short_ui_notification_sound_faq_a1: "Tidak. DTMF memakai frekuensi telepon berpasangan dalam urutan keypad. Halaman ini hanya membuat cue UI singkat.",
   tool_make_a_short_ui_notification_sound_faq_q2: "Bisakah membuat sine panjang pada Hertz pilihan?",

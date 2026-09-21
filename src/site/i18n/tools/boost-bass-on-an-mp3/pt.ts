@@ -10,8 +10,7 @@ const pt: SiteLangDict = {
     "Engrosse graves finos com presets Mild, Medium ou Strong de low-shelf e baixe um WAV de 16 bits. Só no dispositivo.",
   tool_boost_bass_on_an_mp3_description:
     "Aumentar os graves de um MP3 com presets Mild, Medium ou Strong de low-shelf. Passos: aumentar, pré-ouvir, baixar WAV. Exemplo: carregue a amostra de graves finos. Só graves em low-shelf—não um equalizador multibanda completo nem um aumentador de volume do arquivo inteiro. O áudio fica no seu dispositivo; nunca é enviado.",
-  tool_boost_bass_on_an_mp3_article:
-    "Exportações do telemóvel e altifalantes de portátil costumam deixar kick e baixo finos: médios a mais, peso a menos abaixo de ~100 Hz. Esta página corre uma etapa BiquadFilter lowshelf no OfflineAudioContext. Mild é suave; Medium (predefinição) o realce do dia a dia; Strong empurra mais. A proteção suave de picos escala se o boost clipasse. Isso é boost de graves—não o EQ de três bandas Clarity/Warmth/Presence para voz abafada, nem ganho dB plano em tudo. Canais 1 ou 2. Guarde o master; o download é um novo WAV de 16 bits. O trabalho corre no browser.",
+  tool_boost_bass_on_an_mp3_article: "Exportações do telemóvel e altifalantes de portátil costumam deixar kick e baixo finos: médios a mais, peso a menos abaixo de ~100 Hz. Esta página corre uma etapa lowshelf EQ no on-device audio processing. Mild é suave; Medium (predefinição) o realce do dia a dia; Strong empurra mais. A proteção suave de picos escala se o boost clipasse. Isso é boost de graves—não o EQ de três bandas Clarity/Warmth/Presence para voz abafada, nem ganho dB plano em tudo. Canais 1 ou 2. Guarde o master; o download é um novo WAV de 16 bits. O trabalho corre no browser.",
   tool_boost_bass_on_an_mp3_choose: "Escolher um ficheiro de áudio",
   tool_boost_bass_on_an_mp3_hint: "Largue um WAV, MP3, M4A, AAC ou OGG. Máximo 40 MiB e 10 minutos; mono ou estéreo.",
   tool_boost_bass_on_an_mp3_convert: "Aumentar",
@@ -58,7 +57,7 @@ const pt: SiteLangDict = {
   tool_boost_bass_on_an_mp3_why_choose_item_4: "Mudar o preset ou a entrada limpa o download antigo para não guardar um WAV obsoleto.",
   tool_boost_bass_on_an_mp3_rules_title: "Mild, Medium, Strong e limites",
   tool_boost_bass_on_an_mp3_rules_body:
-    "Cada preset é uma etapa lowshelf Biquad. Mild é suave; Medium o realce do dia a dia; Strong mais pesado. Proteção de picos se o boost clipasse.",
+    "Cada preset é uma etapa lowshelf EQ. Mild é suave; Medium o realce do dia a dia; Strong mais pesado. Proteção de picos se o boost clipasse.",
   tool_boost_bass_on_an_mp3_rules_item_1:
     "Medium (predefinição) usa lowshelf perto de 90 Hz a cerca de +8 dB. Mild ~+4 dB; Strong ~+12 dB com shelf um pouco mais baixo.",
   tool_boost_bass_on_an_mp3_rules_item_2:
@@ -72,6 +71,7 @@ const pt: SiteLangDict = {
   tool_boost_bass_on_an_mp3_usecases_title: "Quando ajuda",
   tool_boost_bass_on_an_mp3_usecase_1: "Um MP3 exportado que soa fino nos altifalantes—escolha Medium, Aumentar, baixe WAV.",
   tool_boost_bass_on_an_mp3_usecase_2: "Uma faixa que precisa de mais peso de kick sem abrir um EQ gráfico completo nem deixar a mistura toda mais alta.",
+  tool_boost_bass_on_an_mp3_usecase_3: "Um MP3 do telemóvel soa fino no portátil e você só quer mais grave, não mais médios.",
   tool_boost_bass_on_an_mp3_faq_q1: "É o mesmo que equalizar uma gravação de voz abafada?",
   tool_boost_bass_on_an_mp3_faq_a1:
     "Não. Essa página usa presets Clarity/Warmth/Presence de três bandas para fala abafada. Esta só sobe graves com lowshelf. Para EQ de voz abafada, use Equalizar uma gravação de voz abafada.",

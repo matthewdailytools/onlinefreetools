@@ -10,8 +10,7 @@ const ja: SiteLangDict = {
     "50 または 60 Hz のノッチと任意の高調波で電源ハムを抑え、16-bit WAV をダウンロード。端末内のみ。",
   tool_remove_mains_hum_from_a_recording_description:
     "録音から電源ハムを除去します。50 または 60 Hz のノッチと任意の第2〜第5高調波を使います。手順：ハム除去、試聴、WAV をダウンロード。例：ハム付きサンプルを読み込みます。狭いノッチで電気ハム向け—広帯域デノイズでも、デクリックでも、こもった声の EQ でもありません。音声は端末に留まり、アップロードされません。",
-  tool_remove_mains_hum_from_a_recording_article:
-    "電源や調光器、接地の悪い機材の近くで録ると、50 または 60 Hz の定常ハムと高調波が乗りやすいです。本ページは OfflineAudioContext で BiquadFilter のノッチを直列し、選んだ基本波と、任意で Nyquist 未満の第2〜第5高調波を狙います。狭い電気トーン向けで、ファンノイズの広帯域デノイズやクリック修復、3 バンドのこもった声 EQ ではありません。ノッチ近くの低音が少し薄くなることがあります。チャンネルは 1 または 2 のまま。原ファイルは残し、ダウンロードは新しい 16-bit WAV です。処理はブラウザ内の端末で行います。",
+  tool_remove_mains_hum_from_a_recording_article: "電源や調光器、接地の悪い機材の近くで録ると、50 または 60 Hz の定常ハムと高調波が乗りやすいです。本ページは on-device audio processing で EQ filter のノッチを直列し、選んだ基本波と、任意で Nyquist 未満の第2〜第5高調波を狙います。狭い電気トーン向けで、ファンノイズの広帯域デノイズやクリック修復、3 バンドのこもった声 EQ ではありません。ノッチ近くの低音が少し薄くなることがあります。チャンネルは 1 または 2 のまま。原ファイルは残し、ダウンロードは新しい 16-bit WAV です。処理はブラウザ内の端末で行います。",
   tool_remove_mains_hum_from_a_recording_choose: "音声ファイルを選ぶ",
   tool_remove_mains_hum_from_a_recording_hint: "WAV、MP3、M4A、AAC、OGG を1つドロップ。最大 40 MiB・10 分。モノラルまたはステレオ。",
   tool_remove_mains_hum_from_a_recording_convert: "ハム除去",
@@ -70,6 +69,7 @@ const ja: SiteLangDict = {
   tool_remove_mains_hum_from_a_recording_usecases_title: "役立つ場面",
   tool_remove_mains_hum_from_a_recording_usecase_1: "充電器や調光器由来の定常電気バズが乗ったボイスメモ—地域の Hz を選び、ハム除去、WAV を保存。",
   tool_remove_mains_hum_from_a_recording_usecase_2: "現場録音で電源トーンを先に消し、その後に広帯域ヒスのデノイズやこもった声の EQ をする前処理。",
+  tool_remove_mains_hum_from_a_recording_usecase_3: "電源由来の50/60Hzハムがテイクの下に聞こえる。",
   tool_remove_mains_hum_from_a_recording_faq_q1: "ボイスメモの背景ノイズ低減と同じですか？",
   tool_remove_mains_hum_from_a_recording_faq_a1:
     "違います。そちらはハイパスとノイズフロアゲートでファン／空調ヒスを抑えます。本ページは狭い 50/60 Hz の電気トーンをノッチします。広帯域ヒスにはボイスメモの背景ノイズを減らすを使ってください。",

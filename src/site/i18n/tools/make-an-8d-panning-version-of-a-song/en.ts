@@ -65,6 +65,7 @@ const en: SiteLangDict = {
   tool_make_an_8d_panning_version_of_a_song_usecases_title: "When this helps",
   tool_make_an_8d_panning_version_of_a_song_usecase_1: "A short song or loop for a classic headphone 8D edit—pick 5s, 8D pan, download WAV.",
   tool_make_an_8d_panning_version_of_a_song_usecase_2: "A clip that needs motion left↔right—not slowed+reverb, not nightcore, not reverse.",
+  tool_make_an_8d_panning_version_of_a_song_usecase_3: "You want a rotating stereo pan effect for headphones, not a mono remix.",
   tool_make_an_8d_panning_version_of_a_song_faq_q1: "Is this true 3D surround or HRTF?",
   tool_make_an_8d_panning_version_of_a_song_faq_a1: "No. It is a mid signal auto-panned L/R with constant-power gains for a headphone “circle” feel. It does not decode Dolby, Ambisonics or measured HRTF.",
   tool_make_an_8d_panning_version_of_a_song_faq_q2: "Is this the same as slowed and reverb?",

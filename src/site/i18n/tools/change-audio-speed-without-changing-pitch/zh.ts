@@ -65,6 +65,7 @@ const zh: SiteLangDict = {
   tool_change_audio_speed_without_changing_pitch_usecases_title: "适用场景",
   tool_change_audio_speed_without_changing_pitch_usecase_1: "练歌太快——选 0.75×，拉伸，下载 WAV。",
   tool_change_audio_speed_without_changing_pitch_usecase_2: "需要略加速卡点、但不想要夜核升调。",
+  tool_change_audio_speed_without_changing_pitch_usecase_3: "口播要压进更短视频槽，又不能变成花栗鼠声。",
   tool_change_audio_speed_without_changing_pitch_faq_q1: "这和变调/改调是一回事吗？",
   tool_change_audio_speed_without_changing_pitch_faq_a1: "不是。变调作业改变音高（时长可能不变）。本页用 WSOLA 改节奏并尽量保留音高。只变调是另一类工具作业。",
   tool_change_audio_speed_without_changing_pitch_faq_q2: "这是夜核生成器吗？",

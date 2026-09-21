@@ -57,6 +57,7 @@ const de: SiteLangDict = {
   tool_make_a_short_ui_notification_sound_usecases_title: "Wann das hilft",
   tool_make_a_short_ui_notification_sound_usecase_1: "Sie brauchen einen winzigen Erfolgs- oder Klick-Cue für einen Prototyp—Preset wählen, Erzeugen, WAV für Mocks/Demos herunterladen.",
   tool_make_a_short_ui_notification_sound_usecase_2: "Sie wollen einen wiederverwendbaren Alert oder Ping ohne Stock-Bibliothek oder Desktop-Synth.",
+  tool_make_a_short_ui_notification_sound_usecase_3: "Du brauchst einen kurzen Klick- oder Glocken-WAV für einen App-Prototyp.",
   tool_make_a_short_ui_notification_sound_faq_q1: "Ist das ein DTMF-Wählton-Generator?",
   tool_make_a_short_ui_notification_sound_faq_a1: "Nein. DTMF nutzt gepaarte Telefonfrequenzen in einer Tastatursequenz. Diese Seite macht nur kurze UI-Cues.",
   tool_make_a_short_ui_notification_sound_faq_q2: "Kann es einen langen Sinus bei gewähltem Hertz machen?",

@@ -9,10 +9,8 @@ const zh: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_title: '替换视频文件中的音轨',
   tool_replace_the_audio_in_a_video_file_desc:
     '用另一条本地音频替换视频原声，再下载成片。仅本机处理——不做 YouTube 下载。',
-  tool_replace_the_audio_in_a_video_file_description:
-    '在浏览器里替换本地视频的音轨：丢掉原声、铺上新的配乐后下载。步骤：选择视频和新音频、替换音轨、预览、下载。示例：带旧音调的短片换成新的 WAV。使用 captureStream 与 MediaRecorder，输出多为 WebM，不是无损 remux。文件不会上传。不做 YouTube 下载。适合「替换视频音轨」「换 BGM」「改视频配乐」等本机换轨需求，也不是只静音或只给无声片加轨。',
-  tool_replace_the_audio_in_a_video_file_article:
-    '配乐选错或原声偏弱时，分享前往往需要整条换轨。本页可打开本地视频与本地新音频：丢弃原音轨后捕获画面，用 AudioContext 解码新配乐，再经 MediaRecorder 写出——视浏览器多为 WebM。成片时长跟视频走；音频更长会被截断，更短则画面后半段无声。不做 YouTube 或其他 URL 代抓，不是只静音不加新声，也不是单纯「给无声视频加轨」的叙事。成功取决于浏览器能否播放两份文件并支持带音频的 MediaRecorder。保留原文件；下载是新文件。全程在本机运行。',
+  tool_replace_the_audio_in_a_video_file_description: '在浏览器里替换本地视频的音轨：丢掉原声、铺上新的配乐后下载。步骤：选择视频和新音频、替换音轨、预览、下载。示例：带旧音调的短片换成新的 WAV。使用 captureStream 与 浏览器媒体录制，输出多为 WebM，不是无损 remux。文件不会上传。不做 YouTube 下载。适合「替换视频音轨」「换 BGM」「改视频配乐」等本机换轨需求，也不是只静音或只给无声片加轨。',
+  tool_replace_the_audio_in_a_video_file_article: '配乐选错或原声偏弱时，分享前往往需要整条换轨。本页可打开本地视频与本地新音频：丢弃原音轨后捕获画面，用 浏览器音频引擎 解码新配乐，再经 浏览器媒体录制 写出——视浏览器多为 WebM。成片时长跟视频走；音频更长会被截断，更短则画面后半段无声。不做 YouTube 或其他 URL 代抓，不是只静音不加新声，也不是单纯「给无声视频加轨」的叙事。成功取决于浏览器能否播放两份文件并支持带音频的 浏览器媒体录制。保留原文件；下载是新文件。全程在本机运行。',
   tool_replace_the_audio_in_a_video_file_choose_video: '选择视频文件',
   tool_replace_the_audio_in_a_video_file_hint_video:
     '拖入或选择浏览器可播放的本地 MP4、WebM、MOV 或 M4V。最多约 80 MiB、约 3 分钟。不要粘贴 YouTube 或 URL。',
@@ -25,7 +23,7 @@ const zh: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_clear: '清空',
   tool_replace_the_audio_in_a_video_file_advanced: '换轨说明',
   tool_replace_the_audio_in_a_video_file_settings_hint:
-    '浏览器通常会丢弃原音轨、挂上你的新配乐，再经 MediaRecorder 重编码。输出多为 WebM，不是源 MP4 的无损 remux。本页从不下载 YouTube。',
+    '浏览器通常会丢弃原音轨、挂上你的新配乐，再经 浏览器媒体录制 重编码。输出多为 WebM，不是源 MP4 的无损 remux。本页从不下载 YouTube。',
   tool_replace_the_audio_in_a_video_file_progress: '替换音轨进度',
   tool_replace_the_audio_in_a_video_file_read: '读取',
   tool_replace_the_audio_in_a_video_file_decode: '解码',
@@ -50,7 +48,7 @@ const zh: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_err_decode:
     '浏览器无法解码该视频或音频。请换容器或更短片段。',
   tool_replace_the_audio_in_a_video_file_err_encoder:
-    'MediaRecorder 无法写出换轨视频。请尝试 Chrome/Edge，或更短的 WebM/MP4 加 WAV/MP3。',
+    '浏览器媒体录制 无法写出换轨视频。请尝试 Chrome/Edge，或更短的 WebM/MP4 加 WAV/MP3。',
   tool_replace_the_audio_in_a_video_file_how_title: '如何替换视频文件中的音轨',
   tool_replace_the_audio_in_a_video_file_how_body:
     '选择本地视频与新音频，点击替换音轨，预览结果，再下载——不上传，也不做 YouTube 下载。',
@@ -66,14 +64,14 @@ const zh: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_why_choose_item_1:
     '保存前可查看时长、MIME 类型与输出体积（KiB）。',
   tool_replace_the_audio_in_a_video_file_why_choose_item_2:
-    '作业清晰：一次换轨；诚实写明 MediaRecorder 限制，不假装无损 remux。',
+    '作业清晰：一次换轨；诚实写明 浏览器媒体录制 限制，不假装无损 remux。',
   tool_replace_the_audio_in_a_video_file_why_choose_item_3:
     '读取与录制都在本机完成；页面不会上传你的文件去处理。',
   tool_replace_the_audio_in_a_video_file_why_choose_item_4:
     '更换任一文件会清除旧下载，避免误存过期换轨成片。',
   tool_replace_the_audio_in_a_video_file_rules_title: '换轨规则与诚实的浏览器上限',
   tool_replace_the_audio_in_a_video_file_rules_body:
-    '每次运行会丢弃原音轨、挂上你的新配乐，并用 MediaRecorder 重编码。输出多为 WebM。这不是 YouTube 下载，也不是只静音。',
+    '每次运行会丢弃原音轨、挂上你的新配乐，并用 浏览器媒体录制 重编码。输出多为 WebM。这不是 YouTube 下载，也不是只静音。',
   tool_replace_the_audio_in_a_video_file_rules_item_1:
     '一个本地视频最多约 80 MiB、约三分钟，外加一个本地音频最多约 40 MiB。须先能播放/解码。',
   tool_replace_the_audio_in_a_video_file_rules_item_2:
@@ -90,6 +88,7 @@ const zh: SiteLangDict = {
     '录屏时配错了 BGM，手头有更好的本地 WAV——在此换轨后下载分享。',
   tool_replace_the_audio_in_a_video_file_usecase_2:
     '想用更清晰的本地配乐替换薄弱原声，又不想安装桌面剪辑软件。',
+  tool_replace_the_audio_in_a_video_file_usecase_3: '配乐选错，需要整条换成新音轨并保留画面。',
   tool_replace_the_audio_in_a_video_file_faq_q1: '能下载 YouTube 或粘贴 URL 吗？',
   tool_replace_the_audio_in_a_video_file_faq_a1:
     '不能。只接受你本机已有的文件。没有 YouTube 下载器，也不做远程抓取。',
@@ -101,7 +100,7 @@ const zh: SiteLangDict = {
     '加轨常针对无声或弱声片段。本页的任务是明确用另一文件替换现有音轨。',
   tool_replace_the_audio_in_a_video_file_faq_q4: '输出会和源文件一样仍是 MP4 吗？',
   tool_replace_the_audio_in_a_video_file_faq_a4:
-    '通常不会。浏览器一般经 MediaRecorder 重编码，多为 WebM。画质与容器都可能变化。',
+    '通常不会。浏览器一般经 浏览器媒体录制 重编码，多为 WebM。画质与容器都可能变化。',
   tool_replace_the_audio_in_a_video_file_faq_q5: '会把文件上传到服务器吗？',
   tool_replace_the_audio_in_a_video_file_faq_a5:
     '不会。解码与录制都在本机浏览器完成。首次打开页面需要网络；不保证可离线使用。',

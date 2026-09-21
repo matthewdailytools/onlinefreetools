@@ -61,6 +61,7 @@ const ar: SiteLangDict = {
   tool_remove_clicks_from_a_recording_usecases_title: "متى يفيد ذلك",
   tool_remove_clicks_from_a_recording_usecase_1: "مذكرة صوت بفرقعات فم أو نقرات كابل—اختر متوسط، أزل النقرات، نزّل WAV.",
   tool_remove_clicks_from_a_recording_usecase_2: "نقل بتشقق فينيل متفرق قبل إزالة ضوضاء أو همهمة في مكان آخر.",
+  tool_remove_clicks_from_a_recording_usecase_3: "نقرات الفم وفرقعات المontage تشتت تعليقًا نظيفًا.",
   tool_remove_clicks_from_a_recording_faq_q1: "هل هذا مثل تقليل ضوضاء الخلفية في مذكرة صوت؟",
   tool_remove_clicks_from_a_recording_faq_a1: "لا. تلك الصفحة تمرّر عاليًا وتغلق هسيس المروحة/المكيّف الثابت. هذه تصلح قممًا اندفاعية قصيرة. لهسيس عريض استخدم تقليل ضوضاء الخلفية في مذكرة صوت.",
   tool_remove_clicks_from_a_recording_faq_q2: "هل يزيل همهمة التيار 50/60 هرتز؟",

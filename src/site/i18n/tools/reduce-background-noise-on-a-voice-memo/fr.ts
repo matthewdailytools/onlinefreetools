@@ -67,6 +67,7 @@ const fr: SiteLangDict = {
   tool_reduce_background_noise_on_a_voice_memo_usecases_title: "Quand cela aide",
   tool_reduce_background_noise_on_a_voice_memo_usecase_1: "Mémo téléphone avec ventilateur ou clim—Medium, Débruiter, télécharger le WAV.",
   tool_reduce_background_noise_on_a_voice_memo_usecase_2: "Note de terrain à alléger avant fondus ou EQ ailleurs.",
+  tool_reduce_background_noise_on_a_voice_memo_usecase_3: "Ventilo ou clim constants sous la voix ; un gate doux doit calmer les silences.",
   tool_reduce_background_noise_on_a_voice_memo_faq_q1: "Est-ce Adobe Enhance Speech ?",
   tool_reduce_background_noise_on_a_voice_memo_faq_a1:
     "Non. Enhance cloud reconstruit la parole avec de grands modèles. Ici : passe-haut et porte de plancher dans le navigateur—résultat modeste et honnête.",

@@ -7,7 +7,7 @@ import type { SiteLangDict } from '../../../types';
 const ja: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_title: 'OGGファイルをMP3に変換',
   tool_convert_an_ogg_file_to_mp3_desc: 'ローカルのOGGまたはOpus録音をMP3にします。音声は端末内に留まり、サーバーへはアップロードされません。',
-  tool_convert_an_ogg_file_to_mp3_description: 'ブラウザでOGGをMP3に変換し、アップロードしません。手順：OGG/Opusを選び、ビットレートを選び、「MP3に変換」、試聴してダウンロード。例：5秒のステレオOpus-in-OGGが192 kbpsで約120 KiBのMP3になります。ブラウザがデコードできる場合はdecodeAudioData、続けてlamejs。失敗時は明確なエラー。ファイルは端末に留まります。',
+  tool_convert_an_ogg_file_to_mp3_description: 'ブラウザでOGGをMP3に変換し、アップロードしません。手順：OGG/Opusを選び、ビットレートを選び、「MP3に変換」、試聴してダウンロード。例：5秒のステレオOpus-in-OGGが192 kbpsで約120 KiBのMP3になります。ブラウザがデコードできる場合はbrowser decoding、続けてin-browser MP3 encoding。失敗時は明確なエラー。ファイルは端末に留まります。',
   tool_convert_an_ogg_file_to_mp3_article: 'ボイスメモやゲーム音声はOGG VorbisやOpusで届くことが多いですが、相手はMP3を求めることがあります。このページは1本のローカルOGG（Opus含む）を保存前に聴けるMP3にします。再エンコードは不可逆なので原本を残してください。',
   tool_convert_an_ogg_file_to_mp3_choose: 'OGGまたはOpusファイルを選ぶ',
   tool_convert_an_ogg_file_to_mp3_hint: '1つの.ogg/.oga/.opus。最大40 MiB・10分、モノ/ステレオ。デコードはブラウザ次第です。',
@@ -57,6 +57,7 @@ const ja: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_usecases_title: 'こんなときに',
   tool_convert_an_ogg_file_to_mp3_usecase_1: 'ゲームやチャットのOGGをMP3で送る。',
   tool_convert_an_ogg_file_to_mp3_usecase_2: 'Opusボイスメモを添付用MP3にし、原本は残す。',
+  tool_convert_an_ogg_file_to_mp3_usecase_3: '音声メモがOGG/Opusで届き、編集ソフトがMP3しか受け付けない。',
   tool_convert_an_ogg_file_to_mp3_faq_q1: 'OpusもMP3にできますか？',
   tool_convert_an_ogg_file_to_mp3_faq_a1: 'はい。OGG内のOpus（およびOGG扱いの.opus）は同じボタンです。拡張子の変更だけでは変換されません。',
   tool_convert_an_ogg_file_to_mp3_faq_q2: 'アップロードされますか？オフラインは？',

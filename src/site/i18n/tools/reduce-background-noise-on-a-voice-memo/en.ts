@@ -89,6 +89,7 @@ const en: SiteLangDict = {
     "A phone voice memo with fan or AC hiss under the talk—pick Medium, Denoise, download WAV.",
   tool_reduce_background_noise_on_a_voice_memo_usecase_2:
     "A quick field note that needs less room hiss before you fade edges or EQ tone elsewhere.",
+  tool_reduce_background_noise_on_a_voice_memo_usecase_3: "Steady fan or AC hum sits under speech and a soft gate should quiet the gaps.",
   tool_reduce_background_noise_on_a_voice_memo_faq_q1: "Is this the same as Adobe Enhance Speech?",
   tool_reduce_background_noise_on_a_voice_memo_faq_a1:
     "No. Cloud enhance tools rebuild speech with large models. This page only high-passes and gently gates to a noise floor in your browser. Results are modest and honest—not studio AI clarity.",

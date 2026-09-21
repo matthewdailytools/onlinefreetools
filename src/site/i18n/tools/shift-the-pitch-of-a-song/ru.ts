@@ -66,6 +66,7 @@ const ru: SiteLangDict = {
   tool_shift_the_pitch_of_a_song_usecases_title: "Когда это помогает",
   tool_shift_the_pitch_of_a_song_usecase_1: "Аккомпанемент слишком высок—выберите −2, Сдвинуть, скачайте WAV.",
   tool_shift_the_pitch_of_a_song_usecase_2: "Короткий клип нуждается в +1 или +2 без ускорения как nightcore.",
+  tool_shift_the_pitch_of_a_song_usecase_3: "Караоке или кавер — на несколько полутонов вверх/вниз с сохранением длины.",
   tool_shift_the_pitch_of_a_song_faq_q1: "Это то же, что изменить скорость без изменения высоты?",
   tool_shift_the_pitch_of_a_song_faq_a1: "Нет. Скорость-без-высоты меняет темп через WSOLA, стараясь сохранить высоту. Эта страница меняет музыкальную высоту, стараясь сохранить длительность. Для только темпа используйте Изменить скорость аудио без изменения высоты.",
   tool_shift_the_pitch_of_a_song_faq_q2: "Это генератор nightcore?",

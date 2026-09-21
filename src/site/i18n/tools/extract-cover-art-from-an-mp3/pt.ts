@@ -53,6 +53,7 @@ const pt: SiteLangDict = {
   tool_extract_cover_art_from_an_mp3_usecases_title: 'Útil para',
   tool_extract_cover_art_from_an_mp3_usecase_1: 'Salvar capa de podcast como miniatura.',
   tool_extract_cover_art_from_an_mp3_usecase_2: 'Verificar se o MP3 já tem capa.',
+  tool_extract_cover_art_from_an_mp3_usecase_3: 'Precisa da capa embutida como imagem sem recodificar a faixa.',
   tool_extract_cover_art_from_an_mp3_faq_q1: 'Meu MP3 é enviado?',
   tool_extract_cover_art_from_an_mp3_faq_a1: 'Não. Análise APIC no navegador.',
   tool_extract_cover_art_from_an_mp3_faq_q2: 'E se não houver capa?',

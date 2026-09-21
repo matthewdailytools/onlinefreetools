@@ -64,6 +64,7 @@ const ru: SiteLangDict = {
   tool_make_a_nightcore_version_of_a_song_usecases_title: "Когда это помогает",
   tool_make_a_nightcore_version_of_a_song_usecase_1: "Поп или аниме-трек для классического nightcore—выберите 1.25×, Nightcore, скачайте WAV.",
   tool_make_a_nightcore_version_of_a_song_usecase_2: "Короткий клип нуждается в lift скорости и высоты—не только темп для практики, не только транспонирование.",
+  tool_make_a_nightcore_version_of_a_song_usecase_3: "Для короткого монтажа нужен классический ускоренный nightcore‑характер.",
   tool_make_a_nightcore_version_of_a_song_faq_q1: "Это то же, что изменить скорость без изменения высоты?",
   tool_make_a_nightcore_version_of_a_song_faq_a1: "Нет. Скорость-без-высоты использует WSOLA, чтобы менять темп, стараясь сохранить высоту. Nightcore ускоряет и поднимает высоту вместе. Для только темпа используйте Изменить скорость аудио без изменения высоты.",
   tool_make_a_nightcore_version_of_a_song_faq_q2: "Это то же, что сдвинуть высоту с сохранением длительности?",

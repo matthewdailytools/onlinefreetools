@@ -53,6 +53,7 @@ const fr: SiteLangDict = {
   tool_extract_cover_art_from_an_mp3_usecases_title: 'Utile pour',
   tool_extract_cover_art_from_an_mp3_usecase_1: 'Sauver une pochette podcast en miniature.',
   tool_extract_cover_art_from_an_mp3_usecase_2: 'Vérifier qu’un MP3 a déjà une pochette.',
+  tool_extract_cover_art_from_an_mp3_usecase_3: 'Il faut la pochette embarquée en image sans réencoder la piste.',
   tool_extract_cover_art_from_an_mp3_faq_q1: 'Mon MP3 est-il envoyé ?',
   tool_extract_cover_art_from_an_mp3_faq_a1: 'Non. Analyse APIC dans le navigateur.',
   tool_extract_cover_art_from_an_mp3_faq_q2: 'Pas de pochette ?',

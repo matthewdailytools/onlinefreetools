@@ -65,6 +65,7 @@ const en: SiteLangDict = {
   tool_make_a_nightcore_version_of_a_song_usecases_title: "When this helps",
   tool_make_a_nightcore_version_of_a_song_usecase_1: "A pop or anime track for a classic nightcore edit—pick 1.25×, Nightcore, download WAV.",
   tool_make_a_nightcore_version_of_a_song_usecase_2: "A short clip that needs both speed and pitch lift—not tempo-only practice, not key-only transpose.",
+  tool_make_a_nightcore_version_of_a_song_usecase_3: "A track needs the classic faster, higher nightcore feel for a short edit.",
   tool_make_a_nightcore_version_of_a_song_faq_q1: "Is this the same as changing speed without changing pitch?",
   tool_make_a_nightcore_version_of_a_song_faq_a1: "No. Speed-without-pitch uses WSOLA so tempo changes while pitch aims to stay. Nightcore speeds up and raises pitch together. Use Change audio speed without changing pitch for tempo-only work.",
   tool_make_a_nightcore_version_of_a_song_faq_q2: "Is this the same as shifting pitch while keeping duration?",

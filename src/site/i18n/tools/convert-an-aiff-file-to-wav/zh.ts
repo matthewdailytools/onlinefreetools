@@ -56,6 +56,7 @@ const zh: SiteLangDict = {
   tool_convert_an_aiff_file_to_wav_usecases_title: '适合哪些录音',
   tool_convert_an_aiff_file_to_wav_usecase_1: '把 Logic 或 GarageBand 导出的 AIFF 转成 Windows 编辑器更认的 WAV。',
   tool_convert_an_aiff_file_to_wav_usecase_2: '把 CAF 语音备忘录转成 WAV，同时保留原容器文件。',
+  tool_convert_an_aiff_file_to_wav_usecase_3: 'Logic 导出的 AIFF 要交给只用 WAV 的协作方。',
   tool_convert_an_aiff_file_to_wav_faq_q1: 'CAF 文件也能转吗？',
   tool_convert_an_aiff_file_to_wav_faq_a1: '可以。若浏览器能解码 .caf，与 AIFF 使用同一“转成 WAV”按钮。',
   tool_convert_an_aiff_file_to_wav_faq_q2: 'AIFF 转 WAV 是无损吗？',

@@ -63,6 +63,7 @@ const es: SiteLangDict = {
   tool_mix_a_voiceover_with_background_music_usecases_title: "Cuándo ayuda",
   tool_mix_a_voiceover_with_background_music_usecase_1: "Una toma hablada necesita cama musical suave—añade ambas, baja la cama o activa ducking, Mezclar, descarga.",
   tool_mix_a_voiceover_with_background_music_usecase_2: "Ya extrajiste audio de un vídeo y quieres capa de locución sin subir a un mezclador online.",
+  tool_mix_a_voiceover_with_background_music_usecase_3: "Una VO seca necesita música de fondo más baja debajo sin un mezclador completo.",
   tool_mix_a_voiceover_with_background_music_faq_q1: "¿Es lo mismo que unir archivos de audio uno tras otro?",
   tool_mix_a_voiceover_with_background_music_faq_a1: "No. Unir coloca clips uno después de otro. Esta página reproduce voz y cama a la vez.",
   tool_mix_a_voiceover_with_background_music_faq_q2: "¿Hace fundido cruzado entre canciones?",

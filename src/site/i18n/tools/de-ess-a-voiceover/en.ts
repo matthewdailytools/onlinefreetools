@@ -62,6 +62,7 @@ const en: SiteLangDict = {
   tool_de_ess_a_voiceover_usecases_title: "When this helps",
   tool_de_ess_a_voiceover_usecase_1: "A voiceover with piercing S sounds—pick Medium, De-ess, download WAV.",
   tool_de_ess_a_voiceover_usecase_2: "A narration pass before you EQ muffled tone or declick mouth pops elsewhere.",
+  tool_de_ess_a_voiceover_usecase_3: "Harsh “s” sounds stick out on headphones after a bright mic take.",
   tool_de_ess_a_voiceover_faq_q1: "Is this the same as EQ a muffled voice recording?",
   tool_de_ess_a_voiceover_faq_a1: "No. That page applies static Clarity/Warmth/Presence tone presets across low, mid and high bands. This page only attenuates when sibilant-band energy rises. Use EQ a muffled voice recording for overall muffled tone.",
   tool_de_ess_a_voiceover_faq_q2: "Does this reduce background noise on a voice memo?",

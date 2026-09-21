@@ -58,6 +58,7 @@ const fr: SiteLangDict = {
   tool_normalize_an_audio_file_to_peak_usecases_title: "Quand cela aide",
   tool_normalize_an_audio_file_to_peak_usecase_1: "Une livraison qui demande des pics près du plein échelle avec marge—normalisez à −1 dBFS et téléchargez le WAV.",
   tool_normalize_an_audio_file_to_peak_usecase_2: "Plusieurs prises à niveaux différents à aligner par pic avant montage, sans chasser un chiffre LUFS.",
+  tool_normalize_an_audio_file_to_peak_usecase_3: "Des prises à pics différents doivent viser le même pic cible.",
   tool_normalize_an_audio_file_to_peak_faq_q1: "Est-ce la même chose qu’augmenter le volume avec un gain dB fixe ?",
   tool_normalize_an_audio_file_to_peak_faq_a1: "Non. Le gain fixe multiplie par des dB choisis. La normalisation au pic scale ce qu’il faut pour que le pic absolu atteigne la cible. Pour un boost dB fixe, utilisez Rendre plus forte un enregistrement faible.",
   tool_normalize_an_audio_file_to_peak_faq_q2: "Cela aligne-t-il la loudness podcast / LUFS ?",

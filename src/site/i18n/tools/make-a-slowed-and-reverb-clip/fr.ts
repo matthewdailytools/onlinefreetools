@@ -68,6 +68,7 @@ const fr: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_usecases_title: "Quand cela aide",
   tool_make_a_slowed_and_reverb_clip_usecase_1: "Un clip pop ou R&B pour un edit slowed+reverb classique—0.8× + Moyen, Slowed reverb, télécharger le WAV.",
   tool_make_a_slowed_and_reverb_clip_usecase_2: "Un court clip qui a besoin de lent et d’espace—pas tempo-only, pas nightcore, pas réverb sèche seule.",
+  tool_make_a_slowed_and_reverb_clip_usecase_3: "Un extrait doit sonner slowed-and-reverb pour un montage social.",
   tool_make_a_slowed_and_reverb_clip_faq_q1: "Est-ce la même chose que changer la vitesse sans changer la hauteur ?",
   tool_make_a_slowed_and_reverb_clip_faq_a1: "Non. Vitesse-sans-hauteur utilise WSOLA sans réverb. Cette page ralentit avec baisse de hauteur et ajoute de la réverb. Utilisez Changer la vitesse audio sans changer la hauteur pour le tempo seul.",
   tool_make_a_slowed_and_reverb_clip_faq_q2: "Est-ce la même chose que le nightcore ?",

@@ -63,6 +63,7 @@ const de: SiteLangDict = {
   tool_make_an_8d_panning_version_of_a_song_usecases_title: "Wann das hilft",
   tool_make_an_8d_panning_version_of_a_song_usecase_1: "Kurzer Song oder Loop für klassischen Kopfhörer-8D-Edit—5s wählen, 8D-Pan, WAV laden.",
   tool_make_an_8d_panning_version_of_a_song_usecase_2: "Clip braucht L↔R-Bewegung—nicht Slowed+Reverb, nicht Nightcore, nicht Reverse.",
+  tool_make_an_8d_panning_version_of_a_song_usecase_3: "Du willst rotierendes Stereopanning für Kopfhörer, kein Mono-Remix.",
   tool_make_an_8d_panning_version_of_a_song_faq_q1: "Ist das echtes 3D-Surround oder HRTF?",
   tool_make_an_8d_panning_version_of_a_song_faq_a1: "Nein. Mid-Signal mit Constant-Power-Gewinnen L/R autopanned für Kopfhörer-„Kreis“-Gefühl. Kein Dolby-, Ambisonics- oder gemessenes HRTF-Decode.",
   tool_make_an_8d_panning_version_of_a_song_faq_q2: "Ist das dasselbe wie Slowed and Reverb?",

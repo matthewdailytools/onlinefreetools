@@ -53,6 +53,7 @@ const es: SiteLangDict = {
   tool_extract_cover_art_from_an_mp3_usecases_title: 'Para qué sirve',
   tool_extract_cover_art_from_an_mp3_usecase_1: 'Guardar carátula de podcast como miniatura.',
   tool_extract_cover_art_from_an_mp3_usecase_2: 'Comprobar si un MP3 ya lleva carátula.',
+  tool_extract_cover_art_from_an_mp3_usecase_3: 'Necesitas la carátula embebida como imagen sin re-codificar la pista.',
   tool_extract_cover_art_from_an_mp3_faq_q1: '¿Se sube mi MP3?',
   tool_extract_cover_art_from_an_mp3_faq_a1: 'No. El análisis APIC corre en el navegador.',
   tool_extract_cover_art_from_an_mp3_faq_q2: '¿Y si no hay carátula?',

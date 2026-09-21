@@ -82,6 +82,7 @@ const fr: SiteLangDict = {
     'Vous voulez un WAV d’ambiance de concentration réutilisable : réglez porteuse et rythme, Mixer, téléchargez et gardez le fichier pour le casque.',
   tool_mix_binaural_beats_for_focus_usecase_2:
     'Vous avez besoin d’une démo rapide de rythme stéréo sans installer une appli de tons ni croire des promesses thérapeutiques.',
+  tool_mix_binaural_beats_for_focus_usecase_3: 'Vous voulez un fond stéréo court carrier/beat Hz uniquement au casque.',
   tool_mix_binaural_beats_for_focus_faq_q1: 'Est-ce un traitement médical ou une thérapie ?',
   tool_mix_binaural_beats_for_focus_faq_a1:
     'Non. Cette page crée uniquement un son de divertissement et d’ambiance personnelle pour la concentration. Elle ne diagnostique, ne traite ni ne guérit aucune affection et ne revendique aucune efficacité thérapeutique.',

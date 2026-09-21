@@ -95,6 +95,7 @@ const en: SiteLangDict = {
     'A spoken take needs a quiet music bed underneath—add both, lower bed gain or enable ducking, Mix, download WAV.',
   tool_mix_a_voiceover_with_background_music_usecase_2:
     'You already extracted audio from a video and want to layer a new voiceover without uploading to an online mixer.',
+  tool_mix_a_voiceover_with_background_music_usecase_3: 'A dry VO needs quieter bed music underneath without a full mixer.',
   tool_mix_a_voiceover_with_background_music_faq_q1: 'Is this the same as joining audio files end-to-end?',
   tool_mix_a_voiceover_with_background_music_faq_a1:
     'No. Joining places clips one after another. This page plays voice and bed at the same time (overlay mix).',

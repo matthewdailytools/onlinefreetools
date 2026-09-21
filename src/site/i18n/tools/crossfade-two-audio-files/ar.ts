@@ -65,6 +65,7 @@ const ar: SiteLangDict = {
   tool_crossfade_two_audio_files_usecases_title: 'متى يفيد',
   tool_crossfade_two_audio_files_usecase_1: 'أغنيتان تحتاجان تسليماً بأسلوب DJ—أضفهما، 2–5 ث equal-power، تداخل، نزّل WAV.',
   tool_crossfade_two_audio_files_usecase_2: 'مقاطع بودكاست يجب أن تلتقي بنعومة—ثانية واحدة بين التسجيلات دون محرر عبر الإنترنت.',
+  tool_crossfade_two_audio_files_usecase_3: 'قسمان يحتاجان تداخلًا قصيرًا حتى لا يكون الوصل قطعًا حادًا.',
   tool_crossfade_two_audio_files_faq_q1: 'هل هذا مثل وصل الملفات طرفاً بطرف؟',
   tool_crossfade_two_audio_files_faq_a1: 'لا. الوصل قطع حاد. هذه الصفحة تُراكب نهاية الأول مع بداية الثاني.',
   tool_crossfade_two_audio_files_faq_q2: 'هل هذا مثل مزج تعليق صوتي فوق موسيقى؟',

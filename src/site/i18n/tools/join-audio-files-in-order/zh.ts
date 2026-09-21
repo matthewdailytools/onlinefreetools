@@ -78,6 +78,7 @@ const zh: SiteLangDict = {
   tool_join_audio_files_in_order_usecases_title: '适用场景',
   tool_join_audio_files_in_order_usecase_1: '多条语音备忘录要合成一条连续口播——按序添加、拼接、下载 WAV。',
   tool_join_audio_files_in_order_usecase_2: '歌曲分段或播客章节是多个文件，需要一次导出且不想上传到在线拼接站。',
+  tool_join_audio_files_in_order_usecase_3: '多章 WAV 要按列表顺序拼成一条连续文件。',
   tool_join_audio_files_in_order_faq_q1: '这和把两轨叠在一起混音一样吗？',
   tool_join_audio_files_in_order_faq_a1:
     '不一样。叠加混音是同一时间同时出声（例如口播配乐）。本页只按列表顺序一段接一段。',

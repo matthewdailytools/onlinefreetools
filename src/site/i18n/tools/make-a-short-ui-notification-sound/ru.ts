@@ -57,6 +57,7 @@ const ru: SiteLangDict = {
   tool_make_a_short_ui_notification_sound_usecases_title: "Когда это помогает",
   tool_make_a_short_ui_notification_sound_usecase_1: "Нужна крошечная cue успеха или клика для прототипа—выберите пресет, Сгенерировать, скачайте WAV для моков или демо.",
   tool_make_a_short_ui_notification_sound_usecase_2: "Нужен повторно используемый alert или ping без поиска сток-библиотеки и без установки настольного синтезатора.",
+  tool_make_a_short_ui_notification_sound_usecase_3: "Нужен короткий клик/колокольчик WAV для прототипа приложения.",
   tool_make_a_short_ui_notification_sound_faq_q1: "Это генератор DTMF-тонов набора?",
   tool_make_a_short_ui_notification_sound_faq_a1: "Нет. DTMF использует парные телефонные частоты в последовательности клавиатуры. Эта страница делает только короткие UI-cues.",
   tool_make_a_short_ui_notification_sound_faq_q2: "Может ли он сделать длинную синусоиду на выбранном герце?",

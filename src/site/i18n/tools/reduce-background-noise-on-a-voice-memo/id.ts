@@ -67,6 +67,7 @@ const id: SiteLangDict = {
   tool_reduce_background_noise_on_a_voice_memo_usecases_title: "Kapan ini membantu",
   tool_reduce_background_noise_on_a_voice_memo_usecase_1: "Memo ponsel dengan desis kipas atau AC—pilih Medium, Denoise, unduh WAV.",
   tool_reduce_background_noise_on_a_voice_memo_usecase_2: "Catatan lapangan yang butuh lebih sedikit desis sebelum fade atau EQ di tempat lain.",
+  tool_reduce_background_noise_on_a_voice_memo_usecase_3: "Dengung kipas/AC stabil di bawah suara; gate lembut harus menenangkan jeda.",
   tool_reduce_background_noise_on_a_voice_memo_faq_q1: "Apakah ini sama dengan Adobe Enhance Speech?",
   tool_reduce_background_noise_on_a_voice_memo_faq_a1:
     "Tidak. Enhance cloud membangun ulang ucapan dengan model besar. Di sini hanya high-pass dan gate lantai di browser—hasil sederhana dan jujur.",

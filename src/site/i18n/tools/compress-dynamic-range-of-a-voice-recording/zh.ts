@@ -67,6 +67,7 @@ const zh: SiteLangDict = {
   tool_compress_dynamic_range_of_a_voice_recording_usecases_title: "适用场景",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_1: "配音忽轻忽响——选「中」压缩后下载 WAV。",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_2: "采访轨想先贴面再去做响度对齐，而不是为省空间压小 MP3。",
+  tool_compress_dynamic_range_of_a_voice_recording_usecase_3: "同一条里忽轻忽重，希望听感更均匀。",
   tool_compress_dynamic_range_of_a_voice_recording_faq_q1: "这和「压缩」MP3、缩小文件体积是一回事吗？",
   tool_compress_dynamic_range_of_a_voice_recording_faq_a1: "不是。这里的「压缩」指动态范围压缩（阈值/比率），不是降低码率或字节数。要缩小 MP3 请用「压缩 MP3 文件大小」。中文里：压缩人声动态 ≠ 压缩 MP3 体积。",
   tool_compress_dynamic_range_of_a_voice_recording_faq_q2: "这和把安静的录音用固定 dB 增益调大声是一回事吗？",

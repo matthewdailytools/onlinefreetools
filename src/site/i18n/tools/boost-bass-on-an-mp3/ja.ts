@@ -10,8 +10,7 @@ const ja: SiteLangDict = {
     "Mild / Medium / Strong のローシェルフで薄い低音を厚くし、16ビットWAVを保存。端末内のみ。",
   tool_boost_bass_on_an_mp3_description:
     "MP3の低音をブースト：Mild・Medium・Strongのローシェルフプリセットで低域を持ち上げます。手順：ブースト、プレビュー、WAVを保存。例：薄い低音サンプルを読み込む。ローシェルフの低音のみ—フル多帯域EQでも、ファイル全体の音量ブースターでもありません。音声は端末に留まり、アップロードしません。",
-  tool_boost_bass_on_an_mp3_article:
-    "スマホ書き出しやノートPCスピーカーではキックとベースが薄くなりがちで、中域は足りても約100Hz以下の重さが足りません。本ページはOfflineAudioContextでBiquadFilterのlowshelf一段を走らせます。Mildは穏やか、Medium（既定）は日常向け、Strongはより重い低音。クリップしそうならソフトピーク保護でスケールします。これは低音ブーストであり、こもった声向けClarity/Warmth/Presence三帯域EQでも、全帯域を同じdBで上げる音量ブースターでもありません。チャンネルは1〜2。マスターは残し、ダウンロードは新しい16ビットWAV。処理はブラウザ内です。",
+  tool_boost_bass_on_an_mp3_article: "スマホ書き出しやノートPCスピーカーではキックとベースが薄くなりがちで、中域は足りても約100Hz以下の重さが足りません。本ページはon-device audio processingでEQ filterのlowshelf一段を走らせます。Mildは穏やか、Medium（既定）は日常向け、Strongはより重い低音。クリップしそうならソフトピーク保護でスケールします。これは低音ブーストであり、こもった声向けClarity/Warmth/Presence三帯域EQでも、全帯域を同じdBで上げる音量ブースターでもありません。チャンネルは1〜2。マスターは残し、ダウンロードは新しい16ビットWAV。処理はブラウザ内です。",
   tool_boost_bass_on_an_mp3_choose: "音声ファイルを選ぶ",
   tool_boost_bass_on_an_mp3_hint: "WAV、MP3、M4A、AAC、OGGを1つ。最大40MiB・10分。モノラルまたはステレオ。",
   tool_boost_bass_on_an_mp3_convert: "ブースト",
@@ -72,6 +71,7 @@ const ja: SiteLangDict = {
   tool_boost_bass_on_an_mp3_usecases_title: "こんなときに",
   tool_boost_bass_on_an_mp3_usecase_1: "書き出したMP3がスピーカーで薄い—Mediumを選んでブーストし、WAVを保存。",
   tool_boost_bass_on_an_mp3_usecase_2: "フルグラフィックEQやミックス全体の音量上げなしでキックに重さが欲しいとき。",
+  tool_boost_bass_on_an_mp3_usecase_3: "スマホ書き出しのMP3がノートPCで薄く、キックだけ厚くしたい。",
   tool_boost_bass_on_an_mp3_faq_q1: "こもったボイス録音のEQと同じですか？",
   tool_boost_bass_on_an_mp3_faq_a1:
     "いいえ。あちらはClarity/Warmth/Presenceの三帯域でこもった声向け。こちらはlowshelfで低域だけ。こもった声EQは「こもったボイス録音をEQする」を使ってください。",

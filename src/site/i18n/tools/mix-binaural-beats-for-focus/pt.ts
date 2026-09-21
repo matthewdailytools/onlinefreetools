@@ -82,6 +82,7 @@ const pt: SiteLangDict = {
     'Você quer um WAV ambiente de foco reutilizável: defina portadora e batida, Misturar, baixe e guarde o arquivo para fones.',
   tool_mix_binaural_beats_for_focus_usecase_2:
     'Você precisa de uma demo rápida de batida estéreo sem instalar app de tons nem confiar em alegações de terapia.',
+  tool_mix_binaural_beats_for_focus_usecase_3: 'Quer um ambiente estéreo curto de carrier e beat Hz só de auscultadores.',
   tool_mix_binaural_beats_for_focus_faq_q1: 'Isto é tratamento médico ou terapia?',
   tool_mix_binaural_beats_for_focus_faq_a1:
     'Não. Esta página só cria som de entretenimento e ambiente pessoal de foco. Não diagnostica, trata nem cura nenhuma condição e não afirma eficácia terapêutica.',

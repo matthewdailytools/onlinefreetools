@@ -67,6 +67,7 @@ const de: SiteLangDict = {
   tool_reduce_background_noise_on_a_voice_memo_usecases_title: "Wann das hilft",
   tool_reduce_background_noise_on_a_voice_memo_usecase_1: "Telefonnotiz mit Lüfter- oder Klima-Zischen—Medium, Entrauschen, WAV laden.",
   tool_reduce_background_noise_on_a_voice_memo_usecase_2: "Feldnotiz mit weniger Raumrauschen, bevor Fades oder EQ woanders folgen.",
+  tool_reduce_background_noise_on_a_voice_memo_usecase_3: "Stetiges Lüfter-/AC-Rauschen unter der Stimme; ein weiches Gate soll Lücken beruhigen.",
   tool_reduce_background_noise_on_a_voice_memo_faq_q1: "Ist das Adobe Enhance Speech?",
   tool_reduce_background_noise_on_a_voice_memo_faq_a1:
     "Nein. Cloud-Enhance baut Sprache mit großen Modellen neu. Hier nur Hochpass und Rauschboden-Gate im Browser—bescheidene, ehrliche Ergebnisse.",

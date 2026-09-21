@@ -61,6 +61,7 @@ const id: SiteLangDict = {
   tool_remove_clicks_from_a_recording_usecases_title: "Kapan ini membantu",
   tool_remove_clicks_from_a_recording_usecase_1: "Memo suara dengan pop mulut atau ketukan kabel—pilih Sedang, Declick, unduh WAV.",
   tool_remove_clicks_from_a_recording_usecase_2: "Transfer dengan retak vinil jarang sebelum denoise atau dehum di tempat lain.",
+  tool_remove_clicks_from_a_recording_usecase_3: "Klik mulut dan pop edit mengganggu VO yang bersih.",
   tool_remove_clicks_from_a_recording_faq_q1: "Apakah ini sama dengan mengurangi noise latar pada memo suara?",
   tool_remove_clicks_from_a_recording_faq_a1: "Tidak. Halaman itu high-pass dan gate desis kipas/AC mantap. Halaman ini memperbaiki lonjakan impulsif pendek. Untuk desis pita lebar gunakan Kurangi noise latar pada memo suara.",
   tool_remove_clicks_from_a_recording_faq_q2: "Apakah ini menghapus dengung listrik 50/60 Hz?",

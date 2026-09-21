@@ -62,6 +62,7 @@ const id: SiteLangDict = {
   tool_add_reverb_to_an_audio_clip_usecases_title: "Kapan ini membantu",
   tool_add_reverb_to_an_audio_clip_usecase_1: "Voice-over kering yang butuh sedikit udara ruang—pilih Ruang, Tambah reverb, unduh WAV.",
   tool_add_reverb_to_an_audio_clip_usecase_2: "Stem pendek yang butuh ruang aula atau gema lebih jelas tanpa memperlambat.",
+  tool_add_reverb_to_an_audio_clip_usecase_3: "Anda ingin ekor ruang/hall singkat pada vokal kering tanpa membuka DAW.",
   tool_add_reverb_to_an_audio_clip_faq_q1: "Apakah ini sama dengan slowed and reverb?",
   tool_add_reverb_to_an_audio_clip_faq_a1: "Tidak. Slowed and reverb juga meregangkan tempo dan menurunkan pitch sebelum menambah ruang. Halaman ini membiarkan kecepatan dan pitch serta hanya menambah reverb atau gema. Gunakan Make a slowed and reverb clip untuk estetika itu.",
   tool_add_reverb_to_an_audio_clip_faq_q2: "Apa bedanya Ruang, Aula, dan Echo?",

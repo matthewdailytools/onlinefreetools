@@ -60,6 +60,7 @@ const ar: SiteLangDict = {
   tool_change_audio_speed_without_changing_pitch_usecases_title: "متى يفيد ذلك",
   tool_change_audio_speed_without_changing_pitch_usecase_1: "أغنية تدريب سريعة جداً—اختر 0.75×، مدّد، نزّل WAV.",
   tool_change_audio_speed_without_changing_pitch_usecase_2: "مقطع يحتاج تسريعاً طفيفاً للتوقيت دون رفع طبقة النايتكور.",
+  tool_change_audio_speed_without_changing_pitch_usecase_3: "يجب ضغط تعليق صوتي في فيديو أقصر دون صوت مرتفع النبرة بشكل سخيف.",
   tool_change_audio_speed_without_changing_pitch_faq_q1: "هل هذا مثل تغيير الطبقة أو المفتاح؟",
   tool_change_audio_speed_without_changing_pitch_faq_a1: "لا. تغيير الطبقة يغيّر الطبقة الموسيقية (وقد تبقى المدة). هذه الصفحة تغيّر الإيقاع بـ WSOLA مع استهداف الحفاظ على الطبقة. الطبقة فقط مهمة منفصلة.",
   tool_change_audio_speed_without_changing_pitch_faq_q2: "هل هذا صانع نايتكور؟",

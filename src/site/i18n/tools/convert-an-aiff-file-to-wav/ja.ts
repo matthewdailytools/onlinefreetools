@@ -56,6 +56,7 @@ const ja: SiteLangDict = {
   tool_convert_an_aiff_file_to_wav_usecases_title: 'こんなときに',
   tool_convert_an_aiff_file_to_wav_usecase_1: 'LogicのAIFFをWindowsエディタ向けWAVに。',
   tool_convert_an_aiff_file_to_wav_usecase_2: 'CAF音声メモをWAVに、原本は保持。',
+  tool_convert_an_aiff_file_to_wav_usecase_3: 'LogicのAIFFバウンスを、Windows側向けWAVにしたい。',
   tool_convert_an_aiff_file_to_wav_faq_q1: 'CAFも可？',
   tool_convert_an_aiff_file_to_wav_faq_a1: 'はい。ブラウザがデコードできる.cafは同じ「WAVに変換」でAIFFと共通。',
   tool_convert_an_aiff_file_to_wav_faq_q2: 'AIFF→WAVはロスレス？',

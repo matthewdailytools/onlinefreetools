@@ -56,6 +56,7 @@ const de: SiteLangDict = {
   tool_generate_dtmf_touch_tones_usecases_title: "Wann das hilft",
   tool_generate_dtmf_touch_tones_usecase_1: "Sie brauchen einen DTMF-Clip für IVR oder Telefon-Demo—Ziffern eingeben, Erzeugen, WAV für Docs/Tests herunterladen.",
   tool_generate_dtmf_touch_tones_usecase_2: "Sie wollen eine reproduzierbare Touch-Tone-Sequenz ohne Desktop-Signalgenerator.",
+  tool_generate_dtmf_touch_tones_usecase_3: "Du musst Tastenpiepser für eine IVR-Demo erzeugen.",
   tool_generate_dtmf_touch_tones_faq_q1: "Ist das ein einzelner Sinuston-Generator?",
   tool_generate_dtmf_touch_tones_faq_a1: "Nein. DTMF nutzt zwei Frequenzen gleichzeitig (Zeile + Spalte). Für einen Sinus bei gewähltem Hertz die Sinuston-Seite nutzen.",
   tool_generate_dtmf_touch_tones_faq_q2: "Kann es kurze UI-Benachrichtigungstöne machen?",

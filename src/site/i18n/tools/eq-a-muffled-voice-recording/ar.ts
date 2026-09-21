@@ -10,8 +10,7 @@ const ar: SiteLangDict = {
     "افتح صوتًا مكتومًا بإعدادات Clarity أو Warmth أو Presence ثلاثية النطاق ثم نزّل WAV بـ 16 بت. على الجهاز فقط.",
   tool_eq_a_muffled_voice_recording_description:
     "معادلة تسجيل صوت مكتوم بإعدادات Clarity وWarmth وPresence ثلاثية النطاق. الخطوات: معادلة، معاينة، تنزيل WAV. مثال: حمّل العينة المكتومة. تشكيل نغمة فقط—ليس تعزيز باس وحده، ولا إزالة ضوضاء، ولا إزالة صفير. يبقى الصوت على جهازك؛ لا يُرفع أبدًا.",
-  tool_eq_a_muffled_voice_recording_article:
-    "المكالمات والأقنعة والميكروفونات البعيدة غالبًا تبدو مكتومة: طين زائد تحت بضع مئات من الهرتز ووضوح ناقص في نطاق الكلام. هذه الصفحة تشغّل ثلاث مراحل BiquadFilter في OfflineAudioContext—lowshelf وpeaking وhighshelf—كإعدادات مسماة. Clarity يقطع الطين ويرفع حضور الكلام؛ Warmth يرفع الجسم ويليّن الحدة؛ Presence يركز حضور منتصف-عالي والهواء. هذا EQ نغمي لصوت مكتوم، لا معزز باس أحادي النطاق، ولا إزالة ضوضاء خلفية، ولا مزيل صفير فقط. القنوات 1 أو 2. احتفظ بالأصلي؛ التنزيل WAV جديد 16 بت. العمل في المتصفح على جهازك.",
+  tool_eq_a_muffled_voice_recording_article: "المكالمات والأقنعة والميكروفونات البعيدة غالبًا تبدو مكتومة: طين زائد تحت بضع مئات من الهرتز ووضوح ناقص في نطاق الكلام. هذه الصفحة تشغّل ثلاث مراحل EQ filter في on-device audio processing—lowshelf وpeaking وhighshelf—كإعدادات مسماة. Clarity يقطع الطين ويرفع حضور الكلام؛ Warmth يرفع الجسم ويليّن الحدة؛ Presence يركز حضور منتصف-عالي والهواء. هذا EQ نغمي لصوت مكتوم، لا معزز باس أحادي النطاق، ولا إزالة ضوضاء خلفية، ولا مزيل صفير فقط. القنوات 1 أو 2. احتفظ بالأصلي؛ التنزيل WAV جديد 16 بت. العمل في المتصفح على جهازك.",
   tool_eq_a_muffled_voice_recording_choose: "اختر ملف صوت",
   tool_eq_a_muffled_voice_recording_hint: "أسقط WAV أو MP3 أو M4A أو AAC أو OGG واحدًا. بحد أقصى 40 ميبيبايت و10 دقائق؛ أحادي أو ستيريو.",
   tool_eq_a_muffled_voice_recording_convert: "معادلة",
@@ -58,7 +57,7 @@ const ar: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_why_choose_item_4: "تغيير الإعداد أو الإدخال يمسح التنزيل القديم حتى لا تحفظ WAV قديمًا بالخطأ.",
   tool_eq_a_muffled_voice_recording_rules_title: "Clarity وWarmth وPresence والحدود",
   tool_eq_a_muffled_voice_recording_rules_body:
-    "كل إعداد ثلاث مراحل Biquad (lowshelf وpeaking وhighshelf). Clarity يفتح الكلام المكتوم؛ Warmth يضيف جسمًا؛ Presence يرفع الحضور والهواء. حماية الذروة الناعمة تقيس النتيجة إن كان التعزيز سيسبب قصًا.",
+    "كل إعداد ثلاث مراحل EQ (lowshelf وpeaking وhighshelf). Clarity يفتح الكلام المكتوم؛ Warmth يضيف جسمًا؛ Presence يرفع الحضور والهواء. حماية الذروة الناعمة تقيس النتيجة إن كان التعزيز سيسبب قصًا.",
   tool_eq_a_muffled_voice_recording_rules_item_1:
     "Clarity الافتراضي يقطع الباس الطيني ويرفع وضوح الكلام. Warmth يرفع جسم الباس ويليّن الحدة. Presence يركز حضور منتصف-عالي.",
   tool_eq_a_muffled_voice_recording_rules_item_2:
@@ -72,6 +71,7 @@ const ar: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_usecases_title: "متى يساعد هذا",
   tool_eq_a_muffled_voice_recording_usecase_1: "مقطع هاتف أو قناع يبدو كأنه في صندوق—اختر Clarity، عادلة، نزّل WAV.",
   tool_eq_a_muffled_voice_recording_usecase_2: "صوت بودكاست يحتاج جسمًا أدفأ أو حضورًا أكثر دون فتح معادل DAW كامل.",
+  tool_eq_a_muffled_voice_recording_usecase_3: "تسجيل بعيد أو بقناع يبدو مكتومًا وتحتاج حضورًا أوضح للصوت.",
   tool_eq_a_muffled_voice_recording_faq_q1: "هل هذا مثل معزز الباس؟",
   tool_eq_a_muffled_voice_recording_faq_a1:
     "لا. معزز الباس يرفع أساسًا الترددات المنخفضة. هذه الصفحة تقدم ثلاثة إعدادات صوت متعددة النطاقات للكلام المكتوم. تعزيز الباس وحده مهمة أخرى (عند توفر Boost bass on an MP3).",

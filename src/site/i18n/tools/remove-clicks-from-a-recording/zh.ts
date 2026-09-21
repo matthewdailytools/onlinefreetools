@@ -61,6 +61,7 @@ const zh: SiteLangDict = {
   tool_remove_clicks_from_a_recording_usecases_title: "适用场景",
   tool_remove_clicks_from_a_recording_usecase_1: "备忘录里有口喷或线缆咔哒——选中、去咔哒、下载 WAV。",
   tool_remove_clicks_from_a_recording_usecase_2: "转制里有稀疏唱片裂纹，之后再去宽带嘶声或陷波市电嗡嗡。",
+  tool_remove_clicks_from_a_recording_usecase_3: "口播里有嘴部咔哒或剪辑爆音，想尽量去掉。",
   tool_remove_clicks_from_a_recording_faq_q1: "这和给人声备忘录降低背景噪音一样吗？",
   tool_remove_clicks_from_a_recording_faq_a1: "不一样。那一页用高通与门限压制稳态风扇或空调嘶声。本页修复短冲击尖峰。宽带嘶声请用给人声备忘录降低背景噪音。",
   tool_remove_clicks_from_a_recording_faq_q2: "这能去掉 50/60 Hz 市电嗡嗡吗？",

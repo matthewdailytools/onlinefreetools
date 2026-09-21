@@ -64,6 +64,7 @@ const en: SiteLangDict = {
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecases_title: "When this helps",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_1: "A narration that sits a little low—pick Higher, Shift, download WAV.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_2: "A short voice clip that needs a noticeably lower tone without changing length like a toy giant effect.",
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_3: "A VO needs a slightly higher or deeper character without a full pitch-correction suite.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q1: "Does this turn a voice into a specific gender?",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a1: "No. This page only shifts pitch higher or lower while aiming to keep duration. It does not promise male-to-female or female-to-male conversion, and it does not morph formants like studio gender tools.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q2: "Is this the same as toy chipmunk or robot voice effects?",

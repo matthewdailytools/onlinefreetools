@@ -61,6 +61,7 @@ const id: SiteLangDict = {
   tool_de_ess_a_voiceover_usecases_title: "Kapan ini membantu",
   tool_de_ess_a_voiceover_usecase_1: "Voiceover dengan S menusuk—pilih Sedang, De-ess, unduh WAV.",
   tool_de_ess_a_voiceover_usecase_2: "Narasi sebelum EQ nada redam atau hapus klik mulut di tempat lain.",
+  tool_de_ess_a_voiceover_usecase_3: "Bunyi “s” tajam mengganggu di headphone setelah take terang.",
   tool_de_ess_a_voiceover_faq_q1: "Apakah sama dengan EQ rekaman suara redam?",
   tool_de_ess_a_voiceover_faq_a1: "Tidak. Halaman itu menerapkan preset statis Clarity/Warmth/Presence. Halaman ini hanya meredam saat energi sibilan naik. Gunakan EQ rekaman suara redam untuk warna keseluruhan.",
   tool_de_ess_a_voiceover_faq_q2: "Apakah ini mengurangi kebisingan latar memo suara?",

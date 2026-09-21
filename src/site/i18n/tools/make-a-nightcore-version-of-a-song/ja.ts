@@ -64,6 +64,7 @@ const ja: SiteLangDict = {
   tool_make_a_nightcore_version_of_a_song_usecases_title: "役立つ場面",
   tool_make_a_nightcore_version_of_a_song_usecase_1: "ポップやアニメソングの定番ナイトコア—1.25×を選び、ナイトコア、WAV保存。",
   tool_make_a_nightcore_version_of_a_song_usecase_2: "速度とピッチの両方のリフトが必要な短いクリップ—練習用テンポのみでも調だけでもない。",
+  tool_make_a_nightcore_version_of_a_song_usecase_3: "短い編集用に、速く高いナイトコア感が欲しい。",
   tool_make_a_nightcore_version_of_a_song_faq_q1: "ピッチを変えずに速度だけ変えるのと同じですか？",
   tool_make_a_nightcore_version_of_a_song_faq_a1: "いいえ。速度のみはWSOLAでテンポを変えピッチを保とうとします。ナイトコアは速度とピッチを同時に上げます。テンポのみは「ピッチを変えずに音声速度を変更」を使ってください。",
   tool_make_a_nightcore_version_of_a_song_faq_q2: "長さを保ったままピッチをずらすのと同じですか？",

@@ -62,6 +62,7 @@ const en: SiteLangDict = {
   tool_match_podcast_loudness_to_minus_16_lufs_usecases_title: "When this helps",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_1: "A podcast episode that feels too quiet for a −16 LUFS delivery—match at −16 and download WAV.",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_2: "A YouTube or Spotify-bound voice track you want nearer −14 without peak-normalizing or running a compressor.",
+  tool_match_podcast_loudness_to_minus_16_lufs_usecase_3: "Episode loudness wanders and you want an approximate −16 LUFS target before host upload.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q1: "Is this the same as normalizing audio to peak?",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_a1: "No. Peak normalize scales so the absolute peak hits a dBFS target. This page measures approximate integrated loudness and gains toward a LUFS chip. For peak work, use Normalize an audio file to peak.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q2: "Is this the same as making a quiet recording louder with fixed dB gain?",

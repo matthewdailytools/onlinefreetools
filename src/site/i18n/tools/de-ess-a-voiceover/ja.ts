@@ -61,6 +61,7 @@ const ja: SiteLangDict = {
   tool_de_ess_a_voiceover_usecases_title: "向いている場面",
   tool_de_ess_a_voiceover_usecase_1: "サ行が刺さるナレーション—中を選び、ディエッサー、WAV 保存。",
   tool_de_ess_a_voiceover_usecase_2: "こもった EQ や口クリック除去の前に、まず歯擦音を抑える。",
+  tool_de_ess_a_voiceover_usecase_3: "明るい収録のあと、ヘッドホンで刺さる「さ行」を抑えたい。",
   tool_de_ess_a_voiceover_faq_q1: "こもった声のイコライザーと同じですか？",
   tool_de_ess_a_voiceover_faq_a1: "違います。あちらは Clarity/Warmth/Presence の静的プリセット。こちらは歯擦音帯域エネルギーが上がったときだけ減衰します。こもった音色は「こもった声の録音をイコライズ」を使ってください。",
   tool_de_ess_a_voiceover_faq_q2: "ボイスメモの背景ノイズ低減と同じですか？",

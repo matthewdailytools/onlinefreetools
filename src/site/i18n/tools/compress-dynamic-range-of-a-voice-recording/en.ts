@@ -77,6 +77,7 @@ const en: SiteLangDict = {
   tool_compress_dynamic_range_of_a_voice_recording_usecases_title: "When this helps",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_1: "A voiceover that jumps from quiet phrases to loud peaks—pick Medium, compress, download WAV.",
   tool_compress_dynamic_range_of_a_voice_recording_usecase_2: "An interview track you want more even before loudness matching, without shrinking an MP3 for file size.",
+  tool_compress_dynamic_range_of_a_voice_recording_usecase_3: "Whispers and peaks fight each other in one take and you want even listening level.",
   tool_compress_dynamic_range_of_a_voice_recording_faq_q1: "Is this the same as compressing / shrinking an MP3 file size?",
   tool_compress_dynamic_range_of_a_voice_recording_faq_a1:
     "No. “Compress” here means dynamic-range compression (threshold/ratio), not reducing bitrate or bytes. For smaller MP3 files, use Reduce an MP3 file size. In Chinese, 压缩人声动态 ≠ 压缩 MP3 体积.",

@@ -56,6 +56,7 @@ const de: SiteLangDict = {
   tool_convert_an_aiff_file_to_wav_usecases_title: 'Nützlich für',
   tool_convert_an_aiff_file_to_wav_usecase_1: 'Logic-AIFF-Export in Windows-Editor mit WAV öffnen.',
   tool_convert_an_aiff_file_to_wav_usecase_2: 'CAF-Sprachnotiz als WAV, Original behalten.',
+  tool_convert_an_aiff_file_to_wav_usecase_3: 'Ein Logic-Bounce als AIFF muss WAV für einen Windows-Partner werden.',
   tool_convert_an_aiff_file_to_wav_faq_q1: 'CAF-Dateien auch?',
   tool_convert_an_aiff_file_to_wav_faq_a1: 'Ja. .caf ablegen, wenn der Browser dekodiert—dieselbe In WAV umwandeln-Taste.',
   tool_convert_an_aiff_file_to_wav_faq_q2: 'AIFF zu WAV verlustfrei?',

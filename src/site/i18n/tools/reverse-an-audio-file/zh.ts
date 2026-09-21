@@ -57,6 +57,7 @@ const zh: SiteLangDict = {
   tool_reverse_an_audio_file_usecases_title: "适用场景",
   tool_reverse_an_audio_file_usecase_1: "短特效或音乐点缀需要倒着播——点倒放，下载 WAV。",
   tool_reverse_an_audio_file_usecase_2: "想先听混响尾巴——不是 8D 扫动，也不是淡入淡出包络。",
+  tool_reverse_an_audio_file_usecase_3: "短采样需要倒放，用作转场或效果。",
   tool_reverse_an_audio_file_faq_q1: "倒放会改变时长吗？",
   tool_reverse_an_audio_file_faq_a1: "不会。只翻转样本顺序，长度与采样率保持不变。",
   tool_reverse_an_audio_file_faq_q2: "这和 8D 声像一样吗？",

@@ -54,6 +54,7 @@ const id: SiteLangDict = {
   tool_generate_a_sine_tone_at_a_frequency_usecases_title: 'Kapan ini membantu',
   tool_generate_a_sine_tone_at_a_frequency_usecase_1: 'Butuh nada referensi A4—440 Hz, 2 dtk, Hasilkan, unduh WAV.',
   tool_generate_a_sine_tone_at_a_frequency_usecase_2: 'Ingin nada uji 1000 Hz untuk memeriksa speaker tanpa generator desktop.',
+  tool_generate_a_sine_tone_at_a_frequency_usecase_3: 'Butuh nada kalibrasi pada Hz tertentu untuk cek perangkat.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q1: 'Apakah ini generator noise putih/pink/cokelat?',
   tool_generate_a_sine_tone_at_a_frequency_faq_a1: 'Tidak. Halaman ini mensintesis satu sinus. Noise adalah pekerjaan lain.',
   tool_generate_a_sine_tone_at_a_frequency_faq_q2: 'Bisakah membuat nada DTMF?',

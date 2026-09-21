@@ -66,6 +66,7 @@ const de: SiteLangDict = {
   tool_shift_the_pitch_of_a_song_usecases_title: "Wann das hilft",
   tool_shift_the_pitch_of_a_song_usecase_1: "Begleitung zu hoch—−2 wählen, Verschieben, WAV herunterladen.",
   tool_shift_the_pitch_of_a_song_usecase_2: "Kurzer Clip braucht +1 oder +2 ohne Nightcore-Beschleunigung.",
+  tool_shift_the_pitch_of_a_song_usecase_3: "Karaoke oder Cover braucht ein paar Halbtöne hoch/tief bei gehaltener Dauer.",
   tool_shift_the_pitch_of_a_song_faq_q1: "Ist das dasselbe wie Tempo ändern ohne Tonhöhe?",
   tool_shift_the_pitch_of_a_song_faq_a1: "Nein. Tempo ohne Tonhöhe ändert das Tempo per WSOLA und hält die Tonhöhe. Diese Seite ändert die Tonhöhe und hält die Dauer. Für nur Tempo: Audiogeschwindigkeit ändern ohne Tonhöhe.",
   tool_shift_the_pitch_of_a_song_faq_q2: "Ist das ein Nightcore-Maker?",

@@ -63,6 +63,7 @@ const id: SiteLangDict = {
   tool_make_an_8d_panning_version_of_a_song_usecases_title: "Kapan ini membantu",
   tool_make_an_8d_panning_version_of_a_song_usecase_1: "Lagu pendek atau loop untuk edit 8D headphone klasik—pilih 5d, Pan 8D, unduh WAV.",
   tool_make_an_8d_panning_version_of_a_song_usecase_2: "Klip yang butuh gerakan K↔K—bukan slowed+reverb, bukan nightcore, bukan reverse.",
+  tool_make_an_8d_panning_version_of_a_song_usecase_3: "Anda ingin pan stereo berputar untuk headphone, bukan remix mono.",
   tool_make_an_8d_panning_version_of_a_song_faq_q1: "Apakah ini surround 3D sungguhan atau HRTF?",
   tool_make_an_8d_panning_version_of_a_song_faq_a1: "Tidak. Mid yang di-autopan K/K dengan gain daya konstan untuk rasa “lingkaran” di headphone. Tidak mendekode Dolby, Ambisonics, atau HRTF terukur.",
   tool_make_an_8d_panning_version_of_a_song_faq_q2: "Apakah sama dengan slowed and reverb?",

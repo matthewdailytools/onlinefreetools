@@ -61,6 +61,7 @@ const id: SiteLangDict = {
   tool_convert_stereo_audio_to_mono_usecases_title: "Kapan ini membantu",
   tool_convert_stereo_audio_to_mono_usecase_1: "Menyerahkan memo suara stereo atau bed podcast ke formulir yang hanya menerima unggahan mono.",
   tool_convert_stereo_audio_to_mono_usecase_2: "Menyimpan hanya mikrofon wawancara kiri (atau kanan) saat sisi lain bising atau hening.",
+  tool_convert_stereo_audio_to_mono_usecase_3: "Wawancara stereo harus jadi mono untuk IVR atau satu speaker.",
   tool_convert_stereo_audio_to_mono_faq_q1: "Apa yang dilakukan Campur ke mono pada kiri dan kanan?",
   tool_convert_stereo_audio_to_mono_faq_a1: "Ia merata setiap sampel saluran kiri dan kanan ((L+R)/2) menjadi satu trek mono, lalu menulis WAV PCM 16-bit. Pan ekstrem jadi lebih pelan; audio berfase berlawanan bisa menipis—pratinjau sebelum mengunduh.",
   tool_convert_stereo_audio_to_mono_faq_q2: "Bisakah saya mengonversi MP3 atau M4A ke WAV mono?",

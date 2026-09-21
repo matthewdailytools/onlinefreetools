@@ -66,6 +66,7 @@ const pt: SiteLangDict = {
   tool_shift_the_pitch_of_a_song_usecases_title: "Quando isso ajuda",
   tool_shift_the_pitch_of_a_song_usecase_1: "Acompanhamento alto demais—escolha −2, Transpor, baixe o WAV.",
   tool_shift_the_pitch_of_a_song_usecase_2: "Clipe que precisa de +1 ou +2 sem acelerar como nightcore.",
+  tool_shift_the_pitch_of_a_song_usecase_3: "Um karaoke ou cover precisa de alguns semitons para cima ou baixo mantendo a duração.",
   tool_shift_the_pitch_of_a_song_faq_q1: "É o mesmo que mudar a velocidade sem mudar o tom?",
   tool_shift_the_pitch_of_a_song_faq_a1: "Não. Velocidade-sem-tom muda o tempo com WSOLA visando manter o tom. Esta página muda o tom musical visando manter a duração. Use Alterar a velocidade do áudio sem alterar o tom para só tempo.",
   tool_shift_the_pitch_of_a_song_faq_q2: "Isto é um criador de nightcore?",

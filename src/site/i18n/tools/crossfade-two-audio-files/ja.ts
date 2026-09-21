@@ -65,6 +65,7 @@ const ja: SiteLangDict = {
   tool_crossfade_two_audio_files_usecases_title: 'こんなときに',
   tool_crossfade_two_audio_files_usecase_1: '2曲のDJ風つなぎ—両方追加し2–5秒 equal-power、クロスフェード、WAV保存。',
   tool_crossfade_two_audio_files_usecase_2: 'ポッドキャスト区間を柔らかくつなぐ—1秒フェードでハードカットを避け、オンライン編集へ上げない。',
+  tool_crossfade_two_audio_files_usecase_3: '2つの区間を短いオーバーラップでつなぎ、硬いカットを避けたい。',
   tool_crossfade_two_audio_files_faq_q1: '端から端への連結と同じですか？',
   tool_crossfade_two_audio_files_faq_a1: 'いいえ。連結はハードカット。本ページは末尾と先頭を重ねて一緒にフェードします。',
   tool_crossfade_two_audio_files_faq_q2: 'ナレーションをBGMに重ねるのと同じですか？',

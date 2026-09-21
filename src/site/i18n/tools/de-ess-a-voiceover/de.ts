@@ -61,6 +61,7 @@ const de: SiteLangDict = {
   tool_de_ess_a_voiceover_usecases_title: "Wann das hilft",
   tool_de_ess_a_voiceover_usecase_1: "Voiceover mit stechenden S-Lauten—Mittel wählen, De-essen, WAV laden.",
   tool_de_ess_a_voiceover_usecase_2: "Narration vor Dumpf-EQ oder Mundklick-Declick anderswo zuerst de-essen.",
+  tool_de_ess_a_voiceover_usecase_3: "Harte S-Laute nerven auf Kopfhörern nach einer hellen Aufnahme.",
   tool_de_ess_a_voiceover_faq_q1: "Ist das dasselbe wie eine dumpfe Stimmaufnahme entzerren?",
   tool_de_ess_a_voiceover_faq_a1: "Nein. Jene Seite setzt statische Clarity/Warmth/Presence-Presets. Diese dämpft nur bei steigender Sibilanzenergie. Für dumpfen Gesamtton Dumpfe Stimmaufnahme entzerren nutzen.",
   tool_de_ess_a_voiceover_faq_q2: "Reduziert das Hintergrundgeräusche in einer Sprachnotiz?",

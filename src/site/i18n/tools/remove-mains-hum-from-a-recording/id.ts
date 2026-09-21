@@ -10,8 +10,7 @@ const id: SiteLangDict = {
     "Potong dengung listrik 50 atau 60 Hz dengan filter notch dan harmonik opsional, lalu unduh WAV 16-bit. Hanya di perangkat.",
   tool_remove_mains_hum_from_a_recording_description:
     "Hapus dengung listrik dari rekaman dengan filter notch 50 atau 60 Hz dan harmonik ke-2–ke-5 opsional. Langkah: Dehum, pratinjau, unduh WAV. Contoh: muat sampel yang mendengung. Notch sempit untuk dengung listrik—bukan denoise pita lebar, bukan declick, bukan EQ suara teredam. Audio tetap di perangkat Anda; tidak pernah diunggah.",
-  tool_remove_mains_hum_from_a_recording_article:
-    "Rekaman dekat catu daya, dimmer, atau peralatan yang kurang grounding sering menangkap dengung listrik stabil 50 atau 60 Hz, kadang dengan harmonik. Halaman ini merangkai tahap notch BiquadFilter di OfflineAudioContext pada fundamental yang dipilih dan, opsional, harmonik ke-2 hingga ke-5 di bawah Nyquist. Menarget nada listrik sempit—bukan denoise desis kipas pita lebar, bukan perbaikan klik, dan bukan EQ tiga pita untuk suara teredam. Bass dekat notch bisa sedikit menipis. Jumlah saluran tetap 1 atau 2. Simpan file asli; unduhan adalah WAV 16-bit baru. Pekerjaan berjalan di browser pada perangkat Anda.",
+  tool_remove_mains_hum_from_a_recording_article: "Rekaman dekat catu daya, dimmer, atau peralatan yang kurang grounding sering menangkap dengung listrik stabil 50 atau 60 Hz, kadang dengan harmonik. Halaman ini merangkai tahap notch EQ filter di on-device audio processing pada fundamental yang dipilih dan, opsional, harmonik ke-2 hingga ke-5 di bawah Nyquist. Menarget nada listrik sempit—bukan denoise desis kipas pita lebar, bukan perbaikan klik, dan bukan EQ tiga pita untuk suara teredam. Bass dekat notch bisa sedikit menipis. Jumlah saluran tetap 1 atau 2. Simpan file asli; unduhan adalah WAV 16-bit baru. Pekerjaan berjalan di browser pada perangkat Anda.",
   tool_remove_mains_hum_from_a_recording_choose: "Pilih file audio",
   tool_remove_mains_hum_from_a_recording_hint: "Jatuhkan satu WAV, MP3, M4A, AAC, atau OGG. Maksimum 40 MiB dan 10 menit; mono atau stereo.",
   tool_remove_mains_hum_from_a_recording_convert: "Dehum",
@@ -70,6 +69,7 @@ const id: SiteLangDict = {
   tool_remove_mains_hum_from_a_recording_usecases_title: "Kapan ini membantu",
   tool_remove_mains_hum_from_a_recording_usecase_1: "Catatan suara dengan dengung listrik stabil dari charger atau dimmer—pilih Hz jaringan Anda, Dehum, unduh WAV.",
   tool_remove_mains_hum_from_a_recording_usecase_2: "Rekaman lapangan yang perlu menghilangkan nada listrik sebelum denoise desis pita lebar atau EQ suara teredam di tempat lain.",
+  tool_remove_mains_hum_from_a_recording_usecase_3: "Dengung 50/60 Hz dari listrik terdengar di bawah take.",
   tool_remove_mains_hum_from_a_recording_faq_q1: "Apakah sama dengan kurangi noise latar pada memo suara?",
   tool_remove_mains_hum_from_a_recording_faq_a1:
     "Tidak. Halaman itu high-pass dan gate desis kipas atau AC yang stabil. Halaman ini menotch nada listrik sempit 50/60 Hz. Gunakan Kurangi noise latar pada memo suara untuk desis pita lebar.",

@@ -10,8 +10,7 @@ const zh: SiteLangDict = {
     "用 50 或 60 Hz 陷波及可选谐波切掉市电嗡嗡，然后下载 16-bit WAV。仅本机处理。",
   tool_remove_mains_hum_from_a_recording_description:
     "从录音中去除市电嗡嗡：选择 50 或 60 Hz 陷波，并可叠加 2–5 次谐波。步骤：去嗡嗡、试听、下载 16 位 WAV。示例：加载带嗡嗡的样例即可体验。窄带陷波专治电流声——不是宽带降噪、不是去咔哒、不是闷声 EQ。音频始终留在本机，绝不会上传。",
-  tool_remove_mains_hum_from_a_recording_article:
-    "靠近电源、调光器或接地不良的设备录音时，常会叠上稳态 50 或 60 Hz 市电嗡嗡，有时还带谐波。本页在 OfflineAudioContext 中串联 Biquad 陷波，对准所选基波，并可在 Nyquist 以下叠加 2–5 次谐波。这针对窄带电流声——不是风扇嘶声宽带降噪、不是咔哒修复、也不是三频段闷声 EQ。靠近陷波的低音可能略薄。声道保持 1 或 2。保留原文件；下载是新的 16-bit WAV。处理在浏览器本机完成。",
+  tool_remove_mains_hum_from_a_recording_article: "靠近电源、调光器或接地不良的设备录音时，常会叠上稳态 50 或 60 Hz 市电嗡嗡，有时还带谐波。本页在 本机音频处理 中串联 均衡器 陷波，对准所选基波，并可在 Nyquist 以下叠加 2–5 次谐波。这针对窄带电流声——不是风扇嘶声宽带降噪、不是咔哒修复、也不是三频段闷声 EQ。靠近陷波的低音可能略薄。声道保持 1 或 2。保留原文件；下载是新的 16-bit WAV。处理在浏览器本机完成。",
   tool_remove_mains_hum_from_a_recording_choose: "选择音频文件",
   tool_remove_mains_hum_from_a_recording_hint: "拖入一个 WAV、MP3、M4A、AAC 或 OGG。最大 40 MiB、10 分钟；单声道或立体声。",
   tool_remove_mains_hum_from_a_recording_convert: "去嗡嗡",
@@ -69,6 +68,7 @@ const zh: SiteLangDict = {
   tool_remove_mains_hum_from_a_recording_usecases_title: "什么时候有用",
   tool_remove_mains_hum_from_a_recording_usecase_1: "备忘录叠着充电器或调光器的稳态电流嗡——选对电网 Hz，去嗡嗡，下载 WAV。",
   tool_remove_mains_hum_from_a_recording_usecase_2: "外录想先去掉市电音，再去做宽带降噪或闷声 EQ。",
+  tool_remove_mains_hum_from_a_recording_usecase_3: "电源或调光器带来的 50/60 Hz 嗡嗡听得见。",
   tool_remove_mains_hum_from_a_recording_faq_q1: "这和「给人声备忘录降低背景噪音」一样吗？",
   tool_remove_mains_hum_from_a_recording_faq_a1:
     "不一样。那一页用高通和噪声底门控压风扇/空调嘶声。本页陷波窄带 50/60 Hz 电流声。宽带嘶声请用给人声备忘录降低背景噪音。",

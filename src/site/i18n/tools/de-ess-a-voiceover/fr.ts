@@ -61,6 +61,7 @@ const fr: SiteLangDict = {
   tool_de_ess_a_voiceover_usecases_title: "Quand cela aide",
   tool_de_ess_a_voiceover_usecase_1: "Une voix off aux S perçants—choisissez Moyen, Dé-esser, téléchargez le WAV.",
   tool_de_ess_a_voiceover_usecase_2: "Une narration avant d’égaliser un ton étouffé ou de retirer des clics de bouche ailleurs.",
+  tool_de_ess_a_voiceover_usecase_3: "Des « s » agressifs gênent au casque après une prise brillante.",
   tool_de_ess_a_voiceover_faq_q1: "Est-ce la même chose qu’égaliser un enregistrement de voix étouffée ?",
   tool_de_ess_a_voiceover_faq_a1: "Non. Cette page-là applique des presets statiques Clarity/Warmth/Presence. Ici on atténue seulement quand l’énergie sibilante monte. Pour le ton étouffé, utilisez Égaliser un enregistrement de voix étouffée.",
   tool_de_ess_a_voiceover_faq_q2: "Cela réduit-il le bruit de fond d’un mémo vocal ?",

@@ -64,6 +64,7 @@ const zh: SiteLangDict = {
   tool_make_an_8d_panning_version_of_a_song_usecases_title: "适用场景",
   tool_make_an_8d_panning_version_of_a_song_usecase_1: "短歌或循环要做经典耳机 8D——选 5 秒，点 8D 声像，下载 WAV。",
   tool_make_an_8d_panning_version_of_a_song_usecase_2: "需要左右运动感的片段——不是 slowed+reverb，不是夜核，也不是倒放。",
+  tool_make_an_8d_panning_version_of_a_song_usecase_3: "想用耳机听旋转声像效果，而不是单声道翻制。",
   tool_make_an_8d_panning_version_of_a_song_faq_q1: "这是真 3D 环绕或 HRTF 吗？",
   tool_make_an_8d_panning_version_of_a_song_faq_a1: "不是。这是中置信号用恒功率增益左右自动声像，做出耳机「绕圈」感。不会解码杜比、Ambisonics 或实测 HRTF。",
   tool_make_an_8d_panning_version_of_a_song_faq_q2: "这和 slowed 混响一样吗？",

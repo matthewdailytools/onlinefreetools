@@ -63,6 +63,7 @@ const de: SiteLangDict = {
   tool_limit_peaks_so_a_file_does_not_clip_usecases_title: "Wann das hilft",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_1: "Mix mit gelegentlichem Clipping—Soft −1 wählen, begrenzen, WAV laden.",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_2: "Lieferung verbietet Peaks über Ceiling nach gesetztem Gesamtpegel, ohne vollen Kompressor.",
+  tool_limit_peaks_so_a_file_does_not_clip_usecase_3: "Ein heißer Export clippt an Peaks; du willst eine Sicherheitsgrenze vor dem Publish.",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q1: "Ist das dasselbe wie Peak-Normalisierung?",
   tool_limit_peaks_so_a_file_does_not_clip_faq_a1: "Nein. Peak-Normalisierung skaliert die ganze Spur, damit der absolute Peak ein Ziel trifft (kann Leises anheben). Dieser Limiter dämpft nur Samples über der Ceiling. Für Peak-Normalisierung: Audiodatei auf Peak normalisieren.",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q2: "Ist das ein Dynamikkompressor?",

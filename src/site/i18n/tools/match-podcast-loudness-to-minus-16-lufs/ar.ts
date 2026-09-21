@@ -60,6 +60,7 @@ const ar: SiteLangDict = {
   tool_match_podcast_loudness_to_minus_16_lufs_usecases_title: "متى يفيد ذلك",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_1: "حلقة بودكاست أهدأ من اللازم لتسليم −16 LUFS—طابق عند −16 ونزّل WAV.",
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_2: "مسار صوت ليوتيوب أو سبوتيفاي تريد تقريبه من −14 دون تطبيع ذروة أو ضاغط.",
+  tool_match_podcast_loudness_to_minus_16_lufs_usecase_3: "علو الحلقة يتقلب وتريد هدفًا تقريبيًا عند −16 LUFS.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q1: "هل هذا مثل تطبيع الصوت إلى الذروة؟",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_a1: "لا. تطبيع الذروة يقيّس حتى تصل الذروة المطلقة إلى هدف dBFS. هنا تُقاس جهارة متكاملة تقريبية ويُطبَّق كسب نحو شريحة LUFS. للذروة استخدم تطبيع ملف صوتي إلى الذروة.",
   tool_match_podcast_loudness_to_minus_16_lufs_faq_q2: "هل هذا مثل جعل تسجيل هادئ أعلى بكسب dB ثابت؟",

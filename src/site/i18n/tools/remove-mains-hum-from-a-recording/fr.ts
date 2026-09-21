@@ -10,8 +10,7 @@ const fr: SiteLangDict = {
     "Coupez le ronflement électrique 50 ou 60 Hz avec des filtres notch et des harmoniques optionnelles, puis téléchargez un WAV 16 bits. Sur l’appareil uniquement.",
   tool_remove_mains_hum_from_a_recording_description:
     "Retirez le ronflement secteur d’un enregistrement avec des filtres notch 50 ou 60 Hz et des harmoniques 2e–5e optionnelles. Étapes : Déshummer, préécouter, télécharger le WAV. Exemple : chargez l’échantillon qui ronfle. Notches étroits pour le ronflement électrique—pas un débruitage large bande, pas un declick, pas un EQ de voix étouffée. L’audio reste sur votre appareil ; jamais téléversé.",
-  tool_remove_mains_hum_from_a_recording_article:
-    "Les enregistrements près d’alimentations, de variateurs ou d’équipements mal reliés à la terre captent souvent un ronflement secteur stable à 50 ou 60 Hz, parfois avec harmoniques. Cette page enchaîne des étages notch BiquadFilter dans OfflineAudioContext sur le fondamental choisi et, en option, les 2e à 5e harmoniques sous Nyquist. Elle vise des tons électriques étroits—pas le débruitage de souffle de ventilateur, pas la réparation de clics, et pas un EQ trois bandes pour voix étouffée. Les graves près du notch peuvent s’amincir un peu. Le nombre de canaux reste 1 ou 2. Gardez le fichier d’origine ; le téléchargement est un nouveau WAV 16 bits. Le travail s’exécute dans le navigateur sur votre appareil.",
+  tool_remove_mains_hum_from_a_recording_article: "Les enregistrements près d’alimentations, de variateurs ou d’équipements mal reliés à la terre captent souvent un ronflement secteur stable à 50 ou 60 Hz, parfois avec harmoniques. Cette page enchaîne des étages notch EQ filter dans on-device audio processing sur le fondamental choisi et, en option, les 2e à 5e harmoniques sous Nyquist. Elle vise des tons électriques étroits—pas le débruitage de souffle de ventilateur, pas la réparation de clics, et pas un EQ trois bandes pour voix étouffée. Les graves près du notch peuvent s’amincir un peu. Le nombre de canaux reste 1 ou 2. Gardez le fichier d’origine ; le téléchargement est un nouveau WAV 16 bits. Le travail s’exécute dans le navigateur sur votre appareil.",
   tool_remove_mains_hum_from_a_recording_choose: "Choisir un fichier audio",
   tool_remove_mains_hum_from_a_recording_hint: "Déposez un WAV, MP3, M4A, AAC ou OGG. Maximum 40 Mio et 10 minutes ; mono ou stéréo.",
   tool_remove_mains_hum_from_a_recording_convert: "Déshummer",
@@ -70,6 +69,7 @@ const fr: SiteLangDict = {
   tool_remove_mains_hum_from_a_recording_usecases_title: "Quand cela aide",
   tool_remove_mains_hum_from_a_recording_usecase_1: "Une note vocale avec buzz électrique stable d’un chargeur ou variateur—choisissez les Hz de votre réseau, Déshummer, téléchargez le WAV.",
   tool_remove_mains_hum_from_a_recording_usecase_2: "Un enregistrement de terrain qui doit perdre le ton secteur avant de débruiter le souffle large bande ou d’EQ une voix étouffée ailleurs.",
+  tool_remove_mains_hum_from_a_recording_usecase_3: "Un ronflement 50/60 Hz du secteur s’entend sous la prise.",
   tool_remove_mains_hum_from_a_recording_faq_q1: "Est-ce la même chose que réduire le bruit de fond d’un mémo vocal ?",
   tool_remove_mains_hum_from_a_recording_faq_a1:
     "Non. Cette page-là passe-haut et porte le souffle stable de ventilateur ou clim. Cette page notche des tons électriques étroits 50/60 Hz. Utilisez Réduire le bruit de fond d’un mémo vocal pour le souffle large bande.",

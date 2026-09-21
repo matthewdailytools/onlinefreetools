@@ -118,7 +118,7 @@ const id: SiteLangDict = {
   tool_acceleration_v_ph: 'mis. 10',
   tool_add_an_audio_track_to_a_video_advanced: 'Catatan gabungan',
   tool_add_an_audio_track_to_a_video_article:
-    'Klip bisu atau bersuara lemah sering butuh soundtrack baru sebelum dibagikan. Halaman ini membuka video dan audio lokal, menangkap bingkai tanpa trek asli, mendekode soundtrack di AudioContext, menggabungkan, lalu merekam ulang dengan MediaRecorder—sering WebM tergantung peramban. Durasi mengikuti video; audio lebih panjang dipotong, yang lebih pendek berakhir lebih awal. Tidak mengunduh YouTube atau URL lain, bukan hanya membisukan tanpa menambah suara, dan bukan mengekstrak audio sebagai berkas terpisah. Keberhasilan bergantung pada kemampuan memutar kedua berkas dan MediaRecorder dengan audio. Simpan aslinya. Semua berjalan di perangkat Anda.',
+    'Klip bisu atau bersuara lemah sering butuh soundtrack baru sebelum dibagikan. Halaman ini membuka video dan audio lokal, menangkap bingkai tanpa trek asli, mendekode soundtrack di the browser audio engine, menggabungkan, lalu merekam ulang dengan browser media recording—sering WebM tergantung peramban. Durasi mengikuti video; audio lebih panjang dipotong, yang lebih pendek berakhir lebih awal. Tidak mengunduh YouTube atau URL lain, bukan hanya membisukan tanpa menambah suara, dan bukan mengekstrak audio sebagai berkas terpisah. Keberhasilan bergantung pada kemampuan memutar kedua berkas dan browser media recording dengan audio. Simpan aslinya. Semua berjalan di perangkat Anda.',
   tool_add_an_audio_track_to_a_video_audio_label: 'Audio: {name}',
   tool_add_an_audio_track_to_a_video_choose_audio: 'Pilih berkas audio',
   tool_add_an_audio_track_to_a_video_choose_video: 'Pilih berkas video',
@@ -127,7 +127,7 @@ const id: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_decode: 'Dekode',
   tool_add_an_audio_track_to_a_video_desc: 'Gabungkan soundtrack lokal dengan video lokal, lalu unduh. Hanya di perangkat—tanpa unduhan YouTube.',
   tool_add_an_audio_track_to_a_video_description:
-    'Tambahkan trek audio ke video lokal di peramban dengan menggabungkan gambar dan soundtrack pilihan, lalu unduh. Langkah: pilih video dan audio, Tambah audio, pratinjau, unduh. Contoh: klip bisu plus WAV pendek. Menggunakan captureStream dan MediaRecorder—sering WebM; bukan remux tanpa rugi. Tidak pernah diunggah. Tanpa unduhan YouTube.',
+    'Tambahkan trek audio ke video lokal di peramban dengan menggabungkan gambar dan soundtrack pilihan, lalu unduh. Langkah: pilih video dan audio, Tambah audio, pratinjau, unduh. Contoh: klip bisu plus WAV pendek. Menggunakan captureStream dan browser media recording—sering WebM; bukan remux tanpa rugi. Tidak pernah diunggah. Tanpa unduhan YouTube.',
   tool_add_an_audio_track_to_a_video_done: 'Siap. Pratinjau video gabungan, lalu Unduh.',
   tool_add_an_audio_track_to_a_video_download: 'Unduh',
   tool_add_an_audio_track_to_a_video_elapsed: '{s} dtk berlalu',
@@ -136,7 +136,7 @@ const id: SiteLangDict = {
     'Belum ada berkas. Jatuhkan video dan soundtrack lokal, atau klik Muat sampel. Alat ini menggabungkan audio ke gambar—bukan hanya bisu, bukan hanya ekstrak, dan tidak mengunduh YouTube.',
   tool_add_an_audio_track_to_a_video_err_decode: 'Peramban tidak dapat mendekode video atau audio. Coba wadah lain atau klip lebih pendek.',
   tool_add_an_audio_track_to_a_video_err_encoder:
-    'MediaRecorder tidak dapat menulis video gabungan. Coba Chrome/Edge atau WebM/MP4 lebih pendek plus WAV/MP3.',
+    'browser media recording tidak dapat menulis video gabungan. Coba Chrome/Edge atau WebM/MP4 lebih pendek plus WAV/MP3.',
   tool_add_an_audio_track_to_a_video_err_file: 'Pilih satu video dan satu audio lokal yang didukung.',
   tool_add_an_audio_track_to_a_video_err_format:
     'Berkas tidak didukung atau tidak dapat diputar. Gunakan tipe video/audio umum yang dapat didekode. Tanpa URL YouTube.',
@@ -151,7 +151,7 @@ const id: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_faq_a3:
     'Tidak. Mengekstrak audio dari video adalah alat lain. Di sini hasilnya adalah berkas video dengan suara gabungan.',
   tool_add_an_audio_track_to_a_video_faq_a4:
-    'Biasanya tidak. Peramban umumnya merekam ulang dengan MediaRecorder, sering ke WebM. Kualitas dan wadah dapat berubah.',
+    'Biasanya tidak. Peramban umumnya merekam ulang dengan browser media recording, sering ke WebM. Kualitas dan wadah dapat berubah.',
   tool_add_an_audio_track_to_a_video_faq_a5:
     'Tidak. Dekode dan perekaman berjalan di peramban pada perangkat Anda. Halaman butuh jaringan saat pertama dimuat; offline tidak dijamin.',
   tool_add_an_audio_track_to_a_video_faq_a6: 'Gabungan mengikuti durasi video. Audio setelah akhir gambar tidak disimpan dalam unduhan.',
@@ -177,7 +177,7 @@ const id: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_read: 'Baca',
   tool_add_an_audio_track_to_a_video_result: '{seconds} dtk · dengan audio · {mime} · {output} KiB',
   tool_add_an_audio_track_to_a_video_rules_body:
-    'Setiap proses membuang trek asli, menempel soundtrack Anda, dan merekam ulang dengan MediaRecorder. Keluaran sering WebM. Bukan unduhan YouTube, bukan hanya bisu, bukan ekstrak audio.',
+    'Setiap proses membuang trek asli, menempel soundtrack Anda, dan merekam ulang dengan browser media recording. Keluaran sering WebM. Bukan unduhan YouTube, bukan hanya bisu, bukan ekstrak audio.',
   tool_add_an_audio_track_to_a_video_rules_item_1:
     'Satu video lokal hingga 80 MiB dan sekitar tiga menit, plus satu audio lokal hingga 40 MiB. Putar/dekode harus berhasil dulu.',
   tool_add_an_audio_track_to_a_video_rules_item_2: 'Durasi keluaran mengikuti video. Audio lebih panjang dipotong; lebih pendek berakhir sebelum gambar.',
@@ -187,15 +187,16 @@ const id: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_sample: 'Muat sampel',
   tool_add_an_audio_track_to_a_video_sample_name: 'sampel-tambah-audio',
   tool_add_an_audio_track_to_a_video_settings_hint:
-    'Peramban biasanya merekam ulang lewat MediaRecorder setelah membuang trek asli dan menempel soundtrack Anda. Keluaran sering WebM, bukan remux tanpa rugi. Halaman ini tidak pernah mengunduh YouTube.',
+    'Peramban biasanya merekam ulang lewat browser media recording setelah membuang trek asli dan menempel soundtrack Anda. Keluaran sering WebM, bukan remux tanpa rugi. Halaman ini tidak pernah mengunduh YouTube.',
   tool_add_an_audio_track_to_a_video_title: 'Tambahkan trek audio ke video',
   tool_add_an_audio_track_to_a_video_usecase_1: 'Rekaman layar bisu dan dasar WAV—gabungkan di sini, lalu unduh untuk dibagikan.',
   tool_add_an_audio_track_to_a_video_usecase_2: 'Ganti trek bawaan yang lemah dengan soundtrack lokal yang lebih jelas tanpa memasang editor desktop.',
+  tool_add_an_audio_track_to_a_video_usecase_3: 'Anda punya rekaman layar tanpa suara dan voiceover terpisah untuk digabung sebelum unggah.',
   tool_add_an_audio_track_to_a_video_usecases_title: 'Kapan ini membantu',
   tool_add_an_audio_track_to_a_video_video_label: 'Video: {name}',
   tool_add_an_audio_track_to_a_video_why_choose_item_1: 'Lihat durasi, tipe MIME, dan KiB keluaran sebelum menyimpan.',
   tool_add_an_audio_track_to_a_video_why_choose_item_2:
-    'Satu pekerjaan gabung yang jelas dengan batas MediaRecorder yang jujur—bukan janji remux tanpa rugi palsu.',
+    'Satu pekerjaan gabung yang jelas dengan batas browser media recording yang jujur—bukan janji remux tanpa rugi palsu.',
   tool_add_an_audio_track_to_a_video_why_choose_item_3: 'Pembacaan dan perekaman di perangkat Anda; halaman tidak mengunggah berkas untuk diproses.',
   tool_add_an_audio_track_to_a_video_why_choose_item_4: 'Mengganti salah satu berkas menghapus unduhan lama agar tidak menyimpan gabungan usang.',
   tool_add_an_audio_track_to_a_video_why_choose_title: 'Mengapa memilih alat tambah trek audio kami',
@@ -340,6 +341,7 @@ const id: SiteLangDict = {
   tool_add_reverb_to_an_audio_clip_title: 'Tambahkan reverb ke klip audio',
   tool_add_reverb_to_an_audio_clip_usecase_1: 'Voice-over kering yang butuh sedikit udara ruang—pilih Ruang, Tambah reverb, unduh WAV.',
   tool_add_reverb_to_an_audio_clip_usecase_2: 'Stem pendek yang butuh ruang aula atau gema lebih jelas tanpa memperlambat.',
+  tool_add_reverb_to_an_audio_clip_usecase_3: 'Anda ingin ekor ruang/hall singkat pada vokal kering tanpa membuka DAW.',
   tool_add_reverb_to_an_audio_clip_usecases_title: 'Kapan ini membantu',
   tool_add_reverb_to_an_audio_clip_why_choose_item_1: 'Lihat detik masukan dan keluaran, nama preset, dan KiB sebelum menyimpan.',
   tool_add_reverb_to_an_audio_clip_why_choose_item_2: 'Tiga pekerjaan ruang yang jelas—Ruang, Aula, dan Echo—bukan rak send DAW yang ramai.',
@@ -909,6 +911,7 @@ const id: SiteLangDict = {
   tool_apply_a_toy_voice_effect_to_a_recording_title: 'Terapkan efek suara mainan pada rekaman',
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_1: 'Meme pendek atau klip anak yang butuh warna chipmunk atau helium—Terapkan, unduh WAV.',
   tool_apply_a_toy_voice_effect_to_a_recording_usecase_2: 'Gag robot atau telepon playful untuk pesan—bukan klon selebriti, bukan klaim gender.',
+  tool_apply_a_toy_voice_effect_to_a_recording_usecase_3: 'Perlu suara mainan chipmunk atau dalam untuk meme pendek.',
   tool_apply_a_toy_voice_effect_to_a_recording_usecases_title: 'Kapan berguna',
   tool_apply_a_toy_voice_effect_to_a_recording_why_choose_item_1: 'Lihat detik masukan, detik keluaran, nama preset, dan KiB keluaran sebelum menyimpan.',
   tool_apply_a_toy_voice_effect_to_a_recording_why_choose_item_2: 'Empat warna mainan jelas—chipmunk, raksasa, robot, telepon—bukan rack DAW yang penuh.',
@@ -2086,14 +2089,14 @@ const id: SiteLangDict = {
   tool_batch_convert_web_pages_to_png_wait_label: 'Jeda muat (dtk)',
   tool_batch_trim_the_same_intro_from_audio_files_advanced: 'Tentang trim batch (opsional)',
   tool_batch_trim_the_same_intro_from_audio_files_article:
-    'Batch podcast sering berbagi bumper yang sama. Halaman ini menerapkan satu panjang intro ke antrian, mengekspor WAV 16-bit, dan men-zip dengan JSZip malas. Bukan editor gelombang satu file. Kerja lokal.',
+    'Batch podcast sering berbagi bumper yang sama. Halaman ini menerapkan satu panjang intro ke antrian, mengekspor WAV 16-bit, dan men-zip dengan ZIP packaging malas. Bukan editor gelombang satu file. Kerja lokal.',
   tool_batch_trim_the_same_intro_from_audio_files_choose: 'Pilih file audio',
   tool_batch_trim_the_same_intro_from_audio_files_clear: 'Hapus',
   tool_batch_trim_the_same_intro_from_audio_files_convert: 'Trim ke ZIP',
   tool_batch_trim_the_same_intro_from_audio_files_decode: 'Dekode audio',
   tool_batch_trim_the_same_intro_from_audio_files_desc: 'Potong panjang intro yang sama dari banyak audio lokal dan unduh ZIP WAV.',
   tool_batch_trim_the_same_intro_from_audio_files_description:
-    'Trim intro yang sama secara batch di browser tanpa unggah. Langkah: tambah klip, set detik bersama, Trim ke ZIP, unduh. Contoh: dua nada empat detik kehilangan detik pertama dalam ZIP berisi dua WAV. decodeAudioData, WAV 16-bit, JSZip malas. File di perangkat.',
+    'Trim intro yang sama secara batch di browser tanpa unggah. Langkah: tambah klip, set detik bersama, Trim ke ZIP, unduh. Contoh: dua nada empat detik kehilangan detik pertama dalam ZIP berisi dua WAV. browser decoding, WAV 16-bit, ZIP packaging malas. File di perangkat.',
   tool_batch_trim_the_same_intro_from_audio_files_done: 'Siap. Unduh ZIP WAV yang dipotong.',
   tool_batch_trim_the_same_intro_from_audio_files_download: 'Unduh ZIP',
   tool_batch_trim_the_same_intro_from_audio_files_elapsed: 'Berlalu: {s}d',
@@ -2150,9 +2153,10 @@ const id: SiteLangDict = {
   tool_batch_trim_the_same_intro_from_audio_files_trim: 'Potong intro',
   tool_batch_trim_the_same_intro_from_audio_files_usecase_1: 'Buang bumper sama dari catatan suara seminggu.',
   tool_batch_trim_the_same_intro_from_audio_files_usecase_2: 'Siapkan take wawancara dengan countdown sama.',
+  tool_batch_trim_the_same_intro_from_audio_files_usecase_3: 'Beberapa podcast mulai dengan bumper 8 detik yang sama dan ingin dipotong sekaligus.',
   tool_batch_trim_the_same_intro_from_audio_files_usecases_title: 'Berguna untuk',
   tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_1: 'Satu intro untuk seluruh antrian.',
-  tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_2: 'Contoh membuktikan dekode/trim/JSZip.',
+  tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_2: 'Contoh membuktikan dekode/trim/ZIP packaging.',
   tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_3: 'Kegagalan sebagian tetap mengirim WAV OK.',
   tool_batch_trim_the_same_intro_from_audio_files_why_choose_item_4: 'Lokal; trim tunggal dan WAV→MP3 dekat.',
   tool_batch_trim_the_same_intro_from_audio_files_why_choose_title: 'Mengapa Potong intro yang sama dari banyak audio',
@@ -2421,7 +2425,7 @@ const id: SiteLangDict = {
   tool_body_fat_waist_ph: 'mis. 86',
   tool_boost_bass_on_an_mp3_advanced: 'Preset bass',
   tool_boost_bass_on_an_mp3_article:
-    'Ekspor ponsel dan speaker laptop sering membuat kick dan bassline tipis: cukup midrange, kurang bobot di bawah ~100 Hz. Halaman ini menjalankan satu tahap BiquadFilter lowshelf di OfflineAudioContext. Mild lembut; Medium (default) angkatan harian; Strong lebih berat. Perlindungan puncak lembut menskala jika boost akan clipping. Itu boost bass—bukan EQ tiga pita Clarity/Warmth/Presence untuk suara teredam, dan bukan gain dB datar yang membesarkan semua frekuensi. Saluran tetap 1 atau 2. Simpan master; unduhan adalah WAV 16-bit baru. Pekerjaan berjalan di browser.',
+    'Ekspor ponsel dan speaker laptop sering membuat kick dan bassline tipis: cukup midrange, kurang bobot di bawah ~100 Hz. Halaman ini menjalankan satu tahap lowshelf EQ di on-device audio processing. Mild lembut; Medium (default) angkatan harian; Strong lebih berat. Perlindungan puncak lembut menskala jika boost akan clipping. Itu boost bass—bukan EQ tiga pita Clarity/Warmth/Presence untuk suara teredam, dan bukan gain dB datar yang membesarkan semua frekuensi. Saluran tetap 1 atau 2. Simpan master; unduhan adalah WAV 16-bit baru. Pekerjaan berjalan di browser.',
   tool_boost_bass_on_an_mp3_boost: 'Tingkatkan',
   tool_boost_bass_on_an_mp3_choose: 'Pilih file audio',
   tool_boost_bass_on_an_mp3_clear: 'Hapus',
@@ -2480,7 +2484,7 @@ const id: SiteLangDict = {
   tool_boost_bass_on_an_mp3_read: 'Baca',
   tool_boost_bass_on_an_mp3_result: '{seconds} dtk · {preset} · puncak {peakBefore} → {peakAfter} · WAV {output} KiB',
   tool_boost_bass_on_an_mp3_rules_body:
-    'Setiap preset adalah satu tahap lowshelf Biquad. Mild lembut; Medium angkatan harian; Strong lebih berat. Perlindungan puncak menskala jika boost akan clipping.',
+    'Setiap preset adalah satu tahap lowshelf EQ. Mild lembut; Medium angkatan harian; Strong lebih berat. Perlindungan puncak menskala jika boost akan clipping.',
   tool_boost_bass_on_an_mp3_rules_item_1:
     'Default Medium memakai lowshelf dekat 90 Hz sekitar +8 dB. Mild ~+4 dB; Strong ~+12 dB dengan shelf sedikit lebih rendah.',
   tool_boost_bass_on_an_mp3_rules_item_2:
@@ -2496,6 +2500,7 @@ const id: SiteLangDict = {
   tool_boost_bass_on_an_mp3_title: 'Tingkatkan bass pada MP3',
   tool_boost_bass_on_an_mp3_usecase_1: 'Ekspor MP3 terdengar tipis di speaker—pilih Medium, Tingkatkan, unduh WAV.',
   tool_boost_bass_on_an_mp3_usecase_2: 'Trek yang butuh bobot kick lebih dalam tanpa membuka EQ grafik penuh atau membesarkan seluruh mix.',
+  tool_boost_bass_on_an_mp3_usecase_3: 'MP3 dari ponsel terdengar tipis di laptop; Anda hanya ingin kick lebih kuat, bukan mid lebih keras.',
   tool_boost_bass_on_an_mp3_usecases_title: 'Kapan ini membantu',
   tool_boost_bass_on_an_mp3_why_choose_item_1: 'Lihat nama preset, puncak sebelum/sesudah, dan KiB keluaran sebelum menyimpan.',
   tool_boost_bass_on_an_mp3_why_choose_item_2: 'Tiga preset low-shelf jelas—satu pekerjaan bass, bukan EQ sepuluh pita atau dinding volume datar.',
@@ -3176,7 +3181,7 @@ const id: SiteLangDict = {
   tool_bulk_convert_images_to_webp_warn_large: 'Ada berkas lebih dari 25 MB — tab ini bisa kehabisan memori.',
   tool_bulk_convert_wav_files_to_mp3_advanced: 'Advanced settings (optional)',
   tool_bulk_convert_wav_files_to_mp3_article:
-    'Folders of WAV exports are awkward to share. This page queues several local WAV files, decodes each in the browser, encodes MP3 with lamejs, and packs a ZIP with JSZip. MP3 is lossy—keep the WAV masters. For one file use the related single WAV converter; FLAC is a different page. Work stays on-device.',
+    'Folders of WAV exports are awkward to share. This page queues several local WAV files, decodes each in the browser, encodes MP3 with in-browser MP3 encoding, and packs a ZIP with ZIP packaging. MP3 is lossy—keep the WAV masters. For one file use the related single WAV converter; FLAC is a different page. Work stays on-device.',
   tool_bulk_convert_wav_files_to_mp3_bitrate: 'MP3 bitrate (all files)',
   tool_bulk_convert_wav_files_to_mp3_choose: 'Pilih berkas WAV',
   tool_bulk_convert_wav_files_to_mp3_clear: 'Hapus',
@@ -3184,7 +3189,7 @@ const id: SiteLangDict = {
   tool_bulk_convert_wav_files_to_mp3_decode: 'Decode audio',
   tool_bulk_convert_wav_files_to_mp3_desc: 'Ubah beberapa WAV lokal menjadi MP3 dalam satu ZIP. Audio tetap di perangkat.',
   tool_bulk_convert_wav_files_to_mp3_description:
-    'Ubah banyak WAV ke MP3 di browser tanpa unggah. Langkah: tambah beberapa WAV, pilih bitrate, Ubah ke ZIP, unduh. Contoh: dua nada stereo lima detik → dua MP3 dalam ZIP pada 192 kbps. Memakai decodeAudioData dan lamejs per berkas, lalu JSZip. Berkas tetap di perangkat.',
+    'Ubah banyak WAV ke MP3 di browser tanpa unggah. Langkah: tambah beberapa WAV, pilih bitrate, Ubah ke ZIP, unduh. Contoh: dua nada stereo lima detik → dua MP3 dalam ZIP pada 192 kbps. Memakai browser decoding dan in-browser MP3 encoding per berkas, lalu ZIP packaging. Berkas tetap di perangkat.',
   tool_bulk_convert_wav_files_to_mp3_done: 'Ready. Download the ZIP of MP3 files.',
   tool_bulk_convert_wav_files_to_mp3_download: 'Unduh ZIP',
   tool_bulk_convert_wav_files_to_mp3_elapsed: 'Elapsed: {s}s',
@@ -3247,10 +3252,11 @@ const id: SiteLangDict = {
   tool_bulk_convert_wav_files_to_mp3_title: 'Ubah banyak berkas WAV menjadi MP3',
   tool_bulk_convert_wav_files_to_mp3_usecase_1: 'Share a folder of WAV voice memos as a ZIP of MP3 attachments.',
   tool_bulk_convert_wav_files_to_mp3_usecase_2: 'Batch-convert short studio WAV exports before uploading to a player that prefers MP3.',
+  tool_bulk_convert_wav_files_to_mp3_usecase_3: 'Sesi selesai sebagai banyak WAV dan Anda butuh satu ZIP MP3 yang mudah dibagikan.',
   tool_bulk_convert_wav_files_to_mp3_usecases_title: 'Berguna untuk',
   tool_bulk_convert_wav_files_to_mp3_why_choose_item_1: 'The built-in two-file sample runs the same decode, encode and ZIP path as your queue.',
   tool_bulk_convert_wav_files_to_mp3_why_choose_item_2: 'You see how many files succeeded before saving the archive.',
-  tool_bulk_convert_wav_files_to_mp3_why_choose_item_3: 'JSZip and lamejs load only when you convert—not on every page view.',
+  tool_bulk_convert_wav_files_to_mp3_why_choose_item_3: 'ZIP packaging and in-browser MP3 encoding load only when you convert—not on every page view.',
   tool_bulk_convert_wav_files_to_mp3_why_choose_item_4: 'Processing stays on your device; related single-file WAV and FLAC converters are nearby.',
   tool_bulk_convert_wav_files_to_mp3_why_choose_title: 'Mengapa pilih konversi WAV ke MP3 massal kami',
   tool_cagr_article:
@@ -3386,6 +3392,7 @@ const id: SiteLangDict = {
   tool_change_audio_speed_without_changing_pitch_title: 'Ubah kecepatan audio tanpa mengubah pitch',
   tool_change_audio_speed_without_changing_pitch_usecase_1: 'Lagu latihan terlalu cepat—pilih 0.75×, Stretch, unduh WAV.',
   tool_change_audio_speed_without_changing_pitch_usecase_2: 'Klip yang perlu sedikit dipercepat untuk timing tanpa naik pitch nightcore.',
+  tool_change_audio_speed_without_changing_pitch_usecase_3: 'VO harus muat di slot video lebih pendek tanpa suara chipmunk.',
   tool_change_audio_speed_without_changing_pitch_usecases_title: 'Kapan ini membantu',
   tool_change_audio_speed_without_changing_pitch_why_choose_item_1: 'Lihat detik input/output, kecepatan, dan KiB sebelum menyimpan.',
   tool_change_audio_speed_without_changing_pitch_why_choose_item_2: 'Satu pekerjaan time-stretch yang jelas—tempo WSOLA, bukan peta DAW tersembunyi.',
@@ -4279,6 +4286,7 @@ const id: SiteLangDict = {
   tool_compress_dynamic_range_of_a_voice_recording_title: 'Mengompres rentang dinamis rekaman suara',
   tool_compress_dynamic_range_of_a_voice_recording_usecase_1: 'Voice-over yang loncat dari frasa pelan ke puncak keras—pilih Podcast, kompres, unduh WAV.',
   tool_compress_dynamic_range_of_a_voice_recording_usecase_2: 'Wawancara yang ingin lebih rata sebelum penyesuaian loudness, tanpa mengecilkan MP3 demi ukuran.',
+  tool_compress_dynamic_range_of_a_voice_recording_usecase_3: 'Bisikan dan puncak bertarung dalam satu take; Anda ingin level dengaran lebih rata.',
   tool_compress_dynamic_range_of_a_voice_recording_usecases_title: 'Kapan ini membantu',
   tool_compress_dynamic_range_of_a_voice_recording_why_choose_item_1: 'Lihat preset, ambang, rasio, makeup, peak, dan KiB keluaran sebelum menyimpan.',
   tool_compress_dynamic_range_of_a_voice_recording_why_choose_item_2: 'Tiga preset suara jelas—satu pekerjaan dinamika, bukan dinding ukuran MP3/gain/normalisasi.',
@@ -4512,7 +4520,7 @@ const id: SiteLangDict = {
   tool_convert_a_flac_file_to_mp3_decode: 'Dekode audio',
   tool_convert_a_flac_file_to_mp3_desc: 'Ubah rekaman FLAC lokal menjadi MP3. Audio tetap di perangkat dan tidak diunggah ke server.',
   tool_convert_a_flac_file_to_mp3_description:
-    'Ubah berkas FLAC ke MP3 di browser tanpa mengunggah. Langkah: pilih FLAC, pilih bitrate, Ubah ke MP3, pratinjau dan unduh. Contoh: nada FLAC stereo lima detik menjadi sekitar 120 KiB MP3 pada 192 kbps. Memakai decodeAudioData jika browser mendukung FLAC, lalu lamejs; error jelas jika decode gagal. Berkas tetap di perangkat.',
+    'Ubah berkas FLAC ke MP3 di browser tanpa mengunggah. Langkah: pilih FLAC, pilih bitrate, Ubah ke MP3, pratinjau dan unduh. Contoh: nada FLAC stereo lima detik menjadi sekitar 120 KiB MP3 pada 192 kbps. Memakai browser decoding jika browser mendukung FLAC, lalu in-browser MP3 encoding; error jelas jika decode gagal. Berkas tetap di perangkat.',
   tool_convert_a_flac_file_to_mp3_done: 'Siap. Dengarkan hasil, lalu unduh MP3.',
   tool_convert_a_flac_file_to_mp3_download: 'Unduh MP3',
   tool_convert_a_flac_file_to_mp3_elapsed: 'Berjalan: {s}d',
@@ -4531,7 +4539,7 @@ const id: SiteLangDict = {
   tool_convert_a_flac_file_to_mp3_failed: 'Gagal. Coba FLAC lebih pendek atau browser dengan dukungan FLAC.',
   tool_convert_a_flac_file_to_mp3_faq_a1: 'Tidak. FLAC lossless; MP3 selalu kehilangan data. Simpan master.',
   tool_convert_a_flac_file_to_mp3_faq_a2: 'Berkas tetap di perangkat. Halaman dan encoder butuh jaringan saat dimuat; offline tidak dijamin.',
-  tool_convert_a_flac_file_to_mp3_faq_a3: 'decodeAudioData harus mendukung FLAC. Coba browser terkini dan contoh bawaan.',
+  tool_convert_a_flac_file_to_mp3_faq_a3: 'browser decoding harus mendukung FLAC. Coba browser terkini dan contoh bawaan.',
   tool_convert_a_flac_file_to_mp3_faq_a4: 'Tidak. Hanya FLAC → MP3. Tanpa matriks format.',
   tool_convert_a_flac_file_to_mp3_faq_a5: 'Satu FLAC utuh → satu MP3. Tanpa daftar putar, tautan video, atau batch.',
   tool_convert_a_flac_file_to_mp3_faq_q1: 'FLAC ke MP3 lossless?',
@@ -4564,6 +4572,7 @@ const id: SiteLangDict = {
   tool_convert_a_flac_file_to_mp3_title: 'Ubah berkas FLAC menjadi MP3',
   tool_convert_a_flac_file_to_mp3_usecase_1: 'Bagikan arsip lossless sebagai MP3 jika penerima tidak membuka FLAC.',
   tool_convert_a_flac_file_to_mp3_usecase_2: 'Lampirkan latihan FLAC lebih kecil sambil menyimpan asli.',
+  tool_convert_a_flac_file_to_mp3_usecase_3: 'FLAC arsip perlu jadi MP3 yang nyaman dikirim chat.',
   tool_convert_a_flac_file_to_mp3_usecases_title: 'Kapan membantu',
   tool_convert_a_flac_file_to_mp3_why_choose_item_1: 'Contoh FLAC memakai jalur dekode dan MP3 yang sama.',
   tool_convert_a_flac_file_to_mp3_why_choose_item_2: 'Anda mendengar keluaran nyata dan melihat ukuran terukur sebelum menyimpan.',
@@ -4795,6 +4804,7 @@ const id: SiteLangDict = {
   tool_convert_an_aiff_file_to_wav_title: 'Ubah berkas AIFF menjadi WAV',
   tool_convert_an_aiff_file_to_wav_usecase_1: 'Export Logic untuk editor Windows.',
   tool_convert_an_aiff_file_to_wav_usecase_2: 'Memo CAF ke WAV.',
+  tool_convert_an_aiff_file_to_wav_usecase_3: 'Bounce Logic sebagai AIFF harus jadi WAV untuk kolaborator Windows.',
   tool_convert_an_aiff_file_to_wav_usecases_title: 'Berguna untuk',
   tool_convert_an_aiff_file_to_wav_why_choose_item_1: 'Contoh AIFF bawaan, jalur sama.',
   tool_convert_an_aiff_file_to_wav_why_choose_item_2: 'Keluaran nyata dan KiB terukur.',
@@ -4962,7 +4972,7 @@ const id: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_decode: 'Dekode audio',
   tool_convert_an_ogg_file_to_mp3_desc: 'Ubah rekaman OGG atau Opus lokal menjadi MP3. Audio tetap di perangkat dan tidak diunggah ke server.',
   tool_convert_an_ogg_file_to_mp3_description:
-    'Ubah OGG ke MP3 di browser tanpa unggah. Langkah: pilih OGG/Opus, pilih bitrate, Ubah ke MP3, dengarkan, unduh. Contoh: nada Opus-in-OGG stereo lima detik ~120 KiB MP3 pada 192 kbps. decodeAudioData lalu lamejs; error jelas jika gagal. Berkas di perangkat.',
+    'Ubah OGG ke MP3 di browser tanpa unggah. Langkah: pilih OGG/Opus, pilih bitrate, Ubah ke MP3, dengarkan, unduh. Contoh: nada Opus-in-OGG stereo lima detik ~120 KiB MP3 pada 192 kbps. browser decoding lalu in-browser MP3 encoding; error jelas jika gagal. Berkas di perangkat.',
   tool_convert_an_ogg_file_to_mp3_done: 'Siap. Dengarkan hasilnya, lalu Unduh MP3.',
   tool_convert_an_ogg_file_to_mp3_download: 'Unduh MP3',
   tool_convert_an_ogg_file_to_mp3_elapsed: 'Berlalu: {s} d',
@@ -5015,6 +5025,7 @@ const id: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_title: 'Ubah berkas OGG menjadi MP3',
   tool_convert_an_ogg_file_to_mp3_usecase_1: 'Kirim klip OGG game/chat ke yang butuh MP3.',
   tool_convert_an_ogg_file_to_mp3_usecase_2: 'Memo Opus jadi lampiran MP3 sambil simpan asli.',
+  tool_convert_an_ogg_file_to_mp3_usecase_3: 'Catatan suara datang sebagai OGG/Opus dan editor hanya menerima MP3.',
   tool_convert_an_ogg_file_to_mp3_usecases_title: 'Berguna untuk',
   tool_convert_an_ogg_file_to_mp3_why_choose_item_1: 'Contoh Opus-in-OGG bawaan melewati jalur dekode + MP3 yang sama.',
   tool_convert_an_ogg_file_to_mp3_why_choose_item_2: 'Anda mendengar keluaran nyata dan melihat ukuran terukur sebelum menyimpan.',
@@ -5457,6 +5468,7 @@ const id: SiteLangDict = {
   tool_convert_stereo_audio_to_mono_title: 'Mengonversi audio stereo menjadi mono',
   tool_convert_stereo_audio_to_mono_usecase_1: 'Menyerahkan memo suara stereo atau bed podcast ke formulir yang hanya menerima unggahan mono.',
   tool_convert_stereo_audio_to_mono_usecase_2: 'Menyimpan hanya mikrofon wawancara kiri (atau kanan) saat sisi lain bising atau hening.',
+  tool_convert_stereo_audio_to_mono_usecase_3: 'Wawancara stereo harus jadi mono untuk IVR atau satu speaker.',
   tool_convert_stereo_audio_to_mono_usecases_title: 'Kapan ini membantu',
   tool_convert_stereo_audio_to_mono_why_choose_item_1: 'Lihat durasi terukur, jumlah saluran sumber, mode yang dipilih, dan KiB keluaran sebelum menyimpan.',
   tool_convert_stereo_audio_to_mono_why_choose_item_2: 'Campur merata L+R, atau simpan satu sisi saja—tiga mode jelas, bukan matriks format tersembunyi.',
@@ -5981,6 +5993,7 @@ const id: SiteLangDict = {
   tool_crossfade_two_audio_files_title: 'Crossfade dua berkas audio',
   tool_crossfade_two_audio_files_usecase_1: 'Dua lagu butuh handoff gaya DJ—tambah keduanya, 2–5 dtk equal-power, Crossfade, unduh WAV.',
   tool_crossfade_two_audio_files_usecase_2: 'Segmen podcast harus bertemu lembut—gunakan 1 dtk antar take tanpa mengunggah editor daring.',
+  tool_crossfade_two_audio_files_usecase_3: 'Dua bagian lagu perlu overlap singkat agar sambungan tidak potong keras.',
   tool_crossfade_two_audio_files_usecases_title: 'Kapan ini membantu',
   tool_crossfade_two_audio_files_why_choose_item_1: 'Lihat durasi, fade, kurva, saluran, laju, dan KiB sebelum menyimpan.',
   tool_crossfade_two_audio_files_why_choose_item_2: 'Satu pekerjaan transisi ekor-ke-kepala yang jelas, dengan batas jujur jika dekode gagal.',
@@ -6312,6 +6325,7 @@ const id: SiteLangDict = {
   tool_de_ess_a_voiceover_title: 'De-ess voiceover',
   tool_de_ess_a_voiceover_usecase_1: 'Voiceover dengan S menusuk—pilih Sedang, De-ess, unduh WAV.',
   tool_de_ess_a_voiceover_usecase_2: 'Narasi sebelum EQ nada redam atau hapus klik mulut di tempat lain.',
+  tool_de_ess_a_voiceover_usecase_3: 'Bunyi “s” tajam mengganggu di headphone setelah take terang.',
   tool_de_ess_a_voiceover_usecases_title: 'Kapan ini membantu',
   tool_de_ess_a_voiceover_why_choose_item_1: 'Lihat sensitivitas, persen frame teredam, dan KiB keluaran sebelum menyimpan.',
   tool_de_ess_a_voiceover_why_choose_item_2: 'Satu pekerjaan de-ess yang jelas—high-shelf dinamis pada sibilan, bukan rak DAW tersembunyi.',
@@ -6612,7 +6626,7 @@ const id: SiteLangDict = {
   tool_edit_audio_on_waveform_why_choose_item_2: 'Honest scope: lightweight hub, not Pro Tools or a multi-track DAW.',
   tool_edit_audio_on_waveform_why_choose_item_3: 'Scene chips deep-link to shipped trim, loop, fade, and mono tools.',
   tool_edit_audio_on_waveform_why_choose_item_4: 'Caps refuse oversized files instead of silently truncating them.',
-  tool_edit_audio_on_waveform_why_choose_title: 'Why choose our Edit audio on a waveform tools',
+  tool_edit_audio_on_waveform_why_choose_title: 'Mengapa memilih alat Edit audio pada gelombang kami',
   tool_edit_audio_on_waveform_zerocross: 'Snap cuts to nearby zero crossings',
   tool_edit_audio_on_waveform_zerocross_hint: 'Reduces clicks at the splice. Turn off only if you need exact sample edges.',
   tool_edit_mp3_title_and_cover_art_advanced: 'Tentang dukungan ID3 (opsional)',
@@ -6681,8 +6695,9 @@ const id: SiteLangDict = {
   tool_edit_mp3_title_and_cover_art_title: 'Edit judul dan sampul MP3',
   tool_edit_mp3_title_and_cover_art_usecase_1: 'Memberi judul dan artis yang terbaca pada ekspor podcast.',
   tool_edit_mp3_title_and_cover_art_usecase_2: 'Menambah sampul agar ponsel menampilkannya.',
+  tool_edit_mp3_title_and_cover_art_usecase_3: 'MP3 jadi diputar tanpa judul dan cover di ponsel.',
   tool_edit_mp3_title_and_cover_art_usecases_title: 'Berguna untuk',
-  tool_edit_mp3_title_and_cover_art_why_choose_item_1: 'Frame audio disalin apa adanya—tanpa encode ulang lamejs.',
+  tool_edit_mp3_title_and_cover_art_why_choose_item_1: 'Frame audio disalin apa adanya—tanpa encode ulang in-browser MP3 encoding.',
   tool_edit_mp3_title_and_cover_art_why_choose_item_2: 'Sampel menunjukkan judul dan sampul pada jalur yang sama.',
   tool_edit_mp3_title_and_cover_art_why_choose_item_3: 'Batas dan cakupan ID3v2.3 dinyatakan di muka.',
   tool_edit_mp3_title_and_cover_art_why_choose_item_4: 'Pemrosesan lokal; alat WAV→MP3 satu klik.',
@@ -6868,6 +6883,7 @@ const id: SiteLangDict = {
   tool_embed_lyrics_in_an_mp3_title: 'Sematkan lirik ke MP3',
   tool_embed_lyrics_in_an_mp3_usecase_1: 'Lampirkan transkrip ke podcast MP3 via USLT.',
   tool_embed_lyrics_in_an_mp3_usecase_2: 'Tambah lirik polos tanpa encode ulang.',
+  tool_embed_lyrics_in_an_mp3_usecase_3: 'Anda ingin lirik di dalam MP3 agar pemutar menampilkannya offline.',
   tool_embed_lyrics_in_an_mp3_usecases_title: 'Berguna untuk',
   tool_embed_lyrics_in_an_mp3_why_choose_item_1: 'Frame audio disalin apa adanya.',
   tool_embed_lyrics_in_an_mp3_why_choose_item_2: 'Contoh membuktikan jalur USLT yang sama.',
@@ -6956,7 +6972,7 @@ const id: SiteLangDict = {
   tool_emi_years_placeholder: 'mis. 5',
   tool_eq_a_muffled_voice_recording_advanced: 'Preset EQ',
   tool_eq_a_muffled_voice_recording_article:
-    'Panggilan, masker, dan mikrofon jauh sering terdengar teredam: terlalu banyak lumpur di bawah beberapa ratus hertz dan kurang kejelasan di pita bicara. Halaman ini menjalankan tiga tahap BiquadFilter di OfflineAudioContext—lowshelf, peaking, dan highshelf—sebagai preset bernama. Clarity memotong lumpur dan membuka presence bicara; Warmth menaikkan body dan melembutkan high tajam; Presence memfokuskan presence mid-high dan air. Itu adalah EQ tonal untuk suara teredam, bukan booster satu pita bass, bukan pengurangan noise latar, dan bukan de-esser hanya untuk sibilance. Saluran tetap 1 atau 2. Simpan master; unduhan adalah WAV 16-bit baru. Kerja berjalan di browser pada perangkat Anda.',
+    'Panggilan, masker, dan mikrofon jauh sering terdengar teredam: terlalu banyak lumpur di bawah beberapa ratus hertz dan kurang kejelasan di pita bicara. Halaman ini menjalankan tiga tahap EQ filter di on-device audio processing—lowshelf, peaking, dan highshelf—sebagai preset bernama. Clarity memotong lumpur dan membuka presence bicara; Warmth menaikkan body dan melembutkan high tajam; Presence memfokuskan presence mid-high dan air. Itu adalah EQ tonal untuk suara teredam, bukan booster satu pita bass, bukan pengurangan noise latar, dan bukan de-esser hanya untuk sibilance. Saluran tetap 1 atau 2. Simpan master; unduhan adalah WAV 16-bit baru. Kerja berjalan di browser pada perangkat Anda.',
   tool_eq_a_muffled_voice_recording_choose: 'Pilih berkas audio',
   tool_eq_a_muffled_voice_recording_clear: 'Hapus',
   tool_eq_a_muffled_voice_recording_convert: 'EQ',
@@ -7015,7 +7031,7 @@ const id: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_read: 'Baca',
   tool_eq_a_muffled_voice_recording_result: '{seconds}d · {preset} · puncak {peakBefore} → {peakAfter} · WAV {output} KiB',
   tool_eq_a_muffled_voice_recording_rules_body:
-    'Setiap preset adalah tiga tahap Biquad (lowshelf, peaking, highshelf). Clarity membuka bicara teredam; Warmth menambah body; Presence menaikkan presence dan air. Soft peak protection menskalakan jika boost akan clipping.',
+    'Setiap preset adalah tiga tahap EQ (lowshelf, peaking, highshelf). Clarity membuka bicara teredam; Warmth menambah body; Presence menaikkan presence dan air. Soft peak protection menskalakan jika boost akan clipping.',
   tool_eq_a_muffled_voice_recording_rules_item_1:
     'Clarity bawaan memotong low berlumpur dan menaikkan kejernihan bicara. Warmth menaikkan body low dan melembutkan high tajam. Presence memfokuskan presence mid-high.',
   tool_eq_a_muffled_voice_recording_rules_item_2:
@@ -7031,11 +7047,12 @@ const id: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_title: 'EQ rekaman suara yang teredam',
   tool_eq_a_muffled_voice_recording_usecase_1: 'Take telepon atau masker yang terdengar seperti di kotak—pilih Clarity, EQ, unduh WAV.',
   tool_eq_a_muffled_voice_recording_usecase_2: 'Suara podcast butuh body lebih hangat atau lebih presence tanpa membuka EQ DAW penuh.',
+  tool_eq_a_muffled_voice_recording_usecase_3: 'Take jauh atau bermasker terdengar buram dan butuh kehadiran suara lebih jelas.',
   tool_eq_a_muffled_voice_recording_usecases_title: 'Kapan ini membantu',
   tool_eq_a_muffled_voice_recording_why_choose_item_1: 'Lihat nama preset, puncak sebelum/sesudah, dan KiB keluaran sebelum menyimpan.',
   tool_eq_a_muffled_voice_recording_why_choose_item_2: 'Tiga preset suara jelas—satu pekerjaan EQ teredam, bukan mainan sepuluh pita atau bass saja.',
   tool_eq_a_muffled_voice_recording_why_choose_item_3:
-    'Dekode, EQ Biquad, dan penulisan WAV berjalan di perangkat Anda; halaman tidak mengunggah rekaman untuk diproses.',
+    'Dekode, EQ EQ, dan penulisan WAV berjalan di perangkat Anda; halaman tidak mengunggah rekaman untuk diproses.',
   tool_eq_a_muffled_voice_recording_why_choose_item_4: 'Mengubah preset atau input menghapus unduhan lama agar tidak menyimpan WAV usang.',
   tool_eq_a_muffled_voice_recording_why_choose_title: 'Mengapa memilih alat EQ rekaman suara yang teredam kami',
   tool_eq_a_muffled_voice_recording_write: 'Tulis',
@@ -7211,7 +7228,7 @@ const id: SiteLangDict = {
   tool_exponent_usecases_title: 'Kapan dipakai',
   tool_extract_audio_from_a_video_file_advanced: 'Format ekspor',
   tool_extract_audio_from_a_video_file_article:
-    'Klip ponsel, rekaman layar, dan file kamera sering membawa voice-over atau BGM tanpa butuh gambar. Halaman ini membaca kontainer video lokal, meminta browser mendekode trek dengan decodeAudioData, lalu menulis WAV 16-bit atau MP3 via lamejs. Tidak mengambil YouTube atau URL jarak jauh, tidak membisukan video menjadi MP4 sunyi, dan tidak memotong gelombang. Keberhasilan bergantung pada dekode browser; codec langka gagal dengan error jelas. Saluran satu atau dua. Simpan asli; unduhan adalah file audio baru. Pemrosesan di perangkat.',
+    'Klip ponsel, rekaman layar, dan file kamera sering membawa voice-over atau BGM tanpa butuh gambar. Halaman ini membaca kontainer video lokal, meminta browser mendekode trek dengan browser decoding, lalu menulis WAV 16-bit atau MP3 via in-browser MP3 encoding. Tidak mengambil YouTube atau URL jarak jauh, tidak membisukan video menjadi MP4 sunyi, dan tidak memotong gelombang. Keberhasilan bergantung pada dekode browser; codec langka gagal dengan error jelas. Saluran satu atau dua. Simpan asli; unduhan adalah file audio baru. Pemrosesan di perangkat.',
   tool_extract_audio_from_a_video_file_bitrate: 'Bitrate MP3',
   tool_extract_audio_from_a_video_file_choose: 'Pilih file video',
   tool_extract_audio_from_a_video_file_clear: 'Hapus',
@@ -7236,7 +7253,7 @@ const id: SiteLangDict = {
   tool_extract_audio_from_a_video_file_err_limit: 'Gunakan file maksimal 80 MiB atau 10 menit, dengan satu atau dua saluran audio.',
   tool_extract_audio_from_a_video_file_err_sample: 'Tidak dapat membuat video sampel di browser ini. Jatuhkan file video lokal Anda sendiri.',
   tool_extract_audio_from_a_video_file_example:
-    'Muat sampel membuat WebM sintetis pendek dengan nada saat MediaRecorder tersedia, lalu Ekstrak berjalan. Pemutaran tidak dimulai sendiri. Jika sampel gagal, jatuhkan MP4 Anda.',
+    'Muat sampel membuat WebM sintetis pendek dengan nada saat browser media recording tersedia, lalu Ekstrak berjalan. Pemutaran tidak dimulai sendiri. Jika sampel gagal, jatuhkan MP4 Anda.',
   tool_extract_audio_from_a_video_file_example_title: 'Coba ekstraksi nyata',
   tool_extract_audio_from_a_video_file_extract: 'Ekstrak',
   tool_extract_audio_from_a_video_file_failed: 'Ekstraksi gagal. Coba video lebih kecil yang dapat didekode browser.',
@@ -7289,6 +7306,7 @@ const id: SiteLangDict = {
   tool_extract_audio_from_a_video_file_title: 'Ekstrak audio dari file video',
   tool_extract_audio_from_a_video_file_usecase_1: 'Anda hanya butuh voice-over atau BGM dari klip ponsel—Ekstrak, lalu unduh WAV atau MP3.',
   tool_extract_audio_from_a_video_file_usecase_2: 'Rekaman layar harus menjadi audio yang bisa dibagikan tanpa mengunggah video ke situs konverter.',
+  tool_extract_audio_from_a_video_file_usecase_3: 'Anda hanya butuh VO atau BGM dari klip kamera sebagai WAV atau MP3.',
   tool_extract_audio_from_a_video_file_usecases_title: 'Kapan ini membantu',
   tool_extract_audio_from_a_video_file_why_choose_item_1: 'Lihat durasi, jumlah saluran, sample rate, format, dan KiB keluaran sebelum menyimpan.',
   tool_extract_audio_from_a_video_file_why_choose_item_2: 'Satu pekerjaan jelas—video lokal ke audio—dengan batas jujur saat browser gagal mendekode.',
@@ -7352,6 +7370,7 @@ const id: SiteLangDict = {
   tool_extract_cover_art_from_an_mp3_title: 'Ekstrak sampul dari MP3',
   tool_extract_cover_art_from_an_mp3_usecase_1: 'Simpan sampul podcast sebagai thumbnail.',
   tool_extract_cover_art_from_an_mp3_usecase_2: 'Cek apakah MP3 sudah punya sampul.',
+  tool_extract_cover_art_from_an_mp3_usecase_3: 'Butuh cover tertanam sebagai gambar tanpa encode ulang trek.',
   tool_extract_cover_art_from_an_mp3_usecases_title: 'Berguna untuk',
   tool_extract_cover_art_from_an_mp3_why_choose_item_1: 'Penguraian APIC lokal, tanpa unggah pustaka.',
   tool_extract_cover_art_from_an_mp3_why_choose_item_2: 'Contoh membuktikan jalur yang sama.',
@@ -7494,6 +7513,7 @@ const id: SiteLangDict = {
   tool_fade_in_and_fade_out_an_audio_clip_usecase_1: 'Voiceover atau music bed yang berklik di potongan—pilih 1 dtk / 1 dtk, Fade, unduh WAV.',
   tool_fade_in_and_fade_out_an_audio_clip_usecase_2:
     'Klip yang butuh tepi lembut sebelum dipotong di tempat lain atau dimasukkan timeline—tanpa membangun loop mulus.',
+  tool_fade_in_and_fade_out_an_audio_clip_usecase_3: 'Nada dering atau bumper mulai/akhir mendadak dan butuh tepi lembut.',
   tool_fade_in_and_fade_out_an_audio_clip_usecases_title: 'Kapan ini membantu',
   tool_fade_in_and_fade_out_an_audio_clip_why_choose_item_1: 'Lihat detik fade-in/out, nama kurva, dan KiB keluaran sebelum menyimpan.',
   tool_fade_in_and_fade_out_an_audio_clip_why_choose_item_2: 'Chip durasi jelas dan dua kurva—satu pekerjaan tepi, bukan wrap loop mulus atau rantai limiter/EQ.',
@@ -7985,6 +8005,7 @@ const id: SiteLangDict = {
   tool_generate_a_sine_tone_at_a_frequency_title: 'Hasilkan nada sinus pada suatu frekuensi',
   tool_generate_a_sine_tone_at_a_frequency_usecase_1: 'Butuh nada referensi A4—440 Hz, 2 dtk, Hasilkan, unduh WAV.',
   tool_generate_a_sine_tone_at_a_frequency_usecase_2: 'Ingin nada uji 1000 Hz untuk memeriksa speaker tanpa generator desktop.',
+  tool_generate_a_sine_tone_at_a_frequency_usecase_3: 'Butuh nada kalibrasi pada Hz tertentu untuk cek perangkat.',
   tool_generate_a_sine_tone_at_a_frequency_usecases_title: 'Kapan ini membantu',
   tool_generate_a_sine_tone_at_a_frequency_why_choose_item_1: 'Lihat hertz tepat, durasi, laju, dan KiB sebelum menyimpan.',
   tool_generate_a_sine_tone_at_a_frequency_why_choose_item_2: 'Satu pekerjaan sinus yang jelas, dengan batas jujur jika Hz di luar jangkauan.',
@@ -8065,6 +8086,7 @@ const id: SiteLangDict = {
   tool_generate_dtmf_touch_tones_usecase_1:
     'Anda butuh klip DTMF untuk demo IVR atau telepon—ketik digit, Hasilkan, unduh WAV untuk dokumen atau uji.',
   tool_generate_dtmf_touch_tones_usecase_2: 'Anda ingin urutan touch-tone yang dapat direproduksi tanpa memasang generator sinyal desktop.',
+  tool_generate_dtmf_touch_tones_usecase_3: 'Harus membuat bip keypad untuk demo IVR.',
   tool_generate_dtmf_touch_tones_usecases_title: 'Kapan ini membantu',
   tool_generate_dtmf_touch_tones_why_choose_item_1: 'Lihat urutan tepat, jumlah tombol, durasi, laju sampel, dan KiB keluaran sebelum menyimpan.',
   tool_generate_dtmf_touch_tones_why_choose_item_2: 'Satu pekerjaan DTMF yang jelas—dengan batas jujur bila urutan kosong atau tidak valid.',
@@ -10159,6 +10181,7 @@ const id: SiteLangDict = {
   tool_join_audio_files_in_order_usecase_1: 'Beberapa memo suara harus menjadi satu trek berkelanjutan—tambah berurutan, Gabungkan, unduh WAV.',
   tool_join_audio_files_in_order_usecase_2:
     'Bagian lagu atau bab podcast yang tersimpan terpisah perlu satu ekspor tanpa diunggah ke situs joiner.',
+  tool_join_audio_files_in_order_usecase_3: 'Beberapa WAV bab harus jadi satu file berurutan.',
   tool_join_audio_files_in_order_usecases_title: 'Kapan ini membantu',
   tool_join_audio_files_in_order_why_choose_item_1: 'Lihat jumlah file, durasi, saluran, laju sampel, dan KiB keluaran sebelum menyimpan.',
   tool_join_audio_files_in_order_why_choose_item_2:
@@ -10439,6 +10462,7 @@ const id: SiteLangDict = {
   tool_limit_peaks_so_a_file_does_not_clip_usecase_1: 'Mix yang kadang clipping—pilih Soft −1, batasi, unduh WAV.',
   tool_limit_peaks_so_a_file_does_not_clip_usecase_2:
     'Pengiriman yang melarang puncak di atas langit-langit setelah level keseluruhan ditetapkan, tanpa kompresor penuh.',
+  tool_limit_peaks_so_a_file_does_not_clip_usecase_3: 'Ekspor panas clip di puncak; Anda ingin langit-langit aman sebelum terbit.',
   tool_limit_peaks_so_a_file_does_not_clip_usecases_title: 'Kapan ini membantu',
   tool_limit_peaks_so_a_file_does_not_clip_why_choose_item_1: 'Lihat langit-langit, mode, puncak sebelum/sesudah, dan KiB keluaran sebelum menyimpan.',
   tool_limit_peaks_so_a_file_does_not_clip_why_choose_item_2:
@@ -10874,6 +10898,7 @@ const id: SiteLangDict = {
   tool_make_a_nightcore_version_of_a_song_title: 'Buat versi nightcore sebuah lagu',
   tool_make_a_nightcore_version_of_a_song_usecase_1: 'Lagu pop atau anime untuk nightcore klasik—pilih 1.25×, Nightcore, unduh WAV.',
   tool_make_a_nightcore_version_of_a_song_usecase_2: 'Klip pendek butuh lift kecepatan dan pitch—bukan tempo-only latihan, bukan transpose kunci saja.',
+  tool_make_a_nightcore_version_of_a_song_usecase_3: 'Trek butuh feel nightcore lebih cepat dan tinggi untuk edit singkat.',
   tool_make_a_nightcore_version_of_a_song_usecases_title: 'Kapan ini membantu',
   tool_make_a_nightcore_version_of_a_song_why_choose_item_1: 'Lihat detik input/output, kecepatan, semitone perkiraan, dan KiB sebelum menyimpan.',
   tool_make_a_nightcore_version_of_a_song_why_choose_item_2: 'Satu pekerjaan nightcore yang jelas—kecepatan dan pitch naik bersama, bukan otomasi DAW tersembunyi.',
@@ -10959,6 +10984,7 @@ const id: SiteLangDict = {
   tool_make_a_quiet_recording_louder_usecase_1: 'Memo suara ponsel yang terlalu pelan untuk diputar nyaman—naikkan +6 dB dan unduh WAV.',
   tool_make_a_quiet_recording_louder_usecase_2:
     'Trek wawancara yang secara keseluruhan lemah, saat Anda ingin rasio yang sama lebih keras tanpa mengejar target LUFS.',
+  tool_make_a_quiet_recording_louder_usecase_3: 'Memo pelan dari ponsel perlu gain dengan proteksi puncak.',
   tool_make_a_quiet_recording_louder_usecases_title: 'Kapan ini membantu',
   tool_make_a_quiet_recording_louder_why_choose_item_1:
     'Lihat durasi terukur, gain dB yang diminta (dan efektif), puncak sebelum/sesudah, dan KiB keluaran sebelum menyimpan.',
@@ -11169,6 +11195,7 @@ const id: SiteLangDict = {
     'Anda butuh cue sukses atau klik kecil untuk prototipe—pilih preset, Hasilkan, unduh WAV untuk mock atau demo.',
   tool_make_a_short_ui_notification_sound_usecase_2:
     'Anda ingin peringatan atau ping yang dapat digunakan ulang tanpa mencari pustaka stok atau memasang synth desktop.',
+  tool_make_a_short_ui_notification_sound_usecase_3: 'Butuh klik atau chime WAV pendek untuk prototipe app.',
   tool_make_a_short_ui_notification_sound_usecases_title: 'Kapan ini membantu',
   tool_make_a_short_ui_notification_sound_why_choose_item_1: 'Lihat nama preset, panjang, laju sampel, dan KiB keluaran sebelum menyimpan.',
   tool_make_a_short_ui_notification_sound_why_choose_item_2: 'Satu pekerjaan cue UI singkat yang jelas—dengan batas jujur bila panjang di luar rentang.',
@@ -11260,6 +11287,7 @@ const id: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_title: 'Buat klip slowed and reverb',
   tool_make_a_slowed_and_reverb_clip_usecase_1: 'Klip pop atau R&B untuk edit klasik slowed+reverb—0.8× + Sedang, Slowed reverb, unduh WAV.',
   tool_make_a_slowed_and_reverb_clip_usecase_2: 'Klip pendek yang butuh lambat dan ruang—bukan tempo saja, bukan nightcore, bukan reverb kering saja.',
+  tool_make_a_slowed_and_reverb_clip_usecase_3: 'Cuplikan lagu harus terdengar slowed-and-reverb untuk edit sosial.',
   tool_make_a_slowed_and_reverb_clip_usecases_title: 'Kapan ini membantu',
   tool_make_a_slowed_and_reverb_clip_why_choose_item_1: 'Lihat detik masuk/keluar, rasio, semiton perkiraan, reverb, dan KiB keluaran sebelum menyimpan.',
   tool_make_a_slowed_and_reverb_clip_why_choose_item_2: 'Satu pekerjaan slowed+reverb yang jelas—lambat dan ruang bersama, bukan otomasi DAW tersembunyi.',
@@ -11269,14 +11297,14 @@ const id: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_write: 'Tulis',
   tool_make_a_waveform_video_from_audio_advanced: 'Catatan video gelombang',
   tool_make_a_waveform_video_from_audio_article:
-    'Cuplikan podcast sering butuh video yang bisa dibagikan dengan gelombang bergerak. Halaman ini mendekode audio lokal, menggambar puncak di canvas, menangkap aliran, mencampur soundtrack, dan merekam dengan MediaRecorder—sering WebM. Tanpa YouTube atau janji MP4. Simpan asli. Kerja di perangkat.',
+    'Cuplikan podcast sering butuh video yang bisa dibagikan dengan gelombang bergerak. Halaman ini mendekode audio lokal, menggambar puncak di canvas, menangkap aliran, mencampur soundtrack, dan merekam dengan browser media recording—sering WebM. Tanpa YouTube atau janji MP4. Simpan asli. Kerja di perangkat.',
   tool_make_a_waveform_video_from_audio_choose: 'Pilih berkas audio',
   tool_make_a_waveform_video_from_audio_clear: 'Bersihkan',
   tool_make_a_waveform_video_from_audio_convert: 'Buat video',
   tool_make_a_waveform_video_from_audio_decode: 'Dekode',
   tool_make_a_waveform_video_from_audio_desc: 'Ubah audio lokal menjadi video gaya audiogram dengan gelombang, lalu unduh WebM. Hanya di perangkat.',
   tool_make_a_waveform_video_from_audio_description:
-    'Buat video gelombang dari audio di browser: dekode berkas lokal, gambar gelombang gaya audiogram di canvas, rekam dengan MediaRecorder, lalu unduh. Langkah: Pilih audio, Buat video, pratayang, unduh. Contoh: Muat sampel membuat nada pendek dan merekam klip gelombang bergerak. Keluaran biasanya WebM—bukan remux MP4 atau NLE desktop. Tidak pernah diunggah.',
+    'Buat video gelombang dari audio di browser: dekode berkas lokal, gambar gelombang gaya audiogram di canvas, rekam dengan browser media recording, lalu unduh. Langkah: Pilih audio, Buat video, pratayang, unduh. Contoh: Muat sampel membuat nada pendek dan merekam klip gelombang bergerak. Keluaran biasanya WebM—bukan remux MP4 atau NLE desktop. Tidak pernah diunggah.',
   tool_make_a_waveform_video_from_audio_done: 'Siap. Pratayang video gelombang, lalu unduh.',
   tool_make_a_waveform_video_from_audio_download: 'Unduh video',
   tool_make_a_waveform_video_from_audio_draw: 'Gambar',
@@ -11285,7 +11313,7 @@ const id: SiteLangDict = {
   tool_make_a_waveform_video_from_audio_empty_state:
     'Belum ada audio. Jatuhkan trek lokal atau muat sampel. Ini menggambar video gelombang—bukan ekstrak audio, bukan hanya potong, bukan unduh YouTube.',
   tool_make_a_waveform_video_from_audio_err_decode: 'Browser tidak bisa mendekode audio. Coba kontainer lain atau klip lebih pendek.',
-  tool_make_a_waveform_video_from_audio_err_encoder: 'MediaRecorder tidak bisa menulis video. Coba Chrome/Edge atau WAV/MP3 lebih pendek.',
+  tool_make_a_waveform_video_from_audio_err_encoder: 'browser media recording tidak bisa menulis video. Coba Chrome/Edge atau WAV/MP3 lebih pendek.',
   tool_make_a_waveform_video_from_audio_err_file: 'Pilih satu berkas audio lokal yang didukung.',
   tool_make_a_waveform_video_from_audio_err_format: 'Audio tidak didukung. Gunakan tipe umum. Tanpa URL YouTube.',
   tool_make_a_waveform_video_from_audio_err_limit: 'Audio lokal hingga 40 MiB dan sekitar 3 menit.',
@@ -11294,11 +11322,11 @@ const id: SiteLangDict = {
   tool_make_a_waveform_video_from_audio_example_title: 'Coba nada pendek sebagai klip gelombang',
   tool_make_a_waveform_video_from_audio_failed: 'Tidak bisa membuat video. Coba berkas lebih pendek atau Chrome/Edge.',
   tool_make_a_waveform_video_from_audio_faq_a1: 'Tidak. Hanya berkas lokal. Tidak ada pengunduh YouTube.',
-  tool_make_a_waveform_video_from_audio_faq_a2: 'Biasanya WebM via MediaRecorder. Bukan remux lossless.',
+  tool_make_a_waveform_video_from_audio_faq_a2: 'Biasanya WebM via browser media recording. Bukan remux lossless.',
   tool_make_a_waveform_video_from_audio_faq_a3: 'Tidak. Ekstraksi adalah alat lain. Di sini input audio, output video gelombang.',
   tool_make_a_waveform_video_from_audio_faq_a4: 'Tidak ada UI potong. Gunakan dulu halaman terkait potong audio.',
   tool_make_a_waveform_video_from_audio_faq_a5: 'Tidak. Pemrosesan di browser. Pemuatan pertama butuh jaringan.',
-  tool_make_a_waveform_video_from_audio_faq_a6: 'Perlu MediaRecorder dan canvas.captureStream, plus dekode. Coba Chrome/Edge.',
+  tool_make_a_waveform_video_from_audio_faq_a6: 'Perlu browser media recording dan canvas.captureStream, plus dekode. Coba Chrome/Edge.',
   tool_make_a_waveform_video_from_audio_faq_q1: 'Bisakah mengunduh YouTube atau menempel URL?',
   tool_make_a_waveform_video_from_audio_faq_q2: 'Apakah keluaran akan MP4?',
   tool_make_a_waveform_video_from_audio_faq_q3: 'Apakah sama dengan mengekstrak audio dari video?',
@@ -11318,7 +11346,7 @@ const id: SiteLangDict = {
   tool_make_a_waveform_video_from_audio_read: 'Baca',
   tool_make_a_waveform_video_from_audio_result: '{seconds}d · gelombang · {mime} · {output} KiB',
   tool_make_a_waveform_video_from_audio_rules_body:
-    'Setiap proses mendekode, menganimasikan gelombang canvas, dan mengkode ulang dengan MediaRecorder. Sering WebM. Bukan YouTube, ekstrak, atau hanya potong.',
+    'Setiap proses mendekode, menganimasikan gelombang canvas, dan mengkode ulang dengan browser media recording. Sering WebM. Bukan YouTube, ekstrak, atau hanya potong.',
   tool_make_a_waveform_video_from_audio_rules_item_1: 'Satu audio lokal hingga 40 MiB dan sekitar tiga menit. Dekode dulu.',
   tool_make_a_waveform_video_from_audio_rules_item_2: 'Durasi mengikuti audio. Klip pendek lebih andal.',
   tool_make_a_waveform_video_from_audio_rules_item_3: 'Tanpa YouTube, URL podcast, atau unduhan jarak jauh.',
@@ -11327,13 +11355,14 @@ const id: SiteLangDict = {
   tool_make_a_waveform_video_from_audio_sample: 'Muat sampel',
   tool_make_a_waveform_video_from_audio_sample_name: 'sampel-video-gelombang',
   tool_make_a_waveform_video_from_audio_settings_hint:
-    'Browser merekam canvas + audio dengan MediaRecorder. Sering WebM. Bukan remux lossless atau jaminan MP4. Tanpa YouTube.',
+    'Browser merekam canvas + audio dengan browser media recording. Sering WebM. Bukan remux lossless atau jaminan MP4. Tanpa YouTube.',
   tool_make_a_waveform_video_from_audio_title: 'Buat video gelombang dari audio',
   tool_make_a_waveform_video_from_audio_usecase_1: 'Anda punya potongan podcast MP3 dan butuh video gelombang sederhana untuk sosial.',
   tool_make_a_waveform_video_from_audio_usecase_2: 'Anda ingin pratayang gaya audiogram dari memo suara tanpa editor desktop.',
+  tool_make_a_waveform_video_from_audio_usecase_3: 'Klip podcast butuh video gelombang sederhana untuk posting sosial.',
   tool_make_a_waveform_video_from_audio_usecases_title: 'Kapan membantu',
   tool_make_a_waveform_video_from_audio_why_choose_item_1: 'Lihat durasi, MIME, dan KiB sebelum menyimpan.',
-  tool_make_a_waveform_video_from_audio_why_choose_item_2: 'Satu pekerjaan audiogram jelas dengan batas MediaRecorder/WebM yang jujur.',
+  tool_make_a_waveform_video_from_audio_why_choose_item_2: 'Satu pekerjaan audiogram jelas dengan batas browser media recording/WebM yang jujur.',
   tool_make_a_waveform_video_from_audio_why_choose_item_3: 'Dekode dan rekaman di perangkat; tidak diunggah untuk diproses.',
   tool_make_a_waveform_video_from_audio_why_choose_item_4: 'Mengganti berkas membersihkan unduhan lama.',
   tool_make_a_waveform_video_from_audio_why_choose_title: 'Mengapa memilih alat video gelombang kami',
@@ -11417,6 +11446,7 @@ const id: SiteLangDict = {
   tool_make_an_8d_panning_version_of_a_song_title: 'Buat versi panning 8D dari sebuah lagu',
   tool_make_an_8d_panning_version_of_a_song_usecase_1: 'Lagu pendek atau loop untuk edit 8D headphone klasik—pilih 5d, Pan 8D, unduh WAV.',
   tool_make_an_8d_panning_version_of_a_song_usecase_2: 'Klip yang butuh gerakan K↔K—bukan slowed+reverb, bukan nightcore, bukan reverse.',
+  tool_make_an_8d_panning_version_of_a_song_usecase_3: 'Anda ingin pan stereo berputar untuk headphone, bukan remix mono.',
   tool_make_an_8d_panning_version_of_a_song_usecases_title: 'Kapan ini membantu',
   tool_make_an_8d_panning_version_of_a_song_why_choose_item_1: 'Lihat detik input, periode sapuan, dan KiB keluaran sebelum menyimpan.',
   tool_make_an_8d_panning_version_of_a_song_why_choose_item_2: 'Satu pekerjaan pan bergaya 8D yang jelas—bukan otomasi DAW tersembunyi.',
@@ -11535,42 +11565,42 @@ const id: SiteLangDict = {
   tool_make_pdf_flipbook_warn_large: 'Large file — may be slow.',
   tool_make_srt_subtitles_from_an_audio_file_advanced: 'Honest limits',
   tool_make_srt_subtitles_from_an_audio_file_article:
-    'People search for audio to srt and generate subtitles from audio expecting Whisper-class timed captions. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses Web Speech API SpeechRecognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), stamps cues from recognition timing, and formats standard SRT—or you can dictate live with the mic. If SpeechRecognition is missing, the page says so clearly. Output is editable SRT you can download—not plain TXT only, and not burned into video. Related tools cover plain transcription and waveform video. Keep expectations honest: cue times and accuracy vary by browser.',
+    'People search for audio to srt and generate subtitles from audio expecting large-model-class timed captions. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses browser speech recognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), stamps cues from recognition timing, and formats standard SRT—or you can dictate live with the mic. If browser speech recognition is missing, the page says so clearly. Output is editable SRT you can download—not plain TXT only, and not burned into video. Related tools cover plain transcription and waveform video. Keep expectations honest: cue times and accuracy vary by browser.',
   tool_make_srt_subtitles_from_an_audio_file_choose: 'Choose an audio file',
   tool_make_srt_subtitles_from_an_audio_file_clear: 'Hapus',
   tool_make_srt_subtitles_from_an_audio_file_convert: 'Buat SRT saat diputar',
   tool_make_srt_subtitles_from_an_audio_file_decode: 'Decode',
   tool_make_srt_subtitles_from_an_audio_file_desc:
-    'Buat subtitle SRT berwaktu dari ucapan lokal dengan SpeechRecognition browser jika tersedia, atau dikte lewat mikrofon. Bukan klon Whisper.',
+    'Buat subtitle SRT berwaktu dari ucapan lokal dengan browser speech recognition browser jika tersedia, atau dikte lewat mikrofon. Bukan klon a large speech model.',
   tool_make_srt_subtitles_from_an_audio_file_description:
-    'Buat subtitle SRT dari file audio di browser dengan SpeechRecognition jika tersedia. Langkah: pilih audio lokal, pilih bahasa, Buat SRT saat diputar atau Dikte mikrofon, edit pratinjau, unduh .srt. Contoh: Muat sampel membuka nada pendek dan menjalankan jalur putar—perlu rekaman suara nyata atau mikrofon. Waktu cue adalah perkiraan saat hasil final tiba, bukan penyelarasan paksa seperti Whisper. Bukan klon Whisper dan tidak memuat model wasm besar. Banyak browser tidak dapat membuat subtitle file secara offline dengan andal. Halaman ini tidak mengunggah file Anda untuk ASR server.',
+    'Buat subtitle SRT dari file audio di browser dengan browser speech recognition jika tersedia. Langkah: pilih audio lokal, pilih bahasa, Buat SRT saat diputar atau Dikte mikrofon, edit pratinjau, unduh .srt. Contoh: Muat sampel membuka nada pendek dan menjalankan jalur putar—perlu rekaman suara nyata atau mikrofon. Waktu cue adalah perkiraan saat hasil final tiba, bukan penyelarasan paksa seperti a large speech model. Bukan klon a large speech model dan tidak memuat model offline model besar. Banyak browser tidak dapat membuat subtitle file secara offline dengan andal. Halaman ini tidak mengunggah file Anda untuk ASR server.',
   tool_make_srt_subtitles_from_an_audio_file_done: 'Ready. Edit the SRT if needed, then Download SRT.',
   tool_make_srt_subtitles_from_an_audio_file_download: 'Unduh SRT',
   tool_make_srt_subtitles_from_an_audio_file_elapsed: '{s}s elapsed',
   tool_make_srt_subtitles_from_an_audio_file_empty: 'Choose a local audio file, or use Dictate with mic.',
   tool_make_srt_subtitles_from_an_audio_file_empty_state:
-    'No SRT yet. Drop a voice recording and Make SRT while playing, or click Dictate with mic. Not a Whisper clone—browser SpeechRecognition only, with honest timing limits.',
+    'No SRT yet. Drop a voice recording and Make SRT while playing, or click Dictate with mic. Not a a large speech model clone—browser browser speech recognition only, with honest timing limits.',
   tool_make_srt_subtitles_from_an_audio_file_err_decode: 'The browser could not decode this audio file.',
   tool_make_srt_subtitles_from_an_audio_file_err_file: 'Choose one local audio file, or use Dictate with mic.',
   tool_make_srt_subtitles_from_an_audio_file_err_format: 'Unsupported audio type. Use a common format your browser can decode.',
   tool_make_srt_subtitles_from_an_audio_file_err_limit: 'Use audio up to about 40 MiB and 3 minutes.',
   tool_make_srt_subtitles_from_an_audio_file_err_permission: 'Microphone or speech permission was denied. Allow access or use another browser.',
-  tool_make_srt_subtitles_from_an_audio_file_err_unsupported: 'SpeechRecognition is unavailable in this browser.',
+  tool_make_srt_subtitles_from_an_audio_file_err_unsupported: 'browser speech recognition is unavailable in this browser.',
   tool_make_srt_subtitles_from_an_audio_file_example:
     'Load sample attaches a short tone WAV and runs Make SRT while playing. A tone will not produce words—use a real voice file or Dictate with mic to see cues. Playback never auto-starts after a finished SRT.',
   tool_make_srt_subtitles_from_an_audio_file_example_title: 'Try the sample playthrough path',
   tool_make_srt_subtitles_from_an_audio_file_failed: 'Could not build SRT. Try Dictate with mic, another browser, or a clearer voice recording.',
   tool_make_srt_subtitles_from_an_audio_file_faq_a1:
-    'Tidak. Tidak menyertakan Whisper wasm dan tidak mengunggah file ke server kami untuk ASR. Menggunakan SpeechRecognition browser jika tersedia.',
+    'Tidak. Tidak menyertakan a large offline speech model dan tidak mengunggah file ke server kami untuk ASR. Menggunakan browser speech recognition browser jika tersedia.',
   tool_make_srt_subtitles_from_an_audio_file_faq_a2: 'Perkiraan berdasarkan kapan hasil final tiba—bukan penyelarasan paksa per bingkai.',
   tool_make_srt_subtitles_from_an_audio_file_faq_a3:
     'Most browsers listen via the microphone, not a private WebAudio tap. Playthrough needs the mic to hear the speakers, plus permission. If that fails, use Dictate with mic.',
   tool_make_srt_subtitles_from_an_audio_file_faq_a4: 'Halaman itu mengunduh TXT tanpa waktu. Halaman ini memformat cue SRT bernomor dengan awal dan akhir.',
   tool_make_srt_subtitles_from_an_audio_file_faq_a5:
-    'This page does not upload the file for processing. SpeechRecognition may use the microphone and a browser vendor service. Keep sensitive material offline if that is unacceptable.',
+    'This page does not upload the file for processing. browser speech recognition may use the microphone and a browser vendor service. Keep sensitive material offline if that is unacceptable.',
   tool_make_srt_subtitles_from_an_audio_file_faq_a6:
     'No. It only downloads a .srt sidecar. For a waveform-style video from audio, see the related waveform video tool—not burned-in captions.',
-  tool_make_srt_subtitles_from_an_audio_file_faq_q1: 'Apakah ini klon Whisper atau unggahan ASR cloud?',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q1: 'Apakah ini klon a large speech model atau unggahan ASR cloud?',
   tool_make_srt_subtitles_from_an_audio_file_faq_q2: 'Seberapa akurat stempel waktu SRT?',
   tool_make_srt_subtitles_from_an_audio_file_faq_q3: 'Why did my uploaded file produce little or no text?',
   tool_make_srt_subtitles_from_an_audio_file_faq_q4: 'Bedanya dengan Transkripsikan file audio menjadi teks?',
@@ -11578,7 +11608,7 @@ const id: SiteLangDict = {
   tool_make_srt_subtitles_from_an_audio_file_faq_q6: 'Can this burn subtitles into a video file?',
   tool_make_srt_subtitles_from_an_audio_file_file_label: 'Audio: {name}',
   tool_make_srt_subtitles_from_an_audio_file_hint:
-    'Optional local WAV, MP3 or M4A up to about 40 MiB / 3 minutes. File subtitling depends on browser SpeechRecognition and often needs speakers plus microphone permission.',
+    'Optional local WAV, MP3 or M4A up to about 40 MiB / 3 minutes. File subtitling depends on browser browser speech recognition and often needs speakers plus microphone permission.',
   tool_make_srt_subtitles_from_an_audio_file_how_body:
     'Use browser speech recognition on a local file playthrough or live mic dictation, stamp cues, then download .srt.',
   tool_make_srt_subtitles_from_an_audio_file_how_item_1: 'Choose a local voice recording (or Load sample), and pick a recognition language.',
@@ -11589,7 +11619,8 @@ const id: SiteLangDict = {
   tool_make_srt_subtitles_from_an_audio_file_how_item_4: 'Edit the SRT preview if needed, then Download SRT.',
   tool_make_srt_subtitles_from_an_audio_file_how_title: 'Cara membuat subtitle SRT dari file audio',
   tool_make_srt_subtitles_from_an_audio_file_interim_label: 'Interim (live)',
-  tool_make_srt_subtitles_from_an_audio_file_lang_hint: 'Passed to SpeechRecognition.lang. Pick the language spoken in the recording or into the mic.',
+  tool_make_srt_subtitles_from_an_audio_file_lang_hint:
+    'Passed to browser speech recognition.lang. Pick the language spoken in the recording or into the mic.',
   tool_make_srt_subtitles_from_an_audio_file_lang_label: 'Recognition language',
   tool_make_srt_subtitles_from_an_audio_file_listen: 'Listen',
   tool_make_srt_subtitles_from_an_audio_file_mic: 'Dikte mikrofon',
@@ -11598,37 +11629,39 @@ const id: SiteLangDict = {
   tool_make_srt_subtitles_from_an_audio_file_read: 'Read',
   tool_make_srt_subtitles_from_an_audio_file_result: '{cues} cues · {chars} characters',
   tool_make_srt_subtitles_from_an_audio_file_rules_body:
-    'This page uses Web Speech API SpeechRecognition when present. It is not offline Whisper. Cue times come from recognition timing clocks. File upload subtitling is best-effort and may fall back to live mic.',
+    'This page uses browser speech recognition when present. It is not an offline large speech model. Cue times come from recognition timing clocks. File upload subtitling is best-effort and may fall back to live mic.',
   tool_make_srt_subtitles_from_an_audio_file_rules_item_1:
-    'SpeechRecognition must exist. Otherwise the unsupported banner stays visible and primary actions stay disabled.',
+    'browser speech recognition must exist. Otherwise the unsupported banner stays visible and primary actions stay disabled.',
   tool_make_srt_subtitles_from_an_audio_file_rules_item_2:
     'Recognition typically uses the microphone. Playing a file does not guarantee a private decode→subtitle path.',
   tool_make_srt_subtitles_from_an_audio_file_rules_item_3: 'Optional file up to about 40 MiB / 3 minutes. Output is standard SRT—not burned-in video captions.',
   tool_make_srt_subtitles_from_an_audio_file_rules_item_4:
-    'This page does not upload your file for server-side Whisper. Browser vendors may still send mic audio to their speech service—check your browser privacy settings.',
+    'This page does not upload your file for server-side speech recognition. Browser vendors may still send mic audio to their speech service—check your browser privacy settings.',
   tool_make_srt_subtitles_from_an_audio_file_rules_title: 'SRT rules and honest browser limits',
   tool_make_srt_subtitles_from_an_audio_file_sample: 'Muat sampel',
   tool_make_srt_subtitles_from_an_audio_file_sample_name: 'srt-sample',
   tool_make_srt_subtitles_from_an_audio_file_settings_hint:
-    'SpeechRecognition usually listens to the microphone—not a private WebAudio tap. Playing a file may work only if the mic hears the speakers. Cue times are estimated from when finals arrive, not Whisper forced alignment. This is not Whisper and does not download a large model.',
+    'browser speech recognition usually listens to the microphone—not a private WebAudio tap. Playing a file may work only if the mic hears the speakers. Cue times are estimated from when finals arrive, not a large speech model forced alignment. This is not a large speech model and does not download a large model.',
   tool_make_srt_subtitles_from_an_audio_file_status_listening:
-    'Playback finished with little or no text. SpeechRecognition often needs the microphone to hear the speakers—try Dictate with mic, raise volume, or allow mic access.',
+    'Playback finished with little or no text. browser speech recognition often needs the microphone to hear the speakers—try Dictate with mic, raise volume, or allow mic access.',
   tool_make_srt_subtitles_from_an_audio_file_status_mic: 'Listening to the microphone… speak clearly, then Stop. Cue times use session elapsed time.',
-  tool_make_srt_subtitles_from_an_audio_file_status_playing: 'Playing the file and building timed cues via SpeechRecognition (mic path)…',
+  tool_make_srt_subtitles_from_an_audio_file_status_playing: 'Playing the file and building timed cues via browser speech recognition (mic path)…',
   tool_make_srt_subtitles_from_an_audio_file_status_unsupported:
-    'This browser does not expose SpeechRecognition / webkitSpeechRecognition. Try Chrome or Edge, or use a different device. True offline Whisper-style ASR is not bundled here.',
+    'This browser does not expose browser speech recognition / webkitbrowser speech recognition. Try Chrome or Edge, or use a different device. True offline a large speech model-style ASR is not bundled here.',
   tool_make_srt_subtitles_from_an_audio_file_stop: 'Berhenti',
   tool_make_srt_subtitles_from_an_audio_file_title: 'Buat subtitle SRT dari file audio',
   tool_make_srt_subtitles_from_an_audio_file_usecase_1:
     'You want a rough timed .srt for a short voice note in a Chromium browser without installing desktop software.',
   tool_make_srt_subtitles_from_an_audio_file_usecase_2:
     'File loopback fails, so you dictate the same content live with the mic and download SRT with session-relative times.',
+  tool_make_srt_subtitles_from_an_audio_file_usecase_3: 'Butuh SRT awal dari pengenalan ucapan untuk disunting sebelum terbit.',
   tool_make_srt_subtitles_from_an_audio_file_usecases_title: 'When this helps',
   tool_make_srt_subtitles_from_an_audio_file_why_choose_item_1: 'Clear dual path: file playthrough attempt plus mic dictation fallback, both emitting .srt.',
-  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_2: 'Honest copy: not Whisper, no huge wasm model, timing is best-effort and stated up front.',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_2:
+    'Honest copy: not a large speech model, no huge offline model model, timing is best-effort and stated up front.',
   tool_make_srt_subtitles_from_an_audio_file_why_choose_item_3: 'You can edit the SRT before downloading.',
   tool_make_srt_subtitles_from_an_audio_file_why_choose_item_4: 'Nearby tools cover plain TXT transcription and waveform video without forcing a hub editor.',
-  tool_make_srt_subtitles_from_an_audio_file_why_choose_title: 'Why choose our Make SRT subtitles from an audio file tools',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_title: 'Mengapa memilih alat Buat subtitle SRT dari file audio kami',
   tool_make_srt_subtitles_from_an_audio_file_write: 'Write SRT',
   tool_marginal_revenue_article:
     'Pendapatan marjinal adalah perubahan total pendapatan saat kuantitas berubah. Kalkulator ini menampilkan derivasi diskrit dua titik.',
@@ -11859,6 +11892,7 @@ const id: SiteLangDict = {
   tool_match_podcast_loudness_to_minus_16_lufs_title: 'Menyamakan loudness podcast ke −16 LUFS',
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_1: 'Episode podcast terlalu pelan untuk pengiriman −16 LUFS—samakan ke −16 dan unduh WAV.',
   tool_match_podcast_loudness_to_minus_16_lufs_usecase_2: 'Trek suara YouTube/Spotify yang ingin dekat −14 tanpa normalisasi peak atau kompresor.',
+  tool_match_podcast_loudness_to_minus_16_lufs_usecase_3: 'Loudness episode bergeser; Anda ingin target sekitar −16 LUFS.',
   tool_match_podcast_loudness_to_minus_16_lufs_usecases_title: 'Kapan ini membantu',
   tool_match_podcast_loudness_to_minus_16_lufs_why_choose_item_1: 'Lihat ≈LUFS terukur, target, gain dB, dan KiB keluaran sebelum menyimpan.',
   tool_match_podcast_loudness_to_minus_16_lufs_why_choose_item_2: 'Tiga target jelas gaya platform—satu pekerjaan loudness, bukan dinding peak/gain/kompresor.',
@@ -12380,6 +12414,7 @@ const id: SiteLangDict = {
   tool_mix_a_voiceover_with_background_music_title: 'Campurkan voiceover dengan musik latar',
   tool_mix_a_voiceover_with_background_music_usecase_1: 'Rekaman bicara butuh bed lembut—tambah keduanya, turunkan bed atau aktifkan ducking, campur, unduh.',
   tool_mix_a_voiceover_with_background_music_usecase_2: 'Sudah ekstrak audio dari video dan ingin voiceover baru di atas tanpa mixer daring.',
+  tool_mix_a_voiceover_with_background_music_usecase_3: 'VO kering perlu musik latar lebih pelan di bawah tanpa mixer penuh.',
   tool_mix_a_voiceover_with_background_music_usecases_title: 'Kapan membantu',
   tool_mix_a_voiceover_with_background_music_voice_gain: 'Gain voiceover',
   tool_mix_a_voiceover_with_background_music_voice_label: 'Voiceover: {name}',
@@ -12468,6 +12503,7 @@ const id: SiteLangDict = {
     'Anda ingin WAV ambient fokus yang bisa dipakai ulang—atur carrier dan beat, Campur, unduh, dan simpan file untuk headphone.',
   tool_mix_binaural_beats_for_focus_usecase_2:
     'Anda butuh demo beat stereo cepat tanpa memasang aplikasi nada desktop atau mempercayai klaim terapi.',
+  tool_mix_binaural_beats_for_focus_usecase_3: 'Anda ingin bed fokus stereo singkat dari carrier dan beat Hz hanya dengan headphone.',
   tool_mix_binaural_beats_for_focus_usecases_title: 'Kapan ini membantu',
   tool_mix_binaural_beats_for_focus_why_choose_item_1: 'Lihat Hz kiri, kanan, selisih beat, durasi, dan KiB keluaran sebelum menyimpan.',
   tool_mix_binaural_beats_for_focus_why_choose_item_2: 'Satu pekerjaan binaural stereo yang jelas dengan batas YMYL jujur—ambient hiburan, bukan pengobatan.',
@@ -12549,6 +12585,7 @@ const id: SiteLangDict = {
   tool_normalize_an_audio_file_to_peak_usecase_1: 'Penyerahan yang meminta peak dekat full scale dengan headroom—normalisasi ke −1 dBFS dan unduh WAV.',
   tool_normalize_an_audio_file_to_peak_usecase_2:
     'Beberapa take level berbeda yang ingin diselaraskan berdasarkan peak sebelum edit, tanpa mengejar angka LUFS.',
+  tool_normalize_an_audio_file_to_peak_usecase_3: 'Take dengan puncak berbeda ingin target puncak yang konsisten.',
   tool_normalize_an_audio_file_to_peak_usecases_title: 'Kapan ini membantu',
   tool_normalize_an_audio_file_to_peak_why_choose_item_1: 'Lihat durasi, dBFS target, peak sebelum/sesudah, dan KiB keluaran sebelum menyimpan.',
   tool_normalize_an_audio_file_to_peak_why_choose_item_2: 'Tiga target peak jelas—satu pekerjaan peak normalize, bukan dinding gain/LUFS/kompresor.',
@@ -14535,6 +14572,7 @@ const id: SiteLangDict = {
   tool_reduce_background_noise_on_a_voice_memo_title: 'Kurangi noise latar pada memo suara',
   tool_reduce_background_noise_on_a_voice_memo_usecase_1: 'Memo ponsel dengan desis kipas atau AC—pilih Medium, Denoise, unduh WAV.',
   tool_reduce_background_noise_on_a_voice_memo_usecase_2: 'Catatan lapangan yang butuh lebih sedikit desis sebelum fade atau EQ di tempat lain.',
+  tool_reduce_background_noise_on_a_voice_memo_usecase_3: 'Dengung kipas/AC stabil di bawah suara; gate lembut harus menenangkan jeda.',
   tool_reduce_background_noise_on_a_voice_memo_usecases_title: 'Kapan ini membantu',
   tool_reduce_background_noise_on_a_voice_memo_why_choose_item_1: 'Lihat nama kekuatan, lantai noise perkiraan, dan KiB keluaran sebelum menyimpan.',
   tool_reduce_background_noise_on_a_voice_memo_why_choose_item_2: 'Tiga kekuatan jelas—satu pekerjaan denoise memo, bukan rak DAW atau upsell Enhance cloud.',
@@ -14619,6 +14657,7 @@ const id: SiteLangDict = {
   tool_remove_clicks_from_a_recording_title: 'Hapus klik dari rekaman',
   tool_remove_clicks_from_a_recording_usecase_1: 'Memo suara dengan pop mulut atau ketukan kabel—pilih Sedang, Declick, unduh WAV.',
   tool_remove_clicks_from_a_recording_usecase_2: 'Transfer dengan retak vinil jarang sebelum denoise atau dehum di tempat lain.',
+  tool_remove_clicks_from_a_recording_usecase_3: 'Klik mulut dan pop edit mengganggu VO yang bersih.',
   tool_remove_clicks_from_a_recording_usecases_title: 'Kapan ini membantu',
   tool_remove_clicks_from_a_recording_why_choose_item_1: 'Lihat sensitivitas, jumlah lonjakan diperbaiki, dan KiB keluaran sebelum menyimpan.',
   tool_remove_clicks_from_a_recording_why_choose_item_2: 'Satu pekerjaan declick yang jelas—perbaikan median pendek, bukan rak DAW tersembunyi.',
@@ -14628,7 +14667,7 @@ const id: SiteLangDict = {
   tool_remove_clicks_from_a_recording_write: 'Tulis',
   tool_remove_mains_hum_from_a_recording_advanced: 'Frekuensi listrik dan harmonik',
   tool_remove_mains_hum_from_a_recording_article:
-    'Rekaman dekat catu daya, dimmer, atau peralatan yang kurang grounding sering menangkap dengung listrik stabil 50 atau 60 Hz, kadang dengan harmonik. Halaman ini merangkai tahap notch BiquadFilter di OfflineAudioContext pada fundamental yang dipilih dan, opsional, harmonik ke-2 hingga ke-5 di bawah Nyquist. Menarget nada listrik sempit—bukan denoise desis kipas pita lebar, bukan perbaikan klik, dan bukan EQ tiga pita untuk suara teredam. Bass dekat notch bisa sedikit menipis. Jumlah saluran tetap 1 atau 2. Simpan file asli; unduhan adalah WAV 16-bit baru. Pekerjaan berjalan di browser pada perangkat Anda.',
+    'Rekaman dekat catu daya, dimmer, atau peralatan yang kurang grounding sering menangkap dengung listrik stabil 50 atau 60 Hz, kadang dengan harmonik. Halaman ini merangkai tahap notch EQ filter di on-device audio processing pada fundamental yang dipilih dan, opsional, harmonik ke-2 hingga ke-5 di bawah Nyquist. Menarget nada listrik sempit—bukan denoise desis kipas pita lebar, bukan perbaikan klik, dan bukan EQ tiga pita untuk suara teredam. Bass dekat notch bisa sedikit menipis. Jumlah saluran tetap 1 atau 2. Simpan file asli; unduhan adalah WAV 16-bit baru. Pekerjaan berjalan di browser pada perangkat Anda.',
   tool_remove_mains_hum_from_a_recording_choose: 'Pilih file audio',
   tool_remove_mains_hum_from_a_recording_clear: 'Hapus',
   tool_remove_mains_hum_from_a_recording_convert: 'Dehum',
@@ -14709,6 +14748,7 @@ const id: SiteLangDict = {
     'Catatan suara dengan dengung listrik stabil dari charger atau dimmer—pilih Hz jaringan Anda, Dehum, unduh WAV.',
   tool_remove_mains_hum_from_a_recording_usecase_2:
     'Rekaman lapangan yang perlu menghilangkan nada listrik sebelum denoise desis pita lebar atau EQ suara teredam di tempat lain.',
+  tool_remove_mains_hum_from_a_recording_usecase_3: 'Dengung 50/60 Hz dari listrik terdengar di bawah take.',
   tool_remove_mains_hum_from_a_recording_usecases_title: 'Kapan ini membantu',
   tool_remove_mains_hum_from_a_recording_why_choose_item_1: 'Lihat Hz listrik, mode harmonik, jumlah notch, dan KiB keluaran sebelum menyimpan.',
   tool_remove_mains_hum_from_a_recording_why_choose_item_2: 'Satu pekerjaan dehum yang jelas—notch 50/60 Hz dengan harmonik opsional, bukan rak DAW tersembunyi.',
@@ -14836,14 +14876,14 @@ const id: SiteLangDict = {
   tool_remove_silence_from_a_recording_why_choose_title: 'Mengapa memakai Hapus keheningan dari rekaman',
   tool_remove_the_audio_track_from_a_video_advanced: 'Catatan bisu',
   tool_remove_the_audio_track_from_a_video_article:
-    'Klip pendek terkadang hanya butuh gambar agar soundtrack baru bisa ditambahkan nanti. Halaman ini membuka video lokal, menangkap bingkai tanpa trek audio, merekode ulang dengan MediaRecorder, lalu mengunduh file bisu—sering WebM tergantung browser. Tidak mengunduh YouTube, tidak mengekstrak soundtrack sebagai audio, dan tidak menjanjikan remux MP4 bit-identik. Keberhasilan bergantung pemutaran dan MediaRecorder. Simpan asli. Berjalan di perangkat Anda.',
+    'Klip pendek terkadang hanya butuh gambar agar soundtrack baru bisa ditambahkan nanti. Halaman ini membuka video lokal, menangkap bingkai tanpa trek audio, merekode ulang dengan browser media recording, lalu mengunduh file bisu—sering WebM tergantung browser. Tidak mengunduh YouTube, tidak mengekstrak soundtrack sebagai audio, dan tidak menjanjikan remux MP4 bit-identik. Keberhasilan bergantung pemutaran dan browser media recording. Simpan asli. Berjalan di perangkat Anda.',
   tool_remove_the_audio_track_from_a_video_capture: 'Tangkap',
   tool_remove_the_audio_track_from_a_video_choose: 'Pilih file video',
   tool_remove_the_audio_track_from_a_video_clear: 'Hapus',
   tool_remove_the_audio_track_from_a_video_convert: 'Hapus audio',
   tool_remove_the_audio_track_from_a_video_desc: 'Bisukan video lokal di browser dan unduh klip tanpa audio. Hanya di perangkat—tanpa unduhan YouTube.',
   tool_remove_the_audio_track_from_a_video_description:
-    'Hapus trek audio dari video lokal di browser dan unduh klip yang dibisukan. Langkah: Pilih video, Hapus audio, pratinjau, unduh. Contoh: muat sampel pendek dengan nada. Menggunakan captureStream tanpa trek audio dan MediaRecorder—sering WebM; bukan remux lossless. Tidak pernah diunggah. Tanpa unduhan YouTube.',
+    'Hapus trek audio dari video lokal di browser dan unduh klip yang dibisukan. Langkah: Pilih video, Hapus audio, pratinjau, unduh. Contoh: muat sampel pendek dengan nada. Menggunakan captureStream tanpa trek audio dan browser media recording—sering WebM; bukan remux lossless. Tidak pernah diunggah. Tanpa unduhan YouTube.',
   tool_remove_the_audio_track_from_a_video_done: 'Siap. Pratinjau video bisu, lalu unduh.',
   tool_remove_the_audio_track_from_a_video_download: 'Unduh video bisu',
   tool_remove_the_audio_track_from_a_video_elapsed: '{s}d berlalu',
@@ -14851,7 +14891,7 @@ const id: SiteLangDict = {
   tool_remove_the_audio_track_from_a_video_empty_state:
     'Belum ada video. Jatuhkan file lokal atau Muat sampel. Alat ini membisukan—bukan ekstrak audio dan bukan unduh YouTube.',
   tool_remove_the_audio_track_from_a_video_err_decode: 'Browser tidak bisa memutar video ini. Coba kontainer lain atau klip lebih pendek.',
-  tool_remove_the_audio_track_from_a_video_err_encoder: 'MediaRecorder tidak bisa menulis video bisu. Coba Chrome/Edge atau WebM/MP4 lebih pendek.',
+  tool_remove_the_audio_track_from_a_video_err_encoder: 'browser media recording tidak bisa menulis video bisu. Coba Chrome/Edge atau WebM/MP4 lebih pendek.',
   tool_remove_the_audio_track_from_a_video_err_file: 'Pilih video lokal yang didukung.',
   tool_remove_the_audio_track_from_a_video_err_format: 'Video tidak didukung atau tidak bisa diputar. Gunakan MP4, WebM, MOV, atau M4V. Tanpa URL YouTube.',
   tool_remove_the_audio_track_from_a_video_err_limit: 'Gunakan video lokal hingga 80 MiB dan sekitar 3 menit.',
@@ -14861,11 +14901,11 @@ const id: SiteLangDict = {
   tool_remove_the_audio_track_from_a_video_failed: 'Tidak bisa membisukan. Coba klip lebih pendek yang bisa diputar.',
   tool_remove_the_audio_track_from_a_video_faq_a1: 'Tidak. Hanya file video lokal. Tidak pernah mengunduh YouTube atau media jarak jauh lain.',
   tool_remove_the_audio_track_from_a_video_faq_a2:
-    'Biasanya tidak. Browser merekode ulang dengan MediaRecorder setelah tangkap hanya video. Sering WebM; kualitas bisa berbeda.',
+    'Biasanya tidak. Browser merekode ulang dengan browser media recording setelah tangkap hanya video. Sering WebM; kualitas bisa berbeda.',
   tool_remove_the_audio_track_from_a_video_faq_a3:
     'Tidak. Ekstrak menyimpan soundtrack sebagai file audio. Halaman ini menyimpan gambar dan menghapus suara.',
   tool_remove_the_audio_track_from_a_video_faq_a4:
-    'Browser harus bisa memutar file dan mendukung MediaRecorder untuk MIME video. Coba MP4/WebM lebih pendek atau browser lain.',
+    'Browser harus bisa memutar file dan mendukung browser media recording untuk MIME video. Coba MP4/WebM lebih pendek atau browser lain.',
   tool_remove_the_audio_track_from_a_video_faq_a5: 'Tidak. Semuanya di browser. Jaringan diperlukan saat memuat halaman; offline tidak dijamin.',
   tool_remove_the_audio_track_from_a_video_faq_a6:
     'Siapkan audio terpisah—misalnya Campur voiceover dengan musik—lalu gunakan editor video yang bisa memasang trek baru. Halaman ini hanya menghapus audio.',
@@ -14890,7 +14930,7 @@ const id: SiteLangDict = {
   tool_remove_the_audio_track_from_a_video_record: 'Rekam',
   tool_remove_the_audio_track_from_a_video_result: '{seconds}d · bisu · {mime} · {output} KiB',
   tool_remove_the_audio_track_from_a_video_rules_body:
-    'Setiap proses menangkap video tanpa trek audio dan merekode ulang dengan MediaRecorder. Keluaran sering WebM. Bukan unduhan YouTube, bukan ekstrak audio, bukan remux lossless terjamin.',
+    'Setiap proses menangkap video tanpa trek audio dan merekode ulang dengan browser media recording. Keluaran sering WebM. Bukan unduhan YouTube, bukan ekstrak audio, bukan remux lossless terjamin.',
   tool_remove_the_audio_track_from_a_video_rules_item_1: 'Satu video lokal hingga 80 MiB dan sekitar tiga menit. Harus bisa diputar di browser dulu.',
   tool_remove_the_audio_track_from_a_video_rules_item_2: 'Trek audio dibuang dari aliran tangkapan. Kontainer dan codec bisa berubah.',
   tool_remove_the_audio_track_from_a_video_rules_item_3: 'Tanpa YouTube, URL podcast, atau unduhan jarak jauh. Tempel tidak didukung.',
@@ -14900,20 +14940,21 @@ const id: SiteLangDict = {
   tool_remove_the_audio_track_from_a_video_sample: 'Muat sampel',
   tool_remove_the_audio_track_from_a_video_sample_name: 'sampel-bisu',
   tool_remove_the_audio_track_from_a_video_settings_hint:
-    'Browser biasanya merekode ulang via MediaRecorder setelah membuang trek audio. Keluaran sering WebM, bukan remux lossless. Halaman ini tidak pernah mengunduh YouTube.',
+    'Browser biasanya merekode ulang via browser media recording setelah membuang trek audio. Keluaran sering WebM, bukan remux lossless. Halaman ini tidak pernah mengunduh YouTube.',
   tool_remove_the_audio_track_from_a_video_title: 'Hapus trek audio dari video',
   tool_remove_the_audio_track_from_a_video_usecase_1: 'Klip ponsel butuh master bisu sebelum menambahkan voiceover atau bed di tempat lain.',
   tool_remove_the_audio_track_from_a_video_usecase_2: 'Anda ingin hanya gambar untuk unggahan sosial tanpa audio ruang asli.',
+  tool_remove_the_audio_track_from_a_video_usecase_3: 'Butuh gambar tanpa suara agar bisa menambah soundtrack baru nanti.',
   tool_remove_the_audio_track_from_a_video_usecases_title: 'Kapan membantu',
   tool_remove_the_audio_track_from_a_video_why_choose_item_1: 'Lihat durasi, status bisu, MIME, dan KiB keluaran sebelum menyimpan.',
-  tool_remove_the_audio_track_from_a_video_why_choose_item_2: 'Satu pekerjaan bisu jelas dengan batas MediaRecorder yang jujur—tanpa janji remux palsu.',
+  tool_remove_the_audio_track_from_a_video_why_choose_item_2: 'Satu pekerjaan bisu jelas dengan batas browser media recording yang jujur—tanpa janji remux palsu.',
   tool_remove_the_audio_track_from_a_video_why_choose_item_3: 'Baca dan rekam di perangkat; halaman tidak mengunggah video Anda.',
   tool_remove_the_audio_track_from_a_video_why_choose_item_4: 'Mengubah file menghapus unduhan lama agar klip basi tidak tersimpan.',
   tool_remove_the_audio_track_from_a_video_why_choose_title: 'Mengapa memilih alat hapus audio dari video kami',
   tool_remove_the_audio_track_from_a_video_write: 'Tulis',
   tool_replace_the_audio_in_a_video_file_advanced: 'Catatan penggantian',
   tool_replace_the_audio_in_a_video_file_article:
-    'BGM salah atau trek bawaan lemah sering butuh penggantian soundtrack penuh sebelum dibagikan. Halaman ini membuka video lokal dan audio pengganti, membuang trek asli, menangkap gambar, mendekode soundtrack baru di AudioContext, merekam ulang dengan MediaRecorder, lalu mengunduh—sering WebM tergantung peramban. Durasi mengikuti video; audio lebih panjang dipotong, yang lebih pendek berakhir lebih awal. Tidak mengunduh YouTube atau URL lain, bukan hanya membisukan tanpa menambah suara, dan bukan hanya “menambah audio ke klip bisu”. Keberhasilan bergantung pada memutar kedua berkas dan MediaRecorder dengan audio. Simpan aslinya. Semua berjalan di perangkat Anda.',
+    'BGM salah atau trek bawaan lemah sering butuh penggantian soundtrack penuh sebelum dibagikan. Halaman ini membuka video lokal dan audio pengganti, membuang trek asli, menangkap gambar, mendekode soundtrack baru di the browser audio engine, merekam ulang dengan browser media recording, lalu mengunduh—sering WebM tergantung peramban. Durasi mengikuti video; audio lebih panjang dipotong, yang lebih pendek berakhir lebih awal. Tidak mengunduh YouTube atau URL lain, bukan hanya membisukan tanpa menambah suara, dan bukan hanya “menambah audio ke klip bisu”. Keberhasilan bergantung pada memutar kedua berkas dan browser media recording dengan audio. Simpan aslinya. Semua berjalan di perangkat Anda.',
   tool_replace_the_audio_in_a_video_file_audio_label: 'Audio baru: {name}',
   tool_replace_the_audio_in_a_video_file_choose_audio: 'Pilih berkas audio baru',
   tool_replace_the_audio_in_a_video_file_choose_video: 'Pilih berkas video',
@@ -14923,7 +14964,7 @@ const id: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_desc:
     'Ganti soundtrack video lokal dengan audio lain, lalu unduh. Hanya di perangkat—tanpa unduhan YouTube.',
   tool_replace_the_audio_in_a_video_file_description:
-    'Ganti soundtrack video lokal di peramban dengan berkas audio lain, lalu unduh. Langkah: pilih video dan audio baru, Ganti audio, pratinjau, unduh. Contoh: klip dengan nada lama diganti WAV baru. Menggunakan captureStream dan MediaRecorder—sering WebM; bukan remux tanpa rugi. Tidak pernah diunggah. Tanpa unduhan YouTube.',
+    'Ganti soundtrack video lokal di peramban dengan berkas audio lain, lalu unduh. Langkah: pilih video dan audio baru, Ganti audio, pratinjau, unduh. Contoh: klip dengan nada lama diganti WAV baru. Menggunakan captureStream dan browser media recording—sering WebM; bukan remux tanpa rugi. Tidak pernah diunggah. Tanpa unduhan YouTube.',
   tool_replace_the_audio_in_a_video_file_done: 'Siap. Pratinjau video dengan soundtrack baru, lalu Unduh.',
   tool_replace_the_audio_in_a_video_file_download: 'Unduh',
   tool_replace_the_audio_in_a_video_file_elapsed: '{s}d berlalu',
@@ -14932,7 +14973,7 @@ const id: SiteLangDict = {
     'Belum ada berkas. Jatuhkan video lokal dan soundtrack pengganti, atau klik Muat sampel. Alat ini menukar soundtrack—bukan hanya bisu dan tidak mengunduh YouTube.',
   tool_replace_the_audio_in_a_video_file_err_decode: 'Peramban tidak dapat mendekode video atau audio. Coba wadah lain atau klip lebih pendek.',
   tool_replace_the_audio_in_a_video_file_err_encoder:
-    'MediaRecorder tidak dapat menulis video dengan audio diganti. Coba Chrome/Edge atau WebM/MP4 lebih pendek plus WAV/MP3.',
+    'browser media recording tidak dapat menulis video dengan audio diganti. Coba Chrome/Edge atau WebM/MP4 lebih pendek plus WAV/MP3.',
   tool_replace_the_audio_in_a_video_file_err_file: 'Pilih satu video lokal yang didukung dan satu audio baru.',
   tool_replace_the_audio_in_a_video_file_err_format: 'Berkas tidak didukung atau tidak dapat diputar. Gunakan tipe video/audio umum. Tanpa URL YouTube.',
   tool_replace_the_audio_in_a_video_file_err_limit: 'Gunakan video lokal hingga 80 MiB / sekitar 3 menit, dan audio hingga 40 MiB.',
@@ -14947,7 +14988,7 @@ const id: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_faq_a3:
     'Menambah sering untuk klip bisu atau bersuara lemah. Di sini tugasnya secara eksplisit mengganti soundtrack yang ada dengan berkas lain.',
   tool_replace_the_audio_in_a_video_file_faq_a4:
-    'Biasanya tidak. Peramban umumnya merekam ulang dengan MediaRecorder, sering ke WebM. Kualitas dan wadah dapat berubah.',
+    'Biasanya tidak. Peramban umumnya merekam ulang dengan browser media recording, sering ke WebM. Kualitas dan wadah dapat berubah.',
   tool_replace_the_audio_in_a_video_file_faq_a5:
     'Tidak. Dekode dan perekaman berjalan di peramban pada perangkat Anda. Halaman butuh jaringan saat pertama dimuat; offline tidak dijamin.',
   tool_replace_the_audio_in_a_video_file_faq_a6: 'Penukaran mengikuti durasi video. Audio setelah akhir gambar tidak disimpan dalam unduhan.',
@@ -14973,7 +15014,7 @@ const id: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_read: 'Baca',
   tool_replace_the_audio_in_a_video_file_result: '{seconds}d · audio diganti · {mime} · {output} KiB',
   tool_replace_the_audio_in_a_video_file_rules_body:
-    'Setiap proses membuang trek asli, menempel soundtrack baru, dan merekam ulang dengan MediaRecorder. Keluaran sering WebM. Bukan unduhan YouTube dan bukan hanya bisu.',
+    'Setiap proses membuang trek asli, menempel soundtrack baru, dan merekam ulang dengan browser media recording. Keluaran sering WebM. Bukan unduhan YouTube dan bukan hanya bisu.',
   tool_replace_the_audio_in_a_video_file_rules_item_1:
     'Satu video lokal hingga 80 MiB dan sekitar tiga menit, plus satu audio lokal hingga 40 MiB. Putar/dekode harus berhasil dulu.',
   tool_replace_the_audio_in_a_video_file_rules_item_2: 'Durasi keluaran mengikuti video. Audio lebih panjang dipotong; lebih pendek berakhir sebelum gambar.',
@@ -14983,17 +15024,18 @@ const id: SiteLangDict = {
   tool_replace_the_audio_in_a_video_file_sample: 'Muat sampel',
   tool_replace_the_audio_in_a_video_file_sample_name: 'sampel-ganti-audio',
   tool_replace_the_audio_in_a_video_file_settings_hint:
-    'Peramban biasanya merekam ulang lewat MediaRecorder setelah membuang trek asli dan menempel soundtrack baru. Keluaran sering WebM, bukan remux tanpa rugi. Halaman ini tidak pernah mengunduh YouTube.',
+    'Peramban biasanya merekam ulang lewat browser media recording setelah membuang trek asli dan menempel soundtrack baru. Keluaran sering WebM, bukan remux tanpa rugi. Halaman ini tidak pernah mengunduh YouTube.',
   tool_replace_the_audio_in_a_video_file_title: 'Ganti audio dalam berkas video',
   tool_replace_the_audio_in_a_video_file_usecase_1:
     'Merekam dengan BGM salah dan punya WAV lokal yang lebih baik—tukar di sini, lalu unduh untuk dibagikan.',
   tool_replace_the_audio_in_a_video_file_usecase_2:
     'Ingin mengganti trek bawaan yang lemah dengan soundtrack lokal yang lebih jelas tanpa memasang editor desktop.',
+  tool_replace_the_audio_in_a_video_file_usecase_3: 'BGM salah harus diganti trek baru sambil mempertahankan gambar.',
   tool_replace_the_audio_in_a_video_file_usecases_title: 'Kapan ini membantu',
   tool_replace_the_audio_in_a_video_file_video_label: 'Video: {name}',
   tool_replace_the_audio_in_a_video_file_why_choose_item_1: 'Lihat durasi, tipe MIME, dan KiB keluaran sebelum menyimpan.',
   tool_replace_the_audio_in_a_video_file_why_choose_item_2:
-    'Satu pekerjaan tukar soundtrack yang jelas dengan batas MediaRecorder yang jujur—bukan janji remux tanpa rugi palsu.',
+    'Satu pekerjaan tukar soundtrack yang jelas dengan batas browser media recording yang jujur—bukan janji remux tanpa rugi palsu.',
   tool_replace_the_audio_in_a_video_file_why_choose_item_3: 'Pembacaan dan perekaman di perangkat Anda; halaman tidak mengunggah berkas untuk diproses.',
   tool_replace_the_audio_in_a_video_file_why_choose_item_4: 'Mengganti salah satu berkas menghapus unduhan lama agar tidak menyimpan tukaran usang.',
   tool_replace_the_audio_in_a_video_file_why_choose_title: 'Mengapa memilih alat ganti audio video kami',
@@ -15064,6 +15106,7 @@ const id: SiteLangDict = {
   tool_reverse_an_audio_file_title: 'Balikkan berkas audio',
   tool_reverse_an_audio_file_usecase_1: 'Efek pendek atau sting musik yang harus diputar mundur—Balik, unduh WAV.',
   tool_reverse_an_audio_file_usecase_2: 'Periksa ekor reverb dengan mendengar akhir lebih dulu—bukan sapuan 8D, bukan amplop fade.',
+  tool_reverse_an_audio_file_usecase_3: 'Sampel pendek harus diputar mundur untuk transisi atau efek.',
   tool_reverse_an_audio_file_usecases_title: 'Kapan ini membantu',
   tool_reverse_an_audio_file_why_choose_item_1: 'Lihat detik, jumlah saluran, dan KiB keluaran sebelum menyimpan.',
   tool_reverse_an_audio_file_why_choose_item_2: 'Satu pekerjaan balik yang jelas—bukan otomasi DAW tersembunyi.',
@@ -15662,6 +15705,7 @@ const id: SiteLangDict = {
   tool_shift_a_recording_toward_a_higher_or_lower_voice_title: 'Geser rekaman menuju suara lebih tinggi atau lebih rendah',
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_1: 'Narasi sedikit rendah—Lebih tinggi, Geser, unduh WAV.',
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_2: 'Klips suara pendek butuh nada lebih rendah tanpa mengubah durasi seperti raksasa mainan.',
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_3: 'VO perlu karakter sedikit lebih tinggi atau dalam tanpa suite pitch penuh.',
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecases_title: 'Kapan ini membantu',
   tool_shift_a_recording_toward_a_higher_or_lower_voice_voice_label: 'Preset tinggi suara (durasi dipertahankan)',
   tool_shift_a_recording_toward_a_higher_or_lower_voice_why_choose_item_1: 'Lihat detik masuk, keluar, nama preset dan KiB sebelum menyimpan.',
@@ -15749,6 +15793,7 @@ const id: SiteLangDict = {
   tool_shift_the_pitch_of_a_song_title: 'Geser pitch sebuah lagu',
   tool_shift_the_pitch_of_a_song_usecase_1: 'Iringan terlalu tinggi—pilih −2, Geser, unduh WAV.',
   tool_shift_the_pitch_of_a_song_usecase_2: 'Klip pendek butuh +1 atau +2 tanpa dipercepat seperti nightcore.',
+  tool_shift_the_pitch_of_a_song_usecase_3: 'Karaoke atau cover perlu beberapa semitone naik/turun dengan durasi dijaga.',
   tool_shift_the_pitch_of_a_song_usecases_title: 'Kapan ini membantu',
   tool_shift_the_pitch_of_a_song_why_choose_item_1: 'Lihat detik input/output, offset semitone, dan KiB sebelum menyimpan.',
   tool_shift_the_pitch_of_a_song_why_choose_item_2:
@@ -16891,6 +16936,7 @@ const id: SiteLangDict = {
   tool_split_stereo_into_left_and_right_files_title: 'Memisahkan stereo menjadi file kiri dan kanan',
   tool_split_stereo_into_left_and_right_files_usecase_1: 'Menyerahkan ke editor WAV mono kiri dan kanan terpisah dari wawancara stereo atau take dual-mic.',
   tool_split_stereo_into_left_and_right_files_usecase_2: 'Memperbaiki ekspor stereo yang dikabelkan terbalik dengan menukar L-R sebelum memublikasikan.',
+  tool_split_stereo_into_left_and_right_files_usecase_3: 'Wawancara stereo harus jadi file mono kiri dan kanan.',
   tool_split_stereo_into_left_and_right_files_usecases_title: 'Kapan ini membantu',
   tool_split_stereo_into_left_and_right_files_why_choose_item_1: 'Lihat durasi terukur, saluran sumber, mode, dan KiB keluaran sebelum menyimpan.',
   tool_split_stereo_into_left_and_right_files_why_choose_item_2:
@@ -17369,44 +17415,44 @@ const id: SiteLangDict = {
   tool_tip_usecases_title: 'Kapan dipakai',
   tool_transcribe_an_audio_file_to_text_advanced: 'Honest limits',
   tool_transcribe_an_audio_file_to_text_article:
-    'People search for audio to text and speech to text expecting a Whisper-class transcript. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses the Web Speech API SpeechRecognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), or you can dictate live with the mic. If SpeechRecognition is missing, the page says so clearly. Output is plain text you can edit and download as TXT—not timed SRT. Related tools cover waveform video and voice memos. Keep expectations honest: accuracy and file support vary by browser.',
+    'People search for audio to text and speech to text expecting a large-model-class transcript. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses the browser speech recognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), or you can dictate live with the mic. If browser speech recognition is missing, the page says so clearly. Output is plain text you can edit and download as TXT—not timed SRT. Related tools cover waveform video and voice memos. Keep expectations honest: accuracy and file support vary by browser.',
   tool_transcribe_an_audio_file_to_text_choose: 'Choose an audio file',
   tool_transcribe_an_audio_file_to_text_clear: 'Hapus',
   tool_transcribe_an_audio_file_to_text_convert: 'Transkripsi saat diputar',
   tool_transcribe_an_audio_file_to_text_decode: 'Decode',
   tool_transcribe_an_audio_file_to_text_desc:
-    'Ubah ucapan lokal menjadi teks yang bisa diedit dengan SpeechRecognition browser jika tersedia, atau dikte lewat mikrofon. Bukan klon Whisper.',
+    'Ubah ucapan lokal menjadi teks yang bisa diedit dengan browser speech recognition browser jika tersedia, atau dikte lewat mikrofon. Bukan klon a large speech model.',
   tool_transcribe_an_audio_file_to_text_description:
-    'Transkripsikan file audio menjadi teks di browser dengan SpeechRecognition jika tersedia. Langkah: pilih audio lokal, pilih bahasa, Transkripsi saat diputar atau Dikte mikrofon, edit, unduh TXT. Contoh: Muat sampel membuka nada pendek dan menjalankan jalur putar—perlu rekaman suara nyata atau mikrofon. Bukan klon Whisper dan tidak memuat model wasm besar. Banyak browser tidak dapat mentranskripsi file secara offline dengan andal. Halaman ini tidak mengunggah file Anda untuk ASR server.',
+    'Transkripsikan file audio menjadi teks di browser dengan browser speech recognition jika tersedia. Langkah: pilih audio lokal, pilih bahasa, Transkripsi saat diputar atau Dikte mikrofon, edit, unduh TXT. Contoh: Muat sampel membuka nada pendek dan menjalankan jalur putar—perlu rekaman suara nyata atau mikrofon. Bukan klon a large speech model dan tidak memuat model offline model besar. Banyak browser tidak dapat mentranskripsi file secara offline dengan andal. Halaman ini tidak mengunggah file Anda untuk ASR server.',
   tool_transcribe_an_audio_file_to_text_done: 'Ready. Edit the text if needed, then Download TXT.',
   tool_transcribe_an_audio_file_to_text_download: 'Unduh TXT',
   tool_transcribe_an_audio_file_to_text_elapsed: '{s}s elapsed',
   tool_transcribe_an_audio_file_to_text_empty: 'Choose a local audio file, or use Dictate with mic.',
   tool_transcribe_an_audio_file_to_text_empty_state:
-    'No transcript yet. Drop a voice recording and Transcribe while playing, or click Dictate with mic. Not a Whisper clone—browser SpeechRecognition only, with honest limits.',
+    'No transcript yet. Drop a voice recording and Transcribe while playing, or click Dictate with mic. Not a a large speech model clone—browser browser speech recognition only, with honest limits.',
   tool_transcribe_an_audio_file_to_text_err_decode: 'The browser could not decode this audio file.',
   tool_transcribe_an_audio_file_to_text_err_file: 'Choose one local audio file, or use Dictate with mic.',
   tool_transcribe_an_audio_file_to_text_err_format: 'Unsupported audio type. Use a common format your browser can decode.',
   tool_transcribe_an_audio_file_to_text_err_limit: 'Use audio up to about 40 MiB and 3 minutes.',
   tool_transcribe_an_audio_file_to_text_err_permission: 'Microphone or speech permission was denied. Allow access or use another browser.',
-  tool_transcribe_an_audio_file_to_text_err_unsupported: 'SpeechRecognition is unavailable in this browser.',
+  tool_transcribe_an_audio_file_to_text_err_unsupported: 'browser speech recognition is unavailable in this browser.',
   tool_transcribe_an_audio_file_to_text_example:
     'Load sample attaches a short tone WAV and runs Transcribe while playing. A tone will not produce words—use a real voice file or Dictate with mic to see text. Playback never auto-starts after a finished transcript.',
   tool_transcribe_an_audio_file_to_text_example_title: 'Try the sample playthrough path',
   tool_transcribe_an_audio_file_to_text_failed: 'Could not transcribe. Try Dictate with mic, another browser, or a clearer voice recording.',
   tool_transcribe_an_audio_file_to_text_faq_a1:
-    'Tidak. Tidak menyertakan Whisper wasm dan tidak mengunggah file ke server kami untuk ASR. Menggunakan SpeechRecognition browser jika tersedia.',
+    'Tidak. Tidak menyertakan a large offline speech model dan tidak mengunggah file ke server kami untuk ASR. Menggunakan browser speech recognition browser jika tersedia.',
   tool_transcribe_an_audio_file_to_text_faq_a2:
     'Most browsers listen via the microphone, not a private WebAudio tap. Playthrough needs the mic to hear the speakers, plus permission. If that fails, use Dictate with mic.',
   tool_transcribe_an_audio_file_to_text_faq_a3:
-    'Chromium-based browsers with webkitSpeechRecognition are the most common. Safari/Firefox support varies. If unsupported, the page shows a clear message.',
+    'Chromium-based browsers with webkitbrowser speech recognition are the most common. Safari/Firefox support varies. If unsupported, the page shows a clear message.',
   tool_transcribe_an_audio_file_to_text_faq_a4:
     'Not on this page. Output is editable plain text (TXT). A dedicated subtitle scene would be a different tool.',
   tool_transcribe_an_audio_file_to_text_faq_a5:
-    'This page does not upload the file for processing. SpeechRecognition may use the microphone and a browser vendor service. Keep sensitive material offline if that is unacceptable.',
+    'This page does not upload the file for processing. browser speech recognition may use the microphone and a browser vendor service. Keep sensitive material offline if that is unacceptable.',
   tool_transcribe_an_audio_file_to_text_faq_a6:
     'Voice memo captures audio for download. This page aims for text. Use the memo tool when you need a recording, and this one when you need a transcript.',
-  tool_transcribe_an_audio_file_to_text_faq_q1: 'Apakah ini klon Whisper atau unggahan ASR cloud?',
+  tool_transcribe_an_audio_file_to_text_faq_q1: 'Apakah ini klon a large speech model atau unggahan ASR cloud?',
   tool_transcribe_an_audio_file_to_text_faq_q2: 'Why did my uploaded file produce little or no text?',
   tool_transcribe_an_audio_file_to_text_faq_q3: 'Which browsers work best?',
   tool_transcribe_an_audio_file_to_text_faq_q4: 'Can I get SRT subtitles with timestamps?',
@@ -17414,7 +17460,7 @@ const id: SiteLangDict = {
   tool_transcribe_an_audio_file_to_text_faq_q6: 'How is this different from recording a voice memo?',
   tool_transcribe_an_audio_file_to_text_file_label: 'Audio: {name}',
   tool_transcribe_an_audio_file_to_text_hint:
-    'Optional local WAV, MP3 or M4A up to about 40 MiB / 3 minutes. File transcription depends on browser SpeechRecognition and often needs speakers plus microphone permission.',
+    'Optional local WAV, MP3 or M4A up to about 40 MiB / 3 minutes. File transcription depends on browser browser speech recognition and often needs speakers plus microphone permission.',
   tool_transcribe_an_audio_file_to_text_how_body: 'Use browser speech recognition on a local file playthrough or live mic dictation, then download TXT.',
   tool_transcribe_an_audio_file_to_text_how_item_1: 'Choose a local voice recording (or Load sample), and pick a recognition language.',
   tool_transcribe_an_audio_file_to_text_how_item_2:
@@ -17423,7 +17469,8 @@ const id: SiteLangDict = {
   tool_transcribe_an_audio_file_to_text_how_item_4: 'Edit the text if needed, then Download TXT.',
   tool_transcribe_an_audio_file_to_text_how_title: 'Cara mentranskripsikan file audio menjadi teks',
   tool_transcribe_an_audio_file_to_text_interim_label: 'Interim (live)',
-  tool_transcribe_an_audio_file_to_text_lang_hint: 'Passed to SpeechRecognition.lang. Pick the language spoken in the recording or into the mic.',
+  tool_transcribe_an_audio_file_to_text_lang_hint:
+    'Passed to browser speech recognition.lang. Pick the language spoken in the recording or into the mic.',
   tool_transcribe_an_audio_file_to_text_lang_label: 'Recognition language',
   tool_transcribe_an_audio_file_to_text_listen: 'Listen',
   tool_transcribe_an_audio_file_to_text_mic: 'Dikte mikrofon',
@@ -17432,36 +17479,37 @@ const id: SiteLangDict = {
   tool_transcribe_an_audio_file_to_text_read: 'Read',
   tool_transcribe_an_audio_file_to_text_result: '{chars} characters · {words} words',
   tool_transcribe_an_audio_file_to_text_rules_body:
-    'This page uses Web Speech API SpeechRecognition when present. It is not offline Whisper. File upload transcription is best-effort and may fall back to live mic.',
+    'This page uses browser speech recognition when present. It is not an offline large speech model. File upload transcription is best-effort and may fall back to live mic.',
   tool_transcribe_an_audio_file_to_text_rules_item_1:
-    'SpeechRecognition must exist. Otherwise the unsupported banner stays visible and primary actions stay disabled.',
+    'browser speech recognition must exist. Otherwise the unsupported banner stays visible and primary actions stay disabled.',
   tool_transcribe_an_audio_file_to_text_rules_item_2:
     'Recognition typically uses the microphone. Playing a file does not guarantee a private decode→text path.',
   tool_transcribe_an_audio_file_to_text_rules_item_3: 'Optional file up to about 40 MiB / 3 minutes. Output is plain TXT, not SRT subtitles.',
   tool_transcribe_an_audio_file_to_text_rules_item_4:
-    'This page does not upload your file for server-side Whisper. Browser vendors may still send mic audio to their speech service—check your browser privacy settings.',
+    'This page does not upload your file for server-side speech recognition. Browser vendors may still send mic audio to their speech service—check your browser privacy settings.',
   tool_transcribe_an_audio_file_to_text_rules_title: 'Transcription rules and honest browser limits',
   tool_transcribe_an_audio_file_to_text_sample: 'Muat sampel',
   tool_transcribe_an_audio_file_to_text_sample_name: 'transcribe-sample',
   tool_transcribe_an_audio_file_to_text_settings_hint:
-    'SpeechRecognition usually listens to the microphone—not a private WebAudio tap. Playing a file may work only if the mic hears the speakers. Many browsers lack reliable file ASR. This is not Whisper and does not download a large model.',
+    'browser speech recognition usually listens to the microphone—not a private WebAudio tap. Playing a file may work only if the mic hears the speakers. Many browsers lack reliable file ASR. This is not a large speech model and does not download a large model.',
   tool_transcribe_an_audio_file_to_text_status_listening:
-    'Playback finished with little or no text. SpeechRecognition often needs the microphone to hear the speakers—try Dictate with mic, raise volume, or allow mic access.',
+    'Playback finished with little or no text. browser speech recognition often needs the microphone to hear the speakers—try Dictate with mic, raise volume, or allow mic access.',
   tool_transcribe_an_audio_file_to_text_status_mic: 'Listening to the microphone… speak clearly, then Stop.',
-  tool_transcribe_an_audio_file_to_text_status_playing: 'Playing the file and listening via SpeechRecognition (mic path)…',
+  tool_transcribe_an_audio_file_to_text_status_playing: 'Playing the file and listening via browser speech recognition (mic path)…',
   tool_transcribe_an_audio_file_to_text_status_unsupported:
-    'This browser does not expose SpeechRecognition / webkitSpeechRecognition. Try Chrome or Edge, or use a different device. True offline Whisper-style ASR is not bundled here.',
+    'This browser does not expose browser speech recognition / webkitbrowser speech recognition. Try Chrome or Edge, or use a different device. True offline a large speech model-style ASR is not bundled here.',
   tool_transcribe_an_audio_file_to_text_stop: 'Berhenti',
   tool_transcribe_an_audio_file_to_text_title: 'Transkripsikan file audio menjadi teks',
   tool_transcribe_an_audio_file_to_text_usecase_1:
     'You want a rough transcript of a short voice note in a Chromium browser without installing desktop software.',
   tool_transcribe_an_audio_file_to_text_usecase_2: 'File loopback fails, so you dictate the same content live with the mic and download TXT.',
+  tool_transcribe_an_audio_file_to_text_usecase_3: 'Butuh draf transkrip dari pengenalan browser untuk disunting jadi catatan.',
   tool_transcribe_an_audio_file_to_text_usecases_title: 'When this helps',
   tool_transcribe_an_audio_file_to_text_why_choose_item_1: 'Clear dual path: file playthrough attempt plus mic dictation fallback.',
-  tool_transcribe_an_audio_file_to_text_why_choose_item_2: 'Honest copy: not Whisper, no huge wasm model, browser limits stated up front.',
+  tool_transcribe_an_audio_file_to_text_why_choose_item_2: 'Honest copy: not a large speech model, no huge offline model model, browser limits stated up front.',
   tool_transcribe_an_audio_file_to_text_why_choose_item_3: 'You can edit the transcript before downloading TXT.',
   tool_transcribe_an_audio_file_to_text_why_choose_item_4: 'Nearby tools cover waveform video and voice memos without forcing a hub editor.',
-  tool_transcribe_an_audio_file_to_text_why_choose_title: 'Why choose our Transcribe an audio file to text tools',
+  tool_transcribe_an_audio_file_to_text_why_choose_title: 'Mengapa memilih alat Transkripsikan file audio menjadi teks kami',
   tool_transcribe_an_audio_file_to_text_write: 'Write',
   tool_triangle_area_areaOut_label: 'Luas',
   tool_triangle_area_article: 'Kalkulator luas segitiga',

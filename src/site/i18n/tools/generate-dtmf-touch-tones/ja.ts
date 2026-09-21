@@ -56,6 +56,7 @@ const ja: SiteLangDict = {
   tool_generate_dtmf_touch_tones_usecases_title: "役立つ場面",
   tool_generate_dtmf_touch_tones_usecase_1: "IVRや電話デモ用のDTMFクリップが必要—数字を入力、生成、ドキュメントやテスト用にWAVを保存。",
   tool_generate_dtmf_touch_tones_usecase_2: "デスクトップ信号発生器を入れずに再現可能なタッチトーン列が欲しいとき。",
+  tool_generate_dtmf_touch_tones_usecase_3: "IVRデモ用に、電話キーのビープを生成したい。",
   tool_generate_dtmf_touch_tones_faq_q1: "単一正弦トーンジェネレーターですか？",
   tool_generate_dtmf_touch_tones_faq_a1: "いいえ。DTMFは同時に2つの周波数（行+列）を使います。あるヘルツの単一正弦は正弦トーンツールを使ってください。",
   tool_generate_dtmf_touch_tones_faq_q2: "短いUI通知ビープは作れますか？",

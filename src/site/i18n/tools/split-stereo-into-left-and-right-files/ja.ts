@@ -67,6 +67,7 @@ const ja: SiteLangDict = {
   tool_split_stereo_into_left_and_right_files_usecases_title: "こんなときに役立ちます",
   tool_split_stereo_into_left_and_right_files_usecase_1: "ステレオインタビューやデュアルミクトラックから左右のモノラル WAV を別々に編集者へ渡す。",
   tool_split_stereo_into_left_and_right_files_usecase_2: "配線が逆だったステレオ書き出しを、公開前に L-R 入れ替えで直す。",
+  tool_split_stereo_into_left_and_right_files_usecase_3: "ステレオ取材を左右モノラル2ファイルに分けたい。",
   tool_split_stereo_into_left_and_right_files_faq_q1: "「ファイルに分割」後の ZIP の中身は？",
   tool_split_stereo_into_left_and_right_files_faq_a1: "16 ビットのモノラル WAV が二つ：左チャンネル用と右チャンネル用。ファイル名に left と right が入り、見分けやすくなっています。",
   tool_split_stereo_into_left_and_right_files_faq_q2: "ステレオをモノラルに変換するのと同じですか？",

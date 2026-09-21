@@ -6,7 +6,7 @@ import type { SiteLangDict } from '../../../types';
 const ar: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_title: 'تحويل ملف OGG إلى MP3',
   tool_convert_an_ogg_file_to_mp3_desc: 'حوّل تسجيل OGG أو Opus محليًا إلى MP3. يبقى الصوت على جهازك ولا يُرفع إلى خادم.',
-  tool_convert_an_ogg_file_to_mp3_description: 'حوّل OGG إلى MP3 في المتصفح دون رفع. الخطوات: اختر OGG/Opus، اختر معدل البت، تحويل إلى MP3، استمع، نزّل. مثال: نغمة Opus-in-OGG ستيريو لخمس ثوانٍ ~120 KiB MP3 عند 192 kbps. decodeAudioData ثم lamejs؛ خطأ واضح عند الفشل. الملفات على الجهاز.',
+  tool_convert_an_ogg_file_to_mp3_description: 'حوّل OGG إلى MP3 في المتصفح دون رفع. الخطوات: اختر OGG/Opus، اختر معدل البت، تحويل إلى MP3، استمع، نزّل. مثال: نغمة Opus-in-OGG ستيريو لخمس ثوانٍ ~120 KiB MP3 عند 192 kbps. browser decoding ثم in-browser MP3 encoding؛ خطأ واضح عند الفشل. الملفات على الجهاز.',
   tool_convert_an_ogg_file_to_mp3_article: 'المذكرات الصوتية وصوت الألعاب غالبًا OGG Vorbis أو Opus، لكن المستلم قد يحتاج MP3. تحوّل هذه الصفحة حاوية OGG محلية كاملة — Vorbis أو Opus — إلى MP3 قابل للمعاينة. MP3 خطوة فقد إضافية؛ احتفظ بالأصل.',
   tool_convert_an_ogg_file_to_mp3_choose: 'اختر ملف OGG أو Opus',
   tool_convert_an_ogg_file_to_mp3_hint: 'ملف .ogg أو .oga أو .opus واحد، حتى 40 ميغابايت و10 دقائق؛ أحادي/ستيريو. فك الترميز يعتمد على المتصفح.',
@@ -56,6 +56,7 @@ const ar: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_usecases_title: 'مفيد لـ',
   tool_convert_an_ogg_file_to_mp3_usecase_1: 'إرسال مقطع OGG لعبة/دردشة لمن يتوقع MP3.',
   tool_convert_an_ogg_file_to_mp3_usecase_2: 'مذكرة Opus كمرفق MP3 مع الاحتفاظ بالأصل.',
+  tool_convert_an_ogg_file_to_mp3_usecase_3: 'وصلت ملاحظة صوتية بصيغة OGG/Opus والمحرر يقبل MP3 فقط.',
   tool_convert_an_ogg_file_to_mp3_faq_q1: 'Opus إلى MP3 أيضًا؟',
   tool_convert_an_ogg_file_to_mp3_faq_a1: 'نعم. Opus داخل OGG (و.opus يُعامل كOGG) يستخدم نفس تحويل إلى MP3. إعادة تسمية الامتداد لا تحوّل.',
   tool_convert_an_ogg_file_to_mp3_faq_q2: 'هل يُرفع تسجيلي؟',

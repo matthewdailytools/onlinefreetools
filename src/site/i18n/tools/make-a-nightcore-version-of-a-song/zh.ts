@@ -64,6 +64,7 @@ const zh: SiteLangDict = {
   tool_make_a_nightcore_version_of_a_song_usecases_title: "适用场景",
   tool_make_a_nightcore_version_of_a_song_usecase_1: "流行或动漫曲做经典夜核——选 1.25×，夜核，下载 WAV。",
   tool_make_a_nightcore_version_of_a_song_usecase_2: "短片段需要同时加速与升调——不是练歌只变速，也不是只改调。",
+  tool_make_a_nightcore_version_of_a_song_usecase_3: "短视频剪辑需要经典的加速升高夜核感。",
   tool_make_a_nightcore_version_of_a_song_faq_q1: "这和「变速不变调」是一回事吗？",
   tool_make_a_nightcore_version_of_a_song_faq_a1: "不是。变速不变调用 WSOLA 改节奏并尽量保留音高。夜核同时加速并升高音高。只改速度请用「改变音频速度且不改变音高」。",
   tool_make_a_nightcore_version_of_a_song_faq_q2: "这和「变调并保留时长」是一回事吗？",

@@ -53,6 +53,7 @@ const de: SiteLangDict = {
   tool_extract_cover_art_from_an_mp3_usecases_title: 'Nützlich für',
   tool_extract_cover_art_from_an_mp3_usecase_1: 'Podcast-Cover als Thumbnail speichern.',
   tool_extract_cover_art_from_an_mp3_usecase_2: 'Vor dem Teilen prüfen, ob Cover vorhanden ist.',
+  tool_extract_cover_art_from_an_mp3_usecase_3: 'Du brauchst das eingebettete Cover als Bild ohne Neu-Encoding.',
   tool_extract_cover_art_from_an_mp3_faq_q1: 'Wird meine MP3 hochgeladen?',
   tool_extract_cover_art_from_an_mp3_faq_a1: 'Nein. APIC-Parsing im Browser.',
   tool_extract_cover_art_from_an_mp3_faq_q2: 'Kein Cover?',

@@ -63,6 +63,7 @@ const ja: SiteLangDict = {
   tool_mix_a_voiceover_with_background_music_usecases_title: "こんなときに",
   tool_mix_a_voiceover_with_background_music_usecase_1: "話し声の下に静かなBGMが欲しい—両方追加、BGMを下げるかダッキング、ミックス、保存。",
   tool_mix_a_voiceover_with_background_music_usecase_2: "動画から抽出した音に新しいナレーションを重ねたいがオンラインミキサーに上げたくない。",
+  tool_mix_a_voiceover_with_background_music_usecase_3: "ドライなVOの下に、小さめのBGMを敷きたい（本格ミキサーなし）。",
   tool_mix_a_voiceover_with_background_music_faq_q1: "音声を端から端へ連結するのと同じですか？",
   tool_mix_a_voiceover_with_background_music_faq_a1: "違います。連結は順番に並べます。本ページは声とBGMを同時に再生します。",
   tool_mix_a_voiceover_with_background_music_faq_q2: "曲間でクロスフェードしますか？",

@@ -75,6 +75,7 @@ const zh: SiteLangDict = {
   tool_fade_in_and_fade_out_an_audio_clip_usecases_title: "适用场景",
   tool_fade_in_and_fade_out_an_audio_clip_usecase_1: "旁白或音乐床切点咔哒——选 1 秒 / 1 秒，淡化后下载 WAV。",
   tool_fade_in_and_fade_out_an_audio_clip_usecase_2: "先要软边再去别处裁切或上时间线——不必做成无缝循环。",
+  tool_fade_in_and_fade_out_an_audio_clip_usecase_3: "铃声或片头起止太硬，需要柔和淡入淡出。",
   tool_fade_in_and_fade_out_an_audio_clip_faq_q1: "这和「把音频做成无缝循环」一样吗？",
   tool_fade_in_and_fade_out_an_audio_clip_faq_a1:
     "不一样。那一页把选区尾叠到头做交叉淡化，让循环接缝干净。本页只柔化单段起止。要无缝循环请用「把音频做成无缝循环」。",

@@ -64,6 +64,7 @@ const id: SiteLangDict = {
   tool_make_a_nightcore_version_of_a_song_usecases_title: "Kapan ini membantu",
   tool_make_a_nightcore_version_of_a_song_usecase_1: "Lagu pop atau anime untuk nightcore klasik—pilih 1.25×, Nightcore, unduh WAV.",
   tool_make_a_nightcore_version_of_a_song_usecase_2: "Klip pendek butuh lift kecepatan dan pitch—bukan tempo-only latihan, bukan transpose kunci saja.",
+  tool_make_a_nightcore_version_of_a_song_usecase_3: "Trek butuh feel nightcore lebih cepat dan tinggi untuk edit singkat.",
   tool_make_a_nightcore_version_of_a_song_faq_q1: "Apakah ini sama dengan mengubah kecepatan tanpa mengubah pitch?",
   tool_make_a_nightcore_version_of_a_song_faq_a1: "Tidak. Kecepatan-tanpa-pitch memakai WSOLA agar tempo berubah sambil menjaga pitch. Nightcore mempercepat dan menaikkan pitch bersama. Gunakan Ubah kecepatan audio tanpa mengubah pitch untuk kerja tempo saja.",
   tool_make_a_nightcore_version_of_a_song_faq_q2: "Apakah ini sama dengan menggeser pitch sambil menjaga durasi?",

@@ -63,6 +63,7 @@ const pt: SiteLangDict = {
   tool_limit_peaks_so_a_file_does_not_clip_usecases_title: "Quando isso ajuda",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_1: "Uma mix que às vezes clipa—escolha Soft −1, limite, baixe WAV.",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_2: "Uma entrega que proíbe picos acima de um teto após o nível geral, sem compressor completo.",
+  tool_limit_peaks_so_a_file_does_not_clip_usecase_3: "Uma exportação satura nos picos e quer um teto seguro antes de publicar.",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q1: "É o mesmo que normalizar ao pico?",
   tool_limit_peaks_so_a_file_does_not_clip_faq_a1: "Não. A normalização de pico escala o clipe inteiro para o pico absoluto atingir um alvo (pode elevar material quieto). Este limitador só atenua amostras acima do teto. Para normalizar, use Normalizar um arquivo de áudio ao pico.",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q2: "É um compressor dinâmico?",

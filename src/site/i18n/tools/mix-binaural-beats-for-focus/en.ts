@@ -81,6 +81,7 @@ const en: SiteLangDict = {
     'You want a reusable ambient focus WAV—set carrier and beat, Mix, download, and keep the file for headphones.',
   tool_mix_binaural_beats_for_focus_usecase_2:
     'You need a quick stereo beat demo without installing a desktop tone app or trusting therapy claims.',
+  tool_mix_binaural_beats_for_focus_usecase_3: 'You want a short stereo focus bed from carrier and beat Hz for headphones only.',
   tool_mix_binaural_beats_for_focus_faq_q1: 'Is this medical treatment or therapy?',
   tool_mix_binaural_beats_for_focus_faq_a1:
     'No. This page makes entertainment and personal ambient focus sound only. It does not diagnose, treat or cure any condition and makes no therapeutic efficacy claims.',

@@ -61,6 +61,7 @@ const ja: SiteLangDict = {
   tool_convert_stereo_audio_to_mono_usecases_title: "こんなときに役立ちます",
   tool_convert_stereo_audio_to_mono_usecase_1: "配信フォームがモノラルアップロードだけ受け付けるとき、ステレオのボイスメモやポッドキャストベッドを渡す。",
   tool_convert_stereo_audio_to_mono_usecase_2: "インタビューの片側がノイズや無音のとき、左（または右）マイクだけ残す。",
+  tool_convert_stereo_audio_to_mono_usecase_3: "ステレオ取材をIVRや単一スピーカー向けモノラルにしたい。",
   tool_convert_stereo_audio_to_mono_faq_q1: "「モノラルにミックス」は左右に何をしますか？",
   tool_convert_stereo_audio_to_mono_faq_a1: "左右チャンネルの各サンプルを平均 ((L+R)/2) して一本のモノラルトラックにし、16 ビット PCM WAV を書き出します。極端なパンは小さく聞こえ、逆相の音声は薄くなることがあります—ダウンロード前に試聴してください。",
   tool_convert_stereo_audio_to_mono_faq_q2: "MP3 や M4A をモノラル WAV に変換できますか？",

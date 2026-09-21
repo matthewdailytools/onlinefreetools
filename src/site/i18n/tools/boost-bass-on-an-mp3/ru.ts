@@ -10,8 +10,7 @@ const ru: SiteLangDict = {
     "Утолщите тонкий низ пресетами Mild, Medium или Strong (low-shelf) и скачайте 16-битный WAV. Только на устройстве.",
   tool_boost_bass_on_an_mp3_description:
     "Усилить бас в MP3 пресетами Mild, Medium или Strong с low-shelf. Шаги: усилить, прослушать, скачать WAV. Пример: загрузите образец с тонким басом. Только low-shelf бас—не полный многополосный эквалайзер и не усилитель громкости всего файла. Аудио остаётся на устройстве; никогда не загружается.",
-  tool_boost_bass_on_an_mp3_article:
-    "Экспорт с телефона и ноутбучные динамики часто оставляют кик и бас тонкими: середины хватает, веса ниже ~100 Гц мало. Страница гоняет одну ступень BiquadFilter lowshelf в OfflineAudioContext. Mild мягкий; Medium (по умолчанию) повседневный подъём; Strong сильнее. Мягкая защита пиков масштабирует результат, если буст клиппирует. Это усиление баса—не трёхполосный EQ Clarity/Warmth/Presence для глухого голоса и не плоский dB-gain на всё. Каналов 1 или 2. Сохраните мастер; загрузка — новый 16-битный WAV. Работа в браузере на устройстве.",
+  tool_boost_bass_on_an_mp3_article: "Экспорт с телефона и ноутбучные динамики часто оставляют кик и бас тонкими: середины хватает, веса ниже ~100 Гц мало. Страница гоняет одну ступень lowshelf EQ в on-device audio processing. Mild мягкий; Medium (по умолчанию) повседневный подъём; Strong сильнее. Мягкая защита пиков масштабирует результат, если буст клиппирует. Это усиление баса—не трёхполосный EQ Clarity/Warmth/Presence для глухого голоса и не плоский dB-gain на всё. Каналов 1 или 2. Сохраните мастер; загрузка — новый 16-битный WAV. Работа в браузере на устройстве.",
   tool_boost_bass_on_an_mp3_choose: "Выберите аудиофайл",
   tool_boost_bass_on_an_mp3_hint: "Перетащите один WAV, MP3, M4A, AAC или OGG. Максимум 40 МиБ и 10 минут; моно или стерео.",
   tool_boost_bass_on_an_mp3_convert: "Усилить",
@@ -58,7 +57,7 @@ const ru: SiteLangDict = {
   tool_boost_bass_on_an_mp3_why_choose_item_4: "Смена пресета или входа очищает старую загрузку, чтобы не сохранить устаревший WAV.",
   tool_boost_bass_on_an_mp3_rules_title: "Mild, Medium, Strong и ограничения",
   tool_boost_bass_on_an_mp3_rules_body:
-    "Каждый пресет — одна ступень lowshelf Biquad. Mild мягкий; Medium повседневный подъём; Strong тяжелее. Защита пиков масштабирует при угрозе клиппинга.",
+    "Каждый пресет — одна ступень lowshelf EQ. Mild мягкий; Medium повседневный подъём; Strong тяжелее. Защита пиков масштабирует при угрозе клиппинга.",
   tool_boost_bass_on_an_mp3_rules_item_1:
     "Medium по умолчанию: lowshelf около 90 Гц примерно +8 дБ. Mild ~+4 дБ; Strong ~+12 дБ с чуть более низким shelf.",
   tool_boost_bass_on_an_mp3_rules_item_2:
@@ -72,6 +71,7 @@ const ru: SiteLangDict = {
   tool_boost_bass_on_an_mp3_usecases_title: "Когда это помогает",
   tool_boost_bass_on_an_mp3_usecase_1: "Экспорт MP3 звучит тонко на колонках—выберите Medium, Усилить, скачайте WAV.",
   tool_boost_bass_on_an_mp3_usecase_2: "Треку нужен более тяжёлый кик без полного графического EQ и без громче всего микса.",
+  tool_boost_bass_on_an_mp3_usecase_3: "MP3 с телефона звучит тонко на ноутбуке — усилить только низ, не середину.",
   tool_boost_bass_on_an_mp3_faq_q1: "Это то же, что эквалайзер для глухой голосовой записи?",
   tool_boost_bass_on_an_mp3_faq_a1:
     "Нет. Та страница — трёхполосные пресеты Clarity/Warmth/Presence для глухой речи. Здесь только lowshelf поднимает низ. Для EQ глухого голоса: Эквалайзер для глухой голосовой записи.",

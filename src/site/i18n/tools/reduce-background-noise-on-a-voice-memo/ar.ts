@@ -67,6 +67,7 @@ const ar: SiteLangDict = {
   tool_reduce_background_noise_on_a_voice_memo_usecases_title: "متى يساعد ذلك",
   tool_reduce_background_noise_on_a_voice_memo_usecase_1: "مذكرة هاتف تحتها هسيس مروحة أو مكيّف—اختر متوسط، قلّل الضوضاء، نزّل WAV.",
   tool_reduce_background_noise_on_a_voice_memo_usecase_2: "ملاحظة ميدانية تحتاج أقل هسيس قبل التلاشي أو المعادلة في مكان آخر.",
+  tool_reduce_background_noise_on_a_voice_memo_usecase_3: "ضوضاء مروحة/تكييف ثابتة تحت الكلام؛ بوابة ناعمة تهدئ الفجوات.",
   tool_reduce_background_noise_on_a_voice_memo_faq_q1: "هل هذا مثل Adobe Enhance Speech؟",
   tool_reduce_background_noise_on_a_voice_memo_faq_a1:
     "لا. أدوات Enhance السحابية تعيد بناء الكلام بنماذج كبيرة. هنا تمرير عالٍ وبوابة أرضية في المتصفح فقط—نتيجة متواضعة وصادقة.",

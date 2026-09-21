@@ -63,6 +63,7 @@ const zh: SiteLangDict = {
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecases_title: "适用场景",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_1: "旁白略偏低——选「更高」、调整、下载 WAV。",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_2: "短人声需要明显更低音调，又不想像玩具巨人那样改变时长。",
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_3: "口播想略提或略沉一点音色，又不想上整套修音套件。",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q1: "这能把声音变成某一性别吗？",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a1: "不能。本页只是在尽量保持时长的前提下把音高移高或移低。不承诺男变女或女变男，也不会像工作室性别工具那样变形共振峰。",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q2: "这和玩具花栗鼠或机器人变声一样吗？",

@@ -64,6 +64,7 @@ const ar: SiteLangDict = {
   tool_make_a_nightcore_version_of_a_song_usecases_title: "متى يساعد هذا",
   tool_make_a_nightcore_version_of_a_song_usecase_1: "أغنية بوب أو أنمي لنايت كور كلاسيكي—اختر 1.25×، نايت كور، نزّل WAV.",
   tool_make_a_nightcore_version_of_a_song_usecase_2: "مقطع قصير يحتاج رفع سرعة وطبقة—ليس إيقاع تدريب فقط، وليس نقل مفتاح فقط.",
+  tool_make_a_nightcore_version_of_a_song_usecase_3: "مقطع يحتاج إحساس نايتكور أسرع وأعلى لتحرير قصير.",
   tool_make_a_nightcore_version_of_a_song_faq_q1: "هل هذا مثل تغيير السرعة دون تغيير الطبقة؟",
   tool_make_a_nightcore_version_of_a_song_faq_a1: "لا. السرعة-دون-الطبقة تستخدم WSOLA لتغيير الإيقاع مع السعي للإبقاء على الطبقة. النايت كور يسرّع ويرفع الطبقة معًا. استخدم تغيير سرعة الصوت دون تغيير الطبقة للإيقاع فقط.",
   tool_make_a_nightcore_version_of_a_song_faq_q2: "هل هذا مثل إزاحة الطبقة مع حفظ المدة؟",

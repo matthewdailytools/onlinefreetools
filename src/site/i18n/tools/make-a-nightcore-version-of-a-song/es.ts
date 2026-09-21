@@ -64,6 +64,7 @@ const es: SiteLangDict = {
   tool_make_a_nightcore_version_of_a_song_usecases_title: "Cuándo ayuda",
   tool_make_a_nightcore_version_of_a_song_usecase_1: "Tema pop o anime para un nightcore clásico—elige 1.25×, Nightcore, descarga WAV.",
   tool_make_a_nightcore_version_of_a_song_usecase_2: "Clip corto que necesita lift de velocidad y tono—no solo tempo de práctica, no solo transposición de tonalidad.",
+  tool_make_a_nightcore_version_of_a_song_usecase_3: "Una pista necesita el feel nightcore más rápido y agudo para un edit corto.",
   tool_make_a_nightcore_version_of_a_song_faq_q1: "¿Es lo mismo que cambiar la velocidad sin cambiar el tono?",
   tool_make_a_nightcore_version_of_a_song_faq_a1: "No. Velocidad-sin-tono usa WSOLA para cambiar el tempo intentando conservar el tono. Nightcore acelera y sube el tono juntos. Usa Cambiar la velocidad del audio sin cambiar el tono para solo tempo.",
   tool_make_a_nightcore_version_of_a_song_faq_q2: "¿Es lo mismo que desplazar el tono manteniendo la duración?",

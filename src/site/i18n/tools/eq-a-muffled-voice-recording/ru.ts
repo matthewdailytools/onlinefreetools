@@ -10,8 +10,7 @@ const ru: SiteLangDict = {
     "Откройте глухой голос пресетами Clarity, Warmth или Presence (три полосы) и скачайте 16-bit WAV. Только на устройстве.",
   tool_eq_a_muffled_voice_recording_description:
     "Эквалайзер для глухой голосовой записи с трёхполосными пресетами Clarity, Warmth или Presence. Шаги: EQ, прослушивание, скачать WAV. Пример: загрузите глухой образец. Только тональная коррекция—не буст одного баса, не шумоподавление, не деэссер. Аудио остаётся на устройстве; никогда не загружается.",
-  tool_eq_a_muffled_voice_recording_article:
-    "Звонки, маски и удалённые микрофоны часто звучат глухо: слишком много грязи ниже нескольких сотен герц и мало ясности в речевом диапазоне. Эта страница запускает три ступени BiquadFilter в OfflineAudioContext—lowshelf, peaking и highshelf—как именованные пресеты. Clarity срезает грязь и поднимает присутствие речи; Warmth добавляет тело и смягчает резкий верх; Presence фокусирует средне-высокое присутствие и воздух. Это тональный EQ для глухого голоса, не однополосный бас-бустер, не подавление фона и не деэссер только для сибилянтов. Каналы 1 или 2. Сохраните оригинал; загрузка — новый 16-bit WAV. Работа идёт в браузере на вашем устройстве.",
+  tool_eq_a_muffled_voice_recording_article: "Звонки, маски и удалённые микрофоны часто звучат глухо: слишком много грязи ниже нескольких сотен герц и мало ясности в речевом диапазоне. Эта страница запускает три ступени EQ filter в on-device audio processing—lowshelf, peaking и highshelf—как именованные пресеты. Clarity срезает грязь и поднимает присутствие речи; Warmth добавляет тело и смягчает резкий верх; Presence фокусирует средне-высокое присутствие и воздух. Это тональный EQ для глухого голоса, не однополосный бас-бустер, не подавление фона и не деэссер только для сибилянтов. Каналы 1 или 2. Сохраните оригинал; загрузка — новый 16-bit WAV. Работа идёт в браузере на вашем устройстве.",
   tool_eq_a_muffled_voice_recording_choose: "Выберите аудиофайл",
   tool_eq_a_muffled_voice_recording_hint: "Перетащите один WAV, MP3, M4A, AAC или OGG. Максимум 40 МиБ и 10 минут; моно или стерео.",
   tool_eq_a_muffled_voice_recording_convert: "EQ",
@@ -54,11 +53,11 @@ const ru: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_why_choose_item_1: "Видьте имя пресета, пик до/после и КиБ выхода перед сохранением.",
   tool_eq_a_muffled_voice_recording_why_choose_item_2: "Три ясных голосовых пресета—одна задача глухого EQ, не игрушка из десяти полос и не только бас.",
   tool_eq_a_muffled_voice_recording_why_choose_item_3:
-    "Декодирование, Biquad EQ и запись WAV идут на устройстве; страница не загружает запись для обработки.",
+    "Декодирование, EQ EQ и запись WAV идут на устройстве; страница не загружает запись для обработки.",
   tool_eq_a_muffled_voice_recording_why_choose_item_4: "Смена пресета или входа очищает старую загрузку, чтобы не сохранить устаревший WAV.",
   tool_eq_a_muffled_voice_recording_rules_title: "Clarity, Warmth, Presence и пределы",
   tool_eq_a_muffled_voice_recording_rules_body:
-    "Каждый пресет — три ступени Biquad (lowshelf, peaking, highshelf). Clarity открывает глухую речь; Warmth добавляет тело; Presence поднимает присутствие и воздух. Мягкая защита пиков масштабирует результат, если бусты клипповали бы.",
+    "Каждый пресет — три ступени EQ (lowshelf, peaking, highshelf). Clarity открывает глухую речь; Warmth добавляет тело; Presence поднимает присутствие и воздух. Мягкая защита пиков масштабирует результат, если бусты клипповали бы.",
   tool_eq_a_muffled_voice_recording_rules_item_1:
     "Clarity по умолчанию срезает грязный низ и поднимает ясность речи. Warmth поднимает низкое тело и смягчает резкий верх. Presence фокусирует средне-высокое присутствие.",
   tool_eq_a_muffled_voice_recording_rules_item_2:
@@ -72,6 +71,7 @@ const ru: SiteLangDict = {
   tool_eq_a_muffled_voice_recording_usecases_title: "Когда это помогает",
   tool_eq_a_muffled_voice_recording_usecase_1: "Телефонный или масочный тейк звучит «в коробке»—выберите Clarity, EQ, скачайте WAV.",
   tool_eq_a_muffled_voice_recording_usecase_2: "Подкаст-голос нуждается в более тёплом теле или большем присутствии без полного DAW EQ.",
+  tool_eq_a_muffled_voice_recording_usecase_3: "Далёкая/масочная запись глухая — нужна ясность речи.",
   tool_eq_a_muffled_voice_recording_faq_q1: "Это то же, что бас-бустер?",
   tool_eq_a_muffled_voice_recording_faq_a1:
     "Нет. Бас-бустер в основном поднимает низкие частоты. Эта страница даёт три многополосных голосовых пресета для глухой речи. Буст только баса — другая задача (Boost bass on an MP3, когда доступен).",

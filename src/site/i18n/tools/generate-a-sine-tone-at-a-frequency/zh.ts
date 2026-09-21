@@ -54,6 +54,7 @@ const zh: SiteLangDict = {
   tool_generate_a_sine_tone_at_a_frequency_usecases_title: '适用场景',
   tool_generate_a_sine_tone_at_a_frequency_usecase_1: '需要 A4 参考音——设 440 Hz、2 秒，生成并下载 WAV，供耳机或校音器使用。',
   tool_generate_a_sine_tone_at_a_frequency_usecase_2: '想用 1000 Hz 测试音检查喇叭，无需安装桌面信号发生器。',
+  tool_generate_a_sine_tone_at_a_frequency_usecase_3: '设备校准需要指定频率的正弦测试音。',
   tool_generate_a_sine_tone_at_a_frequency_faq_q1: '这是白/粉/棕噪声发生器吗？',
   tool_generate_a_sine_tone_at_a_frequency_faq_a1: '不是。本页只在一个频率上合成正弦。噪声发生器是别的作业。',
   tool_generate_a_sine_tone_at_a_frequency_faq_q2: '能生成 DTMF 拨号音吗？',

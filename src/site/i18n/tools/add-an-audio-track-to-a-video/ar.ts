@@ -8,10 +8,8 @@ const ar: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_title: 'إضافة مسار صوتي إلى فيديو',
   tool_add_an_audio_track_to_a_video_desc:
     'ادمج مقطعًا صوتيًا محليًا مع فيديو محلي ثم نزّل النتيجة. على الجهاز فقط—بلا تنزيل من يوتيوب.',
-  tool_add_an_audio_track_to_a_video_description:
-    'أضف مسارًا صوتيًا إلى فيديو محلي في المتصفح بدمج الصورة مع المقطع المختار ثم نزّل. الخطوات: اختر فيديوًا وصوتًا، أضف الصوت، عاين، نزّل. مثال: مقطع صامت مع WAV قصير. يستخدم captureStream وMediaRecorder—غالبًا WebM؛ ليس إعادة تغليف بلا خسارة. لا يُرفع أبدًا. بلا تنزيل من يوتيوب.',
-  tool_add_an_audio_track_to_a_video_article:
-    'المقاطع الصامتة أو ضعيفة الصوت تحتاج غالبًا مسارًا جديدًا قبل المشاركة. تفتح هذه الصفحة فيديوًا وصوتًا محليين، وتلتقط الإطارات دون المسارات الأصلية، وتفك شفرة الصوت في AudioContext، ثم تدمج وتعيد الترميز بـ MediaRecorder—غالبًا WebM حسب المتصفح. المدة تتبع الفيديو؛ الصوت الأطول يُقطع والأقصر ينتهي مبكرًا. لا تنزّل يوتيوب أو عناوين أخرى، وليست كتمًا فقط دون إضافة صوت، ولا تستخرج الصوت كملف مستقل. النجاح يعتمد على تشغيل الملفين ودعم MediaRecorder مع صوت. احتفظ بالأصلين. كل شيء يعمل على جهازك.',
+  tool_add_an_audio_track_to_a_video_description: 'أضف مسارًا صوتيًا إلى فيديو محلي في المتصفح بدمج الصورة مع المقطع المختار ثم نزّل. الخطوات: اختر فيديوًا وصوتًا، أضف الصوت، عاين، نزّل. مثال: مقطع صامت مع WAV قصير. يستخدم captureStream وbrowser media recording—غالبًا WebM؛ ليس إعادة تغليف بلا خسارة. لا يُرفع أبدًا. بلا تنزيل من يوتيوب.',
+  tool_add_an_audio_track_to_a_video_article: 'المقاطع الصامتة أو ضعيفة الصوت تحتاج غالبًا مسارًا جديدًا قبل المشاركة. تفتح هذه الصفحة فيديوًا وصوتًا محليين، وتلتقط الإطارات دون المسارات الأصلية، وتفك شفرة الصوت في the browser audio engine، ثم تدمج وتعيد الترميز بـ browser media recording—غالبًا WebM حسب المتصفح. المدة تتبع الفيديو؛ الصوت الأطول يُقطع والأقصر ينتهي مبكرًا. لا تنزّل يوتيوب أو عناوين أخرى، وليست كتمًا فقط دون إضافة صوت، ولا تستخرج الصوت كملف مستقل. النجاح يعتمد على تشغيل الملفين ودعم browser media recording مع صوت. احتفظ بالأصلين. كل شيء يعمل على جهازك.',
   tool_add_an_audio_track_to_a_video_choose_video: 'اختر ملف فيديو',
   tool_add_an_audio_track_to_a_video_hint_video:
     'أسقط أو اختر MP4 أو WebM أو MOV أو M4V محليًا يمكن للمتصفح تشغيله. حتى 80 ميبيبايت وحوالي 3 دقائق. بلا يوتيوب أو لصق رابط.',
@@ -24,7 +22,7 @@ const ar: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_clear: 'مسح',
   tool_add_an_audio_track_to_a_video_advanced: 'ملاحظات الدمج',
   tool_add_an_audio_track_to_a_video_settings_hint:
-    'عادةً يعيد المتصفح الترميز عبر MediaRecorder بعد إسقاط المسارات الأصلية وإرفاق مقطعك. المخرج غالبًا WebM وليس إعادة تغليف بلا خسارة. هذه الصفحة لا تنزّل يوتيوب أبدًا.',
+    'عادةً يعيد المتصفح الترميز عبر browser media recording بعد إسقاط المسارات الأصلية وإرفاق مقطعك. المخرج غالبًا WebM وليس إعادة تغليف بلا خسارة. هذه الصفحة لا تنزّل يوتيوب أبدًا.',
   tool_add_an_audio_track_to_a_video_progress: 'تقدم إضافة الصوت',
   tool_add_an_audio_track_to_a_video_read: 'قراءة',
   tool_add_an_audio_track_to_a_video_decode: 'فك الشفرة',
@@ -50,7 +48,7 @@ const ar: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_err_decode:
     'تعذّر على المتصفح فك شفرة الفيديو أو الصوت. جرّب حاوية أخرى أو مقطعًا أقصر.',
   tool_add_an_audio_track_to_a_video_err_encoder:
-    'تعذّر على MediaRecorder كتابة الفيديو المدمج. جرّب Chrome/Edge أو WebM/MP4 أقصر مع WAV/MP3.',
+    'تعذّر على browser media recording كتابة الفيديو المدمج. جرّب Chrome/Edge أو WebM/MP4 أقصر مع WAV/MP3.',
   tool_add_an_audio_track_to_a_video_how_title: 'كيفية إضافة مسار صوتي إلى فيديو',
   tool_add_an_audio_track_to_a_video_how_body:
     'اختر فيديوًا وصوتًا محليين، شغّل إضافة الصوت، عاين، ثم نزّل—بلا رفع وبلا يوتيوب.',
@@ -66,14 +64,14 @@ const ar: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_why_choose_item_1:
     'اطّلع على المدة ونوع MIME وحجم المخرج بالكيبيبايت قبل الحفظ.',
   tool_add_an_audio_track_to_a_video_why_choose_item_2:
-    'مهمة دمج واضحة بحدود MediaRecorder صادقة—بلا وعد زائف بإعادة تغليف بلا خسارة.',
+    'مهمة دمج واضحة بحدود browser media recording صادقة—بلا وعد زائف بإعادة تغليف بلا خسارة.',
   tool_add_an_audio_track_to_a_video_why_choose_item_3:
     'القراءة والتسجيل على جهازك؛ الصفحة لا ترفع ملفاتك للمعالجة.',
   tool_add_an_audio_track_to_a_video_why_choose_item_4:
     'تغيير أي ملف يمسح التنزيل القديم حتى لا تحفظ دمجًا قديمًا.',
   tool_add_an_audio_track_to_a_video_rules_title: 'قواعد الدمج وحدود المتصفح الصادقة',
   tool_add_an_audio_track_to_a_video_rules_body:
-    'كل تشغيل يسقط المسارات الأصلية ويرفق مقطعك ويعيد الترميز بـ MediaRecorder. المخرج غالبًا WebM. ليس تنزيل يوتيوب ولا كتمًا فقط ولا استخراج صوت.',
+    'كل تشغيل يسقط المسارات الأصلية ويرفق مقطعك ويعيد الترميز بـ browser media recording. المخرج غالبًا WebM. ليس تنزيل يوتيوب ولا كتمًا فقط ولا استخراج صوت.',
   tool_add_an_audio_track_to_a_video_rules_item_1:
     'فيديو محلي واحد حتى 80 ميبيبايت وحوالي ثلاث دقائق، مع صوت محلي حتى 40 ميبيبايت. يجب نجاح التشغيل/فك الشفرة أولًا.',
   tool_add_an_audio_track_to_a_video_rules_item_2:
@@ -90,6 +88,7 @@ const ar: SiteLangDict = {
     'تسجيل شاشة صامت وقاعدة WAV—ادمجهما هنا ثم نزّل للمشاركة.',
   tool_add_an_audio_track_to_a_video_usecase_2:
     'استبدل مسارًا مدمجًا ضعيفًا بمقطع محلي أوضح دون تثبيت محرر سطح مكتب.',
+  tool_add_an_audio_track_to_a_video_usecase_3: 'لديك تسجيل شاشة صامت وتعليق صوتي منفصل لدمجهما قبل الرفع.',
   tool_add_an_audio_track_to_a_video_faq_q1: 'هل يمكنه تنزيل يوتيوب أو لصق رابط؟',
   tool_add_an_audio_track_to_a_video_faq_a1:
     'لا. فقط ملفات محلية لديك بالفعل. لا يوجد منزّل يوتيوب ولا جلب عن بُعد.',
@@ -101,7 +100,7 @@ const ar: SiteLangDict = {
     'لا. استخراج الصوت من فيديو أداة أخرى. هنا النتيجة ملف فيديو بصوت مدمج.',
   tool_add_an_audio_track_to_a_video_faq_q4: 'هل سيكون المخرج نفس MP4 المصدر؟',
   tool_add_an_audio_track_to_a_video_faq_a4:
-    'عادة لا. المتصفحات تعيد الترميز عادةً بـ MediaRecorder، غالبًا إلى WebM. قد تتغير الجودة والحاوية.',
+    'عادة لا. المتصفحات تعيد الترميز عادةً بـ browser media recording، غالبًا إلى WebM. قد تتغير الجودة والحاوية.',
   tool_add_an_audio_track_to_a_video_faq_q5: 'هل يُرفع شيء إلى خادم؟',
   tool_add_an_audio_track_to_a_video_faq_a5:
     'لا. فك الشفرة والتسجيل يعملان في المتصفح على جهازك. تحتاج الصفحة شبكة عند أول تحميل؛ العمل دون اتصال غير مضمون.',

@@ -10,8 +10,7 @@ const id: SiteLangDict = {
     "Pertebal bass tipis dengan preset Mild, Medium, atau Strong low-shelf, lalu unduh WAV 16-bit. Hanya di perangkat.",
   tool_boost_bass_on_an_mp3_description:
     "Tingkatkan bass pada MP3 dengan preset Mild, Medium, atau Strong low-shelf. Langkah: Tingkatkan, pratinjau, unduh WAV. Contoh: muat sampel bass tipis. Hanya bass low-shelf—bukan EQ multiband penuh, bukan penguat volume seluruh file. Audio tetap di perangkat Anda; tidak pernah diunggah.",
-  tool_boost_bass_on_an_mp3_article:
-    "Ekspor ponsel dan speaker laptop sering membuat kick dan bassline tipis: cukup midrange, kurang bobot di bawah ~100 Hz. Halaman ini menjalankan satu tahap BiquadFilter lowshelf di OfflineAudioContext. Mild lembut; Medium (default) angkatan harian; Strong lebih berat. Perlindungan puncak lembut menskala jika boost akan clipping. Itu boost bass—bukan EQ tiga pita Clarity/Warmth/Presence untuk suara teredam, dan bukan gain dB datar yang membesarkan semua frekuensi. Saluran tetap 1 atau 2. Simpan master; unduhan adalah WAV 16-bit baru. Pekerjaan berjalan di browser.",
+  tool_boost_bass_on_an_mp3_article: "Ekspor ponsel dan speaker laptop sering membuat kick dan bassline tipis: cukup midrange, kurang bobot di bawah ~100 Hz. Halaman ini menjalankan satu tahap lowshelf EQ di on-device audio processing. Mild lembut; Medium (default) angkatan harian; Strong lebih berat. Perlindungan puncak lembut menskala jika boost akan clipping. Itu boost bass—bukan EQ tiga pita Clarity/Warmth/Presence untuk suara teredam, dan bukan gain dB datar yang membesarkan semua frekuensi. Saluran tetap 1 atau 2. Simpan master; unduhan adalah WAV 16-bit baru. Pekerjaan berjalan di browser.",
   tool_boost_bass_on_an_mp3_choose: "Pilih file audio",
   tool_boost_bass_on_an_mp3_hint: "Jatuhkan satu WAV, MP3, M4A, AAC, atau OGG. Maksimum 40 MiB dan 10 menit; mono atau stereo.",
   tool_boost_bass_on_an_mp3_convert: "Tingkatkan",
@@ -58,7 +57,7 @@ const id: SiteLangDict = {
   tool_boost_bass_on_an_mp3_why_choose_item_4: "Mengubah preset atau input membersihkan unduhan lama agar tidak menyimpan WAV usang.",
   tool_boost_bass_on_an_mp3_rules_title: "Mild, Medium, Strong, dan batas",
   tool_boost_bass_on_an_mp3_rules_body:
-    "Setiap preset adalah satu tahap lowshelf Biquad. Mild lembut; Medium angkatan harian; Strong lebih berat. Perlindungan puncak menskala jika boost akan clipping.",
+    "Setiap preset adalah satu tahap lowshelf EQ. Mild lembut; Medium angkatan harian; Strong lebih berat. Perlindungan puncak menskala jika boost akan clipping.",
   tool_boost_bass_on_an_mp3_rules_item_1:
     "Default Medium memakai lowshelf dekat 90 Hz sekitar +8 dB. Mild ~+4 dB; Strong ~+12 dB dengan shelf sedikit lebih rendah.",
   tool_boost_bass_on_an_mp3_rules_item_2:
@@ -72,6 +71,7 @@ const id: SiteLangDict = {
   tool_boost_bass_on_an_mp3_usecases_title: "Kapan ini membantu",
   tool_boost_bass_on_an_mp3_usecase_1: "Ekspor MP3 terdengar tipis di speaker—pilih Medium, Tingkatkan, unduh WAV.",
   tool_boost_bass_on_an_mp3_usecase_2: "Trek yang butuh bobot kick lebih dalam tanpa membuka EQ grafik penuh atau membesarkan seluruh mix.",
+  tool_boost_bass_on_an_mp3_usecase_3: "MP3 dari ponsel terdengar tipis di laptop; Anda hanya ingin kick lebih kuat, bukan mid lebih keras.",
   tool_boost_bass_on_an_mp3_faq_q1: "Apakah sama dengan EQ rekaman suara yang teredam?",
   tool_boost_bass_on_an_mp3_faq_a1:
     "Tidak. Halaman itu memakai preset Clarity/Warmth/Presence tiga pita untuk ucapan teredam. Halaman ini hanya mengangkat frekuensi rendah dengan lowshelf. Untuk EQ suara teredam, gunakan EQ rekaman suara yang teredam.",

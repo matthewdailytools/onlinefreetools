@@ -57,6 +57,7 @@ const ja: SiteLangDict = {
   tool_make_a_short_ui_notification_sound_usecases_title: "役立つ場面",
   tool_make_a_short_ui_notification_sound_usecase_1: "プロトタイプ用の小さな成功やクリックが必要—プリセットを選び、生成、モックやデモ用にWAVを保存。",
   tool_make_a_short_ui_notification_sound_usecase_2: "ストックライブラリを探したりデスクトップシンセを入れたりせず、再利用できるアラートやピンが欲しいとき。",
+  tool_make_a_short_ui_notification_sound_usecase_3: "アプリ試作用に、短いクリック/チャイムのWAVが欲しい。",
   tool_make_a_short_ui_notification_sound_faq_q1: "DTMFダイヤルトーンジェネレーターですか？",
   tool_make_a_short_ui_notification_sound_faq_a1: "いいえ。DTMFはキーパッド列の電話周波数ペアを使います。このページは短いUIキューのみです。",
   tool_make_a_short_ui_notification_sound_faq_q2: "選んだヘルツの長い正弦は作れますか？",

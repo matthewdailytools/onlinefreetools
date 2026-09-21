@@ -56,6 +56,7 @@ const fr: SiteLangDict = {
   tool_reverse_an_audio_file_usecases_title: "Quand ça aide",
   tool_reverse_an_audio_file_usecase_1: "Court effet ou sting musical à jouer à l’envers—Inverser, téléchargez WAV.",
   tool_reverse_an_audio_file_usecase_2: "Vérifier une queue de réverb en entendant d’abord la fin—pas de balayage 8D, pas d’enveloppes de fondu.",
+  tool_reverse_an_audio_file_usecase_3: "Un court sample doit jouer à l’envers pour une transition ou un effet.",
   tool_reverse_an_audio_file_faq_q1: "L’inversion change-t-elle la durée ?",
   tool_reverse_an_audio_file_faq_a1: "Non. L’ordre des échantillons est retourné, mais la longueur et la fréquence d’échantillonnage restent les mêmes.",
   tool_reverse_an_audio_file_faq_q2: "Est-ce la même chose que le pan 8D ?",

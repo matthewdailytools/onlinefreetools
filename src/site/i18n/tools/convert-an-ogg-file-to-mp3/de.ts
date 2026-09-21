@@ -7,7 +7,7 @@ import type { SiteLangDict } from '../../../types';
 const de: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_title: 'Eine OGG-Datei in MP3 umwandeln',
   tool_convert_an_ogg_file_to_mp3_desc: 'Wandeln Sie eine lokale OGG- oder Opus-Aufnahme in MP3 um. Die Audiodaten bleiben auf dem Gerät und werden nicht hochgeladen.',
-  tool_convert_an_ogg_file_to_mp3_description: 'Wandeln Sie eine OGG-Datei im Browser in MP3 um – ohne Upload. Schritte: OGG/Opus wählen, Bitrate wählen, In MP3 umwandeln, anhören und herunterladen. Beispiel: ein fünfsekündiger Stereo-Opus-in-OGG-Ton wird bei 192 kbps zu etwa 120 KiB MP3. Nutzt decodeAudioData, wenn der Browser OGG/Opus dekodieren kann, danach lamejs; klare Fehlermeldung bei Misserfolg. Dateien bleiben auf dem Gerät.',
+  tool_convert_an_ogg_file_to_mp3_description: 'Wandeln Sie eine OGG-Datei im Browser in MP3 um – ohne Upload. Schritte: OGG/Opus wählen, Bitrate wählen, In MP3 umwandeln, anhören und herunterladen. Beispiel: ein fünfsekündiger Stereo-Opus-in-OGG-Ton wird bei 192 kbps zu etwa 120 KiB MP3. Nutzt browser decoding, wenn der Browser OGG/Opus dekodieren kann, danach in-browser MP3 encoding; klare Fehlermeldung bei Misserfolg. Dateien bleiben auf dem Gerät.',
   tool_convert_an_ogg_file_to_mp3_article: 'Sprachnotizen und Spiele-Audio kommen oft als OGG Vorbis oder Opus. Empfänger brauchen manchmal MP3. Diese Seite wandelt einen vollständigen lokalen OGG-Container — Vorbis oder Opus — in ein anhörbares MP3 um. MP3 ist eine weitere Verluststufe; Original behalten. Erfolg hängt vom Browser-Decoder ab.',
   tool_convert_an_ogg_file_to_mp3_choose: 'OGG- oder Opus-Datei auswählen',
   tool_convert_an_ogg_file_to_mp3_hint: 'Eine .ogg-, .oga- oder .opus-Datei, max. 40 MiB und 10 Minuten; Mono oder Stereo. Dekodierung hängt vom Browser ab.',
@@ -57,6 +57,7 @@ const de: SiteLangDict = {
   tool_convert_an_ogg_file_to_mp3_usecases_title: 'Wofür es hilft',
   tool_convert_an_ogg_file_to_mp3_usecase_1: 'Einen Spiel- oder Chat-OGG-Clip als MP3 senden.',
   tool_convert_an_ogg_file_to_mp3_usecase_2: 'Eine Opus-Sprachnotiz als MP3-Anhang speichern und das Original behalten.',
+  tool_convert_an_ogg_file_to_mp3_usecase_3: 'Eine Sprachnotiz kam als OGG/Opus; der Editor akzeptiert nur MP3.',
   tool_convert_an_ogg_file_to_mp3_faq_q1: 'Auch Opus zu MP3?',
   tool_convert_an_ogg_file_to_mp3_faq_a1: 'Ja. Opus in OGG (und vom Browser als OGG behandelte .opus) nutzen dieselbe Schaltfläche. Umbenennen konvertiert nicht.',
   tool_convert_an_ogg_file_to_mp3_faq_q2: 'Wird Audio hochgeladen? Offline?',

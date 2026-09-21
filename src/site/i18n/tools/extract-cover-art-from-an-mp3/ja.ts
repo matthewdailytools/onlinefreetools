@@ -53,6 +53,7 @@ const ja: SiteLangDict = {
   tool_extract_cover_art_from_an_mp3_usecases_title: '用途',
   tool_extract_cover_art_from_an_mp3_usecase_1: 'ポッドキャストのジャケットをサムネ用に保存。',
   tool_extract_cover_art_from_an_mp3_usecase_2: '共有前にカバー有無を確認。',
+  tool_extract_cover_art_from_an_mp3_usecase_3: '埋め込みジャケットを画像として取り出し、再エンコードは避けたい。',
   tool_extract_cover_art_from_an_mp3_faq_q1: 'MP3はアップロードされますか？',
   tool_extract_cover_art_from_an_mp3_faq_a1: 'いいえ。APIC解析はブラウザ内です。',
   tool_extract_cover_art_from_an_mp3_faq_q2: 'カバーが無い場合は？',

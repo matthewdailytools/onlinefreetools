@@ -74,6 +74,7 @@ const ar: SiteLangDict = {
   tool_limit_peaks_so_a_file_does_not_clip_usecases_title: "متى يساعد هذا",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_1: "مزيج شبه جاهز لكن بعض القمم قد تقص عند التصدير—اختر −1 Soft وحدد ونزّل WAV.",
   tool_limit_peaks_so_a_file_does_not_clip_usecase_2: "تسجيل صوت مضغوط مسبقاً وتحتاج سقفاً نهائياً فقط قبل التسليم.",
+  tool_limit_peaks_so_a_file_does_not_clip_usecase_3: "تصدير ساخن يقص عند القمم وتريد سقفًا آمنًا قبل النشر.",
   tool_limit_peaks_so_a_file_does_not_clip_faq_q1: "هل هذا مثل ضاغط المدى الديناميكي؟",
   tool_limit_peaks_so_a_file_does_not_clip_faq_a1:
     "لا. الضاغط يستخدم عتبة/نسبة (وغالباً مكياجاً) للديناميك غير المتساو. هذه الصفحة تحدد القمم عند سقف فقط. لديناميك الصوت استخدم ضغط المدى الديناميكي لتسجيل صوتي.",

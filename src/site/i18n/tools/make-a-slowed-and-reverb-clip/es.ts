@@ -68,6 +68,7 @@ const es: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_usecases_title: "Cuándo ayuda",
   tool_make_a_slowed_and_reverb_clip_usecase_1: "Un clip pop o R&B para un edit slowed+reverb clásico—elige 0.8× + Medio, Slowed reverb, descarga WAV.",
   tool_make_a_slowed_and_reverb_clip_usecase_2: "Un clip corto que necesita lento y espacio—no solo tempo de práctica, no nightcore, no reverb seco solo.",
+  tool_make_a_slowed_and_reverb_clip_usecase_3: "Un fragmento debe sonar slowed-and-reverb para una edición social.",
   tool_make_a_slowed_and_reverb_clip_faq_q1: "¿Es lo mismo que cambiar la velocidad sin cambiar el tono?",
   tool_make_a_slowed_and_reverb_clip_faq_a1: "No. Velocidad-sin-tono usa WSOLA para cambiar el tempo intentando conservar el tono, sin reverb. Esta página ralentiza con bajada de tono y añade reverb. Usa Cambiar la velocidad del audio sin cambiar el tono para solo tempo.",
   tool_make_a_slowed_and_reverb_clip_faq_q2: "¿Es lo mismo que nightcore?",

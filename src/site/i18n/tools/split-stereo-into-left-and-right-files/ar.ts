@@ -68,6 +68,7 @@ const ar: SiteLangDict = {
   tool_split_stereo_into_left_and_right_files_usecases_title: "متى يفيد ذلك",
   tool_split_stereo_into_left_and_right_files_usecase_1: "تسليم محرر ملفات WAV أحادية يسار ويمين منفصلة من مقابلة استريو أو تسجيل ثنائي الميكروفون.",
   tool_split_stereo_into_left_and_right_files_usecase_2: "تصحيح تصدير استريو موصول بالعكس بتبديل L-R قبل النشر.",
+  tool_split_stereo_into_left_and_right_files_usecase_3: "مقابلة ستيريو يجب أن تصبح ملفين أحاديين يسار ويمين.",
   tool_split_stereo_into_left_and_right_files_faq_q1: "ماذا يوجد داخل ZIP بعد فصل إلى ملفات؟",
   tool_split_stereo_into_left_and_right_files_faq_a1: "ملفان WAV أحاديان 16 بت: واحد للقناة اليسرى وواحد لليمنى. الأسماء تتضمن left و right للتمييز.",
   tool_split_stereo_into_left_and_right_files_faq_q2: "هل هذا مثل تحويل الاستريو إلى أحادي؟",

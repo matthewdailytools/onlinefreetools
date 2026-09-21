@@ -68,6 +68,7 @@ const ru: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_usecases_title: "Когда это помогает",
   tool_make_a_slowed_and_reverb_clip_usecase_1: "Поп или R&B клип для классического slowed+reverb — 0.8× + Средний, Slowed reverb, скачать WAV.",
   tool_make_a_slowed_and_reverb_clip_usecase_2: "Короткий клип, которому нужны slow и пространство — не только темп, не nightcore, не сухой реверб один.",
+  tool_make_a_slowed_and_reverb_clip_usecase_3: "Фрагмент должен звучать slowed‑and‑reverb для соцсетей.",
   tool_make_a_slowed_and_reverb_clip_faq_q1: "Это то же, что менять скорость без смены тона?",
   tool_make_a_slowed_and_reverb_clip_faq_a1: "Нет. Скорость-без-тона использует WSOLA без реверба. Эта страница замедляет с понижением тона и добавляет реверб. Для только темпа — Изменить скорость аудио без изменения тона.",
   tool_make_a_slowed_and_reverb_clip_faq_q2: "Это то же, что nightcore?",

@@ -56,6 +56,7 @@ const id: SiteLangDict = {
   tool_convert_an_aiff_file_to_wav_usecases_title: 'Berguna untuk',
   tool_convert_an_aiff_file_to_wav_usecase_1: 'Export Logic untuk editor Windows.',
   tool_convert_an_aiff_file_to_wav_usecase_2: 'Memo CAF ke WAV.',
+  tool_convert_an_aiff_file_to_wav_usecase_3: 'Bounce Logic sebagai AIFF harus jadi WAV untuk kolaborator Windows.',
   tool_convert_an_aiff_file_to_wav_faq_q1: 'CAF juga?',
   tool_convert_an_aiff_file_to_wav_faq_a1: 'Ya. .caf jika browser mendekode.',
   tool_convert_an_aiff_file_to_wav_faq_q2: 'Lossless?',

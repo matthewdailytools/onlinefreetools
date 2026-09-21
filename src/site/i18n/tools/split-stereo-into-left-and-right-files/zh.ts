@@ -67,6 +67,7 @@ const zh: SiteLangDict = {
   tool_split_stereo_into_left_and_right_files_usecases_title: "适用场景",
   tool_split_stereo_into_left_and_right_files_usecase_1: "把立体声访谈或双麦素材拆成左右单声道 WAV，交给剪辑分轨处理。",
   tool_split_stereo_into_left_and_right_files_usecase_2: "发布前用「交换左右」纠正接线反了的立体声导出。",
+  tool_split_stereo_into_left_and_right_files_usecase_3: "立体声采访要拆成左右两个单声道文件。",
   tool_split_stereo_into_left_and_right_files_faq_q1: "「拆成文件」后 ZIP 里有什么？",
   tool_split_stereo_into_left_and_right_files_faq_a1: "两个 16 位单声道 WAV：一个左声道、一个右声道。文件名含 left 与 right，便于区分。",
   tool_split_stereo_into_left_and_right_files_faq_q2: "这和立体声转单声道一样吗？",

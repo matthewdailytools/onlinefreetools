@@ -60,6 +60,7 @@ const ru: SiteLangDict = {
   tool_embed_lyrics_in_an_mp3_usecases_title: 'Полезно для',
   tool_embed_lyrics_in_an_mp3_usecase_1: 'Прикрепить расшифровку к подкасту MP3 через USLT.',
   tool_embed_lyrics_in_an_mp3_usecase_2: 'Добавить простой текст без перекодирования.',
+  tool_embed_lyrics_in_an_mp3_usecase_3: 'Хочу текст песни внутри MP3 для офлайн‑плееров.',
   tool_embed_lyrics_in_an_mp3_faq_q1: 'Перекодируется ли?',
   tool_embed_lyrics_in_an_mp3_faq_a1: 'Нет. Переписывается только ID3 с USLT.',
   tool_embed_lyrics_in_an_mp3_faq_q2: 'Синхронный LRC?',

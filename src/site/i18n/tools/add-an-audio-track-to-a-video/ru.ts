@@ -8,10 +8,8 @@ const ru: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_title: 'Добавить звуковую дорожку к видео',
   tool_add_an_audio_track_to_a_video_desc:
     'Объедините локальный саундтрек с локальным видео и скачайте результат. Только на устройстве—без загрузки с YouTube.',
-  tool_add_an_audio_track_to_a_video_description:
-    'Добавьте звуковую дорожку к локальному видео в браузере: объедините картинку с выбранным саундтреком и скачайте. Шаги: выберите видео и аудио, Добавить аудио, превью, скачать. Пример: немой клип плюс короткий WAV. Использует captureStream и MediaRecorder—часто WebM; это не lossless remux. Никогда не загружается. Без загрузки с YouTube.',
-  tool_add_an_audio_track_to_a_video_article:
-    'Немым или слабо озвученным роликам часто нужна новая дорожка перед публикацией. Эта страница открывает локальное видео и локальное аудио, захватывает кадры без исходных дорожек, декодирует саундтрек в AudioContext, объединяет и перекодирует через MediaRecorder—часто WebM в зависимости от браузера. Длительность следует за видео; более длинное аудио обрезается, более короткое заканчивается раньше. Не скачивает YouTube и другие URL, не только глушит без нового звука и не извлекает аудио отдельным файлом. Успех зависит от воспроизведения обоих файлов и MediaRecorder со звуком. Сохраните оригиналы. Всё выполняется на вашем устройстве.',
+  tool_add_an_audio_track_to_a_video_description: 'Добавьте звуковую дорожку к локальному видео в браузере: объедините картинку с выбранным саундтреком и скачайте. Шаги: выберите видео и аудио, Добавить аудио, превью, скачать. Пример: немой клип плюс короткий WAV. Использует captureStream и browser media recording—часто WebM; это не lossless remux. Никогда не загружается. Без загрузки с YouTube.',
+  tool_add_an_audio_track_to_a_video_article: 'Немым или слабо озвученным роликам часто нужна новая дорожка перед публикацией. Эта страница открывает локальное видео и локальное аудио, захватывает кадры без исходных дорожек, декодирует саундтрек в the browser audio engine, объединяет и перекодирует через browser media recording—часто WebM в зависимости от браузера. Длительность следует за видео; более длинное аудио обрезается, более короткое заканчивается раньше. Не скачивает YouTube и другие URL, не только глушит без нового звука и не извлекает аудио отдельным файлом. Успех зависит от воспроизведения обоих файлов и browser media recording со звуком. Сохраните оригиналы. Всё выполняется на вашем устройстве.',
   tool_add_an_audio_track_to_a_video_choose_video: 'Выбрать видеофайл',
   tool_add_an_audio_track_to_a_video_hint_video:
     'Перетащите или выберите локальный MP4, WebM, MOV или M4V, который браузер может воспроизвести. До 80 МиБ и около 3 минут. Без YouTube и вставки URL.',
@@ -24,7 +22,7 @@ const ru: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_clear: 'Очистить',
   tool_add_an_audio_track_to_a_video_advanced: 'Заметки о слиянии',
   tool_add_an_audio_track_to_a_video_settings_hint:
-    'Браузеры обычно перекодируют через MediaRecorder после удаления исходных дорожек и добавления вашего саундтрека. Выход часто WebM, не lossless remux. Эта страница никогда не скачивает YouTube.',
+    'Браузеры обычно перекодируют через browser media recording после удаления исходных дорожек и добавления вашего саундтрека. Выход часто WebM, не lossless remux. Эта страница никогда не скачивает YouTube.',
   tool_add_an_audio_track_to_a_video_progress: 'Прогресс добавления аудио',
   tool_add_an_audio_track_to_a_video_read: 'Чтение',
   tool_add_an_audio_track_to_a_video_decode: 'Декодирование',
@@ -50,7 +48,7 @@ const ru: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_err_decode:
     'Браузер не смог декодировать видео или аудио. Попробуйте другой контейнер или более короткий клип.',
   tool_add_an_audio_track_to_a_video_err_encoder:
-    'MediaRecorder не смог записать объединённое видео. Попробуйте Chrome/Edge или более короткий WebM/MP4 плюс WAV/MP3.',
+    'browser media recording не смог записать объединённое видео. Попробуйте Chrome/Edge или более короткий WebM/MP4 плюс WAV/MP3.',
   tool_add_an_audio_track_to_a_video_how_title: 'Как добавить звуковую дорожку к видео',
   tool_add_an_audio_track_to_a_video_how_body:
     'Выберите локальные видео и аудио, запустите «Добавить аудио», просмотрите и скачайте—без загрузки и без YouTube.',
@@ -66,14 +64,14 @@ const ru: SiteLangDict = {
   tool_add_an_audio_track_to_a_video_why_choose_item_1:
     'Смотрите длительность, MIME-тип и размер выхода в КиБ перед сохранением.',
   tool_add_an_audio_track_to_a_video_why_choose_item_2:
-    'Одна понятная задача слияния с честными пределами MediaRecorder—без ложного обещания lossless remux.',
+    'Одна понятная задача слияния с честными пределами browser media recording—без ложного обещания lossless remux.',
   tool_add_an_audio_track_to_a_video_why_choose_item_3:
     'Чтение и запись на вашем устройстве; страница не загружает файлы на сервер для обработки.',
   tool_add_an_audio_track_to_a_video_why_choose_item_4:
     'Смена любого файла очищает старую загрузку, чтобы не сохранить устаревшее слияние.',
   tool_add_an_audio_track_to_a_video_rules_title: 'Правила слияния и честные пределы браузера',
   tool_add_an_audio_track_to_a_video_rules_body:
-    'Каждый запуск удаляет исходные дорожки, добавляет ваш саундтрек и перекодирует через MediaRecorder. Выход часто WebM. Это не загрузка YouTube, не только mute и не извлечение аудио.',
+    'Каждый запуск удаляет исходные дорожки, добавляет ваш саундтрек и перекодирует через browser media recording. Выход часто WebM. Это не загрузка YouTube, не только mute и не извлечение аудио.',
   tool_add_an_audio_track_to_a_video_rules_item_1:
     'Одно локальное видео до 80 МиБ и около трёх минут плюс одно локальное аудио до 40 МиБ. Сначала должно пройти воспроизведение/декодирование.',
   tool_add_an_audio_track_to_a_video_rules_item_2:
@@ -90,6 +88,7 @@ const ru: SiteLangDict = {
     'Немая запись экрана и WAV-подложка—объедините здесь и скачайте для публикации.',
   tool_add_an_audio_track_to_a_video_usecase_2:
     'Заменить слабую встроенную дорожку более чистым локальным саундтреком без установки настольного редактора.',
+  tool_add_an_audio_track_to_a_video_usecase_3: 'Есть немое видео экрана и отдельная озвучка — нужно свести перед загрузкой.',
   tool_add_an_audio_track_to_a_video_faq_q1: 'Может ли он скачать YouTube или вставить URL?',
   tool_add_an_audio_track_to_a_video_faq_a1:
     'Нет. Только локальные файлы, которые у вас уже есть. Нет загрузчика YouTube и нет удалённой выборки.',
@@ -101,7 +100,7 @@ const ru: SiteLangDict = {
     'Нет. Извлечение аудио из видео — другой инструмент. Здесь результат — видеофайл с объединённым звуком.',
   tool_add_an_audio_track_to_a_video_faq_q4: 'Будет ли выход тем же MP4, что источник?',
   tool_add_an_audio_track_to_a_video_faq_a4:
-    'Обычно нет. Браузеры обычно перекодируют через MediaRecorder, часто в WebM. Качество и контейнер могут измениться.',
+    'Обычно нет. Браузеры обычно перекодируют через browser media recording, часто в WebM. Качество и контейнер могут измениться.',
   tool_add_an_audio_track_to_a_video_faq_q5: 'Загружается ли что-то на сервер?',
   tool_add_an_audio_track_to_a_video_faq_a5:
     'Нет. Декодирование и запись выполняются в браузере на вашем устройстве. При первой загрузке нужна сеть; офлайн не гарантируется.',

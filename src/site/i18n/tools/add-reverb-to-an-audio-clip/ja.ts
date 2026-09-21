@@ -62,6 +62,7 @@ const ja: SiteLangDict = {
   tool_add_reverb_to_an_audio_clip_usecases_title: "こんなときに",
   tool_add_reverb_to_an_audio_clip_usecase_1: "乾いたナレーションに少し部屋の空気—Room を選び、リバーブ追加、WAVを保存。",
   tool_add_reverb_to_an_audio_clip_usecase_2: "短いステムにホール感やはっきりしたエコーが欲しいが、スローしたくないとき。",
+  tool_add_reverb_to_an_audio_clip_usecase_3: "ドライな声に短い部屋/ホールの残響を足したいが、DAWは開きたくない。",
   tool_add_reverb_to_an_audio_clip_faq_q1: "slowed and reverb と同じですか？",
   tool_add_reverb_to_an_audio_clip_faq_a1: "いいえ。slowed and reverb は空間の前にテンポを伸ばしピッチを下げます。本ページは速度とピッチを変えずリバーブやエコーだけです。その美学には Make a slowed and reverb clip を使ってください。",
   tool_add_reverb_to_an_audio_clip_faq_q2: "Room・Hall・Echo の違いは？",

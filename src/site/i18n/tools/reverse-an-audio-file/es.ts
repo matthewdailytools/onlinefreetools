@@ -56,6 +56,7 @@ const es: SiteLangDict = {
   tool_reverse_an_audio_file_usecases_title: "Cuándo ayuda",
   tool_reverse_an_audio_file_usecase_1: "Un efecto corto o sting musical que debe sonar al revés—Invertir, descarga WAV.",
   tool_reverse_an_audio_file_usecase_2: "Revisar una cola de reverb oyendo el final primero—no barrido 8D, no envolventes de fundido.",
+  tool_reverse_an_audio_file_usecase_3: "Una muestra corta debe sonar al revés para una transición o efecto.",
   tool_reverse_an_audio_file_faq_q1: "¿Invertir cambia la duración?",
   tool_reverse_an_audio_file_faq_a1: "No. El orden de muestras se voltea, pero la longitud y la frecuencia de muestreo se mantienen.",
   tool_reverse_an_audio_file_faq_q2: "¿Es lo mismo que el paneo 8D?",

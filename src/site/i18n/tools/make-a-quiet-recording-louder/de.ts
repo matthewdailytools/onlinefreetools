@@ -59,6 +59,7 @@ const de: SiteLangDict = {
   tool_make_a_quiet_recording_louder_usecases_title: "Wann das hilft",
   tool_make_a_quiet_recording_louder_usecase_1: "Eine Handy-Sprachnotiz zu leise aufgenommen—+6 dB verstärken und WAV herunterladen.",
   tool_make_a_quiet_recording_louder_usecase_2: "Eine insgesamt schwache Interviewspur, wenn Sie dasselbe Verhältnis lauter wollen ohne LUFS-Ziel.",
+  tool_make_a_quiet_recording_louder_usecase_3: "Eine leise Handymemo braucht Gain mit Peak-Schutz.",
   tool_make_a_quiet_recording_louder_faq_q1: "Ist das dasselbe wie Peak-Normalisieren auf 0 dBFS?",
   tool_make_a_quiet_recording_louder_faq_a1: "Nein. Sie wählen einen festen dB-Gain. Peak-Schutz skaliert nur zurück, wenn dieser Gain clippen würde—er hebt nicht automatisch jede Datei auf Vollaussteuerung. Peak-Normalisieren ist eine andere geplante Aufgabe.",
   tool_make_a_quiet_recording_louder_faq_q2: "Gleicht das Podcast-Loudness / LUFS an?",

@@ -68,6 +68,7 @@ const id: SiteLangDict = {
   tool_make_a_slowed_and_reverb_clip_usecases_title: "Kapan ini membantu",
   tool_make_a_slowed_and_reverb_clip_usecase_1: "Klip pop atau R&B untuk edit klasik slowed+reverb—0.8× + Sedang, Slowed reverb, unduh WAV.",
   tool_make_a_slowed_and_reverb_clip_usecase_2: "Klip pendek yang butuh lambat dan ruang—bukan tempo saja, bukan nightcore, bukan reverb kering saja.",
+  tool_make_a_slowed_and_reverb_clip_usecase_3: "Cuplikan lagu harus terdengar slowed-and-reverb untuk edit sosial.",
   tool_make_a_slowed_and_reverb_clip_faq_q1: "Apakah sama dengan mengubah kecepatan tanpa mengubah pitch?",
   tool_make_a_slowed_and_reverb_clip_faq_a1: "Tidak. Kecepatan-tanpa-pitch memakai WSOLA tanpa reverb. Halaman ini memperlambat dengan turun pitch dan menambah reverb. Gunakan Ubah kecepatan audio tanpa mengubah pitch untuk tempo saja.",
   tool_make_a_slowed_and_reverb_clip_faq_q2: "Apakah sama dengan nightcore?",

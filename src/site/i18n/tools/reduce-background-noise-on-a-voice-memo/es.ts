@@ -67,6 +67,7 @@ const es: SiteLangDict = {
   tool_reduce_background_noise_on_a_voice_memo_usecases_title: "Cuándo ayuda",
   tool_reduce_background_noise_on_a_voice_memo_usecase_1: "Memo del teléfono con ventilador o AC—elige Medium, reduce, descarga WAV.",
   tool_reduce_background_noise_on_a_voice_memo_usecase_2: "Nota rápida que necesita menos siseo antes de fundidos o EQ en otro sitio.",
+  tool_reduce_background_noise_on_a_voice_memo_usecase_3: "Un ventilador o aire acondicionado constante queda bajo la voz y un gate suave debe callar los huecos.",
   tool_reduce_background_noise_on_a_voice_memo_faq_q1: "¿Es lo mismo que Adobe Enhance Speech?",
   tool_reduce_background_noise_on_a_voice_memo_faq_a1:
     "No. Enhance en la nube reconstruye el habla con modelos grandes. Aquí solo hay paso alto y puerta por suelo en el navegador. Resultado modesto y honesto.",

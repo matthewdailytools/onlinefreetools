@@ -63,6 +63,7 @@ const id: SiteLangDict = {
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecases_title: "Kapan ini membantu",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_1: "Narasi sedikit rendah—Lebih tinggi, Geser, unduh WAV.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_2: "Klips suara pendek butuh nada lebih rendah tanpa mengubah durasi seperti raksasa mainan.",
+  tool_shift_a_recording_toward_a_higher_or_lower_voice_usecase_3: "VO perlu karakter sedikit lebih tinggi atau dalam tanpa suite pitch penuh.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q1: "Apakah ini mengubah suara menjadi gender tertentu?",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_a1: "Tidak. Hanya menggeser nada naik atau turun sambil menjaga durasi. Tidak menjanjikan pria-ke-wanita atau morfing formant studio.",
   tool_shift_a_recording_toward_a_higher_or_lower_voice_faq_q2: "Apakah sama dengan efek chipmunk atau robot?",
