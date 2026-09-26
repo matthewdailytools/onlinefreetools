@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dev Logs (18/30) | OnlineFreeTools.org</title>
-  <meta name="description" content="Curated project development notes with reusable decisions and fixes, organized by month. (18/30)" />
+  <title>Rebuilt all prerendered pages and re-uploaded R2 after a stale local `_pages` overwrite; bumped cache to 4.78. | Dev Logs</title>
+  <meta name="description" content="Rebuilt all prerendered pages and re-uploaded R2 after a stale local `_pages` overwrite; bumped cache to 4.78." />
   
-  <link rel="canonical" href="https://onlinefreetools.org/devlogs/page-18.html" />
-  <meta property="og:title" content="Dev Logs (18/30) | OnlineFreeTools.org" />
-  <meta property="og:description" content="Curated project development notes with reusable decisions and fixes, organized by month. (18/30)" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://onlinefreetools.org/devlogs/page-18.html" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-09-26-14-05-rebuild-r2-after-stale-upload.html" />
+  <meta property="og:title" content="Rebuilt all prerendered pages and re-uploaded R2 after a stale local `_pages` overwrite; bumped cache to 4.78. | Dev Logs" />
+  <meta property="og:description" content="Rebuilt all prerendered pages and re-uploaded R2 after a stale local `_pages` overwrite; bumped cache to 4.78." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-09-26-14-05-rebuild-r2-after-stale-upload.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
@@ -47,9 +47,8 @@
   else window.addEventListener('load', schedule, { once: true });
 })();
 </script>
-  <link rel="prev" href="https://onlinefreetools.org/devlogs/page-17.html" />
-  <link rel="next" href="https://onlinefreetools.org/devlogs/page-19.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs (18/30)","url":"https://onlinefreetools.org/devlogs/page-18.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://onlinefreetools.org/devlogs/"}]}}</script>
+  
+  
 </head>
 <body class="is-info-page is-devlog-page">
   
@@ -163,150 +162,46 @@
       <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/"><span class="sidebar-tool-label">Home</span></a></div>
     </aside>
     <main id="content" class="p-4">
-    <section>
-      <header class="devlog-page-head mb-3">
-        <a class="btn btn-outline-secondary btn-sm devlog-back flex-shrink-0" href="/">Back to Home</a>
-        <h1 class="devlog-title">Dev Logs</h1>
-        <p class="devlog-lead text-muted mb-0">
-          Browse Q&A and implementation notes by month.
-          <a class="ms-1 text-decoration-none" href="https://github.com/matthewdailytools/onlinefreetools" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </p>
-      </header>
-      
-      <div class="mb-4">
-        <h2 class="h5 text-muted mb-2">2026-08</h2>
-        <ul class="list-group shadow-sm">
+      <section class="mb-3">
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Rebuilt all prerendered pages and re-uploaded R2 after a stale local `_pages` overwrite; bumped cache to 4.78.</h1>
           
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-45-ship-salary-pvalue-ci-serial.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-salary-pvalue-ci-serial<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-44-ship-how-to-calculate-z-score.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-how-to-calculate-z-score<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-42-ship-how-to-calculate-confidence-interval.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-how-to-calculate-confidence-interval<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-41-ship-how-to-calculate-confidence-interval.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-how-to-calculate-confidence-interval<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-40-ship-how-to-calculate-p-value.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-how-to-calculate-p-value<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-38-indexnow-expand-sitemap-url-list.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>indexnow-expand-sitemap-url-list<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-35-ship-how-to-calculate-salary-hourly.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-how-to-calculate-salary-hourly<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-35-ship-how-to-calculate-paint.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-how-to-calculate-paint<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-33-ship-how-to-calculate-aspect-ratio.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-how-to-calculate-aspect-ratio<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-29-ship-how-to-calculate-tile.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-how-to-calculate-tile<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-26-ship-how-to-calculate-concrete.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-how-to-calculate-concrete<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-26-continue-tools-14-through-19.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>continue-tools-14-through-19<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-26-blocked-aspect-ratio-wait-for-tile.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>blocked-aspect-ratio-wait-for-tile<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-21-ship-how-to-calculate-standard-deviation.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-how-to-calculate-standard-deviation<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-16-ship-how-to-calculate-npv.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-how-to-calculate-npv<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-12-cagr-nine-locale-i18n.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>cagr-nine-locale-i18n<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-10-implement-how-to-calculate-cagr.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>implement-how-to-calculate-cagr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-09-ship-ideal-weight-continue-cagr.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-ideal-weight-continue-cagr<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-08-08-ideal-weight-nine-locale-i18n.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ideal-weight-nine-locale-i18n<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-01-11-unit-converter-categories-in-title.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>unit-converter-categories-in-title<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-01-06-continue-s12-be-gm-uc-bf.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>continue-s12-be-gm-uc-bf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-01-01-ship-unit-converter-full-pipeline.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-unit-converter-full-pipeline<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-00-57-ship-gross-margin-full-pipeline.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-gross-margin-full-pipeline<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-00-52-ship-break-even-continue-gross-margin.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-break-even-continue-gross-margin<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-00-47-why-bmr-i18n-rules-skipped.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>why-bmr-i18n-rules-skipped<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-00-47-bmr-tdee-i18n-full-rewrite.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>bmr-tdee-i18n-full-rewrite<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-00-42-ship-how-to-calculate-bmr-tdee.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ship-how-to-calculate-bmr-tdee<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-00-31-implement-how-to-calculate-emi.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>implement-how-to-calculate-emi<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-00-16-home-all-tools-center.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>home-all-tools-center<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-09-00-15-remove-home-featured-section.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>remove-home-featured-section<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-        </ul>
-      </div>
-      
-      <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4" aria-label="Dev Logs">
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-17.html" rel="prev">Previous</a>
-        <span class="small text-muted">Page 18 of 30</span>
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-19.html" rel="next">Next</a>
-      </nav>
-    </section>
-  </main>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-26 14:05
+Summary: Rebuilt all prerendered pages and re-uploaded R2 after a stale local <code>_pages</code> overwrite; bumped cache to 4.78.
+Visibility: people</p>
+<p>[question]
+重建和重新上传</p>
+<p>[try to solve]</p>
+<h2>Context</h2>
+<p>A prior <code>npm run upload:r2</code> ran against a stale local <code>public/_pages</code> tree (about 2026-09-12, ~221 EN tool gz files vs 278 in catalog). Hash-delta mode saw every object differ from R2 meta and re-uploaded 2690 files, overwriting overlapping taxonomy/info/tool HTML while leaving newer-only keys intact.</p>
+<h2>Process</h2>
+<ol>
+<li>Bumped <code>PAGES_CACHE_VERSION</code> in <code>wrangler.jsonc</code> from <code>4.77</code> → <code>4.78</code> so edge Cache API keys invalidate.</li>
+<li>Ran <code>npm run build:site</code> (full): 278 tools × 10 langs, gzip wrote 3260 <code>.html.gz</code>.</li>
+<li>Ran <code>npm run upload:r2</code> (<code>--changed-only</code>): <code>files=3260 upload=3260 skipped=0</code> (expected after full rebuild vs previous meta).</li>
+<li>Confirmed R2: <code>_meta/pages-build.json</code> version <code>4.78</code>, <code>fileCount=3260</code>; sample tools and <code>/zh/topics/health-body</code> objects updated today.</li>
+</ol>
+<h2>Root cause / analysis</h2>
+<p>Incremental upload is correct: it compares <strong>this machine’s</strong> gz hashes to R2 meta. It cannot know the local tree is behind production. Worker-only fixes must not call <code>upload:r2</code> unless <code>_pages</code> was freshly built from current sources.</p>
+<h2>Solution</h2>
+<p>Full rebuild + R2 re-upload + cache bump. Deploy Worker (<code>git:deploy</code>) so production reads <code>PAGES_CACHE_VERSION=4.78</code>.</p>
+<h2>Notes / boundaries</h2>
+<ul>
+<li>Before any remote <code>upload:r2</code>: ensure <code>public/_pages</code> was produced by a recent <code>build:site</code> on this checkout (tool gz count ≈ catalog size).</li>
+<li>Prefer <code>npm run upload:r2 -- --dry-run</code> and check <code>upload=</code> / <code>skipped=</code> when unsure.</li>
+<li>Sitemap locs did not need trailing-slash edits for the earlier GSC redirect fix; this rebuild refreshed lastmod/state as a side effect of <code>build:site</code>.</li>
+</ul>
+<p>[actions]</p>
+<ul>
+<li><code>wrangler.jsonc</code>: PAGES_CACHE_VERSION 4.78</li>
+<li><code>npm run build:site</code> then <code>npm run upload:r2</code> (3260 objects)</li>
+<li>Commit sitemap / lastmod state + git:deploy for Worker version</li>
+</ul>
+</article>
+      </section>
+    </main>
   </div>
   
   <footer class="site-footer border-top text-center py-3">
