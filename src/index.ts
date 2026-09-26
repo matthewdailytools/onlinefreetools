@@ -302,8 +302,12 @@ app.get("/", async (c) => {
 });
 
 // 各语首页与信息页。默认语显式前缀由上方中间件 301 剥离；此处保留路由作兜底。
+// 尾斜杠策略（须与 sitemap / canonical / hreflang / 内链一致）：
+// - 各语首页：`/{lang}/` 为规范（sitemap 已用尾斜杠）
+// - 信息页 / taxonomy hub+leaf：无尾斜杠为规范；有尾斜杠的 URL 301 去掉斜杠
+//   （曾对非默认语 308 强制加斜杠，导致 Google 抓 sitemap 无斜杠 URL 时报「网页会自动重定向」）
 for (const code of DEFAULT_LANGS) {
-	app.get(`/${code}`, (c) => c.redirect(`/${code}/`, 308));
+	app.get(`/${code}`, (c) => c.redirect(`/${code}/`, 301));
 	app.get(`/${code}/`, async (c) => {
 		const accept = c.req.header('accept') || '';
 		if (!accept.includes('text/html')) return c.notFound();
@@ -316,8 +320,7 @@ for (const code of DEFAULT_LANGS) {
 	});
 	// 静态信息页（含默认语显式前缀）：about / privacy / terms / contact
 	for (const page of ['about', 'privacy', 'terms', 'contact'] as const) {
-		app.get(`/${code}/${page}`, (c) => c.redirect(`/${code}/${page}/`, 308));
-		app.get(`/${code}/${page}/`, async (c) => {
+		app.get(`/${code}/${page}`, async (c) => {
 			const accept = c.req.header('accept') || '';
 			if (!accept.includes('text/html')) return c.notFound();
 			const enabled = getEnabledLangs(c.env);
@@ -327,12 +330,19 @@ for (const code of DEFAULT_LANGS) {
 			}
 			return servePagesHtml(c, `/_pages/${code}/${page}.html`);
 		});
+		app.get(`/${code}/${page}/`, (c) => {
+			const enabled = getEnabledLangs(c.env);
+			const defaultLang = getDefaultLang(c.env, enabled);
+			if (code === defaultLang) {
+				return redirectDefaultLangCanonical(c, `/${page}`, defaultLang);
+			}
+			return c.redirect(`/${code}/${page}`, 301);
+		});
 	}
 
 	// 应用场景 / 工具类型 / 主题 hub + leaf（静态 `_pages/{lang}/...`）
 	for (const hub of ['where-to-use-tools', 'tool-type', 'topics'] as const) {
-		app.get(`/${code}/${hub}`, (c) => c.redirect(`/${code}/${hub}/`, 308));
-		app.get(`/${code}/${hub}/`, async (c) => {
+		app.get(`/${code}/${hub}`, async (c) => {
 			const accept = c.req.header('accept') || '';
 			if (!accept.includes('text/html')) return c.notFound();
 			const enabled = getEnabledLangs(c.env);
@@ -342,11 +352,15 @@ for (const code of DEFAULT_LANGS) {
 			}
 			return servePagesHtml(c, `/_pages/${code}/${hub}/index.html`);
 		});
-		app.get(`/${code}/${hub}/:id`, (c) => {
-			const id = c.req.param('id');
-			return c.redirect(`/${code}/${hub}/${id}/`, 308);
+		app.get(`/${code}/${hub}/`, (c) => {
+			const enabled = getEnabledLangs(c.env);
+			const defaultLang = getDefaultLang(c.env, enabled);
+			if (code === defaultLang) {
+				return redirectDefaultLangCanonical(c, `/${hub}`, defaultLang);
+			}
+			return c.redirect(`/${code}/${hub}`, 301);
 		});
-		app.get(`/${code}/${hub}/:id/`, async (c) => {
+		app.get(`/${code}/${hub}/:id`, async (c) => {
 			const accept = c.req.header('accept') || '';
 			if (!accept.includes('text/html')) return c.notFound();
 			const enabled = getEnabledLangs(c.env);
@@ -357,24 +371,33 @@ for (const code of DEFAULT_LANGS) {
 			}
 			return servePagesHtml(c, `/_pages/${code}/${hub}/${id}.html`);
 		});
+		app.get(`/${code}/${hub}/:id/`, (c) => {
+			const enabled = getEnabledLangs(c.env);
+			const defaultLang = getDefaultLang(c.env, enabled);
+			const id = c.req.param('id');
+			if (code === defaultLang) {
+				return redirectDefaultLangCanonical(c, `/${hub}/${id}`, defaultLang);
+			}
+			return c.redirect(`/${code}/${hub}/${id}`, 301);
+		});
 	}
 
-	// 旧路径 301 → 新路径（避免已收录 URL 失效）
-	app.get(`/${code}/use-cases`, (c) => c.redirect(`/${code}/where-to-use-tools/`, 301));
-	app.get(`/${code}/use-cases/`, (c) => c.redirect(`/${code}/where-to-use-tools/`, 301));
+	// 旧路径 301 → 新路径（无尾斜杠，与现行规范 URL 一致）
+	app.get(`/${code}/use-cases`, (c) => c.redirect(`/${code}/where-to-use-tools`, 301));
+	app.get(`/${code}/use-cases/`, (c) => c.redirect(`/${code}/where-to-use-tools`, 301));
 	app.get(`/${code}/use-cases/:id`, (c) =>
-		c.redirect(`/${code}/where-to-use-tools/${c.req.param('id')}/`, 301)
+		c.redirect(`/${code}/where-to-use-tools/${c.req.param('id')}`, 301)
 	);
 	app.get(`/${code}/use-cases/:id/`, (c) =>
-		c.redirect(`/${code}/where-to-use-tools/${c.req.param('id')}/`, 301)
+		c.redirect(`/${code}/where-to-use-tools/${c.req.param('id')}`, 301)
 	);
-	app.get(`/${code}/subjects`, (c) => c.redirect(`/${code}/tool-type/`, 301));
-	app.get(`/${code}/subjects/`, (c) => c.redirect(`/${code}/tool-type/`, 301));
+	app.get(`/${code}/subjects`, (c) => c.redirect(`/${code}/tool-type`, 301));
+	app.get(`/${code}/subjects/`, (c) => c.redirect(`/${code}/tool-type`, 301));
 	app.get(`/${code}/subjects/:id`, (c) =>
-		c.redirect(`/${code}/tool-type/${c.req.param('id')}/`, 301)
+		c.redirect(`/${code}/tool-type/${c.req.param('id')}`, 301)
 	);
 	app.get(`/${code}/subjects/:id/`, (c) =>
-		c.redirect(`/${code}/tool-type/${c.req.param('id')}/`, 301)
+		c.redirect(`/${code}/tool-type/${c.req.param('id')}`, 301)
 	);
 }
 

@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dev Logs (24/30) | OnlineFreeTools.org</title>
-  <meta name="description" content="Curated project development notes with reusable decisions and fixes, organized by month. (24/30)" />
+  <title>Fixed non-default-locale trailing-slash 308s that caused GSC “Page with redirect” on sitemap/canonical URLs. | Dev Logs</title>
+  <meta name="description" content="Fixed non-default-locale trailing-slash 308s that caused GSC “Page with redirect” on sitemap/canonical URLs." />
   
-  <link rel="canonical" href="https://onlinefreetools.org/devlogs/page-24.html" />
-  <meta property="og:title" content="Dev Logs (24/30) | OnlineFreeTools.org" />
-  <meta property="og:description" content="Curated project development notes with reusable decisions and fixes, organized by month. (24/30)" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://onlinefreetools.org/devlogs/page-24.html" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-09-26-13-50-gsc-page-with-redirect-trailing-slash.html" />
+  <meta property="og:title" content="Fixed non-default-locale trailing-slash 308s that caused GSC “Page with redirect” on sitemap/canonical URLs. | Dev Logs" />
+  <meta property="og:description" content="Fixed non-default-locale trailing-slash 308s that caused GSC “Page with redirect” on sitemap/canonical URLs." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-09-26-13-50-gsc-page-with-redirect-trailing-slash.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
@@ -47,9 +47,8 @@
   else window.addEventListener('load', schedule, { once: true });
 })();
 </script>
-  <link rel="prev" href="https://onlinefreetools.org/devlogs/page-23.html" />
-  <link rel="next" href="https://onlinefreetools.org/devlogs/page-25.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs (24/30)","url":"https://onlinefreetools.org/devlogs/page-24.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://onlinefreetools.org/devlogs/"}]}}</script>
+  
+  
 </head>
 <body class="is-info-page is-devlog-page">
   
@@ -163,150 +162,68 @@
       <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/"><span class="sidebar-tool-label">Home</span></a></div>
     </aside>
     <main id="content" class="p-4">
-    <section>
-      <header class="devlog-page-head mb-3">
-        <a class="btn btn-outline-secondary btn-sm devlog-back flex-shrink-0" href="/">Back to Home</a>
-        <h1 class="devlog-title">Dev Logs</h1>
-        <p class="devlog-lead text-muted mb-0">
-          Browse Q&A and implementation notes by month.
-          <a class="ms-1 text-decoration-none" href="https://github.com/matthewdailytools/onlinefreetools" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </p>
-      </header>
-      
-      <div class="mb-4">
-        <h2 class="h5 text-muted mb-2">2026-08</h2>
-        <ul class="list-group shadow-sm">
+      <section class="mb-3">
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Fixed non-default-locale trailing-slash 308s that caused GSC “Page with redirect” on sitemap/canonical URLs.</h1>
           
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-12-07-three-tools-title-keyword-coverage-analysis.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>three-tools-title-keyword-coverage-analysis<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-12-05-color-from-image-i18n-click-pick-locales.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>color-from-image-i18n-click-pick-locales<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-12-04-color-from-image-click-pick.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>color-from-image-click-pick<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-11-57-three-tools-auto-sample-rerun.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>three-tools-auto-sample-rerun<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-11-54-rule-auto-run-sample-results.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>rule-auto-run-sample-results<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-11-50-three-image-tools-brief-and-implement.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>three-image-tools-brief-and-implement<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-11-49-image-overlay-tool-implementation.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>image-overlay-tool-implementation<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-11-37-image-merge-tool-implement.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>image-merge-tool-implement<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-11-32-color-from-image-i18n-locales.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>color-from-image-i18n-locales<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-11-21-home-white-solid-buttons.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>home-white-solid-buttons<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-11-00-home-hero-lead-remove-why-cards.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>home-hero-lead-remove-why-cards<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-10-52-ip-address-cf-geo-isp-lightweight.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ip-address-cf-geo-isp-lightweight<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-10-49-ip-region-isp-feasibility.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ip-region-isp-feasibility<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-10-45-sync-ip-address-i18n-ipv4-ipv6.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>sync-ip-address-i18n-ipv4-ipv6<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-10-42-js-local-ipv4-ipv6-feasibility.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>js-local-ipv4-ipv6-feasibility<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-10-32-optimize-zh-ip-address-search-intent.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>optimize-zh-ip-address-search-intent<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-10-28-seo-docs-split-under-date-folder.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>seo-docs-split-under-date-folder<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-10-25-gsc-data-analysis-seo-optimization.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>gsc-data-analysis-seo-optimization<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-10-16-devlog-html-noindex.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>devlog-html-noindex<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-07-17-43-designer-tools-direction-section.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>designer-tools-direction-section<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-07-17-37-designer-tools-competitor-research.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>designer-tools-competitor-research<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-07-17-33-fix-broken-image-tool-svg-icons.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>fix-broken-image-tool-svg-icons<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-07-17-27-image-tools-dropzone-and-more-formats.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>image-tools-dropzone-and-more-formats<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-07-17-16-site-palette-iloveimg-inspired.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>site-palette-iloveimg-inspired<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-07-17-12-iloveimg-seo-ux-competitor-analysis.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>iloveimg-seo-ux-competitor-analysis<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-07-17-08-move-about-devlogs-to-footer.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>move-about-devlogs-to-footer<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-07-16-50-fix-image-optimizer-svg-xml.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>fix-image-optimizer-svg-xml<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-07-16-47-rebuild-home-image-optimizer-entry.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>rebuild-home-image-optimizer-entry<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-07-16-37-implement-image-optimizer.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>implement-image-optimizer<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-07</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-07-16-03-image-optimizer-locale-briefs-and-i18n.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>image-optimizer-locale-briefs-and-i18n<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-07</span>
-          </li>
-        </ul>
-      </div>
-      
-      <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4" aria-label="Dev Logs">
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-23.html" rel="prev">Previous</a>
-        <span class="small text-muted">Page 24 of 30</span>
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-25.html" rel="next">Next</a>
-      </nav>
-    </section>
-  </main>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-26 13:50
+Summary: Fixed non-default-locale trailing-slash 308s that caused GSC “Page with redirect” on sitemap/canonical URLs.
+Visibility: people</p>
+<p>[question]
+@docs/seo/reviews/2026-09-26/ 文件夹中是 GSC &quot;网页会自动重定向 此类网页未编入索引或不会显示在 Google 搜索结果中&quot;,分析修正</p>
+<p>[try to solve]</p>
+<h2>Context</h2>
+<p>GSC Coverage exported 435 URLs under “Page with redirect” (Chinese: 网页会自动重定向). Those source URLs are not indexed; Google follows the redirect and credits the destination when it chooses to.</p>
+<h2>Process</h2>
+<ol>
+<li>Classified the CSV: 134 <code>/en/...</code> URLs vs ~301 non-English taxonomy/info URLs (<code>topics</code>, <code>where-to-use-tools</code>, <code>tool-type</code>, about/privacy/terms/contact).</li>
+<li>Probed production with <code>Accept: text/html</code>:<ul>
+<li><code>/en/tools/...</code> → <strong>301</strong> to unprefixed <code>/tools/...</code> (intended).</li>
+<li><code>/zh/topics/health-body</code> → <strong>308</strong> to <code>/zh/topics/health-body/</code> (then 200).</li>
+</ul>
+</li>
+<li>Compared signals: sitemap <code>loc</code>, <code>rel=canonical</code>, and <code>hreflang</code> all use <strong>no</strong> trailing slash for those pages (<code>withLangPath</code>). English unprefixed routes already serve no-slash as 200 and 301 away from slash.</li>
+<li>Confirmed tool pages <code>/{lang}/tools/{slug}</code> already return 200 without a slash — they were absent from this GSC bucket for the right reason.</li>
+</ol>
+<h2>Root cause / analysis</h2>
+<p>Two different redirect stories were mixed in one GSC report:</p>
+<ol>
+<li><strong><code>/en/...</code> 301</strong> — Product design since 2026-09-03: strip default-lang prefix, set <code>oft_lang=en</code>. Correct; leave as-is. Google will keep listing them while old <code>/en/</code> links exist.</li>
+<li><strong>Non-en trailing-slash 308</strong> — Bug/inconsistency. Worker treated <strong>with</strong> slash as canonical for non-default locales, while sitemap/canonical/internal links advertised <strong>without</strong> slash. Google fetched the advertised URL, got a permanent redirect, and filed “Page with redirect”. The HTML on the slash URL still pointed canonical back to the no-slash URL, which is a classic self-fight.</li>
+</ol>
+<p>Lang homes <code>/{lang}/</code> correctly use a trailing slash (matching sitemap) and were not the fix target.</p>
+<h2>Solution</h2>
+<p>Updated <code>src/index.ts</code> so non-default locale info + taxonomy hub/leaf routes match English:</p>
+<ul>
+<li>No trailing slash → <strong>200</strong> HTML</li>
+<li>With trailing slash → <strong>301</strong> to no slash</li>
+<li>Legacy <code>use-cases</code> / <code>subjects</code> redirects now target no-slash paths</li>
+<li><code>/{lang}</code> → <code>/{lang}/</code> kept (301) for language homes only</li>
+</ul>
+<p>Documented the breakdown in <code>docs/seo/reviews/2026-09-26/01-analysis-redirects.md</code>.</p>
+<p><strong>Deploy required:</strong> this is Worker routing only; after <code>git:deploy</code> (or emergency <code>deploy:worker-only</code>), verify:</p>
+<pre><code class="language-bash">curl -sSI -H &#39;Accept: text/html&#39; &#39;https://onlinefreetools.org/zh/topics/health-body&#39;
+# expect HTTP/2 200
+curl -sSI -H &#39;Accept: text/html&#39; &#39;https://onlinefreetools.org/zh/topics/health-body/&#39;
+# expect HTTP/2 301 Location: .../zh/topics/health-body
+</code></pre>
+<p>In GSC, optionally “Validate fix” on a few high-value no-slash URLs; the non-en share of this issue should fall over re-crawls. <code>/en/...</code> counts may remain.</p>
+<h2>Notes / boundaries</h2>
+<ul>
+<li>Do not remove <code>/en/</code> → unprefixed 301 to “clear” the report.</li>
+<li>No sitemap or prerender HTML rebuild required for this routing fix.</li>
+<li>Related earlier note: <code>docs/seo/reviews/2026-09-07/04-crawled-not-indexed.md</code> already flagged <code>/zh/...</code> 308 vs canonical mismatch.</li>
+</ul>
+<p>[actions]</p>
+<ul>
+<li>Fixed trailing-slash policy in <code>src/index.ts</code> for non-default locale info/taxonomy routes</li>
+<li>Added <code>docs/seo/reviews/2026-09-26/01-analysis-redirects.md</code></li>
+</ul>
+</article>
+      </section>
+    </main>
   </div>
   
   <footer class="site-footer border-top text-center py-3">
