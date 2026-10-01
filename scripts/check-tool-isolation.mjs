@@ -64,6 +64,9 @@ function allowlistFor(toolSlug) {
 		`public/samples/${toolSlug}.flac`,
 		`public/samples/${toolSlug}.ogg`,
 		`public/samples/${toolSlug}.aiff`,
+		`public/samples/${toolSlug}.wav`,
+		`public/samples/${toolSlug}.mp4`,
+		`public/samples/${toolSlug}.webm`,
 		`public/samples/${toolSlug}.md`,
 		`scripts/tool-modules/`,
 		`scripts/check-tool-isolation.mjs`,
@@ -72,6 +75,8 @@ function allowlistFor(toolSlug) {
 		`scripts/validate-tool-artifacts.mjs`,
 		`scripts/lib/observed-step.mjs`,
 		`scripts/tests/tool-workflow.test.mjs`,
+		`scripts/vendor-whisper.mjs`,
+		`scripts/whisper-browser-entry.mjs`,
 		`.cursor/rules/`,
 		`.cursor/skills/`,
 		`dev-logs/`,
@@ -80,6 +85,7 @@ function allowlistFor(toolSlug) {
 		`AGENTS.md`,
 		`wrangler.jsonc`, // release cache version; review its diff before publishing
 		// 新工具加 npm 库时 lockfile 与 package.json 成对出现
+		`package.json`,
 		`package-lock.json`,
 		// 同域 vendor 复制清单与必入库路径（本工具点后加载 WASM）
 		`scripts/copy-tool-libs-vendor.mjs`,

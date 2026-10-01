@@ -57,6 +57,21 @@
 - [从录音中去除市电嗡嗡](https://onlinefreetools.org/zh/tools/remove-mains-hum-from-a-recording) - 用 50/60 Hz 陷波及可选谐波切掉市电嗡嗡，试听后下载 16 位 WAV；文件留在本机，不上传服务器
 - [看着提词器录制旁白](https://onlinefreetools.org/zh/tools/record-a-voiceover-with-a-teleprompter) - 先排练滚稿，再边读边录，同步暂停文字与音频，试听后下载；稿件和声音留在设备、不上传服务器
 - [在浏览器录一段语音备忘](https://onlinefreetools.org/zh/tools/record-a-voice-memo-in-the-browser) - 查看麦克风电平，可暂停和继续，停止后试听并下载；音频留在设备、不上传服务器
+- [从视频文件提取音频](https://onlinefreetools.org/zh/tools/extract-audio-from-a-video-file) - 本机从单个本地视频提取音轨为 WAV/MP3；短片整段解码，长片流式 MP3 稳住内存；多文件请用批量页；文件不上传服务器
+- [从 WebM 文件提取音频](https://onlinefreetools.org/zh/tools/extract-audio-from-a-webm-file) - 仅 WebM：浏览器播放抓取 Opus 为 WAV/MP3，单文件约 500 MiB/4 小时；不上传服务器
+- [从 MP4 文件提取音频](https://onlinefreetools.org/zh/tools/extract-audio-from-an-mp4-file) - 仅 MP4/M4V：本机 demux 容器内 AAC 为 WAV/MP3，大文件走 OPFS；不上传服务器
+- [批量从 WebM 文件提取音频](https://onlinefreetools.org/zh/tools/batch-extract-audio-from-webm-files) - 仅 .webm 文件夹：逐个播放抓取、失败跳过、打包 ZIP；不上传服务器
+- [批量从 MP4 文件提取音频](https://onlinefreetools.org/zh/tools/batch-extract-audio-from-mp4-files) - 仅 .mp4 文件夹：逐个抽音、失败跳过、打包 ZIP；不上传服务器
+- [从 MOV 文件提取音频](https://onlinefreetools.org/zh/tools/extract-audio-from-a-mov-file) - 仅 QuickTime .mov：本机 ISOBMFF demux 抽 AAC 为 WAV/MP3，大文件 OPFS；不上传服务器
+- [批量从 MOV 文件提取音频](https://onlinefreetools.org/zh/tools/batch-extract-audio-from-mov-files) - 仅 .mov 文件夹：串行抽音、失败跳过、ZIP 下载；不上传服务器
+- [从 MKV 文件提取音频](https://onlinefreetools.org/zh/tools/extract-audio-from-an-mkv-file) - 仅 .mkv：浏览器回退路径抽音为 WAV/MP3（约 500 MiB/4 小时）；大文件请转 MP4；不上传服务器
+- [把 MKV 文件转换成 MP4 文件](https://onlinefreetools.org/zh/tools/convert-an-mkv-file-to-an-mp4-file) - 本地 MKV→MP4（AAC 立体声）；OPFS 流式约 5 GiB（无 OPFS 约 1 GiB）；不上传服务器
+- [批量把 MKV 文件转换成 MP4 文件](https://onlinefreetools.org/zh/tools/batch-convert-mkv-files-to-mp4-files) - 多个本地 MKV→AAC MP4，打包 ZIP；行失败可跳过；不上传服务器
+- [批量从 MKV 文件提取音频](https://onlinefreetools.org/zh/tools/batch-extract-audio-from-mkv-files) - 仅 .mkv 文件夹：串行回退抽音、失败跳过、部分 ZIP；不上传服务器
+- [批量从视频提取音频](https://onlinefreetools.org/zh/tools/batch-extract-audio-from-video-files) - 多段本地视频逐个抽音轨并打成 ZIP；串行处理控内存，失败可跳过；文件不上传服务器
+- [从视频文件生成 SRT 字幕](https://onlinefreetools.org/zh/tools/make-srt-subtitles-from-a-video-file) - 本机 Whisper 读本地视频音轨，对照画面预览生成可编辑 SRT；仅接受视频；首次约 45 MB 模型下载后缓存；文件不上传服务器
+- [从音频文件生成 SRT 字幕](https://onlinefreetools.org/zh/tools/make-srt-subtitles-from-an-audio-file) - 本机 Whisper 读本地音频（也可带音轨视频），生成可编辑带时间轴的 SRT；可选麦克风口述；首次约 45 MB 模型下载后缓存；文件不上传服务器
+- [把音频文件转写成文字](https://onlinefreetools.org/zh/tools/transcribe-an-audio-file-to-text) - 浏览器内尽力转写本地人声为纯文本；与 SRT 页相邻；文件处理边界见页内说明
 - [在线解压 ZIP](https://onlinefreetools.org/zh/tools/unzip-file) - 浏览器内查看 ZIP 文件树、预览文本/图片，并下载单个文件或导出全部，不上传服务器
 - [创建 zip 文件](https://onlinefreetools.org/zh/tools/create-zip-file) - 在浏览器里把多个文件打成 ZIP 下载；可保留文件夹路径；文件留在设备、不上传服务器
 - [压缩包在线解压](https://onlinefreetools.org/zh/tools/archive-extractor) - 浏览器内打开 ZIP、TAR、TAR.GZ 压缩包，预览文件并导出干净 ZIP，不上传服务器
@@ -300,6 +315,21 @@ Below are our available online tools with their links (English version):
 - [Remove mains hum from a recording](https://onlinefreetools.org/tools/remove-mains-hum-from-a-recording) - Cut 50 or 60 Hz electrical hum with notch filters and optional harmonics, preview, then download 16-bit WAV; audio stays on your device without server upload
 - [Record a voiceover with a teleprompter](https://onlinefreetools.org/tools/record-a-voiceover-with-a-teleprompter) - Rehearse a scrolling script, record while reading, pause text and audio together, then listen and download; text and audio stay on your device without upload
 - [Record a voice memo in the browser](https://onlinefreetools.org/tools/record-a-voice-memo-in-the-browser) - Watch the microphone level, pause or resume, then play and download the recording — stays on the device, not uploaded
+- [Extract audio from a video file](https://onlinefreetools.org/tools/extract-audio-from-a-video-file) - Pull a soundtrack from one local video to WAV/MP3 on-device; short clips decode in one pass, longer clips stream MP3 for stable memory; use the batch page for many files — not uploaded
+- [Extract audio from a WebM file](https://onlinefreetools.org/tools/extract-audio-from-a-webm-file) - WebM-only: capture Opus from one local screen-recording WebM to WAV/MP3 via browser playback (about 500 MiB / 4 h cap) — stays on your device, not uploaded
+- [Extract audio from an MP4 file](https://onlinefreetools.org/tools/extract-audio-from-an-mp4-file) - MP4/M4V only: demux AAC from one local phone or camera export to WAV/MP3 with ISOBMFF+OPFS for large files — stays on your device, not uploaded
+- [Batch extract audio from video files](https://onlinefreetools.org/tools/batch-extract-audio-from-video-files) - Queue local videos, extract audio one-by-one into a ZIP with memory-safe serial processing and skip-on-fail — stays on the device, not uploaded
+- [Batch extract audio from WebM files](https://onlinefreetools.org/tools/batch-extract-audio-from-webm-files) - WebM-only folder batch: serial playback capture into a partial ZIP with skip-on-fail and the same ~500 MiB / 4 h cap as the single WebM page — not uploaded
+- [Batch extract audio from MP4 files](https://onlinefreetools.org/tools/batch-extract-audio-from-mp4-files) - MP4/M4V-only folder batch: serial extract into a partial ZIP with skip-on-fail and the same demux caps as the single MP4 page — not uploaded
+- [Extract audio from a MOV file](https://onlinefreetools.org/tools/extract-audio-from-a-mov-file) - QuickTime .mov only: ISOBMFF demux AAC from one local export to WAV/MP3 with OPFS for large files — stays on your device, not uploaded
+- [Batch extract audio from MOV files](https://onlinefreetools.org/tools/batch-extract-audio-from-mov-files) - .mov-only batch: serial extract, skip-on-fail ZIP, same demux caps as the single MOV page — not uploaded
+- [Extract audio from an MKV file](https://onlinefreetools.org/tools/extract-audio-from-an-mkv-file) - .mkv only: browser fallback extract to WAV/MP3 (about 500 MiB / 4 h); remux to MP4 for large demux — not uploaded
+- [Convert an MKV file to an MP4 file](https://onlinefreetools.org/tools/convert-an-mkv-file-to-an-mp4-file) - Local MKV→MP4 with AAC stereo; OPFS stream about 5 GiB (about 1 GiB without) — not uploaded
+- [Batch convert MKV files to MP4 files](https://onlinefreetools.org/tools/batch-convert-mkv-files-to-mp4-files) - Queue local MKVs to AAC MP4 ZIP; skip failed rows — not uploaded
+- [Batch extract audio from MKV files](https://onlinefreetools.org/tools/batch-extract-audio-from-mkv-files) - .mkv-only batch: serial fallback extract, skip-on-fail partial ZIP — not uploaded
+- [Make SRT subtitles from a video file](https://onlinefreetools.org/tools/make-srt-subtitles-from-a-video-file) - On-device Whisper turns a local video soundtrack into editable timed .srt with in-page video preview; video-only input; first run downloads ~45 MB once — stays on the device, not uploaded
+- [Make SRT subtitles from an audio file](https://onlinefreetools.org/tools/make-srt-subtitles-from-an-audio-file) - On-device Whisper turns local speech (or a video soundtrack) into editable timed .srt; optional mic path; first run downloads ~45 MB once — stays on the device, not uploaded
+- [Transcribe an audio file to text](https://onlinefreetools.org/tools/transcribe-an-audio-file-to-text) - Browser best-effort plain-text transcript of local speech; related to the SRT tool — see the page for engine limits
 - [Unzip File Online](https://onlinefreetools.org/tools/unzip-file) - Inspect ZIP contents, preview text/images, and download one file or export all in your browser — no server upload
 - [Create zip file](https://onlinefreetools.org/tools/create-zip-file) - Pack several files into a ZIP in your browser, keep folder paths when the browser provides them — stays on the device, not uploaded
 - [Archive Extractor Online](https://onlinefreetools.org/tools/archive-extractor) - Open ZIP, TAR, and TAR.GZ archives in your browser, preview files, and export a clean ZIP — no server upload

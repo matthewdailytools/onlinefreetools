@@ -1,0 +1,29 @@
+{
+  "slug": "batch-convert-mkv-files-to-mp4-files",
+  "path": "/tools/batch-convert-mkv-files-to-mp4-files",
+  "updatedAt": "2026-10-01T13:05:00.000Z",
+  "launchedAt": "2026-10-01T13:05:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_convert_mkv_files_to_mp4_files_title",
+  "homeTitleKey": "tool_batch_convert_mkv_files_to_mp4_files_title",
+  "homeDescKey": "tool_batch_convert_mkv_files_to_mp4_files_desc",
+  "faqPrefix": "tool_batch_convert_mkv_files_to_mp4_files",
+  "related": [
+    "convert-an-mkv-file-to-an-mp4-file",
+    "batch-extract-audio-from-mkv-files",
+    "extract-audio-from-an-mp4-file",
+    "extract-audio-from-an-mkv-file"
+  ],
+  "logo": "/icons/tools/batch-convert-mkv-files-to-mp4-files.svg",
+  "page": {
+    "module": "../pages/batchConvertMkvFilesToMp4FilesPage",
+    "export": "renderBatchConvertMkvFilesToMp4FilesPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

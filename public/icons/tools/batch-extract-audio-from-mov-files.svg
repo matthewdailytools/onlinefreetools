@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-hidden="true">
+  <rect width="32" height="32" rx="8" fill="#6d28d9"/>
+  <text x="6" y="15" fill="#ede9fe" font-size="5.5" font-family="ui-sans-serif,sans-serif" font-weight="700">MOV</text>
+  <text x="6" y="22" fill="#c4b5fd" font-size="5" font-family="ui-sans-serif,sans-serif" font-weight="700">ZIP</text>
+  <rect x="17" y="8" width="10" height="8" rx="1.5" fill="#ddd6fe" opacity="0.5"/>
+  <rect x="17" y="18" width="10" height="8" rx="1.5" fill="#ddd6fe" opacity="0.35"/>
+</svg>

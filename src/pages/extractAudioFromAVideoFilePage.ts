@@ -30,9 +30,9 @@ const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang)
 };
 
 /**
- * 从本地视频文件提取音轨并导出 WAV/MP3（F7 A1）。
- * 管线：读文件 → decodeAudioData（浏览器从视频容器解音轨）→ 提取声道 → 写 16-bit WAV 或 lamejs MP3。
- * 仅本地文件；不做 YouTube/URL 代抓。
+ * 通用视频抽音入口（hub）：本地一文件 → WAV/MP3。
+ * 管线以 `/vendor/extract-audio/stable-extract.js` 能力表为准（ISOBMFF demux+OPFS / MediaElement 回退）。
+ * 仅本地文件；不做 YouTube/URL 代抓。大批量请用 batch-extract-audio-from-video-files。
  * @param opts.lang 当前 UI 语言
  * @param opts.defaultLang 默认（无前缀）语言
  * @param opts.enabledLangs 启用语言列表
@@ -118,9 +118,17 @@ export const renderExtractAudioFromAVideoFilePage = (opts: {
 		'err_file',
 		'err_format',
 		'err_limit',
+		'err_container',
+		'err_codec',
+		'err_channels',
 		'err_decode',
 		'err_encoder',
 		'err_sample',
+		'err_unsupported',
+		'err_empty',
+		'stop',
+		'status_stopped',
+		'forced_mp3',
 		'sample_name',
 		'result',
 		'empty',
@@ -136,9 +144,10 @@ export const renderExtractAudioFromAVideoFilePage = (opts: {
 	const contentHtml = `
     <div id="extract-audio" class="tool-page-heading mb-3"><h1 class="h4">${tr('title')}</h1><p>${tr('desc')}</p></div>
     <section class="tool-panel" id="eaPanel">
-      <label class="tool-dropzone mb-3" id="eaDrop" for="eaFile"><input id="eaFile" type="file" accept="video/*,.mp4,.webm,.mov,.m4v,video/mp4,video/webm,video/quicktime"><span class="tool-dropzone-title">${tr('choose')}</span><span class="tool-dropzone-hint">${tr('hint')}</span><span id="eaName" class="tool-dropzone-file"></span></label>
+      <label class="tool-dropzone mb-3" id="eaDrop" for="eaFile"><input id="eaFile" type="file" accept="video/*,.mp4,.m4v,.mov,.m4a,.webm,.mkv,video/mp4,video/webm,video/quicktime,video/x-matroska"><span class="tool-dropzone-title">${tr('choose')}</span><span class="tool-dropzone-hint">${tr('hint')}</span><span id="eaName" class="tool-dropzone-file"></span></label>
       <div class="tools-bar d-flex flex-wrap mb-3" style="gap:.5rem">
         <button id="eaConvert" class="btn btn-primary" type="button">${tr('convert')}</button>
+        <button id="eaStop" class="btn btn-outline-danger" type="button" disabled>${tr('stop')}</button>
         <button id="eaDownload" class="btn btn-outline-primary" type="button" disabled>${tr('download_wav')}</button>
         <button id="eaSample" class="btn btn-outline-secondary" type="button">${tr('sample')}</button>
         <button id="eaClear" class="btn btn-outline-secondary" type="button">${tr('clear')}</button>
@@ -182,6 +191,14 @@ export const renderExtractAudioFromAVideoFilePage = (opts: {
 				href: 'https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/decodeAudioData',
 			},
 			{
+				label: 'MDN: WebCodecs AudioDecoder',
+				href: 'https://developer.mozilla.org/en-US/docs/Web/API/AudioDecoder',
+			},
+			{
+				label: 'MDN: Origin private file system (OPFS)',
+				href: 'https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system',
+			},
+			{
 				label: 'MDN: Media container formats',
 				href: 'https://developer.mozilla.org/en-US/docs/Web/Media/Formats',
 			},
@@ -214,12 +231,10 @@ export const renderExtractAudioFromAVideoFilePage = (opts: {
     const audio = $('eaAudio');
     /** 空状态提示（无自动样例时可见）。 */
     const emptyState = $('eaEmpty');
-    /** 单文件体积上限：80 MiB（视频容器通常比纯音频大）。 */
-    const MAX_BYTES = 80 * 1024 * 1024;
-    /** 时长上限：10 分钟。 */
-    const MAX_DURATION = 600;
     /** lamejs 脚本路径。 */
     const LAME_SRC = '/vendor/lamejs/lamejs.iife.js';
+    /** 稳内存抽轨共享库。 */
+    const STABLE_SRC = '/vendor/extract-audio/stable-extract.js';
     /** HUD 步骤顺序。 */
     const STEPS = ['read','decode','extract','write'];
     /** 当前选中文件。 */
@@ -238,6 +253,10 @@ export const renderExtractAudioFromAVideoFilePage = (opts: {
     let format = 'wav';
     /** lamejs 加载 Promise 缓存。 */
     let encoderPromise = null;
+    /** stable-extract 加载 Promise。 */
+    let stablePromise = null;
+    /** 当前任务取消器。 */
+    let fileAbort = null;
     /**
      * 用占位符填充文案。
      * @param {string} template 模板
@@ -269,6 +288,7 @@ export const renderExtractAudioFromAVideoFilePage = (opts: {
     function lock(on){
       busy = on;
       $('eaConvert').disabled = on;
+      $('eaStop').disabled = !on;
       $('eaSample').disabled = on;
       $('eaClear').disabled = on;
       fileInput.disabled = on;
@@ -351,8 +371,9 @@ export const renderExtractAudioFromAVideoFilePage = (opts: {
      */
     function isVideo(file){
       if (!file) return false;
-      if (/\\.(mp4|webm|mov|m4v)$/i.test(file.name)) return true;
+      if (/\\.(mp4|m4v|mov|m4a|webm|mkv|avi|mpeg|mpg|ogv)$/i.test(file.name)) return true;
       if (file.type && file.type.indexOf('video/') === 0) return true;
+      if (file.type && (file.type === 'audio/mp4' || file.type === 'audio/x-m4a')) return true;
       return false;
     }
     /**
@@ -385,188 +406,107 @@ export const renderExtractAudioFromAVideoFilePage = (opts: {
       return encoderPromise;
     }
     /**
-     * Float32 通道 → Int16 PCM。
-     * @param {Float32Array} data 浮点样本
-     * @returns {Int16Array}
+     * 懒加载稳内存抽轨库（依赖 lamejs）。
+     * @returns {Promise<any>}
      */
-    function toInt16(data){
-      const out = new Int16Array(data.length);
-      for (let i = 0; i < data.length; i++){
-        const value = Number.isFinite(data[i]) ? Math.max(-1, Math.min(1, data[i])) : 0;
-        out[i] = Math.round(value * (value < 0 ? 32768 : 32767));
+    function loadStable(){
+      if (window.OftExtractAudio && window.OftExtractAudio.extractFile) return Promise.resolve(window.OftExtractAudio);
+      if (!stablePromise){
+        stablePromise = loadEncoder().then(() => new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          let timeout;
+          const bad = () => {
+            clearTimeout(timeout);
+            script.remove();
+            stablePromise = null;
+            reject(Error('err_encoder'));
+          };
+          script.src = STABLE_SRC;
+          script.onerror = bad;
+          script.onload = () => {
+            clearTimeout(timeout);
+            if (window.OftExtractAudio && window.OftExtractAudio.extractFile) resolve(window.OftExtractAudio);
+            else bad();
+          };
+          timeout = setTimeout(bad, 20000);
+          document.head.appendChild(script);
+        }));
       }
-      return out;
+      return stablePromise;
     }
     /**
-     * AudioBuffer → 16-bit PCM WAV Blob。
-     * @param {AudioBuffer} buf 解码缓冲
-     * @returns {Blob}
-     */
-    function bufferToWav(buf){
-      const ch = buf.numberOfChannels;
-      const rate = buf.sampleRate;
-      const len = buf.length;
-      const dataSize = len * ch * 2;
-      const ab = new ArrayBuffer(44 + dataSize);
-      const view = new DataView(ab);
-      /**
-       * 写入 ASCII 四字符标记。
-       * @param {number} off 偏移
-       * @param {string} s 四字符
-       */
-      const wstr = (off, s) => { for (let i = 0; i < s.length; i++) view.setUint8(off + i, s.charCodeAt(i)); };
-      wstr(0, 'RIFF');
-      view.setUint32(4, 36 + dataSize, true);
-      wstr(8, 'WAVE');
-      wstr(12, 'fmt ');
-      view.setUint32(16, 16, true);
-      view.setUint16(20, 1, true);
-      view.setUint16(22, ch, true);
-      view.setUint32(24, rate, true);
-      view.setUint32(28, rate * ch * 2, true);
-      view.setUint16(32, ch * 2, true);
-      view.setUint16(34, 16, true);
-      wstr(36, 'data');
-      view.setUint32(40, dataSize, true);
-      let offset = 44;
-      for (let i = 0; i < len; i++){
-        for (let c = 0; c < ch; c++){
-          const s = Math.max(-1, Math.min(1, buf.getChannelData(c)[i]));
-          view.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7fff, true);
-          offset += 2;
-        }
-      }
-      return new Blob([ab], { type: 'audio/wav' });
-    }
-    /**
-     * AudioBuffer → MP3 Blob（CBR，分块编码并让出 UI）。
-     * @param {AudioBuffer} buf 缓冲
-     * @param {number} kbps 码率
-     * @param {(pct:number)=>void} onPct 写进度回调
-     * @returns {Promise<Blob>}
-     */
-    async function bufferToMp3(buf, kbps, onPct){
-      const lame = await loadEncoder();
-      const ch = buf.numberOfChannels >= 2 ? 2 : 1;
-      const enc = new lame.Mp3Encoder(ch, buf.sampleRate, kbps);
-      const left = toInt16(buf.getChannelData(0));
-      const right = ch === 2 ? toInt16(buf.getChannelData(1)) : null;
-      const block = 1152;
-      const parts = [];
-      let last = performance.now();
-      for (let i = 0; i < left.length; i += block){
-        const l = left.subarray(i, i + block);
-        const chunk = ch === 2 ? enc.encodeBuffer(l, right.subarray(i, i + block)) : enc.encodeBuffer(l);
-        if (chunk && chunk.length) parts.push(new Uint8Array(chunk));
-        if (performance.now() - last > 40){
-          onPct(70 + 25 * Math.min(1, (i + block) / left.length));
-          await yieldUi();
-          last = performance.now();
-        }
-      }
-      const end = enc.flush();
-      if (end && end.length) parts.push(new Uint8Array(end));
-      const blob = new Blob(parts, { type: 'audio/mpeg' });
-      if (!blob.size) throw Error('err_encoder');
-      return blob;
-    }
-    /**
-     * 将解码结果规范为 1–2 声道 AudioBuffer（多声道取前两路）。
-     * @param {AudioBuffer} decoded 原始解码
-     * @returns {AudioBuffer}
-     */
-    function extractChannels(decoded){
-      const ch = Math.min(2, Math.max(1, decoded.numberOfChannels));
-      if (decoded.numberOfChannels === ch) return decoded;
-      const Offline = window.OfflineAudioContext || window.webkitOfflineAudioContext;
-      const ctx = new Offline(ch, decoded.length, decoded.sampleRate);
-      const out = ctx.createBuffer(ch, decoded.length, decoded.sampleRate);
-      for (let c = 0; c < ch; c++) out.copyToChannel(decoded.getChannelData(c), c);
-      return out;
-    }
-    /**
-     * 主提取管线：Read → Decode → Extract → Write。
+     * 主提取管线：小文件 decode；大文件流式 MP3。
      */
     async function extract(){
       if (busy) return;
       discard();
       if (!selected){ fail('empty'); return; }
       if (!isVideo(selected)){ fail('err_format'); return; }
+      if (fileAbort){ try { fileAbort.abort(); } catch (_) {} }
+      fileAbort = typeof AbortController !== 'undefined' ? new AbortController() : null;
       lock(true);
       hud.hidden = false;
       hud.className = 'bcw-hud is-on mb-3';
       hud.setAttribute('role', 'status');
       $('eaCurrent').textContent = selected.name;
       started = performance.now();
-      /**
-       * 刷新已用时间文案。
-       */
       const clock = () => {
         $('eaTime').textContent = fill(M.elapsed, { s: ((performance.now() - started) / 1000).toFixed(1) });
       };
       clock();
       timer = setInterval(clock, 100);
       try {
-        progress(2, 'read');
-        await yieldUi();
-        if (selected.size > MAX_BYTES) throw Error('err_limit');
-        const bytes = await selected.arrayBuffer();
-        progress(18, 'decode');
-        await yieldUi();
-        const Offline = window.OfflineAudioContext || window.webkitOfflineAudioContext;
-        if (!Offline) throw Error('err_decode');
-        let decoded;
-        try {
-          decoded = await new Offline(1, 1, 44100).decodeAudioData(bytes.slice(0));
-        } catch (e) {
-          throw Error('err_decode');
+        const api = await loadStable();
+        if (api.supportedAccept) fileInput.accept = api.supportedAccept();
+        if (api.classifyFile){
+          const c = api.classifyFile(selected);
+          if (c && c.path === 'reject') throw Error(c.reason || 'err_limit');
         }
-        if (!decoded || !decoded.length) throw Error('err_decode');
-        if (decoded.duration > MAX_DURATION + 0.01) throw Error('err_limit');
-        if (decoded.numberOfChannels < 1) throw Error('err_format');
-        progress(45, 'extract');
-        await yieldUi();
-        const extracted = extractChannels(decoded);
-        if (extracted.numberOfChannels > 2) throw Error('err_limit');
-        progress(65, 'write');
-        await yieldUi();
-        let blob;
-        if (format === 'mp3'){
-          const kbps = Number(bitrateEl.value);
-          if (![128, 192, 320].includes(kbps)) throw Error('err_encoder');
-          blob = await bufferToMp3(extracted, kbps, pct => progress(pct, 'write'));
-          outExt = 'mp3';
-        } else {
-          blob = bufferToWav(extracted);
-          outExt = 'wav';
-        }
-        outputUrl = URL.createObjectURL(blob);
+        const result = await api.extractFile(selected, {
+          format: format,
+          bitrate: Number(bitrateEl.value) || 192,
+          signal: fileAbort ? fileAbort.signal : undefined,
+          onProgress: (pct, step) => {
+            progress(pct, step === 'done' ? 'done' : (step || 'write'));
+          }
+        });
+        outputUrl = URL.createObjectURL(result.blob);
+        outExt = result.ext;
         audio.src = outputUrl;
         $('eaOutput').hidden = false;
-        $('eaResult').textContent = fill(M.result, {
-          seconds: extracted.duration.toFixed(2),
-          channels: extracted.numberOfChannels,
-          rate: extracted.sampleRate,
-          format: format === 'mp3' ? 'MP3' : 'WAV',
-          output: (blob.size / 1024).toFixed(1)
+        let line = fill(M.result, {
+          seconds: Number(result.duration).toFixed(2),
+          channels: result.channels,
+          rate: result.sampleRate,
+          format: result.ext === 'mp3' ? 'MP3' : 'WAV',
+          output: (result.blob.size / 1024).toFixed(1)
         });
+        if (result.forcedMp3 && M.forced_mp3) line = line + ' ' + M.forced_mp3;
+        $('eaResult').textContent = line;
+        if (result.ext === 'mp3'){ format = 'mp3'; paintFormat('mp3'); }
         progress(100, 'done');
         hud.classList.remove('is-on');
         hud.classList.add('is-done');
         if (emptyState) emptyState.hidden = true;
       } catch (e) {
+        const msg = e && e.message ? e.message : '';
         discard();
-        fail(e && M[e.message] ? e.message : 'failed');
+        if (msg === 'aborted' || (e && e.name === 'AbortError')) fail('status_stopped');
+        else fail(e && M[msg] ? msg : 'failed');
       } finally {
         clearInterval(timer);
         clock();
         lock(false);
+        fileAbort = null;
       }
     }
     /**
-     * 用 MediaRecorder 合成约 1.5 秒带音轨的短 WebM（样例）。
-     * @returns {Promise<File>}
+     * 停止当前提取。
      */
+    function stopExtract(){
+      if (!busy || !fileAbort) return;
+      try { fileAbort.abort(); } catch (_) {}
+    }
     function makeSampleVideo(){
       return new Promise((resolve, reject) => {
         if (typeof MediaRecorder === 'undefined' || !HTMLCanvasElement.prototype.captureStream){
@@ -657,6 +597,7 @@ export const renderExtractAudioFromAVideoFilePage = (opts: {
     });
     bitrateEl.addEventListener('change', () => { discard(); hud.hidden = true; });
     $('eaConvert').addEventListener('click', extract);
+    $('eaStop').addEventListener('click', stopExtract);
     $('eaSample').addEventListener('click', loadSample);
     $('eaClear').addEventListener('click', () => choose(null));
     $('eaDownload').addEventListener('click', () => {

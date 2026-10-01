@@ -1,0 +1,34 @@
+{
+  "slug": "extract-audio-from-a-mov-file",
+  "path": "/tools/extract-audio-from-a-mov-file",
+  "updatedAt": "2026-10-01T05:30:52.924Z",
+  "launchedAt": "2026-10-01T05:25:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_extract_audio_from_a_mov_file_title",
+  "homeTitleKey": "tool_extract_audio_from_a_mov_file_title",
+  "homeDescKey": "tool_extract_audio_from_a_mov_file_desc",
+  "faqPrefix": "tool_extract_audio_from_a_mov_file",
+  "related": [
+    "batch-extract-audio-from-mov-files",
+    "extract-audio-from-a-webm-file",
+    "extract-audio-from-an-mkv-file",
+    "batch-extract-audio-from-webm-files",
+    "batch-extract-audio-from-mkv-files",
+    "extract-audio-from-a-video-file",
+    "extract-audio-from-an-mp4-file",
+    "batch-extract-audio-from-video-files",
+    "trim-an-audio-clip-and-export"
+  ],
+  "logo": "/icons/tools/extract-audio-from-a-mov-file.svg",
+  "page": {
+    "module": "../pages/extractAudioFromAMovFilePage",
+    "export": "renderExtractAudioFromAMovFilePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

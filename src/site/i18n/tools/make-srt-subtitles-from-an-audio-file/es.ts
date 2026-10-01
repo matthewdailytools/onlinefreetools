@@ -1,84 +1,156 @@
 import type { SiteLangDict } from '../../../types';
 
 /**
- * es copy for make-srt-subtitles-from-an-audio-file (T1). SpeechRecognition → timed SRT; not cloud Whisper; honest limits.
+ * Spanish (es) copy for make-srt-subtitles-from-an-audio-file.
+ * Local search: audio a srt / subtítulos desde audio / whisper en el navegador.
+ * On-device Whisper tiny; first ~45 MB model download; editable SRT; optional mic.
+ * Privacy: sin subir al servidor; files stay on the device. How labels match UI buttons.
  */
 const es: SiteLangDict = {
   tool_make_srt_subtitles_from_an_audio_file_title: 'Crear subtítulos SRT desde un archivo de audio',
-  tool_make_srt_subtitles_from_an_audio_file_desc: 'Crea subtítulos SRT con tiempos desde voz local con browser speech recognition del navegador si está disponible, o dicta con el micrófono. No es un clon de a large speech model.',
-  tool_make_srt_subtitles_from_an_audio_file_description: 'Crea subtítulos SRT desde un archivo de audio en el navegador con browser speech recognition cuando exista. Pasos: elige audio local, elige idioma, Crear SRT al reproducir o Dictar con micrófono, edita la vista previa, descarga .srt. Ejemplo: Cargar muestra abre un tono corto y ejecuta la ruta de reproducción—hace falta voz real o el micrófono. Los tiempos de cue son estimaciones al llegar resultados finales, no alineación forzada tipo a large speech model. No es un clon de a large speech model ni carga un gran modelo offline model. Muchos navegadores no subtitulan archivos de forma fiable sin conexión. Esta página no sube tu archivo para ASR en servidor.',
-  tool_make_srt_subtitles_from_an_audio_file_article: 'People search for audio to srt and generate subtitles from audio expecting large-model-class timed captions. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses browser speech recognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), stamps cues from recognition timing, and formats standard SRT—or you can dictate live with the mic. If browser speech recognition is missing, the page says so clearly. Output is editable SRT you can download—not plain TXT only, and not burned into video. Related tools cover plain transcription and waveform video. Keep expectations honest: cue times and accuracy vary by browser.',
-  tool_make_srt_subtitles_from_an_audio_file_choose: 'Choose an audio file',
-  tool_make_srt_subtitles_from_an_audio_file_hint: 'Optional local WAV, MP3 or M4A up to about 40 MiB / 3 minutes. File subtitling depends on browser browser speech recognition and often needs speakers plus microphone permission.',
-  tool_make_srt_subtitles_from_an_audio_file_lang_label: 'Recognition language',
-  tool_make_srt_subtitles_from_an_audio_file_lang_hint: 'Passed to browser speech recognition.lang. Pick the language spoken in the recording or into the mic.',
-  tool_make_srt_subtitles_from_an_audio_file_convert: 'Crear SRT al reproducir',
+  tool_make_srt_subtitles_from_an_audio_file_desc:
+    'Convierte una grabación local en pistas .srt con tiempos usando Whisper en el dispositivo: los archivos no salen del navegador y no se suben al servidor.',
+  tool_make_srt_subtitles_from_an_audio_file_description:
+    'Genera subtítulos SRT con tiempos a partir de un audio o vídeo local en el navegador con Whisper en el dispositivo: los archivos permanecen en tu equipo y no se suben al servidor. Pasos: elige un archivo de voz, idioma (o auto), Crear SRT, edita las pistas y descarga el .srt. Ejemplo: Cargar muestra pasa un clip corto por Whisper y muestra el SRT. La primera vez descarga unos 45 MB de modelo (luego se cachea). No es una API en la nube; los tiempos salen de los segmentos de Whisper.',
+  tool_make_srt_subtitles_from_an_audio_file_article:
+    'Quien busca «audio a srt» o «subtítulos desde audio» quiere un archivo de subtítulos con tiempos descargable desde una grabación local. Esta herramienta ejecuta Whisper tiny en el dispositivo con scripts del mismo origen: decodifica en la pestaña, obtiene marcas de segmento, formatea SRT editable y descarga. Acepta vídeo con pista de audio si el navegador lo decodifica. «Dictar con micrófono» usa Web Speech solo si está disponible—sin esa API, Crear SRT sigue funcionando. La primera vez descarga unos 45 MB y los cachea. Los tiempos son límites de segmento de Whisper, no alineación fotograma a fotograma, y no incrusta subtítulos en el vídeo.',
+  tool_make_srt_subtitles_from_an_audio_file_choose: 'Elegir un archivo de voz',
+  tool_make_srt_subtitles_from_an_audio_file_hint:
+    'WAV, MP3, M4A u otro audio que el navegador pueda decodificar—hasta unos 120 MiB y unas 2 horas tras decodificar. Los archivos largos van por ventanas deslizantes (ventana n de N; Detener guarda SRT parcial si hay cues). El vídeo con pista de audio vale si la decodificación funciona; si no, verás un error claro.',
+  tool_make_srt_subtitles_from_an_audio_file_lang_label: 'Idioma del habla',
+  tool_make_srt_subtitles_from_an_audio_file_lang_hint:
+    'Auto deja que Whisper detecte el idioma. Elige uno si lo conoces para pistas más estables. El dictado por micrófono usa la misma opción cuando Web Speech está disponible.',
+  tool_make_srt_subtitles_from_an_audio_file_lang_auto: 'Detección automática',
+  tool_make_srt_subtitles_from_an_audio_file_lang_en: 'Inglés',
+  tool_make_srt_subtitles_from_an_audio_file_lang_zh: 'Chino',
+  tool_make_srt_subtitles_from_an_audio_file_lang_es: 'Español',
+  tool_make_srt_subtitles_from_an_audio_file_lang_ja: 'Japonés',
+  tool_make_srt_subtitles_from_an_audio_file_lang_de: 'Alemán',
+  tool_make_srt_subtitles_from_an_audio_file_lang_fr: 'Francés',
+  tool_make_srt_subtitles_from_an_audio_file_lang_pt: 'Portugués',
+  tool_make_srt_subtitles_from_an_audio_file_lang_id: 'Indonesio',
+  tool_make_srt_subtitles_from_an_audio_file_lang_ar: 'Árabe',
+  tool_make_srt_subtitles_from_an_audio_file_lang_ru: 'Ruso',
+  tool_make_srt_subtitles_from_an_audio_file_convert: 'Crear SRT',
   tool_make_srt_subtitles_from_an_audio_file_mic: 'Dictar con micrófono',
   tool_make_srt_subtitles_from_an_audio_file_stop: 'Detener',
   tool_make_srt_subtitles_from_an_audio_file_download: 'Descargar SRT',
   tool_make_srt_subtitles_from_an_audio_file_sample: 'Cargar muestra',
   tool_make_srt_subtitles_from_an_audio_file_clear: 'Borrar',
-  tool_make_srt_subtitles_from_an_audio_file_advanced: 'Honest limits',
-  tool_make_srt_subtitles_from_an_audio_file_settings_hint: 'browser speech recognition usually listens to the microphone—not a private WebAudio tap. Playing a file may work only if the mic hears the speakers. Cue times are estimated from when finals arrive, not a large speech model forced alignment. This is not a large speech model and does not download a large model.',
-  tool_make_srt_subtitles_from_an_audio_file_progress: 'Subtitle progress',
-  tool_make_srt_subtitles_from_an_audio_file_read: 'Read',
-  tool_make_srt_subtitles_from_an_audio_file_decode: 'Decode',
-  tool_make_srt_subtitles_from_an_audio_file_listen: 'Listen',
-  tool_make_srt_subtitles_from_an_audio_file_write: 'Write SRT',
-  tool_make_srt_subtitles_from_an_audio_file_done: 'Ready. Edit the SRT if needed, then Download SRT.',
-  tool_make_srt_subtitles_from_an_audio_file_failed: 'Could not build SRT. Try Dictate with mic, another browser, or a clearer voice recording.',
-  tool_make_srt_subtitles_from_an_audio_file_elapsed: '{s}s elapsed',
-  tool_make_srt_subtitles_from_an_audio_file_preview: 'SRT preview',
-  tool_make_srt_subtitles_from_an_audio_file_interim_label: 'Interim (live)',
-  tool_make_srt_subtitles_from_an_audio_file_result: '{cues} cues · {chars} characters',
-  tool_make_srt_subtitles_from_an_audio_file_sample_name: 'srt-sample',
-  tool_make_srt_subtitles_from_an_audio_file_empty: 'Choose a local audio file, or use Dictate with mic.',
-  tool_make_srt_subtitles_from_an_audio_file_empty_state: 'No SRT yet. Drop a voice recording and Make SRT while playing, or click Dictate with mic. Not a a large speech model clone—browser browser speech recognition only, with honest timing limits.',
-  tool_make_srt_subtitles_from_an_audio_file_file_label: 'Audio: {name}',
-  tool_make_srt_subtitles_from_an_audio_file_status_unsupported: 'This browser does not expose browser speech recognition / webkitbrowser speech recognition. Try Chrome or Edge, or use a different device. True offline a large speech model-style ASR is not bundled here.',
-  tool_make_srt_subtitles_from_an_audio_file_status_listening: 'Playback finished with little or no text. browser speech recognition often needs the microphone to hear the speakers—try Dictate with mic, raise volume, or allow mic access.',
-  tool_make_srt_subtitles_from_an_audio_file_status_mic: 'Listening to the microphone… speak clearly, then Stop. Cue times use session elapsed time.',
-  tool_make_srt_subtitles_from_an_audio_file_status_playing: 'Playing the file and building timed cues via browser speech recognition (mic path)…',
-  tool_make_srt_subtitles_from_an_audio_file_err_file: 'Choose one local audio file, or use Dictate with mic.',
-  tool_make_srt_subtitles_from_an_audio_file_err_format: 'Unsupported audio type. Use a common format your browser can decode.',
-  tool_make_srt_subtitles_from_an_audio_file_err_limit: 'Use audio up to about 40 MiB and 3 minutes.',
-  tool_make_srt_subtitles_from_an_audio_file_err_decode: 'The browser could not decode this audio file.',
-  tool_make_srt_subtitles_from_an_audio_file_err_unsupported: 'browser speech recognition is unavailable in this browser.',
-  tool_make_srt_subtitles_from_an_audio_file_err_permission: 'Microphone or speech permission was denied. Allow access or use another browser.',
+  tool_make_srt_subtitles_from_an_audio_file_source_play: 'Reproducir audio original',
+  tool_make_srt_subtitles_from_an_audio_file_advanced: 'Límites honestos',
+  tool_make_srt_subtitles_from_an_audio_file_settings_hint:
+    'Whisper tiny corre en esta pestaña desde /vendor/whisper del mismo origen. El primer Crear SRT descarga unos 45 MB una vez y reutiliza la caché. Los tiempos siguen segmentos de Whisper—no alineación fotograma a fotograma. El dictado es Web Speech opcional y puede usar el servicio de voz del navegador. Esta herramienta no incrusta subtítulos en el vídeo.',
+  tool_make_srt_subtitles_from_an_audio_file_progress: 'Progreso de subtítulos',
+  tool_make_srt_subtitles_from_an_audio_file_hud_title: 'Progreso de subtítulos',
+  tool_make_srt_subtitles_from_an_audio_file_hud_pct: '{pct}%',
+  tool_make_srt_subtitles_from_an_audio_file_hud_next: 'Listo. Siguiente: edita las pistas si hace falta y pulsa Descargar SRT.',
+  tool_make_srt_subtitles_from_an_audio_file_hud_fail_title: 'No se pudo terminar el SRT',
+  tool_make_srt_subtitles_from_an_audio_file_hud_fail_hint:
+    'Prueba otro archivo, un clip más corto o Cargar muestra. Los archivos no salen del dispositivo.',
+  tool_make_srt_subtitles_from_an_audio_file_hud_model_progress: 'Descargando {file} — {pct}%',
+  tool_make_srt_subtitles_from_an_audio_file_hud_working: 'Iniciando…',
+  tool_make_srt_subtitles_from_an_audio_file_model: 'Modelo',
+  tool_make_srt_subtitles_from_an_audio_file_decode: 'Decodificar',
+  tool_make_srt_subtitles_from_an_audio_file_transcribe: 'Transcribir',
+  tool_make_srt_subtitles_from_an_audio_file_write: 'Escribir SRT',
+  tool_make_srt_subtitles_from_an_audio_file_done: 'Listo. Edita el SRT si hace falta y pulsa Descargar SRT.',
+  tool_make_srt_subtitles_from_an_audio_file_failed:
+    'No se pudo crear el SRT. Prueba Cargar muestra, una grabación más clara o un clip de menos de unas 2 horas.',
+  tool_make_srt_subtitles_from_an_audio_file_elapsed: '{s}s transcurridos',
+  tool_make_srt_subtitles_from_an_audio_file_preview: 'Vista previa SRT',
+  tool_make_srt_subtitles_from_an_audio_file_interim_label: 'Provisional (micrófono)',
+  tool_make_srt_subtitles_from_an_audio_file_result: '{cues} pistas · {chars} caracteres',
+  tool_make_srt_subtitles_from_an_audio_file_sample_name: 'make-srt-subtitles-from-an-audio-file',
+  tool_make_srt_subtitles_from_an_audio_file_empty:
+    'Elige un archivo de voz local, o usa Dictar con micrófono cuando esté disponible.',
+  tool_make_srt_subtitles_from_an_audio_file_empty_state:
+    'Aún no hay SRT. Suelta un archivo de voz y pulsa Crear SRT. Cargar muestra pasa un clip corto por Whisper en el dispositivo. Los archivos no se suben al servidor.',
+  tool_make_srt_subtitles_from_an_audio_file_file_label: 'Medio: {name}',
+  tool_make_srt_subtitles_from_an_audio_file_status_mic_unsupported:
+    'Dictar con micrófono no está disponible en este navegador (sin Web Speech API). Crear SRT con Whisper sigue funcionando con archivos locales.',
+  tool_make_srt_subtitles_from_an_audio_file_status_listening:
+    'Whisper devolvió poco o ningún texto de voz. Prueba una grabación más clara o elige el idioma hablado.',
+  tool_make_srt_subtitles_from_an_audio_file_status_mic:
+    'Escuchando el micrófono… habla con claridad y pulsa Detener. Los tiempos usan el tiempo de la sesión.',
+  tool_make_srt_subtitles_from_an_audio_file_status_model:
+    'Cargando el modelo Whisper en el dispositivo (la primera vez puede descargar ~45 MB)…',
+  tool_make_srt_subtitles_from_an_audio_file_status_decode: 'Decodificando audio en esta pestaña…',
+  tool_make_srt_subtitles_from_an_audio_file_status_transcribe: 'Transcribiendo con Whisper…',
+  tool_make_srt_subtitles_from_an_audio_file_status_transcribe_window: 'Transcribiendo ventana {n} de {total}…',
+  tool_make_srt_subtitles_from_an_audio_file_status_stopped: 'Detenido. Se conserva el SRT parcial si ya había cues.',
+  tool_make_srt_subtitles_from_an_audio_file_status_write: 'Escribiendo pistas SRT con tiempos…',
+  tool_make_srt_subtitles_from_an_audio_file_err_file: 'Elige un archivo de audio o vídeo local, o usa Cargar muestra.',
+  tool_make_srt_subtitles_from_an_audio_file_err_format:
+    'Tipo de medio no admitido. Usa audio habitual, o vídeo con pista de audio que el navegador pueda decodificar.',
+  tool_make_srt_subtitles_from_an_audio_file_err_limit: 'Usa medios de hasta unos 120 MiB y unas 2 horas tras decodificar. En móviles con poca memoria, clips muy largos pueden fallar—recorta o comprime antes.',
+  tool_make_srt_subtitles_from_an_audio_file_err_decode:
+    'El navegador no pudo decodificar este archivo como audio. Un vídeo sin pista usable o un códec no admitido fallan aquí.',
+  tool_make_srt_subtitles_from_an_audio_file_err_unsupported:
+    'Las APIs de Web Audio o de voz necesarias para esta vía no están disponibles en este navegador.',
+  tool_make_srt_subtitles_from_an_audio_file_err_permission:
+    'Se denegó el permiso del micrófono. Autorízalo para Dictar con micrófono, o usa Crear SRT con un archivo.',
+  tool_make_srt_subtitles_from_an_audio_file_err_empty_srt:
+    'Whisper no produjo texto de voz usable. Prueba otro clip o otra opción de idioma.',
+  tool_make_srt_subtitles_from_an_audio_file_err_model:
+    'No se pudo cargar el modelo Whisper en el dispositivo desde este sitio. Mantén la conexión para la primera descarga e inténtalo de nuevo.',
   tool_make_srt_subtitles_from_an_audio_file_how_title: 'Cómo crear subtítulos SRT desde un archivo de audio',
-  tool_make_srt_subtitles_from_an_audio_file_how_body: 'Use browser speech recognition on a local file playthrough or live mic dictation, stamp cues, then download .srt.',
-  tool_make_srt_subtitles_from_an_audio_file_how_item_1: 'Choose a local voice recording (or Load sample), and pick a recognition language.',
-  tool_make_srt_subtitles_from_an_audio_file_how_item_2: 'Click Make SRT while playing, allow microphone if prompted, and keep speakers audible—or click Dictate with mic instead.',
-  tool_make_srt_subtitles_from_an_audio_file_how_item_3: 'Watch interim text; finals become numbered SRT cues with estimated start/end times. Press Stop when dictating.',
-  tool_make_srt_subtitles_from_an_audio_file_how_item_4: 'Edit the SRT preview if needed, then Download SRT.',
-  tool_make_srt_subtitles_from_an_audio_file_why_choose_title: 'Por qué elegir nuestras herramientas Crear subtítulos SRT desde un archivo de audio',
-  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_1: 'Clear dual path: file playthrough attempt plus mic dictation fallback, both emitting .srt.',
-  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_2: 'Honest copy: not a large speech model, no huge offline model model, timing is best-effort and stated up front.',
-  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_3: 'You can edit the SRT before downloading.',
-  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_4: 'Nearby tools cover plain TXT transcription and waveform video without forcing a hub editor.',
-  tool_make_srt_subtitles_from_an_audio_file_rules_title: 'SRT rules and honest browser limits',
-  tool_make_srt_subtitles_from_an_audio_file_rules_body: 'This page uses browser speech recognition when present. It is not an offline large speech model. Cue times come from recognition timing clocks. File upload subtitling is best-effort and may fall back to live mic.',
-  tool_make_srt_subtitles_from_an_audio_file_rules_item_1: 'browser speech recognition must exist. Otherwise the unsupported banner stays visible and primary actions stay disabled.',
-  tool_make_srt_subtitles_from_an_audio_file_rules_item_2: 'Recognition typically uses the microphone. Playing a file does not guarantee a private decode→subtitle path.',
-  tool_make_srt_subtitles_from_an_audio_file_rules_item_3: 'Optional file up to about 40 MiB / 3 minutes. Output is standard SRT—not burned-in video captions.',
-  tool_make_srt_subtitles_from_an_audio_file_rules_item_4: 'This page does not upload your file for server-side speech recognition. Browser vendors may still send mic audio to their speech service—check your browser privacy settings.',
-  tool_make_srt_subtitles_from_an_audio_file_example_title: 'Try the sample playthrough path',
-  tool_make_srt_subtitles_from_an_audio_file_example: 'Load sample attaches a short tone WAV and runs Make SRT while playing. A tone will not produce words—use a real voice file or Dictate with mic to see cues. Playback never auto-starts after a finished SRT.',
-  tool_make_srt_subtitles_from_an_audio_file_usecases_title: 'When this helps',
-  tool_make_srt_subtitles_from_an_audio_file_usecase_1: 'You want a rough timed .srt for a short voice note in a Chromium browser without installing desktop software.',
-  tool_make_srt_subtitles_from_an_audio_file_usecase_2: 'File loopback fails, so you dictate the same content live with the mic and download SRT with session-relative times.',
-  tool_make_srt_subtitles_from_an_audio_file_usecase_3: 'Necesitas un SRT inicial del reconocimiento de voz para editar antes de publicar.',
-  tool_make_srt_subtitles_from_an_audio_file_faq_q1: '¿Es un clon de a large speech model o una subida ASR a la nube?',
-  tool_make_srt_subtitles_from_an_audio_file_faq_a1: 'No. No incluye a large offline speech model ni sube tu archivo a nuestros servidores para ASR. Usa browser speech recognition del navegador cuando esté disponible.',
-  tool_make_srt_subtitles_from_an_audio_file_faq_q2: '¿Qué tan precisos son los tiempos SRT?',
-  tool_make_srt_subtitles_from_an_audio_file_faq_a2: 'Son estimaciones según cuándo llegan los resultados finales—no alineación forzada fotograma a fotograma.',
-  tool_make_srt_subtitles_from_an_audio_file_faq_q3: 'Why did my uploaded file produce little or no text?',
-  tool_make_srt_subtitles_from_an_audio_file_faq_a3: 'Most browsers listen via the microphone, not a private WebAudio tap. Playthrough needs the mic to hear the speakers, plus permission. If that fails, use Dictate with mic.',
-  tool_make_srt_subtitles_from_an_audio_file_faq_q4: '¿En qué se diferencia de Transcribir un archivo de audio a texto?',
-  tool_make_srt_subtitles_from_an_audio_file_faq_a4: 'Esa página descarga TXT sin tiempos. Esta formatea cues SRT numerados con inicio y fin.',
-  tool_make_srt_subtitles_from_an_audio_file_faq_q5: 'Is my audio uploaded?',
-  tool_make_srt_subtitles_from_an_audio_file_faq_a5: 'This page does not upload the file for processing. browser speech recognition may use the microphone and a browser vendor service. Keep sensitive material offline if that is unacceptable.',
-  tool_make_srt_subtitles_from_an_audio_file_faq_q6: 'Can this burn subtitles into a video file?',
-  tool_make_srt_subtitles_from_an_audio_file_faq_a6: 'No. It only downloads a .srt sidecar. For a waveform-style video from audio, see the related waveform video tool—not burned-in captions.',
+  tool_make_srt_subtitles_from_an_audio_file_how_body:
+    'Elige un archivo de voz local, ejecuta Whisper en el dispositivo para obtener pistas con tiempos, edita la vista previa y descarga el .srt.',
+  tool_make_srt_subtitles_from_an_audio_file_how_item_1:
+    'Elige un archivo de voz local (o Cargar muestra) y selecciona Detección automática o un idioma del habla.',
+  tool_make_srt_subtitles_from_an_audio_file_how_item_2:
+    'Pulsa Crear SRT. Mira la tarjeta de progreso: Modelo, Decodificar, Transcribir y luego Escribir SRT.',
+  tool_make_srt_subtitles_from_an_audio_file_how_item_3:
+    'Opcional: pulsa Dictar con micrófono si el navegador admite Web Speech, habla y luego Detener.',
+  tool_make_srt_subtitles_from_an_audio_file_how_item_4: 'Edita la vista previa SRT si hace falta y pulsa Descargar SRT.',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_title: 'Por qué usar Crear subtítulos SRT desde un archivo de audio',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_1:
+    'Whisper tiny en el dispositivo desde archivos vendor del mismo origen—tu grabación no se sube a nuestros servidores para ASR.',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_2:
+    'Coste inicial claro: unos 45 MB de modelo una sola vez, con tarjeta de progreso Modelo / Decodificar / Transcribir / Escribir SRT.',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_3:
+    'Vista previa .srt estándar editable antes de descargar—no solo TXT plano ni incrustado en el vídeo.',
+  tool_make_srt_subtitles_from_an_audio_file_why_choose_item_4:
+    'Herramientas cercanas cubren transcripción en texto plano y vídeo de forma de onda sin forzar un editor central.',
+  tool_make_srt_subtitles_from_an_audio_file_rules_title: 'Reglas SRT y límites de Whisper en el dispositivo',
+  tool_make_srt_subtitles_from_an_audio_file_rules_body:
+    'Esta herramienta ejecuta Whisper tiny en el navegador con recursos del mismo origen. Los tiempos vienen de segmentos del modelo. Los topes de tamaño y duración mantienen la pestaña usable.',
+  tool_make_srt_subtitles_from_an_audio_file_rules_item_1:
+    'La vía principal necesita decodificación Web Audio y la pila Whisper bajo /vendor/whisper. El dictado por micrófono requiere Web Speech y es opcional.',
+  tool_make_srt_subtitles_from_an_audio_file_rules_item_2:
+    'Unos 120 MiB de tamaño y unas 2 horas tras decodificar, en ventanas deslizantes. Archivos más largos o grandes muestran un error de límite claro; móviles con poca memoria pueden necesitar un clip más corto.',
+  tool_make_srt_subtitles_from_an_audio_file_rules_item_3:
+    'Las marcas de tiempo son límites de segmento de Whisper—útiles para reproductores, no alineación forzada fotograma a fotograma.',
+  tool_make_srt_subtitles_from_an_audio_file_rules_item_4:
+    'Tu archivo permanece en el dispositivo para Whisper y no se sube al servidor. El dictado opcional puede usar el servicio de voz del navegador—revisa la privacidad del navegador.',
+  tool_make_srt_subtitles_from_an_audio_file_example_title: 'Prueba el clip de voz de muestra',
+  tool_make_srt_subtitles_from_an_audio_file_example:
+    'Cargar muestra obtiene un WAV hablado corto, ejecuta Crear SRT con Whisper en el dispositivo y rellena la vista previa. La página no lanza la muestra al abrir para no forzar la descarga inicial de ~45 MB a cada visitante.',
+  tool_make_srt_subtitles_from_an_audio_file_usecases_title: 'Cuándo ayuda',
+  tool_make_srt_subtitles_from_an_audio_file_usecase_1:
+    'Tienes una nota de voz o entrevista en WAV/MP3 y necesitas un .srt descargable para un reproductor o editor.',
+  tool_make_srt_subtitles_from_an_audio_file_usecase_2:
+    'Tienes un vídeo corto con pista de audio y quieres subtítulos con tiempos sin subir el archivo a un sitio ASR en la nube.',
+  tool_make_srt_subtitles_from_an_audio_file_usecase_3:
+    'Necesitas un SRT inicial de Whisper en el dispositivo para editar antes de publicar, o recurrir a Dictar con micrófono si no tienes archivo.',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q1: '¿Es Whisper local o una subida a la nube?',
+  tool_make_srt_subtitles_from_an_audio_file_faq_a1:
+    'Crear SRT ejecuta Whisper tiny en el dispositivo desde archivos vendor del mismo origen. Tu audio o vídeo permanece en el dispositivo y no se sube a nuestros servidores para reconocimiento. Dictar con micrófono (opcional) usa la Web Speech API del navegador, que puede implicar el servicio de voz del fabricante.',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q2: '¿Por qué el primer Crear SRT es lento o grande?',
+  tool_make_srt_subtitles_from_an_audio_file_faq_a2:
+    'La primera vez descarga unos 45 MB del modelo Whisper tiny y WASM de este sitio a la caché del navegador. Las siguientes reutilizan esa caché. El progreso aparece en el paso Modelo.',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q3: '¿Qué tan precisos son los tiempos del SRT?',
+  tool_make_srt_subtitles_from_an_audio_file_faq_a3:
+    'Siguen el inicio y el fin de cada segmento de Whisper—suficientes para la mayoría de reproductores y editores, no alineación forzada fotograma a fotograma de un flujo de estudio.',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q4: '¿Se sube mi audio a un servidor?',
+  tool_make_srt_subtitles_from_an_audio_file_faq_a4:
+    'No en la vía Whisper con archivo: la decodificación y la transcripción ocurren en tu pestaña; los archivos permanecen en el dispositivo y no se suben a nuestros servidores. Solo necesitas conexión para obtener los scripts del modelo la primera vez.',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q5: '¿En qué se diferencia de Transcribir un archivo de audio a texto?',
+  tool_make_srt_subtitles_from_an_audio_file_faq_a5:
+    'Esa herramienta relacionada se centra en el texto de transcripción. Esta formatea pistas SRT numeradas con inicio y fin para reproductores y editores que esperan .srt.',
+  tool_make_srt_subtitles_from_an_audio_file_faq_q6: '¿Puede incrustar subtítulos en un archivo de vídeo?',
+  tool_make_srt_subtitles_from_an_audio_file_faq_a6:
+    'No. Solo descarga un .srt aparte. Para un vídeo estilo forma de onda desde audio, mira la herramienta relacionada—tampoco son subtítulos quemados.',
 };
 export default es;

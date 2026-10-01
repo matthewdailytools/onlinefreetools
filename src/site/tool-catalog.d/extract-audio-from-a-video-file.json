@@ -1,7 +1,6 @@
 {
   "slug": "extract-audio-from-a-video-file",
   "path": "/tools/extract-audio-from-a-video-file",
-  "updatedAt": "2026-09-21T01:00:00.000Z",
   "launchedAt": "2026-09-20T22:33:00.000Z",
   "category": "developer",
   "primaryTopic": "sound-editor",
@@ -12,10 +11,17 @@
   "homeDescKey": "tool_extract_audio_from_a_video_file_desc",
   "faqPrefix": "tool_extract_audio_from_a_video_file",
   "related": [
-    "add-an-audio-track-to-a-video",
-    "trim-an-audio-clip-and-export",
-    "make-a-waveform-video-from-audio"
+    "extract-audio-from-an-mp4-file",
+    "extract-audio-from-a-mov-file",
+    "batch-extract-audio-from-mp4-files",
+    "batch-extract-audio-from-mov-files",
+    "batch-extract-audio-from-video-files",
+    "extract-audio-from-a-webm-file",
+    "batch-extract-audio-from-webm-files",
+    "extract-audio-from-an-mkv-file",
+    "batch-extract-audio-from-mkv-files"
   ],
+  "updatedAt": "2026-10-01T05:30:00.000Z",
   "logo": "/icons/tools/extract-audio-from-a-video-file.svg",
   "page": {
     "module": "../pages/extractAudioFromAVideoFilePage",

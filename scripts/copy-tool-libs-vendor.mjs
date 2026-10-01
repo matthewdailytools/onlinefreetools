@@ -137,4 +137,46 @@ for (const code of tessLangs) {
 	}
 }
 
+/**
+ * Whisper 模型与运行时不由本脚本下载：须已提交 `public/vendor/whisper/`（见 `npm run vendor:whisper`）。
+ * 缺关键文件则失败，避免工具页 import 404。
+ */
+const whisperRequired = [
+	'transformers.bundle.js',
+	'whisper-loader.js',
+	'manifest.json',
+	'ort-wasm-simd-threaded.mjs',
+	'ort-wasm-simd-threaded.wasm',
+	'models/onnx-community/whisper-tiny/config.json',
+	'models/onnx-community/whisper-tiny/onnx/encoder_model_quantized.onnx',
+	'models/onnx-community/whisper-tiny/onnx/decoder_model_merged_quantized.onnx.chunks.json',
+	'models/onnx-community/whisper-tiny/onnx/decoder_model_merged_quantized.onnx.part0',
+	'models/onnx-community/whisper-tiny/onnx/decoder_model_merged_quantized.onnx.part1',
+];
+for (const rel of whisperRequired) {
+	const file = path.join(outRoot, 'whisper', rel);
+	if (!fs.existsSync(file)) {
+		console.error('Missing Whisper vendor file (run npm run vendor:whisper):', path.relative(root, file));
+		process.exit(1);
+	}
+}
+
+/**
+ * Mediabunny（MKV→MP4 AAC）不由本脚本打包：须已提交 `public/vendor/mediabunny/`（见 `npm run vendor:mediabunny`）。
+ */
+const mediabunnyRequired = [
+	'mediabunny.min.mjs',
+	'mediabunny-ac3.min.mjs',
+	'mediabunny-aac-encoder.min.mjs',
+	'mkv-to-mp4-loader.js',
+	'LICENSE-mediabunny',
+];
+for (const rel of mediabunnyRequired) {
+	const file = path.join(outRoot, 'mediabunny', rel);
+	if (!fs.existsSync(file)) {
+		console.error('Missing Mediabunny vendor file (run npm run vendor:mediabunny):', path.relative(root, file));
+		process.exit(1);
+	}
+}
+
 console.log('Done. Serve tool libs from /vendor/{lib}/* (no CDN).');

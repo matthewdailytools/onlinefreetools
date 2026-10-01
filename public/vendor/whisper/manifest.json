@@ -1,0 +1,15 @@
+{
+  "transformersVersion": "4.3.0",
+  "ortVersion": "1.31.0-dev.20260914-8d85527a0",
+  "modelId": "onnx-community/whisper-tiny",
+  "modelRevision": "ff4177021cc41f7db950912b73ea4fdf7d01d8e7",
+  "dtype": "q8",
+  "device": "wasm",
+  "bundle": "/vendor/whisper/transformers.bundle.js",
+  "wasmPaths": {
+    "mjs": "/vendor/whisper/ort-wasm-simd-threaded.mjs",
+    "wasm": "/vendor/whisper/ort-wasm-simd-threaded.wasm"
+  },
+  "localModelPath": "/vendor/whisper/models/",
+  "generatedAt": "2026-09-30T12:57:45.882Z"
+}

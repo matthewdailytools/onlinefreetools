@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Whisper vendor POC (local only)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 52rem; margin: 1.5rem auto; padding: 0 1rem; }
+    pre { white-space: pre-wrap; background: #f6f8fa; padding: 0.75rem; border-radius: 6px; }
+    .err { color: #b00020; }
+    .ok { color: #0a7a32; }
+  </style>
+</head>
+<body>
+  <h1>Whisper vendor POC</h1>
+  <p>Loads <code>/vendor/whisper</code> locally. Pick a speech WAV/MP3 (try JFK sample).</p>
+  <p><input id="file" type="file" accept="audio/*" /> <button id="run" type="button">Transcribe</button></p>
+  <pre id="log">Ready.</pre>
+  <h2>SRT</h2>
+  <pre id="srt"></pre>
+  <script type="module">
+    import { createTranscriber, transcribeAudioBuffer, chunksToSrt, downsampleToMono16k } from './whisper-loader.js';
+
+    const logEl = document.getElementById('log');
+    const srtEl = document.getElementById('srt');
+    function log(msg, cls) {
+      logEl.className = cls || '';
+      logEl.textContent = msg;
+    }
+
+    document.getElementById('run').addEventListener('click', async () => {
+      const file = document.getElementById('file').files?.[0];
+      if (!file) { log('Choose an audio file first.', 'err'); return; }
+      try {
+        log('Loading model (first time downloads from this origin into Cache Storage)...');
+        const t0 = performance.now();
+        await createTranscriber((p) => {
+          if (p?.status === 'progress' && p.file) {
+            const pct = p.total ? Math.round((100 * p.loaded) / p.total) : 0;
+            log('Download ' + p.file + ' ' + pct + '%');
+          } else if (p?.status) {
+            log(JSON.stringify(p));
+          }
+        });
+        log('Model ready in ' + Math.round(performance.now() - t0) + ' ms. Decoding audio...');
+        const ab = await file.arrayBuffer();
+        const audioCtx = new AudioContext();
+        const audioBuf = await audioCtx.decodeAudioData(ab.slice(0));
+        await audioCtx.close();
+        const mono = downsampleToMono16k(audioBuf);
+        log('Transcribing ' + (mono.length / 16000).toFixed(1) + 's @16kHz...');
+        const t1 = performance.now();
+        const result = await transcribeAudioBuffer(mono, { language: 'english' });
+        const srt = chunksToSrt(result.chunks || []);
+        srtEl.textContent = srt || '(no chunks)\n\n' + (result.text || '');
+        log('OK in ' + Math.round(performance.now() - t1) + ' ms.\n' + (result.text || ''), 'ok');
+      } catch (err) {
+        console.error(err);
+        log(String(err && err.stack || err), 'err');
+      }
+    });
+  </script>
+</body>
+</html>

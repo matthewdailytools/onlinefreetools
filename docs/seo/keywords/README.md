@@ -38,6 +38,9 @@ python ops/seo/bing_serp/run_bing_serp.py --theme cidr --write-batch-md --batch-
 | [`web-check/`](./web-check/) | 竞品 lissy93/web-check；Bing×15 **0 long_gap** |
 | [`bulk-batch/`](./bulk-batch/) | 存量单文件工具的**独立批量页**清单；`bulk` vs `batch` 搜法选型；**未 SERP** |
 | [`pdf/`](./pdf/) | PDF Planner **1333** 词；**分场景独立 slug**（9 absorb + 22 defer）；禁 editor/converter 壳页；**未 SERP** |
+| [`industry-scan/`](./industry-scan/) | 按行业（字幕、后期、出版、物流、记账、法务、数据运营、施工、烘焙）找未覆盖工具；WebSearch 抽查 14 条 × 5 语 **0 long_gap**；13 行 `defer`（P1：PDF 打码、字幕两件、楼梯规范） |
+| [`subtitles/`](./subtitles/) | 字幕工具专项：23 次抽查 **0 long_gap**（字幕工具站多语铺满）；P0 核验现有音频生成 SRT 页的文件识别能力；P1 字幕格式转换（含乱码修复）作为簇基础页；上一轮两条字幕 P1 降为 P2；16 行（15 `defer`、1 `drop`）。另含浏览器 Whisper 能力覆盖图（2 页修复 + 5 页增量 + 4 个新 URL / 选项；模型托管待决策） |
+| [`construction/`](./construction/) | 施工网站与工具专项：竞品站点地图、品类矩阵（对照 Omni/ToolDone）、8 语本地需求、文件类施工作业；14 行 `defer`（P1：混凝土页补配合比/袋规格/损耗、unit-converter 补坪/畳/亩、PDF 图纸算量、工地照片印时间/GPS） |
 | [`excel/`](./excel/) | Excel Planner **1162** 词（软件品牌种子）；约七成 drop；公式/发票·预算·工时 **8** 页在 catalog；N9–N12 出图/看板/透视/打开已下线；禁 online-excel 壳；**未 SERP** |
 | [`ocr-scan/`](./ocr-scan/) | OCR+Scan **2643** 行 + Text Converter **932** 词（2026-09-08）；N1 已实现；ASR/壳 drop；Word/HTML→TXT defer；**未 SERP** |
 

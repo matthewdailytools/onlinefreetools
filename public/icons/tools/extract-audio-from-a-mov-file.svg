@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-hidden="true">
+  <rect width="32" height="32" rx="8" fill="#7c3aed"/>
+  <text x="7" y="16" fill="#4c1d95" font-size="6.5" font-family="ui-sans-serif,sans-serif" font-weight="700">MOV</text>
+  <rect x="5" y="7" width="14" height="12" rx="2" fill="#ddd6fe" opacity="0.45"/>
+  <path fill="#4c1d95" d="M9 11l5 3-5 3V11z"/>
+  <path fill="none" stroke="#f5f3ff" stroke-width="1.6" stroke-linecap="round" d="M21 10v12M24 12v8M27 14v4"/>
+</svg>

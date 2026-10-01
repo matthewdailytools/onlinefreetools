@@ -18,10 +18,10 @@
 |---|---|
 | 集群 | sound-editor / F7 A1 |
 | Title (en) | Extract audio from a video file |
-| Description | Extract the audio track from a local video file in the browser, then download WAV or MP3. Steps: Extract, preview, download. Example: load a short sample clip. Local file only—not YouTube URL download. Never uploaded. |
+| Description | Extract the audio track from one local video in the browser (hub entry), then download WAV or MP3. MP4/MOV large via demux+OPFS; WebM/MKV tighter fallback. Steps: Extract, preview, download. Local file only—not YouTube URL download. Never uploaded. |
 | page.style | opts |
-| 技术 | video file → decodeAudioData → 16-bit WAV / MP3 (lamejs) |
-| related | trim-an-audio-clip-and-export；convert-a-wav-file-to-mp3 |
+| 技术 | OftExtractAudio：decode / ISOBMFF demux+WebCodecs+OPFS / MediaElement fallback → WAV/MP3 |
+| related | batch-extract-audio-from-video-files；trim；后续格式页（mp4/mov/webm/mkv） |
 | Schema | WebApplication + BreadcrumbList |
 | FAQ | ≠ YouTube URL；≠ V1 mute video；浏览器容器上限；隐私 |
 | IG | 1 规则；2 边界；6 本地；8 样例；9 related |
@@ -33,6 +33,27 @@
 | 只要口播/BGM | Extract → Download WAV/MP3 | 音轨文件 |
 | 手机短视频抽音 | 拖入 MP4 | 本机解码 |
 | 样例验管线 | Load sample（短合成或内置） | 可复现 |
+
+## 2026-10-01 稳内存 / 批量导流（增量）
+
+| 项 | 结论 |
+|---|---|
+| 解码策略 | ≤40 MiB 且 ≤15 min：decodeAudioData；更大：MediaElement 流式 MP3 |
+| 上限 | 约 200 MiB / 3 h；Stop 可中止 |
+| 批量 | description/FAQ/related → `batch-extract-audio-from-video-files` |
+| [x] 已回写 SEO 卡片与十语键 | en/zh 详写；他语补 stop/FAQ7 与上限文案 |
+
+## 2026-10-01 P0 hub + capability registry（增量）
+
+| 项 | 结论 |
+|---|---|
+| 角色 | 通用视频抽音 **hub / common-video entry**（非单一容器落地页） |
+| 引擎 | `OftExtractAudio.getCapabilities` / `classifyFile` / `supportedAccept` |
+| 大文件路径 | ISOBMFF（MP4/MOV/M4V）demux+WebCodecs+OPFS：约 5 GiB / 6 h（无 OPFS ≈1 GiB） |
+| 回退路径 | WebM/MKV 等：MediaElement ≈500 MiB / 4 h；超限 → `err_container` |
+| 错误码 | `err_limit` / `err_container` / `err_codec` / `err_channels` |
+| 格式落地 | P0 **不**新建 mp4/mov/webm/mkv 单页；related 预留后续格式 slug |
+| [x] 覆盖表 / FAQ / Rules 已按双路径诚实上限回写 | 见 en master + 十语同步 |
 
 ## 清单前检索覆盖优化
 

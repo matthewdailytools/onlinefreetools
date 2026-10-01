@@ -1,0 +1,34 @@
+{
+  "slug": "batch-extract-audio-from-video-files",
+  "path": "/tools/batch-extract-audio-from-video-files",
+  "launchedAt": "2026-10-01T02:30:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_extract_audio_from_video_files_title",
+  "homeTitleKey": "tool_batch_extract_audio_from_video_files_title",
+  "homeDescKey": "tool_batch_extract_audio_from_video_files_desc",
+  "faqPrefix": "tool_batch_extract_audio_from_video_files",
+  "related": [
+    "batch-extract-audio-from-mp4-files",
+    "extract-audio-from-an-mp4-file",
+    "extract-audio-from-a-mov-file",
+    "batch-extract-audio-from-mov-files",
+    "extract-audio-from-a-video-file",
+    "extract-audio-from-a-webm-file",
+    "batch-extract-audio-from-webm-files",
+    "extract-audio-from-an-mkv-file",
+    "batch-extract-audio-from-mkv-files"
+  ],
+  "updatedAt": "2026-10-01T05:30:00.000Z",
+  "logo": "/icons/tools/batch-extract-audio-from-video-files.svg",
+  "page": {
+    "module": "../pages/batchExtractAudioFromVideoFilesPage",
+    "export": "renderBatchExtractAudioFromVideoFilesPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

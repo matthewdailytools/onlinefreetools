@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-hidden="true">
+  <rect width="32" height="32" rx="8" fill="#1d4ed8"/>
+  <text x="4" y="13" fill="#dbeafe" font-size="6" font-family="ui-sans-serif,sans-serif" font-weight="700">MKV</text>
+  <path fill="#93c5fd" d="M14 16h4l-1.5 2H20l-6 6v-4h-4l1.5-2H12z"/>
+  <text x="16" y="27" fill="#eff6ff" font-size="6" font-family="ui-sans-serif,sans-serif" font-weight="700">MP4</text>
+</svg>
