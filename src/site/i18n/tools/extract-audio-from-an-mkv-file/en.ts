@@ -6,7 +6,7 @@ import type { SiteLangDict } from '../../../types';
  * D1 honesty: multi-GB / DDP-Atmos → desktop ffmpeg to AAC stereo MP4, then MP4 extract page.
  */
 const en: SiteLangDict = {
-  tool_extract_audio_from_an_mkv_file_title: 'Extract audio from a MKV file',
+  tool_extract_audio_from_an_mkv_file_title: 'Extract audio from an MKV file',
   tool_extract_audio_from_an_mkv_file_desc:
     'Extract audio from one local MKV to WAV or MP3 in the browser when the file fits the ~500 MiB / 4 h fallback path. Multi-gigabyte or DDP/Atmos MKV: convert to AAC MP4 on your computer first, then use the MP4 extract tool.',
   tool_extract_audio_from_an_mkv_file_description:
@@ -59,7 +59,7 @@ const en: SiteLangDict = {
   tool_extract_audio_from_an_mkv_file_stop: 'Stop',
   tool_extract_audio_from_an_mkv_file_status_stopped: 'Stopped. No partial audio file is kept.',
   tool_extract_audio_from_an_mkv_file_forced_mp3: 'Long/large input used stream MP3 on the fallback path.',
-  tool_extract_audio_from_an_mkv_file_how_title: 'How to extract audio from a MKV file',
+  tool_extract_audio_from_an_mkv_file_how_title: 'How to extract audio from an MKV file',
   tool_extract_audio_from_an_mkv_file_how_body:
     'For small local MKV: drop, Extract, download. For multi-GB or DDP/Atmos: convert to AAC MP4 with ffmpeg on your device first, then use the MP4 extract tool.',
   tool_extract_audio_from_an_mkv_file_how_item_1:
@@ -67,7 +67,7 @@ const en: SiteLangDict = {
   tool_extract_audio_from_an_mkv_file_how_item_2: 'Open Export format and pick WAV or MP3; set bitrate if needed.',
   tool_extract_audio_from_an_mkv_file_how_item_3: 'Click Extract and wait for Read → Decode → Extract → Write (or Stop).',
   tool_extract_audio_from_an_mkv_file_how_item_4: 'Preview, then Download WAV or Download MP3.',
-  tool_extract_audio_from_an_mkv_file_why_choose_title: 'Why choose our Extract audio from a MKV file tools',
+  tool_extract_audio_from_an_mkv_file_why_choose_title: 'Why choose our Extract audio from an MKV file tools',
   tool_extract_audio_from_an_mkv_file_why_choose_item_1: 'MKV-only accept so Matroska files are not mixed with MP4 landings.',
   tool_extract_audio_from_an_mkv_file_why_choose_item_2: 'Honest fallback caps—no fake 5 GiB demux marketing for MKV.',
   tool_extract_audio_from_an_mkv_file_why_choose_item_3: 'Clear path for oversize/DDP files: desktop ffmpeg → AAC MP4 → MP4 extract page.',

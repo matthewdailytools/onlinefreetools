@@ -7,14 +7,14 @@ import type { SiteLangDict } from '../../../types';
 const ja: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_title: 'MKVファイルを一括でMP4に変換する',
   tool_batch_convert_mkv_files_to_mp4_files_desc:
-    'ブラウザで複数のローカル MKV を AAC ステレオの MP4 に変換し、ZIP でまとめてダウンロード。約20本・各500 MiBまで。サーバーにアップロードしません。',
+    'ブラウザで複数のローカル MKV を AAC ステレオの MP4 に変換し、ZIP でまとめてダウンロード。約20本・各5 GiB with OPFSまで。サーバーにアップロードしません。',
   tool_batch_convert_mkv_files_to_mp4_files_description:
-    '端末内で複数の MKV を AAC ステレオ付き MP4 に一括変換し、ZIP を1つ取得します。手順：MKV を追加 → すべて変換 → ZIPをダウンロード。例：サンプルを読み込むと短い Matroska を2本キューに入れ、両方の MP4 を ZIP にします。1ファイル約500 MiB/2時間、最大約20本。失敗した行はスキップし、成功分だけ部分 ZIP に入ります。ローカルファイルのみ、YouTube URL 不可。ファイルは端末に残り、サーバーにアップロードしません。1本だけなら「MKVをMP4に変換」の単一ファイルページを。',
+    '端末内で複数の MKV を AAC ステレオ付き MP4 に一括変換し、ZIP を1つ取得します。手順：MKV を追加 → すべて変換 → ZIPをダウンロード。例：サンプルを読み込むと短い Matroska を2本キューに入れ、両方の MP4 を ZIP にします。1ファイル約5 GiB with OPFS/2時間、最大約20本。失敗した行はスキップし、成功分だけ部分 ZIP に入ります。ローカルファイルのみ、YouTube URL 不可。ファイルは端末に残り、サーバーにアップロードしません。1本だけなら「MKVをMP4に変換」の単一ファイルページを。',
   tool_batch_convert_mkv_files_to_mp4_files_article:
     '録画フォルダは MKV ばかりでも、編集ソフトは MP4 を求めることが多いです。単一ファイルツールと同じ AAC 優先の変換を、複数ファイルのキュー・行ごとの状態表示・成功 MP4 の ZIP 化で行います。音声だけの一括抽出や URL 取得はしません。クリップが1本なら単一ページを使ってください。',
   tool_batch_convert_mkv_files_to_mp4_files_choose: 'MKVファイルを選択',
   tool_batch_convert_mkv_files_to_mp4_files_hint:
-    'ローカルの .mkv を複数（各約500 MiB/2時間、最大約20本）。音声は AAC ステレオになります。YouTube ではありません。',
+    'ローカルの .mkv を複数（各約5 GiB with OPFS/2時間、最大約20本）。音声は AAC ステレオになります。YouTube ではありません。',
   tool_batch_convert_mkv_files_to_mp4_files_list_label: 'キュー',
   tool_batch_convert_mkv_files_to_mp4_files_queue_count: 'キュー {n} 件',
   tool_batch_convert_mkv_files_to_mp4_files_convert: 'すべて変換',
@@ -51,7 +51,7 @@ const ja: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_sample_name: 'short-batch-mkv-mp4',
   tool_batch_convert_mkv_files_to_mp4_files_empty: 'MKV を追加するか、先にサンプルを読み込んでください。',
   tool_batch_convert_mkv_files_to_mp4_files_empty_state:
-    'まだファイルがありません。各約500 MiB 以内のローカル .mkv をドロップするか、サンプルを読み込んでください。YouTube 不可。',
+    'まだファイルがありません。各約5 GiB with OPFS 以内のローカル .mkv をドロップするか、サンプルを読み込んでください。YouTube 不可。',
   tool_batch_convert_mkv_files_to_mp4_files_status_pending: '待機中',
   tool_batch_convert_mkv_files_to_mp4_files_status_running: '変換中…',
   tool_batch_convert_mkv_files_to_mp4_files_status_ok: 'MP4 完了',
@@ -60,7 +60,7 @@ const ja: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_err_file: 'MKV ファイルを1つ以上ドロップしてください。',
   tool_batch_convert_mkv_files_to_mp4_files_err_format: '未対応のファイルです。このページは .mkv のみです。',
   tool_batch_convert_mkv_files_to_mp4_files_err_limit:
-    'ファイルが約500 MiB/2時間を超えるか、キューがこのブラウザの上限を超えています。',
+    'ファイルが約5 GiB with OPFS/2時間を超えるか、キューがこのブラウザの上限を超えています。',
   tool_batch_convert_mkv_files_to_mp4_files_err_too_many: 'ファイルが多すぎます。1回あたり MKV は約20本以内にしてください。',
   tool_batch_convert_mkv_files_to_mp4_files_err_container:
     'Matroska として開けないファイルがあるか、使える映像/音声トラックがありません。',
@@ -75,7 +75,7 @@ const ja: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_how_body:
     'ローカル MKV をキューに入れ、「すべて変換」のあと「ZIPをダウンロード」— 成功した各行は AAC ステレオ MP4 です。',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_1:
-    'ローカルの .mkv を複数（各約500 MiB）選ぶか、サンプルを読み込みます。',
+    'ローカルの .mkv を複数（各約5 GiB with OPFS）選ぶか、サンプルを読み込みます。',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_2:
     '必要なら音声設定でモノラルや小さめ AAC（全ファイルに適用）を選びます。',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_3:
@@ -95,7 +95,7 @@ const ja: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_rules_body:
     'ローカル .mkv のみ。音声は AAC に再エンコード。上限と行失敗は最初に明示— 巨大リップはデスクトップ ffmpeg 向き。',
   tool_batch_convert_mkv_files_to_mp4_files_rules_item_1:
-    '1ファイル約500 MiB/2時間、1回約20本。超えるとページに分かりやすいエラーが出ます。',
+    '1ファイル約5 GiB with OPFS/2時間、1回約20本。超えるとページに分かりやすいエラーが出ます。',
   tool_batch_convert_mkv_files_to_mp4_files_rules_item_2: 'URL や YouTube の取得は不可。',
   tool_batch_convert_mkv_files_to_mp4_files_rules_item_3:
     'AAC ステレオ（またはモノ）を意図的に書き込み。E-AC-3 は共有ヘルパーでデコード可；特殊な映像は行失敗のことがあります。',

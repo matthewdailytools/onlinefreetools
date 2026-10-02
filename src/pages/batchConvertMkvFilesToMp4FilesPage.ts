@@ -467,9 +467,10 @@ export const renderBatchConvertMkvFilesToMp4FilesPage = (opts: {
       }
     }
     fileInput.addEventListener('change', () => {
-      const files = fileInput.files;
+      /* FileList 是活引用：须先拷成数组，再清空 value，否则队列永远为空 */
+      const files = Array.from(fileInput.files || []);
       fileInput.value = '';
-      if (!files || !files.length) return;
+      if (!files.length) return;
       addFiles(files);
     });
     $('bcmkDrop').addEventListener('dragover', (event) => event.preventDefault());

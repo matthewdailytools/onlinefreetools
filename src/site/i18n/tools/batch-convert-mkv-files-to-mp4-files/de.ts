@@ -7,14 +7,14 @@ import type { SiteLangDict } from '../../../types';
 const de: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_title: 'MKV-Dateien stapelweise in MP4 umwandeln',
   tool_batch_convert_mkv_files_to_mp4_files_desc:
-    'Wandeln Sie mehrere lokale MKV im Browser in MP4 mit AAC-Stereo um und laden Sie ein ZIP herunter. ~20 Dateien, je ~500 MiB. Ohne Server-Upload.',
+    'Wandeln Sie mehrere lokale MKV im Browser in MP4 mit AAC-Stereo um und laden Sie ein ZIP herunter. ~20 Dateien, je ca. 5 GiB mit OPFS. Ohne Server-Upload.',
   tool_batch_convert_mkv_files_to_mp4_files_description:
-    'Wandeln Sie auf Ihrem Gerät mehrere MKV stapelweise in MP4 mit AAC-Stereo um und holen Sie sich ein ZIP. Schritte: MKV hinzufügen → Alle umwandeln → ZIP herunterladen. Beispiel: Beispiel laden stellt zwei kurze Matroska-Clips in die Warteschlange und packt beide MP4s. ~500 MiB / 2 h pro Datei, bis ~20 in der Queue. Fehlgeschlagene Zeilen werden übersprungen; Erfolge landen in einem Teil-ZIP. Nur lokale Dateien, keine YouTube-URLs; Dateien bleiben auf Ihrem Gerät und werden nicht hochgeladen.',
+    'Wandeln Sie auf Ihrem Gerät mehrere MKV stapelweise in MP4 mit AAC-Stereo um und holen Sie sich ein ZIP. Schritte: MKV hinzufügen → Alle umwandeln → ZIP herunterladen. Beispiel: Beispiel laden stellt zwei kurze Matroska-Clips in die Warteschlange und packt beide MP4s. about 5 GiB with OPFS (about 1 GiB without) pro Datei, bis ~20 in der Queue. Fehlgeschlagene Zeilen werden übersprungen; Erfolge landen in einem Teil-ZIP. Nur lokale Dateien, keine YouTube-URLs; Dateien bleiben auf Ihrem Gerät und werden nicht hochgeladen.',
   tool_batch_convert_mkv_files_to_mp4_files_article:
     'Ordner mit Matroska-Aufnahmen brauchen oft MP4 für Schnittprogramme. Diese Seite nutzt dieselbe AAC-zuerst-Konvertierung wie das Einzeldatei-Tool, aber mit Warteschlange, Zeilenstatus und ZIP der erfolgreichen MP4s. Kein reines Audio-Extrahieren im Stapel, kein URL-Abruf — bei nur einem Clip bitte die Einzeldatei-Seite.',
   tool_batch_convert_mkv_files_to_mp4_files_choose: 'MKV-Dateien wählen',
   tool_batch_convert_mkv_files_to_mp4_files_hint:
-    'Mehrere lokale .mkv ablegen (~500 MiB / 2 h je Datei, bis ~20). Audio wird AAC-Stereo. Kein YouTube.',
+    'Mehrere lokale .mkv ablegen (about 5 GiB with OPFS (about 1 GiB without) je Datei, bis ~20). Audio wird AAC-Stereo. Kein YouTube.',
   tool_batch_convert_mkv_files_to_mp4_files_list_label: 'Warteschlange',
   tool_batch_convert_mkv_files_to_mp4_files_queue_count: '{n} Datei(en) in der Warteschlange',
   tool_batch_convert_mkv_files_to_mp4_files_convert: 'Alle umwandeln',
@@ -51,7 +51,7 @@ const de: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_sample_name: 'short-batch-mkv-mp4',
   tool_batch_convert_mkv_files_to_mp4_files_empty: 'Zuerst MKV hinzufügen oder Beispiel laden.',
   tool_batch_convert_mkv_files_to_mp4_files_empty_state:
-    'Noch keine Dateien. Lokale .mkv (~500 MiB je Datei) ablegen oder Beispiel laden. Kein YouTube.',
+    'Noch keine Dateien. Lokale .mkv (ca. 5 GiB mit OPFS je Datei) ablegen oder Beispiel laden. Kein YouTube.',
   tool_batch_convert_mkv_files_to_mp4_files_status_pending: 'In Warteschlange',
   tool_batch_convert_mkv_files_to_mp4_files_status_running: 'Wird umgewandelt…',
   tool_batch_convert_mkv_files_to_mp4_files_status_ok: 'MP4 bereit',
@@ -60,7 +60,7 @@ const de: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_err_file: 'Eine oder mehrere MKV-Dateien ablegen.',
   tool_batch_convert_mkv_files_to_mp4_files_err_format: 'Datei nicht unterstützt. Auf dieser Seite nur .mkv.',
   tool_batch_convert_mkv_files_to_mp4_files_err_limit:
-    'Eine Datei überschreitet ~500 MiB / 2 h oder die Warteschlange ist für diesen Browser zu groß.',
+    'Eine Datei überschreitet about 5 GiB with OPFS (about 1 GiB without) oder die Warteschlange ist für diesen Browser zu groß.',
   tool_batch_convert_mkv_files_to_mp4_files_err_too_many: 'Zu viele Dateien. Pro Stapel etwa 20 MKV oder weniger.',
   tool_batch_convert_mkv_files_to_mp4_files_err_container:
     'Datei ließ sich nicht als Matroska öffnen oder es blieb keine nutzbare Video-/Audiospur.',
@@ -75,7 +75,7 @@ const de: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_how_body:
     'Lokale MKV in die Queue, Alle umwandeln, dann ZIP herunterladen — jeder Erfolg ist MP4 mit AAC-Stereo.',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_1:
-    'Mehrere lokale .mkv (~500 MiB je Datei) wählen oder Beispiel laden.',
+    'Mehrere lokale .mkv (ca. 5 GiB mit OPFS je Datei) wählen oder Beispiel laden.',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_2:
     'Optional Audioeinstellungen für Mono oder kleinere AAC-Qualität (gilt für den ganzen Stapel).',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_3:
@@ -95,7 +95,7 @@ const de: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_rules_body:
     'Nur lokale .mkv. Audio wird nach AAC neu kodiert. Limits und Zeilenfehler sind vorab genannt — riesige Rips eher Desktop-ffmpeg.',
   tool_batch_convert_mkv_files_to_mp4_files_rules_item_1:
-    '~500 MiB / 2 h pro Datei, ~20 pro Stapel. Bei Überschreitung meldet die Seite das klar.',
+    'about 5 GiB with OPFS (about 1 GiB without) pro Datei, ~20 pro Stapel. Bei Überschreitung meldet die Seite das klar.',
   tool_batch_convert_mkv_files_to_mp4_files_rules_item_2: 'Kein URL- oder YouTube-Download.',
   tool_batch_convert_mkv_files_to_mp4_files_rules_item_3:
     'AAC-Stereo (oder Mono) bewusst. E-AC-3 kann über Helfer dekodiert werden; exotisches Video kann eine Zeile killen.',

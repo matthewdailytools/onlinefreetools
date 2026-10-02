@@ -275,20 +275,18 @@ export const renderBatchExtractAudioFromMovFilesPage = (opts: {
      */
     const fill = (text, values) => text.replace(/{(\\w+)}/g, (_, key) => String(values[key] ?? ''));
     /**
-     * 粗判是否为视频文件（扩展名或 MIME）。
-     * @param {File} file 候选
-     * @returns {boolean}
-     */
-    /**
-     * 本页队列仅接受 .mp4 / .m4v 或 video/mp4。
+     * 本页队列仅接受 .mov 或 MIME video/quicktime（拒 MP4/WebM/MKV）。
      * @param {File} file 候选
      * @returns {boolean}
      */
     function isMovContainer(file){
       if (!file) return false;
       const type = (file.type || '').toLowerCase();
-      if (type === 'video/mp4') return true;
-      return /\\.(mp4|m4v)$/i.test(file.name || '');
+      const name = file.name || '';
+      if (type === 'video/mp4' || /\\.(mp4|m4v|webm|mkv)$/i.test(name)) return false;
+      if (type === 'video/webm' || type === 'video/x-matroska') return false;
+      if (type === 'video/quicktime') return true;
+      return /\\.mov$/i.test(name);
     }
     /**
      * 引擎加载后 MOV 专页二次校验。
@@ -297,11 +295,13 @@ export const renderBatchExtractAudioFromMovFilesPage = (opts: {
      * @returns {string|null}
      */
     function movPageRejectReason(file, api){
-      if (!isMovContainer(file)) return 'err_format';
-      if (api && typeof api.isIsoBmff === 'function' && !api.isIsoBmff(file)) return 'err_format';
       const type = (file.type || '').toLowerCase();
       const name = file.name || '';
-      if (type !== 'video/mp4' && !/\\.(mp4|m4v)$/i.test(name)) return 'err_format';
+      if (type === 'video/mp4' || /\\.(mp4|m4v|webm|mkv)$/i.test(name)) return 'err_format';
+      if (type === 'video/webm' || type === 'video/x-matroska') return 'err_format';
+      if (!isMovContainer(file)) return 'err_format';
+      if (api && typeof api.isIsoBmff === 'function' && !api.isIsoBmff(file)) return 'err_format';
+      if (type !== 'video/quicktime' && !/\\.mov$/i.test(name)) return 'err_format';
       return null;
     }
     /** 丢弃已生成的 ZIP URL 并隐藏结果。 */
@@ -687,9 +687,9 @@ export const renderBatchExtractAudioFromMovFilesPage = (opts: {
       }
     }
     /**
-     * 合成一段短 MP4 样例（色块 + AAC 音轨）。
+     * 合成一段短 MOV 样例（色块 + AAC 音轨；容器按 QuickTime 命名）。
      * @param {number} freqHz 振荡频率
-     * @param {string} name 文件名
+     * @param {string} name 文件名（应带 .mov）
      * @returns {Promise<File>}
      */
     function makeSampleVideo(freqHz, name){
@@ -723,7 +723,7 @@ export const renderBatchExtractAudioFromMovFilesPage = (opts: {
         osc.connect(gain);
         gain.connect(dest);
         dest.stream.getAudioTracks().forEach(track => videoStream.addTrack(track));
-        /** 选择浏览器支持的 MP4 MIME。 */
+        /** 选择浏览器支持的 ISOBMFF（H.264 + AAC）MIME；样例保存为 .mov。 */
         const mimeCandidates = [
           'video/mp4;codecs=avc1.42E01E,mp4a.40.2',
           'video/mp4;codecs=h264,aac',
@@ -740,10 +740,10 @@ export const renderBatchExtractAudioFromMovFilesPage = (opts: {
           try { osc.stop(); } catch (_) {}
           try { ac.close(); } catch (_) {}
           videoStream.getTracks().forEach(t => t.stop());
-          const blob = new Blob(chunks, { type: mime.indexOf('video/mp4') === 0 ? 'video/mp4' : mime.split(';')[0] });
+          const blob = new Blob(chunks, { type: 'video/quicktime' });
           if (!blob.size){ reject(Error('err_sample')); return; }
-          const mp4Name = /\\.mp4$/i.test(name) ? name : name.replace(/\\.[^.]+$/, '') + '.mp4';
-          resolve(new File([blob], mp4Name, { type: 'video/mp4' }));
+          const movName = /\\.mov$/i.test(name) ? name : String(name || 'sample').replace(/\\.[^.]+$/, '') + '.mov';
+          resolve(new File([blob], movName, { type: 'video/quicktime' }));
         };
         osc.start();
         rec.start(100);
@@ -754,12 +754,12 @@ export const renderBatchExtractAudioFromMovFilesPage = (opts: {
       });
     }
     /**
-     * 加载两段合成 WebM 样例并立即跑批量提取。
+     * 加载两段合成 MOV 样例并立即跑批量提取。
      */
     async function loadSample(){
       if (busy) return;
       try {
-        const base = M.sample_name || 'batch-mp4-audio-demo';
+        const base = M.sample_name || 'batch-mov-audio-demo';
         const a = await makeSampleVideo(440, base + '-1.mov');
         const b = await makeSampleVideo(660, base + '-2.mov');
         queue = [a, b];

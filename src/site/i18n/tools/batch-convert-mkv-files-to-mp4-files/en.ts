@@ -9,12 +9,12 @@ const en: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_desc:
     'Convert multiple local MKV files to MP4 with AAC stereo in the browser, then download a ZIP. About 20 files; per file about 5 GiB with OPFS (about 1 GiB without). Not uploaded.',
   tool_batch_convert_mkv_files_to_mp4_files_description:
-    'Batch convert local MKV files to MP4 on your device with AAC stereo audio, then download one ZIP. Steps: add MKVs → Convert all → Download ZIP. Example: Load sample queues two short clips and packs both MP4s. Per file about 5 GiB with OPFS streaming (about 1 GiB without); up to about 20 files. A failed row skips; you still get a partial ZIP of successes. Local only—not YouTube URL download. Never uploaded. One file only? Use Convert an MKV file to an MP4 file.',
+    'Batch convert local MKVs to AAC stereo MP4 on your device, then download one ZIP. Steps: add MKVs → Convert all → Download ZIP. Example: Load sample queues two short clips. About 5 GiB with OPFS per file (about 1 GiB without), up to about 20; failed rows skip into a partial ZIP. Local only—not YouTube. Never uploaded. One file? Convert an MKV file to an MP4 file.',
   tool_batch_convert_mkv_files_to_mp4_files_article:
     'Folders of Matroska captures need MP4 for many editors. This page runs the same AAC-first convert as the single-file tool, but queues many MKVs, shows per-row status, and packs successful MP4s into a ZIP. It does not extract audio tracks alone (see batch extract), does not fetch URLs, and does not replace the single-file page when you only have one clip.',
   tool_batch_convert_mkv_files_to_mp4_files_choose: 'Choose MKV files',
   tool_batch_convert_mkv_files_to_mp4_files_hint:
-    'Drop several local .mkv files (about 5 GiB with OPFS each (about 1 GiB without), up to about 20). Audio becomes AAC stereo. Not YouTube.',
+    'Drop several local .mkv files (about 5 GiB with OPFS each, about 1 GiB without; up to about 20). Audio becomes AAC stereo. Not YouTube.',
   tool_batch_convert_mkv_files_to_mp4_files_list_label: 'Queue',
   tool_batch_convert_mkv_files_to_mp4_files_queue_count: '{n} file(s) in queue',
   tool_batch_convert_mkv_files_to_mp4_files_convert: 'Convert all',

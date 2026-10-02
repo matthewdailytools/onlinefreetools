@@ -307,7 +307,7 @@ export async function convertMkvToMp4(file, opts = {}) {
 	};
 	const quality = qualityMap[opts.quality || 'high'] || mb.QUALITY_HIGH;
 
-	const useOpfs = caps.opfs;
+	const useOpfs = caps.opfs && size > SMALL_BUFFER_MAX_BYTES;
 	/** @type {{ target: any, finalize?: () => Promise<Blob>, cleanup?: () => Promise<void> } | null} */
 	let sink = null;
 	/** @type {any} */
@@ -337,6 +337,7 @@ export async function convertMkvToMp4(file, opts = {}) {
 			err.code = 'err_limit';
 			throw err;
 		}
+		/* 小文件（含样例）走 BufferTarget，兼容仍只读 result.buffer 的旧页面脚本 */
 		target = new mb.BufferTarget();
 		via = 'memory';
 	}

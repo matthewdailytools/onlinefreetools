@@ -715,7 +715,10 @@ export const renderMakeSrtSubtitlesFromAVideoFilePage = (opts: {
         progress(4, 'model', M.status_model, audioFile.name || '');
         await yieldUi();
         const mod = await loadWhisper();
-        await mod.createTranscriber(onModelProgress);
+        await mod.createTranscriber(onModelProgress, {
+          signal: fileAbort ? fileAbort.signal : undefined,
+          timeoutMs: 90000,
+        });
         progress(38, 'model', M.status_model, audioFile.name || '');
         await yieldUi();
 
@@ -922,6 +925,9 @@ export const renderMakeSrtSubtitlesFromAVideoFilePage = (opts: {
       stopRequested = true;
       if (mode === 'file'){
         try { if (fileAbort) fileAbort.abort(); } catch (_) {}
+        try {
+          if (whisperMod && typeof whisperMod.cancelWhisperLoad === 'function') whisperMod.cancelWhisperLoad();
+        } catch (_) {}
         progress(95, 'write', M.status_stopped || M.status_write, audioFile && audioFile.name || '');
         return;
       }

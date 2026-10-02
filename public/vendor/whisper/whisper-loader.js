@@ -26,8 +26,19 @@ export const DEFAULT_STRIDE_LENGTH_S = 5;
 
 /** 是否已完成 env 配置。 */
 let configured = false;
-/** 缓存的 ASR pipeline。 */
+/** 缓存的 ASR pipeline（已就绪）。 */
 let cachedPipeline = null;
+/** 进行中的加载 Promise（多调用方共享，避免重复 pipeline）。 */
+let inflightLoad = null;
+/**
+ * 加载代数：Stop / 超时后递增，使迟到的成功结果被丢弃，便于重试。
+ * @type {number}
+ */
+let loadGeneration = 0;
+/** 同域模型根路径（与 env.localModelPath + MODEL_ID 对齐）。 */
+const MODEL_BASE = '/vendor/whisper/models/' + MODEL_ID + '/';
+/** 默认加载超时（毫秒）：含预取与 WASM 初始化。 */
+export const DEFAULT_LOAD_TIMEOUT_MS = 90000;
 
 /**
  * 配置 transformers.js：禁止远程、指定本地模型与 wasm 路径、切片 fetch。
@@ -37,7 +48,8 @@ export function configureWhisperEnv() {
 	env.allowRemoteModels = false;
 	env.allowLocalModels = true;
 	env.localModelPath = '/vendor/whisper/models/';
-	env.useBrowserCache = true;
+	/* 强制走站内文件；避免损坏的 IndexedDB 缓存让 pipeline 静默挂起 */
+	env.useBrowserCache = false;
 	env.backends.onnx = env.backends.onnx || {};
 	env.backends.onnx.wasm = env.backends.onnx.wasm || {};
 	env.backends.onnx.wasm.wasmPaths = {
@@ -87,23 +99,15 @@ export function configureWhisperEnv() {
 }
 
 /**
- * 创建（或复用）ASR pipeline。
- * @param {(data: object) => void} [onProgress] transformers.js 进度回调
- * @returns {Promise<Function>}
+ * 使进行中的模型加载结果作废，便于 Stop 后立刻重试。
  */
-export async function createTranscriber(onProgress) {
-	configureWhisperEnv();
-	if (cachedPipeline) return cachedPipeline;
-	cachedPipeline = await pipeline('automatic-speech-recognition', MODEL_ID, {
-		dtype: DEFAULT_DTYPE,
-		device: 'wasm',
-		progress_callback: onProgress || undefined,
-	});
-	return cachedPipeline;
+export function cancelWhisperLoad() {
+	loadGeneration += 1;
+	inflightLoad = null;
 }
 
 /**
- * 若 AbortSignal 已中止则抛错。
+ * 若 AbortSignal 已中止则抛 AbortError。
  * @param {AbortSignal | undefined | null} signal
  */
 function throwIfAborted(signal) {
@@ -111,6 +115,172 @@ function throwIfAborted(signal) {
 		const err = new Error('aborted');
 		err.name = 'AbortError';
 		throw err;
+	}
+}
+
+/**
+ * 预取站内 Whisper 权重，尽早暴露网络/404，并向 HUD 汇报进度。
+ * decoder 仅存切片（.part*），勿用原生 fetch 拉虚拟的合并 .onnx。
+ * @param {(data: object) => void} [onProgress]
+ * @param {AbortSignal | undefined} signal
+ * @returns {Promise<void>}
+ */
+async function prefetchWhisperAssets(onProgress, signal) {
+	/** 相对 MODEL_BASE 的小配置文件。 */
+	const smallFiles = [
+		'config.json',
+		'tokenizer.json',
+		'tokenizer_config.json',
+		'preprocessor_config.json',
+		'generation_config.json',
+	];
+	/** 权重相对路径（encoder 整文件 + decoder 各切片）。 */
+	const weightFiles = ['onnx/encoder_model_quantized.onnx'];
+	const chunksMetaUrl = MODEL_BASE + 'onnx/decoder_model_merged_quantized.onnx.chunks.json';
+	/** 已完成字节（估算进度用）。 */
+	let loaded = 0;
+	/** 粗估总量：约 45 MiB。 */
+	const totalHint = 45 * 1024 * 1024;
+	/**
+	 * 拉取并累计进度。
+	 * @param {string} rel 相对 MODEL_BASE 的路径
+	 */
+	async function pull(rel) {
+		throwIfAborted(signal);
+		if (typeof onProgress === 'function') {
+			onProgress({ status: 'progress', file: rel, loaded: loaded, total: totalHint });
+		}
+		const res = await fetch(MODEL_BASE + rel, { cache: 'force-cache' });
+		if (!res.ok) throw new Error('err_model');
+		const buf = await res.arrayBuffer();
+		loaded += buf.byteLength;
+		throwIfAborted(signal);
+		if (typeof onProgress === 'function') {
+			onProgress({
+				status: 'progress',
+				file: rel,
+				loaded: Math.min(loaded, totalHint),
+				total: totalHint,
+			});
+		}
+	}
+	for (const name of smallFiles) await pull(name);
+	const metaRes = await fetch(chunksMetaUrl, { cache: 'force-cache' });
+	if (!metaRes.ok) throw new Error('err_model');
+	const meta = await metaRes.json();
+	if (meta && Array.isArray(meta.parts)) {
+		for (const part of meta.parts) weightFiles.push('onnx/' + part);
+	}
+	for (const name of weightFiles) await pull(name);
+}
+
+/**
+ * 在超时或 Abort 时拒绝，否则返回 promise 结果。
+ * @template T
+ * @param {Promise<T>} promise
+ * @param {AbortSignal | undefined} signal
+ * @param {number} timeoutMs
+ * @returns {Promise<T>}
+ */
+function raceLoad(promise, signal, timeoutMs) {
+	return new Promise((resolve, reject) => {
+		/** @type {ReturnType<typeof setTimeout> | undefined} */
+		let timer;
+		/** @type {(() => void) | undefined} */
+		let onAbort;
+		const cleanup = () => {
+			if (timer) clearTimeout(timer);
+			if (signal && onAbort) signal.removeEventListener('abort', onAbort);
+		};
+		timer = setTimeout(() => {
+			cleanup();
+			const err = new Error('err_model');
+			err.code = 'err_model';
+			reject(err);
+		}, Math.max(5000, timeoutMs || DEFAULT_LOAD_TIMEOUT_MS));
+		if (signal) {
+			if (signal.aborted) {
+				cleanup();
+				const err = new Error('aborted');
+				err.name = 'AbortError';
+				reject(err);
+				return;
+			}
+			onAbort = () => {
+				cleanup();
+				const err = new Error('aborted');
+				err.name = 'AbortError';
+				reject(err);
+			};
+			signal.addEventListener('abort', onAbort, { once: true });
+		}
+		promise.then(
+			(v) => {
+				cleanup();
+				resolve(v);
+			},
+			(e) => {
+				cleanup();
+				reject(e);
+			},
+		);
+	});
+}
+
+/**
+ * 创建（或复用）ASR pipeline。
+ * @param {(data: object) => void} [onProgress] transformers.js / 预取进度回调
+ * @param {{ signal?: AbortSignal, timeoutMs?: number }} [opts] 可取消与超时
+ * @returns {Promise<Function>}
+ */
+export async function createTranscriber(onProgress, opts = {}) {
+	configureWhisperEnv();
+	if (cachedPipeline) return cachedPipeline;
+	/** @type {AbortSignal | undefined} */
+	const signal = opts && opts.signal;
+	const timeoutMs = (opts && opts.timeoutMs) || DEFAULT_LOAD_TIMEOUT_MS;
+	throwIfAborted(signal);
+
+	if (!inflightLoad) {
+		const gen = loadGeneration;
+		/** 本轮加载 Promise（finally 仅在仍是当前 inflight 时清空）。 */
+		const p = (async () => {
+			/* 预取不绑定某一调用方 signal，避免 A 取消拖死共享加载；代数负责作废 */
+			await prefetchWhisperAssets(onProgress, undefined);
+			if (gen !== loadGeneration) {
+				const err = new Error('aborted');
+				err.name = 'AbortError';
+				throw err;
+			}
+			if (typeof onProgress === 'function') {
+				onProgress({ status: 'initiate', file: 'onnx-wasm' });
+			}
+			const asr = await pipeline('automatic-speech-recognition', MODEL_ID, {
+				dtype: DEFAULT_DTYPE,
+				device: 'wasm',
+				progress_callback: onProgress || undefined,
+			});
+			if (gen !== loadGeneration) {
+				const err = new Error('aborted');
+				err.name = 'AbortError';
+				throw err;
+			}
+			cachedPipeline = asr;
+			return asr;
+		})().finally(() => {
+			if (inflightLoad === p) inflightLoad = null;
+		});
+		inflightLoad = p;
+	}
+
+	try {
+		return await raceLoad(inflightLoad, signal, timeoutMs);
+	} catch (e) {
+		/* 调用方超时/取消：作废代数，允许下次重新加载 */
+		if (e && (e.name === 'AbortError' || e.message === 'err_model' || e.code === 'err_model')) {
+			cancelWhisperLoad();
+		}
+		throw e;
 	}
 }
 

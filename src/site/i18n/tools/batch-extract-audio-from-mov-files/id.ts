@@ -1,95 +1,133 @@
 import type { SiteLangDict } from '../../../types';
 
-/** Bahasa Indonesia: ekstrak audio dari banyak file video (berurutan, ZIP). */
+/**
+ * Bahasa Indonesia: banyak MOV lokal → ZIP audio (hanya .mov, berurutan, tanpa YouTube).
+ * Arah pencarian: «ekstrak audio mov batch», «banyak mov ke mp3».
+ */
 const id: SiteLangDict = {
-  tool_batch_extract_audio_from_mov_files_title: 'Ekstrak audio dari file MP4 secara batch',
-  tool_batch_extract_audio_from_mov_files_desc: 'Antrean MP4/M4V saja: satu per satu, lewati gagal, ZIP; tanpa unggah ke server.',
-  tool_batch_extract_audio_from_mov_files_description: 'Ekstrak audio dari video lokal campuran di browser secara berurutan dan aman memori—satu klip—lalu ZIP WAV atau MP3. Langkah: tambah → Ekstrak → Unduh ZIP. Contoh: dua WebM pendek. Batas bersama: demux MP4/MOV ~5 GiB / 6 jam dengan OPFS (~1 GiB tanpa); fallback WebM/MKV ~500 MiB / 4 jam. Gagal dilewati; sukses dikemas. Hanya lokal—bukan YouTube. Satu video: alat file tunggal.',
-  tool_batch_extract_audio_from_mov_files_article: 'Folder klip sering hanya butuh suara atau BGM. Hub ini mengantre kontainer campuran, ekstrak satu per satu, lewati gagal (batas, kontainer, codec) tanpa matikan seluruh batch, dan kemas sukses ke ZIP. Tidak YouTube/URL jarak jauh. Satu file: hub tunggal. Di perangkat.',
-  tool_batch_extract_audio_from_mov_files_choose: 'Pilih file video',
-  tool_batch_extract_audio_from_mov_files_hint: 'Hingga 30 video lokal. Per file: MP4/MOV ~5 GiB / 6 jam dengan streaming privat (else ~1 GiB); fallback WebM/MKV ~500 MiB. Satu per satu—gagal dilewati; ZIP simpan sukses.',
-  tool_batch_extract_audio_from_mov_files_list_label: 'Antrean file',
-  tool_batch_extract_audio_from_mov_files_convert: 'Ekstrak',
-  tool_batch_extract_audio_from_mov_files_stop: 'Berhenti',
-  tool_batch_extract_audio_from_mov_files_download: 'Unduh ZIP',
-  tool_batch_extract_audio_from_mov_files_sample: 'Muat sampel',
-  tool_batch_extract_audio_from_mov_files_clear: 'Hapus',
-  tool_batch_extract_audio_from_mov_files_advanced: 'Format ekspor (opsional)',
-  tool_batch_extract_audio_from_mov_files_format_label: 'Format keluaran',
-  tool_batch_extract_audio_from_mov_files_format_wav: 'WAV (16-bit)',
-  tool_batch_extract_audio_from_mov_files_format_mp3: 'MP3',
-  tool_batch_extract_audio_from_mov_files_bitrate: 'Bitrate MP3',
-  tool_batch_extract_audio_from_mov_files_settings_hint: 'WAV default untuk klip pendek. Panjang/besar bisa MP3 streaming. Batas beda per jalur. Tanpa URL/YouTube.',
-  tool_batch_extract_audio_from_mov_files_progress: 'Progres batch',
-  tool_batch_extract_audio_from_mov_files_read: 'Baca',
-  tool_batch_extract_audio_from_mov_files_decode: 'Dekode',
-  tool_batch_extract_audio_from_mov_files_extract: 'Ekstrak',
-  tool_batch_extract_audio_from_mov_files_write: 'Tulis',
-  tool_batch_extract_audio_from_mov_files_pack: 'Kemas ZIP',
-  tool_batch_extract_audio_from_mov_files_done: 'Selesai. Unduh ZIP file audio.',
-  tool_batch_extract_audio_from_mov_files_failed: 'Batch gagal. Hapus video rusak atau kurangi jumlah file.',
-  tool_batch_extract_audio_from_mov_files_elapsed: '{s}s berlalu',
-  tool_batch_extract_audio_from_mov_files_preview: 'Hasil batch',
-  tool_batch_extract_audio_from_mov_files_result: '{n} audio dikemas · ZIP {output} KiB',
-  tool_batch_extract_audio_from_mov_files_partial: 'OK {ok}, gagal {fail} · ZIP tetap berisi yang sukses ({output} KiB)',
-  tool_batch_extract_audio_from_mov_files_sample_name: 'demo-batch-audio-video',
-  tool_batch_extract_audio_from_mov_files_empty: 'Tambahkan setidaknya satu video atau muat sampel.',
-  tool_batch_extract_audio_from_mov_files_empty_state: 'Belum ada file. Jatuhkan video lokal atau muat contoh. Tidak YouTube/URL.',
-  tool_batch_extract_audio_from_mov_files_remove: 'Hapus',
-  tool_batch_extract_audio_from_mov_files_queue_count: '{n} file dalam antrean',
-  tool_batch_extract_audio_from_mov_files_status_pending: 'Menunggu',
-  tool_batch_extract_audio_from_mov_files_status_running: 'Mengekstrak…',
-  tool_batch_extract_audio_from_mov_files_status_ok: 'Selesai',
-  tool_batch_extract_audio_from_mov_files_status_fail: 'Gagal',
-  tool_batch_extract_audio_from_mov_files_status_stopped: 'Dihentikan',
-  tool_batch_extract_audio_from_mov_files_err_file: 'Tambahkan video yang bisa didekode browser.',
-  tool_batch_extract_audio_from_mov_files_err_format: 'Video tidak didukung atau rusak. MP4, MOV, WebM, atau yang browser bisa coba.',
-  tool_batch_extract_audio_from_mov_files_err_limit: 'Sebuah file melebihi batas demux ukuran/durasi (~5 GiB / 6 jam MP4 dengan OPFS, ~1 GiB tanpa).',
-  tool_batch_extract_audio_from_mov_files_err_container: "File di luar jalur demux file besar (mis. WebM/MKV kebesaran). Fallback ~500 MiB / 4 jam—baris dilewati.",
-  tool_batch_extract_audio_from_mov_files_err_codec: "File memakai codec audio yang demux tidak decode (mis. E-AC-3)—baris dilewati.",
-  tool_batch_extract_audio_from_mov_files_err_channels: "File memakai layout saluran yang ekstraktor tidak tangani—baris dilewati.",
-  tool_batch_extract_audio_from_mov_files_err_decode: 'Browser tidak bisa mendekode audio dari sebuah video.',
-  tool_batch_extract_audio_from_mov_files_err_encoder: 'Tidak bisa menulis file audio. Periksa format lalu coba lagi.',
-  tool_batch_extract_audio_from_mov_files_err_zip: 'Tidak bisa membuat ZIP. Coba lebih sedikit file.',
-  tool_batch_extract_audio_from_mov_files_err_too_many: 'Batas antrean 30 video.',
-  tool_batch_extract_audio_from_mov_files_err_sample: 'Tidak bisa membuat sampel. Jatuhkan file Anda sendiri.',
-  tool_batch_extract_audio_from_mov_files_err_unsupported: 'Browser ini tidak memiliki Web Audio untuk ekstraksi.',
-  tool_batch_extract_audio_from_mov_files_err_empty: 'Tidak ada sampel audio yang berguna.',
-  tool_batch_extract_audio_from_mov_files_forced_mp3: 'File panjang/besar memakai streaming MP3.',
-  tool_batch_extract_audio_from_mov_files_how_title: 'Cara ekstrak audio dari banyak file video',
-  tool_batch_extract_audio_from_mov_files_how_body: 'Antrekan video lokal, ekstrak trek demi trek, unduh ZIP — tanpa unggah dan tanpa tempel URL.',
-  tool_batch_extract_audio_from_mov_files_how_item_1: 'Pilih beberapa video lokal (MP4/MOV/WebM/MKV campuran dalam batas) atau muat contoh dua klip sintetis.',
-  tool_batch_extract_audio_from_mov_files_how_item_2: 'Buka Format ekspor jika butuh MP3 bukan WAV, lalu atur bitrate.',
-  tool_batch_extract_audio_from_mov_files_how_item_3: 'Klik Ekstrak dan ikuti Baca → Dekode → Ekstrak → Tulis; Berhenti membatalkan sisanya.',
-  tool_batch_extract_audio_from_mov_files_how_item_4: 'Saat HUD selesai, Unduh ZIP. Baris gagal dilewati dengan kode jelas; sukses dikemas.',
-  tool_batch_extract_audio_from_mov_files_why_choose_title: 'Mengapa memakai Ekstrak audio dari banyak file video',
-  tool_batch_extract_audio_from_mov_files_why_choose_item_1: 'Satu file per waktu agar memori stabil pada batch panjang.',
-  tool_batch_extract_audio_from_mov_files_why_choose_item_2: 'Status per baris: menunggu, mengekstrak, selesai, atau gagal — satu klip buruk tidak merusak seluruh batch.',
-  tool_batch_extract_audio_from_mov_files_why_choose_item_3: 'Berhenti di tengah batch; Unduh ZIP hanya aktif bila ada arsip nyata.',
-  tool_batch_extract_audio_from_mov_files_why_choose_item_4: 'Pemrosesan di perangkat; ekstrak tunggal dan potong audio ada di dekatnya.',
-  tool_batch_extract_audio_from_mov_files_rules_title: 'Ekstrak berurutan, ZIP, dan batas jujur',
-  tool_batch_extract_audio_from_mov_files_rules_body: 'Setiap video diklasifikasi tabel bersama, diekstrak sendiri, lalu ke ZIP. ZIP parsial tetap simpan sukses. Bukan YouTube→MP3 atau video bisu.',
-  tool_batch_extract_audio_from_mov_files_rules_item_1: 'Hingga 30 file; batas per jalur (demux MP4/MOV ~5 GiB / 6 jam dengan OPFS; fallback WebM/MKV ~500 MiB).',
-  tool_batch_extract_audio_from_mov_files_rules_item_2: 'Tanpa URL/YouTube. Tautan ditolak—file dari perangkat.',
-  tool_batch_extract_audio_from_mov_files_rules_item_3: 'Satu gagal lewati baris dengan err_limit / err_container / err_codec; sukses lain masuk ZIP jika minimal satu berhasil.',
-  tool_batch_extract_audio_from_mov_files_rules_item_4: 'File tetap di perangkat. Offline setelah memuat halaman tidak dijamin.',
-  tool_batch_extract_audio_from_mov_files_example_title: 'Coba batch nyata',
-  tool_batch_extract_audio_from_mov_files_example: 'Muat sampel membuat dua WebM pendek dengan nada (jika MediaRecorder tersedia), menjalankan Ekstrak, dan mengemas dua audio ke ZIP.',
-  tool_batch_extract_audio_from_mov_files_usecases_title: 'Kapan berguna',
-  tool_batch_extract_audio_from_mov_files_usecase_1: 'Folder klip ponsel dan Anda hanya butuh trek suara dalam ZIP WAV/MP3.',
-  tool_batch_extract_audio_from_mov_files_usecase_2: 'Rekaman layar seminggu jadi audio yang bisa dibagikan tanpa mengunggah tiap file.',
-  tool_batch_extract_audio_from_mov_files_usecase_3: 'Batch video ke mp3 saat video sudah di disk — bukan di YouTube.',
-  tool_batch_extract_audio_from_mov_files_faq_q1: 'Bisakah saya menempel URL atau playlist YouTube?',
-  tool_batch_extract_audio_from_mov_files_faq_a1: 'Tidak. Hanya file video lokal. Tidak mengunduh dari YouTube atau URL lain. Simpan dulu ke perangkat, lalu ekstrak di sini.',
-  tool_batch_extract_audio_from_mov_files_faq_q2: 'Saya hanya punya satu video — halaman ini?',
-  tool_batch_extract_audio_from_mov_files_faq_a2: 'Untuk satu file, gunakan Ekstrak audio dari file video. Halaman ini untuk banyak video, ekstrak berurutan, dan ZIP.',
-  tool_batch_extract_audio_from_mov_files_faq_q3: 'Apakah sama dengan batch video ke MP3 online?',
-  tool_batch_extract_audio_from_mov_files_faq_a3: 'Tujuan serupa, lebih jujur: banyak situs menyiratkan tempel tautan. Di sini browser mendekode file lokal satu per satu dan mengemas WAV/MP3 di perangkat.',
-  tool_batch_extract_audio_from_mov_files_faq_q4: 'Mengapa satu per satu?',
-  tool_batch_extract_audio_from_mov_files_faq_a4: 'Mendekode semua sekaligus membuat memori melonjak. Berurutan hanya menyimpan pekerjaan file saat ini.',
-  tool_batch_extract_audio_from_mov_files_faq_q5: 'Apakah video diunggah ke server?',
-  tool_batch_extract_audio_from_mov_files_faq_a5: 'Tidak. Baca, dekode, dan ZIP berjalan di browser di perangkat. Jaringan dibutuhkan saat pertama memuat; offline tidak dijamin.',
-  tool_batch_extract_audio_from_mov_files_faq_q6: 'Bagaimana jika satu MKV terlalu besar?',
-  tool_batch_extract_audio_from_mov_files_faq_a6: 'Baris itu gagal cepat dengan pesan kontainer/batas (fallback ~500 MiB). File lain tetap diekstrak dan dikemas jika minimal satu sukses.',
+	tool_batch_extract_audio_from_mov_files_title: 'Ekstrak audio dari banyak file MOV',
+	tool_batch_extract_audio_from_mov_files_desc:
+		'Antrian hanya MOV lokal: satu per satu, gagal dilewati, ZIP WAV/MP3. Tidak diunggah ke server.',
+	tool_batch_extract_audio_from_mov_files_description:
+		'Ekstrak audio dari banyak MOV lokal secara berurutan di browser dan simpan ZIP WAV atau MP3. Langkah: tambah .mov → Ekstrak → unduh ZIP. Contoh: «Muat contoh» membuat dua MOV sintetis pendek dan mengemas audionya. Per file, batas demux+OPFS sama dengan alat MOV tunggal (dengan OPFS ~5 GiB / 6 jam, tanpa ~1 GiB). Baris gagal dilewati, sukses dikemas. Di perangkat — tanpa unggah. Tanpa YouTube. Satu file → «Ekstrak audio dari file MOV». MP4/WebM/MKV campur → «Ekstrak audio dari file video (batch)».',
+	tool_batch_extract_audio_from_mov_files_article:
+		'Folder MOV ponsel sering hanya butuh trek AAC. Halaman ini hanya mengantri .mov, menolak ekstensi lain, mengekstrak berurutan agar RAM stabil, dan memasukkan sukses ke ZIP. Bukan pengunduh YouTube dan bukan hub kontainer campuran.',
+	tool_batch_extract_audio_from_mov_files_choose: 'Pilih file MOV',
+	tool_batch_extract_audio_from_mov_files_hint:
+		'Maksimal 30 .mov lokal. Format lain ditolak — lihat batch campuran. Batas per file = alat MOV tunggal.',
+	tool_batch_extract_audio_from_mov_files_list_label: 'Antrian MOV',
+	tool_batch_extract_audio_from_mov_files_convert: 'Ekstrak',
+	tool_batch_extract_audio_from_mov_files_stop: 'Berhenti',
+	tool_batch_extract_audio_from_mov_files_download: 'Unduh ZIP',
+	tool_batch_extract_audio_from_mov_files_sample: 'Muat contoh',
+	tool_batch_extract_audio_from_mov_files_clear: 'Hapus',
+	tool_batch_extract_audio_from_mov_files_advanced: 'Format ekspor (opsional)',
+	tool_batch_extract_audio_from_mov_files_format_label: 'Format keluaran',
+	tool_batch_extract_audio_from_mov_files_format_wav: 'WAV (16-bit)',
+	tool_batch_extract_audio_from_mov_files_format_mp3: 'MP3',
+	tool_batch_extract_audio_from_mov_files_bitrate: 'Bitrate MP3',
+	tool_batch_extract_audio_from_mov_files_settings_hint:
+		'MOV pendek: WAV bawaan. File besar bisa memaksa MP3 streaming per baris. Tanpa URL/YouTube.',
+	tool_batch_extract_audio_from_mov_files_progress: 'Progres ekstraksi MOV batch',
+	tool_batch_extract_audio_from_mov_files_read: 'Baca',
+	tool_batch_extract_audio_from_mov_files_decode: 'Demux',
+	tool_batch_extract_audio_from_mov_files_extract: 'Ekstrak',
+	tool_batch_extract_audio_from_mov_files_write: 'Tulis',
+	tool_batch_extract_audio_from_mov_files_pack: 'Kemas ZIP',
+	tool_batch_extract_audio_from_mov_files_done: 'Selesai. Unduh ZIP audio yang diekstrak.',
+	tool_batch_extract_audio_from_mov_files_failed: 'Batch gagal. Hapus MOV rusak atau kurangi jumlah file.',
+	tool_batch_extract_audio_from_mov_files_elapsed: 'Berlalu {s} dtk',
+	tool_batch_extract_audio_from_mov_files_preview: 'Hasil batch',
+	tool_batch_extract_audio_from_mov_files_result: '{n} audio dikemas · ZIP {output} KiB',
+	tool_batch_extract_audio_from_mov_files_partial: '{ok} sukses, {fail} gagal · ZIP hanya sukses ({output} KiB)',
+	tool_batch_extract_audio_from_mov_files_sample_name: 'batch-mov-audio-demo',
+	tool_batch_extract_audio_from_mov_files_empty: 'Tambahkan minimal satu MOV atau muat contoh.',
+	tool_batch_extract_audio_from_mov_files_empty_state:
+		'Belum ada MOV. Jatuhkan .mov lokal atau muat contoh. Tanpa YouTube, tanpa non-MOV.',
+	tool_batch_extract_audio_from_mov_files_remove: 'Hapus',
+	tool_batch_extract_audio_from_mov_files_queue_count: '{n} MOV dalam antrian',
+	tool_batch_extract_audio_from_mov_files_status_pending: 'Menunggu',
+	tool_batch_extract_audio_from_mov_files_status_running: 'Mengekstrak…',
+	tool_batch_extract_audio_from_mov_files_status_ok: 'Selesai',
+	tool_batch_extract_audio_from_mov_files_status_fail: 'Gagal',
+	tool_batch_extract_audio_from_mov_files_status_stopped: 'Dihentikan',
+	tool_batch_extract_audio_from_mov_files_err_file: 'Hanya tambahkan file .mov.',
+	tool_batch_extract_audio_from_mov_files_err_format:
+		'Hanya .mov. Untuk MP4, WebM, atau MKV: batch video campuran.',
+	tool_batch_extract_audio_from_mov_files_err_limit:
+		'MOV melebihi batas demux (OPFS ~5 GiB / 6 jam, tanpa ~1 GiB). Baris dilewati.',
+	tool_batch_extract_audio_from_mov_files_err_container:
+		'MOV ISOBMFF tidak bisa di-demux. Baris dilewati.',
+	tool_batch_extract_audio_from_mov_files_err_codec:
+		'MOV dengan codec audio yang jalur ini tidak dekode. Baris dilewati.',
+	tool_batch_extract_audio_from_mov_files_err_channels:
+		'MOV dengan tata letak saluran tidak didukung. Baris dilewati.',
+	tool_batch_extract_audio_from_mov_files_err_decode: 'Browser gagal mendekode audio dari MOV. Baris dilewati.',
+	tool_batch_extract_audio_from_mov_files_err_encoder: 'Gagal mengekspor audio. Periksa format dan ekstrak lagi.',
+	tool_batch_extract_audio_from_mov_files_err_zip: 'Tidak bisa membuat ZIP. Kurangi jumlah MOV.',
+	tool_batch_extract_audio_from_mov_files_err_too_many: 'Maksimal 30 MOV dalam antrian.',
+	tool_batch_extract_audio_from_mov_files_err_sample:
+		'Tidak bisa membuat MOV contoh di browser ini. Jatuhkan .mov Anda sendiri.',
+	tool_batch_extract_audio_from_mov_files_err_unsupported: 'Web Audio yang dibutuhkan untuk ekstraksi tidak ada.',
+	tool_batch_extract_audio_from_mov_files_err_empty: 'Tidak ada audio yang bisa dipakai di antrian MOV.',
+	tool_batch_extract_audio_from_mov_files_forced_mp3: 'MOV panjang/besar ini memaksa MP3 streaming pada baris ini.',
+	tool_batch_extract_audio_from_mov_files_how_title: 'Cara mengekstrak audio dari banyak MOV',
+	tool_batch_extract_audio_from_mov_files_how_body:
+		'Antrikan MOV lokal, ekstrak satu per satu, unduh ZIP — tanpa unggah dan tanpa tempel URL.',
+	tool_batch_extract_audio_from_mov_files_how_item_1:
+		'Pilih beberapa .mov lokal atau «Muat contoh» untuk dua MOV sintetis pendek.',
+	tool_batch_extract_audio_from_mov_files_how_item_2: 'Jika perlu MP3, buka «Format ekspor» dan atur bitrate.',
+	tool_batch_extract_audio_from_mov_files_how_item_3:
+		'Klik «Ekstrak»: Baca → Demux → Ekstrak → Tulis per file. «Berhenti» membatalkan sisanya.',
+	tool_batch_extract_audio_from_mov_files_how_item_4:
+		'Setelah HUD selesai: «Unduh ZIP». Baris gagal dilewati; ≥1 sukses → dikemas.',
+	tool_batch_extract_audio_from_mov_files_why_choose_title: 'Mengapa batch MOV ini?',
+	tool_batch_extract_audio_from_mov_files_why_choose_item_1:
+		'Hanya MOV — tanpa mencampur diam-diam MP4/WebM/MKV di folder «banyak mov ke mp3».',
+	tool_batch_extract_audio_from_mov_files_why_choose_item_2:
+		'Ekstraksi berurutan menjaga RAM stabil untuk MOV ponsel berukuran GiB (AAC dalam ISOBMFF).',
+	tool_batch_extract_audio_from_mov_files_why_choose_item_3:
+		'Status per baris Menunggu/Mengekstrak/Selesai/Gagal — satu MOV rusak tidak merusak seluruh ZIP.',
+	tool_batch_extract_audio_from_mov_files_why_choose_item_4:
+		'«Berhenti» memotong antrian. Unduhan ZIP tetap mati sampai ada arsip nyata.',
+	tool_batch_extract_audio_from_mov_files_rules_title: 'Antrian MOV, berurutan, ZIP',
+	tool_batch_extract_audio_from_mov_files_rules_body:
+		'Klasifikasikan tiap MOV, ekstrak sendiri, masukkan ke ZIP. Sukses sebagian tetap ada. Bukan YouTube→MP3 atau re-encode video bisu.',
+	tool_batch_extract_audio_from_mov_files_rules_item_1:
+		'Maksimal 30 .mov; batas demux per file (OPFS ~5 GiB / 6 jam).',
+	tool_batch_extract_audio_from_mov_files_rules_item_2:
+		'Non-MOV ditolak saat masuk antrian — MP4/WebM/MKV → hub campuran.',
+	tool_batch_extract_audio_from_mov_files_rules_item_3:
+		'Gagal baris = baris itu saja; ≥1 sukses → dikemas.',
+	tool_batch_extract_audio_from_mov_files_rules_item_4:
+		'Semua di browser di perangkat — tanpa unggah ke server.',
+	tool_batch_extract_audio_from_mov_files_example_title: 'Coba batch MOV nyata',
+	tool_batch_extract_audio_from_mov_files_example:
+		'Muat contoh membuat dua MOV pendek bersuara (jika MediaRecorder mendukung H.264+AAC), mengekstrak, dan memasukkan dua audio ke ZIP.',
+	tool_batch_extract_audio_from_mov_files_usecases_title: 'Kasus penggunaan',
+	tool_batch_extract_audio_from_mov_files_usecase_1:
+		'Folder MOV ponsel menjadi ZIP audio gaya «mov ke mp3 batch» tanpa cloud.',
+	tool_batch_extract_audio_from_mov_files_usecase_2:
+		'Rekam layar MOV seminggu jadi audio yang bisa dibagikan — lokal, bukan YouTube.',
+	tool_batch_extract_audio_from_mov_files_usecase_3:
+		'Kumpulkan AAC dari take kamera dan biarkan MOV asli utuh.',
+	tool_batch_extract_audio_from_mov_files_faq_q1: 'Bisakah saya tempel URL atau playlist YouTube?',
+	tool_batch_extract_audio_from_mov_files_faq_a1:
+		'Tidak. Hanya .mov lokal lewat jatuhkan atau pilih. Simpan dulu di perangkat.',
+	tool_batch_extract_audio_from_mov_files_faq_q2: 'Saya punya satu MOV — halaman ini?',
+	tool_batch_extract_audio_from_mov_files_faq_a2:
+		'Satu file → alat MOV tunggal. Halaman ini untuk banyak MOV dan ZIP.',
+	tool_batch_extract_audio_from_mov_files_faq_q3: 'Folder berisi .mov dan .mp4 campur?',
+	tool_batch_extract_audio_from_mov_files_faq_a3:
+		'Di sini hanya .mov. Kontainer campuran: «Ekstrak audio dari file video (batch)».',
+	tool_batch_extract_audio_from_mov_files_faq_q4: 'Apakah ini «mov ke mp3 batch» online?',
+	tool_batch_extract_audio_from_mov_files_faq_a4:
+		'Niat sama untuk MOV lokal: demux AAC, ZIP MP3/WAV di perangkat — tanpa ambil URL.',
+	tool_batch_extract_audio_from_mov_files_faq_q5: 'Mengapa berurutan, bukan paralel?',
+	tool_batch_extract_audio_from_mov_files_faq_a5:
+		'Dekode paralel membuat RAM melonjak. Berurutan hanya menyimpan audio saat ini untuk ZIP.',
+	tool_batch_extract_audio_from_mov_files_faq_q6: 'Apakah video diunggah ke server?',
+	tool_batch_extract_audio_from_mov_files_faq_a6:
+		'Tidak. Baca, demux, dan ZIP tetap di browser di perangkat Anda.',
 };
 export default id;

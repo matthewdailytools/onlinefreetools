@@ -1,95 +1,133 @@
 import type { SiteLangDict } from '../../../types';
 
-/** Deutsch: Audio aus mehreren Videodateien extrahieren (sequentiell, ZIP). */
+/**
+ * Deutsch: Mehrere lokale MOV-Dateien → Audio-ZIP (nur .mov, seriell, kein YouTube).
+ * Suchrichtung: „mov audio extrahieren batch“, „mehrere mov zu mp3“.
+ */
 const de: SiteLangDict = {
-  tool_batch_extract_audio_from_mov_files_title: 'Audio aus MP4-Dateien stapelweise extrahieren',
-  tool_batch_extract_audio_from_mov_files_desc: 'Nur MP4/M4V-Warteschlange: nacheinander, Fehler überspringen, ZIP; ohne Server-Upload.',
-  tool_batch_extract_audio_from_mov_files_description: 'Audio aus gemischten lokalen Videos im Browser sequenziell und speichersicher extrahieren—eins nach dem anderen—dann ZIP mit WAV oder MP3. Schritte: Videos hinzufügen → Extrahieren → ZIP laden. Beispiel: Beispiel mit zwei kurzen WebM. Pro Datei gelten gemeinsame Limits: MP4/MOV-Demux ca. 5 GiB / 6 h mit OPFS (sonst ca. 1 GiB); WebM/MKV-Fallback ca. 500 MiB / 4 h. Fehler werden übersprungen; Erfolge gepackt. Nur lokal—kein YouTube. Ein Video: Einzel-Tool.',
-  tool_batch_extract_audio_from_mov_files_article: 'Ordner mit Clips brauchen oft nur Sprache oder BGM. Dieser Hub reiht gemischte Container, extrahiert nacheinander, überspringt Fehler (Limit, Container, Codec) ohne den ganzen Lauf zu killen und packt Erfolge ins ZIP. Kein YouTube/Remote-URL. Ein Datei: Einzel-Hub. Auf dem Gerät.',
-  tool_batch_extract_audio_from_mov_files_choose: 'Videodateien wählen',
-  tool_batch_extract_audio_from_mov_files_hint: 'Bis 30 lokale Videos. Pro Datei: MP4/MOV ca. 5 GiB / 6 h mit privatem Streaming (sonst ca. 1 GiB); WebM/MKV-Fallback ca. 500 MiB. Eins nach dem anderen—Fehler überspringen; ZIP behält Erfolge.',
-  tool_batch_extract_audio_from_mov_files_list_label: 'Dateiliste',
-  tool_batch_extract_audio_from_mov_files_convert: 'Extrahieren',
-  tool_batch_extract_audio_from_mov_files_stop: 'Stopp',
-  tool_batch_extract_audio_from_mov_files_download: 'ZIP herunterladen',
-  tool_batch_extract_audio_from_mov_files_sample: 'Beispiel laden',
-  tool_batch_extract_audio_from_mov_files_clear: 'Leeren',
-  tool_batch_extract_audio_from_mov_files_advanced: 'Exportformat (optional)',
-  tool_batch_extract_audio_from_mov_files_format_label: 'Ausgabeformat',
-  tool_batch_extract_audio_from_mov_files_format_wav: 'WAV (16-Bit)',
-  tool_batch_extract_audio_from_mov_files_format_mp3: 'MP3',
-  tool_batch_extract_audio_from_mov_files_bitrate: 'MP3-Bitrate',
-  tool_batch_extract_audio_from_mov_files_settings_hint: 'WAV passt für kurze Clips. Lange/große können MP3-Streaming nutzen. Limits je Containerpfad. Keine URL/YouTube.',
-  tool_batch_extract_audio_from_mov_files_progress: 'Batch-Fortschritt',
-  tool_batch_extract_audio_from_mov_files_read: 'Lesen',
-  tool_batch_extract_audio_from_mov_files_decode: 'Dekodieren',
-  tool_batch_extract_audio_from_mov_files_extract: 'Extrahieren',
-  tool_batch_extract_audio_from_mov_files_write: 'Schreiben',
-  tool_batch_extract_audio_from_mov_files_pack: 'ZIP packen',
-  tool_batch_extract_audio_from_mov_files_done: 'Fertig. Laden Sie das ZIP mit den Audiodateien.',
-  tool_batch_extract_audio_from_mov_files_failed: 'Batch fehlgeschlagen. Beschädigte Videos entfernen oder weniger Dateien.',
-  tool_batch_extract_audio_from_mov_files_elapsed: '{s}s vergangen',
-  tool_batch_extract_audio_from_mov_files_preview: 'Batch-Ergebnis',
-  tool_batch_extract_audio_from_mov_files_result: '{n} Audiodateien gepackt · ZIP {output} KiB',
-  tool_batch_extract_audio_from_mov_files_partial: 'OK {ok}, fehlgeschlagen {fail} · ZIP enthält die Erfolge ({output} KiB)',
-  tool_batch_extract_audio_from_mov_files_sample_name: 'batch-video-audio-demo',
-  tool_batch_extract_audio_from_mov_files_empty: 'Mindestens ein Video hinzufügen oder Beispiel laden.',
-  tool_batch_extract_audio_from_mov_files_empty_state: 'Noch keine Dateien. Lokale Videos ablegen oder Beispiel laden. Kein YouTube oder andere URLs.',
-  tool_batch_extract_audio_from_mov_files_remove: 'Entfernen',
-  tool_batch_extract_audio_from_mov_files_queue_count: '{n} Datei(en) in der Warteschlange',
-  tool_batch_extract_audio_from_mov_files_status_pending: 'Wartend',
-  tool_batch_extract_audio_from_mov_files_status_running: 'Extrahiert…',
-  tool_batch_extract_audio_from_mov_files_status_ok: 'Fertig',
-  tool_batch_extract_audio_from_mov_files_status_fail: 'Fehlgeschlagen',
-  tool_batch_extract_audio_from_mov_files_status_stopped: 'Gestoppt',
-  tool_batch_extract_audio_from_mov_files_err_file: 'Videos hinzufügen, die der Browser dekodieren kann.',
-  tool_batch_extract_audio_from_mov_files_err_format: 'Nicht unterstütztes oder beschädigtes Video. MP4, MOV, WebM oder ähnlich, das der Browser versuchen kann.',
-  tool_batch_extract_audio_from_mov_files_err_limit: 'Eine Datei überschreitet das Demux-Größen-/Dauerlimit (ca. 5 GiB / 6 h für MP4 mit OPFS, sonst ca. 1 GiB).',
-  tool_batch_extract_audio_from_mov_files_err_container: "Eine Datei liegt außerhalb des Großdatei-Demux-Pfads (z. B. zu großes WebM/MKV). Fallback ca. 500 MiB / 4 h—Zeile übersprungen.",
-  tool_batch_extract_audio_from_mov_files_err_codec: "Eine Datei nutzt einen Audiocodec, den der Demux nicht decodiert (z. B. E-AC-3). Zeile übersprungen.",
-  tool_batch_extract_audio_from_mov_files_err_channels: "Eine Datei nutzt ein Kanallayout, das der Extraktor nicht verarbeitet. Zeile übersprungen.",
-  tool_batch_extract_audio_from_mov_files_err_decode: 'Audio konnte nicht dekodiert werden. Anderen Container versuchen.',
-  tool_batch_extract_audio_from_mov_files_err_encoder: 'Audiodatei konnte nicht geschrieben werden. Format prüfen und erneut versuchen.',
-  tool_batch_extract_audio_from_mov_files_err_zip: 'ZIP konnte nicht erzeugt werden. Weniger Dateien versuchen.',
-  tool_batch_extract_audio_from_mov_files_err_too_many: 'Warteschlangenlimit: 30 Videos.',
-  tool_batch_extract_audio_from_mov_files_err_sample: 'Beispiele konnten nicht erzeugt werden. Eigene Dateien ablegen.',
-  tool_batch_extract_audio_from_mov_files_err_unsupported: 'Dieser Browser hat kein Web Audio für die Extraktion.',
-  tool_batch_extract_audio_from_mov_files_err_empty: 'Keine nutzbaren Audiosamples erfasst.',
-  tool_batch_extract_audio_from_mov_files_forced_mp3: 'Lange/große Datei nutzte Streaming-MP3.',
-  tool_batch_extract_audio_from_mov_files_how_title: 'So extrahieren Sie Audio aus mehreren Videodateien',
-  tool_batch_extract_audio_from_mov_files_how_body: 'Lokale Videos einreihen, Spur für Spur extrahieren, ZIP laden — ohne Upload und ohne URL.',
-  tool_batch_extract_audio_from_mov_files_how_item_1: 'Mehrere lokale Videos wählen (gemischte MP4/MOV/WebM/MKV innerhalb der Limits) oder Beispiel für zwei synthetische Clips.',
-  tool_batch_extract_audio_from_mov_files_how_item_2: 'Unter Exportformat bei Bedarf MP3 statt WAV wählen und Bitrate setzen.',
-  tool_batch_extract_audio_from_mov_files_how_item_3: 'Extrahieren klicken und Lesen → Dekodieren → Extrahieren → Schreiben verfolgen; Stopp bricht ab.',
-  tool_batch_extract_audio_from_mov_files_how_item_4: 'Wenn das HUD fertig ist, ZIP laden. Fehlzeilen mit klaren Codes übersprungen; Erfolge gepackt.',
-  tool_batch_extract_audio_from_mov_files_why_choose_title: 'Warum Audio aus mehreren Videodateien extrahieren bei uns',
-  tool_batch_extract_audio_from_mov_files_why_choose_item_1: 'Eine Datei nach der anderen hält den Speicher bei langen Batches stabil.',
-  tool_batch_extract_audio_from_mov_files_why_choose_item_2: 'Zeilenstatus zeigt wartend/extrahiert/fertig/fehlgeschlagen — ein Fehler killt nicht den ganzen Batch.',
-  tool_batch_extract_audio_from_mov_files_why_choose_item_3: 'Stopp mittendrin möglich; ZIP-Download erst mit echtem Archiv aktiv.',
-  tool_batch_extract_audio_from_mov_files_why_choose_item_4: 'Verarbeitung auf dem Gerät; Einzel-Extraktion und Trim liegen daneben.',
-  tool_batch_extract_audio_from_mov_files_rules_title: 'Sequenzielle Extraktion, ZIP und ehrliche Limits',
-  tool_batch_extract_audio_from_mov_files_rules_body: 'Jedes Video wird nach gemeinsamer Tabelle klassifiziert, einzeln extrahiert und ins ZIP gelegt. Partielle ZIPs behalten Erfolge. Kein YouTube-zu-MP3, kein stummes Video.',
-  tool_batch_extract_audio_from_mov_files_rules_item_1: 'Bis 30 Dateien; Limits pro Pfad (MP4/MOV-Demux ca. 5 GiB / 6 h mit OPFS; WebM/MKV-Fallback ca. 500 MiB).',
-  tool_batch_extract_audio_from_mov_files_rules_item_2: 'Keine URL/YouTube. Links abgelehnt—Dateien vom Gerät.',
-  tool_batch_extract_audio_from_mov_files_rules_item_3: 'Ein Fehler überspringt die Zeile mit err_limit / err_container / err_codec; andere Erfolge ins ZIP wenn mindestens einer klappt.',
-  tool_batch_extract_audio_from_mov_files_rules_item_4: 'Dateien bleiben auf dem Gerät. Offline nach dem Laden nicht garantiert.',
-  tool_batch_extract_audio_from_mov_files_example_title: 'Echten Batch testen',
-  tool_batch_extract_audio_from_mov_files_example: 'Beispiel laden erzeugt zwei kurze WebM mit Ton (wenn MediaRecorder verfügbar), startet Extrahieren und packt zwei Audios ins ZIP.',
-  tool_batch_extract_audio_from_mov_files_usecases_title: 'Wann es hilft',
-  tool_batch_extract_audio_from_mov_files_usecase_1: 'Ordner voller Handyclips — nur Sprachspuren als WAV/MP3-ZIP.',
-  tool_batch_extract_audio_from_mov_files_usecase_2: 'Bildschirmaufnahmen einer Woche als Audio teilen, ohne jeden Upload.',
-  tool_batch_extract_audio_from_mov_files_usecase_3: 'Batch Video zu MP3, wenn die Videos schon auf der Festplatte liegen — nicht auf YouTube.',
-  tool_batch_extract_audio_from_mov_files_faq_q1: 'Kann ich eine YouTube-URL oder Playlist einfügen?',
-  tool_batch_extract_audio_from_mov_files_faq_a1: 'Nein. Nur lokale Videodateien. Kein Download von YouTube oder anderen URLs. Speichern Sie die Videos zuerst auf dem Gerät.',
-  tool_batch_extract_audio_from_mov_files_faq_q2: 'Ich habe nur ein Video — diese Seite?',
-  tool_batch_extract_audio_from_mov_files_faq_a2: 'Für eine Datei: Audio aus einer Videodatei extrahieren. Diese Seite ist für viele Videos, sequentielle Extraktion und ZIP.',
-  tool_batch_extract_audio_from_mov_files_faq_q3: 'Ist das wie Batch Video zu MP3 online?',
-  tool_batch_extract_audio_from_mov_files_faq_a3: 'Ähnliches Ziel, mehr Ehrlichkeit: Viele Converter suggerieren URL-Fetch. Hier dekodiert der Browser lokale Dateien nacheinander und packt WAV/MP3 auf dem Gerät.',
-  tool_batch_extract_audio_from_mov_files_faq_q4: 'Warum nacheinander?',
-  tool_batch_extract_audio_from_mov_files_faq_a4: 'Alles gleichzeitig zu dekodieren treibt den Speicher hoch. Sequentiell bleibt nur die aktuelle Datei in Arbeit.',
-  tool_batch_extract_audio_from_mov_files_faq_q5: 'Werden Videos auf einen Server hochgeladen?',
-  tool_batch_extract_audio_from_mov_files_faq_a5: 'Nein. Lesen, Dekodieren und ZIP laufen im Browser auf dem Gerät. Netz beim ersten Laden nötig; Offline nicht garantiert.',
-  tool_batch_extract_audio_from_mov_files_faq_q6: 'Was passiert bei einer zu großen MKV?',
-  tool_batch_extract_audio_from_mov_files_faq_a6: 'Diese Zeile scheitert sofort mit Container/Limit-Meldung (Fallback ca. 500 MiB). Andere Dateien werden weiter extrahiert und ins ZIP gepackt, wenn mindestens eine gelingt.',
+	tool_batch_extract_audio_from_mov_files_title: 'Audio aus mehreren MOV-Dateien extrahieren',
+	tool_batch_extract_audio_from_mov_files_desc:
+		'Nur lokale MOV-Warteschlange: Datei für Datei, Fehler überspringen, WAV/MP3-ZIP. Kein Server-Upload.',
+	tool_batch_extract_audio_from_mov_files_description:
+		'Extrahiert Audio aus mehreren lokalen MOV-Dateien nacheinander im Browser und speichert ein WAV- oder MP3-ZIP. Ablauf: .mov hinzufügen → Extrahieren → ZIP laden. Beispiel: „Beispiel laden“ erzeugt zwei kurze synthetische MOVs und packt die Audios. Pro Datei gelten dieselben Demux+OPFS-Grenzen wie beim Einzel-MOV-Tool (mit OPFS ~5 GiB / 6 h, sonst ~1 GiB). Fehlzeilen übersprungen, Erfolge gepackt. Nur auf dem Gerät — kein Upload. Kein YouTube. Eine Datei → „Audio aus einer MOV-Datei extrahieren“. Gemischte MP4/WebM/MKV → „Audio aus Videodateien extrahieren (Batch)“.',
+	tool_batch_extract_audio_from_mov_files_article:
+		'Ordner mit Handy-MOVs brauchen oft nur die AAC-Spur. Diese Seite reiht nur .mov ein, lehnt andere Endungen ab, extrahiert seriell für stabile RAM und packt Erfolge in ein ZIP. Kein YouTube-Downloader und kein Hub für gemischte Container.',
+	tool_batch_extract_audio_from_mov_files_choose: 'MOV-Dateien wählen',
+	tool_batch_extract_audio_from_mov_files_hint:
+		'Bis 30 lokale .mov. Andere Formate abgelehnt — siehe gemischter Batch. Pro Datei wie Einzel-MOV-Tool.',
+	tool_batch_extract_audio_from_mov_files_list_label: 'MOV-Warteschlange',
+	tool_batch_extract_audio_from_mov_files_convert: 'Extrahieren',
+	tool_batch_extract_audio_from_mov_files_stop: 'Stopp',
+	tool_batch_extract_audio_from_mov_files_download: 'ZIP herunterladen',
+	tool_batch_extract_audio_from_mov_files_sample: 'Beispiel laden',
+	tool_batch_extract_audio_from_mov_files_clear: 'Leeren',
+	tool_batch_extract_audio_from_mov_files_advanced: 'Exportformat (optional)',
+	tool_batch_extract_audio_from_mov_files_format_label: 'Ausgabeformat',
+	tool_batch_extract_audio_from_mov_files_format_wav: 'WAV (16 Bit)',
+	tool_batch_extract_audio_from_mov_files_format_mp3: 'MP3',
+	tool_batch_extract_audio_from_mov_files_bitrate: 'MP3-Bitrate',
+	tool_batch_extract_audio_from_mov_files_settings_hint:
+		'Kurze MOVs: Standard WAV. Große Dateien können zeilenweise Streaming-MP3 erzwingen. Keine URL/YouTube.',
+	tool_batch_extract_audio_from_mov_files_progress: 'Fortschritt Batch-MOV-Audio',
+	tool_batch_extract_audio_from_mov_files_read: 'Lesen',
+	tool_batch_extract_audio_from_mov_files_decode: 'Demux',
+	tool_batch_extract_audio_from_mov_files_extract: 'Extrahieren',
+	tool_batch_extract_audio_from_mov_files_write: 'Schreiben',
+	tool_batch_extract_audio_from_mov_files_pack: 'ZIP packen',
+	tool_batch_extract_audio_from_mov_files_done: 'Fertig. ZIP mit extrahiertem Audio laden.',
+	tool_batch_extract_audio_from_mov_files_failed: 'Batch fehlgeschlagen. Defekte MOVs entfernen oder weniger Dateien wählen.',
+	tool_batch_extract_audio_from_mov_files_elapsed: 'Verstrichen {s} s',
+	tool_batch_extract_audio_from_mov_files_preview: 'Batch-Ergebnis',
+	tool_batch_extract_audio_from_mov_files_result: '{n} Audios gepackt · ZIP {output} KiB',
+	tool_batch_extract_audio_from_mov_files_partial: '{ok} ok, {fail} fehlgeschlagen · ZIP nur Erfolge ({output} KiB)',
+	tool_batch_extract_audio_from_mov_files_sample_name: 'batch-mov-audio-demo',
+	tool_batch_extract_audio_from_mov_files_empty: 'Mindestens eine MOV hinzufügen oder Beispiel laden.',
+	tool_batch_extract_audio_from_mov_files_empty_state:
+		'Noch keine MOVs. Lokale .mov ablegen oder Beispiel laden. Kein YouTube, keine Nicht-MOV-Dateien.',
+	tool_batch_extract_audio_from_mov_files_remove: 'Entfernen',
+	tool_batch_extract_audio_from_mov_files_queue_count: '{n} MOVs in der Warteschlange',
+	tool_batch_extract_audio_from_mov_files_status_pending: 'Wartend',
+	tool_batch_extract_audio_from_mov_files_status_running: 'Extrahiere…',
+	tool_batch_extract_audio_from_mov_files_status_ok: 'Fertig',
+	tool_batch_extract_audio_from_mov_files_status_fail: 'Fehlgeschlagen',
+	tool_batch_extract_audio_from_mov_files_status_stopped: 'Gestoppt',
+	tool_batch_extract_audio_from_mov_files_err_file: 'Nur .mov-Dateien hinzufügen.',
+	tool_batch_extract_audio_from_mov_files_err_format:
+		'Nur .mov. Für MP4, WebM oder MKV: gemischter Video-Batch.',
+	tool_batch_extract_audio_from_mov_files_err_limit:
+		'MOV über Demux-Grenze (mit OPFS ~5 GiB / 6 h, sonst ~1 GiB). Zeile übersprungen.',
+	tool_batch_extract_audio_from_mov_files_err_container:
+		'Kein demuxbares ISOBMFF-MOV. Zeile übersprungen.',
+	tool_batch_extract_audio_from_mov_files_err_codec:
+		'MOV mit Audio-Codec, den dieser Pfad nicht dekodiert. Zeile übersprungen.',
+	tool_batch_extract_audio_from_mov_files_err_channels:
+		'MOV mit nicht unterstütztem Kanallayout. Zeile übersprungen.',
+	tool_batch_extract_audio_from_mov_files_err_decode: 'Browser konnte Audio aus dem MOV nicht dekodieren. Zeile übersprungen.',
+	tool_batch_extract_audio_from_mov_files_err_encoder: 'Audio-Export fehlgeschlagen. Format prüfen und erneut extrahieren.',
+	tool_batch_extract_audio_from_mov_files_err_zip: 'ZIP konnte nicht erstellt werden. Weniger MOVs wählen.',
+	tool_batch_extract_audio_from_mov_files_err_too_many: 'Maximal 30 MOVs in der Warteschlange.',
+	tool_batch_extract_audio_from_mov_files_err_sample:
+		'Beispiel-MOVs in diesem Browser nicht erzeugbar. Eigene .mov ablegen.',
+	tool_batch_extract_audio_from_mov_files_err_unsupported: 'Web Audio für die Extraktion fehlt.',
+	tool_batch_extract_audio_from_mov_files_err_empty: 'Kein nutzbares Audio in der MOV-Warteschlange.',
+	tool_batch_extract_audio_from_mov_files_forced_mp3: 'Lange/große MOV in dieser Zeile erzwang Streaming-MP3.',
+	tool_batch_extract_audio_from_mov_files_how_title: 'Audio aus mehreren MOV-Dateien extrahieren',
+	tool_batch_extract_audio_from_mov_files_how_body:
+		'Lokale MOVs einreihen, Datei für Datei extrahieren, ZIP laden — ohne Upload und ohne URL-Paste.',
+	tool_batch_extract_audio_from_mov_files_how_item_1:
+		'Mehrere lokale .mov wählen oder „Beispiel laden“ für zwei kurze synthetische MOVs.',
+	tool_batch_extract_audio_from_mov_files_how_item_2: 'Bei Bedarf unter „Exportformat“ MP3 und Bitrate wählen.',
+	tool_batch_extract_audio_from_mov_files_how_item_3:
+		'„Extrahieren“: Lesen → Demux → Extrahieren → Schreiben pro Datei. „Stopp“ bricht Rest ab.',
+	tool_batch_extract_audio_from_mov_files_how_item_4:
+		'Nach HUD-Fertig: „ZIP herunterladen“. Fehlzeilen übersprungen; ab ≥1 Erfolg wird gepackt.',
+	tool_batch_extract_audio_from_mov_files_why_choose_title: 'Warum dieser MOV-Batch?',
+	tool_batch_extract_audio_from_mov_files_why_choose_item_1:
+		'Nur MOV — kein stilles Mischen von MP4/WebM/MKV in einem „mehrere mov zu mp3“-Ordner.',
+	tool_batch_extract_audio_from_mov_files_why_choose_item_2:
+		'Serielle Extraktion hält RAM stabil bei GiB-großen Handy-MOVs mit AAC in ISOBMFF.',
+	tool_batch_extract_audio_from_mov_files_why_choose_item_3:
+		'Zeilenstatus Wartend/Extrahiere/Fertig/Fehlgeschlagen — eine kaputte MOV zerstört nicht das ganze ZIP.',
+	tool_batch_extract_audio_from_mov_files_why_choose_item_4:
+		'„Stopp“ bricht ab. ZIP-Download bleibt aus, bis ein echtes Archiv existiert.',
+	tool_batch_extract_audio_from_mov_files_rules_title: 'MOV-Warteschlange, seriell, ZIP',
+	tool_batch_extract_audio_from_mov_files_rules_body:
+		'Jede MOV klassifizieren, einzeln extrahieren, in ZIP legen. Teilerfolge bleiben. Kein YouTube→MP3, keine stumme Video-Neuencodierung.',
+	tool_batch_extract_audio_from_mov_files_rules_item_1:
+		'Bis 30 .mov; je Datei Demux-Grenze (mit OPFS ~5 GiB / 6 h).',
+	tool_batch_extract_audio_from_mov_files_rules_item_2:
+		'Nicht-MOV beim Einreihen abgelehnt — MP4/WebM/MKV → gemischter Hub.',
+	tool_batch_extract_audio_from_mov_files_rules_item_3:
+		'Zeilenfehler nur diese Zeile; ab einer erfolgreichen Datei wird gepackt.',
+	tool_batch_extract_audio_from_mov_files_rules_item_4:
+		'Alles im Browser auf dem Gerät — kein Server-Upload.',
+	tool_batch_extract_audio_from_mov_files_example_title: 'Echten MOV-Batch testen',
+	tool_batch_extract_audio_from_mov_files_example:
+		'Beispiel laden erzeugt zwei kurze MOVs mit Ton (wenn MediaRecorder H.264+AAC kann), extrahiert und packt zwei Audios ins ZIP.',
+	tool_batch_extract_audio_from_mov_files_usecases_title: 'Wann nutzen',
+	tool_batch_extract_audio_from_mov_files_usecase_1:
+		'Handy-MOV-Ordner ohne Cloud in ein Audio-ZIP im Stil „mov zu mp3 batch“.',
+	tool_batch_extract_audio_from_mov_files_usecase_2:
+		'Wochenscreen-MOVs zu teilbaren Audios — lokal, nicht von YouTube.',
+	tool_batch_extract_audio_from_mov_files_usecase_3:
+		'AAC aus Kameraschüssen sammeln und Original-MOVs unberührt lassen.',
+	tool_batch_extract_audio_from_mov_files_faq_q1: 'Kann ich YouTube-URLs oder Playlists einfügen?',
+	tool_batch_extract_audio_from_mov_files_faq_a1:
+		'Nein. Nur lokale .mov per Drop oder Auswahl. Zuerst auf dem Gerät speichern.',
+	tool_batch_extract_audio_from_mov_files_faq_q2: 'Ich habe nur eine MOV — diese Seite?',
+	tool_batch_extract_audio_from_mov_files_faq_a2:
+		'Eine Datei → Einzel-MOV-Tool. Diese Seite ist für mehrere MOVs und ZIP.',
+	tool_batch_extract_audio_from_mov_files_faq_q3: 'Ordner mit .mov und .mp4 gemischt?',
+	tool_batch_extract_audio_from_mov_files_faq_a3:
+		'Hier nur .mov. Gemischte Container: „Audio aus Videodateien extrahieren (Batch)“.',
+	tool_batch_extract_audio_from_mov_files_faq_q4: 'Ist das ein Online-„mov zu mp3 batch“?',
+	tool_batch_extract_audio_from_mov_files_faq_a4:
+		'Gleiche Absicht für lokale MOVs: AAC demuxen, MP3/WAV-ZIP auf dem Gerät — ohne URL.',
+	tool_batch_extract_audio_from_mov_files_faq_q5: 'Warum seriell statt parallel?',
+	tool_batch_extract_audio_from_mov_files_faq_a5:
+		'Paralleles Dekodieren sprengt den RAM. Seriell hält nur das aktuelle Audio fürs ZIP im Speicher.',
+	tool_batch_extract_audio_from_mov_files_faq_q6: 'Werden Videos auf einen Server hochgeladen?',
+	tool_batch_extract_audio_from_mov_files_faq_a6:
+		'Nein. Lesen, Demux und ZIP laufen im Browser auf Ihrem Gerät.',
 };
 export default de;

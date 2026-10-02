@@ -7,14 +7,14 @@ import type { SiteLangDict } from '../../../types';
 const id: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_title: 'Ubah banyak file MKV menjadi MP4',
   tool_batch_convert_mkv_files_to_mp4_files_desc:
-    'Ubah beberapa MKV lokal ke MP4 AAC stereo di browser, lalu unduh satu ZIP. ~20 file, ~500 MiB per file. Tanpa unggah ke server.',
+    'Ubah beberapa MKV lokal ke MP4 AAC stereo di browser, lalu unduh satu ZIP. ~20 file, ~5 GiB with OPFS per file. Tanpa unggah ke server.',
   tool_batch_convert_mkv_files_to_mp4_files_description:
-    'Ubah batch MKV lokal ke MP4 AAC stereo di perangkat Anda, lalu unduh satu ZIP. Langkah: tambah MKV → Ubah semua → Unduh ZIP. Contoh: Muat contoh mengantre dua clip Matroska pendek dan mengemas kedua MP4. ~500 MiB / 2 jam per file, antrean ~20. Baris gagal dilewati; yang sukses tetap masuk ZIP sebagian. Hanya file lokal, bukan tautan YouTube; tetap di perangkat tanpa unggah ke server. Satu file saja? Ubah satu file MKV ke MP4.',
+    'Ubah batch MKV lokal ke MP4 AAC stereo di perangkat Anda, lalu unduh satu ZIP. Langkah: tambah MKV → Ubah semua → Unduh ZIP. Contoh: Muat contoh mengantre dua clip Matroska pendek dan mengemas kedua MP4. sekitar 5 GiB dengan OPFS (sekitar 1 GiB tanpa) per file, antrean ~20. Baris gagal dilewati; yang sukses tetap masuk ZIP sebagian. Hanya file lokal, bukan tautan YouTube; tetap di perangkat tanpa unggah ke server. Satu file saja? Ubah satu file MKV ke MP4.',
   tool_batch_convert_mkv_files_to_mp4_files_article:
     'Folder rekaman Matroska sering perlu MP4 untuk editor. Halaman ini memakai konversi AAC yang sama dengan alat satu file, tapi mengantre banyak MKV, menampilkan status per baris, dan mengemas MP4 sukses ke ZIP. Bukan ekstrak audio batch saja, bukan unduh URL — satu clip → halaman satu file.',
   tool_batch_convert_mkv_files_to_mp4_files_choose: 'Pilih file MKV',
   tool_batch_convert_mkv_files_to_mp4_files_hint:
-    'Jatuhkan beberapa .mkv lokal (~500 MiB / 2 jam per file, hingga ~20). Audio jadi AAC stereo. Bukan YouTube.',
+    'Jatuhkan beberapa .mkv lokal (sekitar 5 GiB dengan OPFS (sekitar 1 GiB tanpa) per file, hingga ~20). Audio jadi AAC stereo. Bukan YouTube.',
   tool_batch_convert_mkv_files_to_mp4_files_list_label: 'Antrean',
   tool_batch_convert_mkv_files_to_mp4_files_queue_count: '{n} file dalam antrean',
   tool_batch_convert_mkv_files_to_mp4_files_convert: 'Ubah semua',
@@ -51,7 +51,7 @@ const id: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_sample_name: 'short-batch-mkv-mp4',
   tool_batch_convert_mkv_files_to_mp4_files_empty: 'Tambah MKV atau muat contoh dulu.',
   tool_batch_convert_mkv_files_to_mp4_files_empty_state:
-    'Belum ada file. Jatuhkan .mkv lokal (~500 MiB per file) atau Muat contoh. Bukan YouTube.',
+    'Belum ada file. Jatuhkan .mkv lokal (~5 GiB with OPFS per file) atau Muat contoh. Bukan YouTube.',
   tool_batch_convert_mkv_files_to_mp4_files_status_pending: 'Mengantre',
   tool_batch_convert_mkv_files_to_mp4_files_status_running: 'Mengubah…',
   tool_batch_convert_mkv_files_to_mp4_files_status_ok: 'MP4 siap',
@@ -60,7 +60,7 @@ const id: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_err_file: 'Jatuhkan satu atau lebih file MKV.',
   tool_batch_convert_mkv_files_to_mp4_files_err_format: 'File tidak didukung. Halaman ini hanya .mkv.',
   tool_batch_convert_mkv_files_to_mp4_files_err_limit:
-    'Sebuah file melebihi ~500 MiB / 2 jam atau antrean terlalu besar untuk browser ini.',
+    'Sebuah file melebihi sekitar 5 GiB dengan OPFS (sekitar 1 GiB tanpa) atau antrean terlalu besar untuk browser ini.',
   tool_batch_convert_mkv_files_to_mp4_files_err_too_many: 'Terlalu banyak file. Pertahankan ~20 MKV atau kurang per batch.',
   tool_batch_convert_mkv_files_to_mp4_files_err_container:
     'Tidak bisa membuka file sebagai Matroska atau tidak ada trek video/audio yang bisa dipakai.',
@@ -75,7 +75,7 @@ const id: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_how_body:
     'Antrekan MKV lokal, Ubah semua, lalu Unduh ZIP — setiap sukses adalah MP4 AAC stereo.',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_1:
-    'Pilih beberapa .mkv lokal (~500 MiB per file) atau Muat contoh.',
+    'Pilih beberapa .mkv lokal (~5 GiB with OPFS per file) atau Muat contoh.',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_2:
     'Opsional: buka Pengaturan audio untuk mono atau AAC lebih kecil (berlaku seluruh batch).',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_3:
@@ -95,7 +95,7 @@ const id: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_rules_body:
     'Hanya .mkv lokal. Audio di-enkode ulang ke AAC. Batas dan gagal per baris dijelaskan di awal — rip besar tetap butuh ffmpeg desktop.',
   tool_batch_convert_mkv_files_to_mp4_files_rules_item_1:
-    '~500 MiB / 2 jam per file, ~20 per batch. Jika melebihi, halaman memberi pesan jelas.',
+    'sekitar 5 GiB dengan OPFS (sekitar 1 GiB tanpa) per file, ~20 per batch. Jika melebihi, halaman memberi pesan jelas.',
   tool_batch_convert_mkv_files_to_mp4_files_rules_item_2: 'Tanpa unduh URL atau YouTube.',
   tool_batch_convert_mkv_files_to_mp4_files_rules_item_3:
     'AAC stereo (atau mono) sengaja ditulis. E-AC-3 bisa lewat helper bersama; video eksotis bisa gagal satu baris.',

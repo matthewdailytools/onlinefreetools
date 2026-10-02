@@ -745,7 +745,10 @@ export const renderMakeSrtSubtitlesFromAnAudioFilePage = (opts: {
         progress(4, 'model', M.status_model, audioFile.name || '');
         await yieldUi();
         const mod = await loadWhisper();
-        await mod.createTranscriber(onModelProgress);
+        await mod.createTranscriber(onModelProgress, {
+          signal: fileAbort ? fileAbort.signal : undefined,
+          timeoutMs: 90000,
+        });
         progress(38, 'model', M.status_model, audioFile.name || '');
         await yieldUi();
 
@@ -947,12 +950,15 @@ export const renderMakeSrtSubtitlesFromAnAudioFilePage = (opts: {
       }
     }
 
-    /** 用户点 Stop：麦克风结束会话；文件路径中止滑窗（尽量保留已出 SRT）。 */
+    /** 用户点 Stop：麦克风结束会话；文件路径中止滑窗/模型加载（尽量保留已出 SRT）。 */
     function userStop(){
       if (!busy) return;
       stopRequested = true;
       if (mode === 'file'){
         try { if (fileAbort) fileAbort.abort(); } catch (_) {}
+        try {
+          if (whisperMod && typeof whisperMod.cancelWhisperLoad === 'function') whisperMod.cancelWhisperLoad();
+        } catch (_) {}
         progress(95, 'write', M.status_stopped || M.status_write, audioFile && audioFile.name || '');
         return;
       }

@@ -33,6 +33,7 @@
 | 0b | 2026-10-01 | MOV-only 批量 brief：H1/accept 与混批 sibling 分界；同意图表（bulk mov zip、中文批量、单 MOV/hub/混批 related、YouTube drop）；十语 H1；意图审查满足串行 ZIP | 02 ready；03 briefs-ready；待 coverage 0b |
 | 1b | 2026-10-01 | 母版 en：H1 batch+MOV；desc 写 MOV-only 串行 ZIP、sibling 导流；FAQ 单文件/混容器三分流 | coverage:gate phase=2 绿 |
 | 2b | 2026-10-01 | 十语：当地 bulk mov 说法；zh 批量 mov 转 mp3；err_format 指混批页；抽查 en,zh,es,ja | coverage:gate phase=4 绿 |
+| 2b | 2026-10-02 | 非英八语完整重写：去掉混合视频枢纽/WebM 样例残留；仅 .mov 串行 ZIP；H1 对齐当地检索；抽查 en,zh,es,ja | coverage:gate phase=4 |
 
 | 0b | 2026-10-01 | QuickTime MOV 立项：MOV-only accept+ISOBMFF IG；同意图 mov to mp3/wav；MP4/hub/batch 导流；十语 H1 | 02 ready |
 | 1b | 2026-10-01 | 母版 en：H1 Extract/Batch MOV；desc FAQ mov to mp3；QuickTime caps | phase=2 |

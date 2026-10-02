@@ -1620,7 +1620,7 @@ const en: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_desc:
     'Convert multiple local MKV files to MP4 with AAC stereo in the browser, then download a ZIP. About 20 files; per file about 5 GiB with OPFS (about 1 GiB without). Not uploaded.',
   tool_batch_convert_mkv_files_to_mp4_files_description:
-    'Batch convert local MKV files to MP4 on your device with AAC stereo audio, then download one ZIP. Steps: add MKVs → Convert all → Download ZIP. Example: Load sample queues two short clips and packs both MP4s. Per file about 5 GiB with OPFS streaming (about 1 GiB without); up to about 20 files. A failed row skips; you still get a partial ZIP of successes. Local only—not YouTube URL download. Never uploaded. One file only? Use Convert an MKV file to an MP4 file.',
+    'Batch convert local MKVs to AAC stereo MP4 on your device, then download one ZIP. Steps: add MKVs → Convert all → Download ZIP. Example: Load sample queues two short clips. About 5 GiB with OPFS per file (about 1 GiB without), up to about 20; failed rows skip into a partial ZIP. Local only—not YouTube. Never uploaded. One file? Convert an MKV file to an MP4 file.',
   tool_batch_convert_mkv_files_to_mp4_files_done: 'Ready. Download the ZIP, or open the single-file convert tool for one clip.',
   tool_batch_convert_mkv_files_to_mp4_files_download: 'Download ZIP',
   tool_batch_convert_mkv_files_to_mp4_files_elapsed: '{s}s elapsed',
@@ -1658,7 +1658,7 @@ const en: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_faq_q5: 'I only need audio WAV/MP3 from many MKVs—wrong page?',
   tool_batch_convert_mkv_files_to_mp4_files_faq_q6: 'Is my folder uploaded?',
   tool_batch_convert_mkv_files_to_mp4_files_hint:
-    'Drop several local .mkv files (about 5 GiB with OPFS each (about 1 GiB without), up to about 20). Audio becomes AAC stereo. Not YouTube.',
+    'Drop several local .mkv files (about 5 GiB with OPFS each, about 1 GiB without; up to about 20). Audio becomes AAC stereo. Not YouTube.',
   tool_batch_convert_mkv_files_to_mp4_files_how_body: 'Queue local MKVs, run Convert all, then Download ZIP—each success is an AAC stereo MP4.',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_1: 'Choose several local .mkv files within about 5 GiB with OPFS each, or click Load sample.',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_2: 'Optionally open Audio settings for mono or a smaller AAC quality (applies to every file).',
@@ -2365,30 +2365,30 @@ const en: SiteLangDict = {
   tool_batch_extract_audio_from_mkv_files_write: 'Write',
   tool_batch_extract_audio_from_mov_files_advanced: 'Export format (optional)',
   tool_batch_extract_audio_from_mov_files_article:
-    'Folders of phone MOV exports often need only the AAC tracks. This page queues .mov and .m4v files, rejects other extensions up front, extracts each file alone for stable memory, skips failures, and packs successes into a ZIP. It does not fetch YouTube playlists and is not the mixed-format batch hub.',
+    'Folders of phone MOV exports often need only the AAC tracks. This page queues .mov files, rejects other extensions up front, extracts each file alone for stable memory, skips failures, and packs successes into a ZIP. It does not fetch YouTube playlists and is not the mixed-format batch hub.',
   tool_batch_extract_audio_from_mov_files_bitrate: 'MP3 bitrate',
   tool_batch_extract_audio_from_mov_files_choose: 'Choose MOV files',
   tool_batch_extract_audio_from_mov_files_clear: 'Clear',
   tool_batch_extract_audio_from_mov_files_convert: 'Extract',
   tool_batch_extract_audio_from_mov_files_decode: 'Demux',
   tool_batch_extract_audio_from_mov_files_desc:
-    'Queue local MOV/M4V only—extract one at a time, skip failures, download a ZIP of WAV or MP3; never uploaded.',
+    'Queue local MOV files only—extract one at a time, skip failures, download a ZIP of WAV or MP3; never uploaded.',
   tool_batch_extract_audio_from_mov_files_description:
-    'Batch extract audio from local MOV and M4V files only—processed one at a time—then download a ZIP of WAV or MP3. Steps: add .mov files → Extract → Download ZIP. Example: Load sample builds two short synthetic MOVs and packs their audio. Each file follows the same demux+OPFS caps as the single MOV tool (about 5 GiB / 6 hours with OPFS, about 1 GiB without). Failures skip with clear codes; successes still pack. Files stay on your device; not uploaded. Not for YouTube. One MOV? Use Extract audio from an MOV file. Mixed WebM/MOV/MKV? Use Batch extract audio from video files.',
+    'Batch extract audio from local MOV files only—processed one at a time—then download a ZIP of WAV or MP3. Steps: add .mov files → Extract → Download ZIP. Example: Load sample builds two short synthetic MOVs and packs their audio. Each file follows the same demux+OPFS caps as the single MOV tool (about 5 GiB / 6 hours with OPFS, about 1 GiB without). Failures skip with clear codes; successes still pack. Files stay on your device; not uploaded. Not for YouTube. One MOV? Use Extract audio from an MOV file. Mixed MP4/WebM/MKV? Use Batch extract audio from video files.',
   tool_batch_extract_audio_from_mov_files_done: 'Ready. Download the ZIP of extracted audio files.',
   tool_batch_extract_audio_from_mov_files_download: 'Download ZIP',
   tool_batch_extract_audio_from_mov_files_elapsed: '{s}s elapsed',
   tool_batch_extract_audio_from_mov_files_empty: 'Add at least one MOV file or load the sample first.',
   tool_batch_extract_audio_from_mov_files_empty_state:
-    'No MOVs yet. Drop local .mov or .m4v files, or load the sample. YouTube links and non-MOV videos are not accepted.',
+    'No MOVs yet. Drop local .mov files, or load the sample. YouTube links and non-MOV videos are not accepted.',
   tool_batch_extract_audio_from_mov_files_err_channels: 'An MOV uses a channel layout the extractor cannot handle. That row is skipped.',
   tool_batch_extract_audio_from_mov_files_err_codec: 'An MOV uses an audio codec the demux path cannot decode. That row is skipped.',
   tool_batch_extract_audio_from_mov_files_err_container: 'A file is not a valid ISOBMFF MOV for demux. That row is skipped.',
   tool_batch_extract_audio_from_mov_files_err_decode: 'The browser could not decode audio from an MOV. That row is skipped.',
   tool_batch_extract_audio_from_mov_files_err_empty: 'No usable audio was captured from the MOV queue.',
   tool_batch_extract_audio_from_mov_files_err_encoder: 'Could not write an audio file. Check the format, then try Extract again.',
-  tool_batch_extract_audio_from_mov_files_err_file: 'Add MOV or M4V files only.',
-  tool_batch_extract_audio_from_mov_files_err_format: 'Only .mov and .m4v are accepted. MOV, WebM or MKV belong on Batch extract audio from video files.',
+  tool_batch_extract_audio_from_mov_files_err_file: 'Add .mov files only.',
+  tool_batch_extract_audio_from_mov_files_err_format: 'Only .mov is accepted. MP4, WebM or MKV belong on Batch extract audio from video files.',
   tool_batch_extract_audio_from_mov_files_err_limit:
     'An MOV exceeds the demux cap (about 5 GiB / 6 hours with OPFS, else about 1 GiB). That row is skipped.',
   tool_batch_extract_audio_from_mov_files_err_sample: 'Could not build sample MOVs in this browser. Drop your own local .mov files instead.',
@@ -2400,17 +2400,17 @@ const en: SiteLangDict = {
   tool_batch_extract_audio_from_mov_files_example_title: 'Try a real MOV batch',
   tool_batch_extract_audio_from_mov_files_extract: 'Extract',
   tool_batch_extract_audio_from_mov_files_failed: 'Batch extract failed. Remove damaged MOVs or try fewer files.',
-  tool_batch_extract_audio_from_mov_files_faq_a1: 'No. Only local MOV/M4V files you drop or choose. Save videos to your device first.',
+  tool_batch_extract_audio_from_mov_files_faq_a1: 'No. Only local .mov files you drop or choose. Save videos to your device first.',
   tool_batch_extract_audio_from_mov_files_faq_a2:
     'Use Extract audio from an MOV file for a single file. This batch page is for many MOVs and a ZIP download.',
-  tool_batch_extract_audio_from_mov_files_faq_a3: 'This page accepts only .mov/.m4v. Open Batch extract audio from video files for mixed containers.',
+  tool_batch_extract_audio_from_mov_files_faq_a3: 'This page accepts only .mov. Open Batch extract audio from video files for mixed containers.',
   tool_batch_extract_audio_from_mov_files_faq_a4: 'Similar goal for local MOVs: demux AAC and pack MP3 or WAV in a ZIP on your device—no URL fetch.',
   tool_batch_extract_audio_from_mov_files_faq_a5:
     'Decoding every MOV at once can spike memory. Sequential extract stores only the current file’s audio blob in the ZIP.',
   tool_batch_extract_audio_from_mov_files_faq_a6: 'No. Reading, demux and ZIP packing run in your browser on your device.',
   tool_batch_extract_audio_from_mov_files_faq_q1: 'Can I paste a YouTube URL or playlist?',
   tool_batch_extract_audio_from_mov_files_faq_q2: 'I only have one MOV—should I use this page?',
-  tool_batch_extract_audio_from_mov_files_faq_q3: 'My folder has .mov and .mov—what now?',
+  tool_batch_extract_audio_from_mov_files_faq_q3: 'My folder has .mov and .mp4—what now?',
   tool_batch_extract_audio_from_mov_files_faq_q4: 'Is this bulk mov to mp3 online?',
   tool_batch_extract_audio_from_mov_files_faq_q5: 'Why process one MOV at a time?',
   tool_batch_extract_audio_from_mov_files_faq_q6: 'Is my video uploaded to a server?',
@@ -2419,10 +2419,10 @@ const en: SiteLangDict = {
   tool_batch_extract_audio_from_mov_files_format_mp3: 'MP3',
   tool_batch_extract_audio_from_mov_files_format_wav: 'WAV (16-bit)',
   tool_batch_extract_audio_from_mov_files_hint:
-    'Up to 30 local .mov or .m4v files. Non-MOV videos are rejected—use the mixed-format batch page. Per-file demux caps match the single MOV tool.',
+    'Up to 30 local .mov files. Non-MOV videos are rejected—use the mixed-format batch page. Per-file demux caps match the single MOV tool.',
   tool_batch_extract_audio_from_mov_files_how_body:
     'Queue local MOVs, extract each track one-by-one, then download a ZIP—without uploading or pasting URLs.',
-  tool_batch_extract_audio_from_mov_files_how_item_1: 'Choose several local .mov or .m4v files, or click Load sample for two short synthetic MOVs.',
+  tool_batch_extract_audio_from_mov_files_how_item_1: 'Choose several local .mov files, or click Load sample for two short synthetic MOVs.',
   tool_batch_extract_audio_from_mov_files_how_item_2: 'Open Export format if you need MP3 instead of WAV, then set bitrate when needed.',
   tool_batch_extract_audio_from_mov_files_how_item_3: 'Click Extract and watch Read → Demux → Extract → Write per file; use Stop to cancel the rest.',
   tool_batch_extract_audio_from_mov_files_how_item_4:
@@ -2439,9 +2439,9 @@ const en: SiteLangDict = {
   tool_batch_extract_audio_from_mov_files_result: 'Packed {n} audio files · ZIP {output} KiB',
   tool_batch_extract_audio_from_mov_files_rules_body:
     'Each MOV is classified, extracted alone, then stored in the ZIP. Partial ZIPs keep successes. Not YouTube-to-MP3 and not mute-video export.',
-  tool_batch_extract_audio_from_mov_files_rules_item_1: 'Up to 30 .mov/.m4v files; each follows demux caps (about 5 GiB / 6 hours with OPFS).',
+  tool_batch_extract_audio_from_mov_files_rules_item_1: 'Up to 30 .mov files; each follows demux caps (about 5 GiB / 6 hours with OPFS).',
   tool_batch_extract_audio_from_mov_files_rules_item_2:
-    'Non-MOV files are rejected at enqueue with err_format—use the mixed-format batch hub for MOV/WebM/MKV.',
+    'Non-MOV files are rejected at enqueue with err_format—use the mixed-format batch hub for MP4/WebM/MKV.',
   tool_batch_extract_audio_from_mov_files_rules_item_3: 'One failure skips that row; other MOVs still pack when at least one succeeds.',
   tool_batch_extract_audio_from_mov_files_rules_item_4: 'Processing stays on your device; not uploaded to a server.',
   tool_batch_extract_audio_from_mov_files_rules_title: 'MOV queue, sequential extract and ZIP',
@@ -2460,7 +2460,7 @@ const en: SiteLangDict = {
   tool_batch_extract_audio_from_mov_files_usecase_3: 'Bulk rip AAC tracks from camera MOV exports while keeping originals untouched.',
   tool_batch_extract_audio_from_mov_files_usecases_title: 'When this helps',
   tool_batch_extract_audio_from_mov_files_why_choose_item_1:
-    'MOV-only accept matches “bulk mov to mp3” folders without silently mixing WebM or MOV into the queue.',
+    'MOV-only accept matches “bulk mov to mp3” folders without silently mixing MP4, WebM or MKV into the queue.',
   tool_batch_extract_audio_from_mov_files_why_choose_item_2:
     'Sequential extract keeps memory stable when each phone export can be gigabytes with AAC inside ISOBMFF.',
   tool_batch_extract_audio_from_mov_files_why_choose_item_3: 'Per-row status shows waiting, extracting, done, or failed—one bad MOV does not wipe the whole ZIP.',
@@ -5915,7 +5915,7 @@ const en: SiteLangDict = {
   tool_convert_an_mkv_file_to_an_mp4_file_desc:
     'Convert one local MKV to MP4 in the browser with AAC stereo audio. Video copies when possible. About 5 GiB with OPFS streaming (about 1 GiB without). Not uploaded.',
   tool_convert_an_mkv_file_to_an_mp4_file_description:
-    'Convert one local MKV to an MP4 on your device, with AAC stereo audio so players and extract tools can use the track. Steps: choose MKV → Convert → Download. Example: Load sample converts a short synthetic Matroska clip. Video packets copy when the browser can keep the codec; audio is always re-encoded to AAC (E-AC-3 / DDP can decode via an on-page WASM helper). Large files stream through private OPFS (about 5 GiB)—without OPFS about 1 GiB—so multi-gigabyte MKVs do not require holding the whole MP4 in RAM. Local only—not YouTube URL download. Never uploaded. Need voice only afterward? Open Extract audio from an MP4 file.',
+    'Convert one local MKV to MP4 on your device with AAC stereo (video copies when possible). Steps: choose MKV → Convert → Download. Example: Load sample converts a short Matroska clip. Multi-gigabyte files stream via private OPFS (about 5 GiB; about 1 GiB without). Local only—not YouTube. Never uploaded. Need voice afterward? Extract audio from an MP4 file.',
   tool_convert_an_mkv_file_to_an_mp4_file_done: 'Ready. Download the MP4, or open the MP4 extract tool for audio-only.',
   tool_convert_an_mkv_file_to_an_mp4_file_download: 'Download',
   tool_convert_an_mkv_file_to_an_mp4_file_elapsed: '{s}s elapsed',
@@ -8809,7 +8809,7 @@ const en: SiteLangDict = {
   tool_extract_audio_from_an_mkv_file_how_item_2: 'Open Export format and pick WAV or MP3; set bitrate if needed.',
   tool_extract_audio_from_an_mkv_file_how_item_3: 'Click Extract and wait for Read → Decode → Extract → Write (or Stop).',
   tool_extract_audio_from_an_mkv_file_how_item_4: 'Preview, then Download WAV or Download MP3.',
-  tool_extract_audio_from_an_mkv_file_how_title: 'How to extract audio from a MKV file',
+  tool_extract_audio_from_an_mkv_file_how_title: 'How to extract audio from an MKV file',
   tool_extract_audio_from_an_mkv_file_preview: 'Listen to the extracted audio',
   tool_extract_audio_from_an_mkv_file_progress: 'Extract progress',
   tool_extract_audio_from_an_mkv_file_read: 'Read',
@@ -8828,7 +8828,7 @@ const en: SiteLangDict = {
     'Default WAV suits short MKVs. Larger clips may stream MP3. Cap is fallback (~500 MiB), not MP4 demux. No URL fetch.',
   tool_extract_audio_from_an_mkv_file_status_stopped: 'Stopped. No partial audio file is kept.',
   tool_extract_audio_from_an_mkv_file_stop: 'Stop',
-  tool_extract_audio_from_an_mkv_file_title: 'Extract audio from a MKV file',
+  tool_extract_audio_from_an_mkv_file_title: 'Extract audio from an MKV file',
   tool_extract_audio_from_an_mkv_file_usecase_1: 'Browser screen capture MKV under ~500 MiB → shareable MP3 without uploading.',
   tool_extract_audio_from_an_mkv_file_usecase_2: 'A short MKV interview clip needs only the audio track as WAV.',
   tool_extract_audio_from_an_mkv_file_usecase_3:
@@ -8838,7 +8838,7 @@ const en: SiteLangDict = {
   tool_extract_audio_from_an_mkv_file_why_choose_item_2: 'Honest fallback caps—no fake 5 GiB demux marketing for MKV.',
   tool_extract_audio_from_an_mkv_file_why_choose_item_3: 'Clear path for oversize/DDP files: desktop ffmpeg → AAC MP4 → MP4 extract page.',
   tool_extract_audio_from_an_mkv_file_why_choose_item_4: 'Processing stays on your device; Stop cancels mid-run.',
-  tool_extract_audio_from_an_mkv_file_why_choose_title: 'Why choose our Extract audio from a MKV file tools',
+  tool_extract_audio_from_an_mkv_file_why_choose_title: 'Why choose our Extract audio from an MKV file tools',
   tool_extract_audio_from_an_mkv_file_write: 'Write',
   tool_extract_audio_from_an_mp4_file_advanced: 'Export format',
   tool_extract_audio_from_an_mp4_file_article:

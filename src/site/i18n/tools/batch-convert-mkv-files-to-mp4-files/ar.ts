@@ -7,14 +7,14 @@ import type { SiteLangDict } from '../../../types';
 const ar: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_title: 'تحويل ملفات MKV إلى MP4 دفعة واحدة',
   tool_batch_convert_mkv_files_to_mp4_files_desc:
-    'حوّل عدة ملفات MKV محلية إلى MP4 بصوت AAC ستريو في المتصفح، ثم نزّل ZIP واحد. نحو 20 ملفًا، ~500 MiB لكل ملف. دون رفع إلى خادم.',
+    'حوّل عدة ملفات MKV محلية إلى MP4 بصوت AAC ستريو في المتصفح، ثم نزّل ZIP واحد. نحو 20 ملفًا، ~5 GiB with OPFS لكل ملف. دون رفع إلى خادم.',
   tool_batch_convert_mkv_files_to_mp4_files_description:
-    'حوّل دفعة من MKV المحلية إلى MP4 بصوت AAC ستريو على جهازك، ثم نزّل ZIP واحد. الخطوات: أضف MKV → تحويل الكل → تنزيل ZIP. مثال: تحميل العينة يضع مقطعين Matroska قصيرين في الطابور ويحزم MP4ين. ~500 MiB / ساعتان لكل ملف، حتى ~20 في الطابور. الصف الفاشل يُتخطى؛ الناجح يبقى في ZIP جزئي. ملفات محلية فقط، لا روابط YouTube؛ تبقى على جهازك دون رفع إلى خادم. ملف واحد فقط؟ حوّل ملف MKV واحدًا إلى MP4.',
+    'حوّل دفعة من MKV المحلية إلى MP4 بصوت AAC ستريو على جهازك، ثم نزّل ZIP واحد. الخطوات: أضف MKV → تحويل الكل → تنزيل ZIP. مثال: تحميل العينة يضع مقطعين Matroska قصيرين في الطابور ويحزم MP4ين. حوالي 5 GiB مع OPFS لكل ملف، حتى ~20 في الطابور. الصف الفاشل يُتخطى؛ الناجح يبقى في ZIP جزئي. ملفات محلية فقط، لا روابط YouTube؛ تبقى على جهازك دون رفع إلى خادم. ملف واحد فقط؟ حوّل ملف MKV واحدًا إلى MP4.',
   tool_batch_convert_mkv_files_to_mp4_files_article:
     'مجلدات التسجيل بصيغة Matroska تحتاج MP4 لكثير من برامج المونتاج. هذه الصفحة تستخدم نفس تحويل AAC لأداة الملف الواحد، لكنها تُصفّ عدة MKV، تعرض حالة كل صف، وتحزم MP4 الناجحة في ZIP. ليست استخراج صوت دفعة فقط، ولا تنزيل روابط — مقطع واحد → صفحة الملف الواحد.',
   tool_batch_convert_mkv_files_to_mp4_files_choose: 'اختر ملفات MKV',
   tool_batch_convert_mkv_files_to_mp4_files_hint:
-    'أسقط عدة .mkv محلية (~500 MiB / ساعتان لكل ملف، حتى ~20). الصوت يصبح AAC ستريو. ليس YouTube.',
+    'أسقط عدة .mkv محلية (حوالي 5 GiB مع OPFS لكل ملف، حتى ~20). الصوت يصبح AAC ستريو. ليس YouTube.',
   tool_batch_convert_mkv_files_to_mp4_files_list_label: 'الطابور',
   tool_batch_convert_mkv_files_to_mp4_files_queue_count: '{n} ملف(ات) في الطابور',
   tool_batch_convert_mkv_files_to_mp4_files_convert: 'تحويل الكل',
@@ -51,7 +51,7 @@ const ar: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_sample_name: 'short-batch-mkv-mp4',
   tool_batch_convert_mkv_files_to_mp4_files_empty: 'أضف MKV أو حمّل العينة أولًا.',
   tool_batch_convert_mkv_files_to_mp4_files_empty_state:
-    'لا ملفات بعد. أسقط .mkv محلية (~500 MiB لكل ملف) أو حمّل العينة. ليس YouTube.',
+    'لا ملفات بعد. أسقط .mkv محلية (~5 GiB with OPFS لكل ملف) أو حمّل العينة. ليس YouTube.',
   tool_batch_convert_mkv_files_to_mp4_files_status_pending: 'في الانتظار',
   tool_batch_convert_mkv_files_to_mp4_files_status_running: 'جاري التحويل…',
   tool_batch_convert_mkv_files_to_mp4_files_status_ok: 'MP4 جاهز',
@@ -60,7 +60,7 @@ const ar: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_err_file: 'أسقط ملف MKV واحدًا أو أكثر.',
   tool_batch_convert_mkv_files_to_mp4_files_err_format: 'ملف غير مدعوم. هذه الصفحة لـ .mkv فقط.',
   tool_batch_convert_mkv_files_to_mp4_files_err_limit:
-    'ملف يتجاوز ~500 MiB / ساعتين أو الطابور كبير جدًا لهذا المتصفح.',
+    'ملف يتجاوز حوالي 5 GiB مع OPFS أو الطابور كبير جدًا لهذا المتصفح.',
   tool_batch_convert_mkv_files_to_mp4_files_err_too_many: 'ملفات كثيرة. اجعل الدفعة ~20 MKV أو أقل.',
   tool_batch_convert_mkv_files_to_mp4_files_err_container:
     'تعذّر فتح ملف كـ Matroska أو لا يوجد مسار فيديو/صوت صالح.',
@@ -75,7 +75,7 @@ const ar: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_how_body:
     'صفّ MKV محلية، تحويل الكل، ثم تنزيل ZIP — كل نجاح MP4 بصوت AAC ستريو.',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_1:
-    'اختر عدة .mkv محلية (~500 MiB لكل ملف) أو حمّل العينة.',
+    'اختر عدة .mkv محلية (~5 GiB with OPFS لكل ملف) أو حمّل العينة.',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_2:
     'اختياري: افتح إعدادات الصوت لـ mono أو AAC أخف (يُطبَّق على الدفعة كلها).',
   tool_batch_convert_mkv_files_to_mp4_files_how_item_3:
@@ -95,7 +95,7 @@ const ar: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_rules_body:
     '.mkv محلية فقط. الصوت يُعاد ترميزه إلى AAC. الحدود وفشل الصفوف مذكورة مسبقًا — rips ضخمة ما زالت لـ ffmpeg على سطح المكتب.',
   tool_batch_convert_mkv_files_to_mp4_files_rules_item_1:
-    '~500 MiB / ساعتان لكل ملف، ~20 لكل دفعة. عند التجاوز تظهر رسالة واضحة.',
+    'حوالي 5 GiB مع OPFS لكل ملف، ~20 لكل دفعة. عند التجاوز تظهر رسالة واضحة.',
   tool_batch_convert_mkv_files_to_mp4_files_rules_item_2: 'لا تنزيل عبر URL أو YouTube.',
   tool_batch_convert_mkv_files_to_mp4_files_rules_item_3:
     'AAC ستريو (أو mono) عمدًا. E-AC-3 قد يُفك عبر مساعد مشترك؛ فيديو غريب قد يفشل صفًا.',
