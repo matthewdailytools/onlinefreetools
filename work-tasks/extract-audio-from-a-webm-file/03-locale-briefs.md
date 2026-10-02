@@ -33,3 +33,4 @@
 | 0b | 2026-10-01 | WebM 容器立项：与 hub 分工的 H1/accept/IG（Opus+ISOBMFF+OPFS）；同意图全表（webm to mp3/wav、中文、批量/hub 导流、YouTube drop）；十语 H1 方向；意图审查满足本地 WebM 抽音 | 02 ready；03 briefs-ready；待 coverage 0b |
 | 1b | 2026-10-01 | 母版 en 完整键：H1「Extract audio from an WebM file」；desc/FAQ 落 webm to mp3、OPFS caps、拒 URL；How Demux 步骤与 WebM-only accept 一致 | coverage:gate phase=2 绿 |
 | 2b | 2026-10-01 | 十语分片：zh/es/pt/de/fr/ja/ar/ru/id 独立 H1 与隐私句；次词 webm 转 mp3/批量导流写入 FAQ/usecase；抽查 en,zh,es,ja | coverage:gate phase=4 绿 |
+| 2b | 2026-10-02 | Rewrite fr/pt/id/ja/ru/ar from EN master: remove Spanish body leakage; WebM-only H1 + 500 MiB fallback honesty; spot-check en,zh,es,ja | coverage:gate phase=4 |

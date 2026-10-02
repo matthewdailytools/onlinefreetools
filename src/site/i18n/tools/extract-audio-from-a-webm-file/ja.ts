@@ -1,103 +1,123 @@
 import type { SiteLangDict } from '../../../types';
 
 /**
- * Español: extraer audio de un archivo WebM (solo .webm; fallback ~500 MiB / 4 h).
+ * 日本語: WebMファイルから音声を抽出する。
+ * .webm のみ；MediaElement フォールバック（約 500 MiB / 4 時間）—5 GiB デマックス主張なし。
+ * 端末内処理；出力は WAV または MP3；YouTube URL なし。
  */
 const ja: SiteLangDict = {
   tool_extract_audio_from_a_webm_file_title: 'WebMファイルから音声を抽出する',
   tool_extract_audio_from_a_webm_file_desc:
-    'Solo WebM local: captura Opus/Vorbis en el dispositivo y descarga WAV o MP3; ruta fallback ~500 MiB / 4 h—sin prometer demux de 5 GiB.',
+    'ローカル WebM の Opus/Vorbis 音声を端末上で WAV または MP3 に抽出。ブラウザのフォールバックは約 500 MiB / 4 時間—5 GiB デマックスは謳いません。',
   tool_extract_audio_from_a_webm_file_description:
-    'Extrae la pista de un WebM local en el navegador y descarga WAV o MP3. Pasos: elegir WebM → Extraer → escuchar → descargar. Ejemplo: Cargar muestra crea un WebM corto si MediaRecorder está disponible. Esta página usa la ruta fallback MediaElement (~500 MiB / 4 h); archivos más grandes fallan al instante con mensaje de contenedor. Demux grande de MP4/MOV está en esas páginas o en el hub de vídeo. Solo local—no YouTube ni URL. No se sube al servidor. ¿Muchos WebM? Usa Extraer audio de archivos WebM por lotes. 手順プロセス：ファイル選択→抽出→保存。例：サンプルを読み込む。',
+    'ローカル WebM の音声トラックをブラウザで抽出し、WAV または MP3 をダウンロード。手順：WebM を選ぶ → 抽出 → プレビュー → ダウンロード。例：サンプルを読み込むは MediaRecorder が使えるとき短い合成 WebM を作ります。この WebM 専用ページは共有エンジンの MediaElement フォールバック（約 500 MiB / 4 時間）を使い、大きすぎるファイルは err_container で即失敗します。大きな MP4/MOV デマックスは各形式ページまたは動画ハブへ。ローカルのみ—YouTube や URL 取得なし。アップロードしません。多数の WebM なら「複数のWebMファイルから音声を一括抽出」へ。',
   tool_extract_audio_from_a_webm_file_article:
-    'Grabaciones de pantalla y capturas del navegador suelen ser WebM con Opus. Esta página acepta solo .webm, usa la ruta fallback compartida y escribe WAV o MP3 sin subir. No promete demux ISOBMFF ni streaming OPFS multi‑GiB—eso es para MP4/MOV. No obtiene URL de YouTube. Carpetas mixtas: hub o lote del hub.',
-  tool_extract_audio_from_a_webm_file_choose: 'Elegir un archivo WebM',
+    '画面録画やブラウザキャプチャは Opus 付き WebM になりがちです。本ページは .webm のみ受け付け、抽出能力表のフォールバック経路で WAV/MP3 を書き、アップロードしません。ISOBMFF デマックスや数 GiB の OPFS ストリーミングは主張しません—それは MP4/MOV 向けです。YouTube URL は取得しません。混在フォルダはハブまたはハブ一括へ。',
+  tool_extract_audio_from_a_webm_file_choose: 'WebMファイルを選ぶ',
   tool_extract_audio_from_a_webm_file_hint:
-    'Suelta un .webm local. Tope fallback ~500 MiB / 4 h. WebM más grandes fallan con mensaje claro—remux a MP4 para demux grande o reduce el archivo.',
-  tool_extract_audio_from_a_webm_file_convert: 'Extraer',
-  tool_extract_audio_from_a_webm_file_download: 'Descargar',
-  tool_extract_audio_from_a_webm_file_download_wav: 'Descargar WAV',
-  tool_extract_audio_from_a_webm_file_download_mp3: 'Descargar MP3',
-  tool_extract_audio_from_a_webm_file_sample: 'Cargar muestra',
-  tool_extract_audio_from_a_webm_file_clear: 'Borrar',
-  tool_extract_audio_from_a_webm_file_advanced: 'Formato de exportación',
-  tool_extract_audio_from_a_webm_file_format_label: 'Formato de salida',
-  tool_extract_audio_from_a_webm_file_format_wav: 'WAV (16 bits)',
+    'ローカルの .webm を1つドロップ。フォールバック上限は約 500 MiB / 4 時間。それより大きい WebM は明確なコンテナメッセージで失敗—大容量デマックスなら MP4 にリマックスするか、ファイルを縮小してください。',
+  tool_extract_audio_from_a_webm_file_convert: '抽出',
+  tool_extract_audio_from_a_webm_file_download: 'ダウンロード',
+  tool_extract_audio_from_a_webm_file_download_wav: 'WAVをダウンロード',
+  tool_extract_audio_from_a_webm_file_download_mp3: 'MP3をダウンロード',
+  tool_extract_audio_from_a_webm_file_sample: 'サンプルを読み込む',
+  tool_extract_audio_from_a_webm_file_clear: 'クリア',
+  tool_extract_audio_from_a_webm_file_advanced: '書き出し形式',
+  tool_extract_audio_from_a_webm_file_format_label: '出力形式',
+  tool_extract_audio_from_a_webm_file_format_wav: 'WAV（16ビット）',
   tool_extract_audio_from_a_webm_file_format_mp3: 'MP3',
-  tool_extract_audio_from_a_webm_file_bitrate: 'Bitrate MP3',
+  tool_extract_audio_from_a_webm_file_bitrate: 'MP3ビットレート',
   tool_extract_audio_from_a_webm_file_settings_hint:
-    'WAV por defecto vale para WebM cortos. Clips largos pueden ir a MP3 por streaming. El tope es la ruta fallback (~500 MiB), no demux MP4. Sin URL.',
-  tool_extract_audio_from_a_webm_file_progress: 'Progreso de extracción',
-  tool_extract_audio_from_a_webm_file_read: 'Leer',
-  tool_extract_audio_from_a_webm_file_decode: 'Reproducir',
-  tool_extract_audio_from_a_webm_file_extract: 'Extraer',
-  tool_extract_audio_from_a_webm_file_write: 'Escribir',
-  tool_extract_audio_from_a_webm_file_done: 'Listo. Escucha el audio y descarga WAV o MP3.',
-  tool_extract_audio_from_a_webm_file_failed: 'La extracción falló. Prueba un WebM más pequeño que el navegador pueda decodificar.',
-  tool_extract_audio_from_a_webm_file_elapsed: '{s}s transcurridos',
-  tool_extract_audio_from_a_webm_file_preview: 'Escuchar el audio extraído',
-  tool_extract_audio_from_a_webm_file_result: '{seconds}s · {channels} ch · {rate} Hz · {format} {output} KiB',
-  tool_extract_audio_from_a_webm_file_sample_name: 'demo-webm-corto',
-  tool_extract_audio_from_a_webm_file_empty: 'Elige un WebM o carga la muestra primero.',
+    '短い WebM には既定の WAV。長いクリップは MP3 ストリームになることがあります。上限はフォールバック経路（約 500 MiB）であり、MP4 デマックスではありません。URL 取得なし。',
+  tool_extract_audio_from_a_webm_file_progress: '抽出の進捗',
+  tool_extract_audio_from_a_webm_file_read: '読み込み',
+  tool_extract_audio_from_a_webm_file_decode: 'デコード',
+  tool_extract_audio_from_a_webm_file_extract: '抽出',
+  tool_extract_audio_from_a_webm_file_write: '書き込み',
+  tool_extract_audio_from_a_webm_file_done: '完了。音声をプレビューしてから WAV または MP3 をダウンロードしてください。',
+  tool_extract_audio_from_a_webm_file_failed:
+    '抽出に失敗しました。ブラウザがデコードできる小さめの WebM を試してください。',
+  tool_extract_audio_from_a_webm_file_elapsed: '{s}秒経過',
+  tool_extract_audio_from_a_webm_file_preview: '抽出した音声を聴く',
+  tool_extract_audio_from_a_webm_file_result: '{seconds}秒 · {channels} ch · {rate} Hz · {format} {output} KiB',
+  tool_extract_audio_from_a_webm_file_sample_name: 'short-webm-audio-demo',
+  tool_extract_audio_from_a_webm_file_empty: '先に WebM ファイルを選ぶか、サンプルを読み込んでください。',
   tool_extract_audio_from_a_webm_file_empty_state:
-    'Sin archivo. Suelta un .webm local (~500 MiB) o Cargar muestra. No YouTube.',
-  tool_extract_audio_from_a_webm_file_err_file: 'Suelta exactamente un archivo WebM.',
-  tool_extract_audio_from_a_webm_file_err_format: 'Archivo no admitido. En esta página solo .webm (video/webm).',
-  tool_extract_audio_from_a_webm_file_err_limit: 'Este WebM supera el tope de tamaño o duración de la ruta fallback.',
+    'まだファイルがありません。約 500 MiB 以内のローカル .webm をドロップするか、サンプルを読み込む。YouTube ではありません。',
+  tool_extract_audio_from_a_webm_file_err_file: 'WebM ファイルをちょうど1つドロップしてください。',
+  tool_extract_audio_from_a_webm_file_err_format:
+    '非対応のファイルです。このページでは .webm（video/webm）のみです。',
+  tool_extract_audio_from_a_webm_file_err_limit:
+    'この WebM はフォールバック経路の時間またはサイズ制限を超えています。',
   tool_extract_audio_from_a_webm_file_err_container:
-    'Este WebM supera el tope fallback (~500 MiB / 4 h) o no se puede decodificar aquí. Remux a MP4 para demux grande o usa un WebM más pequeño.',
-  tool_extract_audio_from_a_webm_file_err_codec: 'El códec de audio de este WebM no está soportado en la ruta fallback.',
-  tool_extract_audio_from_a_webm_file_err_channels: 'La pista usa un layout de canales que el extractor no puede tratar.',
-  tool_extract_audio_from_a_webm_file_err_decode: 'El navegador no pudo decodificar audio de este WebM.',
-  tool_extract_audio_from_a_webm_file_err_encoder: 'No se pudo escribir el audio. Intenta Extraer de nuevo.',
-  tool_extract_audio_from_a_webm_file_err_sample: 'No se pudo crear la muestra WebM. Suelta tu propio .webm.',
-  tool_extract_audio_from_a_webm_file_err_unsupported: 'Este navegador no tiene Web Audio necesario para extraer.',
-  tool_extract_audio_from_a_webm_file_err_empty: 'No se capturaron muestras de audio útiles.',
-  tool_extract_audio_from_a_webm_file_stop: 'Detener',
-  tool_extract_audio_from_a_webm_file_status_stopped: 'Detenido. No se guarda audio parcial.',
-  tool_extract_audio_from_a_webm_file_forced_mp3: 'Entrada larga/grande usó MP3 por streaming en la ruta fallback.',
-  tool_extract_audio_from_a_webm_file_how_title: 'Cómo extraer audio de un archivo WebM',
+    'この WebM はフォールバック上限（約 500 MiB / 4 時間）を超えるか、ここでデコードできません。大容量デマックスなら MP4 にリマックスするか、小さめの WebM を使ってください。',
+  tool_extract_audio_from_a_webm_file_err_codec:
+    'この WebM の音声コーデックはブラウザのフォールバック経路でサポートされていません。',
+  tool_extract_audio_from_a_webm_file_err_channels:
+    'このトラックのチャンネル構成は抽出器が扱えません。',
+  tool_extract_audio_from_a_webm_file_err_decode: 'ブラウザはこの WebM から音声をデコードできませんでした。',
+  tool_extract_audio_from_a_webm_file_err_encoder: '音声ファイルを書き込めませんでした。もう一度「抽出」してください。',
+  tool_extract_audio_from_a_webm_file_err_sample:
+    'サンプル WebM を作れませんでした。ご自身の .webm をドロップしてください。',
+  tool_extract_audio_from_a_webm_file_err_unsupported:
+    'このブラウザには抽出に必要な Web Audio がありません。',
+  tool_extract_audio_from_a_webm_file_err_empty: '使える音声サンプルを取得できませんでした。',
+  tool_extract_audio_from_a_webm_file_stop: '停止',
+  tool_extract_audio_from_a_webm_file_status_stopped: '停止しました。途中の音声ファイルは保持されません。',
+  tool_extract_audio_from_a_webm_file_forced_mp3:
+    '長い／大きい入力はフォールバック経路でストリーム MP3 を使いました。',
+  tool_extract_audio_from_a_webm_file_how_title: 'WebMファイルから音声を抽出する方法',
   tool_extract_audio_from_a_webm_file_how_body:
-    'Suelta un WebM local, elige WAV o MP3, Extraer, escucha y descarga—sin subir ni pegar URL.',
+    'ローカル WebM をドロップし、WAV または MP3 を選び、抽出→プレビュー→ダウンロード。アップロードなし。',
   tool_extract_audio_from_a_webm_file_how_item_1:
-    'Elige un .webm local (~500 MiB) o Cargar muestra si MediaRecorder funciona.',
-  tool_extract_audio_from_a_webm_file_how_item_2: 'Abre Formato de exportación y elige WAV o MP3; ajusta bitrate si hace falta.',
-  tool_extract_audio_from_a_webm_file_how_item_3: 'Pulsa Extraer y espera Leer → Reproducir → Extraer → Escribir (o Detener).',
-  tool_extract_audio_from_a_webm_file_how_item_4: 'Escucha y luego Descargar WAV o Descargar MP3.',
-  tool_extract_audio_from_a_webm_file_why_choose_title: 'Por qué usar Extraer audio de un archivo WebM',
+    'ローカルの .webm（約 500 MiB 以内）を選ぶか、MediaRecorder が動くときサンプルを読み込む。',
+  tool_extract_audio_from_a_webm_file_how_item_2:
+    '書き出し形式を開き、WAV または MP3 を選び、必要ならビットレートを設定。',
+  tool_extract_audio_from_a_webm_file_how_item_3:
+    '「抽出」をクリックし、読み込み → デコード → 抽出 → 書き込みを待つ（または停止）。',
+  tool_extract_audio_from_a_webm_file_how_item_4: 'プレビュー後、「WAVをダウンロード」または「MP3をダウンロード」。',
+  tool_extract_audio_from_a_webm_file_why_choose_title: 'WebMファイルから音声を抽出するを使う理由',
   tool_extract_audio_from_a_webm_file_why_choose_item_1:
-    'Solo acepta WebM para que capturas de pantalla no se mezclen con landings MP4.',
+    'WebM 専用受付なので、画面キャプチャが MP4 ランディングと混ざりません。',
   tool_extract_audio_from_a_webm_file_why_choose_item_2:
-    'Topes fallback honestos—sin marketing falso de demux 5 GiB para WebM.',
-  tool_extract_audio_from_a_webm_file_why_choose_item_3: 'El procesamiento queda en tu dispositivo; Detener cancela a mitad.',
-  tool_extract_audio_from_a_webm_file_why_choose_item_4: 'Hub y páginas MP4/MOV de archivos grandes cerca cuando necesites demux.',
-  tool_extract_audio_from_a_webm_file_rules_title: 'Solo WebM y límites fallback',
+    'フォールバック上限を正直に示す—WebM 向けの偽 5 GiB デマックス宣伝なし。',
+  tool_extract_audio_from_a_webm_file_why_choose_item_3:
+    '処理は端末内；「停止」で途中キャンセル可能。',
+  tool_extract_audio_from_a_webm_file_why_choose_item_4:
+    'デマックスが必要なときは近くのハブや MP4/MOV 大容量ページへ。',
+  tool_extract_audio_from_a_webm_file_rules_title: 'WebMのみとフォールバック制限',
   tool_extract_audio_from_a_webm_file_rules_body:
-    'Un WebM local por ejecución en la ruta fallback MediaElement. No es YouTube a MP3. No exporta vídeo mudo.',
+    'MediaElement フォールバックでローカル WebM を1回につき1本。YouTube から MP3 ではありません。無音動画の書き出しでもありません。',
   tool_extract_audio_from_a_webm_file_rules_item_1:
-    '~500 MiB / 4 h fallback. Si pasas el tope → mensaje de contenedor. Demux grande solo MP4/MOV hoy.',
-  tool_extract_audio_from_a_webm_file_rules_item_2: 'Sin URL ni descarga de YouTube.',
-  tool_extract_audio_from_a_webm_file_rules_item_3: 'Depende del soporte WebM/Opus del navegador.',
-  tool_extract_audio_from_a_webm_file_rules_item_4: 'El WebM original no se sobrescribe. Lotes WebM en la herramienta batch WebM.',
-  tool_extract_audio_from_a_webm_file_example_title: 'Prueba una extracción WebM real',
+    'フォールバック約 500 MiB / 4 時間。超過 → err_container。大容量デマックスは現状 MP4/MOV のみ。',
+  tool_extract_audio_from_a_webm_file_rules_item_2: 'URL や YouTube ダウンロードなし。',
+  tool_extract_audio_from_a_webm_file_rules_item_3: '成否はブラウザの WebM/Opus 対応に依存します。',
+  tool_extract_audio_from_a_webm_file_rules_item_4:
+    '元の WebM は上書きしません。複数 WebM は WebM 一括ツールへ。',
+  tool_extract_audio_from_a_webm_file_example_title: '実際のWebM抽出を試す',
   tool_extract_audio_from_a_webm_file_example:
-    'Cargar muestra crea un WebM sintético corto cuando MediaRecorder está disponible y luego Extraer. Mejor tu propio .webm si la muestra no se crea.',
-  tool_extract_audio_from_a_webm_file_usecases_title: 'Cuándo ayuda',
-  tool_extract_audio_from_a_webm_file_usecase_1: 'Captura WebM del navegador → MP3 compartible sin subir.',
-  tool_extract_audio_from_a_webm_file_usecase_2: 'Un clip WebM de entrevista solo necesita la pista Opus en WAV.',
-  tool_extract_audio_from_a_webm_file_usecase_3: 'Ya sabes que es WebM y quieres una landing de formato—not el hub mixto.',
-  tool_extract_audio_from_a_webm_file_faq_q1: '¿Puedo pegar una URL de YouTube?',
-  tool_extract_audio_from_a_webm_file_faq_a1: 'No. Solo .webm local.',
-  tool_extract_audio_from_a_webm_file_faq_q2: '¿Por qué no 5 GiB como la página MP4?',
+    'サンプルを読み込むは MediaRecorder が使えるとき短い合成 WebM を作り、その後「抽出」が走ります。サンプルが作れないときはご自身の .webm を推奨。',
+  tool_extract_audio_from_a_webm_file_usecases_title: 'こんなときに役立ちます',
+  tool_extract_audio_from_a_webm_file_usecase_1:
+    'ブラウザの画面キャプチャ WebM → アップロードなしで共有できる MP3。',
+  tool_extract_audio_from_a_webm_file_usecase_2:
+    'インタビューの WebM クリップから Opus トラックだけを WAV にしたい。',
+  tool_extract_audio_from_a_webm_file_usecase_3:
+    'ファイルが WebM だと分かっていて、混在ハブではなく形式専用ページが欲しい。',
+  tool_extract_audio_from_a_webm_file_faq_q1: 'YouTubeのURLを貼れますか？',
+  tool_extract_audio_from_a_webm_file_faq_a1: 'いいえ。ローカルの .webm のみです。',
+  tool_extract_audio_from_a_webm_file_faq_q2: 'MP4ページのように5 GiBではないのですか？',
   tool_extract_audio_from_a_webm_file_faq_a2:
-    'Demux grande hoy es ISOBMFF (MP4/MOV). WebM usa fallback MediaElement ~500 MiB hasta que exista demux WebM.',
-  tool_extract_audio_from_a_webm_file_faq_q3: '¿Silencia el WebM (vídeo mudo)?',
-  tool_extract_audio_from_a_webm_file_faq_a3: 'No. Solo extrae audio a WAV/MP3.',
-  tool_extract_audio_from_a_webm_file_faq_q4: '¿Se sube mi archivo?',
-  tool_extract_audio_from_a_webm_file_faq_a4: 'No. Decodificación y escritura en tu navegador.',
-  tool_extract_audio_from_a_webm_file_faq_q5: 'Tengo muchos WebM—¿qué página?',
-  tool_extract_audio_from_a_webm_file_faq_a5: 'Usa Extraer audio de archivos WebM por lotes para un ZIP de aciertos.',
-  tool_extract_audio_from_a_webm_file_faq_q6: '¿Recortar después de extraer?',
-  tool_extract_audio_from_a_webm_file_faq_a6: 'No aquí. Descarga y usa Recortar un clip de audio y exportar.',
+    '大容量デマックスは現状 ISOBMFF（MP4/MOV）です。WebM は MediaElement フォールバック約 500 MiB を使い、WebM デマックスが来るまでこの上限です。',
+  tool_extract_audio_from_a_webm_file_faq_q3: 'WebMを無音動画（ミュート）にしますか？',
+  tool_extract_audio_from_a_webm_file_faq_a3: 'いいえ。音声だけを WAV/MP3 に抽出します。',
+  tool_extract_audio_from_a_webm_file_faq_q4: 'ファイルはアップロードされますか？',
+  tool_extract_audio_from_a_webm_file_faq_a4: 'いいえ。デコードと書き込みはブラウザ内です。',
+  tool_extract_audio_from_a_webm_file_faq_q5: 'WebMが多数あります—どのページ？',
+  tool_extract_audio_from_a_webm_file_faq_a5:
+    '成功分の ZIP なら「複数のWebMファイルから音声を一括抽出」を使ってください。',
+  tool_extract_audio_from_a_webm_file_faq_q6: '抽出後にトリムできますか？',
+  tool_extract_audio_from_a_webm_file_faq_a6:
+    'ここではありません。ダウンロード後、「音声クリップをトリムして書き出す」を使ってください。',
 };
 export default ja;

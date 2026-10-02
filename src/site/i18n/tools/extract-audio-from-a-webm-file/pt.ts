@@ -1,103 +1,123 @@
 import type { SiteLangDict } from '../../../types';
 
 /**
- * Español: extraer audio de un archivo WebM (solo .webm; fallback ~500 MiB / 4 h).
+ * Português: Extrair áudio de um ficheiro WebM.
+ * Apenas .webm ; fallback MediaElement (~500 MiB / 4 h)—sem demux 5 GiB.
+ * Processamento local ; saída WAV ou MP3 ; sem URL YouTube.
  */
 const pt: SiteLangDict = {
   tool_extract_audio_from_a_webm_file_title: 'Extrair áudio de um ficheiro WebM',
   tool_extract_audio_from_a_webm_file_desc:
-    'Solo WebM local: captura Opus/Vorbis en el dispositivo y descarga WAV o MP3; ruta fallback ~500 MiB / 4 h—sin prometer demux de 5 GiB.',
+    'Extrair áudio Opus/Vorbis de um WebM local para WAV ou MP3 no dispositivo. Fallback do browser ~500 MiB / 4 h—sem demux 5 GiB.',
   tool_extract_audio_from_a_webm_file_description:
-    'Extrae la pista de un WebM local en el navegador y descarga WAV o MP3. Pasos: elegir WebM → Extraer → escuchar → descargar. Ejemplo: Cargar muestra crea un WebM corto si MediaRecorder está disponible. Esta página usa la ruta fallback MediaElement (~500 MiB / 4 h); archivos más grandes fallan al instante con mensaje de contenedor. Demux grande de MP4/MOV está en esas páginas o en el hub de vídeo. Solo local—no YouTube ni URL. No se sube al servidor. ¿Muchos WebM? Usa Extraer audio de archivos WebM por lotes. Processo em passos: escolher ficheiro → extrair → transferir. Exemplo: carregar amostra.',
+    'Extrair a faixa de áudio de um WebM local no browser e descarregar WAV ou MP3. Passos: escolher WebM → Extrair → pré-ouvir → descarregar. Exemplo: Carregar amostra cria um WebM sintético curto quando MediaRecorder está disponível. Esta página WebM usa o fallback MediaElement partilhado (~500 MiB / 4 h)—ficheiros grandes falham depressa com err_container. Demux grande de MP4/MOV está nessas páginas de formato ou no hub de vídeo. Só local—não descarrega YouTube nem URL. Nunca enviado. Muitos WebM? Use Extrair áudio de ficheiros WebM em lote.',
   tool_extract_audio_from_a_webm_file_article:
-    'Grabaciones de pantalla y capturas del navegador suelen ser WebM con Opus. Esta página acepta solo .webm, usa la ruta fallback compartida y escribe WAV o MP3 sin subir. No promete demux ISOBMFF ni streaming OPFS multi‑GiB—eso es para MP4/MOV. No obtiene URL de YouTube. Carpetas mixtas: hub o lote del hub.',
-  tool_extract_audio_from_a_webm_file_choose: 'Elegir un archivo WebM',
+    'Gravações de ecrã e capturas do browser costumam sair em WebM com Opus. Esta página aceita só .webm, segue o caminho de fallback da tabela de capacidades e escreve WAV ou MP3 sem upload. Não reivindica demux ISOBMFF nem streaming OPFS multi-gigabyte—isso é para MP4/MOV. Não obtém URLs YouTube. Pastas mistas pertencem ao hub ou ao lote do hub.',
+  tool_extract_audio_from_a_webm_file_choose: 'Escolher um ficheiro WebM',
   tool_extract_audio_from_a_webm_file_hint:
-    'Suelta un .webm local. Tope fallback ~500 MiB / 4 h. WebM más grandes fallan con mensaje claro—remux a MP4 para demux grande o reduce el archivo.',
-  tool_extract_audio_from_a_webm_file_convert: 'Extraer',
-  tool_extract_audio_from_a_webm_file_download: 'Descargar',
-  tool_extract_audio_from_a_webm_file_download_wav: 'Descargar WAV',
-  tool_extract_audio_from_a_webm_file_download_mp3: 'Descargar MP3',
-  tool_extract_audio_from_a_webm_file_sample: 'Cargar muestra',
-  tool_extract_audio_from_a_webm_file_clear: 'Borrar',
-  tool_extract_audio_from_a_webm_file_advanced: 'Formato de exportación',
-  tool_extract_audio_from_a_webm_file_format_label: 'Formato de salida',
+    'Largue um .webm local. Limite de fallback ~500 MiB / 4 h. WebMs maiores falham com mensagem de contentor clara—remuxe para MP4 no caminho de demux grande, ou reduza o ficheiro.',
+  tool_extract_audio_from_a_webm_file_convert: 'Extrair',
+  tool_extract_audio_from_a_webm_file_download: 'Descarregar',
+  tool_extract_audio_from_a_webm_file_download_wav: 'Descarregar WAV',
+  tool_extract_audio_from_a_webm_file_download_mp3: 'Descarregar MP3',
+  tool_extract_audio_from_a_webm_file_sample: 'Carregar amostra',
+  tool_extract_audio_from_a_webm_file_clear: 'Limpar',
+  tool_extract_audio_from_a_webm_file_advanced: 'Formato de exportação',
+  tool_extract_audio_from_a_webm_file_format_label: 'Formato de saída',
   tool_extract_audio_from_a_webm_file_format_wav: 'WAV (16 bits)',
   tool_extract_audio_from_a_webm_file_format_mp3: 'MP3',
-  tool_extract_audio_from_a_webm_file_bitrate: 'Bitrate MP3',
+  tool_extract_audio_from_a_webm_file_bitrate: 'Taxa de bits MP3',
   tool_extract_audio_from_a_webm_file_settings_hint:
-    'WAV por defecto vale para WebM cortos. Clips largos pueden ir a MP3 por streaming. El tope es la ruta fallback (~500 MiB), no demux MP4. Sin URL.',
-  tool_extract_audio_from_a_webm_file_progress: 'Progreso de extracción',
-  tool_extract_audio_from_a_webm_file_read: 'Leer',
-  tool_extract_audio_from_a_webm_file_decode: 'Reproducir',
-  tool_extract_audio_from_a_webm_file_extract: 'Extraer',
-  tool_extract_audio_from_a_webm_file_write: 'Escribir',
-  tool_extract_audio_from_a_webm_file_done: 'Listo. Escucha el audio y descarga WAV o MP3.',
-  tool_extract_audio_from_a_webm_file_failed: 'La extracción falló. Prueba un WebM más pequeño que el navegador pueda decodificar.',
-  tool_extract_audio_from_a_webm_file_elapsed: '{s}s transcurridos',
-  tool_extract_audio_from_a_webm_file_preview: 'Escuchar el audio extraído',
-  tool_extract_audio_from_a_webm_file_result: '{seconds}s · {channels} ch · {rate} Hz · {format} {output} KiB',
-  tool_extract_audio_from_a_webm_file_sample_name: 'demo-webm-corto',
-  tool_extract_audio_from_a_webm_file_empty: 'Elige un WebM o carga la muestra primero.',
+    'WAV por defeito para WebMs curtos. Clipes maiores podem transmitir MP3. O limite é o fallback (~500 MiB), não demux MP4. Sem URL.',
+  tool_extract_audio_from_a_webm_file_progress: 'Progresso da extração',
+  tool_extract_audio_from_a_webm_file_read: 'Ler',
+  tool_extract_audio_from_a_webm_file_decode: 'Descodificar',
+  tool_extract_audio_from_a_webm_file_extract: 'Extrair',
+  tool_extract_audio_from_a_webm_file_write: 'Escrever',
+  tool_extract_audio_from_a_webm_file_done: 'Pronto. Pré-ouça o áudio e descarregue WAV ou MP3.',
+  tool_extract_audio_from_a_webm_file_failed:
+    'A extração falhou. Experimente um WebM mais pequeno que o browser consiga descodificar.',
+  tool_extract_audio_from_a_webm_file_elapsed: '{s}s decorridos',
+  tool_extract_audio_from_a_webm_file_preview: 'Ouvir o áudio extraído',
+  tool_extract_audio_from_a_webm_file_result: '{seconds}s · {channels} can. · {rate} Hz · {format} {output} KiB',
+  tool_extract_audio_from_a_webm_file_sample_name: 'demo-webm-audio-curto',
+  tool_extract_audio_from_a_webm_file_empty: 'Escolha primeiro um ficheiro WebM ou carregue a amostra.',
   tool_extract_audio_from_a_webm_file_empty_state:
-    'Sin archivo. Suelta un .webm local (~500 MiB) o Cargar muestra. No YouTube.',
-  tool_extract_audio_from_a_webm_file_err_file: 'Suelta exactamente un archivo WebM.',
-  tool_extract_audio_from_a_webm_file_err_format: 'Archivo no admitido. En esta página solo .webm (video/webm).',
-  tool_extract_audio_from_a_webm_file_err_limit: 'Este WebM supera el tope de tamaño o duración de la ruta fallback.',
+    'Ainda sem ficheiro. Largue um .webm local (~500 MiB) ou Carregar amostra. Não é YouTube.',
+  tool_extract_audio_from_a_webm_file_err_file: 'Largue exatamente um ficheiro WebM.',
+  tool_extract_audio_from_a_webm_file_err_format:
+    'Ficheiro não suportado. Use só .webm (video/webm) nesta página.',
+  tool_extract_audio_from_a_webm_file_err_limit:
+    'Este WebM excede um limite de duração ou tamanho no caminho de fallback.',
   tool_extract_audio_from_a_webm_file_err_container:
-    'Este WebM supera el tope fallback (~500 MiB / 4 h) o no se puede decodificar aquí. Remux a MP4 para demux grande o usa un WebM más pequeño.',
-  tool_extract_audio_from_a_webm_file_err_codec: 'El códec de audio de este WebM no está soportado en la ruta fallback.',
-  tool_extract_audio_from_a_webm_file_err_channels: 'La pista usa un layout de canales que el extractor no puede tratar.',
-  tool_extract_audio_from_a_webm_file_err_decode: 'El navegador no pudo decodificar audio de este WebM.',
-  tool_extract_audio_from_a_webm_file_err_encoder: 'No se pudo escribir el audio. Intenta Extraer de nuevo.',
-  tool_extract_audio_from_a_webm_file_err_sample: 'No se pudo crear la muestra WebM. Suelta tu propio .webm.',
-  tool_extract_audio_from_a_webm_file_err_unsupported: 'Este navegador no tiene Web Audio necesario para extraer.',
-  tool_extract_audio_from_a_webm_file_err_empty: 'No se capturaron muestras de audio útiles.',
-  tool_extract_audio_from_a_webm_file_stop: 'Detener',
-  tool_extract_audio_from_a_webm_file_status_stopped: 'Detenido. No se guarda audio parcial.',
-  tool_extract_audio_from_a_webm_file_forced_mp3: 'Entrada larga/grande usó MP3 por streaming en la ruta fallback.',
-  tool_extract_audio_from_a_webm_file_how_title: 'Cómo extraer audio de un archivo WebM',
+    'Este WebM ultrapassa o limite de fallback (~500 MiB / 4 h) ou não é descodificável aqui. Remuxe para MP4 no demux grande, ou use um WebM mais pequeno.',
+  tool_extract_audio_from_a_webm_file_err_codec:
+    'O codec de áudio deste WebM não é suportado no caminho de fallback do browser.',
+  tool_extract_audio_from_a_webm_file_err_channels:
+    'Esta faixa usa um layout de canais que o extrator não consegue tratar.',
+  tool_extract_audio_from_a_webm_file_err_decode: 'O browser não conseguiu descodificar áudio deste WebM.',
+  tool_extract_audio_from_a_webm_file_err_encoder: 'Não foi possível escrever o ficheiro de áudio. Tente Extrair de novo.',
+  tool_extract_audio_from_a_webm_file_err_sample:
+    'Não foi possível criar um WebM de amostra. Largue o seu próprio .webm.',
+  tool_extract_audio_from_a_webm_file_err_unsupported:
+    'Este browser não tem Web Audio necessário para a extração.',
+  tool_extract_audio_from_a_webm_file_err_empty: 'Não foram capturadas amostras de áudio utilizáveis.',
+  tool_extract_audio_from_a_webm_file_stop: 'Parar',
+  tool_extract_audio_from_a_webm_file_status_stopped: 'Parado. Nenhum ficheiro de áudio parcial é guardado.',
+  tool_extract_audio_from_a_webm_file_forced_mp3:
+    'Entrada longa/grande usou MP3 em stream no caminho de fallback.',
+  tool_extract_audio_from_a_webm_file_how_title: 'Como extrair áudio de um ficheiro WebM',
   tool_extract_audio_from_a_webm_file_how_body:
-    'Suelta un WebM local, elige WAV o MP3, Extraer, escucha y descarga—sin subir ni pegar URL.',
+    'Largue um WebM local, escolha WAV ou MP3, Extrair, pré-ouça, descarregue—sem upload.',
   tool_extract_audio_from_a_webm_file_how_item_1:
-    'Elige un .webm local (~500 MiB) o Cargar muestra si MediaRecorder funciona.',
-  tool_extract_audio_from_a_webm_file_how_item_2: 'Abre Formato de exportación y elige WAV o MP3; ajusta bitrate si hace falta.',
-  tool_extract_audio_from_a_webm_file_how_item_3: 'Pulsa Extraer y espera Leer → Reproducir → Extraer → Escribir (o Detener).',
-  tool_extract_audio_from_a_webm_file_how_item_4: 'Escucha y luego Descargar WAV o Descargar MP3.',
-  tool_extract_audio_from_a_webm_file_why_choose_title: 'Por qué usar Extraer audio de un archivo WebM',
+    'Escolha um .webm local (~500 MiB), ou Carregar amostra quando MediaRecorder funcionar.',
+  tool_extract_audio_from_a_webm_file_how_item_2:
+    'Abra Formato de exportação e escolha WAV ou MP3; defina a taxa de bits se precisar.',
+  tool_extract_audio_from_a_webm_file_how_item_3:
+    'Clique Extrair e aguarde Ler → Descodificar → Extrair → Escrever (ou Parar).',
+  tool_extract_audio_from_a_webm_file_how_item_4: 'Pré-ouça, depois Descarregar WAV ou Descarregar MP3.',
+  tool_extract_audio_from_a_webm_file_why_choose_title: 'Por que usar Extrair áudio de um ficheiro WebM',
   tool_extract_audio_from_a_webm_file_why_choose_item_1:
-    'Solo acepta WebM para que capturas de pantalla no se mezclen con landings MP4.',
+    'Aceita só WebM para capturas de ecrã não se misturarem com landings MP4.',
   tool_extract_audio_from_a_webm_file_why_choose_item_2:
-    'Topes fallback honestos—sin marketing falso de demux 5 GiB para WebM.',
-  tool_extract_audio_from_a_webm_file_why_choose_item_3: 'El procesamiento queda en tu dispositivo; Detener cancela a mitad.',
-  tool_extract_audio_from_a_webm_file_why_choose_item_4: 'Hub y páginas MP4/MOV de archivos grandes cerca cuando necesites demux.',
-  tool_extract_audio_from_a_webm_file_rules_title: 'Solo WebM y límites fallback',
+    'Limites de fallback honestos—sem marketing falso de demux 5 GiB para WebM.',
+  tool_extract_audio_from_a_webm_file_why_choose_item_3:
+    'Processamento no seu dispositivo; Parar cancela a meio.',
+  tool_extract_audio_from_a_webm_file_why_choose_item_4:
+    'Hub e páginas de ficheiros grandes MP4/MOV por perto quando precisa de demux.',
+  tool_extract_audio_from_a_webm_file_rules_title: 'Só WebM e limites de fallback',
   tool_extract_audio_from_a_webm_file_rules_body:
-    'Un WebM local por ejecución en la ruta fallback MediaElement. No es YouTube a MP3. No exporta vídeo mudo.',
+    'Um WebM local por execução no caminho MediaElement de fallback. Não é YouTube para MP3. Não exporta vídeo mudo.',
   tool_extract_audio_from_a_webm_file_rules_item_1:
-    '~500 MiB / 4 h fallback. Si pasas el tope → mensaje de contenedor. Demux grande solo MP4/MOV hoy.',
-  tool_extract_audio_from_a_webm_file_rules_item_2: 'Sin URL ni descarga de YouTube.',
-  tool_extract_audio_from_a_webm_file_rules_item_3: 'Depende del soporte WebM/Opus del navegador.',
-  tool_extract_audio_from_a_webm_file_rules_item_4: 'El WebM original no se sobrescribe. Lotes WebM en la herramienta batch WebM.',
-  tool_extract_audio_from_a_webm_file_example_title: 'Prueba una extracción WebM real',
+    '~500 MiB / 4 h de fallback. Acima → err_container. Demux grande hoje só MP4/MOV.',
+  tool_extract_audio_from_a_webm_file_rules_item_2: 'Sem URL nem descarga YouTube.',
+  tool_extract_audio_from_a_webm_file_rules_item_3: 'O sucesso depende do suporte WebM/Opus do browser.',
+  tool_extract_audio_from_a_webm_file_rules_item_4:
+    'O WebM original nunca é sobrescrito. Vários WebM: ferramenta de lote WebM.',
+  tool_extract_audio_from_a_webm_file_example_title: 'Experimentar uma extração WebM real',
   tool_extract_audio_from_a_webm_file_example:
-    'Cargar muestra crea un WebM sintético corto cuando MediaRecorder está disponible y luego Extraer. Mejor tu propio .webm si la muestra no se crea.',
-  tool_extract_audio_from_a_webm_file_usecases_title: 'Cuándo ayuda',
-  tool_extract_audio_from_a_webm_file_usecase_1: 'Captura WebM del navegador → MP3 compartible sin subir.',
-  tool_extract_audio_from_a_webm_file_usecase_2: 'Un clip WebM de entrevista solo necesita la pista Opus en WAV.',
-  tool_extract_audio_from_a_webm_file_usecase_3: 'Ya sabes que es WebM y quieres una landing de formato—not el hub mixto.',
-  tool_extract_audio_from_a_webm_file_faq_q1: '¿Puedo pegar una URL de YouTube?',
-  tool_extract_audio_from_a_webm_file_faq_a1: 'No. Solo .webm local.',
-  tool_extract_audio_from_a_webm_file_faq_q2: '¿Por qué no 5 GiB como la página MP4?',
+    'Carregar amostra cria um WebM sintético curto quando MediaRecorder está disponível, depois Extrair corre. Prefira o seu .webm se a amostra falhar.',
+  tool_extract_audio_from_a_webm_file_usecases_title: 'Quando ajuda',
+  tool_extract_audio_from_a_webm_file_usecase_1:
+    'Captura de ecrã WebM do browser → MP3 partilhável sem upload.',
+  tool_extract_audio_from_a_webm_file_usecase_2:
+    'Um clip de entrevista WebM precisa só da faixa Opus em WAV.',
+  tool_extract_audio_from_a_webm_file_usecase_3:
+    'Já sabe que o ficheiro é WebM e quer uma landing por formato—não o hub misto.',
+  tool_extract_audio_from_a_webm_file_faq_q1: 'Posso colar um URL do YouTube?',
+  tool_extract_audio_from_a_webm_file_faq_a1: 'Não. Só .webm local.',
+  tool_extract_audio_from_a_webm_file_faq_q2: 'Porquê não 5 GiB como na página MP4?',
   tool_extract_audio_from_a_webm_file_faq_a2:
-    'Demux grande hoy es ISOBMFF (MP4/MOV). WebM usa fallback MediaElement ~500 MiB hasta que exista demux WebM.',
-  tool_extract_audio_from_a_webm_file_faq_q3: '¿Silencia el WebM (vídeo mudo)?',
-  tool_extract_audio_from_a_webm_file_faq_a3: 'No. Solo extrae audio a WAV/MP3.',
-  tool_extract_audio_from_a_webm_file_faq_q4: '¿Se sube mi archivo?',
-  tool_extract_audio_from_a_webm_file_faq_a4: 'No. Decodificación y escritura en tu navegador.',
-  tool_extract_audio_from_a_webm_file_faq_q5: 'Tengo muchos WebM—¿qué página?',
-  tool_extract_audio_from_a_webm_file_faq_a5: 'Usa Extraer audio de archivos WebM por lotes para un ZIP de aciertos.',
-  tool_extract_audio_from_a_webm_file_faq_q6: '¿Recortar después de extraer?',
-  tool_extract_audio_from_a_webm_file_faq_a6: 'No aquí. Descarga y usa Recortar un clip de audio y exportar.',
+    'O demux grande hoje é ISOBMFF (MP4/MOV). WebM usa fallback MediaElement ~500 MiB até haver demux WebM.',
+  tool_extract_audio_from_a_webm_file_faq_q3: 'Isto silencia um WebM (vídeo mudo)?',
+  tool_extract_audio_from_a_webm_file_faq_a3: 'Não. Extrai apenas áudio para WAV/MP3.',
+  tool_extract_audio_from_a_webm_file_faq_q4: 'O meu ficheiro é enviado?',
+  tool_extract_audio_from_a_webm_file_faq_a4: 'Não. Descodificação e escrita no seu browser.',
+  tool_extract_audio_from_a_webm_file_faq_q5: 'Tenho muitos WebM—qual página?',
+  tool_extract_audio_from_a_webm_file_faq_a5:
+    'Use Extrair áudio de ficheiros WebM em lote para um ZIP dos sucessos.',
+  tool_extract_audio_from_a_webm_file_faq_q6: 'Posso cortar depois da extração?',
+  tool_extract_audio_from_a_webm_file_faq_a6:
+    'Não aqui. Descarregue e use Cortar um clip de áudio e exportar.',
 };
 export default pt;

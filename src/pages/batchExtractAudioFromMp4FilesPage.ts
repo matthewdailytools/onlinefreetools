@@ -267,7 +267,20 @@ export const renderBatchExtractAudioFromMp4FilesPage = (opts: {
     /** 本轮开始时间戳。 */
     let started = 0;
     /** 让出主线程一帧，保持 HUD 可更新。 */
-    const yieldUi = () => new Promise(resolve => requestAnimationFrame(() => setTimeout(resolve, 0)));
+    const yieldUi = () => new Promise(resolve => {
+      /** 是否已 resolve。 */
+      let done = false;
+      /** 只 resolve 一次；后台标签页不触发 rAF，隐藏时走 MessageChannel，可见时 50ms 兜底。 */
+      const finish = () => { if (!done){ done = true; resolve(); } };
+      if (document.hidden && typeof MessageChannel === 'function'){
+        const ch = new MessageChannel();
+        ch.port1.onmessage = finish;
+        ch.port2.postMessage(0);
+        return;
+      }
+      requestAnimationFrame(() => setTimeout(finish, 0));
+      setTimeout(finish, 50);
+    });
     /**
      * 用命名占位符填充模板。
      * @param {string} text 模板

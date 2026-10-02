@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dev Logs (24/32) | OnlineFreeTools.org</title>
-  <meta name="description" content="Curated project development notes with reusable decisions and fixes, organized by month. (24/32)" />
+  <title>Fixed five production defects from the AV suite QA: OPFS MP3 blobs stay readable, WebM/MKV fallback records unmuted audio at 1x, yields no longer stall on hidden tabs, Whisper uses an inactivity timeout with byte progress, and WebM fr/pt/id/ja/ru/ar plus MP4/MOV gate copy were rewritten. | Dev Logs</title>
+  <meta name="description" content="Fixed five production defects from the AV suite QA: OPFS MP3 blobs stay readable, WebM/MKV fallback records unmuted audio at 1x, yields no longer stall on hidden tabs, Whisper uses an inactivity timeout with byte progress, and WebM fr/pt/id/ja/ru/ar plus MP4/MOV gate copy were rewritten." />
   
-  <link rel="canonical" href="https://onlinefreetools.org/devlogs/page-24.html" />
-  <meta property="og:title" content="Dev Logs (24/32) | OnlineFreeTools.org" />
-  <meta property="og:description" content="Curated project development notes with reusable decisions and fixes, organized by month. (24/32)" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://onlinefreetools.org/devlogs/page-24.html" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-10-02-15-20-av-suite-production-defect-fixes.html" />
+  <meta property="og:title" content="Fixed five production defects from the AV suite QA: OPFS MP3 blobs stay readable, WebM/MKV fallback records unmuted audio at 1x, yields no longer stall on hidden tabs, Whisper uses an inactivity timeout with byte progress, and WebM fr/pt/id/ja/ru/ar plus MP4/MOV gate copy were rewritten. | Dev Logs" />
+  <meta property="og:description" content="Fixed five production defects from the AV suite QA: OPFS MP3 blobs stay readable, WebM/MKV fallback records unmuted audio at 1x, yields no longer stall on hidden tabs, Whisper uses an inactivity timeout with byte progress, and WebM fr/pt/id/ja/ru/ar plus MP4/MOV gate copy were rewritten." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-10-02-15-20-av-suite-production-defect-fixes.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
@@ -47,9 +47,8 @@
   else window.addEventListener('load', schedule, { once: true });
 })();
 </script>
-  <link rel="prev" href="https://onlinefreetools.org/devlogs/page-23.html" />
-  <link rel="next" href="https://onlinefreetools.org/devlogs/page-25.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs (24/32)","url":"https://onlinefreetools.org/devlogs/page-24.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://onlinefreetools.org/devlogs/"}]}}</script>
+  
+  
 </head>
 <body class="is-info-page is-devlog-page">
   
@@ -163,150 +162,72 @@
       <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/"><span class="sidebar-tool-label">Home</span></a></div>
     </aside>
     <main id="content" class="p-4">
-    <section>
-      <header class="devlog-page-head mb-3">
-        <a class="btn btn-outline-secondary btn-sm devlog-back flex-shrink-0" href="/">Back to Home</a>
-        <h1 class="devlog-title">Dev Logs</h1>
-        <p class="devlog-lead text-muted mb-0">
-          Browse Q&A and implementation notes by month.
-          <a class="ms-1 text-decoration-none" href="https://github.com/matthewdailytools/onlinefreetools" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </p>
-      </header>
-      
-      <div class="mb-4">
-        <h2 class="h5 text-muted mb-2">2026-08</h2>
-        <ul class="list-group shadow-sm">
-          
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-16-08-track-all-vendor-assets.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>track-all-vendor-assets<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-16-06-cf-github-auto-deploy-vendor.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>cf-github-auto-deploy-vendor<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-16-05-why-keep-image-vendor-gitignore.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>why-keep-image-vendor-gitignore<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-16-04-track-bootstrap-fonts-vendor-commit.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>track-bootstrap-fonts-vendor-commit<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-16-02-gitignore-vendor-chrome-explain.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>gitignore-vendor-chrome-explain<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-59-zh-home-style-misalign-missing-vendor.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>zh-home-style-misalign-missing-vendor<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-52-add-design-tool-category.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>add-design-tool-category<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-44-tool-page-fluid-content-width.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>tool-page-fluid-content-width<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-42-home-card-grid-autofill.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>home-card-grid-autofill<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-41-remove-baidu-keep-clarity.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>remove-baidu-keep-clarity<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-40-fix-slow-load-self-host-chrome.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>fix-slow-load-self-host-chrome<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-32-ilovepdf-tag-btn-and-fluid-page-pad.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ilovepdf-tag-btn-and-fluid-page-pad<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-30-fix-images-to-gif-slow-load.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>fix-images-to-gif-slow-load<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-27-ilovepdf-white-outline-buttons.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ilovepdf-white-outline-buttons<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-24-align-site-styles-to-ilovepdf.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>align-site-styles-to-ilovepdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-20-fix-yaml-json-sample-template-escape.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>fix-yaml-json-sample-template-escape<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-18-fix-yaml-json-literal-backslash-n.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>fix-yaml-json-literal-backslash-n<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-16-ilovepdf-tools-supplement.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>ilovepdf-tools-supplement<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-15-fix-schema-validator-literal-backslash-n.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>fix-schema-validator-literal-backslash-n<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-10-rule-pre-checklist-search-coverage.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>rule-pre-checklist-search-coverage<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-05-seo-title-keyword-optimize-flow.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>seo-title-keyword-optimize-flow<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-15-03-json-schema-validator-full-flow.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>json-schema-validator-full-flow<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-14-44-tooldone-tool-inventory-formula-refs.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>tooldone-tool-inventory-formula-refs<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-14-38-tool-structure-isolation-layer.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>tool-structure-isolation-layer<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-14-22-zip-slug-search-intent.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>zip-slug-search-intent<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-14-21-nine-image-tools-brief-and-implement.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>nine-image-tools-brief-and-implement<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-14-14-gradient-is-math-calculator.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>gradient-is-math-calculator<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-14-11-tool-inventory-serial-numbers.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>tool-inventory-serial-numbers<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-14-08-tool-inventory-dev-progress.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>tool-inventory-dev-progress<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
-            <a href="/devlogs/2026-08-08-13-52-tool-inventory-table-doc.html" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>tool-inventory-table-doc<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
-            <span class="badge text-bg-secondary">2026-08-08</span>
-          </li>
-        </ul>
-      </div>
-      
-      <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4" aria-label="Dev Logs">
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-23.html" rel="prev">Previous</a>
-        <span class="small text-muted">Page 24 of 32</span>
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-25.html" rel="next">Next</a>
-      </nav>
-    </section>
-  </main>
+      <section class="mb-3">
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Fixed five production defects from the AV suite QA: OPFS MP3 blobs stay readable, WebM/MKV fallback records unmuted audio at 1x, yields no longer stall on hidden tabs, Whisper uses an inactivity timeout with byte progress, and WebM fr/pt/id/ja/ru/ar plus MP4/MOV gate copy were rewritten.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-convert-mkv-files-to-mp4-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-mkv-files-to-mp4-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-extract-audio-from-mkv-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-extract-audio-from-mkv-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-extract-audio-from-mov-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-extract-audio-from-mov-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-extract-audio-from-mp4-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-extract-audio-from-mp4-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-extract-audio-from-video-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-extract-audio-from-video-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-extract-audio-from-webm-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-extract-audio-from-webm-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/convert-an-mkv-file-to-an-mp4-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-an-mkv-file-to-an-mp4-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/extract-audio-from-a-mov-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>extract-audio-from-a-mov-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/extract-audio-from-a-video-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>extract-audio-from-a-video-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/extract-audio-from-a-webm-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>extract-audio-from-a-webm-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/extract-audio-from-an-mkv-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>extract-audio-from-an-mkv-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/extract-audio-from-an-mp4-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>extract-audio-from-an-mp4-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/make-srt-subtitles-from-a-video-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>make-srt-subtitles-from-a-video-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/make-srt-subtitles-from-an-audio-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>make-srt-subtitles-from-an-audio-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-10-02 15:20
+Summary: Fixed five production defects from the AV suite QA: OPFS MP3 blobs stay readable, WebM/MKV fallback records unmuted audio at 1x, yields no longer stall on hidden tabs, Whisper uses an inactivity timeout with byte progress, and WebM fr/pt/id/ja/ru/ar plus MP4/MOV gate copy were rewritten.
+Visibility: people</p>
+<p>[question]
+按顺序逐一修复（引擎缺陷 1–3 优先；大文件回退用原速采集；随后 Whisper、文案与 WebM 六语）</p>
+<h2>Tool links (English)</h2>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-convert-mkv-files-to-mp4-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-mkv-files-to-mp4-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-extract-audio-from-mkv-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-extract-audio-from-mkv-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-extract-audio-from-mov-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-extract-audio-from-mov-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-extract-audio-from-mp4-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-extract-audio-from-mp4-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-extract-audio-from-video-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-extract-audio-from-video-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-extract-audio-from-webm-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-extract-audio-from-webm-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/convert-an-mkv-file-to-an-mp4-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-an-mkv-file-to-an-mp4-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/extract-audio-from-a-mov-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>extract-audio-from-a-mov-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/extract-audio-from-a-video-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>extract-audio-from-a-video-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/extract-audio-from-a-webm-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>extract-audio-from-a-webm-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/extract-audio-from-an-mkv-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>extract-audio-from-an-mkv-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/extract-audio-from-an-mp4-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>extract-audio-from-an-mp4-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/make-srt-subtitles-from-a-video-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>make-srt-subtitles-from-a-video-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/make-srt-subtitles-from-an-audio-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>make-srt-subtitles-from-an-audio-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
+<p>[try to solve]</p>
+<h2>Context</h2>
+<p>Live QA of the 14 audio/video tools found five defects. This pass fixed them in order and verified on the local wrangler + R2 stack. Production deploy is still pending approval.</p>
+<h2>Process</h2>
+<ol>
+<li><strong>OPFS sink (<code>stable-extract.js</code>)</strong> — <code>finalize()</code> used to <code>removeEntry()</code> immediately after <code>file.slice()</code>. The Blob kept a size but later reads threw <code>NotFoundError</code>. Fix: keep the OPFS entry for the page session; sweep files older than 6 hours on first sink create; delete session files on <code>pagehide</code> (non-bfcache).</li>
+<li><strong>MediaElement fallback</strong> — probe <code>&lt;video&gt;</code> was <code>muted=true</code>, so ScriptProcessor captured silence; <code>playbackRate=2</code> halved duration. Fix: unmute (speakers still silent via gain=0); force <code>STREAM_PLAYBACK_RATE = 1</code>.</li>
+<li><strong><code>yieldUi</code></strong> — rAF-only yields froze in hidden tabs. Fix in the library and 14 page scripts: when <code>document.hidden</code>, resolve via <code>MessageChannel</code>; when visible, race rAF with a 50 ms (SRT: 90 ms) timeout.</li>
+<li><strong>Whisper loader</strong> — hard 90 s total timeout aborted slow first downloads; superseded progress still wrote into the error HUD. Fix: inactivity timeout that resets on byte progress; streaming prefetch with <code>ReadableStream</code>; generation-gated progress; page <code>onModelProgress</code> ignores callbacks after fail/stop.</li>
+<li><strong>Copy / i18n</strong> — MP4/MOV <code>err_format</code> rewritten per locale for single-format gates; English residue keys translated. WebM single + batch <code>fr/pt/id/ja/ru/ar</code> fully rewritten from EN masters (Spanish leakage removed). Coverage phase=4 green for those four slugs.</li>
+</ol>
+<h2>Root cause / analysis</h2>
+<ul>
+<li>OPFS <code>File</code> Blobs are live views of the private file; deleting the entry invalidates later ZIP/download reads.</li>
+<li>Chrome feeds silence from muted media elements into <code>MediaElementAudioSourceNode</code>.</li>
+<li>Background tabs pause rAF; long jobs must not depend on it alone.</li>
+<li>Total timeouts punish slow networks; stall detection with real progress is the right model.</li>
+<li>Earlier WebM locale generation copied Spanish into six languages; mechanical key presence gates did not catch it.</li>
+</ul>
+<h2>Solution</h2>
+<ul>
+<li>Engine and Whisper vendor scripts updated under <code>public/vendor/</code>.</li>
+<li>Page <code>yieldUi</code> helpers updated in all 14 AV tool pages.</li>
+<li>MP4/MOV and WebM locale shards updated; brief <code>2b</code> rows recorded for WebM tools.</li>
+<li>Local verification:<ul>
+<li>147 MiB MOV batch → readable MP3 in ZIP (RMS ≈ 0.06).</li>
+<li>Large WebM stream path → ~15.2 s duration, RMS ≈ 0.06 (was silent ~7.7 s).</li>
+<li>Simulated hidden tab (<code>document.hidden</code> + dead rAF) still finishes extract in ~1 s.</li>
+<li>Whisper hung-fetch inactivity timeout fails in ~5 s with <code>err_model</code>.</li>
+<li>Local ja WebM page H1 correct; zero Spanish body hits.</li>
+<li><code>CROSS_TOOL_UPDATE=1 npm run verify:tool</code> OK for WebM single and SRT audio (suite-wide catalog <code>updatedAt</code> bumps).</li>
+</ul>
+</li>
+</ul>
+<h2>Notes / boundaries</h2>
+<ul>
+<li>Large WebM/MKV extract now takes wall-clock ≈ media duration (1× capture). That is the chosen correctness trade-off.</li>
+<li>Production is unchanged until <code>npm run deploy</code> + <code>git:deploy</code>. Cache version remains 4.89 until the next R2 upload bumps it if configured.</li>
+<li>Leftover <code>scripts/tmp/*webm*</code> generators that caused Spanish spread stay uncommitted and should not ship.</li>
+<li>Minor residual: hub <code>extract-audio-from-a-video-file</code> ja still has a few English-templated keys; out of this fix scope.</li>
+</ul>
+<p>[actions]</p>
+<ul>
+<li><code>public/vendor/extract-audio/stable-extract.js</code> — OPFS lifetime, unmuted 1× fallback, resilient <code>yieldUi</code></li>
+<li><code>public/vendor/whisper/whisper-loader.js</code> — inactivity timeout, byte prefetch, gated progress</li>
+<li>14 <code>src/pages/*Page.ts</code> AV pages — <code>yieldUi</code> fallback; SRT progress ignore-after-fail</li>
+<li>MP4/MOV/WebM i18n shards + WebM <code>03-locale-briefs.md</code> 2b rows</li>
+<li><code>npm run build:site</code>, <code>upload:r2:local</code>, local Chrome/Playwright checks, <code>verify:tool</code> (cross-tool)</li>
+</ul>
+</article>
+      </section>
+    </main>
   </div>
   
   <footer class="site-footer border-top text-center py-3">

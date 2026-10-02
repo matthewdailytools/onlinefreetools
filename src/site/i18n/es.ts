@@ -8320,14 +8320,15 @@ const es: SiteLangDict = {
   tool_extract_audio_from_a_mov_file_err_container:
     'Este contenedor no está en la ruta de demux para archivos grandes. WebM/MKV y similares quedan en ~500 MiB / 4 h por fallback—o remux a MP4/MOV.',
   tool_extract_audio_from_a_mov_file_err_decode: 'El navegador no pudo decodificar audio de este vídeo. Prueba otro contenedor o un clip más corto.',
-  tool_extract_audio_from_a_mov_file_err_empty: 'No usable audio samples were captured from the video.',
+  tool_extract_audio_from_a_mov_file_err_empty: 'No se capturaron muestras de audio útiles del MOV.',
   tool_extract_audio_from_a_mov_file_err_encoder: 'No se pudo escribir el archivo de audio. Revisa el formato e intenta Extraer de nuevo.',
   tool_extract_audio_from_a_mov_file_err_file: 'Suelta exactamente un archivo de vídeo.',
-  tool_extract_audio_from_a_mov_file_err_format: 'Vídeo no compatible o dañado. Usa MP4, MOV, WebM u otro contenedor que el navegador pueda intentar.',
+  tool_extract_audio_from_a_mov_file_err_format:
+    'Esta página solo admite .mov (video/quicktime). MP4, WebM, MKV o .m4a solo audio van en otras herramientas.',
   tool_extract_audio_from_a_mov_file_err_limit:
     'Este archivo supera el tope de tamaño o duración de su ruta (demux MP4/MOV ~5 GiB / 6 h con OPFS, si no ~1 GiB).',
   tool_extract_audio_from_a_mov_file_err_sample: 'No se pudo crear un vídeo de muestra en este navegador. Suelta tu propio archivo local.',
-  tool_extract_audio_from_a_mov_file_err_unsupported: 'This browser lacks Web Audio needed for extraction.',
+  tool_extract_audio_from_a_mov_file_err_unsupported: 'Este navegador no tiene Web Audio necesario para la extracción.',
   tool_extract_audio_from_a_mov_file_example:
     'Cargar muestra crea un WebM sintético corto con un tono cuando browser media recording está disponible y Extraer se ejecuta solo. La reproducción no arranca sola—pulsa play en la vista previa. Si no se puede crear la muestra, suelta tu propio MP4.',
   tool_extract_audio_from_a_mov_file_example_title: 'Prueba una extracción real',
@@ -8346,15 +8347,15 @@ const es: SiteLangDict = {
   tool_extract_audio_from_a_mov_file_faq_a6:
     'No en esta página. Descarga el WAV o MP3 y usa Recortar un clip de audio y exportar. Para solo WAV→MP3, usa Convertir un archivo WAV a MP3.',
   tool_extract_audio_from_a_mov_file_faq_a7:
-    'This page is for one file. For many clips, use Batch extract audio from video files—queued one-by-one with ZIP output.',
+    'Esta página es para un archivo. Para muchos clips usa Extraer audio de archivos de vídeo por lotes (cola + ZIP).',
   tool_extract_audio_from_a_mov_file_faq_q1: '¿Puedo pegar una URL de YouTube o cualquier enlace?',
   tool_extract_audio_from_a_mov_file_faq_q2: '¿Es lo mismo que convertir MP4 a MP3 en línea?',
   tool_extract_audio_from_a_mov_file_faq_q3: '¿Esto quita el audio de un vídeo (MP4 silencioso)?',
   tool_extract_audio_from_a_mov_file_faq_q4: '¿Qué formatos valen para archivos grandes?',
   tool_extract_audio_from_a_mov_file_faq_q5: '¿Se sube mi vídeo a un servidor?',
   tool_extract_audio_from_a_mov_file_faq_q6: '¿Puedo recortar el audio después de extraerlo?',
-  tool_extract_audio_from_a_mov_file_faq_q7: 'I have many videos—should I use this page?',
-  tool_extract_audio_from_a_mov_file_forced_mp3: 'Long/large input used streaming MP3 (WAV would peak too much memory).',
+  tool_extract_audio_from_a_mov_file_faq_q7: 'Tengo muchos vídeos: ¿debo usar esta página?',
+  tool_extract_audio_from_a_mov_file_forced_mp3: 'MOV largo/grande: se usó demux/MP3 en streaming (WAV completo saturaría la memoria).',
   tool_extract_audio_from_a_mov_file_format_label: 'Formato de salida',
   tool_extract_audio_from_a_mov_file_format_mp3: 'MP3',
   tool_extract_audio_from_a_mov_file_format_wav: 'WAV (16 bits)',
@@ -8371,7 +8372,7 @@ const es: SiteLangDict = {
   tool_extract_audio_from_a_mov_file_preview: 'Escuchar el audio extraído',
   tool_extract_audio_from_a_mov_file_progress: 'Progreso de extracción',
   tool_extract_audio_from_a_mov_file_read: 'Leer',
-  tool_extract_audio_from_a_mov_file_result: '{seconds}s · {channels} ch · {rate} Hz · {format} {output} KiB',
+  tool_extract_audio_from_a_mov_file_result: '{seconds}s · {channels} can. · {rate} Hz · {format} {output} KiB',
   tool_extract_audio_from_a_mov_file_rules_body:
     'Cada ejecución lee un vídeo local y enruta según la tabla de capacidades. Exportación WAV 16 bits o MP3. Contenedor, códec o canales no soportados fallan con errores distintos. No es YouTube a MP3, no es vídeo mudo ni recorte por onda.',
   tool_extract_audio_from_a_mov_file_rules_item_1:
@@ -8386,7 +8387,7 @@ const es: SiteLangDict = {
   tool_extract_audio_from_a_mov_file_sample_name: 'demo-audio-de-video-corto',
   tool_extract_audio_from_a_mov_file_settings_hint:
     'WAV por defecto vale para clips cortos. Vídeos largos o pesados pasan a MP3 por streaming para evitar picos de memoria. El bitrate solo aplica a MP3. Los topes varían según la ruta del contenedor (ver Reglas). Sin URL ni YouTube.',
-  tool_extract_audio_from_a_mov_file_status_stopped: 'Stopped. No partial audio file is kept for this run.',
+  tool_extract_audio_from_a_mov_file_status_stopped: 'Detenido. No se guarda audio parcial de esta ejecución.',
   tool_extract_audio_from_a_mov_file_stop: 'Stop',
   tool_extract_audio_from_a_mov_file_title: 'Extraer audio de un archivo MP4',
   tool_extract_audio_from_a_mov_file_usecase_1: 'Solo necesitas la voz o el BGM de un clip del móvil—Extraer y descarga WAV o MP3.',
@@ -8726,14 +8727,15 @@ const es: SiteLangDict = {
   tool_extract_audio_from_an_mp4_file_err_container:
     'Este contenedor no está en la ruta de demux para archivos grandes. WebM/MKV y similares quedan en ~500 MiB / 4 h por fallback—o remux a MP4/MOV.',
   tool_extract_audio_from_an_mp4_file_err_decode: 'El navegador no pudo decodificar audio de este vídeo. Prueba otro contenedor o un clip más corto.',
-  tool_extract_audio_from_an_mp4_file_err_empty: 'No usable audio samples were captured from the video.',
+  tool_extract_audio_from_an_mp4_file_err_empty: 'No se capturaron muestras de audio útiles del MP4.',
   tool_extract_audio_from_an_mp4_file_err_encoder: 'No se pudo escribir el archivo de audio. Revisa el formato e intenta Extraer de nuevo.',
   tool_extract_audio_from_an_mp4_file_err_file: 'Suelta exactamente un archivo de vídeo.',
-  tool_extract_audio_from_an_mp4_file_err_format: 'Vídeo no compatible o dañado. Usa MP4, MOV, WebM u otro contenedor que el navegador pueda intentar.',
+  tool_extract_audio_from_an_mp4_file_err_format:
+    'Esta página solo admite .mp4 o .m4v (video/mp4). MOV, WebM, MKV o .m4a solo audio van en otras herramientas.',
   tool_extract_audio_from_an_mp4_file_err_limit:
     'Este archivo supera el tope de tamaño o duración de su ruta (demux MP4/MOV ~5 GiB / 6 h con OPFS, si no ~1 GiB).',
   tool_extract_audio_from_an_mp4_file_err_sample: 'No se pudo crear un vídeo de muestra en este navegador. Suelta tu propio archivo local.',
-  tool_extract_audio_from_an_mp4_file_err_unsupported: 'This browser lacks Web Audio needed for extraction.',
+  tool_extract_audio_from_an_mp4_file_err_unsupported: 'Este navegador no tiene Web Audio necesario para la extracción.',
   tool_extract_audio_from_an_mp4_file_example:
     'Cargar muestra crea un WebM sintético corto con un tono cuando browser media recording está disponible y Extraer se ejecuta solo. La reproducción no arranca sola—pulsa play en la vista previa. Si no se puede crear la muestra, suelta tu propio MP4.',
   tool_extract_audio_from_an_mp4_file_example_title: 'Prueba una extracción real',
@@ -8752,15 +8754,15 @@ const es: SiteLangDict = {
   tool_extract_audio_from_an_mp4_file_faq_a6:
     'No en esta página. Descarga el WAV o MP3 y usa Recortar un clip de audio y exportar. Para solo WAV→MP3, usa Convertir un archivo WAV a MP3.',
   tool_extract_audio_from_an_mp4_file_faq_a7:
-    'This page is for one file. For many clips, use Batch extract audio from video files—queued one-by-one with ZIP output.',
+    'Esta página es para un archivo. Para muchos clips usa Extraer audio de archivos de vídeo por lotes (cola + ZIP).',
   tool_extract_audio_from_an_mp4_file_faq_q1: '¿Puedo pegar una URL de YouTube o cualquier enlace?',
   tool_extract_audio_from_an_mp4_file_faq_q2: '¿Es lo mismo que convertir MP4 a MP3 en línea?',
   tool_extract_audio_from_an_mp4_file_faq_q3: '¿Esto quita el audio de un vídeo (MP4 silencioso)?',
   tool_extract_audio_from_an_mp4_file_faq_q4: '¿Qué formatos valen para archivos grandes?',
   tool_extract_audio_from_an_mp4_file_faq_q5: '¿Se sube mi vídeo a un servidor?',
   tool_extract_audio_from_an_mp4_file_faq_q6: '¿Puedo recortar el audio después de extraerlo?',
-  tool_extract_audio_from_an_mp4_file_faq_q7: 'I have many videos—should I use this page?',
-  tool_extract_audio_from_an_mp4_file_forced_mp3: 'Long/large input used streaming MP3 (WAV would peak too much memory).',
+  tool_extract_audio_from_an_mp4_file_faq_q7: 'Tengo muchos vídeos: ¿debo usar esta página?',
+  tool_extract_audio_from_an_mp4_file_forced_mp3: 'MP4 largo/grande: se usó demux/MP3 en streaming (WAV completo saturaría la memoria).',
   tool_extract_audio_from_an_mp4_file_format_label: 'Formato de salida',
   tool_extract_audio_from_an_mp4_file_format_mp3: 'MP3',
   tool_extract_audio_from_an_mp4_file_format_wav: 'WAV (16 bits)',
@@ -8777,7 +8779,7 @@ const es: SiteLangDict = {
   tool_extract_audio_from_an_mp4_file_preview: 'Escuchar el audio extraído',
   tool_extract_audio_from_an_mp4_file_progress: 'Progreso de extracción',
   tool_extract_audio_from_an_mp4_file_read: 'Leer',
-  tool_extract_audio_from_an_mp4_file_result: '{seconds}s · {channels} ch · {rate} Hz · {format} {output} KiB',
+  tool_extract_audio_from_an_mp4_file_result: '{seconds}s · {channels} can. · {rate} Hz · {format} {output} KiB',
   tool_extract_audio_from_an_mp4_file_rules_body:
     'Cada ejecución lee un vídeo local y enruta según la tabla de capacidades. Exportación WAV 16 bits o MP3. Contenedor, códec o canales no soportados fallan con errores distintos. No es YouTube a MP3, no es vídeo mudo ni recorte por onda.',
   tool_extract_audio_from_an_mp4_file_rules_item_1:
@@ -8792,7 +8794,7 @@ const es: SiteLangDict = {
   tool_extract_audio_from_an_mp4_file_sample_name: 'demo-audio-de-video-corto',
   tool_extract_audio_from_an_mp4_file_settings_hint:
     'WAV por defecto vale para clips cortos. Vídeos largos o pesados pasan a MP3 por streaming para evitar picos de memoria. El bitrate solo aplica a MP3. Los topes varían según la ruta del contenedor (ver Reglas). Sin URL ni YouTube.',
-  tool_extract_audio_from_an_mp4_file_status_stopped: 'Stopped. No partial audio file is kept for this run.',
+  tool_extract_audio_from_an_mp4_file_status_stopped: 'Detenido. No se guarda audio parcial de esta ejecución.',
   tool_extract_audio_from_an_mp4_file_stop: 'Stop',
   tool_extract_audio_from_an_mp4_file_title: 'Extraer audio de un archivo MP4',
   tool_extract_audio_from_an_mp4_file_usecase_1: 'Solo necesitas la voz o el BGM de un clip del móvil—Extraer y descarga WAV o MP3.',

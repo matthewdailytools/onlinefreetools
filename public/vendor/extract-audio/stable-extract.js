@@ -34,8 +34,11 @@
 	var STREAM_FALLBACK_DURATION = 4 * 60 * 60;
 	/** 批量最多文件数。 */
 	var BATCH_MAX_FILES = 30;
-	/** MediaElement 流式倍速。 */
-	var STREAM_PLAYBACK_RATE = 2;
+	/**
+	 * MediaElement 流式倍速：须为 1。
+	 * ScriptProcessor 按实时采样捕获，倍速会把音频压缩成加速版（时长减半）。
+	 */
+	var STREAM_PLAYBACK_RATE = 1;
 	/** 向 mp4box 追加的分片大小（字节）。 */
 	var MP4_FEED_CHUNK = 2 * 1024 * 1024;
 	/** 内存汇聚时，每满此字节打成一个 Blob，降低小片段数量。 */
@@ -78,15 +81,72 @@
 		return name === 'NotFoundError' || name === 'InvalidStateError' || /could not be found|not found/i.test(msg);
 	}
 
+	/** OPFS 暂存目录名。 */
+	var OPFS_DIR = 'oft-extract-audio';
+	/** 暂存文件超过此时长（毫秒）视为上次会话遗留，可清理。 */
+	var OPFS_STALE_MS = 6 * 60 * 60 * 1000;
+	/** 本页会话是否已做过遗留清理。 */
+	var opfsSweepDone = false;
+	/** 本页会话写出的 OPFS 文件名（离开页面时清理）。 */
+	var opfsSessionNames = [];
+	/** 是否已注册 pagehide 清理。 */
+	var opfsPagehideBound = false;
+
+	/**
+	 * 删除超过 OPFS_STALE_MS 的遗留暂存文件（文件名内含创建时间戳）。
+	 * 仅在本页会话首次创建 sink 时执行，避免误删本会话仍被引用的 Blob。
+	 * @param {FileSystemDirectoryHandle} dir 暂存目录
+	 * @returns {Promise<void>}
+	 */
+	async function sweepStaleOpfs(dir) {
+		if (opfsSweepDone) return;
+		opfsSweepDone = true;
+		try {
+			var now = Date.now();
+			/** 待删除的文件名。 */
+			var stale = [];
+			for await (var entry of dir.keys()) {
+				var m = /^out-(\d+)-/.exec(entry);
+				if (m && now - Number(m[1]) > OPFS_STALE_MS) stale.push(entry);
+			}
+			for (var i = 0; i < stale.length; i++) {
+				try {
+					await dir.removeEntry(stale[i]);
+				} catch (_) {}
+			}
+		} catch (_) {}
+	}
+
+	/**
+	 * 离开页面（非 bfcache 保留）时删除本会话写出的暂存文件。
+	 * @param {FileSystemDirectoryHandle} dir 暂存目录
+	 */
+	function bindOpfsPagehide(dir) {
+		if (opfsPagehideBound || typeof global.addEventListener !== 'function') return;
+		opfsPagehideBound = true;
+		global.addEventListener('pagehide', function (ev) {
+			if (ev && ev.persisted) return;
+			var names = opfsSessionNames.splice(0);
+			for (var i = 0; i < names.length; i++) {
+				try {
+					dir.removeEntry(names[i]).catch(function () {});
+				} catch (_) {}
+			}
+		});
+	}
+
 	/**
 	 * 创建 MP3 写出汇聚器：优先 OPFS WritableStream，否则内存 Blob 汇聚。
+	 * OPFS 返回的 Blob 依赖底层文件存在，finalize 后不得立即 removeEntry。
 	 * @returns {Promise<{kind:string, write:Function, finalize:Function, abort:Function}>}
 	 */
 	async function createMp3Sink() {
 		if (supportsOpfs()) {
 			try {
 				var root = await global.navigator.storage.getDirectory();
-				var dir = await root.getDirectoryHandle('oft-extract-audio', { create: true });
+				var dir = await root.getDirectoryHandle(OPFS_DIR, { create: true });
+				await sweepStaleOpfs(dir);
+				bindOpfsPagehide(dir);
 				var name = 'out-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8) + '.mp3';
 				var fh = await dir.getFileHandle(name, { create: true });
 				var writable = await fh.createWritable();
@@ -106,11 +166,8 @@
 					finalize: async function () {
 						await writable.close();
 						var file = await fh.getFile();
-						var blob = file.slice(0, file.size, 'audio/mpeg');
-						try {
-							await dir.removeEntry(name);
-						} catch (_) {}
-						return blob;
+						opfsSessionNames.push(name);
+						return file.slice(0, file.size, 'audio/mpeg');
 					},
 					/**
 					 * @returns {Promise<void>}
@@ -179,13 +236,29 @@
 
 	/**
 	 * 让出主线程，便于刷新 HUD。
+	 * 后台标签页不触发 rAF 且计时器被节流：隐藏时走 MessageChannel；可见时 rAF 与 50ms 兜底先到先得。
 	 * @returns {Promise<void>}
 	 */
 	function yieldUi() {
 		return new Promise(function (resolve) {
+			/** 是否已 resolve。 */
+			var done = false;
+			/** 只 resolve 一次。 */
+			function finish() {
+				if (done) return;
+				done = true;
+				resolve();
+			}
+			if (typeof document !== 'undefined' && document.hidden && typeof MessageChannel === 'function') {
+				var ch = new MessageChannel();
+				ch.port1.onmessage = finish;
+				ch.port2.postMessage(0);
+				return;
+			}
 			requestAnimationFrame(function () {
-				setTimeout(resolve, 0);
+				setTimeout(finish, 0);
 			});
+			setTimeout(finish, 50);
 		});
 	}
 
@@ -1066,6 +1139,9 @@
 		try {
 			throwIfAborted(signal);
 			if (audioCtx.state === 'suspended') await audioCtx.resume();
+			/* muted 元素送入 MediaElementSource 的是静音；扬声器静音靠下方 gain=0 */
+			video.muted = false;
+			video.volume = 1;
 			var source = audioCtx.createMediaElementSource(video);
 			var processor = audioCtx.createScriptProcessor(4096, 2, 2);
 			var mute = audioCtx.createGain();

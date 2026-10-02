@@ -265,9 +265,22 @@ export const renderExtractAudioFromAVideoFilePage = (opts: {
     function fill(template, vars){
       return String(template || '').replace(/\\{(\\w+)\\}/g, (_, key) => (vars[key] != null ? String(vars[key]) : ''));
     }
-    /** 让出主线程一帧，刷新 HUD。 */
+    /** 让出主线程一帧，刷新 HUD；后台标签页不触发 rAF，隐藏时走 MessageChannel，可见时 50ms 兜底。 */
     function yieldUi(){
-      return new Promise(resolve => requestAnimationFrame(() => setTimeout(resolve, 0)));
+      return new Promise(resolve => {
+        /** 是否已 resolve。 */
+        let done = false;
+        /** 只 resolve 一次。 */
+        const finish = () => { if (!done){ done = true; resolve(); } };
+        if (document.hidden && typeof MessageChannel === 'function'){
+          const ch = new MessageChannel();
+          ch.port1.onmessage = finish;
+          ch.port2.postMessage(0);
+          return;
+        }
+        requestAnimationFrame(() => setTimeout(finish, 0));
+        setTimeout(finish, 50);
+      });
     }
     /** 丢弃旧输出。 */
     function discard(){

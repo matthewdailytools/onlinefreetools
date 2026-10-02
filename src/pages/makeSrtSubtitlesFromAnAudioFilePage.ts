@@ -420,7 +420,20 @@ export const renderMakeSrtSubtitlesFromAnAudioFilePage = (opts: {
      * @returns {Promise<void>}
      */
     function yieldUi(){
-      return new Promise(resolve => requestAnimationFrame(() => setTimeout(resolve, 40)));
+      return new Promise(resolve => {
+        /** 是否已 resolve。 */
+        let done = false;
+        /** 只 resolve 一次；后台标签页不触发 rAF，隐藏时走 MessageChannel，可见时 90ms 兜底。 */
+        const finish = () => { if (!done){ done = true; resolve(); } };
+        if (document.hidden && typeof MessageChannel === 'function'){
+          const ch = new MessageChannel();
+          ch.port1.onmessage = finish;
+          ch.port2.postMessage(0);
+          return;
+        }
+        requestAnimationFrame(() => setTimeout(finish, 40));
+        setTimeout(finish, 90);
+      });
     }
 
     /** 刷新空状态可见性。 */
@@ -701,6 +714,8 @@ export const renderMakeSrtSubtitlesFromAnAudioFilePage = (opts: {
      * @param {object} p progress_callback 数据
      */
     function onModelProgress(p){
+      /* 本轮已结束或已取消：忽略迟到的模型进度，避免错误 HUD 被进度条文覆盖 */
+      if (!busy || stopRequested || (fileAbort && fileAbort.signal.aborted)) return;
       if (!p || !p.status) return;
       if (p.status === 'progress' && p.file){
         const pct = p.total ? Math.round((100 * p.loaded) / p.total) : 0;

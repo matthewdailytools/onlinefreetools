@@ -1,113 +1,127 @@
 import type { SiteLangDict } from '../../../types';
 
-/** Español: extraer audio de archivos WebM por lotes (fallback ~500 MiB / 4 h por archivo). */
+/**
+ * Bahasa Indonesia: Ekstrak audio dari banyak file WebM.
+ * Antrean hanya .webm ; ekstrak berurutan ; ZIP parsial menyimpan yang berhasil ;
+ * batas fallback ~500 MiB / 4 jam per file ; maks 30 file ; tanpa YouTube.
+ */
 const id: SiteLangDict = {
-  tool_batch_extract_audio_from_webm_files_title: 'Ekstrak audio dari file WebM secara batch',
+  tool_batch_extract_audio_from_webm_files_title: 'Ekstrak audio dari banyak file WebM',
   tool_batch_extract_audio_from_webm_files_desc:
-    'Solo WebM local: cola uno a uno, omite fallos, ZIP WAV/MP3; sin subir al servidor.',
+    'Ekstrak audio dari WebM lokal satu per satu ke ZIP WAV/MP3. Fallback ~500 MiB tiap file—ZIP parsial menyimpan yang berhasil.',
   tool_batch_extract_audio_from_webm_files_description:
-    'Extrae pistas solo de WebM locales, uno a uno, y descarga ZIP WAV o MP3. Pasos: añadir .webm → Extraer → Descargar ZIP. Ejemplo: Cargar muestra crea dos WebM cortos. ~500 MiB / 4 h por archivo (ruta fallback), no demux MP4/MOV. Fallos se omiten; aciertos se empaquetan. Archivos en tu dispositivo, no se suben. No YouTube. Un WebM: Extraer audio de un archivo WebM. Mezcla MP4/MOV/MKV: hub de vídeo por lotes. Proses langkah: pilih file → ekstrak → unduh. Contoh: muat sampel.',
+    'Antrekan file WebM lokal, ekstrak berurutan lewat jalur fallback mesin bersama (~500 MiB / 4 jam tiap file), lewati kegagalan dengan kode jelas, unduh ZIP. Langkah: tambah WebM → Ekstrak → Unduh ZIP. Contoh: Muat sampel membuat dua klip pendek saat MediaRecorder berfungsi. Bukan YouTube. Untuk satu file gunakan Ekstrak audio dari file WebM.',
   tool_batch_extract_audio_from_webm_files_article:
-    'Carpetas de capturas WebM suelen necesitar solo la voz. Esta página encola solo .webm, extrae uno a uno, omite fallos y empaqueta aciertos. No YouTube ni lote mixto del hub.',
-  tool_batch_extract_audio_from_webm_files_choose: 'Elegir archivos WebM',
+    'Folder tangkapan WebM sering butuh paket ZIP hanya suara. Halaman ini mengantrekan .webm saja, mengekstrak satu per satu, melewatkan yang terlalu besar dengan err_container, dan mengemas yang berhasil. Tanpa YouTube. Tanpa klaim demux 5 GiB.',
+  tool_batch_extract_audio_from_webm_files_choose: 'Pilih file WebM',
   tool_batch_extract_audio_from_webm_files_hint:
-    'Hasta 30 .webm locales. No WebM → err_format. ~500 MiB / 4 h por archivo.',
-  tool_batch_extract_audio_from_webm_files_list_label: 'Cola WebM',
-  tool_batch_extract_audio_from_webm_files_convert: 'Extraer',
-  tool_batch_extract_audio_from_webm_files_stop: 'Detener',
-  tool_batch_extract_audio_from_webm_files_download: 'Descargar ZIP',
-  tool_batch_extract_audio_from_webm_files_sample: 'Cargar muestra',
-  tool_batch_extract_audio_from_webm_files_clear: 'Borrar',
-  tool_batch_extract_audio_from_webm_files_advanced: 'Formato de exportación (opcional)',
-  tool_batch_extract_audio_from_webm_files_format_label: 'Formato de salida',
-  tool_batch_extract_audio_from_webm_files_format_wav: 'WAV (16 bits)',
+    'Hingga 30 file .webm lokal. Fallback per file ~500 MiB / 4 jam. Kegagalan dilewati; ZIP menyimpan yang berhasil.',
+  tool_batch_extract_audio_from_webm_files_list_label: 'Antrean file',
+  tool_batch_extract_audio_from_webm_files_convert: 'Ekstrak',
+  tool_batch_extract_audio_from_webm_files_stop: 'Berhenti',
+  tool_batch_extract_audio_from_webm_files_download: 'Unduh ZIP',
+  tool_batch_extract_audio_from_webm_files_sample: 'Muat sampel',
+  tool_batch_extract_audio_from_webm_files_clear: 'Hapus',
+  tool_batch_extract_audio_from_webm_files_advanced: 'Format ekspor (opsional)',
+  tool_batch_extract_audio_from_webm_files_format_label: 'Format keluaran',
+  tool_batch_extract_audio_from_webm_files_format_wav: 'WAV (16-bit)',
   tool_batch_extract_audio_from_webm_files_format_mp3: 'MP3',
   tool_batch_extract_audio_from_webm_files_bitrate: 'Bitrate MP3',
   tool_batch_extract_audio_from_webm_files_settings_hint:
-    'WAV por defecto en WebM cortos. Clips largos pueden ir a MP3 por streaming. Sin URL ni YouTube.',
-  tool_batch_extract_audio_from_webm_files_progress: 'Progreso del lote',
-  tool_batch_extract_audio_from_webm_files_read: 'Leer',
-  tool_batch_extract_audio_from_webm_files_decode: 'Reproducir',
-  tool_batch_extract_audio_from_webm_files_extract: 'Extraer',
-  tool_batch_extract_audio_from_webm_files_write: 'Escribir',
-  tool_batch_extract_audio_from_webm_files_pack: 'Empaquetar ZIP',
-  tool_batch_extract_audio_from_webm_files_done: 'Listo. Descarga el ZIP de audio.',
-  tool_batch_extract_audio_from_webm_files_failed: 'El lote falló. Quita WebM dañados o reduce la cola.',
-  tool_batch_extract_audio_from_webm_files_elapsed: '{s}s transcurridos',
-  tool_batch_extract_audio_from_webm_files_preview: 'Resultado del lote',
-  tool_batch_extract_audio_from_webm_files_result: 'Empaquetados {n} audios · ZIP {output} KiB',
-  tool_batch_extract_audio_from_webm_files_partial: 'OK {ok}, fallidos {fail} · el ZIP incluye aciertos ({output} KiB)',
-  tool_batch_extract_audio_from_webm_files_sample_name: 'demo-lote-webm',
-  tool_batch_extract_audio_from_webm_files_empty: 'Añade al menos un WebM o carga la muestra.',
+    'WAV default untuk klip pendek. Batas mengikuti jalur fallback. Tanpa URL.',
+  tool_batch_extract_audio_from_webm_files_progress: 'Progres ekstrak batch',
+  tool_batch_extract_audio_from_webm_files_read: 'Baca',
+  tool_batch_extract_audio_from_webm_files_decode: 'Decode',
+  tool_batch_extract_audio_from_webm_files_extract: 'Ekstrak',
+  tool_batch_extract_audio_from_webm_files_write: 'Tulis',
+  tool_batch_extract_audio_from_webm_files_pack: 'Kemas ZIP',
+  tool_batch_extract_audio_from_webm_files_done: 'Siap. Unduh ZIP file audio hasil ekstrak.',
+  tool_batch_extract_audio_from_webm_files_failed:
+    'Ekstrak batch gagal. Hapus file rusak atau coba lebih sedikit.',
+  tool_batch_extract_audio_from_webm_files_elapsed: '{s}d berlalu',
+  tool_batch_extract_audio_from_webm_files_preview: 'Hasil batch',
+  tool_batch_extract_audio_from_webm_files_result: '{n} file audio dikemas · ZIP {output} KiB',
+  tool_batch_extract_audio_from_webm_files_partial:
+    'OK {ok}, gagal {fail} · ZIP tetap berisi yang berhasil ({output} KiB)',
+  tool_batch_extract_audio_from_webm_files_sample_name: 'batch-webm-audio-demo',
+  tool_batch_extract_audio_from_webm_files_empty: 'Tambahkan setidaknya satu file WebM atau muat sampel dulu.',
   tool_batch_extract_audio_from_webm_files_empty_state:
-    'Sin WebM. Suelta .webm o Cargar muestra. No YouTube ni otros formatos.',
-  tool_batch_extract_audio_from_webm_files_remove: 'Quitar',
-  tool_batch_extract_audio_from_webm_files_queue_count: '{n} WebM en cola',
-  tool_batch_extract_audio_from_webm_files_status_pending: 'En espera',
-  tool_batch_extract_audio_from_webm_files_status_running: 'Extrayendo…',
-  tool_batch_extract_audio_from_webm_files_status_ok: 'Listo',
-  tool_batch_extract_audio_from_webm_files_status_fail: 'Falló',
-  tool_batch_extract_audio_from_webm_files_status_stopped: 'Detenido',
-  tool_batch_extract_audio_from_webm_files_err_file: 'Añade solo archivos WebM.',
+    'Belum ada file. Jatuhkan .webm lokal. Bukan YouTube.',
+  tool_batch_extract_audio_from_webm_files_remove: 'Hapus',
+  tool_batch_extract_audio_from_webm_files_queue_count: '{n} file dalam antrean',
+  tool_batch_extract_audio_from_webm_files_status_pending: 'Menunggu',
+  tool_batch_extract_audio_from_webm_files_status_running: 'Mengekstrak…',
+  tool_batch_extract_audio_from_webm_files_status_ok: 'Selesai',
+  tool_batch_extract_audio_from_webm_files_status_fail: 'Gagal',
+  tool_batch_extract_audio_from_webm_files_status_stopped: 'Dihentikan',
+  tool_batch_extract_audio_from_webm_files_err_file: 'Tambahkan file WebM yang bisa didekode browser.',
   tool_batch_extract_audio_from_webm_files_err_format:
-    'Solo .webm. MP4/MOV/MKV: Extraer audio de archivos de vídeo por lotes.',
-  tool_batch_extract_audio_from_webm_files_err_limit: 'Un WebM superó ~500 MiB / 4 h; fila omitida.',
-  tool_batch_extract_audio_from_webm_files_err_container: 'Un WebM demasiado grande o largo (~500 MiB / 4 h); fila omitida.',
-  tool_batch_extract_audio_from_webm_files_err_codec: 'Códec de audio no soportado en un WebM; fila omitida.',
-  tool_batch_extract_audio_from_webm_files_err_channels: 'Layout de canales no soportado; fila omitida.',
-  tool_batch_extract_audio_from_webm_files_err_decode: 'No se pudo decodificar audio de un WebM; fila omitida.',
-  tool_batch_extract_audio_from_webm_files_err_encoder: 'No se pudo escribir audio. Revisa formato e inténtalo.',
-  tool_batch_extract_audio_from_webm_files_err_zip: 'No se pudo crear el ZIP. Reduce la cola.',
-  tool_batch_extract_audio_from_webm_files_err_too_many: 'Límite de cola: 30 WebM.',
-  tool_batch_extract_audio_from_webm_files_err_sample: 'No se pudo crear muestra WebM. Añade tus .webm.',
-  tool_batch_extract_audio_from_webm_files_err_unsupported: 'Este navegador no tiene Web Audio.',
-  tool_batch_extract_audio_from_webm_files_err_empty: 'No se capturó audio útil en la cola.',
-  tool_batch_extract_audio_from_webm_files_forced_mp3: 'Un WebM largo usó MP3 por streaming en esa fila.',
-  tool_batch_extract_audio_from_webm_files_how_title: 'Cómo extraer audio de archivos WebM por lotes',
+    'File tidak didukung. Gunakan hanya .webm di halaman ini.',
+  tool_batch_extract_audio_from_webm_files_err_limit:
+    'Sebuah file melebihi batas ukuran/durasi di jalur fallback.',
+  tool_batch_extract_audio_from_webm_files_err_container:
+    'Sebuah file melebihi batas fallback ~500 MiB / 4 jam—atau bukan WebM valid. Baris dilewati.',
+  tool_batch_extract_audio_from_webm_files_err_codec:
+    'Sebuah file memakai codec audio yang tidak didukung. Baris dilewati.',
+  tool_batch_extract_audio_from_webm_files_err_channels:
+    'Sebuah file memakai layout saluran yang tidak didukung. Baris dilewati.',
+  tool_batch_extract_audio_from_webm_files_err_decode: 'Browser tidak bisa mendekode audio dari sebuah file.',
+  tool_batch_extract_audio_from_webm_files_err_encoder: 'Tidak bisa menulis file audio.',
+  tool_batch_extract_audio_from_webm_files_err_zip: 'Tidak bisa membuat ZIP.',
+  tool_batch_extract_audio_from_webm_files_err_too_many: 'Batas antrean adalah 30 file.',
+  tool_batch_extract_audio_from_webm_files_err_sample: 'Tidak bisa membuat sampel. Jatuhkan file Anda sendiri.',
+  tool_batch_extract_audio_from_webm_files_err_unsupported: 'Browser ini tidak punya Web Audio.',
+  tool_batch_extract_audio_from_webm_files_err_empty: 'Tidak ada sampel audio yang bisa dipakai.',
+  tool_batch_extract_audio_from_webm_files_forced_mp3: 'File panjang/besar memakai streaming MP3.',
+  tool_batch_extract_audio_from_webm_files_how_title: 'Cara mengekstrak audio dari banyak file WebM',
   tool_batch_extract_audio_from_webm_files_how_body:
-    'Encola WebM locales, extrae uno a uno, descarga ZIP—sin subir ni URL.',
-  tool_batch_extract_audio_from_webm_files_how_item_1: 'Elige varios .webm o Cargar muestra (dos WebM cortos).',
-  tool_batch_extract_audio_from_webm_files_how_item_2: 'Cambia a MP3 en Formato de exportación si lo necesitas.',
+    'Antrekan WebM lokal, ekstrak satu per satu, unduh ZIP.',
+  tool_batch_extract_audio_from_webm_files_how_item_1: 'Pilih beberapa .webm atau Muat sampel.',
+  tool_batch_extract_audio_from_webm_files_how_item_2: 'Opsional atur MP3 sebagai ganti WAV.',
   tool_batch_extract_audio_from_webm_files_how_item_3:
-    'Pulsa Extraer; sigue Leer→Reproducir→Extraer→Escribir; Detener cancela el resto.',
-  tool_batch_extract_audio_from_webm_files_how_item_4:
-    'Descargar ZIP. Filas fallidas se omiten; basta un acierto para empaquetar.',
-  tool_batch_extract_audio_from_webm_files_why_choose_title: 'Por qué usar Extraer audio de archivos WebM por lotes',
+    'Klik Ekstrak; gunakan Berhenti untuk membatalkan baris yang tersisa.',
+  tool_batch_extract_audio_from_webm_files_how_item_4: 'Unduh ZIP. Baris gagal dilewati.',
+  tool_batch_extract_audio_from_webm_files_why_choose_title:
+    'Mengapa memakai Ekstrak audio dari banyak file WebM',
   tool_batch_extract_audio_from_webm_files_why_choose_item_1:
-    'Solo WebM—encaja con carpetas de captura sin mezclar MP4/MOV.',
-  tool_batch_extract_audio_from_webm_files_why_choose_item_2: 'Uno a uno evita picos de memoria con varios WebM grandes.',
-  tool_batch_extract_audio_from_webm_files_why_choose_item_3:
-    'Estado por fila: un WebM malo no borra todo el ZIP.',
+    'Ekstrak berurutan menjaga memori stabil.',
+  tool_batch_extract_audio_from_webm_files_why_choose_item_2:
+    'Status per baris; satu kegagalan tidak menghapus ZIP.',
+  tool_batch_extract_audio_from_webm_files_why_choose_item_3: 'Batas fallback jujur untuk WebM.',
   tool_batch_extract_audio_from_webm_files_why_choose_item_4:
-    'WebM enormes se omiten con mensaje de contenedor; demux grande en MP4/MOV.',
-  tool_batch_extract_audio_from_webm_files_rules_title: 'Cola WebM, extracción secuencial y ZIP',
+    'Pemrosesan di perangkat; hub dekat untuk format campuran.',
+  tool_batch_extract_audio_from_webm_files_rules_title: 'Ekstrak WebM berurutan dan kejujuran ZIP',
   tool_batch_extract_audio_from_webm_files_rules_body:
-    'Cada WebM se clasifica, reproduce y entra al ZIP. ZIP parciales conservan aciertos. No YouTube a MP3.',
+    'Setiap WebM diklasifikasi lalu diekstrak sendiri. ZIP parsial menyimpan yang berhasil.',
   tool_batch_extract_audio_from_webm_files_rules_item_1:
-    'Hasta 30 .webm; ~500 MiB / 4 h cada uno. Demux grande MP4/MOV en páginas hermanas.',
-  tool_batch_extract_audio_from_webm_files_rules_item_2: 'No WebM → err_format. Mezcla: hub por lotes.',
-  tool_batch_extract_audio_from_webm_files_rules_item_3: 'Un fallo omite la fila; otros pueden empaquetarse.',
-  tool_batch_extract_audio_from_webm_files_rules_item_4: 'Procesamiento en tu dispositivo; no se sube al servidor.',
-  tool_batch_extract_audio_from_webm_files_example_title: 'Prueba un lote WebM real',
+    'Hingga 30 file; masing-masing ~500 MiB / 4 jam fallback.',
+  tool_batch_extract_audio_from_webm_files_rules_item_2: 'Tanpa URL atau unduhan YouTube.',
+  tool_batch_extract_audio_from_webm_files_rules_item_3:
+    'Kegagalan dilewati dengan err_container / err_codec bila berlaku.',
+  tool_batch_extract_audio_from_webm_files_rules_item_4: 'File tetap di perangkat Anda.',
+  tool_batch_extract_audio_from_webm_files_example_title: 'Coba batch nyata',
   tool_batch_extract_audio_from_webm_files_example:
-    'Cargar muestra crea dos WebM cortos cuando es posible y empaqueta un ZIP.',
-  tool_batch_extract_audio_from_webm_files_usecases_title: 'Cuándo ayuda',
-  tool_batch_extract_audio_from_webm_files_usecase_1: 'Carpeta de capturas WebM → ZIP estilo webm a MP3.',
-  tool_batch_extract_audio_from_webm_files_usecase_2: 'Exportaciones del navegador a audio sin subir cada archivo.',
-  tool_batch_extract_audio_from_webm_files_usecase_3: 'Sacar Opus de WebM VP9 conservando los vídeos originales.',
-  tool_batch_extract_audio_from_webm_files_faq_q1: '¿Lista de reproducción de YouTube?',
-  tool_batch_extract_audio_from_webm_files_faq_a1: 'No. Solo WebM local. Descarga primero al dispositivo.',
-  tool_batch_extract_audio_from_webm_files_faq_q2: '¿Solo un WebM?',
-  tool_batch_extract_audio_from_webm_files_faq_a2: 'Usa Extraer audio de un archivo WebM. Esta página es para ZIP.',
-  tool_batch_extract_audio_from_webm_files_faq_q3: '¿Carpeta con .mp4 y .webm?',
-  tool_batch_extract_audio_from_webm_files_faq_a3: 'Solo .webm aquí. Mezcla: hub por lotes de vídeo.',
-  tool_batch_extract_audio_from_webm_files_faq_q4: '¿Es webm a MP3 online en lote?',
-  tool_batch_extract_audio_from_webm_files_faq_a4:
-    'Similar para WebM local: captura Opus y ZIP MP3/WAV; no pega URL.',
-  tool_batch_extract_audio_from_webm_files_faq_q5: '¿Por qué uno a uno?',
+    'Muat sampel membuat dua klip pendek bila memungkinkan, lalu mengemas ZIP.',
+  tool_batch_extract_audio_from_webm_files_usecases_title: 'Kapan ini membantu',
+  tool_batch_extract_audio_from_webm_files_usecase_1:
+    'Folder tangkapan WebM butuh trek suara dalam satu ZIP.',
+  tool_batch_extract_audio_from_webm_files_usecase_2: 'Ekstrak massal tanpa mengunggah setiap file.',
+  tool_batch_extract_audio_from_webm_files_usecase_3:
+    'Campur dengan file terlalu besar—ZIP parsial tetap berguna.',
+  tool_batch_extract_audio_from_webm_files_faq_q1: 'Playlist YouTube?',
+  tool_batch_extract_audio_from_webm_files_faq_a1: 'Tidak. Hanya .webm lokal.',
+  tool_batch_extract_audio_from_webm_files_faq_q2: 'Hanya satu file?',
+  tool_batch_extract_audio_from_webm_files_faq_a2: 'Gunakan halaman ekstrak WebM tunggal.',
+  tool_batch_extract_audio_from_webm_files_faq_q3: 'Mengapa 500 MiB bukan 5 GiB?',
+  tool_batch_extract_audio_from_webm_files_faq_a3:
+    'Belum ada demux WebM; batas fallback berlaku. MP4/MOV punya demux besar.',
+  tool_batch_extract_audio_from_webm_files_faq_q4: 'Diunggah?',
+  tool_batch_extract_audio_from_webm_files_faq_a4: 'Tidak. Hanya di browser.',
+  tool_batch_extract_audio_from_webm_files_faq_q5: 'Satu file raksasa gagal?',
   tool_batch_extract_audio_from_webm_files_faq_a5:
-    'Decodificar varios WebM a la vez dispara memoria. Secuencial mantiene solo el blob actual.',
-  tool_batch_extract_audio_from_webm_files_faq_q6: '¿Se suben los vídeos?',
-  tool_batch_extract_audio_from_webm_files_faq_a6: 'No. Lectura, captura y ZIP en tu navegador.',
+    'Baris itu gagal dengan err_container; yang lain tetap dikemas.',
+  tool_batch_extract_audio_from_webm_files_faq_q6: 'Potong setelahnya?',
+  tool_batch_extract_audio_from_webm_files_faq_a6:
+    'Unduh ZIP, lalu gunakan alat potong per file.',
 };
 export default id;

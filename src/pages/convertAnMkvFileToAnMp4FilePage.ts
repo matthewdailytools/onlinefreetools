@@ -176,7 +176,21 @@ export const renderConvertAnMkvFileToAnMp4FilePage = (opts: {
     let selected = null, busy = false, outputUrl = '', timer = 0, started = 0, abortCtrl = null, convertMod = null;
     /** OPFS 临时文件清理函数（若引擎返回）。 */
     let outputCleanup = null;
-    const yieldUi = () => new Promise((resolve) => requestAnimationFrame(() => setTimeout(resolve, 0)));
+    /** 让出主线程刷新 HUD；后台标签页不触发 rAF，隐藏时走 MessageChannel，可见时 50ms 兜底。 */
+    const yieldUi = () => new Promise((resolve) => {
+      /** 是否已 resolve。 */
+      let done = false;
+      /** 只 resolve 一次。 */
+      const finish = () => { if (!done) { done = true; resolve(); } };
+      if (document.hidden && typeof MessageChannel === 'function') {
+        const ch = new MessageChannel();
+        ch.port1.onmessage = finish;
+        ch.port2.postMessage(0);
+        return;
+      }
+      requestAnimationFrame(() => setTimeout(finish, 0));
+      setTimeout(finish, 50);
+    });
     const fill = (text, values) => text.replace(/{(\\w+)}/g, (_, key) => String(values[key] ?? ''));
     async function discard(){
       video.pause(); video.removeAttribute('src'); video.load();

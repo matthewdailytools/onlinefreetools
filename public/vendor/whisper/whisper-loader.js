@@ -35,10 +35,27 @@ let inflightLoad = null;
  * @type {number}
  */
 let loadGeneration = 0;
+/**
+ * 当前共享加载的无进度监听集合：预取/pipeline 进度时通知每一位 raceLoad 调用方。
+ * @type {Set<() => void>}
+ */
+let sharedLoadActivityListeners = new Set();
+/**
+ * 通知所有无进度监听者重置计时。
+ */
+function notifyLoadActivity() {
+	for (const fn of sharedLoadActivityListeners) {
+		try {
+			fn();
+		} catch (_) {}
+	}
+}
 /** 同域模型根路径（与 env.localModelPath + MODEL_ID 对齐）。 */
 const MODEL_BASE = '/vendor/whisper/models/' + MODEL_ID + '/';
-/** 默认加载超时（毫秒）：含预取与 WASM 初始化。 */
+/** 默认加载超时（毫秒）：无进度达到此时长才判失败（非总时长上限）。 */
 export const DEFAULT_LOAD_TIMEOUT_MS = 90000;
+/** 预取时每收到多少字节就重置一次“无进度”计时（避免极慢流也每秒重置）。 */
+const PROGRESS_BYTE_STEP = 256 * 1024;
 
 /**
  * 配置 transformers.js：禁止远程、指定本地模型与 wasm 路径、切片 fetch。
@@ -104,6 +121,7 @@ export function configureWhisperEnv() {
 export function cancelWhisperLoad() {
 	loadGeneration += 1;
 	inflightLoad = null;
+	sharedLoadActivityListeners.clear();
 }
 
 /**
@@ -119,13 +137,14 @@ function throwIfAborted(signal) {
 }
 
 /**
- * 预取站内 Whisper 权重，尽早暴露网络/404，并向 HUD 汇报进度。
+ * 预取站内 Whisper 权重，尽早暴露网络/404，并向 HUD 汇报字节进度。
  * decoder 仅存切片（.part*），勿用原生 fetch 拉虚拟的合并 .onnx。
  * @param {(data: object) => void} [onProgress]
  * @param {AbortSignal | undefined} signal
+ * @param {() => void} [onActivity] 有字节/文件进度时调用，用于重置无进度超时
  * @returns {Promise<void>}
  */
-async function prefetchWhisperAssets(onProgress, signal) {
+async function prefetchWhisperAssets(onProgress, signal, onActivity) {
 	/** 相对 MODEL_BASE 的小配置文件。 */
 	const smallFiles = [
 		'config.json',
@@ -142,27 +161,60 @@ async function prefetchWhisperAssets(onProgress, signal) {
 	/** 粗估总量：约 45 MiB。 */
 	const totalHint = 45 * 1024 * 1024;
 	/**
-	 * 拉取并累计进度。
+	 * 上报进度并通知活动。
+	 * @param {string} rel 相对路径
+	 * @param {number} [fileLoaded] 单文件已读字节（流式）
+	 * @param {number} [fileTotal] 单文件总字节
+	 */
+	function report(rel, fileLoaded, fileTotal) {
+		if (typeof onActivity === 'function') onActivity();
+		if (typeof onProgress !== 'function') return;
+		onProgress({
+			status: 'progress',
+			file: rel,
+			loaded: Math.min(loaded + (fileLoaded || 0), totalHint),
+			total: totalHint,
+			fileLoaded: fileLoaded,
+			fileTotal: fileTotal,
+		});
+	}
+	/**
+	 * 流式拉取并累计进度。
 	 * @param {string} rel 相对 MODEL_BASE 的路径
 	 */
 	async function pull(rel) {
 		throwIfAborted(signal);
-		if (typeof onProgress === 'function') {
-			onProgress({ status: 'progress', file: rel, loaded: loaded, total: totalHint });
-		}
+		report(rel, 0, 0);
 		const res = await fetch(MODEL_BASE + rel, { cache: 'force-cache' });
 		if (!res.ok) throw new Error('err_model');
-		const buf = await res.arrayBuffer();
-		loaded += buf.byteLength;
-		throwIfAborted(signal);
-		if (typeof onProgress === 'function') {
-			onProgress({
-				status: 'progress',
-				file: rel,
-				loaded: Math.min(loaded, totalHint),
-				total: totalHint,
-			});
+		const contentLength = Number(res.headers.get('content-length') || 0);
+		/** 本文件已读。 */
+		let fileLoaded = 0;
+		/** 上次触发活动的字节水位。 */
+		let lastActive = 0;
+		if (res.body && typeof res.body.getReader === 'function') {
+			const reader = res.body.getReader();
+			/** 分块缓冲。 */
+			const chunks = [];
+			for (;;) {
+				throwIfAborted(signal);
+				const { done, value } = await reader.read();
+				if (done) break;
+				chunks.push(value);
+				fileLoaded += value.byteLength;
+				if (fileLoaded - lastActive >= PROGRESS_BYTE_STEP || fileLoaded === contentLength) {
+					lastActive = fileLoaded;
+					report(rel, fileLoaded, contentLength || undefined);
+				}
+			}
+			loaded += fileLoaded;
+		} else {
+			const buf = await res.arrayBuffer();
+			fileLoaded = buf.byteLength;
+			loaded += fileLoaded;
 		}
+		throwIfAborted(signal);
+		report(rel, fileLoaded, fileLoaded);
 	}
 	for (const name of smallFiles) await pull(name);
 	const metaRes = await fetch(chunksMetaUrl, { cache: 'force-cache' });
@@ -175,11 +227,11 @@ async function prefetchWhisperAssets(onProgress, signal) {
 }
 
 /**
- * 在超时或 Abort 时拒绝，否则返回 promise 结果。
+ * 无进度超时：有活动则重置计时；Abort 时拒绝。
  * @template T
  * @param {Promise<T>} promise
  * @param {AbortSignal | undefined} signal
- * @param {number} timeoutMs
+ * @param {number} timeoutMs 无活动达到此时长才失败
  * @returns {Promise<T>}
  */
 function raceLoad(promise, signal, timeoutMs) {
@@ -188,42 +240,51 @@ function raceLoad(promise, signal, timeoutMs) {
 		let timer;
 		/** @type {(() => void) | undefined} */
 		let onAbort;
+		/** 是否已结束。 */
+		let settled = false;
+		const idleMs = Math.max(5000, timeoutMs || DEFAULT_LOAD_TIMEOUT_MS);
+		const arm = () => {
+			if (timer) clearTimeout(timer);
+			timer = setTimeout(() => {
+				const err = new Error('err_model');
+				err.code = 'err_model';
+				fail(err);
+			}, idleMs);
+		};
+		sharedLoadActivityListeners.add(arm);
 		const cleanup = () => {
 			if (timer) clearTimeout(timer);
+			sharedLoadActivityListeners.delete(arm);
 			if (signal && onAbort) signal.removeEventListener('abort', onAbort);
 		};
-		timer = setTimeout(() => {
+		const fail = (err) => {
+			if (settled) return;
+			settled = true;
 			cleanup();
-			const err = new Error('err_model');
-			err.code = 'err_model';
 			reject(err);
-		}, Math.max(5000, timeoutMs || DEFAULT_LOAD_TIMEOUT_MS));
+		};
+		const ok = (v) => {
+			if (settled) return;
+			settled = true;
+			cleanup();
+			resolve(v);
+		};
+		arm();
 		if (signal) {
 			if (signal.aborted) {
-				cleanup();
 				const err = new Error('aborted');
 				err.name = 'AbortError';
-				reject(err);
+				fail(err);
 				return;
 			}
 			onAbort = () => {
-				cleanup();
 				const err = new Error('aborted');
 				err.name = 'AbortError';
-				reject(err);
+				fail(err);
 			};
 			signal.addEventListener('abort', onAbort, { once: true });
 		}
-		promise.then(
-			(v) => {
-				cleanup();
-				resolve(v);
-			},
-			(e) => {
-				cleanup();
-				reject(e);
-			},
-		);
+		promise.then(ok, fail);
 	});
 }
 
@@ -241,24 +302,36 @@ export async function createTranscriber(onProgress, opts = {}) {
 	const timeoutMs = (opts && opts.timeoutMs) || DEFAULT_LOAD_TIMEOUT_MS;
 	throwIfAborted(signal);
 
+	/** 本调用方绑定的代数（作废后忽略进度）。 */
+	const gen = loadGeneration;
+	/**
+	 * 进度回调：本代数作废后忽略；有进度时重置无进度计时。
+	 * @param {object} data
+	 */
+	function gatedProgress(data) {
+		if (gen !== loadGeneration) return;
+		notifyLoadActivity();
+		if (typeof onProgress === 'function') onProgress(data);
+	}
+
 	if (!inflightLoad) {
-		const gen = loadGeneration;
 		/** 本轮加载 Promise（finally 仅在仍是当前 inflight 时清空）。 */
 		const p = (async () => {
 			/* 预取不绑定某一调用方 signal，避免 A 取消拖死共享加载；代数负责作废 */
-			await prefetchWhisperAssets(onProgress, undefined);
+			await prefetchWhisperAssets(gatedProgress, undefined, notifyLoadActivity);
 			if (gen !== loadGeneration) {
 				const err = new Error('aborted');
 				err.name = 'AbortError';
 				throw err;
 			}
-			if (typeof onProgress === 'function') {
+			notifyLoadActivity();
+			if (typeof onProgress === 'function' && gen === loadGeneration) {
 				onProgress({ status: 'initiate', file: 'onnx-wasm' });
 			}
 			const asr = await pipeline('automatic-speech-recognition', MODEL_ID, {
 				dtype: DEFAULT_DTYPE,
 				device: 'wasm',
-				progress_callback: onProgress || undefined,
+				progress_callback: gatedProgress,
 			});
 			if (gen !== loadGeneration) {
 				const err = new Error('aborted');

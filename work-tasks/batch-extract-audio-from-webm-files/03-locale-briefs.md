@@ -33,3 +33,4 @@
 | 0b | 2026-10-01 | WebM-only 批量 brief：H1/accept 与混批 sibling 分界；同意图表（bulk webm zip、中文批量、单 WebM/hub/混批 related、YouTube drop）；十语 H1；意图审查满足串行 ZIP | 02 ready；03 briefs-ready；待 coverage 0b |
 | 1b | 2026-10-01 | 母版 en：H1 batch+WebM；desc 写 WebM-only 串行 ZIP、sibling 导流；FAQ 单文件/混容器三分流 | coverage:gate phase=2 绿 |
 | 2b | 2026-10-01 | 十语：当地 bulk webm 说法；zh 批量 webm 转 mp3；err_format 指混批页；抽查 en,zh,es,ja | coverage:gate phase=4 绿 |
+| 2b | 2026-10-02 | Rewrite fr/pt/id/ja/ru/ar from EN master: remove Spanish body leakage; WebM-only H1 + 500 MiB fallback honesty; spot-check en,zh,es,ja | coverage:gate phase=4 |

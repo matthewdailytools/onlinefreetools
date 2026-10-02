@@ -44,7 +44,7 @@ const en: SiteLangDict = {
     'No MOV loaded yet. Drop a local .mov, or click Load sample. This page does not accept YouTube links or non-MOV video formats.',
   tool_extract_audio_from_a_mov_file_err_file: 'Drop exactly one QuickTime MOV file.',
   tool_extract_audio_from_a_mov_file_err_format:
-    'This page accepts only .mov files (video/quicktime). MOV, WebM, MKV or audio-only .m4a belong on other tools—see the mixed-format extract page.',
+    'This page accepts only .mov files (video/quicktime). MP4, WebM, MKV or audio-only .m4a belong on other tools—see the mixed-format extract page.',
   tool_extract_audio_from_a_mov_file_err_limit:
     'This MOV exceeds the demux size or duration cap (about 5 GiB / 6 hours with OPFS, else about 1 GiB).',
   tool_extract_audio_from_a_mov_file_err_container:

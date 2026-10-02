@@ -8462,7 +8462,7 @@ const en: SiteLangDict = {
   tool_extract_audio_from_a_mov_file_err_encoder: 'Could not write the audio file. Check the format, then try Extract again.',
   tool_extract_audio_from_a_mov_file_err_file: 'Drop exactly one QuickTime MOV file.',
   tool_extract_audio_from_a_mov_file_err_format:
-    'This page accepts only .mov files (video/quicktime). MOV, WebM, MKV or audio-only .m4a belong on other tools—see the mixed-format extract page.',
+    'This page accepts only .mov files (video/quicktime). MP4, WebM, MKV or audio-only .m4a belong on other tools—see the mixed-format extract page.',
   tool_extract_audio_from_a_mov_file_err_limit: 'This MOV exceeds the demux size or duration cap (about 5 GiB / 6 hours with OPFS, else about 1 GiB).',
   tool_extract_audio_from_a_mov_file_err_sample: 'Could not build a sample MOV in this browser. Drop your own local .mov instead.',
   tool_extract_audio_from_a_mov_file_err_unsupported: 'This browser lacks Web Audio needed for extraction.',

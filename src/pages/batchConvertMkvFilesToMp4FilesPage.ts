@@ -193,7 +193,21 @@ export const renderBatchConvertMkvFilesToMp4FilesPage = (opts: {
     let fileAbort = null, convertMod = null, zipPromise = null;
     /** 引擎侧体积上限（探测后覆盖 MAX_BYTES）。 */
     let engineMaxBytes = MAX_BYTES;
-    const yieldUi = () => new Promise((resolve) => requestAnimationFrame(() => setTimeout(resolve, 0)));
+    /** 让出主线程刷新 HUD；后台标签页不触发 rAF，隐藏时走 MessageChannel，可见时 50ms 兜底。 */
+    const yieldUi = () => new Promise((resolve) => {
+      /** 是否已 resolve。 */
+      let done = false;
+      /** 只 resolve 一次。 */
+      const finish = () => { if (!done) { done = true; resolve(); } };
+      if (document.hidden && typeof MessageChannel === 'function') {
+        const ch = new MessageChannel();
+        ch.port1.onmessage = finish;
+        ch.port2.postMessage(0);
+        return;
+      }
+      requestAnimationFrame(() => setTimeout(finish, 0));
+      setTimeout(finish, 50);
+    });
     const fill = (text, values) => text.replace(/{(\\w+)}/g, (_, key) => String(values[key] ?? ''));
     function isMkv(file){
       if (!file) return false;

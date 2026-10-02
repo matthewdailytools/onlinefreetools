@@ -1,113 +1,127 @@
 import type { SiteLangDict } from '../../../types';
 
-/** Español: extraer audio de archivos WebM por lotes (fallback ~500 MiB / 4 h por archivo). */
+/**
+ * Русский: Пакетно извлечь аудио из WebM-файлов.
+ * Очередь только .webm; последовательное извлечение; частичный ZIP с успешными;
+ * лимит запасного пути ~500 МиБ / 4 ч на файл; до 30 файлов; без YouTube.
+ */
 const ru: SiteLangDict = {
   tool_batch_extract_audio_from_webm_files_title: 'Пакетно извлечь аудио из WebM-файлов',
   tool_batch_extract_audio_from_webm_files_desc:
-    'Solo WebM local: cola uno a uno, omite fallos, ZIP WAV/MP3; sin subir al servidor.',
+    'Извлечь аудио из локальных WebM по одному в ZIP WAV/MP3. Запасной путь ~500 МиБ каждый — частичный ZIP сохраняет успехи.',
   tool_batch_extract_audio_from_webm_files_description:
-    'Extrae pistas solo de WebM locales, uno a uno, y descarga ZIP WAV o MP3. Pasos: añadir .webm → Extraer → Descargar ZIP. Ejemplo: Cargar muestra crea dos WebM cortos. ~500 MiB / 4 h por archivo (ruta fallback), no demux MP4/MOV. Fallos se omiten; aciertos se empaquetan. Archivos en tu dispositivo, no se suben. No YouTube. Un WebM: Extraer audio de un archivo WebM. Mezcla MP4/MOV/MKV: hub de vídeo por lotes. Процесс: шаги извлечения и пример с локальным файлом.',
+    'Поставьте локальные WebM в очередь, извлекайте последовательно через запасной путь общего движка (~500 МиБ / 4 ч каждый), пропускайте сбои с понятными кодами, скачайте ZIP. Шаги: добавить WebM → Извлечь → Скачать ZIP. Пример: Загрузить образец создаёт два коротких клипа, если MediaRecorder работает. Не YouTube. Для одного файла используйте «Извлечь аудио из WebM-файла».',
   tool_batch_extract_audio_from_webm_files_article:
-    'Carpetas de capturas WebM suelen necesitar solo la voz. Esta página encola solo .webm, extrae uno a uno, omite fallos y empaqueta aciertos. No YouTube ni lote mixto del hub.',
-  tool_batch_extract_audio_from_webm_files_choose: 'Elegir archivos WebM',
+    'Папкам с WebM-захватами нужны ZIP только с голосом. Страница ставит в очередь только .webm, извлекает по одному, пропускает слишком большие с err_container и упаковывает успехи. Без YouTube. Без заявки на демукс 5 ГиБ.',
+  tool_batch_extract_audio_from_webm_files_choose: 'Выбрать WebM-файлы',
   tool_batch_extract_audio_from_webm_files_hint:
-    'Hasta 30 .webm locales. No WebM → err_format. ~500 MiB / 4 h por archivo.',
-  tool_batch_extract_audio_from_webm_files_list_label: 'Cola WebM',
-  tool_batch_extract_audio_from_webm_files_convert: 'Extraer',
-  tool_batch_extract_audio_from_webm_files_stop: 'Detener',
-  tool_batch_extract_audio_from_webm_files_download: 'Descargar ZIP',
-  tool_batch_extract_audio_from_webm_files_sample: 'Cargar muestra',
-  tool_batch_extract_audio_from_webm_files_clear: 'Borrar',
-  tool_batch_extract_audio_from_webm_files_advanced: 'Formato de exportación (opcional)',
-  tool_batch_extract_audio_from_webm_files_format_label: 'Formato de salida',
-  tool_batch_extract_audio_from_webm_files_format_wav: 'WAV (16 bits)',
+    'До 30 локальных .webm. Запасной путь на файл ~500 МиБ / 4 ч. Сбои пропускаются; ZIP сохраняет успехи.',
+  tool_batch_extract_audio_from_webm_files_list_label: 'Очередь файлов',
+  tool_batch_extract_audio_from_webm_files_convert: 'Извлечь',
+  tool_batch_extract_audio_from_webm_files_stop: 'Стоп',
+  tool_batch_extract_audio_from_webm_files_download: 'Скачать ZIP',
+  tool_batch_extract_audio_from_webm_files_sample: 'Загрузить образец',
+  tool_batch_extract_audio_from_webm_files_clear: 'Очистить',
+  tool_batch_extract_audio_from_webm_files_advanced: 'Формат экспорта (необязательно)',
+  tool_batch_extract_audio_from_webm_files_format_label: 'Формат вывода',
+  tool_batch_extract_audio_from_webm_files_format_wav: 'WAV (16 бит)',
   tool_batch_extract_audio_from_webm_files_format_mp3: 'MP3',
-  tool_batch_extract_audio_from_webm_files_bitrate: 'Bitrate MP3',
+  tool_batch_extract_audio_from_webm_files_bitrate: 'Битрейт MP3',
   tool_batch_extract_audio_from_webm_files_settings_hint:
-    'WAV por defecto en WebM cortos. Clips largos pueden ir a MP3 por streaming. Sin URL ni YouTube.',
-  tool_batch_extract_audio_from_webm_files_progress: 'Progreso del lote',
-  tool_batch_extract_audio_from_webm_files_read: 'Leer',
-  tool_batch_extract_audio_from_webm_files_decode: 'Reproducir',
-  tool_batch_extract_audio_from_webm_files_extract: 'Extraer',
-  tool_batch_extract_audio_from_webm_files_write: 'Escribir',
-  tool_batch_extract_audio_from_webm_files_pack: 'Empaquetar ZIP',
-  tool_batch_extract_audio_from_webm_files_done: 'Listo. Descarga el ZIP de audio.',
-  tool_batch_extract_audio_from_webm_files_failed: 'El lote falló. Quita WebM dañados o reduce la cola.',
-  tool_batch_extract_audio_from_webm_files_elapsed: '{s}s transcurridos',
-  tool_batch_extract_audio_from_webm_files_preview: 'Resultado del lote',
-  tool_batch_extract_audio_from_webm_files_result: 'Empaquetados {n} audios · ZIP {output} KiB',
-  tool_batch_extract_audio_from_webm_files_partial: 'OK {ok}, fallidos {fail} · el ZIP incluye aciertos ({output} KiB)',
-  tool_batch_extract_audio_from_webm_files_sample_name: 'demo-lote-webm',
-  tool_batch_extract_audio_from_webm_files_empty: 'Añade al menos un WebM o carga la muestra.',
+    'По умолчанию WAV для коротких клипов. Лимиты следуют запасному пути. Без URL.',
+  tool_batch_extract_audio_from_webm_files_progress: 'Прогресс пакетного извлечения',
+  tool_batch_extract_audio_from_webm_files_read: 'Чтение',
+  tool_batch_extract_audio_from_webm_files_decode: 'Декодирование',
+  tool_batch_extract_audio_from_webm_files_extract: 'Извлечение',
+  tool_batch_extract_audio_from_webm_files_write: 'Запись',
+  tool_batch_extract_audio_from_webm_files_pack: 'Упаковать ZIP',
+  tool_batch_extract_audio_from_webm_files_done: 'Готово. Скачайте ZIP извлечённых аудиофайлов.',
+  tool_batch_extract_audio_from_webm_files_failed:
+    'Пакетное извлечение не удалось. Удалите повреждённые файлы или возьмите меньше.',
+  tool_batch_extract_audio_from_webm_files_elapsed: 'Прошло {s} с',
+  tool_batch_extract_audio_from_webm_files_preview: 'Результат пакета',
+  tool_batch_extract_audio_from_webm_files_result: 'Упаковано {n} аудиофайлов · ZIP {output} КиБ',
+  tool_batch_extract_audio_from_webm_files_partial:
+    'OK {ok}, сбой {fail} · ZIP всё ещё включает успехи ({output} КиБ)',
+  tool_batch_extract_audio_from_webm_files_sample_name: 'batch-webm-audio-demo',
+  tool_batch_extract_audio_from_webm_files_empty: 'Добавьте хотя бы один WebM или сначала загрузите образец.',
   tool_batch_extract_audio_from_webm_files_empty_state:
-    'Sin WebM. Suelta .webm o Cargar muestra. No YouTube ni otros formatos.',
-  tool_batch_extract_audio_from_webm_files_remove: 'Quitar',
-  tool_batch_extract_audio_from_webm_files_queue_count: '{n} WebM en cola',
-  tool_batch_extract_audio_from_webm_files_status_pending: 'En espera',
-  tool_batch_extract_audio_from_webm_files_status_running: 'Extrayendo…',
-  tool_batch_extract_audio_from_webm_files_status_ok: 'Listo',
-  tool_batch_extract_audio_from_webm_files_status_fail: 'Falló',
-  tool_batch_extract_audio_from_webm_files_status_stopped: 'Detenido',
-  tool_batch_extract_audio_from_webm_files_err_file: 'Añade solo archivos WebM.',
+    'Файлов ещё нет. Перетащите локальные .webm. Не YouTube.',
+  tool_batch_extract_audio_from_webm_files_remove: 'Удалить',
+  tool_batch_extract_audio_from_webm_files_queue_count: '{n} файл(ов) в очереди',
+  tool_batch_extract_audio_from_webm_files_status_pending: 'Ожидание',
+  tool_batch_extract_audio_from_webm_files_status_running: 'Извлечение…',
+  tool_batch_extract_audio_from_webm_files_status_ok: 'Готово',
+  tool_batch_extract_audio_from_webm_files_status_fail: 'Сбой',
+  tool_batch_extract_audio_from_webm_files_status_stopped: 'Остановлено',
+  tool_batch_extract_audio_from_webm_files_err_file: 'Добавьте WebM, которые браузер сможет декодировать.',
   tool_batch_extract_audio_from_webm_files_err_format:
-    'Solo .webm. MP4/MOV/MKV: Extraer audio de archivos de vídeo por lotes.',
-  tool_batch_extract_audio_from_webm_files_err_limit: 'Un WebM superó ~500 MiB / 4 h; fila omitida.',
-  tool_batch_extract_audio_from_webm_files_err_container: 'Un WebM demasiado grande o largo (~500 MiB / 4 h); fila omitida.',
-  tool_batch_extract_audio_from_webm_files_err_codec: 'Códec de audio no soportado en un WebM; fila omitida.',
-  tool_batch_extract_audio_from_webm_files_err_channels: 'Layout de canales no soportado; fila omitida.',
-  tool_batch_extract_audio_from_webm_files_err_decode: 'No se pudo decodificar audio de un WebM; fila omitida.',
-  tool_batch_extract_audio_from_webm_files_err_encoder: 'No se pudo escribir audio. Revisa formato e inténtalo.',
-  tool_batch_extract_audio_from_webm_files_err_zip: 'No se pudo crear el ZIP. Reduce la cola.',
-  tool_batch_extract_audio_from_webm_files_err_too_many: 'Límite de cola: 30 WebM.',
-  tool_batch_extract_audio_from_webm_files_err_sample: 'No se pudo crear muestra WebM. Añade tus .webm.',
-  tool_batch_extract_audio_from_webm_files_err_unsupported: 'Este navegador no tiene Web Audio.',
-  tool_batch_extract_audio_from_webm_files_err_empty: 'No se capturó audio útil en la cola.',
-  tool_batch_extract_audio_from_webm_files_forced_mp3: 'Un WebM largo usó MP3 por streaming en esa fila.',
-  tool_batch_extract_audio_from_webm_files_how_title: 'Cómo extraer audio de archivos WebM por lotes',
+    'Неподдерживаемый файл. На этой странице только .webm.',
+  tool_batch_extract_audio_from_webm_files_err_limit:
+    'Файл превысил ограничение размера/длительности запасного пути.',
+  tool_batch_extract_audio_from_webm_files_err_container:
+    'Файл превышает лимит запасного пути ~500 МиБ / 4 ч — или это невалидный WebM. Строка пропущена.',
+  tool_batch_extract_audio_from_webm_files_err_codec:
+    'Файл использует неподдерживаемый аудиокодек. Строка пропущена.',
+  tool_batch_extract_audio_from_webm_files_err_channels:
+    'Файл использует неподдерживаемую раскладку каналов. Строка пропущена.',
+  tool_batch_extract_audio_from_webm_files_err_decode: 'Браузер не смог декодировать аудио из файла.',
+  tool_batch_extract_audio_from_webm_files_err_encoder: 'Не удалось записать аудиофайл.',
+  tool_batch_extract_audio_from_webm_files_err_zip: 'Не удалось создать ZIP.',
+  tool_batch_extract_audio_from_webm_files_err_too_many: 'Лимит очереди — 30 файлов.',
+  tool_batch_extract_audio_from_webm_files_err_sample: 'Не удалось создать образцы. Перетащите свои файлы.',
+  tool_batch_extract_audio_from_webm_files_err_unsupported: 'В этом браузере нет Web Audio.',
+  tool_batch_extract_audio_from_webm_files_err_empty: 'Нет пригодных аудиосэмплов.',
+  tool_batch_extract_audio_from_webm_files_forced_mp3: 'Длинный/крупный файл использовал потоковый MP3.',
+  tool_batch_extract_audio_from_webm_files_how_title: 'Как пакетно извлечь аудио из WebM-файлов',
   tool_batch_extract_audio_from_webm_files_how_body:
-    'Encola WebM locales, extrae uno a uno, descarga ZIP—sin subir ni URL.',
-  tool_batch_extract_audio_from_webm_files_how_item_1: 'Elige varios .webm o Cargar muestra (dos WebM cortos).',
-  tool_batch_extract_audio_from_webm_files_how_item_2: 'Cambia a MP3 en Formato de exportación si lo necesitas.',
+    'Поставьте локальные WebM в очередь, извлекайте по одному, скачайте ZIP.',
+  tool_batch_extract_audio_from_webm_files_how_item_1: 'Выберите несколько .webm или «Загрузить образец».',
+  tool_batch_extract_audio_from_webm_files_how_item_2: 'При желании выберите MP3 вместо WAV.',
   tool_batch_extract_audio_from_webm_files_how_item_3:
-    'Pulsa Extraer; sigue Leer→Reproducir→Extraer→Escribir; Detener cancela el resto.',
-  tool_batch_extract_audio_from_webm_files_how_item_4:
-    'Descargar ZIP. Filas fallidas se omiten; basta un acierto para empaquetar.',
-  tool_batch_extract_audio_from_webm_files_why_choose_title: 'Por qué usar Extraer audio de archivos WebM por lotes',
+    'Нажмите «Извлечь»; «Стоп» отменяет оставшиеся строки.',
+  tool_batch_extract_audio_from_webm_files_how_item_4: 'Скачайте ZIP. Неудачные строки пропускаются.',
+  tool_batch_extract_audio_from_webm_files_why_choose_title:
+    'Зачем выбирать «Пакетно извлечь аудио из WebM-файлов»',
   tool_batch_extract_audio_from_webm_files_why_choose_item_1:
-    'Solo WebM—encaja con carpetas de captura sin mezclar MP4/MOV.',
-  tool_batch_extract_audio_from_webm_files_why_choose_item_2: 'Uno a uno evita picos de memoria con varios WebM grandes.',
-  tool_batch_extract_audio_from_webm_files_why_choose_item_3:
-    'Estado por fila: un WebM malo no borra todo el ZIP.',
+    'Последовательное извлечение стабилизирует память.',
+  tool_batch_extract_audio_from_webm_files_why_choose_item_2:
+    'Статус по строкам; один сбой не стирает ZIP.',
+  tool_batch_extract_audio_from_webm_files_why_choose_item_3: 'Честные лимиты запасного пути для WebM.',
   tool_batch_extract_audio_from_webm_files_why_choose_item_4:
-    'WebM enormes se omiten con mensaje de contenedor; demux grande en MP4/MOV.',
-  tool_batch_extract_audio_from_webm_files_rules_title: 'Cola WebM, extracción secuencial y ZIP',
+    'Обработка на устройстве; рядом хаб для смешанных форматов.',
+  tool_batch_extract_audio_from_webm_files_rules_title: 'Последовательное извлечение WebM и честность ZIP',
   tool_batch_extract_audio_from_webm_files_rules_body:
-    'Cada WebM se clasifica, reproduce y entra al ZIP. ZIP parciales conservan aciertos. No YouTube a MP3.',
+    'Каждый WebM классифицируется, затем извлекается отдельно. Частичные ZIP сохраняют успехи.',
   tool_batch_extract_audio_from_webm_files_rules_item_1:
-    'Hasta 30 .webm; ~500 MiB / 4 h cada uno. Demux grande MP4/MOV en páginas hermanas.',
-  tool_batch_extract_audio_from_webm_files_rules_item_2: 'No WebM → err_format. Mezcla: hub por lotes.',
-  tool_batch_extract_audio_from_webm_files_rules_item_3: 'Un fallo omite la fila; otros pueden empaquetarse.',
-  tool_batch_extract_audio_from_webm_files_rules_item_4: 'Procesamiento en tu dispositivo; no se sube al servidor.',
-  tool_batch_extract_audio_from_webm_files_example_title: 'Prueba un lote WebM real',
+    'До 30 файлов; каждый ~500 МиБ / 4 ч запасного пути.',
+  tool_batch_extract_audio_from_webm_files_rules_item_2: 'Без URL и скачивания YouTube.',
+  tool_batch_extract_audio_from_webm_files_rules_item_3:
+    'Сбои пропускаются с err_container / err_codec при необходимости.',
+  tool_batch_extract_audio_from_webm_files_rules_item_4: 'Файлы остаются на вашем устройстве.',
+  tool_batch_extract_audio_from_webm_files_example_title: 'Попробовать реальный пакет',
   tool_batch_extract_audio_from_webm_files_example:
-    'Cargar muestra crea dos WebM cortos cuando es posible y empaqueta un ZIP.',
-  tool_batch_extract_audio_from_webm_files_usecases_title: 'Cuándo ayuda',
-  tool_batch_extract_audio_from_webm_files_usecase_1: 'Carpeta de capturas WebM → ZIP estilo webm a MP3.',
-  tool_batch_extract_audio_from_webm_files_usecase_2: 'Exportaciones del navegador a audio sin subir cada archivo.',
-  tool_batch_extract_audio_from_webm_files_usecase_3: 'Sacar Opus de WebM VP9 conservando los vídeos originales.',
-  tool_batch_extract_audio_from_webm_files_faq_q1: '¿Lista de reproducción de YouTube?',
-  tool_batch_extract_audio_from_webm_files_faq_a1: 'No. Solo WebM local. Descarga primero al dispositivo.',
-  tool_batch_extract_audio_from_webm_files_faq_q2: '¿Solo un WebM?',
-  tool_batch_extract_audio_from_webm_files_faq_a2: 'Usa Extraer audio de un archivo WebM. Esta página es para ZIP.',
-  tool_batch_extract_audio_from_webm_files_faq_q3: '¿Carpeta con .mp4 y .webm?',
-  tool_batch_extract_audio_from_webm_files_faq_a3: 'Solo .webm aquí. Mezcla: hub por lotes de vídeo.',
-  tool_batch_extract_audio_from_webm_files_faq_q4: '¿Es webm a MP3 online en lote?',
-  tool_batch_extract_audio_from_webm_files_faq_a4:
-    'Similar para WebM local: captura Opus y ZIP MP3/WAV; no pega URL.',
-  tool_batch_extract_audio_from_webm_files_faq_q5: '¿Por qué uno a uno?',
+    '«Загрузить образец» по возможности создаёт два коротких клипа и упаковывает ZIP.',
+  tool_batch_extract_audio_from_webm_files_usecases_title: 'Когда это помогает',
+  tool_batch_extract_audio_from_webm_files_usecase_1:
+    'Папка WebM-захватов нужна как голосовые дорожки в одном ZIP.',
+  tool_batch_extract_audio_from_webm_files_usecase_2: 'Массовое извлечение без загрузки каждого файла.',
+  tool_batch_extract_audio_from_webm_files_usecase_3:
+    'Смесь с слишком большими файлами — частичный ZIP всё равно полезен.',
+  tool_batch_extract_audio_from_webm_files_faq_q1: 'Плейлист YouTube?',
+  tool_batch_extract_audio_from_webm_files_faq_a1: 'Нет. Только локальные .webm.',
+  tool_batch_extract_audio_from_webm_files_faq_q2: 'Только один файл?',
+  tool_batch_extract_audio_from_webm_files_faq_a2: 'Используйте страницу одиночного извлечения WebM.',
+  tool_batch_extract_audio_from_webm_files_faq_q3: 'Почему 500 МиБ, а не 5 ГиБ?',
+  tool_batch_extract_audio_from_webm_files_faq_a3:
+    'Демукса WebM ещё нет; действуют лимиты запасного пути. У MP4/MOV есть крупный демукс.',
+  tool_batch_extract_audio_from_webm_files_faq_q4: 'Загружается?',
+  tool_batch_extract_audio_from_webm_files_faq_a4: 'Нет. Только в браузере.',
+  tool_batch_extract_audio_from_webm_files_faq_q5: 'Один огромный файл падает?',
   tool_batch_extract_audio_from_webm_files_faq_a5:
-    'Decodificar varios WebM a la vez dispara memoria. Secuencial mantiene solo el blob actual.',
-  tool_batch_extract_audio_from_webm_files_faq_q6: '¿Se suben los vídeos?',
-  tool_batch_extract_audio_from_webm_files_faq_a6: 'No. Lectura, captura y ZIP en tu navegador.',
+    'Эта строка падает с err_container; остальные всё равно упаковываются.',
+  tool_batch_extract_audio_from_webm_files_faq_q6: 'Обрезать потом?',
+  tool_batch_extract_audio_from_webm_files_faq_a6:
+    'Скачайте ZIP, затем используйте инструмент обрезки по файлу.',
 };
 export default ru;
