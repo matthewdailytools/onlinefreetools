@@ -1,0 +1,31 @@
+{
+  "slug": "trim-a-video-clip-and-export",
+  "path": "/tools/trim-a-video-clip-and-export",
+  "updatedAt": "2026-10-03T13:06:05.523Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_trim_a_video_clip_and_export_title",
+  "homeTitleKey": "tool_trim_a_video_clip_and_export_title",
+  "homeDescKey": "tool_trim_a_video_clip_and_export_desc",
+  "faqPrefix": "tool_trim_a_video_clip_and_export",
+  "related": [
+    "extract-frames-from-a-video-as-images",
+    "convert-a-video-file-to-a-gif",
+    "convert-a-mov-file-to-an-mp4-file",
+    "convert-an-mp4-file-to-a-webm-file",
+    "compress-a-video-file",
+    "merge-video-clips-in-order"
+  ],
+  "logo": "/icons/tools/trim-a-video-clip-and-export.svg",
+  "page": {
+    "module": "../pages/trimAVideoClipAndExportPage",
+    "export": "renderTrimAVideoClipAndExportPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

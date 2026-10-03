@@ -1,7 +1,7 @@
 {
   "slug": "images-to-gif",
   "path": "/tools/images-to-gif",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-03T08:11:53.118Z",
   "category": "image",
   "primaryTopic": "image-media",
   "featured": true,
@@ -13,7 +13,8 @@
   "related": [
     "images-to-pdf",
     "image-merge",
-    "image-format-converter"
+    "image-format-converter",
+    "convert-a-video-file-to-a-gif"
   ],
   "logo": "/icons/tools/images-to-gif.svg",
   "page": {

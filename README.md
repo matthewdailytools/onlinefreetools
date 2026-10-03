@@ -39,15 +39,20 @@
 - [文件元数据分析器](https://onlinefreetools.org/zh/tools/file-metadata-analyzer) - 本地查看文件大小、MIME、修改时间，以及图片尺寸或音视频时长；文件留在设备、不上传服务器
 - [裁剪一段音频并导出](https://onlinefreetools.org/zh/tools/trim-an-audio-clip-and-export) - 在本标签页按起点和终点裁剪本地音频，再导出 WAV 或 MP3；文件留在设备、不上传服务器
 - [从一段录音里去掉静音](https://onlinefreetools.org/zh/tools/remove-silence-from-a-recording) - 在本标签页挖掉录音里够长的静音，拼成一个更短文件再导出 WAV 或 MP3；文件留在设备、不上传服务器
+- [批量去除录音中的静音](https://onlinefreetools.org/zh/tools/batch-remove-silence-from-recordings) - 多段录音统一停顿阈值，逐项试听、下载及失败重试；显示实际删去时长，文件不上传服务器
+- [批量把音频标准化到目标峰值](https://onlinefreetools.org/zh/tools/batch-normalize-audio-files-to-peak) - 多文件逐项报告原峰值和增益，导出 WAV；样本峰值不等于响度，文件不上传服务器
 - [按静音把一段录音切成多段](https://onlinefreetools.org/zh/tools/split-a-recording-on-silence) - 在本标签页按够长的停顿切开录音，下载多段 ZIP；文件留在设备、不上传服务器
 - [按固定时长把音频切成多段](https://onlinefreetools.org/zh/tools/split-an-audio-file-by-duration) - 在本标签页按固定秒数把本地音频切成等长多段并下载 ZIP，末段留下余数；文件留在设备、不上传服务器
 - [用 cue 表把整轨镜像分轨](https://onlinefreetools.org/zh/tools/split-a-disc-image-with-a-cue-sheet) - 在本标签页按 cue 的 INDEX 01 把整轨镜像切成带曲名的多轨 ZIP；文件留在设备、不上传服务器
 - [把音频做成无缝循环](https://onlinefreetools.org/zh/tools/make-a-seamless-audio-loop) - 在本标签页把本地音频选段做等功率交叉淡化，导出可循环 WAV 或 MP3；文件留在设备、不上传服务器
 - [做成 30 秒 MP3 铃声](https://onlinefreetools.org/zh/tools/make-a-30-second-mp3-ringtone) - 在本标签页把本地歌曲裁成约 30 秒并淡化头尾，导出 MP3 铃声；文件留在设备、不上传服务器
 - [压缩 MP3 文件大小](https://onlinefreetools.org/zh/tools/reduce-an-mp3-file-size) - 降低码率、可选单声道，试听并比较实际体积；文件留在本机，不上传服务器
+- [批量缩小 MP3 文件](https://onlinefreetools.org/zh/tools/batch-reduce-mp3-file-sizes) - 多个 MP3 统一设置逐项重编码，报告真实节省或反增并分别下载；文件不上传服务器
 - [转换音频采样率与位深](https://onlinefreetools.org/zh/tools/convert-audio-sample-rate-and-bit-depth) - 把录音改成 44.1/48 kHz、16/24 位 WAV，试听后下载；文件留在本机，不上传服务器
 - [把 WAV 文件转成 MP3](https://onlinefreetools.org/zh/tools/convert-a-wav-file-to-mp3) - 整段 WAV 转 MP3，选择码率、试听并对比实际文件大小；文件留在设备，不上传服务器
 - [把 MP3 文件转成 WAV](https://onlinefreetools.org/zh/tools/convert-an-mp3-file-to-wav) - 整段 MP3 转 16 位 PCM WAV，选择 44.1 或 48 kHz、试听并对比实际文件大小；文件留在设备，不上传服务器
+- [批量把音频文件转成 MP3](https://onlinefreetools.org/zh/tools/batch-convert-audio-files-to-mp3) - 混合音频逐项转 MP3，独立下载并隔离失败；文件留在设备、不上传服务器
+- [批量把 MP3 文件转成 WAV](https://onlinefreetools.org/zh/tools/batch-convert-mp3-files-to-wav) - 多个 MP3 逐项导出 PCM WAV，报告真实体积增长；大输出可用 OPFS，文件不上传服务器
 - [把 M4A 文件转成 MP3](https://onlinefreetools.org/zh/tools/convert-an-m4a-file-to-mp3) - 将一个 M4A 或 AAC 录音转成 MP3，选择码率、试听并比较实际大小；文件留在设备，不上传服务器
 - [给 MP3 增强低音](https://onlinefreetools.org/zh/tools/boost-bass-on-an-mp3) - 用轻柔/适中/强烈低架式预设抬升偏薄低音，试听后下载 16 位 WAV；文件留在本机，不上传服务器
 - [给音频剪辑加淡入淡出](https://onlinefreetools.org/zh/tools/fade-in-and-fade-out-an-audio-clip) - 用 0.5–3 秒芯片与线性或等功率曲线柔化头尾，试听后下载 16 位 WAV；文件留在本机，不上传服务器
@@ -66,6 +71,23 @@
 - [批量从 MOV 文件提取音频](https://onlinefreetools.org/zh/tools/batch-extract-audio-from-mov-files) - 仅 .mov 文件夹：串行抽音、失败跳过、ZIP 下载；不上传服务器
 - [从 MKV 文件提取音频](https://onlinefreetools.org/zh/tools/extract-audio-from-an-mkv-file) - 仅 .mkv：浏览器回退路径抽音为 WAV/MP3（约 500 MiB/4 小时）；大文件请转 MP4；不上传服务器
 - [把 MKV 文件转换成 MP4 文件](https://onlinefreetools.org/zh/tools/convert-an-mkv-file-to-an-mp4-file) - 本地 MKV→MP4（AAC 立体声）；OPFS 流式约 5 GiB（无 OPFS 约 1 GiB）；不上传服务器
+- [把 WebM 录屏转换成 H.264 MP4](https://onlinefreetools.org/zh/tools/convert-a-webm-file-to-an-mp4-file) - 本地 WebM 真正重编码为 H.264 视频及可用时 AAC 音频，显示源轨道和实际体积；文件不上传服务器
+- [批量把多个 WebM 转成 H.264 MP4](https://onlinefreetools.org/zh/tools/batch-convert-webm-files-to-mp4-files) - 串行处理多段录屏，逐行核对编码、时长与体积，保留成功项并逐件下载；不上传视频
+- [把 MP4 转成 VP9 WebM](https://onlinefreetools.org/zh/tools/convert-an-mp4-file-to-a-webm-file) - 真正重编码为 VP9 视频及有声时 Opus，复检输出轨道、时长和实际体积；大结果使用 OPFS，不保证更小
+- [把视频片段转成动态 GIF](https://onlinefreetools.org/zh/tools/convert-a-video-file-to-a-gif) - 本地视频按起止时间抽帧，显示帧数、尺寸和真实 GIF 体积；GIF 无声，短片段有内存预算
+- [从视频抽取 JPG/PNG 帧图片](https://onlinefreetools.org/zh/tools/extract-frames-from-a-video-as-images) - 按间隔或单时间点保存静态图，显示实际时间、尺寸和字节数；逐张下载或打包小型 ZIP
+- [裁剪视频片段并导出 MP4](https://onlinefreetools.org/zh/tools/trim-a-video-clip-and-export) - 按起止时间保留连续片段，复核实际时长、H.264/AAC 轨道与前后体积；大结果可走浏览器本地 OPFS（本地已验收，未部署）
+- [压缩视频并对比文件大小](https://onlinefreetools.org/zh/tools/compress-a-video-file) - 调整码率和目标高度，预估并实测输出体积、像素和轨道；已很小的源文件可能变大（本地已验收，未部署）
+- [旋转视频并修正画面方向](https://onlinefreetools.org/zh/tools/rotate-a-video-file) - 顺时针 90°、180° 或逆时针 90°，真正旋转画面像素并核对宽高、音轨与体积；大文件使用本地 OPFS（本地已验收，未部署）
+- [调整视频速度并导出 MP4](https://onlinefreetools.org/zh/tools/change-video-speed) - 0.5–2 倍真实变速，选择声音随速变调、60 秒内近似保调或静音；核对实际视频与音轨时长，大文件使用本地 OPFS（本地已验收，未部署）
+- [转换字幕文件供播放器或网页使用](https://onlinefreetools.org/zh/tools/convert-subtitle-files-between-srt-vtt-and-ass) - 同页完成 SRT↔VTT 及 ASS/SSA/SBV/LRC 转换；核对字幕数、时间轴、字符编码与样式损失，支持逐项下载和小型 ZIP（本地已验收，未部署）
+- [查看视频文件的画面与声音轨道](https://onlinefreetools.org/zh/tools/inspect-video-file-tracks) - 逐轨核对真实编码、语言、声道、时长元数据与当前浏览器解码能力；多文件串行检查并逐项下载 JSON（本地已验收，未部署）
+- [听歌逐行打点制作 LRC 歌词](https://onlinefreetools.org/zh/tools/sync-song-lyrics-to-lrc-by-tapping) - 播放本机音频并逐行标记歌词时间，可重拍、微调与整体偏移；预览后下载 LRC，音频不上传（本地已验收，未部署）
+- [把本地视频转成兼容的 H.264/AAC MP4](https://onlinefreetools.org/zh/tools/convert-a-video-to-an-mp4-with-aac-audio) - 同一入口接收 MOV/WebM/MKV/MP4，核对复制或重编码路径，并在下载前复查真实画面、音轨与体积（本地已验收，未部署）
+- [把 SRT 字幕烧录到本地视频](https://onlinefreetools.org/zh/tools/burn-subtitles-into-a-video) - 导入视频和 SRT/VTT，把定时字幕逐帧写入画面；可调颜色与安全边距，验收 MP4 后下载（本地已验收，未部署）
+- [按指定顺序合并本地视频片段](https://onlinefreetools.org/zh/tools/merge-video-clips-in-order) - 排序多段视频并输出一个 H.264/AAC MP4；统一画面与声音参数，显示来源轨道及总时长（本地已验收，未部署）
+- [把 MOV 视频转换成兼容 MP4](https://onlinefreetools.org/zh/tools/convert-a-mov-file-to-an-mp4-file) - H.264 画面可复制、可解码声音转 AAC；HEVC 按设备能力检查，输出轨道再次复检；文件不上传服务器
+- [批量把多个 MOV 转成 H.264 MP4](https://onlinefreetools.org/zh/tools/batch-convert-mov-files-to-mp4-files) - 逐段判断 H.264 复制或重编码、PCM 转 AAC 与 HEVC 兼容性；保留成功项并逐件下载，不汇成大 ZIP
 - [批量把 MKV 文件转换成 MP4 文件](https://onlinefreetools.org/zh/tools/batch-convert-mkv-files-to-mp4-files) - 多个本地 MKV→AAC MP4，打包 ZIP；行失败可跳过；不上传服务器
 - [批量从 MKV 文件提取音频](https://onlinefreetools.org/zh/tools/batch-extract-audio-from-mkv-files) - 仅 .mkv 文件夹：串行回退抽音、失败跳过、部分 ZIP；不上传服务器
 - [批量从视频提取音频](https://onlinefreetools.org/zh/tools/batch-extract-audio-from-video-files) - 多段本地视频逐个抽音轨并打成 ZIP；串行处理控内存，失败可跳过；文件不上传服务器
@@ -297,15 +319,20 @@ Below are our available online tools with their links (English version):
 - [File metadata analyzer](https://onlinefreetools.org/tools/file-metadata-analyzer) - Inspect local file size, MIME, modified time, plus image dimensions or A/V duration — stays on the device, not uploaded
 - [Trim an audio clip and export](https://onlinefreetools.org/tools/trim-an-audio-clip-and-export) - Trim a local file to start and end times, then export WAV or MP3 in this tab — stays on the device, not uploaded
 - [Remove silence from a recording](https://onlinefreetools.org/tools/remove-silence-from-a-recording) - Cut long quiet gaps from a local recording into one shorter WAV or MP3 in this tab — stays on the device, not uploaded
+- [Batch remove silence from recordings](https://onlinefreetools.org/tools/batch-remove-silence-from-recordings) - Apply one pause rule to several recordings; preview, download, retry failed rows and inspect removed time — files are not uploaded
+- [Batch normalize audio files to peak](https://onlinefreetools.org/tools/batch-normalize-audio-files-to-peak) - Report each source peak and gain, export WAV separately; sample peak is not loudness — files are not uploaded
 - [Split a recording on silence](https://onlinefreetools.org/tools/split-a-recording-on-silence) - Cut a local recording at long pauses and download a ZIP of clips in this tab — stays on the device, not uploaded
 - [Split an audio file by duration](https://onlinefreetools.org/tools/split-an-audio-file-by-duration) - Cut a local file into equal-length clips and download a ZIP in this tab; the last clip keeps the remainder — stays on the device, not uploaded
 - [Split a disc image with a cue sheet](https://onlinefreetools.org/tools/split-a-disc-image-with-a-cue-sheet) - Cut a local album image at cue INDEX 01 and download named tracks as a ZIP in this tab — stays on the device, not uploaded
 - [Make a seamless audio loop](https://onlinefreetools.org/tools/make-a-seamless-audio-loop) - Wrap a local clip with an equal-power crossfade so it loops without a click, then export WAV or MP3 in this tab — stays on the device, not uploaded
 - [Make a 30-second MP3 ringtone](https://onlinefreetools.org/tools/make-a-30-second-mp3-ringtone) - Cut a local song to about 30 seconds, fade the edges, then export an MP3 ringtone in this tab — stays on the device, not uploaded
 - [Reduce an MP3 file size](https://onlinefreetools.org/tools/reduce-an-mp3-file-size) - Re-encode at a lower bitrate, preview and compare actual savings; audio stays on your device without server upload
+- [Batch reduce MP3 file sizes](https://onlinefreetools.org/tools/batch-reduce-mp3-file-sizes) - Re-encode several MP3s with shared settings, report actual savings or growth, and download each result — no upload
 - [Convert audio sample rate and bit depth](https://onlinefreetools.org/tools/convert-audio-sample-rate-and-bit-depth) - Resample to 44.1/48 kHz and export 16/24-bit WAV, preview then download; audio stays on your device without server upload
 - [Convert a WAV file to MP3](https://onlinefreetools.org/tools/convert-a-wav-file-to-mp3) - Convert a complete WAV recording, choose bitrate, preview the MP3 and compare actual sizes; files stay on your device without server upload
 - [Convert an MP3 file to WAV](https://onlinefreetools.org/tools/convert-an-mp3-file-to-wav) - Convert a complete MP3 recording to 16-bit PCM WAV, choose 44.1 or 48 kHz, preview the result and compare actual sizes; files stay on your device without server upload
+- [Batch convert audio files to MP3](https://onlinefreetools.org/tools/batch-convert-audio-files-to-mp3) - Convert mixed local audio files into independent MP3s with row-level results and retries — no server upload
+- [Batch convert MP3 files to WAV](https://onlinefreetools.org/tools/batch-convert-mp3-files-to-wav) - Export several MP3s as separate PCM WAVs and report actual size growth; OPFS can hold large outputs — no upload
 - [Convert an M4A file to MP3](https://onlinefreetools.org/tools/convert-an-m4a-file-to-mp3) - Convert one M4A or AAC recording to MP3, choose bitrate, preview the result and compare actual sizes; files stay on your device without server upload
 - [Boost bass on an MP3](https://onlinefreetools.org/tools/boost-bass-on-an-mp3) - Lift thin low end with Mild, Medium or Strong low-shelf presets, preview, then download 16-bit WAV; audio stays on your device without server upload
 - [Fade in and fade out an audio clip](https://onlinefreetools.org/tools/fade-in-and-fade-out-an-audio-clip) - Soften abrupt starts and stops with 0.5–3 s chips and linear or equal-power curves, preview, then download 16-bit WAV; audio stays on your device without server upload
@@ -325,6 +352,23 @@ Below are our available online tools with their links (English version):
 - [Batch extract audio from MOV files](https://onlinefreetools.org/tools/batch-extract-audio-from-mov-files) - .mov-only batch: serial extract, skip-on-fail ZIP, same demux caps as the single MOV page — not uploaded
 - [Extract audio from an MKV file](https://onlinefreetools.org/tools/extract-audio-from-an-mkv-file) - .mkv only: browser fallback extract to WAV/MP3 (about 500 MiB / 4 h); remux to MP4 for large demux — not uploaded
 - [Convert an MKV file to an MP4 file](https://onlinefreetools.org/tools/convert-an-mkv-file-to-an-mp4-file) - Local MKV→MP4 with AAC stereo; OPFS stream about 5 GiB (about 1 GiB without) — not uploaded
+- [Convert a WebM recording to H.264 MP4](https://onlinefreetools.org/tools/convert-a-webm-file-to-an-mp4-file) - Re-encode local WebM to real H.264 video and AAC when audio exists; inspect source tracks and actual output size — not uploaded
+- [Batch convert WebM files to H.264 MP4](https://onlinefreetools.org/tools/batch-convert-webm-files-to-mp4-files) - Process several recordings one at a time; verify each MP4 track, duration and size, keep partial successes and download individually — not uploaded
+- [Convert MP4 to VP9 WebM](https://onlinefreetools.org/tools/convert-an-mp4-file-to-a-webm-file) - Really encode VP9 video and Opus when audio exists, reopen the output tracks, duration and actual size; use OPFS for large results without promising a smaller file
+- [Convert a video clip to an animated GIF](https://onlinefreetools.org/tools/convert-a-video-file-to-a-gif) - Sample a short local video range into a real silent GIF; report actual frame count, dimensions and output bytes
+- [Extract frames from a video as JPG or PNG](https://onlinefreetools.org/tools/extract-frames-from-a-video-as-images) - Capture stills at an interval or one timestamp; report actual times, dimensions and bytes, then download images or a bounded ZIP
+- [Trim a video clip and export an MP4](https://onlinefreetools.org/tools/trim-a-video-clip-and-export) - Keep a selected interval, then check actual duration, H.264/AAC tracks and input/output bytes; browser-local OPFS can stream large results (locally verified, not deployed)
+- [Compress a video file and compare the size](https://onlinefreetools.org/tools/compress-a-video-file) - Set bitrate and target height, then compare estimated and actual bytes, pixels and tracks; efficient sources can grow (locally verified, not deployed)
+- [Rotate a video file and fix its orientation](https://onlinefreetools.org/tools/rotate-a-video-file) - Turn pixels 90° right, 180° or 90° left; verify output dimensions, audio and bytes, with local OPFS for large files (locally verified, not deployed)
+- [Change video speed and export MP4](https://onlinefreetools.org/tools/change-video-speed) - Render actual 0.5–2× timing with pitch-following audio, approximate pitch preservation for clips up to 60 seconds or mute; verify track durations and use local OPFS for large output (locally verified, not deployed)
+- [Convert subtitle files for a player or web track](https://onlinefreetools.org/tools/convert-subtitle-files-between-srt-vtt-and-ass) - Convert SRT↔VTT plus ASS/SSA/SBV/LRC in one browser page; inspect cue timing, encoding and lost styling, then download individually or as a small ZIP (locally verified, not deployed)
+- [Inspect video and audio tracks in a local file](https://onlinefreetools.org/tools/inspect-video-file-tracks) - List actual codecs, audio languages, channels, metadata timing and this browser’s decoding support; inspect files serially and download individual JSON reports (locally verified, not deployed)
+- [Sync song lyrics to LRC by tapping each line](https://onlinefreetools.org/tools/sync-song-lyrics-to-lrc-by-tapping) - Play local audio, mark and correct each lyric line, preview timing and download a real LRC without uploading the song (locally verified, not deployed)
+- [Convert a local video to compatible H.264/AAC MP4](https://onlinefreetools.org/tools/convert-a-video-to-an-mp4-with-aac-audio) - Accept MOV/WebM/MKV/MP4 through one input, report video copy or re-encode, and verify actual output tracks and size before download (locally verified, not deployed)
+- [Burn SRT subtitles into a local video](https://onlinefreetools.org/tools/burn-subtitles-into-a-video) - Draw timed SRT/VTT captions into video frames, adjust readable placement, then inspect and download the H.264/AAC MP4 (locally verified, not deployed)
+- [Merge local video clips in the order you choose](https://onlinefreetools.org/tools/merge-video-clips-in-order) - Reorder clips and export one H.264/AAC MP4 with normalized audio, fitted frames and a checked combined duration (locally verified, not deployed)
+- [Convert a MOV video to compatible MP4](https://onlinefreetools.org/tools/convert-a-mov-file-to-an-mp4-file) - Copy H.264 video when compatible, write decodable audio as AAC, and verify output tracks; HEVC depends on this device — not uploaded
+- [Batch convert MOV files to H.264 MP4](https://onlinefreetools.org/tools/batch-convert-mov-files-to-mp4-files) - Check H.264 copy or transcode, PCM to AAC and HEVC support per row; retain successful MP4s and download them individually without a large ZIP
 - [Batch convert MKV files to MP4 files](https://onlinefreetools.org/tools/batch-convert-mkv-files-to-mp4-files) - Queue local MKVs to AAC MP4 ZIP; skip failed rows — not uploaded
 - [Batch extract audio from MKV files](https://onlinefreetools.org/tools/batch-extract-audio-from-mkv-files) - .mkv-only batch: serial fallback extract, skip-on-fail partial ZIP — not uploaded
 - [Make SRT subtitles from a video file](https://onlinefreetools.org/tools/make-srt-subtitles-from-a-video-file) - On-device Whisper turns a local video soundtrack into editable timed .srt with in-page video preview; video-only input; first run downloads ~45 MB once — stays on the device, not uploaded

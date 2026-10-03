@@ -1,0 +1,30 @@
+{
+  "slug": "convert-a-mov-file-to-an-mp4-file",
+  "path": "/tools/convert-a-mov-file-to-an-mp4-file",
+  "updatedAt": "2026-10-03T07:23:26.788Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_convert_a_mov_file_to_an_mp4_file_title",
+  "homeTitleKey": "tool_convert_a_mov_file_to_an_mp4_file_title",
+  "homeDescKey": "tool_convert_a_mov_file_to_an_mp4_file_desc",
+  "faqPrefix": "tool_convert_a_mov_file_to_an_mp4_file",
+  "related": [
+    "convert-an-mkv-file-to-an-mp4-file",
+    "extract-audio-from-a-mov-file",
+    "convert-a-webm-file-to-an-mp4-file",
+    "extract-audio-from-a-video-file",
+    "batch-convert-mov-files-to-mp4-files"
+  ],
+  "logo": "/icons/tools/convert-a-mov-file-to-an-mp4-file.svg",
+  "page": {
+    "module": "../pages/convertAMovFileToAnMp4FilePage",
+    "export": "renderConvertAMovFileToAnMp4FilePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

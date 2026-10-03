@@ -1,0 +1,31 @@
+{
+  "slug": "convert-a-webm-file-to-an-mp4-file",
+  "path": "/tools/convert-a-webm-file-to-an-mp4-file",
+  "updatedAt": "2026-10-03T07:40:41.785Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_convert_a_webm_file_to_an_mp4_file_title",
+  "homeTitleKey": "tool_convert_a_webm_file_to_an_mp4_file_title",
+  "homeDescKey": "tool_convert_a_webm_file_to_an_mp4_file_desc",
+  "faqPrefix": "tool_convert_a_webm_file_to_an_mp4_file",
+  "related": [
+    "batch-convert-webm-files-to-mp4-files",
+    "convert-an-mp4-file-to-a-webm-file",
+    "convert-an-mkv-file-to-an-mp4-file",
+    "convert-a-mov-file-to-an-mp4-file",
+    "extract-audio-from-a-webm-file",
+    "extract-audio-from-a-video-file"
+  ],
+  "logo": "/icons/tools/convert-a-webm-file-to-an-mp4-file.svg",
+  "page": {
+    "module": "../pages/convertAWebmFileToAnMp4FilePage",
+    "export": "renderConvertAWebmFileToAnMp4FilePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

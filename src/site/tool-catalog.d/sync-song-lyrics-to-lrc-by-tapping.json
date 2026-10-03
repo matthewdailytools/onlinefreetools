@@ -1,0 +1,28 @@
+{
+  "slug": "sync-song-lyrics-to-lrc-by-tapping",
+  "path": "/tools/sync-song-lyrics-to-lrc-by-tapping",
+  "updatedAt": "2026-10-03T12:00:00.000Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "audio",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_sync_song_lyrics_to_lrc_by_tapping_title",
+  "homeTitleKey": "tool_sync_song_lyrics_to_lrc_by_tapping_title",
+  "homeDescKey": "tool_sync_song_lyrics_to_lrc_by_tapping_desc",
+  "faqPrefix": "tool_sync_song_lyrics_to_lrc_by_tapping",
+  "related": [
+    "convert-subtitle-files-between-srt-vtt-and-ass",
+    "embed-lyrics-in-an-mp3",
+    "transcribe-an-audio-file-to-text"
+  ],
+  "logo": "/icons/tools/sync-song-lyrics-to-lrc-by-tapping.svg",
+  "page": {
+    "module": "../pages/syncSongLyricsToLrcByTappingPage",
+    "export": "renderSyncSongLyricsToLrcByTappingPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

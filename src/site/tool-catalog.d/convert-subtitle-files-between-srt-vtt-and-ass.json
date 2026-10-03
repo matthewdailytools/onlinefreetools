@@ -1,0 +1,20 @@
+{
+  "slug": "convert-subtitle-files-between-srt-vtt-and-ass",
+  "path": "/tools/convert-subtitle-files-between-srt-vtt-and-ass",
+  "updatedAt": "2026-10-03T10:05:00.000Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_convert_subtitle_files_between_srt_vtt_and_ass_title",
+  "homeTitleKey": "tool_convert_subtitle_files_between_srt_vtt_and_ass_title",
+  "homeDescKey": "tool_convert_subtitle_files_between_srt_vtt_and_ass_desc",
+  "faqPrefix": "tool_convert_subtitle_files_between_srt_vtt_and_ass",
+  "related": ["make-srt-subtitles-from-an-audio-file", "make-srt-subtitles-from-a-video-file", "extract-frames-from-a-video-as-images"],
+  "logo": "/icons/tools/convert-subtitle-files-between-srt-vtt-and-ass.svg",
+  "page": { "module": "../pages/convertSubtitleFilesBetweenSrtVttAndAssPage", "export": "renderConvertSubtitleFilesBetweenSrtVttAndAssPage", "style": "opts" },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

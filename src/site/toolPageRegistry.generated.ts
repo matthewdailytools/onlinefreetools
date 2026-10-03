@@ -18,19 +18,26 @@ import { renderAwsVpcCidrPlannerPage } from '../pages/awsVpcCidrPlannerPage';
 import { renderBase64Page } from '../pages/base64Page';
 import { renderBatchChecksumReleaseFilesPage } from '../pages/batchChecksumReleaseFilesPage';
 import { renderBatchCompressPdfsForEmailPage } from '../pages/batchCompressPdfsForEmailPage';
+import { renderBatchConvertAudioFilesToMp3Page } from '../pages/batchConvertAudioFilesToMp3Page';
 import { renderBatchConvertJpgToEditableWordWithOcrPage } from '../pages/batchConvertJpgToEditableWordWithOcrPage';
 import { renderBatchConvertJpgToTextWithOcrPage } from '../pages/batchConvertJpgToTextWithOcrPage';
 import { renderBatchConvertMkvFilesToMp4FilesPage } from '../pages/batchConvertMkvFilesToMp4FilesPage';
+import { renderBatchConvertMovFilesToMp4FilesPage } from '../pages/batchConvertMovFilesToMp4FilesPage';
+import { renderBatchConvertMp3FilesToWavPage } from '../pages/batchConvertMp3FilesToWavPage';
 import { renderBatchConvertScannedPdfToWordWithOcrPage } from '../pages/batchConvertScannedPdfToWordWithOcrPage';
 import { renderBatchConvertWebPagesToExcelPage } from '../pages/batchConvertWebPagesToExcelPage';
 import { renderBatchConvertWebPagesToJpgPage } from '../pages/batchConvertWebPagesToJpgPage';
 import { renderBatchConvertWebPagesToPdfPage } from '../pages/batchConvertWebPagesToPdfPage';
 import { renderBatchConvertWebPagesToPngPage } from '../pages/batchConvertWebPagesToPngPage';
+import { renderBatchConvertWebmFilesToMp4FilesPage } from '../pages/batchConvertWebmFilesToMp4FilesPage';
 import { renderBatchExtractAudioFromMkvFilesPage } from '../pages/batchExtractAudioFromMkvFilesPage';
 import { renderBatchExtractAudioFromMovFilesPage } from '../pages/batchExtractAudioFromMovFilesPage';
 import { renderBatchExtractAudioFromMp4FilesPage } from '../pages/batchExtractAudioFromMp4FilesPage';
 import { renderBatchExtractAudioFromVideoFilesPage } from '../pages/batchExtractAudioFromVideoFilesPage';
 import { renderBatchExtractAudioFromWebmFilesPage } from '../pages/batchExtractAudioFromWebmFilesPage';
+import { renderBatchNormalizeAudioFilesToPeakPage } from '../pages/batchNormalizeAudioFilesToPeakPage';
+import { renderBatchReduceMp3FileSizesPage } from '../pages/batchReduceMp3FileSizesPage';
+import { renderBatchRemoveSilenceFromRecordingsPage } from '../pages/batchRemoveSilenceFromRecordingsPage';
 import { renderBatchTrimTheSameIntroFromAudioFilesPage } from '../pages/batchTrimTheSameIntroFromAudioFilesPage';
 import { renderBatchWatermarkPdfDraftsPage } from '../pages/batchWatermarkPdfDraftsPage';
 import { renderBatchWatermarkProductPhotosPage } from '../pages/batchWatermarkProductPhotosPage';
@@ -45,7 +52,9 @@ import { renderBulkConvertImagesToWebpPage } from '../pages/bulkConvertImagesToW
 import { renderBulkConvertWavFilesToMp3Page } from '../pages/bulkConvertWavFilesToMp3Page';
 import { renderBulkOptimizeSvgIconSetPage } from '../pages/bulkOptimizeSvgIconSetPage';
 import { renderBulkStripPhotoExifPage } from '../pages/bulkStripPhotoExifPage';
+import { renderBurnSubtitlesIntoAVideoPage } from '../pages/burnSubtitlesIntoAVideoPage';
 import { renderChangeAudioSpeedWithoutChangingPitchPage } from '../pages/changeAudioSpeedWithoutChangingPitchPage';
+import { renderChangeVideoSpeedPage } from '../pages/changeVideoSpeedPage';
 import { renderChatgptExportToMarkdownPage } from '../pages/chatgptExportToMarkdownPage';
 import { renderCheckPdfACompliancePage } from '../pages/checkPdfACompliancePage';
 import { renderCheckRobotsTxtUrlBlockedPage } from '../pages/checkRobotsTxtUrlBlockedPage';
@@ -57,15 +66,21 @@ import { renderCombineFilesIntoOnePdfPage } from '../pages/combineFilesIntoOnePd
 import { renderCompareTwoPdfsPage } from '../pages/compareTwoPdfsPage';
 import { renderCompareTwoTextFilesOnlinePage } from '../pages/compareTwoTextFilesOnlinePage';
 import { renderCompareTwoWordDocumentsForDifferencesPage } from '../pages/compareTwoWordDocumentsForDifferencesPage';
+import { renderCompressAVideoFilePage } from '../pages/compressAVideoFilePage';
 import { renderCompressDynamicRangeOfAVoiceRecordingPage } from '../pages/compressDynamicRangeOfAVoiceRecordingPage';
 import { renderCompressPdfPage } from '../pages/compressPdfPage';
 import { renderConvertAFlacFileToMp3Page } from '../pages/convertAFlacFileToMp3Page';
 import { renderConvertAJpgToTextWithOcrPage } from '../pages/convertAJpgToTextWithOcrPage';
+import { renderConvertAMovFileToAnMp4FilePage } from '../pages/convertAMovFileToAnMp4FilePage';
+import { renderConvertAVideoFileToAGifPage } from '../pages/convertAVideoFileToAGifPage';
+import { renderConvertAVideoToAnMp4WithAacAudioPage } from '../pages/convertAVideoToAnMp4WithAacAudioPage';
 import { renderConvertAWavFileToMp3Page } from '../pages/convertAWavFileToMp3Page';
+import { renderConvertAWebmFileToAnMp4FilePage } from '../pages/convertAWebmFileToAnMp4FilePage';
 import { renderConvertAnAiffFileToWavPage } from '../pages/convertAnAiffFileToWavPage';
 import { renderConvertAnM4aFileToMp3Page } from '../pages/convertAnM4aFileToMp3Page';
 import { renderConvertAnMkvFileToAnMp4FilePage } from '../pages/convertAnMkvFileToAnMp4FilePage';
 import { renderConvertAnMp3FileToWavPage } from '../pages/convertAnMp3FileToWavPage';
+import { renderConvertAnMp4FileToAWebmFilePage } from '../pages/convertAnMp4FileToAWebmFilePage';
 import { renderConvertAnOggFileToMp3Page } from '../pages/convertAnOggFileToMp3Page';
 import { renderConvertAudioSampleRateAndBitDepthPage } from '../pages/convertAudioSampleRateAndBitDepthPage';
 import { renderConvertHtmlToPdfPage } from '../pages/convertHtmlToPdfPage';
@@ -73,6 +88,7 @@ import { renderConvertHtmlWebPagesToWordDocumentPage } from '../pages/convertHtm
 import { renderConvertPdfToDwgPage } from '../pages/convertPdfToDwgPage';
 import { renderConvertPdfToPdfAPage } from '../pages/convertPdfToPdfAPage';
 import { renderConvertStereoAudioToMonoPage } from '../pages/convertStereoAudioToMonoPage';
+import { renderConvertSubtitleFilesBetweenSrtVttAndAssPage } from '../pages/convertSubtitleFilesBetweenSrtVttAndAssPage';
 import { renderConvertWordDocumentToPdfPage } from '../pages/convertWordDocumentToPdfPage';
 import { renderCoreWebVitalsCheckerPage } from '../pages/coreWebVitalsCheckerPage';
 import { renderCreateBudgetSpreadsheetPage } from '../pages/createBudgetSpreadsheetPage';
@@ -100,6 +116,7 @@ import { renderExtractAudioFromAWebmFilePage } from '../pages/extractAudioFromAW
 import { renderExtractAudioFromAnMkvFilePage } from '../pages/extractAudioFromAnMkvFilePage';
 import { renderExtractAudioFromAnMp4FilePage } from '../pages/extractAudioFromAnMp4FilePage';
 import { renderExtractCoverArtFromAnMp3Page } from '../pages/extractCoverArtFromAnMp3Page';
+import { renderExtractFramesFromAVideoAsImagesPage } from '../pages/extractFramesFromAVideoAsImagesPage';
 import { renderExtractTextFromAScannedPdfPage } from '../pages/extractTextFromAScannedPdfPage';
 import { renderExtractTextFromPdfPage } from '../pages/extractTextFromPdfPage';
 import { renderFadeInAndFadeOutAnAudioClipPage } from '../pages/fadeInAndFadeOutAnAudioClipPage';
@@ -188,6 +205,7 @@ import { renderImagesToPdfPage } from '../pages/imagesToPdfPage';
 import { renderImagesToPptPage } from '../pages/imagesToPptPage';
 import { renderImagesToWordPage } from '../pages/imagesToWordPage';
 import { renderIndexNowPage } from '../pages/indexNowPage';
+import { renderInspectVideoFileTracksPage } from '../pages/inspectVideoFileTracksPage';
 import { renderInstagramPostSizePage } from '../pages/instagramPostSizePage';
 import { renderInstagramStorySizePage } from '../pages/instagramStorySizePage';
 import { renderIosAppIconSizePage } from '../pages/iosAppIconSizePage';
@@ -219,6 +237,7 @@ import { renderMarkdownToHtmlPage } from '../pages/markdownToHtmlPage';
 import { renderMatchPodcastLoudnessToMinus16LufsPage } from '../pages/matchPodcastLoudnessToMinus16LufsPage';
 import { renderMeasuringMagneticFieldsPage } from '../pages/measuringMagneticFieldsPage';
 import { renderMergePdfPage } from '../pages/mergePdfPage';
+import { renderMergeVideoClipsInOrderPage } from '../pages/mergeVideoClipsInOrderPage';
 import { renderMetaSerpPreviewPage } from '../pages/metaSerpPreviewPage';
 import { renderMetaTagGeneratorPage } from '../pages/metaTagGeneratorPage';
 import { renderMidjourneyPromptBuilderPage } from '../pages/midjourneyPromptBuilderPage';
@@ -252,6 +271,7 @@ import { renderRemoveTheAudioTrackFromAVideoPage } from '../pages/removeTheAudio
 import { renderReplaceTheAudioInAVideoFilePage } from '../pages/replaceTheAudioInAVideoFilePage';
 import { renderReverseAnAudioFilePage } from '../pages/reverseAnAudioFilePage';
 import { renderRobotsTxtGeneratorPage } from '../pages/robotsTxtGeneratorPage';
+import { renderRotateAVideoFilePage } from '../pages/rotateAVideoFilePage';
 import { renderRotatePdfPage } from '../pages/rotatePdfPage';
 import { renderSchemaJsonldGeneratorPage } from '../pages/schemaJsonldGeneratorPage';
 import { renderShiftARecordingTowardAHigherOrLowerVoicePage } from '../pages/shiftARecordingTowardAHigherOrLowerVoicePage';
@@ -269,10 +289,12 @@ import { renderSplitPdfPage } from '../pages/splitPdfPage';
 import { renderSplitStereoIntoLeftAndRightFilesPage } from '../pages/splitStereoIntoLeftAndRightFilesPage';
 import { renderSquareFeetPage } from '../pages/squareFeetPage';
 import { renderSvgOptimizerPage } from '../pages/svgOptimizerPage';
+import { renderSyncSongLyricsToLrcByTappingPage } from '../pages/syncSongLyricsToLrcByTappingPage';
 import { renderTerraformCidrsubnetPage } from '../pages/terraformCidrsubnetPage';
 import { renderTextDiffPage } from '../pages/textDiffPage';
 import { renderTimezoneConverterPage } from '../pages/timezoneConverterPage';
 import { renderTranscribeAnAudioFileToTextPage } from '../pages/transcribeAnAudioFileToTextPage';
+import { renderTrimAVideoClipAndExportPage } from '../pages/trimAVideoClipAndExportPage';
 import { renderTrimAnAudioClipAndExportPage } from '../pages/trimAnAudioClipAndExportPage';
 import { renderTurnPdfIntoEditableDocumentPage } from '../pages/turnPdfIntoEditableDocumentPage';
 import { renderTurnPdfIntoWordDocumentPage } from '../pages/turnPdfIntoWordDocumentPage';
@@ -317,19 +339,26 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'base64': (lang, defaultLang, enabled) => renderBase64Page({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-checksum-release-files': (lang, defaultLang, enabled) => renderBatchChecksumReleaseFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-compress-pdfs-for-email': (lang, defaultLang, enabled) => renderBatchCompressPdfsForEmailPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-convert-audio-files-to-mp3': (lang, defaultLang, enabled) => renderBatchConvertAudioFilesToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-jpg-to-editable-word-with-ocr': (lang, defaultLang, enabled) => renderBatchConvertJpgToEditableWordWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-jpg-to-text-with-ocr': (lang, defaultLang, enabled) => renderBatchConvertJpgToTextWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-mkv-files-to-mp4-files': (lang, defaultLang, enabled) => renderBatchConvertMkvFilesToMp4FilesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-convert-mov-files-to-mp4-files': (lang, defaultLang, enabled) => renderBatchConvertMovFilesToMp4FilesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-convert-mp3-files-to-wav': (lang, defaultLang, enabled) => renderBatchConvertMp3FilesToWavPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-scanned-pdf-to-word-with-ocr': (lang, defaultLang, enabled) => renderBatchConvertScannedPdfToWordWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-web-pages-to-excel': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToExcelPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-web-pages-to-jpg': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToJpgPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-web-pages-to-pdf': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-web-pages-to-png': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToPngPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-convert-webm-files-to-mp4-files': (lang, defaultLang, enabled) => renderBatchConvertWebmFilesToMp4FilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-extract-audio-from-mkv-files': (lang, defaultLang, enabled) => renderBatchExtractAudioFromMkvFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-extract-audio-from-mov-files': (lang, defaultLang, enabled) => renderBatchExtractAudioFromMovFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-extract-audio-from-mp4-files': (lang, defaultLang, enabled) => renderBatchExtractAudioFromMp4FilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-extract-audio-from-video-files': (lang, defaultLang, enabled) => renderBatchExtractAudioFromVideoFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-extract-audio-from-webm-files': (lang, defaultLang, enabled) => renderBatchExtractAudioFromWebmFilesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-normalize-audio-files-to-peak': (lang, defaultLang, enabled) => renderBatchNormalizeAudioFilesToPeakPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-reduce-mp3-file-sizes': (lang, defaultLang, enabled) => renderBatchReduceMp3FileSizesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-remove-silence-from-recordings': (lang, defaultLang, enabled) => renderBatchRemoveSilenceFromRecordingsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-trim-the-same-intro-from-audio-files': (lang, defaultLang, enabled) => renderBatchTrimTheSameIntroFromAudioFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-watermark-pdf-drafts': (lang, defaultLang, enabled) => renderBatchWatermarkPdfDraftsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-watermark-product-photos': (lang, defaultLang, enabled) => renderBatchWatermarkProductPhotosPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -344,7 +373,9 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'bulk-convert-wav-files-to-mp3': (lang, defaultLang, enabled) => renderBulkConvertWavFilesToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
 	'bulk-optimize-svg-icon-set': (lang, defaultLang, enabled) => renderBulkOptimizeSvgIconSetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'bulk-strip-photo-exif': (lang, defaultLang, enabled) => renderBulkStripPhotoExifPage({ lang, defaultLang, enabledLangs: enabled }),
+	'burn-subtitles-into-a-video': (lang, defaultLang, enabled) => renderBurnSubtitlesIntoAVideoPage({ lang, defaultLang, enabledLangs: enabled }),
 	'change-audio-speed-without-changing-pitch': (lang, defaultLang, enabled) => renderChangeAudioSpeedWithoutChangingPitchPage({ lang, defaultLang, enabledLangs: enabled }),
+	'change-video-speed': (lang, defaultLang, enabled) => renderChangeVideoSpeedPage({ lang, defaultLang, enabledLangs: enabled }),
 	'chatgpt-export-to-markdown': (lang, defaultLang, enabled) => renderChatgptExportToMarkdownPage({ lang, defaultLang, enabledLangs: enabled }),
 	'check-pdf-a-compliance': (lang, defaultLang, enabled) => renderCheckPdfACompliancePage({ lang, defaultLang, enabledLangs: enabled }),
 	'check-robots-txt-url-blocked': (lang, defaultLang, enabled) => renderCheckRobotsTxtUrlBlockedPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -356,15 +387,21 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'compare-two-pdfs': (lang, defaultLang, enabled) => renderCompareTwoPdfsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'compare-two-text-files-online': (lang, defaultLang, enabled) => renderCompareTwoTextFilesOnlinePage({ lang, defaultLang, enabledLangs: enabled }),
 	'compare-two-word-documents-for-differences': (lang, defaultLang, enabled) => renderCompareTwoWordDocumentsForDifferencesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'compress-a-video-file': (lang, defaultLang, enabled) => renderCompressAVideoFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'compress-dynamic-range-of-a-voice-recording': (lang, defaultLang, enabled) => renderCompressDynamicRangeOfAVoiceRecordingPage({ lang, defaultLang, enabledLangs: enabled }),
 	'compress-pdf': (lang, defaultLang, enabled) => renderCompressPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-a-flac-file-to-mp3': (lang, defaultLang, enabled) => renderConvertAFlacFileToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-a-jpg-to-text-with-ocr': (lang, defaultLang, enabled) => renderConvertAJpgToTextWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-a-mov-file-to-an-mp4-file': (lang, defaultLang, enabled) => renderConvertAMovFileToAnMp4FilePage({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-a-video-file-to-a-gif': (lang, defaultLang, enabled) => renderConvertAVideoFileToAGifPage({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-a-video-to-an-mp4-with-aac-audio': (lang, defaultLang, enabled) => renderConvertAVideoToAnMp4WithAacAudioPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-a-wav-file-to-mp3': (lang, defaultLang, enabled) => renderConvertAWavFileToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-a-webm-file-to-an-mp4-file': (lang, defaultLang, enabled) => renderConvertAWebmFileToAnMp4FilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-an-aiff-file-to-wav': (lang, defaultLang, enabled) => renderConvertAnAiffFileToWavPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-an-m4a-file-to-mp3': (lang, defaultLang, enabled) => renderConvertAnM4aFileToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-an-mkv-file-to-an-mp4-file': (lang, defaultLang, enabled) => renderConvertAnMkvFileToAnMp4FilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-an-mp3-file-to-wav': (lang, defaultLang, enabled) => renderConvertAnMp3FileToWavPage({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-an-mp4-file-to-a-webm-file': (lang, defaultLang, enabled) => renderConvertAnMp4FileToAWebmFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-an-ogg-file-to-mp3': (lang, defaultLang, enabled) => renderConvertAnOggFileToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-audio-sample-rate-and-bit-depth': (lang, defaultLang, enabled) => renderConvertAudioSampleRateAndBitDepthPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-html-to-pdf': (lang, defaultLang, enabled) => renderConvertHtmlToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -372,6 +409,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'convert-pdf-to-dwg': (lang, defaultLang, enabled) => renderConvertPdfToDwgPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-pdf-to-pdf-a': (lang, defaultLang, enabled) => renderConvertPdfToPdfAPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-stereo-audio-to-mono': (lang, defaultLang, enabled) => renderConvertStereoAudioToMonoPage({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-subtitle-files-between-srt-vtt-and-ass': (lang, defaultLang, enabled) => renderConvertSubtitleFilesBetweenSrtVttAndAssPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-word-document-to-pdf': (lang, defaultLang, enabled) => renderConvertWordDocumentToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'core-web-vitals-checker': (lang, defaultLang, enabled) => renderCoreWebVitalsCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'create-budget-spreadsheet': (lang, defaultLang, enabled) => renderCreateBudgetSpreadsheetPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -399,6 +437,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'extract-audio-from-an-mkv-file': (lang, defaultLang, enabled) => renderExtractAudioFromAnMkvFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'extract-audio-from-an-mp4-file': (lang, defaultLang, enabled) => renderExtractAudioFromAnMp4FilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'extract-cover-art-from-an-mp3': (lang, defaultLang, enabled) => renderExtractCoverArtFromAnMp3Page({ lang, defaultLang, enabledLangs: enabled }),
+	'extract-frames-from-a-video-as-images': (lang, defaultLang, enabled) => renderExtractFramesFromAVideoAsImagesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'extract-text-from-a-scanned-pdf': (lang, defaultLang, enabled) => renderExtractTextFromAScannedPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'extract-text-from-pdf': (lang, defaultLang, enabled) => renderExtractTextFromPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'fade-in-and-fade-out-an-audio-clip': (lang, defaultLang, enabled) => renderFadeInAndFadeOutAnAudioClipPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -487,6 +526,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'images-to-ppt': (lang, defaultLang, enabled) => renderImagesToPptPage({ lang, defaultLang, enabledLangs: enabled }),
 	'images-to-word': (lang, defaultLang, enabled) => renderImagesToWordPage({ lang, defaultLang, enabledLangs: enabled }),
 	'indexnow': (lang, defaultLang, enabled) => renderIndexNowPage({ lang, defaultLang, enabledLangs: enabled }),
+	'inspect-video-file-tracks': (lang, defaultLang, enabled) => renderInspectVideoFileTracksPage({ lang, defaultLang, enabledLangs: enabled }),
 	'instagram-post-size': (lang, defaultLang, enabled) => renderInstagramPostSizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'instagram-story-size': (lang, defaultLang, enabled) => renderInstagramStorySizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'ios-app-icon-size': (lang, defaultLang, enabled) => renderIosAppIconSizePage({ lang, defaultLang, enabledLangs: enabled }),
@@ -518,6 +558,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'match-podcast-loudness-to-minus-16-lufs': (lang, defaultLang, enabled) => renderMatchPodcastLoudnessToMinus16LufsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'measuring-magnetic-fields': (lang, defaultLang, enabled) => renderMeasuringMagneticFieldsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'merge-pdf': (lang, defaultLang, enabled) => renderMergePdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'merge-video-clips-in-order': (lang, defaultLang, enabled) => renderMergeVideoClipsInOrderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'meta-serp-preview': (lang, defaultLang, enabled) => renderMetaSerpPreviewPage({ lang, defaultLang, enabledLangs: enabled }),
 	'meta-tag-generator': (lang, defaultLang, enabled) => renderMetaTagGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'midjourney-prompt-builder': (lang, defaultLang, enabled) => renderMidjourneyPromptBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -551,6 +592,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'replace-the-audio-in-a-video-file': (lang, defaultLang, enabled) => renderReplaceTheAudioInAVideoFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'reverse-an-audio-file': (lang, defaultLang, enabled) => renderReverseAnAudioFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'robots-txt-generator': (lang, defaultLang, enabled) => renderRobotsTxtGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
+	'rotate-a-video-file': (lang, defaultLang, enabled) => renderRotateAVideoFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'rotate-pdf': (lang, defaultLang, enabled) => renderRotatePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'schema-jsonld-generator': (lang, defaultLang, enabled) => renderSchemaJsonldGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'shift-a-recording-toward-a-higher-or-lower-voice': (lang, defaultLang, enabled) => renderShiftARecordingTowardAHigherOrLowerVoicePage({ lang, defaultLang, enabledLangs: enabled }),
@@ -568,10 +610,12 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'split-stereo-into-left-and-right-files': (lang, defaultLang, enabled) => renderSplitStereoIntoLeftAndRightFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'square-feet': (lang, defaultLang, enabled) => renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'svg-optimizer': (lang, defaultLang, enabled) => renderSvgOptimizerPage({ lang, defaultLang, enabledLangs: enabled }),
+	'sync-song-lyrics-to-lrc-by-tapping': (lang, defaultLang, enabled) => renderSyncSongLyricsToLrcByTappingPage({ lang, defaultLang, enabledLangs: enabled }),
 	'terraform-cidrsubnet': (lang, defaultLang, enabled) => renderTerraformCidrsubnetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'text-diff': (lang, defaultLang, enabled) => renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled }),
 	'timezone-converter': (lang, defaultLang, enabled) => renderTimezoneConverterPage({ lang, defaultLang, enabledLangs: enabled }),
 	'transcribe-an-audio-file-to-text': (lang, defaultLang, enabled) => renderTranscribeAnAudioFileToTextPage({ lang, defaultLang, enabledLangs: enabled }),
+	'trim-a-video-clip-and-export': (lang, defaultLang, enabled) => renderTrimAVideoClipAndExportPage({ lang, defaultLang, enabledLangs: enabled }),
 	'trim-an-audio-clip-and-export': (lang, defaultLang, enabled) => renderTrimAnAudioClipAndExportPage({ lang, defaultLang, enabledLangs: enabled }),
 	'turn-pdf-into-editable-document': (lang, defaultLang, enabled) => renderTurnPdfIntoEditableDocumentPage({ lang, defaultLang, enabledLangs: enabled }),
 	'turn-pdf-into-word-document': (lang, defaultLang, enabled) => renderTurnPdfIntoWordDocumentPage({ lang, defaultLang, enabledLangs: enabled }),

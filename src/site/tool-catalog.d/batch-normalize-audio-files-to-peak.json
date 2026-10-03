@@ -1,0 +1,24 @@
+{
+  "slug": "batch-normalize-audio-files-to-peak",
+  "path": "/tools/batch-normalize-audio-files-to-peak",
+  "updatedAt": "2026-10-03T00:00:00.000Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_normalize_audio_files_to_peak_title",
+  "homeTitleKey": "tool_batch_normalize_audio_files_to_peak_title",
+  "homeDescKey": "tool_batch_normalize_audio_files_to_peak_desc",
+  "faqPrefix": "tool_batch_normalize_audio_files_to_peak",
+  "related": ["normalize-an-audio-file-to-peak", "match-podcast-loudness-to-minus-16-lufs", "batch-reduce-mp3-file-sizes"],
+  "logo": "/icons/tools/batch-normalize-audio-files-to-peak.svg",
+  "page": {
+    "module": "../pages/batchNormalizeAudioFilesToPeakPage",
+    "export": "renderBatchNormalizeAudioFilesToPeakPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

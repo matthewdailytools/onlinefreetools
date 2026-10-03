@@ -1,0 +1,20 @@
+{
+  "slug": "inspect-video-file-tracks",
+  "path": "/tools/inspect-video-file-tracks",
+  "updatedAt": "2026-10-03T10:50:00.000Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_inspect_video_file_tracks_title",
+  "homeTitleKey": "tool_inspect_video_file_tracks_title",
+  "homeDescKey": "tool_inspect_video_file_tracks_desc",
+  "faqPrefix": "tool_inspect_video_file_tracks",
+  "related": ["convert-a-webm-file-to-an-mp4-file", "convert-a-mov-file-to-an-mp4-file", "extract-audio-from-a-video-file"],
+  "logo": "/icons/tools/inspect-video-file-tracks.svg",
+  "page": { "module": "../pages/inspectVideoFileTracksPage", "export": "renderInspectVideoFileTracksPage", "style": "opts" },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

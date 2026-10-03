@@ -1,7 +1,7 @@
 {
   "slug": "make-srt-subtitles-from-a-video-file",
   "path": "/tools/make-srt-subtitles-from-a-video-file",
-  "updatedAt": "2026-10-02T07:10:00Z",
+  "updatedAt": "2026-10-03T13:06:05.523Z",
   "launchedAt": "2026-10-01T01:20:00.000Z",
   "category": "developer",
   "primaryTopic": "sound-editor",
@@ -13,7 +13,8 @@
   "faqPrefix": "tool_make_srt_subtitles_from_a_video_file",
   "related": [
     "make-srt-subtitles-from-an-audio-file",
-    "make-a-waveform-video-from-audio"
+    "make-a-waveform-video-from-audio",
+    "burn-subtitles-into-a-video"
   ],
   "logo": "/icons/tools/make-srt-subtitles-from-a-video-file.svg",
   "page": {

@@ -1,0 +1,28 @@
+{
+  "slug": "merge-video-clips-in-order",
+  "path": "/tools/merge-video-clips-in-order",
+  "updatedAt": "2026-10-03T13:06:05.523Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "video",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_merge_video_clips_in_order_title",
+  "homeTitleKey": "tool_merge_video_clips_in_order_title",
+  "homeDescKey": "tool_merge_video_clips_in_order_desc",
+  "faqPrefix": "tool_merge_video_clips_in_order",
+  "related": [
+    "trim-a-video-clip-and-export",
+    "convert-a-video-to-an-mp4-with-aac-audio",
+    "compress-a-video-file"
+  ],
+  "logo": "/icons/tools/merge-video-clips-in-order.svg",
+  "page": {
+    "module": "../pages/mergeVideoClipsInOrderPage",
+    "export": "renderMergeVideoClipsInOrderPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "compress-a-video-file",
+  "path": "/tools/compress-a-video-file",
+  "updatedAt": "2026-10-03T09:11:00.000Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_compress_a_video_file_title",
+  "homeTitleKey": "tool_compress_a_video_file_title",
+  "homeDescKey": "tool_compress_a_video_file_desc",
+  "faqPrefix": "tool_compress_a_video_file",
+  "related": [
+    "trim-a-video-clip-and-export",
+    "convert-a-mov-file-to-an-mp4-file",
+    "convert-a-webm-file-to-an-mp4-file",
+    "convert-a-video-file-to-a-gif",
+    "rotate-a-video-file"
+  ],
+  "logo": "/icons/tools/compress-a-video-file.svg",
+  "page": {
+    "module": "../pages/compressAVideoFilePage",
+    "export": "renderCompressAVideoFilePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

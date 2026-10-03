@@ -1,0 +1,30 @@
+{
+  "slug": "convert-a-video-file-to-a-gif",
+  "path": "/tools/convert-a-video-file-to-a-gif",
+  "updatedAt": "2026-10-03T09:37:00.000Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_convert_a_video_file_to_a_gif_title",
+  "homeTitleKey": "tool_convert_a_video_file_to_a_gif_title",
+  "homeDescKey": "tool_convert_a_video_file_to_a_gif_desc",
+  "faqPrefix": "tool_convert_a_video_file_to_a_gif",
+  "related": [
+    "images-to-gif",
+    "image-format-converter",
+    "convert-an-mp4-file-to-a-webm-file",
+    "extract-frames-from-a-video-as-images",
+    "trim-a-video-clip-and-export"
+  ],
+  "logo": "/icons/tools/convert-a-video-file-to-a-gif.svg",
+  "page": {
+    "module": "../pages/convertAVideoFileToAGifPage",
+    "export": "renderConvertAVideoFileToAGifPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

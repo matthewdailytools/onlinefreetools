@@ -354,6 +354,30 @@
     "subject": "pdf"
   },
   {
+    "slug": "batch-convert-audio-files-to-mp3",
+    "path": "/tools/batch-convert-audio-files-to-mp3",
+    "updatedAt": "2026-10-03T00:00:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_convert_audio_files_to_mp3_title",
+    "homeTitleKey": "tool_batch_convert_audio_files_to_mp3_title",
+    "homeDescKey": "tool_batch_convert_audio_files_to_mp3_desc",
+    "faqPrefix": "tool_batch_convert_audio_files_to_mp3",
+    "related": [
+      "convert-an-m4a-file-to-mp3",
+      "convert-a-flac-file-to-mp3",
+      "convert-an-ogg-file-to-mp3",
+      "bulk-convert-wav-files-to-mp3"
+    ],
+    "logo": "/icons/tools/batch-convert-audio-files-to-mp3.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "batch-convert-jpg-to-editable-word-with-ocr",
     "path": "/tools/batch-convert-jpg-to-editable-word-with-ocr",
     "updatedAt": "2026-09-08T16:11:27.219Z",
@@ -428,6 +452,53 @@
     "localProcessing": true,
     "scenario": "media",
     "subject": "video"
+  },
+  {
+    "slug": "batch-convert-mov-files-to-mp4-files",
+    "path": "/tools/batch-convert-mov-files-to-mp4-files",
+    "updatedAt": "2026-10-03T07:23:30.926Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_convert_mov_files_to_mp4_files_title",
+    "homeTitleKey": "tool_batch_convert_mov_files_to_mp4_files_title",
+    "homeDescKey": "tool_batch_convert_mov_files_to_mp4_files_desc",
+    "faqPrefix": "tool_batch_convert_mov_files_to_mp4_files",
+    "related": [
+      "convert-a-mov-file-to-an-mp4-file",
+      "batch-convert-webm-files-to-mp4-files",
+      "convert-a-webm-file-to-an-mp4-file",
+      "extract-audio-from-a-mov-file"
+    ],
+    "logo": "/icons/tools/batch-convert-mov-files-to-mp4-files.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
+  },
+  {
+    "slug": "batch-convert-mp3-files-to-wav",
+    "path": "/tools/batch-convert-mp3-files-to-wav",
+    "updatedAt": "2026-10-03T00:00:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_convert_mp3_files_to_wav_title",
+    "homeTitleKey": "tool_batch_convert_mp3_files_to_wav_title",
+    "homeDescKey": "tool_batch_convert_mp3_files_to_wav_desc",
+    "faqPrefix": "tool_batch_convert_mp3_files_to_wav",
+    "related": [
+      "convert-an-mp3-file-to-wav",
+      "batch-reduce-mp3-file-sizes",
+      "bulk-convert-wav-files-to-mp3"
+    ],
+    "logo": "/icons/tools/batch-convert-mp3-files-to-wav.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "batch-convert-scanned-pdf-to-word-with-ocr",
@@ -546,6 +617,30 @@
     "localProcessing": false,
     "scenario": "media",
     "subject": "image"
+  },
+  {
+    "slug": "batch-convert-webm-files-to-mp4-files",
+    "path": "/tools/batch-convert-webm-files-to-mp4-files",
+    "updatedAt": "2026-10-03T07:04:01.031Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_convert_webm_files_to_mp4_files_title",
+    "homeTitleKey": "tool_batch_convert_webm_files_to_mp4_files_title",
+    "homeDescKey": "tool_batch_convert_webm_files_to_mp4_files_desc",
+    "faqPrefix": "tool_batch_convert_webm_files_to_mp4_files",
+    "related": [
+      "convert-a-webm-file-to-an-mp4-file",
+      "batch-convert-mkv-files-to-mp4-files",
+      "convert-a-mov-file-to-an-mp4-file",
+      "extract-audio-from-a-webm-file"
+    ],
+    "logo": "/icons/tools/batch-convert-webm-files-to-mp4-files.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
   },
   {
     "slug": "batch-extract-audio-from-mkv-files",
@@ -676,6 +771,75 @@
       "trim-an-audio-clip-and-export"
     ],
     "logo": "/icons/tools/batch-extract-audio-from-webm-files.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "batch-normalize-audio-files-to-peak",
+    "path": "/tools/batch-normalize-audio-files-to-peak",
+    "updatedAt": "2026-10-03T00:00:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_normalize_audio_files_to_peak_title",
+    "homeTitleKey": "tool_batch_normalize_audio_files_to_peak_title",
+    "homeDescKey": "tool_batch_normalize_audio_files_to_peak_desc",
+    "faqPrefix": "tool_batch_normalize_audio_files_to_peak",
+    "related": [
+      "normalize-an-audio-file-to-peak",
+      "match-podcast-loudness-to-minus-16-lufs",
+      "batch-reduce-mp3-file-sizes"
+    ],
+    "logo": "/icons/tools/batch-normalize-audio-files-to-peak.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "batch-reduce-mp3-file-sizes",
+    "path": "/tools/batch-reduce-mp3-file-sizes",
+    "updatedAt": "2026-10-03T00:00:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_reduce_mp3_file_sizes_title",
+    "homeTitleKey": "tool_batch_reduce_mp3_file_sizes_title",
+    "homeDescKey": "tool_batch_reduce_mp3_file_sizes_desc",
+    "faqPrefix": "tool_batch_reduce_mp3_file_sizes",
+    "related": [
+      "reduce-an-mp3-file-size",
+      "batch-convert-audio-files-to-mp3",
+      "bulk-convert-wav-files-to-mp3"
+    ],
+    "logo": "/icons/tools/batch-reduce-mp3-file-sizes.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
+    "slug": "batch-remove-silence-from-recordings",
+    "path": "/tools/batch-remove-silence-from-recordings",
+    "updatedAt": "2026-10-03T00:00:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_remove_silence_from_recordings_title",
+    "homeTitleKey": "tool_batch_remove_silence_from_recordings_title",
+    "homeDescKey": "tool_batch_remove_silence_from_recordings_desc",
+    "faqPrefix": "tool_batch_remove_silence_from_recordings",
+    "related": [
+      "remove-silence-from-a-recording",
+      "split-a-recording-on-silence",
+      "batch-trim-the-same-intro-from-audio-files"
+    ],
+    "logo": "/icons/tools/batch-remove-silence-from-recordings.svg",
     "localProcessing": true,
     "scenario": "media",
     "subject": "audio"
@@ -1006,6 +1170,29 @@
     "subject": "image"
   },
   {
+    "slug": "burn-subtitles-into-a-video",
+    "path": "/tools/burn-subtitles-into-a-video",
+    "updatedAt": "2026-10-03T13:06:05.523Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "video",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_burn_subtitles_into_a_video_title",
+    "homeTitleKey": "tool_burn_subtitles_into_a_video_title",
+    "homeDescKey": "tool_burn_subtitles_into_a_video_desc",
+    "faqPrefix": "tool_burn_subtitles_into_a_video",
+    "related": [
+      "convert-subtitle-files-between-srt-vtt-and-ass",
+      "make-srt-subtitles-from-a-video-file",
+      "convert-a-video-to-an-mp4-with-aac-audio"
+    ],
+    "logo": "/icons/tools/burn-subtitles-into-a-video.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
+  },
+  {
     "slug": "change-audio-speed-without-changing-pitch",
     "path": "/tools/change-audio-speed-without-changing-pitch",
     "updatedAt": "2026-09-20T20:48:30.000Z",
@@ -1026,6 +1213,30 @@
     "localProcessing": true,
     "scenario": "media",
     "subject": "audio"
+  },
+  {
+    "slug": "change-video-speed",
+    "path": "/tools/change-video-speed",
+    "updatedAt": "2026-10-03T09:43:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_change_video_speed_title",
+    "homeTitleKey": "tool_change_video_speed_title",
+    "homeDescKey": "tool_change_video_speed_desc",
+    "faqPrefix": "tool_change_video_speed",
+    "related": [
+      "trim-a-video-clip-and-export",
+      "rotate-a-video-file",
+      "compress-a-video-file",
+      "change-audio-speed-without-changing-pitch"
+    ],
+    "logo": "/icons/tools/change-video-speed.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
   },
   {
     "slug": "chatgpt-export-to-markdown",
@@ -1293,6 +1504,31 @@
     "subject": "text"
   },
   {
+    "slug": "compress-a-video-file",
+    "path": "/tools/compress-a-video-file",
+    "updatedAt": "2026-10-03T09:11:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_compress_a_video_file_title",
+    "homeTitleKey": "tool_compress_a_video_file_title",
+    "homeDescKey": "tool_compress_a_video_file_desc",
+    "faqPrefix": "tool_compress_a_video_file",
+    "related": [
+      "trim-a-video-clip-and-export",
+      "convert-a-mov-file-to-an-mp4-file",
+      "convert-a-webm-file-to-an-mp4-file",
+      "convert-a-video-file-to-a-gif",
+      "rotate-a-video-file"
+    ],
+    "logo": "/icons/tools/compress-a-video-file.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
+  },
+  {
     "slug": "compress-dynamic-range-of-a-voice-recording",
     "path": "/tools/compress-dynamic-range-of-a-voice-recording",
     "updatedAt": "2026-09-20T12:00:00.000Z",
@@ -1340,7 +1576,7 @@
   {
     "slug": "convert-a-flac-file-to-mp3",
     "path": "/tools/convert-a-flac-file-to-mp3",
-    "updatedAt": "2026-09-20T23:59:00.000Z",
+    "updatedAt": "2026-10-03T00:00:00.000Z",
     "launchedAt": "2026-09-20T23:59:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -1352,7 +1588,8 @@
     "faqPrefix": "tool_convert_a_flac_file_to_mp3",
     "related": [
       "convert-a-wav-file-to-mp3",
-      "convert-an-m4a-file-to-mp3"
+      "convert-an-m4a-file-to-mp3",
+      "batch-convert-audio-files-to-mp3"
     ],
     "logo": "/icons/tools/convert-a-flac-file-to-mp3.svg",
     "localProcessing": true,
@@ -1386,6 +1623,80 @@
     "subject": "image"
   },
   {
+    "slug": "convert-a-mov-file-to-an-mp4-file",
+    "path": "/tools/convert-a-mov-file-to-an-mp4-file",
+    "updatedAt": "2026-10-03T07:23:26.788Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_a_mov_file_to_an_mp4_file_title",
+    "homeTitleKey": "tool_convert_a_mov_file_to_an_mp4_file_title",
+    "homeDescKey": "tool_convert_a_mov_file_to_an_mp4_file_desc",
+    "faqPrefix": "tool_convert_a_mov_file_to_an_mp4_file",
+    "related": [
+      "convert-an-mkv-file-to-an-mp4-file",
+      "extract-audio-from-a-mov-file",
+      "convert-a-webm-file-to-an-mp4-file",
+      "extract-audio-from-a-video-file",
+      "batch-convert-mov-files-to-mp4-files"
+    ],
+    "logo": "/icons/tools/convert-a-mov-file-to-an-mp4-file.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
+  },
+  {
+    "slug": "convert-a-video-file-to-a-gif",
+    "path": "/tools/convert-a-video-file-to-a-gif",
+    "updatedAt": "2026-10-03T09:37:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_a_video_file_to_a_gif_title",
+    "homeTitleKey": "tool_convert_a_video_file_to_a_gif_title",
+    "homeDescKey": "tool_convert_a_video_file_to_a_gif_desc",
+    "faqPrefix": "tool_convert_a_video_file_to_a_gif",
+    "related": [
+      "images-to-gif",
+      "image-format-converter",
+      "convert-an-mp4-file-to-a-webm-file",
+      "extract-frames-from-a-video-as-images",
+      "trim-a-video-clip-and-export"
+    ],
+    "logo": "/icons/tools/convert-a-video-file-to-a-gif.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
+  },
+  {
+    "slug": "convert-a-video-to-an-mp4-with-aac-audio",
+    "path": "/tools/convert-a-video-to-an-mp4-with-aac-audio",
+    "updatedAt": "2026-10-03T12:00:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "video",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_a_video_to_an_mp4_with_aac_audio_title",
+    "homeTitleKey": "tool_convert_a_video_to_an_mp4_with_aac_audio_title",
+    "homeDescKey": "tool_convert_a_video_to_an_mp4_with_aac_audio_desc",
+    "faqPrefix": "tool_convert_a_video_to_an_mp4_with_aac_audio",
+    "related": [
+      "inspect-video-file-tracks",
+      "convert-a-webm-file-to-an-mp4-file",
+      "convert-a-mov-file-to-an-mp4-file",
+      "convert-an-mkv-file-to-an-mp4-file"
+    ],
+    "logo": "/icons/tools/convert-a-video-to-an-mp4-with-aac-audio.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
+  },
+  {
     "slug": "convert-a-wav-file-to-mp3",
     "path": "/tools/convert-a-wav-file-to-mp3",
     "updatedAt": "2026-09-16T03:36:46.256Z",
@@ -1407,6 +1718,32 @@
     "localProcessing": true,
     "scenario": "media",
     "subject": "audio"
+  },
+  {
+    "slug": "convert-a-webm-file-to-an-mp4-file",
+    "path": "/tools/convert-a-webm-file-to-an-mp4-file",
+    "updatedAt": "2026-10-03T07:40:41.785Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_a_webm_file_to_an_mp4_file_title",
+    "homeTitleKey": "tool_convert_a_webm_file_to_an_mp4_file_title",
+    "homeDescKey": "tool_convert_a_webm_file_to_an_mp4_file_desc",
+    "faqPrefix": "tool_convert_a_webm_file_to_an_mp4_file",
+    "related": [
+      "batch-convert-webm-files-to-mp4-files",
+      "convert-an-mp4-file-to-a-webm-file",
+      "convert-an-mkv-file-to-an-mp4-file",
+      "convert-a-mov-file-to-an-mp4-file",
+      "extract-audio-from-a-webm-file",
+      "extract-audio-from-a-video-file"
+    ],
+    "logo": "/icons/tools/convert-a-webm-file-to-an-mp4-file.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
   },
   {
     "slug": "convert-an-aiff-file-to-wav",
@@ -1433,7 +1770,7 @@
   {
     "slug": "convert-an-m4a-file-to-mp3",
     "path": "/tools/convert-an-m4a-file-to-mp3",
-    "updatedAt": "2026-09-16T10:20:27.411Z",
+    "updatedAt": "2026-10-03T00:00:00.000Z",
     "launchedAt": "2026-09-16T08:30:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -1445,7 +1782,8 @@
     "faqPrefix": "tool_convert_an_m4a_file_to_mp3",
     "related": [
       "convert-a-wav-file-to-mp3",
-      "trim-an-audio-clip-and-export"
+      "trim-an-audio-clip-and-export",
+      "batch-convert-audio-files-to-mp3"
     ],
     "logo": "/icons/tools/convert-an-m4a-file-to-mp3.svg",
     "localProcessing": true,
@@ -1480,7 +1818,7 @@
   {
     "slug": "convert-an-mp3-file-to-wav",
     "path": "/tools/convert-an-mp3-file-to-wav",
-    "updatedAt": "2026-09-16T12:00:00.000Z",
+    "updatedAt": "2026-10-03T00:00:00.000Z",
     "launchedAt": "2026-09-16T12:00:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -1492,7 +1830,8 @@
     "faqPrefix": "tool_convert_an_mp3_file_to_wav",
     "related": [
       "trim-an-audio-clip-and-export",
-      "make-a-30-second-mp3-ringtone"
+      "make-a-30-second-mp3-ringtone",
+      "batch-convert-mp3-files-to-wav"
     ],
     "logo": "/icons/tools/convert-an-mp3-file-to-wav.svg",
     "localProcessing": true,
@@ -1500,9 +1839,33 @@
     "subject": "audio"
   },
   {
+    "slug": "convert-an-mp4-file-to-a-webm-file",
+    "path": "/tools/convert-an-mp4-file-to-a-webm-file",
+    "updatedAt": "2026-10-03T07:40:45.105Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_an_mp4_file_to_a_webm_file_title",
+    "homeTitleKey": "tool_convert_an_mp4_file_to_a_webm_file_title",
+    "homeDescKey": "tool_convert_an_mp4_file_to_a_webm_file_desc",
+    "faqPrefix": "tool_convert_an_mp4_file_to_a_webm_file",
+    "related": [
+      "convert-a-webm-file-to-an-mp4-file",
+      "convert-a-mov-file-to-an-mp4-file",
+      "convert-an-mkv-file-to-an-mp4-file",
+      "extract-audio-from-a-video-file"
+    ],
+    "logo": "/icons/tools/convert-an-mp4-file-to-a-webm-file.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
+  },
+  {
     "slug": "convert-an-ogg-file-to-mp3",
     "path": "/tools/convert-an-ogg-file-to-mp3",
-    "updatedAt": "2026-09-20T23:59:00.000Z",
+    "updatedAt": "2026-10-03T00:00:00.000Z",
     "launchedAt": "2026-09-20T23:59:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -1514,7 +1877,8 @@
     "faqPrefix": "tool_convert_an_ogg_file_to_mp3",
     "related": [
       "convert-a-flac-file-to-mp3",
-      "convert-an-m4a-file-to-mp3"
+      "convert-an-m4a-file-to-mp3",
+      "batch-convert-audio-files-to-mp3"
     ],
     "logo": "/icons/tools/convert-an-ogg-file-to-mp3.svg",
     "localProcessing": true,
@@ -1668,6 +2032,29 @@
     "localProcessing": true,
     "scenario": "media",
     "subject": "audio"
+  },
+  {
+    "slug": "convert-subtitle-files-between-srt-vtt-and-ass",
+    "path": "/tools/convert-subtitle-files-between-srt-vtt-and-ass",
+    "updatedAt": "2026-10-03T10:05:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_subtitle_files_between_srt_vtt_and_ass_title",
+    "homeTitleKey": "tool_convert_subtitle_files_between_srt_vtt_and_ass_title",
+    "homeDescKey": "tool_convert_subtitle_files_between_srt_vtt_and_ass_desc",
+    "faqPrefix": "tool_convert_subtitle_files_between_srt_vtt_and_ass",
+    "related": [
+      "make-srt-subtitles-from-an-audio-file",
+      "make-srt-subtitles-from-a-video-file",
+      "extract-frames-from-a-video-as-images"
+    ],
+    "logo": "/icons/tools/convert-subtitle-files-between-srt-vtt-and-ass.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
   },
   {
     "slug": "convert-word-document-to-pdf",
@@ -2167,7 +2554,7 @@
   {
     "slug": "extract-audio-from-a-mov-file",
     "path": "/tools/extract-audio-from-a-mov-file",
-    "updatedAt": "2026-10-02T07:10:00Z",
+    "updatedAt": "2026-10-03T06:17:00Z",
     "launchedAt": "2026-10-01T05:25:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -2185,6 +2572,7 @@
       "batch-extract-audio-from-mkv-files",
       "extract-audio-from-a-video-file",
       "extract-audio-from-an-mp4-file",
+      "convert-a-mov-file-to-an-mp4-file",
       "batch-extract-audio-from-video-files",
       "trim-an-audio-clip-and-export"
     ],
@@ -2225,7 +2613,7 @@
   {
     "slug": "extract-audio-from-a-webm-file",
     "path": "/tools/extract-audio-from-a-webm-file",
-    "updatedAt": "2026-10-02T07:10:00Z",
+    "updatedAt": "2026-10-03T00:00:00.000Z",
     "launchedAt": "2026-10-01T13:30:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -2240,7 +2628,8 @@
       "extract-audio-from-a-video-file",
       "extract-audio-from-an-mp4-file",
       "batch-extract-audio-from-video-files",
-      "trim-an-audio-clip-and-export"
+      "trim-an-audio-clip-and-export",
+      "convert-a-webm-file-to-an-mp4-file"
     ],
     "logo": "/icons/tools/extract-audio-from-a-webm-file.svg",
     "localProcessing": true,
@@ -2326,6 +2715,31 @@
     "localProcessing": true,
     "scenario": "media",
     "subject": "audio"
+  },
+  {
+    "slug": "extract-frames-from-a-video-as-images",
+    "path": "/tools/extract-frames-from-a-video-as-images",
+    "updatedAt": "2026-10-03T09:37:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_extract_frames_from_a_video_as_images_title",
+    "homeTitleKey": "tool_extract_frames_from_a_video_as_images_title",
+    "homeDescKey": "tool_extract_frames_from_a_video_as_images_desc",
+    "faqPrefix": "tool_extract_frames_from_a_video_as_images",
+    "related": [
+      "convert-a-video-file-to-a-gif",
+      "images-to-gif",
+      "image-format-converter",
+      "extract-audio-from-a-video-file",
+      "trim-a-video-clip-and-export"
+    ],
+    "logo": "/icons/tools/extract-frames-from-a-video-as-images.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
   },
   {
     "slug": "extract-text-from-a-scanned-pdf",
@@ -4287,7 +4701,7 @@
   {
     "slug": "images-to-gif",
     "path": "/tools/images-to-gif",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-03T08:11:53.118Z",
     "category": "image",
     "primaryTopic": "image-media",
     "featured": true,
@@ -4299,7 +4713,8 @@
     "related": [
       "images-to-pdf",
       "image-merge",
-      "image-format-converter"
+      "image-format-converter",
+      "convert-a-video-file-to-a-gif"
     ],
     "logo": "/icons/tools/images-to-gif.svg",
     "localProcessing": true,
@@ -4408,6 +4823,29 @@
     "scenario": "seo",
     "subject": "network",
     "launchedAt": "2026-08-07T07:20:17+08:00"
+  },
+  {
+    "slug": "inspect-video-file-tracks",
+    "path": "/tools/inspect-video-file-tracks",
+    "updatedAt": "2026-10-03T10:50:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_inspect_video_file_tracks_title",
+    "homeTitleKey": "tool_inspect_video_file_tracks_title",
+    "homeDescKey": "tool_inspect_video_file_tracks_desc",
+    "faqPrefix": "tool_inspect_video_file_tracks",
+    "related": [
+      "convert-a-webm-file-to-an-mp4-file",
+      "convert-a-mov-file-to-an-mp4-file",
+      "extract-audio-from-a-video-file"
+    ],
+    "logo": "/icons/tools/inspect-video-file-tracks.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
   },
   {
     "slug": "instagram-post-size",
@@ -4990,7 +5428,7 @@
   {
     "slug": "make-srt-subtitles-from-a-video-file",
     "path": "/tools/make-srt-subtitles-from-a-video-file",
-    "updatedAt": "2026-10-02T07:10:00Z",
+    "updatedAt": "2026-10-03T13:06:05.523Z",
     "launchedAt": "2026-10-01T01:20:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -5002,7 +5440,8 @@
     "faqPrefix": "tool_make_srt_subtitles_from_a_video_file",
     "related": [
       "make-srt-subtitles-from-an-audio-file",
-      "make-a-waveform-video-from-audio"
+      "make-a-waveform-video-from-audio",
+      "burn-subtitles-into-a-video"
     ],
     "logo": "/icons/tools/make-srt-subtitles-from-a-video-file.svg",
     "localProcessing": true,
@@ -5131,6 +5570,29 @@
     "launchedAt": "2026-08-08T19:55:35+08:00"
   },
   {
+    "slug": "merge-video-clips-in-order",
+    "path": "/tools/merge-video-clips-in-order",
+    "updatedAt": "2026-10-03T13:06:05.523Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "video",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_merge_video_clips_in_order_title",
+    "homeTitleKey": "tool_merge_video_clips_in_order_title",
+    "homeDescKey": "tool_merge_video_clips_in_order_desc",
+    "faqPrefix": "tool_merge_video_clips_in_order",
+    "related": [
+      "trim-a-video-clip-and-export",
+      "convert-a-video-to-an-mp4-with-aac-audio",
+      "compress-a-video-file"
+    ],
+    "logo": "/icons/tools/merge-video-clips-in-order.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
+  },
+  {
     "slug": "meta-serp-preview",
     "path": "/tools/meta-serp-preview",
     "updatedAt": "2026-09-05T16:22:08.221Z",
@@ -5247,7 +5709,7 @@
   {
     "slug": "normalize-an-audio-file-to-peak",
     "path": "/tools/normalize-an-audio-file-to-peak",
-    "updatedAt": "2026-09-20T12:00:00.000Z",
+    "updatedAt": "2026-10-03T00:00:00.000Z",
     "launchedAt": "2026-09-20T12:00:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -5259,7 +5721,8 @@
     "faqPrefix": "tool_normalize_an_audio_file_to_peak",
     "related": [
       "limit-peaks-so-a-file-does-not-clip",
-      "compress-dynamic-range-of-a-voice-recording"
+      "compress-dynamic-range-of-a-voice-recording",
+      "batch-normalize-audio-files-to-peak"
     ],
     "logo": "/icons/tools/normalize-an-audio-file-to-peak.svg",
     "localProcessing": true,
@@ -5705,7 +6168,7 @@
   {
     "slug": "reduce-an-mp3-file-size",
     "path": "/tools/reduce-an-mp3-file-size",
-    "updatedAt": "2026-09-20T01:26:12.582Z",
+    "updatedAt": "2026-10-03T00:00:00.000Z",
     "launchedAt": "2026-09-20T01:00:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -5717,7 +6180,8 @@
     "faqPrefix": "tool_reduce_an_mp3_file_size",
     "related": [
       "convert-a-wav-file-to-mp3",
-      "trim-an-audio-clip-and-export"
+      "trim-an-audio-clip-and-export",
+      "batch-reduce-mp3-file-sizes"
     ],
     "logo": "/icons/tools/reduce-an-mp3-file-size.svg",
     "localProcessing": true,
@@ -5795,7 +6259,7 @@
   {
     "slug": "remove-silence-from-a-recording",
     "path": "/tools/remove-silence-from-a-recording",
-    "updatedAt": "2026-09-11T07:40:00.000Z",
+    "updatedAt": "2026-10-03T00:00:00.000Z",
     "launchedAt": "2026-09-11T05:46:00.000Z",
     "category": "developer",
     "primaryTopic": "sound-editor",
@@ -5808,7 +6272,8 @@
     "related": [
       "trim-an-audio-clip-and-export",
       "split-a-recording-on-silence",
-      "split-an-audio-file-by-duration"
+      "split-an-audio-file-by-duration",
+      "batch-remove-silence-from-recordings"
     ],
     "logo": "/icons/tools/remove-silence-from-a-recording.svg",
     "localProcessing": true,
@@ -5904,6 +6369,31 @@
     "scenario": "seo",
     "subject": "text",
     "launchedAt": "2026-08-09T21:03:55+08:00"
+  },
+  {
+    "slug": "rotate-a-video-file",
+    "path": "/tools/rotate-a-video-file",
+    "updatedAt": "2026-10-03T09:24:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_rotate_a_video_file_title",
+    "homeTitleKey": "tool_rotate_a_video_file_title",
+    "homeDescKey": "tool_rotate_a_video_file_desc",
+    "faqPrefix": "tool_rotate_a_video_file",
+    "related": [
+      "compress-a-video-file",
+      "trim-a-video-clip-and-export",
+      "convert-a-mov-file-to-an-mp4-file",
+      "convert-a-webm-file-to-an-mp4-file",
+      "change-video-speed"
+    ],
+    "logo": "/icons/tools/rotate-a-video-file.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
   },
   {
     "slug": "rotate-pdf",
@@ -6309,6 +6799,29 @@
     "subject": "image"
   },
   {
+    "slug": "sync-song-lyrics-to-lrc-by-tapping",
+    "path": "/tools/sync-song-lyrics-to-lrc-by-tapping",
+    "updatedAt": "2026-10-03T12:00:00.000Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "audio",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_sync_song_lyrics_to_lrc_by_tapping_title",
+    "homeTitleKey": "tool_sync_song_lyrics_to_lrc_by_tapping_title",
+    "homeDescKey": "tool_sync_song_lyrics_to_lrc_by_tapping_desc",
+    "faqPrefix": "tool_sync_song_lyrics_to_lrc_by_tapping",
+    "related": [
+      "convert-subtitle-files-between-srt-vtt-and-ass",
+      "embed-lyrics-in-an-mp3",
+      "transcribe-an-audio-file-to-text"
+    ],
+    "logo": "/icons/tools/sync-song-lyrics-to-lrc-by-tapping.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "terraform-cidrsubnet",
     "path": "/tools/terraform-cidrsubnet",
     "updatedAt": "2026-09-06T09:37:59.139Z",
@@ -6410,6 +6923,32 @@
     "localProcessing": true,
     "scenario": "media",
     "subject": "audio"
+  },
+  {
+    "slug": "trim-a-video-clip-and-export",
+    "path": "/tools/trim-a-video-clip-and-export",
+    "updatedAt": "2026-10-03T13:06:05.523Z",
+    "launchedAt": "2026-10-03T00:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_trim_a_video_clip_and_export_title",
+    "homeTitleKey": "tool_trim_a_video_clip_and_export_title",
+    "homeDescKey": "tool_trim_a_video_clip_and_export_desc",
+    "faqPrefix": "tool_trim_a_video_clip_and_export",
+    "related": [
+      "extract-frames-from-a-video-as-images",
+      "convert-a-video-file-to-a-gif",
+      "convert-a-mov-file-to-an-mp4-file",
+      "convert-an-mp4-file-to-a-webm-file",
+      "compress-a-video-file",
+      "merge-video-clips-in-order"
+    ],
+    "logo": "/icons/tools/trim-a-video-clip-and-export.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "video"
   },
   {
     "slug": "trim-an-audio-clip-and-export",

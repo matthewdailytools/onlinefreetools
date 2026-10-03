@@ -1,0 +1,30 @@
+{
+  "slug": "rotate-a-video-file",
+  "path": "/tools/rotate-a-video-file",
+  "updatedAt": "2026-10-03T09:24:00.000Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_rotate_a_video_file_title",
+  "homeTitleKey": "tool_rotate_a_video_file_title",
+  "homeDescKey": "tool_rotate_a_video_file_desc",
+  "faqPrefix": "tool_rotate_a_video_file",
+  "related": [
+    "compress-a-video-file",
+    "trim-a-video-clip-and-export",
+    "convert-a-mov-file-to-an-mp4-file",
+    "convert-a-webm-file-to-an-mp4-file",
+    "change-video-speed"
+  ],
+  "logo": "/icons/tools/rotate-a-video-file.svg",
+  "page": {
+    "module": "../pages/rotateAVideoFilePage",
+    "export": "renderRotateAVideoFilePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

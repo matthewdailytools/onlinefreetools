@@ -1,0 +1,24 @@
+{
+  "slug": "batch-reduce-mp3-file-sizes",
+  "path": "/tools/batch-reduce-mp3-file-sizes",
+  "updatedAt": "2026-10-03T00:00:00.000Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_reduce_mp3_file_sizes_title",
+  "homeTitleKey": "tool_batch_reduce_mp3_file_sizes_title",
+  "homeDescKey": "tool_batch_reduce_mp3_file_sizes_desc",
+  "faqPrefix": "tool_batch_reduce_mp3_file_sizes",
+  "related": ["reduce-an-mp3-file-size", "batch-convert-audio-files-to-mp3", "bulk-convert-wav-files-to-mp3"],
+  "logo": "/icons/tools/batch-reduce-mp3-file-sizes.svg",
+  "page": {
+    "module": "../pages/batchReduceMp3FileSizesPage",
+    "export": "renderBatchReduceMp3FileSizesPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

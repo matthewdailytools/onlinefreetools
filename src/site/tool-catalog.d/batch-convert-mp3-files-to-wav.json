@@ -1,0 +1,24 @@
+{
+  "slug": "batch-convert-mp3-files-to-wav",
+  "path": "/tools/batch-convert-mp3-files-to-wav",
+  "updatedAt": "2026-10-03T00:00:00.000Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_convert_mp3_files_to_wav_title",
+  "homeTitleKey": "tool_batch_convert_mp3_files_to_wav_title",
+  "homeDescKey": "tool_batch_convert_mp3_files_to_wav_desc",
+  "faqPrefix": "tool_batch_convert_mp3_files_to_wav",
+  "related": ["convert-an-mp3-file-to-wav", "batch-reduce-mp3-file-sizes", "bulk-convert-wav-files-to-mp3"],
+  "logo": "/icons/tools/batch-convert-mp3-files-to-wav.svg",
+  "page": {
+    "module": "../pages/batchConvertMp3FilesToWavPage",
+    "export": "renderBatchConvertMp3FilesToWavPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "burn-subtitles-into-a-video",
+  "path": "/tools/burn-subtitles-into-a-video",
+  "updatedAt": "2026-10-03T13:06:05.523Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "video",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_burn_subtitles_into_a_video_title",
+  "homeTitleKey": "tool_burn_subtitles_into_a_video_title",
+  "homeDescKey": "tool_burn_subtitles_into_a_video_desc",
+  "faqPrefix": "tool_burn_subtitles_into_a_video",
+  "related": [
+    "convert-subtitle-files-between-srt-vtt-and-ass",
+    "make-srt-subtitles-from-a-video-file",
+    "convert-a-video-to-an-mp4-with-aac-audio"
+  ],
+  "logo": "/icons/tools/burn-subtitles-into-a-video.svg",
+  "page": {
+    "module": "../pages/burnSubtitlesIntoAVideoPage",
+    "export": "renderBurnSubtitlesIntoAVideoPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

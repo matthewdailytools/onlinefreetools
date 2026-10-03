@@ -30,6 +30,7 @@ export type ToolSubject =
 	| 'image'
 	| 'pdf'
 	| 'audio'
+	| 'video'
 	| 'text'
 	| 'number'
 	| 'color'
@@ -58,6 +59,7 @@ export const TOOL_SUBJECT_ORDER: ToolSubject[] = [
 	'image',
 	'pdf',
 	'audio',
+	'video',
 	'text',
 	'number',
 	'color',
@@ -181,6 +183,12 @@ export const SUBJECT_I18N_KEYS: Record<ToolSubject, SubjectI18nKeys> = {
 		titleKey: 'taxonomy_subject_audio_title',
 		descKey: 'taxonomy_subject_audio_desc',
 		blurbKey: 'taxonomy_subject_audio_blurb',
+	},
+	video: {
+		labelKey: 'taxonomy_subject_video',
+		titleKey: 'taxonomy_subject_video_title',
+		descKey: 'taxonomy_subject_video_desc',
+		blurbKey: 'taxonomy_subject_video_blurb',
 	},
 	text: {
 		labelKey: 'taxonomy_subject_text',

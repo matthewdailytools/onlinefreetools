@@ -1,0 +1,29 @@
+{
+  "slug": "change-video-speed",
+  "path": "/tools/change-video-speed",
+  "updatedAt": "2026-10-03T09:43:00.000Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_change_video_speed_title",
+  "homeTitleKey": "tool_change_video_speed_title",
+  "homeDescKey": "tool_change_video_speed_desc",
+  "faqPrefix": "tool_change_video_speed",
+  "related": [
+    "trim-a-video-clip-and-export",
+    "rotate-a-video-file",
+    "compress-a-video-file",
+    "change-audio-speed-without-changing-pitch"
+  ],
+  "logo": "/icons/tools/change-video-speed.svg",
+  "page": {
+    "module": "../pages/changeVideoSpeedPage",
+    "export": "renderChangeVideoSpeedPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

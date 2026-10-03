@@ -1,0 +1,29 @@
+{
+  "slug": "convert-a-video-to-an-mp4-with-aac-audio",
+  "path": "/tools/convert-a-video-to-an-mp4-with-aac-audio",
+  "updatedAt": "2026-10-03T12:00:00.000Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "video",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_convert_a_video_to_an_mp4_with_aac_audio_title",
+  "homeTitleKey": "tool_convert_a_video_to_an_mp4_with_aac_audio_title",
+  "homeDescKey": "tool_convert_a_video_to_an_mp4_with_aac_audio_desc",
+  "faqPrefix": "tool_convert_a_video_to_an_mp4_with_aac_audio",
+  "related": [
+    "inspect-video-file-tracks",
+    "convert-a-webm-file-to-an-mp4-file",
+    "convert-a-mov-file-to-an-mp4-file",
+    "convert-an-mkv-file-to-an-mp4-file"
+  ],
+  "logo": "/icons/tools/convert-a-video-to-an-mp4-with-aac-audio.svg",
+  "page": {
+    "module": "../pages/convertAVideoToAnMp4WithAacAudioPage",
+    "export": "renderConvertAVideoToAnMp4WithAacAudioPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

@@ -1390,6 +1390,101 @@ const en: SiteLangDict = {
   tool_batch_compress_pdfs_for_email_usecase_3: 'Shrink several PDFs before email without merging them.',
   tool_batch_compress_pdfs_for_email_usecases_title: 'Good fits',
   tool_batch_compress_pdfs_for_email_warn_large: 'A file is larger than 40 MB — this tab may run out of memory on that row.',
+  tool_batch_convert_audio_files_to_mp3_advanced: 'Advanced settings (optional)',
+  tool_batch_convert_audio_files_to_mp3_article:
+    'A folder may mix phone M4A recordings, FLAC masters, OGG assets and WAV exports. This queue makes one MP3 for each source using the same bitrate. The browser decodes one file at a time and an MP3 encoder writes a separate result. Check each row before downloading. Browser codec support differs, so an accepted extension can still fail to decode. MP3 loses information; keep source masters. For WAV-only batches the related WAV page remains available.',
+  tool_batch_convert_audio_files_to_mp3_bitrate: 'MP3 bitrate for the queue',
+  tool_batch_convert_audio_files_to_mp3_choose: 'Choose M4A, FLAC, OGG or WAV files',
+  tool_batch_convert_audio_files_to_mp3_clear: 'Clear queue',
+  tool_batch_convert_audio_files_to_mp3_convert: 'Convert files',
+  tool_batch_convert_audio_files_to_mp3_decode: 'Decode audio',
+  tool_batch_convert_audio_files_to_mp3_desc:
+    'Convert multiple M4A, FLAC, OGG and WAV files to separate MP3s in one queue. Each successful file can be downloaded even when another file fails. Files stay on your device and are not uploaded to a server.',
+  tool_batch_convert_audio_files_to_mp3_description:
+    'Batch convert mixed audio files to MP3 online in your browser. Add M4A voice memos, FLAC tracks, OGG audio or WAV recordings together, choose 128, 192 or 320 kbps, then download each finished MP3. A failed source does not erase successful outputs. Processing stays on your device; the files are not uploaded to a server.',
+  tool_batch_convert_audio_files_to_mp3_done: 'Ready. Download successful MP3 files from their rows.',
+  tool_batch_convert_audio_files_to_mp3_download: 'Download MP3',
+  tool_batch_convert_audio_files_to_mp3_elapsed: 'Elapsed: {s}s',
+  tool_batch_convert_audio_files_to_mp3_empty: 'Add files or load the sample first.',
+  tool_batch_convert_audio_files_to_mp3_empty_state: 'Choose a mixed set of audio files, or load the built-in sample to see real output.',
+  tool_batch_convert_audio_files_to_mp3_encode: 'Encode MP3',
+  tool_batch_convert_audio_files_to_mp3_err_decode: 'This browser could not decode this audio codec. Try another supported source or browser.',
+  tool_batch_convert_audio_files_to_mp3_err_encoder: 'The MP3 encoder could not load or write this file. Retry after checking the connection.',
+  tool_batch_convert_audio_files_to_mp3_err_file: 'Only M4A, FLAC, OGG and WAV audio files are accepted.',
+  tool_batch_convert_audio_files_to_mp3_err_format: 'The file header does not match a supported audio format, or the file is damaged.',
+  tool_batch_convert_audio_files_to_mp3_err_limit: 'File exceeds 40 MiB or 10 minutes, or has more than two channels.',
+  tool_batch_convert_audio_files_to_mp3_err_output: 'The browser could not keep this output. Download and clear completed results, then retry.',
+  tool_batch_convert_audio_files_to_mp3_err_sample: 'The mixed sample could not load. Try again.',
+  tool_batch_convert_audio_files_to_mp3_err_too_many: 'At most 20 files per queue.',
+  tool_batch_convert_audio_files_to_mp3_example:
+    'The built-in sample loads short M4A and FLAC sources and runs them at 192 kbps on opening. Two separate MP3 rows appear when this browser decodes both. If one codec is unavailable, its row explains the failure and the other MP3 remains downloadable.',
+  tool_batch_convert_audio_files_to_mp3_example_title: 'Mixed audio batch example',
+  tool_batch_convert_audio_files_to_mp3_failed: 'No file converted. Check the row errors and retry.',
+  tool_batch_convert_audio_files_to_mp3_faq_a1:
+    'Yes. Each accepted file is checked and converted to a separate MP3. The browser still needs to decode its codec; a failure appears on that file’s row.',
+  tool_batch_convert_audio_files_to_mp3_faq_a2:
+    'No. MP3 is lossy, and re-encoding M4A or OGG cannot recover details already discarded. Keep original FLAC or WAV masters.',
+  tool_batch_convert_audio_files_to_mp3_faq_a3:
+    'The failed row shows its reason. The queue continues, ready MP3s stay downloadable, and failed files can be retried.',
+  tool_batch_convert_audio_files_to_mp3_faq_a4:
+    'No. Reading, decoding and MP3 encoding occur in your browser on your device. Page and encoder assets may need a network connection.',
+  tool_batch_convert_audio_files_to_mp3_faq_a5:
+    'No. This tool outputs one MP3 per source, including mixed input formats. Use the related WAV batch page for a WAV-only folder or the audio joiner to make one combined track.',
+  tool_batch_convert_audio_files_to_mp3_faq_q1: 'Can I mix M4A, FLAC, OGG and WAV in one batch?',
+  tool_batch_convert_audio_files_to_mp3_faq_q2: 'Will a higher bitrate make compressed audio lossless?',
+  tool_batch_convert_audio_files_to_mp3_faq_q3: 'What happens if one file is damaged?',
+  tool_batch_convert_audio_files_to_mp3_faq_q4: 'Are my audio files uploaded?',
+  tool_batch_convert_audio_files_to_mp3_faq_q5: 'Is this the same as merging audio or converting WAV-only batches?',
+  tool_batch_convert_audio_files_to_mp3_hint: 'Mix up to 20 files. Each file must be at most 40 MiB and 10 minutes; mono or stereo audio only.',
+  tool_batch_convert_audio_files_to_mp3_how_body: 'Use one queue for several source formats; each input gets its own MP3, not a merged soundtrack.',
+  tool_batch_convert_audio_files_to_mp3_how_item_1: 'Add M4A, FLAC, OGG and WAV files together, or load the built-in mixed sample.',
+  tool_batch_convert_audio_files_to_mp3_how_item_2: 'Choose one MP3 bitrate for the queue, then start conversion. Files are decoded one at a time.',
+  tool_batch_convert_audio_files_to_mp3_how_item_3:
+    'Watch each row move through read, decode and encode. A damaged file gets its own error while the queue continues.',
+  tool_batch_convert_audio_files_to_mp3_how_item_4:
+    'Download each ready MP3 from its row. Stop before the next file or retry failed rows without losing earlier results.',
+  tool_batch_convert_audio_files_to_mp3_how_title: 'How to batch convert audio files to MP3',
+  tool_batch_convert_audio_files_to_mp3_list_label: 'Conversion queue',
+  tool_batch_convert_audio_files_to_mp3_pending: 'Pending',
+  tool_batch_convert_audio_files_to_mp3_preview: 'Batch results',
+  tool_batch_convert_audio_files_to_mp3_progress: 'Batch conversion progress',
+  tool_batch_convert_audio_files_to_mp3_queue_count: '{n} file(s) in queue',
+  tool_batch_convert_audio_files_to_mp3_read: 'Read file',
+  tool_batch_convert_audio_files_to_mp3_ready: 'Ready',
+  tool_batch_convert_audio_files_to_mp3_remove: 'Remove',
+  tool_batch_convert_audio_files_to_mp3_result: '{ok} ready · {fail} failed · {pending} pending at {kbps} kbps',
+  tool_batch_convert_audio_files_to_mp3_retry: 'Retry failed files',
+  tool_batch_convert_audio_files_to_mp3_row_result: '{seconds}s · {input} KiB → {output} KiB',
+  tool_batch_convert_audio_files_to_mp3_rules_body:
+    'MP3 size is roughly duration × bitrate ÷ 8; actual bytes vary with metadata and encoder behavior. More bitrate cannot restore detail already missing from a source.',
+  tool_batch_convert_audio_files_to_mp3_rules_item_1:
+    'FLAC and WAV sources lose information when encoded to MP3. Re-encoding already lossy M4A or OGG does not improve their quality.',
+  tool_batch_convert_audio_files_to_mp3_rules_item_2:
+    'A matching extension is only an initial filter. The browser must support the codec inside the file, so a row can fail at decode.',
+  tool_batch_convert_audio_files_to_mp3_rules_item_3:
+    'Maximum 20 files per queue; each at most 40 MiB and 10 minutes. Files convert serially. Results use on-device browser storage when available; otherwise the page limits retained MP3 output to 96 MiB.',
+  tool_batch_convert_audio_files_to_mp3_rules_item_4:
+    'Results are separate MP3s. No audio merging, DRM removal, metadata preservation, or guarantee of every M4A/OGG codec.',
+  tool_batch_convert_audio_files_to_mp3_rules_title: 'Formats, quality and batch limits',
+  tool_batch_convert_audio_files_to_mp3_sample: 'Load mixed sample',
+  tool_batch_convert_audio_files_to_mp3_sample_name: 'sample',
+  tool_batch_convert_audio_files_to_mp3_settings_hint: '192 kbps is the default. Output is 44.1 kHz MP3; source tags and artwork are not copied.',
+  tool_batch_convert_audio_files_to_mp3_stop: 'Stop after current file',
+  tool_batch_convert_audio_files_to_mp3_stopped: 'Stopped before the next file. Ready MP3s remain downloadable.',
+  tool_batch_convert_audio_files_to_mp3_title: 'Batch convert mixed audio files to MP3',
+  tool_batch_convert_audio_files_to_mp3_usecase_1: 'Turn phone M4A voice memos and WAV meeting captures into individual MP3 attachments for sharing.',
+  tool_batch_convert_audio_files_to_mp3_usecase_2: 'Make MP3 listening copies of FLAC album tracks while keeping the lossless originals.',
+  tool_batch_convert_audio_files_to_mp3_usecase_3:
+    'Bring OGG sound assets and mixed recordings into a player that accepts MP3, while checking failed files individually.',
+  tool_batch_convert_audio_files_to_mp3_usecases_title: 'When this mixed MP3 queue helps',
+  tool_batch_convert_audio_files_to_mp3_why_choose_item_1:
+    'One mixed-format queue replaces repeated single-file conversions for phone recordings and archived tracks.',
+  tool_batch_convert_audio_files_to_mp3_why_choose_item_2: 'Per-file output sizes and errors let you inspect what really happened before downloading.',
+  tool_batch_convert_audio_files_to_mp3_why_choose_item_3: 'Ready MP3s can be downloaded individually, so one bad source never blocks the good ones.',
+  tool_batch_convert_audio_files_to_mp3_why_choose_item_4:
+    'The audio stays on your device and is not uploaded to a server. The demo follows the same conversion path.',
+  tool_batch_convert_audio_files_to_mp3_why_choose_title: 'Why choose our batch audio to MP3 converter',
+  tool_batch_convert_audio_files_to_mp3_working: 'Converting',
   tool_batch_convert_jpg_to_editable_word_with_ocr_advanced: 'Advanced settings (optional)',
   tool_batch_convert_jpg_to_editable_word_with_ocr_article:
     'Drop a stack of printed JPGs or screenshots, click Convert all, then Download Word. Each photo becomes a section with a heading and editable paragraphs; the original picture is included by default for proofing. One blurry shot is skipped. Files stay on your device, not uploaded to a server. Need a ZIP of TXT instead? Use Batch convert JPG to text with OCR.',
@@ -1709,6 +1804,229 @@ const en: SiteLangDict = {
   tool_batch_convert_mkv_files_to_mp4_files_why_choose_item_3: 'Same AAC-first engine as the single-file convert page—honest caps, not silent remux.',
   tool_batch_convert_mkv_files_to_mp4_files_why_choose_item_4: 'Clear related path to single-file convert and to extract-audio tools after you have MP4s.',
   tool_batch_convert_mkv_files_to_mp4_files_why_choose_title: 'Why choose our Batch convert MKV files to MP4 files tools',
+  tool_batch_convert_mov_files_to_mp4_files_advanced: 'Encoding settings (optional)',
+  tool_batch_convert_mov_files_to_mp4_files_article:
+    'A folder of iPhone or QuickTime .mov clips may mix H.264, HEVC, AAC, PCM and silent video. Choose up to 20 files: this queue inspects each clip and uses a different path per row. When the source video is H.264, its encoded video can be copied into MP4; other decodable video is re-encoded to H.264 if the device has an encoder. Existing audio becomes AAC, including PCM. The output is reopened to verify an H.264 video track, the expected audio and a plausible duration. Each row shows source/output codecs, video copy versus transcode, dimensions, duration, before/after bytes and a specific failure. On this browser an undecodable HEVC clip fails only its row; already completed MP4s remain downloadable. Files run serially. Large outputs can remain in OPFS until downloaded or cleared, instead of joining all results in a memory-heavy ZIP. Original MOVs stay local and untouched.',
+  tool_batch_convert_mov_files_to_mp4_files_channels_label: 'AAC audio channels',
+  tool_batch_convert_mov_files_to_mp4_files_channels_mono: 'Mono',
+  tool_batch_convert_mov_files_to_mp4_files_channels_stereo: 'Stereo (default)',
+  tool_batch_convert_mov_files_to_mp4_files_choose: 'Choose MOV videos',
+  tool_batch_convert_mov_files_to_mp4_files_clear: 'Clear',
+  tool_batch_convert_mov_files_to_mp4_files_convert: 'Convert all',
+  tool_batch_convert_mov_files_to_mp4_files_decode: 'Inspect tracks',
+  tool_batch_convert_mov_files_to_mp4_files_desc:
+    'Batch convert multiple iPhone or QuickTime MOV clips into separate H.264 MP4 files with AAC when audio exists. See each video copy or transcode decision, track, duration, size and error.',
+  tool_batch_convert_mov_files_to_mp4_files_description:
+    'Batch convert multiple MOV videos into separate H.264/AAC MP4 files in your browser. Inspect per-file video copy or transcode decisions, tracks and sizes. Steps: add MOVs, Convert all, download each MP4. Example: two QuickTime clips get distinct names and verified output tracks.',
+  tool_batch_convert_mov_files_to_mp4_files_done: 'Ready. Download each successful MP4 beside its row.',
+  tool_batch_convert_mov_files_to_mp4_files_download: 'Download first MP4',
+  tool_batch_convert_mov_files_to_mp4_files_download_one: 'Download MP4',
+  tool_batch_convert_mov_files_to_mp4_files_elapsed: 'Elapsed: {s}s',
+  tool_batch_convert_mov_files_to_mp4_files_empty: 'Add MOV videos or load the samples first.',
+  tool_batch_convert_mov_files_to_mp4_files_empty_state:
+    'Add several iPhone/QuickTime MOV clips or load two on-site H.264/AAC samples. Each successful row gets its own MP4 download.',
+  tool_batch_convert_mov_files_to_mp4_files_encode: 'Copy video or encode H.264/AAC',
+  tool_batch_convert_mov_files_to_mp4_files_err_aborted: 'Conversion stopped. Finished MP4s are kept.',
+  tool_batch_convert_mov_files_to_mp4_files_err_codec: 'A source track cannot be decoded or the resulting MP4 failed its H.264/AAC video/audio check.',
+  tool_batch_convert_mov_files_to_mp4_files_err_container: 'Could not read a usable video track from this MOV.',
+  tool_batch_convert_mov_files_to_mp4_files_err_encoder: 'Could not write this MP4. Free browser storage and retry the row.',
+  tool_batch_convert_mov_files_to_mp4_files_err_engine: 'Could not load the local conversion engine. Retry or use another browser.',
+  tool_batch_convert_mov_files_to_mp4_files_err_file: 'Choose one or more MOV videos.',
+  tool_batch_convert_mov_files_to_mp4_files_err_format: 'This row is not a QuickTime MOV video. Its filename or internal container did not match.',
+  tool_batch_convert_mov_files_to_mp4_files_err_hevc:
+    'This browser cannot decode the HEVC video in this MOV. This row is skipped; try another device or a desktop converter.',
+  tool_batch_convert_mov_files_to_mp4_files_err_limit:
+    'This MOV exceeds the code cap: 500 MiB with OPFS or 80 MiB without. Try a smaller file or free browser storage.',
+  tool_batch_convert_mov_files_to_mp4_files_err_no_avc: 'This device cannot encode H.264 at this video size. Other rows continue.',
+  tool_batch_convert_mov_files_to_mp4_files_err_sample: 'Could not load the on-site MOV samples. Choose your own files.',
+  tool_batch_convert_mov_files_to_mp4_files_err_too_many: 'Keep at most 20 MOV files in one batch.',
+  tool_batch_convert_mov_files_to_mp4_files_err_total_limit:
+    'Without OPFS, the 128 MiB total output-memory budget is full. Download and remove finished rows, or use a browser with OPFS.',
+  tool_batch_convert_mov_files_to_mp4_files_example:
+    'Load two MOV samples queues the same short H.264/AAC QuickTime clip twice. Convert all produces two verified MP4s with distinct names, H.264 video-copy labels and per-row source/output size.',
+  tool_batch_convert_mov_files_to_mp4_files_example_title: 'Two QuickTime MOV clips, two separate MP4s',
+  tool_batch_convert_mov_files_to_mp4_files_failed: 'No MP4 was created. Check row errors, source tracks, browser codecs and storage.',
+  tool_batch_convert_mov_files_to_mp4_files_faq_a1:
+    'No. Every supported MOV gets its own MP4 and download. Joining clips into a movie is a different task.',
+  tool_batch_convert_mov_files_to_mp4_files_faq_a2:
+    'Yes when its video packets are compatible. The row labels video copied; existing audio is still converted to AAC when needed. Other video may require re-encoding.',
+  tool_batch_convert_mov_files_to_mp4_files_faq_a3:
+    'No. HEVC decode support varies. An undecodable clip gets a row error; the other clips keep processing and no audio-only file is called a converted video.',
+  tool_batch_convert_mov_files_to_mp4_files_faq_a4:
+    'That row shows its failure, but successful MP4s remain downloadable. Click Convert all again to retry unfinished rows.',
+  tool_batch_convert_mov_files_to_mp4_files_faq_a5:
+    'A ZIP of large MP4 files can exhaust tab memory. Individual links keep each result separate; OPFS-backed files stay available until Clear.',
+  tool_batch_convert_mov_files_to_mp4_files_faq_a6: 'No. The browser processes local MOV files on your device using scripts loaded from this site.',
+  tool_batch_convert_mov_files_to_mp4_files_faq_q1: 'Does this batch join the MOV clips into one MP4?',
+  tool_batch_convert_mov_files_to_mp4_files_faq_q2: 'Can H.264 MOV video be converted without re-encoding?',
+  tool_batch_convert_mov_files_to_mp4_files_faq_q3: 'Can this batch convert every iPhone HEVC MOV?',
+  tool_batch_convert_mov_files_to_mp4_files_faq_q4: 'What happens if one MOV is damaged?',
+  tool_batch_convert_mov_files_to_mp4_files_faq_q5: 'Why not download the entire batch as one ZIP?',
+  tool_batch_convert_mov_files_to_mp4_files_faq_q6: 'Are my MOV videos uploaded?',
+  tool_batch_convert_mov_files_to_mp4_files_hint:
+    'Up to 20 local .mov videos. Code cap per input: 500 MiB with OPFS, 80 MiB without; real support depends on tracks, codec and device.',
+  tool_batch_convert_mov_files_to_mp4_files_how_body:
+    'Choose multiple MOV videos and Convert all. Each supported clip becomes its own H.264 MP4 with AAC when audio exists. Check whether video was copied or re-encoded, then download each result; failed rows do not erase successes.',
+  tool_batch_convert_mov_files_to_mp4_files_how_item_1: 'Choose up to 20 local .mov clips, or click Load two MOV samples.',
+  tool_batch_convert_mov_files_to_mp4_files_how_item_2: 'Optionally open Encoding settings for quality and AAC mono/stereo across the batch.',
+  tool_batch_convert_mov_files_to_mp4_files_how_item_3:
+    'Click Convert all. Each QuickTime MOV is checked for decodable tracks; H.264 video is copied where possible, while supported other video is re-encoded.',
+  tool_batch_convert_mov_files_to_mp4_files_how_item_4:
+    'Read each row’s codec, video path, duration and size; click Download MP4 beside every success. Convert all again retries failed or stopped rows.',
+  tool_batch_convert_mov_files_to_mp4_files_how_title: 'How to batch convert iPhone and QuickTime MOV clips to separate MP4s',
+  tool_batch_convert_mov_files_to_mp4_files_list_label: 'MOV conversion queue',
+  tool_batch_convert_mov_files_to_mp4_files_load: 'Load engine',
+  tool_batch_convert_mov_files_to_mp4_files_mode_copy: 'H.264 video copied',
+  tool_batch_convert_mov_files_to_mp4_files_mode_transcode: 'video re-encoded to H.264',
+  tool_batch_convert_mov_files_to_mp4_files_no_audio: 'no audio',
+  tool_batch_convert_mov_files_to_mp4_files_pack: 'Verify MP4 results',
+  tool_batch_convert_mov_files_to_mp4_files_partial:
+    '{ok} MP4 file(s) ready; {fail} failed. Download successes and click Convert all again to retry unfinished rows.',
+  tool_batch_convert_mov_files_to_mp4_files_preview: 'Batch result',
+  tool_batch_convert_mov_files_to_mp4_files_progress: 'MOV batch conversion progress',
+  tool_batch_convert_mov_files_to_mp4_files_quality_high: 'Higher quality (default)',
+  tool_batch_convert_mov_files_to_mp4_files_quality_label: 'Video and audio quality',
+  tool_batch_convert_mov_files_to_mp4_files_quality_low: 'Smaller file, lower quality',
+  tool_batch_convert_mov_files_to_mp4_files_quality_medium: 'Balanced',
+  tool_batch_convert_mov_files_to_mp4_files_queue_count: '{n} file(s) in queue',
+  tool_batch_convert_mov_files_to_mp4_files_read: 'Read MOV',
+  tool_batch_convert_mov_files_to_mp4_files_remove: 'Remove',
+  tool_batch_convert_mov_files_to_mp4_files_result: '{n} separate MP4 file(s) ready. Download each beside its row.',
+  tool_batch_convert_mov_files_to_mp4_files_retry: 'Retry unfinished',
+  tool_batch_convert_mov_files_to_mp4_files_rules_body:
+    'MOV is a QuickTime container, not a promise of a particular codec. This batch seeks H.264 video and AAC audio when sound exists. Track support is checked separately for every clip.',
+  tool_batch_convert_mov_files_to_mp4_files_rules_item_1:
+    'H.264 source video is copied when compatible; other decodable video needs H.264 re-encoding, which can change quality and size. Existing PCM audio becomes AAC.',
+  tool_batch_convert_mov_files_to_mp4_files_rules_item_2:
+    'HEVC is device-dependent. If this browser cannot decode it, that row fails before conversion; an audio-only MP4 is never reported as success.',
+  tool_batch_convert_mov_files_to_mp4_files_rules_item_3:
+    'Up to 20 inputs; code cap per file is 500 MiB with OPFS, 80 MiB without. Without OPFS, retained outputs share 128 MiB of memory. These are code limits, not universal test maxima.',
+  tool_batch_convert_mov_files_to_mp4_files_rules_item_4:
+    'MP4s remain separate and are downloaded one by one. A large ZIP is not assembled in page memory. Extra timecode, HDR and camera metadata are not guaranteed to transfer.',
+  tool_batch_convert_mov_files_to_mp4_files_rules_title: 'MOV video copy, HEVC support and storage limits',
+  tool_batch_convert_mov_files_to_mp4_files_sample: 'Load two MOV samples',
+  tool_batch_convert_mov_files_to_mp4_files_sample_name: 'mov-batch-example',
+  tool_batch_convert_mov_files_to_mp4_files_settings_hint:
+    'H.264 source video is copied when possible; other decodable video needs H.264 encoding. Existing audio becomes AAC. Settings apply to all rows and clear old outputs when changed.',
+  tool_batch_convert_mov_files_to_mp4_files_status_fail: 'Failed',
+  tool_batch_convert_mov_files_to_mp4_files_status_ok: 'MP4 ready',
+  tool_batch_convert_mov_files_to_mp4_files_status_pending: 'Queued',
+  tool_batch_convert_mov_files_to_mp4_files_status_running: 'Converting…',
+  tool_batch_convert_mov_files_to_mp4_files_status_stopped: 'Stopped; earlier MP4s remain available',
+  tool_batch_convert_mov_files_to_mp4_files_stop: 'Stop',
+  tool_batch_convert_mov_files_to_mp4_files_title: 'Batch convert MOV files to H.264 MP4',
+  tool_batch_convert_mov_files_to_mp4_files_usecase_1: 'Prepare several iPhone MOV recordings as individual MP4 files for a Windows or web editor.',
+  tool_batch_convert_mov_files_to_mp4_files_usecase_2:
+    'Sort mixed QuickTime exports: see which H.264 tracks were copied, which audio became AAC and which HEVC clip cannot decode here.',
+  tool_batch_convert_mov_files_to_mp4_files_usecase_3: 'Convert local camera footage without uploading clips or collecting large results into one ZIP.',
+  tool_batch_convert_mov_files_to_mp4_files_usecases_title: 'When bulk MOV to MP4 helps',
+  tool_batch_convert_mov_files_to_mp4_files_why_choose_item_1:
+    'Each H.264 source can keep its encoded video packets while PCM or other existing audio becomes AAC; rows report the path used.',
+  tool_batch_convert_mov_files_to_mp4_files_why_choose_item_2:
+    'Every output is reopened to check a real H.264 video track, expected audio and plausible duration, preventing an audio-only false success.',
+  tool_batch_convert_mov_files_to_mp4_files_why_choose_item_3: 'Unsupported HEVC or other damaged MOVs fail per row without discarding finished MP4s.',
+  tool_batch_convert_mov_files_to_mp4_files_why_choose_item_4:
+    'Large outputs are downloaded individually from OPFS when available; duplicate names are disambiguated without a big in-memory ZIP.',
+  tool_batch_convert_mov_files_to_mp4_files_why_choose_title: 'Why choose our Batch convert MOV files to H.264 MP4 tools',
+  tool_batch_convert_mp3_files_to_wav_advanced: 'WAV output settings (optional)',
+  tool_batch_convert_mp3_files_to_wav_article:
+    'When a DAW or sampler asks for WAV, several compressed MP3s can be converted in one queue. Each source becomes its own 16-bit PCM WAV, with real input/output bytes and the expansion ratio shown per row. The estimated size is 44 header bytes plus duration × sample rate × channels × 2. WAV is convenient for editing but does not undo quality already lost in the source MP3. The queue keeps completed results if another file is damaged, supports stopping and retrying, and offers individual downloads instead of building a large ZIP in memory.',
+  tool_batch_convert_mp3_files_to_wav_bitrate: 'WAV sample rate',
+  tool_batch_convert_mp3_files_to_wav_channels: 'Audio channels',
+  tool_batch_convert_mp3_files_to_wav_choose: 'Choose MP3 files',
+  tool_batch_convert_mp3_files_to_wav_clear: 'Clear queue',
+  tool_batch_convert_mp3_files_to_wav_convert: 'Convert to WAV',
+  tool_batch_convert_mp3_files_to_wav_decode: 'Decode MP3',
+  tool_batch_convert_mp3_files_to_wav_desc:
+    'Convert multiple MP3s into separate 16-bit PCM WAV files in your browser. See the expected size expansion and each real result, then download files individually. WAV will not restore sound detail already lost in MP3. Audio stays on your device and is not uploaded.',
+  tool_batch_convert_mp3_files_to_wav_description:
+    'Batch MP3 to WAV converter for audio editing: add multiple MP3 recordings, choose 44.1 or 48 kHz PCM WAV, and compare the measured input and output size of every file. A WAV is usually much larger because it stores uncompressed samples; it cannot recover lost MP3 detail. Example: the built-in short stereo MP3s become separate WAVs with verified sample rate, channels and bytes. Conversion happens on your device without server upload.',
+  tool_batch_convert_mp3_files_to_wav_done: 'Finished. Check each measured WAV and download the files you need.',
+  tool_batch_convert_mp3_files_to_wav_download: 'Download result',
+  tool_batch_convert_mp3_files_to_wav_elapsed: 'Elapsed: {s}s',
+  tool_batch_convert_mp3_files_to_wav_empty: 'Add MP3 files or load the sample first.',
+  tool_batch_convert_mp3_files_to_wav_empty_state: 'Drop MP3 files or load the examples to see their actual WAV size expansion.',
+  tool_batch_convert_mp3_files_to_wav_encode: 'Write PCM WAV',
+  tool_batch_convert_mp3_files_to_wav_err_decode: 'This browser could not decode the MP3. Try another source or browser.',
+  tool_batch_convert_mp3_files_to_wav_err_encoder: 'The sample MP3 generator could not load. Check the connection and retry.',
+  tool_batch_convert_mp3_files_to_wav_err_file: 'Add MP3 files only.',
+  tool_batch_convert_mp3_files_to_wav_err_format: 'Not a valid MP3 stream, or the file is damaged.',
+  tool_batch_convert_mp3_files_to_wav_err_limit: 'File exceeds 20 MiB or 5 minutes, uses unsupported channels, or WAV would exceed 60 MiB.',
+  tool_batch_convert_mp3_files_to_wav_err_output:
+    'The browser could not store this WAV. Download and remove completed files, free device space, then retry.',
+  tool_batch_convert_mp3_files_to_wav_err_sample: 'The MP3-to-WAV examples could not be generated. Retry.',
+  tool_batch_convert_mp3_files_to_wav_err_too_many: 'At most 20 MP3 files per queue.',
+  tool_batch_convert_mp3_files_to_wav_example:
+    'On opening, two 3-second stereo MP3 tones are generated at 192 and 64 kbps and converted separately to 44.1 kHz, 16-bit PCM WAV. Their compressed input sizes differ, while each uncompressed output has about the same PCM size. Each row reports the measured bytes and can be downloaded independently.',
+  tool_batch_convert_mp3_files_to_wav_example_title: 'MP3 expansion into PCM WAV',
+  tool_batch_convert_mp3_files_to_wav_expanded: '{ratio}× the MP3 size',
+  tool_batch_convert_mp3_files_to_wav_failed: 'No WAV was created. Check row errors and retry.',
+  tool_batch_convert_mp3_files_to_wav_faq_a1:
+    'Yes. One queue makes an independent 16-bit PCM WAV for each valid MP3 and keeps successful results when another file fails.',
+  tool_batch_convert_mp3_files_to_wav_faq_a2:
+    'PCM stores every sample without MP3 compression. Estimate 44 header bytes plus seconds × sample rate × channels × 2, then check the measured size in each row.',
+  tool_batch_convert_mp3_files_to_wav_faq_a3:
+    'No. The audio was already lossy before conversion. WAV avoids another lossy encoding generation but cannot recover the removed detail.',
+  tool_batch_convert_mp3_files_to_wav_faq_a4:
+    'Its row reports the failure. Other completed WAVs remain downloadable; remove downloaded results to free space and retry the failed item.',
+  tool_batch_convert_mp3_files_to_wav_faq_a5:
+    'No. The browser decodes and writes the files on your device. Loading the page and its sample generator may require a connection.',
+  tool_batch_convert_mp3_files_to_wav_faq_q1: 'Can I convert several MP3 files to WAV at once?',
+  tool_batch_convert_mp3_files_to_wav_faq_q2: 'Why is the WAV much larger?',
+  tool_batch_convert_mp3_files_to_wav_faq_q3: 'Does WAV restore lost MP3 quality?',
+  tool_batch_convert_mp3_files_to_wav_faq_q4: 'What if an MP3 is damaged or browser storage is full?',
+  tool_batch_convert_mp3_files_to_wav_faq_q5: 'Are my MP3 recordings uploaded?',
+  tool_batch_convert_mp3_files_to_wav_hint: 'Up to 20 MP3s; each at most 20 MiB and 5 minutes. WAV output can be many times larger.',
+  tool_batch_convert_mp3_files_to_wav_how_body:
+    'WAV output is 16-bit PCM. Estimate bytes as 44 + seconds × sample rate × channels × 2; the finished file is measured for each row.',
+  tool_batch_convert_mp3_files_to_wav_how_item_1: 'Add several MP3s or use the built-in short examples.',
+  tool_batch_convert_mp3_files_to_wav_how_item_2: 'Keep the default 44.1 kHz or choose 48 kHz, and optionally make speech mono. Start the queue.',
+  tool_batch_convert_mp3_files_to_wav_how_item_3: 'Compare each MP3 size with its actual WAV size, sample rate, channel count and expansion ratio.',
+  tool_batch_convert_mp3_files_to_wav_how_item_4:
+    'Download each WAV separately. Stop before the next file or retry damaged entries while keeping completed files.',
+  tool_batch_convert_mp3_files_to_wav_how_title: 'How to convert MP3 files to WAV in bulk',
+  tool_batch_convert_mp3_files_to_wav_keep: 'Keep source channels',
+  tool_batch_convert_mp3_files_to_wav_list_label: 'MP3 to WAV queue',
+  tool_batch_convert_mp3_files_to_wav_mono: 'Make mono for speech',
+  tool_batch_convert_mp3_files_to_wav_pending: 'Pending',
+  tool_batch_convert_mp3_files_to_wav_preview: 'Converted WAV results',
+  tool_batch_convert_mp3_files_to_wav_progress: 'Batch MP3 to WAV progress',
+  tool_batch_convert_mp3_files_to_wav_queue_count: '{n} MP3 file(s) in queue',
+  tool_batch_convert_mp3_files_to_wav_read: 'Read MP3',
+  tool_batch_convert_mp3_files_to_wav_ready: 'WAV ready',
+  tool_batch_convert_mp3_files_to_wav_remove: 'Remove',
+  tool_batch_convert_mp3_files_to_wav_result: '{ok} WAV files · {fail} failed · {pending} pending at {rate} kHz',
+  tool_batch_convert_mp3_files_to_wav_retry: 'Retry failed files',
+  tool_batch_convert_mp3_files_to_wav_row_result: '{seconds}s · {input} KiB → {output} KiB · {rate} Hz · {channels} channel(s)',
+  tool_batch_convert_mp3_files_to_wav_rules_body:
+    'Estimated PCM bytes = 44 + seconds × sample rate × channels × 2. The page measures the final bytes after writing each WAV.',
+  tool_batch_convert_mp3_files_to_wav_rules_item_1:
+    'WAV stores uncompressed PCM, so it is normally much larger than MP3. It does not recreate detail already removed by MP3 compression.',
+  tool_batch_convert_mp3_files_to_wav_rules_item_2:
+    'Changing 44.1 to 48 kHz resamples the decoded source; it does not add genuine source fidelity. Mono reduces size but merges channels.',
+  tool_batch_convert_mp3_files_to_wav_rules_item_3:
+    'At most 20 MP3s, each 20 MiB/5 minutes; each WAV at most 60 MiB. Real outputs stream to on-device browser storage when available; memory fallback retains at most 96 MiB total.',
+  tool_batch_convert_mp3_files_to_wav_rules_item_4:
+    'No ZIP is required, and originals are never overwritten. Tags and artwork are not transferred to PCM WAV.',
+  tool_batch_convert_mp3_files_to_wav_rules_title: 'What MP3 to WAV changes',
+  tool_batch_convert_mp3_files_to_wav_sample: 'Load MP3-to-WAV examples',
+  tool_batch_convert_mp3_files_to_wav_sample_name: 'pcm-example',
+  tool_batch_convert_mp3_files_to_wav_settings_hint:
+    '16-bit PCM WAV at 44.1 kHz by default; 48 kHz is optional. Raising sample rate does not restore MP3 quality. Tags and cover art are not copied.',
+  tool_batch_convert_mp3_files_to_wav_stop: 'Stop after current file',
+  tool_batch_convert_mp3_files_to_wav_stopped: 'Stopped before the next file. Completed results remain available.',
+  tool_batch_convert_mp3_files_to_wav_title: 'Batch convert MP3 files to WAV',
+  tool_batch_convert_mp3_files_to_wav_usecase_1: 'Prepare several MP3 interviews as separate PCM WAV files for a DAW editing session.',
+  tool_batch_convert_mp3_files_to_wav_usecase_2: 'Give a sampler or older audio workflow the WAV format it requires without uploading recordings.',
+  tool_batch_convert_mp3_files_to_wav_usecase_3: 'Compare how much space a podcast archive would use as WAV before downloading every result.',
+  tool_batch_convert_mp3_files_to_wav_usecases_title: 'Where batch WAV conversion helps',
+  tool_batch_convert_mp3_files_to_wav_why_choose_item_1:
+    'One queue creates separate PCM WAV files from multiple MP3 recordings for audio editors and samplers.',
+  tool_batch_convert_mp3_files_to_wav_why_choose_item_2: 'A measured expansion ratio shows the storage cost for each file before download.',
+  tool_batch_convert_mp3_files_to_wav_why_choose_item_3: 'Individual downloads avoid keeping an additional ZIP of large WAV outputs in browser memory.',
+  tool_batch_convert_mp3_files_to_wav_why_choose_item_4: 'Files are processed on your device and not uploaded to a server.',
+  tool_batch_convert_mp3_files_to_wav_why_choose_title: 'Why use this batch MP3 to WAV converter',
+  tool_batch_convert_mp3_files_to_wav_working: 'Converting',
   tool_batch_convert_scanned_pdf_to_word_with_ocr_advanced: 'Advanced settings (optional)',
   tool_batch_convert_scanned_pdf_to_word_with_ocr_article:
     'Drop one or more scanned PDFs, click Convert all, then Download Word. Default is one Word file for the whole queue; you can switch to one Word per PDF (several files then Download ZIP). Each file becomes a heading; each successful page becomes editable paragraphs. The page picture is included by default so you can proof in Word. A blurry page is skipped. Files stay on your device, not uploaded to a server. Digital PDFs that already have a text layer belong on Turn PDF into Word document. Photo stacks belong on Batch convert JPG to editable Word with OCR.',
@@ -2265,6 +2583,122 @@ const en: SiteLangDict = {
   tool_batch_convert_web_pages_to_png_wait_hint:
     'Extra seconds after images start loading so remote pictures can finish. Default is 1. Raise it if a PNG shows empty image boxes.',
   tool_batch_convert_web_pages_to_png_wait_label: 'Load wait (sec)',
+  tool_batch_convert_webm_files_to_mp4_files_advanced: 'Encoding settings (optional)',
+  tool_batch_convert_webm_files_to_mp4_files_article:
+    'A folder of browser recordings often contains VP8 or VP9 WebM files that an MP4-only editor cannot use. Select up to 20 files and Convert all: this page encodes each video to H.264 and existing audio to AAC, then checks the actual output tracks before showing an independent download. Each row reports source video/audio codecs, resolution, duration and before/after size. One damaged clip fails only its row. Results are kept for individual download, including larger outputs stored with browser OPFS when available, instead of collecting every MP4 in a memory-heavy ZIP. The queue runs serially and supports stopping, preserving successes and retrying unfinished rows. Original files stay on your device and are not overwritten.',
+  tool_batch_convert_webm_files_to_mp4_files_channels_label: 'AAC audio channels',
+  tool_batch_convert_webm_files_to_mp4_files_channels_mono: 'Mono',
+  tool_batch_convert_webm_files_to_mp4_files_channels_stereo: 'Stereo (default)',
+  tool_batch_convert_webm_files_to_mp4_files_choose: 'Choose WebM files',
+  tool_batch_convert_webm_files_to_mp4_files_clear: 'Clear',
+  tool_batch_convert_webm_files_to_mp4_files_convert: 'Convert all',
+  tool_batch_convert_webm_files_to_mp4_files_decode: 'Inspect and decode',
+  tool_batch_convert_webm_files_to_mp4_files_desc:
+    'Batch convert multiple WebM recordings into separate H.264 MP4 files with AAC when audio exists. Inspect each clip’s codecs, duration, size and errors; download each success locally.',
+  tool_batch_convert_webm_files_to_mp4_files_description:
+    'Batch convert multiple WebM videos to separate H.264/AAC MP4 files in your browser, with per-file codec, size and error reports. Steps: add WebMs, Convert all, download each MP4. Example: two VP9 clips become two named MP4s; files stay on your device.',
+  tool_batch_convert_webm_files_to_mp4_files_done: 'Ready. Download each successful MP4 beside its queue row.',
+  tool_batch_convert_webm_files_to_mp4_files_download: 'Download first MP4',
+  tool_batch_convert_webm_files_to_mp4_files_download_one: 'Download MP4',
+  tool_batch_convert_webm_files_to_mp4_files_elapsed: 'Elapsed: {s}s',
+  tool_batch_convert_webm_files_to_mp4_files_empty: 'Add WebM videos or load the samples first.',
+  tool_batch_convert_webm_files_to_mp4_files_empty_state:
+    'Add several WebM recordings, or load two built-in VP9/Opus samples. Each successful row gets its own real MP4 download.',
+  tool_batch_convert_webm_files_to_mp4_files_encode: 'Encode H.264/AAC',
+  tool_batch_convert_webm_files_to_mp4_files_err_aborted: 'Conversion stopped. Finished rows are kept.',
+  tool_batch_convert_webm_files_to_mp4_files_err_codec: 'A source track cannot be decoded or the output MP4 failed its H.264/AAC track check.',
+  tool_batch_convert_webm_files_to_mp4_files_err_container: 'Could not read a usable WebM video track from this row.',
+  tool_batch_convert_webm_files_to_mp4_files_err_encoder: 'Could not write the MP4. Free browser storage and retry this row.',
+  tool_batch_convert_webm_files_to_mp4_files_err_engine: 'Could not load the local conversion engine. Retry or use another browser.',
+  tool_batch_convert_webm_files_to_mp4_files_err_file: 'Choose one or more WebM videos.',
+  tool_batch_convert_webm_files_to_mp4_files_err_format: 'This row is not a WebM video. Its filename or internal container did not match.',
+  tool_batch_convert_webm_files_to_mp4_files_err_limit:
+    'This row exceeds the code cap: 500 MiB with OPFS or 80 MiB without. Try a smaller file or free browser storage.',
+  tool_batch_convert_webm_files_to_mp4_files_err_no_avc: 'This device cannot encode H.264 at this video size. Other rows continue.',
+  tool_batch_convert_webm_files_to_mp4_files_err_sample: 'Could not load the built-in WebM samples. Choose your own files.',
+  tool_batch_convert_webm_files_to_mp4_files_err_too_many: 'Keep at most 20 WebM files in one batch.',
+  tool_batch_convert_webm_files_to_mp4_files_err_total_limit:
+    'The 128 MiB total output-memory budget is full without OPFS. Download and remove finished rows, or use a browser with OPFS.',
+  tool_batch_convert_webm_files_to_mp4_files_example:
+    'Load two WebM samples queues the same short VP9/Opus recording twice. Convert all creates two independently checked H.264/AAC MP4s with distinct download names and per-row codec/size reports.',
+  tool_batch_convert_webm_files_to_mp4_files_example_title: 'Two VP9 recordings to two named MP4s',
+  tool_batch_convert_webm_files_to_mp4_files_failed: 'No MP4 was created. Check row errors, encoder support and available browser storage.',
+  tool_batch_convert_webm_files_to_mp4_files_faq_a1:
+    'No. Every supported input has its own MP4 row and download. Merging many clips into one movie is a different task.',
+  tool_batch_convert_webm_files_to_mp4_files_faq_a2:
+    'No. This queue re-encodes video to H.264 and any available audio to AAC, then verifies the actual MP4 tracks.',
+  tool_batch_convert_webm_files_to_mp4_files_faq_a3:
+    'That row shows its error while other rows continue. Finished MP4s remain downloadable; Convert all retries unfinished rows.',
+  tool_batch_convert_webm_files_to_mp4_files_faq_a4:
+    'Large MP4 outputs should not be copied together into page memory. Each verified result keeps its own download link; OPFS-backed files stay available until Clear.',
+  tool_batch_convert_webm_files_to_mp4_files_faq_a5: 'Its MP4 is video-only. The row reports no audio instead of claiming an AAC track was created.',
+  tool_batch_convert_webm_files_to_mp4_files_faq_a6: 'No. The browser converts local files on this device. It loads conversion scripts from this site.',
+  tool_batch_convert_webm_files_to_mp4_files_faq_q1: 'Does batch conversion merge my WebM clips?',
+  tool_batch_convert_webm_files_to_mp4_files_faq_q2: 'Can I bulk convert VP9 WebM by renaming the files?',
+  tool_batch_convert_webm_files_to_mp4_files_faq_q3: 'What happens if one file fails?',
+  tool_batch_convert_webm_files_to_mp4_files_faq_q4: 'Why are results downloaded individually rather than as one ZIP?',
+  tool_batch_convert_webm_files_to_mp4_files_faq_q5: 'What if a WebM has no audio?',
+  tool_batch_convert_webm_files_to_mp4_files_faq_q6: 'Are the WebM videos uploaded?',
+  tool_batch_convert_webm_files_to_mp4_files_hint:
+    'Up to 20 local .webm videos. Code cap per file: 500 MiB with OPFS, 80 MiB without; real capacity depends on storage and encoder.',
+  tool_batch_convert_webm_files_to_mp4_files_how_body:
+    'Choose multiple WebM recordings and Convert all. Every supported file becomes its own H.264 MP4 with AAC when audio exists. Check each row and download its result; failed files do not erase successes.',
+  tool_batch_convert_webm_files_to_mp4_files_how_item_1: 'Choose up to 20 .webm videos, or click Load two WebM samples to try the queue.',
+  tool_batch_convert_webm_files_to_mp4_files_how_item_2: 'Optionally open Encoding settings to select quality and mono or stereo AAC for all rows.',
+  tool_batch_convert_webm_files_to_mp4_files_how_item_3:
+    'Click Convert all. The queue checks each WebM, encodes H.264/AAC and verifies the MP4 before moving to the next row.',
+  tool_batch_convert_webm_files_to_mp4_files_how_item_4:
+    'Read each row’s source/output codecs, duration and size; click Download MP4 beside every success. Click Convert all again to retry failed or stopped rows.',
+  tool_batch_convert_webm_files_to_mp4_files_how_title: 'How to batch convert WebM recordings to separate MP4 files',
+  tool_batch_convert_webm_files_to_mp4_files_list_label: 'WebM conversion queue',
+  tool_batch_convert_webm_files_to_mp4_files_load: 'Load engine',
+  tool_batch_convert_webm_files_to_mp4_files_no_audio: 'no audio',
+  tool_batch_convert_webm_files_to_mp4_files_pack: 'Verify MP4 results',
+  tool_batch_convert_webm_files_to_mp4_files_partial:
+    '{ok} MP4 file(s) ready; {fail} failed. Download successes and click Convert all again to retry unfinished rows.',
+  tool_batch_convert_webm_files_to_mp4_files_preview: 'Batch result',
+  tool_batch_convert_webm_files_to_mp4_files_progress: 'WebM batch conversion progress',
+  tool_batch_convert_webm_files_to_mp4_files_quality_high: 'Higher quality (default)',
+  tool_batch_convert_webm_files_to_mp4_files_quality_label: 'Video and audio quality',
+  tool_batch_convert_webm_files_to_mp4_files_quality_low: 'Smaller file, lower quality',
+  tool_batch_convert_webm_files_to_mp4_files_quality_medium: 'Balanced',
+  tool_batch_convert_webm_files_to_mp4_files_queue_count: '{n} file(s) in queue',
+  tool_batch_convert_webm_files_to_mp4_files_read: 'Read WebM',
+  tool_batch_convert_webm_files_to_mp4_files_remove: 'Remove',
+  tool_batch_convert_webm_files_to_mp4_files_result: '{n} separate MP4 file(s) ready. Download each beside its row.',
+  tool_batch_convert_webm_files_to_mp4_files_retry: 'Retry unfinished',
+  tool_batch_convert_webm_files_to_mp4_files_rules_body:
+    'WebM is a container. This batch converts each video track to AVC/H.264 and any existing audio track to AAC, then reads the MP4 tracks back. Browser codec and storage support vary.',
+  tool_batch_convert_webm_files_to_mp4_files_rules_item_1: 'Renaming .webm to .mp4 or putting VP9 inside MP4 does not meet this H.264 compatibility target.',
+  tool_batch_convert_webm_files_to_mp4_files_rules_item_2:
+    'Up to 20 queued files; code cap per input is 500 MiB with OPFS, 80 MiB without. Without OPFS, retained outputs share a 128 MiB memory budget. These are code limits, not validated maxima.',
+  tool_batch_convert_webm_files_to_mp4_files_rules_item_3:
+    'Conversions run one at a time. Larger outputs can live in OPFS until you download or clear them; quota and encoder speed depend on the device.',
+  tool_batch_convert_webm_files_to_mp4_files_rules_item_4:
+    'Download files one by one. No ZIP is assembled for a large batch, so a single archive cannot exhaust page memory. Sources remain untouched.',
+  tool_batch_convert_webm_files_to_mp4_files_rules_title: 'WebM codec, batch size and storage limits',
+  tool_batch_convert_webm_files_to_mp4_files_sample: 'Load two WebM samples',
+  tool_batch_convert_webm_files_to_mp4_files_sample_name: 'webm-batch-example',
+  tool_batch_convert_webm_files_to_mp4_files_settings_hint:
+    'H.264 video is always encoded. Existing audio becomes AAC; no audio remains video-only. Settings apply to every row. Changing settings clears old outputs.',
+  tool_batch_convert_webm_files_to_mp4_files_status_fail: 'Failed',
+  tool_batch_convert_webm_files_to_mp4_files_status_ok: 'MP4 ready',
+  tool_batch_convert_webm_files_to_mp4_files_status_pending: 'Queued',
+  tool_batch_convert_webm_files_to_mp4_files_status_running: 'Converting…',
+  tool_batch_convert_webm_files_to_mp4_files_status_stopped: 'Stopped; earlier MP4s remain available',
+  tool_batch_convert_webm_files_to_mp4_files_stop: 'Stop',
+  tool_batch_convert_webm_files_to_mp4_files_title: 'Batch convert WebM files to H.264 MP4',
+  tool_batch_convert_webm_files_to_mp4_files_usecase_1: 'Convert several browser screen recordings to separate MP4s before importing them into an editor.',
+  tool_batch_convert_webm_files_to_mp4_files_usecase_2:
+    'Prepare many VP9 WebM clips for an H.264-only playback workflow while identifying a single corrupted file.',
+  tool_batch_convert_webm_files_to_mp4_files_usecase_3: 'Process local video archives without uploading them or building a large ZIP in browser memory.',
+  tool_batch_convert_webm_files_to_mp4_files_usecases_title: 'When batch WebM to MP4 helps',
+  tool_batch_convert_webm_files_to_mp4_files_why_choose_item_1: 'Each WebM becomes a separate, verified H.264/AAC MP4 rather than a renamed or VP9-wrapped file.',
+  tool_batch_convert_webm_files_to_mp4_files_why_choose_item_2: 'Per-row codec, dimensions, duration, byte ratio and errors reveal which recordings need attention.',
+  tool_batch_convert_webm_files_to_mp4_files_why_choose_item_3: 'A damaged or unsupported row does not discard successful MP4s; Stop and retry keep completed files.',
+  tool_batch_convert_webm_files_to_mp4_files_why_choose_item_4:
+    'Individual downloads avoid gathering every large output into one in-memory ZIP; duplicate source names receive distinct MP4 names.',
+  tool_batch_convert_webm_files_to_mp4_files_why_choose_title: 'Why choose our Batch convert WebM files to H.264 MP4 tools',
   tool_batch_extract_audio_from_mkv_files_advanced: 'Export format (optional)',
   tool_batch_extract_audio_from_mkv_files_article:
     'Folders of MKV captures need voice-only ZIP packs. This page queues .mkv only, extracts one-by-one, skips oversize with err_container and unsupported codecs with err_codec, packs successes. No YouTube. No 5 GiB demux claim. Huge or DDP files belong on a desktop AAC MP4 conversion step before the MP4 batch tool.',
@@ -2775,6 +3209,311 @@ const en: SiteLangDict = {
   tool_batch_extract_audio_from_webm_files_why_choose_item_4: 'On-device processing; hub nearby for mixed formats.',
   tool_batch_extract_audio_from_webm_files_why_choose_title: 'Why choose our Batch extract audio from WebM files tools',
   tool_batch_extract_audio_from_webm_files_write: 'Write',
+  tool_batch_normalize_audio_files_to_peak_advanced: 'WAV output settings (optional)',
+  tool_batch_normalize_audio_files_to_peak_article:
+    'A folder of voice clips or sound effects may have very different maximum sample levels. This tool analyzes each file independently, then applies one constant linear gain so its loudest sample approaches the shared target. The gain is target dBFS minus measured source peak dBFS; the result row shows both values and the actual WAV peak. Two files can share a peak without sounding equally loud because average level and dynamics differ. This is neither LUFS normalization nor intersample true-peak limiting. A silent or damaged file fails only its row. Completed 16-bit PCM WAV files remain individually downloadable without building a large ZIP.',
+  tool_batch_normalize_audio_files_to_peak_bitrate: 'WAV sample rate',
+  tool_batch_normalize_audio_files_to_peak_channels: 'Audio channels',
+  tool_batch_normalize_audio_files_to_peak_choose: 'Choose audio files',
+  tool_batch_normalize_audio_files_to_peak_clear: 'Clear queue',
+  tool_batch_normalize_audio_files_to_peak_convert: 'Normalize files',
+  tool_batch_normalize_audio_files_to_peak_decode: 'Decode audio',
+  tool_batch_normalize_audio_files_to_peak_desc:
+    'Normalize several recordings to the same sample-peak dBFS target in one local queue. See each source peak, applied gain and measured output peak, then download separate WAV files. Peak level is not perceived loudness or true peak. Audio stays on your device and is not uploaded.',
+  tool_batch_normalize_audio_files_to_peak_description:
+    'Batch peak normalize audio files in your browser. Add MP3, WAV, M4A, FLAC or OGG recordings, choose -1, -3 or -6 dBFS, and compare each file\'s original sample peak, gain and final peak. Example: built-in quiet and loud tones need different gains to reach the same -1 dBFS target. This is not LUFS matching or true-peak limiting. Files remain on your device and are not uploaded to a server.',
+  tool_batch_normalize_audio_files_to_peak_done: 'Finished. Check the measured peak and gain of every file before downloading.',
+  tool_batch_normalize_audio_files_to_peak_download: 'Download result',
+  tool_batch_normalize_audio_files_to_peak_elapsed: 'Elapsed: {s}s',
+  tool_batch_normalize_audio_files_to_peak_empty: 'Add audio files or load the sample first.',
+  tool_batch_normalize_audio_files_to_peak_empty_state: 'Add several audio files or load two tones with different sample peaks to see the per-file gain.',
+  tool_batch_normalize_audio_files_to_peak_encode: 'Write PCM WAV',
+  tool_batch_normalize_audio_files_to_peak_err_decode: 'This browser could not decode the audio codec. Try another source or browser.',
+  tool_batch_normalize_audio_files_to_peak_err_encoder: 'The output WAV could not be written. Free storage and retry.',
+  tool_batch_normalize_audio_files_to_peak_err_file: 'Add supported audio files only.',
+  tool_batch_normalize_audio_files_to_peak_err_format: 'The extension and audio signature do not match, or the file is damaged.',
+  tool_batch_normalize_audio_files_to_peak_err_limit: 'File exceeds 20 MiB or 5 minutes, WAV would exceed 60 MiB, or channels are unsupported.',
+  tool_batch_normalize_audio_files_to_peak_err_output: 'The browser could not keep this WAV. Download and remove finished results, free space, then retry.',
+  tool_batch_normalize_audio_files_to_peak_err_sample: 'The quiet/loud sample could not be created. Retry.',
+  tool_batch_normalize_audio_files_to_peak_err_silence: 'No audible sample peak was found; silence cannot be normalized to a target peak.',
+  tool_batch_normalize_audio_files_to_peak_err_too_many: 'At most 20 audio files per queue.',
+  tool_batch_normalize_audio_files_to_peak_example:
+    'On opening, two 2-second stereo WAV tones are generated at different sample peaks. Both are processed to -1 dBFS: the quiet clip receives more positive gain than the loud clip. Each row displays the source, gain and measured output peak, and each WAV can be downloaded separately.',
+  tool_batch_normalize_audio_files_to_peak_example_title: 'Quiet and loud clips with one target',
+  tool_batch_normalize_audio_files_to_peak_failed: 'No file was normalized. Check the row errors.',
+  tool_batch_normalize_audio_files_to_peak_faq_a1:
+    'Yes. The queue applies the chosen sample-peak target to each valid file separately and shows each gain and output WAV.',
+  tool_batch_normalize_audio_files_to_peak_faq_a2:
+    'Not necessarily. Matching the loudest sample is different from matching average perceived loudness or LUFS; dynamics remain different.',
+  tool_batch_normalize_audio_files_to_peak_faq_a3:
+    'It keeps the measured samples below full scale in the exported WAV. Intersample true peaks and later processing are not measured or limited here.',
+  tool_batch_normalize_audio_files_to_peak_faq_a4:
+    'Its row reports the problem and the queue continues. Completed WAV files stay available; retry failed items after changing the sources.',
+  tool_batch_normalize_audio_files_to_peak_faq_a5:
+    'No. The browser reads, analyzes and writes them on your device. Loading the page may require a connection.',
+  tool_batch_normalize_audio_files_to_peak_faq_q1: 'Can I normalize several audio files at once?',
+  tool_batch_normalize_audio_files_to_peak_faq_q2: 'Will the recordings sound equally loud?',
+  tool_batch_normalize_audio_files_to_peak_faq_q3: 'Does -1 dBFS prevent every kind of clipping?',
+  tool_batch_normalize_audio_files_to_peak_faq_q4: 'What if a file is silent or cannot be decoded?',
+  tool_batch_normalize_audio_files_to_peak_faq_q5: 'Are my recordings uploaded?',
+  tool_batch_normalize_audio_files_to_peak_hint: 'Up to 20 browser-decodable MP3, WAV, M4A, FLAC or OGG files; each at most 20 MiB and 5 minutes.',
+  tool_batch_normalize_audio_files_to_peak_how_body:
+    'For each file: source peak dBFS = 20 × log10(maximum absolute sample); gain dB = target − source peak. Final WAV peak is measured after quantization.',
+  tool_batch_normalize_audio_files_to_peak_how_item_1: 'Add several audio files or load the built-in quiet and loud tones.',
+  tool_batch_normalize_audio_files_to_peak_how_item_2: 'Choose -1, -3 or -6 dBFS as the shared sample-peak target; start the queue.',
+  tool_batch_normalize_audio_files_to_peak_how_item_3:
+    'Read each source peak, applied gain, measured output peak, duration and output size. A silent row is clearly rejected.',
+  tool_batch_normalize_audio_files_to_peak_how_item_4:
+    'Download separate WAV results. Stop before the next file or retry failures without losing completed work.',
+  tool_batch_normalize_audio_files_to_peak_how_title: 'How to normalize multiple audio files by peak',
+  tool_batch_normalize_audio_files_to_peak_keep: 'Keep source channels',
+  tool_batch_normalize_audio_files_to_peak_list_label: 'Peak-normalization queue',
+  tool_batch_normalize_audio_files_to_peak_mono: 'Make mono for speech',
+  tool_batch_normalize_audio_files_to_peak_normalize: 'Measure sample peak',
+  tool_batch_normalize_audio_files_to_peak_peak_result: '{before} dBFS → {after} dBFS · gain {gain} dB',
+  tool_batch_normalize_audio_files_to_peak_pending: 'Pending',
+  tool_batch_normalize_audio_files_to_peak_preview: 'Measured peak-normalization results',
+  tool_batch_normalize_audio_files_to_peak_progress: 'Batch peak-normalization progress',
+  tool_batch_normalize_audio_files_to_peak_queue_count: '{n} audio file(s) in queue',
+  tool_batch_normalize_audio_files_to_peak_read: 'Read audio',
+  tool_batch_normalize_audio_files_to_peak_ready: 'WAV ready',
+  tool_batch_normalize_audio_files_to_peak_remove: 'Remove',
+  tool_batch_normalize_audio_files_to_peak_result: '{ok} WAV results · {fail} failed · {pending} pending · target {target} dBFS',
+  tool_batch_normalize_audio_files_to_peak_retry: 'Retry failed files',
+  tool_batch_normalize_audio_files_to_peak_row_result: '{seconds}s · {input} KiB → {output} KiB · {rate} Hz · {channels} channel(s)',
+  tool_batch_normalize_audio_files_to_peak_rules_body:
+    'Target linear amplitude = 10^(target dBFS/20). Gain = target amplitude ÷ original maximum absolute sample. The resulting 16-bit WAV peak is measured again.',
+  tool_batch_normalize_audio_files_to_peak_rules_item_1:
+    'Peak normalization applies one constant gain per file. It does not reduce dynamic range or remove noise; quiet noise rises with quiet speech.',
+  tool_batch_normalize_audio_files_to_peak_rules_item_2:
+    'The same sample peak does not ensure the same perceived loudness. This page does not calculate LUFS, integrated loudness or intersample true peak.',
+  tool_batch_normalize_audio_files_to_peak_rules_item_3:
+    'Up to 20 files, each 20 MiB/5 minutes; each output WAV at most 60 MiB. Real files stream to on-device browser storage when available; memory fallback retains at most 96 MiB.',
+  tool_batch_normalize_audio_files_to_peak_rules_item_4:
+    'Output is PCM WAV, so compressed MP3/M4A input may expand. Originals are not overwritten, and tags/artwork are not copied.',
+  tool_batch_normalize_audio_files_to_peak_rules_title: 'Sample peak, loudness and file limits',
+  tool_batch_normalize_audio_files_to_peak_sample: 'Load quiet/loud sample',
+  tool_batch_normalize_audio_files_to_peak_sample_name: 'peak-example',
+  tool_batch_normalize_audio_files_to_peak_settings_hint:
+    'Output is 16-bit PCM WAV at 44.1 kHz by default. Optional 48 kHz or mono changes output format, not the target. Tags and artwork are not copied.',
+  tool_batch_normalize_audio_files_to_peak_stop: 'Stop after current file',
+  tool_batch_normalize_audio_files_to_peak_stopped: 'Stopped before the next file. Completed results remain available.',
+  tool_batch_normalize_audio_files_to_peak_target_label: 'Target sample peak for each file',
+  tool_batch_normalize_audio_files_to_peak_title: 'Batch normalize audio files to a peak target',
+  tool_batch_normalize_audio_files_to_peak_usecase_1: 'Bring multiple voice clips close to one maximum sample level before manual editing.',
+  tool_batch_normalize_audio_files_to_peak_usecase_2: 'Prepare game sound effects with a shared peak ceiling while inspecting each gain adjustment.',
+  tool_batch_normalize_audio_files_to_peak_usecase_3: 'Check a mixed recording folder for silent or damaged items without stopping the remaining queue.',
+  tool_batch_normalize_audio_files_to_peak_usecases_title: 'Useful batch peak tasks',
+  tool_batch_normalize_audio_files_to_peak_why_choose_item_1: 'A single target yields an individual gain calculation and output for each recording.',
+  tool_batch_normalize_audio_files_to_peak_why_choose_item_2: 'Before/after sample peaks and gain make the actual amplitude change verifiable.',
+  tool_batch_normalize_audio_files_to_peak_why_choose_item_3: 'A silent or damaged item does not discard successful WAV downloads, and no large ZIP is required.',
+  tool_batch_normalize_audio_files_to_peak_why_choose_item_4: 'Audio is processed on your device and not uploaded to a server.',
+  tool_batch_normalize_audio_files_to_peak_why_choose_title: 'What this batch peak normalizer reports',
+  tool_batch_normalize_audio_files_to_peak_working: 'Normalizing',
+  tool_batch_normalize_audio_files_to_peak_write: 'Apply gain and write WAV',
+  tool_batch_reduce_mp3_file_sizes_advanced: 'Compression settings (optional)',
+  tool_batch_reduce_mp3_file_sizes_article:
+    'A folder of MP3 voice memos or podcast episodes can use a lot of space. This page re-encodes each file independently at one chosen bitrate and reports the true size change rather than promising every result is smaller. A 192 kbps source may shrink at 128 kbps; a 64 kbps source can become larger at that same target. Re-encoding MP3 is another lossy generation, so keep your originals. The queue continues past damaged files, allows stop and retry, and provides individual downloads. For one file and an audio preview, use the related single-file size reducer.',
+  tool_batch_reduce_mp3_file_sizes_bitrate: 'Target MP3 bitrate',
+  tool_batch_reduce_mp3_file_sizes_channels: 'Audio channels',
+  tool_batch_reduce_mp3_file_sizes_choose: 'Choose MP3 files',
+  tool_batch_reduce_mp3_file_sizes_clear: 'Clear queue',
+  tool_batch_reduce_mp3_file_sizes_convert: 'Reduce file sizes',
+  tool_batch_reduce_mp3_file_sizes_decode: 'Decode audio',
+  tool_batch_reduce_mp3_file_sizes_desc:
+    'Shrink several MP3 files in one local queue. Choose a bitrate, compare each real before-and-after size, and download the results worth keeping. Low-bitrate files may grow. Audio stays on your device and is not uploaded.',
+  tool_batch_reduce_mp3_file_sizes_description:
+    'Batch reduce MP3 file sizes in your browser. Add several MP3 recordings, choose a lower bitrate, then compare actual input and output bytes for each file. Download smaller copies individually; a low-bitrate source may grow instead. Example: the built-in 192 kbps and 64 kbps samples both target 128 kbps, with different size outcomes. Files stay on your device and are not uploaded to a server.',
+  tool_batch_reduce_mp3_file_sizes_done: 'Finished. Check each measured result before downloading.',
+  tool_batch_reduce_mp3_file_sizes_download: 'Download result',
+  tool_batch_reduce_mp3_file_sizes_elapsed: 'Elapsed: {s}s',
+  tool_batch_reduce_mp3_file_sizes_empty: 'Add MP3 files or load the sample first.',
+  tool_batch_reduce_mp3_file_sizes_empty_state: 'Drop several MP3 files here or load the high/low bitrate sample to see real size differences.',
+  tool_batch_reduce_mp3_file_sizes_encode: 'Re-encode MP3',
+  tool_batch_reduce_mp3_file_sizes_err_decode: 'This browser could not decode the MP3. Try another source or browser.',
+  tool_batch_reduce_mp3_file_sizes_err_encoder: 'The MP3 encoder could not load or write output. Check the connection and retry.',
+  tool_batch_reduce_mp3_file_sizes_err_file: 'Add MP3 files only.',
+  tool_batch_reduce_mp3_file_sizes_err_format: 'Not a valid MP3 stream, or the file is damaged.',
+  tool_batch_reduce_mp3_file_sizes_err_limit: 'File exceeds 40 MiB or 10 minutes, or has unsupported channels.',
+  tool_batch_reduce_mp3_file_sizes_err_output: 'The browser could not keep this result. Download and remove finished results, then retry.',
+  tool_batch_reduce_mp3_file_sizes_err_sample: 'The high/low bitrate sample could not be generated. Retry.',
+  tool_batch_reduce_mp3_file_sizes_err_too_many: 'At most 20 MP3 files per queue.',
+  tool_batch_reduce_mp3_file_sizes_example:
+    'On opening, two 3-second stereo MP3 tones are generated at 192 and 64 kbps. Both are actually re-encoded at 128 kbps: the 192 kbps source should shrink, while the 64 kbps source may grow. Each row displays its measured bytes and can be downloaded independently.',
+  tool_batch_reduce_mp3_file_sizes_example_title: 'High- and low-bitrate MP3 example',
+  tool_batch_reduce_mp3_file_sizes_failed: 'No MP3 was processed. Check the row errors and retry.',
+  tool_batch_reduce_mp3_file_sizes_faq_a1:
+    'Yes. Each file is processed separately in one queue, with its actual size change shown before you choose which results to download.',
+  tool_batch_reduce_mp3_file_sizes_faq_a2:
+    'No. A low-bitrate source can grow at the selected bitrate. The row says “Not smaller” so you can keep the original.',
+  tool_batch_reduce_mp3_file_sizes_faq_a3:
+    'No. Re-encoding MP3 loses information. The chosen bitrate only estimates size; the page measures the real bytes after conversion and cannot promise an exact MB target.',
+  tool_batch_reduce_mp3_file_sizes_faq_a4:
+    'Its row reports the failure and the queue continues. Finished files stay downloadable; retry only failed rows if you repair their sources.',
+  tool_batch_reduce_mp3_file_sizes_faq_a5:
+    'No. Your files remain on your device and the browser reads and re-encodes them locally. Loading the page and encoder may require a connection.',
+  tool_batch_reduce_mp3_file_sizes_faq_q1: 'Can I reduce several MP3 files at once?',
+  tool_batch_reduce_mp3_file_sizes_faq_q2: 'Will every MP3 get smaller?',
+  tool_batch_reduce_mp3_file_sizes_faq_q3: 'Is this lossless or an exact target-size compressor?',
+  tool_batch_reduce_mp3_file_sizes_faq_q4: 'What if one MP3 is corrupt?',
+  tool_batch_reduce_mp3_file_sizes_faq_q5: 'Are my recordings uploaded?',
+  tool_batch_reduce_mp3_file_sizes_hint: 'Up to 20 MP3 files; each at most 40 MiB and 10 minutes. Actual savings vary by source.',
+  tool_batch_reduce_mp3_file_sizes_how_body:
+    'The result is measured for each file; the bitrate setting is a target, not a promise of a particular byte count.',
+  tool_batch_reduce_mp3_file_sizes_how_item_1: 'Add several MP3s or load the built-in 192 kbps and 64 kbps example.',
+  tool_batch_reduce_mp3_file_sizes_how_item_2: 'Choose 64, 96, 128 or 192 kbps and optionally downmix speech to mono, then start the queue.',
+  tool_batch_reduce_mp3_file_sizes_how_item_3: 'Inspect every input/output size and the calculated savings. A result that grew is marked clearly.',
+  tool_batch_reduce_mp3_file_sizes_how_item_4:
+    'Download the smaller copies you want. Stop before the next file or retry damaged entries without discarding completed work.',
+  tool_batch_reduce_mp3_file_sizes_how_title: 'How to bulk compress MP3 files',
+  tool_batch_reduce_mp3_file_sizes_keep: 'Keep mono/stereo',
+  tool_batch_reduce_mp3_file_sizes_list_label: 'MP3 compression queue',
+  tool_batch_reduce_mp3_file_sizes_mono: 'Make mono for speech',
+  tool_batch_reduce_mp3_file_sizes_not_smaller: 'Not smaller — keep the original unless you prefer this re-encode',
+  tool_batch_reduce_mp3_file_sizes_pending: 'Pending',
+  tool_batch_reduce_mp3_file_sizes_preview: 'Measured batch results',
+  tool_batch_reduce_mp3_file_sizes_progress: 'Batch MP3 compression progress',
+  tool_batch_reduce_mp3_file_sizes_queue_count: '{n} MP3 file(s) in queue',
+  tool_batch_reduce_mp3_file_sizes_read: 'Read MP3',
+  tool_batch_reduce_mp3_file_sizes_ready: 'Measured',
+  tool_batch_reduce_mp3_file_sizes_remove: 'Remove',
+  tool_batch_reduce_mp3_file_sizes_result: '{ok} results · {fail} failed · {pending} pending at {kbps} kbps',
+  tool_batch_reduce_mp3_file_sizes_retry: 'Retry failed files',
+  tool_batch_reduce_mp3_file_sizes_row_result: '{seconds}s · {input} KiB → {output} KiB',
+  tool_batch_reduce_mp3_file_sizes_rules_body:
+    'Measured saving = (1 − output bytes ÷ input bytes) × 100%. Estimated output bytes ≈ seconds × kbps × 1000 ÷ 8; actual size must be measured.',
+  tool_batch_reduce_mp3_file_sizes_rules_item_1:
+    'MP3 is already lossy. Lowering bitrate or mixing stereo to mono removes more information and can change the sound.',
+  tool_batch_reduce_mp3_file_sizes_rules_item_2:
+    'A 64 kbps source re-encoded at 128 kbps can be larger. This page marks it “Not smaller” rather than claiming a saving.',
+  tool_batch_reduce_mp3_file_sizes_rules_item_3:
+    'Maximum 20 files; each at most 40 MiB and 10 minutes. Outputs use on-device browser storage if available, otherwise at most 96 MiB are retained in memory.',
+  tool_batch_reduce_mp3_file_sizes_rules_item_4:
+    'No exact-MB guarantee, lossless reduction, tag preservation or source overwrite. Try the single-file page to preview one output.',
+  tool_batch_reduce_mp3_file_sizes_rules_title: 'What reducing MP3 size really changes',
+  tool_batch_reduce_mp3_file_sizes_sample: 'Load high/low bitrate sample',
+  tool_batch_reduce_mp3_file_sizes_sample_name: 'bitrate-sample',
+  tool_batch_reduce_mp3_file_sizes_saved: '{percent}% smaller',
+  tool_batch_reduce_mp3_file_sizes_settings_hint:
+    '128 kbps by default. Lower bitrate or mono can save space but loses more detail. Output is 44.1 kHz; tags and art are not copied.',
+  tool_batch_reduce_mp3_file_sizes_stop: 'Stop after current file',
+  tool_batch_reduce_mp3_file_sizes_stopped: 'Stopped before the next file. Completed results remain available.',
+  tool_batch_reduce_mp3_file_sizes_title: 'Batch reduce MP3 file sizes',
+  tool_batch_reduce_mp3_file_sizes_usecase_1:
+    'Shrink a folder of high-bitrate interview or lecture MP3s before emailing them, then download only the copies that saved space.',
+  tool_batch_reduce_mp3_file_sizes_usecase_2: 'Compare per-episode savings across a podcast backlog before moving smaller copies to a phone.',
+  tool_batch_reduce_mp3_file_sizes_usecase_3:
+    'Check a mixed-bitrate music folder without assuming every track benefits from the same lower setting.',
+  tool_batch_reduce_mp3_file_sizes_usecases_title: 'Useful batch tasks',
+  tool_batch_reduce_mp3_file_sizes_why_choose_item_1: 'A single setting processes several recordings while each file keeps its own measured result.',
+  tool_batch_reduce_mp3_file_sizes_why_choose_item_2: 'Before/after bytes and savings percentages expose results that did not shrink.',
+  tool_batch_reduce_mp3_file_sizes_why_choose_item_3: 'Individual downloads avoid keeping a whole large ZIP in memory just to get one successful file.',
+  tool_batch_reduce_mp3_file_sizes_why_choose_item_4:
+    'MP3s are processed on your device and not uploaded to a server; the sample follows the same pipeline.',
+  tool_batch_reduce_mp3_file_sizes_why_choose_title: 'Why choose this batch MP3 size reducer',
+  tool_batch_reduce_mp3_file_sizes_working: 'Compressing',
+  tool_batch_remove_silence_from_recordings_advanced: 'Pause detection settings (optional)',
+  tool_batch_remove_silence_from_recordings_article:
+    'A folder of interview takes or voice clips may contain different long pauses. This bulk audio silence remover checks 10 ms RMS windows in each recording and shortens stretches below the chosen threshold that last at least the minimum duration. It keeps a small gap so words do not collide. Each row reports how many pauses were detected, original and exported durations, seconds and percentage removed, and actual WAV size. A short pause below the minimum stays untouched. Silence detection does not understand sentence boundaries: an aggressive threshold can cut soft speech. Damaged or completely silent files fail individually, while completed 16-bit PCM WAVs remain available.',
+  tool_batch_remove_silence_from_recordings_choose: 'Choose audio recordings',
+  tool_batch_remove_silence_from_recordings_clear: 'Clear queue',
+  tool_batch_remove_silence_from_recordings_convert: 'Remove long pauses',
+  tool_batch_remove_silence_from_recordings_decode: 'Decode audio',
+  tool_batch_remove_silence_from_recordings_desc:
+    'Batch remove silence from audio recordings: shorten long pauses inside and at the ends of each file with one threshold. See original duration, new duration and seconds removed per downloadable WAV. Files stay on your device.',
+  tool_batch_remove_silence_from_recordings_description:
+    'Batch remove silence from multiple recordings in your browser. Set an RMS threshold and minimum pause, then see seconds removed from each WAV. Example: a 3-second clip with one long gap becomes 2.30 seconds. Listen and download separately; files stay on your device.',
+  tool_batch_remove_silence_from_recordings_detect: 'Detect long quiet sections',
+  tool_batch_remove_silence_from_recordings_done: 'Finished. Review each duration and removed time before downloading.',
+  tool_batch_remove_silence_from_recordings_download: 'Download WAV',
+  tool_batch_remove_silence_from_recordings_elapsed: 'Elapsed: {s}s',
+  tool_batch_remove_silence_from_recordings_empty: 'Add recordings or load the sample first.',
+  tool_batch_remove_silence_from_recordings_empty_state: 'Add multiple recordings or load two built-in clips with different long pauses.',
+  tool_batch_remove_silence_from_recordings_err_decode: 'This browser could not decode the audio codec. Try another source or browser.',
+  tool_batch_remove_silence_from_recordings_err_encoder: 'Invalid pause settings or WAV output failure.',
+  tool_batch_remove_silence_from_recordings_err_file: 'Add supported audio recordings only.',
+  tool_batch_remove_silence_from_recordings_err_format: 'The extension and audio signature do not match, or the file is damaged.',
+  tool_batch_remove_silence_from_recordings_err_limit: 'Input exceeds 20 MiB or 5 minutes, output exceeds 60 MiB, or channels are unsupported.',
+  tool_batch_remove_silence_from_recordings_err_output:
+    'The browser cannot retain this WAV. Download and remove completed items, free device storage, then retry.',
+  tool_batch_remove_silence_from_recordings_err_sample: 'Could not create the pause examples. Retry.',
+  tool_batch_remove_silence_from_recordings_err_silence: 'The file contains no audible signal; a completely silent recording has no useful shortened result.',
+  tool_batch_remove_silence_from_recordings_err_too_many: 'At most 20 recordings per queue.',
+  tool_batch_remove_silence_from_recordings_example:
+    'On opening, two 3-second stereo WAV examples are generated. One has one long pause and the other has two; both use -40 dBFS, a 0.4-second minimum and 0.15-second kept gap. Each downloaded WAV has a different measured duration and row-level removal report.',
+  tool_batch_remove_silence_from_recordings_example_title: 'Two recordings with different long pauses',
+  tool_batch_remove_silence_from_recordings_failed: 'No recording was processed. Check each row error.',
+  tool_batch_remove_silence_from_recordings_faq_a1:
+    'Yes. The queue applies the same detection settings to each recording and gives every file a separate WAV plus its own duration report.',
+  tool_batch_remove_silence_from_recordings_faq_a2:
+    'It checks the beginning, middle and end. A run must stay under the threshold for the chosen minimum duration; a short gap remains after shortening.',
+  tool_batch_remove_silence_from_recordings_faq_a3:
+    'Yes. This is an RMS level rule, not speech understanding. A high threshold may classify quiet syllables as silence; use a lower threshold and review the result.',
+  tool_batch_remove_silence_from_recordings_faq_a4:
+    'Every result is uncompressed 16-bit PCM WAV. Removing time can still yield more bytes than a compressed MP3 or M4A input.',
+  tool_batch_remove_silence_from_recordings_faq_a5: 'No. The browser decodes and writes audio on your device. Opening the page may require a connection.',
+  tool_batch_remove_silence_from_recordings_faq_q1: 'Can I remove silence from several audio files at once?',
+  tool_batch_remove_silence_from_recordings_faq_q2: 'Does this remove pauses inside recordings or only at the ends?',
+  tool_batch_remove_silence_from_recordings_faq_q3: 'Can a threshold cut soft speech?',
+  tool_batch_remove_silence_from_recordings_faq_q4: 'Why can the output file be larger?',
+  tool_batch_remove_silence_from_recordings_faq_q5: 'Are my recordings uploaded?',
+  tool_batch_remove_silence_from_recordings_hint: 'Up to 20 browser-decodable MP3, WAV, M4A, FLAC or OGG files; each at most 20 MiB and 5 minutes.',
+  tool_batch_remove_silence_from_recordings_how_body:
+    'For each file, the browser computes RMS over 10 ms windows. A below-threshold run is shortened only if it reaches the minimum duration; the chosen short gap remains. Each file is exported separately.',
+  tool_batch_remove_silence_from_recordings_how_item_1: 'Add several recordings or load the two built-in pause examples.',
+  tool_batch_remove_silence_from_recordings_how_item_2:
+    'Choose an RMS threshold; optionally set the minimum quiet duration and gap to keep. Start the batch queue.',
+  tool_batch_remove_silence_from_recordings_how_item_3:
+    'Check each row for detected long quiet sections, original and new duration, seconds removed, and output size.',
+  tool_batch_remove_silence_from_recordings_how_item_4:
+    'Download each WAV separately. Stop after the current file or retry failures without discarding successful outputs.',
+  tool_batch_remove_silence_from_recordings_how_title: 'How to remove silence from multiple recordings',
+  tool_batch_remove_silence_from_recordings_keep_label: 'Keep this much of each long pause',
+  tool_batch_remove_silence_from_recordings_list_label: 'Silence-removal queue',
+  tool_batch_remove_silence_from_recordings_min_label: 'Minimum quiet stretch',
+  tool_batch_remove_silence_from_recordings_pending: 'Pending',
+  tool_batch_remove_silence_from_recordings_preview: 'Measured pause-removal results',
+  tool_batch_remove_silence_from_recordings_preview_audio: 'Listen to result',
+  tool_batch_remove_silence_from_recordings_progress: 'Batch silence-removal progress',
+  tool_batch_remove_silence_from_recordings_queue_count: '{n} recording(s) in queue',
+  tool_batch_remove_silence_from_recordings_read: 'Read audio',
+  tool_batch_remove_silence_from_recordings_ready: 'WAV ready',
+  tool_batch_remove_silence_from_recordings_remove: 'Remove',
+  tool_batch_remove_silence_from_recordings_result: '{ok} WAV results · {fail} failed · {pending} pending · threshold {threshold} dBFS',
+  tool_batch_remove_silence_from_recordings_retry: 'Retry failed files',
+  tool_batch_remove_silence_from_recordings_row_result: '{input} KiB → {output} KiB · {rate} Hz · {channels} channel(s)',
+  tool_batch_remove_silence_from_recordings_rules_body:
+    'A 10 ms RMS window is quiet below the chosen dBFS threshold. Consecutive quiet windows must last at least the selected minimum; the kept gap is split around each cut. Boundaries use a short fade.',
+  tool_batch_remove_silence_from_recordings_rules_item_1:
+    'This trims quiet stretches at the beginning, middle and end. It is not semantic speech editing or background-noise removal; preview soft speech before using an aggressive threshold.',
+  tool_batch_remove_silence_from_recordings_rules_item_2:
+    'A pause shorter than the minimum stays. A qualifying pause may leave the chosen gap; output duration can remain unchanged when no long quiet run is found.',
+  tool_batch_remove_silence_from_recordings_rules_item_3:
+    'Up to 20 files, each 20 MiB/5 minutes; each WAV at most 60 MiB. Real files use on-device browser storage where available; the memory fallback retains at most 96 MiB.',
+  tool_batch_remove_silence_from_recordings_rules_item_4:
+    'Output is 44.1 kHz 16-bit PCM WAV. A compressed source may produce a larger file even after pauses are removed. Originals are not overwritten and tags are not copied.',
+  tool_batch_remove_silence_from_recordings_rules_title: 'Silence threshold, pause length and file limits',
+  tool_batch_remove_silence_from_recordings_sample: 'Load two pause examples',
+  tool_batch_remove_silence_from_recordings_sample_name: 'pause-example',
+  tool_batch_remove_silence_from_recordings_settings_hint:
+    'Default: below -40 dBFS for at least 0.4 s, shortened to 0.15 s. A higher threshold can cut soft words. Output is 44.1 kHz 16-bit PCM WAV; tags and artwork are not copied.',
+  tool_batch_remove_silence_from_recordings_silence_result: '{before}s → {after}s · removed {removed}s ({percent}%) · {gaps} long quiet section(s)',
+  tool_batch_remove_silence_from_recordings_stop: 'Stop after current file',
+  tool_batch_remove_silence_from_recordings_stopped: 'Stopped before the next file. Completed WAVs remain available.',
+  tool_batch_remove_silence_from_recordings_threshold_label: 'RMS silence threshold',
+  tool_batch_remove_silence_from_recordings_title: 'Remove silence from multiple recordings in one batch',
+  tool_batch_remove_silence_from_recordings_usecase_1: 'Shorten long gaps across an interview folder while checking each result before sharing.',
+  tool_batch_remove_silence_from_recordings_usecase_2: 'Prepare several voice clips for manual editing without joining separate recordings into one track.',
+  tool_batch_remove_silence_from_recordings_usecase_3: 'Find damaged or silent takes in a batch and retain the WAVs that finished successfully.',
+  tool_batch_remove_silence_from_recordings_usecases_title: 'Useful bulk pause-removal tasks',
+  tool_batch_remove_silence_from_recordings_why_choose_item_1: 'One detection rule can shorten a different amount of silence in each independent recording.',
+  tool_batch_remove_silence_from_recordings_why_choose_item_2:
+    'Per-file before/after seconds and removed percentage verify the actual edit; zero removed time is displayed rather than hidden.',
+  tool_batch_remove_silence_from_recordings_why_choose_item_3: 'A damaged or silent item does not discard successful WAV downloads; no large ZIP is required.',
+  tool_batch_remove_silence_from_recordings_why_choose_item_4: 'Files are processed locally on your device and are not uploaded to a server.',
+  tool_batch_remove_silence_from_recordings_why_choose_title: 'What this batch silence remover shows',
+  tool_batch_remove_silence_from_recordings_working: 'Removing pauses',
+  tool_batch_remove_silence_from_recordings_write: 'Write shortened WAV',
   tool_batch_trim_the_same_intro_from_audio_files_advanced: 'About batch trim (optional)',
   tool_batch_trim_the_same_intro_from_audio_files_article:
     'Podcast batches often share the same bumper. This page applies one intro length to a queue, exports trimmed 16-bit WAV files, and zips them with lazy ZIP packaging. It is not a single-file waveform editor—use the related trim page for precise handles. Bulk WAV→MP3 sits nearby for encoding after trim. Work stays on-device.',
@@ -4188,6 +4927,82 @@ const en: SiteLangDict = {
     'Orientation is applied while decoding, so removing the original EXIF does not discard the display rotation.',
   tool_bulk_strip_photo_exif_why_choose_title: 'What this tool adds',
   tool_bulk_strip_photo_exif_working: 'Processing…',
+  tool_burn_subtitles_into_a_video_advanced: 'Caption appearance (optional)',
+  tool_burn_subtitles_into_a_video_article:
+    'Burning subtitles means drawing each timed caption into the picture frames. Unlike an optional subtitle track, the text remains visible in players that do not support separate captions. Select a video and an existing SRT or VTT file with the same timeline. This tool parses the cue times, draws readable text inside a safe margin, and re-encodes the video as H.264 MP4. Existing sound becomes AAC. It then inspects the result before enabling download. A 00:00:01 cue appears only on frames in its interval; the preview lets you check the placement. Text size, color and bottom margin can be adjusted. Long lines wrap; VTT styling and positioning instructions are not preserved. Re-encoding changes quality and may take a long time for a large video. Browser codec support and storage quota determine whether a file can complete. This page does not generate or translate captions. Your video and subtitle file are processed locally without server upload.',
+  tool_burn_subtitles_into_a_video_burn: 'Burn subtitles',
+  tool_burn_subtitles_into_a_video_choose_subtitle: 'Choose an SRT or VTT file',
+  tool_burn_subtitles_into_a_video_choose_video: 'Choose a video',
+  tool_burn_subtitles_into_a_video_clear: 'Clear',
+  tool_burn_subtitles_into_a_video_color: 'Text color',
+  tool_burn_subtitles_into_a_video_desc:
+    'Hardcode existing SRT or VTT subtitles into a local video. Adjust text size and safe area, preview the H.264/AAC MP4, and download without uploading your files.',
+  tool_burn_subtitles_into_a_video_description:
+    'Burn SRT subtitles into a local video so captions remain visible without a subtitle switch. Add an SRT or VTT file, adjust readability, create a verified MP4 and download it. The video stays on your device. Example: a cue from 00:00:00.500 to 00:00:02.300 appears only on those frames; inspect its timing in the final preview.',
+  tool_burn_subtitles_into_a_video_done: 'Burned-in MP4 ready. Check the preview and download.',
+  tool_burn_subtitles_into_a_video_download: 'Download MP4',
+  tool_burn_subtitles_into_a_video_empty: 'Choose a video and subtitles, or load the example.',
+  tool_burn_subtitles_into_a_video_encode: 'Draw timed captions and encode',
+  tool_burn_subtitles_into_a_video_err_aborted: 'Stopped. No partial MP4 is available.',
+  tool_burn_subtitles_into_a_video_err_codec: 'This browser cannot decode a source track.',
+  tool_burn_subtitles_into_a_video_err_encoder: 'This browser cannot encode or write this MP4. Free storage or try another browser.',
+  tool_burn_subtitles_into_a_video_err_file: 'Choose a readable local video.',
+  tool_burn_subtitles_into_a_video_err_format: 'The video dimensions or duration could not be read.',
+  tool_burn_subtitles_into_a_video_err_limit: 'This video exceeds the browser-safe code limit or available storage.',
+  tool_burn_subtitles_into_a_video_err_output: 'The output tracks did not pass verification.',
+  tool_burn_subtitles_into_a_video_err_sample: 'Could not load the local example.',
+  tool_burn_subtitles_into_a_video_err_subtitle: 'Choose valid SRT or VTT captions with start and end times.',
+  tool_burn_subtitles_into_a_video_example:
+    'Load the example to burn a timed caption into the supplied WebM. Move playback across its cue boundary and check that text appears only during the cue in the resulting MP4.',
+  tool_burn_subtitles_into_a_video_example_title: 'SRT caption burned into a short video',
+  tool_burn_subtitles_into_a_video_failed: 'The subtitles could not be burned into this video.',
+  tool_burn_subtitles_into_a_video_faq_a1: 'Yes. The timed text is drawn into the video pixels and cannot be toggled off in a player.',
+  tool_burn_subtitles_into_a_video_faq_a2: 'Yes, standard VTT cue times and text work. Advanced positioning and styles are not preserved.',
+  tool_burn_subtitles_into_a_video_faq_a3: 'No. Bring an existing SRT or VTT file. The related transcription tool can make an SRT first.',
+  tool_burn_subtitles_into_a_video_faq_a4: 'Yes. Burning requires video re-encoding; quality, size and processing time can change.',
+  tool_burn_subtitles_into_a_video_faq_a5: 'No. Video and captions stay in your browser on this device.',
+  tool_burn_subtitles_into_a_video_faq_q1: 'Are these permanent subtitles?',
+  tool_burn_subtitles_into_a_video_faq_q2: 'Can I use VTT instead of SRT?',
+  tool_burn_subtitles_into_a_video_faq_q3: 'Does this create subtitles from speech?',
+  tool_burn_subtitles_into_a_video_faq_q4: 'Will quality or file size change?',
+  tool_burn_subtitles_into_a_video_faq_q5: 'Is my video uploaded?',
+  tool_burn_subtitles_into_a_video_hint: 'One local video plus existing timed captions. Large jobs need browser storage and an H.264 encoder.',
+  tool_burn_subtitles_into_a_video_how_body:
+    'Prepare a timed SRT or VTT file aligned with the video. Then burn its cues into the picture and inspect the result.',
+  tool_burn_subtitles_into_a_video_how_item_1: 'Choose your local video and its matching SRT or VTT file, or load the example.',
+  tool_burn_subtitles_into_a_video_how_item_2: 'Optionally set text size, color and bottom safe area for readable captions.',
+  tool_burn_subtitles_into_a_video_how_item_3: 'Click Burn subtitles. The video is decoded, captioned frame by frame and re-encoded as MP4.',
+  tool_burn_subtitles_into_a_video_how_item_4: 'Preview the timed text and sound, then download the verified MP4.',
+  tool_burn_subtitles_into_a_video_how_title: 'How to hardcode captions into a video',
+  tool_burn_subtitles_into_a_video_load: 'Load video engine',
+  tool_burn_subtitles_into_a_video_margin: 'Bottom safe area, % of frame',
+  tool_burn_subtitles_into_a_video_preview: 'MP4 with visible captions',
+  tool_burn_subtitles_into_a_video_progress: 'Subtitle burn progress',
+  tool_burn_subtitles_into_a_video_read: 'Read video and captions',
+  tool_burn_subtitles_into_a_video_result: '{cues} timed captions · {frames} video frames · {input} → {output} · H.264/{audio}',
+  tool_burn_subtitles_into_a_video_rules_body:
+    'Burned captions become part of the picture. An SRT or VTT sidecar remains separate and can be hidden or replaced in a player.',
+  tool_burn_subtitles_into_a_video_rules_item_1: 'Hardcoded captions cannot be switched off after export.',
+  tool_burn_subtitles_into_a_video_rules_item_2: 'Every frame is re-encoded to H.264; source video packets are not copied.',
+  tool_burn_subtitles_into_a_video_rules_item_3: 'Existing audio becomes AAC; a silent source stays silent.',
+  tool_burn_subtitles_into_a_video_rules_item_4: 'Complex VTT styling, vertical cues and arbitrary placement are not reproduced.',
+  tool_burn_subtitles_into_a_video_rules_title: 'Burned-in versus optional subtitles',
+  tool_burn_subtitles_into_a_video_sample: 'Load video and SRT example',
+  tool_burn_subtitles_into_a_video_settings_hint:
+    'Captions are centered with a dark outline. Long lines wrap; advanced VTT positioning is not retained.',
+  tool_burn_subtitles_into_a_video_size: 'Text height, % of frame',
+  tool_burn_subtitles_into_a_video_stop: 'Stop',
+  tool_burn_subtitles_into_a_video_title: 'Burn SRT subtitles into a local video',
+  tool_burn_subtitles_into_a_video_usecase_1: 'Send a video to a player or platform that ignores external SRT files.',
+  tool_burn_subtitles_into_a_video_usecase_2: 'Share a clip whose captions must always be visible.',
+  tool_burn_subtitles_into_a_video_usecase_3: 'Check whether caption timing and safe margins work in the final picture.',
+  tool_burn_subtitles_into_a_video_usecases_title: 'When to burn subtitles',
+  tool_burn_subtitles_into_a_video_why_choose_item_1: 'SRT and VTT cue times are parsed before video encoding starts.',
+  tool_burn_subtitles_into_a_video_why_choose_item_2: 'Text is drawn into actual frames, so no player caption switch is needed.',
+  tool_burn_subtitles_into_a_video_why_choose_item_3: 'A safe margin and dark outline keep captions away from the frame edge.',
+  tool_burn_subtitles_into_a_video_why_choose_item_4: 'The output video and audio codecs are checked before download.',
+  tool_burn_subtitles_into_a_video_why_choose_title: 'What this subtitle burner checks',
+  tool_burn_subtitles_into_a_video_write: 'Verify and write MP4',
   tool_cagr_article:
     'CAGR is the constant annual rate that takes a beginning value to an ending value over a number of years, assuming compounding once per year. Use it for rough multi-year growth comparisons; it is not a forecast and ignores cash flows mid-period.',
   tool_cagr_begin_label: 'Beginning value',
@@ -4333,6 +5148,94 @@ const en: SiteLangDict = {
   tool_change_audio_speed_without_changing_pitch_why_choose_item_4: 'Changing speed or the input clears the old download so you never save a stale WAV by mistake.',
   tool_change_audio_speed_without_changing_pitch_why_choose_title: 'Why choose our Change audio speed without changing pitch tools',
   tool_change_audio_speed_without_changing_pitch_write: 'Write',
+  tool_change_video_speed_article:
+    'This browser video speed changer rewrites video-frame and audio-sample timing in a new H.264 MP4. Choose 0.5×, 0.75×, 1.25×, 1.5× or 2×. A 6-second source at 1.5× should be about 4 seconds; the result verifies the actual video duration, codec, dimensions, audio presence, input/output bytes and browser storage route. With audio enabled, source audio starts with video and is encoded as AAC. Choose tape-style sound, whose pitch rises when speeding up and falls when slowing down, or pitch-preserving WSOLA for clips up to 60 seconds. This bounded mode decodes audio before export and may cause mild artifacts; larger sources can use tape-style sound or mute. Mute mode removes the audio track, and a silent source stays silent. AAC padding can extend the audio tail by roughly a tenth of a second, so sample-level sync is not promised. The source must be decodable in this browser and H.264 must be encodable. Larger results use browser-local OPFS; insufficient space or unsupported codecs lead to an explicit error. Inputs stay on your device. Stop and retry if you choose another speed.',
+  tool_change_video_speed_audio_follow: 'synced; pitch follows speed',
+  tool_change_video_speed_audio_mode: 'Output audio',
+  tool_change_video_speed_audio_muted: 'muted',
+  tool_change_video_speed_audio_preserved: 'synced; approximate pitch preserved',
+  tool_change_video_speed_check: 'Verify MP4 output',
+  tool_change_video_speed_choose: 'Choose a video or MP4',
+  tool_change_video_speed_clear: 'Clear',
+  tool_change_video_speed_convert: 'Change speed and export MP4',
+  tool_change_video_speed_desc:
+    'Speed up or slow down a local MP4, MOV or WebM from 0.5× to 2×. Download a genuinely retimed H.264 MP4 with audio following the speed, pitch preserved for short clips, or muted, and compare actual duration.',
+  tool_change_video_speed_description:
+    'Change video speed online: speed up MP4 with audio or slow down video in your browser. Steps: choose one local MP4, MOV or WebM, pick 0.5×–2× and an audio mode, export H.264 MP4, then compare expected and actual duration. Example: a 6-second clip at 1.5× becomes about 4 seconds. Choose tape-style pitch change or pitch-preserving WSOLA for audio clips up to 60 seconds; large files use pitch-following or mute.',
+  tool_change_video_speed_done: 'Timed MP4 is ready.',
+  tool_change_video_speed_download: 'Download timed MP4',
+  tool_change_video_speed_elapsed: 'Elapsed {s} s',
+  tool_change_video_speed_empty: 'Choose a video or load the moving tone sample to begin.',
+  tool_change_video_speed_encode: 'Retime and encode video',
+  tool_change_video_speed_err_audio: 'The browser cannot decode the source audio; choose mute or another file.',
+  tool_change_video_speed_err_codec: 'The browser cannot decode this source video codec.',
+  tool_change_video_speed_err_container: 'This file container is unsupported or damaged.',
+  tool_change_video_speed_err_encoder: 'Retime or MP4 output verification failed. Try another supported video.',
+  tool_change_video_speed_err_file: 'Choose a local video file first.',
+  tool_change_video_speed_err_limit: 'This job needs browser-local OPFS storage or exceeds this browser’s safe file limit.',
+  tool_change_video_speed_err_pitch_limit:
+    'Pitch-preserved audio is limited to decodable clips up to 60 seconds. Choose pitch-following audio or mute for longer videos.',
+  tool_change_video_speed_err_sample: 'The moving tone sample could not be loaded.',
+  tool_change_video_speed_err_settings: 'Choose a speed from 0.5× to 2×.',
+  tool_change_video_speed_err_video: 'The browser cannot encode H.264 video at this size.',
+  tool_change_video_speed_estimate: 'Estimated duration: {source} s ÷ {rate}× ≈ {expected} s. Audio: {audio}.',
+  tool_change_video_speed_example:
+    'Load the moving six-second 440 Hz tone sample and choose 1.5×. The video should be about four seconds; tape-style audio rises to about 660 Hz, while pitch-preserved mode stays near 440 Hz. Downloaded MP4 track lengths are checked, with AAC tail padding explained.',
+  tool_change_video_speed_example_title: 'Six-second video at 1.5× example',
+  tool_change_video_speed_failed: 'The video speed could not be changed.',
+  tool_change_video_speed_faq_a1:
+    'Yes. Video-frame timestamps and audio samples are rewritten before H.264/AAC export. The result checks the actual output duration; it is not only a preview playback-rate setting.',
+  tool_change_video_speed_faq_a2:
+    'Audio starts with video and its duration is retimed. Select tape-style sound to change pitch, or approximate pitch-preserving WSOLA for decodable sources up to 60 seconds. The latter may add artifacts and is unavailable for longer files.',
+  tool_change_video_speed_faq_a3:
+    'Yes. Select Mute output. The finished MP4 is checked for no audio track, and silent input also stays silent.',
+  tool_change_video_speed_faq_a4:
+    'AAC encoders can add roughly a tenth of a second of tail padding. The page checks video duration and audio presence; it does not claim sample-level exact sync.',
+  tool_change_video_speed_faq_q1: 'Does the downloaded MP4 really play faster or slower?',
+  tool_change_video_speed_faq_q2: 'Will audio remain synchronized and keep its pitch?',
+  tool_change_video_speed_faq_q3: 'Can I remove audio while changing speed?',
+  tool_change_video_speed_faq_q4: 'Why is the audio duration slightly longer than video?',
+  tool_change_video_speed_follow_pitch: 'Keep audio in sync (pitch changes)',
+  tool_change_video_speed_hint: 'One local MP4, MOV or WebM. The browser must decode it and encode H.264.',
+  tool_change_video_speed_how_intro: 'Export a new MP4 whose frame and sound timeline is actually changed.',
+  tool_change_video_speed_how_item_1: 'Choose one MP4, MOV or WebM, or load the moving tone sample.',
+  tool_change_video_speed_how_item_2: 'Select 0.5×–2× and keep synced audio with shifting pitch, or mute the output.',
+  tool_change_video_speed_how_item_3: 'Click Change speed and export MP4; watch track checking, encoding and verification progress.',
+  tool_change_video_speed_how_item_4: 'Compare estimated and actual duration, preview the result and download the MP4.',
+  tool_change_video_speed_how_title: 'How to speed up or slow down a video',
+  tool_change_video_speed_mute: 'Mute output',
+  tool_change_video_speed_preserve_pitch: 'Keep approximate pitch (up to 60 s)',
+  tool_change_video_speed_progress: 'Video speed change progress',
+  tool_change_video_speed_read: 'Check source tracks',
+  tool_change_video_speed_result:
+    'Speed: {rate}×. Duration: {source_duration} s → expected {expected} s → actual video {actual} s. Output: {width}×{height}, {video} video, {audio} audio ({pitch}). File: {source} → {output}. Storage: {route}.',
+  tool_change_video_speed_result_title: 'Retimed video',
+  tool_change_video_speed_rules_body:
+    'The exported file has new timestamps. Changing only the preview player rate would not create this result.',
+  tool_change_video_speed_rules_item_1:
+    'Expected duration is source duration divided by speed. The output panel checks actual duration after encoding.',
+  tool_change_video_speed_rules_item_2:
+    'Audio can follow speed with higher/lower pitch, or use bounded WSOLA to keep approximate voice pitch for sources up to 60 seconds. The preserved mode may add artifacts.',
+  tool_change_video_speed_rules_item_3:
+    'AAC may add about 0.1 s of tail padding. Mute mode removes the audio track; silent input stays silent.',
+  tool_change_video_speed_rules_item_4:
+    'Big results use browser-local OPFS. Pitch preservation predecodes at most 60 seconds of audio; longer videos can use pitch-following or mute. Without OPFS, large jobs are rejected before memory encoding.',
+  tool_change_video_speed_rules_title: 'Duration, audio pitch and storage limits',
+  tool_change_video_speed_sample: 'Load moving tone sample',
+  tool_change_video_speed_settings_hint:
+    'Choose pitch-following sound for large jobs, preserve approximate voice pitch with bounded WSOLA up to 60 seconds, or mute. Pitch-preserved mode may add audio artifacts.',
+  tool_change_video_speed_silent: 'silent',
+  tool_change_video_speed_source_info: 'Source: {width}×{height}, {duration} s, {codec} video, {audio} audio, {size}.',
+  tool_change_video_speed_source_preview: 'Source preview',
+  tool_change_video_speed_speed: 'Playback speed',
+  tool_change_video_speed_stop: 'Stop',
+  tool_change_video_speed_stopped: 'Speed change stopped. Choose a setting and retry.',
+  tool_change_video_speed_title: 'Change video speed and export a timed MP4',
+  tool_change_video_speed_usecase_1:
+    'Speed up a long screen recording with pitch-following sound, or use the bounded voice-pitch mode for a short clip.',
+  tool_change_video_speed_usecase_2: 'Slow down a short action clip to inspect motion, with lower-pitched or muted sound.',
+  tool_change_video_speed_usecase_3: 'Make a silent fast-motion clip without adding an audio track.',
+  tool_change_video_speed_usecases_title: 'When to change video speed',
   tool_chatgpt_export_to_markdown_article:
     'Turn a ChatGPT export into Markdown on this page. Paste or drop the JSON, get readable turns, and optionally switch to JSON or CSV. Claude exports work on the same canvas. Files stay on your device and are not uploaded to a server.',
   tool_chatgpt_export_to_markdown_choose_file: 'Choose file',
@@ -5175,6 +6078,98 @@ const en: SiteLangDict = {
   tool_compound_interest_usecases_title: 'When to use it',
   tool_compound_interest_years_label: 'Time (years)',
   tool_compound_interest_years_placeholder: 'e.g. 10',
+  tool_compress_a_video_file_advanced: 'Compression and resolution settings (optional)',
+  tool_compress_a_video_file_article:
+    'This video compressor makes a new H.264 MP4 from one local video. It decodes the source and re-encodes at a chosen video bitrate; optional target height preserves aspect ratio and never upscales above the source. A target size in MB is only converted to an approximate bitrate, with room for audio and container overhead: the final size is measured after encoding and may miss the requested number. The result panel checks actual width and height, H.264 video, AAC audio if the source had decodable sound, full duration, input/output bytes, estimated bytes, and the saved or increased percentage. A silent source remains silent. A very efficient source can become larger even at a lower bitrate, so no guaranteed reduction or lossless compression is claimed. Unsupported source codecs, missing H.264 encoder or storage limits produce errors rather than a misleading success. The engine reads with bounded cache and streams larger outputs to browser-local OPFS. The input code cap is 5 GiB when OPFS works, while without OPFS a task above 80 MiB input or about 48 MiB estimated output is rejected before memory encoding. These are safeguards, not universal tested maxima. Processing stays in the browser and can be stopped and retried.',
+  tool_compress_a_video_file_bigger: 'larger',
+  tool_compress_a_video_file_bitrate: 'Video bitrate (kbps)',
+  tool_compress_a_video_file_channels: 'Audio channels',
+  tool_compress_a_video_file_check: 'Check output',
+  tool_compress_a_video_file_choose: 'Choose a video or MP4',
+  tool_compress_a_video_file_clear: 'Clear',
+  tool_compress_a_video_file_convert: 'Compress and export MP4',
+  tool_compress_a_video_file_desc:
+    'Compress a local MP4, MOV or WebM to a playable H.264/AAC MP4. Choose a target height and bitrate, then compare actual pixels, tracks and bytes before download.',
+  tool_compress_a_video_file_description:
+    'Compress video or reduce MP4 file size in your browser. Steps: choose one local MP4, MOV or WebM, set output height and bitrate or an approximate target MB, encode H.264/AAC, then compare actual dimensions and bytes. Example: a high-bitrate 640×360 clip can become a smaller MP4 at a lower video bitrate; a file that is already efficient may grow.',
+  tool_compress_a_video_file_done: 'MP4 ready. Compare actual size and preview before downloading.',
+  tool_compress_a_video_file_download: 'Download compressed MP4',
+  tool_compress_a_video_file_elapsed: 'Elapsed: {s}s',
+  tool_compress_a_video_file_empty: 'Choose a video or load the high-bitrate sample to compare sizes.',
+  tool_compress_a_video_file_encode: 'Encode smaller MP4',
+  tool_compress_a_video_file_err_audio: 'This browser cannot decode the source audio.',
+  tool_compress_a_video_file_err_codec: 'This browser cannot decode the source video codec.',
+  tool_compress_a_video_file_err_container: 'No usable video track was found.',
+  tool_compress_a_video_file_err_encoder: 'The browser could not create or verify the MP4. Try a lower height or bitrate.',
+  tool_compress_a_video_file_err_file: 'Choose one nonempty video.',
+  tool_compress_a_video_file_err_limit: 'This job needs more browser-local storage than is available. Reduce the source or target size.',
+  tool_compress_a_video_file_err_sample: 'The high-bitrate sample could not load. Choose your own file.',
+  tool_compress_a_video_file_err_settings: 'Set a target between 100 and 20,000 kbps, or a feasible approximate MiB size.',
+  tool_compress_a_video_file_err_video: 'This browser cannot encode H.264 at the selected output dimensions.',
+  tool_compress_a_video_file_estimate: 'Estimated MP4: about {size} at {width}×{height}, video {bitrate} kbps. Final bytes can differ.',
+  tool_compress_a_video_file_example:
+    'Load the on-site 8-second 640×360 high-bitrate sample. Use the suggested lower bitrate; the result reports actual H.264/AAC tracks, pixels, input/output MiB, estimated MiB and the measured saving.',
+  tool_compress_a_video_file_example_title: 'High-bitrate video to smaller MP4 example',
+  tool_compress_a_video_file_failed: 'The video could not be compressed.',
+  tool_compress_a_video_file_faq_a1:
+    'No. Re-encoding an already efficient source can increase bytes. The page shows the real size difference and allows you to decide whether to download.',
+  tool_compress_a_video_file_faq_a2:
+    'Yes. Choose 720p as a maximum output height. A shorter source stays at its original height; aspect ratio is preserved and actual pixels are shown.',
+  tool_compress_a_video_file_faq_a3:
+    'No exact target is promised. The optional MiB setting calculates a single-pass bitrate estimate; audio, motion and encoder behavior affect the final size.',
+  tool_compress_a_video_file_faq_a4:
+    'Video is re-encoded with loss. If source audio is decodable, the output is verified for AAC audio; a silent source stays silent.',
+  tool_compress_a_video_file_faq_q1: 'Will compressing a video always make it smaller?',
+  tool_compress_a_video_file_faq_q2: 'Can I resize a video to 720p here?',
+  tool_compress_a_video_file_faq_q3: 'Can I hit an exact MP4 file size in MB?',
+  tool_compress_a_video_file_faq_q4: 'Is the compression lossless and does it keep audio?',
+  tool_compress_a_video_file_height: 'Maximum output height',
+  tool_compress_a_video_file_hint: 'One local MP4, MOV or WebM. The browser must decode it and encode H.264.',
+  tool_compress_a_video_file_how_body:
+    'Choose a local video, use the suggested bitrate or set a height/target size, export MP4, then compare the measured result before downloading.',
+  tool_compress_a_video_file_how_item_1: 'Choose one MP4, MOV or WebM file, or load the high-bitrate moving sample.',
+  tool_compress_a_video_file_how_item_2:
+    'Check source pixels, duration and size. Open settings to select a lower output height, bitrate or approximate target MiB.',
+  tool_compress_a_video_file_how_item_3: 'Click Compress and export MP4; watch track checking, encoding and output verification progress.',
+  tool_compress_a_video_file_how_item_4:
+    'Compare actual input/output bytes and dimensions. Preview and download even when the result is larger.',
+  tool_compress_a_video_file_how_title: 'How to compress a video and reduce MP4 size',
+  tool_compress_a_video_file_mono: 'Mono',
+  tool_compress_a_video_file_optional: 'Optional',
+  tool_compress_a_video_file_progress: 'Video compression progress',
+  tool_compress_a_video_file_read: 'Read tracks and settings',
+  tool_compress_a_video_file_result:
+    'Source {source} at {width}×{height} → MP4 {output} at {out_width}×{out_height} · {change} {percent}% · estimate {estimate} · {duration}s · {video}/{audio} · {route}',
+  tool_compress_a_video_file_result_title: 'Compressed video result',
+  tool_compress_a_video_file_rules_body:
+    'The selected video bitrate and duration give only a rough file-size estimate; actual encoder output is measured.',
+  tool_compress_a_video_file_rules_item_1:
+    'A lower bitrate reduces detail and often saves bytes. It is lossy and may still create a larger file than an already efficient source.',
+  tool_compress_a_video_file_rules_item_2:
+    'Output height is capped at the source height; selecting 720p from a 360p source does not invent pixels. The original aspect ratio is preserved.',
+  tool_compress_a_video_file_rules_item_3:
+    'Approximate target MiB reserves room for AAC audio and overhead. It is not a precise two-pass size target; check the actual result.',
+  tool_compress_a_video_file_rules_item_4:
+    'With OPFS, the source code cap is 5 GiB. Without it, input above 80 MiB or estimated output above about 48 MiB is rejected to protect memory.',
+  tool_compress_a_video_file_rules_title: 'How bitrate, resolution and audio affect file size',
+  tool_compress_a_video_file_same: 'similar size',
+  tool_compress_a_video_file_sample: 'Load high-bitrate sample',
+  tool_compress_a_video_file_settings_hint:
+    'Lower bitrate usually saves bytes but reduces detail. The target MiB is an estimate, not an exact file-size promise. Output height never exceeds the source.',
+  tool_compress_a_video_file_silent: 'none',
+  tool_compress_a_video_file_smaller: 'smaller',
+  tool_compress_a_video_file_source_height: 'Keep source height',
+  tool_compress_a_video_file_source_info: 'Source: {width}×{height} · {duration}s · {codec}/{audio} · {size}',
+  tool_compress_a_video_file_source_preview: 'Source preview',
+  tool_compress_a_video_file_stereo: 'Stereo',
+  tool_compress_a_video_file_stop: 'Stop',
+  tool_compress_a_video_file_stopped: 'Stopped. Change settings or retry.',
+  tool_compress_a_video_file_target_size: 'Approximate target size (MiB)',
+  tool_compress_a_video_file_title: 'Compress a video file and compare the size',
+  tool_compress_a_video_file_usecase_1: 'Reduce an oversized MP4 screen recording before sharing it.',
+  tool_compress_a_video_file_usecase_2: 'Set a maximum 720p or 480p output height for a smaller web video.',
+  tool_compress_a_video_file_usecase_3: 'Compare an already compressed MOV or WebM with the new MP4 and keep the better file.',
+  tool_compress_a_video_file_usecases_title: 'When to make a video file smaller',
   tool_compress_dynamic_range_of_a_voice_recording_advanced: 'Compressor settings',
   tool_compress_dynamic_range_of_a_voice_recording_article:
     'Uneven voice takes often jump from whispers to peaks. This page runs a soft-knee (light/medium) or hard-knee (heavy) peak-envelope compressor in pure JavaScript: light ≈ −18 dB / 2:1, medium ≈ −24 dB / 3:1 (default), heavy ≈ −30 dB / 6:1. Optional makeup restores overall level after peaks are tamed, with soft peak protect before writing 16-bit WAV. Loud moments are reduced more than soft ones—that is dynamic-range compression, not shrinking an MP3 to save bytes (do not confuse Chinese/English “compress”), not a fixed whole-file dB boost, not peak dBFS normalize, and not podcast LUFS matching. Channel count stays 1 or 2. Keep the original master; the download is a new file. Work runs in the browser on your device.',
@@ -5669,6 +6664,312 @@ const en: SiteLangDict = {
   tool_convert_a_jpg_to_text_with_ocr_usecase_2: 'Use an OCR image reader on a chat or error screenshot when you cannot select the pixels.',
   tool_convert_a_jpg_to_text_with_ocr_usecase_3: 'Copy printed Chinese or English from a menu or manual photo (not a handwritten list).',
   tool_convert_a_jpg_to_text_with_ocr_usecases_title: 'Good fits',
+  tool_convert_a_mov_file_to_an_mp4_file_advanced: 'Encoding settings (optional)',
+  tool_convert_a_mov_file_to_an_mp4_file_article:
+    'An iPhone or camera MOV is a QuickTime container, not a promise about its video codec. Some contain H.264 with AAC or PCM sound; others contain HEVC, which this browser may not decode. Renaming .mov to .mp4 does not check compatibility. This tool reads the video and audio tracks, dimensions and approximate duration. If the video is already H.264, it copies the encoded video without another video compression pass; sound is written as AAC when present. Other source video can become H.264 only when this device can decode it and encode AVC. A Chrome HEVC MOV that cannot be decoded is rejected before conversion, avoiding an audio-only MP4 presented as success. The exported MP4 is inspected again for real H.264 video, AAC when needed, and duration before preview and download. The page shows source codecs, copy or transcode decision, and actual input and output bytes. Audio transcoding may change quality or file size. The original stays on your device and is not uploaded.',
+  tool_convert_a_mov_file_to_an_mp4_file_channels_label: 'AAC audio channels',
+  tool_convert_a_mov_file_to_an_mp4_file_channels_mono: 'Mono',
+  tool_convert_a_mov_file_to_an_mp4_file_channels_stereo: 'Stereo (default)',
+  tool_convert_a_mov_file_to_an_mp4_file_choose: 'Choose a MOV video',
+  tool_convert_a_mov_file_to_an_mp4_file_clear: 'Clear',
+  tool_convert_a_mov_file_to_an_mp4_file_convert: 'Convert MOV to MP4',
+  tool_convert_a_mov_file_to_an_mp4_file_decode: 'Check source codecs',
+  tool_convert_a_mov_file_to_an_mp4_file_desc:
+    'Convert one local QuickTime or iPhone MOV to a playable H.264 MP4 with AAC audio when present. Inspect source tracks, the video copy or transcode decision, duration and actual output size. Files stay on your device and are not uploaded.',
+  tool_convert_a_mov_file_to_an_mp4_file_description:
+    'Convert MOV to a real H.264/AAC MP4 in your browser. Steps: choose a QuickTime or iPhone MOV, convert, preview, download. Example: H.264/PCM copies video and makes AAC audio; HEVC needs local decoder support. See tracks and actual sizes. Files stay on your device, not a server.',
+  tool_convert_a_mov_file_to_an_mp4_file_done: 'MP4 ready. Check its track report and preview before downloading.',
+  tool_convert_a_mov_file_to_an_mp4_file_download: 'Download MP4',
+  tool_convert_a_mov_file_to_an_mp4_file_elapsed: 'Elapsed: {s}s',
+  tool_convert_a_mov_file_to_an_mp4_file_empty: 'Choose a MOV or load the example first.',
+  tool_convert_a_mov_file_to_an_mp4_file_empty_state:
+    'Choose one QuickTime MOV or load the built-in H.264/AAC sample; Convert enables Download after the complete MP4 passes track checks.',
+  tool_convert_a_mov_file_to_an_mp4_file_encode: 'Copy or encode video; make AAC',
+  tool_convert_a_mov_file_to_an_mp4_file_err_aborted: 'Conversion was stopped.',
+  tool_convert_a_mov_file_to_an_mp4_file_err_codec:
+    'A source track could not be decoded, or the output lacks required H.264/AAC tracks. Try another browser or file.',
+  tool_convert_a_mov_file_to_an_mp4_file_err_container: 'Could not read a usable video track from this MOV. Try another recording.',
+  tool_convert_a_mov_file_to_an_mp4_file_err_encoder: 'Could not write the MP4. Free browser storage and retry.',
+  tool_convert_a_mov_file_to_an_mp4_file_err_engine: 'Could not load the local conversion engine. Retry or use another browser.',
+  tool_convert_a_mov_file_to_an_mp4_file_err_file: 'Choose exactly one MOV video file.',
+  tool_convert_a_mov_file_to_an_mp4_file_err_format:
+    'This is not a readable QuickTime MOV video. Its extension, MIME type or internal container did not match.',
+  tool_convert_a_mov_file_to_an_mp4_file_err_hevc:
+    'This device cannot decode the HEVC video in this MOV. No audio-only MP4 was kept. Try another browser or a desktop converter.',
+  tool_convert_a_mov_file_to_an_mp4_file_err_limit:
+    'This MOV exceeds the device-safe code limit: 500 MiB with OPFS or 80 MiB without. Free space or choose a smaller file.',
+  tool_convert_a_mov_file_to_an_mp4_file_err_no_avc: 'This device cannot encode H.264 at this video size. Try another device or a desktop converter.',
+  tool_convert_a_mov_file_to_an_mp4_file_err_sample: 'Could not load the on-site MOV sample. Choose your own file.',
+  tool_convert_a_mov_file_to_an_mp4_file_example:
+    'Load the on-site 320×180 H.264/AAC QuickTime sample. Conversion copies the H.264 video into a real MP4, writes AAC sound and reports source tracks, decision and actual file size. Preview and download the result.',
+  tool_convert_a_mov_file_to_an_mp4_file_example_title: 'H.264/AAC MOV to H.264/AAC MP4 example',
+  tool_convert_a_mov_file_to_an_mp4_file_failed: 'This MOV could not become a complete H.264 MP4. Check its tracks and this browser\'s codec support.',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_a1:
+    'No. MOV and MP4 are containers; the encoded tracks determine compatibility. This page checks tracks and exports a verified H.264 MP4.',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_a2:
+    'Only if this browser can decode its HEVC track and encode H.264 at the video size. Otherwise it reports an error and does not keep an audio-only result.',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_a3:
+    'The H.264 video packets are copied when compatible, avoiding a video re-encode. Audio is written as AAC; container overhead and audio can change total size. Smaller size is not guaranteed.',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_a4:
+    'Decodable PCM sound becomes AAC with the chosen channels. A MOV without a sound track stays video-only; no silent AAC track is invented.',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_a5:
+    'No such guarantee. This page targets H.264/AAC compatibility, and unusual video tracks may be refused by the device codec check.',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_a6:
+    'No. The browser reads and converts it on your device; the file is not uploaded to our server. Conversion scripts load from this site.',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_a7:
+    'This page converts one MOV. For several clips, use Batch convert MOV files to MP4: it gives each input a separate H.264/AAC result, reports copy or transcode per row and downloads outputs individually.',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_q1: 'Can I just rename .mov to .mp4?',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_q2: 'Will an iPhone HEVC MOV work?',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_q3: 'Is H.264 MOV to MP4 lossless or smaller?',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_q4: 'What happens to PCM audio or a MOV without audio?',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_q5: 'Can this preserve HDR, Dolby Vision or ProRes?',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_q6: 'Is the MOV sent to a server?',
+  tool_convert_a_mov_file_to_an_mp4_file_faq_q7: 'Can I convert several MOV clips at once?',
+  tool_convert_a_mov_file_to_an_mp4_file_hint:
+    'One local .mov with a video track. Code cap: 500 MiB with OPFS, 80 MiB without; actual successful size depends on storage and device codecs. HEVC may be unsupported.',
+  tool_convert_a_mov_file_to_an_mp4_file_how_body:
+    'Choose a local MOV, inspect the source tracks, click Convert MOV to MP4, preview the verified result and download. H.264 video is copied; HEVC needs device decode and H.264 encode support.',
+  tool_convert_a_mov_file_to_an_mp4_file_how_item_1: 'Choose one .mov video or click Load H.264/AAC MOV sample.',
+  tool_convert_a_mov_file_to_an_mp4_file_how_item_2: 'Optionally choose AAC mono or quality. Video quality only applies when video must be re-encoded.',
+  tool_convert_a_mov_file_to_an_mp4_file_how_item_3: 'Click Convert MOV to MP4 and watch track checks, audio encoding and MP4 writing.',
+  tool_convert_a_mov_file_to_an_mp4_file_how_item_4:
+    'Review source codecs, the video copy/transcode decision, duration and actual size; preview, then Download MP4.',
+  tool_convert_a_mov_file_to_an_mp4_file_how_title: 'How to convert an iPhone or QuickTime MOV to MP4',
+  tool_convert_a_mov_file_to_an_mp4_file_load: 'Load conversion engine',
+  tool_convert_a_mov_file_to_an_mp4_file_mode_copy: 'H.264 video copied',
+  tool_convert_a_mov_file_to_an_mp4_file_mode_transcode: 'video re-encoded to H.264',
+  tool_convert_a_mov_file_to_an_mp4_file_no_audio: 'no audio track',
+  tool_convert_a_mov_file_to_an_mp4_file_preview: 'Converted MP4 video preview',
+  tool_convert_a_mov_file_to_an_mp4_file_progress: 'MOV to MP4 conversion progress',
+  tool_convert_a_mov_file_to_an_mp4_file_quality_high: 'Higher quality (default)',
+  tool_convert_a_mov_file_to_an_mp4_file_quality_label: 'Audio quality and video quality if re-encoded',
+  tool_convert_a_mov_file_to_an_mp4_file_quality_low: 'Smaller output, lower quality',
+  tool_convert_a_mov_file_to_an_mp4_file_quality_medium: 'Balanced',
+  tool_convert_a_mov_file_to_an_mp4_file_read: 'Read MOV tracks',
+  tool_convert_a_mov_file_to_an_mp4_file_result:
+    'Source: {videoCodec} video / {audioCodec} · {width}×{height} · about {duration}s · {input} → MP4: H.264 / {targetAudio} · {mode} · {output}',
+  tool_convert_a_mov_file_to_an_mp4_file_rules_body:
+    'MOV is a container. iPhone and QuickTime recordings can carry H.264 or HEVC video and AAC or PCM sound. The target is H.264 MP4 with AAC when sound exists; support is checked per track on this device.',
+  tool_convert_a_mov_file_to_an_mp4_file_rules_item_1:
+    'Renaming .mov to .mp4 does not change the tracks. H.264 source video can be copied; non-H.264 video needs actual decoding and re-encoding.',
+  tool_convert_a_mov_file_to_an_mp4_file_rules_item_2:
+    'HEVC support varies by device and browser. If it cannot be decoded here, this page stops instead of exporting sound without picture. HDR, Dolby Vision and ProRes preservation are not promised.',
+  tool_convert_a_mov_file_to_an_mp4_file_rules_item_3:
+    'Audio is written as AAC and may change size or fidelity. H.264 video copy avoids another video generation, but the full file is not bit-for-bit identical.',
+  tool_convert_a_mov_file_to_an_mp4_file_rules_item_4:
+    'Code caps: 500 MiB with OPFS, 80 MiB without; these are not validated maxima. Browser storage quota, speed and output size vary by device.',
+  tool_convert_a_mov_file_to_an_mp4_file_rules_title: 'MOV codecs, iPhone HEVC support and file limits',
+  tool_convert_a_mov_file_to_an_mp4_file_sample: 'Load H.264/AAC MOV sample',
+  tool_convert_a_mov_file_to_an_mp4_file_sample_name: 'mov-to-mp4-example',
+  tool_convert_a_mov_file_to_an_mp4_file_settings_hint:
+    'H.264 source video is copied; other video requires decoding and H.264 re-encoding. Existing sound becomes AAC. Mono and quality affect AAC; quality also affects video if re-encoded. Changing settings clears the previous result.',
+  tool_convert_a_mov_file_to_an_mp4_file_status_stopped: 'Stopped. No partial MP4 is kept.',
+  tool_convert_a_mov_file_to_an_mp4_file_stop: 'Stop',
+  tool_convert_a_mov_file_to_an_mp4_file_title: 'Convert a MOV video to a compatible H.264 MP4',
+  tool_convert_a_mov_file_to_an_mp4_file_usecase_1: 'Prepare an iPhone or camera MOV for an editor or upload form that accepts compatible MP4 video.',
+  tool_convert_a_mov_file_to_an_mp4_file_usecase_2:
+    'Convert a QuickTime H.264/PCM recording to MP4 while keeping video packets and changing sound to AAC.',
+  tool_convert_a_mov_file_to_an_mp4_file_usecase_3:
+    'Check whether an HEVC MOV can be decoded on this device before spending time on a conversion, and inspect real output bytes.',
+  tool_convert_a_mov_file_to_an_mp4_file_usecases_title: 'When a MOV to MP4 conversion helps',
+  tool_convert_a_mov_file_to_an_mp4_file_why_choose_item_1:
+    'Already-compatible H.264 video is copied; a test fixture\'s raw H.264 packets matched before and after conversion.',
+  tool_convert_a_mov_file_to_an_mp4_file_why_choose_item_2:
+    'PCM or other decodable sound becomes AAC, while source codecs, dimensions and actual output bytes are reported.',
+  tool_convert_a_mov_file_to_an_mp4_file_why_choose_item_3:
+    'HEVC without a device decoder is refused. Output tracks are checked again so an audio-only file is never labeled a successful video conversion.',
+  tool_convert_a_mov_file_to_an_mp4_file_why_choose_item_4:
+    'Files remain on your device. OPFS can hold larger outputs when available rather than collecting them all in page memory.',
+  tool_convert_a_mov_file_to_an_mp4_file_why_choose_title: 'Why choose our Convert a MOV video to a compatible H.264 MP4 tool',
+  tool_convert_a_mov_file_to_an_mp4_file_write: 'Write MP4',
+  tool_convert_a_video_file_to_a_gif_advanced: 'Clip and GIF settings (optional)',
+  tool_convert_a_video_file_to_a_gif_article:
+    'A video-to-GIF converter samples pictures from a short section of the video timeline and compresses them into one looping image. This page reads a local video with the browser\'s available decoder and encodes frames with the on-site gifenc library; the video is not uploaded. You can set start and end times, frame rate and width. The result report shows the first sampled time, end of the selected window, number of frames, output dimensions and real GIF bytes. Lower frame rate or width usually saves space at the cost of motion or detail. GIF never carries the source audio. Long sources can be seeked to a short window without decoding the whole video, but the selected clip is capped at 10 seconds, 100 frames, 20 million processed pixels and a 30 MiB GIF. Device codec support, source seeking and available memory still matter; no arbitrary video length or output size is promised. A damaged or unsupported video yields an error rather than a blank download.',
+  tool_convert_a_video_file_to_a_gif_budget:
+    'Planned: {count} frames at {width}×{height}. Select no more than {seconds} seconds; fewer frames and pixels usually make a smaller GIF.',
+  tool_convert_a_video_file_to_a_gif_choose: 'Choose a video or MP4',
+  tool_convert_a_video_file_to_a_gif_clear: 'Clear',
+  tool_convert_a_video_file_to_a_gif_convert: 'Convert video to GIF',
+  tool_convert_a_video_file_to_a_gif_desc:
+    'Turn a short video or MP4 clip into a silent, looping GIF. Choose a time range, frame rate and width; see the actual frames, pixels and output size before downloading.',
+  tool_convert_a_video_file_to_a_gif_description:
+    'Convert video to GIF in your browser. Choose a local video or MP4, select up to 10 seconds, click Convert video to GIF, preview the animation and download the real GIF. Frame count, sample times, dimensions and actual bytes explain how the clip and settings affect the result. GIF has no sound. Example: a 3-second MP4 clip becomes 24 silent frames at 8 fps; compare the actual GIF bytes before sharing.',
+  tool_convert_a_video_file_to_a_gif_done: 'Animated GIF ready. Preview, then download.',
+  tool_convert_a_video_file_to_a_gif_download: 'Download GIF',
+  tool_convert_a_video_file_to_a_gif_elapsed: 'Elapsed: {s}s',
+  tool_convert_a_video_file_to_a_gif_empty: 'Choose a video or load the on-site moving sample to make a GIF.',
+  tool_convert_a_video_file_to_a_gif_encode: 'Finish GIF',
+  tool_convert_a_video_file_to_a_gif_end: 'End time (seconds)',
+  tool_convert_a_video_file_to_a_gif_err_budget:
+    'This clip exceeds the 100-frame, 20-million-pixel or 30 MiB GIF budget. Shorten it or reduce frame rate or width.',
+  tool_convert_a_video_file_to_a_gif_err_decode: 'This browser could not decode a video track from that file. Try a supported MP4 or WebM.',
+  tool_convert_a_video_file_to_a_gif_err_encode: 'Could not encode a complete GIF. Shorten the clip or reduce width and frame rate, then retry.',
+  tool_convert_a_video_file_to_a_gif_err_file: 'Choose exactly one nonempty video file.',
+  tool_convert_a_video_file_to_a_gif_err_range: 'Choose an end after the start and within the video, with a clip no longer than 10 seconds.',
+  tool_convert_a_video_file_to_a_gif_err_sample: 'Could not load the on-site moving video sample. Choose your own file.',
+  tool_convert_a_video_file_to_a_gif_err_seek: 'This video could not seek to the requested frame. Try an MP4/WebM with a seekable video track.',
+  tool_convert_a_video_file_to_a_gif_err_size: 'This source exceeds the 1 GiB code cap. Choose a smaller video.',
+  tool_convert_a_video_file_to_a_gif_example:
+    'Load the 5-second moving MP4 sample. At the default 0–3 seconds, 8 fps and 320-pixel width, the page samples 24 frames into a looping silent GIF and reports the real output size.',
+  tool_convert_a_video_file_to_a_gif_example_title: 'MP4 clip to GIF example',
+  tool_convert_a_video_file_to_a_gif_failed: 'No GIF was created. Check the video and clip settings.',
+  tool_convert_a_video_file_to_a_gif_faq_a1:
+    'Yes, if this browser can decode its video track. Choose the MP4 and a short clip; the downloaded file is a real animated GIF.',
+  tool_convert_a_video_file_to_a_gif_faq_a2: 'No. GIF images cannot carry the video\'s audio track.',
+  tool_convert_a_video_file_to_a_gif_faq_a3:
+    'Shorten the selected clip or use fewer frames per second and a narrower width. The page reports actual output bytes; a precise size is not guaranteed.',
+  tool_convert_a_video_file_to_a_gif_faq_a4:
+    'Yes when the browser can seek the source video. The chosen GIF window remains limited to 10 seconds and the source is capped in code at 1 GiB.',
+  tool_convert_a_video_file_to_a_gif_faq_a5:
+    'This page samples frames at timestamps from one video. Images to GIF joins already separate image files in a chosen order.',
+  tool_convert_a_video_file_to_a_gif_faq_a6: 'No. The selected file is read in this browser and encoded with an on-site GIF library.',
+  tool_convert_a_video_file_to_a_gif_faq_q1: 'Can I convert an MP4 to GIF here?',
+  tool_convert_a_video_file_to_a_gif_faq_q2: 'Will the GIF include sound?',
+  tool_convert_a_video_file_to_a_gif_faq_q3: 'How do I make a smaller GIF?',
+  tool_convert_a_video_file_to_a_gif_faq_q4: 'Can I select a clip from a long video?',
+  tool_convert_a_video_file_to_a_gif_faq_q5: 'How is this different from Images to GIF?',
+  tool_convert_a_video_file_to_a_gif_faq_q6: 'Is my video uploaded?',
+  tool_convert_a_video_file_to_a_gif_fps: 'Frames per second',
+  tool_convert_a_video_file_to_a_gif_frame_status: 'Frame {index}/{count} at {time}s',
+  tool_convert_a_video_file_to_a_gif_frames: 'Sample video frames',
+  tool_convert_a_video_file_to_a_gif_hint: 'One local video. Select a clip of 10 seconds or less; GIF is silent. Source code cap: 1 GiB.',
+  tool_convert_a_video_file_to_a_gif_how_body:
+    'Choose a video, select a short range, click Convert video to GIF and Download GIF after preview. Processing stays in this browser.',
+  tool_convert_a_video_file_to_a_gif_how_item_1: 'Choose one local video or load the 5-second moving MP4 sample.',
+  tool_convert_a_video_file_to_a_gif_how_item_2: 'Optionally set start/end times, frame rate and width for the desired GIF motion and size.',
+  tool_convert_a_video_file_to_a_gif_how_item_3: 'Click Convert video to GIF. Watch frame progress and actual sampled times.',
+  tool_convert_a_video_file_to_a_gif_how_item_4: 'Preview the silent loop, check frame count and real output bytes, then Download GIF.',
+  tool_convert_a_video_file_to_a_gif_how_title: 'How to convert video or MP4 to GIF',
+  tool_convert_a_video_file_to_a_gif_preview: 'Animated GIF preview',
+  tool_convert_a_video_file_to_a_gif_progress: 'Video to GIF progress',
+  tool_convert_a_video_file_to_a_gif_read: 'Read video and clip range',
+  tool_convert_a_video_file_to_a_gif_ready: 'Ready to convert',
+  tool_convert_a_video_file_to_a_gif_result: 'Source {source} · clip {start}–{end}s · {count} frames · {width}×{height} · GIF {output} · no audio',
+  tool_convert_a_video_file_to_a_gif_rules_body:
+    'A GIF contains indexed-color pictures, not video sound. Frame rate and dimensions drive animation smoothness and memory use.',
+  tool_convert_a_video_file_to_a_gif_rules_item_1:
+    'Choose a start/end window of at most 10 seconds. The GIF has no audio even when the MP4 has a soundtrack.',
+  tool_convert_a_video_file_to_a_gif_rules_item_2:
+    '5 fps uses fewer pictures than 12 fps. Lower width reduces pixels; neither setting guarantees a particular output byte size.',
+  tool_convert_a_video_file_to_a_gif_rules_item_3:
+    'Encoding is capped at 100 frames, 20 million processed pixels and 30 MiB output to protect browser memory. A 1 GiB source cap is code, not a tested universal maximum.',
+  tool_convert_a_video_file_to_a_gif_rules_item_4:
+    'Video decode and accurate seeking depend on the browser and source codec. Damaged or unsupported video is rejected.',
+  tool_convert_a_video_file_to_a_gif_rules_title: 'GIF frame rate, size and source limits',
+  tool_convert_a_video_file_to_a_gif_sample: 'Load video sample',
+  tool_convert_a_video_file_to_a_gif_start: 'Start time (seconds)',
+  tool_convert_a_video_file_to_a_gif_stop: 'Stop',
+  tool_convert_a_video_file_to_a_gif_stopped: 'Stopped. No partial GIF is kept; you can retry.',
+  tool_convert_a_video_file_to_a_gif_title: 'Convert a video clip to an animated GIF',
+  tool_convert_a_video_file_to_a_gif_usecase_1: 'Make a short silent reaction GIF from a local phone or screen-recorded MP4.',
+  tool_convert_a_video_file_to_a_gif_usecase_2: 'Trim a product or interface demo to a looping animated image for a page or message.',
+  tool_convert_a_video_file_to_a_gif_usecase_3: 'Compare frame rate and width against the GIF\'s actual byte size before sharing.',
+  tool_convert_a_video_file_to_a_gif_usecases_title: 'When a GIF from video is useful',
+  tool_convert_a_video_file_to_a_gif_width: 'GIF width',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_advanced: 'Encoding settings (optional)',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_article:
+    'A .mp4 filename alone does not make a video widely playable: the video and sound tracks may still use unsupported codecs. Choose one MOV, WebM, MKV or MP4 file and this page reads its actual container and primary tracks. H.264 video can be copied when compatible; decodable VP9 or other supported video is re-encoded to H.264. If the source has sound, the selected audio track becomes AAC. A silent source remains silent rather than receiving a fake audio track. After conversion, the output is inspected again for a real MP4 container, H.264 video, AAC when needed, and a plausible duration. The result shows source codecs, copy/transcode decision and actual file sizes. This is a common playback target, not a promise that every device can play it. HEVC, unusual multitrack files and missing hardware codecs may fail on this browser; the page then stops rather than offering an incomplete video. Large files use bounded reads and OPFS when available, subject to local storage quota. The original file stays on your device and is not uploaded.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_channels_label: 'AAC audio channels',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_channels_mono: 'Mono',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_channels_stereo: 'Stereo (default)',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_choose: 'Choose a video file',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_clear: 'Clear',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_convert: 'Convert video to MP4',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_decode: 'Check source codecs',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_desc:
+    'Turn a local MOV, WebM, MKV or MP4 into a verified H.264/AAC MP4 for common playback. Inspect real codecs, copy or re-encode video as needed, and compare source and output tracks without uploading.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_description:
+    'Convert a local video to compatible H.264/AAC MP4. Choose MOV, WebM, MKV or MP4; inspect source codecs, convert, verify the output video and AAC audio, then download. Example: a VP9/Opus WebM becomes H.264/AAC MP4. Files stay on your device.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_done: 'Verified H.264/AAC MP4 ready. Preview and download.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_download: 'Download MP4',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_elapsed: 'Elapsed: {s}s',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_empty: 'Choose a video or load the WebM example.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_empty_state:
+    'Choose one MOV, WebM, MKV or MP4, or load the WebM sample. Download unlocks only after the output tracks pass verification.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_encode: 'Copy or encode video; make AAC',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_err_aborted: 'Conversion was stopped.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_err_codec:
+    'A source track could not be decoded, or the output lacks required H.264/AAC tracks. Try another browser or file.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_err_container: 'Could not read a usable video track from this file.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_err_encoder: 'Could not write the MP4. Free browser storage and retry.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_err_engine: 'Could not load the local conversion engine. Retry or use another browser.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_err_file: 'Choose exactly one local video.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_err_format: 'This is not a readable MOV, WebM, MKV or MP4 video.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_err_hevc: 'This browser cannot decode that HEVC video. No incomplete MP4 was kept.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_err_limit: 'The video exceeds the device-safe code limit: 500 MiB with OPFS or 80 MiB without.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_err_no_avc: 'This device cannot encode H.264 at this video size. Try another device or a desktop converter.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_err_sample: 'The local WebM example could not be loaded.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_example:
+    'Load the local WebM sample. Its VP9 video is re-encoded as H.264 and Opus sound becomes AAC. The result reports both tracks, duration, bytes and a verified MP4 download.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_example_title: 'VP9/Opus WebM to H.264/AAC MP4 example',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_failed: 'This video could not become a complete H.264/AAC MP4 in this browser.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_a1:
+    'No. A filename does not change video or audio codecs. This tool writes MP4 and checks H.264 video plus AAC when audio is present.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_a2:
+    'MOV, WebM, MKV and MP4 are accepted when this browser can read and decode their tracks. HEVC and other unsupported codecs may fail; the page will not present an incomplete output as success.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_a3:
+    'No. H.264 video can be copied, but other video is re-encoded and audio becomes AAC. Container overhead and encoding can make the output larger.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_a4: 'The output remains video-only. An AAC track is created only when the source has decodable audio.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_a5:
+    'No. H.264/AAC MP4 is a common target, but a particular device or software may still have limits. Inspect the output before sharing.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_a6:
+    'No. Reading and conversion run in your browser on your device; the file is not uploaded to our server.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_a7:
+    'If you know the source is MOV, WebM or MKV, the matching page offers source-specific guidance. This page accepts those containers through one input for a common target.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_q1: 'Is changing the extension to .mp4 enough?',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_q2: 'Which source videos can I convert?',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_q3: 'Is the output lossless or always smaller?',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_q4: 'What if the original video has no sound?',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_q5: 'Does compatible mean every device will play it?',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_q6: 'Is my video uploaded?',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_faq_q7: 'Should I use a format-specific converter?',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_hint:
+    'One local MOV, WebM, MKV or MP4 with a video track. Code cap: 500 MiB with OPFS, 80 MiB without; actual capacity depends on this device.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_how_body:
+    'Choose a video, inspect its tracks, click Convert video to MP4, then preview the verified H.264/AAC output and download.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_how_item_1: 'Choose one local MOV, WebM, MKV or MP4, or load the VP9/Opus WebM sample.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_how_item_2: 'Optionally set AAC channels and quality; H.264 picture packets are copied when suitable.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_how_item_3:
+    'Click Convert video to MP4 and follow source reading, codec checks, encoding and output verification.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_how_item_4: 'Compare source and result tracks, duration and size; preview the video, then Download MP4.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_how_title: 'How to make a compatible MP4 from a local video',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_load: 'Load conversion engine',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_mode_copy: 'H.264 video copied',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_mode_transcode: 'video re-encoded to H.264',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_no_audio: 'no audio track',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_preview: 'Converted MP4 video preview',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_progress: 'Video to compatible MP4 progress',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_quality_high: 'Higher quality (default)',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_quality_label: 'Audio quality and video quality if re-encoded',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_quality_low: 'Smaller output, lower quality',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_quality_medium: 'Balanced',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_read: 'Read source tracks',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_result:
+    'Source: {videoCodec} video / {audioCodec} · {width}×{height} · about {duration}s · {input} → MP4: H.264 / {targetAudio} · {mode} · {output}',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_rules_body:
+    'The target is an MP4 container with H.264 picture and AAC sound when the source has an audio track. Browser codecs and storage quota still limit conversion.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_rules_item_1: 'Container name and codecs are separate: MOV, WebM, MKV and MP4 may carry different tracks.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_rules_item_2: 'H.264 can be copied; VP9 needs re-encoding, and unsupported HEVC is rejected.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_rules_item_3: 'Existing sound becomes AAC; a silent source remains video-only. Size or quality can change.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_rules_item_4: '500 MiB with OPFS and 80 MiB without are code limits, not proven maximum sizes.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_rules_title: 'How the H.264/AAC MP4 target is checked',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_sample: 'Load VP9/Opus WebM sample',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_sample_name: 'compatible-mp4-example',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_settings_hint:
+    'H.264 source video is copied; other video requires decoding and H.264 re-encoding. Existing sound becomes AAC. Mono and quality affect AAC; quality also affects video if re-encoded. Changing settings clears the previous result.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_status_stopped: 'Stopped. No partial MP4 is kept.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_stop: 'Stop',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_title: 'Convert a local video to compatible H.264/AAC MP4',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_usecase_1: 'Make MP4 from several camera or screen-recording formats for common playback.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_usecase_2: 'Repair a nominal MP4 whose internal audio or video codec is unsupported.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_usecase_3: 'Check actual codec and file size before sending a clip to an editor.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_usecases_title: 'When to make a compatible MP4',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_why_choose_item_1: 'One input accepts different containers for the same H.264/AAC output.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_why_choose_item_2: 'The result tells you when H.264 was copied and when video was re-encoded.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_why_choose_item_3: 'A second track inspection refuses an incomplete MP4 before download.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_why_choose_item_4: 'Bounded reads and OPFS support larger local files when device quota allows.',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_why_choose_title: 'Why choose our compatible MP4 converter',
+  tool_convert_a_video_to_an_mp4_with_aac_audio_write: 'Write MP4',
   tool_convert_a_wav_file_to_mp3_advanced: 'Advanced settings (optional)',
   tool_convert_a_wav_file_to_mp3_article:
     'A WAV recording can be too large to send comfortably. This converter keeps the complete recording and makes an MP3 at your chosen bitrate. Listen to the encoded file before saving it, and compare its actual size with the original. Keep the WAV as your editing master: MP3 discards audio information, even at 320 kbps.',
@@ -5745,6 +7046,119 @@ const en: SiteLangDict = {
   tool_convert_a_wav_file_to_mp3_why_choose_item_3:
     'WAV headers and duration are checked before decoding; unsupported files get a visible error instead of a partial download.',
   tool_convert_a_wav_file_to_mp3_why_choose_title: 'Why choose our Convert a WAV file to MP3 tools',
+  tool_convert_a_webm_file_to_an_mp4_file_advanced: 'Encoding settings (optional)',
+  tool_convert_a_webm_file_to_an_mp4_file_article:
+    'A browser screen recording often arrives as VP8 or VP9 video in WebM, with Opus or no audio. A file named .mp4 is not necessarily a compatible MP4: simply renaming WebM fails, and copying VP9 into MP4 can still leave an unsupported video track. This page reads the WebM tracks, checks whether H.264 encoding is available on this device, explicitly re-encodes video to AVC/H.264, and re-encodes an existing audio track to AAC stereo by default. It reports source codecs, dimensions, approximate source duration, input bytes and actual MP4 bytes. Preview the exported MP4 before downloading. Re-encoding may change quality or increase file size; no missing audio is invented. Local files are processed in the browser and are not uploaded.',
+  tool_convert_a_webm_file_to_an_mp4_file_channels_label: 'AAC audio channels',
+  tool_convert_a_webm_file_to_an_mp4_file_channels_mono: 'Mono',
+  tool_convert_a_webm_file_to_an_mp4_file_channels_stereo: 'Stereo (default)',
+  tool_convert_a_webm_file_to_an_mp4_file_choose: 'Choose a WebM video',
+  tool_convert_a_webm_file_to_an_mp4_file_clear: 'Clear',
+  tool_convert_a_webm_file_to_an_mp4_file_convert: 'Convert WebM to MP4',
+  tool_convert_a_webm_file_to_an_mp4_file_decode: 'Decode tracks',
+  tool_convert_a_webm_file_to_an_mp4_file_desc:
+    'Convert one WebM recording to a real MP4 with H.264 video and AAC audio when present. Check source tracks, duration and actual output size before downloading. Process locally in your browser.',
+  tool_convert_a_webm_file_to_an_mp4_file_description:
+    'Convert WebM to real H.264/AAC MP4 in your browser. Steps: choose WebM, Convert, preview and download. Example: VP9/Opus becomes H.264/AAC; source tracks and size are shown. Files stay on your device.',
+  tool_convert_a_webm_file_to_an_mp4_file_done: 'MP4 ready. Preview the real video and download it.',
+  tool_convert_a_webm_file_to_an_mp4_file_download: 'Download MP4',
+  tool_convert_a_webm_file_to_an_mp4_file_elapsed: 'Elapsed: {s}s',
+  tool_convert_a_webm_file_to_an_mp4_file_empty: 'Choose a WebM or load the example first.',
+  tool_convert_a_webm_file_to_an_mp4_file_empty_state:
+    'Choose one WebM recording or load the built-in VP9/Opus sample; Convert enables Download after a real MP4 exists.',
+  tool_convert_a_webm_file_to_an_mp4_file_encode: 'Encode H.264/AAC',
+  tool_convert_a_webm_file_to_an_mp4_file_err_aborted: 'Conversion was stopped.',
+  tool_convert_a_webm_file_to_an_mp4_file_err_codec:
+    'A source track could not be decoded, or the resulting MP4 lacks the required H.264/AAC track. Try another browser or file.',
+  tool_convert_a_webm_file_to_an_mp4_file_err_container: 'Could not read a usable video track from this WebM. Try another recording.',
+  tool_convert_a_webm_file_to_an_mp4_file_err_encoder: 'Could not write the MP4. Free browser storage and retry.',
+  tool_convert_a_webm_file_to_an_mp4_file_err_engine: 'Could not load the local conversion engine. Retry or use another browser.',
+  tool_convert_a_webm_file_to_an_mp4_file_err_file: 'Choose exactly one WebM video file.',
+  tool_convert_a_webm_file_to_an_mp4_file_err_format: 'The file is not a WebM video. Its extension, MIME type or internal container did not match.',
+  tool_convert_a_webm_file_to_an_mp4_file_err_limit:
+    'This WebM exceeds the device-safe code limit: 500 MiB with OPFS or 80 MiB without. Free space or choose a smaller file.',
+  tool_convert_a_webm_file_to_an_mp4_file_err_no_avc:
+    'This browser or device cannot encode H.264 at this video size. Try a supported device or a desktop converter.',
+  tool_convert_a_webm_file_to_an_mp4_file_err_sample: 'Could not load the on-site WebM sample. Choose your own file.',
+  tool_convert_a_webm_file_to_an_mp4_file_example:
+    'Load VP9/Opus sample selects a short on-site 320×180 WebM recording. Convert WebM to MP4 then creates a real H.264/AAC MP4 with a visible track and size report; preview and download are available.',
+  tool_convert_a_webm_file_to_an_mp4_file_example_title: 'VP9/Opus WebM to H.264/AAC MP4 example',
+  tool_convert_a_webm_file_to_an_mp4_file_failed: 'Could not convert this WebM. Check its tracks, file size and browser encoder support.',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_a1:
+    'No. The container and encoded tracks must be converted. This page explicitly produces H.264 video and AAC audio when the WebM contains audio.',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_a2:
+    'Some MP4 files can contain VP9, but that does not meet an H.264 playback requirement. This page forces H.264 encoding and reports the source codec.',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_a3:
+    'Neither is guaranteed. H.264 re-encoding changes compressed video and may increase size. The page shows both byte counts and lets you preview the result.',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_a4:
+    'The MP4 remains video-only. This page does not invent audio or claim AAC exists when the source had no audio track.',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_a5:
+    'The page stops before conversion with an encoder-support error. Try a browser/device with H.264 WebCodecs support or a desktop video converter.',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_a6:
+    'No. The browser reads and encodes the local file on your device. The conversion scripts load from this site.',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_a7:
+    'This page converts one. For many recordings, use Batch convert WebM files to H.264 MP4: each clip has its own checked output and download.',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_q1: 'Can I just rename .webm to .mp4?',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_q2: 'Why not copy VP9 video into MP4?',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_q3: 'Will the MP4 be smaller or lossless?',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_q4: 'What if my WebM has no audio?',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_q5: 'What if H.264 encoding is unavailable?',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_q6: 'Is the WebM uploaded to a server?',
+  tool_convert_a_webm_file_to_an_mp4_file_faq_q7: 'Can I convert several WebM files together?',
+  tool_convert_a_webm_file_to_an_mp4_file_hint:
+    'One local .webm with a video track. Code cap: 500 MiB with browser OPFS storage, 80 MiB without; actual successful size depends on your device.',
+  tool_convert_a_webm_file_to_an_mp4_file_how_body:
+    'Choose a local WebM video, run Convert WebM to MP4, check the source track report and playable result, then Download MP4. The browser must support source decoding and H.264 encoding.',
+  tool_convert_a_webm_file_to_an_mp4_file_how_item_1: 'Choose one .webm recording or click Load VP9/Opus sample.',
+  tool_convert_a_webm_file_to_an_mp4_file_how_item_2:
+    'Optionally open Encoding settings for quality or mono AAC; the default creates H.264 video and AAC audio when audio exists.',
+  tool_convert_a_webm_file_to_an_mp4_file_how_item_3: 'Click Convert WebM to MP4 and watch the read, decode, encode and write progress.',
+  tool_convert_a_webm_file_to_an_mp4_file_how_item_4:
+    'Check the reported codecs, dimensions, duration and actual size; preview the video, then click Download MP4.',
+  tool_convert_a_webm_file_to_an_mp4_file_how_title: 'How to convert a WebM recording to H.264 MP4',
+  tool_convert_a_webm_file_to_an_mp4_file_load: 'Load engine',
+  tool_convert_a_webm_file_to_an_mp4_file_no_audio: 'no audio track',
+  tool_convert_a_webm_file_to_an_mp4_file_preview: 'Converted MP4 video preview',
+  tool_convert_a_webm_file_to_an_mp4_file_progress: 'WebM to MP4 conversion progress',
+  tool_convert_a_webm_file_to_an_mp4_file_quality_high: 'Higher quality (default)',
+  tool_convert_a_webm_file_to_an_mp4_file_quality_label: 'Video and audio quality',
+  tool_convert_a_webm_file_to_an_mp4_file_quality_low: 'Smaller file, lower quality',
+  tool_convert_a_webm_file_to_an_mp4_file_quality_medium: 'Balanced',
+  tool_convert_a_webm_file_to_an_mp4_file_read: 'Read WebM',
+  tool_convert_a_webm_file_to_an_mp4_file_result:
+    'Source: {videoCodec} video / {audioCodec} · {width}×{height} · about {duration}s · {input} → MP4: H.264 / {targetAudio} · {output}',
+  tool_convert_a_webm_file_to_an_mp4_file_rules_body:
+    'WebM is a container, commonly holding VP8/VP9 video and Opus audio. This tool always requests AVC/H.264 output video and AAC output audio if an audio track exists. Codec support is checked on this device.',
+  tool_convert_a_webm_file_to_an_mp4_file_rules_item_1:
+    'Changing only .webm to .mp4 does not transcode. Copying VP9 video into an MP4 container is not the same as producing an H.264-compatible file.',
+  tool_convert_a_webm_file_to_an_mp4_file_rules_item_2:
+    'Re-encoding can change quality and either increase or decrease size. Higher quality typically needs more bytes; preview before using the result.',
+  tool_convert_a_webm_file_to_an_mp4_file_rules_item_3:
+    'Code caps: 500 MiB source with OPFS and 80 MiB without. Those caps are not validated maximums. Storage quota and encoder speed depend on this browser and hardware.',
+  tool_convert_a_webm_file_to_an_mp4_file_rules_item_4:
+    'Source files are never overwritten or uploaded. Only one local WebM is converted per run; use the separate batch task for many files once verified.',
+  tool_convert_a_webm_file_to_an_mp4_file_rules_title: 'Codec compatibility, quality and file limits',
+  tool_convert_a_webm_file_to_an_mp4_file_sample: 'Load VP9/Opus sample',
+  tool_convert_a_webm_file_to_an_mp4_file_sample_name: 'webm-to-mp4-example',
+  tool_convert_a_webm_file_to_an_mp4_file_settings_hint:
+    'H.264 video is always re-encoded. An existing audio track becomes AAC; mono and quality affect the result. No audio track stays silent. Changing settings clears the previous output.',
+  tool_convert_a_webm_file_to_an_mp4_file_status_stopped: 'Stopped. No partial MP4 is kept.',
+  tool_convert_a_webm_file_to_an_mp4_file_stop: 'Stop',
+  tool_convert_a_webm_file_to_an_mp4_file_title: 'Convert WebM to a playable H.264 MP4',
+  tool_convert_a_webm_file_to_an_mp4_file_usecase_1: 'Turn a browser screen recording into an H.264 MP4 for an editor that rejects WebM.',
+  tool_convert_a_webm_file_to_an_mp4_file_usecase_2:
+    'Share a VP9/Opus WebM clip with an MP4-only playback workflow, while checking the new audio and video codecs.',
+  tool_convert_a_webm_file_to_an_mp4_file_usecase_3: 'Keep a local conversion on the device and inspect output size before uploading it elsewhere.',
+  tool_convert_a_webm_file_to_an_mp4_file_usecases_title: 'When a real WebM to MP4 file helps',
+  tool_convert_a_webm_file_to_an_mp4_file_why_choose_item_1:
+    'Video is explicitly re-encoded to H.264. A VP9 track merely wrapped in MP4 would not meet this page’s compatibility target.',
+  tool_convert_a_webm_file_to_an_mp4_file_why_choose_item_2:
+    'The source video/audio codecs, dimensions and approximate duration are reported alongside actual MP4 bytes.',
+  tool_convert_a_webm_file_to_an_mp4_file_why_choose_item_3: 'A WebM without audio remains video-only; the page does not claim to create a missing track.',
+  tool_convert_a_webm_file_to_an_mp4_file_why_choose_item_4:
+    'Conversion happens locally. OPFS stores larger outputs on the device when available instead of collecting the entire MP4 in page memory.',
+  tool_convert_a_webm_file_to_an_mp4_file_why_choose_title: 'Why choose our Convert WebM to a playable H.264 MP4 tool',
+  tool_convert_a_webm_file_to_an_mp4_file_write: 'Write MP4',
   tool_convert_an_aiff_file_to_wav_advanced: 'Advanced settings (optional)',
   tool_convert_an_aiff_file_to_wav_article:
     'Logic Pro and older Mac tools often export AIFF or CAF. Many editors and players prefer WAV. This page opens one local AIFF/CAF, asks the browser to decode it, then writes 16-bit PCM WAV on your device. Decode support varies; when decode fails you see a clear message. The PCM path is lossless relative to decoded samples—keep the original if you need the source container.',
@@ -6075,6 +7489,118 @@ const en: SiteLangDict = {
   tool_convert_an_mp3_file_to_wav_why_choose_item_3:
     'MP3 headers and duration are checked before decoding; unsupported files get a visible error instead of a partial download.',
   tool_convert_an_mp3_file_to_wav_why_choose_title: 'Why choose our Convert an WAV file to MP3 tools',
+  tool_convert_an_mp4_file_to_a_webm_file_advanced: 'Encoding settings (optional)',
+  tool_convert_an_mp4_file_to_a_webm_file_article:
+    'MP4 to WebM conversion changes encoded tracks, not just the filename. This page reads one MP4 video, reports its video/audio codecs, dimensions and duration, and checks whether this browser can decode the source and encode VP9 and Opus. A supported H.264/AAC source becomes VP9 video and Opus sound; a silent source stays video-only. The resulting WebM is reopened to confirm its video track, expected audio and plausible duration before preview or download. You see source versus output tracks, actual input/output bytes and the path taken. VP9 can be larger or smaller than H.264 depending on the source, quality and device encoder; this is not a guaranteed compressor. If the device cannot decode a source HEVC track or encode VP9, the page shows a specific error rather than calling an audio-only result a success. The original MP4 remains local and untouched. Large supported outputs can be written to browser OPFS and downloaded without first collecting the complete result in a JavaScript array.',
+  tool_convert_an_mp4_file_to_a_webm_file_channels_label: 'Opus audio channels',
+  tool_convert_an_mp4_file_to_a_webm_file_channels_mono: 'Mono',
+  tool_convert_an_mp4_file_to_a_webm_file_channels_stereo: 'Stereo (default)',
+  tool_convert_an_mp4_file_to_a_webm_file_choose: 'Choose an MP4 video',
+  tool_convert_an_mp4_file_to_a_webm_file_clear: 'Clear',
+  tool_convert_an_mp4_file_to_a_webm_file_convert: 'Convert MP4 to WebM',
+  tool_convert_an_mp4_file_to_a_webm_file_decode: 'Check source and target codecs',
+  tool_convert_an_mp4_file_to_a_webm_file_desc:
+    'Convert one MP4 video to real VP9 WebM with Opus when audio exists. See source and output codecs, duration and size; download the checked file for a website or WebM workflow.',
+  tool_convert_an_mp4_file_to_a_webm_file_description:
+    'Convert MP4 to WebM in your browser. Steps: choose a local H.264/AAC MP4, convert video to VP9 and existing audio to Opus, preview and download the verified WebM. Example: an 11-second MP4 becomes a separate VP9/Opus file. Compare track details and actual bytes; a smaller result is not guaranteed.',
+  tool_convert_an_mp4_file_to_a_webm_file_done: 'WebM ready. Review the track report and preview, then download.',
+  tool_convert_an_mp4_file_to_a_webm_file_download: 'Download WebM',
+  tool_convert_an_mp4_file_to_a_webm_file_elapsed: 'Elapsed: {s}s',
+  tool_convert_an_mp4_file_to_a_webm_file_empty: 'Choose an MP4 or load the sample first.',
+  tool_convert_an_mp4_file_to_a_webm_file_empty_state:
+    'Choose one local MP4 or load the on-site H.264/AAC sample. A verified VP9/Opus WebM enables preview and download.',
+  tool_convert_an_mp4_file_to_a_webm_file_encode: 'Encode VP9 video and Opus audio',
+  tool_convert_an_mp4_file_to_a_webm_file_err_aborted: 'Conversion was stopped.',
+  tool_convert_an_mp4_file_to_a_webm_file_err_codec: 'A source track could not be decoded or the output failed VP9/Opus video/audio validation.',
+  tool_convert_an_mp4_file_to_a_webm_file_err_container: 'No usable video track could be read from this MP4.',
+  tool_convert_an_mp4_file_to_a_webm_file_err_encoder: 'Could not write the WebM. Free browser storage and retry.',
+  tool_convert_an_mp4_file_to_a_webm_file_err_engine: 'Could not load the local conversion engine. Retry or use another browser.',
+  tool_convert_an_mp4_file_to_a_webm_file_err_file: 'Choose exactly one MP4 video.',
+  tool_convert_an_mp4_file_to_a_webm_file_err_format: 'This is not an MP4 video. Its filename, MIME type or internal container did not match.',
+  tool_convert_an_mp4_file_to_a_webm_file_err_hevc:
+    'This browser cannot decode HEVC video in this MP4. No audio-only WebM is kept. Try another device or desktop conversion.',
+  tool_convert_an_mp4_file_to_a_webm_file_err_limit:
+    'This MP4 exceeds the code cap: 500 MiB with OPFS or 80 MiB without. Use a smaller file or free browser storage.',
+  tool_convert_an_mp4_file_to_a_webm_file_err_no_opus:
+    'This device cannot encode Opus for the existing audio track. Try a different device or a video-only source.',
+  tool_convert_an_mp4_file_to_a_webm_file_err_no_vp9: 'This device cannot encode VP9 at this video size. Try a different device or desktop converter.',
+  tool_convert_an_mp4_file_to_a_webm_file_err_sample: 'Could not load the on-site MP4 sample. Choose your own file.',
+  tool_convert_an_mp4_file_to_a_webm_file_example:
+    'Load the on-site 11-second, 640×360 H.264/AAC MP4. Convert to a WebM with VP9 video and Opus audio, reopen the output tracks, compare bytes and download the result.',
+  tool_convert_an_mp4_file_to_a_webm_file_example_title: 'H.264/AAC MP4 to VP9/Opus WebM example',
+  tool_convert_an_mp4_file_to_a_webm_file_failed: 'No complete WebM was created. Check source tracks, VP9/Opus support and browser storage.',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_a1:
+    'No. The codecs and container structure remain MP4. This tool re-encodes video to VP9 and existing audio to Opus, then checks the resulting WebM.',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_a2:
+    'Only when this browser can decode HEVC and encode VP9 at the source dimensions. Otherwise it shows an error; audio-only output is not accepted.',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_a3:
+    'No. File size depends on the original bitrate, content and chosen quality. Both video and audio are re-encoded, so conversion is not lossless.',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_a4: 'The result remains a video-only VP9 WebM. The page does not invent a silent Opus track.',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_a5:
+    'Not guaranteed. The target is VP9/Opus WebM; color, HDR and extra camera metadata may change or be omitted.',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_a6:
+    'No. Conversion runs in your browser from scripts loaded by this site; the local video stays on your device.',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_a7:
+    'This page converts one file. Multiple independent outputs need a separate batch queue with per-file errors and large-result handling.',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_q1: 'Can I rename .mp4 to .webm?',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_q2: 'Can this convert an HEVC MP4?',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_q3: 'Will WebM always be smaller than MP4?',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_q4: 'What if the MP4 has no audio?',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_q5: 'Can it preserve HDR or camera metadata?',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_q6: 'Is the MP4 uploaded?',
+  tool_convert_an_mp4_file_to_a_webm_file_faq_q7: 'Can I convert several MP4 videos together?',
+  tool_convert_an_mp4_file_to_a_webm_file_hint:
+    'One local .mp4 with a video track. Code cap: 500 MiB with OPFS, 80 MiB without; actual capacity depends on storage and codecs.',
+  tool_convert_an_mp4_file_to_a_webm_file_how_body:
+    'Choose one MP4, click Convert MP4 to WebM, review real VP9/Opus output tracks and download the result. The source stays on your device.',
+  tool_convert_an_mp4_file_to_a_webm_file_how_item_1: 'Choose a local .mp4 video or load the on-site H.264/AAC sample.',
+  tool_convert_an_mp4_file_to_a_webm_file_how_item_2: 'Optionally choose VP9/Opus quality and mono or stereo audio.',
+  tool_convert_an_mp4_file_to_a_webm_file_how_item_3: 'Click Convert MP4 to WebM. The page checks source decoders, target encoders and conversion progress.',
+  tool_convert_an_mp4_file_to_a_webm_file_how_item_4: 'Compare track codecs, duration, dimensions and actual bytes, preview the video, then Download WebM.',
+  tool_convert_an_mp4_file_to_a_webm_file_how_title: 'How to convert an MP4 video to VP9 WebM',
+  tool_convert_an_mp4_file_to_a_webm_file_load: 'Load conversion engine',
+  tool_convert_an_mp4_file_to_a_webm_file_mode_copy: 'video copy not used for MP4 to WebM',
+  tool_convert_an_mp4_file_to_a_webm_file_mode_transcode: 'video re-encoded to VP9',
+  tool_convert_an_mp4_file_to_a_webm_file_no_audio: 'no audio track',
+  tool_convert_an_mp4_file_to_a_webm_file_preview: 'Converted WebM preview',
+  tool_convert_an_mp4_file_to_a_webm_file_progress: 'MP4 to WebM conversion progress',
+  tool_convert_an_mp4_file_to_a_webm_file_quality_high: 'Higher quality (default)',
+  tool_convert_an_mp4_file_to_a_webm_file_quality_label: 'VP9 video and Opus audio quality',
+  tool_convert_an_mp4_file_to_a_webm_file_quality_low: 'Smaller output, lower quality',
+  tool_convert_an_mp4_file_to_a_webm_file_quality_medium: 'Balanced',
+  tool_convert_an_mp4_file_to_a_webm_file_read: 'Read MP4 tracks',
+  tool_convert_an_mp4_file_to_a_webm_file_result:
+    'Source: {videoCodec} video / {audioCodec} · {width}×{height} · about {duration}s · {input} → WebM: VP9 / {targetAudio} · {mode} · {output}',
+  tool_convert_an_mp4_file_to_a_webm_file_rules_body:
+    'WebM is a different container from MP4. This page targets VP9 video and Opus sound where sound exists; it checks support on the current device.',
+  tool_convert_an_mp4_file_to_a_webm_file_rules_item_1:
+    'H.264 and AAC from a typical MP4 must be decoded and re-encoded. Renaming .mp4 to .webm does not create a valid WebM.',
+  tool_convert_an_mp4_file_to_a_webm_file_rules_item_2:
+    'HEVC decoding and VP9/Opus encoding vary by device. If any needed track is unsupported, conversion fails with an explicit message.',
+  tool_convert_an_mp4_file_to_a_webm_file_rules_item_3:
+    'VP9 quality affects output bytes and fidelity. A smaller file is not guaranteed; no HDR, Dolby Vision, camera metadata or lossless transfer is promised.',
+  tool_convert_an_mp4_file_to_a_webm_file_rules_item_4:
+    'Code input caps are 500 MiB with OPFS and 80 MiB without, not universal tested maxima. Storage quota and encoding time vary.',
+  tool_convert_an_mp4_file_to_a_webm_file_rules_title: 'MP4 source codecs, VP9/Opus support and file size',
+  tool_convert_an_mp4_file_to_a_webm_file_sample: 'Load MP4 sample',
+  tool_convert_an_mp4_file_to_a_webm_file_sample_name: 'mp4-to-webm-example',
+  tool_convert_an_mp4_file_to_a_webm_file_settings_hint:
+    'MP4 video is decoded and re-encoded to VP9; existing sound becomes Opus. Quality and mono/stereo settings apply to this conversion. Changing settings clears the prior result.',
+  tool_convert_an_mp4_file_to_a_webm_file_status_stopped: 'Stopped. No partial WebM is kept.',
+  tool_convert_an_mp4_file_to_a_webm_file_stop: 'Stop',
+  tool_convert_an_mp4_file_to_a_webm_file_title: 'Convert an MP4 file to VP9 WebM',
+  tool_convert_an_mp4_file_to_a_webm_file_usecase_1: 'Prepare a real WebM version of an MP4 clip for a website or supported web player.',
+  tool_convert_an_mp4_file_to_a_webm_file_usecase_2: 'Check a local H.264/AAC clip before adding VP9/Opus media to an open-format workflow.',
+  tool_convert_an_mp4_file_to_a_webm_file_usecase_3: 'Compare actual MP4 and WebM sizes without uploading the original video.',
+  tool_convert_an_mp4_file_to_a_webm_file_usecases_title: 'When MP4 to WebM is useful',
+  tool_convert_an_mp4_file_to_a_webm_file_why_choose_item_1:
+    'The download is a real WebM containing VP9 video and Opus sound when the MP4 has audio, not a renamed MP4.',
+  tool_convert_an_mp4_file_to_a_webm_file_why_choose_item_2: 'The page reopens the result and reports track codecs, dimensions, duration and before/after size.',
+  tool_convert_an_mp4_file_to_a_webm_file_why_choose_item_3:
+    'Unavailable HEVC decode or VP9/Opus encode is reported before a damaged or audio-only file can be called successful.',
+  tool_convert_an_mp4_file_to_a_webm_file_why_choose_item_4: 'Files stay on this device; OPFS can hold larger outputs while the original remains unchanged.',
+  tool_convert_an_mp4_file_to_a_webm_file_why_choose_title: 'Why use this MP4 to WebM converter',
+  tool_convert_an_mp4_file_to_a_webm_file_write: 'Verify WebM output',
   tool_convert_an_ogg_file_to_mp3_advanced: 'Advanced settings (optional)',
   tool_convert_an_ogg_file_to_mp3_article:
     'Voice notes and game audio often arrive as OGG Vorbis or Opus. Recipients may still need MP3. This page converts one complete local OGG container—Vorbis or Opus—into an MP3 you can preview. Encoding to MP3 is another lossy step, so keep the original. Success depends on whether your browser can decode that OGG stream.',
@@ -6609,6 +8135,88 @@ const en: SiteLangDict = {
     'Changing the mode or the input clears the old download so you never save a stale mono WAV by mistake.',
   tool_convert_stereo_audio_to_mono_why_choose_title: 'Why choose our Convert stereo audio to mono tools',
   tool_convert_stereo_audio_to_mono_write: 'Write',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_advanced: 'Encoding and output options',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_article:
+    'A subtitle file is more than its extension. This converter parses each timed cue and writes a new SRT, WebVTT, ASS, SSA, SBV or LRC file on your device. SRT to VTT adds the WEBVTT header and changes comma milliseconds to dots for an HTML video track; VTT to SRT adds numbered cues and comma milliseconds. The result checks the generated file by parsing it again and reports cue count, first and last times, bytes, detected source encoding and features that cannot survive a format change. WebVTT positioning, STYLE and REGION blocks, ASS styling or karaoke timing, and LRC end times can be lost or estimated; the page reports this instead of silently promising a lossless conversion. Choose a source encoding if automatic decoding produces garbled characters; output is UTF-8 with optional BOM. Multiple files are processed one by one. A failed row does not remove successful downloads. A small batch can download as ZIP; larger results stay as separate files to avoid a large in-memory archive. Files are processed in this browser and are not uploaded.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_auto: 'Detect automatically',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_bom: 'Add UTF-8 BOM to output',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_check: 'Check output',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_choose: 'Choose subtitle files',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_clear: 'Clear',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_convert: 'Convert subtitles',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_desc:
+    'Convert local SRT, VTT, ASS, SSA, SBV or LRC captions; inspect cue timing, encoding and formatting loss before downloading each result or a small batch ZIP.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_description:
+    'Convert subtitle files for a player or HTML5 web track: SRT to VTT, VTT to SRT and ASS, SSA, SBV or LRC in one browser tool. See cue counts, time range, character encoding and lost styling. Steps: choose files, target format and optional encoding, convert, then download. Example: a two-cue SRT becomes a WEBVTT file with dot milliseconds.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_details: 'Cue and format details',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_done: 'Ready to download',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_download: 'Download',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_download_zip: 'Download small batch ZIP',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_empty: 'Choose subtitle files or load the two-cue sample.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_encoding: 'Source text encoding',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_err_files: 'Choose one or more supported subtitle files.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_err_limit: 'Limit: 30 files, 50 MiB per file and 200 MiB total.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_err_sample: 'The sample could not be loaded.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_err_zip: 'Could not create the ZIP; individual results remain available.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_example:
+    'The sample begins with “Hello” at 00:00:01,000 and a second cue at 00:00:04,000. With VTT selected, the downloaded file begins WEBVTT, uses 00:00:01.000 and keeps two cues. The row shows the checked count, time range and bytes.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_example_title: 'Two SRT cues converted to WebVTT',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_failed: 'Could not convert',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_faq_a1:
+    'Yes. It parses cue timestamps, adds a WEBVTT header, writes dot milliseconds and re-parses the finished file. The text and cue order remain unless the source is invalid.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_faq_a2:
+    'Timing and plain text are retained, but VTT cue positioning, regions, CSS and special markup may not fit SRT. The result lists detected losses before you download.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_faq_a3:
+    'Often. The browser checks BOM and UTF-8, then estimates several legacy encodings. Choose the source encoding manually if the preview is wrong; output uses UTF-8 with an optional BOM.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_faq_a4:
+    'That row shows an error and the next file continues. Successful results remain downloadable individually; a small group of successes can also be zipped.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_faq_q1: 'Does SRT to VTT change more than the file extension?',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_faq_q2: 'Can I convert VTT back to SRT without losing styling?',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_faq_q3: 'Can this fix garbled subtitle characters?',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_faq_q4: 'What happens if one subtitle file in a batch is broken?',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_hint: 'SRT, VTT, ASS, SSA, SBV or LRC; up to 30 files, 50 MiB each and 200 MiB total.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_how_intro: 'Choose existing timed captions and export the format your player or web track accepts.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_how_item_1: 'Choose one or more SRT, VTT, ASS, SSA, SBV or LRC files, or load the two-cue SRT sample.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_how_item_2:
+    'Select an output format. If text looks garbled, open Encoding and output options to choose the source encoding.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_how_item_3:
+    'Click Convert subtitles; inspect each row for cue count, timing, source encoding and reported feature loss.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_how_item_4:
+    'Download each result, or use Download small batch ZIP when the finished batch fits the archive limit.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_how_title: 'How to convert subtitle files',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_name: 'File',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_none: 'none detected',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_parse: 'Convert cues',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_preview: 'First cue: {text}',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_progress: 'Subtitle conversion progress',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_read: 'Read and decode',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_result_title: 'Converted files and cue checks',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_rules_body:
+    'The result is parsed again after serialization. Format-only conversion cannot recreate styling that the target format cannot express.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_rules_item_1:
+    'SRT uses numbered cues and comma milliseconds; WebVTT uses a WEBVTT header and dot milliseconds for an HTML5 text track.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_rules_item_2:
+    'VTT layout/STYLE/REGION, ASS/SSA style and karaoke effects, and LRC end times may be discarded or estimated. Each row reports observed losses.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_rules_item_3:
+    'Automatic decoding checks BOM and strict UTF-8 first, then estimates legacy encodings. Override it for GB18030, Big5, Shift_JIS or Windows encodings when text looks wrong.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_rules_item_4:
+    'Files stay on your device. The 30 MiB ZIP budget prevents a large archive from consuming browser memory; larger successful outputs can still download separately.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_rules_title: 'Formats, character encoding and losses',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_sample: 'Load SRT sample',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_status: 'Status',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_stop: 'Stop',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_stopped: 'Stopped; completed files remain downloadable.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_summary: '{count} cues; {first}–{last}; source {encoding}; {source} → {output}; losses: {losses}.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_target: 'Output format',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_title: 'Convert subtitle files for a video player or web track',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_usecase_1: 'Convert SRT to VTT when adding captions to an HTML5 video track.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_usecase_2:
+    'Convert WebVTT or ASS subtitles to SRT for a player that expects numbered SubRip cues, after checking any layout loss.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_usecase_3:
+    'Repair garbled imported captions by selecting the legacy encoding and exporting UTF-8, or process several independent caption files together.',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_usecases_title: 'Where the converted captions fit',
+  tool_convert_subtitle_files_between_srt_vtt_and_ass_zip_limit:
+    'ZIP is available for at least two successful files totaling no more than 30 MiB; otherwise download rows separately.',
   tool_convert_word_document_to_pdf_article: 'Convert a Word .docx to PDF in this tab. Files stay on your device; not uploaded to a server.',
   tool_convert_word_document_to_pdf_choose_file: 'Choose a Word file (.docx)',
   tool_convert_word_document_to_pdf_choose_files: 'Choose files',
@@ -9014,6 +10622,100 @@ const en: SiteLangDict = {
   tool_extract_cover_art_from_an_mp3_why_choose_item_3: 'Missing covers fail clearly instead of silent empty downloads.',
   tool_extract_cover_art_from_an_mp3_why_choose_item_4: 'Related tag editor and WAV→MP3 tools sit one click away.',
   tool_extract_cover_art_from_an_mp3_why_choose_title: 'Why choose our Extract cover art from an MP3 tools',
+  tool_extract_frames_from_a_video_as_images_advanced: 'Capture time and image settings (optional)',
+  tool_extract_frames_from_a_video_as_images_article:
+    'Video frame extraction turns chosen points on a video timeline into separate still images. This page reads one local video in the browser and draws decoded pictures to canvas; the source is not uploaded. The default interval mode samples 0, 1 and 2 seconds from the on-site moving MP4 example. You can change the start/end, interval, JPG or PNG output, width and JPG quality. A single-timestamp mode covers a video thumbnail or poster frame without creating a near-duplicate URL. Each result shows its requested sequence number, actual video time, dimensions and byte size and can be downloaded separately; a small group can be saved as a ZIP. These are decoded stills near requested times, not every original coded frame or a lossless remux of video frames. Browser codec support and source seekability determine accuracy. Large source files can be addressed at a short window, while processing is capped at 60 frames, 30 million total pixels and 32 MiB of images to protect browser memory. A 1 GiB source cap is code, not a universal tested maximum. If later frames fail, already completed pictures remain available.',
+  tool_extract_frames_from_a_video_as_images_budget:
+    'Planned: {count} images at up to {width}×{height}. Code cap: {limit} frames; fewer frames and pixels reduce memory and ZIP size.',
+  tool_extract_frames_from_a_video_as_images_choose: 'Choose a video or MP4',
+  tool_extract_frames_from_a_video_as_images_clear: 'Clear',
+  tool_extract_frames_from_a_video_as_images_desc:
+    'Save still frames from one local video or MP4 at a time interval or one timestamp. Preview actual capture times, pixels and bytes; download individual JPG/PNG images or a bounded ZIP.',
+  tool_extract_frames_from_a_video_as_images_description:
+    'Extract frames from video to JPG or PNG in your browser. Steps: choose a local MP4 or other decodable video, set an interval or one timestamp, extract and preview still images, then download each image or a ZIP. Example: a three-second clip sampled every second yields three numbered files with actual capture times, dimensions and bytes.',
+  tool_extract_frames_from_a_video_as_images_done: 'Still frames ready. Preview and download images or ZIP.',
+  tool_extract_frames_from_a_video_as_images_download_one: 'Download image',
+  tool_extract_frames_from_a_video_as_images_elapsed: 'Elapsed: {s}s',
+  tool_extract_frames_from_a_video_as_images_empty: 'Choose a video or load the on-site moving MP4 sample to extract pictures.',
+  tool_extract_frames_from_a_video_as_images_end: 'End time (seconds)',
+  tool_extract_frames_from_a_video_as_images_err_budget:
+    'This job exceeds 60 frames, 30 million processed pixels or 32 MiB of images. Select a shorter range, larger interval, lower width or JPG.',
+  tool_extract_frames_from_a_video_as_images_err_decode: 'This browser could not decode a video track from the file. Try a supported MP4 or WebM.',
+  tool_extract_frames_from_a_video_as_images_err_encode: 'Could not create an image from that video frame. Try JPG at a lower width.',
+  tool_extract_frames_from_a_video_as_images_err_file: 'Choose exactly one nonempty video.',
+  tool_extract_frames_from_a_video_as_images_err_range: 'Choose times inside the video, with an end after the start and an interval of at least 0.1 seconds.',
+  tool_extract_frames_from_a_video_as_images_err_sample: 'Could not load the on-site moving video sample. Choose your own file.',
+  tool_extract_frames_from_a_video_as_images_err_seek: 'This video could not seek to the requested frame. Try a seekable MP4 or WebM.',
+  tool_extract_frames_from_a_video_as_images_err_size: 'This source exceeds the 1 GiB code cap. Choose a smaller video.',
+  tool_extract_frames_from_a_video_as_images_err_zip:
+    'Could not prepare the image ZIP within the browser memory budget. Individual completed images remain downloadable.',
+  tool_extract_frames_from_a_video_as_images_example:
+    'Load the 5-second moving MP4 sample. The default 0–3 seconds at a one-second interval extracts three numbered JPGs at 0, 1 and 2 seconds, each with its own dimensions, actual capture time and byte size.',
+  tool_extract_frames_from_a_video_as_images_example_title: 'MP4 to JPG image sequence example',
+  tool_extract_frames_from_a_video_as_images_extract: 'Extract video frames',
+  tool_extract_frames_from_a_video_as_images_failed: 'No frames were saved. Check the video and selected times.',
+  tool_extract_frames_from_a_video_as_images_faq_a1:
+    'Yes if this browser can decode the MP4 video track. Choose JPG or PNG and download each decoded still or a small ZIP.',
+  tool_extract_frames_from_a_video_as_images_faq_a2:
+    'Select one-frame mode and enter the time. The page reports the actual video timestamp; exact decoded pixels depend on seeking and the source.',
+  tool_extract_frames_from_a_video_as_images_faq_a3:
+    'No. It samples up to 60 browser-decoded stills at chosen times. It does not export all coded video frames losslessly.',
+  tool_extract_frames_from_a_video_as_images_faq_a4:
+    'JPG often uses fewer bytes for photographic video and offers a quality setting. PNG may be preferable for sharp interface text but can be larger.',
+  tool_extract_frames_from_a_video_as_images_faq_a5:
+    'The browser can seek a short range in a local source. The input code cap is 1 GiB and image frames, pixels and bytes have separate limits.',
+  tool_extract_frames_from_a_video_as_images_faq_a6: 'No. The file is decoded and captured locally by this browser.',
+  tool_extract_frames_from_a_video_as_images_faq_q1: 'Can I save frames from an MP4 as JPG or PNG?',
+  tool_extract_frames_from_a_video_as_images_faq_q2: 'Can I capture one video thumbnail at an exact time?',
+  tool_extract_frames_from_a_video_as_images_faq_q3: 'Does this extract every original frame?',
+  tool_extract_frames_from_a_video_as_images_faq_q4: 'Which is smaller, JPG or PNG?',
+  tool_extract_frames_from_a_video_as_images_faq_q5: 'Can I use a large source video?',
+  tool_extract_frames_from_a_video_as_images_faq_q6: 'Is the video uploaded?',
+  tool_extract_frames_from_a_video_as_images_format: 'Image format',
+  tool_extract_frames_from_a_video_as_images_frame_status: 'Frame {index}/{count} captured at {time}s',
+  tool_extract_frames_from_a_video_as_images_hint: 'One local video. Default: one JPG every second for three seconds; source code cap 1 GiB.',
+  tool_extract_frames_from_a_video_as_images_how_body:
+    'Choose a local video, select a time interval or single timestamp, click Extract video frames, inspect real capture times and download the JPG/PNG images or ZIP.',
+  tool_extract_frames_from_a_video_as_images_how_item_1: 'Choose one local MP4 or other browser-decodable video, or load the moving sample.',
+  tool_extract_frames_from_a_video_as_images_how_item_2: 'Keep the one-second interval or set a different time range; use one-frame mode for a thumbnail.',
+  tool_extract_frames_from_a_video_as_images_how_item_3: 'Choose JPG/PNG, width and JPG quality, then click Extract video frames.',
+  tool_extract_frames_from_a_video_as_images_how_item_4: 'Check each actual timestamp, dimensions and bytes; download frames individually or as a ZIP.',
+  tool_extract_frames_from_a_video_as_images_how_title: 'How to extract JPG or PNG frames from a video',
+  tool_extract_frames_from_a_video_as_images_interval: 'Interval (seconds)',
+  tool_extract_frames_from_a_video_as_images_item: 'Frame {index} · {time}s · {width}×{height} · {size}',
+  tool_extract_frames_from_a_video_as_images_mode: 'Extraction mode',
+  tool_extract_frames_from_a_video_as_images_mode_interval: 'Frames at a fixed interval',
+  tool_extract_frames_from_a_video_as_images_mode_single: 'One frame at the start time',
+  tool_extract_frames_from_a_video_as_images_partial: '{count} completed images remain downloadable.',
+  tool_extract_frames_from_a_video_as_images_progress: 'Video frame extraction progress',
+  tool_extract_frames_from_a_video_as_images_quality: 'JPG quality',
+  tool_extract_frames_from_a_video_as_images_read: 'Read video and times',
+  tool_extract_frames_from_a_video_as_images_result: 'Source {source} · {count} images · actual capture range {first}–{last}s · total {total}',
+  tool_extract_frames_from_a_video_as_images_result_title: 'Extracted video frames',
+  tool_extract_frames_from_a_video_as_images_rules_body:
+    'The browser decodes frames near requested times and draws them as new still images. It does not expose every original coded frame exactly.',
+  tool_extract_frames_from_a_video_as_images_rules_item_1:
+    'A one-second interval between 0 and 3 seconds asks for three stills at 0, 1 and 2 seconds. The result reports actual currentTime values.',
+  tool_extract_frames_from_a_video_as_images_rules_item_2:
+    'JPG quality trades bytes for detail; PNG preserves canvas pixels but may be larger. Neither recovers detail absent from the video.',
+  tool_extract_frames_from_a_video_as_images_rules_item_3:
+    'Code caps are 60 frames, 30 million processed pixels, 32 MiB combined images and 1 GiB source. These are not universal tested maxima.',
+  tool_extract_frames_from_a_video_as_images_rules_item_4:
+    'Unsupported codecs, poor seekability and damaged files can fail; completed earlier frames remain available on partial failure.',
+  tool_extract_frames_from_a_video_as_images_rules_title: 'Video frame times, JPG/PNG quality and output limits',
+  tool_extract_frames_from_a_video_as_images_sample: 'Load video sample',
+  tool_extract_frames_from_a_video_as_images_save: 'Prepare image ZIP',
+  tool_extract_frames_from_a_video_as_images_seek: 'Seek and capture frames',
+  tool_extract_frames_from_a_video_as_images_start: 'Start or single time (seconds)',
+  tool_extract_frames_from_a_video_as_images_stop: 'Stop',
+  tool_extract_frames_from_a_video_as_images_stopped: 'Stopped. Completed frames remain available; you can retry.',
+  tool_extract_frames_from_a_video_as_images_title: 'Extract frames from a video as JPG or PNG images',
+  tool_extract_frames_from_a_video_as_images_usecase_1: 'Capture a single video thumbnail at a timestamp for a cover image or slide.',
+  tool_extract_frames_from_a_video_as_images_usecase_2: 'Save MP4 frames every second to inspect motion or a screen-recorded interface.',
+  tool_extract_frames_from_a_video_as_images_usecase_3: 'Export a short sequence as numbered JPG/PNG stills for review without uploading the video.',
+  tool_extract_frames_from_a_video_as_images_usecases_title: 'When to save video frames as images',
+  tool_extract_frames_from_a_video_as_images_width: 'Maximum output width',
+  tool_extract_frames_from_a_video_as_images_zip: 'Download frames ZIP',
   tool_extract_text_from_a_scanned_pdf_after: 'Output',
   tool_extract_text_from_a_scanned_pdf_article:
     'Turn image-only PDF pages into editable text, then download one TXT file in page order. No. Files stay on your device and are processed in this browser tab, without uploading to a server.',
@@ -11379,6 +13081,86 @@ const en: SiteLangDict = {
   tool_inflation_usecase_2: 'Rough future sticker-price sketch.',
   tool_inflation_usecase_3: 'Pair with CAGR/compound-interest pages.',
   tool_inflation_usecases_title: 'When to use it',
+  tool_inspect_video_file_tracks_article:
+    'A filename ending in .mp4 does not tell you which video or audio codecs are inside. This browser video track checker reads file metadata without uploading the movie or decoding every frame. It lists every track, including secondary audio languages that a preview player may not select. Each video row shows codec, detailed codec string, display dimensions, rotation, language when present, start time, metadata end time and whether this browser can decode it. Audio rows add channel count and sample rate. If no audio rows appear, the source has no audio track; if an audio row exists but says it cannot decode here, the audio is present but this browser lacks support. The current-browser check does not certify another phone, editor or television. Metadata time can be approximate, especially for unusual containers or truncated files; this page does not scan every packet to claim an exact duration. A Web Worker and bounded BlobSource cache keep the interface responsive while one or up to 30 local files are inspected in sequence. Broken files fail their own row, successful JSON reports remain downloadable, and Stop cancels the active read. The file contents stay on your device.',
+  tool_inspect_video_file_tracks_audio: 'Audio #{number}',
+  tool_inspect_video_file_tracks_audio_detail: '{channels} channel(s) · {rate} Hz',
+  tool_inspect_video_file_tracks_choose: 'Choose video files',
+  tool_inspect_video_file_tracks_clear: 'Clear',
+  tool_inspect_video_file_tracks_codec_head: 'Codec and language',
+  tool_inspect_video_file_tracks_container_fit: 'Codec family in target container',
+  tool_inspect_video_file_tracks_decode_head: 'Can decode here?',
+  tool_inspect_video_file_tracks_desc:
+    'Check every video and audio track in MP4, MOV, WebM or MKV without uploading: real codecs, languages, channels, timing and this browser’s decoding support.',
+  tool_inspect_video_file_tracks_description:
+    'Inspect video and audio tracks in a local MP4, MOV, WebM or MKV. See the container separately from actual codecs, every audio language, channels, resolution, start time and approximate metadata duration. Steps: choose files, inspect them, compare tracks, then download a JSON report. Example: the sample MP4 has one H.264 picture track and two AAC language tracks.',
+  tool_inspect_video_file_tracks_detail_head: 'Dimensions or audio · timing',
+  tool_inspect_video_file_tracks_done: 'Inspection complete',
+  tool_inspect_video_file_tracks_download: 'Download JSON report',
+  tool_inspect_video_file_tracks_empty: 'Choose a video or load the two-language sample.',
+  tool_inspect_video_file_tracks_err_files: 'Choose one or more local video files.',
+  tool_inspect_video_file_tracks_err_limit: 'Inspect up to 30 files, at most 5 GiB each.',
+  tool_inspect_video_file_tracks_err_sample: 'The two-language sample could not be loaded.',
+  tool_inspect_video_file_tracks_example:
+    'Load the sample MP4. Its video row should report H.264 at 320×180, and two AAC audio rows should show English and Spanish language codes. The sample is not two separate videos; it is one container with three tracks.',
+  tool_inspect_video_file_tracks_example_title: 'One picture track and two audio languages',
+  tool_inspect_video_file_tracks_failed: 'Inspection failed',
+  tool_inspect_video_file_tracks_faq_a1:
+    'No. The extension describes a container. The table reads the video and audio codecs inside each track, including codec parameter strings when available.',
+  tool_inspect_video_file_tracks_faq_a2:
+    'If the report has zero audio tracks, there is no sound stream in that file. If it lists audio but cannot decode it here, try a compatible browser or an audio conversion; the check is specific to this device.',
+  tool_inspect_video_file_tracks_faq_a3:
+    'Yes. It lists every readable audio track with its language code, channels and sample rate, including secondary tracks a simple preview might ignore. “und” means language was not tagged.',
+  tool_inspect_video_file_tracks_faq_a4:
+    'No. It means this browser reports that it can decode the track configuration. The metadata end time is also an estimate; another device or damaged packet may behave differently.',
+  tool_inspect_video_file_tracks_faq_q1: 'Can the filename tell me the video codec?',
+  tool_inspect_video_file_tracks_faq_q2: 'Why does my MP4 have no sound?',
+  tool_inspect_video_file_tracks_faq_q3: 'Will this inspect all audio languages?',
+  tool_inspect_video_file_tracks_faq_q4: 'Does a “Yes” guarantee the video plays on every device?',
+  tool_inspect_video_file_tracks_fit_hint:
+    'MP4/WebM checks show whether each codec family is accepted by that container. They do not prove a remux, transcode or playback will succeed.',
+  tool_inspect_video_file_tracks_hint: 'MP4, MOV, WebM or MKV; up to 30 files, 5 GiB per file. Large files are read on demand.',
+  tool_inspect_video_file_tracks_how_intro: 'Read all media tracks from the original file before choosing a conversion or playback fix.',
+  tool_inspect_video_file_tracks_how_item_1: 'Choose one or more local video files, or load the sample with English and Spanish audio tracks.',
+  tool_inspect_video_file_tracks_how_item_2: 'Click Inspect tracks and watch each file’s container and tracks appear in order.',
+  tool_inspect_video_file_tracks_how_item_3:
+    'Compare video and audio codecs, language, channels, metadata times and current-browser decoding results.',
+  tool_inspect_video_file_tracks_how_item_4: 'Download a JSON report for each successful file; a damaged file does not erase other reports.',
+  tool_inspect_video_file_tracks_how_title: 'How to check the tracks in a video file',
+  tool_inspect_video_file_tracks_inspect: 'Inspect tracks',
+  tool_inspect_video_file_tracks_no: 'No, in this browser',
+  tool_inspect_video_file_tracks_none: 'No audio track found in this file.',
+  tool_inspect_video_file_tracks_progress: 'Track inspection progress',
+  tool_inspect_video_file_tracks_read: 'Read container',
+  tool_inspect_video_file_tracks_report: 'Prepare report',
+  tool_inspect_video_file_tracks_result_title: 'Video and audio track reports',
+  tool_inspect_video_file_tracks_rules_body:
+    'Container, codec and current-device decoding are separate facts. Read all three before deciding why a clip will not play.',
+  tool_inspect_video_file_tracks_rules_item_1:
+    'An MP4 or MKV container may hold different codecs. The report reads actual track metadata instead of guessing from the filename.',
+  tool_inspect_video_file_tracks_rules_item_2:
+    'Zero audio tracks means the file has no sound stream. An audio track marked not decodable means sound exists but this browser cannot decode that encoding.',
+  tool_inspect_video_file_tracks_rules_item_3:
+    'Language code “und” means the container did not specify a language. Multiple audio rows are kept separate, including secondary tracks.',
+  tool_inspect_video_file_tracks_rules_item_4:
+    'Start and end times come from metadata and may be approximate. “Can decode here?” tests only this browser and device; it is not a universal compatibility promise.',
+  tool_inspect_video_file_tracks_rules_title: 'What the track report can and cannot tell you',
+  tool_inspect_video_file_tracks_sample: 'Load two-audio-track sample',
+  tool_inspect_video_file_tracks_stop: 'Stop',
+  tool_inspect_video_file_tracks_stopped: 'Stopped; finished reports remain downloadable.',
+  tool_inspect_video_file_tracks_summary: '{container} · {size} · {video} video track(s) · {audio} audio track(s)',
+  tool_inspect_video_file_tracks_timing: 'starts {start} s · metadata ends {end} s',
+  tool_inspect_video_file_tracks_title: 'Inspect video and audio tracks in a local file',
+  tool_inspect_video_file_tracks_track_head: 'Track',
+  tool_inspect_video_file_tracks_tracks: 'Read every track',
+  tool_inspect_video_file_tracks_unknown: 'unknown',
+  tool_inspect_video_file_tracks_usecase_1: 'Check whether a silent MP4 truly lacks an audio track or contains audio this browser cannot decode.',
+  tool_inspect_video_file_tracks_usecase_2: 'Find language and channel counts before extracting or replacing a video’s sound.',
+  tool_inspect_video_file_tracks_usecase_3: 'Compare codecs in several MOV, WebM or MKV files before choosing a compatible MP4 conversion.',
+  tool_inspect_video_file_tracks_usecases_title: 'When to inspect a video before editing',
+  tool_inspect_video_file_tracks_video: 'Video #{number}',
+  tool_inspect_video_file_tracks_video_detail: '{width}×{height} · rotation {rotation}°',
+  tool_inspect_video_file_tracks_yes: 'Yes, in this browser',
   tool_instagram_post_size_article:
     'Cover-fill a photo to Instagram post size 1080×1080 (1:1) and download a JPEG. 4:5 and landscape chips stay on this feed canvas. Files stay on your device and are not uploaded to a server.',
   tool_instagram_post_size_choose_image: 'Choose image',
@@ -14195,6 +15977,85 @@ const en: SiteLangDict = {
   tool_merge_pdf_usecases_title: 'Good fits',
   tool_merge_pdf_warn_large: 'A file is larger than ~25 MB — merge may be slow or fail in some browsers.',
   tool_merge_pdf_warn_pdflib: 'PDF library failed to load. Check your network and retry.',
+  tool_merge_video_clips_in_order_advanced: 'Output quality (optional)',
+  tool_merge_video_clips_in_order_article:
+    'Choose at least two local video clips and move them up or down to set playback order. Unlike a batch converter, this page creates one continuous MP4 with one video track. It decodes each clip in sequence, fits different frame sizes inside the first clip\'s canvas without stretching, and re-encodes H.264 video. Audio from the clips is normalized to stereo 48 kHz before AAC encoding, so different source sample rates can join. If a clip is silent, its segment remains silent. A WebM intro followed by a MOV recording still becomes one MP4 when this browser can decode both. The page reports source codecs and durations, then checks the combined output codec and duration before download. Re-encoding can change quality and size; there are no transitions, trimming or background music. Larger inputs use bounded reads and browser OPFS storage when available. The 500 MiB aggregate code limit is not a guaranteed device capacity. Source files stay on this device and are never uploaded to our server.',
+  tool_merge_video_clips_in_order_choose: 'Choose two or more videos',
+  tool_merge_video_clips_in_order_clear: 'Clear',
+  tool_merge_video_clips_in_order_desc:
+    'Arrange two or more local video clips, then merge them into one H.264/AAC MP4. Inspect clip codecs, dimensions, audio and total duration before download; no upload.',
+  tool_merge_video_clips_in_order_description:
+    'Merge local video clips in your chosen order into one MP4, even when source formats or audio rates differ. Arrange the list, run the merge process, check the combined duration and download without uploading files. Example: a WebM followed by a MOV becomes one video.',
+  tool_merge_video_clips_in_order_done: 'One merged MP4 is ready. Preview the joins and download.',
+  tool_merge_video_clips_in_order_down: 'Move down',
+  tool_merge_video_clips_in_order_download: 'Download merged MP4',
+  tool_merge_video_clips_in_order_empty: 'Choose at least two videos or load the example.',
+  tool_merge_video_clips_in_order_encode: 'Join picture and sound',
+  tool_merge_video_clips_in_order_err_aborted: 'Stopped. No partial MP4 is available.',
+  tool_merge_video_clips_in_order_err_codec: 'This browser cannot decode one of the video or audio tracks.',
+  tool_merge_video_clips_in_order_err_count: 'Choose at least two and at most 30 local video clips.',
+  tool_merge_video_clips_in_order_err_encoder: 'This browser cannot encode or store the merged MP4.',
+  tool_merge_video_clips_in_order_err_format: 'A clip has no readable video duration or dimensions.',
+  tool_merge_video_clips_in_order_err_limit: 'The combined input exceeds the code limit or available browser storage.',
+  tool_merge_video_clips_in_order_err_output: 'The output tracks or total duration failed verification.',
+  tool_merge_video_clips_in_order_err_sample: 'Could not load the two local example clips.',
+  tool_merge_video_clips_in_order_example:
+    'Load the two-clip example. The WebM plays first and the MOV second; switch their rows to change the ending. The result is one H.264/AAC MP4 with roughly the sum of both durations.',
+  tool_merge_video_clips_in_order_example_title: 'WebM intro plus MOV clip',
+  tool_merge_video_clips_in_order_failed: 'The clips could not be joined into one complete MP4.',
+  tool_merge_video_clips_in_order_faq_a1: 'One MP4 containing the clips in list order. It does not export each source separately.',
+  tool_merge_video_clips_in_order_faq_a2: 'Yes. Use Move up and Move down; the top item plays first.',
+  tool_merge_video_clips_in_order_faq_a3:
+    'Yes when this browser can decode their tracks. Video is re-encoded to H.264 and existing sound to AAC with a common sample rate.',
+  tool_merge_video_clips_in_order_faq_a4: 'No. Mixed codecs and sizes are normalized and re-encoded, so quality and file size can change.',
+  tool_merge_video_clips_in_order_faq_a5: 'No. Clips are read and merged in your browser on this device.',
+  tool_merge_video_clips_in_order_faq_q1: 'Does Merge clips create one file or a batch of files?',
+  tool_merge_video_clips_in_order_faq_q2: 'Can I change the order before merging?',
+  tool_merge_video_clips_in_order_faq_q3: 'Can WebM and MOV be joined with sound?',
+  tool_merge_video_clips_in_order_faq_q4: 'Is the join lossless?',
+  tool_merge_video_clips_in_order_faq_q5: 'Are the files uploaded?',
+  tool_merge_video_clips_in_order_hint:
+    '2–30 local video clips; arrange them below. Total code cap: 500 MiB with OPFS, 80 MiB without; actual capacity depends on your device.',
+  tool_merge_video_clips_in_order_how_body: 'Decide the playback order, join the clips on one timeline, then check the resulting video and sound.',
+  tool_merge_video_clips_in_order_how_item_1: 'Choose 2–30 local videos or load the WebM + MOV example.',
+  tool_merge_video_clips_in_order_how_item_2: 'Use Move up and Move down to place intro, main clip and ending in order.',
+  tool_merge_video_clips_in_order_how_item_3: 'Click Merge clips and follow decoding, joining, encoding and output verification.',
+  tool_merge_video_clips_in_order_how_item_4: 'Preview both sides of each join, check total duration and sound, then download the single MP4.',
+  tool_merge_video_clips_in_order_how_title: 'How to combine clips into one video',
+  tool_merge_video_clips_in_order_load: 'Load video engine',
+  tool_merge_video_clips_in_order_merge: 'Merge clips',
+  tool_merge_video_clips_in_order_preview: 'Preview the merged video',
+  tool_merge_video_clips_in_order_progress: 'Video merge progress',
+  tool_merge_video_clips_in_order_quality: 'Encoding quality',
+  tool_merge_video_clips_in_order_quality_high: 'Higher quality',
+  tool_merge_video_clips_in_order_quality_low: 'Smaller output',
+  tool_merge_video_clips_in_order_quality_medium: 'Balanced (default)',
+  tool_merge_video_clips_in_order_read: 'Check source tracks',
+  tool_merge_video_clips_in_order_remove: 'Remove',
+  tool_merge_video_clips_in_order_result: '{count} clips in order · {duration}s total · {width}×{height} · {input} → {output} · H.264/{audio}',
+  tool_merge_video_clips_in_order_rules_body:
+    'Joining mixed videos into one timeline requires a shared frame size and consistent audio encoding. That means re-encoding, even if a source is already MP4.',
+  tool_merge_video_clips_in_order_rules_item_1: 'Clip order follows the list from top to bottom; moving a row changes playback order.',
+  tool_merge_video_clips_in_order_rules_item_2: 'The first clip sets the output canvas; other sizes fit inside it with black bars.',
+  tool_merge_video_clips_in_order_rules_item_3: 'Source sound becomes AAC at 48 kHz stereo; silent clips stay silent in their interval.',
+  tool_merge_video_clips_in_order_rules_item_4: 'Input code limits are 500 MiB with OPFS or 80 MiB without, not measured maximums for every device.',
+  tool_merge_video_clips_in_order_rules_title: 'What changes when clips are joined',
+  tool_merge_video_clips_in_order_sample: 'Load two-clip example',
+  tool_merge_video_clips_in_order_settings_hint:
+    'All clips are re-encoded for one timeline. Mixed sizes fit the first clip\'s frame with black bars; sound is normalized to AAC.',
+  tool_merge_video_clips_in_order_stop: 'Stop',
+  tool_merge_video_clips_in_order_title: 'Merge local video clips in the order you choose',
+  tool_merge_video_clips_in_order_up: 'Move up',
+  tool_merge_video_clips_in_order_usecase_1: 'Put an introduction, a recording and an ending in one shareable clip.',
+  tool_merge_video_clips_in_order_usecase_2: 'Join a WebM screen recording and a MOV camera clip without uploading them.',
+  tool_merge_video_clips_in_order_usecase_3: 'Check that mixed video sizes and audio rates still produce one continuous MP4.',
+  tool_merge_video_clips_in_order_usecases_title: 'When to combine videos in order',
+  tool_merge_video_clips_in_order_why_choose_item_1: 'Order controls and clip names make the final sequence explicit.',
+  tool_merge_video_clips_in_order_why_choose_item_2: 'Mixed frame sizes fit a common canvas without stretching the image.',
+  tool_merge_video_clips_in_order_why_choose_item_3: 'Audio sample rates are normalized, avoiding a track switch at the join.',
+  tool_merge_video_clips_in_order_why_choose_item_4: 'The final MP4 is inspected for one video, AAC sound when present, and plausible duration.',
+  tool_merge_video_clips_in_order_why_choose_title: 'What the merge report reveals',
+  tool_merge_video_clips_in_order_write: 'Verify the merged MP4',
   tool_meta_canonical_hint: 'The preferred URL for this page. Add the full URL including the protocol.',
   tool_meta_canonical_label: 'Canonical URL',
   tool_meta_canonical_ph: 'https://example.com/your-page',
@@ -17473,6 +19334,84 @@ const en: SiteLangDict = {
   tool_roi_usecase_3: 'Project recap: summarize one completed initiative as a single cost/gain pair (estimate only).',
   tool_roi_usecases_title: 'When to use it',
   tool_roi_zero_cost: 'Initial investment must be greater than zero.',
+  tool_rotate_a_video_file_angle: 'Rotation direction',
+  tool_rotate_a_video_file_article:
+    'This browser video rotator fixes one sideways or upside-down recording. Select a quarter turn, preview the source, and export a new H.264 MP4. The turn is baked into the picture pixels instead of depending only on a player rotation flag. A 90° or 270° turn swaps displayed width and height; a 180° turn keeps them. The result checks actual dimensions, video codec, AAC audio when decodable sound existed, duration, input/output bytes and browser storage route. The picture is re-encoded, so the operation is not lossless and output size may change. MP4, MOV and WebM are accepted only when this browser can decode their actual tracks and encode H.264. A silent source stays silent. Larger files use browser-local OPFS for output; source code caps and available disk space are safeguards, not universal guarantees. If OPFS or the video encoder is unavailable for a large job, the page reports an error rather than pretending the file was rotated. Stop, choose another angle and retry locally.',
+  tool_rotate_a_video_file_check: 'Verify MP4 output',
+  tool_rotate_a_video_file_choose: 'Choose a video or MP4',
+  tool_rotate_a_video_file_clear: 'Clear',
+  tool_rotate_a_video_file_clockwise: '90° clockwise (right)',
+  tool_rotate_a_video_file_convert: 'Rotate and export MP4',
+  tool_rotate_a_video_file_counterclockwise: '90° counterclockwise (left)',
+  tool_rotate_a_video_file_desc:
+    'Rotate a local MP4, MOV or WebM 90° right, 180° or 90° left. Preview the corrected picture, then download an H.264 MP4 with the turn baked into its pixels.',
+  tool_rotate_a_video_file_description:
+    'Rotate video online or rotate an MP4 90 degrees in your browser. Fix a sideways video: choose one local MP4, MOV or WebM, select clockwise, upside down or counterclockwise, and download the corrected H.264 MP4. Steps: choose the angle, rotate, preview and download. Example: a 640×360 clip becomes 360×640 after 90°. Compare pixels, audio, duration and bytes; no video upload.',
+  tool_rotate_a_video_file_done: 'Rotated MP4 is ready.',
+  tool_rotate_a_video_file_download: 'Download rotated MP4',
+  tool_rotate_a_video_file_elapsed: 'Elapsed {s} s',
+  tool_rotate_a_video_file_empty: 'Choose a video or load the color-block sample to begin.',
+  tool_rotate_a_video_file_encode: 'Rotate and encode frames',
+  tool_rotate_a_video_file_err_audio: 'The browser cannot decode the source audio track.',
+  tool_rotate_a_video_file_err_codec: 'The browser cannot decode this source video codec.',
+  tool_rotate_a_video_file_err_container: 'This file container is unsupported or damaged.',
+  tool_rotate_a_video_file_err_encoder: 'Rotation or output verification failed. Try another supported video.',
+  tool_rotate_a_video_file_err_file: 'Choose a local video file first.',
+  tool_rotate_a_video_file_err_limit: 'This job needs browser-local OPFS storage or exceeds this browser’s safe file limit.',
+  tool_rotate_a_video_file_err_sample: 'The orientation sample could not be loaded.',
+  tool_rotate_a_video_file_err_settings: 'Choose a 90°, 180° or 270° turn.',
+  tool_rotate_a_video_file_err_video: 'The browser cannot encode H.264 video at this output size.',
+  tool_rotate_a_video_file_example:
+    'Load the four-color 640×360 sample and choose 90° clockwise. The exported picture becomes 360×640, with the red upper-left block moved to the upper-right. The result reports its actual codecs, duration and bytes.',
+  tool_rotate_a_video_file_example_title: 'Fix a sideways video example',
+  tool_rotate_a_video_file_failed: 'The video could not be rotated.',
+  tool_rotate_a_video_file_faq_a1:
+    'The page re-encodes H.264 video with the selected turn baked into the picture. It checks the exported dimensions rather than only changing a playback rotation flag.',
+  tool_rotate_a_video_file_faq_a2:
+    'Yes. Choose clockwise for right or counterclockwise for left. Both swap width and height; the result preview shows the direction.',
+  tool_rotate_a_video_file_faq_a3:
+    'Pixel rotation requires lossy video re-encoding. Decodable source audio is retained as AAC; a silent source stays silent. Check the downloaded result before replacing the original.',
+  tool_rotate_a_video_file_faq_a4:
+    'The browser may lack a decoder for the source track, an H.264 encoder at the output size, or enough OPFS storage for a large result. The page reports the failed stage; choose a supported file or free local storage.',
+  tool_rotate_a_video_file_faq_q1: 'Does this rotate the actual video pixels or just change a tag?',
+  tool_rotate_a_video_file_faq_q2: 'Can I rotate an MP4 90 degrees right or left?',
+  tool_rotate_a_video_file_faq_q3: 'Will rotation keep the original quality and audio?',
+  tool_rotate_a_video_file_faq_q4: 'Why did my video fail to rotate?',
+  tool_rotate_a_video_file_hint: 'One local MP4, MOV or WebM. The browser must decode it and encode H.264.',
+  tool_rotate_a_video_file_how_intro: 'Fix a sideways video by exporting pixels already turned into an MP4.',
+  tool_rotate_a_video_file_how_item_1: 'Choose one MP4, MOV or WebM, or load the color-block orientation sample.',
+  tool_rotate_a_video_file_how_item_2: 'Preview the source. Select 90° clockwise, 180° upside down or 90° counterclockwise.',
+  tool_rotate_a_video_file_how_item_3: 'Click Rotate and export MP4; watch track checking, frame encoding and output verification.',
+  tool_rotate_a_video_file_how_item_4: 'Preview the result, compare its actual width and height, then download the MP4.',
+  tool_rotate_a_video_file_how_title: 'How to rotate a video and keep the corrected direction',
+  tool_rotate_a_video_file_progress: 'Video rotation progress',
+  tool_rotate_a_video_file_read: 'Check source tracks',
+  tool_rotate_a_video_file_result:
+    'Turn: {angle}°. Pixels: {width}×{height} → {out_width}×{out_height}. Output: {video} video, {audio} audio, {duration} s. File: {source} → {output}. Storage: {route}.',
+  tool_rotate_a_video_file_result_title: 'Rotated video',
+  tool_rotate_a_video_file_rules_body:
+    'The output is a new H.264 MP4 with the turn applied to its picture pixels, not merely a rotation tag.',
+  tool_rotate_a_video_file_rules_item_1: 'For 90° and 270°, width and height swap. For 180°, they stay the same while the picture turns.',
+  tool_rotate_a_video_file_rules_item_2:
+    'Re-encoding changes compressed pixels and may change file size. This is not a lossless metadata edit.',
+  tool_rotate_a_video_file_rules_item_3:
+    'Decodable source sound is encoded as AAC; silent videos stay silent. Unsupported tracks are rejected before export.',
+  tool_rotate_a_video_file_rules_item_4:
+    'Large output uses browser-local OPFS. Without it, jobs above the safe memory budget are rejected; free disk space still matters.',
+  tool_rotate_a_video_file_rules_title: 'Pixel rotation, audio and large-file limits',
+  tool_rotate_a_video_file_sample: 'Load orientation sample',
+  tool_rotate_a_video_file_settings_hint: 'The selected turn is written into the picture pixels. Export re-encodes video; it is not lossless.',
+  tool_rotate_a_video_file_silent: 'silent',
+  tool_rotate_a_video_file_source_info: 'Source: {width}×{height}, {duration} s, {codec} video, {audio} audio, {size}.',
+  tool_rotate_a_video_file_source_preview: 'Source preview',
+  tool_rotate_a_video_file_stop: 'Stop',
+  tool_rotate_a_video_file_stopped: 'Rotation stopped. Change the angle or retry.',
+  tool_rotate_a_video_file_title: 'Rotate a video file and fix its orientation',
+  tool_rotate_a_video_file_upside_down: '180° upside down',
+  tool_rotate_a_video_file_usecase_1: 'Turn a sideways phone clip upright before sharing.',
+  tool_rotate_a_video_file_usecase_2: 'Correct an upside-down MP4 recording with a 180° turn.',
+  tool_rotate_a_video_file_usecase_3: 'Export MOV or WebM as an MP4 whose corrected direction does not depend only on player metadata.',
+  tool_rotate_a_video_file_usecases_title: 'When to rotate a video',
   tool_rotate_pdf_angle_180: '180°',
   tool_rotate_pdf_angle_90ccw: '90° counter-clockwise',
   tool_rotate_pdf_angle_90cw: '90° clockwise',
@@ -19379,6 +21318,82 @@ const en: SiteLangDict = {
   tool_svg_optimizer_usecase_2: 'Clean inline SVG for a landing page and see byte savings without installing SVGO.',
   tool_svg_optimizer_usecase_3: 'Strip comments and metadata from a design handoff while keeping the preview identical.',
   tool_svg_optimizer_usecases_title: 'Good fits',
+  tool_sync_song_lyrics_to_lrc_by_tapping_article:
+    'An LRC file pairs each lyric line with the time when it begins. Paste lyrics you are allowed to use, play a song from your device, then press Tap next line or Space as the next line starts. Every recorded timestamp stays editable: retap that row at the current playhead, nudge it by 0.1 second, or apply one overall offset. The preview displays exact [mm:ss.xx] timestamps, so you can inspect line order before downloading. The file is line-level LRC, not word-level karaoke timing or automatic speech recognition. The player uses a Blob URL for a local audio file and does not decode the entire song into memory; the file stays on your device and is not uploaded. Browser codec support still determines whether a particular MP3, M4A, WAV, OGG or FLAC will play. There is a limit of 1,000 lyric lines, and an incomplete or reversed timeline cannot be downloaded.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_choose: 'Choose a song',
+  tool_sync_song_lyrics_to_lrc_by_tapping_clear: 'Clear',
+  tool_sync_song_lyrics_to_lrc_by_tapping_desc:
+    'Make an LRC lyric file from your own words and a local song. Tap each line as it starts, correct the timing, then download synced lyrics without uploading audio.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_description:
+    'Sync song lyrics to LRC by tapping each line while a local MP3 or other playable audio runs. Correct an early or late line, shift all timestamps and download a UTF-8 LRC file. Steps: choose a song, paste lyrics, tap each line, review the preview and download. Example: four sample lines start at 0, 1, 2 and 3 seconds.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_download: 'Download LRC',
+  tool_sync_song_lyrics_to_lrc_by_tapping_earlier: 'Earlier',
+  tool_sync_song_lyrics_to_lrc_by_tapping_example:
+    'Load the four-second sample: the lines begin at 00:00.00, 00:01.00, 00:02.00 and 00:03.00. Retap a row, inspect the preview and download a real LRC file.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_example_title: 'Four timed sample lines',
+  tool_sync_song_lyrics_to_lrc_by_tapping_faq_a1:
+    'Yes, if this browser can play your MP3. Paste your own lyric lines, tap along and download the LRC; the original MP3 is not changed.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_faq_a2:
+    'Retap one line or move it 0.1 second at a time. Use the overall offset for a consistent delay across all lines; negative export times are rejected.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_faq_a3:
+    'No. Supply your own lyrics and mark each line by listening. This produces line-level LRC, not automatically recognized words or word-by-word karaoke data.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_faq_a4:
+    'No. Playback uses a local browser URL. A browser must still support the audio codec, and the audio file remains on your device.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_faq_q1: 'Can I make an LRC file from an MP3?',
+  tool_sync_song_lyrics_to_lrc_by_tapping_faq_q2: 'How can I fix lyrics that are out of sync?',
+  tool_sync_song_lyrics_to_lrc_by_tapping_faq_q3: 'Does this automatically transcribe a song?',
+  tool_sync_song_lyrics_to_lrc_by_tapping_faq_q4: 'Does the song get uploaded?',
+  tool_sync_song_lyrics_to_lrc_by_tapping_hint: 'MP3, M4A, WAV, OGG or FLAC supported by this browser; audio stays on your device.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_how_intro: 'Make an LRC file by listening to the song and marking each line.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_how_item_1:
+    'Choose an audio file from your device and paste the lyrics with one line per row, or load the playable sample.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_how_item_2: 'Click Prepare lines, play the song, then tap Tap next line or Space when each new line begins.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_how_item_3: 'Retap or nudge a line that is early or late; set an overall offset when every line drifts together.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_how_item_4: 'Review the timestamped preview and click Download LRC after every line has a valid time.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_how_title: 'How to make synced LRC lyrics',
+  tool_sync_song_lyrics_to_lrc_by_tapping_later: 'Later',
+  tool_sync_song_lyrics_to_lrc_by_tapping_lyrics_label: 'Lyrics, one line at a time',
+  tool_sync_song_lyrics_to_lrc_by_tapping_lyrics_placeholder: 'First lyric line\nSecond lyric line',
+  tool_sync_song_lyrics_to_lrc_by_tapping_offset: 'Overall offset (ms)',
+  tool_sync_song_lyrics_to_lrc_by_tapping_offset_hint: 'Positive numbers delay all exported lines.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_prepare: 'Prepare lines',
+  tool_sync_song_lyrics_to_lrc_by_tapping_preview: 'LRC preview',
+  tool_sync_song_lyrics_to_lrc_by_tapping_retap: 'Retap now',
+  tool_sync_song_lyrics_to_lrc_by_tapping_rules_body: 'Correct timing before exporting so a player can follow the lyrics.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_rules_item_1:
+    'Each tap records the audio playhead in integer milliseconds; the exported line uses [mm:ss.xx] hundredths.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_rules_item_2:
+    'Retap replaces one line time. The −0.1 and +0.1 controls move a single time by 100 ms; overall offset moves all exported times.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_rules_item_3:
+    'The file keeps lyric order. If a later line is timed before an earlier one, correct it before download.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_rules_item_4:
+    'This is manual line-level syncing. It does not fetch lyrics, transcribe speech or produce word-by-word eLRC.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_rules_title: 'LRC timing and correction rules',
+  tool_sync_song_lyrics_to_lrc_by_tapping_sample: 'Load sample',
+  tool_sync_song_lyrics_to_lrc_by_tapping_sample_lines: 'Morning light\nA melody starts\nThe chorus rises\nOne last note',
+  tool_sync_song_lyrics_to_lrc_by_tapping_settings: 'Advanced timing',
+  tool_sync_song_lyrics_to_lrc_by_tapping_speed: 'Playback speed',
+  tool_sync_song_lyrics_to_lrc_by_tapping_status_audio: 'Choose a playable local song first.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_status_done: 'All lines are timed. Review and download the LRC.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_status_empty: 'Paste at least one lyric line.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_status_limit: 'Use at most 1,000 lyric lines.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_status_missing: 'Every line needs a timestamp before download.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_status_negative: 'Offset would make a timestamp negative.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_status_next: 'Tap line {number} when it begins.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_status_order: 'A later lyric cannot start before the previous one.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_status_play: 'This browser could not play the audio. Try another format.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_status_ready: 'Lines are ready. Play and tap, or edit the sample times.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_tap: 'Tap next line',
+  tool_sync_song_lyrics_to_lrc_by_tapping_title: 'Sync song lyrics to LRC by tapping each line',
+  tool_sync_song_lyrics_to_lrc_by_tapping_usecase_1: 'Create timed lyrics for a local music player from lyrics you already wrote.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_usecase_2: 'Fix a chorus line that was tapped late without redoing the whole song.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_usecase_3: 'Make an LRC file from an MP3 while keeping a long audio file on your device.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_usecases_title: 'When to sync lyrics by hand',
+  tool_sync_song_lyrics_to_lrc_by_tapping_why_choose_body: 'The timeline stays visible, correctable and local.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_why_choose_item_1: 'Retap any line without restarting the song.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_why_choose_item_2: 'Compare the exact LRC timestamps before downloading.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_why_choose_item_3: 'Play long audio through the browser without loading the full waveform.',
+  tool_sync_song_lyrics_to_lrc_by_tapping_why_choose_title: 'Why use this LRC lyric maker',
   tool_terraform_cidrsubnet_article:
     'cidrsubnet takes a parent CIDR and returns one child prefix. newbits is how many extra prefix bits you borrow; netnum picks which subnet, starting at 0. cidrhost returns a host address in a prefix; cidrnetmask returns an IPv4 dotted mask. This page matches HashiCorp function rules in the browser — it is not terraform console and does not wrap the hashicorp/subnets/cidr module.',
   tool_terraform_cidrsubnet_bits_tpl: 'Parent /{old} plus {nb} bits → /{neu}. netnum {nn} fills the extra bits; remaining host bits: {hb}.',
@@ -19844,6 +21859,92 @@ const en: SiteLangDict = {
   tool_triangle_area_usecase_2: 'Quick area sketch.',
   tool_triangle_area_usecase_3: 'Compare related shape tools.',
   tool_triangle_area_usecases_title: 'When to use it',
+  tool_trim_a_video_clip_and_export_advanced: 'Encoding settings (optional)',
+  tool_trim_a_video_clip_and_export_article:
+    'A video trimmer keeps one continuous section of a source file. Choose local MP4, MOV or WebM, set start and end seconds, preview the source, then export a new MP4. This tool checks whether the browser can decode the video, whether an H.264 encoder is available, and whether source audio can be decoded before conversion. A nonzero start triggers transcoding of video and audio in the current engine, so arbitrary-point lossless cutting is not promised. The output panel reads the completed MP4 again and reports the actual duration, H.264 video, AAC audio when the source had sound, source/output bytes and whether a streamed OPFS path was used. A silent source remains silent. The engine reads the source with bounded cache and streams large output to browser-local OPFS when available; a 5 GiB source code cap with OPFS and an 80 MiB conversion cap without it are safeguards, not universally tested maximums. Output duration can differ slightly from the requested interval because of frame and audio packet timing. Conversion stays in the browser and can be stopped or retried.',
+  tool_trim_a_video_clip_and_export_channels: 'Audio channels',
+  tool_trim_a_video_clip_and_export_check: 'Check output tracks',
+  tool_trim_a_video_clip_and_export_choose: 'Choose a video or MP4',
+  tool_trim_a_video_clip_and_export_clear: 'Clear',
+  tool_trim_a_video_clip_and_export_convert: 'Trim and export MP4',
+  tool_trim_a_video_clip_and_export_desc:
+    'Trim one local video or cut an MP4 clip by start and end time. Preview the source, export an H.264/AAC MP4, and check actual duration, tracks and bytes.',
+  tool_trim_a_video_clip_and_export_description:
+    'Trim video online in your browser. Steps: choose one local MP4, MOV or WebM, set start and end seconds, export a playable H.264/AAC MP4, then inspect actual duration, audio and bytes. Example: keep seconds 2–5 from an eight-second clip as a three-second file.',
+  tool_trim_a_video_clip_and_export_done: 'Trimmed MP4 ready. Check the result and download.',
+  tool_trim_a_video_clip_and_export_download: 'Download trimmed MP4',
+  tool_trim_a_video_clip_and_export_elapsed: 'Elapsed: {s}s',
+  tool_trim_a_video_clip_and_export_empty: 'Choose a video or load the on-site sample to trim a clip.',
+  tool_trim_a_video_clip_and_export_encode: 'Trim and encode MP4',
+  tool_trim_a_video_clip_and_export_end: 'End (seconds)',
+  tool_trim_a_video_clip_and_export_err_audio: 'This browser cannot decode the source audio track.',
+  tool_trim_a_video_clip_and_export_err_codec: 'This browser cannot decode the source video codec.',
+  tool_trim_a_video_clip_and_export_err_container: 'No usable video track was found in this file.',
+  tool_trim_a_video_clip_and_export_err_encoder: 'The browser could not create or verify a playable MP4. Try a different source or quality.',
+  tool_trim_a_video_clip_and_export_err_file: 'Choose one nonempty video file.',
+  tool_trim_a_video_clip_and_export_err_limit: 'This source exceeds the current browser storage code limit.',
+  tool_trim_a_video_clip_and_export_err_range: 'Start and end must be inside the video, at least 0.1 seconds apart.',
+  tool_trim_a_video_clip_and_export_err_sample: 'The on-site video sample could not load. Choose your own file.',
+  tool_trim_a_video_clip_and_export_err_video: 'This browser has no H.264 encoder at this video size.',
+  tool_trim_a_video_clip_and_export_example:
+    'Load the eight-second moving MP4 sample. Keep seconds 2–5, export an MP4, and compare the actual roughly three-second duration, H.264/AAC tracks and input/output bytes.',
+  tool_trim_a_video_clip_and_export_example_title: 'MP4 clip cut from seconds 2 to 5',
+  tool_trim_a_video_clip_and_export_failed: 'The video could not be trimmed.',
+  tool_trim_a_video_clip_and_export_faq_a1:
+    'You can request start and end seconds. The completed MP4 reports its actual encoded duration; frame and audio packet timing can introduce a small difference.',
+  tool_trim_a_video_clip_and_export_faq_a2:
+    'When the source has decodable audio, the output is checked for AAC audio. A silent source stays silent. Unsupported audio is rejected.',
+  tool_trim_a_video_clip_and_export_faq_a3:
+    'No general lossless guarantee. A nonzero start currently causes video and audio transcoding so an arbitrary cut can begin near the requested time.',
+  tool_trim_a_video_clip_and_export_faq_a4:
+    'Only when the browser can decode its tracks and encode H.264. Large output uses OPFS streaming where available; the code source cap is a safeguard, not a tested size promise.',
+  tool_trim_a_video_clip_and_export_faq_q1: 'Can I cut an MP4 clip by exact start and end time?',
+  tool_trim_a_video_clip_and_export_faq_q2: 'Does trimming preserve audio?',
+  tool_trim_a_video_clip_and_export_faq_q3: 'Is this lossless video trimming?',
+  tool_trim_a_video_clip_and_export_faq_q4: 'Can I trim a large MOV or WebM?',
+  tool_trim_a_video_clip_and_export_high: 'High',
+  tool_trim_a_video_clip_and_export_hint: 'One local MP4, MOV or WebM. Requires browser decoding and H.264 encoding.',
+  tool_trim_a_video_clip_and_export_how_body:
+    'Choose one video, set a start and end time, click Trim and export MP4, inspect the actual length and audio, then download.',
+  tool_trim_a_video_clip_and_export_how_item_1: 'Choose a local MP4, MOV or WebM, or load the moving sample.',
+  tool_trim_a_video_clip_and_export_how_item_2: 'Preview the source and set start/end seconds for the section to keep.',
+  tool_trim_a_video_clip_and_export_how_item_3: 'Optionally adjust output quality or audio channels, then export the clip.',
+  tool_trim_a_video_clip_and_export_how_item_4: 'Check actual duration, tracks and file size before downloading the MP4.',
+  tool_trim_a_video_clip_and_export_how_title: 'How to trim a video or cut an MP4 clip',
+  tool_trim_a_video_clip_and_export_low: 'Low',
+  tool_trim_a_video_clip_and_export_medium: 'Medium',
+  tool_trim_a_video_clip_and_export_mono: 'Mono',
+  tool_trim_a_video_clip_and_export_progress: 'Video trimming progress',
+  tool_trim_a_video_clip_and_export_quality: 'Output quality',
+  tool_trim_a_video_clip_and_export_read: 'Read and check tracks',
+  tool_trim_a_video_clip_and_export_result:
+    'Requested {start}–{end}s · actual duration {duration}s · {video} video / {audio} audio · source {source} → output {output} · {route} path',
+  tool_trim_a_video_clip_and_export_result_title: 'Completed video clip',
+  tool_trim_a_video_clip_and_export_rules_body: 'A continuous selected interval becomes a new MP4; the output report reflects the encoded file.',
+  tool_trim_a_video_clip_and_export_rules_item_1:
+    'A 2–5 second range aims for a three-second file. Video frames and audio packets can leave a small duration difference.',
+  tool_trim_a_video_clip_and_export_rules_item_2:
+    'The browser re-encodes nonzero-start trims to H.264 video and AAC audio when source audio exists; a silent source stays silent.',
+  tool_trim_a_video_clip_and_export_rules_item_3:
+    'The source needs decodable tracks and an H.264 encoder. Unsupported codecs and damaged files are rejected instead of producing a misleading download.',
+  tool_trim_a_video_clip_and_export_rules_item_4:
+    'Large output streams through OPFS when available; code caps are 5 GiB source with OPFS or 80 MiB without. These are not tested maxima.',
+  tool_trim_a_video_clip_and_export_rules_title: 'Video trim timing, audio and file-size rules',
+  tool_trim_a_video_clip_and_export_sample: 'Load video sample',
+  tool_trim_a_video_clip_and_export_settings_hint:
+    'Trimming from a nonzero start re-encodes the video and any audio. Quality can change file size; it does not guarantee a smaller file.',
+  tool_trim_a_video_clip_and_export_silent: 'none',
+  tool_trim_a_video_clip_and_export_source_info: 'Source duration {duration}s',
+  tool_trim_a_video_clip_and_export_source_preview: 'Source preview',
+  tool_trim_a_video_clip_and_export_start: 'Start (seconds)',
+  tool_trim_a_video_clip_and_export_stereo: 'Stereo',
+  tool_trim_a_video_clip_and_export_stop: 'Stop',
+  tool_trim_a_video_clip_and_export_stopped: 'Stopped. Change settings or retry.',
+  tool_trim_a_video_clip_and_export_title: 'Trim a video clip and export an MP4',
+  tool_trim_a_video_clip_and_export_usecase_1: 'Remove an intro or ending from a short screen recording.',
+  tool_trim_a_video_clip_and_export_usecase_2: 'Cut an MP4 clip to the relevant three-second passage while retaining decoded audio.',
+  tool_trim_a_video_clip_and_export_usecase_3: 'Export one continuous highlight for a presentation or review without uploading the source.',
+  tool_trim_a_video_clip_and_export_usecases_title: 'When to trim a video clip',
   tool_trim_an_audio_clip_and_export_advanced: 'Advanced settings (optional)',
   tool_trim_an_audio_clip_and_export_article:
     'Trim audio in this tab: open a local file, set Start and End, click Trim, then Export WAV or Export MP3. Files stay on your device. An audio trimmer or mp3 cutter job is this one cut, not a full waveform editor.',

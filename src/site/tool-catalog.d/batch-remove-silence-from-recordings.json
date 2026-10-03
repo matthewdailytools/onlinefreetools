@@ -1,0 +1,24 @@
+{
+  "slug": "batch-remove-silence-from-recordings",
+  "path": "/tools/batch-remove-silence-from-recordings",
+  "updatedAt": "2026-10-03T00:00:00.000Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_remove_silence_from_recordings_title",
+  "homeTitleKey": "tool_batch_remove_silence_from_recordings_title",
+  "homeDescKey": "tool_batch_remove_silence_from_recordings_desc",
+  "faqPrefix": "tool_batch_remove_silence_from_recordings",
+  "related": ["remove-silence-from-a-recording", "split-a-recording-on-silence", "batch-trim-the-same-intro-from-audio-files"],
+  "logo": "/icons/tools/batch-remove-silence-from-recordings.svg",
+  "page": {
+    "module": "../pages/batchRemoveSilenceFromRecordingsPage",
+    "export": "renderBatchRemoveSilenceFromRecordingsPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}
