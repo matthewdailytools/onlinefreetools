@@ -79,6 +79,7 @@ const ru: SiteLangDict = {
   pdf_work_next: 'Далее',
   tool_category_design: 'Инструменты дизайна',
   tool_category_pdf: 'PDF-инструменты',
+  tool_category_video: 'Видеоинструменты',
   tool_feedback_body:
     'Что-то неясно, сломано или отсутствует? Напишите сообщение ниже — мы читаем каждую заметку об этих инструментах.',
   tool_feedback_cta: 'Открыть в почтовом приложении',

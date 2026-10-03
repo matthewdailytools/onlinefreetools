@@ -1,0 +1,28 @@
+{
+  "slug": "add-soft-subtitles-to-an-mp4",
+  "path": "/tools/add-soft-subtitles-to-an-mp4",
+  "updatedAt": "2026-10-03T15:14:51.892Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "video",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_add_soft_subtitles_to_an_mp4_title",
+  "homeTitleKey": "tool_add_soft_subtitles_to_an_mp4_title",
+  "homeDescKey": "tool_add_soft_subtitles_to_an_mp4_desc",
+  "faqPrefix": "tool_add_soft_subtitles_to_an_mp4",
+  "related": [
+    "burn-subtitles-into-a-video",
+    "make-srt-subtitles-from-a-video-file",
+    "convert-subtitle-files-between-srt-vtt-and-ass"
+  ],
+  "logo": "/icons/tools/add-soft-subtitles-to-an-mp4.svg",
+  "page": {
+    "module": "../pages/addSoftSubtitlesToAnMp4Page",
+    "export": "renderAddSoftSubtitlesToAnMp4Page",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

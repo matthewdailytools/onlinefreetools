@@ -239,7 +239,7 @@ SRT 模型：whisper-tiny q8、滑窗识别；**不做**说话人区分 / 任意
 | `batch-convert-web-pages-to-jpg` / `png` / `pdf` | **网页截图**，不是本地视频转码 | 是 |
 | 全部 `extract-audio-from-*` / `batch-extract-*` | **抽音**（B 栈），输出 WAV/MP3，不是视频容器转换 | 是（见 §4.1） |
 
-**剩余空白：** 已有 MKV→MP4 AAC 单/批页；WebM/MOV→H.264 MP4 单/批、MP4→VP9/Opus WebM、视频→GIF、抽帧、裁剪、压缩、旋转、变速、字幕烧录与顺序拼接页均已完成本地验收、尚未部署。软字幕轨 mux 和部分视频批量作业仍待立项；本地完成不代表生产已上线。
+**剩余空白：** 已有 MKV→MP4 AAC 单/批页；WebM/MOV→H.264 MP4 单/批、MP4→VP9/Opus WebM、视频→GIF、抽帧、裁剪、压缩、旋转、变速、字幕烧录与顺序拼接页均已完成本地验收、尚未部署。软字幕轨 mux 及本节列出的四个新增视频/音频批量作业已完成本地实现与输出验收，尚未部署；大文件能力仍按各页代码上限与实际样例区分。本地完成不代表生产已上线。
 
 #### 4.6.3 转换工具清单（已上线、本地已验收与候选）
 
@@ -285,7 +285,7 @@ SRT 模型：whisper-tiny q8、滑窗识别；**不做**说话人区分 / 任意
 | 建议 slug | 作业 | 推荐底座 | 浏览器可行性 | 是否已经实现 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | `burn-subtitles-into-a-video` | 已有 SRT/VTT 烧进画面 | Mediabunny 逐帧 Canvas + OPFS | **本地 Chrome 已测** | **本地已验收；未部署（2026-10-03）** | 自动样例字幕仅在指定时段形成真实像素，H.264/AAC MP4 验轨；VTT、坏字幕后重试、65 秒视频、>80 MiB 输入、停止重试和十语手机端下载通过；不做自动转写，烧录必重编码 |
-| `add-soft-subtitles-to-an-mp4` | 软字幕轨 mux | **V1**（ISOBMFF） | **中** | 否 | 需 mux 字幕轨；非烧录 |
+| `add-soft-subtitles-to-an-mp4`（本地已实现，未部署） | 软字幕轨 mux | **V1** · MP4 ≤160 MiB 代码上限；75.6 MiB 浏览器成品已测 | **中** | 是 | SRT→mov_text/tx3g 可选字幕轨，H.264/AAC 原轨字节哈希一致；浏览器实测下载，ffprobe 验轨与反提 SRT。部分播放器/浏览器 video 控件不显示此轨，另提供 SRT sidecar；非烧录 |
 
 #### 4.6.4 转换对 × 底座速查（浏览器）
 
@@ -461,16 +461,16 @@ SRT 模型：whisper-tiny q8、滑窗识别；**不做**说话人区分 / 任意
 
 ### 11.3 多文件批量完成同一作业（B）
 
-批量是**多个独立输入重复同一功能**，不是把视频片段合成一个成片。§4.1 的 5 个批量抽音页、`batch-convert-mkv-files-to-mp4-files`、`batch-convert-webm-files-to-mp4-files`、`batch-convert-mov-files-to-mp4-files`、`bulk-convert-wav-files-to-mp3`、`batch-convert-audio-files-to-mp3`、`batch-reduce-mp3-file-sizes`、`batch-convert-mp3-files-to-wav`、`batch-normalize-audio-files-to-peak`、`batch-remove-silence-from-recordings` 和 `batch-trim-the-same-intro-from-audio-files` 已在本地注册；本轮新增页尚未部署。新增 B 页先等对应单件页真实输入→下载验收通过；大结果不能默认把所有输出在内存里汇成 JSZip。
+批量是**多个独立输入重复同一功能**，不是把视频片段合成一个成片。§4.1 的 5 个批量抽音页、`batch-convert-mkv-files-to-mp4-files`、`batch-convert-webm-files-to-mp4-files`、`batch-convert-mov-files-to-mp4-files`、`bulk-convert-wav-files-to-mp3`、`batch-convert-audio-files-to-mp3`、`batch-reduce-mp3-file-sizes`、`batch-convert-mp3-files-to-wav`、`batch-normalize-audio-files-to-peak`、`batch-remove-silence-from-recordings` 和 `batch-trim-the-same-intro-from-audio-files`、`batch-compress-video-files`、`batch-trim-video-clips-by-time`、`batch-extract-frames-from-videos` 和 `batch-make-srt-subtitles-from-audio-files` 已在本地注册；本轮新增页尚未部署。新增 B 页先等对应单件页真实输入→下载验收通过；大结果不能默认把所有输出在内存里汇成 JSZip。
 
 | 批量任务与建议 slug | 路径/大文件档 | 主搜法 → 产物 | 独立 IG 与压力条件 |
 | --- | --- | --- | --- |
 | `batch-convert-webm-files-to-mp4-files`（本地已实现，未部署） | V1 · 108 MiB 输入已测；大输出保留路径待压测 | `batch WebM to MP4` → 多个独立 H.264/AAC MP4，逐项下载 | 每行 codec/尺寸/时长/前后体积/错误，同名去重，部分成功和重试保留成功项；20 项通过；不默认内存 ZIP |
 | `batch-convert-mov-files-to-mp4-files`（本地已实现，未部署） | V1 · 130 MiB 输入及 >80 MiB OPFS 输出已测 | `batch MOV to MP4` → 独立 H.264/AAC MP4 逐项下载 | H.264 视频包复制、PCM→AAC、HEVC 仅失败该行；20 项、部分成功、十语下载、无 OPFS 与停止重试通过 |
-| `batch-compress-video-files` | V2 · 流待测 | `batch video compressor` → 多个压缩视频 | 统一预设与每行前后体积、受控并发、部分成功 |
-| `batch-trim-video-clips-by-time` | V1 · 流待测 | `batch trim videos` → 同规则多成片 | 长短不一的越界处理、实际起止与精确/关键帧模式 |
-| `batch-extract-frames-from-videos` | 解帧 · 短/待测 | `batch extract frames from videos` → 分目录图片 ZIP | 帧数/总体输出预算；单视频多帧留在 S 页 |
-| `batch-make-srt-subtitles-from-audio-files` | D · 模型内存受限 | `batch audio to SRT` → 逐文件字幕 | 模型只载一次、串行推理、逐条校正/跳过失败；长文件大批量不默认承诺 |
+| `batch-compress-video-files`（本地已验收，未部署） | V2 · 单件 500 MiB 代码上限；实测约 4.9 MiB×2 | `batch video compressor` → 多个独立 MP4 | 统一质量预设与每行真实尺寸/体积；串行处理、错误隔离；下载 H.264/AAC 经 ffprobe 验证，不承诺所有来源一定缩小 |
+| `batch-trim-video-clips-by-time`（本地已验收，未部署） | V1 · 两段约 8 秒样例实测 | `batch trim videos` → 同规则独立 MP4 | 统一 1–4 秒裁剪，两个下载输出经 ffprobe 验约 3.04 秒 H.264/AAC；短于终点的来源逐行失败、保留成功项 |
+| `batch-extract-frames-from-videos`（本地已验收，未部署） | 解帧 · 每视频 1 GiB 输入代码上限、48 MiB/80 帧/80M 像素输出预算 | `batch extract frames from videos` → 分目录 JPG ZIP | 两段视频→四张 JPG 与分目录/manifest ZIP 已实测；坏来源逐行错误，成功目录保留；ZIP 在内存中构造，大任务按预算限制 |
+| `batch-make-srt-subtitles-from-audio-files`（本地已验收，未部署） | D · 每件 120 MiB/2 小时代码上限，2–10 件 | `batch audio to SRT` → 逐文件可编辑字幕 | 99 个 Whisper 语音语言选项与自动检测，模型只载一次、串行推理；两段语音各得 SRT，坏音频隔离；需人工校对，不承诺无限批量或准确率 |
 
 ### 11.4 现有单功能页能否另起 batch slug：逐族判定
 

@@ -1,7 +1,7 @@
 {
   "slug": "make-srt-subtitles-from-an-audio-file",
   "path": "/tools/make-srt-subtitles-from-an-audio-file",
-  "updatedAt": "2026-10-02T07:10:00Z",
+  "updatedAt": "2026-10-03T15:14:51.892Z",
   "launchedAt": "2026-09-21T01:20:00.000Z",
   "category": "developer",
   "primaryTopic": "sound-editor",
@@ -14,7 +14,7 @@
   "related": [
     "make-srt-subtitles-from-a-video-file",
     "transcribe-an-audio-file-to-text",
-    "make-a-waveform-video-from-audio"
+    "batch-make-srt-subtitles-from-audio-files"
   ],
   "logo": "/icons/tools/make-srt-subtitles-from-an-audio-file.svg",
   "page": {

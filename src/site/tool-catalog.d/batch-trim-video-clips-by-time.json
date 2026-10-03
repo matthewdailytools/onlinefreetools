@@ -1,0 +1,28 @@
+{
+  "slug": "batch-trim-video-clips-by-time",
+  "path": "/tools/batch-trim-video-clips-by-time",
+  "updatedAt": "2026-10-03T15:14:51.892Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "video",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_trim_video_clips_by_time_title",
+  "homeTitleKey": "tool_batch_trim_video_clips_by_time_title",
+  "homeDescKey": "tool_batch_trim_video_clips_by_time_desc",
+  "faqPrefix": "tool_batch_trim_video_clips_by_time",
+  "related": [
+    "trim-a-video-clip-and-export",
+    "batch-compress-video-files",
+    "batch-convert-webm-files-to-mp4-files"
+  ],
+  "logo": "/icons/tools/batch-trim-video-clips-by-time.svg",
+  "page": {
+    "module": "../pages/batchTrimVideoClipsByTimePage",
+    "export": "renderBatchTrimVideoClipsByTimePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

@@ -3,12 +3,13 @@
  */
 import type { ToolCategory } from './tools';
 
-/** 分类在首页与导航中的展示顺序（图片 → 设计 → PDF → 开发者 → 计算器）。 */
-export const TOOL_CATEGORY_ORDER: ToolCategory[] = ['image', 'design', 'pdf', 'developer', 'calculator'];
+/** 分类在首页与导航中的展示顺序。 */
+export const TOOL_CATEGORY_ORDER: ToolCategory[] = ['image', 'video', 'design', 'pdf', 'developer', 'calculator'];
 
 /** 各分类在首页 `#all-tools` 下的锚点 id。 */
 export const CATEGORY_ANCHORS: Record<ToolCategory, string> = {
 	image: 'cat-image',
+	video: 'cat-video',
 	design: 'cat-design',
 	pdf: 'cat-pdf',
 	developer: 'cat-dev',
@@ -24,6 +25,7 @@ export const getCategoryAnchor = (category: ToolCategory): string => CATEGORY_AN
 /** 运行时顶栏分类下拉使用的 i18n 键。 */
 type CategoryRuntimeLabelKey =
 	| 'tool_category_image'
+	| 'tool_category_video'
 	| 'tool_category_design'
 	| 'tool_category_pdf'
 	| 'tool_category_developer'
@@ -32,6 +34,7 @@ type CategoryRuntimeLabelKey =
 /** 静态首页构建使用的分类标题 i18n 键。 */
 type CategoryHomeLabelKey =
 	| 'home_cat_image'
+	| 'home_cat_video'
 	| 'home_cat_design'
 	| 'home_cat_pdf'
 	| 'home_cat_dev'
@@ -43,6 +46,7 @@ type CategoryHomeLabelKey =
  */
 export const getCategoryRuntimeLabelKey = (category: ToolCategory): CategoryRuntimeLabelKey => {
 	if (category === 'image') return 'tool_category_image';
+	if (category === 'video') return 'tool_category_video';
 	if (category === 'design') return 'tool_category_design';
 	if (category === 'pdf') return 'tool_category_pdf';
 	if (category === 'calculator') return 'tool_category_calculator';
@@ -55,6 +59,7 @@ export const getCategoryRuntimeLabelKey = (category: ToolCategory): CategoryRunt
  */
 export const getCategoryHomeLabelKey = (category: ToolCategory): CategoryHomeLabelKey => {
 	if (category === 'image') return 'home_cat_image';
+	if (category === 'video') return 'home_cat_video';
 	if (category === 'design') return 'home_cat_design';
 	if (category === 'pdf') return 'home_cat_pdf';
 	if (category === 'calculator') return 'home_cat_calculator';
@@ -74,6 +79,11 @@ export const CATEGORY_HOME_SECTION_KEYS: Record<
 		labelKey: 'home_cat_image',
 		descKey: 'home_cat_image_desc',
 		blurbKey: 'home_cat_image_blurb',
+	},
+	video: {
+		labelKey: 'home_cat_video',
+		descKey: 'home_cat_video_desc',
+		blurbKey: 'home_cat_video_blurb',
 	},
 	design: {
 		labelKey: 'home_cat_design',

@@ -80,6 +80,7 @@ const fr: SiteLangDict = {
   pdf_work_next: 'Suivant',
   tool_category_design: 'Outils de design',
   tool_category_pdf: 'Outils PDF',
+  tool_category_video: 'Outils vidéo',
   tool_feedback_body:
     'Quelque chose n’est pas clair, cassé ou manquant ? Rédigez un message ci-dessous — nous lisons chaque note.',
   tool_feedback_cta: 'Ouvrir dans l’app e-mail',

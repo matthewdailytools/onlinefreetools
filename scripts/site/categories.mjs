@@ -2,12 +2,13 @@
  * 构建侧工具分类顺序与首页锚点（与 src/site/categories.ts 保持同步）。
  */
 
-/** @type {Array<'image'|'design'|'pdf'|'developer'|'calculator'>} */
-export const TOOL_CATEGORY_ORDER = ['image', 'design', 'pdf', 'developer', 'calculator'];
+/** @type {Array<'image'|'video'|'design'|'pdf'|'developer'|'calculator'>} */
+export const TOOL_CATEGORY_ORDER = ['image', 'video', 'design', 'pdf', 'developer', 'calculator'];
 
 /** @type {Record<string, string>} */
 export const CATEGORY_ANCHORS = {
   image: 'cat-image',
+  video: 'cat-video',
   design: 'cat-design',
   pdf: 'cat-pdf',
   developer: 'cat-dev',
@@ -15,7 +16,7 @@ export const CATEGORY_ANCHORS = {
 };
 
 /**
- * @param {'image'|'design'|'pdf'|'developer'|'calculator'} category
+ * @param {'image'|'video'|'design'|'pdf'|'developer'|'calculator'} category
  */
 export const getCategoryAnchor = (category) => CATEGORY_ANCHORS[category];
 
@@ -24,6 +25,7 @@ export const getCategoryAnchor = (category) => CATEGORY_ANCHORS[category];
  */
 export const getCategoryHomeLabelKey = (category) => {
   if (category === 'image') return 'home_cat_image';
+  if (category === 'video') return 'home_cat_video';
   if (category === 'design') return 'home_cat_design';
   if (category === 'pdf') return 'home_cat_pdf';
   if (category === 'calculator') return 'home_cat_calculator';
@@ -36,6 +38,11 @@ export const CATEGORY_HOME_SECTION_KEYS = {
     labelKey: 'home_cat_image',
     descKey: 'home_cat_image_desc',
     blurbKey: 'home_cat_image_blurb',
+  },
+  video: {
+    labelKey: 'home_cat_video',
+    descKey: 'home_cat_video_desc',
+    blurbKey: 'home_cat_video_blurb',
   },
   design: {
     labelKey: 'home_cat_design',

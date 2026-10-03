@@ -5,8 +5,8 @@ import catalog from './tool-catalog.json';
 import type { ToolScenario, ToolSubject } from './taxonomy';
 import type { ToolTopic } from './topics';
 
-/** 工具分类：计算器、开发者工具、图片处理工具、设计工具、PDF 工具。 */
-export type ToolCategory = 'calculator' | 'developer' | 'image' | 'design' | 'pdf';
+/** 工具分类：计算器、开发者、图片、视频、设计和 PDF 工具。 */
+export type ToolCategory = 'calculator' | 'developer' | 'image' | 'video' | 'design' | 'pdf';
 
 export type { ToolScenario, ToolSubject, ToolTopic };
 

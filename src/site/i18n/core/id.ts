@@ -75,6 +75,7 @@ const id: SiteLangDict = {
   pdf_work_next: 'Berikutnya',
   tool_category_design: 'Alat desain',
   tool_category_pdf: 'Alat PDF',
+  tool_category_video: 'Alat video',
   tool_feedback_body:
     'Ada yang kurang jelas, rusak, atau hilang? Tulis pesan di bawah — kami membaca setiap catatan tentang alat ini.',
   tool_feedback_cta: 'Buka di aplikasi email',

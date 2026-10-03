@@ -1,0 +1,28 @@
+{
+  "slug": "batch-extract-frames-from-videos",
+  "path": "/tools/batch-extract-frames-from-videos",
+  "updatedAt": "2026-10-03T15:14:51.892Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "video",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_extract_frames_from_videos_title",
+  "homeTitleKey": "tool_batch_extract_frames_from_videos_title",
+  "homeDescKey": "tool_batch_extract_frames_from_videos_desc",
+  "faqPrefix": "tool_batch_extract_frames_from_videos",
+  "related": [
+    "extract-frames-from-a-video-as-images",
+    "batch-trim-video-clips-by-time",
+    "batch-compress-video-files"
+  ],
+  "logo": "/icons/tools/batch-extract-frames-from-videos.svg",
+  "page": {
+    "module": "../pages/batchExtractFramesFromVideosPage",
+    "export": "renderBatchExtractFramesFromVideosPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

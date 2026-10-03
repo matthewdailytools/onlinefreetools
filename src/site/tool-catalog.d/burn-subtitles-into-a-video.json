@@ -1,7 +1,7 @@
 {
   "slug": "burn-subtitles-into-a-video",
   "path": "/tools/burn-subtitles-into-a-video",
-  "updatedAt": "2026-10-03T13:06:05.523Z",
+  "updatedAt": "2026-10-03T15:14:51.892Z",
   "launchedAt": "2026-10-03T00:00:00.000Z",
   "category": "video",
   "primaryTopic": "sound-editor",
@@ -14,7 +14,7 @@
   "related": [
     "convert-subtitle-files-between-srt-vtt-and-ass",
     "make-srt-subtitles-from-a-video-file",
-    "convert-a-video-to-an-mp4-with-aac-audio"
+    "add-soft-subtitles-to-an-mp4"
   ],
   "logo": "/icons/tools/burn-subtitles-into-a-video.svg",
   "page": {

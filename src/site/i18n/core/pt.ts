@@ -75,6 +75,7 @@ const pt: SiteLangDict = {
   pdf_work_next: 'Seguinte',
   tool_category_design: 'Ferramentas de design',
   tool_category_pdf: 'Ferramentas PDF',
+  tool_category_video: 'Ferramentas de vídeo',
   tool_feedback_body:
     'Algo pouco claro, quebrado ou faltando? Escreva abaixo — lemos cada mensagem sobre estas ferramentas.',
   tool_feedback_cta: 'Abrir no app de e-mail',

@@ -6,6 +6,7 @@ import type { SiteLang } from './i18n';
 import { renderAddAnAudioTrackToAVideoPage } from '../pages/addAnAudioTrackToAVideoPage';
 import { renderAddDigitalSignatureToPdfPage } from '../pages/addDigitalSignatureToPdfPage';
 import { renderAddReverbToAnAudioClipPage } from '../pages/addReverbToAnAudioClipPage';
+import { renderAddSoftSubtitlesToAnMp4Page } from '../pages/addSoftSubtitlesToAnMp4Page';
 import { renderAddTextToPdfFilePage } from '../pages/addTextToPdfFilePage';
 import { renderAddWatermarkPage } from '../pages/addWatermarkPage';
 import { renderAddWwwToDnsPage } from '../pages/addWwwToDnsPage';
@@ -18,6 +19,7 @@ import { renderAwsVpcCidrPlannerPage } from '../pages/awsVpcCidrPlannerPage';
 import { renderBase64Page } from '../pages/base64Page';
 import { renderBatchChecksumReleaseFilesPage } from '../pages/batchChecksumReleaseFilesPage';
 import { renderBatchCompressPdfsForEmailPage } from '../pages/batchCompressPdfsForEmailPage';
+import { renderBatchCompressVideoFilesPage } from '../pages/batchCompressVideoFilesPage';
 import { renderBatchConvertAudioFilesToMp3Page } from '../pages/batchConvertAudioFilesToMp3Page';
 import { renderBatchConvertJpgToEditableWordWithOcrPage } from '../pages/batchConvertJpgToEditableWordWithOcrPage';
 import { renderBatchConvertJpgToTextWithOcrPage } from '../pages/batchConvertJpgToTextWithOcrPage';
@@ -35,10 +37,13 @@ import { renderBatchExtractAudioFromMovFilesPage } from '../pages/batchExtractAu
 import { renderBatchExtractAudioFromMp4FilesPage } from '../pages/batchExtractAudioFromMp4FilesPage';
 import { renderBatchExtractAudioFromVideoFilesPage } from '../pages/batchExtractAudioFromVideoFilesPage';
 import { renderBatchExtractAudioFromWebmFilesPage } from '../pages/batchExtractAudioFromWebmFilesPage';
+import { renderBatchExtractFramesFromVideosPage } from '../pages/batchExtractFramesFromVideosPage';
+import { renderBatchMakeSrtSubtitlesFromAudioFilesPage } from '../pages/batchMakeSrtSubtitlesFromAudioFilesPage';
 import { renderBatchNormalizeAudioFilesToPeakPage } from '../pages/batchNormalizeAudioFilesToPeakPage';
 import { renderBatchReduceMp3FileSizesPage } from '../pages/batchReduceMp3FileSizesPage';
 import { renderBatchRemoveSilenceFromRecordingsPage } from '../pages/batchRemoveSilenceFromRecordingsPage';
 import { renderBatchTrimTheSameIntroFromAudioFilesPage } from '../pages/batchTrimTheSameIntroFromAudioFilesPage';
+import { renderBatchTrimVideoClipsByTimePage } from '../pages/batchTrimVideoClipsByTimePage';
 import { renderBatchWatermarkPdfDraftsPage } from '../pages/batchWatermarkPdfDraftsPage';
 import { renderBatchWatermarkProductPhotosPage } from '../pages/batchWatermarkProductPhotosPage';
 import { renderBoostBassOnAnMp3Page } from '../pages/boostBassOnAnMp3Page';
@@ -327,6 +332,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'add-an-audio-track-to-a-video': (lang, defaultLang, enabled) => renderAddAnAudioTrackToAVideoPage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-digital-signature-to-pdf': (lang, defaultLang, enabled) => renderAddDigitalSignatureToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-reverb-to-an-audio-clip': (lang, defaultLang, enabled) => renderAddReverbToAnAudioClipPage({ lang, defaultLang, enabledLangs: enabled }),
+	'add-soft-subtitles-to-an-mp4': (lang, defaultLang, enabled) => renderAddSoftSubtitlesToAnMp4Page({ lang, defaultLang, enabledLangs: enabled }),
 	'add-text-to-pdf-file': (lang, defaultLang, enabled) => renderAddTextToPdfFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-watermark': (lang, defaultLang, enabled) => renderAddWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-www-to-dns': (lang, defaultLang, enabled) => renderAddWwwToDnsPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -339,6 +345,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'base64': (lang, defaultLang, enabled) => renderBase64Page({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-checksum-release-files': (lang, defaultLang, enabled) => renderBatchChecksumReleaseFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-compress-pdfs-for-email': (lang, defaultLang, enabled) => renderBatchCompressPdfsForEmailPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-compress-video-files': (lang, defaultLang, enabled) => renderBatchCompressVideoFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-audio-files-to-mp3': (lang, defaultLang, enabled) => renderBatchConvertAudioFilesToMp3Page({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-jpg-to-editable-word-with-ocr': (lang, defaultLang, enabled) => renderBatchConvertJpgToEditableWordWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-convert-jpg-to-text-with-ocr': (lang, defaultLang, enabled) => renderBatchConvertJpgToTextWithOcrPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -356,10 +363,13 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'batch-extract-audio-from-mp4-files': (lang, defaultLang, enabled) => renderBatchExtractAudioFromMp4FilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-extract-audio-from-video-files': (lang, defaultLang, enabled) => renderBatchExtractAudioFromVideoFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-extract-audio-from-webm-files': (lang, defaultLang, enabled) => renderBatchExtractAudioFromWebmFilesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-extract-frames-from-videos': (lang, defaultLang, enabled) => renderBatchExtractFramesFromVideosPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-make-srt-subtitles-from-audio-files': (lang, defaultLang, enabled) => renderBatchMakeSrtSubtitlesFromAudioFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-normalize-audio-files-to-peak': (lang, defaultLang, enabled) => renderBatchNormalizeAudioFilesToPeakPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-reduce-mp3-file-sizes': (lang, defaultLang, enabled) => renderBatchReduceMp3FileSizesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-remove-silence-from-recordings': (lang, defaultLang, enabled) => renderBatchRemoveSilenceFromRecordingsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-trim-the-same-intro-from-audio-files': (lang, defaultLang, enabled) => renderBatchTrimTheSameIntroFromAudioFilesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-trim-video-clips-by-time': (lang, defaultLang, enabled) => renderBatchTrimVideoClipsByTimePage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-watermark-pdf-drafts': (lang, defaultLang, enabled) => renderBatchWatermarkPdfDraftsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-watermark-product-photos': (lang, defaultLang, enabled) => renderBatchWatermarkProductPhotosPage({ lang, defaultLang, enabledLangs: enabled }),
 	'boost-bass-on-an-mp3': (lang, defaultLang, enabled) => renderBoostBassOnAnMp3Page({ lang, defaultLang, enabledLangs: enabled }),

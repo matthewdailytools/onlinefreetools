@@ -1,0 +1,28 @@
+{
+  "slug": "batch-compress-video-files",
+  "path": "/tools/batch-compress-video-files",
+  "updatedAt": "2026-10-03T15:14:51.892Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "video",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_compress_video_files_title",
+  "homeTitleKey": "tool_batch_compress_video_files_title",
+  "homeDescKey": "tool_batch_compress_video_files_desc",
+  "faqPrefix": "tool_batch_compress_video_files",
+  "related": [
+    "compress-a-video-file",
+    "batch-convert-webm-files-to-mp4-files",
+    "batch-convert-mov-files-to-mp4-files"
+  ],
+  "logo": "/icons/tools/batch-compress-video-files.svg",
+  "page": {
+    "module": "../pages/batchCompressVideoFilesPage",
+    "export": "renderBatchCompressVideoFilesPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "video"
+}

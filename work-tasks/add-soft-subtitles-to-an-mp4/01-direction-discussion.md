@@ -1,0 +1,3 @@
+# 01 — Direction
+
+**A: mux existing SRT cues as a removable/selectable mov_text (`tx3g`) subtitle track in an existing MP4.** Preserve original video and audio samples without re-encoding. Download a sidecar SRT too because player support for MP4 subtitle tracks varies. Do not promise the browser preview will expose this track: Chrome's HTMLVideoElement does not expose tx3g in `textTracks`. Verify with ffprobe and extraction back to SRT. Bound MP4 input to 160 MiB because mp4box rewrites the whole container in memory. Reject malformed cue timing and overlapping cues. Do not turn this into hardcoded subtitles or speech transcription.

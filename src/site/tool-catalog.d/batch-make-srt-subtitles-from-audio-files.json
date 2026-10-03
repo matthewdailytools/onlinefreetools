@@ -1,0 +1,28 @@
+{
+  "slug": "batch-make-srt-subtitles-from-audio-files",
+  "path": "/tools/batch-make-srt-subtitles-from-audio-files",
+  "updatedAt": "2026-10-03T15:14:51.892Z",
+  "launchedAt": "2026-10-03T00:00:00.000Z",
+  "category": "audio",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_make_srt_subtitles_from_audio_files_title",
+  "homeTitleKey": "tool_batch_make_srt_subtitles_from_audio_files_title",
+  "homeDescKey": "tool_batch_make_srt_subtitles_from_audio_files_desc",
+  "faqPrefix": "tool_batch_make_srt_subtitles_from_audio_files",
+  "related": [
+    "make-srt-subtitles-from-an-audio-file",
+    "batch-extract-frames-from-videos",
+    "transcribe-an-audio-file-to-text"
+  ],
+  "logo": "/icons/tools/batch-make-srt-subtitles-from-audio-files.svg",
+  "page": {
+    "module": "../pages/batchMakeSrtSubtitlesFromAudioFilesPage",
+    "export": "renderBatchMakeSrtSubtitlesFromAudioFilesPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

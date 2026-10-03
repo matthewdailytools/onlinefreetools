@@ -75,6 +75,7 @@ const ar: SiteLangDict = {
   pdf_work_next: 'التالي',
   tool_category_design: 'أدوات التصميم',
   tool_category_pdf: 'أدوات PDF',
+  tool_category_video: 'أدوات الفيديو',
   tool_feedback_body: 'هل هناك غموض أو خلل أو نقص؟ اكتب رسالة أدناه — نقرأ كل ملاحظة عن هذه الأدوات.',
   tool_feedback_cta: 'فتح في تطبيق البريد',
   tool_feedback_report_bug: 'الإبلاغ عن خلل على GitHub',

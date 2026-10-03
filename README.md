@@ -9,6 +9,12 @@
 ## 工具清单 / Tools List
 以下是我们提供的在线工具及其链接（中文版）：
 
+- [批量压缩视频文件](https://onlinefreetools.org/zh/tools/batch-compress-video-files) - 多个视频逐项压缩、对比实际体积并分别下载 MP4
+- [批量按时间裁剪视频](https://onlinefreetools.org/zh/tools/batch-trim-video-clips-by-time) - 同一时间范围作用于多个片段，短文件逐项报错
+- [批量从视频提取帧](https://onlinefreetools.org/zh/tools/batch-extract-frames-from-videos) - 多个视频的 JPG 按来源分目录打包 ZIP
+- [批量从音频生成 SRT](https://onlinefreetools.org/zh/tools/batch-make-srt-subtitles-from-audio-files) - 本地 Whisper 串行转写、逐项编辑与下载字幕
+- [给 MP4 添加软字幕](https://onlinefreetools.org/zh/tools/add-soft-subtitles-to-an-mp4) - SRT 嵌入可选 mov_text 轨，不重编码原音视频，并提供 SRT 备用文件
+
 - [扫描 PDF 转 TXT](https://onlinefreetools.org/zh/tools/extract-text-from-a-scanned-pdf) - 逐页 OCR、校对文字后下载
 - [批量清除照片 EXIF](https://onlinefreetools.org/zh/tools/bulk-strip-photo-exif) - PNG 净图与逐文件 CSV 报告打包
 - [批量给 PDF 添加水印](https://onlinefreetools.org/zh/tools/batch-watermark-pdf-drafts) - 同一模板适配不同尺寸页面，失败跳过

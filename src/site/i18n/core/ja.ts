@@ -74,6 +74,7 @@ const ja: SiteLangDict = {
   pdf_work_next: '次へ',
   tool_category_design: 'デザインツール',
   tool_category_pdf: 'PDFツール',
+  tool_category_video: '動画ツール',
   tool_feedback_body: '分かりにくい点、不具合、不足があれば下にメッセージを書いてください。ツールに関する内容はすべて確認します。',
   tool_feedback_cta: 'メールアプリで開く',
   tool_feedback_report_bug: 'GitHub で不具合を報告',
