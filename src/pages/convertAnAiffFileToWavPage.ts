@@ -168,7 +168,7 @@ export const renderConvertAnAiffFileToWavPage = (opts: {
 	/** HUD 与布局补充样式。 */
 	const extraHeadHtml = `<style>${bcwHudCss({ hudId: 'aiffHud', convertBtnId: 'aiffConvert' })}#aiffHud.is-error{border-color:#b91c1c;background:#fff1f2}#aiffHud:not(.is-on) .bcw-hud-spin{animation:none}#aiffRate{max-width:18rem}.site-footer nav.d-inline{display:inline-flex!important;flex-wrap:wrap;justify-content:center;max-width:100%}</style>`;
 
-	/** 客户端：读 AIFF/CAF → decodeAudioData → 写 16-bit WAV。 */
+	/** 客户端：读 AIFF/CAF → 内置 PCM 解析（压缩格式退回 decodeAudioData）→ 写 16-bit WAV。 */
 	const extraBodyHtml = `<script>
   (function(){
     'use strict';
@@ -280,6 +280,173 @@ export const renderConvertAnAiffFileToWavPage = (opts: {
       throw Error('err_format');
     }
     /**
+     * 包装成 writeWav 需要的 AudioBuffer 形状（duration / sampleRate / getChannelData）。
+     * @param {Float32Array[]} channels 每声道样本
+     * @param {number} sampleRate 采样率
+     */
+    function pcmBuffer(channels, sampleRate){
+      const length = channels[0].length;
+      return {
+        numberOfChannels: channels.length,
+        sampleRate,
+        length,
+        duration: length / sampleRate,
+        getChannelData: (c) => channels[c],
+      };
+    }
+    /**
+     * 把交错的整数/浮点 PCM 拆成每声道 Float32Array。
+     * @param {DataView} view 文件视图
+     * @param {number} start 第一帧字节偏移
+     * @param {number} frames 帧数
+     * @param {number} channelCount 声道数
+     * @param {number} bits 每样本位数
+     * @param {boolean} isFloat 是否 IEEE 浮点
+     * @param {boolean} little 是否小端
+     */
+    function readInterleaved(view, start, frames, channelCount, bits, isFloat, little){
+      const width = Math.ceil(bits / 8);
+      if (![1, 2, 3, 4, 8].includes(width) || (isFloat && width !== 4 && width !== 8)) throw Error('unsupported');
+      const available = Math.floor((view.byteLength - start) / (width * channelCount));
+      const count = Math.max(0, Math.min(frames, available));
+      if (!count) throw Error('unsupported');
+      const out = [];
+      for (let c = 0; c < channelCount; c++) out.push(new Float32Array(count));
+      let at = start;
+      for (let i = 0; i < count; i++) {
+        for (let c = 0; c < channelCount; c++, at += width) {
+          let v;
+          if (isFloat) {
+            v = width === 4 ? view.getFloat32(at, little) : view.getFloat64(at, little);
+          } else if (width === 1) {
+            v = view.getInt8(at) / 128;
+          } else if (width === 2) {
+            v = view.getInt16(at, little) / 32768;
+          } else if (width === 3) {
+            const b0 = view.getUint8(at), b1 = view.getUint8(at + 1), b2 = view.getUint8(at + 2);
+            let n = little ? (b2 << 16) | (b1 << 8) | b0 : (b0 << 16) | (b1 << 8) | b2;
+            if (n & 0x800000) n -= 0x1000000;
+            v = n / 8388608;
+          } else {
+            v = view.getInt32(at, little) / 2147483648;
+          }
+          out[c][i] = v;
+        }
+      }
+      return out;
+    }
+    /**
+     * 读 AIFF COMM 里的 80 位 IEEE 扩展精度采样率。
+     * @param {DataView} view 文件视图
+     * @param {number} at 偏移
+     */
+    function readExtended(view, at){
+      const exp = view.getUint16(at) & 0x7fff;
+      const hi = view.getUint32(at + 2);
+      const lo = view.getUint32(at + 6);
+      if (!exp && !hi && !lo) return 0;
+      return hi * Math.pow(2, exp - 16383 - 31) + lo * Math.pow(2, exp - 16383 - 63);
+    }
+    /**
+     * 不依赖 Web Audio 解析未压缩 AIFF / AIFC（NONE、sowt、fl32、fl64）。
+     * Chrome 的 decodeAudioData 不支持 AIFF 容器，故优先走这里。
+     * @param {ArrayBuffer} bytes 文件字节
+     */
+    function parseAiffPcm(bytes){
+      const view = new DataView(bytes);
+      const tag = (at) => String.fromCharCode(view.getUint8(at), view.getUint8(at + 1), view.getUint8(at + 2), view.getUint8(at + 3));
+      const aifc = tag(8) === 'AIFC';
+      let comm = null;
+      let ssnd = -1;
+      for (let at = 12; at + 8 <= view.byteLength;) {
+        const id = tag(at);
+        const size = view.getUint32(at + 4);
+        const body = at + 8;
+        if (id === 'COMM' && body + 18 <= view.byteLength) {
+          comm = {
+            channels: view.getInt16(body),
+            frames: view.getUint32(body + 2),
+            bits: view.getInt16(body + 6),
+            rate: readExtended(view, body + 8),
+            codec: aifc && body + 22 <= view.byteLength ? tag(body + 18) : 'NONE',
+          };
+        } else if (id === 'SSND' && body + 8 <= view.byteLength) {
+          ssnd = body + 8 + view.getUint32(body);
+        }
+        at = body + size + (size & 1);
+      }
+      if (!comm || ssnd < 0 || comm.channels < 1 || !(comm.rate > 0)) throw Error('unsupported');
+      const codec = comm.codec.toLowerCase();
+      let isFloat = false;
+      let little = false;
+      let bits = comm.bits;
+      if (codec === 'sowt') little = true;
+      else if (codec === 'fl32') { isFloat = true; bits = 32; }
+      else if (codec === 'fl64') { isFloat = true; bits = 64; }
+      else if (codec !== 'none') throw Error('unsupported');
+      return pcmBuffer(readInterleaved(view, ssnd, comm.frames, comm.channels, bits, isFloat, little), comm.rate);
+    }
+    /**
+     * 不依赖 Web Audio 解析 CAF 线性 PCM（desc=lpcm）。
+     * @param {ArrayBuffer} bytes 文件字节
+     */
+    function parseCafPcm(bytes){
+      const view = new DataView(bytes);
+      const tag = (at) => String.fromCharCode(view.getUint8(at), view.getUint8(at + 1), view.getUint8(at + 2), view.getUint8(at + 3));
+      let desc = null;
+      let dataStart = -1;
+      let dataEnd = view.byteLength;
+      for (let at = 8; at + 12 <= view.byteLength;) {
+        const id = tag(at);
+        const hiSize = view.getInt32(at + 4);
+        const loSize = view.getUint32(at + 8);
+        const body = at + 12;
+        const size = hiSize === -1 && loSize === 0xffffffff ? view.byteLength - body : hiSize * 4294967296 + loSize;
+        if (id === 'desc' && body + 32 <= view.byteLength) {
+          desc = {
+            rate: view.getFloat64(body),
+            format: tag(body + 8),
+            flags: view.getUint32(body + 12),
+            channels: view.getUint32(body + 24),
+            bits: view.getUint32(body + 28),
+          };
+        } else if (id === 'data') {
+          dataStart = body + 4;
+          dataEnd = Math.min(view.byteLength, body + size);
+        }
+        if (size < 0 || !Number.isFinite(size)) break;
+        at = body + size;
+      }
+      if (!desc || desc.format !== 'lpcm' || dataStart < 0 || desc.channels < 1 || !(desc.rate > 0)) throw Error('unsupported');
+      const width = Math.ceil(desc.bits / 8);
+      const frames = Math.floor((dataEnd - dataStart) / (width * desc.channels));
+      const isFloat = (desc.flags & 1) === 1;
+      const little = (desc.flags & 2) === 2;
+      return pcmBuffer(readInterleaved(new DataView(bytes, 0, dataEnd), dataStart, frames, desc.channels, desc.bits, isFloat, little), desc.rate);
+    }
+    /**
+     * 先用内置 PCM 解析，压缩格式再交给浏览器 decodeAudioData。
+     * @param {ArrayBuffer} bytes 文件字节
+     */
+    async function decodeAiffOrCaf(bytes){
+      const head = String.fromCharCode(...new Uint8Array(bytes, 0, 4));
+      try {
+        return head === 'caff' ? parseCafPcm(bytes) : parseAiffPcm(bytes);
+      } catch (e) {
+        /* 压缩 AIFC / CAF（如 ALAC、IMA4）交给浏览器 */
+      }
+      const Context = window.AudioContext || window.webkitAudioContext;
+      if (!Context) throw Error('err_decode');
+      const context = new Context();
+      try {
+        return await context.decodeAudioData(bytes.slice(0));
+      } catch (e) {
+        throw Error('err_decode');
+      } finally {
+        if (context.close) context.close();
+      }
+    }
+    /**
      * 将 AudioBuffer 写成 16-bit PCM WAV Blob（可重采样到目标 rate）。
      * @param {AudioBuffer} buffer 解码缓冲
      * @param {number} rate 目标采样率
@@ -341,17 +508,7 @@ export const renderConvertAnAiffFileToWavPage = (opts: {
         inspectAiffOrCaf(bytes);
         progress(12, 'decode');
         await yieldUi();
-        const Context = window.AudioContext || window.webkitAudioContext;
-        if (!Context) throw Error('err_decode');
-        const context = new Context();
-        let decoded;
-        try {
-          decoded = await context.decodeAudioData(bytes.slice(0));
-        } catch (e) {
-          throw Error('err_decode');
-        } finally {
-          if (context.close) context.close();
-        }
+        const decoded = await decodeAiffOrCaf(bytes);
         if (decoded.duration > 600.01 || decoded.numberOfChannels < 1 || decoded.numberOfChannels > 2) {
           throw Error('err_limit');
         }
