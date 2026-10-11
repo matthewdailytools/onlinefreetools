@@ -3,7 +3,7 @@
   "path": "/tools/extract-audio-from-a-video-file",
   "launchedAt": "2026-09-20T22:33:00.000Z",
   "category": "video",
-  "primaryTopic": "sound-editor",
+  "primaryTopic": "video-editor",
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_extract_audio_from_a_video_file_title",
@@ -21,7 +21,7 @@
     "extract-audio-from-an-mkv-file",
     "batch-extract-audio-from-mkv-files"
   ],
-  "updatedAt": "2026-10-02T07:10:00Z",
+  "updatedAt": "2026-10-11T03:13:27.000Z",
   "logo": "/icons/tools/extract-audio-from-a-video-file.svg",
   "page": {
     "module": "../pages/extractAudioFromAVideoFilePage",

@@ -1,10 +1,10 @@
 {
   "slug": "batch-extract-audio-from-mp4-files",
   "path": "/tools/batch-extract-audio-from-mp4-files",
-  "updatedAt": "2026-10-02T07:10:00Z",
+  "updatedAt": "2026-10-11T03:13:27.000Z",
   "launchedAt": "2026-10-01T05:10:00.000Z",
   "category": "video",
-  "primaryTopic": "sound-editor",
+  "primaryTopic": "video-editor",
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_batch_extract_audio_from_mp4_files_title",

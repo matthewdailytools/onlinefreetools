@@ -23307,6 +23307,7 @@ const pt: SiteLangDict = {
   topic_sound_editor: 'Editor de som',
   topic_text_compare: 'Comparar texto',
   topic_time_calendar: 'Tempo e calendário',
+  topic_video_editor: 'Editor de vídeo',
   topics_view_all: 'Ver tudo neste tópico',
   unit_feet: 'Pés',
   unit_inches: 'Polegadas',

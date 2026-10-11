@@ -22,6 +22,7 @@ export type ToolTopic =
 	| 'time-calendar'
 	| 'pdf-docs'
 	| 'image-media'
+	| 'video-editor'
 	| 'design-brand'
 	| 'seo-growth'
 	| 'network-ip'
@@ -44,6 +45,7 @@ export const TOOL_TOPIC_ORDER: ToolTopic[] = [
 	'time-calendar',
 	'pdf-docs',
 	'image-media',
+	'video-editor',
 	'design-brand',
 	'seo-growth',
 	'network-ip',

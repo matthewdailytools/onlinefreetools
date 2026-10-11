@@ -2,6 +2,7 @@
  * Topic leaf IG 英文母版：H1 写用户任务 + 产品类型 + 完整场景（禁止 which X page），表单元格（须含首页卡片没有的输入/失败事实）、工作流、簇级例、次要理由、FAQ。
  * 由 build-topic-ig.mjs 扁平化；勿在生成物里改。
  */
+import { videoEditorEn } from './topic-ig-copy-video-editor.mjs';
 
 /** @param {string} job @param {string} need @param {string} skip @param {string} [card] */
 const r = (job, need, skip, card) => ({ job, need, skip, card: card || need });
@@ -1801,4 +1802,5 @@ export const topics = {
       'mdn-audiobuffer': 'MDN: AudioBuffer — samples the browser holds in memory',
     },
   },
+  'video-editor': videoEditorEn,
 };

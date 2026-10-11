@@ -23099,6 +23099,7 @@ const id: SiteLangDict = {
   topic_sound_editor: 'Editor suara',
   topic_text_compare: 'Bandingkan teks',
   topic_time_calendar: 'Waktu & kalender',
+  topic_video_editor: 'Editor video',
   topics_view_all: 'Lihat semua di topik ini',
   unit_feet: 'Kaki',
   unit_inches: 'Inci',

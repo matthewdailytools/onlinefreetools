@@ -20640,6 +20640,7 @@ const zh: SiteLangDict = {
   topic_sound_editor: '声音编辑',
   topic_text_compare: '文本对比',
   topic_time_calendar: '时间与日历',
+  topic_video_editor: '视频编辑',
   topics_view_all: '查看本主题全部工具',
   unit_feet: '英尺',
   unit_inches: '英寸',

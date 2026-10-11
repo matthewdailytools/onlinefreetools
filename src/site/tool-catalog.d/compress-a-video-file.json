@@ -1,10 +1,10 @@
 {
   "slug": "compress-a-video-file",
   "path": "/tools/compress-a-video-file",
-  "updatedAt": "2026-10-03T09:11:00.000Z",
+  "updatedAt": "2026-10-11T03:13:27.000Z",
   "launchedAt": "2026-10-03T00:00:00.000Z",
   "category": "video",
-  "primaryTopic": "sound-editor",
+  "primaryTopic": "video-editor",
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_compress_a_video_file_title",

@@ -110,6 +110,7 @@ const ja: SiteLangDict = {
   topic_time_calendar: "時間・カレンダー",
   topic_pdf_docs: "PDF・ドキュメント",
   topic_image_media: "画像・メディア",
+  topic_video_editor: "動画編集",
   topic_design_brand: "デザイン・ブランド",
   topic_seo_growth: "SEO・成長",
   topic_network_ip: "ネットワーク・IP",

@@ -2,6 +2,7 @@
  * Topic IG 阿拉伯语：面向以阿拉伯语检索的用户独立重写（非英模锁句）。
  * rows 为 [job, need, skip]；由 rest 的 expand() 展开。
  */
+import { buildVideoEditorExpand } from './topic-ig-copy-video-editor.mjs';
 
 /**
  * @param {(t: object) => object} expand
@@ -796,6 +797,7 @@ export const buildArTopics = (expand) => ({
       'mdn-audiobuffer': 'MDN: AudioBuffer — عيّنات يحتفظ بها المتصفح في الذاكرة',
     },
   }),
+  'video-editor': expand(buildVideoEditorExpand('ar')),
 });
 
 

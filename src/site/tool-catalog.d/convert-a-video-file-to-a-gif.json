@@ -1,10 +1,10 @@
 {
   "slug": "convert-a-video-file-to-a-gif",
   "path": "/tools/convert-a-video-file-to-a-gif",
-  "updatedAt": "2026-10-03T09:37:00.000Z",
+  "updatedAt": "2026-10-11T03:13:27.000Z",
   "launchedAt": "2026-10-03T00:00:00.000Z",
   "category": "video",
-  "primaryTopic": "sound-editor",
+  "primaryTopic": "video-editor",
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_convert_a_video_file_to_a_gif_title",

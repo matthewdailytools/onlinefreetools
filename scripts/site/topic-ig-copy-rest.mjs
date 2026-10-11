@@ -1,6 +1,6 @@
 /**
  * Topic leaf IG 其余八语：检索向独立重写（非英模锁句）。
- * 结构须与 topic-ig-copy-en.mjs 对齐：同 chrome 键、同 18 主题、同 row/secondary slug、同 flow 长度、FAQ×4、同 cite id。
+ * 结构须与 topic-ig-copy-en.mjs 对齐：同 chrome 键、同 19 主题、同 row/secondary slug、同 flow 长度、FAQ×4、同 cite id。
  * 由 build-topic-ig.mjs 动态 import；勿在生成物里改。
  */
 import { buildArTopics } from './topic-ig-copy-rest-ar.mjs';
@@ -10,6 +10,7 @@ import { buildFrTopics } from './topic-ig-copy-rest-fr.mjs';
 import { buildJaTopics } from './topic-ig-copy-rest-ja.mjs';
 import { buildRuTopics } from './topic-ig-copy-rest-ru.mjs';
 import { buildDeTopics } from './topic-ig-copy-rest-de.mjs';
+import { buildVideoEditorExpand } from './topic-ig-copy-video-editor.mjs';
 // 以上分文件避免单文件超限；PACKS 仍从此入口导出。
 
 /**
@@ -1814,6 +1815,9 @@ const expand = (t) => {
   }
   return { ...t, rows };
 };
+
+/** 西班牙语 video-editor：与 rest 八语同用 expand 紧凑包 */
+topicsEs['video-editor'] = expand(buildVideoEditorExpand('es'));
 
 /** 阿拉伯语表头 */
 const chromeAr = {

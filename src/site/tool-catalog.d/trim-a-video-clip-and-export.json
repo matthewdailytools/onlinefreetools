@@ -1,10 +1,10 @@
 {
   "slug": "trim-a-video-clip-and-export",
   "path": "/tools/trim-a-video-clip-and-export",
-  "updatedAt": "2026-10-03T13:06:05.523Z",
+  "updatedAt": "2026-10-11T03:13:27.000Z",
   "launchedAt": "2026-10-03T00:00:00.000Z",
   "category": "video",
-  "primaryTopic": "sound-editor",
+  "primaryTopic": "video-editor",
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_trim_a_video_clip_and_export_title",

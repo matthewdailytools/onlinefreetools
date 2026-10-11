@@ -2,6 +2,8 @@
  * Topic IG 俄语：面向以俄语检索的用户独立重写（вы）。
  * @param {(t: object) => object} expand
  */
+import { buildVideoEditorExpand } from './topic-ig-copy-video-editor.mjs';
+
 export const buildRuTopics = (expand) => ({
   'health-body': expand({
     title: 'ИМТ, суточные калории или макросы: с чего начать?',
@@ -792,4 +794,5 @@ export const buildRuTopics = (expand) => ({
       'mdn-audiobuffer': 'MDN: AudioBuffer — сэмплы, которые браузер держит в памяти',
     },
   }),
+  'video-editor': expand(buildVideoEditorExpand('ru')),
 });

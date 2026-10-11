@@ -1,10 +1,10 @@
 {
   "slug": "burn-subtitles-into-a-video",
   "path": "/tools/burn-subtitles-into-a-video",
-  "updatedAt": "2026-10-03T15:14:51.892Z",
+  "updatedAt": "2026-10-11T03:13:27.000Z",
   "launchedAt": "2026-10-03T00:00:00.000Z",
   "category": "video",
-  "primaryTopic": "sound-editor",
+  "primaryTopic": "video-editor",
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_burn_subtitles_into_a_video_title",

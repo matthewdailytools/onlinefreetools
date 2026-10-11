@@ -2,6 +2,8 @@
  * Topic IG 印尼语：面向以 Bahasa Indonesia 检索的用户独立重写（Anda）。
  * @param {(t: object) => object} expand
  */
+import { buildVideoEditorExpand } from './topic-ig-copy-video-editor.mjs';
+
 export const buildIdTopics = (expand) => ({
   'health-body': expand({
     title: 'BMI, kalori harian, atau makro: mulai dari mana?',
@@ -792,4 +794,5 @@ export const buildIdTopics = (expand) => ({
       'mdn-audiobuffer': 'MDN: AudioBuffer — sampel yang dipegang peramban di memori',
     },
   }),
+  'video-editor': expand(buildVideoEditorExpand('id')),
 });

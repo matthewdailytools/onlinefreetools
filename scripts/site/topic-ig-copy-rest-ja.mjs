@@ -2,6 +2,8 @@
  * Topic IG 日语：面向以日语检索的用户独立重写（です/ます、不用英语 tools 后缀）。
  * @param {(t: object) => object} expand
  */
+import { buildVideoEditorExpand } from './topic-ig-copy-video-editor.mjs';
+
 export const buildJaTopics = (expand) => ({
   'health-body': expand({
     title: 'BMI・1日の消費・マクロ、どれから出す？',
@@ -792,4 +794,5 @@ export const buildJaTopics = (expand) => ({
       'mdn-audiobuffer': 'MDN: AudioBuffer — ブラウザがメモリに持つサンプル',
     },
   }),
+  'video-editor': expand(buildVideoEditorExpand('ja')),
 });

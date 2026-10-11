@@ -147,6 +147,7 @@ const TOOL_TOPIC_IDS = new Set([
 	'time-calendar',
 	'pdf-docs',
 	'image-media',
+	'video-editor',
 	'design-brand',
 	'seo-growth',
 	'network-ip',

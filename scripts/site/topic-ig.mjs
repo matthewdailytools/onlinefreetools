@@ -452,11 +452,104 @@ export const TOPIC_IG = {
       'make-a-seamless-audio-loop',
       'make-a-30-second-mp3-ringtone',
     ],
-    relatedTopics: ['files-archives', 'security-ids'],
+    relatedTopics: ['video-editor', 'files-archives', 'security-ids'],
     citations: [
       {
         id: 'mdn-audiobuffer',
         href: 'https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer',
+      },
+    ],
+  },
+  /**
+   * 浏览器视频任务簇：容器互转、抽音、裁剪/合并/变速/压缩、字幕、抽帧与检轨。
+   * 与首页 category=video 对齐；顶栏「工具」菜单与 /topics/video-editor 由此驱动。
+   */
+  'video-editor': {
+    localCluster: true,
+    groups: [
+      {
+        id: 'convert',
+        slugs: [
+          'convert-an-mkv-file-to-an-mp4-file',
+          'convert-a-mov-file-to-an-mp4-file',
+          'convert-a-webm-file-to-an-mp4-file',
+          'convert-an-mp4-file-to-a-webm-file',
+          'convert-a-video-to-an-mp4-with-aac-audio',
+          'batch-convert-mkv-files-to-mp4-files',
+          'batch-convert-mov-files-to-mp4-files',
+          'batch-convert-webm-files-to-mp4-files',
+        ],
+      },
+      {
+        id: 'extract',
+        slugs: [
+          'extract-audio-from-a-video-file',
+          'extract-audio-from-an-mp4-file',
+          'extract-audio-from-a-mov-file',
+          'extract-audio-from-an-mkv-file',
+          'extract-audio-from-a-webm-file',
+          'batch-extract-audio-from-video-files',
+          'batch-extract-audio-from-mp4-files',
+          'batch-extract-audio-from-mov-files',
+          'batch-extract-audio-from-mkv-files',
+          'batch-extract-audio-from-webm-files',
+        ],
+      },
+      {
+        id: 'edit',
+        slugs: [
+          'trim-a-video-clip-and-export',
+          'batch-trim-video-clips-by-time',
+          'merge-video-clips-in-order',
+          'change-video-speed',
+          'rotate-a-video-file',
+          'compress-a-video-file',
+          'batch-compress-video-files',
+        ],
+      },
+      {
+        id: 'tracks',
+        slugs: [
+          'remove-the-audio-track-from-a-video',
+          'replace-the-audio-in-a-video-file',
+          'add-an-audio-track-to-a-video',
+          'make-a-waveform-video-from-audio',
+        ],
+      },
+      {
+        id: 'subtitles',
+        slugs: [
+          'add-soft-subtitles-to-an-mp4',
+          'burn-subtitles-into-a-video',
+          'convert-subtitle-files-between-srt-vtt-and-ass',
+          'make-srt-subtitles-from-a-video-file',
+        ],
+      },
+      {
+        id: 'frames',
+        slugs: [
+          'extract-frames-from-a-video-as-images',
+          'batch-extract-frames-from-videos',
+          'convert-a-video-file-to-a-gif',
+        ],
+      },
+      {
+        id: 'inspect',
+        slugs: ['inspect-video-file-tracks'],
+      },
+    ],
+    workflow: [
+      'inspect-video-file-tracks',
+      'convert-an-mkv-file-to-an-mp4-file',
+      'trim-a-video-clip-and-export',
+      'extract-audio-from-an-mp4-file',
+      'add-soft-subtitles-to-an-mp4',
+    ],
+    relatedTopics: ['sound-editor', 'image-media'],
+    citations: [
+      {
+        id: 'mdn-videodecoder',
+        href: 'https://developer.mozilla.org/en-US/docs/Web/API/VideoDecoder',
       },
     ],
   },

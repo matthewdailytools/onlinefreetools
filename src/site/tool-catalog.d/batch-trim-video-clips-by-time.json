@@ -1,10 +1,10 @@
 {
   "slug": "batch-trim-video-clips-by-time",
   "path": "/tools/batch-trim-video-clips-by-time",
-  "updatedAt": "2026-10-03T15:14:51.892Z",
+  "updatedAt": "2026-10-11T03:13:27.000Z",
   "launchedAt": "2026-10-03T00:00:00.000Z",
   "category": "video",
-  "primaryTopic": "sound-editor",
+  "primaryTopic": "video-editor",
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_batch_trim_video_clips_by_time_title",

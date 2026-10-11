@@ -3,6 +3,7 @@
  * 结构键、分组 id、行 slug、flow 条数、FAQ 条数、cite id 必须与 topic-ig-copy-en.mjs 对齐。
  * 由 build-topic-ig.mjs 扁平化；勿在生成物里改。
  */
+import { videoEditorZh } from './topic-ig-copy-video-editor.mjs';
 
 /**
  * 组装决策表一行。
@@ -1808,4 +1809,5 @@ export const topics = {
       'mdn-audiobuffer': 'MDN：AudioBuffer — 浏览器内存里的采样',
     },
   },
+  'video-editor': videoEditorZh,
 };

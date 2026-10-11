@@ -1,10 +1,10 @@
 {
   "slug": "merge-video-clips-in-order",
   "path": "/tools/merge-video-clips-in-order",
-  "updatedAt": "2026-10-03T13:06:05.523Z",
+  "updatedAt": "2026-10-11T03:13:27.000Z",
   "launchedAt": "2026-10-03T00:00:00.000Z",
   "category": "video",
-  "primaryTopic": "sound-editor",
+  "primaryTopic": "video-editor",
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_merge_video_clips_in_order_title",

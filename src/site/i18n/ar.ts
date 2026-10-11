@@ -22180,6 +22180,7 @@ const ar: SiteLangDict = {
   topic_sound_editor: 'محرر الصوت',
   topic_text_compare: 'مقارنة النص',
   topic_time_calendar: 'الوقت والتقويم',
+  topic_video_editor: 'محرر الفيديو',
   topics_view_all: 'عرض الكل في هذا الموضوع',
   unit_feet: 'أقدام',
   unit_inches: 'بوصات',

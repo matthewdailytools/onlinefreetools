@@ -116,6 +116,7 @@ const ru: SiteLangDict = {
   topic_time_calendar: "Время и календарь",
   topic_pdf_docs: "PDF и документы",
   topic_image_media: "Изображения и медиа",
+  topic_video_editor: "Видеоредактор",
   topic_design_brand: "Дизайн и бренд",
   topic_seo_growth: "SEO и рост",
   topic_network_ip: "Сеть и IP",

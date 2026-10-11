@@ -120,6 +120,7 @@ const zh: SiteLangDict = {
   topic_time_calendar: "时间与日历",
   topic_pdf_docs: "PDF 与文档",
   topic_image_media: "图片与媒体",
+  topic_video_editor: "视频编辑",
   topic_design_brand: "设计与品牌",
   topic_seo_growth: "SEO 与增长",
   topic_network_ip: "网络与 IP",

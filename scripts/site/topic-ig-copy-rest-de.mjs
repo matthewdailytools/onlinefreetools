@@ -2,6 +2,8 @@
  * Topic IG 德语：面向以德语检索的用户独立重写（Sie）。
  * @param {(t: object) => object} expand
  */
+import { buildVideoEditorExpand } from './topic-ig-copy-video-editor.mjs';
+
 export const buildDeTopics = (expand) => ({
   'health-body': expand({
     title: 'BMI, Tageskalorien oder Makros: womit beginnen?',
@@ -792,4 +794,5 @@ export const buildDeTopics = (expand) => ({
       'mdn-audiobuffer': 'MDN: AudioBuffer — Samples, die der Browser im Speicher hält',
     },
   }),
+  'video-editor': expand(buildVideoEditorExpand('de')),
 });

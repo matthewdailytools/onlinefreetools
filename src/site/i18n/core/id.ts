@@ -112,6 +112,7 @@ const id: SiteLangDict = {
   topic_time_calendar: "Waktu & kalender",
   topic_pdf_docs: "PDF & dokumen",
   topic_image_media: "Gambar & media",
+  topic_video_editor: "Editor video",
   topic_design_brand: "Desain & merek",
   topic_seo_growth: "SEO & pertumbuhan",
   topic_network_ip: "Jaringan & IP",

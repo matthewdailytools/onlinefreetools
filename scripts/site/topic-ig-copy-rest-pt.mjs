@@ -2,6 +2,8 @@
  * Topic IG 巴西葡萄牙语：面向以 PT-BR 检索的用户独立重写。
  * @param {(t: object) => object} expand
  */
+import { buildVideoEditorExpand } from './topic-ig-copy-video-editor.mjs';
+
 export const buildPtTopics = (expand) => ({
   'health-body': expand({
     title: 'IMC, gasto do dia ou macros: por onde você começa?',
@@ -792,6 +794,7 @@ export const buildPtTopics = (expand) => ({
       'mdn-audiobuffer': 'MDN: AudioBuffer — amostras que o navegador guarda em memória',
     },
   }),
+  'video-editor': expand(buildVideoEditorExpand('pt')),
 });
 
 

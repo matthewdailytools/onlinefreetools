@@ -112,6 +112,7 @@ const pt: SiteLangDict = {
   topic_time_calendar: "Tempo e calendário",
   topic_pdf_docs: "PDF e documentos",
   topic_image_media: "Imagem e média",
+  topic_video_editor: "Editor de vídeo",
   topic_design_brand: "Design e marca",
   topic_seo_growth: "SEO e crescimento",
   topic_network_ip: "Rede e IP",

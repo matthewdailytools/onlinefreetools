@@ -223,6 +223,17 @@ const EN = {
     faqA4:
       'Not yet. Shipped jobs are trim, cut silence, three ZIP splits, a seamless loop, and a 30-second MP3 ringtone. A waveform hub is a later slug. Searching mp3 cutter should use the trimmer; ringtone maker should use the 30-second MP3 page.',
   },
+  'video-editor': {
+    guideTitle: 'Convert, trim, extract audio, or subtitle; a full timeline editor comes later',
+    guideBody:
+      'Inspect first: open Inspect video file tracks when you need codecs and streams before changing anything.\n\n' +
+      'Containers: MKV/MOV/WebM to MP4 (and batch twins), or MP4 to WebM, or MP4 with AAC when a player is picky.\n\n' +
+      'Edit and audio: trim or batch-trim, merge, speed, rotate, compress; extract or replace audio; soft or burned subtitles; frames or GIF.\n\n' +
+      'Head queries such as online video editor belong in this topic FAQ until a timeline hub ships as its own tool slug. Do not rip streams or strip DRM.',
+    faqQ4: 'Is this topic a full online video editor?',
+    faqA4:
+      'Not a full timeline. Shipped jobs are convert, trim or compress, extract or replace audio, soft or burned subtitles, frames or GIF, and inspect tracks. Searching mkv to mp4 should use the matching convert tool; extract audio should use the extract tools.',
+  },
 };
 
 /** @type {Record<string, typeof EN>} */
@@ -446,6 +457,17 @@ BY_LANG.zh = {
     faqA4:
       '还不是。已上线的是裁剪、挖静音、三种 ZIP 分轨、无缝循环和 30 秒 MP3 铃声。波形宿主以后另开。搜 mp3 剪切用裁剪页；铃声制作用 30 秒 MP3 页。',
   },
+  'video-editor': {
+    guideTitle: '先转换、裁剪、抽音或加字幕；完整时间线剪辑在后',
+    guideBody:
+      '先检视：打开「检视视频文件轨道」，看清编码与流再动手。\n\n' +
+      '容器：MKV/MOV/WebM 转 MP4（及批量版），或 MP4 转 WebM，或整理成带 AAC 的 MP4。\n\n' +
+      '剪辑与音频：裁剪或批量裁剪、合并、变速、旋转、压缩；抽音或换音；软字幕或烧录；抽帧或 GIF。\n\n' +
+      '搜「在线视频编辑」这类头词先看本主题 FAQ；时间线工作台是以后另开的工具。不要扒流或破解 DRM。',
+    faqQ4: '这个主题就是完整在线视频编辑器吗？',
+    faqA4:
+      '不是完整时间线。已上线的是转换、裁剪压缩、抽音换音、软硬字幕、抽帧或 GIF、检视轨道。搜 mkv 转 mp4 用对应转换页；视频提取音频用抽音工具。',
+  },
 };
 
 /** 西班牙语：检索向独立重写 */
@@ -665,6 +687,17 @@ BY_LANG.es = {
     faqQ4: '¿Este tema es un editor de sonido completo?',
     faqA4:
       'Todavía no. Hay recorte, quitar silencios, tres particiones ZIP, un bucle y un tono MP3 de 30 s. El hub de onda es otro slug. Cortar mp3 usa el recortador; creador de tonos usa la página de 30 segundos.',
+  },
+  'video-editor': {
+    guideTitle: 'Convierte, recorta, saca el audio o subtitula; el editor de timeline llega después',
+    guideBody:
+      'Inspecciona primero: abre Inspeccionar pistas de un archivo de vídeo cuando necesites códecs y streams antes de cambiar nada.\n\n' +
+      'Contenedores: MKV/MOV/WebM a MP4 (y lotes), o MP4 a WebM, o MP4 con AAC si el reproductor es exigente.\n\n' +
+      'Edición y audio: recortar o lote, unir, velocidad, girar, comprimir; extraer o sustituir audio; subtítulos blandos o quemados; fotogramas o GIF.\n\n' +
+      'Búsquedas como editor de vídeo online van en las FAQ hasta que exista un hub de timeline. No ripes streams ni quites DRM.',
+    faqQ4: '¿Este tema es un editor de vídeo completo?',
+    faqA4:
+      'No es una línea de tiempo completa. Hay convertir, recortar o comprimir, extraer o sustituir audio, subtítulos blandos o quemados, fotogramas o GIF, e inspeccionar pistas. mkv a mp4 usa la herramienta de conversión; extraer audio usa las de extracción.',
   },
 };
 
@@ -886,6 +919,17 @@ BY_LANG.ar = {
     faqA4:
       'ليس بعد. هناك القص وإزالة الصمت وثلاثة تقسيمات ZIP وحلقة ونغمة MP3 لـ30 ثانية. منصة الموجة لاحقًا. قص mp3 للقصّاص؛ صانع النغمات لصفحة الثلاثين ثانية.',
   },
+  'video-editor': {
+    guideTitle: 'حوّل أو قصّ أو استخرج الصوت أو أضف ترجمة؛ محرر الخط الزمني لاحقًا',
+    guideBody:
+      'افحص أولًا: افتح فحص مسارات ملف الفيديو عندما تحتاج الترميزات والتيارات قبل أي تغيير.\n\n' +
+      'الحاويات: MKV/MOV/WebM إلى MP4 (والدفعات)، أو MP4 إلى WebM، أو MP4 مع AAC إن كان المشغّل صعبًا.\n\n' +
+      'التحرير والصوت: قص أو دفعة، دمج، سرعة، تدوير، ضغط؛ استخراج أو استبدال صوت؛ ترجمة ناعمة أو محروقة؛ إطارات أو GIF.\n\n' +
+      'استعلامات محرر الفيديو تبقى في الأسئلة حتى يظهر عنوان خط زمني مستقل. لا تسحب بثًا ولا تفك DRM.',
+    faqQ4: 'هل هذا الموضوع محرر فيديو كامل؟',
+    faqA4:
+      'ليس خطًا زمنيًا كاملًا. هناك التحويل والقص أو الضغط واستخراج أو استبدال الصوت والترجمة الناعمة أو المحروقة والإطارات أو GIF وفحص المسارات. mkv إلى mp4 لأداة التحويل؛ استخراج الصوت لأدوات الاستخراج.',
+  },
 };
 
 /** 葡萄牙语：检索向独立重写 */
@@ -1105,6 +1149,17 @@ BY_LANG.pt = {
     faqQ4: 'Este tema é um editor de som completo?',
     faqA4:
       'Ainda não. Há recorte, remover silêncios, três divisões ZIP, um loop e um toque MP3 de 30 s. O hub de onda é outro slug. Cortar mp3 usa o recorte; criador de toques usa a página de 30 segundos.',
+  },
+  'video-editor': {
+    guideTitle: 'Converta, corte, extraia áudio ou legende; o editor de timeline vem depois',
+    guideBody:
+      'Inspecione primeiro: abra Inspecionar faixas de um ficheiro de vídeo quando precisar de codecs e streams antes de mudar algo.\n\n' +
+      'Containers: MKV/MOV/WebM para MP4 (e lotes), ou MP4 para WebM, ou MP4 com AAC se o player for exigente.\n\n' +
+      'Edição e áudio: cortar ou lote, unir, velocidade, girar, comprimir; extrair ou trocar áudio; legendas suaves ou queimadas; frames ou GIF.\n\n' +
+      'Pesquisas como editor de vídeo online ficam nas FAQ até existir um hub de timeline. Não ripe streams nem remova DRM.',
+    faqQ4: 'Este tema é um editor de vídeo completo?',
+    faqA4:
+      'Não é uma timeline completa. Há converter, cortar ou comprimir, extrair ou trocar áudio, legendas suaves ou queimadas, frames ou GIF, e inspecionar faixas. mkv para mp4 usa a conversão; extrair áudio usa as ferramentas de extração.',
   },
 };
 
@@ -1326,6 +1381,17 @@ BY_LANG.id = {
     faqA4:
       'Belum. Ada potong, hapus jeda, tiga pecah ZIP, loop, dan nada dering MP3 30 detik. Hub gelombang slug terpisah. Potong mp3 memakai pemotong; pembuat nada dering memakai halaman 30 detik.',
   },
+  'video-editor': {
+    guideTitle: 'Konversi, potong, ekstrak audio, atau subtitulkan; editor timeline menyusul',
+    guideBody:
+      'Periksa dulu: buka Periksa trek berkas video saat perlu codec dan aliran sebelum mengubah apa pun.\n\n' +
+      'Kontainer: MKV/MOV/WebM ke MP4 (dan batch), atau MP4 ke WebM, atau MP4 dengan AAC jika pemutar pilih-pilih.\n\n' +
+      'Sunting dan audio: potong atau batch, gabung, kecepatan, putar, kompres; ekstrak atau ganti audio; subtitle lunak atau bakar; bingkai atau GIF.\n\n' +
+      'Pencarian seperti editor video daring ada di FAQ hingga hub timeline punya slug sendiri. Jangan merobek siaran atau membuka DRM.',
+    faqQ4: 'Apakah topik ini editor video daring penuh?',
+    faqA4:
+      'Bukan timeline penuh. Ada konversi, potong atau kompres, ekstrak atau ganti audio, subtitle lunak atau bakar, bingkai atau GIF, dan periksa trek. mkv ke mp4 memakai alat konversi; ekstrak audio memakai alat ekstrak.',
+  },
 };
 
 /** 法语：检索向独立重写 */
@@ -1545,6 +1611,17 @@ BY_LANG.fr = {
     faqQ4: 'Ce thème est-il un éditeur son complet ?',
     faqA4:
       'Pas encore. Il y a rogner, retirer les silences, trois découpes ZIP, une boucle et une sonnerie MP3 de 30 s. Le hub d’onde est un autre slug. Couper un mp3 utilise le rogneur ; créateur de sonnerie utilise la page des 30 secondes.',
+  },
+  'video-editor': {
+    guideTitle: 'Convertir, découper, extraire l’audio ou sous-titrer ; l’éditeur timeline vient plus tard',
+    guideBody:
+      'Inspectez d’abord : ouvrez Inspecter les pistes d’un fichier vidéo quand vous devez voir codecs et flux avant tout changement.\n\n' +
+      'Conteneurs : MKV/MOV/WebM vers MP4 (et lots), ou MP4 vers WebM, ou MP4 avec AAC si le lecteur est exigeant.\n\n' +
+      'Montage et audio : découper ou lot, fusionner, vitesse, pivoter, compresser ; extraire ou remplacer l’audio ; sous-titres souples ou incrustés ; images ou GIF.\n\n' +
+      'Les requêtes du type éditeur vidéo en ligne restent dans la FAQ jusqu’à un hub timeline. Ne rippez pas les flux et ne levez pas le DRM.',
+    faqQ4: 'Ce thème est-il un éditeur vidéo complet ?',
+    faqA4:
+      'Pas une timeline complète. Il y a convertir, découper ou compresser, extraire ou remplacer l’audio, sous-titres souples ou incrustés, images ou GIF, et inspecter les pistes. mkv vers mp4 utilise l’outil de conversion ; extraire l’audio utilise les outils d’extraction.',
   },
 };
 
@@ -1766,6 +1843,17 @@ BY_LANG.ja = {
     faqA4:
       'まだ違います。切り出し、無音削除、三種のZIP分割、ループ、30秒のMP3着信音があります。波形ハブは後のスラッグです。mp3カットは切り出し、着信音作成は30秒MP3ページです。',
   },
+  'video-editor': {
+    guideTitle: '変換、切り出し、音声抽出、字幕；本格タイムラインは後',
+    guideBody:
+      'まず確認：何かを変える前にコーデックとストリームを見るときは「動画ファイルのトラックを確認」を開きます。\n\n' +
+      'コンテナ：MKV/MOV/WebM→MP4（と一括）、またはMP4→WebM、またはAAC付きMP4。\n\n' +
+      '編集と音声：切り出しや一括、結合、速度、回転、圧縮；音声の抽出や差し替え；ソフト字幕や焼き込み；フレームやGIF。\n\n' +
+      '「オンライン動画編集」などの頭の検索は、タイムラインハブが別スラッグになるまで本テーマのFAQへ。配信の無断取得やDRM解除はしません。',
+    faqQ4: 'このテーマは本格的なオンライン動画編集ですか？',
+    faqA4:
+      '本格タイムラインではありません。変換、切り出しや圧縮、音声の抽出や差し替え、ソフト／焼き込み字幕、フレームやGIF、トラック確認です。mkvをmp4には変換ツール、音声抽出には抽出ツールを使います。',
+  },
 };
 
 /** 俄语：检索向独立重写 */
@@ -1986,6 +2074,17 @@ BY_LANG.ru = {
     faqA4:
       'Пока нет. Есть обрезка, тишина, три ZIP-нарезки, цикл и 30-секундный MP3-рингтон. Волновой хаб — поздний слаг. «Обрезать mp3» — в обрезку; ringtone maker — на страницу 30 секунд.',
   },
+  'video-editor': {
+    guideTitle: 'Конвертировать, обрезать, извлечь звук или субтитры; полный таймлайн позже',
+    guideBody:
+      'Сначала проверка: откройте «Проверить дорожки видеофайла», когда нужно увидеть кодеки и потоки до изменений.\n\n' +
+      'Контейнеры: MKV/MOV/WebM в MP4 (и пакеты), или MP4 в WebM, или MP4 с AAC, если плеер привередлив.\n\n' +
+      'Монтаж и звук: обрезка или пакет, склейка, скорость, поворот, сжатие; извлечение или замена звука; мягкие или вшитые субтитры; кадры или GIF.\n\n' +
+      'Запросы вроде онлайн-видеоредактор остаются в FAQ, пока не появится хаб таймлайна. Не рипайте потоки и не снимайте DRM.',
+    faqQ4: 'Эта тема — полноценный онлайн-видеоредактор?',
+    faqA4:
+      'Не полный таймлайн. Есть конвертация, обрезка или сжатие, извлечение или замена звука, мягкие или вшитые субтитры, кадры или GIF, проверка дорожек. mkv в mp4 — инструмент конвертации; извлечь звук — инструменты извлечения.',
+  },
 };
 
 /** 德语：检索向独立重写 */
@@ -2205,6 +2304,17 @@ BY_LANG.de = {
     faqQ4: 'Ist dieses Thema ein voller Online-Sound-Editor?',
     faqA4:
       'Noch nicht. Es gibt Zuschnitt, Stille entfernen, drei ZIP-Teilungen, einen Loop und einen 30-s-MP3-Klingelton. Der Wellenform-Hub kommt später. MP3 schneiden gehört auf den Zuschnitt; Klingelton-Maker auf die 30-Sekunden-MP3-Seite.',
+  },
+  'video-editor': {
+    guideTitle: 'Konvertieren, schneiden, Ton extrahieren oder untertiteln; der Timeline-Editor kommt später',
+    guideBody:
+      'Zuerst prüfen: Öffnen Sie Videodatei-Spuren prüfen, wenn Sie Codecs und Streams sehen müssen, bevor Sie etwas ändern.\n\n' +
+      'Container: MKV/MOV/WebM zu MP4 (und Batches), oder MP4 zu WebM, oder MP4 mit AAC, wenn der Player wählerisch ist.\n\n' +
+      'Schnitt und Ton: zuschneiden oder Batch, zusammenfügen, Tempo, drehen, komprimieren; Ton extrahieren oder ersetzen; Soft- oder eingebrannte Untertitel; Frames oder GIF.\n\n' +
+      'Kopfanfragen wie Online-Videoeditor gehören in die FAQ, bis ein Timeline-Hub als eigener Slug kommt. Keine Streams rippen und kein DRM entfernen.',
+    faqQ4: 'Ist dieses Thema ein vollständiger Online-Videoeditor?',
+    faqA4:
+      'Keine volle Timeline. Es gibt Konvertieren, Schneiden oder Komprimieren, Ton extrahieren oder ersetzen, Soft- oder eingebrannte Untertitel, Frames oder GIF und Spuren prüfen. mkv zu mp4 nutzt das Konvertier-Werkzeug; Ton extrahieren die Extraktions-Werkzeuge.',
   },
 };
 

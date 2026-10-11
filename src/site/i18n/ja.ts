@@ -20834,6 +20834,7 @@ const ja: SiteLangDict = {
   topic_sound_editor: '音声編集',
   topic_text_compare: 'テキスト比較',
   topic_time_calendar: '時間・カレンダー',
+  topic_video_editor: '動画編集',
   topics_view_all: 'このトピックをすべて見る',
   unit_feet: 'フィート',
   unit_inches: 'インチ',

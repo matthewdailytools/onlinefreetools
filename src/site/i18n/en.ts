@@ -23994,6 +23994,7 @@ const en: SiteLangDict = {
   topic_sound_editor: 'Sound editor',
   topic_text_compare: 'Text compare',
   topic_time_calendar: 'Time & calendar',
+  topic_video_editor: 'Video editor',
   topics_view_all: 'View all in this topic',
   unit_feet: 'Feet',
   unit_inches: 'Inches',

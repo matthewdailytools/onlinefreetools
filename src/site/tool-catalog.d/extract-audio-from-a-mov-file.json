@@ -1,10 +1,10 @@
 {
   "slug": "extract-audio-from-a-mov-file",
   "path": "/tools/extract-audio-from-a-mov-file",
-  "updatedAt": "2026-10-03T06:17:00Z",
+  "updatedAt": "2026-10-11T03:13:27.000Z",
   "launchedAt": "2026-10-01T05:25:00.000Z",
   "category": "video",
-  "primaryTopic": "sound-editor",
+  "primaryTopic": "video-editor",
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_extract_audio_from_a_mov_file_title",

@@ -17,6 +17,7 @@ export const TOOL_TOPIC_ORDER = [
   'time-calendar',
   'pdf-docs',
   'image-media',
+  'video-editor',
   'design-brand',
   'seo-growth',
   'network-ip',

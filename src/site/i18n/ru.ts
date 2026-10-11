@@ -23143,6 +23143,7 @@ const ru: SiteLangDict = {
   topic_sound_editor: 'Звуковой редактор',
   topic_text_compare: 'Сравнение текста',
   topic_time_calendar: 'Время и календарь',
+  topic_video_editor: 'Видеоредактор',
   topics_view_all: 'Смотреть всё в этой теме',
   unit_feet: 'Футы',
   unit_inches: 'Дюймы',

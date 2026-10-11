@@ -349,7 +349,7 @@ export const buildDevLogs = async () => {
       <div class="mb-4">
         <h2 class="h5 text-muted mb-2">${monthLabel}</h2>
         <ul class="list-group shadow-sm">
-          ${monthItems
+${monthItems
             .map(
               (i) => `
           <li class="list-group-item d-flex justify-content-between align-items-center gap-3">

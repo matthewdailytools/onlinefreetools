@@ -117,6 +117,7 @@ const fr: SiteLangDict = {
   topic_time_calendar: "Temps & calendrier",
   topic_pdf_docs: "PDF & docs",
   topic_image_media: "Image & médias",
+  topic_video_editor: "Éditeur vidéo",
   topic_design_brand: "Design & marque",
   topic_seo_growth: "SEO & croissance",
   topic_network_ip: "Réseau & IP",

@@ -111,6 +111,7 @@ const ar: SiteLangDict = {
   topic_time_calendar: "الوقت والتقويم",
   topic_pdf_docs: "PDF والمستندات",
   topic_image_media: "الصور والوسائط",
+  topic_video_editor: "محرر الفيديو",
   topic_design_brand: "التصميم والعلامة",
   topic_seo_growth: "SEO والنمو",
   topic_network_ip: "الشبكة وIP",

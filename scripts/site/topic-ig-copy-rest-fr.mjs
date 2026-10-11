@@ -2,6 +2,8 @@
  * Topic IG 法语：面向以法语检索的用户独立重写（vouvoiement）。
  * @param {(t: object) => object} expand
  */
+import { buildVideoEditorExpand } from './topic-ig-copy-video-editor.mjs';
+
 export const buildFrTopics = (expand) => ({
   'health-body': expand({
     title: 'IMC, calories du jour ou macros : par quoi commencer ?',
@@ -792,4 +794,5 @@ export const buildFrTopics = (expand) => ({
       'mdn-audiobuffer': 'MDN : AudioBuffer — échantillons que le navigateur garde en mémoire',
     },
   }),
+  'video-editor': expand(buildVideoEditorExpand('fr')),
 });
