@@ -6,6 +6,22 @@ import { getLangLabel, t } from '../../site/i18n';
 import { escapeHtml } from './layout';
 import type { NavItem } from './nav';
 
+/** 默认语言（与 wrangler `SITE_DEFAULT_LANG` 一致；其 URL 无语言前缀）。 */
+const DEFAULT_LANG: SiteLang = 'en';
+
+/**
+ * 把默认语言的显式前缀链接（`/en`、`/en/...`）改写成无前缀规范 URL。
+ * 服务端会把 `/en/...` 301 到无前缀地址；站内链接直接指向规范 URL，爬虫就不会反复抓重定向。
+ * @param href 站内链接
+ * @param defaultLang 默认语言
+ * @returns 规范站内链接
+ */
+const toCanonicalHref = (href: string, defaultLang: SiteLang = DEFAULT_LANG): string => {
+	const prefix = `/${defaultLang}`;
+	if (href === prefix || href === `${prefix}/`) return '/';
+	return href.startsWith(`${prefix}/`) ? href.slice(prefix.length) : href;
+};
+
 /** 工具等入口：新标签打开时附带安全 rel */
 const newTabAttrs = (openInNewTab?: boolean) =>
 	openInNewTab ? ' target="_blank" rel="noopener noreferrer"' : '';
@@ -107,7 +123,7 @@ export const renderHeader = (opts: {
 	const otherLangLinks = showLangSwitcher
 		? enabled
 				.map((code) => {
-					const href = code === opts.lang ? null : opts.langAlternates[code];
+					const href = code === opts.lang || !opts.langAlternates[code] ? null : toCanonicalHref(opts.langAlternates[code]);
 					const label = getLangLabel(code);
 					if (!href) {
 						return `<li><span class="dropdown-item active" aria-current="true">${escapeHtml(label)}</span></li>`;
@@ -259,7 +275,7 @@ export const renderHeader = (opts: {
 					? ''
 					: '<button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="6" width="18" height="2" rx="1" fill="currentColor"/><rect x="3" y="11" width="18" height="2" rx="1" fill="currentColor" opacity="0.9"/><rect x="3" y="16" width="18" height="2" rx="1" fill="currentColor" opacity="0.8"/></svg></button>'
 			}
-        <a class="navbar-brand" href="${escapeHtml(opts.brandHref)}">
+        <a class="navbar-brand" href="${escapeHtml(toCanonicalHref(opts.brandHref))}">
           <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
           <span class="navbar-brand-text">${escapeHtml(t(opts.lang, 'brand'))}</span>
         </a>

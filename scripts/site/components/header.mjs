@@ -4,6 +4,18 @@
 import { siteConfig, withExplicitLangPath, withLangPath } from '../config.mjs';
 import { t } from '../i18n.mjs';
 
+/**
+ * 把默认语言的显式前缀链接（`/en`、`/en/...`）改写成无前缀规范 URL。
+ * 服务端会把 `/en/...` 301 到无前缀地址；站内链接直接指向规范 URL，爬虫就不会反复抓重定向。
+ * @param {string} href 站内链接
+ * @returns {string} 规范站内链接
+ */
+const toCanonicalHref = (href) => {
+  const prefix = `/${siteConfig.defaultLang}`;
+  if (href === prefix || href === `${prefix}/`) return '/';
+  return href.startsWith(`${prefix}/`) ? href.slice(prefix.length) : href;
+};
+
 /** Buy Me a Coffee 打赏页（外链，新标签打开） */
 const BUY_ME_A_COFFEE_URL = 'https://buymeacoffee.com/matthewxuax';
 
@@ -47,7 +59,8 @@ const renderLangSwitcher = ({ lang, langAlternates }) => {
   const links = enabled
     .map((code) => {
       const label = (siteConfig.languages.find((l) => l.code === code) || { label: code }).label;
-      const href = code === current ? null : (langAlternates && langAlternates[code]) || withExplicitLangPath(code, '/');
+      const href =
+        code === current ? null : toCanonicalHref((langAlternates && langAlternates[code]) || withExplicitLangPath(code, '/'));
       return href
         ? `<li><a class="dropdown-item" href="${href}" data-lang-pref="${code}">${label}</a></li>`
         : `<li><span class="dropdown-item active" aria-current="true">${label}</span></li>`;
@@ -289,7 +302,7 @@ export const renderHeader = ({
             ? '<button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>'
             : ''
         }
-        <a class="navbar-brand" href="${brandHref}">
+        <a class="navbar-brand" href="${toCanonicalHref(brandHref)}">
           <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
           <span class="navbar-brand-text">${t(lang, 'brand')}</span>
         </a>
