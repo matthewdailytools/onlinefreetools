@@ -121,7 +121,7 @@
   {
     "slug": "add-watermark",
     "path": "/tools/add-watermark",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T04:17:26.342Z",
     "category": "image",
     "primaryTopic": "image-media",
     "featured": true,
@@ -132,8 +132,9 @@
     "faqPrefix": "tool_add_watermark",
     "related": [
       "image-overlay",
+      "batch-watermark-product-photos",
       "image-exif",
-      "batch-watermark-product-photos"
+      "pdf-watermark"
     ],
     "logo": "/icons/tools/add-watermark.svg",
     "localProcessing": true,
@@ -1521,7 +1522,7 @@
   {
     "slug": "combine-files-into-one-pdf",
     "path": "/tools/combine-files-into-one-pdf",
-    "updatedAt": "2026-09-06T07:49:35.335Z",
+    "updatedAt": "2026-10-14T04:17:26.182Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -1536,7 +1537,10 @@
     "faqPrefix": "tool_combine_files_into_one_pdf",
     "related": [
       "merge-pdf",
-      "images-to-pdf"
+      "images-to-pdf",
+      "convert-word-document-to-pdf",
+      "compress-pdf",
+      "unlock-pdf"
     ],
     "logo": "/icons/tools/combine-files-into-one-pdf.svg",
     "localProcessing": true,
@@ -3431,7 +3435,7 @@
   {
     "slug": "how-to-calculate-date-difference",
     "path": "/tools/how-to-calculate-date-difference",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T03:25:00.635Z",
     "category": "calculator",
     "primaryTopic": "time-calendar",
     "featured": false,
@@ -3442,8 +3446,8 @@
     "faqPrefix": "tool_date_difference",
     "related": [
       "how-to-calculate-age",
-      "how-to-calculate-tip",
-      "how-to-calculate-salary-hourly"
+      "unix-timestamp",
+      "timezone-converter"
     ],
     "logo": "/icons/tools/how-to-calculate-date-difference.svg",
     "localProcessing": true,
@@ -4009,7 +4013,7 @@
   {
     "slug": "how-to-calculate-payback-period",
     "path": "/tools/how-to-calculate-payback-period",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T03:16:09.844Z",
     "category": "calculator",
     "primaryTopic": "business-finance",
     "featured": false,
@@ -4020,7 +4024,9 @@
     "faqPrefix": "tool_payback_period",
     "related": [
       "how-to-calculate-npv",
-      "how-to-calculate-irr"
+      "how-to-calculate-irr",
+      "how-to-calculate-roi",
+      "how-to-calculate-break-even"
     ],
     "logo": "/icons/tools/how-to-calculate-payback-period.svg",
     "localProcessing": true,
@@ -4031,7 +4037,7 @@
   {
     "slug": "how-to-calculate-percentage-change",
     "path": "/tools/how-to-calculate-percentage-change",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T03:49:45.411Z",
     "category": "calculator",
     "primaryTopic": "personal-money",
     "secondaryTopics": [
@@ -4044,8 +4050,10 @@
     "homeDescKey": "tool_percentage_change_description",
     "faqPrefix": "tool_percentage_change",
     "related": [
+      "how-to-calculate-cagr",
+      "how-to-calculate-discount",
       "how-to-calculate-roi",
-      "how-to-calculate-marginal-revenue"
+      "how-to-calculate-profit-margin"
     ],
     "logo": "/icons/tools/how-to-calculate-percentage-change.svg",
     "localProcessing": true,
@@ -4056,7 +4064,7 @@
   {
     "slug": "how-to-calculate-permutation-combination",
     "path": "/tools/how-to-calculate-permutation-combination",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T03:03:27.004Z",
     "category": "calculator",
     "primaryTopic": "math-stats",
     "featured": false,
@@ -4066,8 +4074,9 @@
     "homeDescKey": "tool_permutation_combination_description",
     "faqPrefix": "tool_permutation_combination",
     "related": [
-      "how-to-calculate-quadratic-equation",
-      "how-to-calculate-slope"
+      "how-to-calculate-exponent",
+      "how-to-calculate-scientific-notation",
+      "how-to-calculate-quadratic-equation"
     ],
     "logo": "/icons/tools/how-to-calculate-permutation-combination.svg",
     "localProcessing": true,
@@ -4265,7 +4274,7 @@
   {
     "slug": "how-to-calculate-scientific-notation",
     "path": "/tools/how-to-calculate-scientific-notation",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T02:52:21.599Z",
     "category": "calculator",
     "primaryTopic": "math-stats",
     "secondaryTopics": [
@@ -4279,6 +4288,7 @@
     "faqPrefix": "tool_scientific_notation",
     "related": [
       "how-to-calculate-significant-figures",
+      "how-to-calculate-exponent",
       "how-to-calculate-logarithm"
     ],
     "logo": "/icons/tools/how-to-calculate-scientific-notation.svg",
@@ -4694,7 +4704,7 @@
   {
     "slug": "image-grayscale",
     "path": "/tools/image-grayscale",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T03:25:00.702Z",
     "category": "image",
     "primaryTopic": "image-media",
     "featured": true,
@@ -4704,8 +4714,9 @@
     "homeDescKey": "tool_image_grayscale_desc",
     "faqPrefix": "tool_image_grayscale",
     "related": [
+      "color-from-image",
+      "image-compress",
       "flip-image",
-      "image-border",
       "image-crop"
     ],
     "logo": "/icons/tools/image-grayscale.svg",
@@ -4818,7 +4829,7 @@
   {
     "slug": "images-to-gif",
     "path": "/tools/images-to-gif",
-    "updatedAt": "2026-10-03T08:11:53.118Z",
+    "updatedAt": "2026-10-14T03:51:28.110Z",
     "category": "image",
     "primaryTopic": "image-media",
     "featured": true,
@@ -5925,7 +5936,7 @@
   {
     "slug": "open-pdf-in-browser",
     "path": "/tools/open-pdf-in-browser",
-    "updatedAt": "2026-09-06T09:37:59.139Z",
+    "updatedAt": "2026-10-14T03:53:36.360Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -5940,8 +5951,9 @@
     "faqPrefix": "tool_open_pdf_in_browser",
     "related": [
       "print-pdf",
-      "pdf-to-jpg",
-      "make-pdf-flipbook"
+      "unlock-pdf",
+      "extract-text-from-pdf",
+      "pdf-to-jpg"
     ],
     "logo": "/icons/tools/open-pdf-in-browser.svg",
     "localProcessing": true,

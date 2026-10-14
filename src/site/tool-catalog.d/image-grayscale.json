@@ -1,7 +1,7 @@
 {
   "slug": "image-grayscale",
   "path": "/tools/image-grayscale",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-14T03:25:00.702Z",
   "category": "image",
   "primaryTopic": "image-media",
   "featured": true,
@@ -11,8 +11,9 @@
   "homeDescKey": "tool_image_grayscale_desc",
   "faqPrefix": "tool_image_grayscale",
   "related": [
+    "color-from-image",
+    "image-compress",
     "flip-image",
-    "image-border",
     "image-crop"
   ],
   "logo": "/icons/tools/image-grayscale.svg",

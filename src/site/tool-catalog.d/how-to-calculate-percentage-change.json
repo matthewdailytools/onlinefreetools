@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-percentage-change",
   "path": "/tools/how-to-calculate-percentage-change",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-14T03:49:45.411Z",
   "category": "calculator",
   "primaryTopic": "personal-money",
   "secondaryTopics": [
@@ -14,8 +14,10 @@
   "homeDescKey": "tool_percentage_change_description",
   "faqPrefix": "tool_percentage_change",
   "related": [
+    "how-to-calculate-cagr",
+    "how-to-calculate-discount",
     "how-to-calculate-roi",
-    "how-to-calculate-marginal-revenue"
+    "how-to-calculate-profit-margin"
   ],
   "logo": "/icons/tools/how-to-calculate-percentage-change.svg",
   "page": {

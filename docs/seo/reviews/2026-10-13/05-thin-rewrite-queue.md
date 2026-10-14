@@ -30,16 +30,16 @@
 | 8 | compare-two-pdfs | pdf | 265 | 9 | 133 | B | 15.5 | done 2026-10-14 |
 | 9 | flip-image | image | 222 | 3 | 136 | B | 14.7 | done 2026-10-14 |
 | 10 | image-to-base64 | image | 179 | 7 | 112 | B | 14.6 | done 2026-10-14 |
-| 11 | how-to-calculate-scientific-notation | how-to-calculate | 200 | 33 | 1 | A | 14.2 | todo |
-| 12 | how-to-calculate-permutation-combination | how-to-calculate | 101 | 19 | 7 | A | 14.2 | todo |
-| 13 | how-to-calculate-payback-period | how-to-calculate | 155 | 24 | 7 | A | 14.1 | todo |
-| 14 | how-to-calculate-date-difference | how-to-calculate | 130 | 20 | 7 | A | 13.3 | todo |
-| 15 | image-grayscale | image | 136 | 2 | 120 | B | 13.2 | todo |
-| 16 | how-to-calculate-percentage-change | how-to-calculate | 317 | 139 | 0 | A | 13.1 | todo |
-| 17 | images-to-gif | image | 159 | 4 | 104 | B | 12.6 | todo |
-| 18 | open-pdf-in-browser | pdf | 266 | 3 | 117 | B | 12.4 | todo |
-| 19 | combine-files-into-one-pdf | pdf | 264 | 2 | 117 | B | 12.2 | todo |
-| 20 | add-watermark | category:image | 171 | 0 | 120 | C | 12.0 | todo |
+| 11 | how-to-calculate-scientific-notation | how-to-calculate | 200 | 33 | 1 | A | 14.2 | done 2026-10-14 |
+| 12 | how-to-calculate-permutation-combination | how-to-calculate | 101 | 19 | 7 | A | 14.2 | done 2026-10-14 |
+| 13 | how-to-calculate-payback-period | how-to-calculate | 155 | 24 | 7 | A | 14.1 | done 2026-10-14 |
+| 14 | how-to-calculate-date-difference | how-to-calculate | 130 | 20 | 7 | A | 13.3 | done 2026-10-14 |
+| 15 | image-grayscale | image | 136 | 2 | 120 | B | 13.2 | done 2026-10-14 |
+| 16 | how-to-calculate-percentage-change | how-to-calculate | 317 | 139 | 0 | A | 13.1 | done 2026-10-14 |
+| 17 | images-to-gif | image | 159 | 4 | 104 | B | 12.6 | done 2026-10-14 |
+| 18 | open-pdf-in-browser | pdf | 266 | 3 | 117 | B | 12.4 | done 2026-10-14 |
+| 19 | combine-files-into-one-pdf | pdf | 264 | 2 | 117 | B | 12.2 | done 2026-10-14 |
+| 20 | add-watermark | category:image | 171 | 0 | 120 | C | 12.0 | done 2026-10-14 |
 | 21 | print-pdf | pdf | 267 | 0 | 117 | A | 11.7 | todo |
 | 22 | how-to-calculate-density | how-to-calculate | 97 | 15 | 7 | A | 11.5 | todo |
 | 23 | image-border | image | 157 | 3 | 96 | B | 11.3 | todo |

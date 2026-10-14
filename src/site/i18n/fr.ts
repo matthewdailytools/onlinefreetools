@@ -541,76 +541,164 @@ const fr: SiteLangDict = {
   tool_add_text_to_pdf_file_warn_large: 'Large file — may be slow.',
   tool_add_text_to_pdf_file_x_label: 'X',
   tool_add_text_to_pdf_file_y_label: 'Y',
-  tool_add_watermark_apply: 'Appliquer',
-  tool_add_watermark_article: 'Canvas fillText watermark with opacity, rotation, and anchor positions; distinct from image-overlay.',
-  tool_add_watermark_choose_file: 'Choisir une image',
+  tool_add_watermark_advanced: 'Réglages avancés (facultatif)',
+  tool_add_watermark_apply: 'Ajouter le filigrane',
+  tool_add_watermark_article: 'Ajouter un filigrane texte à une photo',
+  tool_add_watermark_bold: 'Gras',
+  tool_add_watermark_choose_file: 'Choisir une photo',
   tool_add_watermark_clear: 'Effacer',
-  tool_add_watermark_color_label: 'Color',
-  tool_add_watermark_desc: 'Filigrane texte — dans le navigateur — local, no upload.',
+  tool_add_watermark_color_label: 'Couleur',
+  tool_add_watermark_decode_step: 'Préparation de la photo en taille réelle…',
+  tool_add_watermark_desc:
+    'Saisissez votre nom, une mention © ou votre site, placez-le dans un coin ou répétez-le en mosaïque sur la photo, puis téléchargez.',
   tool_add_watermark_description:
-    'Étapes: choose files, adjust options, export. exemple: sample color blocks demo. processus: local in browser, no upload. Tool: typed text watermark with opacity rotation position. Soft limits ~25MB / 8192px apply.',
-  tool_add_watermark_download: 'Télécharger',
-  tool_add_watermark_drop_hint: 'Or drop JPEG, PNG, or WebP here. Processing stays in this tab.',
-  tool_add_watermark_empty: 'Choose an image first.',
-  tool_add_watermark_empty_text: 'Enter watermark text.',
-  tool_add_watermark_err_decode: 'Could not decode the image. Try JPEG, PNG, or WebP.',
-  tool_add_watermark_err_encode: 'Could not export. Try a smaller image or another format.',
-  tool_add_watermark_example: 'Sample places semi-transparent SAMPLE on a gradient at a diagonal angle.',
+    'Ajoutez un filigrane texte à une photo directement dans le navigateur, gratuitement. Les étapes : choisissez l’image, saisissez votre nom ou une mention de copyright, placez-la dans un coin ou répétez-la en mosaïque, réglez la taille et l’opacité, cliquez sur Ajouter le filigrane puis téléchargez. Par exemple : « © 2026 Camille Laurent » en bas à droite d’une photo de 960 × 640.',
+  tool_add_watermark_download: 'Télécharger l’image',
+  tool_add_watermark_draw_step: 'Tracé du filigrane…',
+  tool_add_watermark_drop_hint: 'Ou déposez ici une image JPEG, PNG, WebP, GIF, BMP ou AVIF.',
+  tool_add_watermark_effect_hint: 'Garde le texte lisible sur les zones claires comme sur les zones sombres de la photo.',
+  tool_add_watermark_effect_label: 'Effet de contraste',
+  tool_add_watermark_effect_none: 'Aucun',
+  tool_add_watermark_effect_outline: 'Contour',
+  tool_add_watermark_effect_shadow: 'Ombre douce',
+  tool_add_watermark_elapsed: '{s} s écoulées',
+  tool_add_watermark_empty: 'Choisissez d’abord une photo.',
+  tool_add_watermark_empty_text: 'Saisissez d’abord le texte du filigrane.',
+  tool_add_watermark_encode_step: 'Enregistrement en {fmt}…',
+  tool_add_watermark_err_decode:
+    'Impossible d’ouvrir ce fichier comme image. Les photos HEIC de l’iPhone doivent d’abord être enregistrées en JPEG.',
+  tool_add_watermark_err_encode: 'L’image n’a pas pu être enregistrée. Essayez Redimensionner pour le web ou un autre format.',
+  tool_add_watermark_example:
+    'L’exemple est une photo de lac de 960 × 640 portant « © 2026 Camille Laurent » en blanc, à 70 % d’opacité, avec une ombre douce. Avec une taille de 35 %, le texte mesure 336 px de large, et une marge de 3 % place le bloc de texte à 19 px des bords droit et inférieur (3 % du petit côté de 640 px). Passez la Disposition sur Répété en mosaïque sur la photo : le même texte se répète à −30° et à 25 % de taille sur toute l’image.',
   tool_add_watermark_example_title: 'Exemple',
-  tool_add_watermark_faq_a1: 'No.',
-  tool_add_watermark_faq_a2: 'Overlay stacks an image/logo file; this page types text.',
-  tool_add_watermark_faq_a3: 'Uses the browser default canvas font stack.',
-  tool_add_watermark_faq_a4: 'Single text stamp per apply in this version.',
-  tool_add_watermark_faq_a5: 'PNG/WebP keep alpha; JPEG needs a background color.',
-  tool_add_watermark_faq_q1: 'Uploaded?',
-  tool_add_watermark_faq_q2: 'Different from Overlay?',
-  tool_add_watermark_faq_q3: 'Custom fonts?',
-  tool_add_watermark_faq_q4: 'Tiled watermarks?',
-  tool_add_watermark_faq_q5: 'Transparent PNG?',
-  tool_add_watermark_font_size_label: 'Font size',
+  tool_add_watermark_faq_a1:
+    'Choisissez la photo, saisissez votre texte, sélectionnez un coin ou Répété en mosaïque sur la photo, puis cliquez sur Ajouter le filigrane et sur Télécharger l’image. Aucune inscription n’est demandée et le résultat ne porte aucune marque de notre part.',
+  tool_add_watermark_faq_a2:
+    'La photo n’est pas envoyée au serveur : le filigrane est tracé dans cet onglet du navigateur et le fichier reste sur votre appareil. La copie téléchargée ne reprend pas les données EXIF d’origine ; les informations de l’appareil photo et la position GPS sont donc omises. Gardez l’original si vous en avez besoin.',
+  tool_add_watermark_faq_a3:
+    'La forme courante associe le symbole ©, l’année de première publication et le nom du titulaire, par exemple « © 2026 Camille Laurent » ; ajouter votre site aide à vous retrouver. Selon la Convention de Berne, une œuvre est protégée sans aucune mention : le filigrane sert surtout à indiquer à qui appartient l’image.',
+  tool_add_watermark_faq_a4:
+    'La plupart des outils utilisent une taille de police fixe en pixels : un texte de 48 px paraît grand sur une image de 1 000 px mais minuscule sur une photo d’appareil de 6 000 px. Ici, la taille est un pourcentage de la largeur de l’image : le même réglage donne le même rendu quelle que soit la résolution.',
+  tool_add_watermark_faq_a5:
+    'Un filigrane dans un coin disparaît d’un simple recadrage. Un filigrane semi-transparent sur le sujet principal, ou le mode répété en mosaïque, est bien plus difficile à retirer. Aucun filigrane visible n’est impossible à effacer par retouche : voyez-le comme un moyen de dissuasion et de signature, et publiez des copies réduites plutôt que vos originaux.',
+  tool_add_watermark_faq_a6:
+    'Cette page trace uniquement du texte saisi. Pour poser un logo PNG sur une photo, utilisez un outil de superposition d’images, qui place une image sur une autre avec transparence.',
+  tool_add_watermark_faq_a7:
+    'Cette page traite une photo à la fois pour que vous placiez le filigrane à l’œil. Pour un dossier de photos de produits ou d’événement avec le même filigrane, utilisez un outil de filigrane par lot.',
+  tool_add_watermark_faq_q1: 'Comment ajouter un filigrane à une photo gratuitement ?',
+  tool_add_watermark_faq_q2: 'Ma photo est-elle envoyée sur un serveur, et sa localisation est-elle conservée ?',
+  tool_add_watermark_faq_q3: 'Que doit contenir un filigrane de copyright ?',
+  tool_add_watermark_faq_q4: 'Pourquoi mon filigrane paraît-il minuscule sur certaines photos ?',
+  tool_add_watermark_faq_q5: 'Où placer un filigrane pour qu’il soit difficile à enlever ?',
+  tool_add_watermark_faq_q6: 'Puis-je ajouter un logo au lieu d’un texte ?',
+  tool_add_watermark_faq_q7: 'Puis-je mettre un filigrane sur plusieurs photos à la fois ?',
+  tool_add_watermark_font_label: 'Police',
+  tool_add_watermark_font_mono: 'Chasse fixe',
+  tool_add_watermark_font_sans: 'Sans empattement (épurée)',
+  tool_add_watermark_font_serif: 'Avec empattement (classique)',
+  tool_add_watermark_format_hint: 'Les JPEG, PNG et WebP gardent leur format ; les autres images sont enregistrées en PNG.',
   tool_add_watermark_format_jpeg: 'JPEG',
-  tool_add_watermark_format_label: 'Output format',
+  tool_add_watermark_format_label: 'Format de sortie',
   tool_add_watermark_format_png: 'PNG',
+  tool_add_watermark_format_same: 'Identique à l’original',
   tool_add_watermark_format_webp: 'WebP',
-  tool_add_watermark_how_body: 'Choose a photo, type watermark text, adjust style and position, apply, download.',
-  tool_add_watermark_how_title: 'Comment ça marche',
-  tool_add_watermark_jpeg_bg_label: 'JPEG background',
-  tool_add_watermark_opacity_label: 'Opacity (%)',
-  tool_add_watermark_pos_bc: 'Bottom center',
-  tool_add_watermark_pos_bl: 'Bottom left',
-  tool_add_watermark_pos_br: 'Bottom right',
-  tool_add_watermark_pos_fraction_hint: 'Values 0–1 are fractions of width/height.',
-  tool_add_watermark_pos_mc: 'Center',
-  tool_add_watermark_pos_ml: 'Middle left',
-  tool_add_watermark_pos_mr: 'Middle right',
-  tool_add_watermark_pos_pixel_hint: 'Values >1 are treated as pixel coordinates.',
-  tool_add_watermark_pos_tc: 'Top center',
-  tool_add_watermark_pos_tl: 'Top left',
-  tool_add_watermark_pos_tr: 'Top right',
-  tool_add_watermark_position_label: 'Position',
-  tool_add_watermark_preview_label: 'Preview',
-  tool_add_watermark_quality_label: 'Quality',
-  tool_add_watermark_rotation_label: 'Rotation (°)',
+  tool_add_watermark_gap_hint: 'Plus faible = motif plus dense, plus difficile à retirer ; plus élevé = la photo reste plus visible.',
+  tool_add_watermark_gap_label: 'Espacement entre les répétitions',
+  tool_add_watermark_how_body:
+    'Le texte est tracé dans les pixels d’une nouvelle copie de votre photo : le filigrane reste en place partout où le fichier est publié. L’aperçu se met à jour dès que vous modifiez un réglage.',
+  tool_add_watermark_how_item_1: 'Choisissez une photo ou déposez-la dans le cadre.',
+  tool_add_watermark_how_item_2:
+    'Saisissez votre texte (Insérer © et l’année ajoute le symbole de copyright) et appuyez sur Entrée pour mettre votre site web sur une deuxième ligne, sous votre nom.',
+  tool_add_watermark_how_item_3:
+    'Choisissez Filigrane unique et un emplacement (ou cliquez sur l’aperçu), ou Répété en mosaïque sur la photo ; réglez ensuite la taille, l’opacité, l’inclinaison et la couleur.',
+  tool_add_watermark_how_item_4:
+    'Cliquez sur Ajouter le filigrane, attendez la fin de la barre de progression, puis cliquez sur Télécharger l’image.',
+  tool_add_watermark_how_title: 'Comment ajouter un filigrane à une photo',
+  tool_add_watermark_insert_copyright: 'Insérer © et l’année',
+  tool_add_watermark_layout_hint: 'En mosaïque, le texte se répète en diagonale : un simple recadrage ne suffit pas à l’enlever.',
+  tool_add_watermark_layout_label: 'Disposition',
+  tool_add_watermark_layout_single: 'Filigrane unique',
+  tool_add_watermark_layout_tile: 'Répété en mosaïque sur la photo',
+  tool_add_watermark_margin_hint: 'En pourcentage du petit côté de la photo.',
+  tool_add_watermark_margin_label: 'Distance au bord',
+  tool_add_watermark_opacity_label: 'Opacité',
+  tool_add_watermark_pos_bc: 'En bas au centre',
+  tool_add_watermark_pos_bl: 'En bas à gauche',
+  tool_add_watermark_pos_br: 'En bas à droite',
+  tool_add_watermark_pos_mc: 'Au centre',
+  tool_add_watermark_pos_ml: 'Au milieu à gauche',
+  tool_add_watermark_pos_mr: 'Au milieu à droite',
+  tool_add_watermark_pos_tc: 'En haut au centre',
+  tool_add_watermark_pos_tl: 'En haut à gauche',
+  tool_add_watermark_pos_tr: 'En haut à droite',
+  tool_add_watermark_position_hint: 'Ou cliquez n’importe où sur l’aperçu.',
+  tool_add_watermark_position_label: 'Emplacement',
+  tool_add_watermark_preview_label: 'Aperçu',
+  tool_add_watermark_progress: 'Ajout du filigrane…',
+  tool_add_watermark_quality_hint: 'JPEG et WebP uniquement.',
+  tool_add_watermark_quality_label: 'Qualité',
+  tool_add_watermark_ref_a_label: 'U.S. Copyright Office — Circular 3 : la mention de copyright (en anglais)',
+  tool_add_watermark_ref_b_label: 'MDN — CanvasRenderingContext2D.fillText(), tracer du texte dans un canvas',
+  tool_add_watermark_resize_1080: 'Côté le plus long : 1080 px (réseaux sociaux)',
+  tool_add_watermark_resize_1600: 'Côté le plus long : 1600 px',
+  tool_add_watermark_resize_2048: 'Côté le plus long : 2048 px',
+  tool_add_watermark_resize_hint:
+    'Les images plus petites ne sont jamais agrandies. Publier une copie réduite vous laisse aussi seul détenteur de l’original en pleine résolution.',
+  tool_add_watermark_resize_label: 'Redimensionner pour le web',
+  tool_add_watermark_resize_none: 'Garder la taille d’origine',
+  tool_add_watermark_rotation_label: 'Inclinaison',
   tool_add_watermark_rules_body:
-    'Text is painted into pixels (not a CSS-only overlay). Anchors use relative positions; rotation is around the anchor.',
-  tool_add_watermark_rules_item_1: 'Font uses the browser default family at your size.',
-  tool_add_watermark_rules_item_2: 'Opacity applies via globalAlpha.',
-  tool_add_watermark_rules_item_3: 'JPEG export can flatten on a background color.',
-  tool_add_watermark_rules_item_4: 'Logo files belong on the Overlay Images tool.',
-  tool_add_watermark_rules_title: 'Règles',
-  tool_add_watermark_sample: 'Charger un exemple',
-  tool_add_watermark_status_done: 'Done — click Download to save.',
-  tool_add_watermark_status_working: 'Working…',
-  tool_add_watermark_text_label: 'Watermark text',
-  tool_add_watermark_title: 'Filigrane texte — dans le navigateur',
-  tool_add_watermark_usecase_1: 'Mark proofs as SAMPLE.',
-  tool_add_watermark_usecase_2: 'Sign photos with a name/URL.',
-  tool_add_watermark_usecase_3: 'Label screenshots before sharing.',
-  tool_add_watermark_usecases_title: 'Bons cas',
-  tool_add_watermark_warn_edge: 'Edge exceeds ~8192 px — some browsers may fail.',
-  tool_add_watermark_warn_large: 'Large file (>25 MB) — may be slow.',
-  tool_add_watermark_x_label: 'X',
-  tool_add_watermark_y_label: 'Y',
+    'Toutes les mesures sont relatives à la photo : l’aperçu et le téléchargement en taille réelle correspondent.',
+  tool_add_watermark_rules_item_1:
+    'Taille : la ligne la plus longue est tracée au pourcentage choisi de la largeur de l’image (35 % par défaut, de 5 à 100 %) ; l’interligne vaut 1,2 × la taille de police, et le bloc entier est limité à 90 % de la hauteur de l’image.',
+  tool_add_watermark_rules_item_2:
+    'Emplacement : la distance au bord est un pourcentage du petit côté (3 % par défaut), mesurée jusqu’au cadre extérieur du texte une fois incliné ; un filigrane en biais ne déborde donc jamais de la photo. Dans les emplacements de gauche, le texte est aligné à gauche ; dans ceux de droite, à droite.',
+  tool_add_watermark_rules_item_3:
+    'Mosaïque : le motif pivote autour du centre de la photo et une rangée sur deux est décalée d’un demi-pas ; l’espacement est un pourcentage de la largeur du texte à l’horizontale et de sa hauteur à la verticale.',
+  tool_add_watermark_rules_item_4:
+    'Couleur de contraste : si la couleur du texte est claire (luminosité de 140 ou plus sur une échelle de 0 à 255, calculée par 0,299 R + 0,587 G + 0,114 B), l’ombre ou le contour sont foncés ; sinon, ils sont blancs.',
+  tool_add_watermark_rules_item_5:
+    'Fichier final : l’image est réencodée ; en JPEG, les zones transparentes sont remplies de blanc. Les informations de l’appareil photo et la position GPS (EXIF) ne sont pas copiées dans le nouveau fichier. Un GIF animé ne garde que sa première image.',
+  tool_add_watermark_rules_title: 'Comment la taille, l’emplacement et le fichier final sont calculés',
+  tool_add_watermark_sample: 'Charger l’exemple',
+  tool_add_watermark_sample_text: '© 2026 Camille Laurent',
+  tool_add_watermark_size_hint:
+    'La taille correspond à la largeur de la ligne la plus longue rapportée à la largeur de la photo : le filigrane a le même rendu sur une image de 1 000 px que sur une image de 6 000 px.',
+  tool_add_watermark_size_label: 'Taille',
+  tool_add_watermark_stats_tpl: '{w} × {h} px · format {fmt} · {bytes}',
+  tool_add_watermark_status_done: 'Terminé : cliquez sur Télécharger l’image pour l’enregistrer.',
+  tool_add_watermark_status_working: 'Traitement en cours…',
+  tool_add_watermark_step_decode: 'Lecture de la photo',
+  tool_add_watermark_step_draw: 'Tracé du texte',
+  tool_add_watermark_step_encode: 'Enregistrement',
+  tool_add_watermark_text_hint: 'Appuyez sur Entrée pour ajouter une deuxième ligne, par exemple votre site web.',
+  tool_add_watermark_text_label: 'Texte du filigrane',
+  tool_add_watermark_text_ph: 'ex. © 2026 Votre Nom',
+  tool_add_watermark_title: 'Ajouter un filigrane à une photo — Votre nom ou © dans un coin ou répété sur toute l’image',
+  tool_add_watermark_usecase_1:
+    'Photographes et artistes qui publient leur travail en ligne : un nom ou un © discret dans un coin vous crédite quand l’image est partagée.',
+  tool_add_watermark_usecase_2:
+    'Épreuves et aperçus pour les clients : « ÉPREUVE » ou « SPÉCIMEN » répété en mosaïque pour que l’image ne puisse pas servir avant d’être payée.',
+  tool_add_watermark_usecase_3:
+    'Carte d’identité et justificatifs envoyés en photo : écrivez en travers « Copie destinée uniquement au dossier de location auprès de la Banque XYZ », pour qu’elle ne puisse pas être réutilisée ailleurs.',
+  tool_add_watermark_usecase_4:
+    'Vendeurs et annonces : le nom de votre boutique ou votre site sur la photo d’un produit ou d’un logement avant de la publier sur une place de marché.',
+  tool_add_watermark_usecases_title: 'Dans quels cas l’utiliser',
+  tool_add_watermark_warn_animation: 'GIF animé : seule la première image est conservée.',
+  tool_add_watermark_warn_edge:
+    'Un côté dépasse environ 8 192 px : certains navigateurs ne peuvent pas le traiter ; choisissez une taille plus petite dans Redimensionner pour le web.',
+  tool_add_watermark_warn_large: 'Fichier volumineux (plus de 25 Mo) : l’enregistrement peut être lent.',
+  tool_add_watermark_why_choose_item_1:
+    'La taille suit la photo, pas une taille de police fixe. À 35 %, la ligne la plus longue occupe 35 % de la largeur, sur une photo de smartphone comme sur un fichier d’appareil de 24 mégapixels : fini les filigranes minuscules sur les grandes images.',
+  tool_add_watermark_why_choose_item_2:
+    'Filigrane sur deux lignes, © avec l’année en cours en un clic, et placement d’un clic sur l’aperçu pour ne pas masquer le sujet.',
+  tool_add_watermark_why_choose_item_3:
+    'Un mode répété en mosaïque pour les images à protéger : le texte se répète en biais sur toute l’image, et recadrer un coin ne suffit pas à l’enlever.',
+  tool_add_watermark_why_choose_item_4:
+    'Une ombre douce ou un contour dans une couleur de contraste choisie automatiquement : le texte blanc reste lisible sur un ciel lumineux, le texte foncé sur les zones d’ombre.',
+  tool_add_watermark_why_choose_item_5:
+    'Les photos de smartphone restent dans le bon sens, le nom du fichier reçoit l’ajout « -watermarked », et la photo est traitée dans cet onglet du navigateur, sans envoi au serveur.',
+  tool_add_watermark_why_choose_title: 'Pourquoi utiliser cet outil pour ajouter un filigrane à une photo',
   tool_add_www_to_dns_apex_alias_note: 'Use provider ALIAS / CNAME flattening / A at the apex — do not put a bare CNAME on @.',
   tool_add_www_to_dns_article:
     'Generate A/AAAA/CNAME rows for www, explain apex CNAME rules and 301 vs DNS, with same-page provider tutorials.',
@@ -6277,59 +6365,149 @@ const fr: SiteLangDict = {
   tool_color_from_image_usecases_title: 'Bon usage',
   tool_color_from_image_warn_animation: 'Fichiers animés : seule la première image est échantillonnée.',
   tool_color_from_image_warn_large: 'Fichier volumineux (>25 Mo) — l’échantillonnage peut être lent.',
-  tool_combine_files_into_one_pdf_article: 'Combiner des fichiers en un PDF. Les fichiers restent sur l’appareil ; sans envoi au serveur.',
-  tool_combine_files_into_one_pdf_choose_file: 'Choisir un PDF',
+  tool_combine_files_into_one_pdf_add_step: 'Ajout du fichier {i} sur {n} : {name}',
+  tool_combine_files_into_one_pdf_advanced: 'Paramètres avancés (facultatif)',
+  tool_combine_files_into_one_pdf_article: 'Fusionner PDF, images et fichiers texte en un seul PDF',
   tool_combine_files_into_one_pdf_choose_files: 'Choisir des fichiers',
   tool_combine_files_into_one_pdf_clear: 'Effacer',
-  tool_combine_files_into_one_pdf_combine: 'Combine',
-  tool_combine_files_into_one_pdf_desc: 'Combiner des fichiers en un PDF — Les fichiers restent sur l’appareil ; sans envoi au serveur.',
+  tool_combine_files_into_one_pdf_combine: 'Fusionner en PDF',
+  tool_combine_files_into_one_pdf_desc:
+    'Regroupez PDF, photos JPG/PNG et fichiers texte en un seul PDF dans l’ordre voulu, choisissez les pages à garder et gardez vos photos de téléphone à l’endroit.',
   tool_combine_files_into_one_pdf_description:
-    'Combiner des fichiers en un PDF. Les fichiers restent sur l’appareil ; sans envoi au serveur. L’exemple montre une entrée et une sortie réelles ; la page précise les étapes et les limites.',
-  tool_combine_files_into_one_pdf_download: 'Télécharger',
-  tool_combine_files_into_one_pdf_drop_hint: 'Ou déposez ici. Le traitement reste dans cet onglet.',
-  tool_combine_files_into_one_pdf_empty: 'Choose a file first.',
-  tool_combine_files_into_one_pdf_err_convert: 'Processing failed. Retry.',
-  tool_combine_files_into_one_pdf_err_encrypted: 'This PDF looks password-protected. Unlock it first.',
-  tool_combine_files_into_one_pdf_err_load: 'Could not read the file.',
-  tool_combine_files_into_one_pdf_err_notext: 'No selectable text found (no OCR).',
-  tool_combine_files_into_one_pdf_err_pdfjs: 'PDF renderer failed to load.',
-  tool_combine_files_into_one_pdf_example: 'Charger un exemple: Combine sample.',
+    'Fusionnez plusieurs fichiers en un seul PDF dans votre navigateur : PDF, images JPG, PNG, WebP et autres, ainsi que fichiers texte, dans l’ordre que vous fixez. Étapes : ajoutez les fichiers, réordonnez-les ou saisissez des plages de pages comme 1-3, cliquez sur Fusionner en PDF, puis téléchargez. Exemple : un rapport de 2 pages, une image de graphique et une note texte donnent un PDF de 4 pages.',
+  tool_combine_files_into_one_pdf_download: 'Télécharger le PDF',
+  tool_combine_files_into_one_pdf_drop_hint:
+    'Ou déposez ici des PDF, des images (JPG, PNG, WebP, GIF, BMP, SVG, AVIF) et des fichiers texte (TXT, MD, CSV). Rien n’est envoyé en ligne.',
+  tool_combine_files_into_one_pdf_duplex_hint:
+    'Ajoute une page blanche après tout fichier qui se termine sur une page impaire, pour que le fichier suivant ne commence jamais au verso du précédent.',
+  tool_combine_files_into_one_pdf_duplex_label: 'Commencer chaque fichier sur une nouvelle feuille (impression recto verso)',
+  tool_combine_files_into_one_pdf_elapsed: 'Écoulé : {s} s',
+  tool_combine_files_into_one_pdf_empty: 'Ajoutez d’abord au moins un fichier.',
+  tool_combine_files_into_one_pdf_err_encrypted:
+    '« {name} » est protégé par un mot de passe. Retirez d’abord le mot de passe, puis ajoutez-le de nouveau.',
+  tool_combine_files_into_one_pdf_err_image: '« {name} » n’a pas pu être ouvert comme image.',
+  tool_combine_files_into_one_pdf_err_pdf: '« {name} » n’a pas pu être lu comme PDF. Il est peut-être endommagé ou incomplètement téléchargé.',
+  tool_combine_files_into_one_pdf_err_range:
+    '« {name} » : « {range} » n’est pas une plage de pages valide. Utilisez des numéros de page de 1 à {n}, par ex. 1-3, 5.',
+  tool_combine_files_into_one_pdf_err_save: 'Le PDF n’a pas pu être créé. Retirez les fichiers très volumineux et réessayez.',
+  tool_combine_files_into_one_pdf_err_text: '« {name} » n’a pas pu être lu comme texte.',
+  tool_combine_files_into_one_pdf_example:
+    'L’exemple assemble report.pdf (2 pages A4), sales-chart.png (900 × 560 px) et meeting-notes.txt (5 lignes) en un PDF de 4 pages : les pages 1–2 sont le rapport, la page 3 est le graphique sur une page A4 en paysage avec des marges de 10 mm, et la page 4 contient les notes. Cochez « Commencer chaque fichier sur une nouvelle feuille (impression recto verso) » : une page blanche est ajoutée après le graphique, et les notes commencent à la page 5.',
   tool_combine_files_into_one_pdf_example_title: 'Exemple',
   tool_combine_files_into_one_pdf_faq_a1:
-    'Non. Le rendu s’exécute dans votre onglet (bibliothèques depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.',
-  tool_combine_files_into_one_pdf_faq_a2: 'Non. Cette opération ne dépend pas de l’extraction de la couche texte du PDF.',
-  tool_combine_files_into_one_pdf_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
-  tool_combine_files_into_one_pdf_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
-  tool_combine_files_into_one_pdf_faq_a5: 'Large files may be slow; try a desktop browser first.',
-  tool_combine_files_into_one_pdf_faq_q1: 'Mon fichier est-il envoyé ?',
-  tool_combine_files_into_one_pdf_faq_q2: 'Faut-il un OCR ou du texte PDF sélectionnable ?',
-  tool_combine_files_into_one_pdf_faq_q3: 'What about encrypted files?',
-  tool_combine_files_into_one_pdf_faq_q4: 'How is this different from related tools?',
-  tool_combine_files_into_one_pdf_faq_q5: 'Are large files supported?',
-  tool_combine_files_into_one_pdf_how_body: 'Fonctionnement: Les fichiers restent sur l’appareil ; sans envoi au serveur.',
-  tool_combine_files_into_one_pdf_how_item_1: 'Choose a PDF or enter content',
-  tool_combine_files_into_one_pdf_how_item_2: 'Cliquez sur « Combine » pour lancer l’opération',
-  tool_combine_files_into_one_pdf_how_item_3: 'Review the output area',
-  tool_combine_files_into_one_pdf_how_item_4: 'Download or print when needed',
-  tool_combine_files_into_one_pdf_how_title: 'Fonctionnement',
-  tool_combine_files_into_one_pdf_move_down: 'Down',
-  tool_combine_files_into_one_pdf_move_up: 'Up',
-  tool_combine_files_into_one_pdf_remove: 'Remove',
-  tool_combine_files_into_one_pdf_rules_body: 'Les fichiers restent sur l’appareil ; sans envoi au serveur.',
-  tool_combine_files_into_one_pdf_rules_item_1: 'Combiner des fichiers en un PDF.',
-  tool_combine_files_into_one_pdf_rules_item_2: 'Client-side only; files are not uploaded.',
-  tool_combine_files_into_one_pdf_rules_item_3: 'No OCR for scanned image-only PDFs.',
-  tool_combine_files_into_one_pdf_rules_item_4: 'Encrypted or corrupt files fail with readable errors.',
-  tool_combine_files_into_one_pdf_rules_title: 'Règles et limites',
-  tool_combine_files_into_one_pdf_sample: 'Charger un exemple',
-  tool_combine_files_into_one_pdf_status_done: 'Done.',
-  tool_combine_files_into_one_pdf_status_working: 'Working…',
-  tool_combine_files_into_one_pdf_title: 'Combiner des fichiers en un PDF',
-  tool_combine_files_into_one_pdf_usecase_1: 'Office: quick PDF tasks without desktop software',
-  tool_combine_files_into_one_pdf_usecase_2: 'Students: local preview and export',
-  tool_combine_files_into_one_pdf_usecase_3: 'Privacy-sensitive files that must stay on device',
-  tool_combine_files_into_one_pdf_usecases_title: 'Bonnes utilisations',
-  tool_combine_files_into_one_pdf_warn_large: 'Large file — may be slow.',
+    'Ajoutez tous les fichiers ici — PDF, images et fichiers texte peuvent être mélangés —, classez-les avec les flèches, puis cliquez sur Fusionner en PDF et sur Télécharger le PDF. Chaque image occupe une page, et chaque PDF apporte toutes ses pages ou seulement la plage saisie.',
+  tool_combine_files_into_one_pdf_faq_a2:
+    'Pas directement : les fichiers Word, Excel et PowerPoint sont ignorés, car un navigateur ne peut pas les mettre en page fidèlement. Utilisez d’abord Enregistrer sous ou Exporter en PDF dans Office, Google Docs ou LibreOffice, puis ajoutez le PDF ici.',
+  tool_combine_files_into_one_pdf_faq_a3:
+    'Saisissez les pages dans le champ de la ligne de ce PDF : 1-3 pour les pages 1 à 3, 2, 5, 9 pour des pages isolées, ou 8- pour aller de la page 8 jusqu’à la fin. Une plage comme 10-1 ajoute les pages dans l’ordre inverse.',
+  tool_combine_files_into_one_pdf_faq_a4:
+    'Les téléphones enregistrent souvent la photo sans la pivoter et notent l’orientation dans une balise EXIF. Les outils qui ignorent cette balise placent l’image de travers. Cet outil lit la balise et redresse l’image avant de l’ajouter.',
+  tool_combine_files_into_one_pdf_faq_a5:
+    'Les photos pèsent généralement le plus : une photo de téléphone de 12 mégapixels fait souvent 3–5 MB. Choisissez Réduire à 1600 px (plus léger, pour l’e-mail) dans Paramètres avancés, ce qui ramène en général chaque photo à quelques centaines de KB. Les pages PDF sont copiées sans modification ; compressez donc un gros PDF séparément.',
+  tool_combine_files_into_one_pdf_faq_a6:
+    'Seulement après avoir retiré le mot de passe. L’outil indique quel fichier est protégé ; ouvrez-le avec son mot de passe et enregistrez une copie non protégée, par exemple avec un outil de déverrouillage, puis ajoutez cette copie.',
+  tool_combine_files_into_one_pdf_faq_a7:
+    'Non. Les fichiers sont lus et fusionnés dans cet onglet du navigateur grâce à la bibliothèque pdf-lib chargée depuis ce site : rien n’est envoyé à un serveur. Fermer l’onglet efface tout.',
+  tool_combine_files_into_one_pdf_faq_q1: 'Comment regrouper plusieurs fichiers différents en un seul PDF ?',
+  tool_combine_files_into_one_pdf_faq_q2: 'Peut-on fusionner des fichiers Word ou Excel avec des PDF ?',
+  tool_combine_files_into_one_pdf_faq_q3: 'Comment n’ajouter que certaines pages d’un PDF ?',
+  tool_combine_files_into_one_pdf_faq_q4: 'Pourquoi mes photos ressortent-elles couchées avec d’autres convertisseurs ?',
+  tool_combine_files_into_one_pdf_faq_q5: 'Pourquoi le PDF fusionné est-il si lourd, et comment le réduire ?',
+  tool_combine_files_into_one_pdf_faq_q6: 'Peut-on fusionner un PDF protégé par mot de passe ?',
+  tool_combine_files_into_one_pdf_faq_q7: 'Mes fichiers sont-ils envoyés sur un serveur ?',
+  tool_combine_files_into_one_pdf_how_body:
+    'Ajoutez tous les fichiers à mettre dans le PDF, réglez l’ordre, puis fusionnez et téléchargez. Les PDF gardent leurs pages telles quelles, chaque image occupe une page et les fichiers texte sont mis en page.',
+  tool_combine_files_into_one_pdf_how_item_1:
+    'Cliquez sur Choisir des fichiers ou déposez-en plusieurs à la fois — PDF, photos, scans et notes .txt peuvent être mélangés.',
+  tool_combine_files_into_one_pdf_how_item_2:
+    'Mettez-les dans l’ordre avec les flèches ou avec Trier par nom de fichier. Sur la ligne d’un PDF, saisissez les pages voulues, par exemple 2-4 ou 1, 3, 5.',
+  tool_combine_files_into_one_pdf_how_item_3:
+    'Choisissez le papier et la marge pour les images et le texte, ainsi qu’un nom de fichier. Ouvrez Paramètres avancés pour alléger les grosses photos ou préparer une impression recto verso.',
+  tool_combine_files_into_one_pdf_how_item_4: 'Cliquez sur Fusionner en PDF, vérifiez les pages dans l’aperçu, puis cliquez sur Télécharger le PDF.',
+  tool_combine_files_into_one_pdf_how_title: 'Comment fusionner plusieurs fichiers en un seul PDF',
+  tool_combine_files_into_one_pdf_image_tpl: '{w} × {h} px',
+  tool_combine_files_into_one_pdf_kind_image: 'Image',
+  tool_combine_files_into_one_pdf_kind_pdf: 'PDF',
+  tool_combine_files_into_one_pdf_kind_text: 'Texte',
+  tool_combine_files_into_one_pdf_lines_tpl: 'lignes : {n}',
+  tool_combine_files_into_one_pdf_list_hint:
+    'Les fichiers sont assemblés de haut en bas. Sur la ligne d’un PDF, saisissez les pages à garder, par ex. 1-3, 5.',
+  tool_combine_files_into_one_pdf_margin_0: 'Aucune (bord à bord)',
+  tool_combine_files_into_one_pdf_margin_10: 'Petite (10 mm)',
+  tool_combine_files_into_one_pdf_margin_20: 'Large (20 mm)',
+  tool_combine_files_into_one_pdf_margin_hint:
+    'Les pages de texte gardent toujours au moins 15 mm de marge pour que les lignes ne touchent pas le bord.',
+  tool_combine_files_into_one_pdf_margin_label: 'Marge autour des images',
+  tool_combine_files_into_one_pdf_move_down: 'Descendre',
+  tool_combine_files_into_one_pdf_move_up: 'Monter',
+  tool_combine_files_into_one_pdf_name_hint: 'Enregistré sous nom.pdf et utilisé aussi comme titre du document PDF.',
+  tool_combine_files_into_one_pdf_name_label: 'Nom du fichier',
+  tool_combine_files_into_one_pdf_pages_tpl: 'pages : {n}',
+  tool_combine_files_into_one_pdf_progress: 'Fusion de vos fichiers…',
+  tool_combine_files_into_one_pdf_range_label: 'Pages à inclure (vide = toutes)',
+  tool_combine_files_into_one_pdf_range_ph: 'Toutes les pages',
+  tool_combine_files_into_one_pdf_read_step: 'Lecture du fichier {i} sur {n}…',
+  tool_combine_files_into_one_pdf_ref_a_label: 'pdf-lib — Créer et modifier des documents PDF en JavaScript',
+  tool_combine_files_into_one_pdf_ref_b_label: 'MDN — image-orientation (rotation EXIF)',
+  tool_combine_files_into_one_pdf_references: 'Documentation de pdf-lib ; MDN — image-orientation et rotation EXIF.',
+  tool_combine_files_into_one_pdf_remove: 'Retirer le fichier',
+  tool_combine_files_into_one_pdf_rules_body: 'Le PDF est construit dans l’ordre de la liste, et chaque type de fichier est traité à sa façon.',
+  tool_combine_files_into_one_pdf_rules_item_1:
+    'PDF : les pages choisies sont copiées avec leur format et leur orientation d’origine. Les PDF protégés par mot de passe doivent d’abord être déverrouillés.',
+  tool_combine_files_into_one_pdf_rules_item_2:
+    'Les JPG et PNG sont intégrés sans recompression, sauf si vous choisissez de réduire les grosses photos. WebP, GIF, BMP, SVG et AVIF sont d’abord convertis ; d’un GIF animé, seule la première image est ajoutée.',
+  tool_combine_files_into_one_pdf_rules_item_3:
+    'Chaque image est centrée sur sa propre page et mise à l’échelle pour tenir dans la marge ; les images en paysage reçoivent une page en paysage. Avec Même taille que chaque image, la page reprend la taille de l’image à 96 dpi.',
+  tool_combine_files_into_one_pdf_rules_item_4:
+    'Les fichiers texte (UTF-8) sont composés en corps 11 pt et renvoyés à la ligne selon la largeur de la page. Le texte en alphabet latin reste sélectionnable ; les lignes dans des écritures comme le chinois ou l’arabe sont dessinées sous forme d’images du texte.',
+  tool_combine_files_into_one_pdf_rules_item_5:
+    'Word, Excel, PowerPoint, HEIC et les autres formats sont ignorés avec un message — enregistrez-les d’abord en PDF ou en JPG.',
+  tool_combine_files_into_one_pdf_rules_title: 'Ce que devient chaque type de fichier',
+  tool_combine_files_into_one_pdf_sample: 'Charger l’exemple',
+  tool_combine_files_into_one_pdf_save_step: 'Enregistrement du PDF…',
+  tool_combine_files_into_one_pdf_shrink_1600: 'Réduire à 1600 px (plus léger, pour l’e-mail)',
+  tool_combine_files_into_one_pdf_shrink_2400: 'Réduire à 2400 px (qualité impression)',
+  tool_combine_files_into_one_pdf_shrink_hint:
+    'Les photos de téléphone font souvent 4000 px de large et 3–5 MB chacune ; les réduire peut ramener le PDF à une fraction de sa taille.',
+  tool_combine_files_into_one_pdf_shrink_label: 'Photos volumineuses',
+  tool_combine_files_into_one_pdf_shrink_off: 'Garder la résolution d’origine',
+  tool_combine_files_into_one_pdf_size_a4: 'A4 (210 × 297 mm)',
+  tool_combine_files_into_one_pdf_size_fit: 'Même taille que chaque image',
+  tool_combine_files_into_one_pdf_size_hint: 'Les pages des PDF gardent leur propre format. Les images en paysage reçoivent une page en paysage.',
+  tool_combine_files_into_one_pdf_size_label: 'Format de papier pour images et texte',
+  tool_combine_files_into_one_pdf_size_letter: 'US Letter (8,5 × 11 in)',
+  tool_combine_files_into_one_pdf_sort_name: 'Trier par nom de fichier',
+  tool_combine_files_into_one_pdf_stats_tpl: 'pages : {pages} · fichiers : {files} · {bytes}',
+  tool_combine_files_into_one_pdf_status_done: 'Terminé — parcourez l’aperçu, puis cliquez sur Télécharger le PDF.',
+  tool_combine_files_into_one_pdf_step_add: 'Ajouter les pages',
+  tool_combine_files_into_one_pdf_step_read: 'Lire les fichiers',
+  tool_combine_files_into_one_pdf_step_save: 'Enregistrer le PDF',
+  tool_combine_files_into_one_pdf_title:
+    'Fusionner plusieurs fichiers en un seul PDF — Assemblez PDF et photos avec vos textes dans l’ordre choisi',
+  tool_combine_files_into_one_pdf_usecase_1:
+    'Dossiers de candidature et démarches : formulaire, photos de votre pièce d’identité et attestation numérisée envoyés en un seul fichier, comme l’exigent un portail en ligne, un service RH, la CAF ou une agence pour un dossier de location.',
+  tool_combine_files_into_one_pdf_usecase_2:
+    'Notes de frais : tickets photographiés au téléphone et facture PDF de la compagnie aérienne, classés par date et prêts à être transmis.',
+  tool_combine_files_into_one_pdf_usecase_3:
+    'Études : le PDF d’un cours, des photos du tableau et vos notes tapées réunis pour réviser ou pour un seul dépôt sur l’espace du cours.',
+  tool_combine_files_into_one_pdf_usecase_4:
+    'Imprimer un lot en recto verso : courriers, formulaires et photos séparés, où chaque document doit commencer sur une nouvelle feuille.',
+  tool_combine_files_into_one_pdf_usecases_title: 'Quand l’utiliser',
+  tool_combine_files_into_one_pdf_warn_large: 'Les fichiers dépassent 100 MB au total — la fusion peut être lente, surtout sur un téléphone.',
+  tool_combine_files_into_one_pdf_warn_pdflib: 'La bibliothèque PDF ne s’est pas chargée. Rechargez la page et réessayez.',
+  tool_combine_files_into_one_pdf_warn_skipped:
+    'Ignorés (type non pris en charge) : {names}. Enregistrez d’abord les fichiers Word, Excel ou PowerPoint en PDF, puis ajoutez-les.',
+  tool_combine_files_into_one_pdf_why_choose_item_1:
+    'Plusieurs types de fichiers en une seule fois : un formulaire PDF, deux photos de tickets prises au téléphone et une note texte finissent dans un seul PDF, sans convertir chaque fichier au préalable.',
+  tool_combine_files_into_one_pdf_why_choose_item_2:
+    'Une plage de pages par PDF — prenez les pages 1-3 d’un document et seulement la page 7 d’un autre, ou inversez une pile numérisée avec 10-1.',
+  tool_combine_files_into_one_pdf_why_choose_item_3:
+    'Les photos de téléphone restent à l’endroit. Beaucoup de convertisseurs ignorent la balise EXIF d’orientation, si bien que les photos en portrait ressortent couchées ; ici, elles sont tournées comme dans votre galerie.',
+  tool_combine_files_into_one_pdf_why_choose_item_4:
+    'Les pages des PDF d’origine sont copiées telles quelles, sans être transformées en images : leur texte reste net, consultable par recherche et sélectionnable.',
+  tool_combine_files_into_one_pdf_why_choose_item_5:
+    'Tout se passe dans cet onglet du navigateur : pièce d’identité, contrats ou courriers médicaux ne quittent jamais votre appareil.',
+  tool_combine_files_into_one_pdf_why_choose_title: 'Pourquoi fusionner vos fichiers en PDF avec cet outil',
   tool_compare_two_pdfs_advanced: 'Réglages avancés (facultatif)',
   tool_compare_two_pdfs_advanced_hint: 'Pratique quand un export coupe les lignes autrement alors que le texte est identique.',
   tool_compare_two_pdfs_article: 'Comparez le texte sélectionnable de deux PDF et téléchargez en HTML les différences mot à mot.',
@@ -9465,44 +9643,116 @@ const fr: SiteLangDict = {
   tool_cwv_usecase_2: 'Avant/après compression d’images : comparer le LCP PSI.',
   tool_cwv_usecase_3: 'Expliquer FID→INP et les trois métriques sur une page.',
   tool_cwv_usecases_title: 'Bons usages',
-  tool_date_difference_article: 'Calculateur d’écart entre dates',
+  tool_date_difference_article: 'Jours entre deux dates',
   tool_date_difference_calculate: 'Calculer',
   tool_date_difference_clear: 'Effacer',
-  tool_date_difference_daysOut_label: 'Jours',
+  tool_date_difference_days_label: 'Jours',
   tool_date_difference_description:
-    'Calculez les jours et semaines entiers entre deux dates calendaires UTC. Exemple : du 2024-01-01 au 2024-01-11 → 10 jours (1 semaine + 3 jours). Calcul local ; processus arithmétique clair.',
-  tool_date_difference_disclaimer: 'Illustration éducative (date difference) uniquement.',
+    'Calculez le nombre de jours entre deux dates, puis la même durée en années, mois et jours, en semaines, et en jours ouvrés face aux jours de week-end. Cochez la case pour inclure la date de fin ; les étapes détaillent le processus de comptage des mois, avec exemple et formule.',
+  tool_date_difference_disclaimer:
+    'Pour planifier et vérifier. Les délais légaux, contractuels ou de paie peuvent suivre leurs propres règles (jours ouvrés, jours fériés exclus, dates inclusives ou exclusives) — vérifiez la règle qui s’applique.',
   tool_date_difference_end_label: 'Date de fin',
-  tool_date_difference_err_generic: 'Vérifiez les entrées.',
-  tool_date_difference_example: 'Exemple : 10 jours.',
+  tool_date_difference_err_date: 'Choisissez deux dates valides (ou saisissez-les au format AAAA-MM-JJ, p. ex. 2024-03-15).',
+  tool_date_difference_example:
+    'Exemple : 1er janvier 2024 (lundi) au 15 mars 2024 (vendredi). Janvier a 31 jours et février 2024 en a 29, donc 31 + 29 + 14 = 74 jours. Cela fait 2 mois entiers (jusqu’au 1er mars) plus 14 jours, 10 semaines et 4 jours, 54 jours ouvrés et 20 jours de week-end samedi–dimanche. En incluant la date de fin : 75 jours (1 776 heures). Cliquez à nouveau sur Charger un exemple pour un cas de fin de mois, un mois ouvré et un long intervalle (p. ex. 17 mai 1990 → 14 octobre 2026 = 13 299 jours = 36 ans, 4 mois et 27 jours).',
   tool_date_difference_example_title: 'Exemple',
-  tool_date_difference_faq_a1: 'Exemple : 10 jours.',
-  tool_date_difference_faq_a2: 'See Formula section.',
-  tool_date_difference_faq_a3: 'Educational only.',
-  tool_date_difference_faq_a4: 'Educational only.',
-  tool_date_difference_faq_q1: 'Exemple ?',
-  tool_date_difference_faq_q2: 'Formula?',
-  tool_date_difference_faq_q3: 'Advice?',
-  tool_date_difference_faq_q4: 'Related?',
-  tool_date_difference_formula_body: 'Saisissez début et fin.',
-  tool_date_difference_formula_item_1: 'See formula notes.',
-  tool_date_difference_formula_item_2: 'Check inputs.',
-  tool_date_difference_formula_item_3: 'Educational only.',
-  tool_date_difference_formula_title: 'Formule',
-  tool_date_difference_how_body: 'Saisissez début et fin.',
-  tool_date_difference_how_title: 'Fonctionnement',
-  tool_date_difference_ref_a_label: 'Wikipedia',
-  tool_date_difference_ref_b_label: 'Textbook formula',
-  tool_date_difference_references: 'Formules de manuel.',
-  tool_date_difference_result_note: 'Éducatif.',
-  tool_date_difference_sample: 'Charger l’exemple',
+  tool_date_difference_faq_a1:
+    'Par défaut, il compte l’écart et laisse de côté une extrémité : du 1er mars au 2 mars, c’est 1 jour. Cochez « Inclure la date de fin » pour compter les deux jours — utile pour des jours de congé ou un festival du vendredi au dimanche (3 jours, mais seulement 2 nuits).',
+  tool_date_difference_faq_a2:
+    'Non. Les jours fériés varient selon le pays et la région, donc le chiffre ne retire que le week-end choisi. Soustrayez vous-même les jours fériés tombant un jour ouvré dans votre intervalle — 20 jours ouvrés dans un mois avec un jour férié en semaine laissent 19. Attention : avec le week-end samedi–dimanche, l’outil compte les jours ouvrés (lundi–vendredi). Les jours ouvrables (lundi–samedi) correspondent plutôt à l’option « dimanche seulement » ; les jours fériés ne sont retirés dans aucun cas.',
+  tool_date_difference_faq_a3:
+    'Comptez les jours restants du mois de début, ajoutez les mois entiers intermédiaires, puis le jour du mois de fin. Du 10 janvier au 5 avril 2025 : 21 jours restants en janvier, 28 en février, 31 en mars et 5 en avril font 85 jours.',
+  tool_date_difference_faq_a4:
+    'Les mois ont de 28 à 31 jours, donc « un mois après le 31 janvier » n’a pas de réponse unique. Cet outil passe au dernier jour du mois plus court (28 ou 29 février) et compte les jours restants à partir de là — comme la plupart des bibliothèques de dates et la fonction MOIS.DECALER d’Excel.',
+  tool_date_difference_faq_a5:
+    'Chaque date réelle est comptée, y compris le 29 février. Du 1er janv. au 1er janv. de l’année suivante, ce sont 366 jours si l’intervalle contient un 29 février, sinon 365. La ligne de résultat indique aussi combien de 29 février tombent dans l’intervalle.',
+  tool_date_difference_faq_a6:
+    'Non. Seules les dates calendaires sont comparées : un jour reste un jour même lorsque les horloges changent. Les heures valent jours × 24 ; si vous avez besoin des heures exactes au passage d’un changement d’heure, comparez des dates-heures complètes.',
+  tool_date_difference_faq_a7:
+    'Les dates sont échangées et une note l’indique ; le nombre de jours est le même dans les deux sens. Utilisez-le pour savoir depuis combien de temps quelque chose s’est produit.',
+  tool_date_difference_faq_q1: 'Le décompte inclut-il la date de début et la date de fin ?',
+  tool_date_difference_faq_q2: 'Les jours fériés sont-ils retirés du décompte des jours ouvrés ?',
+  tool_date_difference_faq_q3: 'Comment calculer à la main les jours entre deux dates ?',
+  tool_date_difference_faq_q4: 'Pourquoi des calculateurs donnent-ils des nombres de mois différents pour les mêmes dates ?',
+  tool_date_difference_faq_q5: 'Comment les années bissextiles sont-elles gérées ?',
+  tool_date_difference_faq_q6: 'Les fuseaux horaires ou l’heure d’été changent-ils le résultat ?',
+  tool_date_difference_faq_q7: 'Que se passe-t-il si la date de fin est antérieure à celle de début ?',
+  tool_date_difference_formula_body: 'Les dates sont traitées comme des jours calendaires entiers du calendrier grégorien.',
+  tool_date_difference_formula_item_1:
+    'Jours totaux = date de fin − date de début. Avec la date de fin incluse, ajoutez 1. C’est l’équivalent de =B1−A1 ou DATEDIF(A1 ; B1 ; "d") dans un tableur.',
+  tool_date_difference_formula_item_2:
+    'Années, mois, jours : comptez les mois calendaires entiers depuis le début (un 29, 30 ou 31 se reporte au dernier jour d’un mois plus court), puis les jours restants. 12 mois forment une année.',
+  tool_date_difference_formula_item_3:
+    'Semaines : jours totaux ÷ 7 donne des semaines entières et un reste ; la décimale est simplement jours ÷ 7. Heures = jours × 24.',
+  tool_date_difference_formula_item_4:
+    'Jours ouvrés : 5 par semaine complète (6 avec un week-end d’un seul jour), plus les jours hors week-end du reste. Jours de week-end = total − jours ouvrés.',
+  tool_date_difference_formula_item_5:
+    'Les années bissextiles ont 366 jours : divisibles par 4, sauf les siècles non divisibles par 400. 2000 et 2024 étaient bissextiles ; 1900 et 2100 ne le sont pas.',
+  tool_date_difference_formula_title: 'Comment chaque chiffre est calculé',
+  tool_date_difference_hours_label: 'En heures',
+  tool_date_difference_how_body:
+    'Soustrayez la date la plus ancienne de la plus récente en comptant des jours entiers. Pour exprimer l’écart en mois, avancez d’un mois calendaire à la fois depuis le début, puis comptez les jours restants.',
+  tool_date_difference_how_item_1:
+    'Choisissez la date de début et la date de fin — ou appuyez sur Aujourd’hui pour renseigner la date du jour.',
+  tool_date_difference_how_item_2:
+    'Décidez si la date de fin compte : case décochée = écart simple ; cochée = décompte inclusif (p. ex. jours de congé).',
+  tool_date_difference_how_item_3: 'Cliquez sur Calculer.',
+  tool_date_difference_how_item_4:
+    'Lisez le total de jours, la ventilation années–mois–jours, les semaines, les jours ouvrés et de week-end, et suivez la ligne de détail pour vérifier les mois.',
+  tool_date_difference_how_title: 'Comment calculer le nombre de jours entre deux dates',
+  tool_date_difference_incl_note: 'Date de fin incluse : le décompte va jusqu’au début de {next}.',
+  tool_date_difference_include_hint:
+    'Laissez la case décochée pour l’écart habituel (1er janv. → 2 janv. = 1 jour). Cochez-la pour compter chaque jour du calendrier dans l’intervalle, comme pour un congé, une location ou un événement (1er janv. → 2 janv. = 2 jours).',
+  tool_date_difference_include_label: 'Inclure la date de fin (compter les deux jours)',
+  tool_date_difference_leap_tpl: 'Jours du 29 février dans cet intervalle : {n}.',
+  tool_date_difference_months_label: 'Mois',
+  tool_date_difference_ref_a_label: 'Wikipedia — ISO 8601 (format de date)',
+  tool_date_difference_ref_b_label: 'Wikipedia — calendrier grégorien (règle de l’année bissextile)',
+  tool_date_difference_references: 'Wikipedia — ISO 8601 ; Wikipedia — calendrier grégorien.',
+  tool_date_difference_result_note:
+    'Jours calendaires entiers du calendrier grégorien ; l’heure, les fuseaux et l’heure d’été ne modifient pas le décompte. Les jours ouvrés excluent le week-end que vous avez choisi ; les jours fériés ne sont pas retirés.',
+  tool_date_difference_sample: 'Charger un exemple',
   tool_date_difference_start_label: 'Date de début',
-  tool_date_difference_title: 'Calculateur d’écart entre dates',
-  tool_date_difference_usecase_1: 'Homework.',
-  tool_date_difference_usecase_2: 'Quick sketch.',
-  tool_date_difference_usecase_3: 'Compare with age for calendar age.',
-  tool_date_difference_usecases_title: 'Cas d’usage',
-  tool_date_difference_weeksOut_label: 'Semaines',
+  tool_date_difference_swap_note:
+    'La date de fin était antérieure à celle de début : les dates ont été échangées — l’écart est le même dans les deux sens.',
+  tool_date_difference_title: 'Calcul du nombre de jours entre deux dates — durée exacte et jours ouvrés',
+  tool_date_difference_today: 'Aujourd’hui',
+  tool_date_difference_total_incl_label: 'Jours, date de fin incluse',
+  tool_date_difference_total_label: 'Jours entre les dates',
+  tool_date_difference_usecase_1:
+    'Échéances et compte à rebours : jours restants avant un examen, une échéance ou des vacances — appuyez sur Aujourd’hui pour la date de début.',
+  tool_date_difference_usecase_2:
+    'Congés, locations et réservations : cochez la date de fin pour compter chaque jour d’absence ; décochez pour compter les nuits d’hôtel.',
+  tool_date_difference_usecase_3:
+    'Planification au travail : jours ouvrés entre deux dates pour un planning ou un préavis, avant de retirer les jours fériés.',
+  tool_date_difference_usecase_4:
+    'Anniversaires et dossiers : depuis combien de temps dure un contrat, un abonnement ou une relation, en années, mois et jours ou en total de jours.',
+  tool_date_difference_usecases_title: 'Quand s’en servir',
+  tool_date_difference_wd_tpl: '{w} sem. + {d} j',
+  tool_date_difference_weekend_label: 'Jours de week-end',
+  tool_date_difference_weekend_opt_fri: 'Vendredi seulement',
+  tool_date_difference_weekend_opt_fri_sat: 'Vendredi et samedi',
+  tool_date_difference_weekend_opt_sat_sun: 'Samedi et dimanche',
+  tool_date_difference_weekend_opt_sun: 'Dimanche seulement',
+  tool_date_difference_weekend_sel_label: 'Week-end',
+  tool_date_difference_weeks_label: 'En semaines',
+  tool_date_difference_weeksdays_label: 'Semaines et jours',
+  tool_date_difference_why_choose_item_1:
+    'Les fins de mois suivent une règle explicite : le 31 janvier plus un mois tombe le 28 février, donc du 31 janv. au 1er mars 2023 on obtient 1 mois et 1 jour (29 jours).',
+  tool_date_difference_why_choose_item_2:
+    'La case « date de fin incluse » évite l’erreur d’un jour en trop ou en moins : un séjour du lundi au vendredi est à 4 jours d’écart, mais dure 5 jours.',
+  tool_date_difference_why_choose_item_3:
+    'Un seul calcul répond aussi aux questions qui suivent : du 1er janvier au 15 mars 2024, ce sont 74 jours, 2 mois et 14 jours, 10 semaines et 4 jours, 54 jours ouvrés et 20 jours de week-end.',
+  tool_date_difference_why_choose_item_4:
+    'Choisissez le week-end qui vous concerne — samedi–dimanche, vendredi–samedi, ou un seul jour. Avec la date de fin incluse, les jours ouvrés correspondent à NB.JOURS.OUVRES / NB.JOURS.OUVRES.INTL d’Excel sans liste de jours fériés.',
+  tool_date_difference_why_choose_item_5:
+    'Chaque date affiche son jour de la semaine, et les 29 février de l’intervalle sont signalés, pour comprendre pourquoi le décompte est plus long d’un jour.',
+  tool_date_difference_why_choose_title: 'Pourquoi utiliser ce calcul du nombre de jours entre deux dates',
+  tool_date_difference_work_label: 'Détail',
+  tool_date_difference_work_months: 'Mois entiers : {start} → {anchor} = {months} ; jours restants : {anchor} → {end} = {days}.',
+  tool_date_difference_work_weeks: 'Total {days} ÷ 7 = {w} reste {r}.',
+  tool_date_difference_workdays_label: 'Jours ouvrés',
+  tool_date_difference_years_label: 'Années',
   tool_de_ess_a_voiceover_advanced: 'Sensibilité',
   tool_de_ess_a_voiceover_article:
     'Les S et CH durs concentrent l’énergie dans une bande aiguë étroite qui rend les voix off perçantes. Cette page mesure cette énergie face à l’enveloppe complète, puis mélange un cut high-shelf seulement là où le rapport monte—une approximation honnête de dé-esseur dans le navigateur. Ce n’est pas un EQ multibande pour voix étouffée, ni un débruitage de ventilateur, ni une interpolation de clics courts. Une sensibilité forte peut adoucir des consonnes brillantes. Le nombre de canaux reste 1 ou 2. Gardez l’original ; le téléchargement est un nouveau WAV 16 bits. Le travail s’exécute dans le navigateur sur votre appareil.',
@@ -12927,56 +13177,123 @@ const fr: SiteLangDict = {
   tool_image_format_converter_warn_animation: 'Animations : seule la première image est convertie.',
   tool_image_format_converter_warn_edge: 'Côté >8192 px — attendez-vous à des ralentissements.',
   tool_image_format_converter_warn_large: 'Fichier volumineux (>25 Mo) — risque de lenteur.',
-  tool_image_grayscale_apply: 'Appliquer',
-  tool_image_grayscale_article: 'Local Rec.601 weighted grayscale via getImageData; alpha preserved.',
+  tool_image_grayscale_advanced: 'Réglages avancés (facultatif)',
+  tool_image_grayscale_amount_hint: '100 % = noir et blanc complet ; des valeurs plus basses gardent un peu de couleur (désaturer).',
+  tool_image_grayscale_amount_label: 'Intensité',
+  tool_image_grayscale_article: 'Image en niveaux de gris',
   tool_image_grayscale_choose_file: 'Choisir une image',
   tool_image_grayscale_clear: 'Effacer',
-  tool_image_grayscale_desc: 'Niveaux de gris — conversion locale — local, no upload.',
+  tool_image_grayscale_convert: 'Convertir en noir et blanc',
+  tool_image_grayscale_decode_step: 'Lecture de l’image…',
+  tool_image_grayscale_desc: 'Passez une photo en noir et blanc dans le navigateur, choisissez la méthode, puis téléchargez.',
   tool_image_grayscale_description:
-    'Étapes: choose files, adjust options, export. exemple: sample color blocks demo. processus: local in browser, no upload. Tool: Rec.601 grayscale conversion, keep alpha when PNG/WebP. Soft limits ~25MB / 8192px apply.',
+    'Convertissez une photo couleur en noir et blanc (niveaux de gris) dans le navigateur. Étapes : choisissez l’image, choisissez luminance, moyenne, clarté ou un canal, réglez l’intensité, cliquez sur Convertir et téléchargez JPEG, WebP ou PNG. Inclut formule et exemple avec barres de couleur.',
   tool_image_grayscale_download: 'Télécharger',
-  tool_image_grayscale_drop_hint: 'Or drop JPEG, PNG, or WebP here. Processing stays in this tab.',
-  tool_image_grayscale_empty: 'Choose an image first.',
-  tool_image_grayscale_err_decode: 'Could not decode the image. Try JPEG, PNG, or WebP.',
-  tool_image_grayscale_err_encode: 'Could not export. Try a smaller image or another format.',
-  tool_image_grayscale_example: 'Sample four-color blocks become gray with distinct brightness levels.',
+  tool_image_grayscale_drop_hint: 'Ou déposez ici un JPEG, PNG, WebP ou GIF.',
+  tool_image_grayscale_elapsed: 'Écoulé {s} s',
+  tool_image_grayscale_empty: 'Choisissez d’abord une image.',
+  tool_image_grayscale_encode_step: 'Enregistrement en {fmt}…',
+  tool_image_grayscale_err_decode: 'Ce fichier n’a pas pu être ouvert comme image. Essayez un JPEG, PNG ou WebP.',
+  tool_image_grayscale_err_encode: 'L’image n’a pas pu être enregistrée. Essayez une image plus petite ou un autre format.',
+  tool_image_grayscale_example:
+    'L’exemple comporte des barres rouge, vert, bleu et jaune purs au-dessus d’une bande arc-en-ciel. Avec Rec.601 elles deviennent 76, 150, 29 et 226 — quatre gris nettement distincts. Rec.709 donne 54, 182, 18 et 237 ; la moyenne donne 85, 85, 85 et 170, donc rouge, vert et bleu se confondent ; la clarté ramène les quatre à 128. Changez de méthode pour voir l’aperçu, puis Convertir et Télécharger.',
   tool_image_grayscale_example_title: 'Exemple',
-  tool_image_grayscale_faq_a1: 'No—everything is local.',
-  tool_image_grayscale_faq_a2: 'Rec.601: 0.299R+0.587G+0.114B.',
-  tool_image_grayscale_faq_a3: 'Not after download; keep the original file.',
-  tool_image_grayscale_faq_a4: 'We rewrite pixels, so the saved file is truly grayscale.',
-  tool_image_grayscale_faq_a5: 'Transparency is kept when exporting PNG/WebP.',
-  tool_image_grayscale_faq_q1: 'Uploaded?',
-  tool_image_grayscale_faq_q2: 'Which formula?',
-  tool_image_grayscale_faq_q3: 'Can I undo?',
-  tool_image_grayscale_faq_q4: 'Same as CSS filter?',
-  tool_image_grayscale_faq_q5: 'Transparent PNG?',
+  tool_image_grayscale_faq_a1:
+    'CSS grayscale(100 %) utilise les mêmes poids que l’option Rec.709, mais ne change que l’affichage de la page ; le fichier reste en couleur. Les filtres téléphone ajoutent souvent contraste ou ton. Cet outil écrit des pixels gris dans un nouveau fichier.',
+  tool_image_grayscale_faq_a2:
+    'Pour les photos, commencez par la luminance Rec.601 : elle pondère surtout le vert et peu le bleu, comme on perçoit la luminosité. Rec.709 est un peu plus claire dans les verts. Moyenne et clarté sont plus simples, mais peuvent aplatir des images très colorées. Utilisez un seul canal pour un effet filtre voulu.',
+  tool_image_grayscale_faq_a3:
+    'Oui. Baissez l’intensité : 70–80 % donne un rendu fané et désaturé ; 0 % laisse la photo inchangée. Garder une seule couleur (couleur sélective) demande des masques, ce que cette page ne fait pas.',
+  tool_image_grayscale_faq_a4:
+    'Des couleurs qui ne diffèrent que par la teinte peuvent finir au même gris. Une fleur rouge sur des feuilles vertes est le cas classique : avec la moyenne les deux font 85. Passez à la luminance ou essayez le canal rouge ou vert pour les séparer.',
+  tool_image_grayscale_faq_a5:
+    'Chaque pixel a R, G et B égaux, donc il s’affiche et s’imprime en gris pur. Les navigateurs l’enregistrent en RGB classique, pas en un seul canal, donc la baisse de taille est modeste — surtout pour le PNG. Utilisez un éditeur si vous avez besoin d’un mode couleur niveaux de gris 8 bits.',
+  tool_image_grayscale_faq_a6:
+    'La transparence est conservée lors du téléchargement PNG ou WebP. Le JPEG ne stocke pas la transparence : ces zones sont remplies avec la couleur de fond JPEG des Réglages avancés.',
+  tool_image_grayscale_faq_a7:
+    'Non. Décodage, conversion et enregistrement s’exécutent dans cet onglet du navigateur. Conservez l’original si vous pourriez vouloir la version couleur — le téléchargement gris ne peut pas redevenir coloré.',
+  tool_image_grayscale_faq_q1: 'Est-ce la même chose que le filtre CSS grayscale() ou le filtre mono du téléphone ?',
+  tool_image_grayscale_faq_q2: 'Quelle méthode de niveaux de gris choisir ?',
+  tool_image_grayscale_faq_q3: 'Puis-je garder un peu de couleur ?',
+  tool_image_grayscale_faq_q4: 'Pourquoi ma photo noir et blanc paraît plate ?',
+  tool_image_grayscale_faq_q5: 'Le fichier téléchargé est-il vraiment en niveaux de gris, et est-il plus petit ?',
+  tool_image_grayscale_faq_q6: 'Que deviennent les PNG transparents ?',
+  tool_image_grayscale_faq_q7: 'Ma photo est-elle envoyée quelque part ?',
+  tool_image_grayscale_format_hint: 'WebP est léger et conserve la transparence. PNG est sans perte. JPEG a besoin d’une couleur de fond.',
   tool_image_grayscale_format_jpeg: 'JPEG',
-  tool_image_grayscale_format_label: 'Output format',
+  tool_image_grayscale_format_label: 'Format de sortie',
   tool_image_grayscale_format_png: 'PNG',
   tool_image_grayscale_format_webp: 'WebP',
-  tool_image_grayscale_how_body: 'Pick a photo, apply grayscale, download. Processing never leaves this tab.',
-  tool_image_grayscale_how_title: 'Comment ça marche',
-  tool_image_grayscale_jpeg_bg_label: 'JPEG background',
-  tool_image_grayscale_preview_label: 'Preview',
-  tool_image_grayscale_quality_label: 'Quality',
-  tool_image_grayscale_rules_body: 'For each pixel Y=0.299R+0.587G+0.114B; R=G=B=Y; alpha unchanged.',
-  tool_image_grayscale_rules_item_1: 'Rec.601 coefficients match common luma practice.',
-  tool_image_grayscale_rules_item_2: 'Alpha channel is copied unchanged.',
-  tool_image_grayscale_rules_item_3: 'Export re-encodes; JPEG drops alpha.',
-  tool_image_grayscale_rules_item_4: 'Animated GIF: first frame only.',
-  tool_image_grayscale_rules_title: 'Règles',
+  tool_image_grayscale_gray_step: 'Recalcul de chaque pixel…',
+  tool_image_grayscale_how_body:
+    'Pour chaque pixel, les valeurs rouge, vert et bleu sont remplacées par un seul gris, de sorte que R = G = B. La méthode décide du calcul de ce gris ; c’est pourquoi la même photo peut sortir plus claire, plus sombre ou plus plate.',
+  tool_image_grayscale_how_item_1: 'Choisissez une photo ou déposez-la dans la zone.',
+  tool_image_grayscale_how_item_2:
+    'Choisissez une méthode de niveaux de gris et une intensité ; cochez Afficher l’original pour comparer.',
+  tool_image_grayscale_how_item_3: 'Cliquez sur Convertir en noir et blanc et attendez la barre de progression.',
+  tool_image_grayscale_how_item_4:
+    'Cliquez sur Télécharger. Ouvrez d’abord les Réglages avancés si vous avez besoin de PNG, JPEG ou d’une autre qualité.',
+  tool_image_grayscale_how_title: 'Comment convertir une image en noir et blanc',
+  tool_image_grayscale_jpeg_bg_hint: 'Remplit les zones transparentes avant l’export JPEG. Par défaut : blanc.',
+  tool_image_grayscale_jpeg_bg_label: 'Fond JPEG',
+  tool_image_grayscale_method_average: 'Moyenne de R, G, B',
+  tool_image_grayscale_method_blue: 'Canal bleu seul',
+  tool_image_grayscale_method_green: 'Canal vert seul',
+  tool_image_grayscale_method_hint: 'La luminance conserve la luminosité perçue par l’œil. L’aperçu se met à jour quand vous changez.',
+  tool_image_grayscale_method_label: 'Méthode de niveaux de gris',
+  tool_image_grayscale_method_lightness: 'Clarté (max + min) ÷ 2',
+  tool_image_grayscale_method_luma601: 'Luminance — Rec.601 (recommandé)',
+  tool_image_grayscale_method_luma709: 'Luminance Rec.709 / sRGB',
+  tool_image_grayscale_method_red: 'Canal rouge seul (effet filtre rouge)',
+  tool_image_grayscale_preview_label: 'Aperçu',
+  tool_image_grayscale_progress: 'Conversion en niveaux de gris…',
+  tool_image_grayscale_quality_hint: 'JPEG et WebP uniquement ; PNG l’ignore.',
+  tool_image_grayscale_quality_label: 'Qualité',
+  tool_image_grayscale_ref_a_label: 'Wikipedia — Niveaux de gris (conversion couleur vers gris)',
+  tool_image_grayscale_ref_b_label: 'W3C Filter Effects — matrice grayscale()',
+  tool_image_grayscale_rules_body: 'R, G et B sont les valeurs 0–255 du pixel ; le résultat Y est écrit dans les trois canaux.',
+  tool_image_grayscale_rules_item_1:
+    'Luminance Rec.601 : Y = 0,299 R + 0,587 G + 0,114 B — la pondération classique TV et JPEG, la plus proche de la luminosité perçue de chaque couleur.',
+  tool_image_grayscale_rules_item_2:
+    'Luminance Rec.709 : Y = 0,2126 R + 0,7152 G + 0,0722 B — poids de la vidéo HD, aussi utilisés par le filtre CSS grayscale(). Comme la plupart des éditeurs, elle s’applique aux valeurs sRGB stockées sans linéarisation du gamma.',
+  tool_image_grayscale_rules_item_3:
+    'Moyenne : Y = (R + G + B) ÷ 3. Clarté : Y = (le plus grand + le plus petit) ÷ 2. Les modes canal copient R, G ou B seul.',
+  tool_image_grayscale_rules_item_4:
+    'Intensité s : nouvelle valeur = original + (Y − original) × s. À 100 %, chaque pixel est gris ; à 50 %, les couleurs sont à mi-chemin vers le gris.',
+  tool_image_grayscale_rules_item_5:
+    'L’alpha (transparence) est inchangé ; le JPEG le remplit avec la couleur de fond. Les GIF animés utilisent la première image. L’enregistrement réencode l’image.',
+  tool_image_grayscale_rules_title: 'Formules de niveaux de gris utilisées',
   tool_image_grayscale_sample: 'Charger un exemple',
-  tool_image_grayscale_status_done: 'Done — click Download to save.',
-  tool_image_grayscale_status_working: 'Working…',
-  tool_image_grayscale_title: 'Niveaux de gris — conversion locale',
-  tool_image_grayscale_usecase_1: 'Print preview without color ink assumptions.',
-  tool_image_grayscale_usecase_2: 'Accessibility contrast drafts.',
-  tool_image_grayscale_usecase_3: 'Stylized black-and-white exports.',
-  tool_image_grayscale_usecases_title: 'Bons cas',
-  tool_image_grayscale_warn_animation: 'Animated GIF: only the first frame is used.',
-  tool_image_grayscale_warn_edge: 'Edge exceeds ~8192 px — some browsers may fail.',
-  tool_image_grayscale_warn_large: 'Large file (>25 MB) — may be slow.',
+  tool_image_grayscale_show_original: 'Afficher l’original',
+  tool_image_grayscale_stats_tpl: '{w} × {h} px · {method} → {fmt} ({bytes})',
+  tool_image_grayscale_status_done: 'Terminé — cliquez sur Télécharger pour enregistrer.',
+  tool_image_grayscale_status_working: 'Traitement…',
+  tool_image_grayscale_step_decode: 'Décoder',
+  tool_image_grayscale_step_encode: 'Encoder',
+  tool_image_grayscale_step_gray: 'Convertir les pixels',
+  tool_image_grayscale_title: 'Convertir une image en noir et blanc — niveaux de gris, méthode au choix',
+  tool_image_grayscale_usecase_1:
+    'Photos noir et blanc pour portraits, réseaux ou un look vintage — essayez le canal rouge pour un effet filtre argentique classique.',
+  tool_image_grayscale_usecase_2:
+    'Impression sur laser monochrome ou pour un journal : convertissez d’abord pour voir comment les couleurs se séparent en gris.',
+  tool_image_grayscale_usecase_3:
+    'Vérifier un graphique, un logo ou une palette d’interface : si deux couleurs deviennent le même gris, une personne daltonienne peut peiner à les distinguer.',
+  tool_image_grayscale_usecase_4:
+    'Préparer des scans et documents : les niveaux de gris enlèvent la dominante du papier et simplifient le fichier.',
+  tool_image_grayscale_usecases_title: 'Quand l’utiliser',
+  tool_image_grayscale_warn_animation: 'GIF animé : seule la première image est convertie.',
+  tool_image_grayscale_warn_edge: 'Un côté dépasse environ 8 192 px — certains navigateurs peuvent échouer à le traiter.',
+  tool_image_grayscale_warn_large: 'Fichier volumineux (plus de 25 Mo) — la conversion peut être lente.',
+  tool_image_grayscale_why_choose_item_1:
+    'Les pixels sont réécrits : le fichier téléchargé reste en noir et blanc dans n’importe quelle appli — contrairement à un filtre CSS ou à un réglage d’affichage.',
+  tool_image_grayscale_why_choose_item_2:
+    'Sept méthodes au lieu d’un filtre unique. Sur l’exemple, le rouge pur devient 76 en luminance Rec.601 mais 85 en moyenne simple — et la clarté transforme rouge, vert, bleu et jaune en le même gris 128.',
+  tool_image_grayscale_why_choose_item_3:
+    'Les modes mono-canal reproduisent des effets de filtre noir et blanc : le canal rouge assombrit les ciels bleus et adoucit la peau ; le bleu éclaircit les ciels et fait ressortir les taches de rousseur.',
+  tool_image_grayscale_why_choose_item_4: 'Le curseur d’intensité donne un rendu désaturé à moitié, pas seulement du noir et blanc total.',
+  tool_image_grayscale_why_choose_item_5:
+    'La transparence est conservée en PNG et WebP, et la photo est traitée dans cet onglet du navigateur, sans envoi au serveur.',
+  tool_image_grayscale_why_choose_title: 'Pourquoi utiliser ce convertisseur noir et blanc',
   tool_image_merge_article:
     'Collage local multi-images avec disposition, espacement, fond, ajustement grille, format et presets de taille.',
   tool_image_merge_bg_label: 'Fond',
@@ -13327,60 +13644,154 @@ const fr: SiteLangDict = {
     'Un avertissement s’affiche au-delà d’environ 25 Mo, quand la mémoire du navigateur risque de saturer.',
   tool_image_to_base64_why_choose_item_5: 'Le traitement se fait dans cet onglet : le fichier reste sur l’appareil, sans envoi au serveur.',
   tool_image_to_base64_why_choose_title: 'Pourquoi utiliser ce convertisseur image en Base64',
-  tool_images_to_gif_article: 'Client gifenc quantize + encode; unified canvas size with contain.',
-  tool_images_to_gif_build: 'Create GIF',
-  tool_images_to_gif_choose_files: 'Choisir une images',
+  tool_images_to_gif_advanced: 'Réglages avancés (facultatif)',
+  tool_images_to_gif_article: 'GIF animé à partir d’images',
+  tool_images_to_gif_bg_hint: 'Remplit les bordures et les zones transparentes des images PNG ou WebP.',
+  tool_images_to_gif_bg_label: 'Couleur des bordures et de la transparence',
+  tool_images_to_gif_boomerang_hint:
+    'Ajoute les images en sens inverse (sans répéter la première ni la dernière) : 8 images deviennent 14 et la boucle ne saute pas.',
+  tool_images_to_gif_boomerang_label: 'Boomerang : lecture vers l’avant puis à l’envers',
+  tool_images_to_gif_build: 'Créer le GIF',
+  tool_images_to_gif_choose_files: 'Choisir des images',
   tool_images_to_gif_clear: 'Effacer',
-  tool_images_to_gif_delay_label: 'Delay (ms)',
-  tool_images_to_gif_desc: 'Images en GIF — courte animation — local, no upload.',
+  tool_images_to_gif_colors_hint:
+    'Le GIF en autorise 256 au maximum. Moins de couleurs donnent un fichier plus léger, mais des aplats en bandes plus visibles.',
+  tool_images_to_gif_colors_label: 'Couleurs par image',
+  tool_images_to_gif_decode_step: 'Dessin de l’image {i} sur {n}…',
+  tool_images_to_gif_delay_hint:
+    '1 000 ms = 1 seconde. 100 ms donne une animation fluide à 10 images/s ; 500 à 1 000 ms convient à un diaporama.',
+  tool_images_to_gif_delay_label: 'Durée par image (ms)',
+  tool_images_to_gif_desc:
+    'Assemblez plusieurs photos en un GIF animé : ordre, vitesse par image, boucle infinie ou lecture unique.',
   tool_images_to_gif_description:
-    'Étapes: choose files, adjust options, export. exemple: sample color blocks demo. processus: local in browser, no upload. Tool: many frames to animated GIF with delay and loop. Soft limits ~25MB / 8192px apply.',
-  tool_images_to_gif_download: 'Télécharger',
-  tool_images_to_gif_drop_hint: 'Or drop several images here. Processing stays in this tab.',
-  tool_images_to_gif_empty: 'Add at least one image first.',
-  tool_images_to_gif_err_decode: 'Could not decode the image. Try JPEG, PNG, or WebP.',
-  tool_images_to_gif_err_encode: 'Could not export. Try a smaller image or another format.',
-  tool_images_to_gif_example: 'Sample creates a three-frame looping GIF from color blocks.',
+    'Faites un GIF animé avec plusieurs photos ou images PNG/JPG dans votre navigateur. Les étapes : ajoutez les images, mettez-les dans l’ordre, réglez la durée et le nombre de lectures, cliquez sur Créer le GIF puis téléchargez-le. Par exemple : 8 images à 100 ms = 10 i/s, une boucle de 0,8 s.',
+  tool_images_to_gif_download: 'Télécharger le GIF',
+  tool_images_to_gif_drop_hint:
+    'Ou déposez ici plusieurs fichiers JPEG, PNG, WebP ou GIF. Ils sont ajoutés dans l’ordre où vous les sélectionnez.',
+  tool_images_to_gif_elapsed: 'Temps écoulé : {s} s',
+  tool_images_to_gif_empty: 'Ajoutez d’abord au moins deux images.',
+  tool_images_to_gif_encode_step: 'Encodage de l’image {i} sur {n}…',
+  tool_images_to_gif_err_decode:
+    'Certains fichiers n’ont pas pu être lus comme des images et ont été ignorés. Utilisez du JPEG, PNG, WebP ou GIF.',
+  tool_images_to_gif_err_encode: 'Impossible de créer le GIF. Essayez avec moins d’images ou une largeur plus petite.',
+  tool_images_to_gif_example:
+    'L’exemple dessine 8 images d’une balle qui saute à travers une scène de 240 × 180. À 100 ms par image, cela fait 10 i/s, et une boucle dure 8 × 0,1 = 0,8 s, répétée sans fin. Cochez Boomerang et la balle revient en arrière : 8 + 6 = 14 images et une boucle de 1,4 s. Indiquez 1 500 ms de pause sur la dernière image pour marquer l’atterrissage avant la reprise.',
   tool_images_to_gif_example_title: 'Exemple',
-  tool_images_to_gif_faq_a1: 'No—encoding is local (library loads from this site).',
-  tool_images_to_gif_faq_a2: 'Converter makes a still GIF from one image; this animates many frames.',
-  tool_images_to_gif_faq_a3: 'GIF uses a limited palette—gradients may dither.',
-  tool_images_to_gif_faq_a4: 'No audio in GIF.',
-  tool_images_to_gif_faq_a5: 'May freeze the tab—keep frames few and small.',
-  tool_images_to_gif_faq_q1: 'Uploaded?',
-  tool_images_to_gif_faq_q2: 'Vs format converter?',
-  tool_images_to_gif_faq_q3: 'Quality?',
-  tool_images_to_gif_faq_q4: 'Audio?',
-  tool_images_to_gif_faq_q5: 'Huge sequences?',
-  tool_images_to_gif_how_body: 'Add ordered frames, set delay and output width, convert, preview the GIF, download.',
-  tool_images_to_gif_how_title: 'Comment ça marche',
-  tool_images_to_gif_loop_label: 'Loop (0=∞)',
-  tool_images_to_gif_move_down: 'Down',
-  tool_images_to_gif_move_up: 'Up',
-  tool_images_to_gif_need_two: 'Add at least two frames for an animation.',
-  tool_images_to_gif_preview_label: 'Preview',
-  tool_images_to_gif_remove: 'Remove',
-  tool_images_to_gif_rules_body: 'Frames are scaled with contain onto one canvas; palette is quantized per encoder settings.',
-  tool_images_to_gif_rules_item_1: 'Delay is milliseconds between frames.',
-  tool_images_to_gif_rules_item_2: 'Loop 0 means infinite in common players.',
-  tool_images_to_gif_rules_item_3: 'Soft cap ~50 frames / memory warnings.',
-  tool_images_to_gif_rules_item_4: 'Differs from format-converter static GIF export.',
-  tool_images_to_gif_rules_title: 'Règles',
+  tool_images_to_gif_faq_a1:
+    'Dans un GIF, le compteur de boucle indique les répétitions en plus de la première lecture : une valeur de 1 donne donc deux lectures. Ici, choisissez « Une fois » dans Lectures : le fichier est créé sans bloc de boucle et s’arrête sur la dernière image.',
+  tool_images_to_gif_faq_a2:
+    'Divisez 1 000 par le nombre d’images par seconde souhaité : 100 ms = 10 i/s pour un mouvement fluide, 40–60 ms pour un mouvement rapide, 500–2 000 ms pour un diaporama de photos ou de captures d’écran. Ne descendez pas sous 20 ms, car les navigateurs ralentissent ces images.',
+  tool_images_to_gif_faq_a3:
+    'Sélectionnez toutes les photos d’un coup, vérifiez leur ordre dans la liste des images, réglez la durée (par exemple 500 ms), puis cliquez sur Créer le GIF et sur Télécharger le GIF. Si les fichiers sont numérotés, Trier par nom de fichier place photo-2 avant photo-10.',
+  tool_images_to_gif_faq_a4:
+    'Chaque image d’un GIF ne peut contenir que 256 couleurs ; les photos avec des dégradés de ciel ou de peau perdent des nuances subtiles. Pour des photos, gardez 256 couleurs et une palette par image ; si les images se ressemblent, prenez une palette commune pour éviter que les couleurs scintillent.',
+  tool_images_to_gif_faq_a5:
+    'Le GIF stocke chaque image en entier avec une compression simple. Le poids augmente avec largeur × hauteur × nombre d’images : diviser la largeur par deux le ramène à environ un quart. Moins de couleurs et une palette commune aident aussi, surtout pour des captures d’écran.',
+  tool_images_to_gif_faq_a6:
+    'Oui. Le GIF prend la largeur que vous indiquez et les proportions de la première photo. Les autres sont affichées en entier avec des bordures ou rognées pour remplir le cadre, selon l’option choisie.',
+  tool_images_to_gif_faq_a7:
+    'Pas de son : le GIF est un format d’image. Sa transparence est tout ou rien, donc cet outil remplit les zones transparentes avec la couleur choisie. Pour du son ou une semi-transparence douce, exportez plutôt une vidéo (MP4 ou WebM).',
+  tool_images_to_gif_faq_q1: 'Pourquoi mon GIF se lit deux fois alors que je voulais une seule lecture ?',
+  tool_images_to_gif_faq_q2: 'Quelle vitesse choisir pour un GIF ?',
+  tool_images_to_gif_faq_q3: 'Comment faire un GIF à partir de plusieurs photos ?',
+  tool_images_to_gif_faq_q4: 'Pourquoi les couleurs paraissent-elles granuleuses ou en bandes ?',
+  tool_images_to_gif_faq_q5: 'Pourquoi le fichier GIF est-il si lourd ?',
+  tool_images_to_gif_faq_q6: 'Les photos peuvent-elles avoir des tailles différentes ?',
+  tool_images_to_gif_faq_q7: 'Peut-on garder la transparence ou ajouter du son ?',
+  tool_images_to_gif_fit_contain: 'Afficher l’image entière (avec bordures)',
+  tool_images_to_gif_fit_cover: 'Remplir le cadre (rogner les bords)',
+  tool_images_to_gif_fit_hint:
+    'Toutes les images d’un GIF ont la même taille : celles d’un autre format reçoivent des bordures ou sont rognées.',
+  tool_images_to_gif_fit_label: 'Images de tailles différentes',
+  tool_images_to_gif_fps_tpl: '≈ {fps} i/s',
+  tool_images_to_gif_frame_delay_title: 'Durée de cette image en ms (vide = durée par défaut)',
+  tool_images_to_gif_hold_hint:
+    'Garde l’image finale affichée avant que la boucle ne reprenne, par exemple 1 500 pour un écran de résultat.',
+  tool_images_to_gif_hold_label: 'Pause supplémentaire sur la dernière image (ms)',
+  tool_images_to_gif_how_body:
+    'Choisissez les photos, placez-les dans l’ordre de lecture, indiquez combien de temps chacune reste à l’écran et combien de fois l’animation se joue, puis créez le GIF et téléchargez-le.',
+  tool_images_to_gif_how_item_1:
+    'Cliquez sur Choisir des images ou déposez plusieurs fichiers d’un coup. Si vos images sont numérotées (photo-1 … photo-12), utilisez Trier par nom de fichier.',
+  tool_images_to_gif_how_item_2:
+    'Montez ou descendez les images et retirez celles dont vous ne voulez pas. Saisissez une valeur dans le champ ms d’une image pour prolonger uniquement celle-ci.',
+  tool_images_to_gif_how_item_3:
+    'Réglez la durée par image, choisissez En boucle ou un nombre fixe de lectures, puis la largeur. Les Réglages avancés gèrent le recadrage, les couleurs, le boomerang et la pause finale.',
+  tool_images_to_gif_how_item_4:
+    'Cliquez sur Créer le GIF, regardez l’aperçu, puis cliquez sur Télécharger le GIF. Modifiez un réglage et recréez-le jusqu’à obtenir le bon rendu.',
+  tool_images_to_gif_how_title: 'Comment faire un GIF avec des photos',
+  tool_images_to_gif_list_hint:
+    'Les images défilent de haut en bas. Laissez le champ ms d’une image vide pour appliquer la durée par défaut.',
+  tool_images_to_gif_loop_forever: 'En boucle (sans fin)',
+  tool_images_to_gif_loop_hint: '« Une fois » s’arrête sur la dernière image. 2×, 3× et 5× indiquent le nombre total de lectures.',
+  tool_images_to_gif_loop_label: 'Lectures',
+  tool_images_to_gif_loop_once: 'Une fois',
+  tool_images_to_gif_move_down: 'Descendre',
+  tool_images_to_gif_move_up: 'Monter',
+  tool_images_to_gif_need_two:
+    'Une animation demande au moins deux images. Pour convertir une seule image en GIF, utilisez le convertisseur de format d’image.',
+  tool_images_to_gif_palette_frame: 'Une par image (meilleures couleurs)',
+  tool_images_to_gif_palette_hint:
+    'Une palette commune empêche les couleurs de varier d’une image à l’autre quand elles se ressemblent, par exemple pour un enregistrement d’écran.',
+  tool_images_to_gif_palette_label: 'Palette de couleurs',
+  tool_images_to_gif_palette_shared: 'Une palette commune (plus léger, sans scintillement)',
+  tool_images_to_gif_palette_step: 'Choix de la palette de couleurs…',
+  tool_images_to_gif_preview_alt: 'Aperçu du GIF animé',
+  tool_images_to_gif_preview_label: 'Aperçu',
+  tool_images_to_gif_progress: 'Création de votre GIF…',
+  tool_images_to_gif_ref_a_label: 'W3C — spécification GIF89a',
+  tool_images_to_gif_ref_b_label: 'MDN — guide des types et formats de fichiers image',
+  tool_images_to_gif_references: 'W3C — spécification GIF89a; MDN — guide des types et formats de fichiers image.',
+  tool_images_to_gif_remove: 'Retirer l’image',
+  tool_images_to_gif_rules_body:
+    'Un GIF animé est une suite d’images complètes de même taille, chacune avec 256 couleurs au plus et sa propre durée d’affichage.',
+  tool_images_to_gif_rules_item_1:
+    'Les durées sont enregistrées en centièmes de seconde, donc arrondies aux 10 ms les plus proches : 125 ms deviennent 130 ms.',
+  tool_images_to_gif_rules_item_2:
+    'Les navigateurs ralentissent les durées très courtes : 0 ou 10 ms s’affichent en général comme 100 ms. C’est pourquoi le minimum est ici de 20 ms (50 i/s).',
+  tool_images_to_gif_rules_item_3:
+    'Le nombre de lectures est stocké dans un bloc à part du fichier : sans bloc = une seule lecture ; 0 = boucle infinie ; un nombre N = N + 1 lectures.',
+  tool_images_to_gif_rules_item_4:
+    'Chaque image contient 256 couleurs au maximum : les photos aux dégradés doux présentent donc quelques bandes. Pour une qualité proche du JPEG, il faut passer à un format vidéo.',
+  tool_images_to_gif_rules_item_5:
+    'Le GIF n’a pas de son et sa transparence est tout ou rien : les zones transparentes d’un PNG sont donc remplies avec la couleur de bordure choisie.',
+  tool_images_to_gif_rules_title: 'Règles de l’animation GIF à connaître',
   tool_images_to_gif_sample: 'Charger un exemple',
-  tool_images_to_gif_stats_tpl: '{n} frames → GIF ready',
-  tool_images_to_gif_status_building: 'Building GIF…',
-  tool_images_to_gif_status_done: 'Done — click Download to save.',
-  tool_images_to_gif_title: 'Images en GIF — courte animation',
-  tool_images_to_gif_usecase_1: 'Simple motion demos.',
-  tool_images_to_gif_usecase_2: 'Step-by-step mini tutorials.',
-  tool_images_to_gif_usecase_3: 'Quick reaction GIFs from stills.',
-  tool_images_to_gif_usecases_title: 'Bons cas',
-  tool_images_to_gif_warn_animation: 'Animated GIF: only the first frame is used.',
-  tool_images_to_gif_warn_edge: 'Edge exceeds ~8192 px — some browsers may fail.',
-  tool_images_to_gif_warn_gifenc: 'GIF encoder failed to load. Check network and retry.',
-  tool_images_to_gif_warn_large: 'Large file (>25 MB) — may be slow.',
-  tool_images_to_gif_warn_max_frames: 'Too many frames — keep under ~50.',
-  tool_images_to_gif_width_label: 'Width (px)',
+  tool_images_to_gif_sort_name: 'Trier par nom de fichier',
+  tool_images_to_gif_stats_tpl: '{w}×{h} px · images : {frames} · une boucle : {dur} s · {bytes}',
+  tool_images_to_gif_status_building: 'Création du GIF…',
+  tool_images_to_gif_status_done: 'Terminé : vérifiez l’aperçu, puis cliquez sur Télécharger le GIF.',
+  tool_images_to_gif_step_decode: 'Lecture des images',
+  tool_images_to_gif_step_encode: 'Encodage du GIF',
+  tool_images_to_gif_step_palette: 'Palette de couleurs',
+  tool_images_to_gif_title: 'Créer un GIF animé à partir d’images — assemblez vos photos et réglez vitesse et nombre de lectures',
+  tool_images_to_gif_usecase_1:
+    'Tutoriels en captures d’écran : cinq captures de 1 500 ms chacune forment une boucle de 7,5 s qui explique un réglage sans vidéo.',
+  tool_images_to_gif_usecase_2:
+    'Fiches produit et avant/après : deux photos à 800 ms, Boomerang désactivé, alternent sur une fiche produit ou une diapositive.',
+  tool_images_to_gif_usecase_3:
+    'Stop motion et rafales photo : 12 à 24 clichés pris au téléphone, à 80–120 ms, donnent une animation courte et fluide pour une messagerie ou les réseaux sociaux.',
+  tool_images_to_gif_usecase_4:
+    'Graphiques et cartes dans le temps : une image par année avec 2 s de pause sur la dernière laisse le lecteur voir l’état final.',
+  tool_images_to_gif_usecases_title: 'Dans quels cas l’utiliser',
+  tool_images_to_gif_warn_animation: 'Vous avez ajouté un GIF animé : seule sa première image est utilisée.',
+  tool_images_to_gif_warn_edge: 'Une image dépasse 8 192 px de large ou de haut : certains navigateurs ne peuvent pas la décoder.',
+  tool_images_to_gif_warn_gifenc: 'L’encodeur GIF ne s’est pas chargé. Vérifiez votre connexion et cliquez de nouveau sur Créer le GIF.',
+  tool_images_to_gif_warn_large: 'Un fichier dépasse 25 Mo : sa lecture peut être lente.',
+  tool_images_to_gif_warn_max_frames: 'Plus de 50 images : l’encodage sera plus long et le fichier volumineux. Pensez à réduire la largeur.',
+  tool_images_to_gif_why_choose_item_1:
+    'Chaque image peut avoir sa propre durée : laissez un titre 2 secondes à l’écran et faites défiler le reste à 100 ms, ce que la plupart des créateurs de GIF simples ne permettent pas.',
+  tool_images_to_gif_why_choose_item_2:
+    '« Une fois » joue vraiment une seule fois. Beaucoup d’outils inscrivent un compteur de boucle à 1, que la plupart des navigateurs affichent deux fois ; ici, « Une fois » supprime entièrement le bloc de boucle.',
+  tool_images_to_gif_why_choose_item_3:
+    'Le mode boomerang et la pause sur la dernière image sont intégrés : inutile de dupliquer des fichiers pour obtenir un aller-retour fluide ou une pause avant la reprise.',
+  tool_images_to_gif_why_choose_item_4:
+    'Les photos de tailles différentes sont prises en charge : gardez l’image entière avec des bordures de la couleur de votre choix, ou rognez-la pour remplir le cadre.',
+  tool_images_to_gif_why_choose_item_5:
+    'Vous arbitrez entre qualité et poids grâce au nombre de couleurs et à la palette commune, et le résultat affiche le poids exact, le nombre d’images et la durée d’une boucle.',
+  tool_images_to_gif_why_choose_title: 'Pourquoi utiliser ce créateur de GIF animé',
+  tool_images_to_gif_width_hint:
+    'La hauteur suit les proportions de la première image. Une largeur plus petite allège nettement le fichier.',
+  tool_images_to_gif_width_label: 'Largeur (px)',
   tool_images_to_pdf_article: 'Client-side pdf-lib; each image becomes one page with contain/cover fit.',
   tool_images_to_pdf_choose_files: 'Choisir une images',
   tool_images_to_pdf_clear: 'Effacer',
@@ -17604,59 +18015,137 @@ const fr: SiteLangDict = {
   tool_open_graph_image_size_usecase_2: 'URL produit : recadrez le packing shot dans le cadre sans ouvrir un logiciel de PAO.',
   tool_open_graph_image_size_usecase_3: 'LinkedIn : prenez la puce 1200×627 si le partenaire exige ce couple.',
   tool_open_graph_image_size_usecases_title: 'Ça sert surtout à',
-  tool_open_pdf_in_browser_article: 'Ouvrir un PDF dans le navigateur. Les fichiers restent sur l’appareil ; sans envoi au serveur.',
+  tool_open_pdf_in_browser_article: 'Afficher un PDF dans le navigateur',
   tool_open_pdf_in_browser_choose_file: 'Choisir un PDF',
-  tool_open_pdf_in_browser_choose_files: 'Choisir des fichiers',
   tool_open_pdf_in_browser_clear: 'Effacer',
-  tool_open_pdf_in_browser_desc: 'Ouvrir un PDF dans le navigateur — Les fichiers restent sur l’appareil ; sans envoi au serveur.',
+  tool_open_pdf_in_browser_desc:
+    'Lecteur PDF en ligne : lisez, zoomez, pivotez et cherchez dans un PDF, avec format de page, version et auteur.',
   tool_open_pdf_in_browser_description:
-    'Ouvrir un PDF dans le navigateur. Les fichiers restent sur l’appareil ; sans envoi au serveur. L’exemple montre une entrée et une sortie réelles ; la page précise les étapes et les limites.',
-  tool_open_pdf_in_browser_download: 'Télécharger',
-  tool_open_pdf_in_browser_drop_hint: 'Ou déposez ici. Le traitement reste dans cet onglet.',
-  tool_open_pdf_in_browser_empty: 'Choose a file first.',
-  tool_open_pdf_in_browser_err_convert: 'Processing failed. Retry.',
-  tool_open_pdf_in_browser_err_encrypted: 'This PDF looks password-protected. Unlock it first.',
-  tool_open_pdf_in_browser_err_load: 'Could not read the file.',
-  tool_open_pdf_in_browser_err_notext: 'No selectable text found (no OCR).',
-  tool_open_pdf_in_browser_err_pdfjs: 'PDF renderer failed to load.',
-  tool_open_pdf_in_browser_example: 'Charger un exemple: Hello browser viewer sample.',
+    'Ouvrez un PDF dans le navigateur et lisez-le page par page : ajustez-le à la largeur, faites-le pivoter, passez en plein écran et cherchez du texte. Étapes : choisissez le fichier, saisissez le mot de passe s’il est protégé, puis tournez les pages avec les boutons ou les flèches du clavier. Exemple : le PDF de démonstration de 3 pages contient des formats A4, Letter et A5.',
+  tool_open_pdf_in_browser_drop_hint: 'Ou déposez un fichier PDF ici. Il s’ouvre dans cet onglet et n’est pas envoyé.',
+  tool_open_pdf_in_browser_err_load:
+    'Impossible d’ouvrir le PDF. Il est peut-être endommagé ou incomplètement téléchargé — téléchargez-le à nouveau et réessayez.',
+  tool_open_pdf_in_browser_err_pdfjs: 'Le lecteur PDF ne s’est pas chargé. Vérifiez votre connexion et rechargez la page.',
+  tool_open_pdf_in_browser_err_sample: 'Impossible de créer le PDF d’exemple. Rechargez la page et réessayez.',
+  tool_open_pdf_in_browser_err_type: 'Ce fichier n’est pas un PDF. Choisissez un fichier qui se termine par .pdf.',
+  tool_open_pdf_in_browser_example:
+    'L’exemple est un PDF de 3 pages. La page 1 est en A4 portrait (210 × 297 mm), la page 2 en US Letter paysage (279,4 × 215,9 mm) et la page 3 en A5 (148 × 210 mm) — tournez les pages et regardez Format de cette page changer. Tapez browser (le texte de l’exemple est en anglais) dans Rechercher dans le PDF : l’outil indique les pages 1, 3 (occurrences : 2) et passe de l’une à l’autre à chaque clic sur Rechercher.',
   tool_open_pdf_in_browser_example_title: 'Exemple',
   tool_open_pdf_in_browser_faq_a1:
-    'Non. Le rendu s’exécute dans votre onglet (bibliothèques depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.',
-  tool_open_pdf_in_browser_faq_a2: 'Non. Cette opération ne dépend pas de l’extraction de la couche texte du PDF.',
-  tool_open_pdf_in_browser_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
-  tool_open_pdf_in_browser_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
-  tool_open_pdf_in_browser_faq_a5: 'Large files may be slow; try a desktop browser first.',
-  tool_open_pdf_in_browser_faq_q1: 'Mon fichier est-il envoyé ?',
-  tool_open_pdf_in_browser_faq_q2: 'Faut-il un OCR ou du texte PDF sélectionnable ?',
-  tool_open_pdf_in_browser_faq_q3: 'What about encrypted files?',
-  tool_open_pdf_in_browser_faq_q4: 'How is this different from related tools?',
-  tool_open_pdf_in_browser_faq_q5: 'Are large files supported?',
-  tool_open_pdf_in_browser_how_body: 'Fonctionnement: Les fichiers restent sur l’appareil ; sans envoi au serveur.',
-  tool_open_pdf_in_browser_how_item_1: 'Choose a PDF or enter content',
-  tool_open_pdf_in_browser_how_item_2: 'Utilisez « Next » pour parcourir les pages du PDF',
-  tool_open_pdf_in_browser_how_item_3: 'Review the output area',
-  tool_open_pdf_in_browser_how_item_4: 'Download or print when needed',
-  tool_open_pdf_in_browser_how_title: 'Fonctionnement',
-  tool_open_pdf_in_browser_next: 'Next',
+    'C’est possible si vous connaissez le mot de passe. Le lecteur vous le demande et ouvre le fichier dès qu’il est correct ; en cas d’erreur, il vous le redemande. Il ne peut ni supprimer ni deviner un mot de passe que vous n’avez pas.',
+  tool_open_pdf_in_browser_faq_a2:
+    'Ouvrez-le et regardez Format de cette page dans Informations sur le document. Il est indiqué en millimètres et en pouces, avec le nom des formats courants, par exemple A4 portrait ou Letter paysage. Tournez les pages pour vérifier les autres, car un PDF peut mélanger plusieurs formats.',
+  tool_open_pdf_in_browser_faq_a3:
+    'Cliquez sur Choisir un PDF ou faites glisser le fichier dans le cadre : il s’ouvre à la page 1. Chrome, Edge, Firefox et Safari ouvrent aussi un PDF déposé dans un onglet vide ; cette page ajoute la recherche sur toutes les pages, le format de chaque page et la saisie du mot de passe quand le lecteur intégré est absent ou désactivé.',
+  tool_open_pdf_in_browser_faq_a4:
+    'En général, un réglage du navigateur impose le téléchargement des PDF. Dans Chrome, allez dans Paramètres → Confidentialité et sécurité → Paramètres des sites → Paramètres de contenu supplémentaires → Documents PDF et choisissez d’ouvrir les PDF dans Chrome ; dans Firefox, allez dans Paramètres → Général → Applications → Portable Document Format (PDF) et choisissez Ouvrir dans Firefox. En attendant, ouvrez le fichier téléchargé avec cette page.',
+  tool_open_pdf_in_browser_faq_a5:
+    'Non. Le fichier est lu dans cet onglet par PDF.js, chargé depuis ce site. Rien n’est envoyé à un serveur, c’est pourquoi l’outil convient aussi aux documents confidentiels.',
+  tool_open_pdf_in_browser_faq_a6:
+    'La page est sans doute un scan : une image de texte sans couche de texte. Pour ces pages, Informations sur le document affiche « Non » pour le texte sélectionnable. Passez le fichier dans un OCR (reconnaissance de caractères) pour pouvoir y chercher.',
+  tool_open_pdf_in_browser_faq_a7:
+    'La plupart des PDF « endommagés » sont des téléchargements incomplets ou des pièces jointes tronquées. Téléchargez à nouveau le fichier et vérifiez que sa taille correspond à l’original. S’il échoue toujours ici et dans le lecteur du navigateur, demandez une nouvelle copie à l’expéditeur.',
+  tool_open_pdf_in_browser_faq_q1: 'Comment ouvrir un PDF protégé par mot de passe ?',
+  tool_open_pdf_in_browser_faq_q2: 'Comment connaître le format de page d’un PDF ?',
+  tool_open_pdf_in_browser_faq_q3: 'Comment ouvrir un PDF dans le navigateur ?',
+  tool_open_pdf_in_browser_faq_q4: 'Pourquoi mon navigateur télécharge-t-il le PDF au lieu de l’ouvrir ?',
+  tool_open_pdf_in_browser_faq_q5: 'Mon PDF est-il envoyé sur un serveur ?',
+  tool_open_pdf_in_browser_faq_q6: 'Pourquoi ne puis-je pas rechercher ni copier le texte de mon PDF ?',
+  tool_open_pdf_in_browser_faq_q7: 'Le PDF est signalé comme endommagé et ne s’ouvre pas : que faire ?',
+  tool_open_pdf_in_browser_find_btn: 'Rechercher',
+  tool_open_pdf_in_browser_find_empty: 'Saisissez un mot ou une expression à rechercher.',
+  tool_open_pdf_in_browser_find_label: 'Rechercher dans le PDF',
+  tool_open_pdf_in_browser_find_no_doc: 'Ouvrez d’abord un PDF.',
+  tool_open_pdf_in_browser_find_none_tpl:
+    '« {q} » est introuvable. Les pages scannées contiennent des images, pas du texte : on ne peut pas y faire de recherche.',
+  tool_open_pdf_in_browser_find_ph: 'Mot ou expression',
+  tool_open_pdf_in_browser_find_result_tpl:
+    '« {q} » trouvé — pages : {pages} (occurrences : {count}). Cliquez à nouveau sur Rechercher pour passer à la page suivante.',
+  tool_open_pdf_in_browser_find_searching_tpl: 'Recherche dans la page {i} sur {n}…',
+  tool_open_pdf_in_browser_fullscreen: 'Plein écran',
+  tool_open_pdf_in_browser_fullscreen_exit: 'Quitter le plein écran',
+  tool_open_pdf_in_browser_how_body:
+    'Choisissez ou déposez le PDF : il s’ouvre à la page 1, ajusté à la largeur de la zone d’affichage. Vous pouvez ensuite tourner les pages, zoomer, faire pivoter, rechercher du texte et consulter les informations du document.',
+  tool_open_pdf_in_browser_how_item_1:
+    'Cliquez sur Choisir un PDF ou déposez le fichier dans le cadre. Si le PDF demande un mot de passe à l’ouverture, saisissez-le dans le champ qui apparaît et cliquez sur Ouvrir.',
+  tool_open_pdf_in_browser_how_item_2:
+    'Tournez les pages avec Précédente et Suivante, saisissez un numéro de page, ou cliquez sur la page et utilisez les flèches, Page préc./Page suiv., Début et Fin.',
+  tool_open_pdf_in_browser_how_item_3:
+    'Choisissez Ajuster à la largeur, Page entière ou un pourcentage, zoomez avec + et −, utilisez Pivoter de 90° pour un scan couché et Plein écran pour lire confortablement.',
+  tool_open_pdf_in_browser_how_item_4:
+    'Tapez un mot dans Rechercher dans le PDF pour lister les pages qui le contiennent, et consultez Informations sur le document pour le format de page, la version PDF et l’auteur.',
+  tool_open_pdf_in_browser_how_title: 'Comment ouvrir un PDF dans le navigateur',
+  tool_open_pdf_in_browser_info_author: 'Auteur',
+  tool_open_pdf_in_browser_info_doc_title: 'Titre',
+  tool_open_pdf_in_browser_info_file: 'Fichier',
+  tool_open_pdf_in_browser_info_page_size: 'Format de cette page',
+  tool_open_pdf_in_browser_info_pages: 'Pages',
+  tool_open_pdf_in_browser_info_producer: 'Créé avec',
+  tool_open_pdf_in_browser_info_size: 'Taille du fichier',
+  tool_open_pdf_in_browser_info_text: 'Texte sélectionnable sur cette page',
+  tool_open_pdf_in_browser_info_title: 'Informations sur le document',
+  tool_open_pdf_in_browser_info_version: 'Version PDF',
+  tool_open_pdf_in_browser_keys_hint: 'Astuce : cliquez sur la page, puis utilisez ← → pour tourner les pages et + / − pour zoomer.',
+  tool_open_pdf_in_browser_next: 'Suivante',
+  tool_open_pdf_in_browser_open_tab: 'Ouvrir dans le lecteur du navigateur',
+  tool_open_pdf_in_browser_orient_landscape: 'paysage',
+  tool_open_pdf_in_browser_orient_portrait: 'portrait',
+  tool_open_pdf_in_browser_orient_square: 'carré',
   tool_open_pdf_in_browser_page_label: 'Page',
-  tool_open_pdf_in_browser_prev: 'Previous',
-  tool_open_pdf_in_browser_rules_body: 'Les fichiers restent sur l’appareil ; sans envoi au serveur.',
-  tool_open_pdf_in_browser_rules_item_1: 'Ouvrir un PDF dans le navigateur.',
-  tool_open_pdf_in_browser_rules_item_2: 'Client-side only; files are not uploaded.',
-  tool_open_pdf_in_browser_rules_item_3: 'No OCR for scanned image-only PDFs.',
-  tool_open_pdf_in_browser_rules_item_4: 'Encrypted or corrupt files fail with readable errors.',
-  tool_open_pdf_in_browser_rules_title: 'Règles et limites',
+  tool_open_pdf_in_browser_page_total_tpl: 'sur {total}',
+  tool_open_pdf_in_browser_password_btn: 'Ouvrir',
+  tool_open_pdf_in_browser_password_label: 'Ce PDF est protégé. Saisissez son mot de passe :',
+  tool_open_pdf_in_browser_password_need: 'Ce PDF est protégé. Saisissez son mot de passe :',
+  tool_open_pdf_in_browser_password_wrong: 'Mot de passe incorrect — réessayez :',
+  tool_open_pdf_in_browser_prev: 'Précédente',
+  tool_open_pdf_in_browser_ref_a_label: 'Mozilla — PDF.js (lecteur PDF open source)',
+  tool_open_pdf_in_browser_ref_b_label: 'PDF Association — norme ISO 32000-2 (PDF 2.0)',
+  tool_open_pdf_in_browser_references: 'Mozilla — PDF.js (lecteur PDF open source); PDF Association — norme ISO 32000-2 (PDF 2.0).',
+  tool_open_pdf_in_browser_rotate: 'Pivoter de 90°',
+  tool_open_pdf_in_browser_rules_body:
+    'Les pages sont rendues par PDF.js, le moteur PDF open source également utilisé dans Firefox. Rien n’est envoyé à un serveur : le fichier ne quitte pas votre appareil.',
+  tool_open_pdf_in_browser_rules_item_1:
+    'Les mots de passe d’ouverture sont pris en charge, à condition de les connaître. Les restrictions de droits seules (impression ou copie interdite) n’empêchent pas l’affichage.',
+  tool_open_pdf_in_browser_rules_item_2:
+    'La recherche porte sur la couche de texte. Une page scannée est une photo de texte : elle affiche « Non » pour le texte sélectionnable et nécessite un OCR avant toute recherche.',
+  tool_open_pdf_in_browser_rules_item_3:
+    'Le format est lu sur chaque page : 595 × 842 points correspond à l’A4 (210 × 297 mm) et 612 × 792 points au format US Letter (8,5 × 11 pouces). Un même PDF peut mélanger plusieurs formats.',
+  tool_open_pdf_in_browser_rules_item_4:
+    'Pivoter ne modifie que l’affichage. Pour enregistrer une copie pivotée ou modifiée, utilisez un outil d’édition de PDF.',
+  tool_open_pdf_in_browser_rules_item_5:
+    'Les formulaires, commentaires et signatures s’affichent tels quels mais ne sont pas modifiables ici ; Ouvrir dans le lecteur du navigateur vous donne le lecteur PDF complet du navigateur.',
+  tool_open_pdf_in_browser_rules_title: 'Ce qu’il faut savoir sur l’affichage d’un PDF ici',
   tool_open_pdf_in_browser_sample: 'Charger un exemple',
-  tool_open_pdf_in_browser_status_done: 'Done.',
-  tool_open_pdf_in_browser_status_working: 'Working…',
-  tool_open_pdf_in_browser_title: 'Ouvrir un PDF dans le navigateur',
-  tool_open_pdf_in_browser_usecase_1: 'Office: quick PDF tasks without desktop software',
-  tool_open_pdf_in_browser_usecase_2: 'Students: local preview and export',
-  tool_open_pdf_in_browser_usecase_3: 'Privacy-sensitive files that must stay on device',
-  tool_open_pdf_in_browser_usecases_title: 'Bonnes utilisations',
-  tool_open_pdf_in_browser_viewer_label: 'Preview',
-  tool_open_pdf_in_browser_warn_large: 'Large file — may be slow.',
+  tool_open_pdf_in_browser_text_no: 'Non — page scannée ou image (OCR nécessaire pour la recherche)',
+  tool_open_pdf_in_browser_text_yes: 'Oui — le texte peut être recherché et copié',
+  tool_open_pdf_in_browser_title: 'Ouvrir un PDF dans le navigateur — lire, rechercher et zoomer sans installer de lecteur',
+  tool_open_pdf_in_browser_usecase_1:
+    'Lire un PDF sur un ordinateur de bibliothèque, d’école ou de bureau où vous ne pouvez pas installer Adobe Acrobat Reader ni un autre logiciel.',
+  tool_open_pdf_in_browser_usecase_2:
+    'Ouvrir un relevé bancaire, un bulletin de paie ou un contrat protégé par mot de passe reçu par e-mail, sans l’envoyer sur un site.',
+  tool_open_pdf_in_browser_usecase_3:
+    'Vérifier un fichier avant de l’imprimer ou de le déposer : nombre de pages, format A4 ou Letter, et présence d’un vrai texte ou d’un simple scan.',
+  tool_open_pdf_in_browser_usecase_4:
+    'Retrouver une clause ou un nom dans un long rapport ou un manuel en listant toutes les pages qui le mentionnent.',
+  tool_open_pdf_in_browser_usecases_title: 'Dans quels cas l’utiliser',
+  tool_open_pdf_in_browser_viewer_label: 'Affichage des pages du PDF',
+  tool_open_pdf_in_browser_warn_large: 'Ce fichier dépasse 100 Mo. Les pages peuvent mettre quelques secondes à s’afficher.',
+  tool_open_pdf_in_browser_why_choose_item_1:
+    'Il fonctionne même sans logiciel PDF : sur un ordinateur partagé ou professionnel, un Chromebook ou un navigateur dont le lecteur intégré a été désactivé.',
+  tool_open_pdf_in_browser_why_choose_item_2:
+    'Les PDF protégés par mot de passe s’ouvrent dès que vous saisissez le mot de passe — et le fichier reste dans cet onglet au lieu de passer par un convertisseur en ligne.',
+  tool_open_pdf_in_browser_why_choose_item_3:
+    'La recherche indique d’un coup toutes les pages qui contiennent votre mot, et signale clairement quand une page est un scan sans texte interrogeable.',
+  tool_open_pdf_in_browser_why_choose_item_4:
+    'Les informations du document donnent ce que demandent imprimeurs et formulaires de dépôt : format exact de la page en mm et en pouces (A4 ou Letter), nombre de pages, version PDF et taille du fichier.',
+  tool_open_pdf_in_browser_why_choose_item_5:
+    'Les pages sont rendues à la pleine résolution de votre écran : les petits caractères restent nets à 200 % ou 300 %.',
+  tool_open_pdf_in_browser_why_choose_title: 'Pourquoi utiliser ce lecteur PDF en ligne',
+  tool_open_pdf_in_browser_zoom_in: 'Zoom avant',
+  tool_open_pdf_in_browser_zoom_label: 'Zoom',
+  tool_open_pdf_in_browser_zoom_out: 'Zoom arrière',
+  tool_open_pdf_in_browser_zoom_page: 'Page entière',
+  tool_open_pdf_in_browser_zoom_width: 'Ajuster à la largeur',
   tool_organize_pdf_apply: 'Appliquer',
   tool_organize_pdf_article:
     'Réordonnez, retirez ou conservez des pages d’un PDF dans le navigateur—le fichier reste sur votre appareil, pas sur un serveur.',
@@ -17919,45 +18408,124 @@ const fr: SiteLangDict = {
   tool_password_generator_usecase_3:
     'Comparer l\'impact de longueur et symboles sur la lisibilité avant de mettre à jour la politique d\'équipe.',
   tool_password_generator_usecases_title: 'Cas d\'usage adaptés',
-  tool_payback_period_article: 'Calculateur de délai de récupération',
+  tool_payback_period_article: 'Délai de récupération',
   tool_payback_period_calculate: 'Calculer',
-  tool_payback_period_cf_label: 'Flux annuel',
-  tool_payback_period_cf_ph: 'ex. 2500',
+  tool_payback_period_cf_hint:
+    'Un seul montant = le même chaque année. Plusieurs = année 1, année 2, année 3… Séparez-les par des espaces, des sauts de ligne ou des points-virgules. Saisissez les milliers sans espace (2500, pas 2 500) ; les décimales se mettent avec une virgule. Un montant négatif est une année qui coûte de l’argent.',
+  tool_payback_period_cf_label: 'Flux de trésorerie net par année',
+  tool_payback_period_cf_ph: 'ex. 2500  — ou un montant par année : 10000 15000 20000 25000',
   tool_payback_period_clear: 'Effacer',
+  tool_payback_period_col_cf: 'Flux de trésorerie',
+  tool_payback_period_col_cum: 'Cumulé',
+  tool_payback_period_col_dcf: 'Flux actualisé',
+  tool_payback_period_col_dcum: 'Cumulé actualisé',
+  tool_payback_period_col_year: 'Année',
   tool_payback_period_description:
-    'Estimez les années de payback avec investissement initial et flux annuel constant. Exemple : 10 000 avec 2 500/an → 4 ans. Éducatif.',
-  tool_payback_period_disclaimer: 'Illustration éducative (payback period) uniquement — pas un conseil financier.',
-  tool_payback_period_err_generic: 'Vérifiez les entrées.',
-  tool_payback_period_example: 'Exemple : 10000 / 2500 = 4 ans.',
+    'Calculez en combien d’années un investissement est récupéré : un flux de trésorerie annuel ou une liste par année, avec un taux d’actualisation optionnel pour le délai de récupération actualisé, le processus, les étapes et le tableau cumulé année par année.',
+  tool_payback_period_dip_tpl:
+    'Remarque : le cumul repasse sous zéro au cours de l’année {y}, donc la première date de récupération masque une perte ultérieure.',
+  tool_payback_period_disc_label: 'Délai de récupération actualisé',
+  tool_payback_period_disc_off: 'Ajoutez un taux d’actualisation pour l’afficher.',
+  tool_payback_period_disc_work_label: 'Détail actualisé',
+  tool_payback_period_disclaimer:
+    'Estimation à but éducatif uniquement — ce n’est pas un conseil financier, fiscal ou d’investissement. Les résultats dépendent entièrement des flux de trésorerie et du taux que vous saisissez ; rendements réels, impôts, inflation et coûts de financement peuvent différer.',
+  tool_payback_period_err_flows: 'Saisissez au moins un flux de trésorerie annuel, par exemple 2500.',
+  tool_payback_period_err_invest: 'Saisissez l’investissement initial comme un montant supérieur à 0, par exemple 10000.',
+  tool_payback_period_err_rate:
+    'Saisissez le taux d’actualisation comme un pourcentage de 0 à 100, par exemple 8, ou laissez le champ vide.',
+  tool_payback_period_err_token:
+    '« {token} » n’est pas un nombre. Séparez les montants annuels par des espaces, des sauts de ligne ou des points-virgules.',
+  tool_payback_period_example:
+    'Exemple : investir 10 000, gagner 2 500 par an, taux d’actualisation 8 %. Délai simple = 10 000 ÷ 2 500 = 4,00 ans. Actualisés, les flux annuels valent 2 314,81, 2 143,35, 1 984,58, 1 837,57 et 1 701,46 ; après 5 ans il reste 18,22 à récupérer ; l’année 6 ajoute 1 575,42, donc le délai actualisé = 5 + 18,22 ÷ 1 575,42 = 5,01 ans. Cliquez à nouveau sur Charger un exemple pour des flux inégaux et un cas de panneaux solaires.',
   tool_payback_period_example_title: 'Exemple',
-  tool_payback_period_faq_a1: 'Exemple : 10000 / 2500 = 4 ans.',
-  tool_payback_period_faq_a2: 'See Formula section.',
-  tool_payback_period_faq_a3: 'Educational only.',
-  tool_payback_period_faq_a4: 'Educational only.',
-  tool_payback_period_faq_q1: 'Exemple ?',
-  tool_payback_period_faq_q2: 'Formula?',
-  tool_payback_period_faq_q3: 'Advice?',
-  tool_payback_period_faq_q4: 'Related?',
-  tool_payback_period_formula_body: 'Saisissez investissement et flux annuel constant.',
-  tool_payback_period_formula_item_1: 'See formula notes.',
-  tool_payback_period_formula_item_2: 'Check inputs.',
-  tool_payback_period_formula_item_3: 'Educational only.',
-  tool_payback_period_formula_title: 'Formule',
-  tool_payback_period_how_body: 'Saisissez investissement et flux annuel constant.',
-  tool_payback_period_how_title: 'Fonctionnement',
+  tool_payback_period_faq_a1:
+    'Utilisez le rendement que vous exigez de cet argent : votre coût du capital, le taux d’intérêt du prêt qui finance l’achat, ou le rendement que vous pourriez obtenir ailleurs à risque comparable. Les entreprises utilisent souvent leur coût moyen pondéré du capital (CMPC).',
+  tool_payback_period_faq_a2:
+    'Multipliez la partie décimale par 12. 4,75 ans font 4 ans et 0,75 × 12 = 9 mois. La calculatrice arrondit au mois le plus proche et l’affiche à côté du résultat.',
+  tool_payback_period_faq_a3:
+    'Il n’existe pas de chiffre universel ; comparez-le à votre propre seuil et à la durée de vie de l’actif. Beaucoup d’entreprises visent 2 à 5 ans pour l’équipement, tandis que le solaire et les rénovations de bâtiments prennent souvent 6 à 12 ans. Un délai plus long que la durée de vie de l’actif signifie que le coût n’est jamais récupéré.',
+  tool_payback_period_faq_a4:
+    'Le délai simple additionne les flux à leur valeur nominale. Le délai actualisé divise d’abord chaque flux annuel par (1 + r)ᵗ, car l’argent reçu plus tard vaut moins aujourd’hui. Cela allonge le délai actualisé et, avec un taux suffisamment élevé, certains projets ne se récupèrent jamais.',
+  tool_payback_period_faq_a5:
+    'Ajoutez les flux annuels à −I₀ jusqu’à ce que le cumul devienne positif. Prenez la dernière année entière avant ce point, puis divisez le montant encore non récupéré par le flux de l’année suivante. Pour 50 000 avec 10 000, 15 000, 20 000, 25 000 : après 3 ans il reste 5 000, et 5 000 ÷ 25 000 = 0,2, donc le délai est de 3,2 ans.',
+  tool_payback_period_faq_a6:
+    'Il s’arrête au point d’équilibre. Un projet qui se récupère en 3 ans puis s’arrête peut sembler meilleur qu’un autre qui se récupère en 4 ans et rapporte encore pendant 15 ans. Utilisez le délai pour la vitesse et le risque, et la VAN ou le TRI pour juger la valeur.',
+  tool_payback_period_faq_a7:
+    'Oui. Tapez-le avec un signe moins, par exemple une grosse réparation à l’année 3. Le cumul baisse cette année-là et, s’il repasse sous zéro après la récupération, la calculatrice vous en avertit.',
+  tool_payback_period_faq_q1: 'Quel taux d’actualisation dois-je utiliser ?',
+  tool_payback_period_faq_q2: 'Comment convertir les années décimales en mois ?',
+  tool_payback_period_faq_q3: 'Qu’est-ce qu’un bon délai de récupération ?',
+  tool_payback_period_faq_q4: 'Quelle est la différence entre le délai simple et le délai actualisé ?',
+  tool_payback_period_faq_q5: 'Comment calculer le délai avec des flux de trésorerie inégaux ?',
+  tool_payback_period_faq_q6: 'Pourquoi le délai peut-il induire en erreur pour comparer des projets ?',
+  tool_payback_period_faq_q7: 'Puis-je saisir une année avec un flux de trésorerie négatif ?',
+  tool_payback_period_formula_body:
+    'Écrivez l’investissement comme un flux de −I₀ à l’année 0 et les flux de trésorerie nets comme CF₁, CF₂, … CFₙ.',
+  tool_payback_period_formula_item_1: 'Flux constants : délai = I₀ ÷ CF. 12 000 ÷ 1 100 = 10,91 ans.',
+  tool_payback_period_formula_item_2:
+    'Flux inégaux : délai = A + B ÷ C, où A est la dernière année avec un cumul négatif, B est le montant encore non récupéré à la fin de l’année A, et C est le flux de l’année A + 1.',
+  tool_payback_period_formula_item_3:
+    'Délai actualisé : remplacez chaque CFₜ par CFₜ ÷ (1 + r)ᵗ, puis appliquez la même règle A + B ÷ C aux valeurs actualisées. Avec r > 0, il est toujours plus long que le délai simple.',
+  tool_payback_period_formula_item_4: 'Conversion en mois : multipliez la fraction d’année par 12. 3,20 ans = 3 ans et 0,20 × 12 ≈ 2 mois.',
+  tool_payback_period_formula_item_5:
+    'Limites : le délai ignore les flux après l’année du retour à l’équilibre et ne dit rien du profit total. Utilisez la VAN ou le TRI pour juger si l’investissement en vaut la peine.',
+  tool_payback_period_formula_title: 'Formules du délai de récupération et leurs limites',
+  tool_payback_period_how_body:
+    'Partez de moins l’investissement et ajoutez le flux de trésorerie net de chaque année jusqu’à ce que le cumul atteigne zéro. Le délai de récupération est le nombre d’années entières avant ce point, plus la part de l’année suivante nécessaire pour combler l’écart.',
+  tool_payback_period_how_item_1: 'Saisissez le débours initial comme investissement initial.',
+  tool_payback_period_how_item_2:
+    'Saisissez le flux de trésorerie net par année — un montant si chaque année est identique, ou un montant par année (année 1 en premier) s’ils diffèrent.',
+  tool_payback_period_how_item_3:
+    'Ajoutez éventuellement un taux d’actualisation pour obtenir aussi le délai de récupération actualisé, puis cliquez sur Calculer.',
+  tool_payback_period_how_item_4:
+    'Lisez le délai en années et en années + mois, suivez le détail du calcul et repérez l’année de récupération mise en évidence dans le tableau cumulé.',
+  tool_payback_period_how_title: 'Comment calculer le délai de récupération',
   tool_payback_period_invest_label: 'Investissement initial',
   tool_payback_period_invest_ph: 'ex. 10000',
-  tool_payback_period_ref_a_label: 'Investopedia',
-  tool_payback_period_ref_b_label: 'Wikipedia',
-  tool_payback_period_references: 'Investopedia et formules de manuel.',
-  tool_payback_period_result_note: 'Éducatif.',
-  tool_payback_period_sample: 'Charger l’exemple',
-  tool_payback_period_title: 'Calculateur de délai de récupération',
-  tool_payback_period_usecase_1: 'Homework.',
-  tool_payback_period_usecase_2: 'Quick sketch.',
-  tool_payback_period_usecase_3: 'Contrast with discounted methods.',
-  tool_payback_period_usecases_title: 'Cas d’usage',
-  tool_payback_period_yearsOut_label: 'Années de payback',
+  tool_payback_period_never_disc_tpl:
+    'À {rate} %, les flux actualisés n’ont pas récupéré l’investissement à la fin de l’année {n} : il manque encore {short}.',
+  tool_payback_period_never_tpl: 'Pas encore récupéré à la fin de l’année {n} : il manque encore {short}.',
+  tool_payback_period_rate_hint:
+    'Laissez vide pour le délai simple uniquement. Utilisez votre coût du capital ou le rendement minimal exigé.',
+  tool_payback_period_rate_label: 'Taux d’actualisation % (facultatif)',
+  tool_payback_period_rate_ph: 'ex. 8',
+  tool_payback_period_ref_a_label: 'Investopedia — Délai de récupération (payback period)',
+  tool_payback_period_ref_b_label: 'Investopedia — Délai de récupération actualisé',
+  tool_payback_period_references:
+    'Investopedia — Délai de récupération (payback period) ; Investopedia — Délai de récupération actualisé.',
+  tool_payback_period_result_note:
+    'Les flux sont traités comme s’ils arrivaient de façon uniforme tout au long de chaque année, ce qui permet d’interpoler la fraction d’année. Le délai ignore tout ce qui se passe après l’année du retour à l’équilibre.',
+  tool_payback_period_sample: 'Charger un exemple',
+  tool_payback_period_title: 'Calcul du délai de récupération (DRCI) — simple ou actualisé, flux constants ou variables',
+  tool_payback_period_usecase_1:
+    'Filtre rapide de risque avant VAN ou TRI : un délai plus court signifie moins d’argent immobilisé pendant moins longtemps, ce qui compte quand la trésorerie est tendue.',
+  tool_payback_period_usecase_2:
+    'Travaux de finance ou de comptabilité : délai avec flux inégaux, par exemple 50 000 récupérés avec 10 000, 15 000, 20 000 et 25 000 — réponse 3,20 ans.',
+  tool_payback_period_usecase_3:
+    'Améliorations énergétiques : une installation solaire de 12 000 qui économise 1 100 par an se récupère en environ 10,91 ans, ou 16,16 ans si vous actualisez à 5 %.',
+  tool_payback_period_usecase_4:
+    'Équipements et achats de petite entreprise : vérifiez à quelle vitesse une machine, un véhicule ou un abonnement logiciel récupère son coût avant de comparer les options.',
+  tool_payback_period_usecases_title: 'Quand l’utiliser',
+  tool_payback_period_why_choose_item_1:
+    'Il indique quand un investissement n’est pas récupéré dans les années listées, et de combien il manque encore.',
+  tool_payback_period_why_choose_item_2:
+    'L’étape d’interpolation est écrite — années entières, montant encore à récupérer, division par le flux de l’année suivante — pour que vous puissiez reprendre la méthode dans un devoir ou un rapport.',
+  tool_payback_period_why_choose_item_3:
+    'Délai simple et délai actualisé partent d’une seule saisie. À 8 %, un investissement de 10 000 qui rapporte 2 500 par an se récupère en 4,00 ans en simple et en 5,01 ans en actualisé.',
+  tool_payback_period_why_choose_item_4:
+    'Les flux inégaux sont pris en charge, pas seulement investissement ÷ flux annuel. Un vrai projet rapporte rarement le même montant chaque année, et le raccourci à flux constant devient faux dès qu’ils divergent.',
+  tool_payback_period_why_choose_item_5:
+    'Le tableau cumulé année par année met en évidence l’année de récupération et rend visible une année négative ou une perte tardive au lieu de les cacher.',
+  tool_payback_period_why_choose_title: 'Pourquoi utiliser ce calcul du délai de récupération (DRCI)',
+  tool_payback_period_work_const: 'Même flux de trésorerie chaque année : {invest} ÷ {cf} = {years} ans.',
+  tool_payback_period_work_exact:
+    'Le flux cumulé atteint exactement zéro à la fin de l’année {y}, donc le délai de récupération est de {years} ans.',
+  tool_payback_period_work_label: 'Détail du calcul',
+  tool_payback_period_work_split:
+    'Récupéré à la fin de l’année {full} : {recovered} ; reste à récupérer : {left}. L’année {next} apporte {cf}, donc {left} ÷ {cf} = {frac} d’année. Délai = {full} + {frac} = {years} ans.',
+  tool_payback_period_yearsOut_label: 'Délai de récupération',
+  tool_payback_period_years_tpl: '{v} ans',
+  tool_payback_period_ym_tpl: '≈ {y} an(s) {m} mois',
   tool_pdf_page_numbers_add: 'Numéroter',
   tool_pdf_page_numbers_article:
     'Ajoutez des numéros de page à chaque feuille PDF dans le navigateur avec la bibliothèque PDF. Choisissez coin ou centre, numéro de départ et marge—le fichier reste sur l’appareil, sans envoi au serveur.',
@@ -18277,86 +18845,220 @@ const fr: SiteLangDict = {
   tool_pdf_watermark_usecases_title: 'Cas d’usage',
   tool_pdf_watermark_warn_large: 'Fichier >~25 Mo — peut être lent ou échouer.',
   tool_pdf_watermark_warn_pdflib: 'Bibliothèque PDF non chargée. Vérifiez le réseau.',
-  tool_percentage_change_abs_note: 'Variation absolue : {delta}',
-  tool_percentage_change_article:
-    'La variation relative répond « de combien la métrique a bougé vs sa base ? ». Saisissez l’ancienne et la nouvelle valeur ; formule (nouveau − ancien) / ancien × 100. Pour les KPI, pas un substitut au ROI.',
+  tool_percentage_change_abs_label: 'Variation absolue (arrivée − départ)',
+  tool_percentage_change_article: 'Taux de variation',
   tool_percentage_change_calculate: 'Calculer',
+  tool_percentage_change_clear: 'Effacer',
   tool_percentage_change_decrease: 'baisse',
   tool_percentage_change_description:
-    'Calculez la hausse ou la baisse en pourcentage entre une ancienne et une nouvelle valeur. Processus : saisissez les deux, appliquez (nouveau − ancien) / ancien × 100, lisez le signe. Exemple : 80 → 100 = +25 %. Pensé pour CA MoM, DAU et prix — pas des points de pourcentage.',
+    'Calculez le pourcentage d’augmentation ou de baisse entre une valeur de départ et une valeur d’arrivée, avec le calcul détaillé. Exemple : de 80 à 100, la hausse est de +25 %, mais revenir à 80 demande −20 %. Donne aussi le coefficient multiplicateur, l’écart relatif et les points de pourcentage.',
+  tool_percentage_change_diff_label: 'Écart relatif en % (symétrique)',
+  tool_percentage_change_err_new: 'Saisissez la valeur d’arrivée sous forme de nombre, par exemple 100.',
+  tool_percentage_change_err_old: 'Saisissez la valeur de départ sous forme de nombre, par exemple 80.',
   tool_percentage_change_example:
-    'Exemple complet : ancien 80, nouveau 100 → Δ = 20 → (20 / 80) × 100 = +25 %. Baisse : 100 → 80 = −20 %.',
+    'Avec les valeurs de l’exemple : départ 80, arrivée 100. Variation = 100 − 80 = 20 ; 20 ÷ 80 × 100 = +25 %, une hausse. Le coefficient multiplicateur vaut 100 ÷ 80 = 1,25 et l’écart relatif 20 ÷ 90 = 22,22 %. Pour revenir de 100 à 80, il faut (80 − 100) ÷ 100 × 100 = −20 %, et non −25 %. Cliquez de nouveau sur Charger un exemple pour voir 10 % → 12 % (+20 %, +2 points de pourcentage), une baisse de prix de 40 à 34 (−15 %) et un passage de −200 à 50 (+125 %).',
   tool_percentage_change_example_title: 'Exemple',
-  tool_percentage_change_faq_a1: 'Variation % = (nouveau − ancien) / ancien × 100. Positif = hausse ; négatif = baisse.',
-  tool_percentage_change_faq_a2: 'La division par zéro est indéfinie. Sans base, pas de variation relative.',
-  tool_percentage_change_faq_a3: 'Non. De 10 % à 12 % = +2 points, mais +20 % en variation relative.',
+  tool_percentage_change_faq_a1:
+    'Parce que chaque pourcentage s’applique à une base différente. 80 + 25 % = 100, mais 100 − 25 % = 75 : la baisse se calcule sur le nombre le plus grand. Le taux réciproque de +25 % est −20 % (CM 1,25 puis 1 ÷ 1,25 = 0,8) ; celui de −50 % est +100 %.',
+  tool_percentage_change_faq_a2:
+    'Taux de variation = (valeur d’arrivée − valeur de départ) ÷ valeur de départ × 100. De 80 à 100 : (100 − 80) ÷ 80 = 0,25, et 0,25 × 100 = +25 %. Avec le coefficient multiplicateur : CM = 100 ÷ 80 = 1,25 = 1 + 0,25. Si la valeur de départ est négative, divisez par sa valeur absolue pour que le signe indique toujours le sens de l’évolution.',
+  tool_percentage_change_faq_a3:
+    'Avec la même formule ; le résultat est simplement négatif. De 100 à 80 : (80 − 100) ÷ 100 × 100 = −20 %, soit une baisse de 20 %. Une baisse ne peut jamais dépasser −100 % (tomber à zéro), alors qu’une hausse n’a pas de limite.',
   tool_percentage_change_faq_a4:
-    'Le ROI compare le gain au coût d’investissement. La variation % compare toute nouvelle valeur à une base ancienne.',
-  tool_percentage_change_faq_q1: 'Quelle est la formule de variation en % ?',
-  tool_percentage_change_faq_q2: 'Pourquoi l’ancienne valeur ne peut-elle pas être zéro ?',
-  tool_percentage_change_faq_q3: 'Est-ce la même chose que les points de pourcentage ?',
-  tool_percentage_change_faq_q4: 'Différence avec le ROI ?',
+    'Non. Si un taux passe de 10 % à 12 %, il augmente de 2 points de pourcentage, ce qui représente une hausse de 20 % par rapport à 10 %. On parle en points pour la simple différence entre deux pourcentages (c’est ainsi qu’on annonce une hausse du taux du Livret A) et en pourcentage pour l’évolution relative.',
+  tool_percentage_change_faq_a5:
+    'Le taux de variation a un sens : il va d’une valeur de départ vers une valeur d’arrivée. L’écart relatif compare deux valeurs sans avant ni après, en divisant leur écart par leur moyenne. Pour 80 et 100, le taux de variation est de +25 % (ou −20 % dans l’autre sens), tandis que l’écart relatif est de 22,22 % dans les deux cas.',
+  tool_percentage_change_faq_a6:
+    'La calculatrice divise par la valeur absolue de la valeur de départ : passer de −200 à 50 donne (50 + 200) ÷ 200 × 100 = +125 %. Le signe a ainsi un sens, mais un pourcentage calculé sur une perte ou un solde négatif peut induire en erreur ; donnez aussi la variation absolue.',
+  tool_percentage_change_faq_a7:
+    'Non. La division par zéro n’est pas définie : passer de 0 à 5 ne correspond à aucun pourcentage fini. Indiquez la variation absolue (+5) ou choisissez une autre période de référence dont la valeur n’est pas nulle.',
+  tool_percentage_change_faq_q1: 'Pourquoi une baisse de 25 % n’annule-t-elle pas une hausse de 25 % ?',
+  tool_percentage_change_faq_q2: 'Quelle est la formule du taux de variation ?',
+  tool_percentage_change_faq_q3: 'Comment calculer un pourcentage de baisse ?',
+  tool_percentage_change_faq_q4: 'Pourcentage et points de pourcentage, est-ce la même chose ?',
+  tool_percentage_change_faq_q5: 'Quelle différence entre taux de variation et écart en pourcentage ?',
+  tool_percentage_change_faq_q6: 'Comment faire avec des nombres négatifs ?',
+  tool_percentage_change_faq_q7: 'Peut-on calculer un taux de variation quand la valeur de départ est 0 ?',
   tool_percentage_change_formula_body:
-    'Variation % = (nouveau − ancien) / ancien × 100. Le dénominateur utilise l’ancien signé (pas |ancien|).',
-  tool_percentage_change_formula_item_1: 'Δ = nouveau − ancien',
-  tool_percentage_change_formula_item_2: 'pourcentage = (Δ / ancien) × 100',
-  tool_percentage_change_formula_item_3: 'ancien = 0 → indéfini (erreur)',
-  tool_percentage_change_formula_title: 'Formule de variation en pourcentage',
+    'Notons V₁ la valeur de départ et V₂ la valeur d’arrivée. Le taux d’évolution se calcule toujours par rapport à la valeur de départ : l’ordre compte.',
+  tool_percentage_change_formula_item_1: 'Taux d’évolution t = (V₂ − V₁) ÷ |V₁| × 100. De 80 à 100 : 20 ÷ 80 × 100 = +25 %.',
+  tool_percentage_change_formula_item_2:
+    'Coefficient multiplicateur CM = V₂ ÷ V₁ = 1 + t (t en écriture décimale), donc t = (CM − 1) × 100. ×1,25 correspond à +25 % ; ×2,5 à +150 % ; ×0,85 à −15 %.',
+  tool_percentage_change_formula_item_3:
+    'Taux réciproque : pour annuler une évolution de p %, il faut −p ÷ (100 + p) × 100, ce qui revient à un CM réciproque de 1 ÷ CM. +25 % s’annule avec −20 % ; −50 % demande +100 % ; −15 % demande +17,65 %.',
+  tool_percentage_change_formula_item_4:
+    'Écart relatif = |V₁ − V₂| ÷ ((|V₁| + |V₂|) ÷ 2) × 100. Pour 80 et 100 : 20 ÷ 90 = 22,22 %. Le résultat ne dépend pas de l’ordre des deux valeurs.',
+  tool_percentage_change_formula_item_5:
+    'Points de pourcentage = V₂ − V₁ quand les deux valeurs sont déjà des pourcentages. De 10 % à 12 %, c’est +2 points, alors que le taux de variation est de +20 %.',
+  tool_percentage_change_formula_title: 'Formules du taux d’évolution',
   tool_percentage_change_how_body:
-    'Saisissez la base (ancien) et la valeur suivante. On soustrait, on divise par l’ancien, on multiplie par 100. Positif = hausse ; négatif = baisse. Si ancien = 0, la variation relative est indéfinie.',
-  tool_percentage_change_how_title: 'Comment ça marche',
+    'Soustrayez la valeur de départ de la valeur d’arrivée, divisez cet écart par la valeur de départ, puis multipliez par 100. Un résultat positif est un pourcentage d’augmentation ; un résultat négatif, un pourcentage de baisse.',
+  tool_percentage_change_how_item_1:
+    'Saisissez le chiffre de référence comme valeur de départ : le mois dernier, l’année précédente, le prix initial.',
+  tool_percentage_change_how_item_2:
+    'Saisissez le chiffre le plus récent comme valeur d’arrivée. Si ce sont deux taux, par exemple 10 % et 12 %, tapez le signe % ou cochez la case.',
+  tool_percentage_change_how_item_3:
+    'Cliquez sur Calculer pour obtenir le taux de variation signé et le calcul détaillé avec vos propres nombres.',
+  tool_percentage_change_how_item_4:
+    'Servez-vous des résultats complémentaires si besoin : variation absolue, coefficient multiplicateur, taux réciproque, écart relatif et points de pourcentage.',
+  tool_percentage_change_how_title: 'Comment calculer un taux de variation',
   tool_percentage_change_increase: 'hausse',
-  tool_percentage_change_new_label: 'Nouvelle valeur',
-  tool_percentage_change_no_change: 'aucun changement',
-  tool_percentage_change_original_label: 'Ancienne valeur',
-  tool_percentage_change_ref_wiki_label: 'Wikipédia — Relative change and difference',
-  tool_percentage_change_result_invalid: 'L’ancienne valeur doit être un nombre non nul.',
-  tool_percentage_change_result_label: 'Variation en pourcentage',
-  tool_percentage_change_title: 'Calculateur de variation en % — De l’ancienne à la nouvelle valeur',
-  tool_percentage_change_usecase_1: 'CA mensuel : GMV 80 le mois dernier vs 100 ce mois → +25 %.',
-  tool_percentage_change_usecase_2: 'Produit : DAU de 50k à 55k → +10 % relatif.',
-  tool_percentage_change_usecase_3: 'Prix : de 40 à 34 → −15 % (pas « 6 points de pourcentage »).',
-  tool_percentage_change_usecases_title: 'Usages business & data',
-  tool_permutation_combination_article: 'Calculateur de permutations et combinaisons',
-  tool_permutation_combination_cOut_label: 'C(n,r)',
+  tool_percentage_change_mult_label: 'Coefficient multiplicateur (arrivée ÷ départ)',
+  tool_percentage_change_neg_note:
+    'La valeur de départ est négative : la calculatrice divise par sa valeur absolue, et le signe indique alors le sens de l’évolution. Un pourcentage calculé sur une base négative se lit facilement de travers ; donnez aussi la variation absolue.',
+  tool_percentage_change_new_label: 'Valeur d’arrivée (après)',
+  tool_percentage_change_new_ph: 'ex. : 100',
+  tool_percentage_change_no_change: 'aucune variation',
+  tool_percentage_change_old_label: 'Valeur de départ (avant)',
+  tool_percentage_change_old_ph: 'ex. : 80',
+  tool_percentage_change_pp_label: 'Évolution en points de pourcentage',
+  tool_percentage_change_pp_tpl: '{v} points de pourcentage',
+  tool_percentage_change_rates_hint:
+    'Ajoute l’évolution en points de pourcentage : passer de 10 % à 12 %, c’est +2 points. Taper % dans une case coche cette option automatiquement.',
+  tool_percentage_change_rates_label: 'Les deux valeurs sont déjà des pourcentages (taux)',
+  tool_percentage_change_ref_a_label: 'Wikipédia (anglais) — Relative change',
+  tool_percentage_change_ref_b_label: 'Wikipédia (anglais) — Percentage point',
+  tool_percentage_change_references: 'Wikipédia (anglais) — Relative change; Wikipédia (anglais) — Percentage point.',
+  tool_percentage_change_result_label: 'Taux de variation',
+  tool_percentage_change_result_note:
+    'Les pourcentages sont arrondis à 2 décimales. Le taux de variation se calcule par rapport à la valeur de départ : si vous inversez les deux nombres, le résultat change.',
+  tool_percentage_change_sample: 'Charger un exemple',
+  tool_percentage_change_times_note:
+    'Une évolution de {pct} correspond à un coefficient multiplicateur de {m} : la valeur d’arrivée vaut {m} fois la valeur de départ.',
+  tool_percentage_change_title: 'Calcul du taux de variation — pourcentage d’augmentation ou de baisse entre deux valeurs',
+  tool_percentage_change_undo_label: 'Taux réciproque (pour revenir à la valeur de départ)',
+  tool_percentage_change_undo_none: 'Impossible — aucun pourcentage ne permet de repartir de 0',
+  tool_percentage_change_usecase_1:
+    'Suivi du chiffre d’affaires d’un mois ou d’une année à l’autre : passer de 80 000 à 100 000 € fait +25 %, et une audience qui recule de 55 000 à 50 000 visiteurs évolue de −9,09 %.',
+  tool_percentage_change_usecase_2:
+    'Soldes, prix et inflation : un prix ramené de 40 à 34 baisse de 15 %, et revenir à 40 demanderait une hausse de 17,65 %.',
+  tool_percentage_change_usecase_3:
+    'Taux d’intérêt et sondages : comme pour le taux du Livret A, annoncé en points, un taux qui passe de 10 % à 12 % gagne 2 points de pourcentage — soit +20 % en valeur relative.',
+  tool_percentage_change_usecase_4:
+    'Bourse et devoirs : une action qui chute de 50 à 35 perd 30 % et doit regagner 42,86 % pour revenir à son niveau ; les exercices de maths demandent justement ces taux d’évolution, coefficients multiplicateurs et taux réciproques.',
+  tool_percentage_change_usecases_title: 'Quand l’utiliser',
+  tool_percentage_change_why_choose_item_1:
+    'Le calcul est posé avec vos nombres, par exemple (100 − 80) ÷ 80 × 100 = +25 % : vous pouvez le vérifier ou reprendre la méthode dans un exercice.',
+  tool_percentage_change_why_choose_item_2:
+    'Il donne le taux réciproque. Après une hausse de 25 %, une baisse de 25 % ne ramène pas au point de départ : 100 − 25 % = 75. Il faut −20 %.',
+  tool_percentage_change_why_choose_item_3:
+    'Taux de variation, écart relatif et coefficient multiplicateur s’affichent côte à côte : vous choisissez le chiffre adapté, qu’il s’agisse d’un avant/après ou de deux valeurs comparées sans ordre.',
+  tool_percentage_change_why_choose_item_4:
+    'Pour des taux, il donne les deux réponses : un taux de conversion qui passe de 10 % à 12 % gagne 2 points de pourcentage, soit +20 %. Beaucoup d’articles confondent les deux.',
+  tool_percentage_change_why_choose_item_5:
+    'Une valeur de départ nulle ou négative donne lieu à une explication, et non à un chiffre absurde comme « Infinity % ».',
+  tool_percentage_change_why_choose_title: 'Pourquoi utiliser ce calculateur de taux de variation',
+  tool_percentage_change_work_label: 'Calcul détaillé',
+  tool_percentage_change_work_tpl: '({new} − {old}) ÷ {base} × 100 = {delta} ÷ {base} × 100 = {pct}',
+  tool_percentage_change_zero_note:
+    'La valeur de départ est 0 : le taux de variation n’est pas défini, car toute hausse depuis zéro est infinie en valeur relative. Indiquez plutôt la variation absolue.',
+  tool_permutation_combination_approx_tpl: '≈ {a} ({d} chiffres)',
+  tool_permutation_combination_article: 'Arrangements et combinaisons',
   tool_permutation_combination_calculate: 'Calculer',
   tool_permutation_combination_clear: 'Effacer',
+  tool_permutation_combination_comb_label: 'Combinaisons C(n, r) — « r parmi n » (l’ordre ne compte pas, sans répétition)',
+  tool_permutation_combination_comb_rep_label: 'Combinaisons avec répétition (l’ordre ne compte pas, avec répétition)',
   tool_permutation_combination_description:
-    'Calculez les permutations P(n,r) et combinaisons C(n,r) pour des entiers 0≤r≤n (formules factorielles). Exemple : n=5, r=2 → P=20, C=10. Calcul local ; processus de dénombrement clair.',
-  tool_permutation_combination_disclaimer: 'Illustration éducative (permutations and combinations) uniquement.',
-  tool_permutation_combination_err_generic: 'Vérifiez les entrées.',
-  tool_permutation_combination_example: 'Exemple : P=20, C=10.',
+    'Calculez les arrangements A(n, k) et les combinaisons C(n, k), y compris avec répétition. Répondez si l’ordre compte et si l’on peut répéter pour choisir la formule ; voyez le processus et le résultat exact.',
+  tool_permutation_combination_disclaimer:
+    'Pour apprendre et vérifier des réponses. Les dénombrements supposent que chaque élément est distinct et chaque issue équiprobable ; loteries, jeux et mots de passe réels peuvent enfreindre ces hypothèses.',
+  tool_permutation_combination_err_big: 'Gardez n ≤ 1 000 000 et r ≤ 5 000.',
+  tool_permutation_combination_err_n: 'Saisissez n comme un entier ≥ 0, par exemple 49.',
+  tool_permutation_combination_err_r: 'Saisissez r comme un entier ≥ 0, par exemple 6.',
+  tool_permutation_combination_example:
+    'Exemple n = 5, r = 2, l’ordre ne compte pas, sans répétition : C(5, 2) = (5 × 4) ÷ (2 × 1) = 10. Pour le même n et r le tableau indique 20 arrangements, 25 avec répétition et 15 combinaisons avec répétition. Cliquez à nouveau sur Charger un exemple pour un tirage 6 parmi 49, un PIN à 4 chiffres, un podium de 8 et trois boules parmi 5 parfums (rotation 5,2 → 49,6 → 10,4 → 8,3 → 5,3).',
   tool_permutation_combination_example_title: 'Exemple',
-  tool_permutation_combination_faq_a1: 'Exemple : P=20, C=10.',
-  tool_permutation_combination_faq_a2: 'See Formula section.',
-  tool_permutation_combination_faq_a3: 'Educational only.',
-  tool_permutation_combination_faq_a4: 'Educational only.',
-  tool_permutation_combination_faq_q1: 'Exemple ?',
-  tool_permutation_combination_faq_q2: 'Formula?',
-  tool_permutation_combination_faq_q3: 'Advice?',
-  tool_permutation_combination_faq_q4: 'Related?',
-  tool_permutation_combination_formula_body: 'Saisissez n et r.',
-  tool_permutation_combination_formula_item_1: 'See formula notes.',
-  tool_permutation_combination_formula_item_2: 'Check inputs.',
-  tool_permutation_combination_formula_item_3: 'Educational only.',
-  tool_permutation_combination_formula_title: 'Formule',
-  tool_permutation_combination_how_body: 'Saisissez n et r.',
-  tool_permutation_combination_how_title: 'Fonctionnement',
-  tool_permutation_combination_n_label: 'n',
-  tool_permutation_combination_n_ph: 'ex. 5',
-  tool_permutation_combination_pOut_label: 'P(n,r)',
-  tool_permutation_combination_r_label: 'r',
-  tool_permutation_combination_r_ph: 'ex. 2',
-  tool_permutation_combination_ref_a_label: 'Wikipedia',
-  tool_permutation_combination_ref_b_label: 'Textbook formula',
-  tool_permutation_combination_references: 'Formules de manuel.',
-  tool_permutation_combination_result_note: 'Éducatif.',
-  tool_permutation_combination_sample: 'Charger l’exemple',
-  tool_permutation_combination_title: 'Calculateur de permutations et combinaisons',
-  tool_permutation_combination_usecase_1: 'Homework.',
-  tool_permutation_combination_usecase_2: 'Quick sketch.',
-  tool_permutation_combination_usecase_3: 'Compare related algebra tools.',
-  tool_permutation_combination_usecases_title: 'Cas d’usage',
+  tool_permutation_combination_faq_a1:
+    'Dans un arrangement l’ordre compte ; dans une combinaison, non. Prendre 2 parmi A, B et C donne 6 arrangements (AB, BA, AC, CA, BC, CB) mais seulement 3 combinaisons (AB, AC, BC). Chaque combinaison de r éléments apparaît r! fois parmi les arrangements, d’où C(n, r) = A(n, r) ÷ r!. Les permutations de tous les n éléments sont n!.',
+  tool_permutation_combination_faq_a2:
+    'Pour A(n, r), multipliez r nombres en descendant depuis n : A(7, 3) = 7 × 6 × 5 = 210. Pour C(n, r), divisez par r! : C(7, 3) = 210 ÷ (3 × 2 × 1) = 35. Annuler les facteurs communs avant de multiplier garde les nombres petits.',
+  tool_permutation_combination_faq_a3:
+    'Non. L’ordre des chiffres compte et ils peuvent se répéter, donc un cadenas à 3 molettes avec les chiffres 0–9 a 10³ = 1 000 réglages — un arrangement avec répétition. Si l’ordre ne comptait vraiment pas, il n’y aurait que C(12, 3) = 220.',
+  tool_permutation_combination_faq_a4:
+    'Il y a exactement une façon d’ordonner rien. Définir 0! = 1 maintient aussi la cohérence des formules : C(n, n) = n! ÷ (n! × 0!) = 1 et A(n, 0) = 1.',
+  tool_permutation_combination_faq_a5:
+    'Sans répétition la réponse est 0 — on ne peut pas choisir 6 éléments distincts parmi 5. Avec répétition, cela fonctionne : lancer un dé 10 fois donne 6¹⁰ = 60 466 176 résultats ordonnés.',
+  tool_permutation_combination_faq_a6:
+    'Multipliez les dénombrements des étapes indépendantes. Au Loto français on choisit 5 numéros parmi 49 et un numéro Chance parmi 10 : C(49, 5) × 10 = 1 906 884 × 10 = 19 068 840. N’additionnez que des cas qui ne peuvent pas se produire ensemble.',
+  tool_permutation_combination_faq_a7:
+    'C’est une permutation d’un multiensemble : divisez n! par la factorielle de chaque répétition. MISSISSIPPI a 11 lettres avec quatre I, quatre S et deux P, donc 11! ÷ (4! × 4! × 2!) = 34 650 rangements. Ce calculateur ne demande pas le décompte des lettres, mais la formule est un pas au-delà de A(n, r).',
+  tool_permutation_combination_faq_q1: 'Quelle est la différence entre un arrangement et une combinaison ?',
+  tool_permutation_combination_faq_q2: 'Comment calculer A(n, r) et C(n, r) à la main ?',
+  tool_permutation_combination_faq_q3: 'Un cadenas à code est-il vraiment une combinaison ?',
+  tool_permutation_combination_faq_q4: 'Pourquoi 0! vaut-il 1 ?',
+  tool_permutation_combination_faq_q5: 'Que se passe-t-il si r est plus grand que n ?',
+  tool_permutation_combination_faq_q6: 'Comment dénombrer un problème en plusieurs étapes ?',
+  tool_permutation_combination_faq_q7: 'Et les lettres répétées, comme pour ranger MISSISSIPPI ?',
+  tool_permutation_combination_formula_body:
+    'n! (factorielle) signifie n × (n − 1) × … × 1, et 0! = 1. Chaque formule compte les façons de prendre r éléments parmi n. Dans le tableau les formules utilisent n et r (comme les champs) ; en cours on dit souvent « k parmi n », avec r = k.',
+  tool_permutation_combination_formula_item_1:
+    'L’ordre compte, sans répétition — arrangements : A(n, r) = n! ÷ (n − r)!. Or, argent et bronze parmi 8 coureurs : A(8, 3) = 8 × 7 × 6 = 336.',
+  tool_permutation_combination_formula_item_2:
+    'L’ordre ne compte pas, sans répétition — combinaisons « r parmi n » : C(n, r) = n! ÷ (r! (n − r)!), aussi noté (n r). Choisir 6 numéros parmi 49 : C(49, 6) = 13 983 816.',
+  tool_permutation_combination_formula_item_3:
+    'L’ordre compte, avec répétition — p-listes / arrangements avec répétition : nʳ. Code PIN à 4 chiffres (0–9) : 10⁴ = 10 000.',
+  tool_permutation_combination_formula_item_4:
+    'L’ordre ne compte pas, avec répétition (multiensembles) — combinaisons avec répétition : C(n + r − 1, r). Trois boules parmi 5 parfums, doubles autorisés : C(7, 3) = 35.',
+  tool_permutation_combination_formula_item_5:
+    'Cas limites : C(n, 0) = C(n, n) = 1 et C(n, r) = C(n, n − r). Sans répétition, r > n donne 0 : on ne peut pas prendre plus d’éléments distincts qu’il n’en existe.',
+  tool_permutation_combination_formula_title: 'Formules et cas d’emploi',
+  tool_permutation_combination_how_body:
+    'Décidez de deux choses : l’ordre des éléments choisis compte-t-il, et un élément peut-il être repris ? Ces réponses sélectionnent l’une des quatre formules. Sans répétition, A(n, k) = n! ÷ (n − k)! et C(n, k) = A(n, k) ÷ k!. Sur cette page les champs s’appellent n et r — le r ici est le k des manuels (« k parmi n »). Les permutations de tous les éléments sont n!.',
+  tool_permutation_combination_how_item_1:
+    'Entrez n (parmi combien vous choisissez) et r (combien vous prenez). Les deux doivent être des entiers.',
+  tool_permutation_combination_how_item_2:
+    'Répondez à « L’ordre compte-t-il ? » — oui pour un podium, un code ou des places assises ; non pour une équipe, une main de cartes ou un ticket de loto.',
+  tool_permutation_combination_how_item_3: 'Répondez à « Peut-on reprendre le même élément ? », puis cliquez sur Calculer.',
+  tool_permutation_combination_how_item_4:
+    'Lisez le dénombrement surligné, les étapes et la chance 1 sur X, puis comparez les quatre chiffres du tableau pour le même n et r.',
+  tool_permutation_combination_how_title: 'Comment calculer arrangements et combinaisons',
+  tool_permutation_combination_n_label: 'Nombre total d’éléments parmi lesquels vous choisissez (n)',
+  tool_permutation_combination_n_ph: 'ex. 49',
+  tool_permutation_combination_odds_label: 'Chance d’un résultat précis',
+  tool_permutation_combination_odds_tpl: '1 sur {x}',
+  tool_permutation_combination_order_label: 'L’ordre compte-t-il ?',
+  tool_permutation_combination_order_no: 'Non — seuls les éléments choisis comptent',
+  tool_permutation_combination_order_yes: 'Oui — ABC est différent de CBA',
+  tool_permutation_combination_perm_label: 'Arrangements A(n, r) (l’ordre compte, sans répétition)',
+  tool_permutation_combination_perm_rep_label: 'Arrangements avec répétition / p-listes (l’ordre compte, avec répétition)',
+  tool_permutation_combination_r_label: 'Combien vous en prenez (r)',
+  tool_permutation_combination_r_ph: 'ex. 6',
+  tool_permutation_combination_ref_a_label: 'Wikipédia — Permutation',
+  tool_permutation_combination_ref_b_label: 'Wikipédia — Combinaison',
+  tool_permutation_combination_ref_c_label: 'NIST DLMF §26.3 — Coefficients binomiaux',
+  tool_permutation_combination_references: 'Wikipédia — Permutation ; Wikipédia — Combinaison ; NIST DLMF §26.3 — Coefficients binomiaux.',
+  tool_permutation_combination_repeat_label: 'Le même élément peut-il être repris ?',
+  tool_permutation_combination_repeat_no: 'Non, chaque élément une seule fois',
+  tool_permutation_combination_repeat_yes: 'Oui, répétitions autorisées',
+  tool_permutation_combination_result_note:
+    'Arithmétique entière exacte, sans arrondi même pour 52! ou C(1000, 500). La ligne surlignée correspond à vos deux réponses.',
+  tool_permutation_combination_sample: 'Charger un exemple',
+  tool_permutation_combination_table_count: 'Nombre de façons',
+  tool_permutation_combination_table_formula: 'Formule',
+  tool_permutation_combination_table_kind: 'Type de dénombrement',
+  tool_permutation_combination_title: 'Calcul d’arrangements et de combinaisons (k parmi n) — dénombrement avec les étapes',
+  tool_permutation_combination_usecase_1:
+    'Devoirs de probabilités : dénombrer les issues, comme les 2 598 960 mains de poker à cinq cartes, C(52, 5).',
+  tool_permutation_combination_usecase_2: 'Chances au loto : un ticket 6 parmi 49 a 1 chance sur 13 983 816 d’avoir les six numéros.',
+  tool_permutation_combination_usecase_3:
+    'Mots de passe et codes PIN : combien de codes une longueur et un alphabet permettent — 8 lettres minuscules donnent 26⁸ = 208 827 064 576.',
+  tool_permutation_combination_usecase_4:
+    'Organisation : ordres de places, classements, ou combien de comités de 3 personnes un club de 12 peut former — C(12, 3) = 220.',
+  tool_permutation_combination_usecases_title: 'Dans quels cas s’en servir',
+  tool_permutation_combination_why_choose_item_1:
+    'Les réponses restent des entiers exacts quelle que soit leur taille : C(52, 5) = 2 598 960 et 52! a 68 chiffres. Tableurs et calculatrices ordinaires arrondissent après 15–16 chiffres significatifs.',
+  tool_permutation_combination_why_choose_item_2:
+    'Il pose les deux questions qui fixent la formule au lieu de vous faire choisir « nPr » ou « nCr » par le nom — l’étape où la plupart des devoirs se trompent.',
+  tool_permutation_combination_why_choose_item_3:
+    'Le calcul est détaillé : C(5, 2) = (5 × 4) ÷ (2 × 1) = 20 ÷ 2 = 10 ; les longs produits se raccourcissent en 52 × 51 × 50 × … × 48.',
+  tool_permutation_combination_why_choose_item_4:
+    'Les quatre dénombrements apparaissent côte à côte : pour n = 10 et r = 4 ce sont 5 040, 210, 10 000 et 715.',
+  tool_permutation_combination_why_choose_item_5:
+    'La ligne 1 sur X transforme un dénombrement en chance d’un ticket — 1 sur 13 983 816 pour un tirage 6 parmi 49.',
+  tool_permutation_combination_why_choose_title: 'Pourquoi utiliser ce calcul d’arrangements et de combinaisons',
+  tool_permutation_combination_work_label: 'Étapes du calcul',
+  tool_permutation_combination_zero_note:
+    'r est plus grand que n : on ne peut pas choisir r éléments distincts — les dénombrements sans répétition valent 0. Autorisez les répétitions ou baissez r.',
   tool_present_value_amount_label: 'Montant',
   tool_present_value_amount_ph: 'ex. 10000',
   tool_present_value_article: 'Calculateur de valeur actuelle (PV/FV)',
@@ -20270,50 +20972,112 @@ const fr: SiteLangDict = {
     'Produit et structure du site : utilisez Breadcrumb pour décrire les parcours de navigation et Organization pour le nom et le logo de la marque.',
   tool_schema_usecases_title: 'Quand l’utiliser',
   tool_schema_wrap_script: 'Envelopper dans <script type="application/ld+json">',
-  tool_scientific_notation_article: 'Convertissez décimaux et notation scientifique a×10^b dans le navigateur.',
-  tool_scientific_notation_calculate: 'Calculer',
+  tool_scientific_notation_article: 'Écriture scientifique',
   tool_scientific_notation_clear: 'Effacer',
-  tool_scientific_notation_coeffOut_label: 'Coefficient a',
+  tool_scientific_notation_convert: 'Convertir',
+  tool_scientific_notation_dec_label: 'Écriture décimale',
+  tool_scientific_notation_dec_too_long: '{n} chiffres : trop long pour être écrit en entier ; gardez l’écriture scientifique.',
   tool_scientific_notation_description:
-    'Convertissez décimaux ↔ notation scientifique a×10^b. Exemple : 12300 → 1,23×10^4. Accepte 1,23e4 et 1,23×10^4 à l’expansion. Affiche coefficient et exposant. Dans le navigateur.',
-  tool_scientific_notation_disclaimer: 'Conversion pédagogique seulement — pas une bibliothèque de précision arbitraire.',
-  tool_scientific_notation_err_generic: 'Saisissez une valeur décimale ou scientifique analysable selon le mode.',
-  tool_scientific_notation_example: 'Exemple : 12300 → 1,23×10^4 (a = 1,23, b = 4).',
+    'Écriture scientifique : convertissez un nombre en a × 10ⁿ ou revenez à l’écriture décimale, avec les étapes : de combien de rangs la virgule se décale. Vous obtenez aussi la notation E, la notation ingénieur et le nombre de chiffres significatifs.',
+  tool_scientific_notation_disclaimer:
+    'Pour apprendre et vérifier un calcul. L’option chiffres significatifs arrondit au supérieur dès que le chiffre suivant vaut 5 ou plus ; certaines conventions de laboratoire ou de finance arrondissent au pair le plus proche.',
+  tool_scientific_notation_e_label: 'Notation E',
+  tool_scientific_notation_eng_label: 'Notation ingénieur',
+  tool_scientific_notation_err_empty: 'Saisissez un nombre, par exemple 0,00045, 12 300 ou 4.5e-4.',
+  tool_scientific_notation_err_nan:
+    '« {token} » n’est ni un nombre décimal ni une écriture scientifique. Essayez 0,00045, 4.5e-4 ou 4,5 × 10^-4.',
+  tool_scientific_notation_err_range: 'Cet exposant est trop grand. Restez entre −100 000 et 100 000.',
+  tool_scientific_notation_example:
+    'Exemple 0,00004508 : on décale la virgule de 5 rangs vers la droite, ce qui donne 4,508 × 10⁻⁵ — en notation E 4.508e-5, en notation ingénieur 45,08 × 10⁻⁶ (µ, micro) —, avec 4 chiffres significatifs. Cliquez à nouveau sur Charger un exemple pour voir 6.02214076e23, 45,6 × 10^3 et 12300.',
   tool_scientific_notation_example_title: 'Exemple',
-  tool_scientific_notation_expOut_label: 'Exposant b',
-  tool_scientific_notation_faq_a1: '1,23e4, 1,23E+4, 1,23×10^4 et 1,23*10^4.',
-  tool_scientific_notation_faq_a2: 'Non ; conversion JS ordinaire pour apprendre.',
-  tool_scientific_notation_faq_a3: '1 ≤ |a| < 10 en forme normalisée (sauf zéro).',
-  tool_scientific_notation_faq_a4: 'Le signe reste sur a ; l’exposant suit les déplacements.',
-  tool_scientific_notation_faq_q1: 'Quelles écritures scientifiques ?',
-  tool_scientific_notation_faq_q2: 'Précision illimitée ?',
-  tool_scientific_notation_faq_q3: 'Plage de a ?',
-  tool_scientific_notation_faq_q4: 'Nombres négatifs ?',
-  tool_scientific_notation_formula_body: 'Écrire x = a × 10^b normalisé :',
-  tool_scientific_notation_formula_item_1: 'Déplacer la virgule jusqu’à 1 ≤ |a| < 10 (zéro → 0×10^0).',
-  tool_scientific_notation_formula_item_2: 'b est le nombre de déplacements de la virgule.',
-  tool_scientific_notation_formula_item_3: 'Accepté : 1,23e4, 1,23E+4, 1,23×10^4, 1,23*10^4.',
-  tool_scientific_notation_formula_item_4: 'Priorité à une chaîne a×10^b lisible.',
-  tool_scientific_notation_formula_title: 'Règles de conversion',
+  tool_scientific_notation_faq_a1:
+    'Décalez la virgule jusqu’à ce qu’il reste un seul chiffre non nul à sa gauche, puis comptez les rangs. Pour 0,00004508, la virgule se décale de 5 rangs vers la droite : 4,508 × 10⁻⁵. Pour 12 300, elle se décale de 4 rangs vers la gauche : 1,23 × 10⁴.',
+  tool_scientific_notation_faq_a2:
+    'Multipliez les mantisses et additionnez les exposants : (3 × 10⁴) × (5 × 10⁻²) = 15 × 10², soit 1,5 × 10³ une fois remis en écriture scientifique. Pour diviser, divisez les mantisses et soustrayez les exposants. Pour additionner ou soustraire, ramenez d’abord les deux nombres au même exposant. Un résultat non normalisé comme 15 × 10^2 peut être collé ici pour être remis en forme.',
+  tool_scientific_notation_faq_a3:
+    'Avec un exposant positif, la virgule se décale vers la droite et on complète par des zéros : 3,2 × 10⁶ = 3 200 000. Avec un exposant négatif, elle se décale vers la gauche : 7,1 × 10⁻³ = 0,0071.',
+  tool_scientific_notation_faq_a4:
+    'Le E se lit « fois dix puissance » : 1,23E+04 vaut 1,23 × 10⁴ et 6.02e23 vaut 6,02 × 10²³. Excel reprend le séparateur décimal du système, d’où 1,23E+04 sur un poste en français ; les calculatrices et les langages de programmation utilisent le point (1.23E+04). Excel bascule une cellule au format Standard dans cette notation quand le nombre est trop large et ne garde que 15 chiffres significatifs : enregistrez donc en texte les identifiants longs (numéros de carte, codes-barres).',
+  tool_scientific_notation_faq_a5:
+    'Oui. Au collège on dit « écriture scientifique », dans le supérieur et sur les calculatrices plutôt « notation scientifique » : dans les deux cas a × 10ⁿ avec 1 ≤ |a| < 10, et a est parfois appelé « mantisse ». L’écriture décimale, c’est le nombre écrit en entier (3 200 000). La notation ingénieur est une variante où n est un multiple de 3, pour coller aux préfixes k, M, m ou µ.',
+  tool_scientific_notation_faq_a6:
+    'Les zéros de tête ne comptent jamais (0,0045 en a 2). Les zéros placés à la fin après la virgule comptent (4,50 en a 3). Les zéros à la fin d’un entier sont ambigus : 12 300 peut en avoir 3, 4 ou 5. L’écriture scientifique lève le doute — 1,230 × 10⁴ en a clairement 4 —, choisissez donc le nombre voulu dans Chiffres significatifs.',
+  tool_scientific_notation_faq_a7:
+    'C’est une écriture scientifique dont l’exposant est limité aux multiples de 3 : la mantisse va alors de 1 à 999 et correspond à un préfixe du SI. 45,08 × 10⁻⁶ donne 45,08 µ (micro), 12,3 × 10³ donne 12,3 k (kilo).',
+  tool_scientific_notation_faq_q1: 'Comment mettre un nombre en écriture scientifique ?',
+  tool_scientific_notation_faq_q2: 'Comment multiplier ou diviser en écriture scientifique ?',
+  tool_scientific_notation_faq_q3: 'Comment repasser de l’écriture scientifique à l’écriture décimale ?',
+  tool_scientific_notation_faq_q4: 'Que veut dire 1,23E+04 ou 6.02e23 ?',
+  tool_scientific_notation_faq_q5: 'Écriture scientifique, notation scientifique : est-ce la même chose ?',
+  tool_scientific_notation_faq_q6: 'Combien de chiffres significatifs compte un nombre ?',
+  tool_scientific_notation_faq_q7: 'Qu’est-ce que la notation ingénieur ?',
+  tool_scientific_notation_formula_body:
+    'Un nombre en écriture scientifique s’écrit a × 10ⁿ, avec 1 ≤ |a| < 10 et n entier relatif. n compte de combien de rangs la virgule a été décalée.',
+  tool_scientific_notation_formula_item_1:
+    'Nombres supérieurs ou égaux à 10 : la virgule se décale vers la gauche et n est positif. 12 300 → 1,23 × 10⁴.',
+  tool_scientific_notation_formula_item_2: 'Nombres inférieurs à 1 : la virgule se décale vers la droite et n est négatif. 0,0071 → 7,1 × 10⁻³.',
+  tool_scientific_notation_formula_item_3: 'De 1 inclus à 10 exclu, n = 0 : 4,5 = 4,5 × 10⁰.',
+  tool_scientific_notation_formula_item_4:
+    'Un nombre négatif garde son signe sur a : −0,0032 → −3,2 × 10⁻³. Le signe de n indique si le nombre est grand ou petit, pas s’il est négatif.',
+  tool_scientific_notation_formula_item_5:
+    'Séparateurs sur cette page : une virgule seule est la virgule décimale, et un point seul est lui aussi lu comme séparateur décimal, pour que la notation E d’une calculatrice (6.022e23) passe telle quelle. Écrivez les milliers avec des espaces (12 300) ; des points ou des virgules répétés (1.234.567) sont pris comme séparateurs de milliers. Saisies acceptées : 4,508e-5, 4,508E-5, 4,508 × 10^-5, 4,508*10^-5, 4,508 × 10⁻⁵ et 10^6 seul.',
+  tool_scientific_notation_formula_title: 'Règles de l’écriture a × 10ⁿ',
   tool_scientific_notation_how_body:
-    'Choisissez le sens. Décimal→scientifique : nombre ordinaire. Scientifique→décimal : 1,23e4 ou 1,23×10^4. Affiche la chaîne convertie et, si utile, a et b.',
-  tool_scientific_notation_how_title: 'Fonctionnement',
-  tool_scientific_notation_mode_label: 'Sens',
-  tool_scientific_notation_mode_toDec: 'Scientifique → décimal',
-  tool_scientific_notation_mode_toSci: 'Décimal → scientifique',
-  tool_scientific_notation_ref_exp_label: 'Wikipedia — Exponentiation',
-  tool_scientific_notation_ref_sci_label: 'Wikipedia — Notation scientifique',
-  tool_scientific_notation_references: 'Wikipedia notation scientifique.',
-  tool_scientific_notation_resultOut_label: 'Valeur convertie',
-  tool_scientific_notation_result_note: 'Forme a×10^b avec 1 ≤ |a| < 10 (0 comme 0×10^0).',
-  tool_scientific_notation_sample: 'Charger l’exemple',
-  tool_scientific_notation_title: 'Calculateur de notation scientifique — Comment convertir',
-  tool_scientific_notation_usecase_1: 'Devoir : réécrire de grands/petits décimaux.',
-  tool_scientific_notation_usecase_2: 'Développer a×10^b en décimal.',
-  tool_scientific_notation_usecase_3: 'Comparer la notation e et ×10^b.',
-  tool_scientific_notation_usecases_title: 'Quand l’utiliser',
-  tool_scientific_notation_value_label: 'Valeur',
-  tool_scientific_notation_value_ph: 'ex. 12300 ou 1,23e4 ou 1,23×10^4',
+    'Décalez la virgule jusqu’à ce qu’il ne reste qu’un seul chiffre non nul à sa gauche. Le nombre de rangs parcourus donne l’exposant : positif si la virgule part vers la gauche (grand nombre), négatif si elle part vers la droite (petit nombre).',
+  tool_scientific_notation_how_item_1:
+    'Tapez ou collez un nombre décimal comme 0,00004508 ou 12 300, ou un nombre déjà en écriture scientifique comme 6.022e23 ou 4,5 × 10^-4. La calculatrice reconnaît d’elle-même le sens de la conversion.',
+  tool_scientific_notation_how_item_2:
+    'Laissez Chiffres significatifs sur « Garder les chiffres saisis », ou choisissez un nombre de chiffres pour arrondir la mantisse.',
+  tool_scientific_notation_how_item_3: 'Cliquez sur Convertir.',
+  tool_scientific_notation_how_item_4:
+    'Lisez l’écriture scientifique, la notation E, la notation ingénieur et l’écriture décimale ; la ligne Étapes indique de combien de rangs la virgule s’est décalée.',
+  tool_scientific_notation_how_title: 'Comment mettre un nombre en écriture scientifique',
+  tool_scientific_notation_ref_sci_label: 'Wikipédia — Scientific notation (en anglais)',
+  tool_scientific_notation_ref_si_label: 'NIST — Préfixes métriques du SI (en anglais)',
+  tool_scientific_notation_references: 'Wikipédia — Scientific notation (en anglais) ; NIST — Préfixes métriques du SI (en anglais).',
+  tool_scientific_notation_result_note:
+    'Les chiffres sont décalés comme du texte, sans calcul en virgule flottante : les constantes longues gardent tous leurs chiffres et 0,1 reste 0,1.',
+  tool_scientific_notation_sample: 'Charger un exemple',
+  tool_scientific_notation_sig_ambiguous:
+    'De {n} à {max} : les zéros à la fin d’un nombre entier sont ambigus. S’ils proviennent d’une mesure, choisissez le nombre dans la liste ci-dessus.',
+  tool_scientific_notation_sig_label: 'Chiffres significatifs',
+  tool_scientific_notation_sig_plain: '{n}, d’après votre saisie',
+  tool_scientific_notation_sig_set: '{n} (arrondi ou complété par des zéros selon votre réglage)',
+  tool_scientific_notation_sigfigs_all: 'Garder les chiffres saisis',
+  tool_scientific_notation_sigfigs_label: 'Chiffres significatifs',
+  tool_scientific_notation_title: 'Écriture scientifique — calculatrice pour convertir un nombre dans les deux sens, avec les étapes',
+  tool_scientific_notation_usecase_1:
+    'Exercices de physique-chimie au collège ou au lycée avec des constantes comme le nombre d’Avogadro, 6,02214076 × 10²³, ou la charge élémentaire, 1,602176634 × 10⁻¹⁹ C, à écrire en entier ou à remettre en écriture scientifique.',
+  tool_scientific_notation_usecase_2:
+    'Recopier un affichage de calculatrice ou de tableur comme 1.5E-07 sous la forme 1,5 × 10⁻⁷ dans un compte rendu de TP.',
+  tool_scientific_notation_usecase_3:
+    'Remettre en forme un résultat comme 45,6 × 10³, obtenu après une multiplication, pour aboutir à 4,56 × 10⁴.',
+  tool_scientific_notation_usecase_4:
+    'Électronique et unités : la notation ingénieur colle aux préfixes du SI, donc 0,000047 F = 47 × 10⁻⁶ F, soit 47 µF.',
+  tool_scientific_notation_usecases_title: 'Dans quels cas s’en servir',
+  tool_scientific_notation_value_label: 'Nombre (écriture décimale ou scientifique)',
+  tool_scientific_notation_value_ph: 'ex. 0,00004508, 12 300, 6.022e23 ou 4,5 × 10^-4',
+  tool_scientific_notation_why_choose_item_1:
+    'Elle accepte les nombres tels que vous les avez sous la main : notation E de la calculatrice, 1,23E+04 tiré d’Excel, puissances de 10 copiées d’un manuel avec l’exposant en haut (10⁻⁵) et milliers séparés par des espaces.',
+  tool_scientific_notation_why_choose_item_2:
+    'La ligne Étapes rédige la justification attendue en classe, par exemple « Décalage de la virgule : 5 vers la droite, donc l’exposant vaut −5 ».',
+  tool_scientific_notation_why_choose_item_3:
+    'Pas de sens à choisir : elle lit votre saisie et affiche les quatre écritures d’un coup — 4,508 × 10⁻⁵, 4.508e-5, 45,08 × 10⁻⁶ (µ) et 0,00004508.',
+  tool_scientific_notation_why_choose_item_4:
+    'Elle signale l’ambiguïté des zéros finaux et vous laisse fixer le nombre de chiffres significatifs : 1200 peut s’écrire 1,2 × 10³ ou 1,200 × 10³, en connaissance de cause.',
+  tool_scientific_notation_why_choose_item_5:
+    'Les chiffres sont déplacés comme du texte : 6.02214076e23 s’écrit en entier 602214076000000000000000 sans rien perdre, et 4,35 × 10² donne 435, pas 434,99999999999994.',
+  tool_scientific_notation_why_choose_title: 'Pourquoi passer par cette calculatrice d’écriture scientifique',
+  tool_scientific_notation_work_exp_left: 'Exposant {b} : pour l’écrire en entier, la virgule se décale vers la gauche (décalage : {n}).',
+  tool_scientific_notation_work_exp_right: 'Exposant {b} : pour l’écrire en entier, la virgule se décale vers la droite (décalage : {n}).',
+  tool_scientific_notation_work_exp_zero: 'Exposant 0 : la mantisse est le nombre lui-même.',
+  tool_scientific_notation_work_label: 'Étapes',
+  tool_scientific_notation_work_left: 'Décalage de la virgule : {n} vers la gauche, donc l’exposant vaut {b}.',
+  tool_scientific_notation_work_norm:
+    '{a} × 10^{e} n’est pas une écriture scientifique, car {a} n’est pas compris entre 1 et 10 ; on la corrige en {sci}.',
+  tool_scientific_notation_work_right: 'Décalage de la virgule : {n} vers la droite, donc l’exposant vaut {b}.',
+  tool_scientific_notation_work_zero: 'Le nombre est déjà compris entre 1 et 10 : l’exposant vaut 0.',
+  tool_scientific_notation_zero_note: 'Zéro n’a pas d’écriture scientifique normalisée ; on l’écrit simplement 0 (ou 0 × 10⁰).',
   tool_serp_char_count: '{n} caractères',
   tool_serp_clear: 'Effacer',
   tool_serp_compare_label: 'Comparer avec un second titre',

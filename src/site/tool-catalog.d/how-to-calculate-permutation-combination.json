@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-permutation-combination",
   "path": "/tools/how-to-calculate-permutation-combination",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-14T03:03:27.004Z",
   "category": "calculator",
   "primaryTopic": "math-stats",
   "featured": false,
@@ -11,8 +11,9 @@
   "homeDescKey": "tool_permutation_combination_description",
   "faqPrefix": "tool_permutation_combination",
   "related": [
-    "how-to-calculate-quadratic-equation",
-    "how-to-calculate-slope"
+    "how-to-calculate-exponent",
+    "how-to-calculate-scientific-notation",
+    "how-to-calculate-quadratic-equation"
   ],
   "logo": "/icons/tools/how-to-calculate-permutation-combination.svg",
   "page": {

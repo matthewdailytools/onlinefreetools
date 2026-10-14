@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-date-difference",
   "path": "/tools/how-to-calculate-date-difference",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-14T03:25:00.635Z",
   "category": "calculator",
   "primaryTopic": "time-calendar",
   "featured": false,
@@ -12,8 +12,8 @@
   "faqPrefix": "tool_date_difference",
   "related": [
     "how-to-calculate-age",
-    "how-to-calculate-tip",
-    "how-to-calculate-salary-hourly"
+    "unix-timestamp",
+    "timezone-converter"
   ],
   "logo": "/icons/tools/how-to-calculate-date-difference.svg",
   "page": {

@@ -1,7 +1,7 @@
 {
   "slug": "combine-files-into-one-pdf",
   "path": "/tools/combine-files-into-one-pdf",
-  "updatedAt": "2026-09-06T07:49:35.335Z",
+  "updatedAt": "2026-10-14T04:17:26.182Z",
   "launchedAt": "2026-09-03T14:00:00.000Z",
   "category": "pdf",
   "primaryTopic": "pdf-docs",
@@ -16,7 +16,10 @@
   "faqPrefix": "tool_combine_files_into_one_pdf",
   "related": [
     "merge-pdf",
-    "images-to-pdf"
+    "images-to-pdf",
+    "convert-word-document-to-pdf",
+    "compress-pdf",
+    "unlock-pdf"
   ],
   "logo": "/icons/tools/combine-files-into-one-pdf.svg",
   "page": {

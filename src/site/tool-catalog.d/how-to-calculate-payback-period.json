@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-payback-period",
   "path": "/tools/how-to-calculate-payback-period",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-14T03:16:09.844Z",
   "category": "calculator",
   "primaryTopic": "business-finance",
   "featured": false,
@@ -12,7 +12,9 @@
   "faqPrefix": "tool_payback_period",
   "related": [
     "how-to-calculate-npv",
-    "how-to-calculate-irr"
+    "how-to-calculate-irr",
+    "how-to-calculate-roi",
+    "how-to-calculate-break-even"
   ],
   "logo": "/icons/tools/how-to-calculate-payback-period.svg",
   "page": {

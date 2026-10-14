@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-scientific-notation",
   "path": "/tools/how-to-calculate-scientific-notation",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-14T02:52:21.599Z",
   "category": "calculator",
   "primaryTopic": "math-stats",
   "secondaryTopics": [
@@ -15,6 +15,7 @@
   "faqPrefix": "tool_scientific_notation",
   "related": [
     "how-to-calculate-significant-figures",
+    "how-to-calculate-exponent",
     "how-to-calculate-logarithm"
   ],
   "logo": "/icons/tools/how-to-calculate-scientific-notation.svg",
