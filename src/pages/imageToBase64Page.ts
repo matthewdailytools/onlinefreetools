@@ -1,7 +1,7 @@
 /**
- * 图片与 Base64 互转工具页：Encode（FileReader.readAsDataURL）/ Decode（data URL 或裸 Base64），本地处理不上传。
+ * 图片与 Base64 互转工具页：Encode（FileReader.readAsDataURL）/ Decode（data URL 或裸 Base64）。
  * slug: image-to-base64（单页；不拆 encode / decode 近义 URL）。
- * 规格：work-tasks/image-to-base64/02-tool-info.md
+ * UI：Tab 切换主输入面；Encode/Decode → Copy/Download；Advanced；金标 HUD。
  */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
@@ -17,6 +17,7 @@ import {
 	renderToolReferencesSection,
 	buildToolJsonLd,
 } from './site/toolContent';
+import { bcwHudCss } from './site/bcwHudCss';
 
 /**
  * 为路径加上语言前缀（默认语无前缀）。
@@ -42,8 +43,10 @@ export const renderImageToBase64Page = (opts: {
 }) => {
 	const toolPath = '/tools/image-to-base64';
 	const canonicalPath = withLangPrefix(opts.lang, toolPath, opts.defaultLang);
-	const title = `${t(opts.lang, 'tool_image_to_base64_title')} | ${t(opts.lang, 'brand')}`;
-	const description = t(opts.lang, 'tool_image_to_base64_description');
+	/** 取本工具 i18n 文案。 */
+	const tx = (key: string) => t(opts.lang, `tool_image_to_base64_${key}` as never);
+	const title = `${tx('title')} | ${t(opts.lang, 'brand')}`;
+	const description = tx('description');
 
 	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
@@ -83,12 +86,14 @@ export const renderImageToBase64Page = (opts: {
 
 	const footerHtml = renderFooter({ lang: opts.lang });
 
-	/** 页内样式：模式面板、等宽文本区、预览图。 */
+	/** 页内样式：模式面板、等宽文本区、预览、HUD。 */
 	const extraHeadHtml = `
   <style>
+    ${bcwHudCss({ hudId: 'itbHud', convertBtnId: 'itbBtnEncode' })}
+    #itbHud.is-error { border-color:#b91c1c; background:#fff1f2; }
+    #itbHud:not(.is-on) .bcw-hud-spin { animation:none; }
     .tools-bar { gap: .5rem; }
     .opt-pane[hidden] { display: none !important; }
-    .opt-group { gap: .75rem; align-items: center; }
     #itbOutput, #itbDecodeInput {
       min-height: 200px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: .85rem; word-break: break-all;
@@ -107,52 +112,99 @@ export const renderImageToBase64Page = (opts: {
 
 	const contentHtml = `
     <div id="converter" class="tool-page-heading mb-3">
-      <h1 class="h4 mb-0">${escapeHtml(t(opts.lang, 'tool_image_to_base64_title'))}</h1>
+      <h1 class="h4 mb-0">${escapeHtml(tx('title'))}</h1>
     </div>
 
     <div class="d-flex align-items-center tools-bar mb-2 flex-wrap">
-      <div class="btn-group" role="group" aria-label="${escapeHtml(t(opts.lang, 'tool_image_to_base64_mode_label'))}">
+      <div class="btn-group" role="group" aria-label="${escapeHtml(tx('mode_label'))}">
         <input type="radio" class="btn-check" name="itbMode" id="itbModeEncode" value="encode" checked>
-        <label class="btn btn-outline-primary btn-sm" for="itbModeEncode">${escapeHtml(t(opts.lang, 'tool_image_to_base64_tab_encode'))}</label>
+        <label class="btn btn-outline-primary btn-sm" for="itbModeEncode">${escapeHtml(tx('tab_encode'))}</label>
         <input type="radio" class="btn-check" name="itbMode" id="itbModeDecode" value="decode">
-        <label class="btn btn-outline-primary btn-sm" for="itbModeDecode">${escapeHtml(t(opts.lang, 'tool_image_to_base64_tab_decode'))}</label>
+        <label class="btn btn-outline-primary btn-sm" for="itbModeDecode">${escapeHtml(tx('tab_decode'))}</label>
       </div>
-      <button type="button" id="itbBtnCopy" class="btn btn-outline-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_to_base64_copy'))}</button>
-      <button type="button" id="itbBtnDownload" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(t(opts.lang, 'tool_image_to_base64_download'))}</button>
-      <button type="button" id="itbBtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_to_base64_sample'))}</button>
-      <button type="button" id="itbBtnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_to_base64_clear'))}</button>
+      <button type="button" id="itbBtnEncode" class="btn btn-primary btn-sm">${escapeHtml(tx('encode'))}</button>
+      <button type="button" id="itbBtnDecode" class="btn btn-primary btn-sm" hidden>${escapeHtml(tx('decode_btn'))}</button>
+      <button type="button" id="itbBtnCopy" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(tx('copy'))}</button>
+      <button type="button" id="itbBtnDownload" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(tx('download'))}</button>
+      <button type="button" id="itbBtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx('sample'))}</button>
+      <button type="button" id="itbBtnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx('clear'))}</button>
     </div>
 
     <div id="itbEncodePane" class="opt-pane mb-3">
-      <label class="tool-dropzone itb-drop mb-3" id="itbDrop" for="itbFile">
+      <label class="tool-dropzone itb-drop mb-0" id="itbDrop" for="itbFile">
         <input type="file" id="itbFile" accept="image/jpeg,image/png,image/webp,image/gif,image/*">
-        <span class="tool-dropzone-title">${escapeHtml(t(opts.lang, 'tool_image_to_base64_choose_file'))}</span>
-        <span class="tool-dropzone-hint">${escapeHtml(t(opts.lang, 'tool_image_to_base64_drop_hint'))}</span>
+        <span class="tool-dropzone-title">${escapeHtml(tx('choose_file'))}</span>
+        <span class="tool-dropzone-hint">${escapeHtml(tx('drop_hint'))}</span>
         <span id="itbFileName" class="tool-dropzone-file"></span>
       </label>
-      <div class="form-check mb-2">
-        <input class="form-check-input" type="checkbox" id="itbStripPrefix">
-        <label class="form-check-label" for="itbStripPrefix">${escapeHtml(t(opts.lang, 'tool_image_to_base64_strip_prefix'))}</label>
-      </div>
     </div>
 
     <div id="itbDecodePane" class="opt-pane mb-3" hidden>
-      <label class="form-label" for="itbDecodeInput">${escapeHtml(t(opts.lang, 'tool_image_to_base64_decode_input_label'))}</label>
-      <textarea id="itbDecodeInput" class="form-control mb-2" rows="8" spellcheck="false" placeholder="${escapeHtml(t(opts.lang, 'tool_image_to_base64_decode_placeholder'))}"></textarea>
-      <button type="button" id="itbBtnDecode" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_to_base64_decode_btn'))}</button>
+      <label class="form-label" for="itbDecodeInput">${escapeHtml(tx('decode_input_label'))}</label>
+      <textarea id="itbDecodeInput" class="form-control" rows="8" spellcheck="false" placeholder="${escapeHtml(tx('decode_placeholder'))}"></textarea>
+    </div>
+
+    <details class="mb-3" id="itbAdvanced">
+      <summary>${escapeHtml(tx('advanced'))}</summary>
+      <div class="row g-2 mt-1">
+        <div class="col-12 col-md-6">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="itbStripPrefix">
+            <label class="form-check-label" for="itbStripPrefix">${escapeHtml(tx('strip_prefix'))}</label>
+          </div>
+          <p class="form-text mb-0">${escapeHtml(tx('strip_hint'))}</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label mb-0" for="itbDecodeMime">${escapeHtml(tx('decode_mime_label'))}</label>
+          <select id="itbDecodeMime" class="form-select form-select-sm">
+            <option value="image/png" selected>image/png</option>
+            <option value="image/jpeg">image/jpeg</option>
+            <option value="image/webp">image/webp</option>
+            <option value="image/gif">image/gif</option>
+          </select>
+          <p class="form-text mb-0">${escapeHtml(tx('decode_mime_hint'))}</p>
+        </div>
+      </div>
+    </details>
+
+    <div id="itbHud" class="bcw-hud mb-3" role="status" aria-live="polite" hidden>
+      <div class="bcw-hud-top">
+        <div class="bcw-hud-spin" aria-hidden="true"></div>
+        <div class="bcw-hud-pct" id="itbPct">0%</div>
+        <div class="bcw-hud-copy">
+          <div class="bcw-hud-title">${escapeHtml(tx('progress'))}</div>
+          <div class="bcw-hud-step" id="itbStep"></div>
+          <div class="bcw-hud-time" id="itbTime"></div>
+        </div>
+      </div>
+      <div class="progress" style="height:1.35rem">
+        <div id="itbBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        <span class="bcw-hud-sheen" aria-hidden="true"></span>
+      </div>
+      <ol class="bcw-hud-steps" id="itbHudStepsEncode">
+        <li data-step="read">${escapeHtml(tx('step_read'))}</li>
+        <li data-step="encode">${escapeHtml(tx('step_encode'))}</li>
+        <li data-step="ready">${escapeHtml(tx('step_ready'))}</li>
+      </ol>
+      <ol class="bcw-hud-steps" id="itbHudStepsDecode" hidden>
+        <li data-step="parse">${escapeHtml(tx('decode_step_parse'))}</li>
+        <li data-step="blob">${escapeHtml(tx('decode_step_blob'))}</li>
+        <li data-step="ready">${escapeHtml(tx('decode_step_ready'))}</li>
+      </ol>
     </div>
 
     <p id="itbWarn" class="small text-warning mb-2" style="display:none;" role="status"></p>
     <p id="itbError" class="small text-danger mb-2" style="display:none;" role="alert"></p>
     <p id="itbStatus" class="small text-muted mb-2" role="status"></p>
+    <p id="itbStats" class="small text-muted mb-2" style="display:none;"></p>
 
     <div id="itbEncodeOutputWrap" class="opt-pane mb-3">
-      <label class="form-label" for="itbOutput">${escapeHtml(t(opts.lang, 'tool_image_to_base64_output_label'))}</label>
+      <label class="form-label" for="itbOutput">${escapeHtml(tx('output_label'))}</label>
       <textarea id="itbOutput" class="form-control" rows="8" readonly spellcheck="false"></textarea>
     </div>
 
     <div class="mb-3">
-      <label class="form-label">${escapeHtml(t(opts.lang, 'tool_image_to_base64_preview_label'))}</label>
+      <label class="form-label">${escapeHtml(tx('preview_label'))}</label>
       <div class="itb-preview-wrap">
         <img id="itbPreview" alt="" hidden>
       </div>
@@ -164,34 +216,28 @@ export const renderImageToBase64Page = (opts: {
 		lang: opts.lang,
 		prefix: 'tool_image_to_base64',
 		mode: 'rules',
-		usecaseCount: 3,
-		ruleItemCount: 4,
+		howItemCount: 4,
+		whyChooseItemCount: 5,
+		usecaseCount: 4,
+		ruleItemCount: 5,
 	});
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
 		links: [
-			{
-				label: 'MDN — FileReader.readAsDataURL()',
-				href: 'https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL',
-			},
-			{
-				label: 'MDN — Data URLs',
-				href: 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs',
-			},
+			{ label: tx('ref_a_label'), href: 'https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL' },
+			{ label: tx('ref_b_label'), href: 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs' },
 		],
 	});
 
 	/**
-	 * 客户端脚本：Encode 用 FileReader；Decode 解析 data URL 或裸 Base64。
+	 * 客户端脚本：Encode 用 FileReader；Decode 解析 data URL / 裸 Base64；HUD；Clear 不重载样例。
 	 */
 	const extraBodyHtml = `
   <script>
     (function () {
       /** 单文件软警告阈值（字节）。 */
       var SOFT_BYTES = 25 * 1024 * 1024;
-      /** 解码时裸 Base64 默认 MIME。 */
-      var DEFAULT_DECODE_MIME = 'image/png';
 
       var modeEncode = document.getElementById('itbModeEncode');
       var modeDecode = document.getElementById('itbModeDecode');
@@ -202,103 +248,195 @@ export const renderImageToBase64Page = (opts: {
       var fileInput = document.getElementById('itbFile');
       var fileNameEl = document.getElementById('itbFileName');
       var stripPrefixEl = document.getElementById('itbStripPrefix');
+      var decodeMimeEl = document.getElementById('itbDecodeMime');
       var outputEl = document.getElementById('itbOutput');
       var decodeInputEl = document.getElementById('itbDecodeInput');
+      var btnEncode = document.getElementById('itbBtnEncode');
+      var btnDecode = document.getElementById('itbBtnDecode');
       var btnCopy = document.getElementById('itbBtnCopy');
       var btnDownload = document.getElementById('itbBtnDownload');
-      var btnDecode = document.getElementById('itbBtnDecode');
       var btnSample = document.getElementById('itbBtnSample');
       var btnClear = document.getElementById('itbBtnClear');
       var warnEl = document.getElementById('itbWarn');
       var errEl = document.getElementById('itbError');
       var statusEl = document.getElementById('itbStatus');
+      var statsEl = document.getElementById('itbStats');
       var preview = document.getElementById('itbPreview');
+      var hud = document.getElementById('itbHud');
+      var pctEl = document.getElementById('itbPct');
+      var stepEl = document.getElementById('itbStep');
+      var timeEl = document.getElementById('itbTime');
+      var barEl = document.getElementById('itbBar');
+      var stepsEncode = document.getElementById('itbHudStepsEncode');
+      var stepsDecode = document.getElementById('itbHudStepsDecode');
 
       var msg = {
-        empty: ${JSON.stringify(t(opts.lang, 'tool_image_to_base64_empty'))},
-        decodeFail: ${JSON.stringify(t(opts.lang, 'tool_image_to_base64_err_decode'))},
-        encodeFail: ${JSON.stringify(t(opts.lang, 'tool_image_to_base64_err_encode'))},
-        invalid: ${JSON.stringify(t(opts.lang, 'tool_image_to_base64_err_invalid'))},
-        large: ${JSON.stringify(t(opts.lang, 'tool_image_to_base64_warn_large'))},
-        done: ${JSON.stringify(t(opts.lang, 'tool_image_to_base64_status_done'))},
-        copied: ${JSON.stringify(t(opts.lang, 'tool_image_to_base64_copy_done'))},
-        copy: ${JSON.stringify(t(opts.lang, 'tool_image_to_base64_copy'))}
+        empty: ${JSON.stringify(tx('empty'))},
+        emptyDecode: ${JSON.stringify(tx('empty_decode'))},
+        decodeFail: ${JSON.stringify(tx('err_decode'))},
+        encodeFail: ${JSON.stringify(tx('err_encode'))},
+        invalid: ${JSON.stringify(tx('err_invalid'))},
+        large: ${JSON.stringify(tx('warn_large'))},
+        working: ${JSON.stringify(tx('status_working'))},
+        done: ${JSON.stringify(tx('status_done'))},
+        decoded: ${JSON.stringify(tx('status_decoded'))},
+        copied: ${JSON.stringify(tx('copy_done'))},
+        copy: ${JSON.stringify(tx('copy'))},
+        statsTpl: ${JSON.stringify(tx('stats_tpl'))},
+        readStep: ${JSON.stringify(tx('read_step'))},
+        encodeStep: ${JSON.stringify(tx('encode_step'))},
+        readyStep: ${JSON.stringify(tx('ready_step'))},
+        parseStep: ${JSON.stringify(tx('parse_step'))},
+        blobStep: ${JSON.stringify(tx('blob_step'))},
+        elapsed: ${JSON.stringify(tx('elapsed'))}
       };
 
       /** 当前模式：encode | decode。 */
       var currentMode = 'encode';
-      /** 完整 data URL（含 data: 前缀），供预览与下载。 */
+      /** 待编码文件。 */
+      var pendingFile = null;
+      /** 完整 data URL。 */
       var fullDataUrl = '';
-      /** 解码结果 Blob，供下载。 */
+      /** 解码结果 Blob。 */
       var decodeBlob = null;
-      /** 解码结果扩展名。 */
+      /** 解码扩展名。 */
       var decodeExt = 'png';
+      var busy = false;
+      var startedAt = 0;
+      var tickTimer = 0;
 
-      /** 显示或隐藏警告行。 */
+      /** 用 {key} 填充模板。 */
+      function fill(tpl, map) {
+        return tpl.replace(/\\{(\\w+)\\}/g, function (_, k) { return map[k] != null ? map[k] : ''; });
+      }
+
+      /** 格式化字节数。 */
+      function formatBytes(n) {
+        if (n < 1024) return n + ' B';
+        if (n < 1024 * 1024) return (n / 1024).toFixed(1) + ' KB';
+        return (n / (1024 * 1024)).toFixed(2) + ' MB';
+      }
+
       function setWarn(text) {
         if (!text) { warnEl.style.display = 'none'; warnEl.textContent = ''; return; }
         warnEl.textContent = text;
         warnEl.style.display = '';
       }
-
-      /** 显示或隐藏错误行。 */
       function setError(text) {
         if (!text) { errEl.style.display = 'none'; errEl.textContent = ''; return; }
         errEl.textContent = text;
         errEl.style.display = '';
       }
+      function setStatus(text) { statusEl.textContent = text || ''; }
 
-      /** 更新状态行文案。 */
-      function setStatus(text) {
-        statusEl.textContent = text || '';
+      function readMode() { return modeDecode.checked ? 'decode' : 'encode'; }
+
+      /** 忙碌锁。 */
+      function lock(on) {
+        busy = on;
+        [btnEncode, btnDecode, btnSample, btnClear, fileInput, stripPrefixEl, decodeMimeEl, modeEncode, modeDecode].forEach(function (el) {
+          el.disabled = on;
+        });
+        decodeInputEl.readOnly = on;
+        btnCopy.disabled = on || !outputEl.value;
+        btnDownload.disabled = on || (currentMode === 'encode' ? !fullDataUrl : !decodeBlob);
+        btnEncode.setAttribute('aria-busy', String(on));
+        btnDecode.setAttribute('aria-busy', String(on));
       }
 
-      /** 读取当前模式。 */
-      function readMode() {
-        return modeDecode.checked ? 'decode' : 'encode';
+      function tickTime() {
+        var sec = Math.max(0, Math.floor((Date.now() - startedAt) / 1000));
+        timeEl.textContent = fill(msg.elapsed, { s: String(sec) });
       }
 
-      /** 切换 Encode / Decode 面板可见性与按钮状态。 */
+      /**
+       * 更新 HUD。
+       * @param {number} pct
+       * @param {string} stepKey
+       * @param {string} stepText
+       * @param {string[]} order 步骤顺序
+       */
+      function progress(pct, stepKey, stepText, order) {
+        hud.hidden = false;
+        hud.classList.add('is-on');
+        hud.classList.remove('is-error', 'is-done');
+        var p = Math.max(0, Math.min(100, Math.round(pct)));
+        pctEl.textContent = p + '%';
+        barEl.style.width = p + '%';
+        barEl.setAttribute('aria-valuenow', String(p));
+        stepEl.textContent = stepText || '';
+        var list = currentMode === 'encode' ? stepsEncode : stepsDecode;
+        list.querySelectorAll('li').forEach(function (li) {
+          var k = li.getAttribute('data-step');
+          li.classList.toggle('is-done', k !== stepKey && order.indexOf(k) < order.indexOf(stepKey));
+          li.classList.toggle('is-active', k === stepKey);
+        });
+      }
+
+      function endHud(ok) {
+        if (tickTimer) { clearInterval(tickTimer); tickTimer = 0; }
+        hud.classList.remove('is-on');
+        if (ok) {
+          hud.classList.add('is-done');
+          pctEl.textContent = '100%';
+          barEl.style.width = '100%';
+        } else {
+          hud.classList.add('is-error');
+        }
+      }
+
+      function startHud() {
+        startedAt = Date.now();
+        if (tickTimer) clearInterval(tickTimer);
+        tickTimer = setInterval(tickTime, 250);
+        tickTime();
+      }
+
+      /** 切换 Encode / Decode 面板。 */
       function syncModeUi() {
         currentMode = readMode();
         var isEncode = currentMode === 'encode';
         encodePane.hidden = !isEncode;
         decodePane.hidden = isEncode;
         encodeOutputWrap.hidden = !isEncode;
-        btnCopy.style.display = isEncode ? '' : 'none';
+        btnEncode.hidden = !isEncode;
+        btnDecode.hidden = isEncode;
+        btnCopy.hidden = !isEncode;
+        stepsEncode.hidden = !isEncode;
+        stepsDecode.hidden = isEncode;
+        btnCopy.disabled = !outputEl.value;
         btnDownload.disabled = isEncode ? !fullDataUrl : !decodeBlob;
       }
 
-      /**
-       * 根据 strip 选项格式化输出文本。
-       * @param {string} dataUrl 完整 data URL
-       * @returns {string}
-       */
       function formatOutputText(dataUrl) {
         if (!stripPrefixEl.checked) return dataUrl;
         var idx = dataUrl.indexOf(',');
         return idx >= 0 ? dataUrl.slice(idx + 1) : dataUrl;
       }
 
-      /** 刷新输出 textarea 与预览图。 */
       function refreshEncodeDisplay() {
         outputEl.value = fullDataUrl ? formatOutputText(fullDataUrl) : '';
+        btnCopy.disabled = !outputEl.value;
         if (fullDataUrl) {
           preview.src = fullDataUrl;
           preview.hidden = false;
+          var mimeMatch = fullDataUrl.match(/^data:([^;,]+)/);
+          var mime = mimeMatch ? mimeMatch[1] : 'image/*';
+          var body = formatOutputText(fullDataUrl);
+          statsEl.textContent = fill(msg.statsTpl, {
+            mime: mime,
+            chars: String(body.length),
+            bytes: formatBytes(Math.round(body.length * 0.75))
+          });
+          statsEl.style.display = '';
         } else {
           preview.removeAttribute('src');
           preview.hidden = true;
+          statsEl.style.display = 'none';
         }
-        btnDownload.disabled = !decodeBlob && !fullDataUrl;
         if (currentMode === 'encode') btnDownload.disabled = !fullDataUrl;
       }
 
-      /**
-       * 复制文本到剪贴板。
-       * @param {string} text
-       * @returns {Promise<void>}
-       */
       function copyText(text) {
         if (navigator.clipboard && navigator.clipboard.writeText) {
           return navigator.clipboard.writeText(text);
@@ -315,47 +453,72 @@ export const renderImageToBase64Page = (opts: {
       }
 
       /**
-       * 用 FileReader 将 File 读为 data URL 并更新 UI。
+       * 选择文件后仅暂存，需点 Encode。
        * @param {File} file
-       * @returns {Promise<void>}
        */
-      function encodeFile(file) {
-        setError('');
-        decodeBlob = null;
+      function setPendingFile(file) {
+        pendingFile = file;
         fileNameEl.textContent = file.name || '';
+        setError('');
         if (file.size > SOFT_BYTES) setWarn(msg.large);
         else setWarn('');
-        return new Promise(function (resolve, reject) {
-          var reader = new FileReader();
-          reader.onload = function () {
-            var result = typeof reader.result === 'string' ? reader.result : '';
-            if (!result || result.indexOf('data:') !== 0) {
-              setError(msg.encodeFail);
-              fullDataUrl = '';
-              refreshEncodeDisplay();
-              reject(new Error('encode'));
-              return;
-            }
-            fullDataUrl = result;
-            refreshEncodeDisplay();
-            setStatus(msg.done);
-            resolve();
-          };
-          reader.onerror = function () {
-            setError(msg.encodeFail);
-            fullDataUrl = '';
-            refreshEncodeDisplay();
-            reject(new Error('encode'));
-          };
-          reader.readAsDataURL(file);
+      }
+
+      /** Encode：FileReader → data URL。 */
+      function runEncode() {
+        setError('');
+        decodeBlob = null;
+        if (!pendingFile) {
+          setError(msg.empty);
+          return Promise.resolve();
+        }
+        setStatus(msg.working);
+        lock(true);
+        startHud();
+        var order = ['read', 'encode', 'ready'];
+        progress(10, 'read', msg.readStep, order);
+
+        return new Promise(function (resolve) {
+          requestAnimationFrame(function () {
+            setTimeout(function () {
+              progress(40, 'encode', msg.encodeStep, order);
+              var reader = new FileReader();
+              reader.onload = function () {
+                var result = typeof reader.result === 'string' ? reader.result : '';
+                if (!result || result.indexOf('data:') !== 0) {
+                  lock(false);
+                  setError(msg.encodeFail);
+                  fullDataUrl = '';
+                  refreshEncodeDisplay();
+                  endHud(false);
+                  setStatus('');
+                  resolve();
+                  return;
+                }
+                progress(90, 'ready', msg.readyStep, order);
+                fullDataUrl = result;
+                refreshEncodeDisplay();
+                setStatus(msg.done);
+                lock(false);
+                progress(100, 'ready', msg.readyStep, order);
+                endHud(true);
+                resolve();
+              };
+              reader.onerror = function () {
+                lock(false);
+                setError(msg.encodeFail);
+                fullDataUrl = '';
+                refreshEncodeDisplay();
+                endHud(false);
+                setStatus('');
+                resolve();
+              };
+              reader.readAsDataURL(pendingFile);
+            }, 40);
+          });
         });
       }
 
-      /**
-       * 从 MIME 字符串推断下载扩展名。
-       * @param {string} mime
-       * @returns {string}
-       */
       function extFromMime(mime) {
         if (!mime) return 'png';
         if (mime.indexOf('jpeg') >= 0 || mime.indexOf('jpg') >= 0) return 'jpg';
@@ -365,80 +528,98 @@ export const renderImageToBase64Page = (opts: {
         return 'png';
       }
 
-      /**
-       * 将用户输入规范化为 data URL。
-       * 接受 data:image/...;base64,... 或裸 Base64（默认 image/png）。
-       * @param {string} raw
-       * @returns {string|null}
-       */
       function normalizeToDataUrl(raw) {
         var text = (raw || '').trim();
         if (!text) return null;
         if (text.indexOf('data:') === 0) return text;
         if (/^[A-Za-z0-9+/=\\s]+$/.test(text)) {
           var b64 = text.replace(/\\s/g, '');
-          return 'data:' + DEFAULT_DECODE_MIME + ';base64,' + b64;
+          return 'data:' + (decodeMimeEl.value || 'image/png') + ';base64,' + b64;
         }
         return null;
       }
 
-      /**
-       * 将 data URL 转为 Blob。
-       * @param {string} dataUrl
-       * @returns {Promise<Blob>}
-       */
       function dataUrlToBlob(dataUrl) {
         return fetch(dataUrl).then(function (res) { return res.blob(); });
       }
 
-      /**
-       * 解码 textarea 内容：预览 + 启用下载。
-       * @returns {Promise<void>}
-       */
-      function decodeInput() {
+      /** Decode：解析 → Blob → 预览。 */
+      function runDecode() {
         setError('');
         decodeBlob = null;
         fullDataUrl = '';
         var raw = decodeInputEl.value || '';
         if (!raw.trim()) {
-          setError(msg.empty);
+          setError(msg.emptyDecode);
           preview.hidden = true;
           preview.removeAttribute('src');
           btnDownload.disabled = true;
+          statsEl.style.display = 'none';
           return Promise.resolve();
         }
         if (raw.length > SOFT_BYTES * 2) setWarn(msg.large);
         else setWarn('');
-        var dataUrl = normalizeToDataUrl(raw);
-        if (!dataUrl) {
-          setError(msg.invalid);
-          preview.hidden = true;
-          preview.removeAttribute('src');
-          btnDownload.disabled = true;
-          return Promise.resolve();
-        }
-        return dataUrlToBlob(dataUrl)
-          .then(function (blob) {
-            if (!blob || !blob.size) throw new Error('decode');
-            decodeBlob = blob;
-            fullDataUrl = dataUrl;
-            var mimeMatch = dataUrl.match(/^data:([^;,]+)/);
-            var mime = mimeMatch ? mimeMatch[1] : DEFAULT_DECODE_MIME;
-            decodeExt = extFromMime(mime);
-            preview.src = dataUrl;
-            preview.hidden = false;
-            btnDownload.disabled = false;
-            setStatus(msg.done);
-          })
-          .catch(function () {
-            setError(msg.decodeFail);
-            preview.hidden = true;
-            preview.removeAttribute('src');
-            btnDownload.disabled = true;
+
+        setStatus(msg.working);
+        lock(true);
+        startHud();
+        var order = ['parse', 'blob', 'ready'];
+        progress(15, 'parse', msg.parseStep, order);
+
+        return new Promise(function (resolve) {
+          requestAnimationFrame(function () {
+            setTimeout(function () {
+              var dataUrl = normalizeToDataUrl(raw);
+              if (!dataUrl) {
+                lock(false);
+                setError(msg.invalid);
+                preview.hidden = true;
+                preview.removeAttribute('src');
+                btnDownload.disabled = true;
+                endHud(false);
+                setStatus('');
+                resolve();
+                return;
+              }
+              progress(50, 'blob', msg.blobStep, order);
+              dataUrlToBlob(dataUrl)
+                .then(function (blob) {
+                  if (!blob || !blob.size) throw new Error('decode');
+                  decodeBlob = blob;
+                  fullDataUrl = dataUrl;
+                  var mimeMatch = dataUrl.match(/^data:([^;,]+)/);
+                  var mime = mimeMatch ? mimeMatch[1] : decodeMimeEl.value;
+                  decodeExt = extFromMime(mime);
+                  preview.src = dataUrl;
+                  preview.hidden = false;
+                  btnDownload.disabled = false;
+                  statsEl.textContent = fill(msg.statsTpl, {
+                    mime: mime,
+                    chars: String(raw.trim().length),
+                    bytes: formatBytes(blob.size)
+                  });
+                  statsEl.style.display = '';
+                  progress(100, 'ready', msg.readyStep, order);
+                  setStatus(msg.decoded);
+                  lock(false);
+                  endHud(true);
+                  resolve();
+                })
+                .catch(function () {
+                  lock(false);
+                  setError(msg.decodeFail);
+                  preview.hidden = true;
+                  preview.removeAttribute('src');
+                  btnDownload.disabled = true;
+                  endHud(false);
+                  setStatus('');
+                  resolve();
+                });
+            }, 40);
           });
+        });
       }
 
-      /** 下载：Encode 模式导出原图 Blob；Decode 模式导出解码 Blob。 */
       function downloadResult() {
         if (currentMode === 'decode' && decodeBlob) {
           var url = URL.createObjectURL(decodeBlob);
@@ -467,10 +648,6 @@ export const renderImageToBase64Page = (opts: {
         });
       }
 
-      /**
-       * 生成 Canvas PNG 样例并走 Encode 路径。
-       * @returns {Promise<void>}
-       */
       function loadSample() {
         modeEncode.checked = true;
         syncModeUi();
@@ -490,17 +667,16 @@ export const renderImageToBase64Page = (opts: {
         return new Promise(function (resolve) {
           c.toBlob(function (blob) {
             if (!blob) { resolve(); return; }
-            encodeFile(new File([blob], 'sample-base64.png', { type: 'image/png' })).then(resolve).catch(resolve);
+            setPendingFile(new File([blob], 'sample-base64.png', { type: 'image/png' }));
+            runEncode().then(resolve);
           }, 'image/png');
         });
       }
 
-      /**
-       * 重置全部状态。
-       * @param {boolean} resetInputs 是否清空 file input
-       */
       function clearAll(resetInputs) {
+        if (tickTimer) { clearInterval(tickTimer); tickTimer = 0; }
         if (resetInputs !== false) fileInput.value = '';
+        pendingFile = null;
         fileNameEl.textContent = '';
         outputEl.value = '';
         decodeInputEl.value = '';
@@ -509,9 +685,15 @@ export const renderImageToBase64Page = (opts: {
         preview.removeAttribute('src');
         preview.hidden = true;
         btnDownload.disabled = true;
+        btnCopy.disabled = true;
         setError('');
         setWarn('');
         setStatus('');
+        statsEl.style.display = 'none';
+        hud.hidden = true;
+        hud.classList.remove('is-on', 'is-done', 'is-error');
+        stripPrefixEl.checked = false;
+        decodeMimeEl.value = 'image/png';
       }
 
       drop.addEventListener('dragover', function (e) {
@@ -523,18 +705,19 @@ export const renderImageToBase64Page = (opts: {
         e.preventDefault();
         drop.classList.remove('dragover');
         var f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
-        if (f) encodeFile(f);
+        if (f) setPendingFile(f);
       });
       fileInput.addEventListener('change', function () {
         var f = fileInput.files && fileInput.files[0];
-        if (f) encodeFile(f);
+        if (f) setPendingFile(f);
       });
 
       stripPrefixEl.addEventListener('change', refreshEncodeDisplay);
-
       modeEncode.addEventListener('change', syncModeUi);
       modeDecode.addEventListener('change', syncModeUi);
 
+      btnEncode.addEventListener('click', function () { runEncode(); });
+      btnDecode.addEventListener('click', function () { runDecode(); });
       btnCopy.addEventListener('click', function () {
         var text = outputEl.value || '';
         if (!text) { setError(msg.empty); return; }
@@ -544,14 +727,11 @@ export const renderImageToBase64Page = (opts: {
           setTimeout(function () { btnCopy.textContent = msg.copy; }, 1500);
         }).catch(function () {});
       });
-
       btnDownload.addEventListener('click', downloadResult);
-      btnDecode.addEventListener('click', function () { decodeInput(); });
       btnSample.addEventListener('click', function () { loadSample(); });
       btnClear.addEventListener('click', function () { clearAll(true); });
 
       syncModeUi();
-      /** 进页自动跑 Encode 样例（tool-creation 规则）。 */
       loadSample();
     })();
   </script>`;
@@ -565,7 +745,7 @@ export const renderImageToBase64Page = (opts: {
 				lang: opts.lang,
 				defaultLang: opts.defaultLang,
 				tool: toolMeta,
-				name: t(opts.lang, toolMeta.i18nKey as any),
+				name: t(opts.lang, toolMeta.i18nKey as never),
 				description,
 				canonicalPath,
 			})

@@ -1,0 +1,5 @@
+# Workers Static Assets custom headers (not served as a file).
+# Devlogs: site-wide noindex. Keep robots.txt allowing /devlogs/ until GSC confirms
+# removal, otherwise crawlers cannot see this header or the meta robots tag.
+/devlogs/*
+  X-Robots-Tag: noindex, nofollow

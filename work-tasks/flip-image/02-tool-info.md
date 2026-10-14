@@ -4,68 +4,74 @@
 **slug**：`flip-image`  
 **路径**：`/tools/flip-image`  
 **主方向**：A  
-**catalog 分类**：`image`  
+**catalog**：`image`  
 **YMYL**：否  
-**Locale briefs**：见同夹 `03-locale-briefs.md`（状态 `briefs-ready`）
+**最近改写**：2026-10-14（薄页逐页改写队列 #9）
 
----
+## 改写原因（2026-10-14）
+
+审计：222 词；Apply 与 How 动词不一致；导出格式/质量挤占主操作行；无金标 HUD；FAQ/Use cases 偏短；缺 Why choose。
 
 ## IG 预审
 
-- 目标主词 / 长尾意图：见 `03` 各语检索词；英文主意图对齐 Title。
-- 用户真实任务：修正自拍镜像、排版左右对调、竖图上下翻转。
-- [x] 竞品常见：上传转换、下载、少讲清本地边界与算法/页规则
-- [x] 缺口：本地隐私细节、失败边界、与邻近工具分工、固定 Example
-- [x] 增益：Rules + 边界 + Use cases + References + 本地 FAQ + 十语 + Example + Related
-- [x] 长尾：**合并**进本页控件，不拆近义薄页
-- [x] 权威来源：
-  - https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/scale
-- [x] Use cases：围绕「水平或垂直翻转一张本地图片并下载。」写 2–3 条场景
-- [x] 边界：未选图；解码失败；超大图软警告（~25MB / ~8192px）；GIF 动画默认首帧（除非本工具就是动图合成）
-- [x] Example/FAQ：与进页样例一致；FAQ≥3
-- [x] Related：`image-crop`, `image-grayscale`, `image-border`
-
-### 计划勾选的 §3.1 维度
-
-| # | 维度 | 本页如何体现 |
-|---|---|---|
-| 1 | 公式/规则 | Rules：变换矩阵翻转；像素重绘非仅 CSS；GIF 首帧；透明 PNG 保留 |
-| 2 | 边界/失败 | FAQ + UI |
-| 3 | 场景语境 | Use cases |
-| 5 | 权威引用 | References |
-| 6 | 本地隐私 | How/FAQ |
-| 7 | 多语言 | `03` |
-| 8 | 数值示例 | Example |
-| 9 | 主题内链 | related |
-
----
+- 用户任务：本地水平/垂直镜像一张图并下载
+- [x] 缺口：按钮词；Advanced 折叠；HUD；Why×5；FAQ JPEG 透明/邻工具分工
+- [x] 增益：① Flip 主按钮 ② Advanced（格式/质量/JPEG 底色）③ bcw-hud ④ 样例 A/B/C/D ⑤ FAQ×7
+- [x] Related：`image-grayscale`、`image-border`、`image-crop`
 
 ## 开发 / SEO 卡片
 
 | 字段 | 内容 |
 |---|---|
-| 集群 / 优先级 | A.2 · P2 · `image` |
-| 场景与行业 | 通用图片处理 / 轻量交付 |
-| 技术 | Tier 0：Canvas scale(-1,1)/(1,-1) 再 drawImage；导出 PNG/JPEG/WebP；**不上传** |
-| Title (en) | `Flip Image Online — Mirror Horizontally or Vertically \| {Brand}` |
-| Description 要点 | 步骤 + 本地 + 示例；≥120 字落地 |
-| Schema | WebApplication + BreadcrumbList；`#cat-image` |
-| FAQ ≥3 | 是否上传；是否损质量；与旋转区别；双轴同时翻 |
-| related | image-crop, image-grayscale, image-border |
-| 验收 | lint:seo；进页样例真实结果；README |
-| 工期粗估 | 0.5–1.5d |
-| 本地化核查 | `03-locale-briefs.md` |
+| Title (en) | Flip Image — Mirror Horizontally or Vertically |
+| Description (en) | Flip a photo horizontally or vertically in your browser—mirror selfies or swap layout sides without uploading. Steps: choose an image, tick Flip horizontal and/or Flip vertical, click Flip, Download JPEG/WebP/PNG. Example: sample blocks with A/B/C/D → horizontal flip moves A to the right. Files stay on your device. |
+| related | image-grayscale, image-border, image-crop |
 
-## 交互规格（给实现用）
+## 清单前检索覆盖优化
 
-- 输入：单图；水平/垂直（可同时）开关；输出格式
-- 输出：预览翻转结果 + 下载
-- 核心规则 / 算法：变换矩阵翻转；像素重绘非仅 CSS；GIF 首帧；透明 PNG 保留
-- 失败与边界行为：未选图/非法输入提示；软限制警告；Clear 复位
-- 示例 Input → Output：与进页样例一致
-- **进页样例（必填）**：不对称色块图 loadSample→默认水平翻转可见结果；进页调用 `loadSample()` 自动跑出真实结果（见 `tool-creation.mdc`）
+| 项 | 结论 / 落点 |
+|---|---|
+| 日期 | 2026-10-14 |
+| slug 结论 | **保留** `flip-image` |
+| 主检索词 → title/H1 | Flip Image — Mirror Horizontally or Vertically |
+| 次要关键词 | mirror image horizontal → flip_h + How；flip photo vertical → flip_v；flip vs rotate → FAQ q3 |
+| 优化摘要 | 主按钮改为 Flip；desc 含步骤与 A/B/C/D 样例；Advanced 收导出参数 |
+| [x] 已回写 SEO 卡片 | |
+
+## 同意图相关搜索词（页面生成必吸）
+
+| 搜法 | 判定 | 落点 |
+|---|---|---|
+| flip image / mirror image | 吸 | title；How |
+| flip horizontal / vertical | 吸 | 控件标签；Rules |
+| flip selfie / mirror selfie | 吸 | usecase_1 |
+| flip vs rotate | 吸（边界） | FAQ q3 |
+| crop / grayscale | **不吸**（邻工具） | FAQ q7 |
+
+- [x] 上表已列全本意图相关搜索
+- [x] 生成 title / description / FAQ / Use cases 时按上表写入
+
+## Ads / Keyword Planner 长尾
+
+- [x] 不适用
+
+## 用户意图审查
+
+| 层 | 结论 |
+|---|---|
+| 主检索词任务 | 改写前能翻但 Apply 词弱、设置抢主行 → **部分满足**；Flip + Advanced + HUD → **满足** |
+| 有意不满足 | 任意角度旋转、动图全帧、云端批处理 |
+| 总判 | 满足（已回写 H1、FAQ、desc、Flip 按钮、Advanced、HUD） |
+
+## 交互规格
+
+- 单图 dropzone；Flip horizontal / Flip vertical（可同时）
+- 主按钮 **Flip** → Download；Load sample / Clear
+- Advanced：格式 JPEG/WebP/PNG、质量、JPEG 底色
+- 金标 HUD：decode → flip → encode
+- Clear：**清空**，不调用 loadSample；复位默认 WebP + 水平勾选
+- 样例：480×320 A/B/C/D；进页 loadSample
 
 ## 页面模块清单
 
-- [ ] H1 + 摘要 · 首屏交互 · How · Rules · Example · Use cases · FAQ≥3 · Related≥2 · References≥1  
-- [x] `03-locale-briefs.md` 已填
+- [x] H1 + 交互 + How×4/Why×5/Rules×5/Example/Use cases×4/FAQ×7/Related/References

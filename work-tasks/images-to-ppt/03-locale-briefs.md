@@ -1,133 +1,86 @@
 # 03 — 各语言 Locale Brief + 禁词核查
 
-> 规则见 `.cursor/rules/tool-i18n-localization.mdc`。
-
 **工具 slug**：`images-to-ppt`  
 **母版语言**：en  
-**状态**：`briefs-ready`
+**状态**：`i18n-done`  
+**YMYL**：否
 
----
+## 共用禁词 / 禁模式
 
-## 共用禁词 / 禁模式（发布前勾选）
-
-- [ ] 无造词 / 错义借译 / 残缺缩写
-- [ ] 场景标题非空壳英借
-- [ ] title/H1 非参数枚举目录腔
-- [ ] 十语非同一句式骨架
-- [ ] 未依赖英文回退冒充缺语种
-- [ ] 未脚本同构灌语；待母语抽查已清
-- [ ] **检索覆盖已优化**（实现 i18n 时步 2+4）
-
-**本工具额外禁用**：勿暗示上传到服务器；勿与邻近工具 intent 混写（见 02 Related 分工）；勿承诺与 Photoshop/桌面套件像素级一致。
-
----
+- [x] title 非参数目录腔（不把 16:9/4:3/contain 串进 H1）
+- [x] 禁「Best / 100% free / secure」空话；隐私写「本标签页 / 不上传」
+- [x] How 步骤动词与按钮同词（Choose / Convert to PowerPoint / Download 的当地对应）
+- [x] 示例：三色块样例 → 三页；GIF 仅首帧；>25 MB / ~8192 px 软警告
+- [x] **清单前检索覆盖已做**
+- [x] **用户意图审查已做**
+- [x] **检索覆盖已优化**
+- [x] 十语非同构
 
 ## 每语 brief
 
 ### en
-- 检索词：images to powerpoint；photos to ppt；images to pptx
-- 语气：口语工具站
-- Title / H1 方向：Images to PowerPoint — one slide per photo
-- 按钮短词：Apply; Download; Clear; Choose image; Load sample
-- 本地示例用词：与 Use cases 当地化一致
-- 可保留：JPEG、PNG、WebP、PDF、GIF、DOCX、PPTX、Base64、HEX（按工具相关）
-- SERP：对齐当地主检索词
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- Title：Images to PowerPoint — Photos to PPTX Slides
+- 按钮：Convert to PowerPoint / Download / Load sample / Clear
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### zh
-- 检索词：图片转PPT；多图生成pptx；照片转幻灯片
-- 语气：口语工具站
-- Title / H1 方向：多图转 PPT — 每图一张幻灯片
-- 按钮短词：应用；下载；清空；选择图片；加载示例
-- 本地示例用词：与 Use cases 当地化一致
-- 可保留：JPEG、PNG、WebP、PDF、GIF、DOCX、PPTX、Base64、HEX（按工具相关）
-- SERP：对齐当地主检索词
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- 检索词：图片转PPT；照片转PowerPoint；多图生成幻灯片
+- Title：图片转 PowerPoint — 多张照片生成 PPTX 幻灯片
+- 按钮：转换为 PowerPoint / 下载 / 加载样例 / 清空
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### es
-- 检索词：imágenes a powerpoint；fotos a pptx
-- 语气：口语工具站
-- Title / H1 方向：Imágenes a PowerPoint — una diapositiva por foto
-- 按钮短词：Aplicar; Descargar; Limpiar; Elegir imagen; Cargar ejemplo
-- 本地示例用词：与 Use cases 当地化一致
-- 可保留：JPEG、PNG、WebP、PDF、GIF、DOCX、PPTX、Base64、HEX（按工具相关）
-- SERP：对齐当地主检索词
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- 检索词：convertir imágenes a PowerPoint；fotos a PPTX；una imagen por diapositiva
+- Title：Imágenes a PowerPoint — fotos a diapositivas PPTX
+- 按钮：Convertir a PowerPoint / Descargar / Cargar ejemplo / Borrar
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### ar
-- 检索词：صور إلى باوربوينت；صور إلى pptx
-- 语气：口语工具站
-- Title / H1 方向：صور إلى PowerPoint — شريحة لكل صورة
-- 按钮短词：تطبيق؛ تنزيل؛ مسح؛ اختر صورة؛ تحميل مثال
-- 本地示例用词：与 Use cases 当地化一致
-- 可保留：JPEG、PNG、WebP、PDF、GIF、DOCX、PPTX、Base64、HEX（按工具相关）
-- SERP：对齐当地主检索词
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]  待母语抽查：[ ]
+- 检索词：تحويل الصور إلى باوربوينت؛ صور إلى PPTX
+- Title：الصور إلى PowerPoint — صور إلى شرائح PPTX
+- 按钮：تحويل إلى PowerPoint / تنزيل / تحميل مثال / مسح
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### pt
-- 检索词：imagens para powerpoint；fotos em pptx
-- 语气：口语工具站
-- Title / H1 方向：Imagens em PowerPoint — um slide por foto
-- 按钮短词：Aplicar; Baixar; Limpar; Escolher imagem; Carregar exemplo
-- 本地示例用词：与 Use cases 当地化一致
-- 可保留：JPEG、PNG、WebP、PDF、GIF、DOCX、PPTX、Base64、HEX（按工具相关）
-- SERP：对齐当地主检索词
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- 检索词：converter imagens para PowerPoint；fotos em PPTX
+- Title：Imagens para PowerPoint — fotos em slides PPTX
+- 按钮：Converter para PowerPoint / Baixar / Carregar exemplo / Limpar
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### id
-- 检索词：gambar ke powerpoint；foto jadi pptx
-- 语气：口语工具站
-- Title / H1 方向：Gambar ke PowerPoint — satu slide per foto
-- 按钮短词：Terapkan; Unduh; Bersihkan; Pilih gambar; Muat contoh
-- 本地示例用词：与 Use cases 当地化一致
-- 可保留：JPEG、PNG、WebP、PDF、GIF、DOCX、PPTX、Base64、HEX（按工具相关）
-- SERP：对齐当地主检索词
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- 检索词：ubah gambar jadi PowerPoint；foto ke PPTX
+- Title：Gambar ke PowerPoint — foto menjadi slide PPTX
+- 按钮：Konversi ke PowerPoint / Unduh / Muat contoh / Hapus
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### fr
-- 检索词：images vers powerpoint；photos en pptx
-- 语气：口语工具站
-- Title / H1 方向：Images vers PowerPoint — une diapo par photo
-- 按钮短词：Appliquer; Télécharger; Effacer; Choisir une image; Charger un exemple
-- 本地示例用词：与 Use cases 当地化一致
-- 可保留：JPEG、PNG、WebP、PDF、GIF、DOCX、PPTX、Base64、HEX（按工具相关）
-- SERP：对齐当地主检索词
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- 检索词：convertir images en PowerPoint；photos en PPTX
+- Title：Images vers PowerPoint — photos en diapositives PPTX
+- 按钮：Convertir en PowerPoint / Télécharger / Charger un exemple / Effacer
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### ja
-- 检索词：画像 PowerPoint；画像をpptxに
-- 语气：口语工具站
-- Title / H1 方向：画像をPowerPointに — 1枚1スライド
-- 按钮短词：適用；ダウンロード；クリア；画像を選択；サンプル読込
-- 本地示例用词：与 Use cases 当地化一致
-- 可保留：JPEG、PNG、WebP、PDF、GIF、DOCX、PPTX、Base64、HEX（按工具相关）
-- SERP：对齐当地主检索词
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]  待母语抽查：[ ]
+- 检索词：画像をPowerPointに変換；写真からPPTX；画像 スライド
+- Title：画像を PowerPoint に変換 — 写真から PPTX スライドへ
+- 按钮：PowerPoint に変換 / ダウンロード / サンプルを読み込む / クリア
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### ru
-- 检索词：изображения в powerpoint；фото в pptx
-- 语气：口语工具站
-- Title / H1 方向：Изображения в PowerPoint — слайд на фото
-- 按钮短词：Применить；Скачать；Очистить；Выбрать изображение；Загрузить пример
-- 本地示例用词：与 Use cases 当地化一致
-- 可保留：JPEG、PNG、WebP、PDF、GIF、DOCX、PPTX、Base64、HEX（按工具相关）
-- SERP：对齐当地主检索词
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]  待母语抽查：[ ]
+- 检索词：конвертировать изображения в PowerPoint；фото в PPTX
+- Title：Изображения в PowerPoint — фото в слайды PPTX
+- 按钮：Конвертировать в PowerPoint / Скачать / Загрузить пример / Очистить
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### de
-- 检索词：Bilder zu PowerPoint；Fotos in PPTX
-- 语气：口语工具站
-- Title / H1 方向：Bilder zu PowerPoint — eine Folie pro Foto
-- 按钮短词：Anwenden；Herunterladen；Löschen；Bild wählen；Beispiel laden
-- 本地示例用词：与 Use cases 当地化一致
-- 可保留：JPEG、PNG、WebP、PDF、GIF、DOCX、PPTX、Base64、HEX（按工具相关）
-- SERP：对齐当地主检索词
-- 轮次2已重写：[ ]  轮次3已抽查：[ ]
-
----
+- 检索词：Bilder in PowerPoint umwandeln；Fotos zu PPTX
+- Title：Bilder zu PowerPoint — Fotos als PPTX-Folien
+- 按钮：In PowerPoint umwandeln / Herunterladen / Beispiel laden / Leeren
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ## 多轮记录（摘要）
 
 | 轮次 | 日期 | 做了什么 | 结果 |
 |---|---|---|---|
-| 0 brief | 2026-08-08 | Phase 0 立项 briefs-ready | 待实现时填轮次 1–3 |
+| 0b 清单前检索覆盖（改写） | 2026-10-13 | 保留 slug；H1 转换对；同意图：16:9/contain 吸；加标题在线不吸 | 已回写 |
+| 1b 母版检索覆盖优化（改写） | 2026-10-13 | Advanced 布局/适配/背景；HUD；FAQ 重写；stats `{n}/{bytes}` 修复 | 主词在 H1 |
+| 2b 十语检索向重写（改写） | 2026-10-13 | en/zh/es/ja/ar/pt/id/fr/ru/de 按当地「图片转 PPT」说法独立重写 | 键集与 en 一致 |

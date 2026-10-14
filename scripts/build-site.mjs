@@ -29,7 +29,7 @@ import { buildFullSitemap } from './site/sitemap.mjs';
 import {
   collectDevLogMarkdownFiles,
   DEVLOGS_PAGE_SIZE,
-  DEVLOG_VISIBILITY_PROJECT,
+  DEVLOGS_ROBOTS_CONTENT,
   devlogsIndexFileName,
   devlogsIndexPathname,
   devlogsTotalPages,
@@ -186,7 +186,7 @@ const removeStaticToolsDir = async (lang) => {
 
 /**
  * 从 dev-logs/*.md 生成 public/devlogs/ 索引（每页 30 条）与各篇 HTML。
- * 对人有帮助的篇默认可抓取与收录；`Visibility: project` 篇输出 noindex,nofollow 且不进 sitemap。
+ * 全部页面（索引分页 + 各篇，不分 Visibility）统一输出 `DEVLOGS_ROBOTS_CONTENT`（noindex,nofollow），且不进 sitemap。
  * 构建后会删除输出目录中已无对应源文件的孤儿 `.html`。
  * @returns {Promise<object[]>} 索引条目列表
  */
@@ -212,7 +212,7 @@ export const buildDevLogs = async () => {
   const items = [];
   for (const { fullPath, fileName } of fileEntries) {
     const md = await fs.readFile(fullPath, 'utf-8');
-    const { date, summary, visibility, robotsContent } = parseDevLogMeta(md);
+    const { date, summary, visibility } = parseDevLogMeta(md);
     const toolSlugs = extractDevlogToolSlugs(md);
     const htmlBody = marked.parse(rewriteDevlogToolLinksMarkdown(md));
     const base = fileName.replace(/\.md$/, '');
@@ -223,7 +223,6 @@ export const buildDevLogs = async () => {
     const heading = summary || base;
     const description = summary || `${siteConfig.brand} dev logs`;
     const canonicalPath = `/devlogs/${encodeURIComponent(base)}.html`;
-    const isProjectOnly = visibility === DEVLOG_VISIBILITY_PROJECT;
     const slugTagsHtml = renderDevlogSlugTagsHtml(toolSlugs);
 
     const headerHtml = renderHeader({
@@ -258,9 +257,7 @@ export const buildDevLogs = async () => {
       sidebarHtml,
       contentHtml,
       footerHtml,
-      robotsNoindex: isProjectOnly,
-      robotsNofollow: isProjectOnly,
-      robotsContent: isProjectOnly ? robotsContent || 'noindex, nofollow' : '',
+      robotsContent: DEVLOGS_ROBOTS_CONTENT,
       bodyClass: 'is-info-page is-devlog-page',
     });
 
@@ -444,6 +441,7 @@ ${monthItems
       sidebarHtml,
       contentHtml: renderIndexContent(page, pageItems),
       footerHtml,
+      robotsContent: DEVLOGS_ROBOTS_CONTENT,
       bodyClass: 'is-info-page is-devlog-page',
     });
 

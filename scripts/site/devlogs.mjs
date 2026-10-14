@@ -21,13 +21,21 @@ export const DEVLOGS_NAV_PATH = '/devlogs/';
 export const DEVLOGS_PAGE_SIZE = 30;
 
 /**
- * 对人有帮助、默认可索引并进入 sitemap。
+ * 全站 devlogs（索引分页 + 各篇）统一输出的 robots 指令。
+ * 第一阶段只靠 noindex 让已收录 URL 出索引；robots.txt 须暂时放行 `/devlogs/`，
+ * 否则爬虫读不到 noindex（Google Search Central：Block indexing with noindex）。
+ * @type {string}
+ */
+export const DEVLOGS_ROBOTS_CONTENT = 'noindex, nofollow';
+
+/**
+ * 对人有帮助的篇（正文详述）；与 project 篇同样 noindex，且不进 sitemap。
  * @type {'people'}
  */
 export const DEVLOG_VISIBILITY_PEOPLE = 'people';
 
 /**
- * 仅项目留档：公开 HTML 带 noindex,nofollow，且不进 sitemap。
+ * 仅项目留档：可写得较短；公开 HTML 同样 noindex,nofollow，不进 sitemap。
  * @type {'project'}
  */
 export const DEVLOG_VISIBILITY_PROJECT = 'project';
@@ -241,10 +249,12 @@ export const devlogsTotalPages = (totalItems, pageSize = DEVLOGS_PAGE_SIZE) => {
 
 /**
  * 收集开发日志 sitemap 条目（索引各页 + 各篇；单 URL，不按语言展开）。
- * `Visibility: project`（或 Robots 含 noindex）的篇目**不**写入 sitemap。
+ * 全站 devlogs 已统一 noindex（见 `DEVLOGS_ROBOTS_CONTENT`），sitemap 不得列出 noindex URL，故恒返回空数组；
+ * 下方旧逻辑保留，仅在将来恢复 devlogs 可索引时启用。
  * @returns {Promise<Array<{ pathname: string, priority: string, singleUrl: true, sourceFiles: string[] }>>}
  */
 export const collectDevlogSitemapEntries = async () => {
+  if (DEVLOGS_ROBOTS_CONTENT.includes('noindex')) return [];
   const files = await collectDevLogMarkdownFiles();
   /** @type {{ fileName: string, relPath: string, fullPath: string }[]} */
   const indexableFiles = [];

@@ -1546,7 +1546,7 @@
   {
     "slug": "compare-two-pdfs",
     "path": "/tools/compare-two-pdfs",
-    "updatedAt": "2026-09-05T12:58:23.264Z",
+    "updatedAt": "2026-10-13T10:32:27.863Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -3054,7 +3054,7 @@
   {
     "slug": "flip-image",
     "path": "/tools/flip-image",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T01:48:29.217Z",
     "category": "image",
     "primaryTopic": "image-media",
     "featured": true,
@@ -3121,7 +3121,7 @@
   {
     "slug": "how-to-calculate-acceleration",
     "path": "/tools/how-to-calculate-acceleration",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-13T09:23:40.418Z",
     "category": "calculator",
     "primaryTopic": "science-physics",
     "featured": false,
@@ -3454,7 +3454,7 @@
   {
     "slug": "how-to-calculate-debt-payoff",
     "path": "/tools/how-to-calculate-debt-payoff",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-13T09:37:51.915Z",
     "category": "calculator",
     "primaryTopic": "personal-money",
     "featured": false,
@@ -3465,7 +3465,8 @@
     "faqPrefix": "tool_debt_payoff",
     "related": [
       "how-to-calculate-emi",
-      "how-to-calculate-compound-interest"
+      "how-to-calculate-compound-interest",
+      "create-budget-spreadsheet"
     ],
     "logo": "/icons/tools/how-to-calculate-debt-payoff.svg",
     "localProcessing": true,
@@ -3590,7 +3591,7 @@
   {
     "slug": "how-to-calculate-gradient",
     "path": "/tools/how-to-calculate-gradient",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-13T10:23:23.360Z",
     "category": "calculator",
     "primaryTopic": "geometry-measure",
     "secondaryTopics": [
@@ -3823,7 +3824,7 @@
   {
     "slug": "how-to-calculate-mean",
     "path": "/tools/how-to-calculate-mean",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-13T08:34:19.481Z",
     "category": "calculator",
     "primaryTopic": "math-stats",
     "featured": false,
@@ -4406,7 +4407,7 @@
   {
     "slug": "how-to-calculate-triangle-area",
     "path": "/tools/how-to-calculate-triangle-area",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-13T08:56:43.136Z",
     "category": "calculator",
     "primaryTopic": "geometry-measure",
     "featured": false,
@@ -4416,8 +4417,9 @@
     "homeDescKey": "tool_triangle_area_description",
     "faqPrefix": "tool_triangle_area",
     "related": [
+      "how-to-calculate-pythagorean-theorem",
       "how-to-calculate-circle",
-      "how-to-calculate-volume"
+      "square-feet"
     ],
     "logo": "/icons/tools/how-to-calculate-triangle-area.svg",
     "localProcessing": true,
@@ -4791,7 +4793,7 @@
   {
     "slug": "image-to-base64",
     "path": "/tools/image-to-base64",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T01:57:49.209Z",
     "category": "image",
     "primaryTopic": "image-media",
     "secondaryTopics": [
@@ -4868,7 +4870,7 @@
   {
     "slug": "images-to-ppt",
     "path": "/tools/images-to-ppt",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-13T10:08:31.479Z",
     "category": "image",
     "primaryTopic": "image-media",
     "secondaryTopics": [
@@ -6865,7 +6867,7 @@
   {
     "slug": "square-feet",
     "path": "/tools/square-feet",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-13T09:09:47.890Z",
     "category": "calculator",
     "primaryTopic": "home-diy",
     "secondaryTopics": [

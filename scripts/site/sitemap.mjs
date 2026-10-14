@@ -89,7 +89,7 @@ export const hreflangLinksXml = (pathname, langs) => {
  * @typedef {object} SitemapBuildOptions
  * @property {string[]} [langs] 语言代码；默认 siteConfig.enabledLangs
  * @property {boolean} [includeHome] 是否包含各语言首页；默认 true
- * @property {boolean} [includeDevlogs] 是否包含 `/devlogs/` 索引与各篇；默认 true（生产全量）
+ * @property {boolean} [includeDevlogs] 是否尝试包含 `/devlogs/`；devlogs 全站 noindex 期间 `collectDevlogSitemapEntries` 恒返回空
  * @property {string[]} [infoPages] 信息页 id：about|privacy|terms|contact；默认不包含（生产全量剔除）
  * @property {boolean} [includeScenarioHub] 是否包含 /where-to-use-tools hub；默认 true
  * @property {boolean} [includeSubjectHub] 是否包含 /tool-type hub；默认 true

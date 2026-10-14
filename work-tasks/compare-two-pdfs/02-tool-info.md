@@ -1,101 +1,77 @@
 # 02 — 工具信息定稿
 
-**状态**：`ready`  
+**状态**：`implemented`  
 **slug**：`compare-two-pdfs`  
 **路径**：`/tools/compare-two-pdfs`  
 **主方向**：A  
+**catalog**：`pdf`  
 **YMYL**：否  
+**最近改写**：2026-10-13（薄页逐页改写队列 #8）
 
----
+## 改写原因（2026-10-13）
+
+审计：265 词；title 过短「Compare two PDFs」；FAQ/Use cases 通用空话；How 写「enter content」与 UI 不符；**Clear 误调用 loadSample**；摘要只有模糊 change blocks，无增删分计。
 
 ## IG 预审
 
-- 目标主词 / 长尾意图：compare two pdfs; related Planner absorb terms
-- 用户真实任务：Extract text per page; side-by-side diff.
-- [x] 竞品：iLovePDF / SmallPDF 类同意图页
-- [x] 缺口：本地处理边界、失败案例、与邻页划界
-- [x] 增益：Rules 边界、隐私、Example 自动样例、Related ≥2
-- [x] Related：pdf 簇工具
-
-### 计划勾选的 §3.1 维度
-
-| # | 维度 | 本页如何体现 |
-|---|---|---|
-| 1 | 规则 | 作业规则与失败模式 |
-| 2 | 边界 | 加密/扫描/格式限制 |
-| 6 | 本地隐私 | 文件不上传服务器 |
-| 8 | 数值示例 | loadSample 自动演示 |
-| 9 | 主题内链 | related PDF slugs |
-
----
+- 用户任务：两份 PDF 的可选中文本差异（合同修订、条款改动）
+- [x] 缺口：Clear bug；增删分计；忽略大小写/空白；图例；实质 FAQ
+- [x] 增益：① 修 Clear ② added/removed + 页数 ③ Advanced 忽略选项 ④ 更明显样例（thirty→sixty）⑤ Why/FAQ 重写
+- [x] Related：`text-diff`、`extract-text-from-pdf`
 
 ## 开发 / SEO 卡片
 
 | 字段 | 内容 |
 |---|---|
-| 集群 / 优先级 | pdf scene N18 |
-| 技术 | pdf-lib / pdf.js CDN；`page.style: opts` |
-| Title (en) / H1 | **Compare two PDFs** |
-| Description 要点 | Extract text per page; side-by-side diff. Files stay on your device; not uploaded to a server. Example in page. |
-| FAQ | ≥3 场景/边界/邻页划界 |
-| related | merge-pdf, compress-pdf, pdf-to-jpg 等按场景选 2+ |
-| 验收 | verify:tool |
+| Title (en) | Compare Two PDFs — Highlight Text Differences |
+| Description (en) | Compare two PDF files by extracting their selectable text and highlighting words that were added or removed. Steps: choose PDF A and PDF B, click Compare, review the green/red diff, Download HTML. Example: “thirty days” vs “sixty days” is highlighted. Scanned pages need OCR first — this tool does not OCR. |
+| related | text-diff, extract-text-from-pdf |
 
-## 清单前检索覆盖优化（生成页面模块清单前必做）
+## 清单前检索覆盖优化
 
 | 项 | 结论 / 落点 |
 |---|---|
-| 日期 | 2026-09-03 |
-| slug 结论 | 保留 `compare-two-pdfs` |
-| 主检索词 → title/H1 | **Compare two PDFs** |
-| 次要关键词 → desc / FAQ / Use cases | Planner 近义 absorb 进 FAQ（见 pdf keyword planner §5） |
-| 用户搜索习惯判断 | 场景句 H1；禁品类头词 |
-| 优化摘要 | 对齐 pdf planner 分场景 slug；跳过 SERP |
-| [x] 已回写上方 SEO 卡片 Title / Description 与建议 slug | |
+| 日期 | 2026-10-13 |
+| slug 结论 | **保留** `compare-two-pdfs` |
+| 主检索词 → title/H1 | Compare Two PDFs — Highlight Text Differences |
+| 次要关键词 | pdf diff / compare pdf text → How；scanned pdf → FAQ q2；password → FAQ q3；vs text diff → FAQ q4 |
+| 优化摘要 | H1 补「高亮文本差异」；desc 含步骤按钮词与 thirty/sixty 样例；声明非 OCR |
+| [x] 已回写 SEO 卡片 | |
 
-## Ads / Keyword Planner 长尾（有分析时必做）
+## 同意图相关搜索词（页面生成必吸）
 
-- [x] 已引用分析路径：`docs/seo/keywords/pdf/2026-09-03-pdf-keyword-planner.md`
+| 搜法 | 判定 | 落点 |
+|---|---|---|
+| compare two pdfs / pdf diff | 吸 | title；How |
+| compare pdf text / highlight changes | 吸 | desc；图例 |
+| scanned pdf compare | 吸（说明边界） | FAQ q2；Rules |
+| password protected pdf | 吸（报错） | FAQ q3 |
+| visual / pixel pdf compare | **不吸** | FAQ q5 |
+| plain text diff | **不吸**（邻工具） | FAQ q4 → text-diff |
 
-| 长尾词（Planner） | 归属 | 文案落点 | 功能覆盖 | 不覆盖理由 |
-|---|---|---|---|---|
-| compare two pdfs | build 主词 | H1 | 进页默认该场景 | |
-| 近义 absorb | absorb | FAQ/desc | 同控件 | |
+- [x] 上表已列全本意图相关搜索
+- [x] 生成 title / description / FAQ / Use cases 时按上表写入
 
-- [x] 交互规格已按上表补齐能力
+## Ads / Keyword Planner 长尾
 
-## 用户意图审查（标 ready 前必做）
+- [x] 不适用
 
-| 项 | 结论 |
+## 用户意图审查
+
+| 层 | 结论 |
 |---|---|
-| 日期 | 2026-09-03 |
-| 总判 | 满足：进页即 compare two pdfs 场景 |
-| 主词搜索者任务 | Extract text per page; side-by-side diff. |
-| Ads/Planner 长尾任务 | 主词能办成 |
-| 满足之处 | 单场景控件 + loadSample |
-| 超出 / 应划边界 | 不冒充邻页（FAQ 链出） |
-| 缺口与已做优化 | How 对齐任务句 |
-| [x] 已按审查回写 How / 交互主次 / FAQ / desc | |
+| 主检索词任务 | 改写前能比文本但 Clear 错、文案薄 → **部分满足**；修 bug + 选项 + 摘要 → **满足** |
+| 有意不满足 | 视觉/像素对比、OCR、带批注的 PDF 导出 |
+| 总判 | 满足（已回写 H1、FAQ、desc、Clear、Advanced） |
 
-## 交互规格（给实现用）
+## 交互规格
 
-- 输入/输出：Extract text per page; side-by-side diff.
-- 核心规则 / 算法：见 Page 实现
-- 失败与边界行为：加密/无文本/不支持格式 → 可读错误
-- 示例 Input → Output：loadSample 自动生成
-- **进页样例**：loadSample() 自动跑出可见结果
-- **实现防呆**：opts；`\\w` 转义；lint:tool-page
+- 双 dropzone：PDF A / PDF B；Compare → Download HTML diff
+- Advanced：ignore case；collapse whitespace（改选项若已有文件则重跑）
+- 摘要：`{added} added · {removed} removed · pages A=…, B=…`
+- Clear：**清空**，不再调用 loadSample
+- 样例：thirty days vs sixty days；进页 loadSample
 
-## 页面模块清单（与 tool-creation 对齐）
+## 页面模块清单
 
-- [x] H1 + 一句话摘要
-- [x] 首屏工具交互区（含进页自动样例结果）
-- [x] How it works
-- [x] Formula / Rules
-- [x] Example
-- [x] Use cases（2–3）
-- [x] FAQ ≥3
-- [x] Related tools ≥2
-- [x] References ≥1
-- [x] Disclaimer（YMYL 按需）
-- [x] `03-locale-briefs.md` 已填
+- [x] H1 + 交互 + How×4/Why×5/Rules×5/Example/Use cases×4/FAQ×7/Related/References

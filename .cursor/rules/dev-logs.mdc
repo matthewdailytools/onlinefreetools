@@ -1,22 +1,22 @@
 ---
-description: 对人有帮助的日志默认可索引；项目留档日志 Visibility:project → noindex,nofollow；详述过程
+description: 开发日志落盘规则；公开 /devlogs/ 全站 noindex,nofollow 且不进 sitemap；People 详述、Project 可较短
 alwaysApply: true
 ---
 
 # 开发日志（dev-logs）
 
 每次有**需要记录**的 Q&A 结束后，在 **`dev-logs/YYYY-MM/`** 新建一篇英文日志。  
-对人有帮助的篇：详细写清解决过程与方案，**默认可索引**并进入 sitemap。  
-仅项目留档、对人无帮助的篇：仍须落盘，但头部标 `Visibility: project` → 构建为 **`noindex, nofollow`**，且**不进** sitemap。
+对人有帮助的篇：详细写清解决过程与方案。 
+仅项目留档、对人无帮助的篇：仍须落盘，头部标 `Visibility: project`，可较短。
 
-公开页由 `npm run build:logs` 生成到 `public/devlogs/`（`robots.txt` **允许** `/devlogs/`；对人有帮助的篇可索引；索引列表仍可浏览全部篇目）。
+公开页由 `npm run build:logs` 生成到 `public/devlogs/`：**全站 `noindex, nofollow`、不进 sitemap**（不分 Visibility；`DEVLOGS_ROBOTS_CONTENT` + `X-Robots-Tag`）。`robots.txt` **暂时允许** `/devlogs/`，好让爬虫读到 noindex；GSC 确认已出索引后再加 `Disallow: /devlogs/`（见 `docs/seo/reviews/2026-10-13/03-todo.md`）。索引列表仍可供人浏览全部篇目。
 
 ## 1. 何时落盘与可见性（每轮必做）
 
 | 类型 | 何时写 | Markdown 头部 | 公开 SEO |
 | --- | --- | --- | --- |
-| **People**（默认） | 对后人/站内读者有帮助 | 省略，或 `Visibility: people` | 可索引；进 sitemap；详述过程与方案 |
-| **Project** | 项目需要留档，但对外无帮助（内部状态、无增量审计痕迹等） | **必须** `Visibility: project`（或 `Robots: noindex, nofollow`） | `<meta name="robots" content="noindex, nofollow">`；**不进** sitemap；站内清单仍可见 |
+| **People**（默认） | 对后人/站内读者有帮助 | 省略，或 `Visibility: people` | noindex,nofollow（全站统一）；不进 sitemap；详述过程与方案 |
+| **Project** | 项目需要留档，但对外无帮助（内部状态、无增量审计痕迹等） | **必须** `Visibility: project`（或 `Robots: noindex, nofollow`） | noindex,nofollow；不进 sitemap；站内清单仍可见 |
 
 对人有帮助的信号（→ People）：可复用决策/规则、实质交付、可学的排查/howto、读者不看聊天也能复用的信息增量。
 
@@ -64,8 +64,8 @@ alwaysApply: true
 
 权威：`.cursor/rules/seo-google-policy.mdc`。
 
-- **People 篇**：按可索引、people-first 标准写；唯一价值；禁止换皮空壳与关键词堆砌。
-- **Project 篇**：用 noindex/nofollow + 排除 sitemap 避免 scaled thin content 进索引；仍禁止密钥与虚假宣传。
+- **People 篇**：按 people-first 标准写（虽已 noindex，仍对站内读者公开）；唯一价值；禁止换皮空壳与关键词堆砌。
+- **Project 篇**：可较短；仍禁止密钥与虚假宣传。全站 noindex/nofollow + 排除 sitemap，避免日志类薄页进索引。
 - **语言**：新日志**全文英文**（`[question]` 可留原文）。
 - **历史**：默认只追加。用户要求「梳理历史」时：空壳可迁 `_archive/`；对人无帮助但需留档的可改标 `Visibility: project` 后重建，而非一律删除。`_archive` / `_curation` 等 `_` 前缀目录不参与 `build:logs`。
 
@@ -119,11 +119,11 @@ Visibility: people
 - **记**：People 详述；Project 留档并标 Visibility。
 - **不记**：AI 末尾追问；创建日志文件本身；纯 git；密钥。
 - **聊天**：完整展示；不因写日志缩短回复。
-- **公开 URL**：`/devlogs/<文件名>.html`；Project 篇可访问但对爬虫 noindex,nofollow。
+- **公开 URL**：`/devlogs/<文件名>.html`；所有篇与索引页可访问，但对爬虫 noindex,nofollow。
 
 ## 7. 构建
 
-`npm run build:logs` / `build:site`：解析 `Visibility`/`Robots` → Project 篇注入 robots meta，并从 sitemap 排除该篇（索引页与 People 篇仍可进 sitemap）。
+`npm run build:logs` / `build:site`：所有 devlogs 页面（索引分页 + 各篇）注入 `meta robots = DEVLOGS_ROBOTS_CONTENT`（`scripts/site/devlogs.mjs`）；`collectDevlogSitemapEntries` 返回空，sitemap 不含 devlogs。`public/_headers` 与 Worker `/devlogs/` 路由另发 `X-Robots-Tag: noindex, nofollow`。`Visibility` 仍解析，仅影响写作深度与索引列表元数据。
 
 ## 示例路径
 

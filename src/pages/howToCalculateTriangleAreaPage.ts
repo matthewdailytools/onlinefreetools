@@ -88,7 +88,27 @@ export const renderHowToCalculateTriangleAreaPage = (opts: {
     .btn-row { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; }
     .result { background:#f8f9fa; padding:1rem; border-radius:8px; margin-top:1rem; text-align:center }
     .result .muted { color:#6c757d; font-size:.9rem; margin-top:.35rem }
+    .result .work { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.92rem; margin-top:.35rem; word-break:break-word }
+    .point-row { display:grid; grid-template-columns:1fr 1fr; gap:.5rem; }
+    .mode-group[hidden] { display:none !important; }
   </style>`;
+
+	/** 模式分组输入框的 HTML 片段：label + number input。 */
+	const numField = (id: string, labelKey: string, ph: string) => `
+            <div class="form-group form-half">
+              <label class="form-label" for="${id}">${escapeHtml(t(opts.lang, labelKey as never))}</label>
+              <input id="${id}" class="input-lg" type="number" step="any" inputmode="decimal" placeholder="${escapeHtml(ph)}">
+            </div>`;
+
+	/** 坐标模式中单个顶点（x, y）两格输入。 */
+	const pointField = (n: number, labelKey: string, phX: string, phY: string) => `
+            <div class="form-group">
+              <span class="form-label">${escapeHtml(t(opts.lang, labelKey as never))}</span>
+              <div class="point-row">
+                <input id="x${n}" class="input-lg" type="number" step="any" inputmode="decimal" aria-label="x${n}" placeholder="x = ${escapeHtml(phX)}">
+                <input id="y${n}" class="input-lg" type="number" step="any" inputmode="decimal" aria-label="y${n}" placeholder="y = ${escapeHtml(phY)}">
+              </div>
+            </div>`;
 
 	const contentHtml = `
     <div id="triangle-area" class="mb-3">
@@ -99,24 +119,23 @@ export const renderHowToCalculateTriangleAreaPage = (opts: {
     <div class="card tool-card">
       <div class="card-body">
         <form id="calcForm">
-          <div class="form-row">
-
-          <div class="form-group form-half">
+          <div class="form-group">
             <label class="form-label" for="mode">${escapeHtml(t(opts.lang, 'tool_triangle_area_mode_label'))}</label>
             <select id="mode" class="input-lg">
               <option value="bh" selected>${escapeHtml(t(opts.lang, 'tool_triangle_area_mode_bh'))}</option>
+              <option value="sss">${escapeHtml(t(opts.lang, 'tool_triangle_area_mode_sss'))}</option>
+              <option value="sas">${escapeHtml(t(opts.lang, 'tool_triangle_area_mode_sas'))}</option>
+              <option value="coords">${escapeHtml(t(opts.lang, 'tool_triangle_area_mode_coords'))}</option>
             </select>
           </div>
 
-          <div class="form-group form-half">
-            <label class="form-label" for="base">${escapeHtml(t(opts.lang, 'tool_triangle_area_base_label'))}</label>
-            <input id="base" class="input-lg" type="number" step="any" placeholder="${escapeHtml(t(opts.lang, 'tool_triangle_area_base_ph'))}">
+          <div class="form-row mode-group" data-mode="bh">${numField('base', 'tool_triangle_area_base_label', t(opts.lang, 'tool_triangle_area_base_ph'))}${numField('height', 'tool_triangle_area_height_label', t(opts.lang, 'tool_triangle_area_height_ph'))}
           </div>
-
-          <div class="form-group form-half">
-            <label class="form-label" for="height">${escapeHtml(t(opts.lang, 'tool_triangle_area_height_label'))}</label>
-            <input id="height" class="input-lg" type="number" step="any" placeholder="${escapeHtml(t(opts.lang, 'tool_triangle_area_height_ph'))}">
+          <div class="form-row mode-group" data-mode="sss" hidden>${numField('sideA', 'tool_triangle_area_side_a_label', '3')}${numField('sideB', 'tool_triangle_area_side_b_label', '4')}${numField('sideC', 'tool_triangle_area_side_c_label', '5')}
           </div>
+          <div class="form-row mode-group" data-mode="sas" hidden>${numField('sasA', 'tool_triangle_area_side_a_label', '5')}${numField('sasB', 'tool_triangle_area_side_b_label', '7')}${numField('sasAngle', 'tool_triangle_area_angle_label', '30')}
+          </div>
+          <div class="mode-group" data-mode="coords" hidden>${pointField(1, 'tool_triangle_area_point_a', '0', '0')}${pointField(2, 'tool_triangle_area_point_b', '4', '0')}${pointField(3, 'tool_triangle_area_point_c', '0', '3')}
           </div>
           <div class="btn-row">
             <button type="submit" class="btn btn-primary">${escapeHtml(t(opts.lang, 'tool_triangle_area_calculate'))}</button>
@@ -126,12 +145,13 @@ export const renderHowToCalculateTriangleAreaPage = (opts: {
         </form>
         <div id="calcResult" class="result" style="display:none" aria-live="polite">
           <div><strong>${escapeHtml(t(opts.lang, 'tool_triangle_area_areaOut_label'))}:</strong> <span id="areaOut"></span></div>
+          <div id="workWrap" class="work"><strong>${escapeHtml(t(opts.lang, 'tool_triangle_area_work_label'))}:</strong> <span id="workOut" dir="ltr"></span></div>
           <div id="calcNote" class="muted"></div>
         </div>
       </div>
     </div>
 
-    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_triangle_area', mode: 'formula' })}`;
+    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_triangle_area', mode: 'formula', usecaseCount: 4 })}`;
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
@@ -142,7 +162,7 @@ export const renderHowToCalculateTriangleAreaPage = (opts: {
 			},
 			{
 				label: t(opts.lang, 'tool_triangle_area_ref_b_label'),
-				href: 'https://en.wikipedia.org/wiki/Area',
+				href: 'https://mathworld.wolfram.com/TriangleArea.html',
 			}
 		],
 	});
@@ -154,55 +174,125 @@ export const renderHowToCalculateTriangleAreaPage = (opts: {
       var result = document.getElementById('calcResult');
       var noteEl = document.getElementById('calcNote');
       var modeEl = document.getElementById('mode');
-      var baseEl = document.getElementById('base');
-      var heightEl = document.getElementById('height');
       var areaOutEl = document.getElementById('areaOut');
+      var workWrapEl = document.getElementById('workWrap');
+      var workOutEl = document.getElementById('workOut');
+      /** 当前页面语言（用于数字小数点格式）。 */
+      var LANG = ${JSON.stringify(opts.lang)};
       var msgErr = ${JSON.stringify(t(opts.lang, 'tool_triangle_area_err_generic'))};
+      var msgPositive = ${JSON.stringify(t(opts.lang, 'tool_triangle_area_err_positive'))};
+      var msgInequality = ${JSON.stringify(t(opts.lang, 'tool_triangle_area_err_inequality'))};
+      var msgAngle = ${JSON.stringify(t(opts.lang, 'tool_triangle_area_err_angle'))};
+      var msgCollinear = ${JSON.stringify(t(opts.lang, 'tool_triangle_area_err_collinear'))};
       var noteEdu = ${JSON.stringify(t(opts.lang, 'tool_triangle_area_result_note'))};
+      /** 按页面语言格式化：最多 4 位小数、拉丁数字、无千分位。 */
+      var nf = new Intl.NumberFormat(LANG + '-u-nu-latn', { maximumFractionDigits: 4, useGrouping: false });
 
-      /** 格式化数字（默认 2 位小数）。 */
-      function fmt(n, d) {
-        d = d == null ? 2 : d;
-        return Number.isFinite(n) ? n.toFixed(d) : '—';
+      /** 格式化数字；非有限值显示破折号。 */
+      function fmt(n) {
+        return Number.isFinite(n) ? nf.format(n) : '—';
+      }
+
+      /** 负数加括号再格式化，避免过程里出现「4−-1」。 */
+      function par(n) {
+        return n < 0 ? '(' + fmt(n) + ')' : fmt(n);
+      }
+
+      /** 读取输入框数值；空或非数字返回 NaN。 */
+      function num(id) {
+        var raw = document.getElementById(id).value;
+        return raw === '' ? NaN : Number(raw);
+      }
+
+      /** 仅显示当前模式的输入分组。 */
+      function syncMode() {
+        var groups = form.querySelectorAll('.mode-group');
+        for (var i = 0; i < groups.length; i++) {
+          groups[i].hidden = groups[i].getAttribute('data-mode') !== modeEl.value;
+        }
       }
 
       /**
-       * 核心计算（由工具定义注入）。
-       * @returns {{ ok: boolean, error?: string, values?: Record<string, string|number> }}
+       * 按当前模式计算面积，并生成计算过程。
+       * @returns {{ ok: boolean, error?: string, area?: number, work?: string }}
        */
       function compute() {
-
-        var base=parseFloat(baseEl.value), height=parseFloat(heightEl.value);
-        if(!(base>0)||!(height>0)) return {ok:false,error:msgErr};
-        return {ok:true, values:{ areaOut:fmt(base*height/2) }};
-
+        var mode = modeEl.value;
+        if (mode === 'sss') {
+          var a = num('sideA'), b = num('sideB'), c = num('sideC');
+          if (!(a > 0) || !(b > 0) || !(c > 0)) return { ok: false, error: msgPositive };
+          var sides = [a, b, c].sort(function (p, q) { return p - q; });
+          if (sides[0] + sides[1] <= sides[2]) return { ok: false, error: msgInequality };
+          var s = (a + b + c) / 2;
+          var prod = s * (s - a) * (s - b) * (s - c);
+          var areaS = Math.sqrt(prod);
+          return {
+            ok: true,
+            area: areaS,
+            work: 's = (' + fmt(a) + ' + ' + fmt(b) + ' + ' + fmt(c) + ') ÷ 2 = ' + fmt(s) +
+              '; A = √(' + fmt(s) + ' × ' + fmt(s - a) + ' × ' + fmt(s - b) + ' × ' + fmt(s - c) + ') = √' + fmt(prod) + ' = ' + fmt(areaS)
+          };
+        }
+        if (mode === 'sas') {
+          var sa = num('sasA'), sb = num('sasB'), deg = num('sasAngle');
+          if (!(sa > 0) || !(sb > 0)) return { ok: false, error: msgPositive };
+          if (!(deg > 0 && deg < 180)) return { ok: false, error: msgAngle };
+          var sinC = Math.sin(deg * Math.PI / 180);
+          var areaA = 0.5 * sa * sb * sinC;
+          return {
+            ok: true,
+            area: areaA,
+            work: 'A = ½ × ' + fmt(sa) + ' × ' + fmt(sb) + ' × sin(' + fmt(deg) + '°) = ½ × ' + fmt(sa) + ' × ' + fmt(sb) + ' × ' + fmt(sinC) + ' = ' + fmt(areaA)
+          };
+        }
+        if (mode === 'coords') {
+          var x1 = num('x1'), y1 = num('y1'), x2 = num('x2'), y2 = num('y2'), x3 = num('x3'), y3 = num('y3');
+          if (![x1, y1, x2, y2, x3, y3].every(Number.isFinite)) return { ok: false, error: msgErr };
+          var cross = x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2);
+          if (Math.abs(cross) < 1e-12) return { ok: false, error: msgCollinear };
+          var areaC = Math.abs(cross) / 2;
+          return {
+            ok: true,
+            area: areaC,
+            work: 'A = |' + par(x1) + '×(' + par(y2) + '−' + par(y3) + ') + ' + par(x2) + '×(' + par(y3) + '−' + par(y1) + ') + ' + par(x3) + '×(' + par(y1) + '−' + par(y2) + ')| ÷ 2 = |' + fmt(cross) + '| ÷ 2 = ' + fmt(areaC)
+          };
+        }
+        var base = num('base'), height = num('height');
+        if (!(base > 0) || !(height > 0)) return { ok: false, error: msgPositive };
+        var areaB = base * height / 2;
+        return { ok: true, area: areaB, work: 'A = ' + fmt(base) + ' × ' + fmt(height) + ' ÷ 2 = ' + fmt(areaB) };
       }
 
-      /** 执行计算并刷新结果区。 */
+      /** 执行计算并刷新结果区；失败时隐藏计算过程并显示具体原因。 */
       function runCalc() {
         var out = compute();
         result.style.display = 'block';
         if (!out || !out.ok) {
           areaOutEl.textContent = '—';
+          workWrapEl.style.display = 'none';
           noteEl.textContent = (out && out.error) || msgErr;
           return false;
         }
-        var v = out.values || {};
-        areaOutEl.textContent = v.areaOut != null ? String(v.areaOut) : '—';
+        areaOutEl.textContent = fmt(out.area);
+        workOutEl.textContent = out.work;
+        workWrapEl.style.display = '';
         noteEl.textContent = noteEdu;
         return true;
       }
 
-      /** 加载进页样例。 */
+      /** 加载进页样例（与 Example 文案一致：底 10、高 6 → 30）。 */
       function loadSample() {
-
-        modeEl.value='bh';
-        baseEl.value='10';
-        heightEl.value='6';
-
+        modeEl.value = 'bh';
+        syncMode();
+        document.getElementById('base').value = '10';
+        document.getElementById('height').value = '6';
         runCalc();
       }
 
+      modeEl.addEventListener('change', function () {
+        syncMode();
+        result.style.display = 'none';
+      });
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         runCalc();
@@ -210,6 +300,7 @@ export const renderHowToCalculateTriangleAreaPage = (opts: {
       document.getElementById('btnSample').addEventListener('click', loadSample);
       document.getElementById('btnClear').addEventListener('click', function () {
         form.reset();
+        syncMode();
         result.style.display = 'none';
       });
       loadSample();

@@ -6,67 +6,76 @@
 **主方向**：A  
 **catalog 分类**：`image`  
 **YMYL**：否  
-**Locale briefs**：见同夹 `03-locale-briefs.md`（状态 `briefs-ready`）
+**最近改写**：2026-10-13（薄页逐页改写队列 #6）
 
----
+## 改写原因（2026-10-13）
+
+审计：139 词；FAQ「Uploaded? / Need PowerPoint?」为一二字答；无 How 步骤、无 Why choose；高级设置不可见；`stats_tpl` 用 `{n}` 而脚本替换 `{count}/{bytes}`（统计行恒错）。
 
 ## IG 预审
 
-- 目标主词 / 长尾意图：见 `03` 各语检索词；英文主意图对齐 Title。
-- 用户真实任务：快速演示稿、看图说话、产品图串讲。
-- [x] 竞品常见：上传转换、下载、少讲清本地边界与算法/页规则
-- [x] 缺口：本地隐私细节、失败边界、与邻近工具分工、固定 Example
-- [x] 增益：Rules + 边界 + Use cases + References + 本地 FAQ + 十语 + Example + Related
-- [x] 长尾：**合并**进本页控件，不拆近义薄页
-- [x] 权威来源：
-  - https://gitbrent.github.io/PptxGenJS/
-  - https://developer.mozilla.org/en-US/docs/Web/API/Blob
-- [x] Use cases：围绕「多张本地图片各成一页幻灯片，导出 PPTX。」写 2–3 条场景
-- [x] 边界：未选图；解码失败；超大图软警告（~25MB / ~8192px）；GIF 动画默认首帧（除非本工具就是动图合成）
-- [x] Example/FAQ：与进页样例一致；FAQ≥3
-- [x] Related：`images-to-pdf`, `images-to-word`, `image-merge`
-
-### 计划勾选的 §3.1 维度
-
-| # | 维度 | 本页如何体现 |
-|---|---|---|
-| 1 | 公式/规则 | Rules：客户端生成；不上传；一图一页；fit contain 居中 |
-| 2 | 边界/失败 | FAQ + UI |
-| 3 | 场景语境 | Use cases |
-| 5 | 权威引用 | References |
-| 6 | 本地隐私 | How/FAQ |
-| 7 | 多语言 | `03` |
-| 8 | 数值示例 | Example |
-| 9 | 主题内链 | related |
-
----
+- 用户任务：多张本地照片 → 一图一页的 `.pptx`，下载后在 PowerPoint / Impress 打开
+- [x] 竞品常见：上传转 PPT、一图一页、少讲本地边界与 fit/比例
+- [x] 缺口：FAQ 空壳；无 16:9/4:3；无 contain/cover；无进度 HUD；统计模板 bug
+- [x] 增益：① 布局 16:9/4:3 ② contain/cover + 背景色 ③ 金标进度 HUD ④ How 与按钮同词 ⑤ FAQ 实质答 ⑥ 修正 stats
+- [x] Related：`images-to-pdf`、`images-to-word`、`image-merge`
 
 ## 开发 / SEO 卡片
 
 | 字段 | 内容 |
 |---|---|
-| 集群 / 优先级 | A · 多图导出 · P2 · `image` |
-| 场景与行业 | 通用图片处理 / 轻量交付 |
-| 技术 | Tier 1：懒加载 pptxgenjs；每图一幻灯片 contain；**不上传** |
-| Title (en) | `Images to PowerPoint — Photos to PPTX Slides \| {Brand}` |
-| Description 要点 | 步骤 + 本地 + 示例；≥120 字落地 |
-| Schema | WebApplication + BreadcrumbList；`#cat-image` |
-| FAQ ≥3 | 是否上传；需 PowerPoint/兼容应用；与 PDF 区别 |
+| Title (en) | Images to PowerPoint — Photos to PPTX Slides |
+| Description (en) | Convert multiple photos into a PowerPoint (.pptx) deck in your browser—one slide per image, 16:9 or 4:3, contain or cover. Steps: Choose images, Convert to PowerPoint, Download. Example: three photos → three slides. Files never leave this tab. |
 | related | images-to-pdf, images-to-word, image-merge |
-| 验收 | lint:seo；进页样例真实结果；README |
-| 工期粗估 | 0.5–1.5d |
-| 本地化核查 | `03-locale-briefs.md` |
 
-## 交互规格（给实现用）
+## 清单前检索覆盖优化
 
-- 输入：多图排序；幻灯片尺寸预设（宽屏 16:9 默认）
-- 输出：.pptx 下载
-- 核心规则 / 算法：客户端生成；不上传；一图一页；fit contain 居中
-- 失败与边界行为：未选图/非法输入提示；软限制警告；Clear 复位
-- 示例 Input → Output：与进页样例一致
-- **进页样例（必填）**：3 色块→3 页 pptx；进页调用 `loadSample()` 自动跑出真实结果（见 `tool-creation.mdc`）
+| 项 | 结论 / 落点 |
+|---|---|
+| 日期 | 2026-10-13 |
+| slug 结论 | **保留** `images-to-ppt` |
+| 主检索词 → title/H1 | Images to PowerPoint — Photos to PPTX Slides |
+| 次要关键词 | convert photos to pptx → How/desc；jpg to powerpoint → FAQ/accept；16:9 slides → Advanced；images to pdf → FAQ q4 划界 |
+| 优化摘要 | H1 保持转换对；desc 压到摘要窗并写清步骤按钮词；新增布局/适配 IG |
+| [x] 已回写 SEO 卡片 | |
+
+## 同意图相关搜索词（页面生成必吸）
+
+| 搜法 | 判定 | 落点 |
+|---|---|---|
+| images to powerpoint / convert images to pptx | 吸 | title；How |
+| photos to powerpoint / jpg png to ppt | 吸 | desc；drop accept |
+| one image per slide | 吸 | Rules；How |
+| 16:9 / 4:3 powerpoint from photos | 吸 | Advanced layout |
+| fit contain vs cover slides | 吸 | Advanced fit；FAQ q5 |
+| images to pdf | **不吸**（邻工具） | FAQ q4 → images-to-pdf |
+| add titles / animations online | **不吸** | FAQ q3（导出后编辑） |
+
+- [x] 上表已列全本意图相关搜索
+- [x] 生成 title / description / FAQ / Use cases 时按上表写入
+
+## Ads / Keyword Planner 长尾
+
+- [x] 不适用
+
+## 用户意图审查
+
+| 层 | 结论 |
+|---|---|
+| 主检索词任务 | 改写前能转但文案薄、设置不可见 → **部分满足**；布局/适配/HUD/FAQ → **满足** |
+| 有意不满足 | 在线加标题/动画、云盘上传、多文件合并为单图幻灯片 |
+| 总判 | 满足（已回写 H1、Advanced、FAQ、desc、stats bug） |
+
+## 交互规格
+
+- 主输入：dropzone + multiple file（jpeg/png/webp/gif）
+- 主按钮：Convert to PowerPoint → Download（无产物 disabled）
+- Advanced（默认收起）：layout 16:9/4:3；fit contain/cover；bg color
+- 进度：bcw-hud（encode → build → pack）
+- 样例：三色块 960×540 → 三页 PPTX；进页 loadSample
+- stats：`{n} slides → PPTX ready ({bytes})`
 
 ## 页面模块清单
 
-- [ ] H1 + 摘要 · 首屏交互 · How · Rules · Example · Use cases · FAQ≥3 · Related≥2 · References≥1  
+- [x] H1 + 交互 + How×4/Why×5/Rules×5/Example/Use cases×4/FAQ×7/Related/References
 - [x] `03-locale-briefs.md` 已填

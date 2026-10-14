@@ -1,5 +1,5 @@
 /**
- * 加速度计算器 计算器工具页。
+ * 加速度计算器：匀变速直线 a=(v−v0)/t，可解 a / v / v0 / t，附计算过程。
  * slug: how-to-calculate-acceleration（见 work-tasks/how-to-calculate-acceleration/02-tool-info.md）。
  */
 import type { SiteLang } from '../site/i18n';
@@ -77,17 +77,25 @@ export const renderHowToCalculateAccelerationPage = (opts: {
 
 	const footerHtml = renderFooter({ lang: opts.lang });
 
+	/** 单个数值输入字段。 */
+	const numField = (id: string, labelKey: string, phKey: string) => `
+            <div class="form-group form-half" data-field="${id}">
+              <label class="form-label" for="${id}">${escapeHtml(t(opts.lang, labelKey as never))}</label>
+              <input id="${id}" class="input-lg" type="number" step="any" inputmode="decimal" placeholder="${escapeHtml(t(opts.lang, phKey as never))}">
+            </div>`;
+
 	const extraHeadHtml = `
   <style>
     .tool-card { max-width: var(--content-max); width: 100%; margin: 0 0 1.5rem; }
     .form-label { display:block; margin-bottom:.5rem; color:#495057; font-weight:500 }
     .form-group { margin-bottom:1rem; }
     .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-    .form-half { }
     @media (max-width:576px) { .form-row { grid-template-columns:1fr; } }
     .btn-row { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; }
     .result { background:#f8f9fa; padding:1rem; border-radius:8px; margin-top:1rem; text-align:center }
     .result .muted { color:#6c757d; font-size:.9rem; margin-top:.35rem }
+    .result .work { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.92rem; margin-top:.35rem; word-break:break-word }
+    .form-half[hidden] { display:none !important; }
   </style>`;
 
 	const contentHtml = `
@@ -99,22 +107,20 @@ export const renderHowToCalculateAccelerationPage = (opts: {
     <div class="card tool-card">
       <div class="card-body">
         <form id="calcForm">
+          <div class="form-group">
+            <label class="form-label" for="solve">${escapeHtml(t(opts.lang, 'tool_acceleration_solve_label'))}</label>
+            <select id="solve" class="input-lg">
+              <option value="a" selected>${escapeHtml(t(opts.lang, 'tool_acceleration_solve_a'))}</option>
+              <option value="v">${escapeHtml(t(opts.lang, 'tool_acceleration_solve_v'))}</option>
+              <option value="v0">${escapeHtml(t(opts.lang, 'tool_acceleration_solve_v0'))}</option>
+              <option value="t">${escapeHtml(t(opts.lang, 'tool_acceleration_solve_t'))}</option>
+            </select>
+          </div>
           <div class="form-row">
-
-          <div class="form-group form-half">
-            <label class="form-label" for="v0">${escapeHtml(t(opts.lang, 'tool_acceleration_v0_label'))}</label>
-            <input id="v0" class="input-lg" type="number" step="any" placeholder="${escapeHtml(t(opts.lang, 'tool_acceleration_v0_ph'))}">
-          </div>
-
-          <div class="form-group form-half">
-            <label class="form-label" for="v">${escapeHtml(t(opts.lang, 'tool_acceleration_v_label'))}</label>
-            <input id="v" class="input-lg" type="number" step="any" placeholder="${escapeHtml(t(opts.lang, 'tool_acceleration_v_ph'))}">
-          </div>
-
-          <div class="form-group form-half">
-            <label class="form-label" for="t">${escapeHtml(t(opts.lang, 'tool_acceleration_t_label'))}</label>
-            <input id="t" class="input-lg" type="number" step="any" placeholder="${escapeHtml(t(opts.lang, 'tool_acceleration_t_ph'))}">
-          </div>
+            ${numField('v0', 'tool_acceleration_v0_label', 'tool_acceleration_v0_ph')}
+            ${numField('v', 'tool_acceleration_v_label', 'tool_acceleration_v_ph')}
+            ${numField('t', 'tool_acceleration_t_label', 'tool_acceleration_t_ph')}
+            ${numField('a', 'tool_acceleration_a_label', 'tool_acceleration_a_ph')}
           </div>
           <div class="btn-row">
             <button type="submit" class="btn btn-primary">${escapeHtml(t(opts.lang, 'tool_acceleration_calculate'))}</button>
@@ -123,13 +129,14 @@ export const renderHowToCalculateAccelerationPage = (opts: {
           </div>
         </form>
         <div id="calcResult" class="result" style="display:none" aria-live="polite">
-          <div><strong>${escapeHtml(t(opts.lang, 'tool_acceleration_accOut_label'))}:</strong> <span id="accOut"></span></div>
+          <div><strong><span id="outLabel"></span>:</strong> <span id="accOut"></span></div>
+          <div id="workWrap" class="work"><strong>${escapeHtml(t(opts.lang, 'tool_acceleration_work_label'))}:</strong> <span id="workOut" dir="ltr"></span></div>
           <div id="calcNote" class="muted"></div>
         </div>
       </div>
     </div>
 
-    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_acceleration', mode: 'formula' })}`;
+    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_acceleration', mode: 'formula', usecaseCount: 4 })}`;
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
@@ -140,8 +147,8 @@ export const renderHowToCalculateAccelerationPage = (opts: {
 			},
 			{
 				label: t(opts.lang, 'tool_acceleration_ref_b_label'),
-				href: 'https://en.wikipedia.org/wiki/Kinematics',
-			}
+				href: 'https://physics.info/motion-equations/',
+			},
 		],
 	});
 
@@ -149,31 +156,84 @@ export const renderHowToCalculateAccelerationPage = (opts: {
   <script>
     (function () {
       var form = document.getElementById('calcForm');
+      var solveEl = document.getElementById('solve');
       var result = document.getElementById('calcResult');
-      var noteEl = document.getElementById('calcNote');
-      var v0El = document.getElementById('v0');
-      var vEl = document.getElementById('v');
-      var tEl = document.getElementById('t');
+      var outLabel = document.getElementById('outLabel');
       var accOutEl = document.getElementById('accOut');
-      var msgErr = ${JSON.stringify(t(opts.lang, 'tool_acceleration_err_generic'))};
+      var workWrap = document.getElementById('workWrap');
+      var workOut = document.getElementById('workOut');
+      var noteEl = document.getElementById('calcNote');
+      var LANG = ${JSON.stringify(opts.lang)};
+      var msgFinite = ${JSON.stringify(t(opts.lang, 'tool_acceleration_err_finite'))};
+      var msgTime = ${JSON.stringify(t(opts.lang, 'tool_acceleration_err_time'))};
+      var msgZeroA = ${JSON.stringify(t(opts.lang, 'tool_acceleration_err_zero_a'))};
       var noteEdu = ${JSON.stringify(t(opts.lang, 'tool_acceleration_result_note'))};
+      var labels = {
+        a: ${JSON.stringify(t(opts.lang, 'tool_acceleration_accOut_label'))},
+        v: ${JSON.stringify(t(opts.lang, 'tool_acceleration_vOut_label'))},
+        v0: ${JSON.stringify(t(opts.lang, 'tool_acceleration_v0Out_label'))},
+        t: ${JSON.stringify(t(opts.lang, 'tool_acceleration_tOut_label'))}
+      };
+      var nf = new Intl.NumberFormat(LANG + '-u-nu-latn', { maximumFractionDigits: 4, useGrouping: false });
 
-      /** 格式化数字（默认 2 位小数）。 */
-      function fmt(n, d) {
-        d = d == null ? 2 : d;
-        return Number.isFinite(n) ? n.toFixed(d) : '—';
+      /** 格式化数字。 */
+      function fmt(n) {
+        return Number.isFinite(n) ? nf.format(n) : '—';
+      }
+
+      /** 计算过程中的操作数：负数加括号，避免出现 “20 + -9.8”。 */
+      function par(n) {
+        return n < 0 ? '(' + fmt(n) + ')' : fmt(n);
+      }
+
+      /** 读取输入；空为 NaN。 */
+      function num(id) {
+        var raw = document.getElementById(id).value;
+        return raw === '' ? NaN : Number(raw);
+      }
+
+      /** 隐藏要求解的那个输入框。 */
+      function syncSolve() {
+        var target = solveEl.value;
+        ['v0', 'v', 't', 'a'].forEach(function (id) {
+          var wrap = form.querySelector('[data-field=\"' + id + '\"]');
+          wrap.hidden = id === target;
+        });
       }
 
       /**
-       * 核心计算（由工具定义注入）。
-       * @returns {{ ok: boolean, error?: string, values?: Record<string, string|number> }}
+       * 按 a=(v−v0)/t 解所求量。
+       * @returns {{ ok: boolean, error?: string, value?: number, work?: string, kind?: string }}
        */
       function compute() {
-
-        var v0=parseFloat(v0El.value), v=parseFloat(vEl.value), t=parseFloat(tEl.value);
-        if(!Number.isFinite(v0)||!Number.isFinite(v)||!(t>0)) return {ok:false,error:msgErr};
-        return {ok:true, values:{ accOut:fmt((v-v0)/t) }};
-
+        var kind = solveEl.value;
+        if (kind === 'a') {
+          var v0 = num('v0'), v = num('v'), t = num('t');
+          if (![v0, v, t].every(Number.isFinite)) return { ok: false, error: msgFinite };
+          if (!(t > 0)) return { ok: false, error: msgTime };
+          var a = (v - v0) / t;
+          return { ok: true, kind: 'a', value: a, work: 'a = (' + fmt(v) + ' − ' + par(v0) + ') ÷ ' + fmt(t) + ' = ' + fmt(a) };
+        }
+        if (kind === 'v') {
+          var v0b = num('v0'), ab = num('a'), tb = num('t');
+          if (![v0b, ab, tb].every(Number.isFinite)) return { ok: false, error: msgFinite };
+          if (!(tb > 0)) return { ok: false, error: msgTime };
+          var vf = v0b + ab * tb;
+          return { ok: true, kind: 'v', value: vf, work: 'v = ' + fmt(v0b) + ' + ' + par(ab) + ' × ' + fmt(tb) + ' = ' + fmt(vf) };
+        }
+        if (kind === 'v0') {
+          var vc = num('v'), ac = num('a'), tc = num('t');
+          if (![vc, ac, tc].every(Number.isFinite)) return { ok: false, error: msgFinite };
+          if (!(tc > 0)) return { ok: false, error: msgTime };
+          var v0c = vc - ac * tc;
+          return { ok: true, kind: 'v0', value: v0c, work: 'v0 = ' + fmt(vc) + ' − ' + par(ac) + ' × ' + fmt(tc) + ' = ' + fmt(v0c) };
+        }
+        var v0d = num('v0'), vd = num('v'), ad = num('a');
+        if (![v0d, vd, ad].every(Number.isFinite)) return { ok: false, error: msgFinite };
+        if (ad === 0) return { ok: false, error: msgZeroA };
+        var td = (vd - v0d) / ad;
+        if (!(td > 0)) return { ok: false, error: msgTime };
+        return { ok: true, kind: 't', value: td, work: 't = (' + fmt(vd) + ' − ' + par(v0d) + ') ÷ ' + par(ad) + ' = ' + fmt(td) };
       }
 
       /** 执行计算并刷新结果区。 */
@@ -181,26 +241,35 @@ export const renderHowToCalculateAccelerationPage = (opts: {
         var out = compute();
         result.style.display = 'block';
         if (!out || !out.ok) {
+          outLabel.textContent = labels[solveEl.value];
           accOutEl.textContent = '—';
-          noteEl.textContent = (out && out.error) || msgErr;
+          workWrap.style.display = 'none';
+          noteEl.textContent = (out && out.error) || msgFinite;
           return false;
         }
-        var v = out.values || {};
-        accOutEl.textContent = v.accOut != null ? String(v.accOut) : '—';
+        outLabel.textContent = labels[out.kind];
+        accOutEl.textContent = fmt(out.value);
+        workOut.textContent = out.work;
+        workWrap.style.display = '';
         noteEl.textContent = noteEdu;
         return true;
       }
 
-      /** 加载进页样例。 */
+      /** 样例：v0=0, v=10, t=2 → a=5。 */
       function loadSample() {
-
-        v0El.value='0';
-        vEl.value='10';
-        tEl.value='2';
-
+        solveEl.value = 'a';
+        syncSolve();
+        document.getElementById('v0').value = '0';
+        document.getElementById('v').value = '10';
+        document.getElementById('t').value = '2';
+        document.getElementById('a').value = '';
         runCalc();
       }
 
+      solveEl.addEventListener('change', function () {
+        syncSolve();
+        result.style.display = 'none';
+      });
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         runCalc();
@@ -208,8 +277,10 @@ export const renderHowToCalculateAccelerationPage = (opts: {
       document.getElementById('btnSample').addEventListener('click', loadSample);
       document.getElementById('btnClear').addEventListener('click', function () {
         form.reset();
+        syncSolve();
         result.style.display = 'none';
       });
+      syncSolve();
       loadSample();
     })();
   </script>`;

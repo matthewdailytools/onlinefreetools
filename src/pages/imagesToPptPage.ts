@@ -1,7 +1,6 @@
 /**
- * 多图转 PowerPoint 工具页：本地将每张图片生成一页 16:9 幻灯片并导出 PPTX，不上传服务器。
- * slug: images-to-ppt（单页；不拆近义变体 URL）。
- * 规格：work-tasks/images-to-ppt/02-tool-info.md
+ * 多图转 PowerPoint：本地将每张图生成一页幻灯片并导出 PPTX；可选 16:9/4:3、contain/cover、背景色。
+ * slug: images-to-ppt（见 work-tasks/images-to-ppt/02-tool-info.md）。
  */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
@@ -17,6 +16,7 @@ import {
 	renderToolReferencesSection,
 	buildToolJsonLd,
 } from './site/toolContent';
+import { bcwHudCss } from './site/bcwHudCss';
 
 /**
  * 为路径加上语言前缀（默认语无前缀）。
@@ -83,9 +83,15 @@ export const renderImagesToPptPage = (opts: {
 
 	const footerHtml = renderFooter({ lang: opts.lang });
 
-	/** 页内样式：文件列表、缩略图。 */
+	/** 取本工具 i18n 文案。 */
+	const tx = (key: string) => t(opts.lang, `tool_images_to_ppt_${key}` as never);
+
+	/** 页内样式：文件列表、缩略图、HUD。 */
 	const extraHeadHtml = `
   <style>
+    ${bcwHudCss({ hudId: 'img2pptHud', convertBtnId: 'img2pptBtnConvert' })}
+    #img2pptHud.is-error { border-color:#b91c1c; background:#fff1f2; }
+    #img2pptHud:not(.is-on) .bcw-hud-spin { animation:none; }
     .tools-bar { gap: .5rem; }
     .img2ppt-file-list { list-style: none; padding: 0; margin: 0; }
     .img2ppt-file-item {
@@ -98,26 +104,75 @@ export const renderImagesToPptPage = (opts: {
     }
     .img2ppt-file-name { flex: 1; font-size: .85rem; word-break: break-all; }
     .img2ppt-file-actions { display: flex; gap: .25rem; flex-shrink: 0; }
+    #img2pptBg { max-width: 8rem; height: 2rem; padding: .15rem; }
   </style>`;
 
 	const contentHtml = `
     <div id="converter" class="tool-page-heading mb-3">
-      <h1 class="h4 mb-0">${escapeHtml(t(opts.lang, 'tool_images_to_ppt_title'))}</h1>
+      <h1 class="h4 mb-0">${escapeHtml(tx('title'))}</h1>
     </div>
 
     <label class="tool-dropzone img2ppt-drop mb-3" id="img2pptDrop" for="img2pptFiles">
       <input type="file" id="img2pptFiles" accept="image/jpeg,image/png,image/webp,image/gif,image/*" multiple>
-      <span class="tool-dropzone-title">${escapeHtml(t(opts.lang, 'tool_images_to_ppt_choose_files'))}</span>
-      <span class="tool-dropzone-hint">${escapeHtml(t(opts.lang, 'tool_images_to_ppt_drop_hint'))}</span>
+      <span class="tool-dropzone-title">${escapeHtml(tx('choose_files'))}</span>
+      <span class="tool-dropzone-hint">${escapeHtml(tx('drop_hint'))}</span>
     </label>
 
     <ul id="img2pptList" class="img2ppt-file-list mb-3" aria-live="polite"></ul>
 
     <div class="d-flex align-items-center tools-bar mb-2 flex-wrap">
-      <button type="button" id="img2pptBtnConvert" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_images_to_ppt_convert'))}</button>
-      <button type="button" id="img2pptBtnDownload" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(t(opts.lang, 'tool_images_to_ppt_download'))}</button>
-      <button type="button" id="img2pptBtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_images_to_ppt_sample'))}</button>
-      <button type="button" id="img2pptBtnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_images_to_ppt_clear'))}</button>
+      <button type="button" id="img2pptBtnConvert" class="btn btn-primary btn-sm">${escapeHtml(tx('convert'))}</button>
+      <button type="button" id="img2pptBtnDownload" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(tx('download'))}</button>
+      <button type="button" id="img2pptBtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx('sample'))}</button>
+      <button type="button" id="img2pptBtnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx('clear'))}</button>
+    </div>
+
+    <details class="mb-3" id="img2pptAdvanced">
+      <summary>${escapeHtml(tx('advanced'))}</summary>
+      <div class="row g-2 mt-1">
+        <div class="col-6 col-md-4">
+          <label class="form-label mb-0" for="img2pptLayout">${escapeHtml(tx('layout_label'))}</label>
+          <select id="img2pptLayout" class="form-select form-select-sm">
+            <option value="16x9" selected>${escapeHtml(tx('layout_16x9'))}</option>
+            <option value="4x3">${escapeHtml(tx('layout_4x3'))}</option>
+          </select>
+          <p class="form-text mb-0">${escapeHtml(tx('layout_hint'))}</p>
+        </div>
+        <div class="col-6 col-md-4">
+          <label class="form-label mb-0" for="img2pptFit">${escapeHtml(tx('fit_label'))}</label>
+          <select id="img2pptFit" class="form-select form-select-sm">
+            <option value="contain" selected>${escapeHtml(tx('fit_contain'))}</option>
+            <option value="cover">${escapeHtml(tx('fit_cover'))}</option>
+          </select>
+          <p class="form-text mb-0">${escapeHtml(tx('fit_hint'))}</p>
+        </div>
+        <div class="col-6 col-md-4">
+          <label class="form-label mb-0" for="img2pptBg">${escapeHtml(tx('bg_label'))}</label>
+          <input type="color" id="img2pptBg" class="form-control form-control-color" value="#ffffff" title="${escapeHtml(tx('bg_label'))}">
+          <p class="form-text mb-0">${escapeHtml(tx('bg_hint'))}</p>
+        </div>
+      </div>
+    </details>
+
+    <div id="img2pptHud" class="bcw-hud mb-3" role="status" aria-live="polite" hidden>
+      <div class="bcw-hud-top">
+        <div class="bcw-hud-spin" aria-hidden="true"></div>
+        <div class="bcw-hud-pct" id="img2pptPct">0%</div>
+        <div class="bcw-hud-copy">
+          <div class="bcw-hud-title">${escapeHtml(tx('progress'))}</div>
+          <div class="bcw-hud-step" id="img2pptStep"></div>
+          <div class="bcw-hud-time" id="img2pptTime"></div>
+        </div>
+      </div>
+      <div class="progress" style="height:1.35rem">
+        <div id="img2pptBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        <span class="bcw-hud-sheen" aria-hidden="true"></span>
+      </div>
+      <ol class="bcw-hud-steps">
+        <li data-step="encode">${escapeHtml(tx('step_encode'))}</li>
+        <li data-step="build">${escapeHtml(tx('step_build'))}</li>
+        <li data-step="pack">${escapeHtml(tx('step_pack'))}</li>
+      </ol>
     </div>
 
     <p id="img2pptWarn" class="small text-warning mb-2" style="display:none;" role="status"></p>
@@ -131,20 +186,22 @@ export const renderImagesToPptPage = (opts: {
 		lang: opts.lang,
 		prefix: 'tool_images_to_ppt',
 		mode: 'rules',
-		usecaseCount: 3,
-		ruleItemCount: 4,
+		howItemCount: 4,
+		whyChooseItemCount: 5,
+		usecaseCount: 4,
+		ruleItemCount: 5,
 	});
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
 		links: [
-			{ label: 'PptxGenJS — JavaScript PowerPoint library', href: 'https://gitbrent.github.io/PptxGenJS/' },
-			{ label: 'MDN — Blob', href: 'https://developer.mozilla.org/en-US/docs/Web/API/Blob' },
+			{ label: tx('ref_a_label'), href: 'https://gitbrent.github.io/PptxGenJS/' },
+			{ label: tx('ref_b_label'), href: 'https://developer.mozilla.org/en-US/docs/Web/API/Blob' },
 		],
 	});
 
 	/**
-	 * 客户端脚本：多图列表、Canvas 转 data URL、懒加载 PptxGenJS、生成 PPTX 并下载。
+	 * 客户端脚本：多图列表、布局/适配设置、进度 HUD、懒加载 PptxGenJS、生成 PPTX。
 	 */
 	const extraBodyHtml = `
   <script>
@@ -153,15 +210,13 @@ export const renderImagesToPptPage = (opts: {
       var SOFT_BYTES = 25 * 1024 * 1024;
       /** 单边像素软警告阈值。 */
       var SOFT_EDGE = 8192;
-      /** 16:9 幻灯片内容区（英寸，layout LAYOUT_16x9 下约 10×5.625）。 */
-      var SLIDE_W = 9;
-      var SLIDE_H = 5.125;
-      var SLIDE_X = 0.5;
-      var SLIDE_Y = 0.25;
 
       var drop = document.getElementById('img2pptDrop');
       var fileInput = document.getElementById('img2pptFiles');
       var listEl = document.getElementById('img2pptList');
+      var layoutEl = document.getElementById('img2pptLayout');
+      var fitEl = document.getElementById('img2pptFit');
+      var bgEl = document.getElementById('img2pptBg');
       var btnConvert = document.getElementById('img2pptBtnConvert');
       var btnDownload = document.getElementById('img2pptBtnDownload');
       var btnSample = document.getElementById('img2pptBtnSample');
@@ -170,21 +225,33 @@ export const renderImagesToPptPage = (opts: {
       var errEl = document.getElementById('img2pptError');
       var statusEl = document.getElementById('img2pptStatus');
       var statsEl = document.getElementById('img2pptStats');
+      var hud = document.getElementById('img2pptHud');
+      var pctEl = document.getElementById('img2pptPct');
+      var stepEl = document.getElementById('img2pptStep');
+      var timeEl = document.getElementById('img2pptTime');
+      var barEl = document.getElementById('img2pptBar');
+      var busy = false;
+      var startedAt = 0;
+      var tickTimer = 0;
 
       var msg = {
-        empty: ${JSON.stringify(t(opts.lang, 'tool_images_to_ppt_empty'))},
-        decodeFail: ${JSON.stringify(t(opts.lang, 'tool_images_to_ppt_err_decode'))},
-        convertFail: ${JSON.stringify(t(opts.lang, 'tool_images_to_ppt_err_convert'))},
-        libFail: ${JSON.stringify(t(opts.lang, 'tool_images_to_ppt_err_lib'))},
-        large: ${JSON.stringify(t(opts.lang, 'tool_images_to_ppt_warn_large'))},
-        edge: ${JSON.stringify(t(opts.lang, 'tool_images_to_ppt_warn_edge'))},
-        animation: ${JSON.stringify(t(opts.lang, 'tool_images_to_ppt_warn_animation'))},
-        converting: ${JSON.stringify(t(opts.lang, 'tool_images_to_ppt_status_converting'))},
-        done: ${JSON.stringify(t(opts.lang, 'tool_images_to_ppt_status_done'))},
-        moveUp: ${JSON.stringify(t(opts.lang, 'tool_images_to_ppt_move_up'))},
-        moveDown: ${JSON.stringify(t(opts.lang, 'tool_images_to_ppt_move_down'))},
-        remove: ${JSON.stringify(t(opts.lang, 'tool_images_to_ppt_remove'))},
-        statsTpl: ${JSON.stringify(t(opts.lang, 'tool_images_to_ppt_stats_tpl'))}
+        empty: ${JSON.stringify(tx('empty'))},
+        decodeFail: ${JSON.stringify(tx('err_decode'))},
+        convertFail: ${JSON.stringify(tx('err_convert'))},
+        libFail: ${JSON.stringify(tx('err_lib'))},
+        large: ${JSON.stringify(tx('warn_large'))},
+        edge: ${JSON.stringify(tx('warn_edge'))},
+        animation: ${JSON.stringify(tx('warn_animation'))},
+        converting: ${JSON.stringify(tx('status_converting'))},
+        done: ${JSON.stringify(tx('status_done'))},
+        moveUp: ${JSON.stringify(tx('move_up'))},
+        moveDown: ${JSON.stringify(tx('move_down'))},
+        remove: ${JSON.stringify(tx('remove'))},
+        statsTpl: ${JSON.stringify(tx('stats_tpl'))},
+        elapsed: ${JSON.stringify(tx('elapsed'))},
+        encodeStep: ${JSON.stringify(tx('encode_step'))},
+        buildStep: ${JSON.stringify(tx('build_step'))},
+        packStep: ${JSON.stringify(tx('pack_step'))}
       };
 
       /**
@@ -199,6 +266,11 @@ export const renderImagesToPptPage = (opts: {
       var nextId = 1;
       /** @type {Promise<Function>|null} PptxGenJS 构造函数加载缓存。 */
       var pptxLibPromise = null;
+
+      /** 用 {key} 占位符填充模板。 */
+      function fill(tpl, map) {
+        return tpl.replace(/\\{(\\w+)\\}/g, function (_, k) { return map[k] != null ? map[k] : ''; });
+      }
 
       /** 显示或隐藏软警告。 */
       function setWarn(text) {
@@ -233,6 +305,69 @@ export const renderImagesToPptPage = (opts: {
         if (n < 1024) return n + ' B';
         if (n < 1024 * 1024) return (n / 1024).toFixed(1) + ' KB';
         return (n / (1024 * 1024)).toFixed(2) + ' MB';
+      }
+
+      /** 转换期间禁用控件。 */
+      function lock(on) {
+        busy = on;
+        [btnConvert, btnSample, btnClear, fileInput, layoutEl, fitEl, bgEl].forEach(function (el) {
+          el.disabled = on;
+        });
+        btnDownload.disabled = on || !resultBlob;
+        btnConvert.setAttribute('aria-busy', String(on));
+        listEl.querySelectorAll('button').forEach(function (b) { b.disabled = on; });
+      }
+
+      /** 刷新 HUD 已用时。 */
+      function tickTime() {
+        var sec = Math.max(0, Math.floor((Date.now() - startedAt) / 1000));
+        timeEl.textContent = fill(msg.elapsed, { s: String(sec) });
+      }
+
+      /**
+       * 更新进度 HUD。
+       * @param {number} pct 0–100
+       * @param {string} stepKey encode|build|pack
+       * @param {string} stepText 步骤说明
+       */
+      function progress(pct, stepKey, stepText) {
+        hud.hidden = false;
+        hud.classList.add('is-on');
+        hud.classList.remove('is-error', 'is-done');
+        var p = Math.max(0, Math.min(100, Math.round(pct)));
+        pctEl.textContent = p + '%';
+        barEl.style.width = p + '%';
+        barEl.setAttribute('aria-valuenow', String(p));
+        stepEl.textContent = stepText || '';
+        hud.querySelectorAll('.bcw-hud-steps li').forEach(function (li) {
+          var k = li.getAttribute('data-step');
+          li.classList.toggle('is-done', k !== stepKey && (['encode', 'build', 'pack'].indexOf(k) < ['encode', 'build', 'pack'].indexOf(stepKey)));
+          li.classList.toggle('is-active', k === stepKey);
+        });
+      }
+
+      /** 结束 HUD。 */
+      function endHud(ok) {
+        if (tickTimer) { clearInterval(tickTimer); tickTimer = 0; }
+        hud.classList.remove('is-on');
+        if (ok) {
+          hud.classList.add('is-done');
+          pctEl.textContent = '100%';
+          barEl.style.width = '100%';
+        } else {
+          hud.classList.add('is-error');
+        }
+      }
+
+      /**
+       * 按当前布局返回幻灯片内容区（英寸）。
+       * @returns {{ layout: string, x: number, y: number, w: number, h: number }}
+       */
+      function slideBox() {
+        if (layoutEl.value === '4x3') {
+          return { layout: 'LAYOUT_4x3', x: 0.25, y: 0.25, w: 9.5, h: 7 };
+        }
+        return { layout: 'LAYOUT_16x9', x: 0.25, y: 0.25, w: 9.5, h: 5.125 };
       }
 
       /**
@@ -285,9 +420,9 @@ export const renderImagesToPptPage = (opts: {
       }
 
       /**
-       * 将列表项绘制到 Canvas 并导出 PNG data URL（PptxGenJS 可直接嵌入）。
+       * 将列表项绘制到 Canvas 并导出 data URL。
        * @param {PptItem} item 源图项
-       * @returns {Promise<string>} data:image/png;base64,... 字符串
+       * @returns {Promise<string>}
        */
       function itemToDataUrl(item) {
         return new Promise(function (resolve, reject) {
@@ -308,7 +443,7 @@ export const renderImagesToPptPage = (opts: {
         });
       }
 
-      /** 释放单条列表项的资源（缩略图 URL、ImageBitmap）。 */
+      /** 释放单条列表项的资源。 */
       function disposeItem(item) {
         if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
         if (item.bitmap && typeof item.bitmap.close === 'function') item.bitmap.close();
@@ -322,7 +457,7 @@ export const renderImagesToPptPage = (opts: {
         statsEl.textContent = '';
       }
 
-      /** 重绘有序文件列表（含上移/下移/移除）。 */
+      /** 重绘有序文件列表。 */
       function renderList() {
         listEl.innerHTML = '';
         items.forEach(function (item, idx) {
@@ -333,15 +468,15 @@ export const renderImagesToPptPage = (opts: {
             '<img class="img2ppt-thumb" src="' + escapeHtml(item.thumbUrl) + '" alt="">' +
             '<span class="img2ppt-file-name">' + escapeHtml(item.file.name || ('#' + (idx + 1))) + '</span>' +
             '<span class="img2ppt-file-actions">' +
-            '<button type="button" class="btn btn-outline-secondary btn-sm img2ppt-up" data-id="' + escapeHtml(item.id) + '" title="' + escapeHtml(msg.moveUp) + '"' + (idx === 0 ? ' disabled' : '') + '>&#8593;</button>' +
-            '<button type="button" class="btn btn-outline-secondary btn-sm img2ppt-down" data-id="' + escapeHtml(item.id) + '" title="' + escapeHtml(msg.moveDown) + '"' + (idx === items.length - 1 ? ' disabled' : '') + '>&#8595;</button>' +
-            '<button type="button" class="btn btn-outline-danger btn-sm img2ppt-remove" data-id="' + escapeHtml(item.id) + '" title="' + escapeHtml(msg.remove) + '">&times;</button>' +
+            '<button type="button" class="btn btn-outline-secondary btn-sm img2ppt-up" data-id="' + escapeHtml(item.id) + '" title="' + escapeHtml(msg.moveUp) + '"' + (idx === 0 || busy ? ' disabled' : '') + '>&#8593;</button>' +
+            '<button type="button" class="btn btn-outline-secondary btn-sm img2ppt-down" data-id="' + escapeHtml(item.id) + '" title="' + escapeHtml(msg.moveDown) + '"' + (idx === items.length - 1 || busy ? ' disabled' : '') + '>&#8595;</button>' +
+            '<button type="button" class="btn btn-outline-danger btn-sm img2ppt-remove" data-id="' + escapeHtml(item.id) + '" title="' + escapeHtml(msg.remove) + '"' + (busy ? ' disabled' : '') + '>&times;</button>' +
             '</span>';
           listEl.appendChild(li);
         });
       }
 
-      /** 根据当前列表刷新软警告（大文件/GIF/超大边长）。 */
+      /** 根据当前列表刷新软警告。 */
       function refreshWarnings() {
         var warns = [];
         var hasGif = false;
@@ -370,18 +505,23 @@ export const renderImagesToPptPage = (opts: {
         clearResult();
         var arr = Array.prototype.slice.call(files || []);
         if (!arr.length) return Promise.resolve();
-        return Promise.all(arr.map(function (file) {
-          return decodeImage(file).then(function (dec) {
-            items.push({
-              id: String(nextId++),
-              file: file,
-              bitmap: dec.bitmap,
-              w: dec.w,
-              h: dec.h,
-              thumbUrl: URL.createObjectURL(file)
+        /** 按选择顺序串行解码，避免 Promise.all 竞态打乱幻灯片顺序。 */
+        var chain = Promise.resolve();
+        arr.forEach(function (file) {
+          chain = chain.then(function () {
+            return decodeImage(file).then(function (dec) {
+              items.push({
+                id: String(nextId++),
+                file: file,
+                bitmap: dec.bitmap,
+                w: dec.w,
+                h: dec.h,
+                thumbUrl: URL.createObjectURL(file)
+              });
             });
           });
-        }))
+        });
+        return chain
           .then(function () {
             renderList();
             refreshWarnings();
@@ -392,7 +532,7 @@ export const renderImagesToPptPage = (opts: {
       }
 
       /**
-       * 按列表顺序生成 PPTX：16:9 演示文稿，一图一页，contain 居中。
+       * 按列表顺序生成 PPTX。
        * @returns {Promise<void>}
        */
       function convert() {
@@ -403,46 +543,68 @@ export const renderImagesToPptPage = (opts: {
           return Promise.resolve();
         }
         setStatus(msg.converting);
-        btnConvert.disabled = true;
+        lock(true);
+        startedAt = Date.now();
+        tickTime();
+        tickTimer = setInterval(tickTime, 500);
+        progress(2, 'encode', fill(msg.encodeStep, { i: '0', n: String(items.length) }));
+
+        var box = slideBox();
+        var fit = fitEl.value === 'cover' ? 'cover' : 'contain';
+        var bg = (bgEl.value || '#ffffff').replace(/^#/, '').toUpperCase();
+
         return loadPptxLib()
           .then(function (PptxGenJS) {
-            return Promise.all(items.map(itemToDataUrl)).then(function (dataUrls) {
+            var dataUrls = [];
+            var chain = Promise.resolve();
+            items.forEach(function (item, idx) {
+              chain = chain.then(function () {
+                progress(5 + (idx / items.length) * 55, 'encode', fill(msg.encodeStep, { i: String(idx + 1), n: String(items.length) }));
+                return itemToDataUrl(item).then(function (url) { dataUrls.push(url); });
+              });
+            });
+            return chain.then(function () {
+              progress(65, 'build', msg.buildStep);
               var pptx = new PptxGenJS();
-              pptx.layout = 'LAYOUT_16x9';
+              pptx.layout = box.layout;
               dataUrls.forEach(function (dataUrl) {
                 var slide = pptx.addSlide();
+                slide.background = { color: bg };
                 slide.addImage({
                   data: dataUrl,
-                  x: SLIDE_X,
-                  y: SLIDE_Y,
-                  w: SLIDE_W,
-                  h: SLIDE_H,
-                  sizing: { type: 'contain', w: SLIDE_W, h: SLIDE_H }
+                  x: box.x,
+                  y: box.y,
+                  w: box.w,
+                  h: box.h,
+                  sizing: { type: fit, w: box.w, h: box.h }
                 });
               });
+              progress(85, 'pack', msg.packStep);
               return pptx.write({ outputType: 'blob' });
             });
           })
           .then(function (blob) {
-            btnConvert.disabled = false;
+            lock(false);
             if (!blob) {
               setError(msg.convertFail);
               setStatus('');
+              endHud(false);
               return;
             }
             resultBlob = blob;
             btnDownload.disabled = false;
-            statsEl.textContent = msg.statsTpl
-              .replace('{count}', String(items.length))
-              .replace('{bytes}', formatBytes(blob.size));
+            statsEl.textContent = fill(msg.statsTpl, { n: String(items.length), bytes: formatBytes(blob.size) });
             statsEl.style.display = '';
             setStatus(msg.done);
+            progress(100, 'pack', msg.packStep);
+            endHud(true);
           })
           .catch(function (err) {
-            btnConvert.disabled = false;
+            lock(false);
             if (err && err.message === 'lib') setError(msg.libFail);
             else setError(msg.convertFail);
             setStatus('');
+            endHud(false);
           });
       }
 
@@ -466,9 +628,9 @@ export const renderImagesToPptPage = (opts: {
       function loadSample() {
         clearAll(false);
         var specs = [
-          { w: 320, h: 240, color: '#7c3aed', name: 'sample-a.png' },
-          { w: 320, h: 240, color: '#ea580c', name: 'sample-b.png' },
-          { w: 320, h: 240, color: '#0891b2', name: 'sample-c.png' }
+          { w: 960, h: 540, color: '#7c3aed', name: 'sample-a.png' },
+          { w: 960, h: 540, color: '#ea580c', name: 'sample-b.png' },
+          { w: 960, h: 540, color: '#0891b2', name: 'sample-c.png' }
         ];
         var filePromises = specs.map(function (spec) {
           return new Promise(function (resolve) {
@@ -479,8 +641,8 @@ export const renderImagesToPptPage = (opts: {
             ctx.fillStyle = spec.color;
             ctx.fillRect(0, 0, spec.w, spec.h);
             ctx.fillStyle = '#fff';
-            ctx.font = '14px sans-serif';
-            ctx.fillText(spec.name.replace('.png', ''), 20, spec.h / 2);
+            ctx.font = '28px sans-serif';
+            ctx.fillText(spec.name.replace('.png', ''), 40, spec.h / 2);
             c.toBlob(function (blob) {
               resolve(blob ? new File([blob], spec.name, { type: 'image/png' }) : null);
             }, 'image/png');
@@ -504,9 +666,15 @@ export const renderImagesToPptPage = (opts: {
         setError('');
         setWarn('');
         setStatus('');
+        hud.hidden = true;
+        hud.classList.remove('is-on', 'is-done', 'is-error');
+        layoutEl.value = '16x9';
+        fitEl.value = 'contain';
+        bgEl.value = '#ffffff';
       }
 
       listEl.addEventListener('click', function (e) {
+        if (busy) return;
         var tEl = e.target;
         if (!tEl || !tEl.closest) return;
         var up = tEl.closest('.img2ppt-up');
@@ -537,6 +705,12 @@ export const renderImagesToPptPage = (opts: {
         }
       });
 
+      ['change'].forEach(function (ev) {
+        layoutEl.addEventListener(ev, clearResult);
+        fitEl.addEventListener(ev, clearResult);
+        bgEl.addEventListener(ev, clearResult);
+      });
+
       drop.addEventListener('dragover', function (e) {
         e.preventDefault();
         drop.classList.add('dragover');
@@ -545,10 +719,12 @@ export const renderImagesToPptPage = (opts: {
       drop.addEventListener('drop', function (e) {
         e.preventDefault();
         drop.classList.remove('dragover');
+        if (busy) return;
         var fs = e.dataTransfer && e.dataTransfer.files;
         if (fs && fs.length) addFiles(fs);
       });
       fileInput.addEventListener('change', function () {
+        if (busy) return;
         if (fileInput.files && fileInput.files.length) addFiles(fileInput.files);
         fileInput.value = '';
       });

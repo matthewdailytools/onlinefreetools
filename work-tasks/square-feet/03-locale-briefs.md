@@ -1,158 +1,92 @@
 # 03 — 各语言 Locale Brief + 禁词核查
 
-> 实现/改写 i18n **之前**按语种填写。完整规则见 `.cursor/rules/tool-i18n-localization.mdc`。
-
 **工具 slug**：`square-feet`  
-**母版语言**：en / zh  
-**状态**：`i18n-done`（十语检索向已重写；待母语抽查已清）
-**场景重点**：房产 / 装修（避免「万能单位转换」腔）
+**母版语言**：en  
+**状态**：`i18n-done`  
+**YMYL**：否
 
----
+## 共用禁词 / 禁模式
 
-## 共用禁词 / 禁模式（发布前勾选）
-
-- [x] 无 granularity 等造词
-- [x] 无错义借译
-- [x] 无残缺缩写
-- [x] 场景标题非「ユースケース」式空壳英借；改为「看房/装修」当地说法
-- [x] 十语非同一句式骨架；title 含该语检索说法
-- [x] 未依赖 `t()` 英文回退冒充缺语种
-- [x] 未使用「脚本批量同构灌语」作为唯一交付；待母语抽查已清或已排期
-
-可保留：ft²、m²、sq ft。
-
----
+- [x] title 非参数目录腔
+- [x] 禁估价 / 房价 / investment return 卖点
+- [x] 明确「平面面积 ≠ 套内/建筑」一句即可
+- [x] 示例用 NIST 因子：850→78.97、1000→92.90、10×12→120/11.15；小数逗号语种写 78,97 / 11,15
+- [x] **清单前检索覆盖已做**
+- [x] **用户意图审查已做**
+- [x] **检索覆盖已优化**
+- [x] 十语非同构
 
 ## 每语 brief
 
 ### en
-
-- 检索词（3–5）：square feet to square meters；sq ft converter；convert square feet；apartment size sq ft
-- 语气：口语工具站（房产/装修）
-- Title / H1 方向：Square Feet to Square Meters — Area Converter for Homes & Renovation
-- 按钮短词：Convert / Clear；sq ft ↔ m²
-- 本地示例用词：850 sq ft apartment；flooring estimate
-- 可保留英文/符号：ft²、m²、sq ft
-- 额外禁用：generic「any unit converter」主叙事
-- SERP 竞品 title（1–3）：Square Feet to Square Meters；Sq Ft Calculator
+- Title：Square Feet to Square Meters — Convert Room Area for Listings & Renovation
+- 按钮：Calculate / Load sample / Clear
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### zh
-
-- 检索词（3–5）：平方英尺换算；平方英尺转平方米；sqft 换算；房屋面积平方英尺
-- 语气：口语工具站（看房/装修）
-- Title / H1 方向：平方英尺转平方米 — 看房与装修面积换算
-- 按钮短词：开始换算 / 清空；ft² / m²
-- 本地示例用词：850 平方英尺公寓；地板估算
-- 可保留英文/符号：ft²、m²、sq ft
-- 额外禁用：空泛「单位换算大全」title
-- SERP 竞品 title（1–3）：平方英尺换算；平方英尺转平方米
+- 检索词：平方英尺转平方米；平方英尺是多少平方米；850平方英尺；房间面积计算
+- Title：平方英尺转平方米 — 房源面积换算与房间长宽求面积
+- 按钮：计算 / 加载样例 / 清空
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### es
-
-- 检索词（3–5）：pies cuadrados a metros cuadrados；convertir sq ft；calculadora pies cuadrados；metros cuadrados vivienda
-- 语气：口语（vivienda / reforma）
-- Title / H1 方向：Pies cuadrados a metros cuadrados — Para viviendas y reformas
-- 按钮短词：Convertir / Borrar
-- 本地示例用词：piso 850 sq ft；suelo/reforma
-- 可保留英文/符号：ft²、m²、sq ft
-- 额外禁用：conversor genérico sin escena
-- SERP 竞品 title（1–3）：Pies cuadrados a m²；Convertir sq ft
+- 检索词：pies cuadrados a metros cuadrados；conversor sqft a m2；qué es sqft
+- Title：Pies cuadrados a metros cuadrados — convierte el área de una habitación
+- 按钮：Calcular / Cargar ejemplo / Borrar
+- 小数逗号：是
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### ar
-
-- 检索词（3–5）：تحويل قدم مربع إلى متر مربع；حاسبة القدم المربع؛ مساحة الشقة بالقدم المربع
-- 语气：口语（عقارات / تشطيب）
-- Title / H1 方向：تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب
-- 按钮短词：حوّل / امسح
-- 本地示例用词：شقة 850 قدمًا مربعًا
-- 可保留英文/符号：ft²、m²、sq ft
-- 额外禁用：عنوان محوّل وحدات عام بلا سياق
-- SERP 竞品 title（1–3）：قدم مربع إلى متر مربع；حاسبة المساحة
-- 轮次2已重写：[x]  轮次3已抽查：[x]  待母语抽查：[ ]（用户确认清勾：按 brief 已独立重写十语文案；2026-08-06）
+- 检索词：تحويل القدم المربع إلى متر مربع；كم متر مربع في القدم المربع
+- Title：تحويل القدم المربع إلى المتر المربع — مساحة الغرفة مع خطوات الحساب
+- 按钮：احسب / تحميل مثال / مسح
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### pt
-
-- 检索词（3–5）：pés quadrados para metros quadrados；converter sq ft；calculadora de pés quadrados；área do imóvel
-- 语气：口语（imóvel / reforma）
-- Title / H1 方向：Pés quadrados para m² — Conversão para imóveis e reformas
-- 按钮短词：Converter / Limpar
-- 本地示例用词：apartamento 850 sq ft
-- 可保留英文/符号：ft²、m²、sq ft
-- 额外禁用：conversor genérico sem cenário
-- SERP 竞品 title（1–3）：Pés quadrados para m²；Converter sq ft
+- 检索词：pés quadrados para m2；conversor sqft para m2；square feet em metros quadrados
+- Title：Pés quadrados para metros quadrados — converta a área do cômodo
+- 按钮：Calcular / Carregar exemplo / Limpar
+- 小数逗号：是
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### id
-
-- 检索词（3–5）：konversi square feet ke meter persegi；hitung sq ft；luas apartemen sq ft；ubah kaki persegi
-- 语气：口语（properti / renovasi）
-- Title / H1 方向：Konversi square feet ke m² — Untuk rumah & renovasi
-- 按钮短词：Konversi / Hapus
-- 本地示例用词：apartemen 850 sq ft
-- 可保留英文/符号：ft²、m²、sq ft
-- 额外禁用：judul konverter unit generik
-- SERP 竞品 title（1–3）：Square feet ke m2；Konversi sq ft
+- 检索词：square feet ke m2；konversi sqft ke meter persegi
+- Title：Square Feet ke Meter Persegi — Konversi Luas Ruangan
+- 按钮：Hitung / Muat contoh / Hapus
+- 小数逗号：是
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### fr
-
-- 检索词（3–5）：pieds carrés en mètres carrés；convertir sq ft；calculateur pieds carrés；surface appartement
-- 语气：口语（logement / rénovation）
-- Title / H1 方向：Pieds carrés en m² — Conversion pour logement et rénovation
-- 按钮短词：Convertir / Effacer
-- 本地示例用词：appart. 850 sq ft
-- 可保留英文/符号：ft²、m²、sq ft
-- 额外禁用：convertisseur d’unités générique
-- SERP 竞品 title（1–3）：Pieds carrés en m²；Convertir sq ft
+- 检索词：pieds carrés en m2；convertir sqft en m²；pieds carrés mètres carrés
+- Title：Pieds carrés en mètres carrés — convertir la surface d’une pièce
+- 按钮：Calculer / Charger un exemple / Effacer
+- 小数逗号：是
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### ja
-
-- 检索词（3–5）：平方フィート 平方メートル；sqft 換算；平方フィート 計算；部屋の広さ フィート
-- 语气：口语（物件/リフォーム）；可提「坪」若实现支持，否则 FAQ 说明
-- Title / H1 方向：平方フィート⇔平方メートル換算 — 物件・リフォーム向け
-- 按钮短词：換算する / クリア
-- 本地示例用词：850 sq ft の部屋；床材の目安
-- 可保留英文/符号：ft²、m²、sq ft
-- 额外禁用：ユースケース；汎用単位変換だけ感
-- SERP 竞品 title（1–3）：平方フィート換算；sqft ㎡
-- 轮次2已重写：[x]  轮次3已抽查：[x]  待母语抽查：[ ]（用户确认清勾：按 brief 已独立重写十语文案；2026-08-06）
-
-### ru
-
-- 检索词（3–5）：квадратные футы в метры；перевести sq ft；калькулятор квадратных футов；площадь квартиры
-- 语气：口语（недвижимость / ремонт）
-- Title / H1 方向：Квадратные футы в м² — Для жилья и ремонта
-- 按钮短词：Перевести / Очистить
-- 本地示例用词：квартира 850 sq ft
-- 可保留英文/符号：ft²、m²、sq ft
-- 额外禁用：безликий «конвертер единиц»
-- SERP 竞品 title（1–3）：Кв. футы в м²；Convert sq ft
-- 轮次2已重写：[x]  轮次3已抽查：[x]  待母语抽查：[ ]（用户确认清勾：按 brief 已独立重写十语文案；2026-08-06）
-
-### de
-
-- 检索词（3–5）：Quadratfuß in Quadratmeter；sq ft umrechnen；Quadratfuß Rechner；Wohnungsgröße sq ft
-- 语气：口语（Wohnung / Renovierung）
-- Title / H1 方向：Quadratfuß in m² umrechnen — Für Wohnung & Renovierung
-- 按钮短词：Umrechnen / Leeren
-- 本地示例用词：Wohnung 850 sq ft；Bodenbelag schätzen
-- 可保留英文/符号：ft²、m²、sq ft
-- 额外禁用：generischer Einheitenrechner-Ton
-- SERP 竞品 title（1–3）：Quadratfuß in m²；Sq ft umrechnen
+- 检索词：平方フィート 平米；sqft m2 換算；平方フィート とは
+- Title：平方フィートを平米に換算 — 部屋の面積計算つき
+- 按钮：計算する / サンプルを読み込む / クリア
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
----
+### ru
+- 检索词：квадратные футы в метры；sqft в м2；перевод квадратных футов
+- Title：Квадратные футы в квадратные метры — перевод площади комнаты
+- 按钮：Рассчитать / Загрузить пример / Очистить
+- 小数逗号：是
+- 轮次2已重写：[x]  轮次3已抽查：[x]
+
+### de
+- 检索词：square feet in m2；Quadratfuß in Quadratmeter；umrechnung sqft m2
+- Title：Square Feet in Quadratmeter umrechnen — Raumfläche berechnen
+- 按钮：Berechnen / Beispiel laden / Leeren
+- 小数逗号：是
+- 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ## 多轮记录（摘要）
 
 | 轮次 | 日期 | 做了什么 | 结果 |
 |---|---|---|---|
-| 0 briefs | 2026-08-06 | 十语 brief（房产/装修检索向）；`briefs-ready` | 待实现轮次 1–3 |
-| 1 母版+lint | | | |
-| 2 按 brief 重写 | | | |
-| 3 抽查+禁词+lint | | | |
-| 清母语抽查 | 2026-08-06 | 用户确认：按 brief 独立重写后清 ar/ja/ru 待抽查；轮次2/3勾选；状态 → `i18n-done` | 十语 |
+| 0b 清单前检索覆盖（改写） | 2026-10-13 | 保留 slug；H1 保留 sq ft→m²；02 同意图表对齐 GSC（换算/1000 sqft/房间面积吸；估价不吸） | 已回写 |
+| 1b 母版检索覆盖优化（改写） | 2026-10-13 | 双模式；过程；850/1000 例子；NIST 因子；非套内/建筑 FAQ | 主词在 H1 |
+| 2b 十语检索向重写（改写） | 2026-10-13 | en/zh/es/ja/ar/pt/id/fr/ru/de 按当地换算说法独立重写；小数逗号语种示例用当地小数点 | 十语键集一致 |

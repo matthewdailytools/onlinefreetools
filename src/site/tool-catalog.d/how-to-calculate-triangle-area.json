@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-triangle-area",
   "path": "/tools/how-to-calculate-triangle-area",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-13T08:56:43.136Z",
   "category": "calculator",
   "primaryTopic": "geometry-measure",
   "featured": false,
@@ -11,8 +11,9 @@
   "homeDescKey": "tool_triangle_area_description",
   "faqPrefix": "tool_triangle_area",
   "related": [
+    "how-to-calculate-pythagorean-theorem",
     "how-to-calculate-circle",
-    "how-to-calculate-volume"
+    "square-feet"
   ],
   "logo": "/icons/tools/how-to-calculate-triangle-area.svg",
   "page": {

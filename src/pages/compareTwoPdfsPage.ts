@@ -1,6 +1,6 @@
 /**
- * Compare two PDFs 工具页：提取两份 PDF 的文本并高亮差异（纯客户端）。
- * slug: compare-two-pdfs
+ * 对比两份 PDF：提取可选中文本，用 jsdiff 高亮增删，本地预览并下载 HTML 差异。
+ * slug: compare-two-pdfs（见 work-tasks/compare-two-pdfs/02-tool-info.md）。
  */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
@@ -45,8 +45,10 @@ export const renderCompareTwoPdfsPage = (opts: {
 	const canonicalPath = withLangPrefix(opts.lang, toolPath, opts.defaultLang);
 
 	const prefix = 'tool_compare_two_pdfs';
-	const title = `${t(opts.lang, prefix + '_title')} | ${t(opts.lang, 'brand')}`;
-	const description = t(opts.lang, prefix + '_description');
+	/** 取本工具文案。 */
+	const tx = (key: string) => t(opts.lang, `${prefix}_${key}` as never);
+	const title = `${tx('title')} | ${t(opts.lang, 'brand')}`;
+	const description = tx('description');
 
 	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
@@ -91,51 +93,74 @@ export const renderCompareTwoPdfsPage = (opts: {
   <style>
     .diff-added { background: #d4edda; color: #155724; border-radius: 3px; padding: 0 2px; }
     .diff-removed { background: #f8d7da; color: #721c24; border-radius: 3px; padding: 0 2px; text-decoration: line-through; }
-    .diff-neutral { }
     .tools-bar { gap: .5rem; }
-    #compareResult { border: 1px solid #dee2e6; border-radius: .25rem; padding: .75rem; background: #f8f9fa; }
+    #compareResult { border: 1px solid #dee2e6; border-radius: .25rem; padding: .75rem; background: #f8f9fa; max-height: 28rem; overflow: auto; white-space: pre-wrap; word-break: break-word; }
+    .compare-legend { display:flex; flex-wrap:wrap; gap:.75rem; font-size:.85rem; margin:.35rem 0 .75rem; }
+    .compare-legend span { display:inline-flex; align-items:center; gap:.35rem; }
+    .compare-legend i { width:.85rem; height:.85rem; border-radius:2px; display:inline-block; }
+    .compare-legend .lg-add { background:#d4edda; border:1px solid #155724; }
+    .compare-legend .lg-del { background:#f8d7da; border:1px solid #721c24; }
     ${pdfWorkUiCss()}
   </style>`;
 
 	const contentHtml = `
     <div id="converter" class="tool-page-heading mb-3">
-      <h1 class="h4 mb-0">${escapeHtml(t(opts.lang, prefix + '_title'))}</h1>
+      <h1 class="h4 mb-0">${escapeHtml(tx('title'))}</h1>
     </div>
 
     <div class="row g-2 mb-2">
       <div class="col-12 col-md-6">
         <label class="tool-dropzone mb-2" for="comparePdfAFile">
           <input type="file" id="comparePdfAFile" accept="application/pdf,.pdf">
-          <span class="tool-dropzone-title">${escapeHtml(t(opts.lang, prefix + '_file_a'))}</span>
-          <span class="tool-dropzone-hint">${escapeHtml(t(opts.lang, prefix + '_choose_file'))}</span>
+          <span class="tool-dropzone-title">${escapeHtml(tx('file_a'))}</span>
+          <span class="tool-dropzone-hint">${escapeHtml(tx('choose_file'))}</span>
         </label>
       </div>
       <div class="col-12 col-md-6">
         <label class="tool-dropzone mb-2" for="comparePdfBFile">
           <input type="file" id="comparePdfBFile" accept="application/pdf,.pdf">
-          <span class="tool-dropzone-title">${escapeHtml(t(opts.lang, prefix + '_file_b'))}</span>
-          <span class="tool-dropzone-hint">${escapeHtml(t(opts.lang, prefix + '_choose_file'))}</span>
+          <span class="tool-dropzone-title">${escapeHtml(tx('file_b'))}</span>
+          <span class="tool-dropzone-hint">${escapeHtml(tx('choose_file'))}</span>
         </label>
       </div>
     </div>
 
     <div class="d-flex align-items-center tools-bar mb-2 flex-wrap">
-      <button type="button" id="compareBtnCompare" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, prefix + '_compare'))}</button>
-      <button type="button" id="compareBtnDownload" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(t(opts.lang, prefix + '_download'))}</button>
-      <button type="button" id="compareBtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, prefix + '_sample'))}</button>
-      <button type="button" id="compareBtnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, prefix + '_clear'))}</button>
+      <button type="button" id="compareBtnCompare" class="btn btn-primary btn-sm">${escapeHtml(tx('compare'))}</button>
+      <button type="button" id="compareBtnDownload" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(tx('download'))}</button>
+      <button type="button" id="compareBtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx('sample'))}</button>
+      <button type="button" id="compareBtnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx('clear'))}</button>
     </div>
+
+    <details class="mb-3" id="compareAdvanced">
+      <summary>${escapeHtml(tx('advanced'))}</summary>
+      <div class="mt-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="compareIgnoreCase">
+          <label class="form-check-label" for="compareIgnoreCase">${escapeHtml(tx('ignore_case'))}</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="compareIgnoreSpace">
+          <label class="form-check-label" for="compareIgnoreSpace">${escapeHtml(tx('ignore_space'))}</label>
+        </div>
+        <p class="form-text mb-0">${escapeHtml(tx('advanced_hint'))}</p>
+      </div>
+    </details>
 
     <p id="compareError" class="small text-danger mb-2" style="display:none;" role="alert"></p>
     <p id="compareStatus" class="small text-muted mb-2" role="status"></p>
     ${pdfWorkUiProgressHtml({ idPrefix: 'comparePdf', labels: pdfWorkLabels })}
     <div class="row g-2 mb-2">
-      <div class="col-12 col-md-6">${pdfWorkUiPreviewHtml({ idPrefix: 'comparePdfA', labels: pdfWorkLabels, heading: t(opts.lang, prefix + '_file_a') })}</div>
-      <div class="col-12 col-md-6">${pdfWorkUiPreviewHtml({ idPrefix: 'comparePdfB', labels: pdfWorkLabels, heading: t(opts.lang, prefix + '_file_b') })}</div>
+      <div class="col-12 col-md-6">${pdfWorkUiPreviewHtml({ idPrefix: 'comparePdfA', labels: pdfWorkLabels, heading: tx('file_a') })}</div>
+      <div class="col-12 col-md-6">${pdfWorkUiPreviewHtml({ idPrefix: 'comparePdfB', labels: pdfWorkLabels, heading: tx('file_b') })}</div>
     </div>
 
     <p id="compareSummary" class="small text-muted mb-2" style="display:none;"></p>
-    <p class="small text-muted mb-1">${escapeHtml(t(opts.lang, prefix + '_result_label'))}</p>
+    <div class="compare-legend" aria-hidden="true">
+      <span><i class="lg-add"></i>${escapeHtml(tx('legend_added'))}</span>
+      <span><i class="lg-del"></i>${escapeHtml(tx('legend_removed'))}</span>
+    </div>
+    <p class="small text-muted mb-1">${escapeHtml(tx('result_label'))}</p>
     <div id="compareResult" class="mb-3" aria-live="polite"></div>
 
     <p class="tool-lead mb-4">${escapeHtml(description)}</p>`;
@@ -144,15 +169,17 @@ export const renderCompareTwoPdfsPage = (opts: {
 		lang: opts.lang,
 		prefix,
 		mode: 'rules',
-		usecaseCount: 3,
-		ruleItemCount: 4,
+		howItemCount: 4,
+		whyChooseItemCount: 5,
+		usecaseCount: 4,
+		ruleItemCount: 5,
 	});
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
 		links: [
-			{ label: 'PDF.js', href: 'https://mozilla.github.io/pdf.js/' },
-			{ label: 'diff', href: 'https://www.npmjs.com/package/diff' },
+			{ label: tx('ref_a_label'), href: 'https://mozilla.github.io/pdf.js/' },
+			{ label: tx('ref_b_label'), href: 'https://www.npmjs.com/package/diff' },
 		],
 	});
 
@@ -168,6 +195,8 @@ export const renderCompareTwoPdfsPage = (opts: {
       var btnDownload = document.getElementById('compareBtnDownload');
       var btnSample = document.getElementById('compareBtnSample');
       var btnClear = document.getElementById('compareBtnClear');
+      var ignoreCaseEl = document.getElementById('compareIgnoreCase');
+      var ignoreSpaceEl = document.getElementById('compareIgnoreSpace');
       var errEl = document.getElementById('compareError');
       var statusEl = document.getElementById('compareStatus');
       var summaryEl = document.getElementById('compareSummary');
@@ -175,37 +204,49 @@ export const renderCompareTwoPdfsPage = (opts: {
       var work = window.OftPdfWork.bind('comparePdf');
       var previewA = window.OftPdfWork.bind('comparePdfA');
       var previewB = window.OftPdfWork.bind('comparePdfB');
-      var busyBtns = [btnCompare, btnSample, btnClear, btnDownload];
+      var busyBtns = [btnCompare, btnSample, btnClear, btnDownload, ignoreCaseEl, ignoreSpaceEl];
 
-      /** 两份 PDF 字节 */
+      /** 两份 PDF 字节。 */
       var bytesA = null;
       var bytesB = null;
-      /** 下载用：对比结果 HTML */
+      /** 下载用：对比结果 HTML。 */
       var resultHtml = null;
+      /** 提取缓存，避免仅改选项时重复解码。 */
+      var textCacheA = null;
+      var textCacheB = null;
 
       var msg = {
-        empty: ${JSON.stringify(t(opts.lang, prefix + '_empty'))},
-        encrypted: ${JSON.stringify(t(opts.lang, prefix + '_err_encrypted'))},
-        loadFail: ${JSON.stringify(t(opts.lang, prefix + '_err_load'))},
-        convertFail: ${JSON.stringify(t(opts.lang, prefix + '_err_convert'))},
-        notext: ${JSON.stringify(t(opts.lang, prefix + '_err_notext'))},
-        working: ${JSON.stringify(t(opts.lang, prefix + '_status_working'))},
-        done: ${JSON.stringify(t(opts.lang, prefix + '_status_done'))},
-        summaryTpl: ${JSON.stringify(t(opts.lang, prefix + '_summary_tpl'))},
-        pdflibMissing: ${JSON.stringify(t(opts.lang, 'tool_merge_pdf_warn_pdflib'))},
+        empty: ${JSON.stringify(tx('empty'))},
+        encrypted: ${JSON.stringify(tx('err_encrypted'))},
+        loadFail: ${JSON.stringify(tx('err_load'))},
+        convertFail: ${JSON.stringify(tx('err_convert'))},
+        notext: ${JSON.stringify(tx('err_notext'))},
+        working: ${JSON.stringify(tx('status_working'))},
+        done: ${JSON.stringify(tx('status_done'))},
+        identical: ${JSON.stringify(tx('status_identical'))},
+        summaryTpl: ${JSON.stringify(tx('summary_tpl'))},
+        pagesTpl: ${JSON.stringify(tx('pages_tpl'))}
       };
 
+      /** 用 {key} 填充模板。 */
+      function fill(tpl, map) {
+        return tpl.replace(/\\{(\\w+)\\}/g, function (_, k) { return map[k] != null ? map[k] : ''; });
+      }
+
+      /** 显示或隐藏错误。 */
       function setErr(text) {
         if (!text) { errEl.style.display = 'none'; errEl.textContent = ''; return; }
         errEl.textContent = text;
         errEl.style.display = '';
       }
+
+      /** 更新状态行。 */
       function setStatus(text) { statusEl.textContent = text || ''; }
 
       /**
-       * 将 PDF 提取文本转义为安全 HTML 文本，避免差异预览解释原文标记。
-       * @param {unknown} value PDF.js 返回的文本片段
-       * @returns {string} 可安全拼接到差异 HTML 的文本
+       * 将 PDF 提取文本转义为安全 HTML。
+       * @param {unknown} value 文本片段
+       * @returns {string}
        */
       function escapeDiffText(value) {
         return String(value == null ? '' : value)
@@ -214,20 +255,40 @@ export const renderCompareTwoPdfsPage = (opts: {
           .replace(/>/g, '&gt;');
       }
 
-      function setResult(html, changeBlocksCount) {
-        resultHtml = html;
-        resultEl.innerHTML = html;
-        if (typeof changeBlocksCount === 'number') {
-          summaryEl.textContent = msg.summaryTpl.replace('{n}', String(changeBlocksCount));
-          summaryEl.style.display = '';
-        } else {
-          summaryEl.style.display = 'none';
-        }
+      /**
+       * 按当前选项规范化文本后再 diff。
+       * @param {string} s 原文
+       * @returns {string}
+       */
+      function normalize(s) {
+        var out = String(s || '');
+        if (ignoreSpaceEl.checked) out = out.replace(/\\s+/g, ' ').trim();
+        if (ignoreCaseEl.checked) out = out.toLowerCase();
+        return out;
       }
 
+      /**
+       * 写入差异 HTML 与摘要。
+       * @param {string} html 高亮 HTML
+       * @param {{ added: number, removed: number, pagesA: number, pagesB: number }} stats 统计
+       */
+      function setResult(html, stats) {
+        resultHtml = html;
+        resultEl.innerHTML = html;
+        summaryEl.textContent =
+          fill(msg.summaryTpl, { added: String(stats.added), removed: String(stats.removed) }) +
+          ' · ' +
+          fill(msg.pagesTpl, { a: String(stats.pagesA), b: String(stats.pagesB) });
+        summaryEl.style.display = '';
+      }
+
+      /** 下载 HTML 差异。 */
       function downloadResult() {
         if (!resultHtml) return;
-        var blob = new Blob([resultHtml], { type: 'text/html' });
+        var blob = new Blob(
+          ['<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>PDF text diff</title></head><body>', resultHtml, '</body></html>'],
+          { type: 'text/html;charset=utf-8' }
+        );
         var url = URL.createObjectURL(blob);
         var a = document.createElement('a');
         a.href = url;
@@ -238,7 +299,7 @@ export const renderCompareTwoPdfsPage = (opts: {
         URL.revokeObjectURL(url);
       }
 
-      /** 确保 pdfjsLib 已加载（按需动态导入） */
+      /** 确保 pdfjsLib 已加载。 */
       function ensurePdfJs() {
         if (window.pdfjsLib) return Promise.resolve(window.pdfjsLib);
         return import('/vendor/pdfjs/pdf.min.mjs').then(function (mod) {
@@ -249,9 +310,9 @@ export const renderCompareTwoPdfsPage = (opts: {
       }
 
       /**
-       * 提取 PDF 文本（不做 OCR）：只读取 text layer。
-       * @param {Uint8Array} bytes
-       * @returns {Promise<string>}
+       * 提取 PDF 文本层（不做 OCR）。
+       * @param {Uint8Array} bytes PDF 字节
+       * @returns {Promise<{ text: string, pages: number }>}
        */
       function extractText(bytes) {
         return ensurePdfJs().then(function (pdfjsLib) {
@@ -265,27 +326,26 @@ export const renderCompareTwoPdfsPage = (opts: {
                 return doc.getPage(pageNum).then(function (page) {
                   return page.getTextContent().then(function (tc) {
                     var items = tc && tc.items ? tc.items : [];
-                    var line = items.map(function (it) { return it.str; }).join(' ');
-                    parts.push(line);
+                    parts.push(items.map(function (it) { return it.str; }).join(' '));
                   });
                 });
               });
             })(i);
           }
-          return p.then(function () { return parts.join('\\n'); });
+          return p.then(function () {
+            return { text: parts.join('\\n'), pages: doc.numPages };
+          });
         });
       }
 
-      /**
-       * 执行文本差异对比并渲染高亮结果。
-       * @returns {Promise<void>}
-       */
+      /** 执行文本差异对比。 */
       function runCompare() {
         setErr('');
         setStatus('');
         btnDownload.disabled = true;
         summaryEl.style.display = 'none';
         resultEl.innerHTML = '';
+        resultHtml = null;
 
         if (!bytesA || !bytesB) {
           setErr(msg.empty);
@@ -296,42 +356,61 @@ export const renderCompareTwoPdfsPage = (opts: {
         work.setProgress(null);
         setStatus(msg.working);
 
+        var pagesA = 0;
+        var pagesB = 0;
+
         return window.OftPdfWork.yieldUi()
           .then(function () {
-            work.setProgress(15);
+            work.setProgress(10);
             return previewA.showPreview(bytesA);
           })
           .then(function () {
-            work.setProgress(30);
-            return extractText(bytesA);
+            work.setProgress(25);
+            if (textCacheA) return textCacheA;
+            return extractText(bytesA).then(function (out) {
+              textCacheA = out;
+              return out;
+            });
           })
-          .then(function (textA) {
-            if (!textA || !textA.trim()) throw new Error('notext');
-            work.setProgress(50);
-            return previewB.showPreview(bytesB).then(function () { return textA; });
+          .then(function (outA) {
+            if (!outA.text || !outA.text.trim()) throw new Error('notext');
+            pagesA = outA.pages;
+            work.setProgress(45);
+            return previewB.showPreview(bytesB).then(function () { return outA; });
           })
-          .then(function (textA) {
-            work.setProgress(65);
-            return extractText(bytesB).then(function (textB) { return { textA: textA, textB: textB }; });
+          .then(function (outA) {
+            work.setProgress(60);
+            if (textCacheB) return { outA: outA, outB: textCacheB };
+            return extractText(bytesB).then(function (outB) {
+              textCacheB = outB;
+              return { outA: outA, outB: outB };
+            });
           })
           .then(function (data) {
-            var textA = data.textA;
-            var textB = data.textB;
-            work.setProgress(85);
-
-            var changeBlocks = 0;
-            var blocks = Diff.diffWordsWithSpace(textA, textB);
+            if (!data.outB.text || !data.outB.text.trim()) throw new Error('notext');
+            pagesB = data.outB.pages;
+            work.setProgress(80);
+            var left = normalize(data.outA.text);
+            var right = normalize(data.outB.text);
+            var added = 0;
+            var removed = 0;
+            var blocks = Diff.diffWordsWithSpace(left, right);
             var html = blocks.map(function (b) {
               var safeValue = escapeDiffText(b.value);
-              if (b.added) { changeBlocks += 1; return '<span class=\"diff-added\">' + safeValue + '</span>'; }
-              if (b.removed) { changeBlocks += 1; return '<span class=\"diff-removed\">' + safeValue + '</span>'; }
+              if (b.added) {
+                added += 1;
+                return '<span class=\"diff-added\">' + safeValue + '</span>';
+              }
+              if (b.removed) {
+                removed += 1;
+                return '<span class=\"diff-removed\">' + safeValue + '</span>';
+              }
               return '<span class=\"diff-neutral\">' + safeValue + '</span>';
             }).join('');
-
-            setResult(html, changeBlocks);
+            setResult(html, { added: added, removed: removed, pagesA: pagesA, pagesB: pagesB });
             btnDownload.disabled = false;
             work.setProgress(100);
-            setStatus(msg.done);
+            setStatus(added === 0 && removed === 0 ? msg.identical : msg.done);
           })
           .catch(function (err) {
             var eStr = String(err && err.message ? err.message : err);
@@ -348,13 +427,18 @@ export const renderCompareTwoPdfsPage = (opts: {
           });
       }
 
-      /** 生成一个样例 PDF（仅用于演示差异对比） */
-      function makeSamplePdf(label, fileName) {
+      /**
+       * 生成样例 PDF。
+       * @param {string} line1 第一行
+       * @param {string} line2 第二行
+       * @param {string} fileName 文件名
+       */
+      function makeSamplePdf(line1, line2, fileName) {
         return PDFLib.PDFDocument.create().then(function (doc) {
           var page = doc.addPage([420, 300]);
-          return doc.embedFont(PDFLib.StandardFonts.HelveticaBold).then(function (font) {
-            page.drawText(label, { x: 48, y: 170, size: 22, font: font });
-            page.drawText('Compare sample', { x: 48, y: 130, size: 12, font: font });
+          return doc.embedFont(PDFLib.StandardFonts.Helvetica).then(function (font) {
+            page.drawText(line1, { x: 48, y: 180, size: 16, font: font });
+            page.drawText(line2, { x: 48, y: 150, size: 14, font: font });
             return doc.save();
           });
         }).then(function (bytes) {
@@ -362,17 +446,22 @@ export const renderCompareTwoPdfsPage = (opts: {
         });
       }
 
-      /** 加载样例：自动生成 A/B PDF 并执行对比 */
+      /** 加载样例：A/B 各一页，故意改一词以便看到红绿高亮。 */
       function loadSample() {
         setErr('');
         setStatus(msg.working);
         btnDownload.disabled = true;
         summaryEl.style.display = 'none';
         resultEl.innerHTML = '';
+        resultHtml = null;
+        textCacheA = null;
+        textCacheB = null;
+        ignoreCaseEl.checked = false;
+        ignoreSpaceEl.checked = false;
 
         Promise.all([
-          makeSamplePdf('Version A text.', 'a.pdf').then(function (f) { return f.arrayBuffer(); }),
-          makeSamplePdf('Version B text.', 'b.pdf').then(function (f) { return f.arrayBuffer(); }),
+          makeSamplePdf('Contract draft v1', 'Payment due in thirty days.', 'a.pdf').then(function (f) { return f.arrayBuffer(); }),
+          makeSamplePdf('Contract draft v2', 'Payment due in sixty days.', 'b.pdf').then(function (f) { return f.arrayBuffer(); }),
         ]).then(function (arr) {
           bytesA = new Uint8Array(arr[0]);
           bytesB = new Uint8Array(arr[1]);
@@ -383,11 +472,32 @@ export const renderCompareTwoPdfsPage = (opts: {
         });
       }
 
-      /** 处理用户上传 */
+      /** 真正清空，不重新加载样例。 */
+      function clearAll() {
+        bytesA = null;
+        bytesB = null;
+        textCacheA = null;
+        textCacheB = null;
+        resultHtml = null;
+        resultEl.innerHTML = '';
+        summaryEl.style.display = 'none';
+        setErr('');
+        setStatus('');
+        btnDownload.disabled = true;
+        inputA.value = '';
+        inputB.value = '';
+        ignoreCaseEl.checked = false;
+        ignoreSpaceEl.checked = false;
+        previewA.clearPreview();
+        previewB.clearPreview();
+        work.hideProgress();
+      }
+
       inputA.addEventListener('change', function () {
         if (!inputA.files || !inputA.files[0]) return;
         setErr('');
         bytesA = null;
+        textCacheA = null;
         var f = inputA.files[0];
         f.arrayBuffer().then(function (ab) {
           bytesA = new Uint8Array(ab);
@@ -399,6 +509,7 @@ export const renderCompareTwoPdfsPage = (opts: {
         if (!inputB.files || !inputB.files[0]) return;
         setErr('');
         bytesB = null;
+        textCacheB = null;
         var f = inputB.files[0];
         f.arrayBuffer().then(function (ab) {
           bytesB = new Uint8Array(ab);
@@ -407,27 +518,15 @@ export const renderCompareTwoPdfsPage = (opts: {
         inputB.value = '';
       });
 
+      ignoreCaseEl.addEventListener('change', function () { if (bytesA && bytesB) runCompare(); });
+      ignoreSpaceEl.addEventListener('change', function () { if (bytesA && bytesB) runCompare(); });
+
       btnCompare.addEventListener('click', runCompare);
       btnDownload.addEventListener('click', downloadResult);
       btnSample.addEventListener('click', loadSample);
-      btnClear.addEventListener('click', function () {
-        bytesA = null;
-        bytesB = null;
-        resultHtml = null;
-        resultEl.innerHTML = '';
-        summaryEl.style.display = 'none';
-        setErr('');
-        setStatus('');
-        btnDownload.disabled = true;
-        inputA.value = '';
-        inputB.value = '';
-        previewA.clearPreview();
-        previewB.clearPreview();
-        work.hideProgress();
-        loadSample();
-      });
+      btnClear.addEventListener('click', clearAll);
 
-      // 初始化：自动加载样例并执行对比
+      /** 进页自动跑样例。 */
       loadSample();
     })();
   </script>`;
@@ -471,4 +570,3 @@ export const renderCompareTwoPdfsPage = (opts: {
 		sidebarAutoCloseSelector: '#toolNav a',
 	});
 };
-

@@ -27,3 +27,4 @@ reviews/
 | [`2026-08-12/`](./2026-08-12/01-analysis-review.md) | 含「已抓取未索引」drilldown |
 | [`2026-09-07/`](./2026-09-07/01-analysis-review.md) | 仅「已抓取未索引」92 URL；无效果/Coverage 总数 |
 | [`2026-09-10/`](./2026-09-10/01-analysis-review.md) | 效果 **过去 7 天**（09-01～07）：19 点击 / 4314 展示；无 Coverage |
+| [`2026-10-13/`](./2026-10-13/01-analysis-review.md) | **10/6 断崖**；全站近清零 + 零散残留；按 Sept 2026 spam / scaled 挽救策略 |

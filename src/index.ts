@@ -448,11 +448,19 @@ app.get('/subjects/:id', (c) => c.redirect(`/tool-type/${c.req.param('id')}`, 30
 app.get('/subjects/:id/', (c) => c.redirect(`/tool-type/${c.req.param('id')}`, 301));
 
 /**
+ * Devlogs 全站 noindex 的 HTTP 头值；须与构建期 meta robots（`DEVLOGS_ROBOTS_CONTENT`）一致。
+ */
+const DEVLOGS_X_ROBOTS_TAG = "noindex, nofollow";
+
+/**
  * Devlogs 目录索引（Assets 默认也会映射；显式路由保证稳定性）。
+ * 响应补 `X-Robots-Tag`，与页面 meta robots 双保险。
  */
 app.get("/devlogs", (c) => c.redirect("/devlogs/", 301));
 app.get("/devlogs/", async (c) => {
-	const res = await fetchAsset(c, "/devlogs/index.html");
+	const assetRes = await fetchAsset(c, "/devlogs/index.html");
+	const res = new Response(assetRes.body, assetRes);
+	res.headers.set("X-Robots-Tag", DEVLOGS_X_ROBOTS_TAG);
 	return res;
 });
 

@@ -34,8 +34,8 @@ alwaysApply: false
 
 ## 索引
 
-- `robots.txt` 允许正常抓取；`Disallow: /api/`（接口不收录）；`/devlogs/` **允许**抓取；`sitemap.xml` 由 `npm run build:site` 生成（含 `/devlogs/` 索引与 **`Visibility: people`（默认）** 各篇；**不含** `Visibility: project` 篇；单 URL、无 hreflang 展开）；每条 URL 带真实 `<lastmod>`（源文件未变则沿用旧日期，见 `scripts/site/sitemap-lastmod.mjs`）
-- 测试/门禁页：`meta name="robots" content="noindex"`（`renderLayout` 的 `robotsNoindex: true`）。开发日志：**People 篇默认可索引**；**Project 篇**为 `noindex, nofollow`（源文件 `Visibility: project` 或 `Robots: noindex, nofollow`，见 `dev-logs.mdc` / `parseDevLogMeta`）
+- `robots.txt` 允许正常抓取；`Disallow: /api/`（接口不收录）；`/devlogs/` **暂时允许**抓取（全站 noindex 第一阶段：爬虫须能读到 noindex 才会移出索引；GSC 确认 devlogs 已出索引后再加 `Disallow: /devlogs/`，见 `docs/seo/reviews/2026-10-13/03-todo.md`）；`sitemap.xml` 由 `npm run build:site` 生成（**不含** `/devlogs/` 任何 URL；单 URL、无 hreflang 展开）；每条 URL 带真实 `<lastmod>`（源文件未变则沿用旧日期，见 `scripts/site/sitemap-lastmod.mjs`）
+- 测试/门禁页：`meta name="robots" content="noindex"`（`renderLayout` 的 `robotsNoindex: true`）。开发日志：**全站** `noindex, nofollow`（索引分页 + 各篇，不分 Visibility；`DEVLOGS_ROBOTS_CONTENT` + `public/_headers` / Worker `X-Robots-Tag`）
 - 禁止 `llms.txt` 或「AI 专用」Schema 类型
 
 ## 国际化

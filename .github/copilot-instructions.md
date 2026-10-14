@@ -7,14 +7,14 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - Target platform: Cloudflare Workers + Static Assets + R2. Use Wrangler for local dev; production Worker/Assets normally deploy via GitHub push after local R2 upload/verify.
 
 ## Default Agent Behaviors
-- Dev logs (see `.cursor/rules/dev-logs.mdc`): write when **people-helpful** (default `Visibility: people`, detailed process+solution, indexable + sitemap) **or** when **project-needed but not people-helpful** (`Visibility: project` → HTML `noindex, nofollow`, omit from sitemap; still list on `/devlogs/`). Skip only: pure `git add`/`commit`/`push`, empty confirmations, secrets/PII, log-file-only turns, and worthless empty shells. Path: `dev-logs/YYYY-MM/YYYY-MM-DD-HH-MM-<summary>.md`. Same-topic multi-turn → one consolidated log. Curation: thin junk → `_archive/`; keepers may be marked `Visibility: project` instead of deleting.
+- Dev logs (see `.cursor/rules/dev-logs.mdc`): write when **people-helpful** (default `Visibility: people`, detailed process+solution) **or** when **project-needed but not people-helpful** (`Visibility: project`, may be shorter). All public `/devlogs/` pages are `noindex, nofollow` and omitted from the sitemap regardless of Visibility. Skip only: pure `git add`/`commit`/`push`, empty confirmations, secrets/PII, log-file-only turns, and worthless empty shells. Path: `dev-logs/YYYY-MM/YYYY-MM-DD-HH-MM-<summary>.md`. Same-topic multi-turn → one consolidated log. Curation: thin junk → `_archive/`; keepers may be marked `Visibility: project` instead of deleting.
 - Log template (new logs only; do not rewrite past entries):
   - `Date:` / `Summary:` / optional `Visibility: people|project` (or `Robots: noindex, nofollow`)
   - `[question]` + original text
   - `[try to solve]` + English narrative (People: Context→Process→Root cause→Solution→Notes; Project: shorter but factual)
   - Optional `[actions]` (never the log file itself)
 - Exclusions: AI trailing prompts; creating the log file; git-only sessions; secrets.
-- Visibility: keep full Q&A visible in chat; `public/devlogs/` is generated output (crawlable; included in `sitemap.xml` via `build:site`) and must not shorten the chat reply.
+- Visibility: keep full Q&A visible in chat; `public/devlogs/` is generated output (site-wide noindex; not in `sitemap.xml`; robots.txt still allows crawling until GSC confirms removal) and must not shorten the chat reply.
 - Keep edits surgical: modify only files directly relevant to the user request. Do not introduce frameworks or unrelated refactors without explicit instruction.
 - Do not save sensitive data: use environment variables or other secure methods.
 

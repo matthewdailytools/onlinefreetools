@@ -47,6 +47,7 @@
     "vendor:whisper": "node scripts/vendor-whisper.mjs",
     "vendor:mediabunny": "node scripts/vendor-mediabunny.mjs",
     "lint:seo": "node scripts/validate-tool-seo.mjs",
+    "audit:ig": "node scripts/qa/audit-tool-info-gain.mjs",
     "seo:capture-og": "node scripts/seo/capture-tool-og-images.mjs",
     "seo:stamp-og-watermark": "node scripts/seo/stamp-og-watermark.mjs",
     "lint:taxonomy": "node scripts/validate-taxonomy.mjs",
