@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-circle",
   "path": "/tools/how-to-calculate-circle",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-14T09:49:56.233Z",
   "category": "calculator",
   "primaryTopic": "geometry-measure",
   "featured": false,
@@ -12,7 +12,9 @@
   "faqPrefix": "tool_circle",
   "related": [
     "how-to-calculate-triangle-area",
-    "how-to-calculate-volume"
+    "how-to-calculate-volume",
+    "square-feet",
+    "how-to-calculate-pythagorean-theorem"
   ],
   "logo": "/icons/tools/how-to-calculate-circle.svg",
   "page": {

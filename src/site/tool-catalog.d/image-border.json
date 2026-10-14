@@ -1,7 +1,7 @@
 {
   "slug": "image-border",
   "path": "/tools/image-border",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-14T06:12:00.596Z",
   "category": "image",
   "primaryTopic": "image-media",
   "featured": true,
@@ -11,9 +11,10 @@
   "homeDescKey": "tool_image_border_desc",
   "faqPrefix": "tool_image_border",
   "related": [
-    "image-grayscale",
-    "flip-image",
-    "add-watermark"
+    "instagram-post-size",
+    "instagram-story-size",
+    "image-crop",
+    "how-to-calculate-aspect-ratio"
   ],
   "logo": "/icons/tools/image-border.svg",
   "page": {

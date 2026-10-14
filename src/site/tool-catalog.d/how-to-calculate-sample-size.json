@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-sample-size",
   "path": "/tools/how-to-calculate-sample-size",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-14T09:57:11.469Z",
   "category": "calculator",
   "primaryTopic": "math-stats",
   "featured": false,
@@ -12,7 +12,9 @@
   "faqPrefix": "tool_sample_size",
   "related": [
     "how-to-calculate-confidence-interval",
-    "how-to-calculate-p-value"
+    "how-to-calculate-standard-deviation",
+    "how-to-calculate-p-value",
+    "how-to-calculate-z-score"
   ],
   "logo": "/icons/tools/how-to-calculate-sample-size.svg",
   "page": {

@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-quadratic-equation",
   "path": "/tools/how-to-calculate-quadratic-equation",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-14T10:00:51.839Z",
   "category": "calculator",
   "primaryTopic": "math-stats",
   "featured": false,
@@ -11,8 +11,10 @@
   "homeDescKey": "tool_quadratic_equation_description",
   "faqPrefix": "tool_quadratic_equation",
   "related": [
-    "how-to-calculate-permutation-combination",
-    "how-to-calculate-slope"
+    "how-to-calculate-slope",
+    "how-to-calculate-pythagorean-theorem",
+    "how-to-calculate-exponent",
+    "how-to-calculate-acceleration"
   ],
   "logo": "/icons/tools/how-to-calculate-quadratic-equation.svg",
   "page": {

@@ -1,7 +1,7 @@
 {
   "slug": "images-to-pdf",
   "path": "/tools/images-to-pdf",
-  "updatedAt": "2026-09-06T08:01:59.395Z",
+  "updatedAt": "2026-10-14T06:44:38.221Z",
   "category": "image",
   "primaryTopic": "image-media",
   "secondaryTopics": [
@@ -14,10 +14,9 @@
   "homeDescKey": "tool_images_to_pdf_desc",
   "faqPrefix": "tool_images_to_pdf",
   "related": [
-    "image-merge",
+    "combine-files-into-one-pdf",
     "images-to-word",
-    "images-to-ppt",
-    "images-to-gif",
+    "image-compress",
     "pdf-page-to-image-sizes"
   ],
   "logo": "/icons/tools/images-to-pdf.svg",

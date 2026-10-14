@@ -1,7 +1,7 @@
 {
   "slug": "add-text-to-pdf-file",
   "path": "/tools/add-text-to-pdf-file",
-  "updatedAt": "2026-09-06T09:33:13.437Z",
+  "updatedAt": "2026-10-14T10:05:50.973Z",
   "launchedAt": "2026-09-03T14:00:00.000Z",
   "category": "pdf",
   "primaryTopic": "pdf-docs",
@@ -16,9 +16,9 @@
   "faqPrefix": "tool_add_text_to_pdf_file",
   "related": [
     "pdf-watermark",
-    "write-pdf-document-online",
-    "edit-pdf-text-online",
-    "edit-pdf-form-fields"
+    "sign-pdf-document",
+    "pdf-page-numbers",
+    "edit-pdf-text-online"
   ],
   "logo": "/icons/tools/add-text-to-pdf-file.svg",
   "page": {

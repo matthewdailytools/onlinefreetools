@@ -40,16 +40,16 @@
 | 18 | open-pdf-in-browser | pdf | 266 | 3 | 117 | B | 12.4 | done 2026-10-14 |
 | 19 | combine-files-into-one-pdf | pdf | 264 | 2 | 117 | B | 12.2 | done 2026-10-14 |
 | 20 | add-watermark | category:image | 171 | 0 | 120 | C | 12.0 | done 2026-10-14 |
-| 21 | print-pdf | pdf | 267 | 0 | 117 | A | 11.7 | todo |
-| 22 | how-to-calculate-density | how-to-calculate | 97 | 15 | 7 | A | 11.5 | todo |
-| 23 | image-border | image | 157 | 3 | 96 | B | 11.3 | todo |
-| 24 | images-to-pdf | pdf | 158 | 1 | 104 | B | 10.9 | todo |
-| 25 | extract-text-from-pdf | pdf | 304 | 0 | 104 | C | 10.4 | todo |
-| 26 | images-to-word | image | 173 | 3 | 88 | B | 10.3 | todo |
-| 27 | how-to-calculate-circle | how-to-calculate | 110 | 13 | 7 | A | 9.6 | todo |
-| 28 | how-to-calculate-sample-size | how-to-calculate | 292 | 52 | 0 | A | 8.6 | todo |
-| 29 | how-to-calculate-quadratic-equation | how-to-calculate | 114 | 11 | 7 | A | 8.1 | todo |
-| 30 | add-text-to-pdf-file | pdf | 317 | 0 | 72 | C | 7.2 | todo |
+| 21 | print-pdf | pdf | 267 | 0 | 117 | A | 11.7 | done 2026-10-14 |
+| 22 | how-to-calculate-density | how-to-calculate | 97 | 15 | 7 | A | 11.5 | done 2026-10-14 |
+| 23 | image-border | image | 157 | 3 | 96 | B | 11.3 | done 2026-10-14 |
+| 24 | images-to-pdf | pdf | 158 | 1 | 104 | B | 10.9 | done 2026-10-14 |
+| 25 | extract-text-from-pdf | pdf | 304 | 0 | 104 | C | 10.4 | done 2026-10-14 |
+| 26 | images-to-word | image | 173 | 3 | 88 | B | 10.3 | done 2026-10-14 |
+| 27 | how-to-calculate-circle | how-to-calculate | 110 | 13 | 7 | A | 9.6 | done 2026-10-14 |
+| 28 | how-to-calculate-sample-size | how-to-calculate | 292 | 52 | 0 | A | 8.6 | done 2026-10-14 |
+| 29 | how-to-calculate-quadratic-equation | how-to-calculate | 114 | 11 | 7 | A | 8.1 | done 2026-10-14 |
+| 30 | add-text-to-pdf-file | pdf | 317 | 0 | 72 | C | 7.2 | done 2026-10-14 |
 | 31 | how-to-calculate-irr | how-to-calculate | 176 | 13 | 7 | A | 7.2 | todo |
 | 32 | how-to-calculate-median | how-to-calculate | 130 | 11 | 0 | A | 6.9 | todo |
 | 33 | how-to-calculate-present-value | how-to-calculate | 190 | 13 | 7 | A | 6.6 | todo |

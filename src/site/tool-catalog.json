@@ -94,7 +94,7 @@
   {
     "slug": "add-text-to-pdf-file",
     "path": "/tools/add-text-to-pdf-file",
-    "updatedAt": "2026-09-06T09:33:13.437Z",
+    "updatedAt": "2026-10-14T10:05:50.973Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -109,9 +109,9 @@
     "faqPrefix": "tool_add_text_to_pdf_file",
     "related": [
       "pdf-watermark",
-      "write-pdf-document-online",
-      "edit-pdf-text-online",
-      "edit-pdf-form-fields"
+      "sign-pdf-document",
+      "pdf-page-numbers",
+      "edit-pdf-text-online"
     ],
     "logo": "/icons/tools/add-text-to-pdf-file.svg",
     "localProcessing": true,
@@ -2887,7 +2887,7 @@
   {
     "slug": "extract-text-from-pdf",
     "path": "/tools/extract-text-from-pdf",
-    "updatedAt": "2026-09-06T09:37:59.139Z",
+    "updatedAt": "2026-10-14T08:00:42.524Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -2901,10 +2901,10 @@
     "homeDescKey": "tool_extract_text_from_pdf_desc",
     "faqPrefix": "tool_extract_text_from_pdf",
     "related": [
+      "extract-text-from-a-scanned-pdf",
       "pdf-to-markdown",
-      "merge-pdf",
       "turn-pdf-into-word-document",
-      "compare-two-pdfs"
+      "unlock-pdf"
     ],
     "logo": "/icons/tools/extract-text-from-pdf.svg",
     "localProcessing": true,
@@ -3317,7 +3317,7 @@
   {
     "slug": "how-to-calculate-circle",
     "path": "/tools/how-to-calculate-circle",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T09:49:56.233Z",
     "category": "calculator",
     "primaryTopic": "geometry-measure",
     "featured": false,
@@ -3328,7 +3328,9 @@
     "faqPrefix": "tool_circle",
     "related": [
       "how-to-calculate-triangle-area",
-      "how-to-calculate-volume"
+      "how-to-calculate-volume",
+      "square-feet",
+      "how-to-calculate-pythagorean-theorem"
     ],
     "logo": "/icons/tools/how-to-calculate-circle.svg",
     "localProcessing": true,
@@ -3481,7 +3483,7 @@
   {
     "slug": "how-to-calculate-density",
     "path": "/tools/how-to-calculate-density",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T05:40:54.003Z",
     "category": "calculator",
     "primaryTopic": "science-physics",
     "featured": false,
@@ -3492,7 +3494,8 @@
     "faqPrefix": "tool_density",
     "related": [
       "how-to-calculate-volume",
-      "how-to-calculate-ohms-law"
+      "how-to-calculate-circle",
+      "how-to-calculate-scientific-notation"
     ],
     "logo": "/icons/tools/how-to-calculate-density.svg",
     "localProcessing": true,
@@ -4160,7 +4163,7 @@
   {
     "slug": "how-to-calculate-quadratic-equation",
     "path": "/tools/how-to-calculate-quadratic-equation",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T10:00:51.839Z",
     "category": "calculator",
     "primaryTopic": "math-stats",
     "featured": false,
@@ -4170,8 +4173,10 @@
     "homeDescKey": "tool_quadratic_equation_description",
     "faqPrefix": "tool_quadratic_equation",
     "related": [
-      "how-to-calculate-permutation-combination",
-      "how-to-calculate-slope"
+      "how-to-calculate-slope",
+      "how-to-calculate-pythagorean-theorem",
+      "how-to-calculate-exponent",
+      "how-to-calculate-acceleration"
     ],
     "logo": "/icons/tools/how-to-calculate-quadratic-equation.svg",
     "localProcessing": true,
@@ -4252,7 +4257,7 @@
   {
     "slug": "how-to-calculate-sample-size",
     "path": "/tools/how-to-calculate-sample-size",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T09:57:11.469Z",
     "category": "calculator",
     "primaryTopic": "math-stats",
     "featured": false,
@@ -4263,7 +4268,9 @@
     "faqPrefix": "tool_sample_size",
     "related": [
       "how-to-calculate-confidence-interval",
-      "how-to-calculate-p-value"
+      "how-to-calculate-standard-deviation",
+      "how-to-calculate-p-value",
+      "how-to-calculate-z-score"
     ],
     "logo": "/icons/tools/how-to-calculate-sample-size.svg",
     "localProcessing": true,
@@ -4580,7 +4587,7 @@
   {
     "slug": "image-border",
     "path": "/tools/image-border",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-14T06:12:00.596Z",
     "category": "image",
     "primaryTopic": "image-media",
     "featured": true,
@@ -4590,9 +4597,10 @@
     "homeDescKey": "tool_image_border_desc",
     "faqPrefix": "tool_image_border",
     "related": [
-      "image-grayscale",
-      "flip-image",
-      "add-watermark"
+      "instagram-post-size",
+      "instagram-story-size",
+      "image-crop",
+      "how-to-calculate-aspect-ratio"
     ],
     "logo": "/icons/tools/image-border.svg",
     "localProcessing": true,
@@ -4853,7 +4861,7 @@
   {
     "slug": "images-to-pdf",
     "path": "/tools/images-to-pdf",
-    "updatedAt": "2026-09-06T08:01:59.395Z",
+    "updatedAt": "2026-10-14T06:44:38.221Z",
     "category": "image",
     "primaryTopic": "image-media",
     "secondaryTopics": [
@@ -4866,10 +4874,9 @@
     "homeDescKey": "tool_images_to_pdf_desc",
     "faqPrefix": "tool_images_to_pdf",
     "related": [
-      "image-merge",
+      "combine-files-into-one-pdf",
       "images-to-word",
-      "images-to-ppt",
-      "images-to-gif",
+      "image-compress",
       "pdf-page-to-image-sizes"
     ],
     "logo": "/icons/tools/images-to-pdf.svg",
@@ -4907,7 +4914,7 @@
   {
     "slug": "images-to-word",
     "path": "/tools/images-to-word",
-    "updatedAt": "2026-09-08T12:31:00.000Z",
+    "updatedAt": "2026-10-14T09:43:59.967Z",
     "category": "image",
     "primaryTopic": "image-media",
     "secondaryTopics": [
@@ -4922,7 +4929,8 @@
     "related": [
       "batch-convert-jpg-to-editable-word-with-ocr",
       "images-to-pdf",
-      "images-to-ppt"
+      "images-to-ppt",
+      "image-compress"
     ],
     "logo": "/icons/tools/images-to-word.svg",
     "localProcessing": true,
@@ -6134,7 +6142,7 @@
   {
     "slug": "print-pdf",
     "path": "/tools/print-pdf",
-    "updatedAt": "2026-09-05T12:58:23.264Z",
+    "updatedAt": "2026-10-14T04:58:04.212Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -6149,7 +6157,9 @@
     "faqPrefix": "tool_print_pdf",
     "related": [
       "open-pdf-in-browser",
-      "compress-pdf"
+      "organize-pdf",
+      "split-pdf",
+      "unlock-pdf"
     ],
     "logo": "/icons/tools/print-pdf.svg",
     "localProcessing": true,
