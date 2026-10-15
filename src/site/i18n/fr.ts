@@ -12885,44 +12885,141 @@ const fr: SiteLangDict = {
   tool_headers_usecases_title: 'Situations utiles',
   tool_heart_rate_age_label: 'Âge (ans)',
   tool_heart_rate_age_ph: 'ex. 30',
-  tool_heart_rate_article: 'Calculateur de zones de fréquence cardiaque',
+  tool_heart_rate_aha_label: 'FC cible selon l\'AHA',
+  tool_heart_rate_aha_tpl: 'activité modérée (50–70 %) : {m} bpm · activité intense (70–85 %) : {v} bpm',
+  tool_heart_rate_article: 'Calcul des zones de fréquence cardiaque',
+  tool_heart_rate_bpm_tpl: '{v} bpm',
   tool_heart_rate_calculate: 'Calculer',
+  tool_heart_rate_cap_hrr: 'Zones d\'entraînement selon la méthode de Karvonen : FC de repos + pourcentage × FC de réserve',
+  tool_heart_rate_cap_pct: 'Zones d\'entraînement en pourcentage de la FC max',
   tool_heart_rate_clear: 'Effacer',
+  tool_heart_rate_cmp_label: 'Estimations selon l\'âge',
+  tool_heart_rate_cmp_tpl: '220 − âge : {a} · Tanaka : {b} · Gulati (femmes) : {c}',
+  tool_heart_rate_col_30s: 'Battements en 30 s',
+  tool_heart_rate_col_bpm: 'FC (bpm)',
+  tool_heart_rate_col_effort: 'Intensité',
+  tool_heart_rate_col_pct: 'Plage',
+  tool_heart_rate_col_zone: 'Zone',
   tool_heart_rate_description:
-    'Calculez la FC max estimée (220−âge) et des zones d’entraînement en % du maximum. Exemple : âge 30 → max 190 ; modéré souvent ~50–70%. Éducatif seulement — pas un avis médical.',
-  tool_heart_rate_disclaimer: 'Illustration éducative (heart rate zones) uniquement — pas un avis médical.',
-  tool_heart_rate_err_generic: 'Vérifiez les entrées.',
-  tool_heart_rate_example: 'Exemple : âge 30 → 190.',
+    'Calculez votre fréquence cardiaque maximale (FC max) selon votre âge — formule 220 − âge, formule de Tanaka ou de Gulati pour les femmes — ou saisissez une valeur mesurée, puis obtenez cinq zones d\'entraînement en bpm, les plages d\'effort modéré et intense de l\'AHA et le nombre de battements à compter en 30 secondes. Avec votre FC de repos, les zones se calculent aussi par la méthode de Karvonen.',
+  tool_heart_rate_disclaimer:
+    'Estimations à visée éducative uniquement — ceci n\'est pas un avis médical. Si vous avez une maladie cardiaque, prenez un médicament qui agit sur la fréquence cardiaque, ou ressentez une douleur thoracique, des vertiges ou un essoufflement inhabituel pendant l\'effort, arrêtez-vous et consultez un professionnel de santé.',
+  tool_heart_rate_err_age: 'Saisissez votre âge en nombre entier, de 10 à 100.',
+  tool_heart_rate_err_max: 'Saisissez votre FC max mesurée en nombre entier, de 100 à 230 bpm.',
+  tool_heart_rate_err_rest: 'La FC de repos doit être un nombre entier de 30 à 120 bpm — ou laissez le champ vide.',
+  tool_heart_rate_err_rest_high: 'La FC de repos doit être inférieure à la FC max.',
+  tool_heart_rate_err_rest_needed: 'La méthode de la FC de réserve nécessite votre FC de repos.',
+  tool_heart_rate_example:
+    'Exemple : à 30 ans, avec 220 − âge, la FC max est de 190 bpm. La zone 2 (60–70 %) correspond à 114–133 bpm, soit 57–67 battements sur 30 secondes, et les plages de l\'AHA sont de 95–133 bpm pour une activité modérée et de 133–162 bpm pour une activité intense. Cliquez à nouveau sur Charger un exemple pour voir 45 ans avec la formule de Tanaka et une FC de repos de 60 (zones de Karvonen ; 70 % donne 142 bpm), puis une FC max mesurée de 185 bpm avec une FC de repos de 52.',
   tool_heart_rate_example_title: 'Exemple',
-  tool_heart_rate_faq_a1: 'Exemple : âge 30 → 190.',
-  tool_heart_rate_faq_a2: 'See Formula section.',
-  tool_heart_rate_faq_a3: 'Educational only.',
-  tool_heart_rate_faq_a4: 'Seek a clinician — not this tool.',
-  tool_heart_rate_faq_q1: 'Exemple ?',
-  tool_heart_rate_faq_q2: 'Formula?',
-  tool_heart_rate_faq_q3: 'Advice?',
-  tool_heart_rate_faq_q4: 'Related?',
-  tool_heart_rate_formula_body: 'Saisissez l’âge.',
-  tool_heart_rate_formula_item_1: 'See formula notes.',
-  tool_heart_rate_formula_item_2: 'Check inputs.',
-  tool_heart_rate_formula_item_3: 'Educational only.',
-  tool_heart_rate_formula_title: 'Formule',
-  tool_heart_rate_how_body: 'Saisissez l’âge.',
-  tool_heart_rate_how_title: 'Fonctionnement',
-  tool_heart_rate_maxOut_label: 'FC max estimée',
-  tool_heart_rate_ref_a_label: 'Wikipedia',
-  tool_heart_rate_ref_b_label: 'Textbook formula',
-  tool_heart_rate_references: 'Références éducatives.',
-  tool_heart_rate_result_note: 'Éducatif.',
-  tool_heart_rate_sample: 'Charger l’exemple',
-  tool_heart_rate_title: 'Calculateur de zones de fréquence cardiaque',
-  tool_heart_rate_usecase_1: 'Homework.',
-  tool_heart_rate_usecase_2: 'Quick sketch.',
-  tool_heart_rate_usecase_3: 'Educational pairing with macros.',
-  tool_heart_rate_usecases_title: 'Cas d’usage',
-  tool_heart_rate_z1Out_label: 'Zone 1 (50–60 %)',
-  tool_heart_rate_z2Out_label: 'Zone 2 (60–70 %)',
-  tool_heart_rate_z3Out_label: 'Zone 3 (70–85 %)',
+  tool_heart_rate_faq_a1:
+    'Environ 190 bpm avec 220 − 30. La formule de Tanaka donne 208 − 0,7 × 30 = 187 bpm, et celle de Gulati pour les femmes 206 − 0,88 × 30 = 179,6, soit environ 180 bpm. Ces trois valeurs sont des moyennes pour les personnes de votre âge : votre FC max réelle peut être plus haute ou plus basse.',
+  tool_heart_rate_faq_a2:
+    'Elle applique le pourcentage à votre FC de réserve — FC max moins FC de repos — puis rajoute la FC de repos : cible = FC de repos + % × (FC max − FC de repos). Elle tient mieux compte de la condition physique. À 45 ans, avec la FC max de Tanaka de 176,5 ≈ 177 bpm et une FC de repos de 60, 70 % donne 60 + 0,7 × 117 = 142 bpm, contre 124 bpm avec 70 % de la FC max.',
+  tool_heart_rate_faq_a3:
+    'La formule de Tanaka, 208 − 0,7 × âge, repose sur 351 études et 18 712 personnes et a été confirmée par une étude en laboratoire sur 514 adultes en bonne santé ; celle-ci a montré que 220 − âge sous-estime la FC max chez les personnes plus âgées. À 60 ans, les deux donnent 160 et 166 bpm. Ce sont toutefois des moyennes : seule une épreuve d\'effort maximale encadrée donne votre propre valeur.',
+  tool_heart_rate_faq_a4:
+    'D\'après l\'AHA, 60–100 bpm chez la plupart des adultes, et jusqu\'à 40 chez les personnes actives et les sportifs. Le stress, les hormones, les médicaments et la condition physique l\'influencent. Mesurez-la le matin après une bonne nuit de sommeil, avant de vous lever.',
+  tool_heart_rate_faq_a5:
+    'En général la zone 2, soit environ 60–70 % de la FC max — 114–133 bpm à 30 ans. À cette allure facile, une plus grande part de l\'énergie provient des graisses, mais les efforts plus intenses brûlent davantage de calories par minute au total ; pour perdre du poids, le volume global d\'activité compte plus que le fait de rester dans une zone.',
+  tool_heart_rate_faq_a6:
+    'Posez le bout de l\'index et du majeur à l\'intérieur du poignet, côté pouce, comptez les battements pendant 30 secondes et multipliez par 2. La colonne « Battements en 30 s » indique le nombre à viser dans chaque zone — 57–67 en zone 2 à 30 ans.',
+  tool_heart_rate_faq_a7:
+    'C\'est possible. L\'AHA indique que certains médicaments abaissent la FC max et la zone cible, si bien que les valeurs calculées d\'après l\'âge peuvent ne pas vous convenir. Si vous avez une maladie cardiaque ou prenez un traitement, demandez à votre médecin quelle fréquence cardiaque viser.',
+  tool_heart_rate_faq_q1: 'Quelle est ma FC max à 30 ans ?',
+  tool_heart_rate_faq_q2: 'Qu\'est-ce que la méthode de Karvonen et quand l\'utiliser ?',
+  tool_heart_rate_faq_q3: 'Quelle formule est la plus fiable : 220 moins l\'âge ou Tanaka ?',
+  tool_heart_rate_faq_q4: 'Quelle est une FC de repos normale ?',
+  tool_heart_rate_faq_q5: 'Quelle est la zone de combustion des graisses ?',
+  tool_heart_rate_faq_q6: 'Comment prendre son pouls sans montre ?',
+  tool_heart_rate_faq_q7: 'Les médicaments modifient-ils la FC cible ?',
+  tool_heart_rate_formula_body: 'Avec l\'âge A, la fréquence cardiaque maximale FCmax et la fréquence cardiaque de repos FCrepos :',
+  tool_heart_rate_formula_fox: '220 − âge (classique)',
+  tool_heart_rate_formula_gulati: '206 − 0,88 × âge (Gulati, femmes)',
+  tool_heart_rate_formula_item_1:
+    'Estimation classique : FCmax = 220 − A. C\'est celle qu\'utilise l\'AHA pour son tableau des fréquences cardiaques cibles.',
+  tool_heart_rate_formula_item_2:
+    'Tanaka (2001) : FCmax = 208 − 0,7 × A, issue d\'une méta-analyse de 351 études portant sur 18 712 personnes, puis vérifiée en laboratoire sur 514 adultes en bonne santé.',
+  tool_heart_rate_formula_item_3: 'Gulati (2010, femmes) : FCmax = 206 − 0,88 × A.',
+  tool_heart_rate_formula_item_4: 'Pourcentage de la FC max : cible = FCmax × pourcentage, ex. 70 % de 190 = 133 bpm.',
+  tool_heart_rate_formula_item_5:
+    'Karvonen (FC de réserve) : cible = FCrepos + pourcentage × (FCmax − FCrepos), ex. 60 + 70 % × 117 = 142 bpm.',
+  tool_heart_rate_formula_label: 'FC max calculée avec',
+  tool_heart_rate_formula_measured: 'Ma FC max mesurée',
+  tool_heart_rate_formula_tanaka: '208 − 0,7 × âge (Tanaka)',
+  tool_heart_rate_formula_title: 'Formules de la fréquence cardiaque',
+  tool_heart_rate_how_body:
+    'Estimez votre FC max à partir de votre âge (ou utilisez une valeur mesurée), puis appliquez-lui des pourcentages : de 50–60 % pour un effort très léger jusqu\'à 90–100 % pour des accélérations à fond. Si vous connaissez votre FC de repos, la méthode de Karvonen applique plutôt ces pourcentages à l\'écart entre FC de repos et FC max.',
+  tool_heart_rate_how_item_1:
+    'Choisissez comment obtenir votre FC max — 220 − âge, Tanaka, Gulati pour les femmes ou une FC max que vous avez mesurée — et saisissez votre âge.',
+  tool_heart_rate_how_item_2: 'Si vous le souhaitez, saisissez votre FC de repos, mesurée le matin avant de vous lever.',
+  tool_heart_rate_how_item_3:
+    'Choisissez « Pourcentage de la FC max » ou, si vous avez saisi une FC de repos, « FC de réserve (méthode de Karvonen) ».',
+  tool_heart_rate_how_item_4:
+    'Cliquez sur Calculer pour afficher votre FC max, les cinq zones en bpm et en battements sur 30 secondes, ainsi que les plages modérée et intense de l\'AHA.',
+  tool_heart_rate_how_title: 'Comment calculer vos zones de fréquence cardiaque',
+  tool_heart_rate_hrr_label: 'FC de réserve',
+  tool_heart_rate_hrr_tpl: '{max} − {rest} = {hrr} bpm',
+  tool_heart_rate_max_label: 'FC max mesurée (bpm)',
+  tool_heart_rate_max_ph: 'ex. 185',
+  tool_heart_rate_method_hrr: 'FC de réserve (méthode de Karvonen) — nécessite la FC de repos',
+  tool_heart_rate_method_label: 'Calculer les zones avec',
+  tool_heart_rate_method_pct: 'Pourcentage de la FC max',
+  tool_heart_rate_out_max: 'Fréquence cardiaque maximale',
+  tool_heart_rate_ref_a_label: 'American Heart Association — Target heart rates chart (fréquences cardiaques cibles)',
+  tool_heart_rate_ref_b_label: 'Tanaka, Monahan & Seals (2001) — Age-predicted maximal heart rate revisited (JACC)',
+  tool_heart_rate_references:
+    'American Heart Association — Target heart rates chart (fréquences cardiaques cibles) ; Tanaka, Monahan & Seals (2001), Age-predicted maximal heart rate revisited.',
+  tool_heart_rate_rest_athlete_tpl:
+    '{r} bpm est en dessous de la plage habituelle de 60–100 ; selon l\'AHA, les personnes actives et les sportifs ont souvent une FC de repos aussi basse.',
+  tool_heart_rate_rest_high_tpl:
+    '{r} bpm dépasse la plage de 60–100 bpm que l\'AHA considère comme normale pour la plupart des adultes — si elle reste aussi élevée au repos, parlez-en à un médecin.',
+  tool_heart_rate_rest_hint: 'À mesurer de préférence le matin, avant de vous lever.',
+  tool_heart_rate_rest_label: 'FC de repos (facultatif, bpm)',
+  tool_heart_rate_rest_low_tpl:
+    '{r} bpm, c\'est moins que les 40 bpm environ que l\'AHA mentionne chez les personnes très actives — mieux vaut en parler à un médecin, surtout si vous ressentez des vertiges ou une sensation de malaise.',
+  tool_heart_rate_rest_normal_tpl:
+    '{r} bpm se situe dans la plage de 60–100 bpm que l\'AHA considère comme normale pour la plupart des adultes.',
+  tool_heart_rate_rest_ph: 'ex. 60',
+  tool_heart_rate_rest_status_label: 'FC de repos',
+  tool_heart_rate_result_note:
+    'Les formules liées à l\'âge donnent une moyenne pour les personnes de votre âge ; une FC max individuelle peut s\'en écarter de 10 bpm ou plus. Les battements en 30 s correspondent à la moitié des bpm, pour prendre votre pouls à la main.',
+  tool_heart_rate_sample: 'Charger un exemple',
+  tool_heart_rate_sub_fox: '220 − âge : {work}',
+  tool_heart_rate_sub_gulati: 'Formule de Gulati (femmes) : {work}',
+  tool_heart_rate_sub_measured: 'Votre FC max mesurée, utilisée telle quelle',
+  tool_heart_rate_sub_tanaka: 'Formule de Tanaka : {work}',
+  tool_heart_rate_title:
+    'Calcul des zones de fréquence cardiaque — trouvez votre FC max et vos zones d\'entraînement selon votre âge',
+  tool_heart_rate_usecase_1:
+    'Organiser vos séances de course à pied, de vélo ou d\'aviron par zones — sorties faciles en zone 2, fractionné en zones 4–5.',
+  tool_heart_rate_usecase_2:
+    'Paramétrer une montre de sport ou une application d\'entraînement qui demande votre FC max et votre FC de repos.',
+  tool_heart_rate_usecase_3:
+    'Reprendre une activité physique : l\'AHA conseille de commencer dans le bas de la zone cible (autour de 50 %) puis de monter progressivement vers 85 %.',
+  tool_heart_rate_usecase_4:
+    'Devoirs d\'EPS ou de STAPS : comparer les formules liées à l\'âge et calculer les zones étape par étape.',
+  tool_heart_rate_usecases_title: 'Dans quels cas l\'utiliser',
+  tool_heart_rate_why_choose_item_1:
+    'Les plages d\'activité modérée (50–70 %) et intense (70–85 %) de l\'American Heart Association, calculées sur votre propre FC max, à côté de l\'échelle à cinq zones utilisée par les montres de sport.',
+  tool_heart_rate_why_choose_item_2:
+    'Trois formules liées à l\'âge côte à côte : 220 − âge, Tanaka et Gulati (pour les femmes) peuvent différer de dix battements ou plus — à 30 ans, elles donnent 190, 187 et 180 bpm.',
+  tool_heart_rate_why_choose_item_3:
+    'Des zones selon la méthode de Karvonen à partir de votre FC de repos : une personne entraînée, avec une FC de repos basse, obtient des zones adaptées à sa condition physique, pas seulement à son âge.',
+  tool_heart_rate_why_choose_item_4:
+    'Une colonne « Battements en 30 s » pour chaque zone : vous vérifiez avec deux doigts sur le poignet, sans cardiofréquencemètre.',
+  tool_heart_rate_why_choose_item_5:
+    'Vous pouvez partir d\'une FC max réellement mesurée, par exemple lors d\'une épreuve d\'effort encadrée, plutôt que d\'une estimation selon l\'âge.',
+  tool_heart_rate_why_choose_title: 'Pourquoi utiliser ce calculateur de zones de fréquence cardiaque',
+  tool_heart_rate_work_hrr_tpl:
+    'chaque limite de zone = FC de repos + pourcentage × FC de réserve, ex. {rest} + {p} × {hrr} = {v} bpm',
+  tool_heart_rate_work_label: 'Calcul',
+  tool_heart_rate_work_pct_tpl: 'chaque limite de zone = FC max × pourcentage, ex. {max} × {p} = {v} bpm',
+  tool_heart_rate_zone_1: 'Très légère',
+  tool_heart_rate_zone_2: 'Légère',
+  tool_heart_rate_zone_3: 'Modérée',
+  tool_heart_rate_zone_4: 'Soutenue',
+  tool_heart_rate_zone_5: 'Maximale',
   tool_hreflang_clear: 'Effacer',
   tool_hreflang_copied: 'Copié',
   tool_hreflang_copy: 'Copier',
@@ -14674,47 +14771,139 @@ const fr: SiteLangDict = {
   tool_indexnow_warn_banner:
     'HTTP 202 means the endpoint accepted a well-formed request — not that your key file already passed verification. Always Check key first. IndexNow notifies discovery; it does not guarantee indexing or rankings.',
   tool_indexnow_warn_unchecked: 'Check the key file before relying on a green 202.',
-  tool_inflation_amount_label: 'Montant actuel',
-  tool_inflation_amount_ph: 'ex. 1000',
-  tool_inflation_article: 'Calculateur d’inflation',
+  tool_inflation_actual_hint:
+    'Saisissez ce qu\'un salaire, un prix ou une épargne est réellement devenu pour savoir s\'il a suivi l\'inflation.',
+  tool_inflation_actual_label_cpi: 'Montant réel l\'année d\'arrivée (facultatif)',
+  tool_inflation_actual_label_rate: 'Montant réel à la fin (facultatif)',
+  tool_inflation_actual_ph: 'ex. votre salaire actuel',
+  tool_inflation_amount_label: 'Montant',
+  tool_inflation_amount_ph: 'ex. 100',
+  tool_inflation_article:
+    'Découvrez ce que vaut une somme en dollars américains de n\'importe quelle année depuis 1913 dans une autre année grâce aux données officielles de l\'IPC, ou projetez des prix futurs à taux d\'inflation constant dans n\'importe quelle devise. Le calculateur affiche le détail du calcul avec les valeurs d\'IPC utilisées, l\'inflation cumulée et le taux annuel moyen, le pouvoir d\'achat, les taux annuels le plus fort et le plus faible de la période et, si vous saisissez un montant réel, si un salaire ou un prix a suivi l\'inflation en termes réels.',
   tool_inflation_calculate: 'Calculer',
   tool_inflation_clear: 'Effacer',
+  tool_inflation_col_pp: 'Pouvoir d\'achat en argent d\'aujourd\'hui',
+  tool_inflation_col_price: 'Prix',
+  tool_inflation_col_year: 'Année',
+  tool_inflation_compare_down_tpl:
+    'Non — {a} est inférieur de {p} au montant corrigé de l\'inflation, {f} (variation nominale {nom}, variation réelle {real}).',
+  tool_inflation_compare_even_tpl: '{a} correspond au montant corrigé de l\'inflation, {f} : le pouvoir d\'achat est inchangé.',
+  tool_inflation_compare_label: 'A-t-il suivi l\'inflation ?',
+  tool_inflation_compare_up_tpl:
+    'Oui — {a} dépasse de {p} le montant corrigé de l\'inflation, {f} (variation nominale {nom}, variation réelle {real}).',
   tool_inflation_description:
-    'Projetez un montant actuel avec un taux d’inflation annuel constant. Exemple : 1000 sur 5 ans à 3 % → ≈1159,27. Éducatif.',
-  tool_inflation_disclaimer: 'Illustration éducative (inflation) uniquement — pas un conseil financier.',
-  tool_inflation_err_generic: 'Vérifiez les entrées.',
-  tool_inflation_example: 'Exemple : ≈1159,27.',
-  tool_inflation_example_title: 'Exemple',
-  tool_inflation_faq_a1: 'Exemple : ≈1159,27.',
-  tool_inflation_faq_a2: 'See Formula section.',
-  tool_inflation_faq_a3: 'Educational only.',
-  tool_inflation_faq_a4: 'Educational only.',
-  tool_inflation_faq_q1: 'Exemple ?',
-  tool_inflation_faq_q2: 'Formula?',
-  tool_inflation_faq_q3: 'Advice?',
-  tool_inflation_faq_q4: 'Related?',
-  tool_inflation_formula_body: 'Saisissez montant, taux et années.',
-  tool_inflation_formula_item_1: 'See formula notes.',
-  tool_inflation_formula_item_2: 'Check inputs.',
-  tool_inflation_formula_item_3: 'Educational only.',
-  tool_inflation_formula_title: 'Formule',
-  tool_inflation_futOut_label: 'Montant futur',
-  tool_inflation_how_body: 'Saisissez montant, taux et années.',
-  tool_inflation_how_title: 'Fonctionnement',
-  tool_inflation_n_label: 'Années',
-  tool_inflation_n_ph: 'ex. 5',
-  tool_inflation_rate_label: 'Inflation % / an',
+    'Calculez ce que valent aujourd\'hui 100 dollars de 2000, ou toute somme en dollars depuis 1913, avec l\'indice des prix à la consommation officiel des États-Unis, ou projetez des prix futurs à taux d\'inflation constant dans n\'importe quelle devise. Formule, inflation cumulée et moyenne, pouvoir d\'achat et salaire face à l\'inflation, avec exemples.',
+  tool_inflation_disclaimer:
+    'À titre informatif et pédagogique uniquement — ni conseil financier, ni conseil en investissement, ni conseil fiscal. L\'IPC américain mesure l\'évolution moyenne des prix pour les consommateurs urbains des États-Unis ; vos propres dépenses peuvent augmenter plus ou moins vite. L\'inflation future est incertaine : les projections à taux constant sont des illustrations, pas des prévisions.',
+  tool_inflation_double_label: 'Délai de doublement des prix',
+  tool_inflation_double_none: 'les prix ne doublent jamais si l\'inflation est nulle ou négative',
+  tool_inflation_double_tpl: '{t} ans à {r} % par an (règle de 70 : 70 ÷ {r} ≈ {q})',
+  tool_inflation_err_actual: 'Le montant réel doit être un nombre supérieur à 0 — ou laissez le champ vide.',
+  tool_inflation_err_amount: 'Saisissez un montant supérieur à 0.',
+  tool_inflation_err_rate: 'Saisissez un taux d\'inflation compris entre −50 % et 100 % par an.',
+  tool_inflation_err_same_year: 'Choisissez deux années différentes.',
+  tool_inflation_err_years: 'Saisissez un nombre entier d\'années entre 1 et 100.',
+  tool_inflation_example:
+    '100 dollars en 2000 ≈ 186,93 dollars en 2025 : 100 × (321,9 ÷ 172,2) = 186,93, les prix ont donc augmenté de 86,93 %, soit 2,53 % par an en moyenne sur 25 ans. Chargez l\'exemple suivant : un salaire de 50 000 en 2015 devrait atteindre 67 911,39 en 2025 pour garder le même pouvoir d\'achat ; à 62 000, il a augmenté de 24 % sur le papier mais baissé de 8,70 % en termes réels. Le troisième exemple projette 1 000 à 3 % par an : 1 159,27 après 5 ans, alors que 1 000 n\'achèteront plus que ce que 862,61 achètent aujourd\'hui.',
+  tool_inflation_example_title: 'Exemples détaillés',
+  tool_inflation_extreme_label: 'Inflation annuelle la plus forte et la plus faible sur la période',
+  tool_inflation_extreme_tpl: 'la plus forte {p1} en {y1}, la plus faible {p2} en {y2}',
+  tool_inflation_faq_a1:
+    'Avec l\'IPC annuel moyen, 100 × (321,9 ÷ 172,2) = 186,93 dollars de 2025 : les prix ont augmenté de 86,93 %, soit environ 2,53 % par an. À l\'inverse, un dollar de 2025 achète ce que 0,53 dollar achetait en 2000.',
+  tool_inflation_faq_a2:
+    'Divisez l\'indice des prix de l\'année la plus récente par celui de l\'année la plus ancienne, puis multipliez : montant × (IPC de l\'année 2 ÷ IPC de l\'année 1). L\'inflation cumulée vaut IPC₂ ÷ IPC₁ − 1 et le taux annuel moyen (IPC₂ ÷ IPC₁)^(1/années) − 1. Le calculateur ne contient que l\'IPC américain ; pour une somme en euros en France, appliquez le même rapport à l\'indice des prix à la consommation de l\'INSEE ou utilisez le mode à taux d\'inflation constant.',
+  tool_inflation_faq_a3:
+    'Saisissez votre ancien salaire et son année, l\'année en cours et votre salaire actuel comme montant réel. 50 000 en 2015 devraient valoir 67 911,39 en 2025 pour garder le même pouvoir d\'achat ; un salaire de 62 000 a progressé de 24 % en nominal mais recule de 8,70 % en termes réels. Variation réelle = montant réel ÷ montant corrigé de l\'inflation − 1.',
+  tool_inflation_faq_a4:
+    'Dans la table de l\'IPC, les taux annuels les plus élevés sont 17,8 % en 1917 et 17,3 % en 1918, suivis de 14,4 % en 1947 et 13,5 % en 1980. Les plus fortes baisses de prix sont −10,9 % en 1921 et −10,3 % en 1932, pendant la Grande Dépression. Le pic le plus récent est de 8,0 % en 2022.',
+  tool_inflation_faq_a5:
+    'Le montant nominal est le chiffre affiché sur l\'étiquette ou la fiche de paie ; le montant réel est corrigé de l\'inflation et reflète le pouvoir d\'achat. Croissance réelle = (1 + croissance nominale) ÷ (1 + inflation) − 1, donc une augmentation de 4 % avec 3 % d\'inflation donne une hausse réelle de 0,97 %, pas exactement 1 %.',
+  tool_inflation_faq_a6:
+    'À taux constant i, les prix doublent au bout de ln 2 ÷ ln(1 + i) années — 23,45 ans à 3 % et 35 ans à 2 %. La règle de 70 donne une estimation rapide : 70 ÷ 3 ≈ 23,33 ans.',
+  tool_inflation_faq_a7:
+    'Le calculateur du BLS compare un mois choisi à un autre à partir des valeurs mensuelles de l\'IPC-U, alors que cette page utilise des moyennes annuelles arrondies à une décimale issues de la table de la Fed de Minneapolis. Pour des années entières, l\'écart est généralement faible, mais d\'un mois à l\'autre il peut atteindre 1 % ou plus.',
+  tool_inflation_faq_q1: 'Combien valent aujourd\'hui 100 dollars de 2000 ?',
+  tool_inflation_faq_q2: 'Comment calculer l\'inflation entre deux années ?',
+  tool_inflation_faq_q3: 'Mon salaire a-t-il suivi l\'inflation ?',
+  tool_inflation_faq_q4: 'Quelles années ont connu la plus forte inflation aux États-Unis ?',
+  tool_inflation_faq_q5: 'Quelle différence entre montant nominal et montant réel ?',
+  tool_inflation_faq_q6: 'En combien de temps les prix doublent-ils ?',
+  tool_inflation_faq_q7: 'Pourquoi le résultat diffère-t-il légèrement du CPI Inflation Calculator du BLS ?',
+  tool_inflation_formula_body:
+    'Avec IPC₁ et IPC₂ l\'indice des prix des deux années, P un montant, i un taux d\'inflation annuel et n le nombre d\'années :',
+  tool_inflation_formula_item_1: 'Entre deux années : montant₂ = montant₁ × (IPC₂ ÷ IPC₁).',
+  tool_inflation_formula_item_2: 'Inflation cumulée = IPC₂ ÷ IPC₁ − 1 ; taux annuel moyen = (IPC₂ ÷ IPC₁)^(1/n) − 1.',
+  tool_inflation_formula_item_3: 'Prix futur à taux constant : F = P × (1 + i)ⁿ, soit 1 000 × 1,03⁵ = 1 159,27.',
+  tool_inflation_formula_item_4:
+    'Pouvoir d\'achat : P ÷ (1 + i)ⁿ, soit 1 000 ÷ 1,03⁵ = 862,61 ; entre deux années, une unité monétaire vaut IPC₁ ÷ IPC₂.',
+  tool_inflation_formula_item_5:
+    'Variation réelle = (1 + variation nominale) ÷ (1 + inflation) − 1, ce qui revient à montant réel ÷ montant corrigé de l\'inflation − 1.',
+  tool_inflation_formula_title: 'Formules de l\'inflation',
+  tool_inflation_from_label: 'Année de départ',
+  tool_inflation_how_body:
+    'Pour comparer des sommes d\'années différentes, multipliez le montant par le rapport entre les indices des prix à la consommation (IPC) des deux années. Pour une projection, appliquez le taux d\'inflation au prix actuel une fois par année.',
+  tool_inflation_how_item_1:
+    'Choisissez « Ce que vaut une somme en dollars américains d\'une année à l\'autre » pour les prix américains passés, ou « Prix futurs à taux d\'inflation constant » pour l\'euro ou toute autre devise.',
+  tool_inflation_how_item_2: 'Saisissez le montant puis les deux années — ou le taux d\'inflation annuel et le nombre d\'années.',
+  tool_inflation_how_item_3:
+    'Ajoutez si vous le souhaitez le montant réel — par exemple votre salaire actuel — pour savoir s\'il a suivi l\'inflation.',
+  tool_inflation_how_item_4:
+    'Cliquez sur Calculer pour obtenir le montant équivalent, le détail du calcul avec les valeurs d\'IPC utilisées, le pouvoir d\'achat et, à taux constant, le délai de doublement et un tableau année par année.',
+  tool_inflation_how_title: 'Comment calculer l\'inflation',
+  tool_inflation_main_cpi_tpl: '{a} en {y1} ≈ {b} en {y2}',
+  tool_inflation_mode_cpi: 'Ce que vaut une somme en dollars américains d\'une année à l\'autre (IPC 1913–2025)',
+  tool_inflation_mode_label: 'Que voulez-vous calculer ?',
+  tool_inflation_mode_rate: 'Prix futurs à taux d\'inflation constant (toute devise)',
+  tool_inflation_out_cpi: 'Montant équivalent',
+  tool_inflation_out_rate: 'Prix futur',
+  tool_inflation_pp_cpi_tpl: '1 dollar de {y2} vaut {v} en dollars de {y1}',
+  tool_inflation_pp_label: 'Pouvoir d\'achat',
+  tool_inflation_pp_rate_tpl: 'dans {n} ans, {a} achèteront ce que {v} achètent aujourd\'hui',
+  tool_inflation_rate_label: 'Taux d\'inflation annuel (en %)',
   tool_inflation_rate_ph: 'ex. 3',
-  tool_inflation_ref_a_label: 'Investopedia',
-  tool_inflation_ref_b_label: 'Wikipedia',
-  tool_inflation_references: 'Investopedia et formules de manuel.',
-  tool_inflation_result_note: 'Éducatif.',
-  tool_inflation_sample: 'Charger l’exemple',
-  tool_inflation_title: 'Calculateur d’inflation',
-  tool_inflation_usecase_1: 'Homework.',
-  tool_inflation_usecase_2: 'Quick sketch.',
-  tool_inflation_usecase_3: 'Pair with CAGR/compound-interest pages.',
-  tool_inflation_usecases_title: 'Cas d’usage',
+  tool_inflation_ref_a_label: 'Federal Reserve Bank of Minneapolis — indice des prix à la consommation, 1913–',
+  tool_inflation_ref_b_label: 'U.S. Bureau of Labor Statistics — indice des prix à la consommation (CPI)',
+  tool_inflation_references:
+    'Moyennes annuelles de l\'IPC-U américain de la Federal Reserve Bank of Minneapolis ; l\'IPC lui-même est publié par le Bureau of Labor Statistics (BLS) des États-Unis.',
+  tool_inflation_result_note_cpi:
+    'Utilise les moyennes annuelles de l\'IPC-U américain publiées dans la table de la Fed de Minneapolis (une décimale). Les taux annuels le plus fort et le plus faible sont ceux publiés dans cette table.',
+  tool_inflation_result_note_rate:
+    'Suppose le même taux d\'inflation chaque année ; dans la réalité, l\'inflation varie d\'une année à l\'autre.',
+  tool_inflation_sample: 'Charger un exemple',
+  tool_inflation_sub_cpi_back_tpl:
+    'En {y2}, les prix étaient inférieurs de {p} à ceux de {y1} ; ils ont augmenté depuis de {avg} par an en moyenne sur {n} ans',
+  tool_inflation_sub_cpi_one_tpl: 'Les prix ont varié de {p} entre {y1} et {y2}',
+  tool_inflation_sub_cpi_tpl: 'Les prix ont varié de {p} entre {y1} et {y2}, soit {avg} par an en moyenne sur {n} ans',
+  tool_inflation_sub_rate_tpl: 'Les prix varient de {p} en {n} ans à {r} par an',
+  tool_inflation_table_caption: 'Année par année',
+  tool_inflation_title:
+    'Calculateur d\'inflation — ce que vaut aujourd\'hui l\'argent d\'une année passée, avec l\'IPC officiel américain',
+  tool_inflation_to_label: 'Année d\'arrivée',
+  tool_inflation_usecase_1:
+    'Comparer des prix sur plusieurs décennies : ce qui coûtait 1 dollar en 1970 coûte environ 8,30 dollars de 2025 (321,9 ÷ 38,8).',
+  tool_inflation_usecase_2:
+    'Vérifier si une augmentation de salaire, une revalorisation de pension ou une hausse de loyer a suivi l\'inflation, grâce au montant réel facultatif.',
+  tool_inflation_usecase_3:
+    'Budgéter des dépenses futures : à 3 % par an, une dépense de 1 000 aujourd\'hui coûtera environ 1 159,27 dans 5 ans.',
+  tool_inflation_usecase_4:
+    'Mesurer l\'érosion de l\'argent qui dort : avec 2 % d\'inflation, 1 000 gardés sous le matelas n\'achètent plus, après 10 ans, que ce que 820,35 achètent aujourd\'hui.',
+  tool_inflation_usecases_title: 'Dans quels cas l\'utiliser',
+  tool_inflation_why_choose_item_1:
+    'Le détail du calcul affiche les valeurs d\'IPC utilisées : vous pouvez vérifier le résultat ou refaire le calcul à la main.',
+  tool_inflation_why_choose_item_2:
+    'L\'IPC annuel officiel américain de chaque année de 1913 à 2025 est intégré ; il suffit de choisir deux années, sans chercher les valeurs de l\'indice.',
+  tool_inflation_why_choose_item_3:
+    'Il répond à la question « mon salaire a-t-il suivi l\'inflation » : saisissez votre salaire actuel pour voir côte à côte la variation nominale et la variation réelle.',
+  tool_inflation_why_choose_item_4:
+    'Pour l\'euro ou pour l\'avenir, saisissez votre propre taux — par exemple l\'inflation mesurée par l\'indice des prix à la consommation de l\'INSEE — et obtenez le délai de doublement et un tableau année par année.',
+  tool_inflation_why_choose_item_5:
+    'Il repère l\'inflation annuelle la plus forte et la plus faible de votre période — entre 2000 et 2025, 8,0 % en 2022 et −0,4 % en 2009.',
+  tool_inflation_why_choose_title: 'Pourquoi utiliser ce calculateur d\'inflation',
+  tool_inflation_work_cpi_tpl: '{a} × (IPC {y2} ÷ IPC {y1}) = {a} × ({c2} ÷ {c1}) = {b}',
+  tool_inflation_work_label: 'Détail du calcul',
+  tool_inflation_work_rate_tpl: '{a} × (1 + {r})^{n} = {a} × {f} = {b}',
+  tool_inflation_years_label: 'Nombre d\'années',
+  tool_inflation_years_ph: 'ex. 5',
   tool_inspect_video_file_tracks_article:
     'L’extension .mp4 indique un conteneur, pas les codecs qu’il contient. Cet outil lit les métadonnées sans envoyer la vidéo ni décoder toutes ses images. Il énumère chaque piste, y compris les langues audio secondaires qu’un aperçu pourrait ignorer. Chaque ligne vidéo indique codec, paramètres détaillés, dimensions affichées, rotation, langue, début, fin selon les métadonnées et possibilité de décodage dans ce navigateur. Les lignes audio ajoutent canaux et fréquence d’échantillonnage. Sans ligne audio, le fichier n’a pas de flux sonore ; avec une ligne non décodable ici, l’audio existe mais ce navigateur ne prend pas en charge son codec. Cette vérification locale ne garantit rien pour un autre téléphone, logiciel ou téléviseur. Les horaires issus des métadonnées peuvent être approximatifs : la page ne parcourt pas tous les paquets pour promettre une durée exacte. Un Web Worker et un cache BlobSource limité lisent les gros fichiers à la demande pour garder l’interface réactive. Jusqu’à 30 fichiers sont examinés en série ; un fichier abîmé n’efface pas les rapports JSON réussis. Les fichiers restent sur votre appareil et ne sont pas envoyés au serveur.',
   tool_inspect_video_file_tracks_audio: 'Audio nº {number}',
@@ -15284,43 +15473,144 @@ const fr: SiteLangDict = {
   tool_ipv6_cidr_usecase_2: 'Vérifier une liaison point à point qui doit être /127 (RFC 6164).',
   tool_ipv6_cidr_usecase_3: 'Normaliser des préfixes de doc comme 2001:db8::/32 avant une capture.',
   tool_ipv6_cidr_usecases_title: 'Quand ça sert',
-  tool_irr_article: 'Calculateur TRI (IRR)',
+  tool_irr_annual_label: 'Annualisé',
+  tool_irr_annual_tpl: '{annual} effectif par an = (1 + {irr})^{k} − 1 ; nominal {nominal} = {irr} × {k}',
+  tool_irr_article: 'Taux de rendement interne',
   tool_irr_calculate: 'Calculer',
-  tool_irr_cf_label: 'Flux (virgule/ligne ; CF0 d’abord)',
-  tool_irr_cf_ph: 'ex. -1000, 300, 420, 680',
+  tool_irr_cf_hint:
+    'Séparez les périodes par des espaces ou des retours à la ligne (une colonne collée depuis un tableur fonctionne). Pas d’espace dans les milliers : tapez 1000, car un espace sépare deux périodes. Signe moins pour les sorties d’argent, virgule pour les décimales (2,5). 1100*12 répète 1100 douze fois.',
+  tool_irr_cf_label: 'Flux de trésorerie, à partir de la période 1',
+  tool_irr_cf_ph: 'ex. 300 420 680  — ou 1100*12 pour douze versements égaux',
+  tool_irr_check_label: 'Vérification',
+  tool_irr_check_tpl: 'En actualisant chaque flux à {irr}, on obtient VAN = {npv} ; le tableau détaille chaque étape.',
   tool_irr_clear: 'Effacer',
+  tool_irr_col_cf: 'Flux de trésorerie',
+  tool_irr_col_cum: 'Valeur actuelle cumulée',
+  tool_irr_col_df: 'Coefficient d’actualisation au TRI',
+  tool_irr_col_period: 'Période',
+  tool_irr_col_pv: 'Valeur actuelle',
   tool_irr_description:
-    'Estimez le TRI d’une liste de flux par Newton. Exemple : −1000, 300, 420, 680 → TRI approximatif. Éducatif. Calcul éducatif dans le navigateur ; pas un conseil professionnel.',
-  tool_irr_disclaimer: 'Illustration éducative (IRR) uniquement — pas un conseil financier.',
-  tool_irr_err_generic: 'Vérifiez les entrées.',
-  tool_irr_example: 'Exemple : −1000, 300, 420, 680 → TRI ≈ 18,9 %.',
+    'Calculez le TRI (taux de rendement interne) d’un investissement à partir de flux de trésorerie annuels, trimestriels ou mensuels, avec le détail du calcul : formule d’interpolation linéaire, tableau prouvant que la VAN est nulle au TRI, VAN et TRIM à votre taux exigé, et alerte en cas de TRI multiples.',
+  tool_irr_disclaimer:
+    'Estimation à but pédagogique uniquement — ni conseil financier, ni conseil fiscal, ni conseil en investissement. Le résultat dépend entièrement des flux et du taux saisis ; les rendements réels, impôts, frais et risques peuvent différer.',
+  tool_irr_err_flows:
+    'Saisissez au moins un flux après l’investissement initial, ou au moins deux montants si le champ d’investissement est vide.',
+  tool_irr_err_invest:
+    'Saisissez l’investissement initial sous forme d’un seul montant supérieur à 0, par exemple 1000, ou laissez le champ vide si votre liste commence par la période 0.',
+  tool_irr_err_many: 'Utilisez au maximum 600 périodes.',
+  tool_irr_err_none:
+    'Aucun TRI entre −99 % et 1 000 % par période : la VAN n’atteint zéro à aucun taux de cet intervalle. Vérifiez les signes et les montants.',
+  tool_irr_err_rate: 'Saisissez le taux exigé en pourcentage, de 0 à 100, par exemple 10, ou laissez le champ vide.',
+  tool_irr_err_signs:
+    'Le TRI exige au moins un flux négatif et un flux positif, par exemple une dépense de −1000 suivie de recettes.',
+  tool_irr_err_token:
+    '« {token} » n’est pas un nombre. Séparez les montants par des espaces ou des retours à la ligne, sans espace dans les milliers ; écrivez 1100*12 pour répéter un montant.',
+  tool_irr_example:
+    'Exemple : vous investissez 1 000, puis encaissez 300, 420 et 680 sur trois ans. La VAN vaut 6,40 à 16 % et −12,20 à 17 %, donc TRI ≈ 16 % + 6,40 ÷ 18,60 × 1 point = 16,34 %. Actualisés à 16,34 %, les flux valent 257,86 ; 310,30 et 431,83, soit exactement 1 000 au total. Avec un taux exigé de 10 %, VAN = 130,73 et TRIM = 14,60 %. Cliquez de nouveau sur « Charger un exemple » pour un cas à deux TRI (25 % et 400 %), puis un cas mensuel.',
   tool_irr_example_title: 'Exemple',
-  tool_irr_faq_a1: 'Exemple : −1000, 300, 420, 680 → TRI ≈ 18,9 %.',
-  tool_irr_faq_a2: 'See Formula section.',
-  tool_irr_faq_a3: 'Educational only.',
-  tool_irr_faq_a4: 'Educational only.',
-  tool_irr_faq_q1: 'Exemple ?',
-  tool_irr_faq_q2: 'Formula?',
-  tool_irr_faq_q3: 'Advice?',
-  tool_irr_faq_q4: 'Related?',
-  tool_irr_formula_body: 'Collez CF0…CFn. On cherche r tel que NPV(r)=0 par Newton.',
-  tool_irr_formula_item_1: 'See formula notes.',
-  tool_irr_formula_item_2: 'Check inputs.',
-  tool_irr_formula_item_3: 'Educational only.',
-  tool_irr_formula_title: 'Formule',
-  tool_irr_how_body: 'Collez CF0…CFn. On cherche r tel que NPV(r)=0 par Newton.',
-  tool_irr_how_title: 'Fonctionnement',
-  tool_irr_irrOut_label: 'TRI approx.',
-  tool_irr_ref_a_label: 'Investopedia',
-  tool_irr_ref_b_label: 'Wikipedia',
-  tool_irr_references: 'Investopedia et formules de manuel.',
-  tool_irr_result_note: 'Éducatif.',
-  tool_irr_sample: 'Charger l’exemple',
-  tool_irr_title: 'Calculateur TRI (IRR)',
-  tool_irr_usecase_1: 'Homework.',
-  tool_irr_usecase_2: 'Quick sketch.',
-  tool_irr_usecase_3: 'Sketch before talking to an advisor — not a substitute.',
-  tool_irr_usecases_title: 'Cas d’usage',
+  tool_irr_faq_a1:
+    'Le calcul à la main interpole entre deux taux d’essai, et la droite surestime la courbe. Pour l’exemple, essayer 15 % et 20 % donne 16,41 % ; essayer 16 % et 17 % donne 16,34 %, la valeur exacte. Le calculateur interpole entre les deux pourcentages entiers les plus proches.',
+  tool_irr_faq_a2:
+    'La VAN est un montant : ce que vaut le projet aujourd’hui à un taux choisi. Le TRI est un taux : celui qui annule cette VAN. Pour un projet classique (investir puis encaisser), les deux mènent à la même décision d’accepter ou de rejeter ; pour classer des projets de taille ou de durée différentes, ils peuvent diverger, et la VAN est alors le meilleur guide.',
+  tool_irr_faq_a3:
+    'Chaque fois que les flux passent du négatif au positif ou l’inverse, la VAN peut repasser par zéro. −1 600 ; +10 000 ; −10 000 s’annule à 25 % et à 400 %. Aucun des deux n’est « le » rendement ; utilisez plutôt la VAN à votre taux exigé ou le TRIM.',
+  tool_irr_faq_a4:
+    'Choisissez « 1 mois » dans « Chaque période dure ». L’outil calcule le taux mensuel puis le convertit avec (1 + r)¹² − 1. Multiplier par 12 donne le taux nominal, plus faible, qui sous-estime le coût ou le rendement annuel réel.',
+  tool_irr_faq_a5:
+    'Un TRI supérieur à votre taux exigé, c’est-à-dire au coût de l’argent ou à ce que vous obtiendriez ailleurs pour un risque comparable. Un TRI de 16 % est intéressant face à un taux plancher de 10 %, pas face à 20 %. À lui seul, il ne dit rien du montant que le projet rapporte.',
+  tool_irr_faq_a6:
+    'Oui pour des flux régulièrement espacés : =TRI(A1:A4) sur −1 000 ; 300 ; 420 ; 680 renvoie 16,34 %. Excel ne renvoie qu’une racine à partir de sa valeur de départ, alors que ce calculateur liste tous les TRI. Pour des dates irrégulières, Excel utilise TRI.PAIEMENTS, que ce calculateur ne couvre pas.',
+  tool_irr_faq_a7:
+    'Le TRI modifié suppose que la trésorerie encaissée pendant le projet est réinvestie à votre taux exigé et non au TRI lui-même. Il donne une seule réponse même quand le TRI en donne plusieurs, et il est généralement plus bas et plus réaliste lorsque le TRI est élevé.',
+  tool_irr_faq_q1: 'Pourquoi mon manuel donne-t-il un TRI légèrement différent ?',
+  tool_irr_faq_q2: 'Quelle différence entre TRI et VAN ?',
+  tool_irr_faq_q3: 'Pourquoi y a-t-il deux TRI ?',
+  tool_irr_faq_q4: 'Comment calculer le TRI de flux mensuels ?',
+  tool_irr_faq_q5: 'Qu’est-ce qu’un bon TRI ?',
+  tool_irr_faq_q6: 'Le résultat correspond-il à la fonction TRI d’Excel ?',
+  tool_irr_faq_q7: 'Qu’est-ce que le TRIM et quand l’utiliser ?',
+  tool_irr_formula_body: 'Avec des flux CF₀, CF₁ … CFₙ en fin de périodes égales, le TRI est le taux r qui vérifie :',
+  tool_irr_formula_item_1:
+    '0 = CF₀ + CF₁ ÷ (1 + r) + CF₂ ÷ (1 + r)² + … + CFₙ ÷ (1 + r)ⁿ. CF₀ est en général l’investissement initial, négatif.',
+  tool_irr_formula_item_2:
+    'Interpolation linéaire à la main : TRI ≈ r₁ + VAN₁ ÷ (VAN₁ − VAN₂) × (r₂ − r₁), avec VAN₁ > 0 au taux r₁ et VAN₂ < 0 au taux r₂. Plus r₁ et r₂ sont proches, plus l’erreur est faible.',
+  tool_irr_formula_item_3:
+    'Annualisation : TRI annuel effectif = (1 + TRI périodique)ᵏ − 1, avec k = 12 pour des mois et 4 pour des trimestres.',
+  tool_irr_formula_item_4:
+    'TRIM = (valeur acquise des flux positifs au taux de réinvestissement ÷ valeur actuelle des flux négatifs au taux de financement)^(1/n) − 1. Il a toujours une seule solution.',
+  tool_irr_formula_item_5:
+    'Limites : chaque changement de signe des flux peut ajouter un TRI, et le TRI suppose que la trésorerie intermédiaire est réinvestie au TRI lui-même. Pour classer des projets de taille ou de durée différentes, fiez-vous à la VAN, pas au TRI.',
+  tool_irr_formula_title: 'Formule du TRI et ses limites',
+  tool_irr_how_body:
+    'Le TRI est le taux d’actualisation qui annule la valeur actuelle nette (VAN) de l’ensemble des flux. Au-delà de deux périodes, il n’existe pas de formule fermée : on essaie des taux jusqu’à ce que la VAN change de signe, puis on affine par interpolation linéaire.',
+  tool_irr_how_item_1:
+    'Saisissez la dépense de départ dans « Investissement initial (facultatif) », ou laissez ce champ vide et collez une liste qui commence déjà par la période 0.',
+  tool_irr_how_item_2:
+    'Saisissez les flux des périodes 1, 2, 3… (négatifs pour les sorties d’argent) et choisissez dans « Chaque période dure » 1 an, 1 trimestre ou 1 mois.',
+  tool_irr_how_item_3: 'Pour obtenir la VAN et le TRIM, ajoutez votre taux exigé, puis cliquez sur « Calculer ».',
+  tool_irr_how_item_4:
+    'Lisez le TRI, suivez le « Calcul par tâtonnement » et contrôlez le tableau : au TRI, la valeur actuelle cumulée finit à zéro.',
+  tool_irr_how_title: 'Comment calculer le TRI',
+  tool_irr_interp_label: 'Calcul par tâtonnement',
+  tool_irr_interp_tpl:
+    'VAN à {r1} = {n1} ; VAN à {r2} = {n2}. Interpolation linéaire : {r1} + {n1} ÷ ({n1} − ({n2})) × 1 point ≈ {est}. TRI exact par dichotomie : {irr}.',
+  tool_irr_invest_hint:
+    'Compté comme une sortie de trésorerie en période 0. Laissez vide si votre liste commence déjà par la période 0.',
+  tool_irr_invest_label: 'Investissement initial (facultatif)',
+  tool_irr_invest_ph: 'ex. 1000',
+  tool_irr_irrOut_label: 'TRI',
+  tool_irr_mirr_label: 'TRIM (financement et réinvestissement au taux exigé)',
+  tool_irr_multi_tpl:
+    'Les flux changent de signe {k} fois et ont {n} TRI : {list}. Comparer le TRI à un taux plancher n’est pas fiable ici ; utilisez la VAN à votre taux exigé ou le TRIM.',
+  tool_irr_npv_label: 'VAN au taux exigé',
+  tool_irr_npv_tpl: '{npv} à {rate}.',
+  tool_irr_per_year_tpl: '{p} par période ≈ {a} par an',
+  tool_irr_period_label: 'Chaque période dure',
+  tool_irr_period_month: '1 mois',
+  tool_irr_period_quarter: '1 trimestre',
+  tool_irr_period_year: '1 an',
+  tool_irr_rate_hint:
+    'Votre taux d’actualisation : coût du capital ou rendement minimal attendu. Il sert au calcul de la VAN et du TRIM.',
+  tool_irr_rate_label: 'Taux exigé en % par an (facultatif)',
+  tool_irr_rate_none: 'Indiquez un taux exigé pour afficher la VAN et le TRIM.',
+  tool_irr_rate_ph: 'ex. 10',
+  tool_irr_ref_a_label: 'Investopedia — Internal Rate of Return (IRR) (en anglais)',
+  tool_irr_ref_b_label: 'Assistance Microsoft — fonction TRI (IRR) dans Excel (en anglais)',
+  tool_irr_references:
+    'Investopedia — Internal Rate of Return (en anglais) ; Assistance Microsoft — fonction TRI (IRR) d’Excel (en anglais).',
+  tool_irr_result_note:
+    'Chaque flux est supposé arriver à la fin de périodes égales, comme dans la fonction TRI d’Excel et de Google Sheets. Pour des versements à dates irrégulières, utilisez TRI.PAIEMENTS (XIRR).',
+  tool_irr_sample: 'Charger un exemple',
+  tool_irr_signs_tpl:
+    'Les flux changent de signe {k} fois. Un seul TRI a été trouvé entre −99 % et 1 000 %, mais vérifiez aussi la VAN.',
+  tool_irr_title: 'Calcul du TRI — taux de rendement interne d’une série de flux de trésorerie, étape par étape',
+  tool_irr_unit_month: 'par mois',
+  tool_irr_unit_quarter: 'par trimestre',
+  tool_irr_unit_year: 'par an',
+  tool_irr_usecase_1:
+    'Exercices de finance d’entreprise : un projet de 50 000 qui rapporte 15 000, 18 000, 20 000 et 22 000 a un TRI de 17,19 %, et sa VAN à 12 % est de 5 959,35.',
+  tool_irr_usecase_2: 'Matériel ou bien locatif : comparez le TRI de l’achat au taux du prêt qui le financerait.',
+  tool_irr_usecase_3:
+    'Paiements mensuels : 12 000 remboursés en douze mensualités de 1 100 coûtent 1,50 % par mois, soit 19,53 % effectif par an.',
+  tool_irr_usecase_4:
+    'Contrôle d’un tableur : collez la même colonne que celle passée à la fonction TRI d’Excel, confirmez le résultat et voyez s’il existe un second TRI.',
+  tool_irr_usecases_title: 'Quand l’utiliser',
+  tool_irr_verdict_above:
+    'Le TRI de {irr} est supérieur ou égal à {rate} : l’investissement rapporte au moins ce que vous exigez.',
+  tool_irr_verdict_below: 'Le TRI de {irr} est inférieur à {rate} : l’investissement rapporte moins que ce que vous exigez.',
+  tool_irr_verdict_nonconv:
+    'Ces flux ne suivent pas le schéma simple « investir puis encaisser » : jugez-les sur cette VAN plutôt qu’en comparant le TRI au taux.',
+  tool_irr_why_choose_item_1:
+    'La VAN et le TRIM à votre taux exigé s’affichent à côté du TRI : vous voyez si le projet dépasse votre taux plancher et ce qu’il rapporte si la trésorerie est réinvestie à un taux réaliste.',
+  tool_irr_why_choose_item_2:
+    'Le calcul du manuel est détaillé : la VAN aux deux pourcentages entiers qui encadrent la réponse, puis l’interpolation linéaire entre eux, pour vérifier un exercice fait à la main.',
+  tool_irr_why_choose_item_3:
+    'Il trouve tous les TRI, pas un seul. Beaucoup d’outils lancent la méthode de Newton depuis une seule valeur de départ et renvoient sans prévenir la racine sur laquelle ils tombent ; ici, toute la plage de −99 % à 1 000 % est balayée et chaque TRI est listé.',
+  tool_irr_why_choose_item_4:
+    'Il accepte vos chiffres tels quels : une colonne collée depuis un tableur, une liste qui inclut la période 0, ou 1100*12 pour une série de versements égaux.',
+  tool_irr_why_choose_item_5:
+    'Les flux mensuels et trimestriels sont correctement annualisés. Un TRI mensuel de 1,50 % correspond à 19,53 % effectif par an, et non aux 17,97 % obtenus en multipliant par 12.',
+  tool_irr_why_choose_title: 'Pourquoi utiliser ce calculateur de TRI',
   tool_join_audio_files_in_order_advanced: 'Notes de jointure',
   tool_join_audio_files_in_order_article:
     'Prises de podcast, mémos vocaux et sections de chanson doivent souvent devenir un seul fichier continu. Cette page permet de déposer plusieurs fichiers locaux, de les réordonner dans une liste, de décoder chaque clip dans le navigateur, d’aligner la fréquence d’échantillonnage et les canaux, puis de concaténer les échantillons dans cet ordre en un WAV PCM 16 bits. Elle n’empile pas les pistes en même temps (mix), ne fait pas de fondu enchaîné entre chansons et n’extrait pas l’audio d’une vidéo. Le succès dépend du décodage navigateur de chaque conteneur. Canaux : un ou deux. Gardez les originaux ; le téléchargement est un nouveau fichier. Le travail tourne sur votre appareil.',
@@ -15754,51 +16044,129 @@ const fr: SiteLangDict = {
   tool_linkedin_banner_size_usecase_2: 'Titre loin de l’avatar : vérifiez la couche puis téléchargez.',
   tool_linkedin_banner_size_usecase_3: 'Habillage YouTube : passez la puce à 2560×1440 et la fenêtre sûre.',
   tool_linkedin_banner_size_usecases_title: 'Bons usages',
-  tool_logarithm_article: 'Calculez log₁₀, ln ou logs à base perso pour x>0 dans le navigateur.',
-  tool_logarithm_base_label: 'Base b',
-  tool_logarithm_base_ph: 'ex. 2',
+  tool_logarithm_article:
+    'Calculez un logarithme dans n\'importe quelle base, ou revenez au nombre avec l\'antilogarithme, et suivez les étapes qui mènent au résultat. La calculatrice reconnaît les valeurs exactes comme log₄ 8 = 3/2, affiche l\'étape du changement de base, une vérification qui élève la base au résultat, le même nombre en base 10, e et 2, ainsi que la caractéristique, la mantisse, l\'écriture scientifique et le nombre de chiffres utiles pour les exercices sur les tables de logarithmes et le comptage de chiffres.',
+  tool_logarithm_base_10: '10 — logarithme décimal (log)',
+  tool_logarithm_base_2: '2 — logarithme binaire (log₂)',
+  tool_logarithm_base_custom: 'Autre base…',
+  tool_logarithm_base_e: 'e — logarithme népérien (ln)',
+  tool_logarithm_base_label: 'Base',
   tool_logarithm_calculate: 'Calculer',
+  tool_logarithm_char_bar_tpl: 'caractéristique {c}, mantisse {m} — noté {bar} dans les tables de logarithmes',
+  tool_logarithm_char_label: 'Caractéristique et mantisse (log₁₀)',
+  tool_logarithm_char_tpl: 'caractéristique {c}, mantisse {m}',
+  tool_logarithm_check_label: 'Vérification',
   tool_logarithm_clear: 'Effacer',
+  tool_logarithm_custom_label: 'Base b',
+  tool_logarithm_custom_ph: 'ex. : 4 ; 0,5 ou 1/2',
   tool_logarithm_description:
-    'Calculez log₁₀, ln ou log_b(x) pour x>0. Bases perso via ln(x)/ln(b). Exemple : log₁₀(1000)=3. Domaine explicite (x>0, b>0, b≠1). Dans le navigateur.',
-  tool_logarithm_disclaimer: 'Logs réels pédagogiques seulement. Ne remplace pas un CAS.',
-  tool_logarithm_err_generic: 'Saisissez x>0 ; pour une base perso, b>0 et b≠1.',
-  tool_logarithm_example: 'Exemple : log₁₀(1000)=3.',
-  tool_logarithm_example_title: 'Exemple',
-  tool_logarithm_faq_a1: 'Les logs réels en 0 ou négatifs ne sont pas définis ici.',
-  tool_logarithm_faq_a2: 'Non ; le log en base 1 est indéfini.',
-  tool_logarithm_faq_a3: 'Changement de base : ln(x)/ln(b).',
-  tool_logarithm_faq_a4: 'Log népérien de base e ≈ 2,71828.',
-  tool_logarithm_faq_q1: 'Pourquoi x > 0 ?',
-  tool_logarithm_faq_q2: 'Base = 1 ?',
-  tool_logarithm_faq_q3: 'Base personnalisée ?',
-  tool_logarithm_faq_q4: 'Qu’est-ce que ln ?',
-  tool_logarithm_formula_body: 'log_b(x) est l’exposant qui envoie b sur x. Ici :',
-  tool_logarithm_formula_item_1: 'log₁₀ est décimal ; ln est népérien (base e).',
-  tool_logarithm_formula_item_2: 'Perso : log_b(x)=ln(x)/ln(b) avec b>0, b≠1, x>0.',
-  tool_logarithm_formula_item_3: 'x doit être positif.',
-  tool_logarithm_formula_item_4: 'Associez à la page exposants pour vérifier b^y≈x.',
-  tool_logarithm_formula_title: 'Formule et domaine',
+    'Calcul du logarithme décimal, népérien (ln), en base 2 ou dans une base quelconque, et de l\'antilogarithme, pour des décimaux, fractions et puissances. Valeurs exactes comme log₄ 8 = 3/2, formule du changement de base détaillée, caractéristique et mantisse, avec exemples.',
+  tool_logarithm_disclaimer:
+    'Conçu pour l\'apprentissage et les vérifications courantes avec des nombres réels. Les résultats sont des valeurs en virgule flottante arrondies à 10 chiffres significatifs et les logarithmes complexes ne sont pas traités — pour un examen ou un travail d\'ingénierie, suivez la méthode et la précision exigées par votre cours ou la norme applicable.',
+  tool_logarithm_err_base:
+    'Saisissez une base strictement positive et différente de 1 (le logarithme en base 1 n\'est pas défini, car 1 élevé à n\'importe quelle puissance vaut toujours 1).',
+  tool_logarithm_err_empty: 'Saisissez un nombre à calculer.',
+  tool_logarithm_err_neg:
+    'Un nombre négatif n\'a pas de logarithme réel, car une base positive élevée à n\'importe quelle puissance reste toujours positive. Saisissez un x strictement positif.',
+  tool_logarithm_err_num:
+    '« {v} » n\'est pas un nombre que la calculatrice peut lire. Utilisez des chiffres, une fraction comme 1/8, une puissance comme 2^10 ou une écriture scientifique comme 3,2e-5.',
+  tool_logarithm_err_range:
+    'Le résultat est trop grand ou trop petit pour être affiché comme un nombre — essayez un exposant plus petit.',
+  tool_logarithm_err_zero:
+    'log(0) n\'est pas défini : quand x se rapproche de 0, le logarithme tend vers moins l\'infini, il n\'existe donc aucune valeur réelle.',
+  tool_logarithm_exact_tpl: 'Valeur exacte {f}, car {pow} = {x}',
+  tool_logarithm_example:
+    'log₁₀(1000) = 3, car 10³ = 1000 ; pour le même nombre, ln 1000 = 6,907755279 et log₂ 1000 = 9,965784285. En base 4, log₄ 8 = ln 8 ÷ ln 4 = 2,079441542 ÷ 1,386294361 = 3/2, car 4^(3/2) = 8. Pour un nombre inférieur à 1, log₁₀(0,0345) = −1,462180905 : caractéristique −2, mantisse 0,5378190951, noté 2̄,5378 dans les tables de logarithmes, et il y a 1 zéro entre la virgule et le 3. Dans l\'autre sens, l\'antilogarithme 10^2,5 = 316,227766.',
+  tool_logarithm_example_title: 'Exemples corrigés',
+  tool_logarithm_faq_a1:
+    'Au lycée et sur la calculatrice, log désigne le logarithme décimal (base 10) et ln le logarithme népérien (base e ≈ 2,718281828) ; en terminale, c\'est surtout ln qui est étudié. Attention ailleurs : dans Excel, LOG() est en base 10 par défaut, mais en Python, en JavaScript et dans beaucoup d\'ouvrages du supérieur, log(x) désigne le logarithme népérien. Les deux ne diffèrent que d\'un facteur constant : ln x = log₁₀ x × 2,302585093.',
+  tool_logarithm_faq_a2:
+    'Une base positive élevée à n\'importe quelle puissance réelle donne toujours un nombre positif : aucun exposant réel ne peut donc donner 0 ou un nombre négatif. Quand x tend vers 0 par valeurs positives, log x tend vers moins l\'infini. Le logarithme d\'un nombre négatif n\'existe que dans les nombres complexes, que cette page ne traite pas.',
+  tool_logarithm_faq_a3:
+    '1 élevé à n\'importe quelle puissance vaut 1 : un logarithme en base 1 ne pourrait jamais atteindre un autre nombre. Une base nulle ou négative ne donne pas de fonction puissance continue et à valeur unique sur les réels. Les bases comprises entre 0 et 1 sont acceptées : log₀,₅ 8 = −3, car 0,5⁻³ = 8.',
+  tool_logarithm_faq_a4:
+    'Appliquez la formule du changement de base : log_b(x) = ln(x) ÷ ln(b), ou log(x) ÷ log(b) avec le logarithme décimal. Pour log₄ 8 : ln 8 ÷ ln 4 = 2,079441542 ÷ 1,386294361 = 1,5. Dans Excel en français, =LOG(8;4) renvoie aussi 1,5.',
+  tool_logarithm_faq_a5:
+    'Ce sont la partie entière (caractéristique) et la partie décimale positive ou nulle (mantisse) d\'un logarithme décimal ; c\'est ainsi que fonctionnent les tables de logarithmes imprimées. Pour 3450, log₁₀ = 3,537819095 : caractéristique 3, mantisse 0,5378190951. Pour 0,0345, le log vaut −1,462180905 = −2 + 0,5378190951, noté 2̄,5378 avec une barre au-dessus du 2. La mantisse ne dépend que des chiffres 345 ; la caractéristique indique la position de la virgule.',
+  tool_logarithm_faq_a6:
+    'L\'antilogarithme est l\'opération inverse du logarithme : si y = log_b(x), alors x = b^y. L\'antilogarithme décimal de 2,5 vaut 10^2,5 = 316,227766, et l\'antilogarithme népérien de 1 vaut e¹ = 2,718281828. Choisissez « L\'antilogarithme » : la page affiche aussi la vérification par la réciproque.',
+  tool_logarithm_faq_a7:
+    'Pour un entier N ≥ 1, le nombre de chiffres vaut ⌊log₁₀ N⌋ + 1. log₁₀(2¹⁰⁰) = 100 × 0,3010299957 = 30,10299957, donc 2¹⁰⁰ s\'écrit avec 31 chiffres. Saisissez 2^100 ici pour le voir dans « Taille du nombre ».',
+  tool_logarithm_faq_q1: 'Quelle différence entre log et ln ?',
+  tool_logarithm_faq_q2: 'Pourquoi ne peut-on pas calculer le log de 0 ou d\'un nombre négatif ?',
+  tool_logarithm_faq_q3: 'Pourquoi la base ne peut-elle pas valoir 1, 0 ou être négative ?',
+  tool_logarithm_faq_q4: 'Comment calculer un log dans une base absente de ma calculatrice ?',
+  tool_logarithm_faq_q5: 'Que sont la caractéristique et la mantisse ?',
+  tool_logarithm_faq_q6: 'Qu\'est-ce que l\'antilogarithme et comment le calculer ?',
+  tool_logarithm_faq_q7: 'Comment compter les chiffres d\'un grand nombre avec les logarithmes ?',
+  tool_logarithm_formula_body:
+    'Un logarithme répond à la question « à quelle puissance faut-il élever b pour obtenir x ? » : y = log_b(x) signifie b^y = x, avec x > 0, b > 0 et b ≠ 1.',
+  tool_logarithm_formula_item_1:
+    'Changement de base : log_b(x) = ln(x) ÷ ln(b) = log₁₀(x) ÷ log₁₀(b). Exemple : log₂ 1000 = 6,907755279 ÷ 0,6931471806 = 9,965784285.',
+  tool_logarithm_formula_item_2: 'Produit et quotient : log(a × c) = log a + log c, et log(a ÷ c) = log a − log c.',
+  tool_logarithm_formula_item_3: 'Puissance : log(aⁿ) = n · log a, donc log₁₀(2¹⁰⁰) = 100 × 0,3010299957 = 30,10299957.',
+  tool_logarithm_formula_item_4:
+    'Valeurs remarquables : log_b(1) = 0, log_b(b) = 1 et log_b(1/x) = −log_b(x) ; par exemple log₂(1/8) = −3.',
+  tool_logarithm_formula_item_5: 'Antilogarithme : x = b^y. En base 10, 10^2,5 = 316,227766 ; en base e, e¹ = exp(1) = 2,718281828.',
+  tool_logarithm_formula_title: 'Formules et propriétés des logarithmes',
   tool_logarithm_how_body:
-    'Choisissez log₁₀, ln ou une base perso. Entrez x>0 (et b si besoin). Calcul via Math.log/Math.log10 et changement de base.',
-  tool_logarithm_how_title: 'Fonctionnement',
-  tool_logarithm_logOut_label: 'Valeur du logarithme',
-  tool_logarithm_mode_custom: 'log_b (base perso)',
-  tool_logarithm_mode_label: 'Type de log',
-  tool_logarithm_mode_ln: 'ln (népérien)',
-  tool_logarithm_mode_log10: 'log₁₀ (décimal)',
-  tool_logarithm_ref_ln_label: 'Wikipedia — Logarithme naturel',
-  tool_logarithm_ref_log_label: 'Wikipedia — Logarithme',
-  tool_logarithm_references: 'Wikipedia logarithme et logarithme naturel.',
-  tool_logarithm_result_note: 'Changement de base via ln : log_b(x)=ln(x)/ln(b). Exige x>0 et une base valide.',
-  tool_logarithm_sample: 'Charger l’exemple',
-  tool_logarithm_title: 'Calculateur de logarithmes — Comment calculer des logs',
-  tool_logarithm_usecase_1: 'Devoir : évaluer log₁₀, ln ou log₂.',
-  tool_logarithm_usecase_2: 'Vérifier un changement de base à la main.',
-  tool_logarithm_usecase_3: 'Préparer des échelles de notation scientifique.',
-  tool_logarithm_usecases_title: 'Quand l’utiliser',
-  tool_logarithm_x_label: 'Argument x',
-  tool_logarithm_x_ph: 'ex. 1000',
+    'Indiquez ce que vous cherchez, choisissez la base, saisissez le nombre puis cliquez sur Calculer. Le résultat s\'affiche avec les étapes du calcul en dessous.',
+  tool_logarithm_how_item_1:
+    'Choisissez « Le logarithme » pour trouver y dans b^y = x, ou « L\'antilogarithme » pour retrouver le nombre à partir de son logarithme.',
+  tool_logarithm_how_item_2:
+    'Prenez la base 10, e ou 2, ou choisissez « Autre base… » et saisissez n\'importe quelle base strictement positive différente de 1 — les fractions comme 1/2 fonctionnent aussi.',
+  tool_logarithm_how_item_3:
+    'Saisissez le nombre avec une virgule décimale (par exemple 0,0345), sous forme de fraction (1/8), de puissance (2^10) ou en écriture scientifique (3,2e-5 ou 3.2e-5).',
+  tool_logarithm_how_item_4:
+    'Lisez le résultat, la valeur exacte quand elle existe, le changement de base détaillé, la vérification qui élève la base au résultat, ainsi que la caractéristique, la mantisse et le nombre de chiffres.',
+  tool_logarithm_how_title: 'Comment calculer un logarithme avec cet outil',
+  tool_logarithm_input_hint:
+    'Vous pouvez saisir une fraction (1/8), une puissance (2^10), une écriture scientifique (3,2e-5) ou la constante e. La virgule et le point sont acceptés comme séparateur décimal.',
+  tool_logarithm_inverse_tpl: 'Vérification par la réciproque : {s}',
+  tool_logarithm_mode_antilog: 'L\'antilogarithme, x = b^y',
+  tool_logarithm_mode_label: 'Que voulez-vous calculer ?',
+  tool_logarithm_mode_log: 'Le logarithme, y = log_b(x)',
+  tool_logarithm_other_label: 'Le même nombre dans d\'autres bases',
+  tool_logarithm_out_antilog: 'Antilogarithme',
+  tool_logarithm_out_log: 'Logarithme',
+  tool_logarithm_places_frac_tpl: 'Zéros entre la virgule et le premier chiffre non nul de {x} : {z}',
+  tool_logarithm_places_int_tpl: 'Chiffres avant la virgule dans {x} : {d}',
+  tool_logarithm_places_label: 'Taille du nombre',
+  tool_logarithm_ref_ln_label: 'Wikipédia — Logarithme naturel',
+  tool_logarithm_ref_log_label: 'Wikipédia — Logarithme',
+  tool_logarithm_references: 'Pour aller plus loin : définition du logarithme, propriétés et logarithme népérien.',
+  tool_logarithm_result_note:
+    'Les valeurs sont affichées avec 10 chiffres significatifs. Une valeur exacte est reconnue lorsque le logarithme est un entier ou une fraction de dénominateur inférieur ou égal à 12.',
+  tool_logarithm_sample: 'Charger un exemple',
+  tool_logarithm_sci_label: 'Écriture scientifique',
+  tool_logarithm_sub_approx: 'Ni entier ni fraction simple — affiché avec 10 chiffres significatifs',
+  tool_logarithm_title: 'Calcul de logarithme — log d\'un nombre dans n\'importe quelle base, avec valeur exacte et étapes',
+  tool_logarithm_usecase_1:
+    'Chimie : pH = −log[H₃O⁺] (logarithme décimal), donc une concentration de 3,2 × 10⁻⁵ mol/L donne log₁₀ = −4,494850022 et un pH d\'environ 4,49.',
+  tool_logarithm_usecase_2:
+    'Finance : le nombre d\'années pour doubler un capital placé à 7 % par an vaut ln 2 ÷ ln 1,07 = 10,24 — la version exacte de la règle de 72.',
+  tool_logarithm_usecase_3:
+    'Acoustique et informatique : les décibels valent 10 · log₁₀ d\'un rapport de puissances, donc un rapport de 1000 correspond à 30 dB ; log₂ indique combien de bits ou de divisions par deux sont nécessaires (log₂ 1024 = 10).',
+  tool_logarithm_usecase_4:
+    'Devoirs, bac et concours : vérifiez vos exercices sur les propriétés du logarithme, entraînez-vous à lire caractéristique et mantisse ou comptez des chiffres — 2¹⁰⁰ s\'écrit avec ⌊30,103⌋ + 1 = 31 chiffres.',
+  tool_logarithm_usecases_title: 'Quand a-t-on besoin d\'un logarithme ?',
+  tool_logarithm_why_choose_item_1:
+    'Une seule saisie donne log₁₀, ln et log₂ côte à côte, et le mode antilogarithme permet de revenir au nombre depuis n\'importe lequel d\'entre eux.',
+  tool_logarithm_why_choose_item_2:
+    'Des réponses exactes quand elles existent : log₄ 8 est donné sous la forme 3/2, et pas seulement 1,5, avec la justification 4^(3/2) = 8.',
+  tool_logarithm_why_choose_item_3:
+    'Chaque résultat montre l\'étape ln(x) ÷ ln(b), pour que vous puissiez refaire le calcul sur une calculatrice qui n\'a que les touches log et ln.',
+  tool_logarithm_why_choose_item_4:
+    'Des messages clairs expliquent pourquoi log(0), le logarithme d\'un nombre négatif et la base 1 n\'ont pas de valeur réelle, au lieu d\'afficher une simple erreur.',
+  tool_logarithm_why_choose_item_5:
+    'Le détail du logarithme décimal donne la caractéristique, la mantisse et la notation surlignée des tables imprimées, par exemple log₁₀ 0,0345 = 2̄,5378.',
+  tool_logarithm_why_choose_title: 'Pourquoi utiliser cette calculatrice',
+  tool_logarithm_work_change: 'Changement de base',
+  tool_logarithm_work_label: 'Étapes du calcul',
+  tool_logarithm_x_label_antilog: 'Exposant y (le logarithme)',
+  tool_logarithm_x_label_log: 'Nombre x',
+  tool_logarithm_x_ph_antilog: 'ex. : 2,5 ou −3',
+  tool_logarithm_x_ph_log: 'ex. : 1000 ; 1/8 ; 2^10 ou 3,2e-5',
   tool_macros_article: 'Calculateur de macros',
   tool_macros_cG_label: 'Glucides (g)',
   tool_macros_cPct_label: 'Glucides %',
@@ -17535,44 +17903,143 @@ const fr: SiteLangDict = {
   tool_measuring_magnetic_fields_value_ph: 'ex. 200',
   tool_measuring_magnetic_fields_width_label: 'Largeur de face (mm)',
   tool_measuring_magnetic_fields_z_label: 'Distance depuis la face z (mm)',
-  tool_median_article: 'Calculateur de médiane et mode',
+  tool_median_article: 'Médiane et mode',
   tool_median_calculate: 'Calculer',
   tool_median_clear: 'Effacer',
+  tool_median_col_cf: 'Effectif cumulé (cf)',
+  tool_median_col_class: 'Classe',
+  tool_median_col_f: 'Effectif (f)',
+  tool_median_col_mid: 'Centre de classe (x)',
+  tool_median_count_tpl: '{n} valeurs',
   tool_median_description:
-    'Calculez la médiane et le mode d’une liste de nombres après tri (valeur centrale ; plus fréquente). Exemple : 1,2,2,3,4 → médiane 2, mode 2. Calcul local ; processus statistique rapide.',
-  tool_median_disclaimer: 'Illustration éducative (median) uniquement.',
-  tool_median_err_generic: 'Vérifiez les entrées.',
-  tool_median_example: 'Exemple : médiane 2, mode 2.',
+    'Calcul de la médiane et du mode d’une série de nombres ou d’un tableau d’effectifs regroupés en classes. Vous voyez la série triée avec les valeurs centrales surlignées, le cas pair ou impair, tous les modes (ou l’absence de mode), la moyenne et la formule L + (N/2 − cf) ÷ f × h appliquée étape par étape.',
+  tool_median_disclaimer:
+    'Pour réviser et vérifier des données du quotidien. Les résultats sur données groupées sont des estimations fondées sur les bornes des classes, pas la médiane exacte des valeurs d’origine.',
+  tool_median_err_empty:
+    'Saisissez des nombres, par exemple 12 5 8 3 9 — ou, pour des données groupées, une classe par ligne comme 10-20 8.',
+  tool_median_err_line:
+    'Impossible de lire « {line} ». Écrivez une classe par ligne : borne inférieure, borne supérieure, effectif — par exemple 10-20 8.',
+  tool_median_err_many: '10 000 valeurs ou 100 classes au maximum.',
+  tool_median_err_order:
+    'La classe {line} chevauche la précédente. Rangez les classes dans l’ordre croissant, sans chevauchement.',
+  tool_median_err_token:
+    '« {token} » n’est pas un nombre. Séparez les valeurs par des espaces, des points-virgules ou des retours à la ligne (la virgule est le séparateur décimal).',
+  tool_median_err_zero: 'L’effectif total est 0. Saisissez au moins une classe d’effectif supérieur à 0.',
+  tool_median_even_tpl:
+    'n = {n} est pair : la médiane est la moyenne des valeurs de rangs {a} et {b}, soit ({x} + {y}) ÷ 2 = {v}.',
+  tool_median_example:
+    'Série d’exemple : 12 5 8 3 9 7 41 7. Série triée : 3 5 7 7 8 9 12 41. Il y a 8 valeurs, donc la médiane est la moyenne des 4ᵉ et 5ᵉ valeurs : (7 + 8) ÷ 2 = 7,5. Le mode est 7 (deux fois). La moyenne vaut 92 ÷ 8 = 11,5 — tirée vers le haut par 41, d’où l’intérêt de la médiane ici. Cliquez de nouveau sur Charger un exemple pour obtenir une série bimodale (modes 4 et 7), puis un tableau de données groupées dont la médiane vaut 25,83.',
   tool_median_example_title: 'Exemple',
-  tool_median_faq_a1: 'Exemple : médiane 2, mode 2.',
-  tool_median_faq_a2: 'See Formula section.',
-  tool_median_faq_a3: 'Educational only.',
-  tool_median_faq_a4: 'Educational only.',
-  tool_median_faq_q1: 'Exemple ?',
-  tool_median_faq_q2: 'Formula?',
-  tool_median_faq_q3: 'Advice?',
-  tool_median_faq_q4: 'Related?',
-  tool_median_formula_body: 'Collez la liste.',
-  tool_median_formula_item_1: 'See formula notes.',
-  tool_median_formula_item_2: 'Check inputs.',
-  tool_median_formula_item_3: 'Educational only.',
-  tool_median_formula_title: 'Formule',
-  tool_median_how_body: 'Collez la liste.',
-  tool_median_how_title: 'Fonctionnement',
+  tool_median_faq_a1:
+    'Triez les valeurs et faites la moyenne des deux valeurs centrales. Pour 3 5 7 7 8 9 12 41, ce sont les 4ᵉ et 5ᵉ valeurs, 7 et 8, donc la médiane vaut 7,5. La médiane n’est pas forcément l’une des valeurs de la série.',
+  tool_median_faq_a2:
+    'Oui, dans les deux cas. Dans la série 2 4 4 5 7 7 9, les valeurs 4 et 7 apparaissent chacune deux fois : la série est bimodale (et sa médiane vaut 5). Si toutes les valeurs apparaissent le même nombre de fois — 1 2 3 ou 1 1 2 2 — il n’y a pas de mode.',
+  tool_median_faq_a3:
+    'Quand la série contient des valeurs extrêmes ou une longue traîne. Dans l’exemple, la seule valeur 41 porte la moyenne à 11,5 alors que la médiane reste à 7,5. Sans 41, la moyenne tombe à 7,29 et la médiane bouge à peine : 7. C’est pour cela que les revenus et les prix immobiliers sont souvent donnés en médiane.',
+  tool_median_faq_a4:
+    'Calculez N/2, cherchez la première classe dont l’effectif cumulé atteint cette valeur (la classe médiane), puis appliquez L + (N/2 − cf) ÷ f × h. Pour le tableau d’exemple, N = 40 donc N/2 = 20 ; les effectifs cumulés atteignent 20 dans la classe 20–30, ce qui donne 20 + (20 − 13) ÷ 12 × 10 = 25,83. Pour ce même tableau, le mode vaut 25,71 et la moyenne 25,75.',
+  tool_median_faq_a5:
+    'Oui : la formule suppose des classes contiguës, donc 10–19 devient 9,5–19,5. Le calculateur le fait automatiquement et l’indique. Pour 10–19 : 4 ; 20–29 : 10 ; 30–39 : 14 ; 40–49 : 7 ; 50–59 : 5, la médiane vaut 33,79 et le mode 33,14. Les classes notées [10 ; 20[ sont déjà contiguës et restent telles quelles.',
+  tool_median_faq_a6:
+    'À la main, oui — le milieu d’une série non triée n’est qu’une valeur au hasard. Ici, vous pouvez coller les nombres dans n’importe quel ordre : l’outil les trie et affiche la série triée, que vous pouvez recopier dans votre rédaction.',
+  tool_median_faq_a7:
+    'MEDIANE donne le même résultat. MODE.SIMPLE ne renvoie que le premier mode dans l’ordre d’apparition des données, et #N/A s’il n’y en a pas ; MODE.MULTIPLE les renvoie tous, comme cette page. Excel n’a pas de fonction de médiane pour données groupées : les tableaux d’effectifs se traitent généralement à la main.',
+  tool_median_faq_q1: 'Comment trouver la médiane d’une série à effectif pair ?',
+  tool_median_faq_q2: 'Peut-il y avoir plusieurs modes, ou aucun ?',
+  tool_median_faq_q3: 'Quand utiliser la médiane plutôt que la moyenne ?',
+  tool_median_faq_q4: 'Comment calculer la médiane de données groupées en classes ?',
+  tool_median_faq_q5: 'Mes classes sont 10–19 ; 20–29… faut-il les modifier ?',
+  tool_median_faq_q6: 'Faut-il trier les nombres avant ?',
+  tool_median_faq_q7: 'Le résultat correspond-il aux fonctions MEDIANE et MODE d’Excel ?',
+  tool_median_formula_body: 'Pour n valeurs rangées dans l’ordre croissant :',
+  tool_median_formula_item_1: 'n impair : la médiane est la valeur de rang (n + 1) ÷ 2 — la 4ᵉ de 7 valeurs.',
+  tool_median_formula_item_2:
+    'n pair : la médiane est la moyenne des valeurs de rangs n ÷ 2 et n ÷ 2 + 1 — la 4ᵉ et la 5ᵉ de 8 valeurs.',
+  tool_median_formula_item_3:
+    'Mode : la valeur la plus fréquente. Une série peut avoir un mode, plusieurs (bimodale, multimodale) ou aucun quand toutes les valeurs apparaissent le même nombre de fois.',
+  tool_median_formula_item_4:
+    'Médiane de données groupées = L + (N/2 − cf) ÷ f × h, où L est la borne inférieure de la classe médiane, cf l’effectif cumulé de la classe précédente, f l’effectif de la classe et h son amplitude. C’est une interpolation linéaire sur la courbe des effectifs cumulés croissants.',
+  tool_median_formula_item_5:
+    'Mode de données groupées = L + (f₁ − f₀) ÷ (2f₁ − f₀ − f₂) × h, où f₁ est l’effectif de la classe modale et f₀, f₂ ceux des classes précédente et suivante.',
+  tool_median_formula_title: 'Formules de la médiane et du mode',
+  tool_median_g_bound_tpl:
+    'Les classes sont séparées par un écart de {gap} : chaque borne a été décalée d’un demi-écart vers l’extérieur pour obtenir des classes contiguës — la première classe va de {lo} à {hi}.',
+  tool_median_g_mean_tpl: 'Σ f·x ÷ N = {sum} ÷ {N} = {v} (x = centre de classe)',
+  tool_median_g_median_tpl:
+    'N = {N}, donc N/2 = {half}. Les effectifs cumulés atteignent {half} pour la première fois dans la classe {cls} (effectif cumulé précédent cf = {cf}, effectif f = {f}, amplitude h = {h}). Médiane = L + (N/2 − cf) ÷ f × h = {L} + ({half} − {cf}) ÷ {f} × {h} = {v}.',
+  tool_median_g_mode_flat_tpl:
+    'La classe modale est {cls}, mais les classes voisines ont le même effectif : la formule ne s’applique pas, on retient donc le centre de classe {mid}.',
+  tool_median_g_mode_multi_tpl:
+    'Plusieurs classes ont le plus grand effectif ({list}) : la formule du mode pour données groupées ne donne pas de réponse unique.',
+  tool_median_g_mode_tpl:
+    'Classe modale {cls} (f₁ = {f1}, classe précédente f₀ = {f0}, classe suivante f₂ = {f2}). Mode = L + (f₁ − f₀) ÷ (2f₁ − f₀ − f₂) × h = {L} + ({f1} − {f0}) ÷ (2 × {f1} − {f0} − {f2}) × {h} = {v}.',
+  tool_median_groups_hint:
+    'Indiquez la borne inférieure, la borne supérieure et l’effectif, par exemple 10-20 8 ou [10 ; 20[ 8 (ou encore 10–19 : 8). Les classes séparées par un écart (10–19 ; 20–29) sont automatiquement converties en classes contiguës (9,5–19,5).',
+  tool_median_groups_label: 'Classes et effectifs (une classe par ligne)',
+  tool_median_groups_ph: 'ex. :\n0-10 5\n10-20 8\n20-30 12',
+  tool_median_how_body:
+    'Rangez les nombres dans l’ordre croissant. Si l’effectif est impair, la médiane est la valeur du milieu ; s’il est pair, c’est la moyenne des deux valeurs centrales. Pour des données groupées, repérez la classe qui contient la valeur de rang N/2 (la classe médiane) et faites une interpolation linéaire à l’intérieur de cette classe.',
+  tool_median_how_item_1: 'Choisissez Série de nombres, ou Données groupées si vous n’avez qu’un tableau d’effectifs.',
+  tool_median_how_item_2:
+    'Collez ou tapez les valeurs, dans n’importe quel ordre et séparées par des espaces — ou une classe par ligne avec son effectif, comme 20-30 12.',
+  tool_median_how_item_3: 'Cliquez sur Calculer. La série triée s’affiche avec la ou les valeurs centrales surlignées.',
+  tool_median_how_item_4:
+    'Lisez la médiane, la ligne de calcul, le mode et la moyenne ; pour des données groupées, repérez la classe médiane surlignée dans le tableau des effectifs cumulés.',
+  tool_median_how_title: 'Comment calculer la médiane',
+  tool_median_mean_label: 'Moyenne',
   tool_median_medianOut_label: 'Médiane',
   tool_median_modeOut_label: 'Mode',
+  tool_median_mode_grouped: 'Données groupées (tableau d’effectifs)',
+  tool_median_mode_label: 'Type de données',
+  tool_median_mode_list: 'Série de nombres',
+  tool_median_mode_multi_tpl: '{list} (chacun apparaît {c} fois)',
+  tool_median_mode_none_equal_tpl: 'Pas de mode : chaque valeur apparaît {c} fois.',
+  tool_median_mode_none_once: 'Pas de mode : chaque valeur n’apparaît qu’une fois.',
+  tool_median_mode_one_tpl: '{v} (apparaît {c} fois)',
+  tool_median_note_grouped:
+    'Les résultats sur données groupées sont des estimations : ils supposent que les valeurs sont réparties uniformément à l’intérieur de chaque classe.',
+  tool_median_note_list: 'L’ordre de saisie n’a pas d’importance : les nombres sont d’abord triés.',
+  tool_median_nums_hint:
+    'Séparez les valeurs par des espaces, des points-virgules ou des retours à la ligne : la virgule sert de séparateur décimal (7,5). Une colonne copiée depuis un tableur fonctionne. Décimaux et nombres négatifs acceptés.',
   tool_median_nums_label: 'Nombres',
-  tool_median_nums_ph: 'ex. 1,2,2,3,4',
-  tool_median_ref_a_label: 'Wikipedia',
-  tool_median_ref_b_label: 'Textbook formula',
-  tool_median_references: 'Formules de manuel.',
-  tool_median_result_note: 'Éducatif.',
-  tool_median_sample: 'Charger l’exemple',
-  tool_median_title: 'Calculateur de médiane et mode',
-  tool_median_usecase_1: 'Homework.',
-  tool_median_usecase_2: 'Quick sketch.',
-  tool_median_usecase_3: 'Compare with mean.',
-  tool_median_usecases_title: 'Cas d’usage',
+  tool_median_nums_ph: 'ex. : 12 5 8 3 9 7 41 7',
+  tool_median_odd_tpl:
+    'n = {n} est impair : la médiane est la valeur de rang (n + 1) ÷ 2 = {pos} dans la série triée, soit {v}.',
+  tool_median_range_label: 'Étendue',
+  tool_median_range_tpl: '{max} − {min} = {r}',
+  tool_median_ref_a_label: 'NIST/SEMATECH e-Handbook — Measures of Location (indicateurs de position)',
+  tool_median_ref_b_label: 'Wikipédia (en anglais) — médiane de données groupées',
+  tool_median_references:
+    'NIST/SEMATECH e-Handbook of Statistical Methods — Measures of location (indicateurs de position) ; Wikipédia (en anglais) — Median for grouped data (médiane de données groupées).',
+  tool_median_sample: 'Charger un exemple',
+  tool_median_skew_left:
+    'La moyenne est nettement inférieure à la médiane : quelques petites valeurs tirent la moyenne vers le bas, la médiane décrit donc mieux une valeur typique.',
+  tool_median_skew_right:
+    'La moyenne est nettement supérieure à la médiane : quelques grandes valeurs tirent la moyenne vers le haut, la médiane décrit donc mieux une valeur typique.',
+  tool_median_sorted_label: 'Série triée',
+  tool_median_title: 'Calcul de la médiane et du mode — série de nombres ou données groupées, avec les étapes',
+  tool_median_total_tpl: 'N = {n} (effectif total)',
+  tool_median_usecase_1:
+    'Exercice de statistiques avec un tableau d’effectifs : 0–10 : 5 ; 10–20 : 8 ; 20–30 : 12 ; 30–40 : 9 ; 40–50 : 6 donne la classe médiane 20–30 et la médiane 20 + (20 − 13) ÷ 12 × 10 = 25,83.',
+  tool_median_usecase_2:
+    'Salaires, prix de l’immobilier, délais de livraison : quelques valeurs extrêmes rendent la moyenne trompeuse, et c’est la médiane que l’on cite.',
+  tool_median_usecase_3:
+    'Notes de contrôle et avis d’enquête : la note médiane et la réponse la plus fréquente en une seule étape.',
+  tool_median_usecase_4:
+    'Vérifier un tableur : collez la colonne utilisée avec MEDIANE ou MODE.SIMPLE et confirmez le résultat, égalités comprises.',
+  tool_median_usecases_title: 'Quand l’utiliser',
+  tool_median_why_choose_item_1:
+    'La série triée s’affiche avec le milieu surligné : vous voyez exactement quelles valeurs ont servi — l’erreur la plus fréquente consiste à prendre le milieu d’une série non triée.',
+  tool_median_why_choose_item_2:
+    'Les données groupées sont prises en charge : collez un tableau d’effectifs et obtenez la classe médiane, la formule d’interpolation avec vos nombres, la classe modale avec le mode estimé et la moyenne calculée à partir des centres de classes.',
+  tool_median_why_choose_item_3:
+    'Les classes écrites avec un écart, comme 10–19 et 20–29, sont converties en 9,5–19,5, etc. : l’étape demandée dans les manuels, que beaucoup de calculatrices oublient.',
+  tool_median_why_choose_item_4:
+    'Le mode est donné sans raccourci : tous les modes en cas d’égalité, et « pas de mode » quand toutes les valeurs apparaissent aussi souvent, au lieu de retenir le plus petit nombre.',
+  tool_median_why_choose_item_5:
+    'Moyenne et étendue figurent à côté de la médiane, avec une remarque quand des valeurs extrêmes éloignent la moyenne : pratique pour choisir quel indicateur de position présenter.',
+  tool_median_why_choose_title: 'Pourquoi utiliser ce calcul de médiane',
+  tool_median_work_label: 'Calcul',
   tool_merge_pdf_article:
     'Fusionnez plusieurs PDF dans l’ordre de la liste avec pdf-lib côté client, sans envoi au serveur. Réordonnez, gérez les échecs de chiffrement, téléchargez un seul document.',
   tool_merge_pdf_choose_files: 'Choisir des PDF',
@@ -19634,50 +20101,151 @@ const fr: SiteLangDict = {
   tool_permutation_combination_work_label: 'Étapes du calcul',
   tool_permutation_combination_zero_note:
     'r est plus grand que n : on ne peut pas choisir r éléments distincts — les dénombrements sans répétition valent 0. Autorisez les répétitions ou baissez r.',
-  tool_present_value_amount_label: 'Montant',
+  tool_present_value_amount_label_fv: 'Capital placé aujourd\'hui (somme unique)',
+  tool_present_value_amount_label_pv: 'Somme future (capital unique reçu à la fin)',
   tool_present_value_amount_ph: 'ex. 10000',
-  tool_present_value_article: 'Calculateur de valeur actuelle (PV/FV)',
+  tool_present_value_ann_fv_tpl: 'Versements : {p} × ({g} − 1) ÷ {i} = {p} × {af} = {v}',
+  tool_present_value_ann_pv_tpl: 'Versements : {p} × (1 − 1 ÷ {g}) ÷ {i} = {p} × {af} = {v}',
+  tool_present_value_ann_zero_tpl: 'Versements à 0 % : {p} × {N} = {v}',
+  tool_present_value_article: 'Valeur actuelle et valeur future',
   tool_present_value_calculate: 'Calculer',
   tool_present_value_clear: 'Effacer',
+  tool_present_value_col_balance: 'Solde en fin d\'année',
+  tool_present_value_col_flow: 'Versements',
+  tool_present_value_col_interest: 'Intérêts',
+  tool_present_value_col_year: 'Année',
+  tool_present_value_comp_1: 'Annuelle',
+  tool_present_value_comp_12: 'Mensuelle',
+  tool_present_value_comp_2: 'Semestrielle',
+  tool_present_value_comp_365: 'Journalière (365)',
+  tool_present_value_comp_4: 'Trimestrielle',
+  tool_present_value_comp_cont: 'Continue',
+  tool_present_value_comp_label: 'Capitalisation',
+  tool_present_value_cont_tpl: 'Capitalisation continue : facteur de capitalisation e^(r × t) = e^({r} × {t}) = {g}.',
   tool_present_value_description:
-    'Basculez PV/FV pour un montant unique. Exemple : VF 10 000 à 5 % sur 5 ans → VA ≈ 7 835,26. Éducatif. Calcul éducatif dans le navigateur ; pas un conseil professionnel.',
-  tool_present_value_disclaimer: 'Illustration éducative (present value) uniquement — pas un conseil financier.',
-  tool_present_value_err_generic: 'Vérifiez les entrées.',
-  tool_present_value_example: 'Exemple : VF 10000, 5 %, 5 ans → VA ≈ 7835,26.',
+    'Calculez la valeur actuelle ou la valeur future (valeur acquise) d\'un capital unique, de versements réguliers ou des deux. Choisissez une capitalisation annuelle, mensuelle, journalière ou continue et des versements en fin ou en début de période, puis suivez le calcul détaillé de la formule, le taux annuel effectif, un test à ±1 point de taux et le solde année par année.',
+  tool_present_value_disclaimer:
+    'Calcul pédagogique de la valeur temps de l\'argent, et non un conseil financier, fiscal ou en investissement. Les rendements réels varient, et les impôts, les frais et l\'inflation peuvent modifier le résultat.',
+  tool_present_value_due_tpl:
+    'Les versements en début de période rapportent une période d\'intérêts de plus : {a} × (1 + {i}) = {v}',
+  tool_present_value_ear_label: 'Taux annuel effectif',
+  tool_present_value_err_amount:
+    'Saisissez un capital unique, un versement par période ou les deux — au moins un supérieur à 0 et aucun négatif.',
+  tool_present_value_err_rate: 'Saisissez le taux annuel en pourcentage, supérieur à −100 % et au plus 1 000 % (0 est accepté).',
+  tool_present_value_err_whole:
+    'Avec des versements réguliers, années × périodes par an doit donner un nombre entier — par exemple 2,5 ans en capitalisation mensuelle = 30 versements.',
+  tool_present_value_err_years:
+    'Saisissez le nombre d\'années, supérieur à 0 et au plus 200 (les décimales comme 2,5 sont acceptées).',
+  tool_present_value_example:
+    'Exemple : 10 000 reçus dans 5 ans, à 5 % par an, capitalisation annuelle. VA = 10 000 ÷ 1,05^5 = 10 000 ÷ 1,276282 = 7 835,26 — autrement dit, 7 835,26 placés aujourd\'hui à 5 % deviennent 10 000, ce que le tableau montre année par année. À 4 %, la valeur actuelle serait de 8 219,27 ; à 6 %, de 7 472,58. Cliquez à nouveau sur Charger un exemple pour 500 par mois pendant 10 ans à 6 % (VA 45 036,73), puis pour la valeur future de 5 000 plus 200 par mois pendant 20 ans à 7 % (124 379,03).',
   tool_present_value_example_title: 'Exemple',
-  tool_present_value_faq_a1: 'Exemple : VF 10000, 5 %, 5 ans → VA ≈ 7835,26.',
-  tool_present_value_faq_a2: 'See Formula section.',
-  tool_present_value_faq_a3: 'Educational only.',
-  tool_present_value_faq_a4: 'Educational only.',
-  tool_present_value_faq_q1: 'Exemple ?',
-  tool_present_value_faq_q2: 'Formula?',
-  tool_present_value_faq_q3: 'Advice?',
-  tool_present_value_faq_q4: 'Related?',
-  tool_present_value_formula_body: 'Choisissez le mode PV/FV puis montant, taux et années.',
-  tool_present_value_formula_item_1: 'See formula notes.',
-  tool_present_value_formula_item_2: 'Check inputs.',
-  tool_present_value_formula_item_3: 'Educational only.',
-  tool_present_value_formula_title: 'Formule',
-  tool_present_value_how_body: 'Choisissez le mode PV/FV puis montant, taux et années.',
-  tool_present_value_how_title: 'Fonctionnement',
-  tool_present_value_mode_fv: 'Trouver VF (depuis VA)',
-  tool_present_value_mode_label: 'Mode',
-  tool_present_value_mode_pv: 'Trouver VA (depuis VF)',
-  tool_present_value_n_label: 'Années',
-  tool_present_value_n_ph: 'ex. 5',
-  tool_present_value_out_label: 'Résultat',
-  tool_present_value_rate_label: 'Taux annuel %',
+  tool_present_value_faq_a1:
+    '7 835,26 en capitalisation annuelle : 10 000 ÷ 1,05^5, soit 10 000 × le facteur d\'actualisation 0,783526. À 4 %, le résultat serait de 8 219,27 ; à 6 %, de 7 472,58 — plus le taux d\'actualisation est élevé, plus la valeur actuelle est faible.',
+  tool_present_value_faq_a2:
+    'Une capitalisation plus fréquente réduit légèrement la valeur actuelle, car l\'argent croît plus vite. Pour 10 000 dans 5 ans à 5 % : annuelle 7 835,26, mensuelle 7 792,05, journalière 7 788,14, continue 7 788,01. Un taux de 5 % capitalisé mensuellement correspond à un taux annuel effectif de 5,12 %.',
+  tool_present_value_faq_a3:
+    'Chaque versement arrive une période plus tôt, donc la partie versements est multipliée par (1 + i). 500 par mois pendant 10 ans à 6 % valent aujourd\'hui 45 036,73 s\'ils sont versés en fin de mois, et 45 036,73 × 1,005 = 45 261,91 s\'ils sont versés en début de mois.',
+  tool_present_value_faq_a4:
+    'La valeur actuelle est ce que vaut aujourd\'hui une somme future. La valeur actuelle nette (VAN) retranche le coût d\'un investissement de la valeur actuelle de ce qu\'il rapporte, et traite généralement des flux de trésorerie irréguliers année par année. Pour un projet avec une mise de départ et des revenus variables, utilisez le calculateur de VAN.',
+  tool_present_value_faq_a5:
+    'Le rendement que vous pourriez obtenir ailleurs avec cet argent : le taux d\'un livret ou d\'un compte à terme pour de l\'argent sans risque, le taux de votre prêt si vous rembourseriez une dette, ou le rendement exigé d\'un investissement. Pour exprimer une somme future en pouvoir d\'achat d\'aujourd\'hui, prenez le taux d\'inflation — 100 000 dans 10 ans à 3 % valent 74 409,39 aujourd\'hui.',
+  tool_present_value_faq_a6:
+    'Non. Versé en 20 annuités de 50 000, la première dès maintenant, il vaut 654 266,04 aujourd\'hui à 5 % (choisissez « Valeur actuelle (ce que cela vaut aujourd\'hui) », versement 50 000, 20 ans et « En début de période »). À ce taux, une option en capital supérieure à ce montant est la meilleure affaire, avant impôts.',
+  tool_present_value_faq_a7:
+    'Utilisez =VA(taux par période; nombre de périodes; versement; valeur future; type). =VA(5%;5;0;10000) renvoie −7 835,26 et =VA(6%/12;120;500) renvoie −45 036,73 ; le signe moins indique seulement une sortie d\'argent. Type = 1 correspond à des versements en début de période.',
+  tool_present_value_faq_q1: 'Quelle est la valeur actuelle de 10 000 dans 5 ans à 5 % ?',
+  tool_present_value_faq_q2: 'Comment la fréquence de capitalisation modifie-t-elle la valeur actuelle ?',
+  tool_present_value_faq_q3: 'Que change un versement en début de période ?',
+  tool_present_value_faq_q4: 'Quelle différence entre valeur actuelle et VAN ?',
+  tool_present_value_faq_q5: 'Quel taux d\'actualisation choisir ?',
+  tool_present_value_faq_q6: 'Un gain de 1 000 000 versé sur 20 ans vaut-il 1 000 000 ?',
+  tool_present_value_faq_q7: 'Comment vérifier le résultat avec la fonction VA d\'Excel ?',
+  tool_present_value_formula_body:
+    'Avec un taux nominal annuel r capitalisé m fois par an pendant t années, le taux par période est i = r ÷ m et le nombre de périodes N = m × t.',
+  tool_present_value_formula_item_1:
+    'Valeur actuelle d\'un capital unique : VA = VF ÷ (1 + i)^N. Le terme 1 ÷ (1 + i)^N est le facteur d\'actualisation.',
+  tool_present_value_formula_item_2: 'Valeur future (valeur acquise) d\'un capital unique : VF = VA × (1 + i)^N.',
+  tool_present_value_formula_item_3:
+    'Versements réguliers (annuités de fin de période), où a est le versement par période : VA = a × (1 − (1 + i)^−N) ÷ i et VF = a × ((1 + i)^N − 1) ÷ i.',
+  tool_present_value_formula_item_4:
+    'Versements en début de période (annuités de début de période) : multipliez la partie versements par (1 + i).',
+  tool_present_value_formula_item_5:
+    'Capitalisation continue : VA = VF × e^(−r × t). Taux annuel effectif = (1 + r ÷ m)^m − 1, ou e^r − 1 en capitalisation continue.',
+  tool_present_value_formula_title: 'Formules de la valeur actuelle et de la valeur future',
+  tool_present_value_how_body:
+    'La valeur actuelle ramène à aujourd\'hui une somme reçue plus tard : on divise par (1 + i) une fois par période, c\'est l\'actualisation. La valeur future (valeur acquise) applique la même formule dans l\'autre sens. Les versements réguliers s\'ajoutent avec la formule des annuités.',
+  tool_present_value_how_item_1:
+    'Choisissez Valeur actuelle ou Valeur future, puis saisissez le capital unique, le versement par période ou les deux.',
+  tool_present_value_how_item_2:
+    'Saisissez le taux annuel et le nombre d\'années, et choisissez la fréquence de capitalisation des intérêts.',
+  tool_present_value_how_item_3:
+    'S\'il y a des versements, indiquez s\'ils tombent en fin de période (annuités de fin de période : prêts, la plupart des rentes) ou en début de période (loyers, crédit-bail, beaucoup de gains de loterie versés en rente).',
+  tool_present_value_how_item_4:
+    'Cliquez sur Calculer et lisez le résultat, le calcul détaillé avec vos chiffres, le test à ±1 point de taux et le solde année par année.',
+  tool_present_value_how_title: 'Comment calculer la valeur actuelle',
+  tool_present_value_lump_fv_tpl: 'Capital unique : {a} × {g} = {v}',
+  tool_present_value_lump_pv_tpl: 'Capital unique : {a} ÷ {g} = {v}',
+  tool_present_value_mode_fv: 'Valeur future (ce que cela vaudra plus tard)',
+  tool_present_value_mode_label: 'Que calculer',
+  tool_present_value_mode_pv: 'Valeur actuelle (ce que cela vaut aujourd\'hui)',
+  tool_present_value_out_fv: 'Valeur future',
+  tool_present_value_out_pv: 'Valeur actuelle',
+  tool_present_value_pmt_hint:
+    'Un versement par période de capitalisation : une capitalisation mensuelle implique des versements mensuels. Laissez vide pour un capital unique seulement. Non disponible en capitalisation continue.',
+  tool_present_value_pmt_label_fv: 'Versement à chaque période (facultatif)',
+  tool_present_value_pmt_label_pv: 'Versement reçu à chaque période (facultatif)',
+  tool_present_value_pmt_ph: 'ex. 500',
+  tool_present_value_rate_label: 'Taux d\'intérêt / d\'actualisation annuel (%)',
   tool_present_value_rate_ph: 'ex. 5',
-  tool_present_value_ref_a_label: 'Investopedia',
-  tool_present_value_ref_b_label: 'Wikipedia',
-  tool_present_value_references: 'Investopedia et formules de manuel.',
-  tool_present_value_result_note: 'Éducatif.',
-  tool_present_value_sample: 'Charger l’exemple',
-  tool_present_value_title: 'Calculateur de valeur actuelle (PV/FV)',
-  tool_present_value_usecase_1: 'Homework.',
-  tool_present_value_usecase_2: 'Quick sketch.',
-  tool_present_value_usecase_3: 'Contrast with NPV for multi-year cash flows.',
-  tool_present_value_usecases_title: 'Cas d’usage',
+  tool_present_value_rate_tpl:
+    'Taux par période i = {r} ÷ {m} = {i} ; nombre de périodes N = {m} × {t} = {N} ; facteur de capitalisation (1 + i)^N = {g}.',
+  tool_present_value_ref_a_label: 'Investopedia — Present value (PV), valeur actuelle',
+  tool_present_value_ref_b_label: 'Support Microsoft — fonction VA (PV)',
+  tool_present_value_references: 'Investopedia — Present value (valeur actuelle) ; Support Microsoft — fonction VA.',
+  tool_present_value_result_note:
+    'Le taux est un taux nominal annuel, capitalisé à la fréquence choisie. Les montants se saisissent en positif ; impôts et frais ne sont pas inclus.',
+  tool_present_value_sample: 'Charger un exemple',
+  tool_present_value_sens_label: 'Si le taux varie de 1 point',
+  tool_present_value_sens_tpl: 'à {r1} : {v1} · à {r2} : {v2}',
+  tool_present_value_sub_tpl: '{r} par an · capitalisation : {comp} · {t} ans',
+  tool_present_value_sum_tpl: 'Total : {a} + {b} = {v}',
+  tool_present_value_table_fv_note: 'Évolution du solde à partir du capital placé aujourd\'hui et de chaque versement.',
+  tool_present_value_table_pv_lump_note:
+    'Vérification : placez la valeur actuelle aujourd\'hui à ce taux et elle atteint exactement la somme future.',
+  tool_present_value_table_pv_note:
+    'Vérification : placez la valeur actuelle aujourd\'hui à ce taux, retirez chaque versement, et le solde aboutit exactement à la somme future.',
+  tool_present_value_timing_begin: 'En début de période',
+  tool_present_value_timing_end: 'En fin de période',
+  tool_present_value_timing_label: 'Date des versements',
+  tool_present_value_title:
+    'Calcul de la valeur actuelle — ce que vaut aujourd\'hui une somme future ou des versements réguliers, et valeur future',
+  tool_present_value_total_fv_tpl: 'Vous versez {total} au total, qui deviennent {v}. Intérêts gagnés : {d}.',
+  tool_present_value_total_label: 'Sommes versées et reçues',
+  tool_present_value_total_pv_tpl:
+    'Vous recevez {total} au total au fil du temps ; cela vaut {v} aujourd\'hui. La différence, {d}, correspond aux intérêts que cet argent pourrait rapporter entre-temps.',
+  tool_present_value_usecase_1:
+    'Épargner pour un projet : combien placer aujourd\'hui pour disposer de 10 000 dans 5 ans à 5 % (7 835,26), ou ce que deviennent 5 000 plus 200 par mois en 20 ans à 7 %.',
+  tool_present_value_usecase_2:
+    'Loterie et indemnisations : 20 versements annuels de 50 000, le premier dès maintenant, valent 654 266,04 aujourd\'hui à 5 % — à comparer avec le capital proposé en une seule fois.',
+  tool_present_value_usecase_3:
+    'Inflation : avec 3 % d\'inflation, 100 000 dans 10 ans achètent ce qu\'achètent 74 409,39 aujourd\'hui — saisissez 3 % comme taux.',
+  tool_present_value_usecase_4:
+    'Devoirs et examens de mathématiques financières : exercices d\'actualisation et de capitalisation en mensuel, avec annuités de début de période ou capitalisation continue, chaque étape étant détaillée.',
+  tool_present_value_usecases_title: 'Quand l\'utiliser',
+  tool_present_value_why_choose_item_1:
+    'Capital unique et versements réguliers dans le même calcul — la valeur d\'une rente, d\'un crédit-bail ou d\'un gain de loterie versé en annuités, avec ou sans somme finale.',
+  tool_present_value_why_choose_item_2:
+    'Toutes les fréquences de capitalisation, de l\'annuelle à la journalière, plus la capitalisation continue, avec le taux annuel effectif affiché pour comparer les offres à armes égales.',
+  tool_present_value_why_choose_item_3:
+    'Un tableau année par année prouve le résultat : placez la valeur actuelle, retirez les versements, et le solde tombe exactement sur la somme future.',
+  tool_present_value_why_choose_item_4:
+    'Le calcul est écrit avec vos chiffres : taux par période, nombre de périodes, facteur de capitalisation et chaque partie du résultat — facile à recopier dans un devoir ou à vérifier dans Excel.',
+  tool_present_value_why_choose_item_5:
+    'Le test à ±1 point de taux montre à quel point le résultat dépend du taux d\'actualisation choisi, souvent la donnée la plus incertaine.',
+  tool_present_value_why_choose_title: 'Pourquoi utiliser ce calculateur de valeur actuelle',
+  tool_present_value_work_label: 'Calcul détaillé',
+  tool_present_value_years_label: 'Années',
+  tool_present_value_years_ph: 'ex. 5',
   tool_print_pdf_advanced: 'Plus de réglages d’impression',
   tool_print_pdf_article: 'Imprimer des PDF depuis le navigateur',
   tool_print_pdf_blank_page: 'vierge',
@@ -20018,49 +20586,152 @@ const fr: SiteLangDict = {
   tool_product_design_prompt_builder_usecases_title: 'Quand c’est utile',
   tool_product_design_prompt_builder_wireframe_scope_label: 'Wireframe / Périmètre',
   tool_product_design_prompt_builder_wireframe_scope_ph: 'Ex. : bandeau hebdo, feuille de détail, invitation SMS…',
-  tool_profit_margin_article: 'Calculateur de marge — Nette ou d’exploitation',
+  tool_profit_margin_article:
+    'Calcul de marge bénéficiaire brute, opérationnelle et nette à partir du chiffre d\'affaires et des coûts, avec compte de résultat en pourcentage, comparaison taux de marque et taux de marge, et prix de vente pour toute marge visée.',
   tool_profit_margin_calculate: 'Calculer',
   tool_profit_margin_clear: 'Effacer',
-  tool_profit_margin_cost_label: 'Coûts',
-  tool_profit_margin_cost_ph: 'ex. 7000',
+  tool_profit_margin_cogs_label: 'Coût des marchandises vendues',
+  tool_profit_margin_cogs_ph: 'ex. 150000',
+  tool_profit_margin_col_amount: 'Montant',
+  tool_profit_margin_col_item: 'Poste',
+  tool_profit_margin_col_share: 'Part du chiffre d\'affaires',
+  tool_profit_margin_cost_label: 'Coût unitaire',
+  tool_profit_margin_cost_ph: 'ex. 40',
   tool_profit_margin_description:
-    'Calculez la marge nette ou d’exploitation à partir du chiffre d’affaires et des coûts. Exemple : CA 10 000 et coûts 7 000 → marge nette 30 %. Type sur une page. Éducatif.',
-  tool_profit_margin_disclaimer: 'Illustration éducative (margen) uniquement — pas un conseil financier.',
-  tool_profit_margin_err_generic: 'CA > 0 et coûts ≥ 0.',
-  tool_profit_margin_example: 'Exemple : CA 10 000, coûts 7 000 → marge 30 %.',
-  tool_profit_margin_example_title: 'Exemple',
-  tool_profit_margin_faq_a1: '30%',
-  tool_profit_margin_faq_a2: 'Markup÷cost; margin÷revenue.',
-  tool_profit_margin_faq_a3: 'Same form; different cost stacks.',
-  tool_profit_margin_faq_a4: 'Educational only.',
-  tool_profit_margin_faq_q1: 'Sample / contoh?',
-  tool_profit_margin_faq_q2: 'Markup vs marge ?',
-  tool_profit_margin_faq_q3: 'Why two types?',
-  tool_profit_margin_faq_q4: 'Advice?',
-  tool_profit_margin_formula_body: 'Marge % = (CA − coûts) / CA × 100. Notes :',
-  tool_profit_margin_formula_item_1: 'Alignez les coûts sur la définition.',
-  tool_profit_margin_formula_item_2: 'CA > 0.',
-  tool_profit_margin_formula_item_3: 'Compte de résultat simplifié.',
-  tool_profit_margin_formula_title: 'Formule',
-  tool_profit_margin_how_body: 'Choisissez le type, puis CA et coûts. Marge = profit / CA × 100.',
-  tool_profit_margin_how_title: 'Fonctionnement',
-  tool_profit_margin_marginOut_label: 'Marge %',
-  tool_profit_margin_profitOut_label: 'Profit',
-  tool_profit_margin_ref_a_label: 'Investopedia — Profit margin',
-  tool_profit_margin_ref_b_label: 'Investopedia — Operating margin',
-  tool_profit_margin_references: 'Investopedia et formules de manuel.',
-  tool_profit_margin_result_note: 'Marge = profit ÷ CA. Éducatif.',
-  tool_profit_margin_rev_label: 'Chiffre d’affaires',
-  tool_profit_margin_rev_ph: 'ex. 10000',
-  tool_profit_margin_sample: 'Charger l’exemple',
-  tool_profit_margin_title: 'Calculateur de marge — Nette ou d’exploitation',
-  tool_profit_margin_type_label: 'Type de marge',
-  tool_profit_margin_type_net: 'Marge nette',
-  tool_profit_margin_type_op: 'Marge d’exploitation',
-  tool_profit_margin_usecase_1: 'Devoir de marge nette.',
-  tool_profit_margin_usecase_2: 'Comparer exploitation vs nette.',
-  tool_profit_margin_usecase_3: 'Contraster avec marge brute.',
-  tool_profit_margin_usecases_title: 'Cas d’usage',
+    'Calculez la marge brute, opérationnelle et nette à partir du chiffre d\'affaires et des coûts, avec la formule et le détail de chaque étape, et voyez où partent 100 de ventes. Ou indiquez un coût et une marge visée pour obtenir le prix de vente, avec exemples.',
+  tool_profit_margin_disclaimer:
+    'À titre d\'information générale et pédagogique uniquement : ce n\'est pas un conseil comptable, fiscal, financier ou en investissement. Les résultats dépendent de la façon dont vous regroupez les coûts, et les normes comptables comme les règles fiscales varient d\'un pays à l\'autre ; faites valider toute décision importante par un expert-comptable.',
+  tool_profit_margin_err_cost: 'Saisissez un coût unitaire supérieur à 0.',
+  tool_profit_margin_err_neg:
+    'Le coût des marchandises vendues et les charges d\'exploitation ne peuvent pas être négatifs. Indiquez plutôt les remboursements ou autres produits dans la dernière case, en nombre négatif.',
+  tool_profit_margin_err_num:
+    'Saisissez uniquement des chiffres, par exemple 12500 ou 12 500,50, sans symbole monétaire ni lettres.',
+  tool_profit_margin_err_rev:
+    'Saisissez un chiffre d\'affaires supérieur à 0. Une marge est une part des ventes : sans ventes, elle ne peut pas être calculée.',
+  tool_profit_margin_err_target:
+    'Saisissez une marge visée comprise entre 0 et 100 %, 100 % exclu. Une marge de 100 % voudrait dire que l\'article ne vous a rien coûté.',
+  tool_profit_margin_example:
+    'Une entreprise qui réalise 250 000 de chiffre d\'affaires, avec 150 000 de coût des marchandises vendues, 60 000 de charges d\'exploitation et 12 000 d\'intérêts et d\'impôts, dégage 100 000 de bénéfice brut (marge brute de 40 %), 40 000 de résultat d\'exploitation (marge opérationnelle de 16 %) et 28 000 de résultat net (marge nette de 11,20 %) : sur 100 de ventes, 11,20 sont du bénéfice. Rapporté aux 150 000 de coût des marchandises vendues, ce bénéfice brut représente un taux de marge de 66,67 %. Si une deuxième boutique fait 80 000 de ventes avec 52 000 de coût des marchandises vendues et 31 000 de charges d\'exploitation, sa marge brute de 35 % se transforme en une perte de 3 000, soit une marge nette de −3,75 %. Pour obtenir une marge de 25 % sur le prix de vente d\'un article qui coûte 40, il faut le vendre 40 ÷ 0,75 = 53,33 ; le vendre 40 + 25 % = 50 ne donne qu\'une marge de 20 %.',
+  tool_profit_margin_example_title: 'Exemple chiffré',
+  tool_profit_margin_faq_a1:
+    'Divisez le bénéfice par le chiffre d\'affaires, puis multipliez par 100. Avec 250 000 de ventes et 28 000 de résultat net, la marge nette vaut 28 000 ÷ 250 000 × 100 = 11,2 %. Pour la marge brute, prenez comme bénéfice le chiffre d\'affaires moins le coût des marchandises vendues ; pour la marge opérationnelle, retirez aussi les charges d\'exploitation.',
+  tool_profit_margin_faq_a2:
+    'Les deux partent du même bénéfice, mais le taux de marque le divise par le prix de vente, alors que le taux de marge le divise par le coût. La marge bénéficiaire calculée ici correspond donc au taux de marque, et le taux de marge à ce que l\'on appelle markup en anglais. Un article acheté 40 et vendu 53,33 rapporte 13,33 : taux de marque de 25 %, mais taux de marge de 33,33 %. Pour convertir : taux de marge = taux de marque ÷ (1 − taux de marque), et taux de marque = taux de marge ÷ (1 + taux de marge). Raisonnez toujours sur des montants hors taxes.',
+  tool_profit_margin_faq_a3:
+    'Divisez le coût par un moins la marge : prix = coût ÷ (1 − marge). Pour une marge de 25 % sur un coût de 40, le prix est 40 ÷ 0,75 = 53,33. Ajouter 25 % au coût (40 × 1,25 = 50) est une erreur courante : cela donne un taux de marge de 25 %, mais un taux de marque de seulement 20 %.',
+  tool_profit_margin_faq_a4:
+    'Le nombre de coûts déduits. La marge brute ne retire que le coût direct des marchandises ou des services vendus. La marge opérationnelle retire aussi les charges de fonctionnement : loyer, salaires, marketing, logiciels, dotations aux amortissements. La marge nette retire tout, y compris les intérêts et l\'impôt sur les bénéfices. Dans l\'exemple à 250 000 de chiffre d\'affaires, elles valent 40 %, 16 % et 11,2 %.',
+  tool_profit_margin_faq_a5:
+    'Cela dépend beaucoup du secteur. La grande distribution alimentaire et de nombreux commerces de détail tournent souvent avec des marges nettes de quelques pour cent seulement, tandis que l\'édition de logiciels et certains services professionnels peuvent atteindre 20 % ou plus. Comparez-vous aux entreprises de votre secteur et à vos propres exercices précédents plutôt qu\'à un chiffre universel.',
+  tool_profit_margin_faq_a6:
+    'Elle est négative dès que les coûts dépassent les ventes : 80 000 de ventes pour 83 000 de coûts donnent une marge nette de −3,75 %. Elle ne peut pas dépasser 100 % tant que les coûts sont nuls ou positifs, car le bénéfice ne peut jamais excéder le chiffre d\'affaires. Le taux de marge sur coût n\'a pas cette limite : 150 % est courant pour certains produits.',
+  tool_profit_margin_faq_a7:
+    'La marge opérationnelle est proche de la marge d\'EBIT (résultat avant intérêts et impôts), même si l\'EBIT peut inclure des produits hors exploitation. La marge d\'EBITDA, proche de l\'EBE utilisé en France, réintègre en plus les dotations aux amortissements. Si les 60 000 de charges d\'exploitation de l\'exemple comprenaient 8 000 d\'amortissements, l\'EBITDA serait de 48 000 et la marge d\'EBITDA de 19,2 %, contre 16 % de marge opérationnelle.',
+  tool_profit_margin_faq_q1: 'Comment calculer une marge bénéficiaire ?',
+  tool_profit_margin_faq_q2: 'Quelle différence entre taux de marge et taux de marque ?',
+  tool_profit_margin_faq_q3: 'Comment calculer un prix de vente pour obtenir une marge donnée ?',
+  tool_profit_margin_faq_q4: 'Quelle différence entre marge brute, marge opérationnelle et marge nette ?',
+  tool_profit_margin_faq_q5: 'Qu\'est-ce qu\'une bonne marge bénéficiaire ?',
+  tool_profit_margin_faq_q6: 'Une marge peut-elle être négative ou dépasser 100 % ?',
+  tool_profit_margin_faq_q7: 'La marge opérationnelle est-elle la même chose que la marge d\'EBIT ou d\'EBITDA ?',
+  tool_profit_margin_formula_body:
+    'Toutes les marges ont le chiffre d\'affaires pour dénominateur. Ce qui change, c\'est le nombre de coûts retirés avant la division.',
+  tool_profit_margin_formula_item_1:
+    'Marge brute = (chiffre d\'affaires − coût des marchandises vendues) ÷ chiffre d\'affaires × 100. Exemple : (250 000 − 150 000) ÷ 250 000 = 40 %.',
+  tool_profit_margin_formula_item_2:
+    'Marge opérationnelle = (bénéfice brut − charges d\'exploitation) ÷ chiffre d\'affaires × 100. Exemple : (100 000 − 60 000) ÷ 250 000 = 16 %.',
+  tool_profit_margin_formula_item_3:
+    'Marge nette = (résultat d\'exploitation − intérêts, impôts et autres éléments) ÷ chiffre d\'affaires × 100. Exemple : (40 000 − 12 000) ÷ 250 000 = 11,2 %.',
+  tool_profit_margin_formula_item_4: 'Prix pour une marge visée = coût ÷ (1 − marge). Exemple : 40 ÷ (1 − 0,25) = 53,33.',
+  tool_profit_margin_formula_item_5:
+    'Passage de l\'un à l\'autre : taux de marge = taux de marque ÷ (1 − taux de marque) et taux de marque = taux de marge ÷ (1 + taux de marge). Un taux de marque de 25 % correspond à un taux de marge de 33,33 %, et un taux de marge de 50 % à un taux de marque de 33,33 %.',
+  tool_profit_margin_formula_title: 'Formules de calcul de la marge',
+  tool_profit_margin_gross_label: 'Marge brute',
+  tool_profit_margin_gross_tpl: '{p} de bénéfice brut ÷ {r} de chiffre d\'affaires = {m}',
+  tool_profit_margin_hint_price:
+    'Le coût unitaire comprend tout ce que vous payez pour fabriquer ou acheter un article. La marge visée, calculée sur le prix de vente (taux de marque), doit être d\'au moins 0 % et inférieure à 100 %.',
+  tool_profit_margin_hint_statement:
+    'Utilisez la même période pour tous les montants. Un coût laissé vide compte pour 0 ; si les autres produits dépassent les intérêts et impôts, saisissez un nombre négatif dans la dernière case.',
+  tool_profit_margin_how_body:
+    'La marge bénéficiaire est le bénéfice divisé par le chiffre d\'affaires, exprimé en pourcentage. Choisissez ce que vous cherchez, saisissez vos montants et cliquez sur Calculer : le résultat détaille chaque étape.',
+  tool_profit_margin_how_item_1:
+    'Choisissez « Mes marges à partir des ventes et des coûts » pour obtenir vos marges, ou « Le prix de vente pour une marge visée » pour fixer un prix.',
+  tool_profit_margin_how_item_2:
+    'Pour les marges, saisissez le chiffre d\'affaires, le coût des marchandises vendues, les charges d\'exploitation ainsi que les intérêts, impôts et autres éléments sur un même mois, trimestre ou exercice. Laissez vide toute case dont vous n\'avez pas le montant.',
+  tool_profit_margin_how_item_3: 'Pour un prix, indiquez ce que vous coûte un article et la marge souhaitée, par exemple 25.',
+  tool_profit_margin_how_item_4:
+    'Lisez en haut la marge nette ou le prix, puis les lignes de marge brute, opérationnelle et nette, le taux de marge sur coût correspondant et le tableau de répartition de chaque 100 de ventes.',
+  tool_profit_margin_how_title: 'Comment calculer une marge bénéficiaire avec ce calculateur',
+  tool_profit_margin_line_cogs: '− Coût des marchandises vendues',
+  tool_profit_margin_line_gross: '= Bénéfice brut',
+  tool_profit_margin_line_net: '= Résultat net',
+  tool_profit_margin_line_op: '= Résultat d\'exploitation',
+  tool_profit_margin_line_opex: '− Charges d\'exploitation',
+  tool_profit_margin_line_other: '− Intérêts, impôts et autres',
+  tool_profit_margin_line_rev: 'Chiffre d\'affaires',
+  tool_profit_margin_markup_label: 'Même vente en taux de marge (sur coût)',
+  tool_profit_margin_markup_none: 'non défini, car le coût des marchandises vendues est nul',
+  tool_profit_margin_markup_price_tpl: '{u} de bénéfice ÷ {c} de coût = {k} de taux de marge sur coût',
+  tool_profit_margin_markup_tpl: '{p} de bénéfice brut ÷ {c} de coût des marchandises vendues = {m} de taux de marge sur coût',
+  tool_profit_margin_mode_label: 'Que voulez-vous calculer ?',
+  tool_profit_margin_mode_price: 'Le prix de vente pour une marge visée',
+  tool_profit_margin_mode_statement: 'Mes marges à partir des ventes et des coûts',
+  tool_profit_margin_net_label: 'Marge nette',
+  tool_profit_margin_net_tpl: '{p} de résultat net ÷ {r} de chiffre d\'affaires = {m}',
+  tool_profit_margin_op_label: 'Marge opérationnelle',
+  tool_profit_margin_op_tpl: '{p} de résultat d\'exploitation ÷ {r} de chiffre d\'affaires = {m}',
+  tool_profit_margin_opex_label: 'Charges d\'exploitation',
+  tool_profit_margin_opex_ph: 'ex. 60000',
+  tool_profit_margin_other_label: 'Intérêts, impôts et autres éléments (net)',
+  tool_profit_margin_other_ph: 'ex. 12000',
+  tool_profit_margin_out_net: 'Marge nette',
+  tool_profit_margin_out_price: 'Prix de vente',
+  tool_profit_margin_profit_label: 'Bénéfice unitaire',
+  tool_profit_margin_profit_tpl: '{p} de prix − {c} de coût = {u}',
+  tool_profit_margin_ref_a_label: 'Investopedia — Profit margin (marge bénéficiaire)',
+  tool_profit_margin_ref_b_label: 'Investopedia — Operating margin (marge opérationnelle)',
+  tool_profit_margin_references:
+    'Les formules suivent les définitions usuelles du compte de résultat (bénéfice brut, résultat d\'exploitation, résultat net) ; Investopedia propose définitions et exemples (en anglais).',
+  tool_profit_margin_result_note_price:
+    'Prix = coût ÷ (1 − marge). Le taux de marque se calcule sur le prix de vente et le taux de marge sur le coût : pour un même bénéfice, le taux de marge est donc toujours plus élevé que le taux de marque.',
+  tool_profit_margin_result_note_statement:
+    'Les marges sont des parts du chiffre d\'affaires. La marge brute ne retire que le coût direct de ce qui a été vendu ; la marge opérationnelle retire aussi les charges de fonctionnement ; la marge nette correspond à ce qui reste une fois tout déduit, intérêts et impôts compris.',
+  tool_profit_margin_rev_label: 'Chiffre d\'affaires (ventes)',
+  tool_profit_margin_rev_ph: 'ex. 250000',
+  tool_profit_margin_sample: 'Charger un exemple',
+  tool_profit_margin_sub_keep_tpl: 'Sur 100 de ventes, il vous reste {v} de bénéfice net.',
+  tool_profit_margin_sub_loss_tpl: 'Les coûts dépassent les ventes : vous perdez {v} sur chaque 100 de ventes.',
+  tool_profit_margin_sub_price_tpl: 'Vous gagnez {u} par vente, soit {m} du prix.',
+  tool_profit_margin_table_caption: 'Répartition de chaque 100 de chiffre d\'affaires',
+  tool_profit_margin_target_label: 'Marge visée sur le prix de vente (%)',
+  tool_profit_margin_target_ph: 'ex. 25',
+  tool_profit_margin_title:
+    'Calcul de marge bénéficiaire — ce qu\'il vous reste sur chaque vente et le prix de vente pour la marge visée',
+  tool_profit_margin_trap_label: 'Erreur fréquente',
+  tool_profit_margin_trap_tpl:
+    'ajouter {m} au coût comme simple majoration donne {c} × (1 + {m}) = {w}, soit un taux de marque de seulement {x} et {d} de bénéfice en moins par article.',
+  tool_profit_margin_usecase_1:
+    'Commerçants, artisans et TPE : transformez le compte de résultat du mois ou de l\'exercice en marges brute, opérationnelle et nette, et repérez le poste de coûts qui pèse le plus sur les ventes.',
+  tool_profit_margin_usecase_2:
+    'Fixation des prix : calculez un prix de vente qui assure vraiment la marge voulue sur un produit ou un service, au lieu d\'ajouter le pourcentage au coût.',
+  tool_profit_margin_usecase_3:
+    'Étudiants (BTS, DCG, écoles de commerce) : vérifiez vos exercices de marge brute, opérationnelle et nette, et entraînez-vous à passer du taux de marque au taux de marge.',
+  tool_profit_margin_usecase_4:
+    'Comparer des entreprises ou des exercices : ramenez deux comptes de résultat de tailles différentes à la même échelle, puisque les marges sont des parts du chiffre d\'affaires et non des montants.',
+  tool_profit_margin_usecases_title: 'Quand utiliser un calcul de marge bénéficiaire',
+  tool_profit_margin_why_choose_item_1:
+    'Le même bénéfice brut exprimé aussi en taux de marge sur coût, en plus de la marge sur prix de vente : de quoi parler le même langage que vos fournisseurs et votre expert-comptable.',
+  tool_profit_margin_why_choose_item_2:
+    'Les trois marges à partir d\'un seul jeu de chiffres : brute, opérationnelle et nette, chacune avec sa division posée.',
+  tool_profit_margin_why_choose_item_3:
+    'Un compte de résultat ramené en pourcentage du chiffre d\'affaires, qui montre d\'un coup d\'œil si ce sont les achats vendus ou les charges de fonctionnement qui rognent la marge.',
+  tool_profit_margin_why_choose_item_4:
+    'Un mode prix de vente à partir de la marge, qui montre aussi ce que vous gagneriez réellement en ajoutant ce pourcentage au coût comme une simple majoration.',
+  tool_profit_margin_why_choose_item_5:
+    'Des pertes présentées clairement : une marge négative indique combien vous perdez sur chaque 100 de ventes, au lieu d\'un simple message d\'erreur.',
+  tool_profit_margin_why_choose_title: 'Ce que montre ce calcul de marge bénéficiaire',
+  tool_profit_margin_work_label: 'Détail du calcul',
+  tool_profit_margin_work_price_tpl: 'prix = coût ÷ (1 − marge) = {c} ÷ (1 − {m}) = {p}',
   tool_prompt_template_builder_ai_consent_body:
     'Cette étape optionnelle envoie votre brouillon actuel à Cloudflare Workers AI pour inférence. Depuis nos serveurs, rien ne part vers OpenAI, Google, Anthropic ou DeepSeek. Sans IA, l’assemblage local fonctionne toujours.',
   tool_prompt_template_builder_ai_consent_cancel: 'Annuler',
@@ -22533,42 +23204,121 @@ const fr: SiteLangDict = {
     'Comparer avec Product design prompt builder si vous voulez persona/wireframe plutôt que menus Sketch.app.',
   tool_sketch_prompt_generator_usecase_4: 'Garder les brouillons sensibles en local — activer l’IA seulement après consentement.',
   tool_sketch_prompt_generator_usecases_title: 'Bons cas d’usage',
-  tool_slope_article: 'Calculez la pente m entre deux points avec (y₂−y₁)/(x₂−x₁).',
+  tool_slope_angle_label: 'Angle d\'inclinaison',
+  tool_slope_article: 'Coefficient directeur d\'une droite',
   tool_slope_calculate: 'Calculer',
   tool_slope_clear: 'Effacer',
+  tool_slope_coords_hint: 'Entiers, décimaux avec virgule (0,5) ou fractions comme 3/4 ou -5/2 : tout est accepté.',
   tool_slope_description:
-    'Calculez la pente m=(y₂−y₁)/(x₂−x₁) entre deux points. Exemple : (1,2) et (3,6) → m=2. Refuse les verticales avec Δx=0. Dans le navigateur, pour l’algèbre.',
-  tool_slope_disclaimer: 'Pente 2D pédagogique seulement.',
-  tool_slope_err_generic: 'Saisissez quatre coordonnées finies avec x₂≠x₁.',
-  tool_slope_example: 'Exemple : (1,2) et (3,6) → m=2.',
+    'Calculez le coefficient directeur d\'une droite à partir de deux points, ou d\'un point et de la pente. Les fractions restent exactes, chaque étape du calcul est affichée, et vous obtenez aussi l\'équation réduite, la forme point-pente et l\'équation cartésienne, les intersections avec les axes, l\'angle d\'inclinaison, la pente en pourcentage, la perpendiculaire, la distance et le milieu.',
+  tool_slope_dir_down: 'Coefficient directeur négatif : la droite descend de gauche à droite.',
+  tool_slope_dir_flat: 'Coefficient directeur nul : droite horizontale.',
+  tool_slope_dir_up: 'Coefficient directeur positif : la droite monte de gauche à droite.',
+  tool_slope_dir_vert: 'Droite verticale : x₂ − x₁ = 0, et on ne peut pas diviser par zéro.',
+  tool_slope_disclaimer:
+    'Pour l\'étude et la préparation de projets. Les réglementations sur les rampes, escaliers et toitures fixent leurs propres limites et règles de mesure — vérifiez celle qui s\'applique à votre projet.',
+  tool_slope_dist_label: 'Distance entre les points',
+  tool_slope_eq_ps_label: 'Forme point-pente',
+  tool_slope_eq_si_label: 'Équation réduite',
+  tool_slope_eq_std_label: 'Équation cartésienne',
+  tool_slope_err_empty_ps: 'Saisissez x₁, y₁ et le coefficient directeur m.',
+  tool_slope_err_empty_two: 'Saisissez les quatre coordonnées : x₁, y₁, x₂ et y₂.',
+  tool_slope_err_num:
+    '« {v} » n\'est pas un nombre. Utilisez des chiffres, la virgule comme séparateur décimal (0,5) ou une fraction comme 3/4.',
+  tool_slope_err_same:
+    'Les deux points sont identiques : aucune droite unique ne passe par eux. Saisissez deux points distincts.',
+  tool_slope_example:
+    'Exemple : (1; 2) et (3; 6). m = (6 − 2) ÷ (3 − 1) = 4 ÷ 2 = 2 et b = 2 − 2 × 1 = 0, donc y = 2x (équation cartésienne 2x − y = 0). L\'angle vaut arctan(2) = 63,43°, la pente 200 %, le coefficient directeur de la perpendiculaire −1/2, la distance √20 = 2√5 ≈ 4,4721 et le milieu (2; 4). Cliquez de nouveau sur Charger un exemple pour (−2; 3) et (4; −1), puis pour une rampe 1 : 12.',
   tool_slope_example_title: 'Exemple',
-  tool_slope_faq_a1: 'Pour chaque +1 en x, y augmente de 2.',
-  tool_slope_faq_a2: 'Pente indéfinie (verticale) ; erreur ici.',
-  tool_slope_faq_a3: 'Échanger les deux points conserve m.',
-  tool_slope_faq_a4: 'Oui — m=0 si y₁=y₂ et x diffère.',
-  tool_slope_faq_q1: 'Que signifie m=2 ?',
-  tool_slope_faq_q2: 'Si x₁=x₂ ?',
-  tool_slope_faq_q3: 'Ordre des points ?',
-  tool_slope_faq_q4: 'Droite horizontale ?',
-  tool_slope_formula_body: 'Pente entre deux points :',
-  tool_slope_formula_item_1: 'm=(y₂−y₁)/(x₂−x₁).',
-  tool_slope_formula_item_2: 'm>0 monte de gauche à droite ; m<0 descend.',
-  tool_slope_formula_item_3: 'Δx=0 est vertical — indéfini ici.',
-  tool_slope_formula_item_4: 'Échanger les deux points conserve le rapport.',
-  tool_slope_formula_title: 'Formule',
-  tool_slope_how_body: 'Entrez deux points distincts. Renvoie la pente ; si les x coïncident, erreur.',
-  tool_slope_how_title: 'Fonctionnement',
-  tool_slope_ref_line_label: 'Wikipedia — Équation linéaire',
-  tool_slope_ref_slope_label: 'Wikipedia — Pente',
-  tool_slope_references: 'Wikipedia pente.',
-  tool_slope_result_note: 'm=(y₂−y₁)/(x₂−x₁). Les verticales (Δx=0) sont rejetées comme indéfinies.',
-  tool_slope_sample: 'Charger l’exemple',
-  tool_slope_slopeOut_label: 'Pente m',
-  tool_slope_title: 'Calculateur de pente — Comment calculer la pente entre deux points',
-  tool_slope_usecase_1: 'Algèbre : pente depuis deux points.',
-  tool_slope_usecase_2: 'Vérifier rise/run avant de tracer.',
-  tool_slope_usecase_3: 'Comparer avec des idées de ratio Δy:Δx.',
-  tool_slope_usecases_title: 'Quand l’utiliser',
+  tool_slope_faq_a1:
+    'Soustrayez les y, soustrayez les x dans le même ordre, puis divisez : pour (1; 2) et (3; 6), m = (6 − 2) ÷ (3 − 1) = 4 ÷ 2 = 2. La droite monte de 2 chaque fois qu\'on avance de 1 vers la droite.',
+  tool_slope_faq_a2:
+    'Positif : la droite monte de gauche à droite. Négatif : elle descend. Nul : elle est horizontale (y₁ = y₂). Non défini : elle est verticale (x₁ = x₂), car la variation de x vaut 0 et on ne divise pas par zéro ; l\'équation s\'écrit alors x = c.',
+  tool_slope_faq_a3:
+    'Calculez m, puis remplacez un des points dans y = mx + b pour obtenir b. Pour (−2; 3) et (4; −1) : m = −4 ÷ 6 = −2/3 et b = 3 − (−2/3)(−2) = 5/3, donc y = −(2/3)x + 5/3. En multipliant par 3, on obtient 2x + 3y = 5, soit l\'équation cartésienne 2x + 3y − 5 = 0.',
+  tool_slope_faq_a4:
+    'Angle = arctan(m) et pente en % = m × 100 %. m = 2 donne 63,43° et 200 % ; m = 1/12 donne 4,76° et 8,33 %. Une pente de 100 % signifie que la hauteur égale la longueur horizontale, soit 45° — pas un mur vertical.',
+  tool_slope_faq_a5:
+    'Non. Échanger les points change le signe des deux différences, donc le quotient reste le même : (2 − 6) ÷ (1 − 3) = 2 aussi. L\'essentiel est de garder le même ordre en haut et en bas ; en les mélangeant, on se trompe de signe.',
+  tool_slope_faq_a6:
+    'L\'opposé de l\'inverse, −1 ÷ m. Pour m = −2/3, c\'est 3/2, et (−2/3) × (3/2) = −1. Une droite horizontale (m = 0) est perpendiculaire à toute droite verticale, dont le coefficient directeur n\'est pas défini.',
+  tool_slope_faq_a7:
+    '1 unité de hauteur pour 12 unités de longueur horizontale, donc m = 1/12 ≈ 0,0833, une pente de 8,33 % et un angle de 4,76°. Choisissez Un point et le coefficient directeur, saisissez x₁ = 0, y₁ = 0 et m = 1/12 : la page affiche le rapport, la pente en pourcentage et un second point (12; 1).',
+  tool_slope_faq_q1: 'Comment calculer le coefficient directeur avec deux points ?',
+  tool_slope_faq_q2: 'Que signifie un coefficient directeur positif, négatif, nul ou non défini ?',
+  tool_slope_faq_q3: 'Comment trouver l\'équation d\'une droite passant par deux points ?',
+  tool_slope_faq_q4: 'Comment convertir une pente en angle ou en pourcentage ?',
+  tool_slope_faq_q5: 'L\'ordre des points a-t-il une importance ?',
+  tool_slope_faq_q6: 'Quel est le coefficient directeur d\'une droite perpendiculaire ?',
+  tool_slope_faq_q7: 'Que signifie une pente de 1 : 12 ?',
+  tool_slope_formula_body: 'Pour deux points A(x₁; y₁) et B(x₂; y₂) avec x₁ ≠ x₂ :',
+  tool_slope_formula_item_1: 'Coefficient directeur : m = (y₂ − y₁) ÷ (x₂ − x₁), soit la variation de y sur la variation de x.',
+  tool_slope_formula_item_2:
+    'Équation réduite : y = mx + b avec b = y₁ − m · x₁. En cours, on l\'écrit souvent y = mx + p, où p est l\'ordonnée à l\'origine : c\'est le b affiché par la page. Forme point-pente : y − y₁ = m(x − x₁).',
+  tool_slope_formula_item_3:
+    'Angle d\'inclinaison θ = arctan(m) ; pente en % = m × 100 %. Une pente de 100 % correspond à 45°, pas à un mur vertical.',
+  tool_slope_formula_item_4:
+    'Deux droites parallèles ont le même coefficient directeur ; pour deux droites perpendiculaires, m × m⊥ = −1, donc m⊥ = −1 ÷ m.',
+  tool_slope_formula_item_5: 'Distance AB = √((x₂ − x₁)² + (y₂ − y₁)²) ; milieu ((x₁ + x₂) ÷ 2; (y₁ + y₂) ÷ 2).',
+  tool_slope_formula_title: 'Formules du coefficient directeur et de l\'équation de la droite',
+  tool_slope_grade_label: 'Pente en pourcentage',
+  tool_slope_how_body:
+    'Le coefficient directeur est le rapport entre la variation de y et la variation de x : soustrayez les ordonnées, soustrayez les abscisses dans le même ordre, puis divisez. Remplacez ensuite un point dans y = mx + b pour trouver b, l\'ordonnée à l\'origine.',
+  tool_slope_how_item_1: 'Choisissez Deux points, ou Un point et le coefficient directeur si vous connaissez déjà m.',
+  tool_slope_how_item_2:
+    'Saisissez les coordonnées : nombres négatifs, décimaux avec virgule et fractions comme 3/4 sont acceptés.',
+  tool_slope_how_item_3:
+    'Cliquez sur Calculer pour obtenir m sous forme de fraction simplifiée et de décimal, avec la soustraction écrite.',
+  tool_slope_how_item_4:
+    'Recopiez l\'équation sous la forme demandée en cours et, si besoin, lisez les intersections avec les axes, l\'angle, la pente en pourcentage, le coefficient directeur de la perpendiculaire, la distance et le milieu.',
+  tool_slope_how_title: 'Comment calculer le coefficient directeur d\'une droite passant par deux points',
+  tool_slope_int_flat_tpl: 'Ordonnée à l\'origine (0; {b}) ; ne coupe pas l\'axe des abscisses, car la droite lui est parallèle.',
+  tool_slope_int_label: 'Intersections avec les axes',
+  tool_slope_int_tpl: 'Ordonnée à l\'origine (0; {b}) ; coupe l\'axe des abscisses en ({a}; 0)',
+  tool_slope_int_vert_tpl:
+    'Coupe l\'axe des abscisses en ({a}; 0) ; ne coupe pas l\'axe des ordonnées, car la droite lui est parallèle.',
+  tool_slope_int_xaxis: 'La droite est l\'axe des abscisses lui-même (y = 0).',
+  tool_slope_int_yaxis: 'La droite est l\'axe des ordonnées lui-même (x = 0).',
+  tool_slope_m_label: 'Coefficient directeur m',
+  tool_slope_m_ph: 'ex. 2 ou -3/4',
+  tool_slope_mid_label: 'Milieu du segment',
+  tool_slope_mode_label: 'Que connaissez-vous ?',
+  tool_slope_mode_ps: 'Un point et le coefficient directeur',
+  tool_slope_mode_two: 'Deux points',
+  tool_slope_no_si: 'Aucune : une droite verticale ne peut pas s\'écrire y = mx + b.',
+  tool_slope_perp_label: 'Coefficient directeur de la perpendiculaire',
+  tool_slope_perp_vert: 'Non défini : toute droite verticale',
+  tool_slope_point2_label: 'Autre point de la droite',
+  tool_slope_ratio_label: 'Dénivelé : distance horizontale',
+  tool_slope_ref_line_label: 'Wikipedia — Équation linéaire (Linear equation)',
+  tool_slope_ref_slope_label: 'Wikipedia — Pente (Slope)',
+  tool_slope_references: 'Wikipedia — Pente (Slope) ; Wikipedia — Équation linéaire (Linear equation).',
+  tool_slope_result_note: 'Les fractions restent exactes et simplifiées ; les décimales après ≈ sont arrondies à 4 chiffres.',
+  tool_slope_sample: 'Charger un exemple',
+  tool_slope_slopeOut_label: 'Coefficient directeur m',
+  tool_slope_title: 'Calcul du coefficient directeur — pente entre deux points et équation de la droite, avec les étapes',
+  tool_slope_undefined: 'Non défini',
+  tool_slope_usecase_1:
+    'Exercices sur les équations de droites (seconde, première) : coefficient directeur, équation de la droite et intersections avec les axes à partir de deux points, avec le calcul à recopier.',
+  tool_slope_usecase_2:
+    'Rampes et accessibilité : une rampe 1 : 12 (1 de hauteur pour 12 de longueur horizontale) a m = 1/12, une pente de 8,33 % et un angle de 4,76° — la pente maximale des normes ADA américaines. En France, la réglementation accessibilité fixe ses propres limites, plus strictes (5 % en règle générale).',
+  tool_slope_usecase_3:
+    'Toitures, descentes de garage et évacuations : convertissez une hauteur et une longueur en degrés ou en pourcentage — une pente de toit nord-américaine « 4 pour 12 » donne m = 1/3, soit 18,43°.',
+  tool_slope_usecase_4:
+    'Lecture de graphiques et de données : le taux de variation entre deux relevés, par exemple 120 km après 2 h et 300 km après 5 h → 60 km par heure.',
+  tool_slope_usecases_title: 'Quand l\'utiliser',
+  tool_slope_why_choose_item_1:
+    'Des résultats exacts : (−2; 3) et (4; −1) donnent m = −2/3, et non −0,666667, et b = 5/3, comme on l\'attend sur une copie.',
+  tool_slope_why_choose_item_2:
+    'L\'équation sous trois formes à la fois : réduite y = mx + b, point-pente et cartésienne à coefficients entiers.',
+  tool_slope_why_choose_item_3:
+    'Les cas particuliers sont expliqués, pas seulement signalés : une droite verticale donne x = c et un coefficient directeur non défini ; une droite horizontale, m = 0 et aucune intersection avec l\'axe des abscisses.',
+  tool_slope_why_choose_item_4:
+    'Tout ce qu\'on vous demande sur deux points, au même endroit : coefficient directeur de la perpendiculaire, distance sous forme de radical simplifié (√20 = 2√5) et milieu du segment.',
+  tool_slope_why_choose_item_5:
+    'Des résultats concrets pour rampes, routes et toitures : angle en degrés, pente en pourcentage et rapport dénivelé : distance sous la forme 1 : n.',
+  tool_slope_why_choose_title: 'Pourquoi utiliser ce calcul de coefficient directeur',
+  tool_slope_work_label: 'Calcul détaillé',
   tool_slope_x1_label: 'x₁',
   tool_slope_x1_ph: 'ex. 1',
   tool_slope_x2_label: 'x₂',
@@ -23870,49 +24620,137 @@ const fr: SiteLangDict = {
   tool_timezone_converter_usecase_2: 'Ops / logs : horodatage en heure de Chicago — comparez UTC et votre fuseau sans calcul mental.',
   tool_timezone_converter_usecase_3: 'Voyage : atterrissage à Dubaï — lisez Sydney et Los Angeles en parallèle pour vos appels.',
   tool_timezone_converter_usecases_title: 'Cas d’usage',
-  tool_tip_article: 'Calculateur de pourboire',
-  tool_tip_bill_label: 'Addition',
+  tool_tip_article: 'Calcul du pourboire et partage de l\'addition',
+  tool_tip_base_label: 'Calculer le pourboire sur',
+  tool_tip_base_post: 'L\'addition complète, taxes comprises',
+  tool_tip_base_pre: 'Le montant avant taxes',
+  tool_tip_bill_label: 'Montant de l\'addition',
   tool_tip_bill_ph: 'ex. 80',
   tool_tip_calculate: 'Calculer',
   tool_tip_clear: 'Effacer',
+  tool_tip_col_each: 'Par personne',
+  tool_tip_col_rate: 'Taux',
+  tool_tip_col_tip: 'Pourboire',
+  tool_tip_col_total: 'Total',
   tool_tip_description:
-    'Calculez le pourboire avec l’addition et le %, puis partagez. Exemple : 80 avec 15 % → pourboire 12, total 92. Dans le navigateur.',
-  tool_tip_disclaimer: 'Illustration éducative (tip) uniquement — pas un conseil financier.',
-  tool_tip_eachOut_label: 'Par personne',
-  tool_tip_err_generic: 'Vérifiez les entrées.',
-  tool_tip_example: 'Exemple : 80 avec 15 % → 12 / total 92.',
+    'Calculez le pourboire sur n\'importe quelle addition et partagez le total entre plusieurs personnes au centime près, pour que les parts tombent juste. Pourboire sur le montant avant taxes, arrondi au supérieur du pourboire, du total ou de chaque part, pourcentage retrouvé à partir d\'un montant et comparaison de 10 à 25 % côte à côte.',
+  tool_tip_disclaimer:
+    'Aide au calcul uniquement — les usages en matière de pourboire et les frais de service varient selon le pays, l\'établissement et le type de service.',
+  tool_tip_each_label: 'Chacun paie',
+  tool_tip_each_tip_label: 'Pourboire par personne',
+  tool_tip_err_bill: 'Saisissez le montant de l\'addition : un nombre supérieur à 0.',
+  tool_tip_err_people: 'Saisissez le nombre de personnes : un nombre entier de 1 à 100.',
+  tool_tip_err_tax: 'Les taxes doivent être d\'au moins 0 et inférieures à l\'addition.',
+  tool_tip_err_tip: 'Saisissez un pourboire de 0 ou plus (jusqu\'à 1000 % en pourcentage).',
+  tool_tip_example:
+    'Premier exemple : une addition de 80,00 avec 15 % de pourboire. Pourboire = 80,00 × 15 % = 12,00, soit un total de 92,00. Cliquez à nouveau sur Charger un exemple pour une addition de 86,40 comprenant 6,40 de taxes, partagée à trois avec 20 % sur les 80,00 avant taxes : le pourboire est de 16,00 et le total de 102,40, réglé en 34,14 + 34,13 + 34,13. Le troisième exemple partage 137,50 entre quatre personnes à 18 %, chaque part étant arrondie à 41,00 : le pourboire passe alors à 26,50, soit 19,27 %.',
   tool_tip_example_title: 'Exemple',
-  tool_tip_faq_a1: 'Exemple : 80 avec 15 % → 12 / total 92.',
-  tool_tip_faq_a2: 'See Formula section.',
-  tool_tip_faq_a3: 'Educational only.',
-  tool_tip_faq_a4: 'No — local arithmetic only.',
-  tool_tip_faq_q1: 'Exemple ?',
-  tool_tip_faq_q2: 'Formula?',
-  tool_tip_faq_q3: 'Advice?',
-  tool_tip_faq_q4: 'Related?',
-  tool_tip_formula_body: 'Saisissez addition, % et personnes.',
-  tool_tip_formula_item_1: 'See formula notes.',
-  tool_tip_formula_item_2: 'Check inputs.',
-  tool_tip_formula_item_3: 'Educational only.',
-  tool_tip_formula_title: 'Formule',
-  tool_tip_how_body: 'Saisissez addition, % et personnes.',
-  tool_tip_how_title: 'Fonctionnement',
-  tool_tip_ref_a_label: 'Investopedia',
-  tool_tip_ref_b_label: 'Wikipedia',
-  tool_tip_references: 'Investopedia et formules de manuel.',
-  tool_tip_result_note: 'Éducatif.',
-  tool_tip_sample: 'Charger l’exemple',
-  tool_tip_split_label: 'Personnes',
-  tool_tip_split_ph: 'ex. 1',
-  tool_tip_tipOut_label: 'Pourboire',
-  tool_tip_tip_label: 'Pourboire %',
-  tool_tip_tip_ph: 'ex. 15',
-  tool_tip_title: 'Calculateur de pourboire',
-  tool_tip_totalOut_label: 'Total',
-  tool_tip_usecase_1: 'Homework.',
-  tool_tip_usecase_2: 'Quick sketch.',
-  tool_tip_usecase_3: 'Pair with VAT/discount for receipt drills.',
-  tool_tip_usecases_title: 'Cas d’usage',
+  tool_tip_faq_a1:
+    'Cela dépend du pays et du service. Aux États-Unis, l\'Emily Post Institute conseille 15–20 % de l\'addition avant taxes pour le service à table, 10 % dans un buffet et 15–20 % pour les taxis et les salons de coiffure. En France, le service est compris dans les prix (« service compris ») : le pourboire est facultatif, et l\'on arrondit généralement l\'addition ou l\'on laisse quelques euros si le service a plu. Vérifiez d\'abord sur le ticket si des frais de service sont déjà comptés.',
+  tool_tip_faq_a2:
+    'Souvent, oui. Si le ticket mentionne déjà des frais de service — 12,5 % est courant dans les restaurants au Royaume-Uni, et beaucoup d\'établissements en ajoutent pour les grands groupes —, ils tiennent généralement lieu de pourboire : vérifiez avant d\'en ajouter un autre. Pour fixer vous-même le pourboire, saisissez l\'addition sans les frais de service.',
+  tool_tip_faq_a3:
+    'Comptez en centimes et attribuez les centimes restants à quelques personnes. 102,40 à trois, cela fait 34,1333…, donc une personne paie 34,14 et deux paient 34,13 — exactement 102,40 au total. Le calculateur affiche ce partage sous « Chacun paie ».',
+  tool_tip_faq_a4:
+    'Partez de 10 % en décalant la virgule d\'un rang vers la gauche : 10 % de 64,00 font 6,40. Doublez pour 20 % (12,80), ou ajoutez la moitié pour 15 % (6,40 + 3,20 = 9,60). Pour 18 %, prenez 20 % et retirez 2 % : 12,80 − 1,28 = 11,52.',
+  tool_tip_faq_a5:
+    'Des guides de savoir-vivre comme celui de l\'Emily Post Institute conseillent de le calculer sur le montant avant taxes, même si le calculer sur l\'addition complète est courant et plus simple. L\'écart est faible : sur une addition de 86,40 comprenant 6,40 de taxes, un pourboire de 20 % fait 16,00 sur les 80,00 avant taxes et 17,28 sur l\'addition complète. Saisissez les taxes et choisissez l\'une ou l\'autre base.',
+  tool_tip_faq_a6:
+    'Quatre personnes qui partagent 137,50 avec 18 % de pourboire doivent 162,25, soit 40,5625 chacune. En arrondissant chaque part à 41,00, le total passe à 164,00 et le pourboire à 26,50 — 19,27 % au lieu de 18 %. Arrondir plutôt le total donne 163,00 et un pourboire de 25,50 (18,55 %).',
+  tool_tip_faq_a7:
+    'Dans « Saisir le pourboire en », choisissez « Montant » et tapez ce que vous avez laissé. Un pourboire de 10,00 sur une addition de 64,00 représente 10 ÷ 64 = 15,63 %. Le tableau montre ensuite où se situe ce taux par rapport à 10–25 % pour la même addition.',
+  tool_tip_faq_q1: 'Combien laisser de pourboire ?',
+  tool_tip_faq_q2: 'Des frais de service, est-ce la même chose qu\'un pourboire ?',
+  tool_tip_faq_q3: 'Comment partager l\'addition avec le pourboire quand le compte ne tombe pas juste ?',
+  tool_tip_faq_q4: 'Comment calculer de tête un pourboire de 15 % ou de 20 % ?',
+  tool_tip_faq_q5: 'Faut-il calculer le pourboire avant ou après taxes ?',
+  tool_tip_faq_q6: 'Que se passe-t-il si j\'arrondis la part de chacun au supérieur ?',
+  tool_tip_faq_q7: 'Quel pourcentage de pourboire ai-je laissé ?',
+  tool_tip_formula_body: 'Pour une addition B comprenant des taxes X, un taux de pourboire p et n personnes :',
+  tool_tip_formula_item_1:
+    'Pourboire = base × p, la base étant B, ou B − X si vous calculez le pourboire sur le montant avant taxes.',
+  tool_tip_formula_item_2:
+    'Total = B + pourboire. Les taxes restent dans l\'addition dans les deux cas ; seul le pourboire change.',
+  tool_tip_formula_item_3:
+    'Par personne = total ÷ n. En comptant en centimes, si la division laisse un reste r, r personnes paient un centime de plus que les autres.',
+  tool_tip_formula_item_4: 'Taux à partir d\'un montant = pourboire ÷ base × 100 %.',
+  tool_tip_formula_item_5:
+    'Après arrondi au supérieur, le taux effectif = (total arrondi − B) ÷ base ; c\'est pourquoi arrondir chaque part fait monter le pourcentage.',
+  tool_tip_formula_title: 'Formules du pourboire',
+  tool_tip_how_body:
+    'Multipliez l\'addition — ou l\'addition avant taxes — par le taux de pourboire, ajoutez le pourboire à l\'addition, puis divisez par le nombre de personnes. Pour que les parts tombent juste, partagez en centimes : certaines personnes paient alors un centime de plus.',
+  tool_tip_how_item_1:
+    'Saisissez le montant de l\'addition. Pour laisser le pourboire sur le montant avant taxes, indiquez aussi les taxes figurant sur le ticket.',
+  tool_tip_how_item_2:
+    'Tapez un pourcentage ou touchez un raccourci, ou passez à « Montant » pour voir à quel pourcentage correspond votre pourboire.',
+  tool_tip_how_item_3:
+    'Indiquez combien de personnes partagent l\'addition et, si vous le souhaitez, arrondissez au supérieur le pourboire, le total ou la part de chacun.',
+  tool_tip_how_item_4:
+    'Cliquez sur Calculer pour voir le pourboire, le total, ce que chacun paie, le détail du calcul et la comparaison de 10 à 25 % pour la même addition.',
+  tool_tip_how_title: 'Comment calculer un pourboire',
+  tool_tip_out_tip: 'Pourboire',
+  tool_tip_people_label: 'Partager entre (personnes)',
+  tool_tip_people_ph: '1',
+  tool_tip_presets_label: 'Raccourcis :',
+  tool_tip_ref_a_label: 'Wikipedia — Gratuity (en anglais)',
+  tool_tip_ref_b_label: 'Emily Post Institute — General tipping guide (guide des pourboires, en anglais)',
+  tool_tip_references:
+    'Wikipedia — Gratuity (en anglais) ; Emily Post Institute — General tipping guide (guide des pourboires, en anglais).',
+  tool_tip_result_note:
+    'Tous les calculs se font en centimes. Dans le tableau, la colonne par personne indique la part la plus élevée après partage au centime.',
+  tool_tip_round_each: 'Arrondir la part de chacun au montant entier supérieur',
+  tool_tip_round_label: 'Arrondi',
+  tool_tip_round_none: 'Pas d\'arrondi',
+  tool_tip_round_tip: 'Arrondir le pourboire au montant entier supérieur',
+  tool_tip_round_total: 'Arrondir le total au montant entier supérieur',
+  tool_tip_sample: 'Charger un exemple',
+  tool_tip_split_even_tpl: '{v} chacun',
+  tool_tip_split_uneven_tpl: '{n1} × {v1} + {n2} × {v2} = {t}',
+  tool_tip_sub_tpl: '{p} de {base}',
+  tool_tip_table_caption: 'Taux de pourboire courants pour cette addition (avant arrondi)',
+  tool_tip_tax_hint: 'Renseignez-les pour calculer le pourboire sur le montant avant taxes.',
+  tool_tip_tax_label: 'Taxes comprises dans l\'addition (facultatif)',
+  tool_tip_tax_ph: 'ex. 6,40',
+  tool_tip_tip_label_amt: 'Montant du pourboire',
+  tool_tip_tip_label_pct: 'Pourboire (%)',
+  tool_tip_tip_ph_amt: 'ex. 10',
+  tool_tip_tip_ph_pct: 'ex. 15',
+  tool_tip_tipmode_amt: 'Montant',
+  tool_tip_tipmode_label: 'Saisir le pourboire en',
+  tool_tip_tipmode_pct: 'Pourcentage',
+  tool_tip_title: 'Calcul du pourboire — calculez le pourboire et partagez l\'addition au centime près',
+  tool_tip_total_label: 'Total à payer',
+  tool_tip_usecase_1:
+    'En voyage ou au café : là où l\'usage est d\'arrondir plutôt que d\'ajouter un pourcentage, arrondissez le total au supérieur et voyez ce que cela représente comme pourboire.',
+  tool_tip_usecase_2:
+    'Dîners entre amis : ajoutez le pourboire, partagez l\'addition entre tout le monde et réglez sans qu\'il manque un centime.',
+  tool_tip_usecase_3:
+    'Vérifier un ticket ou un terminal de paiement : certains suggèrent des pourboires calculés sur le total taxes comprises — comparez-les ici avec les montants avant taxes.',
+  tool_tip_usecase_4:
+    'Pourboires rapides pour un livreur, un taxi, le coiffeur ou un bar : touchez 15 % ou 20 % et lisez le montant.',
+  tool_tip_usecases_title: 'Quand l\'utiliser',
+  tool_tip_why_choose_item_1:
+    'Arrondir sans se tromper : arrondissez au supérieur le pourboire, le total ou la part de chacun, et voyez le taux de pourboire que vous laissez réellement.',
+  tool_tip_why_choose_item_2:
+    'Des parts qui tombent juste : quand le total ne se divise pas exactement, vous voyez qui paie le centime en plus — 102,40 à trois, c\'est 34,14 + 34,13 + 34,13, et non trois fois 34,13.',
+  tool_tip_why_choose_item_3:
+    'Un tableau de 10 %, 15 %, 18 %, 20 %, 22 % et 25 % pour la même addition, avec votre taux mis en évidence, pour décider avant de payer.',
+  tool_tip_why_choose_item_4:
+    'Pourboire avant taxes ou sur l\'addition complète : saisissez les taxes du ticket, choisissez la base, et le détail du calcul montre le taux avant taxes ainsi que ce qu\'il représente sur toute l\'addition.',
+  tool_tip_why_choose_item_5:
+    'Dans l\'autre sens aussi : saisissez en montant le pourboire laissé et obtenez le pourcentage — pratique pour vérifier le pourboire suggéré par un terminal de paiement.',
+  tool_tip_why_choose_title: 'Pourquoi utiliser ce calculateur de pourboire',
+  tool_tip_work_base_post_tpl: 'Base du pourboire = addition complète, taxes comprises = {base}',
+  tool_tip_work_base_pre_tpl: 'Base du pourboire (avant taxes) = {bill} − {tax} = {base}',
+  tool_tip_work_eff_bill_tpl: 'Cela représente {p} de l\'addition complète, taxes comprises.',
+  tool_tip_work_label: 'Détail du calcul',
+  tool_tip_work_round_each_tpl: 'Chaque part arrondie de {a} à {b} ; {b} × {n} = {total}, donc le pourboire passe à {tip} ({p})',
+  tool_tip_work_round_tip_tpl: 'Pourboire arrondi de {a} à {b} ({p} de la base)',
+  tool_tip_work_round_total_tpl: 'Total arrondi de {a} à {b} : le pourboire passe à {tip} ({p})',
+  tool_tip_work_split_tpl: 'Par personne = {total} ÷ {n} {eq} {v}',
+  tool_tip_work_tip_amt_tpl: 'Taux de pourboire = {tip} ÷ {base} = {p}',
+  tool_tip_work_tip_pct_tpl: 'Pourboire = {base} × {p} = {tip}',
+  tool_tip_work_total_tpl: 'Total = {bill} + {tip} = {total}',
   tool_transcribe_an_audio_file_to_text_advanced: 'Honest limits',
   tool_transcribe_an_audio_file_to_text_article:
     'People search for audio to text and speech to text expecting a large-model-class transcript. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses the browser speech recognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), or you can dictate live with the mic. If browser speech recognition is missing, the page says so clearly. Output is plain text you can edit and download as TXT—not timed SRT. Related tools cover waveform video and voice memos. Keep expectations honest: accuracy and file support vary by browser.',
@@ -24916,45 +25754,154 @@ const fr: SiteLangDict = {
   tool_vat_usecase_2: 'Quick sketch.',
   tool_vat_usecase_3: 'Pair with discount/tip pages for receipt math.',
   tool_vat_usecases_title: 'Cas d’usage',
-  tool_velocity_article: 'Calculateur de vitesse',
+  tool_velocity_article:
+    'Calcul de vitesse qui applique v = d ÷ t pour trouver la vitesse, la distance ou le temps dans les unités courantes, écrit la conversion et le détail du calcul, et donne la vitesse moyenne réelle ainsi que le vecteur vitesse moyen d’un trajet en plusieurs étapes.',
+  tool_velocity_avgvel_label: 'Norme du vecteur vitesse moyen',
+  tool_velocity_avgvel_tpl: '{s} ÷ {t} = {v} (déplacement en ligne droite ÷ durée totale ; un aller-retour donne donc 0)',
   tool_velocity_calculate: 'Calculer',
   tool_velocity_clear: 'Effacer',
+  tool_velocity_conv_label: 'Dans d’autres unités',
   tool_velocity_description:
-    'Calculez la vitesse moyenne avec v=d/t à partir de la distance et du temps. Exemple : distance 100, temps 20 → vitesse 5 (mêmes unités). Calcul local ; vérifiez le processus et les unités.',
-  tool_velocity_disclaimer: 'Illustration éducative (velocity) uniquement.',
+    'Calculez une vitesse moyenne avec la formule vitesse distance temps v = d ÷ t, ou retrouvez la distance ou la durée, en m/s, km/h, mph, ft/s ou nœuds. Chaque conversion (m/s en km/h, etc.) est détaillée, avec exemples et vitesse moyenne réelle d’un trajet en plusieurs étapes.',
+  tool_velocity_disclaimer:
+    'Pour apprendre et faire des estimations au quotidien. Les durées de trajet supposent une vitesse moyenne constante ; en réalité, elles dépendent de la circulation, des arrêts et des conditions.',
+  tool_velocity_disp_label: 'Distance à vol d’oiseau entre le départ et l’arrivée (facultatif)',
+  tool_velocity_disp_ph: 'ex. 0 pour un aller-retour',
   tool_velocity_dist_label: 'Distance',
   tool_velocity_dist_ph: 'ex. 100',
-  tool_velocity_err_generic: 'Vérifiez les entrées.',
-  tool_velocity_example: 'Exemple : v=5.',
-  tool_velocity_example_title: 'Exemple',
-  tool_velocity_faq_a1: 'Exemple : v=5.',
-  tool_velocity_faq_a2: 'See Formula section.',
-  tool_velocity_faq_a3: 'Educational only.',
-  tool_velocity_faq_a4: 'Educational only.',
-  tool_velocity_faq_q1: 'Exemple ?',
-  tool_velocity_faq_q2: 'Formula?',
-  tool_velocity_faq_q3: 'Advice?',
-  tool_velocity_faq_q4: 'Related?',
-  tool_velocity_formula_body: 'Saisissez distance et temps.',
-  tool_velocity_formula_item_1: 'See formula notes.',
-  tool_velocity_formula_item_2: 'Check inputs.',
-  tool_velocity_formula_item_3: 'Educational only.',
-  tool_velocity_formula_title: 'Formule',
-  tool_velocity_how_body: 'Saisissez distance et temps.',
-  tool_velocity_how_title: 'Fonctionnement',
-  tool_velocity_ref_a_label: 'Wikipedia',
-  tool_velocity_ref_b_label: 'Textbook formula',
-  tool_velocity_references: 'Formules de manuel.',
-  tool_velocity_result_note: 'Éducatif.',
-  tool_velocity_sample: 'Charger l’exemple',
+  tool_velocity_err_disp: 'La distance à vol d’oiseau ne peut être ni négative ni supérieure à la distance totale parcourue.',
+  tool_velocity_err_dist: 'Saisissez une distance supérieure ou égale à 0.',
+  tool_velocity_err_leg:
+    'Chaque étape doit avoir une distance et une vitesse supérieures à 0. Si le trajet ne compte que deux étapes, laissez l’étape 3 entièrement vide.',
+  tool_velocity_err_num: 'Saisissez uniquement des nombres, par exemple 42,195 ou 1 500, sans unité ni lettre dans la case.',
+  tool_velocity_err_speed: 'Saisissez une vitesse supérieure à 0 (à vitesse nulle, aucune distance n’est jamais parcourue).',
+  tool_velocity_err_time: 'Saisissez une durée supérieure à 0.',
+  tool_velocity_example:
+    'Le record du monde du 100 m d’Usain Bolt, 9,58 s (Berlin, 2009), correspond à 100 ÷ 9,58 = 10,44 m/s, soit 37,58 km/h ou 23,35 mph. Un coureur qui tient 12 km/h boucle un marathon en 42,195 ÷ 12 = 3,5163 h, c’est-à-dire 3:30:58,5 (12 658,5 s). Une voiture à 65 mph pendant 2,5 heures parcourt 162,5 miles (261,52 km). Faites 60 km à 60 km/h puis revenez à 40 km/h : le trajet dure 1 h + 1,5 h = 2,5 h, la vitesse moyenne est donc 120 ÷ 2,5 = 48 km/h et, comme vous revenez au point de départ, le vecteur vitesse moyen est nul.',
+  tool_velocity_example_title: 'Exemple détaillé',
+  tool_velocity_faq_a1:
+    'On divise la distance par le temps : v = d ÷ t. 100 mètres en 9,58 secondes, c’est 100 ÷ 9,58 = 10,44 m/s. Choisissez des unités cohérentes avec le résultat voulu : des kilomètres et des heures donnent des km/h, des mètres et des secondes des m/s.',
+  tool_velocity_faq_a2:
+    'Divisez la distance totale par la durée totale, sans faire la moyenne des vitesses : on passe plus de temps à la vitesse la plus faible. 60 km à 60 km/h prennent 1 heure, le retour à 40 km/h prend 1,5 heure, donc 120 km en 2,5 heures : 48 km/h, et non 50 km/h. La moyenne simple ne marche que si chaque vitesse est tenue pendant la même durée.',
+  tool_velocity_faq_a3:
+    'Multipliez les m/s par 3,6 pour obtenir des km/h, ou par 2,2369 pour obtenir des mph. 10 m/s = 36 km/h = 22,37 mph. Dans l’autre sens, divisez les km/h par 3,6 : 90 km/h = 25 m/s.',
+  tool_velocity_faq_a4:
+    'La vitesse moyenne dit seulement à quelle allure on se déplace ; le vecteur vitesse indique aussi la direction et le sens. La vitesse moyenne utilise toute la distance parcourue, le vecteur vitesse moyen le déplacement en ligne droite du départ à l’arrivée. Un tour de piste de 400 m en 80 s donne une vitesse moyenne de 5 m/s mais un vecteur vitesse moyen nul, puisqu’on finit là où on a commencé.',
+  tool_velocity_faq_a5:
+    'Divisez la distance par la vitesse : t = d ÷ v. Un marathon de 42,195 km à 12 km/h dure 42,195 ÷ 12 = 3,5163 heures. Multipliez la partie décimale par 60 pour obtenir les minutes : 0,5163 × 60 = 30,98, soit environ 3 h 31 min.',
+  tool_velocity_faq_a6:
+    'De la vitesse moyenne. Distance ÷ temps donne la moyenne sur tout l’intervalle ; ce qu’affiche le compteur à un instant donné est la vitesse instantanée, qui peut être plus élevée ou plus faible. Si l’objet accélère régulièrement, passez aux formules de l’accélération, par exemple v = v₀ + a × t.',
+  tool_velocity_faq_a7:
+    'Oui. Dans un problème de physique à une dimension, le signe donne le sens : si la droite est positive, un objet qui part vers la gauche à 3 m/s a une vitesse de −3 m/s. La vitesse au sens courant est la valeur absolue et n’est jamais négative. Ce calcul travaille avec des valeurs absolues : saisissez des nombres positifs et gérez le sens vous-même.',
+  tool_velocity_faq_q1: 'Quelle est la formule pour calculer une vitesse ?',
+  tool_velocity_faq_q2: 'Comment calculer une vitesse moyenne sur un aller-retour ?',
+  tool_velocity_faq_q3: 'Comment convertir des m/s en km/h ou en mph ?',
+  tool_velocity_faq_q4: 'Quelle différence entre vitesse moyenne et vecteur vitesse ?',
+  tool_velocity_faq_q5: 'Comment trouver le temps à partir de la distance et de la vitesse ?',
+  tool_velocity_faq_q6: 'S’agit-il de la vitesse instantanée ou de la vitesse moyenne ?',
+  tool_velocity_faq_q7: 'Une vitesse peut-elle être négative ?',
+  tool_velocity_formula_body:
+    'Le vecteur vitesse moyen est le déplacement divisé par la durée ; pour un mouvement rectiligne dans un seul sens, sa norme vaut distance ÷ temps.',
+  tool_velocity_formula_item_1: 'v = d ÷ t. Exemple : 100 m ÷ 9,58 s = 10,44 m/s.',
+  tool_velocity_formula_item_2:
+    'Formules dérivées : d = v × t et t = d ÷ v. Exemple : 65 mph × 2,5 h = 162,5 mi ; 42,195 km ÷ 12 km/h = 3,5163 h.',
+  tool_velocity_formula_item_3:
+    'Conversions : 1 m/s = 3,6 km/h = 2,2369 mph = 3,2808 ft/s = 1,9438 nd ; 1 mph = 1,609344 km/h exactement.',
+  tool_velocity_formula_item_4:
+    'Vitesse moyenne sur plusieurs étapes = distance totale ÷ durée totale. Deux distances égales à 60 et 40 km/h donnent 120 km ÷ 2,5 h = 48 km/h, et non 50 km/h.',
+  tool_velocity_formula_item_5:
+    'Vecteur vitesse moyen = déplacement en ligne droite ÷ durée. Sa norme peut être inférieure à la vitesse moyenne et vaut 0 pour un trajet qui finit à son point de départ.',
+  tool_velocity_formula_title: 'Formule vitesse, distance, temps et conversions d’unités',
+  tool_velocity_hint_basic:
+    'Choisissez librement les unités : le résultat s’affiche dans l’unité assortie (km avec km/h, miles avec mph, mètres avec m/s) et les autres sont listées en dessous.',
+  tool_velocity_hint_legs:
+    'Saisissez la distance et la vitesse de chaque étape. Pour un trajet en deux étapes, laissez l’étape 3 vide.',
+  tool_velocity_how_body:
+    'La vitesse est la distance divisée par le temps : v = d ÷ t. Choisissez la grandeur recherchée, saisissez les deux autres avec leurs unités puis cliquez sur Calculer.',
+  tool_velocity_how_item_1:
+    'Indiquez ce que vous cherchez : la vitesse, la distance ou le temps, ou bien la vitesse moyenne d’un trajet en plusieurs étapes.',
+  tool_velocity_how_item_2:
+    'Saisissez les deux valeurs connues et choisissez leurs unités, par exemple 100 m et 9,58 s, ou 42,195 km et 12 km/h.',
+  tool_velocity_how_item_3:
+    'Pour un trajet en étapes, renseignez la distance et la vitesse de chacune ; ajoutez la distance à vol d’oiseau entre départ et arrivée si vous voulez aussi le vecteur vitesse moyen.',
+  tool_velocity_how_item_4:
+    'Lisez la réponse en haut, puis la conversion des unités, le détail du calcul et le même résultat dans d’autres unités.',
+  tool_velocity_how_title: 'Comment calculer une vitesse avec cet outil',
+  tool_velocity_leg_dist_tpl: 'Étape {n} : distance',
+  tool_velocity_leg_speed_tpl: 'Étape {n} : vitesse',
+  tool_velocity_leg_work_tpl: 'étape {n} : {d} ÷ {v} = {t}',
+  tool_velocity_legs_label: 'Durée de chaque étape',
+  tool_velocity_mode_distance: 'La distance à partir de la vitesse et du temps',
+  tool_velocity_mode_label: 'Que voulez-vous calculer ?',
+  tool_velocity_mode_legs: 'La vitesse moyenne d’un trajet en plusieurs étapes',
+  tool_velocity_mode_time: 'Le temps à partir de la distance et de la vitesse',
+  tool_velocity_mode_velocity: 'La vitesse à partir de la distance et du temps',
+  tool_velocity_out_distance: 'Distance parcourue',
+  tool_velocity_out_legs: 'Vitesse moyenne sur tout le trajet',
+  tool_velocity_out_time: 'Durée nécessaire (h:mm:ss)',
+  tool_velocity_out_velocity: 'Vitesse moyenne',
+  tool_velocity_ref_a_label: 'Wikipédia — Vecteur vitesse',
+  tool_velocity_ref_b_label: 'Wikipédia — Vitesse',
+  tool_velocity_references:
+    'Les définitions de vitesse, de vecteur vitesse et de déplacement suivent la physique de base ; les facteurs de conversion reposent sur les définitions exactes 1 mi = 1 609,344 m, 1 ft = 0,3048 m et 1 NM = 1 852 m.',
+  tool_velocity_result_note_basic:
+    'Il s’agit de la vitesse moyenne sur toute la distance. Le vecteur vitesse a en plus une direction et un sens ; sur une trajectoire rectiligne parcourue dans un seul sens, sa norme est la même.',
+  tool_velocity_result_note_legs:
+    'Vitesse moyenne = distance totale ÷ durée totale, et non la moyenne des vitesses. Le vecteur vitesse moyen utilise, lui, la distance en ligne droite entre le départ et l’arrivée.',
+  tool_velocity_sample: 'Charger un exemple',
+  tool_velocity_speed_label: 'Vitesse',
+  tool_velocity_speed_ph: 'ex. 12',
+  tool_velocity_step_label: 'Conversion des unités',
+  tool_velocity_sub_distance_tpl: 'à {v} pendant {t}',
+  tool_velocity_sub_legs_tpl: '{d} en {t} ({c})',
+  tool_velocity_sub_time_tpl: 'pour parcourir {d} à {v}',
+  tool_velocity_sub_velocity_tpl: '{d} en {t}',
+  tool_velocity_sym_ft: 'ft',
+  tool_velocity_sym_fts: 'ft/s',
+  tool_velocity_sym_h: 'h',
+  tool_velocity_sym_km: 'km',
+  tool_velocity_sym_kmh: 'km/h',
+  tool_velocity_sym_kn: 'nd',
+  tool_velocity_sym_m: 'm',
+  tool_velocity_sym_mi: 'mi',
+  tool_velocity_sym_min: 'min',
+  tool_velocity_sym_mph: 'mph',
+  tool_velocity_sym_ms: 'm/s',
+  tool_velocity_sym_nmi: 'NM',
+  tool_velocity_sym_s: 's',
+  tool_velocity_sys_label: 'Unités du trajet',
   tool_velocity_time_label: 'Temps',
-  tool_velocity_time_ph: 'ex. 20',
-  tool_velocity_title: 'Calculateur de vitesse',
-  tool_velocity_usecase_1: 'Homework.',
-  tool_velocity_usecase_2: 'Quick sketch.',
-  tool_velocity_usecase_3: 'Compare with acceleration.',
-  tool_velocity_usecases_title: 'Cas d’usage',
-  tool_velocity_velOut_label: 'Vitesse',
+  tool_velocity_time_ph: 'ex. 9,58',
+  tool_velocity_title:
+    'Calcul de vitesse — trouvez la vitesse, la distance ou le temps avec conversion des unités et le détail du calcul',
+  tool_velocity_trap_label: 'Erreur fréquente',
+  tool_velocity_trap_tpl:
+    'faire la moyenne des vitesses donne {w}, soit {x} de trop, car on passe plus de temps sur les étapes les plus lentes.',
+  tool_velocity_unit_label: 'Unité',
+  tool_velocity_usecase_1:
+    'Exercices de physique : appliquez v = d ÷ t pour n’importe laquelle des trois grandeurs et vérifiez les unités à chaque étape.',
+  tool_velocity_usecase_2:
+    'Course à pied, vélo, natation : transformez un temps de course en vitesse moyenne, ou une allure visée en temps à l’arrivée.',
+  tool_velocity_usecase_3:
+    'Préparer un déplacement : estimez la durée d’un trajet en voiture, en avion ou en bateau à une vitesse donnée, en km/h, mph ou nœuds.',
+  tool_velocity_usecase_4:
+    'Allers-retours et trajets avec arrêts : obtenez la vitesse moyenne réelle au lieu de faire la moyenne des vitesses de chaque étape.',
+  tool_velocity_usecases_title: 'Dans quels cas l’utiliser',
+  tool_velocity_why_choose_item_1:
+    'Le mode trajet donne la vraie vitesse moyenne et indique de combien la simple moyenne des vitesses se tromperait.',
+  tool_velocity_why_choose_item_2:
+    'Une seule formule, trois sens de calcul : la vitesse à partir de la distance et du temps, la distance à partir de la vitesse et du temps, ou le temps à partir de la distance et de la vitesse.',
+  tool_velocity_why_choose_item_3:
+    'Les unités mélangées sont converties et la conversion est écrite, par exemple 90 min = 1,5 h : vous voyez exactement ce qui a été divisé.',
+  tool_velocity_why_choose_item_4:
+    'Inutile de convertir m/s en km/h à part : chaque vitesse est aussi donnée en m/s, km/h, mph, ft/s et nœuds, chaque durée en h:mm:ss, en heures et en minutes.',
+  tool_velocity_why_choose_item_5:
+    'La distance à vol d’oiseau, facultative, donne la norme du vecteur vitesse moyen, ce qui explique pourquoi un aller-retour a un vecteur vitesse moyen nul.',
+  tool_velocity_why_choose_title: 'Pourquoi utiliser ce calcul de vitesse',
+  tool_velocity_work_distance_tpl: 'd = v × t = {v} × {t} = {d}',
+  tool_velocity_work_label: 'Détail du calcul',
+  tool_velocity_work_time_tpl: 't = d ÷ v = {d} ÷ {v} = {t}',
+  tool_velocity_work_velocity_tpl: 'v = d ÷ t = {d} ÷ {t} = {v}',
   tool_volume_article: 'Calculateur de volume',
   tool_volume_calculate: 'Calculer',
   tool_volume_clear: 'Effacer',

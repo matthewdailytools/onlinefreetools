@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-median",
   "path": "/tools/how-to-calculate-median",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-15T02:59:15.578Z",
   "category": "calculator",
   "primaryTopic": "math-stats",
   "featured": false,
@@ -13,7 +13,8 @@
   "related": [
     "how-to-calculate-mean",
     "how-to-calculate-standard-deviation",
-    "how-to-calculate-gpa"
+    "how-to-calculate-z-score",
+    "how-to-calculate-sample-size"
   ],
   "logo": "/icons/tools/how-to-calculate-median.svg",
   "page": {

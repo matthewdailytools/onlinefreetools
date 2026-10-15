@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-tip",
   "path": "/tools/how-to-calculate-tip",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-15T03:42:05.357Z",
   "category": "calculator",
   "primaryTopic": "personal-money",
   "featured": false,
@@ -13,6 +13,7 @@
   "related": [
     "how-to-calculate-vat",
     "how-to-calculate-discount",
+    "how-to-calculate-percentage-change",
     "how-to-calculate-salary-hourly"
   ],
   "logo": "/icons/tools/how-to-calculate-tip.svg",

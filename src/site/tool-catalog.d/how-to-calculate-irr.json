@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-irr",
   "path": "/tools/how-to-calculate-irr",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-15T02:33:54.352Z",
   "category": "calculator",
   "primaryTopic": "business-finance",
   "featured": false,
@@ -12,8 +12,9 @@
   "faqPrefix": "tool_irr",
   "related": [
     "how-to-calculate-npv",
-    "how-to-calculate-cagr",
-    "how-to-calculate-payback-period"
+    "how-to-calculate-payback-period",
+    "how-to-calculate-roi",
+    "how-to-calculate-cagr"
   ],
   "logo": "/icons/tools/how-to-calculate-irr.svg",
   "page": {

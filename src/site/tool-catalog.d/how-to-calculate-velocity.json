@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-velocity",
   "path": "/tools/how-to-calculate-velocity",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-15T04:40:40.299Z",
   "category": "calculator",
   "primaryTopic": "science-physics",
   "featured": false,
@@ -12,6 +12,7 @@
   "faqPrefix": "tool_velocity",
   "related": [
     "how-to-calculate-acceleration",
+    "how-to-calculate-pace",
     "how-to-calculate-density"
   ],
   "logo": "/icons/tools/how-to-calculate-velocity.svg",

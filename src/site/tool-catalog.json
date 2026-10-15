@@ -3647,7 +3647,7 @@
   {
     "slug": "how-to-calculate-heart-rate",
     "path": "/tools/how-to-calculate-heart-rate",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T03:45:21.475Z",
     "category": "calculator",
     "primaryTopic": "health-body",
     "featured": false,
@@ -3657,9 +3657,10 @@
     "homeDescKey": "tool_heart_rate_description",
     "faqPrefix": "tool_heart_rate",
     "related": [
-      "how-to-calculate-macros",
+      "how-to-calculate-pace",
       "how-to-calculate-bmr-tdee",
-      "how-to-calculate-pace"
+      "how-to-calculate-bmi",
+      "how-to-calculate-macros"
     ],
     "logo": "/icons/tools/how-to-calculate-heart-rate.svg",
     "localProcessing": true,
@@ -3693,7 +3694,7 @@
   {
     "slug": "how-to-calculate-inflation",
     "path": "/tools/how-to-calculate-inflation",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T04:32:00.750Z",
     "category": "calculator",
     "primaryTopic": "personal-money",
     "featured": false,
@@ -3704,7 +3705,9 @@
     "faqPrefix": "tool_inflation",
     "related": [
       "how-to-calculate-cagr",
-      "how-to-calculate-compound-interest"
+      "how-to-calculate-compound-interest",
+      "how-to-calculate-present-value",
+      "how-to-calculate-percentage-change"
     ],
     "logo": "/icons/tools/how-to-calculate-inflation.svg",
     "localProcessing": true,
@@ -3715,7 +3718,7 @@
   {
     "slug": "how-to-calculate-irr",
     "path": "/tools/how-to-calculate-irr",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T02:33:54.352Z",
     "category": "calculator",
     "primaryTopic": "business-finance",
     "featured": false,
@@ -3726,8 +3729,9 @@
     "faqPrefix": "tool_irr",
     "related": [
       "how-to-calculate-npv",
-      "how-to-calculate-cagr",
-      "how-to-calculate-payback-period"
+      "how-to-calculate-payback-period",
+      "how-to-calculate-roi",
+      "how-to-calculate-cagr"
     ],
     "logo": "/icons/tools/how-to-calculate-irr.svg",
     "localProcessing": true,
@@ -3738,7 +3742,7 @@
   {
     "slug": "how-to-calculate-logarithm",
     "path": "/tools/how-to-calculate-logarithm",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T03:56:25.953Z",
     "category": "calculator",
     "primaryTopic": "math-stats",
     "featured": false,
@@ -3749,7 +3753,8 @@
     "faqPrefix": "tool_logarithm",
     "related": [
       "how-to-calculate-exponent",
-      "how-to-calculate-scientific-notation"
+      "how-to-calculate-scientific-notation",
+      "how-to-calculate-compound-interest"
     ],
     "logo": "/icons/tools/how-to-calculate-logarithm.svg",
     "localProcessing": true,
@@ -3854,7 +3859,7 @@
   {
     "slug": "how-to-calculate-median",
     "path": "/tools/how-to-calculate-median",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T02:59:15.578Z",
     "category": "calculator",
     "primaryTopic": "math-stats",
     "featured": false,
@@ -3866,7 +3871,8 @@
     "related": [
       "how-to-calculate-mean",
       "how-to-calculate-standard-deviation",
-      "how-to-calculate-gpa"
+      "how-to-calculate-z-score",
+      "how-to-calculate-sample-size"
     ],
     "logo": "/icons/tools/how-to-calculate-median.svg",
     "localProcessing": true,
@@ -4090,7 +4096,7 @@
   {
     "slug": "how-to-calculate-present-value",
     "path": "/tools/how-to-calculate-present-value",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T03:05:06.507Z",
     "category": "calculator",
     "primaryTopic": "personal-money",
     "secondaryTopics": [
@@ -4104,7 +4110,9 @@
     "faqPrefix": "tool_present_value",
     "related": [
       "how-to-calculate-npv",
-      "how-to-calculate-cagr"
+      "how-to-calculate-compound-interest",
+      "how-to-calculate-inflation",
+      "how-to-calculate-irr"
     ],
     "logo": "/icons/tools/how-to-calculate-present-value.svg",
     "localProcessing": true,
@@ -4115,7 +4123,7 @@
   {
     "slug": "how-to-calculate-profit-margin",
     "path": "/tools/how-to-calculate-profit-margin",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T04:37:12.776Z",
     "category": "calculator",
     "primaryTopic": "business-finance",
     "featured": false,
@@ -4126,7 +4134,9 @@
     "faqPrefix": "tool_profit_margin",
     "related": [
       "how-to-calculate-gross-margin",
-      "how-to-calculate-markup"
+      "how-to-calculate-markup",
+      "how-to-calculate-contribution-margin",
+      "how-to-calculate-break-even"
     ],
     "logo": "/icons/tools/how-to-calculate-profit-margin.svg",
     "localProcessing": true,
@@ -4332,7 +4342,7 @@
   {
     "slug": "how-to-calculate-slope",
     "path": "/tools/how-to-calculate-slope",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T03:22:22.234Z",
     "category": "calculator",
     "primaryTopic": "geometry-measure",
     "featured": false,
@@ -4343,7 +4353,8 @@
     "faqPrefix": "tool_slope",
     "related": [
       "how-to-calculate-pythagorean-theorem",
-      "how-to-calculate-aspect-ratio",
+      "how-to-calculate-quadratic-equation",
+      "how-to-calculate-triangle-area",
       "how-to-calculate-gradient"
     ],
     "logo": "/icons/tools/how-to-calculate-slope.svg",
@@ -4401,7 +4412,7 @@
   {
     "slug": "how-to-calculate-tip",
     "path": "/tools/how-to-calculate-tip",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T03:42:05.357Z",
     "category": "calculator",
     "primaryTopic": "personal-money",
     "featured": false,
@@ -4413,6 +4424,7 @@
     "related": [
       "how-to-calculate-vat",
       "how-to-calculate-discount",
+      "how-to-calculate-percentage-change",
       "how-to-calculate-salary-hourly"
     ],
     "logo": "/icons/tools/how-to-calculate-tip.svg",
@@ -4472,7 +4484,7 @@
   {
     "slug": "how-to-calculate-velocity",
     "path": "/tools/how-to-calculate-velocity",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T04:40:40.299Z",
     "category": "calculator",
     "primaryTopic": "science-physics",
     "featured": false,
@@ -4483,6 +4495,7 @@
     "faqPrefix": "tool_velocity",
     "related": [
       "how-to-calculate-acceleration",
+      "how-to-calculate-pace",
       "how-to-calculate-density"
     ],
     "logo": "/icons/tools/how-to-calculate-velocity.svg",

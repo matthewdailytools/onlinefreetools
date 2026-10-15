@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-slope",
   "path": "/tools/how-to-calculate-slope",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-15T03:22:22.234Z",
   "category": "calculator",
   "primaryTopic": "geometry-measure",
   "featured": false,
@@ -12,7 +12,8 @@
   "faqPrefix": "tool_slope",
   "related": [
     "how-to-calculate-pythagorean-theorem",
-    "how-to-calculate-aspect-ratio",
+    "how-to-calculate-quadratic-equation",
+    "how-to-calculate-triangle-area",
     "how-to-calculate-gradient"
   ],
   "logo": "/icons/tools/how-to-calculate-slope.svg",

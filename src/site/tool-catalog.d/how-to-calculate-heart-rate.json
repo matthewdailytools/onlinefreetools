@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-heart-rate",
   "path": "/tools/how-to-calculate-heart-rate",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-15T03:45:21.475Z",
   "category": "calculator",
   "primaryTopic": "health-body",
   "featured": false,
@@ -11,9 +11,10 @@
   "homeDescKey": "tool_heart_rate_description",
   "faqPrefix": "tool_heart_rate",
   "related": [
-    "how-to-calculate-macros",
+    "how-to-calculate-pace",
     "how-to-calculate-bmr-tdee",
-    "how-to-calculate-pace"
+    "how-to-calculate-bmi",
+    "how-to-calculate-macros"
   ],
   "logo": "/icons/tools/how-to-calculate-heart-rate.svg",
   "page": {

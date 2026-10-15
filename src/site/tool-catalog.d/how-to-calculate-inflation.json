@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-inflation",
   "path": "/tools/how-to-calculate-inflation",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-15T04:32:00.750Z",
   "category": "calculator",
   "primaryTopic": "personal-money",
   "featured": false,
@@ -12,7 +12,9 @@
   "faqPrefix": "tool_inflation",
   "related": [
     "how-to-calculate-cagr",
-    "how-to-calculate-compound-interest"
+    "how-to-calculate-compound-interest",
+    "how-to-calculate-present-value",
+    "how-to-calculate-percentage-change"
   ],
   "logo": "/icons/tools/how-to-calculate-inflation.svg",
   "page": {

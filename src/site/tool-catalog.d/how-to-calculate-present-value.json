@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-present-value",
   "path": "/tools/how-to-calculate-present-value",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-15T03:05:06.507Z",
   "category": "calculator",
   "primaryTopic": "personal-money",
   "secondaryTopics": [
@@ -15,7 +15,9 @@
   "faqPrefix": "tool_present_value",
   "related": [
     "how-to-calculate-npv",
-    "how-to-calculate-cagr"
+    "how-to-calculate-compound-interest",
+    "how-to-calculate-inflation",
+    "how-to-calculate-irr"
   ],
   "logo": "/icons/tools/how-to-calculate-present-value.svg",
   "page": {

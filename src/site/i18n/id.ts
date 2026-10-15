@@ -12563,44 +12563,137 @@ const id: SiteLangDict = {
   tool_headers_usecases_title: 'Kapan dipakai',
   tool_heart_rate_age_label: 'Usia (tahun)',
   tool_heart_rate_age_ph: 'mis. 30',
-  tool_heart_rate_article: 'Kalkulator zona denyut jantung',
+  tool_heart_rate_aha_label: 'Detak jantung target AHA',
+  tool_heart_rate_aha_tpl: 'intensitas sedang (50–70%): {m} bpm · intensitas tinggi (70–85%): {v} bpm',
+  tool_heart_rate_article: 'Kalkulator zona detak jantung',
+  tool_heart_rate_bpm_tpl: '{v} bpm',
   tool_heart_rate_calculate: 'Hitung',
+  tool_heart_rate_cap_hrr: 'Zona latihan dengan rumus Karvonen: detak jantung istirahat + persentase × cadangan detak jantung',
+  tool_heart_rate_cap_pct: 'Zona latihan sebagai persentase detak jantung maksimal',
   tool_heart_rate_clear: 'Hapus',
+  tool_heart_rate_cmp_label: 'Perkiraan berdasarkan usia',
+  tool_heart_rate_cmp_tpl: '220 − usia: {a} · Tanaka: {b} · Gulati (wanita): {c}',
+  tool_heart_rate_col_30s: 'Denyut dalam 30 detik',
+  tool_heart_rate_col_bpm: 'Detak jantung (bpm)',
+  tool_heart_rate_col_effort: 'Intensitas',
+  tool_heart_rate_col_pct: 'Rentang',
+  tool_heart_rate_col_zone: 'Zona',
   tool_heart_rate_description:
-    'Hitung perkiraan HR maksimum (220−usia) dan zona latihan sebagai rentang % dari maksimum. Contoh: usia 30 → maks 190; sedang sering ~50–70%. Hanya edukatif — bukan saran medis.',
-  tool_heart_rate_disclaimer: 'Hanya ilustrasi edukatif (heart rate zones); bukan saran medis.',
-  tool_heart_rate_err_generic: 'Periksa input.',
-  tool_heart_rate_example: 'Contoh: usia 30 → 190.',
+    'Hitung detak jantung maksimal berdasarkan usia dengan rumus 220 − usia, rumus Tanaka, atau rumus Gulati untuk wanita, atau masukkan angka hasil pengukuran. Anda akan mendapat lima zona latihan dalam bpm, rentang intensitas sedang dan tinggi versi AHA, serta jumlah denyut yang perlu dihitung dalam 30 detik. Isi detak jantung istirahat untuk zona dengan rumus Karvonen.',
+  tool_heart_rate_disclaimer:
+    'Hanya perkiraan untuk edukasi — bukan nasihat medis. Jika Anda memiliki penyakit jantung, minum obat yang memengaruhi detak jantung, atau merasakan nyeri dada, pusing, atau sesak napas yang tidak biasa saat berolahraga, hentikan latihan dan bicarakan dengan tenaga kesehatan.',
+  tool_heart_rate_err_age: 'Masukkan usia berupa bilangan bulat dari 10 sampai 100.',
+  tool_heart_rate_err_max: 'Masukkan detak jantung maksimal hasil pengukuran berupa bilangan bulat dari 100 sampai 230 bpm.',
+  tool_heart_rate_err_rest: 'Detak jantung istirahat harus berupa bilangan bulat dari 30 sampai 120 bpm — atau biarkan kosong.',
+  tool_heart_rate_err_rest_high: 'Detak jantung istirahat harus lebih rendah daripada detak jantung maksimal.',
+  tool_heart_rate_err_rest_needed: 'Metode cadangan detak jantung memerlukan detak jantung istirahat Anda.',
+  tool_heart_rate_example:
+    'Contoh: usia 30 dengan rumus 220 − usia menghasilkan detak maksimal 190 bpm. Zona 2 (60–70%) adalah 114–133 bpm, atau 57–67 denyut bila dihitung selama 30 detik, dan rentang AHA adalah 95–133 bpm untuk intensitas sedang serta 133–162 bpm untuk intensitas tinggi. Klik Muat contoh lagi untuk usia 45 dengan rumus Tanaka dan detak istirahat 60 (zona Karvonen; 70% = 142 bpm), lalu untuk detak maksimal hasil ukur 185 bpm dengan detak istirahat 52.',
   tool_heart_rate_example_title: 'Contoh',
-  tool_heart_rate_faq_a1: 'Contoh: usia 30 → 190.',
-  tool_heart_rate_faq_a2: 'See Formula section.',
-  tool_heart_rate_faq_a3: 'Educational only.',
-  tool_heart_rate_faq_a4: 'Seek a clinician — not this tool.',
-  tool_heart_rate_faq_q1: 'Contoh?',
-  tool_heart_rate_faq_q2: 'Formula?',
-  tool_heart_rate_faq_q3: 'Advice?',
-  tool_heart_rate_faq_q4: 'Related?',
-  tool_heart_rate_formula_body: 'Isi usia.',
-  tool_heart_rate_formula_item_1: 'See formula notes.',
-  tool_heart_rate_formula_item_2: 'Check inputs.',
-  tool_heart_rate_formula_item_3: 'Educational only.',
-  tool_heart_rate_formula_title: 'Rumus',
-  tool_heart_rate_how_body: 'Isi usia.',
-  tool_heart_rate_how_title: 'Cara kerja',
-  tool_heart_rate_maxOut_label: 'HR maks perkiraan',
-  tool_heart_rate_ref_a_label: 'Wikipedia',
-  tool_heart_rate_ref_b_label: 'Textbook formula',
-  tool_heart_rate_references: 'Referensi edukatif.',
-  tool_heart_rate_result_note: 'Edukatif.',
+  tool_heart_rate_faq_a1:
+    'Sekitar 190 bpm dengan rumus 220 − 30. Rumus Tanaka memberi 208 − 0,7 × 30 = 187 bpm, dan rumus Gulati untuk wanita 206 − 0,88 × 30 = 179,6, sekitar 180 bpm. Ketiganya angka rata-rata untuk orang seusia Anda — detak maksimal Anda sendiri bisa lebih tinggi atau lebih rendah.',
+  tool_heart_rate_faq_a2:
+    'Menurut AHA, 60–100 bpm untuk kebanyakan orang dewasa, sedangkan orang yang aktif dan atlet bisa serendah 40. Stres, hormon, obat-obatan, dan kebugaran ikut memengaruhinya. Ukur pagi hari setelah tidur nyenyak, sebelum bangun. Jika angkanya terus berada di luar rentang itu, konsultasikan dengan dokter.',
+  tool_heart_rate_faq_a3:
+    'Letakkan ujung jari telunjuk dan jari tengah di sisi dalam pergelangan tangan, di sisi ibu jari, hitung denyutnya selama 30 detik, lalu kalikan 2. Kolom ‘Denyut dalam 30 detik’ menunjukkan target hitungan untuk tiap zona — 57–67 untuk zona 2 di usia 30.',
+  tool_heart_rate_faq_a4:
+    'Biasanya zona 2, sekitar 60–70% dari detak maksimal — 114–133 bpm di usia 30. Pada tempo santai ini, porsi energi dari lemak lebih besar, tetapi latihan yang lebih berat membakar lebih banyak kalori per menit secara total. Jadi untuk menurunkan berat badan, jumlah aktivitas secara keseluruhan lebih penting daripada bertahan di satu zona.',
+  tool_heart_rate_faq_a5:
+    'Rumus ini menerapkan persentase pada cadangan detak jantung — detak maksimal dikurangi detak istirahat — lalu menambahkan kembali detak istirahat: target = detak istirahat + % × (detak maksimal − detak istirahat). Hasilnya lebih mencerminkan kebugaran. Di usia 45 dengan detak maksimal Tanaka 177 dan detak istirahat 60, 70% adalah 60 + 0,7 × 117 = 142 bpm, dibandingkan 124 bpm dengan 70% dari detak maksimal.',
+  tool_heart_rate_faq_a6:
+    'Rumus Tanaka 208 − 0,7 × usia berasal dari 351 studi dengan 18.712 orang dan dikonfirmasi dalam studi laboratorium pada 514 orang dewasa sehat; studi itu menemukan bahwa 220 − usia memperkirakan detak maksimal orang yang lebih tua terlalu rendah. Di usia 60, keduanya memberi 160 dan 166 bpm. Keduanya tetap angka rata-rata: tes latihan maksimal dengan pengawasan tenaga medis memberi angka Anda sendiri.',
+  tool_heart_rate_faq_a7:
+    'Bisa. AHA mencatat bahwa beberapa obat menurunkan detak jantung maksimal dan zona target, sehingga angka berdasarkan usia mungkin tidak cocok. Jika Anda memiliki penyakit jantung atau sedang minum obat, tanyakan kepada dokter berapa detak jantung yang sebaiknya Anda tuju.',
+  tool_heart_rate_faq_q1: 'Berapa detak jantung maksimal di usia 30?',
+  tool_heart_rate_faq_q2: 'Berapa detak jantung normal saat istirahat?',
+  tool_heart_rate_faq_q3: 'Bagaimana cara mengecek detak jantung tanpa jam tangan?',
+  tool_heart_rate_faq_q4: 'Apa itu zona pembakaran lemak?',
+  tool_heart_rate_faq_q5: 'Apa itu rumus Karvonen dan kapan sebaiknya dipakai?',
+  tool_heart_rate_faq_q6: 'Mana yang lebih akurat: 220 dikurangi usia atau rumus Tanaka?',
+  tool_heart_rate_faq_q7: 'Apakah obat-obatan mengubah detak jantung target saya?',
+  tool_heart_rate_formula_body: 'Dengan usia U, detak jantung maksimal DJmaks, dan detak jantung istirahat DJistirahat:',
+  tool_heart_rate_formula_fox: '220 − usia (klasik)',
+  tool_heart_rate_formula_gulati: '206 − 0,88 × usia (Gulati, wanita)',
+  tool_heart_rate_formula_item_1: 'Perkiraan klasik: DJmaks = 220 − U. AHA memakainya untuk tabel detak jantung target.',
+  tool_heart_rate_formula_item_2:
+    'Tanaka (2001): DJmaks = 208 − 0,7 × U, dari meta-analisis 351 studi dengan 18.712 orang, lalu diuji dalam studi laboratorium pada 514 orang dewasa sehat.',
+  tool_heart_rate_formula_item_3: 'Gulati (2010, wanita): DJmaks = 206 − 0,88 × U.',
+  tool_heart_rate_formula_item_4: 'Persentase detak maksimal: target = DJmaks × persentase, mis. 70% dari 190 = 133 bpm.',
+  tool_heart_rate_formula_item_5:
+    'Rumus Karvonen (cadangan detak jantung): target = DJistirahat + persentase × (DJmaks − DJistirahat), mis. 60 + 70% × 117 = 142 bpm.',
+  tool_heart_rate_formula_label: 'Detak jantung maksimal dari',
+  tool_heart_rate_formula_measured: 'Hasil ukur maksimal saya',
+  tool_heart_rate_formula_tanaka: '208 − 0,7 × usia (Tanaka)',
+  tool_heart_rate_formula_title: 'Rumus detak jantung',
+  tool_heart_rate_how_body:
+    'Perkirakan detak jantung maksimal dari usia (atau pakai hasil pengukuran), lalu ambil persentasenya: 50–60% untuk intensitas sangat ringan sampai 90–100% untuk sprint singkat sekuat tenaga. Jika Anda tahu detak jantung istirahat, rumus Karvonen menerapkan persentase itu pada selisih antara detak istirahat dan detak maksimal.',
+  tool_heart_rate_how_item_1:
+    'Pilih sumber detak jantung maksimal — 220 − usia, Tanaka, Gulati untuk wanita, atau hasil ukur maksimal Anda — lalu masukkan usia.',
+  tool_heart_rate_how_item_2: 'Jika mau, isi detak jantung istirahat yang diukur pagi hari sebelum bangun.',
+  tool_heart_rate_how_item_3:
+    'Pilih persentase detak jantung maksimal, atau cadangan detak jantung (Karvonen) bila Anda mengisi detak istirahat.',
+  tool_heart_rate_how_item_4:
+    'Klik Hitung untuk melihat detak maksimal, lima zona dalam bpm dan sebagai hitungan nadi 30 detik, serta rentang intensitas sedang dan tinggi versi AHA.',
+  tool_heart_rate_how_title: 'Cara menghitung zona detak jantung',
+  tool_heart_rate_hrr_label: 'Cadangan detak jantung',
+  tool_heart_rate_hrr_tpl: '{max} − {rest} = {hrr} bpm',
+  tool_heart_rate_max_label: 'Detak jantung maksimal hasil pengukuran (bpm)',
+  tool_heart_rate_max_ph: 'mis. 185',
+  tool_heart_rate_method_hrr: 'Cadangan detak jantung (Karvonen) — perlu detak istirahat',
+  tool_heart_rate_method_label: 'Hitung zona dengan',
+  tool_heart_rate_method_pct: 'Persentase detak jantung maksimal',
+  tool_heart_rate_out_max: 'Detak jantung maksimal',
+  tool_heart_rate_ref_a_label: 'American Heart Association — Target heart rates chart (tabel detak jantung target)',
+  tool_heart_rate_ref_b_label: 'Tanaka, Monahan & Seals (2001) — Age-predicted maximal heart rate revisited (JACC)',
+  tool_heart_rate_references:
+    'American Heart Association — Target heart rates chart (tabel detak jantung target); Tanaka, Monahan & Seals (2001), Age-predicted maximal heart rate revisited.',
+  tool_heart_rate_rest_athlete_tpl:
+    '{r} bpm berada di bawah rentang umum 60–100; menurut AHA, orang yang aktif dan atlet sering memiliki detak istirahat serendah ini. Jika Anda jarang berolahraga dan merasa tidak enak badan, konsultasikan dengan dokter.',
+  tool_heart_rate_rest_high_tpl:
+    '{r} bpm berada di atas rentang 60–100 bpm yang menurut AHA normal bagi kebanyakan orang dewasa — jika tetap setinggi ini saat istirahat, bicarakan dengan dokter.',
+  tool_heart_rate_rest_hint: 'Paling baik diukur pagi hari, sebelum Anda bangun dari tempat tidur.',
+  tool_heart_rate_rest_label: 'Detak jantung istirahat (opsional, bpm)',
+  tool_heart_rate_rest_low_tpl:
+    '{r} bpm lebih rendah dari sekitar 40 bpm yang disebut AHA untuk orang yang sangat aktif — sebaiknya periksakan ke dokter, terutama jika Anda merasa pusing atau seperti mau pingsan.',
+  tool_heart_rate_rest_normal_tpl: '{r} bpm berada dalam rentang 60–100 bpm yang menurut AHA normal bagi kebanyakan orang dewasa.',
+  tool_heart_rate_rest_ph: 'mis. 60',
+  tool_heart_rate_rest_status_label: 'Detak jantung istirahat',
+  tool_heart_rate_result_note:
+    'Rumus usia memberi angka rata-rata untuk orang seusia Anda; detak maksimal tiap orang bisa berbeda 10 bpm atau lebih. Kolom ‘Denyut dalam 30 detik’ berisi setengah dari angka bpm, untuk menghitung nadi secara manual.',
   tool_heart_rate_sample: 'Muat contoh',
-  tool_heart_rate_title: 'Kalkulator zona denyut jantung',
-  tool_heart_rate_usecase_1: 'Homework.',
-  tool_heart_rate_usecase_2: 'Quick sketch.',
-  tool_heart_rate_usecase_3: 'Educational pairing with macros.',
-  tool_heart_rate_usecases_title: 'Kapan dipakai',
-  tool_heart_rate_z1Out_label: 'Zona 1 (50–60%)',
-  tool_heart_rate_z2Out_label: 'Zona 2 (60–70%)',
-  tool_heart_rate_z3Out_label: 'Zona 3 (70–85%)',
+  tool_heart_rate_sub_fox: '220 − usia: {work}',
+  tool_heart_rate_sub_gulati: 'Rumus Gulati (wanita): {work}',
+  tool_heart_rate_sub_measured: 'Hasil ukur maksimal Anda — dipakai apa adanya',
+  tool_heart_rate_sub_tanaka: 'Rumus Tanaka: {work}',
+  tool_heart_rate_title: 'Kalkulator Zona Detak Jantung — Hitung Detak Jantung Maksimal dan Zona Latihan Berdasarkan Usia',
+  tool_heart_rate_usecase_1:
+    'Menyusun sesi lari, bersepeda, atau mendayung berdasarkan zona — hari santai di zona 2, interval di zona 4–5.',
+  tool_heart_rate_usecase_2:
+    'Baru mulai berolahraga: AHA menyarankan mulai dari batas bawah zona target (sekitar 50%) lalu naik bertahap menuju 85%.',
+  tool_heart_rate_usecase_3:
+    'Mengatur jam olahraga atau aplikasi kebugaran yang meminta detak jantung maksimal dan detak istirahat.',
+  tool_heart_rate_usecase_4:
+    'Tugas PJOK atau ilmu keolahragaan: membandingkan rumus usia dan menghitung zona langkah demi langkah.',
+  tool_heart_rate_usecases_title: 'Kapan kalkulator ini berguna',
+  tool_heart_rate_why_choose_item_1:
+    'Kolom ‘Denyut dalam 30 detik’ untuk tiap zona, jadi Anda bisa mengecek nadi dengan dua jari di pergelangan tangan tanpa jam.',
+  tool_heart_rate_why_choose_item_2:
+    'Tiga rumus usia berdampingan: 220 − usia, Tanaka, dan Gulati (untuk wanita) bisa selisih sepuluh denyut atau lebih — di usia 30 hasilnya 190, 187, dan 180 bpm.',
+  tool_heart_rate_why_choose_item_3:
+    'Rentang intensitas sedang (50–70%) dan tinggi (70–85%) dari American Heart Association untuk detak maksimal Anda sendiri, berdampingan dengan skala lima zona yang dipakai jam olahraga.',
+  tool_heart_rate_why_choose_item_4:
+    'Zona rumus Karvonen dari detak jantung istirahat, sehingga orang bugar dengan detak istirahat rendah mendapat zona yang sesuai kebugarannya — bukan hanya usianya.',
+  tool_heart_rate_why_choose_item_5:
+    'Gunakan detak maksimal yang benar-benar diukur, misalnya dari tes latihan dengan pengawasan tenaga medis, sebagai ganti perkiraan berdasarkan usia.',
+  tool_heart_rate_why_choose_title: 'Mengapa memakai kalkulator zona detak jantung ini',
+  tool_heart_rate_work_hrr_tpl: 'setiap batas zona = detak istirahat + persentase × cadangan, mis. {rest} + {p} × {hrr} = {v} bpm',
+  tool_heart_rate_work_label: 'Cara hitung',
+  tool_heart_rate_work_pct_tpl: 'setiap batas zona = detak maksimal × persentase, mis. {max} × {p} = {v} bpm',
+  tool_heart_rate_zone_1: 'Sangat ringan',
+  tool_heart_rate_zone_2: 'Ringan',
+  tool_heart_rate_zone_3: 'Sedang',
+  tool_heart_rate_zone_4: 'Berat',
+  tool_heart_rate_zone_5: 'Maksimal',
   tool_hreflang_clear: 'Bersihkan',
   tool_hreflang_copied: 'Tersalin',
   tool_hreflang_copy: 'Salin',
@@ -14321,47 +14414,139 @@ const id: SiteLangDict = {
   tool_indexnow_warn_banner:
     'HTTP 202 means the endpoint accepted a well-formed request — not that your key file already passed verification. Always Check key first. IndexNow notifies discovery; it does not guarantee indexing or rankings.',
   tool_indexnow_warn_unchecked: 'Check the key file before relying on a green 202.',
-  tool_inflation_amount_label: 'Jumlah sekarang',
-  tool_inflation_amount_ph: 'mis. 1000',
-  tool_inflation_article: 'Kalkulator inflasi',
+  tool_inflation_actual_hint:
+    'Masukkan nilai gaji, harga, atau tabungan yang sebenarnya sekarang untuk melihat apakah kenaikannya mengejar inflasi.',
+  tool_inflation_actual_label_cpi: 'Jumlah sebenarnya di tahun tujuan (opsional)',
+  tool_inflation_actual_label_rate: 'Jumlah sebenarnya di akhir periode (opsional)',
+  tool_inflation_actual_ph: 'mis. gaji Anda sekarang',
+  tool_inflation_amount_label: 'Jumlah',
+  tool_inflation_amount_ph: 'mis. 100',
+  tool_inflation_article:
+    'Cari tahu nilai jumlah dolar AS dari tahun mana pun sejak 1913 di tahun lain dengan data CPI resmi, atau proyeksikan harga masa depan dengan tingkat inflasi tetap dalam mata uang apa pun. Kalkulator menampilkan cara hitung dengan nilai CPI yang dipakai, inflasi kumulatif dan rata-rata per tahun, daya beli, inflasi tahunan tertinggi dan terendah pada periode tersebut, dan — jika Anda mengisi jumlah sebenarnya — apakah gaji atau harga mengejar inflasi secara riil.',
   tool_inflation_calculate: 'Hitung',
   tool_inflation_clear: 'Hapus',
+  tool_inflation_col_pp: 'Daya beli dalam uang hari ini',
+  tool_inflation_col_price: 'Harga',
+  tool_inflation_col_year: 'Tahun',
+  tool_inflation_compare_down_tpl:
+    'Tidak — {a} lebih rendah {p} dari jumlah setelah disesuaikan inflasi, yaitu {f} (perubahan nominal {nom}, perubahan riil {real}).',
+  tool_inflation_compare_even_tpl: '{a} sama dengan jumlah setelah disesuaikan inflasi, yaitu {f}, jadi daya belinya tidak berubah.',
+  tool_inflation_compare_label: 'Apakah sudah mengejar inflasi?',
+  tool_inflation_compare_up_tpl:
+    'Ya — {a} lebih tinggi {p} dari jumlah setelah disesuaikan inflasi, yaitu {f} (perubahan nominal {nom}, perubahan riil {real}).',
   tool_inflation_description:
-    'Proyeksikan jumlah sekarang dengan inflasi tahunan tetap. Contoh: 1000 selama 5 tahun pada 3% → ≈1159.27. Edukatif. Perhitungan edukatif di browser; bukan saran profesional.',
-  tool_inflation_disclaimer: 'Hanya ilustrasi edukatif (inflation); bukan saran keuangan.',
-  tool_inflation_err_generic: 'Periksa input.',
-  tool_inflation_example: 'Contoh: ≈1159.27.',
-  tool_inflation_example_title: 'Contoh',
-  tool_inflation_faq_a1: 'Contoh: ≈1159.27.',
-  tool_inflation_faq_a2: 'See Formula section.',
-  tool_inflation_faq_a3: 'Educational only.',
-  tool_inflation_faq_a4: 'Educational only.',
-  tool_inflation_faq_q1: 'Contoh?',
-  tool_inflation_faq_q2: 'Formula?',
-  tool_inflation_faq_q3: 'Advice?',
-  tool_inflation_faq_q4: 'Related?',
-  tool_inflation_formula_body: 'Isi jumlah, suku bunga, tahun.',
-  tool_inflation_formula_item_1: 'See formula notes.',
-  tool_inflation_formula_item_2: 'Check inputs.',
-  tool_inflation_formula_item_3: 'Educational only.',
-  tool_inflation_formula_title: 'Rumus',
-  tool_inflation_futOut_label: 'Jumlah masa depan',
-  tool_inflation_how_body: 'Isi jumlah, suku bunga, tahun.',
-  tool_inflation_how_title: 'Cara kerja',
-  tool_inflation_n_label: 'Tahun',
-  tool_inflation_n_ph: 'mis. 5',
-  tool_inflation_rate_label: 'Inflasi % / tahun',
+    'Hitung nilai uang dulu dan sekarang: berapa nilai jumlah dolar AS dari tahun mana pun sejak 1913 di tahun lain berdasarkan data CPI resmi, atau proyeksikan harga masa depan dengan tingkat inflasi tetap dalam mata uang apa pun, termasuk rupiah. Lengkap dengan rumus, inflasi kumulatif dan rata-rata per tahun, daya beli, cek gaji vs inflasi, serta contoh.',
+  tool_inflation_disclaimer:
+    'Hanya untuk informasi dan edukasi — bukan nasihat keuangan, investasi, atau pajak. CPI mengukur rata-rata perubahan harga bagi konsumen perkotaan di AS, sehingga biaya hidup Anda sendiri bisa naik lebih cepat atau lebih lambat. Inflasi masa depan tidak pasti: proyeksi dengan tingkat tetap hanyalah ilustrasi, bukan perkiraan.',
+  tool_inflation_double_label: 'Waktu sampai harga naik dua kali lipat',
+  tool_inflation_double_none: 'harga tidak pernah naik dua kali lipat jika inflasi nol atau negatif',
+  tool_inflation_double_tpl: '{t} tahun dengan inflasi {r}% per tahun (aturan 70: 70 ÷ {r} ≈ {q})',
+  tool_inflation_err_actual: 'Jumlah sebenarnya harus berupa angka lebih dari 0 — atau biarkan kosong.',
+  tool_inflation_err_amount: 'Masukkan jumlah lebih dari 0.',
+  tool_inflation_err_rate: 'Masukkan tingkat inflasi antara −50% dan 100% per tahun.',
+  tool_inflation_err_same_year: 'Pilih dua tahun yang berbeda.',
+  tool_inflation_err_years: 'Masukkan jumlah tahun berupa bilangan bulat dari 1 sampai 100.',
+  tool_inflation_example:
+    '100 dolar pada 2000 ≈ 186,93 dolar pada 2025: 100 × (321,9 ÷ 172,2) = 186,93, artinya harga naik 86,93% — rata-rata 2,53% per tahun selama 25 tahun. Contoh berikutnya: gaji 50.000 pada 2015 harus menjadi 67.911,39 pada 2025 agar daya belinya sama; dengan gaji 62.000, kenaikannya 24% di atas kertas tetapi turun 8,70% secara riil. Contoh ketiga memproyeksikan 1.000 dengan inflasi 3% per tahun: 1.159,27 setelah 5 tahun, saat 1.000 hanya bisa membeli barang seharga 862,61 hari ini.',
+  tool_inflation_example_title: 'Contoh perhitungan',
+  tool_inflation_extreme_label: 'Inflasi tahunan tertinggi dan terendah pada periode ini',
+  tool_inflation_extreme_tpl: 'tertinggi {p1} pada {y1}, terendah {p2} pada {y2}',
+  tool_inflation_faq_a1:
+    'Bagi indeks harga tahun yang lebih baru dengan indeks tahun yang lebih awal, lalu kalikan: jumlah × (CPI tahun 2 ÷ CPI tahun 1). Inflasi kumulatif = CPI₂ ÷ CPI₁ − 1 dan rata-rata per tahun = (CPI₂ ÷ CPI₁)^(1/jumlah tahun) − 1. Data bawaan hanya CPI AS; untuk Indonesia, terapkan rasio yang sama pada Indeks Harga Konsumen (IHK) dari BPS, atau gunakan mode tingkat inflasi tetap.',
+  tool_inflation_faq_a2:
+    'Masukkan gaji lama beserta tahunnya, tahun sekarang, dan gaji Anda saat ini sebagai jumlah sebenarnya. Gaji 50.000 pada 2015 harus menjadi 67.911,39 pada 2025 agar daya belinya sama; gaji 62.000 naik 24% secara nominal tetapi 8,70% lebih rendah secara riil. Perubahan riil = jumlah sebenarnya ÷ jumlah setelah disesuaikan inflasi − 1.',
+  tool_inflation_faq_a3:
+    'Dengan CPI rata-rata tahunan, 100 × (321,9 ÷ 172,2) = 186,93 dolar tahun 2025: harga naik 86,93%, sekitar 2,53% per tahun. Sebaliknya, 1 dolar pada 2025 hanya bisa membeli barang seharga 0,53 dolar pada 2000.',
+  tool_inflation_faq_a4:
+    'Jumlah nominal adalah angka di label harga atau slip gaji; jumlah riil sudah disesuaikan dengan inflasi sehingga menunjukkan daya beli. Pertumbuhan riil = (1 + pertumbuhan nominal) ÷ (1 + inflasi) − 1, jadi kenaikan gaji 4% saat inflasi 3% berarti kenaikan riil 0,97%, bukan tepat 1%.',
+  tool_inflation_faq_a5:
+    'Kalkulator BLS membandingkan satu bulan dengan bulan lain memakai nilai CPI-U bulanan, sedangkan kalkulator ini memakai rata-rata tahunan dari tabel Minneapolis Fed yang dibulatkan ke satu desimal. Untuk perbandingan tahun penuh selisihnya biasanya kecil, tetapi hasil per bulan bisa berbeda satu persen atau lebih.',
+  tool_inflation_faq_a6:
+    'Dengan tingkat tetap i, harga berlipat dua setelah ln 2 ÷ ln(1 + i) tahun — 23,45 tahun pada 3% dan 35 tahun pada 2%. Aturan 70 memberi perkiraan cepat: 70 ÷ 3 ≈ 23,33 tahun.',
+  tool_inflation_faq_a7:
+    'Di tabel CPI, inflasi tahunan tertinggi adalah 17,8% pada 1917 dan 17,3% pada 1918, disusul 14,4% pada 1947 dan 13,5% pada 1980. Penurunan harga terdalam terjadi pada 1921 (−10,9%) dan pada 1932 di masa Depresi Besar (−10,3%). Puncak terbaru adalah 8,0% pada 2022.',
+  tool_inflation_faq_q1: 'Bagaimana cara menghitung inflasi antara dua tahun?',
+  tool_inflation_faq_q2: 'Apakah kenaikan gaji saya mengejar inflasi?',
+  tool_inflation_faq_q3: 'Berapa nilai 100 dolar tahun 2000 jika dibandingkan hari ini?',
+  tool_inflation_faq_q4: 'Apa bedanya jumlah nominal dan riil?',
+  tool_inflation_faq_q5: 'Mengapa hasilnya sedikit berbeda dari CPI Inflation Calculator milik BLS?',
+  tool_inflation_faq_q6: 'Berapa lama sampai harga naik dua kali lipat?',
+  tool_inflation_faq_q7: 'Tahun berapa inflasi tertinggi di AS?',
+  tool_inflation_formula_body:
+    'Dengan CPI₁ dan CPI₂ sebagai indeks harga di kedua tahun, P suatu jumlah, i tingkat inflasi per tahun, dan n jumlah tahun:',
+  tool_inflation_formula_item_1: 'Antara dua tahun: jumlah₂ = jumlah₁ × (CPI₂ ÷ CPI₁).',
+  tool_inflation_formula_item_2: 'Inflasi kumulatif = CPI₂ ÷ CPI₁ − 1; rata-rata per tahun = (CPI₂ ÷ CPI₁)^(1/n) − 1.',
+  tool_inflation_formula_item_3: 'Harga masa depan dengan tingkat tetap: F = P × (1 + i)ⁿ, jadi 1.000 × 1,03⁵ = 1.159,27.',
+  tool_inflation_formula_item_4:
+    'Daya beli: P ÷ (1 + i)ⁿ, jadi 1.000 ÷ 1,03⁵ = 862,61; antara dua tahun, satu satuan uang bernilai CPI₁ ÷ CPI₂.',
+  tool_inflation_formula_item_5:
+    'Perubahan riil = (1 + perubahan nominal) ÷ (1 + inflasi) − 1, sama dengan jumlah sebenarnya ÷ jumlah setelah disesuaikan inflasi − 1.',
+  tool_inflation_formula_title: 'Rumus inflasi',
+  tool_inflation_from_label: 'Dari tahun',
+  tool_inflation_how_body:
+    'Untuk membandingkan nilai uang antartahun, kalikan jumlahnya dengan rasio indeks harga konsumen (CPI) kedua tahun. Untuk melihat ke depan, naikkan harga hari ini sebesar tingkat inflasi sekali untuk setiap tahun.',
+  tool_inflation_how_item_1:
+    'Pilih “Nilai jumlah dolar AS dari satu tahun di tahun lain” untuk harga historis AS, atau “Harga masa depan dengan tingkat inflasi tetap” untuk mata uang apa pun, termasuk rupiah.',
+  tool_inflation_how_item_2: 'Masukkan jumlahnya, lalu pilih dua tahun — atau ketik tingkat inflasi per tahun dan jumlah tahun.',
+  tool_inflation_how_item_3:
+    'Jika mau, isi jumlah sebenarnya — misalnya gaji Anda sekarang — untuk melihat apakah kenaikan gaji mengejar inflasi.',
+  tool_inflation_how_item_4:
+    'Tekan Hitung untuk melihat jumlah setara, cara hitung dengan nilai CPI yang dipakai, daya beli, dan untuk tingkat tetap juga waktu sampai harga berlipat dua serta tabel per tahun.',
+  tool_inflation_how_title: 'Cara menghitung inflasi',
+  tool_inflation_main_cpi_tpl: '{a} pada {y1} ≈ {b} pada {y2}',
+  tool_inflation_mode_cpi: 'Nilai jumlah dolar AS dari satu tahun di tahun lain (CPI 1913–2025)',
+  tool_inflation_mode_label: 'Apa yang ingin Anda hitung?',
+  tool_inflation_mode_rate: 'Harga masa depan dengan tingkat inflasi tetap (mata uang apa pun)',
+  tool_inflation_out_cpi: 'Jumlah setara',
+  tool_inflation_out_rate: 'Harga masa depan',
+  tool_inflation_pp_cpi_tpl: '1 dolar pada {y2} setara dengan {v} dolar pada {y1}',
+  tool_inflation_pp_label: 'Daya beli',
+  tool_inflation_pp_rate_tpl: 'setelah {n} tahun, {a} hanya bisa membeli barang seharga {v} hari ini',
+  tool_inflation_rate_label: 'Tingkat inflasi per tahun (%)',
   tool_inflation_rate_ph: 'mis. 3',
-  tool_inflation_ref_a_label: 'Investopedia',
-  tool_inflation_ref_b_label: 'Wikipedia',
-  tool_inflation_references: 'Investopedia dan rumus buku teks.',
-  tool_inflation_result_note: 'Edukatif.',
+  tool_inflation_ref_a_label: 'Federal Reserve Bank of Minneapolis — Consumer Price Index, 1913–',
+  tool_inflation_ref_b_label: 'U.S. Bureau of Labor Statistics — Consumer Price Index',
+  tool_inflation_references:
+    'Rata-rata tahunan CPI-U AS dari Federal Reserve Bank of Minneapolis; CPI sendiri diterbitkan oleh U.S. Bureau of Labor Statistics.',
+  tool_inflation_result_note_cpi:
+    'Memakai rata-rata tahunan CPI-U AS dari tabel Federal Reserve Bank of Minneapolis (satu angka desimal). Inflasi tahunan tertinggi dan terendah adalah angka yang diterbitkan di tabel tersebut.',
+  tool_inflation_result_note_rate:
+    'Mengasumsikan tingkat inflasi yang sama setiap tahun; inflasi sebenarnya berubah dari tahun ke tahun.',
   tool_inflation_sample: 'Muat contoh',
-  tool_inflation_title: 'Kalkulator inflasi',
-  tool_inflation_usecase_1: 'Homework.',
-  tool_inflation_usecase_2: 'Quick sketch.',
-  tool_inflation_usecase_3: 'Pair with CAGR/compound-interest pages.',
-  tool_inflation_usecases_title: 'Kapan dipakai',
+  tool_inflation_sub_cpi_back_tpl:
+    'Harga pada {y2} lebih rendah {p} dibanding {y1} — sejak itu naik rata-rata {avg} per tahun selama {n} tahun',
+  tool_inflation_sub_cpi_one_tpl: 'Harga berubah {p} dari {y1} ke {y2}',
+  tool_inflation_sub_cpi_tpl: 'Harga berubah {p} dari {y1} ke {y2} — rata-rata {avg} per tahun selama {n} tahun',
+  tool_inflation_sub_rate_tpl: 'Dengan inflasi {r} per tahun, harga berubah {p} dalam {n} tahun',
+  tool_inflation_table_caption: 'Per tahun',
+  tool_inflation_title:
+    'Kalkulator Inflasi — Hitung Nilai Uang dari Tahun Lalu Jika Dibandingkan Hari Ini, dengan Data CPI Resmi AS',
+  tool_inflation_to_label: 'Ke tahun',
+  tool_inflation_usecase_1:
+    'Membandingkan harga lintas dekade: barang seharga 1 dolar pada 1970 setara sekitar 8,30 dolar dalam uang tahun 2025 (321,9 ÷ 38,8).',
+  tool_inflation_usecase_2:
+    'Mengecek apakah kenaikan gaji, uang pensiun, atau sewa rumah sudah mengejar inflasi, dengan mengisi jumlah sebenarnya (opsional).',
+  tool_inflation_usecase_3:
+    'Menyusun anggaran biaya masa depan: dengan inflasi 3% per tahun, pengeluaran 1.000 hari ini akan menjadi sekitar 1.159,27 dalam 5 tahun.',
+  tool_inflation_usecase_4:
+    'Melihat bagaimana uang tunai kehilangan nilai: dengan inflasi 2%, uang 1.000 yang disimpan di bawah kasur setelah 10 tahun hanya bisa membeli barang seharga 820,35 hari ini.',
+  tool_inflation_usecases_title: 'Kapan kalkulator ini berguna',
+  tool_inflation_why_choose_item_1:
+    'Untuk rupiah atau proyeksi ke depan, masukkan tingkat inflasi sendiri — misalnya inflasi tahunan dari Indeks Harga Konsumen (IHK) BPS — lalu dapatkan waktu sampai harga berlipat dua dan tabel per tahun.',
+  tool_inflation_why_choose_item_2:
+    'Menjawab pertanyaan “gaji naik, tapi kalah dari inflasi?”: masukkan gaji Anda sekarang dan lihat perubahan nominal dan riil berdampingan.',
+  tool_inflation_why_choose_item_3:
+    'CPI tahunan resmi AS untuk setiap tahun dari 1913 sampai 2025 sudah tersedia, jadi Anda cukup memilih dua tahun tanpa mencari nilai indeks.',
+  tool_inflation_why_choose_item_4:
+    'Inflasi tahunan tertinggi dan terendah pada periode Anda langsung ditandai — antara 2000 dan 2025 yaitu 8,0% pada 2022 dan −0,4% pada 2009.',
+  tool_inflation_why_choose_item_5:
+    'Cara hitung menampilkan nilai CPI yang benar-benar dipakai, sehingga Anda bisa memeriksa hasilnya atau mengulanginya secara manual.',
+  tool_inflation_why_choose_title: 'Mengapa memakai kalkulator inflasi ini',
+  tool_inflation_work_cpi_tpl: '{a} × (CPI {y2} ÷ CPI {y1}) = {a} × ({c2} ÷ {c1}) = {b}',
+  tool_inflation_work_label: 'Cara hitung',
+  tool_inflation_work_rate_tpl: '{a} × (1 + {r})^{n} = {a} × {f} = {b}',
+  tool_inflation_years_label: 'Jumlah tahun',
+  tool_inflation_years_ph: 'mis. 5',
   tool_inspect_video_file_tracks_article:
     'Ekstensi .mp4 menunjukkan kontainer, bukan codec di dalamnya. Pemeriksa ini membaca metadata tanpa mengunggah video atau mendekode seluruh frame. Semua trek ditampilkan, termasuk audio kedua yang mungkin tidak dipilih pemutar pratinjau. Baris video memuat codec, parameter rinci, ukuran tampilan, rotasi, bahasa, waktu mulai, akhir menurut metadata, dan kemampuan dekode di browser ini. Baris audio juga memuat jumlah kanal dan sample rate. Jika tidak ada trek audio, berkas tidak memiliki aliran suara. Jika trek audio ada tetapi tidak dapat didekode di sini, suara tetap ada namun browser ini tidak mendukung formatnya. Pemeriksaan perangkat saat ini tidak menjamin hasil di ponsel, editor, atau TV lain. Waktu berasal dari metadata dan dapat berupa perkiraan; halaman ini tidak memindai setiap paket untuk mengklaim durasi tepat. Web Worker dan cache BlobSource yang dibatasi membaca berkas besar seperlunya agar halaman tetap responsif. Hingga 30 berkas diperiksa berurutan; kerusakan satu berkas tidak menghapus laporan JSON yang berhasil. Konten tetap berada di perangkat Anda dan tidak diunggah ke server.',
   tool_inspect_video_file_tracks_audio: 'Audio #{number}',
@@ -14923,43 +15108,146 @@ const id: SiteLangDict = {
   tool_ipv6_cidr_usecase_2: 'Memeriksa tautan titik-ke-titik yang seharusnya /127 (RFC 6164).',
   tool_ipv6_cidr_usecase_3: 'Menyeragamkan prefiks dokumentasi seperti 2001:db8::/32 sebelum tangkapan layar.',
   tool_ipv6_cidr_usecases_title: 'Kapan berguna',
-  tool_irr_article: 'Kalkulator IRR',
+  tool_irr_annual_label: 'Disetahunkan',
+  tool_irr_annual_tpl: '{annual} efektif per tahun = (1 + {irr})^{k} − 1; nominal {nominal} = {irr} × {k}',
+  tool_irr_article: 'Internal rate of return (IRR)',
   tool_irr_calculate: 'Hitung',
-  tool_irr_cf_label: 'Arus kas (koma/baris; CF0 dulu)',
-  tool_irr_cf_ph: 'mis. -1000, 300, 420, 680',
+  tool_irr_cf_hint:
+    'Pisahkan angka dengan spasi atau baris baru (kolom yang disalin dari Excel bisa langsung ditempel). Pakai tanda minus untuk kas keluar. Ribuan boleh memakai titik (1.000), desimal memakai koma. 1100*12 mengulang 1.100 sebanyak dua belas kali.',
+  tool_irr_cf_label: 'Arus kas, mulai periode 1',
+  tool_irr_cf_ph: 'contoh: 300 420 680  — atau 1100*12 untuk dua belas pembayaran sama besar',
+  tool_irr_check_label: 'Pembuktian',
+  tool_irr_check_tpl: 'Jika semua arus kas didiskonto dengan {irr}, NPV = {npv} — tabel menunjukkan setiap langkahnya.',
   tool_irr_clear: 'Hapus',
+  tool_irr_col_cf: 'Arus kas',
+  tool_irr_col_cum: 'PV kumulatif',
+  tool_irr_col_df: 'Faktor diskonto pada IRR',
+  tool_irr_col_period: 'Periode',
+  tool_irr_col_pv: 'Nilai sekarang (PV)',
   tool_irr_description:
-    'Perkirakan IRR dari daftar arus kas sederhana dengan metode Newton. Contoh: −1000, 300, 420, 680 → IRR perkiraan. Edukatif.',
-  tool_irr_disclaimer: 'Hanya ilustrasi edukatif (IRR); bukan saran keuangan.',
-  tool_irr_err_generic: 'Periksa input.',
-  tool_irr_example: 'Contoh: −1000, 300, 420, 680 → IRR ≈ 18.9%.',
+    'Hitung IRR (internal rate of return) sebuah investasi dari arus kas tahunan, kuartalan, atau bulanan. Lengkap dengan langkah interpolasi coba-coba, tabel pembuktian NPV = 0 pada IRR, NPV dan MIRR pada tingkat diskonto Anda, serta peringatan jika IRR-nya lebih dari satu.',
+  tool_irr_disclaimer:
+    'Hanya estimasi untuk pembelajaran — bukan nasihat keuangan, pajak, atau investasi. Hasil sepenuhnya bergantung pada arus kas dan tingkat diskonto yang Anda masukkan; imbal hasil nyata, pajak, biaya, dan risiko bisa berbeda.',
+  tool_irr_err_flows:
+    'Masukkan minimal satu arus kas setelah investasi awal — atau minimal dua angka jika kolom investasi awal kosong.',
+  tool_irr_err_invest:
+    'Masukkan investasi awal sebagai satu angka lebih dari 0, misalnya 1000, atau kosongkan jika daftar Anda dimulai dari periode 0.',
+  tool_irr_err_many: 'Maksimal 600 periode.',
+  tool_irr_err_none:
+    'Tidak ada IRR antara −99% dan 1.000% per periode: NPV tidak pernah mencapai nol pada tingkat berapa pun di rentang itu. Periksa tanda dan jumlahnya.',
+  tool_irr_err_rate: 'Masukkan tingkat diskonto sebagai persen dari 0 sampai 100, misalnya 10, atau kosongkan.',
+  tool_irr_err_signs:
+    'IRR memerlukan minimal satu arus kas negatif dan satu arus kas positif — misalnya pengeluaran −1000 yang diikuti pemasukan.',
+  tool_irr_err_token:
+    '“{token}” bukan angka. Pisahkan angka dengan spasi atau baris baru; tulis 1100*12 untuk mengulang suatu jumlah.',
+  tool_irr_example:
+    'Contoh: investasi 1.000, lalu menerima 300, 420, dan 680 selama tiga tahun. NPV pada 16% adalah 6,40 dan pada 17% adalah −12,20, sehingga IRR ≈ 16% + 6,40 ÷ 18,60 × 1 poin persen = 16,34%. Didiskonto pada 16,34%, arus kas itu bernilai 257,86, 310,30, dan 431,83, yang jumlahnya tepat 1.000. Dengan tingkat diskonto 10%, NPV = 130,73 dan MIRR = 14,60%. Klik “Muat contoh” sekali lagi untuk kasus dengan dua IRR (25% dan 400%) dan kasus bulanan.',
   tool_irr_example_title: 'Contoh',
-  tool_irr_faq_a1: 'Contoh: −1000, 300, 420, 680 → IRR ≈ 18.9%.',
-  tool_irr_faq_a2: 'See Formula section.',
-  tool_irr_faq_a3: 'Educational only.',
-  tool_irr_faq_a4: 'Educational only.',
-  tool_irr_faq_q1: 'Contoh?',
-  tool_irr_faq_q2: 'Formula?',
-  tool_irr_faq_q3: 'Advice?',
-  tool_irr_faq_q4: 'Related?',
-  tool_irr_formula_body: 'Tempel CF0…CFn. Mencari r agar NPV(r)=0 dengan Newton.',
-  tool_irr_formula_item_1: 'See formula notes.',
-  tool_irr_formula_item_2: 'Check inputs.',
-  tool_irr_formula_item_3: 'Educational only.',
-  tool_irr_formula_title: 'Rumus',
-  tool_irr_how_body: 'Tempel CF0…CFn. Mencari r agar NPV(r)=0 dengan Newton.',
-  tool_irr_how_title: 'Cara kerja',
-  tool_irr_irrOut_label: 'IRR perkiraan',
-  tool_irr_ref_a_label: 'Investopedia',
-  tool_irr_ref_b_label: 'Wikipedia',
-  tool_irr_references: 'Investopedia dan rumus buku teks.',
-  tool_irr_result_note: 'Edukatif.',
+  tool_irr_faq_a1:
+    'Hitung NPV pada dua tingkat diskonto coba-coba — satu menghasilkan NPV positif, satu negatif — lalu tarik garis lurus di antaranya. Garis lurus itu sedikit melebihi kurva NPV yang melengkung. Pada contoh, mencoba 15% dan 20% menghasilkan 16,41%, sedangkan 16% dan 17% menghasilkan 16,34%, sama dengan jawaban tepatnya. Kalkulator ini menampilkan versi rentang sempit.',
+  tool_irr_faq_a2:
+    'NPV adalah jumlah uang: nilai proyek hari ini pada tingkat diskonto yang dipilih. IRR adalah persentase: tingkat yang membuat NPV tersebut nol. Untuk proyek biasa (investasi dulu, lalu hasil), keduanya memberi kesimpulan layak atau tidak layak yang sama; saat membandingkan proyek dengan ukuran atau umur berbeda, keduanya bisa bertentangan, dan NPV lebih bisa dipegang.',
+  tool_irr_faq_a3:
+    'IRR yang lebih tinggi dari tingkat pengembalian yang Anda syaratkan — biaya dana atau hasil yang bisa diperoleh di tempat lain dengan risiko serupa. IRR 16% menarik jika patokannya 10%, tetapi tidak jika patokannya 20%. Angka IRR sendiri tidak menunjukkan berapa banyak uang yang dihasilkan proyek.',
+  tool_irr_faq_a4:
+    'Pilih “1 bulan” pada “Satu periode sama dengan”. Kalkulator mencari tingkat bulanan, lalu mengubahnya dengan (1 + r)¹² − 1. Mengalikan dengan 12 hanya memberi tingkat nominal, yang lebih rendah dan membuat biaya atau hasil tahunan yang sebenarnya tampak lebih kecil.',
+  tool_irr_faq_a5:
+    'Modified IRR mengasumsikan kas yang diterima selama proyek diinvestasikan kembali pada tingkat pengembalian yang Anda syaratkan, bukan pada IRR itu sendiri. MIRR selalu memberi satu jawaban meski IRR-nya lebih dari satu, dan biasanya lebih rendah serta lebih realistis ketika IRR tinggi.',
+  tool_irr_faq_a6:
+    'Setiap kali arus kas berganti dari negatif ke positif atau sebaliknya, NPV bisa kembali melewati nol. −1.600, +10.000, −10.000 memotong nol pada 25% dan juga 400%. Tidak ada yang bisa disebut “satu-satunya” hasil; gunakan NPV pada tingkat diskonto Anda atau MIRR.',
+  tool_irr_faq_a7:
+    'Ya, untuk arus kas berjarak sama: =IRR(A1:A4) pada −1.000, 300, 420, 680 menghasilkan 16,34%. Excel hanya mengembalikan satu akar dari tebakan awalnya, sedangkan kalkulator ini menampilkan semua IRR. Untuk tanggal tidak teratur, Excel memakai XIRR, yang tidak dicakup kalkulator ini.',
+  tool_irr_faq_q1: 'Bagaimana cara menghitung IRR dengan interpolasi, dan kenapa hasilnya sedikit beda dengan buku?',
+  tool_irr_faq_q2: 'Apa beda IRR dan NPV?',
+  tool_irr_faq_q3: 'Berapa IRR yang dianggap layak?',
+  tool_irr_faq_q4: 'Bagaimana menghitung IRR untuk arus kas bulanan?',
+  tool_irr_faq_q5: 'Apa itu MIRR dan kapan sebaiknya dipakai?',
+  tool_irr_faq_q6: 'Kenapa bisa ada dua IRR?',
+  tool_irr_faq_q7: 'Apakah hasilnya sama dengan fungsi IRR di Excel?',
+  tool_irr_formula_body:
+    'Untuk arus kas CF₀, CF₁ … CFₙ di akhir periode yang sama panjang, IRR adalah tingkat r yang memenuhi persamaan:',
+  tool_irr_formula_item_1:
+    '0 = CF₀ + CF₁ ÷ (1 + r) + CF₂ ÷ (1 + r)² + … + CFₙ ÷ (1 + r)ⁿ. CF₀ biasanya investasi awal yang bernilai negatif.',
+  tool_irr_formula_item_2:
+    'Interpolasi manual: IRR ≈ r₁ + NPV₁ ÷ (NPV₁ − NPV₂) × (r₂ − r₁), dengan NPV₁ > 0 pada r₁ dan NPV₂ < 0 pada r₂. Makin dekat r₁ dan r₂, makin kecil selisihnya.',
+  tool_irr_formula_item_3:
+    'Menyetahunkan: IRR tahunan efektif = (1 + IRR per periode)ᵏ − 1, dengan k = 12 untuk bulan dan 4 untuk kuartal.',
+  tool_irr_formula_item_4:
+    'MIRR = (FV arus kas positif pada tingkat reinvestasi ÷ PV arus kas negatif pada tingkat pembiayaan)^(1/n) − 1. Hasilnya selalu tepat satu.',
+  tool_irr_formula_item_5:
+    'Batasan: setiap pergantian tanda arus kas bisa menambah satu IRR lagi, dan IRR mengasumsikan kas di tengah jalan diinvestasikan kembali pada tingkat IRR itu sendiri. Untuk memeringkat proyek dengan ukuran atau umur berbeda, pakai NPV, bukan IRR.',
+  tool_irr_formula_title: 'Rumus IRR dan batasannya',
+  tool_irr_how_body:
+    'IRR adalah tingkat diskonto yang membuat net present value (NPV) seluruh arus kas tepat nol. Jika periodenya lebih dari dua, tidak ada rumus langsung, sehingga IRR dicari dengan mencoba beberapa tingkat diskonto sampai NPV berubah tanda.',
+  tool_irr_how_item_1:
+    'Masukkan biaya awal pada “Investasi awal (opsional)”, atau kosongkan kolom itu dan tempel daftar yang sudah dimulai dari periode 0.',
+  tool_irr_how_item_2:
+    'Masukkan arus kas periode 1, 2, 3… (negatif untuk kas keluar), lalu pilih pada “Satu periode sama dengan” apakah tiap periode berarti satu tahun, satu kuartal, atau satu bulan.',
+  tool_irr_how_item_3: 'Jika perlu, isi tingkat diskonto untuk mendapatkan NPV dan MIRR, lalu klik “Hitung”.',
+  tool_irr_how_item_4:
+    'Baca IRR-nya, ikuti langkah coba-coba, dan periksa tabelnya: pada tingkat IRR, PV kumulatif berakhir di nol.',
+  tool_irr_how_title: 'Cara menghitung IRR',
+  tool_irr_interp_label: 'Langkah coba-coba (trial and error)',
+  tool_irr_interp_tpl:
+    'NPV pada {r1} = {n1}; NPV pada {r2} = {n2}. Interpolasi: {r1} + {n1} ÷ ({n1} − ({n2})) × 1 poin persen ≈ {est}. IRR tepat dengan metode bagi dua (bisection): {irr}.',
+  tool_irr_invest_hint:
+    'Dihitung sebagai kas keluar pada periode 0. Kosongkan jika daftar di bawah sudah dimulai dari periode 0.',
+  tool_irr_invest_label: 'Investasi awal (opsional)',
+  tool_irr_invest_ph: 'contoh: 1000',
+  tool_irr_irrOut_label: 'IRR',
+  tool_irr_mirr_label: 'MIRR (pembiayaan dan reinvestasi pada tingkat diskonto)',
+  tool_irr_multi_tpl:
+    'Tanda arus kas berganti {k} kali dan terdapat {n} IRR: {list}. Membandingkan IRR dengan tingkat diskonto tidak bisa diandalkan di sini — pakai NPV pada tingkat diskonto Anda, atau MIRR.',
+  tool_irr_npv_label: 'NPV pada tingkat diskonto',
+  tool_irr_npv_tpl: '{npv} pada {rate}.',
+  tool_irr_per_year_tpl: '{p} per periode ≈ {a} per tahun',
+  tool_irr_period_label: 'Satu periode sama dengan',
+  tool_irr_period_month: '1 bulan',
+  tool_irr_period_quarter: '1 kuartal',
+  tool_irr_period_year: '1 tahun',
+  tool_irr_rate_hint:
+    'Tingkat pengembalian minimum yang Anda syaratkan (MARR) atau biaya modal. Dipakai untuk menghitung NPV dan MIRR.',
+  tool_irr_rate_label: 'Tingkat diskonto % per tahun (opsional)',
+  tool_irr_rate_none: 'Isi tingkat diskonto untuk melihat NPV dan MIRR.',
+  tool_irr_rate_ph: 'contoh: 10',
+  tool_irr_ref_a_label: 'Investopedia — Internal Rate of Return (IRR), dalam bahasa Inggris',
+  tool_irr_ref_b_label: 'Microsoft Support — fungsi IRR di Excel, dalam bahasa Inggris',
+  tool_irr_references:
+    'Investopedia — Internal rate of return (dalam bahasa Inggris); Microsoft Support — fungsi IRR di Excel (dalam bahasa Inggris).',
+  tool_irr_result_note:
+    'Setiap arus kas dianggap terjadi di akhir periode yang sama panjang, asumsi yang sama dengan fungsi IRR di Excel dan Google Sheets. Untuk pembayaran pada tanggal yang tidak teratur, gunakan XIRR.',
   tool_irr_sample: 'Muat contoh',
-  tool_irr_title: 'Kalkulator IRR',
-  tool_irr_usecase_1: 'Homework.',
-  tool_irr_usecase_2: 'Quick sketch.',
-  tool_irr_usecase_3: 'Sketch before talking to an advisor — not a substitute.',
-  tool_irr_usecases_title: 'Kapan dipakai',
+  tool_irr_signs_tpl:
+    'Tanda arus kas berganti {k} kali. Hanya satu IRR yang ditemukan antara −99% dan 1.000%, tetapi periksa juga NPV-nya.',
+  tool_irr_title: 'Kalkulator IRR — Hitung Internal Rate of Return dari Arus Kas, Lengkap dengan Langkahnya',
+  tool_irr_unit_month: 'per bulan',
+  tool_irr_unit_quarter: 'per kuartal',
+  tool_irr_unit_year: 'per tahun',
+  tool_irr_usecase_1:
+    'Tugas manajemen keuangan atau studi kelayakan: proyek 50.000 dengan arus kas 15.000, 18.000, 20.000, dan 22.000 memiliki IRR 17,19%, dan NPV pada 12% sebesar 5.959,35.',
+  tool_irr_usecase_2:
+    'Mesin, peralatan usaha, atau properti sewaan: bandingkan IRR pembelian dengan bunga pinjaman yang akan membiayainya.',
+  tool_irr_usecase_3:
+    'Cicilan bulanan: 12.000 yang dilunasi dengan dua belas cicilan 1.100 berbiaya 1,50% per bulan, atau 19,53% per tahun efektif.',
+  tool_irr_usecase_4:
+    'Mengecek spreadsheet: tempel kolom yang sama dengan yang Anda masukkan ke fungsi IRR di Excel, pastikan hasilnya cocok, sekaligus lihat apakah ada IRR kedua.',
+  tool_irr_usecases_title: 'Kapan kalkulator ini berguna',
+  tool_irr_verdict_above:
+    'IRR {irr} sama dengan atau di atas {rate}, jadi investasi ini layak: hasilnya minimal sebesar yang Anda syaratkan.',
+  tool_irr_verdict_below: 'IRR {irr} di bawah {rate}, jadi hasil investasi ini lebih kecil dari yang Anda syaratkan.',
+  tool_irr_verdict_nonconv:
+    'Arus kas ini bukan pola sederhana “investasi dulu, lalu menerima hasil”, jadi nilailah dengan NPV ini, bukan dengan membandingkan IRR dan tingkat diskonto.',
+  tool_irr_why_choose_item_1:
+    'Langkah interpolasi ditulis seperti di buku studi kelayakan: NPV pada dua persentase bulat di kiri dan kanan jawaban, lalu interpolasi di antaranya. Cocok untuk mengecek tugas atau skripsi yang dihitung manual.',
+  tool_irr_why_choose_item_2:
+    'NPV dan MIRR pada tingkat diskonto Anda tampil di samping IRR, sehingga langsung terlihat apakah proyek layak dan berapa hasilnya jika kas diinvestasikan kembali pada tingkat yang realistis.',
+  tool_irr_why_choose_item_3:
+    'Arus kas bulanan dan kuartalan disetahunkan dengan benar. IRR bulanan 1,50% setara 19,53% per tahun efektif, bukan 17,97% yang didapat dari mengalikan dengan 12.',
+  tool_irr_why_choose_item_4:
+    'Semua IRR ditemukan, bukan hanya satu. Banyak kalkulator memulai metode Newton dari satu tebakan dan diam-diam menampilkan akar mana pun yang ditemukan; di sini seluruh rentang −99% sampai 1.000% diperiksa dan semua akarnya ditampilkan.',
+  tool_irr_why_choose_item_5:
+    'Angka bisa dimasukkan apa adanya: kolom yang disalin dari spreadsheet, daftar yang mencakup periode 0, atau 1100*12 untuk serangkaian pembayaran yang sama besar.',
+  tool_irr_why_choose_title: 'Kenapa memakai kalkulator IRR ini',
   tool_join_audio_files_in_order_advanced: 'Catatan gabung',
   tool_join_audio_files_in_order_article:
     'Take podcast, memo suara, dan bagian lagu sering perlu menjadi satu file berkelanjutan. Halaman ini memungkinkan Anda menjatuhkan beberapa file lokal, menyusun ulang di daftar, mendekode setiap klip di browser, menyelaraskan laju sampel dan saluran, lalu menggabungkan sampel dalam urutan itu menjadi satu WAV PCM 16-bit. Halaman ini tidak menumpuk trek sekaligus (overlay), tidak melakukan crossfade antar lagu, dan tidak mengekstrak audio dari video. Keberhasilan bergantung pada apakah browser dapat mendekode setiap kontainer. Saluran tetap satu atau dua. Simpan aslinya; unduhan adalah file baru. Pekerjaan berjalan di perangkat Anda.',
@@ -15385,51 +15673,128 @@ const id: SiteLangDict = {
   tool_linkedin_banner_size_usecase_2: 'Judul jauh dari avatar: cek overlay lalu unduh.',
   tool_linkedin_banner_size_usecase_3: 'Channel art YouTube: ganti chip ke 2560×1440 dan jendela aman.',
   tool_linkedin_banner_size_usecases_title: 'Cocok untuk',
-  tool_logarithm_article: 'Hitung log₁₀, ln, atau log basis kustom untuk x>0 di browser.',
-  tool_logarithm_base_label: 'Basis b',
-  tool_logarithm_base_ph: 'mis. 2',
+  tool_logarithm_article:
+    'Hitung logaritma dengan basis apa pun, atau balikkan dengan antilogaritma, dan lihat cara mendapatkan jawabannya. Kalkulator mengenali nilai eksak seperti log₄ 8 = 3/2, menampilkan langkah perubahan basis, pengecekan dengan memangkatkan basis, bilangan yang sama dalam basis 10, e, dan 2, serta karakteristik, mantisa, notasi ilmiah, dan banyak angka yang dipakai pada soal tabel logaritma dan menghitung banyak angka.',
+  tool_logarithm_base_10: '10 — logaritma basis 10 (log)',
+  tool_logarithm_base_2: '2 — logaritma basis 2 (²log, log₂)',
+  tool_logarithm_base_custom: 'Basis lain…',
+  tool_logarithm_base_e: 'e — logaritma natural (ln)',
+  tool_logarithm_base_label: 'Basis',
   tool_logarithm_calculate: 'Hitung',
+  tool_logarithm_char_bar_tpl: 'karakteristik {c}, mantisa {m} — ditulis {bar} pada tabel logaritma',
+  tool_logarithm_char_label: 'Karakteristik dan mantisa (log₁₀)',
+  tool_logarithm_char_tpl: 'karakteristik {c}, mantisa {m}',
+  tool_logarithm_check_label: 'Pengecekan',
   tool_logarithm_clear: 'Hapus',
+  tool_logarithm_custom_label: 'Basis b',
+  tool_logarithm_custom_ph: 'mis. 4; 0,5 atau 1/2',
   tool_logarithm_description:
-    'Hitung log₁₀, ln, atau log_b(x) untuk x>0. Basis kustom memakai ln(x)/ln(b). Contoh: log₁₀(1000)=3. Menuliskan domain (x>0, b>0, b≠1). Di browser untuk tugas.',
-  tool_logarithm_disclaimer: 'Hanya log real edukasi. Bukan pengganti CAS.',
-  tool_logarithm_err_generic: 'Masukkan x>0; untuk basis kustom, b>0 dan b≠1.',
-  tool_logarithm_example: 'Contoh: log₁₀(1000)=3.',
-  tool_logarithm_example_title: 'Contoh',
-  tool_logarithm_faq_a1: 'Log natural dengan basis e ≈ 2,71828.',
-  tool_logarithm_faq_a2: 'Log real tidak terdefinisi di 0 dan negatif di halaman ini.',
-  tool_logarithm_faq_a3: 'Tidak. Log basis 1 tidak terdefinisi.',
-  tool_logarithm_faq_a4: 'Perubahan basis: ln(x)/ln(b).',
-  tool_logarithm_faq_q1: 'Apa itu ln?',
-  tool_logarithm_faq_q2: 'Mengapa x > 0?',
-  tool_logarithm_faq_q3: 'Basis boleh 1?',
-  tool_logarithm_faq_q4: 'Basis kustom?',
-  tool_logarithm_formula_body: 'log_b(x) adalah eksponen yang membawa b ke x. Di halaman ini:',
-  tool_logarithm_formula_item_1: 'log₁₀ umum; ln alami (basis e).',
-  tool_logarithm_formula_item_2: 'Kustom: log_b(x)=ln(x)/ln(b) dengan b>0, b≠1, x>0.',
-  tool_logarithm_formula_item_3: 'x harus positif.',
-  tool_logarithm_formula_item_4: 'Padankan dengan halaman eksponen untuk cek b^y≈x.',
-  tool_logarithm_formula_title: 'Rumus dan domain',
+    'Hitung logaritma basis 10, logaritma natural (ln), log₂, atau basis apa pun, serta antilog dari desimal, pecahan, dan pangkat. Menampilkan nilai eksak seperti log₄ 8 = 3/2, langkah sifat perubahan basis, karakteristik dan mantisa, plus contoh soal.',
+  tool_logarithm_disclaimer:
+    'Untuk belajar dan pengecekan sehari-hari dengan bilangan real. Hasil berupa nilai floating-point yang dibulatkan hingga 10 angka penting, dan logaritma kompleks tidak dicakup — untuk ujian atau pekerjaan teknik, ikuti metode dan ketelitian yang diminta mata kuliah atau standar Anda.',
+  tool_logarithm_err_base:
+    'Masukkan basis lebih dari 0 dan tidak sama dengan 1 (logaritma basis 1 tidak terdefinisi, karena 1 pangkat berapa pun tetap 1).',
+  tool_logarithm_err_empty: 'Masukkan bilangan yang ingin dihitung.',
+  tool_logarithm_err_neg:
+    'Bilangan negatif tidak memiliki logaritma real, karena basis positif yang dipangkatkan berapa pun hasilnya selalu positif. Masukkan x lebih dari 0.',
+  tool_logarithm_err_num:
+    '“{v}” tidak dapat dibaca sebagai bilangan. Gunakan angka, pecahan seperti 1/8, pangkat seperti 2^10, atau notasi ilmiah seperti 3,2e-5.',
+  tool_logarithm_err_range: 'Hasilnya terlalu besar atau terlalu kecil untuk ditampilkan — coba pangkat yang lebih kecil.',
+  tool_logarithm_err_zero:
+    'log(0) tidak terdefinisi: makin dekat x ke 0, logaritmanya makin turun menuju minus tak hingga, sehingga tidak ada nilai real.',
+  tool_logarithm_exact_tpl: 'Nilai eksak {f}, karena {pow} = {x}',
+  tool_logarithm_example:
+    'log₁₀(1000) = 3, karena 10³ = 1000; bilangan yang sama memberi ln 1000 = 6,907755279 dan log₂ 1000 = 9,965784285. Dengan basis 4, log₄ 8 = ln 8 ÷ ln 4 = 2,079441542 ÷ 1,386294361 = 3/2, karena 4^(3/2) = 8. Untuk bilangan di bawah 1, log₁₀(0,0345) = −1,462180905: karakteristik −2, mantisa 0,5378190951, ditulis 2̄,5378 pada tabel logaritma, dan ada 1 nol antara koma dan angka 3. Sebaliknya, antilog 10^2,5 = 316,227766.',
+  tool_logarithm_example_title: 'Contoh soal dan pembahasan',
+  tool_logarithm_faq_a1:
+    'Gunakan sifat perubahan basis: log_b(x) = ln(x) ÷ ln(b), atau log(x) ÷ log(b) dengan logaritma basis 10. Untuk log₄ 8: ln 8 ÷ ln 4 = 2,079441542 ÷ 1,386294361 = 1,5. Di Excel dengan pengaturan regional Indonesia, =LOG(8;4) juga menghasilkan 1,5.',
+  tool_logarithm_faq_a2:
+    'Di kalkulator dan buku sekolah, log tanpa basis berarti logaritma basis 10, sedangkan ln adalah logaritma natural dengan basis e ≈ 2,718281828. Buku pelajaran di Indonesia sering menulis basis di kiri atas, misalnya ²log 8 = 3 untuk log₂ 8; halaman ini selalu menulis log₁₀, ln, dan log₂. Hati-hati di luar kelas: LOG() di Excel memakai basis 10 secara default, tetapi di Python dan JavaScript log(x) berarti logaritma natural. Keduanya hanya berbeda faktor tetap: ln x = log₁₀ x × 2,302585093.',
+  tool_logarithm_faq_a3:
+    'Basis positif yang dipangkatkan bilangan real berapa pun selalu menghasilkan bilangan positif, jadi tidak ada pangkat yang menghasilkan 0 atau bilangan negatif. Saat x mendekati 0 dari kanan, log x terus turun tanpa batas menuju minus tak hingga. Logaritma bilangan negatif hanya ada sebagai bilangan kompleks, yang tidak dibahas di halaman ini.',
+  tool_logarithm_faq_a4:
+    '1 dipangkatkan berapa pun tetap 1, jadi logaritma basis 1 tidak pernah bisa mencapai bilangan lain. Basis 0 atau basis negatif tidak menghasilkan fungsi pangkat yang kontinu dan bernilai tunggal pada bilangan real. Basis antara 0 dan 1 boleh: log₀,₅ 8 = −3, karena 0,5⁻³ = 8.',
+  tool_logarithm_faq_a5:
+    'Keduanya memecah logaritma basis 10 menjadi bagian bulat (karakteristik) dan bagian desimal yang tidak negatif (mantisa) — begitulah cara kerja tabel logaritma cetak. Untuk 3450, log₁₀ = 3,537819095: karakteristik 3, mantisa 0,5378190951. Untuk 0,0345 logaritmanya −1,462180905 = −2 + 0,5378190951, ditulis 2̄,5378 dengan garis di atas angka 2. Mantisa hanya bergantung pada deret angka 345; karakteristik menunjukkan letak koma.',
+  tool_logarithm_faq_a6:
+    'Antilogaritma membalik logaritma: jika y = log_b(x), maka x = b^y. Antilog basis 10 dari 2,5 adalah 10^2,5 = 316,227766, dan antilog natural dari 1 adalah e¹ = 2,718281828. Pilih “Antilogaritma: x = b^y”, dan halaman ini juga menampilkan cek kebalikannya.',
+  tool_logarithm_faq_a7:
+    'Untuk bilangan bulat N ≥ 1, banyak angkanya adalah ⌊log₁₀ N⌋ + 1. log₁₀(2¹⁰⁰) = 100 × 0,3010299957 = 30,10299957, jadi 2¹⁰⁰ terdiri atas 31 angka. Ketik 2^100 di sini dan lihat hasilnya pada bagian “Ukuran bilangan”.',
+  tool_logarithm_faq_q1: 'Bagaimana cara menghitung logaritma dengan basis yang tidak ada di kalkulator?',
+  tool_logarithm_faq_q2: 'Apa beda log, ln, dan penulisan ²log?',
+  tool_logarithm_faq_q3: 'Mengapa logaritma 0 atau bilangan negatif tidak bisa dihitung?',
+  tool_logarithm_faq_q4: 'Mengapa basis tidak boleh 1, 0, atau negatif?',
+  tool_logarithm_faq_q5: 'Apa itu karakteristik dan mantisa?',
+  tool_logarithm_faq_q6: 'Apa itu antilog dan bagaimana mencarinya?',
+  tool_logarithm_faq_q7: 'Bagaimana menghitung banyak angka suatu bilangan besar dengan logaritma?',
+  tool_logarithm_formula_body:
+    'Logaritma menjawab pertanyaan “b harus dipangkatkan berapa agar hasilnya x?”: y = log_b(x) berarti b^y = x, dengan numerus x > 0, b > 0, dan b ≠ 1.',
+  tool_logarithm_formula_item_1:
+    'Sifat perubahan basis: log_b(x) = ln(x) ÷ ln(b) = log(x) ÷ log(b). Contoh: log₂ 1000 = 6,907755279 ÷ 0,6931471806 = 9,965784285.',
+  tool_logarithm_formula_item_2: 'Sifat perkalian dan pembagian: log(a × c) = log a + log c, dan log(a ÷ c) = log a − log c.',
+  tool_logarithm_formula_item_3: 'Sifat pangkat: log(aⁿ) = n · log a, sehingga log₁₀(2¹⁰⁰) = 100 × 0,3010299957 = 30,10299957.',
+  tool_logarithm_formula_item_4: 'Nilai khusus: log_b(1) = 0, log_b(b) = 1, dan log_b(1/x) = −log_b(x), misalnya log₂(1/8) = −3.',
+  tool_logarithm_formula_item_5: 'Antilogaritma: x = b^y. Untuk basis 10, 10^2,5 = 316,227766; untuk basis e, e¹ = 2,718281828.',
+  tool_logarithm_formula_title: 'Rumus dan sifat-sifat logaritma',
   tool_logarithm_how_body:
-    'Pilih log₁₀, ln, atau basis kustom. Masukkan x>0 (dan b bila perlu). Dihitung dengan Math.log/Math.log10 dan perubahan basis.',
-  tool_logarithm_how_title: 'Cara kerja',
-  tool_logarithm_logOut_label: 'Nilai logaritma',
-  tool_logarithm_mode_custom: 'log_b (basis kustom)',
-  tool_logarithm_mode_label: 'Jenis log',
-  tool_logarithm_mode_ln: 'ln (alami)',
-  tool_logarithm_mode_log10: 'log₁₀ (umum)',
-  tool_logarithm_ref_ln_label: 'Wikipedia — Natural logarithm',
-  tool_logarithm_ref_log_label: 'Wikipedia — Logarithm',
-  tool_logarithm_references: 'Wikipedia logarithm dan natural logarithm.',
-  tool_logarithm_result_note: 'Perubahan basis via ln: log_b(x)=ln(x)/ln(b). Memerlukan x>0 dan basis valid.',
+    'Pilih apa yang ingin dicari, tentukan basis, ketik bilangannya, lalu tekan Hitung. Hasil muncul bersama langkah pengerjaannya.',
+  tool_logarithm_how_item_1:
+    'Pilih “Logaritma: y = log_b(x)” untuk mencari y pada b^y = x, atau “Antilogaritma: x = b^y” untuk mengembalikan logaritma menjadi bilangan semula.',
+  tool_logarithm_how_item_2:
+    'Pilih basis 10, e, atau 2, atau pilih “Basis lain…” lalu ketik basis positif apa pun selain 1 — pecahan seperti 1/2 juga bisa.',
+  tool_logarithm_how_item_3:
+    'Ketik numerus sebagai desimal dengan koma (misalnya 0,0345), pecahan (1/8), pangkat (2^10), atau notasi ilmiah (3,2e-5).',
+  tool_logarithm_how_item_4:
+    'Baca hasilnya: nilai eksak bila ada, langkah perubahan basis, pengecekan dengan memangkatkan basis, serta karakteristik, mantisa, dan banyak angka.',
+  tool_logarithm_how_title: 'Cara menghitung logaritma dengan kalkulator ini',
+  tool_logarithm_input_hint:
+    'Anda bisa mengetik pecahan (1/8), pangkat (2^10), notasi ilmiah (3,2e-5), atau konstanta e. Gunakan koma sebagai pemisah desimal.',
+  tool_logarithm_inverse_tpl: 'Cek kebalikan: {s}',
+  tool_logarithm_mode_antilog: 'Antilogaritma: x = b^y',
+  tool_logarithm_mode_label: 'Apa yang ingin Anda cari?',
+  tool_logarithm_mode_log: 'Logaritma: y = log_b(x)',
+  tool_logarithm_other_label: 'Bilangan yang sama dengan basis lain',
+  tool_logarithm_out_antilog: 'Antilogaritma',
+  tool_logarithm_out_log: 'Logaritma',
+  tool_logarithm_places_frac_tpl: 'Banyak nol antara koma dan angka bukan nol pertama pada {x}: {z}',
+  tool_logarithm_places_int_tpl: 'Banyak angka sebelum koma pada {x}: {d}',
+  tool_logarithm_places_label: 'Ukuran bilangan',
+  tool_logarithm_ref_ln_label: 'Wikipedia — Natural logarithm (logaritma natural, bahasa Inggris)',
+  tool_logarithm_ref_log_label: 'Wikipedia — Logarithm (logaritma, bahasa Inggris)',
+  tool_logarithm_references: 'Latar belakang tentang definisi logaritma, sifat-sifatnya, dan logaritma natural.',
+  tool_logarithm_result_note:
+    'Nilai ditampilkan hingga 10 angka penting. Nilai eksak dikenali jika logaritmanya bilangan bulat atau pecahan dengan penyebut paling besar 12.',
   tool_logarithm_sample: 'Muat contoh',
-  tool_logarithm_title: 'Kalkulator logaritma — Cara menghitung log',
-  tool_logarithm_usecase_1: 'PR: hitung log₁₀, ln, atau log₂.',
-  tool_logarithm_usecase_2: 'Cek perubahan basis secara manual.',
-  tool_logarithm_usecase_3: 'Siapkan skala notasi ilmiah.',
-  tool_logarithm_usecases_title: 'Kapan dipakai',
-  tool_logarithm_x_label: 'Argumen x',
-  tool_logarithm_x_ph: 'mis. 1000',
+  tool_logarithm_sci_label: 'Notasi ilmiah',
+  tool_logarithm_sub_approx: 'Bukan bilangan bulat atau pecahan sederhana — ditampilkan hingga 10 angka penting',
+  tool_logarithm_title:
+    'Kalkulator Logaritma — Hitung Log Bilangan Apa Pun dengan Basis Apa Pun, Lengkap dengan Nilai Eksak dan Caranya',
+  tool_logarithm_usecase_1:
+    'Kimia: pH = −log[H⁺], sehingga konsentrasi ion hidrogen 3,2 × 10⁻⁵ mol/L memberi log₁₀ = −4,494850022 dan pH sekitar 4,49.',
+  tool_logarithm_usecase_2:
+    'Keuangan: waktu agar uang berlipat dua dengan bunga 7% per tahun adalah ln 2 ÷ ln 1,07 = 10,24 tahun — versi tepat dari aturan 72.',
+  tool_logarithm_usecase_3:
+    'Bunyi dan komputer: desibel adalah 10 · log₁₀ rasio daya, jadi rasio 1000 setara 30 dB; log₂ menunjukkan berapa bit atau langkah membagi dua yang diperlukan (log₂ 1024 = 10).',
+  tool_logarithm_usecase_4:
+    'PR dan ujian: cek jawaban soal sifat logaritma, latihan membaca karakteristik dan mantisa, atau hitung banyak angka — 2¹⁰⁰ terdiri atas ⌊30,103⌋ + 1 = 31 angka.',
+  tool_logarithm_usecases_title: 'Kapan Anda membutuhkan logaritma',
+  tool_logarithm_why_choose_item_1:
+    'Setiap hasil menampilkan langkah perubahan basis ln(x) ÷ ln(b), jadi Anda bisa mengulanginya di kalkulator yang hanya punya tombol log dan ln.',
+  tool_logarithm_why_choose_item_2:
+    'Jawaban eksak bila memang ada: log₄ 8 ditampilkan sebagai 3/2, bukan sekadar 1,5, lengkap dengan alasannya 4^(3/2) = 8.',
+  tool_logarithm_why_choose_item_3:
+    'Satu input langsung memberi log₁₀, ln, dan log₂ berdampingan, dan mode antilogaritma bisa membalik salah satunya.',
+  tool_logarithm_why_choose_item_4:
+    'Uraian logaritma basis 10 memberi karakteristik, mantisa, dan notasi garis atas seperti pada tabel logaritma, misalnya log₁₀ 0,0345 = 2̄,5378.',
+  tool_logarithm_why_choose_item_5:
+    'Pesan yang jelas menerangkan mengapa log(0), logaritma bilangan negatif, dan basis 1 tidak punya nilai real — bukan sekadar pesan error.',
+  tool_logarithm_why_choose_title: 'Kelebihan kalkulator ini',
+  tool_logarithm_work_change: 'Perubahan basis',
+  tool_logarithm_work_label: 'Langkah pengerjaan',
+  tool_logarithm_x_label_antilog: 'Pangkat y (nilai logaritma)',
+  tool_logarithm_x_label_log: 'Bilangan x (numerus)',
+  tool_logarithm_x_ph_antilog: 'mis. 2,5 atau −3',
+  tool_logarithm_x_ph_log: 'mis. 1000; 1/8; 2^10 atau 3,2e-5',
   tool_macros_article: 'Kalkulator makro',
   tool_macros_cG_label: 'Karbo (g)',
   tool_macros_cPct_label: 'Karbo %',
@@ -17124,44 +17489,141 @@ const id: SiteLangDict = {
   tool_measuring_magnetic_fields_value_ph: 'mis. 200',
   tool_measuring_magnetic_fields_width_label: 'Lebar muka (mm)',
   tool_measuring_magnetic_fields_z_label: 'Jarak dari muka z (mm)',
-  tool_median_article: 'Kalkulator median dan modus',
+  tool_median_article: 'Median dan modus',
   tool_median_calculate: 'Hitung',
   tool_median_clear: 'Hapus',
+  tool_median_col_cf: 'Frekuensi kumulatif (cf)',
+  tool_median_col_class: 'Kelas',
+  tool_median_col_f: 'Frekuensi (f)',
+  tool_median_col_mid: 'Titik tengah (x)',
+  tool_median_count_tpl: '{n} nilai',
   tool_median_description:
-    'Hitung median dan modus dari daftar angka setelah diurutkan (nilai tengah; paling sering). Contoh: 1,2,2,3,4 → median 2, modus 2. Hanya di browser; proses statistik cepat.',
-  tool_median_disclaimer: 'Hanya ilustrasi edukatif (median).',
-  tool_median_err_generic: 'Periksa input.',
-  tool_median_example: 'Contoh: median 2, modus 2.',
+    'Hitung median dan modus dari deret angka atau tabel distribusi frekuensi data berkelompok. Lihat data terurut dengan nilai tengah ditandai, cara menangani banyak data ganjil dan genap, semua modus (atau tidak ada modus), rata-rata, serta rumus L + (N/2 − cf) ÷ f × h yang diisi angka Anda.',
+  tool_median_disclaimer:
+    'Untuk belajar dan pengecekan data sehari-hari. Hasil data berkelompok adalah perkiraan berdasarkan tepi kelas, bukan median persis dari data aslinya.',
+  tool_median_err_empty:
+    'Masukkan angka, misalnya 12 5 8 3 9 — atau untuk data berkelompok, satu kelas per baris seperti 10-20 8.',
+  tool_median_err_line:
+    '“{line}” tidak dapat dibaca. Tulis satu kelas per baris: batas bawah, batas atas, frekuensi — misalnya 10-20 8.',
+  tool_median_err_many: 'Maksimal 10.000 nilai atau 100 kelas.',
+  tool_median_err_order:
+    'Kelas {line} tumpang tindih dengan kelas sebelumnya. Urutkan kelas dari yang terkecil ke terbesar tanpa tumpang tindih.',
+  tool_median_err_token:
+    '“{token}” bukan angka. Pisahkan nilai dengan spasi, titik koma, atau baris baru; koma adalah tanda desimal.',
+  tool_median_err_zero: 'Jumlah frekuensi 0. Masukkan minimal satu kelas dengan frekuensi lebih dari 0.',
+  tool_median_even_tpl:
+    'n = {n} genap, jadi median adalah rata-rata nilai pada urutan ke-{a} dan ke-{b}: ({x} + {y}) ÷ 2 = {v}.',
+  tool_median_example:
+    'Data: 12 5 8 3 9 7 41 7. Setelah diurutkan: 3 5 7 7 8 9 12 41. Ada 8 data, jadi median adalah rata-rata data ke-4 dan ke-5: (7 + 8) ÷ 2 = 7,5. Modusnya 7 (muncul dua kali). Rata-ratanya 92 ÷ 8 = 11,5 — tertarik ke atas oleh 41, karena itu median lebih tepat sebagai nilai yang umum. Klik “Muat contoh” lagi untuk deret bimodal (modus 4 dan 7), lalu untuk tabel data berkelompok dengan median 25,83.',
   tool_median_example_title: 'Contoh',
-  tool_median_faq_a1: 'Contoh: median 2, modus 2.',
-  tool_median_faq_a2: 'See Formula section.',
-  tool_median_faq_a3: 'Educational only.',
-  tool_median_faq_a4: 'Educational only.',
-  tool_median_faq_q1: 'Contoh?',
-  tool_median_faq_q2: 'Formula?',
-  tool_median_faq_q3: 'Advice?',
-  tool_median_faq_q4: 'Related?',
-  tool_median_formula_body: 'Tempel daftar angka.',
-  tool_median_formula_item_1: 'See formula notes.',
-  tool_median_formula_item_2: 'Check inputs.',
-  tool_median_formula_item_3: 'Educational only.',
-  tool_median_formula_title: 'Rumus',
-  tool_median_how_body: 'Tempel daftar angka.',
-  tool_median_how_title: 'Cara kerja',
+  tool_median_faq_a1:
+    'Urutkan data lalu ambil rata-rata dua nilai di tengah. Untuk 3 5 7 7 8 9 12 41, pasangan tengahnya adalah data ke-4 dan ke-5, yaitu 7 dan 8, sehingga median = 7,5. Median tidak harus salah satu angka dalam data.',
+  tool_median_faq_a2:
+    'Bisa keduanya. Pada 2 4 4 5 7 7 9, angka 4 dan 7 sama-sama muncul dua kali, jadi datanya bimodal (mediannya 5). Jika setiap nilai muncul sama sering — misalnya 1 2 3 atau 1 1 2 2 — tidak ada modus.',
+  tool_median_faq_a3:
+    'Saat data punya pencilan atau sebarannya miring. Pada contoh, satu nilai 41 menaikkan rata-rata menjadi 11,5, sedangkan median tetap 7,5. Tanpa 41, rata-rata turun ke 7,29 sementara median hampir tidak bergeser, menjadi 7. Karena itu pendapatan dan harga rumah biasanya dilaporkan dengan median.',
+  tool_median_faq_a4:
+    'Hitung N/2, cari kelas pertama yang frekuensi kumulatifnya mencapai nilai itu, lalu pakai L + (N/2 − cf) ÷ f × h (di buku: Me = Tb + ((n/2 − fk) ÷ f) × p). Pada tabel contoh N = 40, jadi N/2 = 20; frekuensi kumulatif mencapai 20 di kelas 20–30, sehingga median = 20 + (20 − 13) ÷ 12 × 10 = 25,83.',
+  tool_median_faq_a5:
+    'Ya: rumus memerlukan tepi kelas tanpa celah, jadi 10–19 menjadi 9,5–19,5 (tepi bawah 9,5). Kalkulator melakukannya otomatis dan memberi tahu Anda. Untuk 10–19: 4; 20–29: 10; 30–39: 14; 40–49: 7; 50–59: 5 mediannya 33,79 dan modusnya 33,14.',
+  tool_median_faq_a6:
+    'Kalau menghitung manual, ya — nilai tengah dari data yang belum diurutkan hanyalah angka acak. Di sini Anda bisa menempel angka dengan urutan apa pun; alat ini mengurutkannya dan menampilkan data terurut agar bisa disalin ke jawaban Anda.',
+  tool_median_faq_a7:
+    'MEDIAN memberi hasil yang sama. MODE.SNGL hanya mengembalikan modus pertama sesuai urutan data dan #N/A jika tidak ada modus; MODE.MULT mengembalikan semuanya, seperti halaman ini. Excel tidak punya fungsi median data berkelompok, jadi tabel frekuensi biasanya dihitung manual.',
+  tool_median_faq_q1: 'Bagaimana cara mencari median jika banyak datanya genap?',
+  tool_median_faq_q2: 'Apakah modus bisa lebih dari satu, atau tidak ada sama sekali?',
+  tool_median_faq_q3: 'Kapan sebaiknya memakai median, bukan rata-rata?',
+  tool_median_faq_q4: 'Bagaimana cara mencari median data berkelompok?',
+  tool_median_faq_q5: 'Kelas saya 10–19; 20–29… apakah perlu diubah?',
+  tool_median_faq_q6: 'Apakah angka harus diurutkan dulu?',
+  tool_median_faq_q7: 'Apakah hasilnya sama dengan fungsi MEDIAN dan MODE di Excel?',
+  tool_median_formula_body: 'Untuk n data yang diurutkan dari terkecil ke terbesar:',
+  tool_median_formula_item_1: 'n ganjil: median adalah data ke-(n + 1) ÷ 2 — data ke-4 dari 7 data.',
+  tool_median_formula_item_2: 'n genap: median adalah rata-rata data ke-n ÷ 2 dan ke-(n ÷ 2 + 1) — data ke-4 dan ke-5 dari 8 data.',
+  tool_median_formula_item_3:
+    'Modus: nilai yang paling sering muncul. Sekumpulan data bisa punya satu modus, beberapa modus (bimodal, multimodal), atau tidak punya modus jika semua nilai muncul sama sering.',
+  tool_median_formula_item_4:
+    'Median data berkelompok = L + (N/2 − cf) ÷ f × h, dengan L tepi bawah kelas median, cf frekuensi kumulatif sebelum kelas median, f frekuensi kelas median, dan h panjang kelas. Di buku pelajaran ditulis Me = Tb + ((n/2 − fk) ÷ f) × p — rumusnya sama.',
+  tool_median_formula_item_5:
+    'Modus data berkelompok = L + (f₁ − f₀) ÷ (2f₁ − f₀ − f₂) × h, dengan f₁ frekuensi kelas modus, f₀ dan f₂ frekuensi kelas sebelum dan sesudahnya. Bentuk buku pelajaran Mo = Tb + (d₁ ÷ (d₁ + d₂)) × p memberi hasil sama, karena d₁ = f₁ − f₀ dan d₂ = f₁ − f₂.',
+  tool_median_formula_title: 'Rumus median dan modus',
+  tool_median_g_bound_tpl:
+    'Antarkelas ada celah {gap}, jadi setiap batas digeser keluar setengah celah untuk mendapat tepi kelas — kelas pertama menjadi {lo}–{hi}.',
+  tool_median_g_mean_tpl: 'Σ f·x ÷ N = {sum} ÷ {N} = {v} (x = titik tengah kelas)',
+  tool_median_g_median_tpl:
+    'N = {N}, jadi N/2 = {half}. Frekuensi kumulatif pertama kali mencapai {half} di kelas {cls} — inilah kelas median (frekuensi kumulatif sebelumnya cf = {cf}, frekuensi f = {f}, panjang kelas h = {h}). Median = L + (N/2 − cf) ÷ f × h = {L} + ({half} − {cf}) ÷ {f} × {h} = {v}.',
+  tool_median_g_mode_flat_tpl:
+    'Kelas modus {cls}, tetapi frekuensi kelas di sebelahnya sama besar sehingga rumus tidak berlaku; titik tengah kelas {mid} dipakai sebagai gantinya.',
+  tool_median_g_mode_multi_tpl:
+    'Beberapa kelas memiliki frekuensi tertinggi yang sama ({list}), sehingga rumus modus data berkelompok tidak memberi satu jawaban.',
+  tool_median_g_mode_tpl:
+    'Kelas modus {cls} (f₁ = {f1}, kelas sebelumnya f₀ = {f0}, kelas sesudahnya f₂ = {f2}). Modus = L + (f₁ − f₀) ÷ (2f₁ − f₀ − f₂) × h = {L} + ({f1} − {f0}) ÷ (2 × {f1} − {f0} − {f2}) × {h} = {v}.',
+  tool_median_groups_hint:
+    'Tulis batas bawah, batas atas, dan frekuensi, misalnya 10-20 8 atau 10–19: 8. Kelas yang berjarak (misalnya 10–19 dan 20–29) otomatis diubah menjadi tepi kelas (9,5–19,5).',
+  tool_median_groups_label: 'Kelas dan frekuensi (satu kelas per baris)',
+  tool_median_groups_ph: 'mis.\n0-10 5\n10-20 8\n20-30 12',
+  tool_median_how_body:
+    'Urutkan angka dari yang terkecil ke terbesar. Jika banyak data ganjil, median adalah nilai yang tepat di tengah; jika genap, median adalah rata-rata dua nilai tengah. Untuk data berkelompok, cari kelas yang memuat data ke-N/2, lalu lakukan interpolasi di dalam kelas itu.',
+  tool_median_how_item_1:
+    'Pilih “Deret angka”, atau “Data berkelompok (tabel frekuensi)” jika Anda hanya punya tabel distribusi frekuensi.',
+  tool_median_how_item_2:
+    'Tempel atau ketik nilainya dengan urutan bebas — atau satu kelas per baris beserta frekuensinya, misalnya 20-30 12.',
+  tool_median_how_item_3: 'Klik “Hitung”. Data terurut muncul dengan satu atau dua nilai tengah ditandai.',
+  tool_median_how_item_4:
+    'Baca median, langkah perhitungan, modus, dan rata-rata; untuk data berkelompok, kelas median ditandai di tabel frekuensi kumulatif.',
+  tool_median_how_title: 'Cara mencari median',
+  tool_median_mean_label: 'Rata-rata (mean)',
   tool_median_medianOut_label: 'Median',
   tool_median_modeOut_label: 'Modus',
+  tool_median_mode_grouped: 'Data berkelompok (tabel frekuensi)',
+  tool_median_mode_label: 'Jenis data',
+  tool_median_mode_list: 'Deret angka',
+  tool_median_mode_multi_tpl: '{list} (masing-masing muncul {c} kali)',
+  tool_median_mode_none_equal_tpl: 'Tidak ada modus — setiap nilai muncul {c} kali.',
+  tool_median_mode_none_once: 'Tidak ada modus — setiap nilai hanya muncul sekali.',
+  tool_median_mode_one_tpl: '{v} (muncul {c} kali)',
+  tool_median_note_grouped: 'Hasil data berkelompok adalah perkiraan: nilai di dalam setiap kelas dianggap tersebar merata.',
+  tool_median_note_list: 'Urutan input tidak berpengaruh — angka diurutkan terlebih dahulu.',
+  tool_median_nums_hint:
+    'Pisahkan nilai dengan spasi, titik koma, atau baris baru; koma dipakai sebagai tanda desimal (7,5). Kolom yang disalin dari Excel bisa langsung ditempel. Bilangan desimal dan negatif diperbolehkan.',
   tool_median_nums_label: 'Angka',
-  tool_median_nums_ph: 'mis. 1,2,2,3,4',
-  tool_median_ref_a_label: 'Wikipedia',
-  tool_median_ref_b_label: 'Textbook formula',
-  tool_median_references: 'Rumus buku teks.',
-  tool_median_result_note: 'Edukatif.',
+  tool_median_nums_ph: 'mis. 12 5 8 3 9 7 41 7',
+  tool_median_odd_tpl: 'n = {n} ganjil, jadi median adalah nilai pada urutan ke-(n + 1) ÷ 2 = {pos} dari data terurut: {v}.',
+  tool_median_range_label: 'Jangkauan',
+  tool_median_range_tpl: '{max} − {min} = {r}',
+  tool_median_ref_a_label: 'NIST/SEMATECH e-Handbook — Measures of Location (ukuran pemusatan)',
+  tool_median_ref_b_label: 'Wikipedia — Median for grouped data (median data berkelompok)',
+  tool_median_references:
+    'NIST/SEMATECH e-Handbook of Statistical Methods — Measures of location (ukuran pemusatan); Wikipedia — Median for grouped data (median data berkelompok).',
   tool_median_sample: 'Muat contoh',
-  tool_median_title: 'Kalkulator median dan modus',
-  tool_median_usecase_1: 'Homework.',
-  tool_median_usecase_2: 'Quick sketch.',
-  tool_median_usecase_3: 'Compare with mean.',
+  tool_median_skew_left:
+    'Rata-rata jauh di bawah median: beberapa nilai kecil menarik rata-rata ke bawah, sehingga median lebih menggambarkan nilai yang umum.',
+  tool_median_skew_right:
+    'Rata-rata jauh di atas median: beberapa nilai besar menarik rata-rata ke atas, sehingga median lebih menggambarkan nilai yang umum.',
+  tool_median_sorted_label: 'Data terurut',
+  tool_median_title: 'Kalkulator Median dan Modus — untuk Deret Angka atau Data Berkelompok, dengan Langkahnya',
+  tool_median_total_tpl: 'N = {n} (jumlah frekuensi)',
+  tool_median_usecase_1:
+    'PR statistik dengan tabel distribusi frekuensi: 0–10: 5; 10–20: 8; 20–30: 12; 30–40: 9; 40–50: 6 menghasilkan kelas median 20–30 dan median 20 + (20 − 13) ÷ 12 × 10 = 25,83.',
+  tool_median_usecase_2:
+    'Gaji, harga rumah, dan waktu pengiriman, ketika beberapa nilai ekstrem membuat rata-rata menyesatkan dan median-lah angka yang biasa dikutip.',
+  tool_median_usecase_3:
+    'Nilai ulangan dan hasil survei: temukan nilai tengah dan jawaban yang paling sering muncul dalam satu langkah.',
+  tool_median_usecase_4:
+    'Mengecek spreadsheet: tempel kolom yang Anda hitung dengan MEDIAN atau MODE.SNGL dan pastikan hasilnya sama, termasuk saat ada lebih dari satu modus.',
   tool_median_usecases_title: 'Kapan dipakai',
+  tool_median_why_choose_item_1:
+    'Data berkelompok sudah tersedia: tempel tabel distribusi frekuensi dan dapatkan kelas median, rumus interpolasi yang sudah diisi angka Anda, modus data berkelompok, dan rata-rata dari titik tengah.',
+  tool_median_why_choose_item_2:
+    'Kelas yang ditulis berjarak seperti 10–19 dan 20–29 diubah ke tepi kelas 9,5–19,5 dan seterusnya — langkah tepi bawah kelas yang diwajibkan buku pelajaran tetapi sering dilewati kalkulator lain.',
+  tool_median_why_choose_item_3:
+    'Data terurut ditampilkan dengan nilai tengah ditandai, jadi Anda tahu persis nilai mana yang dipakai — kesalahan paling umum adalah mengambil nilai tengah dari data yang belum diurutkan.',
+  tool_median_why_choose_item_4:
+    'Modus dilaporkan apa adanya: semua modus jika ada yang sama banyak, dan “tidak ada modus” jika semua nilai muncul sama sering, bukan sekadar memilih angka terkecil.',
+  tool_median_why_choose_item_5:
+    'Rata-rata dan jangkauan ditampilkan di samping median, dengan catatan jika pencilan menarik rata-rata menjauh — berguna untuk memutuskan ukuran pemusatan mana yang dilaporkan.',
+  tool_median_why_choose_title: 'Kenapa memakai kalkulator median ini',
+  tool_median_work_label: 'Langkah',
   tool_merge_pdf_article:
     'Gabungkan beberapa PDF sesuai urutan daftar dengan pdf-lib di klien—tanpa unggah ke server. Susun ulang, tangani gagal enkripsi, unduh satu dokumen.',
   tool_merge_pdf_choose_files: 'Pilih PDF',
@@ -19175,50 +19637,146 @@ const id: SiteLangDict = {
   tool_permutation_combination_work_label: 'Langkah hitung',
   tool_permutation_combination_zero_note:
     'r lebih besar dari n, jadi tanpa pengulangan tidak ada cara mengambil r benda berbeda — hitungan tanpa ulang = 0. Izinkan pengulangan atau turunkan r.',
-  tool_present_value_amount_label: 'Jumlah',
+  tool_present_value_amount_label_fv: 'Jumlah yang diinvestasikan hari ini (sekaligus)',
+  tool_present_value_amount_label_pv: 'Jumlah di masa depan (diterima sekaligus di akhir)',
   tool_present_value_amount_ph: 'mis. 10000',
-  tool_present_value_article: 'Kalkulator present value (PV/FV)',
+  tool_present_value_ann_fv_tpl: 'Pembayaran: {p} × ({g} − 1) ÷ {i} = {p} × {af} = {v}',
+  tool_present_value_ann_pv_tpl: 'Pembayaran: {p} × (1 − 1 ÷ {g}) ÷ {i} = {p} × {af} = {v}',
+  tool_present_value_ann_zero_tpl: 'Pembayaran pada bunga 0%: {p} × {N} = {v}',
+  tool_present_value_article: 'Nilai sekarang dan nilai masa depan',
   tool_present_value_calculate: 'Hitung',
   tool_present_value_clear: 'Hapus',
+  tool_present_value_col_balance: 'Saldo akhir tahun',
+  tool_present_value_col_flow: 'Pembayaran',
+  tool_present_value_col_interest: 'Bunga',
+  tool_present_value_col_year: 'Tahun',
+  tool_present_value_comp_1: 'Tahunan',
+  tool_present_value_comp_12: 'Bulanan',
+  tool_present_value_comp_2: 'Semesteran (6 bulanan)',
+  tool_present_value_comp_365: 'Harian (365)',
+  tool_present_value_comp_4: 'Kuartalan',
+  tool_present_value_comp_cont: 'Kontinu',
+  tool_present_value_comp_label: 'Pemajemukan bunga',
+  tool_present_value_cont_tpl: 'Pemajemukan kontinu: faktor pertumbuhan e^(r × t) = e^({r} × {t}) = {g}.',
   tool_present_value_description:
-    'Ganti mode PV dan FV untuk jumlah tunggal. Contoh: FV 10000, 5%, 5 tahun → PV ≈ 7835.26. Edukatif. Perhitungan edukatif di browser; bukan saran profesional.',
-  tool_present_value_disclaimer: 'Hanya ilustrasi edukatif (present value); bukan saran keuangan.',
-  tool_present_value_err_generic: 'Periksa input.',
-  tool_present_value_example: 'Contoh: FV 10000, 5%, 5 tahun → PV ≈ 7835.26.',
+    'Hitung nilai sekarang (present value) atau nilai masa depan (future value) dari uang sekaligus, pembayaran rutin (anuitas), atau keduanya. Pilih bunga majemuk tahunan hingga harian atau kontinu dan pembayaran di akhir atau di awal periode, lalu lihat rumus dengan angka Anda, suku bunga efektif tahunan, cek suku bunga ±1 poin, dan saldo per tahun.',
+  tool_present_value_disclaimer:
+    'Perhitungan nilai waktu uang untuk edukasi, bukan saran keuangan, pajak, atau investasi. Imbal hasil nyata bisa berbeda, dan pajak, biaya, serta inflasi dapat mengubah hasilnya.',
+  tool_present_value_due_tpl: 'Pembayaran di awal periode mendapat bunga satu periode lebih lama: {a} × (1 + {i}) = {v}',
+  tool_present_value_ear_label: 'Suku bunga efektif tahunan',
+  tool_present_value_err_amount:
+    'Isi uang sekaligus, pembayaran per periode, atau keduanya — minimal satu di atas 0 dan tidak boleh negatif.',
+  tool_present_value_err_rate: 'Isi suku bunga tahunan dalam persen, di atas −100% dan paling tinggi 1000% (0 boleh).',
+  tool_present_value_err_whole:
+    'Dengan pembayaran rutin, tahun × periode per tahun harus bilangan bulat — misalnya 2,5 tahun dengan pemajemukan bulanan = 30 pembayaran.',
+  tool_present_value_err_years: 'Isi jangka waktu dalam tahun, di atas 0 dan paling lama 200 (desimal seperti 2,5 boleh).',
+  tool_present_value_example:
+    'Contoh: 10.000 diterima 5 tahun lagi, bunga 5% per tahun, dimajemukkan tahunan. PV = 10.000 ÷ 1,05^5 = 10.000 ÷ 1,276282 = 7.835,26 — jadi 7.835,26 yang diinvestasikan hari ini pada 5% tumbuh menjadi 10.000, dan tabel menunjukkannya tahun demi tahun. Pada 4% nilai sekarangnya 8.219,27; pada 6%, 7.472,58. Klik Muat contoh lagi untuk 500 per bulan selama 10 tahun pada 6% (PV 45.036,73) dan untuk nilai masa depan 5.000 ditambah 200 per bulan selama 20 tahun pada 7% (124.379,03).',
   tool_present_value_example_title: 'Contoh',
-  tool_present_value_faq_a1: 'Contoh: FV 10000, 5%, 5 tahun → PV ≈ 7835.26.',
-  tool_present_value_faq_a2: 'See Formula section.',
-  tool_present_value_faq_a3: 'Educational only.',
-  tool_present_value_faq_a4: 'Educational only.',
-  tool_present_value_faq_q1: 'Contoh?',
-  tool_present_value_faq_q2: 'Formula?',
-  tool_present_value_faq_q3: 'Advice?',
-  tool_present_value_faq_q4: 'Related?',
-  tool_present_value_formula_body: 'Pilih mode PV/FV, isi jumlah, suku bunga, dan tahun.',
-  tool_present_value_formula_item_1: 'See formula notes.',
-  tool_present_value_formula_item_2: 'Check inputs.',
-  tool_present_value_formula_item_3: 'Educational only.',
-  tool_present_value_formula_title: 'Rumus',
-  tool_present_value_how_body: 'Pilih mode PV/FV, isi jumlah, suku bunga, dan tahun.',
-  tool_present_value_how_title: 'Cara kerja',
-  tool_present_value_mode_fv: 'Cari FV (dari PV)',
-  tool_present_value_mode_label: 'Mode',
-  tool_present_value_mode_pv: 'Cari PV (dari FV)',
-  tool_present_value_n_label: 'Tahun',
-  tool_present_value_n_ph: 'mis. 5',
-  tool_present_value_out_label: 'Hasil',
-  tool_present_value_rate_label: 'Suku bunga tahunan %',
+  tool_present_value_faq_a1:
+    '7.835,26 dengan pemajemukan tahunan: 10.000 ÷ 1,05^5, atau 10.000 × faktor diskonto 0,783526. Jika bunganya 4%, hasilnya 8.219,27; pada 6%, 7.472,58 — makin tinggi tingkat diskonto, makin rendah nilai sekarang.',
+  tool_present_value_faq_a2:
+    'Pemajemukan yang lebih sering sedikit menurunkan nilai sekarang karena uang tumbuh lebih cepat. Untuk 10.000 dalam 5 tahun pada 5%: tahunan 7.835,26, bulanan 7.792,05, harian 7.788,14, kontinu 7.788,01. Pemajemukan bulanan pada 5% setara suku bunga efektif tahunan 5,12%.',
+  tool_present_value_faq_a3:
+    'Setiap pembayaran datang satu periode lebih awal, jadi bagian pembayaran dikalikan (1 + i). 500 per bulan selama 10 tahun pada 6% bernilai 45.036,73 hari ini jika dibayar di akhir setiap bulan (anuitas biasa), dan 45.036,73 × 1,005 = 45.261,91 jika dibayar di awal (anuitas di muka).',
+  tool_present_value_faq_a4:
+    'Present value adalah nilai hari ini dari uang di masa depan. Net present value (NPV, nilai sekarang bersih) mengurangkan biaya investasi dari nilai sekarang hasilnya, dan biasanya menghitung arus kas yang tidak sama dari tahun ke tahun. Gunakan kalkulator NPV untuk proyek dengan modal awal dan hasil yang berubah-ubah.',
+  tool_present_value_faq_a5:
+    'Imbal hasil yang bisa Anda dapat dari uang itu di tempat lain: bunga tabungan atau deposito untuk uang yang aman, bunga pinjaman Anda jika uangnya bisa dipakai melunasi utang, atau imbal hasil yang disyaratkan untuk investasi. Untuk menyatakan uang masa depan dalam daya beli hari ini, pakai tingkat inflasi — 100.000 dalam 10 tahun pada 3% setara 74.409,39 hari ini.',
+  tool_present_value_faq_a6:
+    'Tidak. Jika dibayar dalam 20 pembayaran tahunan masing-masing 50.000 dengan pembayaran pertama sekarang, nilainya hari ini 654.266,04 pada 5% (pilih “Nilai sekarang (nilai hari ini)”, pembayaran 50.000, 20 tahun, dan “Di awal setiap periode (anuitas di muka)”). Opsi tunai di atas jumlah itu lebih menguntungkan pada suku bunga tersebut, sebelum pajak.',
+  tool_present_value_faq_a7:
+    'Gunakan =PV(rate per periode, nper, pmt, fv, type): nper adalah jumlah periode, pmt pembayaran, fv nilai masa depan. =PV(5%, 5, 0, 10000) menghasilkan −7.835,26 dan =PV(6%/12, 120, 500) menghasilkan −45.036,73; tanda minus hanya berarti uang keluar. Type 1 berarti pembayaran di awal setiap periode. (Jika pengaturan regional Windows Anda memakai koma desimal, pemisah argumennya titik koma: =PV(5%;5;0;10000).)',
+  tool_present_value_faq_q1: 'Berapa nilai sekarang dari 10.000 yang diterima 5 tahun lagi dengan bunga 5%?',
+  tool_present_value_faq_q2: 'Bagaimana frekuensi pemajemukan memengaruhi nilai sekarang?',
+  tool_present_value_faq_q3: 'Apa bedanya jika pembayaran dilakukan di awal setiap periode?',
+  tool_present_value_faq_q4: 'Apa perbedaan present value dan NPV?',
+  tool_present_value_faq_q5: 'Tingkat diskonto berapa yang sebaiknya dipakai?',
+  tool_present_value_faq_q6: 'Apakah hadiah 1.000.000 yang dibayar selama 20 tahun benar-benar bernilai 1.000.000?',
+  tool_present_value_faq_q7: 'Bagaimana mengecek hasilnya dengan fungsi PV di Excel?',
+  tool_present_value_formula_body:
+    'Dengan suku bunga nominal tahunan r yang dimajemukkan m kali setahun selama t tahun, bunga per periode i = r ÷ m dan jumlah periode N = m × t.',
+  tool_present_value_formula_item_1: 'Nilai sekarang uang sekaligus: PV = FV ÷ (1 + i)^N. Nilai 1 ÷ (1 + i)^N disebut faktor diskonto.',
+  tool_present_value_formula_item_2: 'Nilai masa depan uang sekaligus: FV = PV × (1 + i)^N.',
+  tool_present_value_formula_item_3:
+    'Pembayaran rutin (anuitas biasa, dibayar di akhir setiap periode): PV = PMT × (1 − (1 + i)^−N) ÷ i dan FV = PMT × ((1 + i)^N − 1) ÷ i.',
+  tool_present_value_formula_item_4: 'Pembayaran di awal setiap periode (anuitas di muka): kalikan bagian pembayaran dengan (1 + i).',
+  tool_present_value_formula_item_5:
+    'Pemajemukan kontinu: PV = FV × e^(−r × t). Suku bunga efektif tahunan = (1 + r ÷ m)^m − 1, atau e^r − 1 untuk pemajemukan kontinu.',
+  tool_present_value_formula_title: 'Rumus present value dan future value',
+  tool_present_value_how_body:
+    'Nilai sekarang mendiskontokan uang yang baru Anda terima nanti ke hari ini: bagi dengan (1 + i) satu kali untuk setiap periode. Nilai masa depan memakai rumus yang sama ke arah sebaliknya. Pembayaran rutin ditambahkan dengan rumus anuitas.',
+  tool_present_value_how_item_1:
+    'Pilih nilai sekarang atau nilai masa depan, lalu isi uang sekaligus, pembayaran per periode, atau keduanya.',
+  tool_present_value_how_item_2: 'Isi suku bunga tahunan dan jangka waktu dalam tahun, lalu pilih seberapa sering bunga dimajemukkan.',
+  tool_present_value_how_item_3:
+    'Jika ada pembayaran, tentukan apakah dibayar di akhir setiap periode (cicilan pinjaman, sebagian besar dana pensiun) atau di awal (sewa, leasing, banyak hadiah undian yang dibayar bertahap).',
+  tool_present_value_how_item_4:
+    'Klik Hitung dan baca hasilnya, langkah perhitungan dengan angka Anda, cek suku bunga ±1 poin, dan saldo per tahun.',
+  tool_present_value_how_title: 'Cara menghitung nilai sekarang (present value)',
+  tool_present_value_lump_fv_tpl: 'Uang sekaligus: {a} × {g} = {v}',
+  tool_present_value_lump_pv_tpl: 'Uang sekaligus: {a} ÷ {g} = {v}',
+  tool_present_value_mode_fv: 'Nilai masa depan (nilai nanti)',
+  tool_present_value_mode_label: 'Yang ingin dihitung',
+  tool_present_value_mode_pv: 'Nilai sekarang (nilai hari ini)',
+  tool_present_value_out_fv: 'Nilai masa depan',
+  tool_present_value_out_pv: 'Nilai sekarang',
+  tool_present_value_pmt_hint:
+    'Satu pembayaran per periode pemajemukan — pemajemukan bulanan berarti pembayaran bulanan. Kosongkan jika hanya menghitung uang sekaligus. Tidak tersedia untuk pemajemukan kontinu.',
+  tool_present_value_pmt_label_fv: 'Setoran tiap periode (opsional)',
+  tool_present_value_pmt_label_pv: 'Pembayaran yang diterima tiap periode (opsional)',
+  tool_present_value_pmt_ph: 'mis. 500',
+  tool_present_value_rate_label: 'Suku bunga / tingkat diskonto per tahun (%)',
   tool_present_value_rate_ph: 'mis. 5',
-  tool_present_value_ref_a_label: 'Investopedia',
-  tool_present_value_ref_b_label: 'Wikipedia',
-  tool_present_value_references: 'Investopedia dan rumus buku teks.',
-  tool_present_value_result_note: 'Edukatif.',
+  tool_present_value_rate_tpl:
+    'Bunga per periode i = {r} ÷ {m} = {i}; jumlah periode N = {m} × {t} = {N}; faktor pertumbuhan (1 + i)^N = {g}.',
+  tool_present_value_ref_a_label: 'Investopedia — Present Value (PV), nilai sekarang',
+  tool_present_value_ref_b_label: 'Microsoft Support — fungsi PV',
+  tool_present_value_references: 'Investopedia — Present Value; Microsoft Support — fungsi PV.',
+  tool_present_value_result_note:
+    'Suku bunga adalah bunga nominal tahunan yang dimajemukkan sesuai frekuensi pilihan Anda. Jumlah diisi sebagai angka positif; pajak dan biaya belum termasuk.',
   tool_present_value_sample: 'Muat contoh',
-  tool_present_value_title: 'Kalkulator present value (PV/FV)',
-  tool_present_value_usecase_1: 'Homework.',
-  tool_present_value_usecase_2: 'Quick sketch.',
-  tool_present_value_usecase_3: 'Contrast with NPV for multi-year cash flows.',
+  tool_present_value_sens_label: 'Jika suku bunga bergeser 1 poin',
+  tool_present_value_sens_tpl: 'pada {r1}: {v1} · pada {r2}: {v2}',
+  tool_present_value_sub_tpl: '{r} per tahun · pemajemukan: {comp} · {t} tahun',
+  tool_present_value_sum_tpl: 'Total: {a} + {b} = {v}',
+  tool_present_value_table_fv_note: 'Cara saldo tumbuh dari jumlah yang diinvestasikan hari ini ditambah setiap setoran.',
+  tool_present_value_table_pv_lump_note:
+    'Bukti: investasikan nilai sekarang hari ini pada suku bunga ini dan uang itu tumbuh tepat menjadi jumlah masa depan.',
+  tool_present_value_table_pv_note:
+    'Bukti: investasikan nilai sekarang hari ini pada suku bunga ini, tarik setiap pembayaran, dan saldo berakhir tepat di jumlah masa depan.',
+  tool_present_value_timing_begin: 'Di awal setiap periode (anuitas di muka)',
+  tool_present_value_timing_end: 'Di akhir setiap periode (anuitas biasa)',
+  tool_present_value_timing_label: 'Waktu pembayaran',
+  tool_present_value_title:
+    'Kalkulator Nilai Sekarang (Present Value) — Berapa Nilai Hari Ini dari Uang Masa Depan atau Pembayaran Rutin, Plus Nilai Masa Depan',
+  tool_present_value_total_fv_tpl: 'Total yang Anda setor {total}; uang itu tumbuh menjadi {v}. Bunga yang diperoleh: {d}.',
+  tool_present_value_total_label: 'Uang masuk dan keluar',
+  tool_present_value_total_pv_tpl:
+    'Secara keseluruhan Anda menerima {total}; nilainya hari ini {v}. Selisihnya, {d}, adalah bunga yang bisa dihasilkan uang itu selama menunggu.',
+  tool_present_value_usecase_1:
+    'Menabung untuk tujuan: berapa yang perlu disisihkan hari ini agar punya 10.000 dalam 5 tahun pada 5% (7.835,26), atau menjadi berapa 5.000 ditambah 200 per bulan dalam 20 tahun pada 7%.',
+  tool_present_value_usecase_2:
+    'Hadiah undian dan ganti rugi: 20 pembayaran tahunan 50.000 yang dimulai sekarang bernilai 654.266,04 hari ini pada 5% — bandingkan dengan tawaran uang tunai sekaligus.',
+  tool_present_value_usecase_3:
+    'Inflasi: dengan inflasi 3%, 100.000 sepuluh tahun lagi hanya setara daya beli 74.409,39 hari ini — isi 3% sebagai suku bunga.',
+  tool_present_value_usecase_4:
+    'Tugas dan ujian manajemen keuangan: soal nilai waktu uang dengan pemajemukan bulanan, anuitas di muka, atau pemajemukan kontinu, lengkap dengan setiap langkah.',
   tool_present_value_usecases_title: 'Kapan dipakai',
+  tool_present_value_why_choose_item_1:
+    'Uang sekaligus dan pembayaran rutin dalam satu perhitungan — nilai dana pensiun, sewa, atau hadiah undian bertahap, dengan atau tanpa pembayaran akhir sekaligus.',
+  tool_present_value_why_choose_item_2:
+    'Langkah perhitungan ditulis dengan angka Anda: bunga per periode, jumlah periode, faktor pertumbuhan, dan setiap bagian jawaban — mudah disalin ke tugas kuliah atau dicocokkan dengan Excel.',
+  tool_present_value_why_choose_item_3:
+    'Semua frekuensi pemajemukan dari tahunan sampai harian, plus kontinu, lengkap dengan suku bunga efektif tahunan agar penawaran bisa dibandingkan secara adil.',
+  tool_present_value_why_choose_item_4:
+    'Cek ±1 poin menunjukkan seberapa peka hasilnya terhadap tingkat diskonto yang Anda pilih, yang biasanya merupakan input paling tidak pasti.',
+  tool_present_value_why_choose_item_5:
+    'Tabel per tahun membuktikan hasilnya: investasikan nilai sekarang, tarik pembayarannya, dan saldo berakhir tepat di jumlah masa depan.',
+  tool_present_value_why_choose_title: 'Mengapa memakai kalkulator present value ini',
+  tool_present_value_work_label: 'Langkah perhitungan',
+  tool_present_value_years_label: 'Jangka waktu (tahun)',
+  tool_present_value_years_ph: 'mis. 5',
   tool_print_pdf_advanced: 'Pengaturan cetak lainnya',
   tool_print_pdf_article: 'Mencetak PDF dari browser web',
   tool_print_pdf_blank_page: 'kosong',
@@ -19551,49 +20109,151 @@ const id: SiteLangDict = {
   tool_product_design_prompt_builder_usecases_title: 'Cocok untuk',
   tool_product_design_prompt_builder_wireframe_scope_label: 'Wireframe / Cakupan',
   tool_product_design_prompt_builder_wireframe_scope_ph: 'Mis.: bilah pekan, sheet detail, undangan SMS…',
-  tool_profit_margin_article: 'Kalkulator margin laba — Neto atau operasional',
+  tool_profit_margin_article:
+    'Kalkulator margin keuntungan untuk margin laba kotor, operasional, dan bersih dari pendapatan dan biaya, dengan rincian persen pendapatan, perbandingan markup, dan harga jual untuk margin target apa pun.',
   tool_profit_margin_calculate: 'Hitung',
   tool_profit_margin_clear: 'Hapus',
-  tool_profit_margin_cost_label: 'Biaya',
-  tool_profit_margin_cost_ph: 'mis. 7000',
+  tool_profit_margin_cogs_label: 'Harga pokok penjualan (HPP)',
+  tool_profit_margin_cogs_ph: 'mis. 150000',
+  tool_profit_margin_col_amount: 'Jumlah',
+  tool_profit_margin_col_item: 'Pos',
+  tool_profit_margin_col_share: 'Porsi dari pendapatan',
+  tool_profit_margin_cost_label: 'Biaya per unit',
+  tool_profit_margin_cost_ph: 'mis. 40',
   tool_profit_margin_description:
-    'Hitung margin laba neto atau operasional dari pendapatan dan biaya. Contoh: pendapatan 10000, biaya 7000 → margin neto 30%. Jenis di satu halaman. Edukatif.',
-  tool_profit_margin_disclaimer: 'Hanya ilustrasi edukatif (margen); bukan saran keuangan.',
-  tool_profit_margin_err_generic: 'Pendapatan > 0 dan biaya ≥ 0.',
-  tool_profit_margin_example: 'Contoh: pendapatan 10000, biaya 7000 → margin 30%.',
-  tool_profit_margin_example_title: 'Contoh',
-  tool_profit_margin_faq_a1: '30%',
-  tool_profit_margin_faq_a2: 'Markup÷cost; margin÷revenue.',
-  tool_profit_margin_faq_a3: 'Same form; different cost stacks.',
-  tool_profit_margin_faq_a4: 'Educational only.',
-  tool_profit_margin_faq_q1: 'Sample / contoh?',
-  tool_profit_margin_faq_q2: 'Markup vs margin?',
-  tool_profit_margin_faq_q3: 'Why two types?',
-  tool_profit_margin_faq_q4: 'Advice?',
-  tool_profit_margin_formula_body: 'Margin % = (pendapatan − biaya) / pendapatan × 100. Catatan:',
-  tool_profit_margin_formula_item_1: 'Sesuaikan biaya dengan definisi.',
-  tool_profit_margin_formula_item_2: 'Pendapatan > 0.',
-  tool_profit_margin_formula_item_3: 'Laba rugi sederhana.',
-  tool_profit_margin_formula_title: 'Rumus',
-  tool_profit_margin_how_body: 'Pilih jenis margin, isi pendapatan dan biaya. Margin = laba / pendapatan × 100.',
-  tool_profit_margin_how_title: 'Cara kerja',
-  tool_profit_margin_marginOut_label: 'Margin %',
-  tool_profit_margin_profitOut_label: 'Laba',
-  tool_profit_margin_ref_a_label: 'Investopedia — Profit margin',
-  tool_profit_margin_ref_b_label: 'Investopedia — Operating margin',
-  tool_profit_margin_references: 'Investopedia dan rumus buku teks.',
-  tool_profit_margin_result_note: 'Margin = laba ÷ pendapatan. Edukatif.',
-  tool_profit_margin_rev_label: 'Pendapatan',
-  tool_profit_margin_rev_ph: 'mis. 10000',
+    'Hitung margin laba kotor, operasional, dan bersih dari penjualan dan biaya, lengkap dengan rumus, langkah perhitungan, dan rincian ke mana setiap 100 penjualan pergi. Atau masukkan biaya per unit dan margin target untuk mendapatkan harga jual, dengan contoh.',
+  tool_profit_margin_disclaimer:
+    'Hanya untuk informasi umum dan edukasi — bukan nasihat akuntansi, pajak, keuangan, atau investasi. Hasil bergantung pada cara Anda mengelompokkan biaya; standar akuntansi dan aturan pajak berbeda di tiap negara, jadi konsultasikan keputusan penting dengan akuntan profesional yang berkualifikasi.',
+  tool_profit_margin_err_cost: 'Masukkan biaya per unit lebih dari 0.',
+  tool_profit_margin_err_neg:
+    'HPP dan beban operasional tidak boleh negatif. Masukkan retur atau pendapatan lain sebagai angka negatif di kotak terakhir.',
+  tool_profit_margin_err_num: 'Gunakan angka saja, misalnya 12500 atau 12.500,50 — tanpa simbol mata uang atau huruf.',
+  tool_profit_margin_err_rev:
+    'Masukkan pendapatan lebih dari 0. Margin adalah porsi dari penjualan, jadi tidak bisa dihitung tanpa penjualan.',
+  tool_profit_margin_err_target:
+    'Masukkan margin target dari 0 hingga di bawah 100%. Margin 100% berarti barang itu sama sekali tidak ada biayanya.',
+  tool_profit_margin_example:
+    'Usaha dengan penjualan 250.000, HPP 150.000, beban operasional 60.000, serta bunga dan pajak 12.000 memperoleh laba kotor 100.000 (margin kotor 40%), laba operasional 40.000 (margin operasional 16%), dan laba bersih 28.000 (margin bersih 11,20%), jadi 11,20 dari setiap 100 penjualan adalah laba. Laba kotornya setara markup 66,67% atas HPP 150.000. Jika toko kedua punya penjualan 80.000, HPP 52.000, dan beban operasional 31.000, margin kotor 35% itu berubah menjadi rugi 3.000, dengan margin bersih −3,75%. Untuk margin 25% pada barang berbiaya 40, harganya harus 40 ÷ 0,75 = 53,33; menjual di harga 40 + 25% = 50 hanya memberi margin 20%.',
+  tool_profit_margin_example_title: 'Contoh perhitungan',
+  tool_profit_margin_faq_a1:
+    'Bagi laba dengan pendapatan, lalu kalikan 100. Dengan penjualan 250.000 dan laba bersih 28.000, margin laba bersih adalah 28.000 ÷ 250.000 × 100 = 11,2%. Untuk margin kotor, gunakan pendapatan dikurangi HPP sebagai labanya; untuk margin operasional, kurangi juga beban operasional.',
+  tool_profit_margin_faq_a2:
+    'Bagi biaya dengan satu dikurangi margin: harga = biaya ÷ (1 − margin). Untuk margin 25% dengan biaya 40, harganya 40 ÷ 0,75 = 53,33. Menambahkan 25% ke biaya (40 × 1,25 = 50) adalah kesalahan umum: itu markup 25%, yang hanya setara margin 20%.',
+  tool_profit_margin_faq_a3:
+    'Keduanya memakai laba yang sama, tetapi margin membaginya dengan harga jual, sedangkan markup membaginya dengan biaya. Barang yang dibeli 40 dan dijual 53,33 menghasilkan 13,33: itu margin 25% tetapi markup 33,33%. Konversinya: markup = margin ÷ (1 − margin) atau margin = markup ÷ (1 + markup).',
+  tool_profit_margin_faq_a4:
+    'Bedanya ada pada seberapa banyak biaya yang dikurangkan. Margin laba kotor hanya mengurangi HPP, yaitu biaya langsung barang atau jasa yang terjual. Margin operasional juga mengurangi beban operasional seperti sewa, gaji, pemasaran, software, dan penyusutan. Margin laba bersih mengurangi semuanya, termasuk bunga dan pajak penghasilan. Pada contoh di atas, ketiganya 40%, 16%, dan 11,2%.',
+  tool_profit_margin_faq_a5:
+    'Sangat bergantung pada industrinya. Toko kelontong dan banyak usaha ritel sering hanya punya margin bersih beberapa persen, sementara software dan sebagian jasa profesional bisa mencapai 20% atau lebih. Bandingkan usaha Anda dengan usaha sejenis di industri yang sama dan dengan tahun-tahun sebelumnya, bukan dengan satu angka universal.',
+  tool_profit_margin_faq_a6:
+    'Margin operasional mendekati margin EBIT (laba sebelum bunga dan pajak), meskipun EBIT bisa juga mencakup pendapatan non-operasional. Margin EBITDA menambahkan kembali penyusutan dan amortisasi. Jika beban operasional 60.000 pada contoh mencakup penyusutan 8.000, EBITDA menjadi 48.000 dan margin EBITDA 19,2%, dibandingkan margin operasional 16%.',
+  tool_profit_margin_faq_a7:
+    'Margin menjadi negatif setiap kali biaya lebih besar daripada penjualan: penjualan 80.000 dengan biaya 83.000 menghasilkan margin bersih −3,75%. Margin tidak bisa melebihi 100% selama biaya nol atau positif, karena laba tidak mungkin lebih besar dari pendapatan. Markup tidak punya batas seperti itu — markup 150% lazim untuk sebagian barang.',
+  tool_profit_margin_faq_q1: 'Bagaimana cara menghitung margin keuntungan?',
+  tool_profit_margin_faq_q2: 'Bagaimana cara menentukan harga jual dengan margin tertentu?',
+  tool_profit_margin_faq_q3: 'Apa perbedaan margin dan markup?',
+  tool_profit_margin_faq_q4: 'Apa bedanya margin laba kotor, operasional, dan bersih?',
+  tool_profit_margin_faq_q5: 'Berapa margin keuntungan yang bagus?',
+  tool_profit_margin_faq_q6: 'Apakah margin operasional sama dengan margin EBIT atau EBITDA?',
+  tool_profit_margin_faq_q7: 'Bisakah margin keuntungan negatif atau lebih dari 100%?',
+  tool_profit_margin_formula_body:
+    'Semua margin memakai pendapatan sebagai pembagi. Yang berbeda hanya berapa banyak biaya yang dikurangkan sebelum dibagi.',
+  tool_profit_margin_formula_item_1:
+    'Margin laba kotor = (pendapatan − HPP) ÷ pendapatan × 100. Contoh: (250.000 − 150.000) ÷ 250.000 = 40%.',
+  tool_profit_margin_formula_item_2:
+    'Margin operasional = (laba kotor − beban operasional) ÷ pendapatan × 100. Contoh: (100.000 − 60.000) ÷ 250.000 = 16%.',
+  tool_profit_margin_formula_item_3:
+    'Margin laba bersih = (laba operasional − bunga, pajak, dan pos lain) ÷ pendapatan × 100. Contoh: (40.000 − 12.000) ÷ 250.000 = 11,2%.',
+  tool_profit_margin_formula_item_4: 'Harga untuk margin target = biaya ÷ (1 − margin). Contoh: 40 ÷ (1 − 0,25) = 53,33.',
+  tool_profit_margin_formula_item_5:
+    'Konversi margin dan markup: markup = margin ÷ (1 − margin) dan margin = markup ÷ (1 + markup). Margin 25% sama dengan markup 33,33%, dan markup 50% sama dengan margin 33,33%.',
+  tool_profit_margin_formula_title: 'Rumus margin keuntungan',
+  tool_profit_margin_gross_label: 'Margin laba kotor',
+  tool_profit_margin_gross_tpl: 'laba kotor {p} ÷ pendapatan {r} = {m}',
+  tool_profit_margin_hint_price:
+    'Biaya per unit adalah semua yang Anda bayar untuk membuat atau membeli satu barang. Margin target minimal 0% dan harus di bawah 100%.',
+  tool_profit_margin_hint_statement:
+    'Gunakan periode yang sama untuk semua angka. Biaya yang dikosongkan dihitung 0; isi angka negatif di kotak terakhir jika pendapatan lain lebih besar daripada bunga dan pajak.',
+  tool_profit_margin_how_body:
+    'Margin keuntungan adalah laba dibagi pendapatan, dinyatakan dalam persen. Pilih apa yang ingin Anda cari, masukkan angka Anda, lalu klik Hitung; hasilnya menampilkan cara hitung untuk setiap langkah.',
+  tool_profit_margin_how_item_1:
+    'Pilih “Margin saya dari penjualan dan biaya” untuk melihat margin Anda, atau “Harga jual untuk margin target” untuk menentukan harga jual.',
+  tool_profit_margin_how_item_2:
+    'Untuk margin, isi pendapatan, HPP, beban operasional, serta bunga, pajak, dan pos lain untuk bulan, kuartal, atau tahun yang sama. Kosongkan kotak yang datanya tidak Anda miliki.',
+  tool_profit_margin_how_item_3: 'Untuk harga, isi biaya satu barang dan margin yang Anda inginkan, misalnya 25.',
+  tool_profit_margin_how_item_4:
+    'Baca margin bersih atau harga di bagian atas, lalu baris margin kotor, operasional, dan bersih, markup yang setara, serta tabel ke mana setiap 100 penjualan pergi.',
+  tool_profit_margin_how_title: 'Cara menghitung margin keuntungan dengan kalkulator ini',
+  tool_profit_margin_line_cogs: '− Harga pokok penjualan',
+  tool_profit_margin_line_gross: '= Laba kotor',
+  tool_profit_margin_line_net: '= Laba bersih',
+  tool_profit_margin_line_op: '= Laba operasional',
+  tool_profit_margin_line_opex: '− Beban operasional',
+  tool_profit_margin_line_other: '− Bunga, pajak, dan lainnya',
+  tool_profit_margin_line_rev: 'Pendapatan',
+  tool_profit_margin_markup_label: 'Penjualan yang sama sebagai markup',
+  tool_profit_margin_markup_none: 'tidak terdefinisi karena HPP bernilai 0',
+  tool_profit_margin_markup_price_tpl: 'laba {u} ÷ biaya {c} = markup {k} atas biaya',
+  tool_profit_margin_markup_tpl: 'laba kotor {p} ÷ HPP {c} = markup {m} atas biaya',
+  tool_profit_margin_mode_label: 'Apa yang ingin Anda hitung?',
+  tool_profit_margin_mode_price: 'Harga jual untuk margin target',
+  tool_profit_margin_mode_statement: 'Margin saya dari penjualan dan biaya',
+  tool_profit_margin_net_label: 'Margin laba bersih',
+  tool_profit_margin_net_tpl: 'laba bersih {p} ÷ pendapatan {r} = {m}',
+  tool_profit_margin_op_label: 'Margin operasional',
+  tool_profit_margin_op_tpl: 'laba operasional {p} ÷ pendapatan {r} = {m}',
+  tool_profit_margin_opex_label: 'Beban operasional',
+  tool_profit_margin_opex_ph: 'mis. 60000',
+  tool_profit_margin_other_label: 'Bunga, pajak, dan pos lain (bersih)',
+  tool_profit_margin_other_ph: 'mis. 12000',
+  tool_profit_margin_out_net: 'Margin laba bersih',
+  tool_profit_margin_out_price: 'Harga jual',
+  tool_profit_margin_profit_label: 'Laba per unit',
+  tool_profit_margin_profit_tpl: 'harga {p} − biaya {c} = {u}',
+  tool_profit_margin_ref_a_label: 'Investopedia — Profit margin (margin keuntungan)',
+  tool_profit_margin_ref_b_label: 'Investopedia — Operating margin (margin operasional)',
+  tool_profit_margin_references:
+    'Rumus mengikuti definisi standar laporan laba rugi untuk laba kotor, laba operasional, dan laba bersih; lihat Investopedia (bahasa Inggris) untuk definisi dan contoh.',
+  tool_profit_margin_result_note_price:
+    'Harga = biaya ÷ (1 − margin). Margin diukur terhadap harga jual, markup terhadap biaya, sehingga laba yang sama selalu menghasilkan markup yang lebih besar daripada margin.',
+  tool_profit_margin_result_note_statement:
+    'Margin adalah porsi dari pendapatan. Margin laba kotor hanya memperhitungkan biaya langsung barang yang terjual; margin operasional juga mengurangi beban operasional; margin laba bersih adalah sisa setelah semua biaya, termasuk bunga dan pajak.',
+  tool_profit_margin_rev_label: 'Pendapatan (penjualan)',
+  tool_profit_margin_rev_ph: 'mis. 250000',
   tool_profit_margin_sample: 'Muat contoh',
-  tool_profit_margin_title: 'Kalkulator margin laba — Neto atau operasional',
-  tool_profit_margin_type_label: 'Jenis margin',
-  tool_profit_margin_type_net: 'Margin laba neto',
-  tool_profit_margin_type_op: 'Margin operasional',
-  tool_profit_margin_usecase_1: 'PR margin neto.',
-  tool_profit_margin_usecase_2: 'Bandingkan operasional vs neto.',
-  tool_profit_margin_usecase_3: 'Bandingkan dengan gross margin.',
-  tool_profit_margin_usecases_title: 'Kapan dipakai',
+  tool_profit_margin_sub_keep_tpl: 'Dari setiap 100 penjualan, {v} tersisa sebagai laba bersih.',
+  tool_profit_margin_sub_loss_tpl: 'Biaya lebih besar daripada penjualan: setiap 100 penjualan rugi {v}.',
+  tool_profit_margin_sub_price_tpl: 'Anda mendapat {u} dari setiap penjualan, yaitu {m} dari harga jual.',
+  tool_profit_margin_table_caption: 'Ke mana setiap 100 penjualan pergi',
+  tool_profit_margin_target_label: 'Margin target (%)',
+  tool_profit_margin_target_ph: 'mis. 25',
+  tool_profit_margin_title:
+    'Kalkulator Margin Keuntungan — Lihat Berapa Laba dari Setiap Penjualan dan Harga Jual untuk Margin Target',
+  tool_profit_margin_trap_label: 'Kesalahan umum',
+  tool_profit_margin_trap_tpl:
+    'menambahkan {m} ke biaya sebagai markup menghasilkan {c} × (1 + {m}) = {w}, padahal itu hanya margin {x} dan laba {d} lebih sedikit per unit.',
+  tool_profit_margin_usecase_1:
+    'Menentukan harga jual produk UMKM, toko online, atau jasa agar margin yang diinginkan benar-benar tercapai, bukan sekadar menambahkan persentase ke modal.',
+  tool_profit_margin_usecase_2:
+    'Pemilik usaha kecil: ubah laporan laba rugi bulanan atau tahunan menjadi margin kotor, operasional, dan bersih, lalu lihat pos biaya mana yang porsinya paling besar terhadap penjualan.',
+  tool_profit_margin_usecase_3:
+    'Pelajar dan mahasiswa: cek jawaban soal akuntansi dan ekonomi tentang margin kotor, operasional, dan bersih, serta latihan mengonversi margin ke markup.',
+  tool_profit_margin_usecase_4:
+    'Membandingkan perusahaan atau periode: samakan skala dua laporan laba rugi yang ukurannya berbeda, karena margin adalah porsi pendapatan, bukan nominal.',
+  tool_profit_margin_usecases_title: 'Kapan memakai kalkulator margin keuntungan',
+  tool_profit_margin_why_choose_item_1:
+    'Mode harga jual dari margin yang juga menunjukkan berapa laba sebenarnya jika margin itu Anda tambahkan ke biaya sebagai markup.',
+  tool_profit_margin_why_choose_item_2:
+    'Tiga margin dari satu set angka: kotor, operasional, dan bersih, masing-masing dengan pembagiannya ditulis lengkap.',
+  tool_profit_margin_why_choose_item_3:
+    'Laba kotor yang sama juga ditampilkan sebagai markup atas biaya — angka yang sering dipakai pemasok dan pemilik toko saat menentukan harga.',
+  tool_profit_margin_why_choose_item_4:
+    'Rincian dalam persen pendapatan, sehingga Anda langsung melihat apakah HPP atau beban operasional yang paling menggerus margin.',
+  tool_profit_margin_why_choose_item_5:
+    'Kerugian ditampilkan dengan jelas: margin negatif memberi tahu berapa yang hilang dari setiap 100 penjualan, bukan sekadar pesan error.',
+  tool_profit_margin_why_choose_title: 'Apa yang ditampilkan kalkulator margin keuntungan ini',
+  tool_profit_margin_work_label: 'Cara hitung',
+  tool_profit_margin_work_price_tpl: 'harga = biaya ÷ (1 − margin) = {c} ÷ (1 − {m}) = {p}',
   tool_prompt_template_builder_ai_consent_body:
     'Langkah opsional ini mengirim draf Anda saat ini ke Cloudflare Workers AI untuk diproses. Dari server kami tidak ada yang diteruskan ke OpenAI, Google, Anthropic, atau DeepSeek. Tanpa AI, penyusunan lokal tetap berfungsi.',
   tool_prompt_template_builder_ai_consent_cancel: 'Batal',
@@ -21998,42 +22658,120 @@ const id: SiteLangDict = {
     'Bandingkan dengan Product design prompt builder jika Anda butuh persona/wireframe, bukan menu Sketch.app.',
   tool_sketch_prompt_generator_usecase_4: 'Simpan draf sensitif di lokal — aktifkan AI hanya setelah persetujuan.',
   tool_sketch_prompt_generator_usecases_title: 'Cocok untuk',
-  tool_slope_article: 'Hitung kemiringan m antara dua titik dengan (y₂−y₁)/(x₂−x₁).',
+  tool_slope_angle_label: 'Sudut kemiringan',
+  tool_slope_article: 'Gradien garis',
   tool_slope_calculate: 'Hitung',
   tool_slope_clear: 'Hapus',
+  tool_slope_coords_hint: 'Bisa bilangan bulat, desimal dengan koma (mis. 0,5), atau pecahan seperti 3/4 dan -5/2.',
   tool_slope_description:
-    'Hitung kemiringan m=(y₂−y₁)/(x₂−x₁) antara dua titik. Contoh: (1,2) dan (3,6) → m=2. Menolak vertikal dengan Δx=0. Di browser untuk aljabar.',
-  tool_slope_disclaimer: 'Hanya kemiringan 2D edukasi.',
-  tool_slope_err_generic: 'Masukkan empat koordinat hingga dengan x₂≠x₁.',
-  tool_slope_example: 'Contoh: (1,2) dan (3,6) → m=2.',
+    'Hitung gradien garis dari dua titik, atau dari satu titik dan gradiennya. Pecahan tetap eksak dan langkah perhitungannya ditampilkan; Anda juga mendapat persamaan garis dalam tiga bentuk, titik potong sumbu, sudut kemiringan, kemiringan dalam persen, gradien garis tegak lurus, jarak, dan titik tengah.',
+  tool_slope_dir_down: 'Gradien negatif — garis turun dari kiri ke kanan.',
+  tool_slope_dir_flat: 'Gradien nol — garis mendatar (horizontal).',
+  tool_slope_dir_up: 'Gradien positif — garis naik dari kiri ke kanan.',
+  tool_slope_dir_vert: 'Garis tegak (vertikal): x₂ − x₁ = 0, dan bilangan tidak bisa dibagi nol.',
+  tool_slope_disclaimer:
+    'Untuk belajar dan perencanaan. Peraturan bangunan untuk ramp, tangga, dan atap menetapkan batas dan cara ukur sendiri — periksa aturan yang berlaku untuk proyek Anda.',
+  tool_slope_dist_label: 'Jarak kedua titik',
+  tool_slope_eq_ps_label: 'Bentuk titik–gradien',
+  tool_slope_eq_si_label: 'Bentuk eksplisit',
+  tool_slope_eq_std_label: 'Bentuk umum',
+  tool_slope_err_empty_ps: 'Masukkan x₁, y₁, dan gradien m.',
+  tool_slope_err_empty_two: 'Masukkan keempat koordinat: x₁, y₁, x₂, dan y₂.',
+  tool_slope_err_num: '“{v}” bukan angka. Gunakan angka, koma sebagai tanda desimal (mis. 0,5), atau pecahan seperti 3/4.',
+  tool_slope_err_same:
+    'Kedua titik sama, jadi tidak ada satu garis tertentu yang melaluinya. Masukkan dua titik yang berbeda.',
+  tool_slope_example:
+    'Contoh: (1; 2) dan (3; 6). m = (6 − 2) ÷ (3 − 1) = 4 ÷ 2 = 2, dan b = 2 − 2 × 1 = 0, jadi y = 2x (bentuk umum 2x − y = 0). Sudut kemiringannya arctan(2) = 63,43°, kemiringan 200%, gradien garis tegak lurus −1/2, jarak √20 = 2√5 ≈ 4,4721, dan titik tengah (2; 4). Klik “Muat contoh” lagi untuk (−2; 3) dan (4; −1), lalu sekali lagi untuk ramp 1 : 12.',
   tool_slope_example_title: 'Contoh',
-  tool_slope_faq_a1: 'Ya — m=0 jika y₁=y₂ dan x berbeda.',
-  tool_slope_faq_a2: 'Kemiringan tak terdefinisi (vertikal); halaman ini error.',
-  tool_slope_faq_a3: 'Menukar keduanya tetap memberi m sama.',
-  tool_slope_faq_a4: 'Setiap +1 pada x, y naik 2.',
-  tool_slope_faq_q1: 'Garis horizontal?',
-  tool_slope_faq_q2: 'Jika x₁=x₂?',
-  tool_slope_faq_q3: 'Urutan titik?',
-  tool_slope_faq_q4: 'Arti m=2?',
-  tool_slope_formula_body: 'Kemiringan antara dua titik:',
-  tool_slope_formula_item_1: 'm=(y₂−y₁)/(x₂−x₁).',
-  tool_slope_formula_item_2: 'm positif naik kiri→kanan; m negatif turun.',
-  tool_slope_formula_item_3: 'Δx=0 berarti vertikal — tak terdefinisi di sini.',
-  tool_slope_formula_item_4: 'Menukar kedua titik menjaga rasio.',
-  tool_slope_formula_title: 'Rumus',
-  tool_slope_how_body: 'Masukkan dua titik berbeda. Mengembalikan kemiringan; jika x sama, error.',
-  tool_slope_how_title: 'Cara kerja',
-  tool_slope_ref_line_label: 'Wikipedia — Linear equation',
-  tool_slope_ref_slope_label: 'Wikipedia — Slope',
-  tool_slope_references: 'Wikipedia slope.',
-  tool_slope_result_note: 'm=(y₂−y₁)/(x₂−x₁). Garis vertikal (Δx=0) ditolak sebagai tak terdefinisi.',
+  tool_slope_faq_a1:
+    'Kurangkan nilai y, kurangkan nilai x dengan urutan yang sama, lalu bagi: untuk (1; 2) dan (3; 6), m = (6 − 2) ÷ (3 − 1) = 4 ÷ 2 = 2. Artinya garis naik 2 satuan setiap bergeser 1 satuan ke kanan.',
+  tool_slope_faq_a2:
+    'Positif: garis naik dari kiri ke kanan. Negatif: garis turun. Nol: garis mendatar (y₁ = y₂). Tidak terdefinisi: garis tegak (x₁ = x₂), karena perubahan x bernilai 0 dan pembagian dengan nol tidak punya nilai — persamaannya menjadi x = c.',
+  tool_slope_faq_a3:
+    'Cari m, lalu substitusikan satu titik ke y = mx + b untuk mendapatkan b. Untuk (−2; 3) dan (4; −1): m = −4 ÷ 6 = −2/3 dan b = 3 − (−2/3)(−2) = 5/3, jadi y = −(2/3)x + 5/3. Jika dikalikan 3, bentuk umumnya 2x + 3y = 5. Rumus di buku, (y − y₁)/(y₂ − y₁) = (x − x₁)/(x₂ − x₁), memberi hasil yang sama.',
+  tool_slope_faq_a4:
+    'Sudut = arctan(m) dan persen kemiringan = m × 100%. m = 2 sama dengan 63,43° dan 200%; m = 1/12 sama dengan 4,76° dan 8,33%. Kemiringan 100% berarti naik sama dengan mendatar, yaitu 45° — bukan dinding tegak.',
+  tool_slope_faq_a5:
+    'Tidak. Jika titik ditukar, kedua selisih berganti tanda sehingga hasil baginya tetap: (2 − 6) ÷ (1 − 3) = 2 juga. Yang penting urutan di pembilang dan penyebut sama; kalau dicampur, tandanya menjadi salah.',
+  tool_slope_faq_a6:
+    'Negatif dari kebalikannya, yaitu −1 ÷ m. Untuk m = −2/3 hasilnya 3/2, karena (−2/3) × (3/2) = −1. Garis mendatar (m = 0) tegak lurus dengan setiap garis vertikal, yang gradiennya tidak terdefinisi.',
+  tool_slope_faq_a7:
+    'Naik 1 satuan untuk setiap 12 satuan mendatar, jadi m = 1/12 ≈ 0,0833, kemiringan 8,33%, dan sudut 4,76°. Pilih “Satu titik dan gradien”, isi x₁ = 0, y₁ = 0, dan m = 1/12, lalu klik “Hitung”; halaman menampilkan perbandingan, persen kemiringan, dan titik kedua (12; 1).',
+  tool_slope_faq_q1: 'Bagaimana cara mencari gradien dari dua titik?',
+  tool_slope_faq_q2: 'Apa arti gradien positif, negatif, nol, dan tidak terdefinisi?',
+  tool_slope_faq_q3: 'Bagaimana menentukan persamaan garis yang melalui dua titik?',
+  tool_slope_faq_q4: 'Bagaimana mengubah gradien menjadi sudut atau persen kemiringan?',
+  tool_slope_faq_q5: 'Apakah urutan titik pertama dan kedua berpengaruh?',
+  tool_slope_faq_q6: 'Berapa gradien garis yang tegak lurus?',
+  tool_slope_faq_q7: 'Apa arti kemiringan 1 : 12?',
+  tool_slope_formula_body: 'Untuk dua titik (x₁; y₁) dan (x₂; y₂) dengan x₁ ≠ x₂:',
+  tool_slope_formula_item_1: 'Gradien: m = (y₂ − y₁) ÷ (x₂ − x₁) — perubahan y dibagi perubahan x.',
+  tool_slope_formula_item_2:
+    'Persamaan garis: y = mx + b dengan b = y₁ − m · x₁; bentuk titik–gradien y − y₁ = m(x − x₁). Di buku sekolah Indonesia biasanya ditulis y = mx + c: huruf c sama dengan b di halaman ini, yaitu titik potong dengan sumbu y.',
+  tool_slope_formula_item_3:
+    'Sudut kemiringan θ = arctan(m), atau tan θ = m; kemiringan dalam persen = m × 100%. Kemiringan 100% sama dengan 45°, bukan garis tegak.',
+  tool_slope_formula_item_4:
+    'Dua garis sejajar memiliki gradien yang sama; dua garis tegak lurus memenuhi m₁ × m₂ = −1, jadi m⊥ = −1 ÷ m.',
+  tool_slope_formula_item_5: 'Jarak d = √((x₂ − x₁)² + (y₂ − y₁)²); titik tengah ((x₁ + x₂) ÷ 2; (y₁ + y₂) ÷ 2).',
+  tool_slope_formula_title: 'Rumus gradien',
+  tool_slope_grade_label: 'Kemiringan dalam persen',
+  tool_slope_how_body:
+    'Gradien adalah perubahan y dibagi perubahan x: kurangkan koordinat y, kurangkan koordinat x dengan urutan yang sama, lalu bagi. Setelah itu substitusikan salah satu titik ke y = mx + b untuk mencari b, yaitu titik potong garis dengan sumbu y.',
+  tool_slope_how_item_1: 'Pilih “Dua titik”, atau “Satu titik dan gradien” jika m sudah diketahui.',
+  tool_slope_how_item_2: 'Ketik koordinatnya — bilangan negatif, desimal dengan koma, dan pecahan seperti 3/4 bisa dipakai.',
+  tool_slope_how_item_3:
+    'Klik “Hitung” untuk melihat m sebagai pecahan paling sederhana dan sebagai desimal, lengkap dengan pengurangannya.',
+  tool_slope_how_item_4:
+    'Salin persamaan garis dalam bentuk yang dipakai di kelas Anda, lalu lihat titik potong sumbu, sudut kemiringan, persen kemiringan, gradien garis tegak lurus, jarak, dan titik tengah bila diperlukan.',
+  tool_slope_how_title: 'Cara mencari gradien dari dua titik',
+  tool_slope_int_flat_tpl: 'Titik potong sumbu y (0; {b}); tidak memotong sumbu x — garis sejajar sumbu x.',
+  tool_slope_int_label: 'Titik potong sumbu',
+  tool_slope_int_tpl: 'Titik potong sumbu y (0; {b}); titik potong sumbu x ({a}; 0)',
+  tool_slope_int_vert_tpl: 'Titik potong sumbu x ({a}; 0); tidak memotong sumbu y — garis sejajar sumbu y.',
+  tool_slope_int_xaxis: 'Garis ini adalah sumbu x itu sendiri (y = 0).',
+  tool_slope_int_yaxis: 'Garis ini adalah sumbu y itu sendiri (x = 0).',
+  tool_slope_m_label: 'Gradien m',
+  tool_slope_m_ph: 'mis. 2 atau -3/4',
+  tool_slope_mid_label: 'Titik tengah',
+  tool_slope_mode_label: 'Apa yang diketahui?',
+  tool_slope_mode_ps: 'Satu titik dan gradien',
+  tool_slope_mode_two: 'Dua titik',
+  tool_slope_no_si: 'Tidak ada — garis vertikal tidak bisa ditulis sebagai y = mx + b.',
+  tool_slope_perp_label: 'Gradien garis tegak lurus',
+  tool_slope_perp_vert: 'Tidak terdefinisi — garis vertikal mana pun',
+  tool_slope_point2_label: 'Titik lain pada garis',
+  tool_slope_ratio_label: 'Naik : mendatar',
+  tool_slope_ref_line_label: 'Wikipedia — Linear equation (persamaan linear, bahasa Inggris)',
+  tool_slope_ref_slope_label: 'Wikipedia — Slope (gradien, bahasa Inggris)',
+  tool_slope_references:
+    'Wikipedia — Slope (gradien, bahasa Inggris); Wikipedia — Linear equation (persamaan linear, bahasa Inggris).',
+  tool_slope_result_note:
+    'Pecahan ditampilkan eksak dalam bentuk paling sederhana; desimal setelah ≈ dibulatkan sampai 4 angka di belakang koma.',
   tool_slope_sample: 'Muat contoh',
-  tool_slope_slopeOut_label: 'Kemiringan m',
-  tool_slope_title: 'Kalkulator kemiringan — Cara menghitung kemiringan dua titik',
-  tool_slope_usecase_1: 'Aljabar: kemiringan dari dua titik.',
-  tool_slope_usecase_2: 'Cek rise-over-run sebelum menggambar.',
-  tool_slope_usecase_3: 'Bandingkan dengan gagasan rasio Δy:Δx.',
-  tool_slope_usecases_title: 'Kapan dipakai',
+  tool_slope_slopeOut_label: 'Gradien m',
+  tool_slope_title: 'Kalkulator Gradien — Cari Gradien Garis dari Dua Titik dan Persamaan Garisnya, Langkah demi Langkah',
+  tool_slope_undefined: 'Tidak terdefinisi',
+  tool_slope_usecase_1:
+    'PR matematika tentang persamaan garis lurus dan geometri koordinat: gradien, persamaan garis, dan titik potong sumbu dari dua titik yang diketahui, lengkap dengan langkah yang bisa disalin.',
+  tool_slope_usecase_2:
+    'Ramp dan aksesibilitas: ramp 1 : 12 (naik 1 untuk setiap 12 mendatar) memiliki m = 1/12, kemiringan 8,33%, dan sudut 4,76° — batas maksimum dalam standar ADA Amerika Serikat. Aturan di Indonesia dan negara lain bisa berbeda.',
+  tool_slope_usecase_3:
+    'Atap, jalan masuk, dan saluran air: ubah tinggi dan panjang mendatar menjadi derajat atau persen — atap dengan kemiringan 4 banding 12 berarti m = 1/3, atau 18,43°.',
+  tool_slope_usecase_4:
+    'Membaca grafik dan data: laju perubahan antara dua pengukuran, misalnya 120 km setelah 2 jam dan 300 km setelah 5 jam, yaitu titik (2; 120) dan (5; 300) → 60 km per jam.',
+  tool_slope_usecases_title: 'Kapan kalkulator ini dipakai',
+  tool_slope_why_choose_item_1:
+    'Jawaban eksak: (−2; 3) dan (4; −1) menghasilkan m = −2/3, bukan −0,666667, dan b = 5/3 — sesuai bentuk yang diminta guru.',
+  tool_slope_why_choose_item_2:
+    'Persamaan garis langsung dalam tiga bentuk: y = mx + b, bentuk titik–gradien y − y₁ = m(x − x₁), dan bentuk umum Ax + By = C dengan bilangan bulat.',
+  tool_slope_why_choose_item_3:
+    'Semua yang biasa ditanyakan tentang dua titik ada di satu tempat: gradien garis tegak lurus, jarak dalam bentuk akar paling sederhana (√20 = 2√5), dan titik tengah.',
+  tool_slope_why_choose_item_4:
+    'Kasus khusus dijelaskan, bukan sekadar ditandai: garis vertikal mendapat x = c dan “tidak terdefinisi”, garis horizontal mendapat m = 0 dan tidak memotong sumbu x.',
+  tool_slope_why_choose_item_5:
+    'Hasil praktis untuk ramp, jalan, dan atap: sudut dalam derajat, kemiringan dalam persen, dan perbandingan naik : mendatar sebagai 1 : n.',
+  tool_slope_why_choose_title: 'Kenapa memakai kalkulator gradien ini',
+  tool_slope_work_label: 'Langkah perhitungan',
   tool_slope_x1_label: 'x₁',
   tool_slope_x1_ph: 'mis. 1',
   tool_slope_x2_label: 'x₂',
@@ -23308,49 +24046,135 @@ const id: SiteLangDict = {
   tool_timezone_converter_usecase_2: 'Ops/log: cap waktu zona Chicago — bandingkan UTC dan zona Anda tanpa hitung manual.',
   tool_timezone_converter_usecase_3: 'Perjalanan: mendarat di Dubai — baca Sydney dan Los Angeles berdampingan untuk panggilan.',
   tool_timezone_converter_usecases_title: 'Kapan cocok',
-  tool_tip_article: 'Kalkulator tip / tip',
-  tool_tip_bill_label: 'Tagihan',
+  tool_tip_article: 'Kalkulator tip dengan bagi rata tagihan',
+  tool_tip_base_label: 'Hitung tip dari',
+  tool_tip_base_post: 'Seluruh tagihan termasuk pajak',
+  tool_tip_base_pre: 'Jumlah sebelum pajak',
+  tool_tip_bill_label: 'Jumlah tagihan',
   tool_tip_bill_ph: 'mis. 80',
   tool_tip_calculate: 'Hitung',
   tool_tip_clear: 'Hapus',
+  tool_tip_col_each: 'Per orang',
+  tool_tip_col_rate: 'Persentase',
+  tool_tip_col_tip: 'Tip',
+  tool_tip_col_total: 'Total',
   tool_tip_description:
-    'Hitung tip dari tagihan dan persen, lalu bagi total. Contoh: tagihan 80 tip 15% → tip 12, total 92. Di browser. Perhitungan edukatif di browser; bukan saran profesional.',
-  tool_tip_disclaimer: 'Hanya ilustrasi edukatif (tip); bukan saran keuangan.',
-  tool_tip_eachOut_label: 'Per orang',
-  tool_tip_err_generic: 'Periksa input.',
-  tool_tip_example: 'Contoh: 80 tip 15% → 12 / total 92.',
+    'Cara menghitung tip dan bagi rata tagihan (split bill) sampai ke sen, sehingga semua bagian pas dengan totalnya. Hitung tip dari jumlah sebelum pajak, bulatkan ke atas tip, total, atau bagian tiap orang, cari persentase dari nominal tip, dan bandingkan 10–25% sekaligus.',
+  tool_tip_disclaimer:
+    'Hanya bantuan hitung — kebiasaan memberi tip dan service charge berbeda menurut negara, tempat, dan jenis layanan.',
+  tool_tip_each_label: 'Tiap orang membayar',
+  tool_tip_each_tip_label: 'Tip per orang',
+  tool_tip_err_bill: 'Masukkan jumlah tagihan — angka lebih dari 0.',
+  tool_tip_err_people: 'Masukkan jumlah orang berupa bilangan bulat dari 1 sampai 100.',
+  tool_tip_err_tax: 'Pajak harus 0 atau lebih dan lebih kecil dari tagihan.',
+  tool_tip_err_tip: 'Masukkan tip 0 atau lebih (persentase paling banyak 1000%).',
+  tool_tip_example:
+    'Contoh: tagihan 80,00 dengan tip 15%. Tip = 80,00 × 15% = 12,00, jadi totalnya 92,00. Klik ‘Muat contoh’ lagi untuk tagihan 86,40 yang sudah termasuk pajak 6,40, dibagi tiga orang dengan tip 20% dari 80,00 sebelum pajak: tipnya 16,00, totalnya 102,40, dibayar sebagai 34,14 + 34,13 + 34,13. Contoh ketiga membagi 137,50 untuk empat orang dengan tip 18% dan bagian tiap orang dibulatkan ke atas menjadi 41,00, sehingga tipnya menjadi 26,50 atau 19,27%.',
   tool_tip_example_title: 'Contoh',
-  tool_tip_faq_a1: 'Contoh: 80 tip 15% → 12 / total 92.',
-  tool_tip_faq_a2: 'See Formula section.',
-  tool_tip_faq_a3: 'Educational only.',
-  tool_tip_faq_a4: 'No — local arithmetic only.',
-  tool_tip_faq_q1: 'Contoh?',
-  tool_tip_faq_q2: 'Formula?',
-  tool_tip_faq_q3: 'Advice?',
-  tool_tip_faq_q4: 'Related?',
-  tool_tip_formula_body: 'Isi tagihan, persen, dan orang.',
-  tool_tip_formula_item_1: 'See formula notes.',
-  tool_tip_formula_item_2: 'Check inputs.',
-  tool_tip_formula_item_3: 'Educational only.',
-  tool_tip_formula_title: 'Rumus',
-  tool_tip_how_body: 'Isi tagihan, persen, dan orang.',
-  tool_tip_how_title: 'Cara kerja',
-  tool_tip_ref_a_label: 'Investopedia',
-  tool_tip_ref_b_label: 'Wikipedia',
-  tool_tip_references: 'Investopedia dan rumus buku teks.',
-  tool_tip_result_note: 'Edukatif.',
+  tool_tip_faq_a1:
+    'Sering kali ya. Jika struk sudah mencantumkan service charge — di restoran Inggris lazimnya 12,5%, dan banyak tempat menambahkannya untuk rombongan besar — biasanya itu sudah menggantikan tip, jadi cek dulu sebelum menambah lagi. Untuk menentukan tip sendiri, masukkan tagihan tanpa service charge.',
+  tool_tip_faq_a2:
+    'Hitung dalam sen dan berikan sisa sennya ke sebagian orang. 102,40 dibagi tiga adalah 34,1333…, jadi satu orang membayar 34,14 dan dua orang membayar 34,13 — totalnya tepat 102,40. Kalkulator menampilkan pembagian ini di baris ‘Tiap orang membayar’.',
+  tool_tip_faq_a3:
+    'Mulai dari 10% dengan menggeser koma satu angka ke kiri: 10% dari 64,00 adalah 6,40. Kalikan dua untuk 20% (12,80), atau tambahkan setengahnya untuk 15% (6,40 + 3,20 = 9,60). Untuk 18%, ambil 20% lalu kurangi 2%: 12,80 − 1,28 = 11,52.',
+  tool_tip_faq_a4:
+    'Tergantung negara dan jenis layanannya. Di Amerika Serikat, Emily Post Institute menyarankan 15–20% dari tagihan sebelum pajak untuk layanan di meja, 10% di restoran prasmanan, dan 15–20% untuk taksi dan salon rambut. Di Indonesia, banyak restoran sudah menambahkan service charge (umumnya 5–10%) ditambah pajak restoran, sehingga tip tambahan bersifat sukarela. Di banyak negara Eropa layanan sering sudah termasuk dan orang umumnya membulatkan atau menambah sekitar 5–10%; di Jepang dan Korea Selatan tip umumnya tidak lazim. Cek dulu apakah struk sudah memuat service charge.',
+  tool_tip_faq_a5:
+    'Panduan etiket seperti Emily Post Institute menyarankan tip dari jumlah sebelum pajak, meski memberi tip dari seluruh tagihan juga umum dan lebih praktis. Selisihnya kecil: pada tagihan 86,40 yang sudah termasuk pajak 6,40, tip 20% adalah 16,00 dari 80,00 sebelum pajak dan 17,28 dari seluruh tagihan. Masukkan pajaknya dan pilih dasar mana pun.',
+  tool_tip_faq_a6:
+    'Empat orang membagi 137,50 dengan tip 18% berarti total 162,25, atau 40,5625 per orang. Membulatkan bagian tiap orang ke atas menjadi 41,00 membuat totalnya 164,00, sehingga tipnya menjadi 26,50 — 19,27%, bukan 18%. Jika yang dibulatkan ke atas adalah totalnya, hasilnya 163,00 dengan tip 25,50 (18,55%).',
+  tool_tip_faq_a7:
+    'Atur ‘Masukkan tip sebagai’ ke ‘Nominal’, lalu ketik jumlah tip yang Anda berikan. Tip 10,00 pada tagihan 64,00 adalah 10 ÷ 64 = 15,63%. Tabel lalu menunjukkan perbandingannya dengan 10–25% untuk tagihan yang sama.',
+  tool_tip_faq_q1: 'Apakah service charge sama dengan tip?',
+  tool_tip_faq_q2: 'Bagaimana cara split bill dengan tip kalau tidak bisa dibagi rata?',
+  tool_tip_faq_q3: 'Bagaimana cara menghitung tip 15% atau 20% di luar kepala?',
+  tool_tip_faq_q4: 'Berapa tip yang sebaiknya diberikan?',
+  tool_tip_faq_q5: 'Tip dihitung dari jumlah sebelum atau sesudah pajak?',
+  tool_tip_faq_q6: 'Apa yang terjadi jika bagian tiap orang dibulatkan ke atas?',
+  tool_tip_faq_q7: 'Berapa persen tip yang saya berikan?',
+  tool_tip_formula_body: 'Untuk tagihan B yang sudah termasuk pajak X, persentase tip p, dan n orang:',
+  tool_tip_formula_item_1: 'Tip = dasar tip × p, dengan dasar tip = B, atau B − X jika tip dihitung dari jumlah sebelum pajak.',
+  tool_tip_formula_item_2: 'Total = B + tip. Pajak tetap ada di tagihan dengan cara mana pun — yang berubah hanya tipnya.',
+  tool_tip_formula_item_3:
+    'Per orang = total ÷ n. Jika dihitung dalam sen dan pembagian menyisakan sisa r, maka r orang membayar satu sen lebih banyak dari yang lain.',
+  tool_tip_formula_item_4: 'Persentase tip dari nominal = tip ÷ dasar tip × 100%.',
+  tool_tip_formula_item_5:
+    'Setelah dibulatkan ke atas, persentase tip efektif = (total yang dibulatkan − B) ÷ dasar tip; itulah sebabnya membulatkan bagian tiap orang ke atas menaikkan persentasenya.',
+  tool_tip_formula_title: 'Rumus tip',
+  tool_tip_how_body:
+    'Kalikan tagihan — atau jumlah sebelum pajak — dengan persentase tip, tambahkan tip ke tagihan, lalu bagi dengan jumlah orang. Agar semua bagian pas dengan total, pembagian dilakukan per sen dan sebagian orang membayar satu sen lebih banyak.',
+  tool_tip_how_item_1:
+    'Masukkan jumlah tagihan. Jika ingin memberi tip dari jumlah sebelum pajak, isi juga pajak yang tertera di struk.',
+  tool_tip_how_item_2:
+    'Ketik persentase tip atau ketuk salah satu tombol cepat — atau pilih ‘Nominal’ untuk melihat berapa persen tip yang Anda berikan.',
+  tool_tip_how_item_3:
+    'Masukkan berapa orang yang ikut membayar dan, bila perlu, bulatkan ke atas tip, total, atau bagian tiap orang ke angka bulat.',
+  tool_tip_how_item_4:
+    'Klik ‘Hitung’ untuk melihat tip, total, berapa yang dibayar tiap orang, langkah perhitungannya, serta perbandingan 10–25% untuk tagihan yang sama.',
+  tool_tip_how_title: 'Cara menghitung tip',
+  tool_tip_out_tip: 'Tip',
+  tool_tip_people_label: 'Dibagi untuk (orang)',
+  tool_tip_people_ph: '1',
+  tool_tip_presets_label: 'Cepat:',
+  tool_tip_ref_a_label: 'Wikipedia — Gratuity (tip)',
+  tool_tip_ref_b_label: 'Emily Post Institute — General tipping guide (panduan tip di AS)',
+  tool_tip_references: 'Wikipedia — Gratuity (tip); Emily Post Institute — General tipping guide.',
+  tool_tip_result_note:
+    'Semua dihitung dalam sen. Di tabel, kolom ‘Per orang’ menampilkan bagian terbesar setelah dibagi per sen.',
+  tool_tip_round_each: 'Bulatkan bagian tiap orang ke atas ke angka bulat',
+  tool_tip_round_label: 'Pembulatan',
+  tool_tip_round_none: 'Tanpa pembulatan',
+  tool_tip_round_tip: 'Bulatkan tip ke atas ke angka bulat',
+  tool_tip_round_total: 'Bulatkan total ke atas ke angka bulat',
   tool_tip_sample: 'Muat contoh',
-  tool_tip_split_label: 'Jumlah orang',
-  tool_tip_split_ph: 'mis. 1',
-  tool_tip_tipOut_label: 'Tip',
-  tool_tip_tip_label: 'Tip %',
-  tool_tip_tip_ph: 'mis. 15',
-  tool_tip_title: 'Kalkulator tip / tip',
-  tool_tip_totalOut_label: 'Total',
-  tool_tip_usecase_1: 'Homework.',
-  tool_tip_usecase_2: 'Quick sketch.',
-  tool_tip_usecase_3: 'Pair with VAT/discount for receipt drills.',
+  tool_tip_split_even_tpl: 'masing-masing {v}',
+  tool_tip_split_uneven_tpl: '{n1} × {v1} + {n2} × {v2} = {t}',
+  tool_tip_sub_tpl: '{p} dari {base}',
+  tool_tip_table_caption: 'Persentase tip yang umum untuk tagihan ini (sebelum pembulatan)',
+  tool_tip_tax_hint: 'Isi kolom ini jika ingin memberi tip dari jumlah sebelum pajak.',
+  tool_tip_tax_label: 'Pajak yang sudah termasuk dalam tagihan (opsional)',
+  tool_tip_tax_ph: 'mis. 6,40',
+  tool_tip_tip_label_amt: 'Nominal tip',
+  tool_tip_tip_label_pct: 'Tip (%)',
+  tool_tip_tip_ph_amt: 'mis. 10',
+  tool_tip_tip_ph_pct: 'mis. 15',
+  tool_tip_tipmode_amt: 'Nominal',
+  tool_tip_tipmode_label: 'Masukkan tip sebagai',
+  tool_tip_tipmode_pct: 'Persentase',
+  tool_tip_title: 'Kalkulator Tip — Hitung Tip dan Bagi Rata Tagihan sampai ke Sen Terakhir',
+  tool_tip_total_label: 'Total yang dibayar',
+  tool_tip_usecase_1:
+    'Makan bareng teman atau kantor: tambahkan tip, bagi rata tagihan ke semua orang, dan selesaikan tanpa ada sen yang kurang.',
+  tool_tip_usecase_2:
+    'Liburan ke luar negeri: di tempat yang kebiasaannya membulatkan, bukan menambah persentase, bulatkan total ke atas dan lihat berapa nilai tipnya.',
+  tool_tip_usecase_3:
+    'Tip cepat untuk kurir, sopir taksi, salon, atau bar: ketuk 15% atau 20% dan langsung baca nominalnya.',
+  tool_tip_usecase_4:
+    'Mengecek struk atau mesin EDC: sebagian menampilkan saran tip yang dihitung dari total setelah pajak — bandingkan dengan angka sebelum pajak di sini.',
   tool_tip_usecases_title: 'Kapan dipakai',
+  tool_tip_why_choose_item_1:
+    'Split bill yang benar-benar pas: kalau total tidak bisa dibagi rata, terlihat siapa yang membayar satu sen tambahan — 102,40 dibagi tiga orang adalah 34,14 + 34,13 + 34,13, bukan tiga kali 34,13.',
+  tool_tip_why_choose_item_2:
+    'Tip dari jumlah sebelum pajak atau dari seluruh tagihan: masukkan pajak dari struk dan pilih dasarnya; langkah perhitungan menampilkan persentase sebelum pajak sekaligus nilainya terhadap seluruh tagihan.',
+  tool_tip_why_choose_item_3:
+    'Pembulatan dengan angka jujur: bulatkan ke atas tip, total, atau bagian tiap orang, lalu lihat persentase tip yang sebenarnya Anda berikan.',
+  tool_tip_why_choose_item_4:
+    'Tabel 10%, 15%, 18%, 20%, 22%, dan 25% untuk tagihan yang sama, dengan persentase Anda disorot, jadi Anda bisa memutuskan sebelum membayar.',
+  tool_tip_why_choose_item_5:
+    'Bisa dihitung mundur: masukkan nominal tip yang Anda berikan dan dapatkan persentasenya — berguna untuk mengecek saran tip di mesin EDC.',
+  tool_tip_why_choose_title: 'Kenapa memakai kalkulator tip ini',
+  tool_tip_work_base_post_tpl: 'Dasar tip = seluruh tagihan termasuk pajak = {base}',
+  tool_tip_work_base_pre_tpl: 'Dasar tip (sebelum pajak) = {bill} − {tax} = {base}',
+  tool_tip_work_eff_bill_tpl: 'Itu setara {p} dari seluruh tagihan termasuk pajak.',
+  tool_tip_work_label: 'Langkah perhitungan',
+  tool_tip_work_round_each_tpl:
+    'Bagian tiap orang dibulatkan ke atas dari {a} menjadi {b}; {b} × {n} = {total}, sehingga tip menjadi {tip} ({p})',
+  tool_tip_work_round_tip_tpl: 'Tip dibulatkan ke atas dari {a} menjadi {b} ({p} dari dasar tip)',
+  tool_tip_work_round_total_tpl: 'Total dibulatkan ke atas dari {a} menjadi {b}, sehingga tip menjadi {tip} ({p})',
+  tool_tip_work_split_tpl: 'Per orang = {total} ÷ {n} {eq} {v}',
+  tool_tip_work_tip_amt_tpl: 'Persentase tip = {tip} ÷ {base} = {p}',
+  tool_tip_work_tip_pct_tpl: 'Tip = {base} × {p} = {tip}',
+  tool_tip_work_total_tpl: 'Total = {bill} + {tip} = {total}',
   tool_transcribe_an_audio_file_to_text_advanced: 'Honest limits',
   tool_transcribe_an_audio_file_to_text_article:
     'People search for audio to text and speech to text expecting a large-model-class transcript. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses the browser speech recognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), or you can dictate live with the mic. If browser speech recognition is missing, the page says so clearly. Output is plain text you can edit and download as TXT—not timed SRT. Related tools cover waveform video and voice memos. Keep expectations honest: accuracy and file support vary by browser.',
@@ -24329,45 +25153,154 @@ const id: SiteLangDict = {
   tool_vat_usecase_2: 'Quick sketch.',
   tool_vat_usecase_3: 'Pair with discount/tip pages for receipt math.',
   tool_vat_usecases_title: 'Kapan dipakai',
-  tool_velocity_article: 'Kalkulator kecepatan',
+  tool_velocity_article:
+    'Kalkulator kecepatan yang menyelesaikan v = d ÷ t untuk kecepatan, jarak, atau waktu dalam satuan umum, menuliskan konversi dan langkah perhitungan, serta memberi kelajuan rata-rata dan kecepatan rata-rata yang benar untuk perjalanan beberapa bagian.',
+  tool_velocity_avgvel_label: 'Kecepatan rata-rata menurut perpindahan',
+  tool_velocity_avgvel_tpl: '{s} ÷ {t} = {v} (perpindahan garis lurus ÷ total waktu, jadi perjalanan pulang-pergi hasilnya 0)',
   tool_velocity_calculate: 'Hitung',
   tool_velocity_clear: 'Hapus',
+  tool_velocity_conv_label: 'Dalam satuan lain',
   tool_velocity_description:
-    'Hitung kecepatan rata-rata dengan rumus v=d/t dari jarak dan waktu. Contoh: jarak 100, waktu 20 → kecepatan 5 (satuan sama). Hanya di browser; cek proses dan satuannya.',
-  tool_velocity_disclaimer: 'Hanya ilustrasi edukatif (velocity).',
+    'Hitung kecepatan dari jarak dan waktu dengan rumus v = d ÷ t, atau cari jarak dan waktu tempuh, dalam m/s, km/jam, mph, ft/s atau knot. Menampilkan langkah perhitungan, konversi satuan (misalnya m/s ke km/jam), contoh soal, serta kecepatan rata-rata yang benar untuk perjalanan beberapa bagian.',
+  tool_velocity_disclaimer:
+    'Untuk belajar dan perkiraan sehari-hari. Waktu tempuh mengasumsikan kecepatan rata-rata konstan; perjalanan nyata bergantung pada lalu lintas, berhenti, dan kondisi jalan.',
+  tool_velocity_disp_label: 'Perpindahan — jarak garis lurus dari titik awal ke akhir (opsional)',
+  tool_velocity_disp_ph: 'mis. 0 untuk pulang-pergi',
   tool_velocity_dist_label: 'Jarak',
   tool_velocity_dist_ph: 'mis. 100',
-  tool_velocity_err_generic: 'Periksa input.',
-  tool_velocity_example: 'Contoh: v=5.',
-  tool_velocity_example_title: 'Contoh',
-  tool_velocity_faq_a1: 'Contoh: v=5.',
-  tool_velocity_faq_a2: 'See Formula section.',
-  tool_velocity_faq_a3: 'Educational only.',
-  tool_velocity_faq_a4: 'Educational only.',
-  tool_velocity_faq_q1: 'Contoh?',
-  tool_velocity_faq_q2: 'Formula?',
-  tool_velocity_faq_q3: 'Advice?',
-  tool_velocity_faq_q4: 'Related?',
-  tool_velocity_formula_body: 'Isi jarak dan waktu.',
-  tool_velocity_formula_item_1: 'See formula notes.',
-  tool_velocity_formula_item_2: 'Check inputs.',
-  tool_velocity_formula_item_3: 'Educational only.',
-  tool_velocity_formula_title: 'Rumus',
-  tool_velocity_how_body: 'Isi jarak dan waktu.',
-  tool_velocity_how_title: 'Cara kerja',
-  tool_velocity_ref_a_label: 'Wikipedia',
-  tool_velocity_ref_b_label: 'Textbook formula',
-  tool_velocity_references: 'Rumus buku teks.',
-  tool_velocity_result_note: 'Edukatif.',
+  tool_velocity_err_disp: 'Jarak garis lurus tidak boleh negatif atau lebih panjang dari total jarak yang ditempuh.',
+  tool_velocity_err_dist: 'Masukkan jarak 0 atau lebih.',
+  tool_velocity_err_leg:
+    'Setiap bagian perlu jarak dan kecepatan lebih dari 0. Kosongkan bagian 3 sepenuhnya jika perjalanan hanya dua bagian.',
+  tool_velocity_err_num: 'Masukkan angka saja, misalnya 42,195 atau 1.500 — tanpa satuan atau huruf di kotak.',
+  tool_velocity_err_speed: 'Masukkan kecepatan lebih dari 0 (dengan kecepatan 0 tidak ada jarak yang ditempuh).',
+  tool_velocity_err_time: 'Masukkan waktu lebih dari 0.',
+  tool_velocity_example:
+    'Rekor dunia 100 m Usain Bolt, 9,58 s (Berlin 2009), berarti 100 ÷ 9,58 = 10,44 m/s, atau 37,58 km/jam dan 23,35 mph. Pelari yang bertahan di 12 km/jam butuh 42,195 ÷ 12 = 3,5163 jam untuk maraton, yaitu 3:30:58,5. Mobil yang melaju 65 mph selama 2,5 jam menempuh 162,5 mil (261,52 km). Berangkat 60 km dengan 60 km/jam lalu pulang dengan 40 km/jam memakan 1 jam + 1,5 jam = 2,5 jam, jadi kecepatan rata-ratanya 120 ÷ 2,5 = 48 km/jam — dan karena Anda kembali ke titik awal, kecepatan rata-rata vektornya 0.',
+  tool_velocity_example_title: 'Contoh soal',
+  tool_velocity_faq_a1:
+    'Bagi jarak dengan waktu: v = d ÷ t. 100 meter dalam 9,58 detik berarti 100 ÷ 9,58 = 10,44 m/s. Pastikan satuannya sesuai jawaban yang diinginkan — kilometer dan jam menghasilkan km/jam, meter dan detik menghasilkan m/s.',
+  tool_velocity_faq_a2:
+    'Kelajuan hanya menyatakan seberapa cepat; kecepatan juga punya arah. Kelajuan rata-rata memakai seluruh jarak yang ditempuh, sedangkan kecepatan rata-rata memakai perpindahan, yaitu jarak garis lurus dari awal ke akhir. Berlari satu putaran lintasan 400 m dalam 80 s berarti kelajuan rata-rata 5 m/s, tetapi kecepatan rata-rata 0, karena Anda finis di tempat start.',
+  tool_velocity_faq_a3:
+    'Karena Anda lebih lama berada di kecepatan yang lebih lambat. Pergi 60 km dengan 60 km/jam butuh 1 jam, tetapi pulang dengan 40 km/jam butuh 1,5 jam, jadi perjalanan 120 km memakan 2,5 jam: 48 km/jam, bukan 50 km/jam. Rata-rata biasa hanya tepat jika setiap kecepatan dipertahankan selama waktu yang sama.',
+  tool_velocity_faq_a4:
+    'Kalikan m/s dengan 3,6 untuk km/jam, atau dengan 2,2369 untuk mph. 10 m/s = 36 km/jam = 22,37 mph. Dari km/jam ke m/s, bagi dengan 3,6: 90 km/jam = 25 m/s.',
+  tool_velocity_faq_a5:
+    'Bagi jarak dengan kecepatan: t = d ÷ v. Maraton 42,195 km dengan 12 km/jam butuh 42,195 ÷ 12 = 3,5163 jam. Kalikan bagian desimal dengan 60 untuk mendapat menit: 0,5163 × 60 = 30,98, jadi sekitar 3 jam 31 menit.',
+  tool_velocity_faq_a6:
+    'Rata-rata. Jarak ÷ waktu memberi nilai rata-rata sepanjang selang waktu; angka speedometer pada satu saat adalah kecepatan sesaat, yang bisa lebih tinggi atau lebih rendah. Jika benda dipercepat secara teratur (GLBB), gunakan rumus percepatan, misalnya v = v₀ + a × t.',
+  tool_velocity_faq_a7:
+    'Bisa. Pada soal fisika satu dimensi, tanda menunjukkan arah: jika ke kanan positif, benda yang bergerak ke kiri dengan 3 m/s memiliki kecepatan −3 m/s. Kelajuan adalah besar kecepatan dan tidak pernah negatif. Kalkulator ini bekerja dengan besar kecepatan, jadi masukkan angka positif dan catat arahnya sendiri.',
+  tool_velocity_faq_q1: 'Bagaimana cara menghitung kecepatan?',
+  tool_velocity_faq_q2: 'Apa bedanya kelajuan dan kecepatan?',
+  tool_velocity_faq_q3: 'Kenapa kecepatan rata-rata bukan rata-rata dari kecepatan saya?',
+  tool_velocity_faq_q4: 'Bagaimana konversi m/s ke km/jam atau mph?',
+  tool_velocity_faq_q5: 'Bagaimana mencari waktu tempuh dari jarak dan kecepatan?',
+  tool_velocity_faq_q6: 'Ini kecepatan sesaat atau kecepatan rata-rata?',
+  tool_velocity_faq_q7: 'Apakah kecepatan bisa negatif?',
+  tool_velocity_formula_body:
+    'Kecepatan rata-rata adalah perpindahan dibagi waktu; untuk gerak lurus searah, nilainya sama dengan jarak dibagi waktu.',
+  tool_velocity_formula_item_1: 'v = d ÷ t. Contoh: 100 m ÷ 9,58 s = 10,44 m/s.',
+  tool_velocity_formula_item_2:
+    'Bentuk lain: d = v × t dan t = d ÷ v. Contoh: 65 mph × 2,5 jam = 162,5 mi; 42,195 km ÷ 12 km/jam = 3,5163 jam.',
+  tool_velocity_formula_item_3:
+    'Konversi satuan: 1 m/s = 3,6 km/jam = 2,2369 mph = 3,2808 ft/s = 1,9438 knot; 1 mph = tepat 1,609344 km/jam. Dari km/jam ke m/s, bagi dengan 3,6.',
+  tool_velocity_formula_item_4:
+    'Kecepatan rata-rata beberapa bagian = total jarak ÷ total waktu. Dua jarak yang sama dengan 60 dan 40 km/jam menghasilkan 120 km ÷ 2,5 jam = 48 km/jam, bukan 50 km/jam.',
+  tool_velocity_formula_item_5:
+    'Kecepatan rata-rata (vektor) = perpindahan garis lurus ÷ waktu. Nilainya bisa lebih kecil dari kelajuan rata-rata dan bernilai 0 bila perjalanan berakhir di titik awal.',
+  tool_velocity_formula_title: 'Rumus kecepatan dan konversi satuan',
+  tool_velocity_hint_basic:
+    'Pilih satuan apa saja — hasilnya memakai satuan yang cocok (km dengan km/jam, mil dengan mph, meter dengan m/s) dan satuan lain ditampilkan di bawahnya.',
+  tool_velocity_hint_legs:
+    'Masukkan jarak dan kecepatan tiap bagian perjalanan. Kosongkan bagian 3 jika perjalanan hanya dua bagian.',
+  tool_velocity_how_body:
+    'Rumus kecepatan adalah jarak dibagi waktu: v = d ÷ t (di buku pelajaran jarak sering ditulis s). Pilih besaran yang dicari, isi dua nilai lainnya beserta satuannya, lalu klik Hitung.',
+  tool_velocity_how_item_1:
+    'Pilih yang ingin dicari: kecepatan, jarak, atau waktu — atau kecepatan rata-rata perjalanan yang terdiri dari beberapa bagian.',
+  tool_velocity_how_item_2:
+    'Ketik dua nilai yang diketahui dan pilih satuannya, misalnya 100 m dan 9,58 s, atau 42,195 km dan 12 km/jam.',
+  tool_velocity_how_item_3:
+    'Untuk perjalanan beberapa bagian, isi jarak dan kecepatan tiap bagian; tambahkan perpindahan (jarak garis lurus awal–akhir) jika ingin tahu kecepatan rata-rata vektornya.',
+  tool_velocity_how_item_4:
+    'Baca hasil di bagian atas, lalu langkah konversi satuan, langkah perhitungan lengkap, dan hasil yang sama dalam satuan lain.',
+  tool_velocity_how_title: 'Cara menghitung kecepatan dengan kalkulator ini',
+  tool_velocity_leg_dist_tpl: 'Bagian {n}: jarak',
+  tool_velocity_leg_speed_tpl: 'Bagian {n}: kecepatan',
+  tool_velocity_leg_work_tpl: 'bagian {n}: {d} ÷ {v} = {t}',
+  tool_velocity_legs_label: 'Waktu tiap bagian',
+  tool_velocity_mode_distance: 'Jarak dari kecepatan dan waktu',
+  tool_velocity_mode_label: 'Apa yang ingin Anda cari?',
+  tool_velocity_mode_legs: 'Kecepatan rata-rata perjalanan beberapa bagian',
+  tool_velocity_mode_time: 'Waktu tempuh dari jarak dan kecepatan',
+  tool_velocity_mode_velocity: 'Kecepatan dari jarak dan waktu',
+  tool_velocity_out_distance: 'Jarak yang ditempuh',
+  tool_velocity_out_legs: 'Kecepatan rata-rata seluruh perjalanan',
+  tool_velocity_out_time: 'Waktu tempuh (jam:menit:detik)',
+  tool_velocity_out_velocity: 'Kecepatan rata-rata',
+  tool_velocity_ref_a_label: 'Wikipedia (Inggris) — Velocity',
+  tool_velocity_ref_b_label: 'Wikipedia (Inggris) — Speed',
+  tool_velocity_references:
+    'Definisi kelajuan, kecepatan, dan perpindahan mengikuti fisika dasar; faktor konversi memakai definisi eksak 1 mi = 1.609,344 m, 1 ft = 0,3048 m, dan 1 nmi = 1.852 m.',
+  tool_velocity_result_note_basic:
+    'Ini kecepatan rata-rata sepanjang seluruh jarak (dalam fisika disebut kelajuan rata-rata). Kecepatan sebagai vektor juga punya arah; pada lintasan lurus searah, besar keduanya sama.',
+  tool_velocity_result_note_legs:
+    'Kelajuan rata-rata = total jarak ÷ total waktu, bukan rata-rata dari kecepatan tiap bagian. Kecepatan rata-rata (vektor) memakai perpindahan, yaitu jarak garis lurus antara titik awal dan akhir.',
   tool_velocity_sample: 'Muat contoh',
+  tool_velocity_speed_label: 'Kecepatan',
+  tool_velocity_speed_ph: 'mis. 12',
+  tool_velocity_step_label: 'Konversi satuan',
+  tool_velocity_sub_distance_tpl: 'pada {v} selama {t}',
+  tool_velocity_sub_legs_tpl: '{d} dalam {t} ({c})',
+  tool_velocity_sub_time_tpl: 'untuk menempuh {d} pada {v}',
+  tool_velocity_sub_velocity_tpl: '{d} dalam {t}',
+  tool_velocity_sym_ft: 'ft',
+  tool_velocity_sym_fts: 'ft/s',
+  tool_velocity_sym_h: 'jam',
+  tool_velocity_sym_km: 'km',
+  tool_velocity_sym_kmh: 'km/jam',
+  tool_velocity_sym_kn: 'knot',
+  tool_velocity_sym_m: 'm',
+  tool_velocity_sym_mi: 'mi',
+  tool_velocity_sym_min: 'min',
+  tool_velocity_sym_mph: 'mph',
+  tool_velocity_sym_ms: 'm/s',
+  tool_velocity_sym_nmi: 'nmi',
+  tool_velocity_sym_s: 's',
+  tool_velocity_sys_label: 'Satuan perjalanan',
   tool_velocity_time_label: 'Waktu',
-  tool_velocity_time_ph: 'mis. 20',
-  tool_velocity_title: 'Kalkulator kecepatan',
-  tool_velocity_usecase_1: 'Homework.',
-  tool_velocity_usecase_2: 'Quick sketch.',
-  tool_velocity_usecase_3: 'Compare with acceleration.',
-  tool_velocity_usecases_title: 'Kapan dipakai',
-  tool_velocity_velOut_label: 'Kecepatan',
+  tool_velocity_time_ph: 'mis. 9,58',
+  tool_velocity_title:
+    'Kalkulator Kecepatan — Cari Kecepatan, Jarak atau Waktu dengan Konversi Satuan dan Langkah Perhitungan',
+  tool_velocity_trap_label: 'Kesalahan umum',
+  tool_velocity_trap_tpl:
+    'merata-ratakan kecepatan menghasilkan {w}, terlalu tinggi {x}, karena lebih banyak waktu dihabiskan di bagian yang lebih lambat.',
+  tool_velocity_unit_label: 'Satuan',
+  tool_velocity_usecase_1:
+    'PR dan soal fisika: cari salah satu dari tiga besaran pada v = d ÷ t dan periksa satuannya di setiap langkah.',
+  tool_velocity_usecase_2:
+    'Lari, bersepeda, dan renang: ubah catatan waktu lomba menjadi kecepatan rata-rata, atau target kecepatan menjadi waktu finis.',
+  tool_velocity_usecase_3:
+    'Rencana perjalanan: perkirakan lama perjalanan mobil, pesawat, atau kapal pada kecepatan tertentu, dalam km/jam, mph, atau knot.',
+  tool_velocity_usecase_4:
+    'Perjalanan pulang-pergi dan rute dengan beberapa bagian: dapatkan kecepatan rata-rata yang sebenarnya, bukan rata-rata kecepatan tiap bagian.',
+  tool_velocity_usecases_title: 'Kapan memakai kalkulator kecepatan',
+  tool_velocity_why_choose_item_1:
+    'Satuan campuran dikonversi otomatis dan langkahnya ditulis, misalnya 90 min = 1,5 jam, sehingga jelas apa yang dibagi.',
+  tool_velocity_why_choose_item_2:
+    'Satu rumus untuk tiga soal: kecepatan dari jarak dan waktu, jarak dari kecepatan dan waktu, atau waktu dari jarak dan kecepatan.',
+  tool_velocity_why_choose_item_3:
+    'Isian perpindahan opsional mengubah kelajuan rata-rata menjadi kecepatan rata-rata — itulah sebabnya kecepatan rata-rata perjalanan pulang-pergi bernilai nol.',
+  tool_velocity_why_choose_item_4:
+    'Setiap kecepatan juga ditampilkan dalam m/s, km/jam, mph, ft/s dan knot, dan setiap waktu dalam jam:menit:detik, jam, serta menit — konversi m/s ke km/jam tidak perlu dihitung manual.',
+  tool_velocity_why_choose_item_5:
+    'Mode perjalanan memberi kecepatan rata-rata yang sebenarnya dan menunjukkan seberapa meleset rata-rata biasa dari kecepatan tiap bagian.',
+  tool_velocity_why_choose_title: 'Apa saja yang bisa dilakukan kalkulator kecepatan ini',
+  tool_velocity_work_distance_tpl: 'd = v × t = {v} × {t} = {d}',
+  tool_velocity_work_label: 'Langkah perhitungan',
+  tool_velocity_work_time_tpl: 't = d ÷ v = {d} ÷ {v} = {t}',
+  tool_velocity_work_velocity_tpl: 'v = d ÷ t = {d} ÷ {t} = {v}',
   tool_volume_article: 'Kalkulator volume',
   tool_volume_calculate: 'Hitung',
   tool_volume_clear: 'Hapus',

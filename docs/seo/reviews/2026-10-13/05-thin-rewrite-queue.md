@@ -50,16 +50,16 @@
 | 28 | how-to-calculate-sample-size | how-to-calculate | 292 | 52 | 0 | A | 8.6 | done 2026-10-14 |
 | 29 | how-to-calculate-quadratic-equation | how-to-calculate | 114 | 11 | 7 | A | 8.1 | done 2026-10-14 |
 | 30 | add-text-to-pdf-file | pdf | 317 | 0 | 72 | C | 7.2 | done 2026-10-14 |
-| 31 | how-to-calculate-irr | how-to-calculate | 176 | 13 | 7 | A | 7.2 | todo |
-| 32 | how-to-calculate-median | how-to-calculate | 130 | 11 | 0 | A | 6.9 | todo |
-| 33 | how-to-calculate-present-value | how-to-calculate | 190 | 13 | 7 | A | 6.6 | todo |
-| 34 | how-to-calculate-slope | how-to-calculate | 201 | 14 | 0 | A | 6.0 | todo |
-| 35 | how-to-calculate-tip | how-to-calculate | 167 | 8 | 14 | A | 5.6 | todo |
-| 36 | how-to-calculate-heart-rate | how-to-calculate | 154 | 7 | 14 | A | 5.3 | todo |
-| 37 | how-to-calculate-logarithm | how-to-calculate | 210 | 13 | 0 | A | 5.2 | todo |
-| 38 | how-to-calculate-inflation | how-to-calculate | 156 | 8 | 7 | A | 5.1 | todo |
-| 39 | how-to-calculate-profit-margin | how-to-calculate | 222 | 14 | 0 | A | 5.1 | todo |
-| 40 | how-to-calculate-velocity | how-to-calculate | 99 | 6 | 7 | A | 5.0 | todo |
+| 31 | how-to-calculate-irr | how-to-calculate | 176 | 13 | 7 | A | 7.2 | done 2026-10-15 |
+| 32 | how-to-calculate-median | how-to-calculate | 130 | 11 | 0 | A | 6.9 | done 2026-10-15 |
+| 33 | how-to-calculate-present-value | how-to-calculate | 190 | 13 | 7 | A | 6.6 | done 2026-10-15 |
+| 34 | how-to-calculate-slope | how-to-calculate | 201 | 14 | 0 | A | 6.0 | done 2026-10-15 |
+| 35 | how-to-calculate-tip | how-to-calculate | 167 | 8 | 14 | A | 5.6 | done 2026-10-15 |
+| 36 | how-to-calculate-heart-rate | how-to-calculate | 154 | 7 | 14 | A | 5.3 | done 2026-10-15 |
+| 37 | how-to-calculate-logarithm | how-to-calculate | 210 | 13 | 0 | A | 5.2 | done 2026-10-15 |
+| 38 | how-to-calculate-inflation | how-to-calculate | 156 | 8 | 7 | A | 5.1 | done 2026-10-15 |
+| 39 | how-to-calculate-profit-margin | how-to-calculate | 222 | 14 | 0 | A | 5.1 | done 2026-10-15 |
+| 40 | how-to-calculate-velocity | how-to-calculate | 99 | 6 | 7 | A | 5.0 | done 2026-10-15 |
 | 41 | write-pdf-document-online | pdf | 330 | 0 | 48 | C | 4.8 | todo |
 | 42 | how-to-calculate-significant-figures | how-to-calculate | 253 | 17 | 0 | A | 4.7 | todo |
 | 43 | how-to-calculate-pace | how-to-calculate | 124 | 5 | 7 | A | 3.9 | todo |

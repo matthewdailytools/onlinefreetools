@@ -12809,44 +12809,137 @@ const de: SiteLangDict = {
   tool_headers_usecases_title: 'Typische Einsätze',
   tool_heart_rate_age_label: 'Alter (Jahre)',
   tool_heart_rate_age_ph: 'z. B. 30',
+  tool_heart_rate_aha_label: 'AHA-Zielherzfrequenz',
+  tool_heart_rate_aha_tpl: 'moderate Belastung (50–70 %): {m} S/min · intensive Belastung (70–85 %): {v} S/min',
   tool_heart_rate_article: 'Herzfrequenzzonen-Rechner',
+  tool_heart_rate_bpm_tpl: '{v} S/min',
   tool_heart_rate_calculate: 'Berechnen',
+  tool_heart_rate_cap_hrr: 'Trainingszonen nach der Karvonen-Formel: Ruhepuls + Prozentsatz × Herzfrequenzreserve',
+  tool_heart_rate_cap_pct: 'Trainingszonen in Prozent der maximalen Herzfrequenz',
   tool_heart_rate_clear: 'Leeren',
+  tool_heart_rate_cmp_label: 'Schätzungen nach Alter',
+  tool_heart_rate_cmp_tpl: '220 − Alter: {a} · Tanaka: {b} · Gulati (Frauen): {c}',
+  tool_heart_rate_col_30s: 'Schläge in 30 s',
+  tool_heart_rate_col_bpm: 'Herzfrequenz (S/min)',
+  tool_heart_rate_col_effort: 'Belastung',
+  tool_heart_rate_col_pct: 'Bereich',
+  tool_heart_rate_col_zone: 'Zone',
   tool_heart_rate_description:
-    'Berechnen Sie die geschätzte HFmax (220−Alter) und Trainingszonen als % der Maximalfrequenz. Beispiel: Alter 30 → max 190; moderat oft ~50–70%. Nur Bildung — keine medizinische Beratung.',
-  tool_heart_rate_disclaimer: 'Nur zur Veranschaulichung (heart rate zones) — keine medizinische Beratung.',
-  tool_heart_rate_err_generic: 'Eingaben prüfen.',
-  tool_heart_rate_example: 'Beispiel: Alter 30 → 190.',
+    'Berechnen Sie Ihre maximale Herzfrequenz nach Alter – mit 220 minus Alter, der Tanaka-Formel oder der Gulati-Formel für Frauen – oder geben Sie einen gemessenen Wert ein. Sie erhalten fünf Trainingszonen in S/min, die AHA-Bereiche für moderate und intensive Belastung und die Pulsschläge, die Sie in 30 Sekunden zählen sollten. Mit Ihrem Ruhepuls werden die Zonen auch nach der Karvonen-Formel berechnet.',
+  tool_heart_rate_disclaimer:
+    'Nur Schätzwerte zur Information – keine medizinische Beratung. Wenn Sie eine Herzerkrankung haben, Medikamente nehmen, die die Herzfrequenz beeinflussen, oder beim Training Brustschmerzen, Schwindel oder ungewöhnliche Atemnot bemerken, hören Sie auf und sprechen Sie mit medizinischem Fachpersonal.',
+  tool_heart_rate_err_age: 'Geben Sie Ihr Alter als ganze Zahl von 10 bis 100 ein.',
+  tool_heart_rate_err_max: 'Geben Sie Ihre gemessene maximale Herzfrequenz als ganze Zahl von 100 bis 230 S/min ein.',
+  tool_heart_rate_err_rest: 'Der Ruhepuls muss eine ganze Zahl von 30 bis 120 S/min sein – oder lassen Sie das Feld leer.',
+  tool_heart_rate_err_rest_high: 'Der Ruhepuls muss niedriger sein als die maximale Herzfrequenz.',
+  tool_heart_rate_err_rest_needed: 'Für die Methode Herzfrequenzreserve brauchen Sie einen Ruhepuls.',
+  tool_heart_rate_example:
+    'Beispiel: Mit 30 Jahren und 220 − Alter ergibt sich eine maximale Herzfrequenz von 190 S/min. Zone 2 (60–70 %) liegt bei 114–133 S/min, also 57–67 Schlägen, wenn Sie 30 Sekunden lang zählen; die AHA-Bereiche sind 95–133 S/min für moderate und 133–162 S/min für intensive Belastung. Klicken Sie erneut auf Beispiel laden für 45 Jahre mit der Tanaka-Formel und einem Ruhepuls von 60 (Karvonen-Zonen; 70 % sind 142 S/min) und danach für einen gemessenen Maximalpuls von 185 S/min mit einem Ruhepuls von 52.',
   tool_heart_rate_example_title: 'Beispiel',
-  tool_heart_rate_faq_a1: 'Beispiel: Alter 30 → 190.',
-  tool_heart_rate_faq_a2: 'See Formula section.',
-  tool_heart_rate_faq_a3: 'Educational only.',
-  tool_heart_rate_faq_a4: 'Seek a clinician — not this tool.',
-  tool_heart_rate_faq_q1: 'Beispiel?',
-  tool_heart_rate_faq_q2: 'Formula?',
-  tool_heart_rate_faq_q3: 'Advice?',
-  tool_heart_rate_faq_q4: 'Related?',
-  tool_heart_rate_formula_body: 'Alter eingeben.',
-  tool_heart_rate_formula_item_1: 'See formula notes.',
-  tool_heart_rate_formula_item_2: 'Check inputs.',
-  tool_heart_rate_formula_item_3: 'Educational only.',
-  tool_heart_rate_formula_title: 'Formel',
-  tool_heart_rate_how_body: 'Alter eingeben.',
-  tool_heart_rate_how_title: 'So funktioniert’s',
-  tool_heart_rate_maxOut_label: 'Geschätzte HFmax',
-  tool_heart_rate_ref_a_label: 'Wikipedia',
-  tool_heart_rate_ref_b_label: 'Textbook formula',
-  tool_heart_rate_references: 'Bildungsreferenzen.',
-  tool_heart_rate_result_note: 'Bildungszweck.',
+  tool_heart_rate_faq_a1:
+    'Mit 220 − 30 etwa 190 S/min. Die Tanaka-Formel ergibt 208 − 0,7 × 30 = 187 S/min, die Gulati-Formel für Frauen 206 − 0,88 × 30 = 179,6, also rund 180 S/min. Alle drei sind Durchschnittswerte für Ihr Alter – Ihr persönlicher Maximalpuls kann höher oder niedriger liegen.',
+  tool_heart_rate_faq_a2:
+    'Gemeint ist meist Zone 2, etwa 60–70 % der maximalen Herzfrequenz – mit 30 Jahren 114–133 S/min. Bei diesem lockeren Tempo stammt ein größerer Anteil der Energie aus Fett; intensivere Belastung verbrennt pro Minute aber insgesamt mehr Kalorien. Fürs Abnehmen zählt daher die gesamte Bewegungsmenge mehr, als genau in einer Zone zu bleiben.',
+  tool_heart_rate_faq_a3:
+    'Sie wendet den Prozentsatz auf Ihre Herzfrequenzreserve an – Maximalpuls minus Ruhepuls – und addiert den Ruhepuls wieder: Ziel = Ruhepuls + % × (Maximalpuls − Ruhepuls). So bildet sie Ihre Fitness besser ab. Mit 45 Jahren, Tanaka-Maximum 177 und Ruhepuls 60 ergeben 70 % den Wert 60 + 0,7 × 117 = 142 S/min – gegenüber 124 S/min bei 70 % der maximalen Herzfrequenz.',
+  tool_heart_rate_faq_a4:
+    'Tanakas 208 − 0,7 × Alter beruht auf 351 Studien mit 18.712 Personen und wurde in einer Laborstudie mit 514 gesunden Erwachsenen bestätigt; dabei zeigte sich, dass 220 − Alter den Maximalpuls älterer Menschen unterschätzt. Mit 60 Jahren ergeben die beiden 160 und 166 S/min. Beides bleiben Durchschnittswerte – Ihren eigenen Wert liefert ein ärztlich überwachter Belastungstest bis zur Ausbelastung.',
+  tool_heart_rate_faq_a5:
+    'Laut AHA 60–100 S/min bei den meisten Erwachsenen; bei aktiven Menschen und Sportlern kann er bis auf 40 sinken. Stress, Hormone, Medikamente und Fitness beeinflussen den Wert. Messen Sie morgens nach einer erholsamen Nacht, noch vor dem Aufstehen. Liegt Ihr Ruhepuls dauerhaft außerhalb dieses Bereichs, sprechen Sie mit Ihrer Ärztin oder Ihrem Arzt.',
+  tool_heart_rate_faq_a6:
+    'Legen Sie die Kuppen von Zeige- und Mittelfinger innen auf das Handgelenk, auf der Daumenseite, zählen Sie die Schläge 30 Sekunden lang und nehmen Sie das Ergebnis mal 2. Die Spalte „Schläge in 30 s“ zeigt für jede Zone, auf welche Zahl Sie kommen sollten – mit 30 Jahren 57–67 in Zone 2.',
+  tool_heart_rate_faq_a7:
+    'Das ist möglich. Die AHA weist darauf hin, dass manche Medikamente die maximale Herzfrequenz und damit die Zielzone senken – die Werte nach Alter passen dann womöglich nicht. Wenn Sie eine Herzerkrankung haben oder Medikamente einnehmen, fragen Sie Ihre Ärztin oder Ihren Arzt, welche Herzfrequenz für Sie sinnvoll ist.',
+  tool_heart_rate_faq_q1: 'Wie hoch ist meine maximale Herzfrequenz mit 30?',
+  tool_heart_rate_faq_q2: 'Was ist der Fettverbrennungspuls?',
+  tool_heart_rate_faq_q3: 'Was ist die Karvonen-Formel und wann lohnt sie sich?',
+  tool_heart_rate_faq_q4: 'Was ist genauer: 220 minus Alter oder die Tanaka-Formel?',
+  tool_heart_rate_faq_q5: 'Welcher Ruhepuls ist normal?',
+  tool_heart_rate_faq_q6: 'Wie messe ich meinen Puls ohne Uhr?',
+  tool_heart_rate_faq_q7: 'Verändern Medikamente meine Zielherzfrequenz?',
+  tool_heart_rate_formula_body: 'Mit dem Alter A, der maximalen Herzfrequenz HFmax und dem Ruhepuls HFRuhe gilt:',
+  tool_heart_rate_formula_fox: '220 − Alter (klassisch)',
+  tool_heart_rate_formula_gulati: '206 − 0,88 × Alter (Gulati, Frauen)',
+  tool_heart_rate_formula_item_1:
+    'Klassische Schätzung: HFmax = 220 − A. Die AHA verwendet sie für ihre Tabelle der Zielherzfrequenzen.',
+  tool_heart_rate_formula_item_2:
+    'Tanaka (2001): HFmax = 208 − 0,7 × A, aus einer Metaanalyse von 351 Studien mit 18.712 Personen, überprüft in einer Laborstudie mit 514 gesunden Erwachsenen.',
+  tool_heart_rate_formula_item_3: 'Gulati (2010, Frauen): HFmax = 206 − 0,88 × A.',
+  tool_heart_rate_formula_item_4: 'Prozent der maximalen Herzfrequenz: Ziel = HFmax × Prozentsatz, z. B. 70 % von 190 = 133 S/min.',
+  tool_heart_rate_formula_item_5:
+    'Karvonen-Formel (Herzfrequenzreserve): Ziel = HFRuhe + Prozentsatz × (HFmax − HFRuhe), z. B. 60 + 70 % × 117 = 142 S/min.',
+  tool_heart_rate_formula_label: 'Maximale Herzfrequenz ermitteln mit',
+  tool_heart_rate_formula_measured: 'Mein gemessener Maximalpuls',
+  tool_heart_rate_formula_tanaka: '208 − 0,7 × Alter (Tanaka)',
+  tool_heart_rate_formula_title: 'Formeln für die Herzfrequenz',
+  tool_heart_rate_how_body:
+    'Schätzen Sie Ihre maximale Herzfrequenz anhand Ihres Alters (oder nehmen Sie einen gemessenen Wert) und rechnen Sie Prozentsätze davon aus: von 50–60 % für sehr leichte Belastung bis 90–100 % für kurze Maximalbelastungen. Kennen Sie Ihren Ruhepuls, wendet die Karvonen-Formel die Prozentsätze stattdessen auf die Spanne zwischen Ruhepuls und Maximalpuls an.',
+  tool_heart_rate_how_item_1:
+    'Wählen Sie, woher die maximale Herzfrequenz kommt – 220 − Alter, Tanaka, Gulati für Frauen oder Ihr gemessener Maximalpuls – und geben Sie Ihr Alter ein.',
+  tool_heart_rate_how_item_2: 'Tragen Sie bei Bedarf Ihren Ruhepuls ein, morgens vor dem Aufstehen gemessen.',
+  tool_heart_rate_how_item_3:
+    'Wählen Sie Prozent der maximalen Herzfrequenz oder – wenn Sie einen Ruhepuls eingetragen haben – Herzfrequenzreserve (Karvonen).',
+  tool_heart_rate_how_item_4:
+    'Klicken Sie auf Berechnen: Sie sehen Ihre maximale Herzfrequenz, die fünf Zonen in S/min und als Pulszahl für 30 Sekunden sowie die AHA-Bereiche für moderate und intensive Belastung.',
+  tool_heart_rate_how_title: 'So berechnen Sie Ihre Herzfrequenzzonen',
+  tool_heart_rate_hrr_label: 'Herzfrequenzreserve',
+  tool_heart_rate_hrr_tpl: '{max} − {rest} = {hrr} S/min',
+  tool_heart_rate_max_label: 'Gemessene maximale Herzfrequenz (S/min)',
+  tool_heart_rate_max_ph: 'z. B. 185',
+  tool_heart_rate_method_hrr: 'Herzfrequenzreserve (Karvonen) – Ruhepuls nötig',
+  tool_heart_rate_method_label: 'Zonen berechnen nach',
+  tool_heart_rate_method_pct: 'Prozent der maximalen Herzfrequenz',
+  tool_heart_rate_out_max: 'Maximale Herzfrequenz',
+  tool_heart_rate_ref_a_label: 'American Heart Association — Target heart rates chart (Tabelle der Zielherzfrequenzen)',
+  tool_heart_rate_ref_b_label: 'Tanaka, Monahan & Seals (2001) — Age-predicted maximal heart rate revisited (JACC)',
+  tool_heart_rate_references:
+    'American Heart Association — Target heart rates chart (Zielherzfrequenzen); Tanaka, Monahan & Seals (2001), Age-predicted maximal heart rate revisited.',
+  tool_heart_rate_rest_athlete_tpl:
+    '{r} S/min liegt unter dem üblichen Bereich von 60–100; laut AHA haben aktive Menschen und Sportler oft einen so niedrigen Ruhepuls. Trainieren Sie kaum und fühlen sich unwohl, sprechen Sie mit Ihrer Ärztin oder Ihrem Arzt.',
+  tool_heart_rate_rest_high_tpl:
+    '{r} S/min liegt über dem Bereich von 60–100 S/min, den die AHA für die meisten Erwachsenen als normal bezeichnet – bleibt Ihr Ruhepuls so hoch, sprechen Sie mit Ihrer Ärztin oder Ihrem Arzt.',
+  tool_heart_rate_rest_hint: 'Am besten morgens im Liegen messen, bevor Sie aufstehen.',
+  tool_heart_rate_rest_label: 'Ruhepuls (optional, S/min)',
+  tool_heart_rate_rest_low_tpl:
+    '{r} S/min liegt unter den etwa 40 S/min, die die AHA für sehr aktive Menschen nennt – lassen Sie das am besten ärztlich abklären, vor allem wenn Ihnen schwindlig wird oder Sie sich einer Ohnmacht nahe fühlen.',
+  tool_heart_rate_rest_normal_tpl:
+    '{r} S/min liegt im Bereich von 60–100 S/min, den die AHA für die meisten Erwachsenen als normal bezeichnet.',
+  tool_heart_rate_rest_ph: 'z. B. 60',
+  tool_heart_rate_rest_status_label: 'Ruhepuls',
+  tool_heart_rate_result_note:
+    'Altersformeln liefern einen Durchschnitt für Menschen Ihres Alters; Ihr persönlicher Maximalpuls kann um 10 S/min oder mehr davon abweichen. „Schläge in 30 s“ ist die halbe Herzfrequenz – zum Pulszählen von Hand.',
   tool_heart_rate_sample: 'Beispiel laden',
-  tool_heart_rate_title: 'Herzfrequenzzonen-Rechner',
-  tool_heart_rate_usecase_1: 'Homework.',
-  tool_heart_rate_usecase_2: 'Quick sketch.',
-  tool_heart_rate_usecase_3: 'Educational pairing with macros.',
-  tool_heart_rate_usecases_title: 'Wann sinnvoll',
-  tool_heart_rate_z1Out_label: 'Zone 1 (50–60 %)',
-  tool_heart_rate_z2Out_label: 'Zone 2 (60–70 %)',
-  tool_heart_rate_z3Out_label: 'Zone 3 (70–85 %)',
+  tool_heart_rate_sub_fox: '220 − Alter: {work}',
+  tool_heart_rate_sub_gulati: 'Gulati-Formel (Frauen): {work}',
+  tool_heart_rate_sub_measured: 'Ihr gemessener Maximalpuls – wird unverändert verwendet',
+  tool_heart_rate_sub_tanaka: 'Tanaka-Formel: {work}',
+  tool_heart_rate_title: 'Herzfrequenzzonen berechnen — maximale Herzfrequenz und Trainingszonen nach Ihrem Alter ermitteln',
+  tool_heart_rate_usecase_1: 'Lauf-, Rad- oder Rudereinheiten nach Zonen planen – lockere Tage in Zone 2, Intervalle in Zone 4–5.',
+  tool_heart_rate_usecase_2:
+    'Einstieg ins Training: Die AHA rät, am unteren Ende der Zielzone (etwa 50 %) zu beginnen und sich allmählich in Richtung 85 % zu steigern.',
+  tool_heart_rate_usecase_3: 'Eine Sportuhr oder Fitness-App einrichten, die nach maximaler Herzfrequenz und Ruhepuls fragt.',
+  tool_heart_rate_usecase_4:
+    'Sportunterricht und Sportwissenschaft: Altersformeln vergleichen und Zonen Schritt für Schritt ausrechnen.',
+  tool_heart_rate_usecases_title: 'Wofür Sie die Zonen nutzen können',
+  tool_heart_rate_why_choose_item_1:
+    'Zonen nach der Karvonen-Formel aus Ihrem Ruhepuls: Wer gut trainiert ist und einen niedrigen Ruhepuls hat, bekommt Zonen, die zu seiner Fitness passen – nicht nur zu seinem Alter.',
+  tool_heart_rate_why_choose_item_2:
+    'Drei Altersformeln im Vergleich: 220 − Alter, Tanaka und Gulati (für Frauen) liegen oft zehn Schläge oder mehr auseinander – mit 30 Jahren ergeben sie 190, 187 und 180 S/min.',
+  tool_heart_rate_why_choose_item_3:
+    'Die Bereiche der American Heart Association für moderate (50–70 %) und intensive Belastung (70–85 %), berechnet für Ihren eigenen Maximalpuls – neben der Fünf-Zonen-Skala, die Sportuhren verwenden.',
+  tool_heart_rate_why_choose_item_4:
+    'Eine Spalte „Schläge in 30 s“ für jede Zone: So prüfen Sie Ihren Puls mit zwei Fingern am Handgelenk, ganz ohne Uhr.',
+  tool_heart_rate_why_choose_item_5:
+    'Statt einer Schätzung nach Alter können Sie einen tatsächlich gemessenen Maximalpuls verwenden, etwa aus einem ärztlich begleiteten Belastungstest.',
+  tool_heart_rate_why_choose_title: 'Warum dieser Herzfrequenzzonen-Rechner',
+  tool_heart_rate_work_hrr_tpl: 'jede Zonengrenze = Ruhepuls + Prozentsatz × Reserve, z. B. {rest} + {p} × {hrr} = {v} S/min',
+  tool_heart_rate_work_label: 'Rechenweg',
+  tool_heart_rate_work_pct_tpl: 'jede Zonengrenze = Maximalpuls × Prozentsatz, z. B. {max} × {p} = {v} S/min',
+  tool_heart_rate_zone_1: 'Sehr leicht',
+  tool_heart_rate_zone_2: 'Leicht',
+  tool_heart_rate_zone_3: 'Moderat',
+  tool_heart_rate_zone_4: 'Anstrengend',
+  tool_heart_rate_zone_5: 'Maximal',
   tool_hreflang_clear: 'Leeren',
   tool_hreflang_copied: 'Kopiert',
   tool_hreflang_copy: 'Kopieren',
@@ -14600,47 +14693,140 @@ const de: SiteLangDict = {
   tool_indexnow_warn_banner:
     'HTTP 202 means the endpoint accepted a well-formed request — not that your key file already passed verification. Always Check key first. IndexNow notifies discovery; it does not guarantee indexing or rankings.',
   tool_indexnow_warn_unchecked: 'Check the key file before relying on a green 202.',
-  tool_inflation_amount_label: 'Heutiger Betrag',
-  tool_inflation_amount_ph: 'z. B. 1000',
-  tool_inflation_article: 'Inflationsrechner',
+  tool_inflation_actual_hint:
+    'Tragen Sie ein, was aus einem Gehalt, Preis oder Sparguthaben tatsächlich geworden ist – dann sehen Sie, ob es mit der Inflation Schritt gehalten hat.',
+  tool_inflation_actual_label_cpi: 'Tatsächlicher Betrag im Zieljahr (optional)',
+  tool_inflation_actual_label_rate: 'Tatsächlicher Betrag am Ende (optional)',
+  tool_inflation_actual_ph: 'z. B. Ihr heutiges Gehalt',
+  tool_inflation_amount_label: 'Betrag',
+  tool_inflation_amount_ph: 'z. B. 100',
+  tool_inflation_article:
+    'Finden Sie heraus, was ein US-Dollar-Betrag aus einem beliebigen Jahr seit 1913 in einem anderen Jahr wert ist – auf Basis offizieller CPI-Daten –, oder rechnen Sie künftige Preise mit fester Inflationsrate in jeder Währung hoch. Der Rechner zeigt den Rechenweg mit den verwendeten CPI-Werten, Gesamt- und durchschnittliche Jahresinflation, die Kaufkraft, die höchste und niedrigste Jahresrate im Zeitraum und – wenn Sie einen tatsächlichen Betrag eingeben – ob ein Gehalt oder Preis real mit der Inflation Schritt gehalten hat.',
   tool_inflation_calculate: 'Berechnen',
   tool_inflation_clear: 'Leeren',
+  tool_inflation_col_pp: 'Kaufkraft in heutigem Geld',
+  tool_inflation_col_price: 'Preis',
+  tool_inflation_col_year: 'Jahr',
+  tool_inflation_compare_down_tpl:
+    'Nein – {a} liegt {p} unter dem inflationsbereinigten Betrag von {f} (nominale Veränderung {nom}, reale Veränderung {real}).',
+  tool_inflation_compare_even_tpl: '{a} entspricht genau dem inflationsbereinigten Betrag von {f} – die Kaufkraft ist unverändert.',
+  tool_inflation_compare_label: 'Hat es mit der Inflation Schritt gehalten?',
+  tool_inflation_compare_up_tpl:
+    'Ja – {a} liegt {p} über dem inflationsbereinigten Betrag von {f} (nominale Veränderung {nom}, reale Veränderung {real}).',
   tool_inflation_description:
-    'Projizieren Sie einen heutigen Betrag mit konstanter Jahresinflation. Beispiel: 1000 über 5 Jahre bei 3% → ≈1159,27. Bildungszweck.',
-  tool_inflation_disclaimer: 'Nur zur Veranschaulichung (inflation) — keine Finanzberatung.',
-  tool_inflation_err_generic: 'Eingaben prüfen.',
-  tool_inflation_example: 'Beispiel: ≈1159,27.',
-  tool_inflation_example_title: 'Beispiel',
-  tool_inflation_faq_a1: 'Beispiel: ≈1159,27.',
-  tool_inflation_faq_a2: 'See Formula section.',
-  tool_inflation_faq_a3: 'Educational only.',
-  tool_inflation_faq_a4: 'Educational only.',
-  tool_inflation_faq_q1: 'Beispiel?',
-  tool_inflation_faq_q2: 'Formula?',
-  tool_inflation_faq_q3: 'Advice?',
-  tool_inflation_faq_q4: 'Related?',
-  tool_inflation_formula_body: 'Betrag, Satz und Jahre eingeben.',
-  tool_inflation_formula_item_1: 'See formula notes.',
-  tool_inflation_formula_item_2: 'Check inputs.',
-  tool_inflation_formula_item_3: 'Educational only.',
-  tool_inflation_formula_title: 'Formel',
-  tool_inflation_futOut_label: 'Zukünftiger Betrag',
-  tool_inflation_how_body: 'Betrag, Satz und Jahre eingeben.',
-  tool_inflation_how_title: 'So funktioniert’s',
-  tool_inflation_n_label: 'Jahre',
-  tool_inflation_n_ph: 'z. B. 5',
-  tool_inflation_rate_label: 'Inflation % / Jahr',
+    'Inflation berechnen: Was ist ein Dollarbetrag aus einem Jahr seit 1913 in einem anderen Jahr wert? Grundlage ist der offizielle US-Verbraucherpreisindex (CPI); für Euro und jede andere Währung rechnen Sie mit fester Inflationsrate in die Zukunft. Mit Formel, Gesamt- und Jahresinflation, Kaufkraft, Reallohn-Check und Beispielen.',
+  tool_inflation_disclaimer:
+    'Nur zur Information und Bildung – keine Finanz-, Anlage- oder Steuerberatung. Der CPI misst durchschnittliche Preisänderungen für Verbraucher in US-Städten; Ihre persönlichen Kosten können schneller oder langsamer steigen. Künftige Inflation ist ungewiss: Rechnungen mit fester Rate sind Veranschaulichungen, keine Prognosen.',
+  tool_inflation_double_label: 'Zeit, bis sich die Preise verdoppeln',
+  tool_inflation_double_none: 'bei einer Inflation von null oder darunter verdoppeln sich die Preise nie',
+  tool_inflation_double_tpl: '{t} Jahre bei {r} % pro Jahr (70er-Regel: 70 ÷ {r} ≈ {q})',
+  tool_inflation_err_actual: 'Der tatsächliche Betrag muss eine Zahl größer als 0 sein – oder lassen Sie das Feld leer.',
+  tool_inflation_err_amount: 'Geben Sie einen Betrag größer als 0 ein.',
+  tool_inflation_err_rate: 'Geben Sie eine Inflationsrate zwischen −50 % und 100 % pro Jahr ein.',
+  tool_inflation_err_same_year: 'Wählen Sie zwei verschiedene Jahre.',
+  tool_inflation_err_years: 'Geben Sie eine ganze Zahl von 1 bis 100 Jahren ein.',
+  tool_inflation_example:
+    '100 Dollar von 2000 ≈ 186,93 Dollar von 2025: 100 × (321,9 ÷ 172,2) = 186,93 – die Preise sind also um 86,93 % gestiegen, im Schnitt um 2,53 % pro Jahr über 25 Jahre. Das nächste Beispiel: Ein Gehalt von 50.000 im Jahr 2015 müsste 2025 bei 67.911,39 liegen, um gleich viel zu kaufen; mit 62.000 ist es auf dem Papier um 24 % gestiegen, real aber um 8,70 % gesunken. Das dritte Beispiel rechnet 1.000 mit 3 % pro Jahr hoch: 1.159,27 nach 5 Jahren – dann bekommen Sie für 1.000 nur noch so viel wie heute für 862,61.',
+  tool_inflation_example_title: 'Rechenbeispiele',
+  tool_inflation_extreme_label: 'Höchste und niedrigste Jahresinflation im Zeitraum',
+  tool_inflation_extreme_tpl: 'höchste {p1} ({y1}), niedrigste {p2} ({y2})',
+  tool_inflation_faq_a1:
+    'Mit dem Jahresdurchschnitts-CPI gerechnet: 100 × (321,9 ÷ 172,2) = 186,93 Dollar von 2025. Die Preise sind um 86,93 % gestiegen, rund 2,53 % pro Jahr. Umgekehrt bekommen Sie für einen Dollar von 2025 so viel wie für 0,53 Dollar im Jahr 2000.',
+  tool_inflation_faq_a2:
+    'Geben Sie Ihr früheres Gehalt mit Jahr, das aktuelle Jahr und Ihr heutiges Gehalt als tatsächlichen Betrag ein. 50.000 aus dem Jahr 2015 müssten 2025 bei 67.911,39 liegen, um gleich viel zu kaufen; ein Gehalt von 62.000 ist nominal um 24 % höher, real aber um 8,70 % niedriger. Reale Veränderung = tatsächlicher ÷ inflationsbereinigter Betrag − 1.',
+  tool_inflation_faq_a3:
+    'Teilen Sie den späteren Preisindex durch den früheren und multiplizieren Sie: Betrag × (CPI Jahr 2 ÷ CPI Jahr 1). Die Gesamtinflation ist CPI₂ ÷ CPI₁ − 1, die durchschnittliche Jahresrate (CPI₂ ÷ CPI₁)^(1/Jahre) − 1. Hinterlegt ist nur der US-CPI; für Deutschland wenden Sie dasselbe Verhältnis auf den Verbraucherpreisindex von Destatis (oder den HVPI von Eurostat) an oder nutzen den Modus mit fester Inflationsrate.',
+  tool_inflation_faq_a4:
+    'Bei einer festen Rate i verdoppeln sich die Preise nach ln 2 ÷ ln(1 + i) Jahren – bei 3 % nach 23,45 Jahren, bei 2 % nach 35 Jahren. Die 70er-Regel liefert eine schnelle Schätzung: 70 ÷ 3 ≈ 23,33 Jahre.',
+  tool_inflation_faq_a5:
+    'Nominale Beträge sind die Zahlen auf Preisschild oder Gehaltsabrechnung; reale Beträge sind um die Inflation bereinigt und zeigen die Kaufkraft. Reales Wachstum = (1 + nominales Wachstum) ÷ (1 + Inflation) − 1 – eine Gehaltserhöhung von 4 % bei 3 % Inflation ist real also ein Plus von 0,97 % und nicht genau 1 %.',
+  tool_inflation_faq_a6:
+    'Der BLS-Rechner vergleicht einen gewählten Monat mit einem anderen anhand monatlicher CPI-U-Werte, während dieser Rechner Jahresdurchschnitte aus der Tabelle der Minneapolis Fed nutzt, gerundet auf eine Nachkommastelle. Bei Vergleichen ganzer Jahre ist der Unterschied meist gering, Ergebnisse von Monat zu Monat können aber um ein Prozent oder mehr abweichen.',
+  tool_inflation_faq_a7:
+    'In der CPI-Tabelle liegen die höchsten Jahresraten bei 17,8 % (1917) und 17,3 % (1918), gefolgt von 14,4 % (1947) und 13,5 % (1980). Die stärksten Preisrückgänge gab es 1921 mit −10,9 % und – mitten in der Weltwirtschaftskrise – 1932 mit −10,3 %. Der jüngste Höchstwert waren 8,0 % im Jahr 2022.',
+  tool_inflation_faq_q1: 'Was sind 100 Dollar von 2000 heute wert?',
+  tool_inflation_faq_q2: 'Wie berechne ich meinen Reallohn – hat mein Gehalt mit der Inflation mitgehalten?',
+  tool_inflation_faq_q3: 'Wie berechnet man die Inflation zwischen zwei Jahren?',
+  tool_inflation_faq_q4: 'Wie lange dauert es, bis sich die Preise verdoppeln?',
+  tool_inflation_faq_q5: 'Was ist der Unterschied zwischen nominalen und realen Beträgen?',
+  tool_inflation_faq_q6: 'Warum weicht das Ergebnis leicht vom CPI Inflation Calculator des BLS ab?',
+  tool_inflation_faq_q7: 'In welchen Jahren war die Inflation in den USA am höchsten?',
+  tool_inflation_formula_body:
+    'CPI₁ und CPI₂ sind der Preisindex der beiden Jahre, P ist ein Betrag, i die jährliche Inflationsrate und n die Anzahl der Jahre:',
+  tool_inflation_formula_item_1: 'Zwischen zwei Jahren: Betrag₂ = Betrag₁ × (CPI₂ ÷ CPI₁).',
+  tool_inflation_formula_item_2: 'Gesamtinflation = CPI₂ ÷ CPI₁ − 1; durchschnittliche Jahresrate = (CPI₂ ÷ CPI₁)^(1/n) − 1.',
+  tool_inflation_formula_item_3: 'Künftiger Preis bei fester Rate: F = P × (1 + i)ⁿ, also 1.000 × 1,03⁵ = 1.159,27.',
+  tool_inflation_formula_item_4:
+    'Kaufkraft: P ÷ (1 + i)ⁿ, also 1.000 ÷ 1,03⁵ = 862,61; zwischen zwei Jahren ist eine Geldeinheit CPI₁ ÷ CPI₂ wert.',
+  tool_inflation_formula_item_5:
+    'Reale Veränderung = (1 + nominale Veränderung) ÷ (1 + Inflation) − 1; das entspricht tatsächlichem Betrag ÷ inflationsbereinigtem Betrag − 1.',
+  tool_inflation_formula_title: 'Formeln zur Inflationsberechnung',
+  tool_inflation_from_label: 'Ausgangsjahr',
+  tool_inflation_how_body:
+    'Um Geld über Jahre hinweg zu vergleichen, multiplizieren Sie den Betrag mit dem Verhältnis der Verbraucherpreisindizes (CPI) beider Jahre. Für einen Blick nach vorn lassen Sie den heutigen Preis für jedes Jahr einmal um die Inflationsrate wachsen.',
+  tool_inflation_how_item_1:
+    'Wählen Sie „Wert eines US-Dollar-Betrags in einem anderen Jahr“ für historische US-Preise oder „Künftige Preise bei fester Inflationsrate“ für jede andere Währung, etwa Euro.',
+  tool_inflation_how_item_2:
+    'Geben Sie den Betrag ein und wählen Sie Ausgangs- und Zieljahr – oder tragen Sie die jährliche Inflationsrate und die Anzahl der Jahre ein.',
+  tool_inflation_how_item_3:
+    'Ergänzen Sie optional den tatsächlichen Betrag, etwa Ihr heutiges Gehalt, um zu sehen, ob es mit der Inflation mitgehalten hat.',
+  tool_inflation_how_item_4:
+    'Klicken Sie auf „Berechnen“: Sie sehen den entsprechenden Betrag, den Rechenweg mit den verwendeten CPI-Werten, die Kaufkraft und bei fester Rate zusätzlich die Verdopplungszeit und eine Tabelle Jahr für Jahr.',
+  tool_inflation_how_title: 'So berechnen Sie die Inflation',
+  tool_inflation_main_cpi_tpl: '{a} im Jahr {y1} ≈ {b} im Jahr {y2}',
+  tool_inflation_mode_cpi: 'Wert eines US-Dollar-Betrags in einem anderen Jahr (CPI 1913–2025)',
+  tool_inflation_mode_label: 'Was möchten Sie berechnen?',
+  tool_inflation_mode_rate: 'Künftige Preise bei fester Inflationsrate (jede Währung)',
+  tool_inflation_out_cpi: 'Entsprechender Betrag',
+  tool_inflation_out_rate: 'Künftiger Preis',
+  tool_inflation_pp_cpi_tpl: '1 Dollar von {y2} entspricht {v} in Dollar von {y1}',
+  tool_inflation_pp_label: 'Kaufkraft',
+  tool_inflation_pp_rate_tpl: 'nach {n} Jahren bekommen Sie für {a} nur noch so viel wie heute für {v}',
+  tool_inflation_rate_label: 'Inflationsrate pro Jahr (%)',
   tool_inflation_rate_ph: 'z. B. 3',
-  tool_inflation_ref_a_label: 'Investopedia',
-  tool_inflation_ref_b_label: 'Wikipedia',
-  tool_inflation_references: 'Investopedia und Lehrbuchformeln.',
-  tool_inflation_result_note: 'Bildungszweck.',
+  tool_inflation_ref_a_label: 'Federal Reserve Bank of Minneapolis — Consumer Price Index, 1913–',
+  tool_inflation_ref_b_label: 'U.S. Bureau of Labor Statistics — Consumer Price Index',
+  tool_inflation_references:
+    'US-CPI-U-Jahresdurchschnitte von der Federal Reserve Bank of Minneapolis; den CPI selbst veröffentlicht das US Bureau of Labor Statistics.',
+  tool_inflation_result_note_cpi:
+    'Grundlage sind die US-CPI-U-Jahresdurchschnitte aus der Tabelle der Minneapolis Fed (eine Nachkommastelle). Höchste und niedrigste Jahresrate sind die dort veröffentlichten Werte.',
+  tool_inflation_result_note_rate:
+    'Angenommen wird jedes Jahr dieselbe Inflationsrate; in Wirklichkeit schwankt die Inflation von Jahr zu Jahr.',
   tool_inflation_sample: 'Beispiel laden',
-  tool_inflation_title: 'Inflationsrechner',
-  tool_inflation_usecase_1: 'Homework.',
-  tool_inflation_usecase_2: 'Quick sketch.',
-  tool_inflation_usecase_3: 'Pair with CAGR/compound-interest pages.',
-  tool_inflation_usecases_title: 'Wann sinnvoll',
+  tool_inflation_sub_cpi_back_tpl:
+    '{y2} lagen die Preise {p} niedriger als {y1} – seitdem sind sie über {n} Jahre im Schnitt um {avg} pro Jahr gestiegen',
+  tool_inflation_sub_cpi_one_tpl: 'Die Preise haben sich von {y1} bis {y2} um {p} verändert',
+  tool_inflation_sub_cpi_tpl: 'Die Preise haben sich von {y1} bis {y2} um {p} verändert – im Schnitt {avg} pro Jahr über {n} Jahre',
+  tool_inflation_sub_rate_tpl: 'Bei {r} pro Jahr ändern sich die Preise in {n} Jahren um {p}',
+  tool_inflation_table_caption: 'Jahr für Jahr',
+  tool_inflation_title:
+    'Inflationsrechner — was Geld aus einem früheren Jahr heute wert ist, mit offiziellen US-Verbraucherpreisdaten',
+  tool_inflation_to_label: 'Zieljahr',
+  tool_inflation_usecase_1:
+    'Preise über Jahrzehnte vergleichen: Was 1970 einen Dollar kostete, kostet in Geld von 2025 etwa 8,30 Dollar (321,9 ÷ 38,8).',
+  tool_inflation_usecase_2:
+    'Prüfen, ob eine Gehaltserhöhung, Rentenanpassung oder Mieterhöhung mit der Inflation Schritt gehalten hat – über den optionalen tatsächlichen Betrag.',
+  tool_inflation_usecase_3:
+    'Künftige Kosten einplanen: Bei 3 % pro Jahr kostet eine Ausgabe von heute 1.000 in 5 Jahren etwa 1.159,27.',
+  tool_inflation_usecase_4:
+    'Sehen, wie Bargeld an Wert verliert: Bei 2 % Inflation bekommen Sie für 1.000 unter der Matratze nach 10 Jahren nur noch so viel wie heute für 820,35.',
+  tool_inflation_usecases_title: 'Wann der Rechner hilft',
+  tool_inflation_why_choose_item_1:
+    'Reallohn berechnen statt schätzen: Tragen Sie Ihr heutiges Gehalt ein und sehen Sie nominale und reale Veränderung direkt nebeneinander.',
+  tool_inflation_why_choose_item_2:
+    'Der offizielle US-Jahres-CPI für jedes Jahr von 1913 bis 2025 ist hinterlegt – Sie wählen nur zwei Jahre und müssen keine Indexwerte nachschlagen.',
+  tool_inflation_why_choose_item_3:
+    'Der Rechenweg nennt die tatsächlich verwendeten CPI-Werte, sodass Sie das Ergebnis prüfen oder von Hand nachrechnen können.',
+  tool_inflation_why_choose_item_4:
+    'Für Euro und andere Währungen oder für die Zukunft geben Sie eine eigene Rate ein – etwa die Teuerung laut Verbraucherpreisindex von Destatis – und erhalten Verdopplungszeit und Jahrestabelle.',
+  tool_inflation_why_choose_item_5:
+    'Höchste und niedrigste Jahresinflation im gewählten Zeitraum werden hervorgehoben – von 2000 bis 2025 sind das 8,0 % im Jahr 2022 und −0,4 % im Jahr 2009.',
+  tool_inflation_why_choose_title: 'Warum dieser Inflationsrechner',
+  tool_inflation_work_cpi_tpl: '{a} × (CPI {y2} ÷ CPI {y1}) = {a} × ({c2} ÷ {c1}) = {b}',
+  tool_inflation_work_label: 'Rechenweg',
+  tool_inflation_work_rate_tpl: '{a} × (1 + {r})^{n} = {a} × {f} = {b}',
+  tool_inflation_years_label: 'Anzahl der Jahre',
+  tool_inflation_years_ph: 'z. B. 5',
   tool_inspect_video_file_tracks_article:
     'Die Endung .mp4 verrät den Container, nicht die enthaltenen Codecs. Dieses Werkzeug liest Metadaten, ohne das Video hochzuladen oder alle Bilder zu decodieren. Es listet jede Spur auf, auch zweite Tonsprachen, die eine Vorschau möglicherweise übergeht. Jede Videospur zeigt Codec, genaue Codec-Parameter, Anzeigegröße, Drehung, Sprache, Beginn, Ende laut Metadaten und die Decodierbarkeit in diesem Browser. Bei Tonspuren kommen Kanäle und Abtastrate hinzu. Ohne Tonspur enthält die Datei keinen Audiostrom. Ist eine Tonspur vorhanden, hier aber nicht decodierbar, liegt Ton vor, dessen Codec dieser Browser nicht unterstützt. Das sagt nichts Sicheres über andere Handys, Schnittprogramme oder Fernseher. Zeiten aus Metadaten können geschätzt sein; die Seite durchsucht nicht jedes Paket, um eine exakte Dauer zu versprechen. Ein Web Worker und der begrenzte BlobSource-Cache lesen große Dateien nach Bedarf und halten die Oberfläche bedienbar. Bis zu 30 Dateien werden nacheinander geprüft; ein beschädigter Eintrag löscht erfolgreiche JSON-Berichte nicht. Dateien bleiben auf Ihrem Gerät und werden nicht an den Server gesendet.',
   tool_inspect_video_file_tracks_audio: 'Ton #{number}',
@@ -15216,43 +15402,149 @@ const de: SiteLangDict = {
   tool_ipv6_cidr_usecase_2: 'Eine Punkt-zu-Punkt-Strecke prüfen, die /127 sein sollte (RFC 6164).',
   tool_ipv6_cidr_usecase_3: 'Dokumentationspräfixe wie 2001:db8::/32 vor einem Screenshot kanonisch komprimieren.',
   tool_ipv6_cidr_usecases_title: 'Wann das hilft',
-  tool_irr_article: 'IRR-Rechner (Interner Zinsfuß)',
+  tool_irr_annual_label: 'Aufs Jahr umgerechnet',
+  tool_irr_annual_tpl: '{annual} effektiv pro Jahr = (1 + {irr})^{k} − 1; nominal {nominal} = {irr} × {k}',
+  tool_irr_article: 'Interner Zinsfuß',
   tool_irr_calculate: 'Berechnen',
-  tool_irr_cf_label: 'Cashflows (Komma/Zeile; CF0 zuerst)',
-  tool_irr_cf_ph: 'z. B. -1000, 300, 420, 680',
+  tool_irr_cf_hint:
+    'Beträge mit Leerzeichen oder Zeilenumbruch trennen (eine aus Excel kopierte Spalte funktioniert). Auszahlungen mit Minuszeichen. Tausenderpunkt (1.000) ist erlaubt, Dezimalstellen mit Komma. 1100*12 wiederholt 1.100 zwölfmal.',
+  tool_irr_cf_label: 'Zahlungsreihe ab Periode 1',
+  tool_irr_cf_ph: 'z. B. 300 420 680  — oder 1100*12 für zwölf gleiche Zahlungen',
+  tool_irr_check_label: 'Probe',
+  tool_irr_check_tpl:
+    'Mit {irr} abgezinst ergeben alle Zahlungen zusammen einen Kapitalwert von {npv} — die Tabelle zeigt jeden Schritt.',
   tool_irr_clear: 'Leeren',
+  tool_irr_col_cf: 'Zahlung',
+  tool_irr_col_cum: 'Kumulierter Barwert',
+  tool_irr_col_df: 'Abzinsungsfaktor beim IZF',
+  tool_irr_col_period: 'Periode',
+  tool_irr_col_pv: 'Barwert',
   tool_irr_description:
-    'Schätzen Sie den IRR einer einfachen Zahlungsreihe per Newton. Beispiel: −1000, 300, 420, 680 → näherungsweiser IRR%. Bildungszweck.',
-  tool_irr_disclaimer: 'Nur zur Veranschaulichung (IRR) — keine Finanzberatung.',
-  tool_irr_err_generic: 'Eingaben prüfen.',
-  tool_irr_example: 'Beispiel: −1000, 300, 420, 680 → IRR ≈ 18,9%.',
+    'Berechnen Sie den internen Zinsfuß (IRR) einer Investition aus jährlichen, vierteljährlichen oder monatlichen Zahlungen. Mit Rechenweg per linearer Interpolation, Probe-Tabelle (Kapitalwert = 0 beim IZF), Kapitalwert und modifiziertem internem Zinsfuß beim Kalkulationszinssatz sowie Warnung bei mehreren internen Zinsfüßen.',
+  tool_irr_disclaimer:
+    'Nur eine Schätzung zu Lernzwecken — keine Finanz-, Steuer- oder Anlageberatung. Die Ergebnisse hängen allein von den eingegebenen Zahlungen und dem Zinssatz ab; tatsächliche Renditen, Steuern, Gebühren und Risiken können abweichen.',
+  tool_irr_err_flows:
+    'Geben Sie nach der Anfangsinvestition mindestens eine Zahlung ein — oder mindestens zwei Beträge, wenn das Feld für die Anfangsinvestition leer ist.',
+  tool_irr_err_invest:
+    'Geben Sie die Anfangsinvestition als einen Betrag größer als 0 ein, zum Beispiel 1000 — oder lassen Sie das Feld leer, wenn Ihre Liste mit Periode 0 beginnt.',
+  tool_irr_err_many: 'Es sind höchstens 600 Perioden möglich.',
+  tool_irr_err_none:
+    'Kein interner Zinsfuß zwischen −99 % und 1.000 % pro Periode: Der Kapitalwert wird bei keinem Zinssatz in diesem Bereich null. Prüfen Sie Vorzeichen und Beträge.',
+  tool_irr_err_rate:
+    'Geben Sie den Kalkulationszinssatz als Prozentwert von 0 bis 100 ein, zum Beispiel 10, oder lassen Sie das Feld leer.',
+  tool_irr_err_signs:
+    'Ein interner Zinsfuß setzt mindestens eine negative und eine positive Zahlung voraus — etwa eine Auszahlung von −1000 und danach Einzahlungen.',
+  tool_irr_err_token:
+    '„{token}“ ist keine Zahl. Trennen Sie Beträge mit Leerzeichen oder Zeilenumbrüchen; mit 1100*12 wiederholen Sie einen Betrag.',
+  tool_irr_example:
+    'Beispiel: Sie investieren 1.000 und erhalten in drei Jahren 300, 420 und 680. Der Kapitalwert beträgt bei 16 % 6,40 und bei 17 % −12,20, also IZF ≈ 16 % + 6,40 ÷ 18,60 × 1 Prozentpunkt = 16,34 %. Mit 16,34 % abgezinst sind die Rückflüsse 257,86, 310,30 und 431,83 wert — zusammen genau 1.000. Bei einem Kalkulationszinssatz von 10 % ergeben sich ein Kapitalwert von 130,73 und ein MIRR von 14,60 %. Klicken Sie erneut auf „Beispiel laden“ für einen Fall mit zwei internen Zinsfüßen (25 % und 400 %) und einen mit Monatszahlungen.',
   tool_irr_example_title: 'Beispiel',
-  tool_irr_faq_a1: 'Beispiel: −1000, 300, 420, 680 → IRR ≈ 18,9%.',
-  tool_irr_faq_a2: 'See Formula section.',
-  tool_irr_faq_a3: 'Educational only.',
-  tool_irr_faq_a4: 'Educational only.',
-  tool_irr_faq_q1: 'Beispiel?',
-  tool_irr_faq_q2: 'Formula?',
-  tool_irr_faq_q3: 'Advice?',
-  tool_irr_faq_q4: 'Related?',
-  tool_irr_formula_body: 'CF0…CFn einfügen. Suche r mit NPV(r)=0 per Newton.',
-  tool_irr_formula_item_1: 'See formula notes.',
-  tool_irr_formula_item_2: 'Check inputs.',
-  tool_irr_formula_item_3: 'Educational only.',
-  tool_irr_formula_title: 'Formel',
-  tool_irr_how_body: 'CF0…CFn einfügen. Suche r mit NPV(r)=0 per Newton.',
-  tool_irr_how_title: 'So funktioniert’s',
-  tool_irr_irrOut_label: 'Näherungs-IRR',
-  tool_irr_ref_a_label: 'Investopedia',
-  tool_irr_ref_b_label: 'Wikipedia',
-  tool_irr_references: 'Investopedia und Lehrbuchformeln.',
-  tool_irr_result_note: 'Bildungszweck.',
+  tool_irr_faq_a1:
+    'Bei der Regula falsi verbindet man zwei Versuchszinssätze mit einer Geraden, und diese Gerade überzeichnet die gekrümmte Kapitalwertkurve. Im Beispiel ergeben Versuche mit 15 % und 20 % einen IZF von 16,41 %, Versuche mit 16 % und 17 % dagegen 16,34 % — das entspricht dem exakten Wert. Der Rechner zeigt die enge Variante.',
+  tool_irr_faq_a2:
+    'Der Kapitalwert ist ein Betrag: was das Projekt heute bei einem gewählten Zinssatz wert ist. Der interne Zinsfuß ist ein Zinssatz: derjenige, bei dem dieser Kapitalwert null ist. Bei einer normalen Investition (erst Auszahlung, dann Einzahlungen) führen beide zur selben Entscheidung über Annahme oder Ablehnung; beim Rangieren von Projekten unterschiedlicher Größe oder Laufzeit können sie sich widersprechen, und dann ist der Kapitalwert der bessere Maßstab.',
+  tool_irr_faq_a3:
+    'Wenn er über Ihrem Kalkulationszinssatz liegt — also über den Kapitalkosten oder der Rendite, die Sie bei ähnlichem Risiko anderswo erzielen könnten. Ein IZF von 16 % ist gegenüber 10 % attraktiv, gegenüber 20 % nicht. Für sich allein sagt die Zahl nichts darüber, wie viel Geld das Projekt einbringt.',
+  tool_irr_faq_a4:
+    'Jedes Mal, wenn die Zahlungsreihe zwischen negativ und positiv wechselt, kann der Kapitalwert erneut null werden. −1.600, +10.000, −10.000 ergibt sowohl 25 % als auch 400 %. Keiner der beiden Werte ist „die“ Rendite; entscheiden Sie nach dem Kapitalwert beim Kalkulationszinssatz oder nach dem MIRR.',
+  tool_irr_faq_a5:
+    'Der MIRR unterstellt, dass Rückflüsse während der Laufzeit zum Kalkulationszinssatz wieder angelegt werden statt zum IZF selbst. Er liefert genau eine Lösung, auch wenn es mehrere interne Zinsfüße gibt, und ist bei hohem IZF meist niedriger und realistischer.',
+  tool_irr_faq_a6:
+    'Wählen Sie unter „Eine Periode entspricht“ die Option „1 Monat“. Der Rechner ermittelt den Monatszins und rechnet ihn mit (1 + r)¹² − 1 aufs Jahr um. Das Multiplizieren mit 12 ergibt nur den nominalen Jahreszins; der ist niedriger und unterschätzt die tatsächlichen jährlichen Kosten oder Erträge.',
+  tool_irr_faq_a7:
+    'Ja, bei gleichmäßig verteilten Zahlungen: =IKV(A1:A4) mit −1.000, 300, 420, 680 liefert 16,34 % (in der englischen Excel-Version =IRR). Excel gibt ausgehend von seinem Schätzwert nur eine Lösung zurück, dieser Rechner listet alle internen Zinsfüße auf. Für unregelmäßige Termine nutzt Excel XINTZINSFUSS (XIRR); das deckt dieser Rechner nicht ab.',
+  tool_irr_faq_q1: 'Warum liefert die Interpolation im Lehrbuch einen etwas anderen internen Zinsfuß?',
+  tool_irr_faq_q2: 'Was ist der Unterschied zwischen Kapitalwertmethode und Interne-Zinsfuß-Methode?',
+  tool_irr_faq_q3: 'Ab wann ist ein interner Zinsfuß gut?',
+  tool_irr_faq_q4: 'Warum gibt es zwei interne Zinsfüße?',
+  tool_irr_faq_q5: 'Was ist der modifizierte interne Zinsfuß (MIRR), und wann sollte ich ihn nutzen?',
+  tool_irr_faq_q6: 'Wie berechne ich den internen Zinsfuß bei monatlichen Zahlungen?',
+  tool_irr_faq_q7: 'Stimmt das Ergebnis mit der Excel-Funktion IKV überein?',
+  tool_irr_formula_body:
+    'Bei Zahlungen CF₀, CF₁ … CFₙ jeweils am Ende gleich langer Perioden ist der interne Zinsfuß der Zinssatz r, der diese Gleichung löst:',
+  tool_irr_formula_item_1:
+    '0 = CF₀ + CF₁ ÷ (1 + r) + CF₂ ÷ (1 + r)² + … + CFₙ ÷ (1 + r)ⁿ. CF₀ ist meist die negative Anfangsinvestition.',
+  tool_irr_formula_item_2:
+    'Interpolation von Hand (Regula falsi): IZF ≈ r₁ + KW₁ ÷ (KW₁ − KW₂) × (r₂ − r₁), mit dem Kapitalwert KW₁ > 0 bei r₁ und KW₂ < 0 bei r₂. Je enger r₁ und r₂ beieinander liegen, desto kleiner ist der Fehler.',
+  tool_irr_formula_item_3:
+    'Aufs Jahr umrechnen: effektiver Jahres-IZF = (1 + IZF pro Periode)ᵏ − 1, mit k = 12 bei Monaten und k = 4 bei Quartalen.',
+  tool_irr_formula_item_4:
+    'MIRR = (Endwert der positiven Zahlungen zum Wiederanlagezins ÷ Barwert der negativen Zahlungen zum Finanzierungszins)^(1/n) − 1. Er hat immer genau eine Lösung.',
+  tool_irr_formula_item_5:
+    'Grenzen: Jeder Vorzeichenwechsel kann einen weiteren internen Zinsfuß erzeugen, und die Methode unterstellt, dass Zwischenrückflüsse zum IZF selbst wieder angelegt werden (Wiederanlageprämisse). Projekte unterschiedlicher Größe oder Laufzeit reihen Sie nach dem Kapitalwert, nicht nach dem IZF.',
+  tool_irr_formula_title: 'Formel des internen Zinsfußes und ihre Grenzen',
+  tool_irr_how_body:
+    'Der interne Zinsfuß ist der Zinssatz, bei dem der Kapitalwert aller Zahlungen genau null wird. Bei mehr als zwei Perioden gibt es dafür keine geschlossene Formel: Man probiert Zinssätze aus, bis der Kapitalwert das Vorzeichen wechselt, und nähert sich der Nullstelle an.',
+  tool_irr_how_item_1:
+    'Tragen Sie die Anschaffungsauszahlung unter „Anfangsinvestition (optional)“ ein — oder lassen Sie das Feld leer und fügen Sie eine Liste ein, die schon mit Periode 0 beginnt.',
+  tool_irr_how_item_2:
+    'Geben Sie die Zahlungen für Periode 1, 2, 3 … ein (Auszahlungen negativ) und wählen Sie unter „Eine Periode entspricht“, ob eine Periode ein Jahr, ein Quartal oder ein Monat ist.',
+  tool_irr_how_item_3:
+    'Tragen Sie optional den Kalkulationszinssatz ein, um Kapitalwert und MIRR zu erhalten, und klicken Sie dann auf „Berechnen“.',
+  tool_irr_how_item_4:
+    'Lesen Sie den internen Zinsfuß ab, verfolgen Sie den Rechenweg und prüfen Sie die Tabelle: Beim IZF endet der kumulierte Barwert bei null.',
+  tool_irr_how_title: 'Internen Zinsfuß berechnen — so gehen Sie vor',
+  tool_irr_interp_label: 'Rechenweg (Probieren und Interpolieren)',
+  tool_irr_interp_tpl:
+    'Kapitalwert bei {r1} = {n1}; bei {r2} = {n2}. Lineare Interpolation (Regula falsi): {r1} + {n1} ÷ ({n1} − ({n2})) × 1 Prozentpunkt ≈ {est}. Exakter IZF per Intervallhalbierung: {irr}.',
+  tool_irr_invest_hint:
+    'Wird als Auszahlung in Periode 0 gerechnet. Lassen Sie das Feld leer, wenn Ihre Liste unten bereits mit Periode 0 beginnt.',
+  tool_irr_invest_label: 'Anfangsinvestition (optional)',
+  tool_irr_invest_ph: 'z. B. 1000',
+  tool_irr_irrOut_label: 'Interner Zinsfuß (IRR)',
+  tool_irr_mirr_label: 'Modifizierter interner Zinsfuß (MIRR; Finanzierung und Wiederanlage zum Kalkulationszinssatz)',
+  tool_irr_multi_tpl:
+    'Die Zahlungsreihe wechselt {k}-mal das Vorzeichen und hat {n} interne Zinsfüße: {list}. Ein Vergleich mit dem Kalkulationszinssatz ist hier nicht verlässlich — entscheiden Sie nach dem Kapitalwert oder dem MIRR.',
+  tool_irr_npv_label: 'Kapitalwert beim Kalkulationszinssatz',
+  tool_irr_npv_tpl: '{npv} bei {rate}.',
+  tool_irr_per_year_tpl: '{p} pro Periode ≈ {a} pro Jahr',
+  tool_irr_period_label: 'Eine Periode entspricht',
+  tool_irr_period_month: '1 Monat',
+  tool_irr_period_quarter: '1 Quartal',
+  tool_irr_period_year: '1 Jahr',
+  tool_irr_rate_hint: 'Ihre Mindestrendite bzw. Kapitalkosten. Daraus werden Kapitalwert und MIRR berechnet.',
+  tool_irr_rate_label: 'Kalkulationszinssatz % p. a. (optional)',
+  tool_irr_rate_none: 'Tragen Sie einen Kalkulationszinssatz ein, um Kapitalwert und MIRR zu sehen.',
+  tool_irr_rate_ph: 'z. B. 10',
+  tool_irr_ref_a_label: 'Investopedia — Internal Rate of Return (IRR), englischsprachig',
+  tool_irr_ref_b_label: 'Microsoft Support — IRR-Funktion in Excel (englischsprachig; deutsch: IKV)',
+  tool_irr_references:
+    'Investopedia — Internal rate of return (englischsprachig); Microsoft Support — IRR-Funktion in Excel (englischsprachig; im deutschen Excel IKV).',
+  tool_irr_result_note:
+    'Jede Zahlung gilt als am Ende einer gleich langen Periode fällig — dieselbe Annahme wie bei der IRR-Funktion in Excel (deutsch IKV) und Google Sheets. Für Zahlungen an unregelmäßigen Terminen nutzen Sie XINTZINSFUSS (XIRR).',
   tool_irr_sample: 'Beispiel laden',
-  tool_irr_title: 'IRR-Rechner (Interner Zinsfuß)',
-  tool_irr_usecase_1: 'Homework.',
-  tool_irr_usecase_2: 'Quick sketch.',
-  tool_irr_usecase_3: 'Sketch before talking to an advisor — not a substitute.',
-  tool_irr_usecases_title: 'Wann sinnvoll',
+  tool_irr_signs_tpl:
+    'Die Zahlungsreihe wechselt {k}-mal das Vorzeichen. Zwischen −99 % und 1.000 % wurde nur ein interner Zinsfuß gefunden; prüfen Sie trotzdem auch den Kapitalwert.',
+  tool_irr_title: 'Interner Zinsfuß berechnen — IRR-Rechner für beliebige Zahlungsreihen mit Rechenweg',
+  tool_irr_unit_month: 'pro Monat',
+  tool_irr_unit_quarter: 'pro Quartal',
+  tool_irr_unit_year: 'pro Jahr',
+  tool_irr_usecase_1:
+    'Investitionsrechnung in BWL-Übung oder Klausur: Ein Projekt über 50.000 mit Rückflüssen von 15.000, 18.000, 20.000 und 22.000 hat einen internen Zinsfuß von 17,19 %; der Kapitalwert bei 12 % beträgt 5.959,35.',
+  tool_irr_usecase_2:
+    'Maschine oder vermietete Immobilie: Vergleichen Sie den internen Zinsfuß der Anschaffung mit dem Zinssatz des Kredits, der sie finanzieren würde.',
+  tool_irr_usecase_3:
+    'Ratenzahlung: 12.000, zurückgezahlt in zwölf Raten zu 1.100, kosten 1,50 % pro Monat — effektiv 19,53 % pro Jahr.',
+  tool_irr_usecase_4:
+    'Excel-Tabelle prüfen: Fügen Sie dieselbe Spalte ein, die Sie der Funktion IKV übergeben haben, bestätigen Sie das Ergebnis und sehen Sie, ob es einen zweiten internen Zinsfuß gibt.',
+  tool_irr_usecases_title: 'Wofür Sie den Rechner nutzen',
+  tool_irr_verdict_above:
+    'Der interne Zinsfuß von {irr} liegt bei oder über {rate} — die Investition erwirtschaftet mindestens die geforderte Rendite.',
+  tool_irr_verdict_below:
+    'Der interne Zinsfuß von {irr} liegt unter {rate} — die Investition erwirtschaftet weniger als gefordert.',
+  tool_irr_verdict_nonconv:
+    'Diese Zahlungsreihe folgt nicht dem einfachen Muster „erst investieren, dann einnehmen“. Entscheiden Sie deshalb anhand dieses Kapitalwerts, nicht durch den Vergleich von IZF und Zinssatz.',
+  tool_irr_why_choose_item_1:
+    'Der Rechenweg steht wie im Lehrbuch da: Kapitalwerte bei den beiden ganzen Prozentsätzen links und rechts der Lösung und die lineare Interpolation (Regula falsi) dazwischen. So können Sie eine Handrechnung aus Übung oder Klausurvorbereitung kontrollieren.',
+  tool_irr_why_choose_item_2:
+    'Er findet jeden internen Zinsfuß, nicht nur einen. Viele Rechner starten das Newton-Verfahren bei einem einzigen Schätzwert und geben stillschweigend die Nullstelle aus, auf der sie landen; hier wird der gesamte Bereich von −99 % bis 1.000 % abgesucht, und alle Lösungen werden aufgelistet.',
+  tool_irr_why_choose_item_3:
+    'Kapitalwert und MIRR beim Kalkulationszinssatz stehen direkt neben dem IZF. Sie sehen, ob das Projekt Ihre Mindestrendite übertrifft und was es bei einer realistischen Wiederanlage verdient.',
+  tool_irr_why_choose_item_4:
+    'Monats- und Quartalszahlungen werden korrekt aufs Jahr umgerechnet: Ein monatlicher IZF von 1,50 % entspricht effektiv 19,53 % pro Jahr, nicht den 17,97 %, die sich durch Multiplizieren mit 12 ergeben.',
+  tool_irr_why_choose_item_5:
+    'Die Eingabe nimmt die Zahlen so, wie sie meist vorliegen: als aus der Tabellenkalkulation kopierte Spalte, als Liste mit Periode 0 oder als 1100*12 für eine Reihe gleicher Zahlungen.',
+  tool_irr_why_choose_title: 'Warum dieser IRR-Rechner',
   tool_join_audio_files_in_order_advanced: 'Hinweise zum Verbinden',
   tool_join_audio_files_in_order_article:
     'Podcast-Takes, Sprachnotizen und Songabschnitte sollen oft eine durchgehende Datei werden. Diese Seite lässt mehrere lokale Audiodateien ablegen, in einer Liste umordnen, jeden Clip im Browser dekodieren, Abtastrate und Kanäle angleichen und die Samples in dieser Reihenfolge zu einer 16-Bit-PCM-WAV verbinden. Sie stapelt keine Spuren gleichzeitig (Overlay), macht keinen Crossfade zwischen Songs und extrahiert kein Audio aus Video. Der Erfolg hängt davon ab, ob der Browser jeden Container dekodieren kann. Kanäle bleiben eins oder zwei. Originale behalten; der Download ist neu. Die Arbeit läuft auf Ihrem Gerät.',
@@ -15689,51 +15981,129 @@ const de: SiteLangDict = {
   tool_linkedin_banner_size_usecase_2: 'Headline weg vom Avatar: Schicht prüfen, dann speichern.',
   tool_linkedin_banner_size_usecase_3: 'YouTube-Kanalbild: Chip auf 2560×1440 und das sichere Fenster stellen.',
   tool_linkedin_banner_size_usecases_title: 'Gute Einsätze',
-  tool_logarithm_article: 'Berechnen Sie log₁₀, ln oder Logs mit eigener Basis für x>0 im Browser.',
-  tool_logarithm_base_label: 'Basis b',
-  tool_logarithm_base_ph: 'z. B. 2',
+  tool_logarithm_article:
+    'Berechnen Sie den Logarithmus zu jeder Basis oder kehren Sie ihn mit dem Antilogarithmus um — und sehen Sie den Rechenweg dazu. Der Rechner erkennt exakte Werte wie log₄ 8 = 3/2, zeigt den Basiswechsel, eine Probe durch Potenzieren, dieselbe Zahl zur Basis 10, e und 2 sowie Kennzahl, Mantisse, wissenschaftliche Schreibweise und Stellenzahl, wie man sie bei Logarithmentafeln und beim Zählen von Stellen braucht.',
+  tool_logarithm_base_10: '10 — Zehnerlogarithmus (lg)',
+  tool_logarithm_base_2: '2 — Zweierlogarithmus (log₂, ld)',
+  tool_logarithm_base_custom: 'Andere Basis …',
+  tool_logarithm_base_e: 'e — natürlicher Logarithmus (ln)',
+  tool_logarithm_base_label: 'Basis',
   tool_logarithm_calculate: 'Berechnen',
+  tool_logarithm_char_bar_tpl: 'Kennzahl {c}, Mantisse {m} — in Logarithmentafeln als {bar} geschrieben',
+  tool_logarithm_char_label: 'Kennzahl und Mantisse (lg = log₁₀)',
+  tool_logarithm_char_tpl: 'Kennzahl {c}, Mantisse {m}',
+  tool_logarithm_check_label: 'Probe',
   tool_logarithm_clear: 'Leeren',
+  tool_logarithm_custom_label: 'Basis b',
+  tool_logarithm_custom_ph: 'z. B. 4; 0,5 oder 1/2',
   tool_logarithm_description:
-    'Berechnen Sie log₁₀, ln oder log_b(x) für x>0. Eigene Basen über ln(x)/ln(b). Beispiel: log₁₀(1000)=3. Macht den Definitionsbereich (x>0, b>0, b≠1) klar. Im Browser zum Lernen.',
-  tool_logarithm_disclaimer: 'Nur reelle Lern-Logarithmen. Kein Ersatz für CAS.',
-  tool_logarithm_err_generic: 'Bitte x>0 eingeben; bei eigener Basis b>0 und b≠1.',
-  tool_logarithm_example: 'Beispiel: log₁₀(1000)=3.',
-  tool_logarithm_example_title: 'Beispiel',
-  tool_logarithm_faq_a1: 'Nein; Logarithmus zur Basis 1 ist undefiniert.',
-  tool_logarithm_faq_a2: 'Natürlicher Logarithmus zur Basis e ≈ 2,71828.',
-  tool_logarithm_faq_a3: 'Reelle Logs bei 0 oder Negativen sind hier undefiniert.',
-  tool_logarithm_faq_a4: 'Basiswechsel: ln(x)/ln(b).',
-  tool_logarithm_faq_q1: 'Darf die Basis 1 sein?',
-  tool_logarithm_faq_q2: 'Was ist ln?',
-  tool_logarithm_faq_q3: 'Warum x > 0?',
-  tool_logarithm_faq_q4: 'Eigene Basis?',
-  tool_logarithm_formula_body: 'log_b(x) ist der Exponent, der b auf x bringt. Hier:',
-  tool_logarithm_formula_item_1: 'log₁₀ ist der Zehnerlog; ln der natürliche (Basis e).',
-  tool_logarithm_formula_item_2: 'Eigene Basis: log_b(x)=ln(x)/ln(b) mit b>0, b≠1, x>0.',
-  tool_logarithm_formula_item_3: 'x muss positiv sein.',
-  tool_logarithm_formula_item_4: 'Mit der Potenz-Seite b^y≈x prüfen.',
-  tool_logarithm_formula_title: 'Formel und Definitionsbereich',
+    'Logarithmus berechnen zur Basis 10 (lg), e (ln), 2 oder einer beliebigen Basis – auch den Antilogarithmus, für Dezimalzahlen, Brüche und Potenzen. Mit exakten Werten wie log₄ 8 = 3/2, Basiswechsel Schritt für Schritt, Kennzahl und Mantisse sowie Beispielen.',
+  tool_logarithm_disclaimer:
+    'Zum Lernen und für alltägliche Kontrollrechnungen mit reellen Zahlen. Die Ergebnisse sind Gleitkommawerte, gerundet auf 10 signifikante Stellen; komplexe Logarithmen werden nicht behandelt. Für Prüfungen oder technische Berechnungen gelten die Methode und Genauigkeit, die Ihr Kurs oder die jeweilige Norm vorschreibt.',
+  tool_logarithm_err_base:
+    'Die Basis muss größer als 0 und ungleich 1 sein (zur Basis 1 ist der Logarithmus nicht definiert, weil 1 hoch jede Zahl wieder 1 ergibt).',
+  tool_logarithm_err_empty: 'Bitte geben Sie eine Zahl ein.',
+  tool_logarithm_err_neg:
+    'Für negative Zahlen gibt es keinen reellen Logarithmus, denn eine positive Basis ergibt bei jedem Exponenten eine positive Zahl. Der Numerus x muss größer als 0 sein.',
+  tool_logarithm_err_num:
+    '„{v}“ kann dieser Rechner nicht als Zahl lesen. Verwenden Sie Ziffern, einen Bruch wie 1/8, eine Potenz wie 2^10 oder wissenschaftliche Schreibweise wie 3,2e-5.',
+  tool_logarithm_err_range:
+    'Das Ergebnis ist zu groß oder zu klein, um es als Zahl darzustellen — versuchen Sie einen kleineren Exponenten.',
+  tool_logarithm_err_zero:
+    'log(0) ist nicht definiert: Je näher x an 0 rückt, desto weiter fällt der Logarithmus gegen minus unendlich – einen reellen Wert gibt es nicht.',
+  tool_logarithm_exact_tpl: 'Exakter Wert {f}, denn {pow} = {x}',
+  tool_logarithm_example:
+    'log₁₀(1000) = 3, denn 10³ = 1000; für dieselbe Zahl gilt ln 1000 = 6,907755279 und log₂ 1000 = 9,965784285. Zur Basis 4: log₄ 8 = ln 8 ÷ ln 4 = 2,079441542 ÷ 1,386294361 = 3/2, denn 4^(3/2) = 8. Für eine Zahl kleiner als 1: log₁₀(0,0345) = −1,462180905, also Kennzahl −2 und Mantisse 0,5378190951, in der Logarithmentafel als 2̄,5378 geschrieben; zwischen dem Komma und der Ziffer 3 steht 1 Null. Umgekehrt ergibt der Antilogarithmus 10^2,5 = 316,227766.',
+  tool_logarithm_example_title: 'Rechenbeispiele',
+  tool_logarithm_faq_a1:
+    'lg x ist der Zehnerlogarithmus, also log₁₀ x; ln x ist der natürliche Logarithmus zur Basis e ≈ 2,718281828. Auf vielen Taschenrechnern heißt die lg-Taste einfach „log“. Vorsicht bei Software: In Excel rechnet LOG() ohne zweites Argument zur Basis 10, in Python und JavaScript bedeutet log(x) dagegen den natürlichen Logarithmus. Beide unterscheiden sich nur um einen festen Faktor: ln x = lg x × 2,302585093. Im Ergebnis schreibt dieser Rechner log₁₀ statt lg.',
+  tool_logarithm_faq_a2:
+    'Mit dem Basiswechsel: log_b(x) = ln(x) ÷ ln(b) oder lg(x) ÷ lg(b). Für log₄ 8: ln 8 ÷ ln 4 = 2,079441542 ÷ 1,386294361 = 1,5. In einem deutschen Excel liefert =LOG(8;4) ebenfalls 1,5.',
+  tool_logarithm_faq_a3:
+    'Sie zerlegen einen Zehnerlogarithmus in den ganzzahligen Teil (Kennzahl) und den nichtnegativen Nachkommateil (Mantisse) — so funktionieren gedruckte Logarithmentafeln. Für 3450 ist log₁₀ = 3,537819095: Kennzahl 3, Mantisse 0,5378190951. Für 0,0345 ist der Logarithmus −1,462180905 = −2 + 0,5378190951, geschrieben 2̄,5378 mit einem Strich über der 2. Die Mantisse hängt nur von der Ziffernfolge 345 ab; die Kennzahl gibt an, wo das Komma steht.',
+  tool_logarithm_faq_a4:
+    'Eine positive Basis ergibt bei jedem reellen Exponenten eine positive Zahl, kein Exponent führt also auf 0 oder auf einen negativen Numerus. Geht x von oben gegen 0, fällt log x unbegrenzt gegen minus unendlich. Logarithmen negativer Zahlen gibt es nur im Komplexen; das behandelt diese Seite nicht.',
+  tool_logarithm_faq_a5:
+    '1 hoch eine beliebige Zahl bleibt 1, ein Logarithmus zur Basis 1 könnte also nie eine andere Zahl erreichen. Mit der Basis 0 oder einer negativen Basis entsteht über den reellen Zahlen keine stetige, eindeutige Potenzfunktion. Basen zwischen 0 und 1 sind dagegen erlaubt: log₀,₅ 8 = −3, denn 0,5⁻³ = 8.',
+  tool_logarithm_faq_a6:
+    'Der Antilogarithmus macht das Logarithmieren rückgängig: Ist y = log_b(x), dann ist x = b^y. Zur Basis 10 gehört zu 2,5 der Wert 10^2,5 = 316,227766, zur Basis e gehört zu 1 der Wert e¹ = 2,718281828. Wählen Sie „Antilogarithmus: x = b^y“; die Seite zeigt dann auch die Probe durch Umkehrung.',
+  tool_logarithm_faq_a7:
+    'Eine natürliche Zahl N ≥ 1 hat ⌊log₁₀ N⌋ + 1 Stellen. log₁₀(2¹⁰⁰) = 100 · 0,3010299957 = 30,10299957, also hat 2¹⁰⁰ 31 Stellen. Geben Sie hier 2^100 ein; die Stellenzahl steht unter „Größenordnung der Zahl“.',
+  tool_logarithm_faq_q1: 'Was ist der Unterschied zwischen lg, log und ln?',
+  tool_logarithm_faq_q2: 'Wie berechne ich einen Logarithmus zu einer Basis, die mein Taschenrechner nicht hat?',
+  tool_logarithm_faq_q3: 'Was sind Kennzahl und Mantisse?',
+  tool_logarithm_faq_q4: 'Warum gibt es keinen Logarithmus von 0 oder von negativen Zahlen?',
+  tool_logarithm_faq_q5: 'Warum darf die Basis nicht 1, 0 oder negativ sein?',
+  tool_logarithm_faq_q6: 'Was ist der Antilogarithmus und wie berechnet man ihn?',
+  tool_logarithm_faq_q7: 'Wie zähle ich mit dem Logarithmus die Stellen einer großen Zahl?',
+  tool_logarithm_formula_body:
+    'Ein Logarithmus beantwortet die Frage „Mit welcher Zahl muss man b potenzieren, um x zu erhalten?“: y = log_b(x) bedeutet b^y = x, wobei der Numerus x > 0, b > 0 und b ≠ 1 ist.',
+  tool_logarithm_formula_item_1:
+    'Basiswechsel: log_b(x) = ln(x) ÷ ln(b) = lg(x) ÷ lg(b). Beispiel: log₂ 1000 = 6,907755279 ÷ 0,6931471806 = 9,965784285.',
+  tool_logarithm_formula_item_2: 'Produkt- und Quotientenregel: log(a · c) = log a + log c und log(a ÷ c) = log a − log c.',
+  tool_logarithm_formula_item_3: 'Potenzregel: log(aⁿ) = n · log a, also log₁₀(2¹⁰⁰) = 100 · 0,3010299957 = 30,10299957.',
+  tool_logarithm_formula_item_4: 'Besondere Werte: log_b(1) = 0, log_b(b) = 1 und log_b(1/x) = −log_b(x), z. B. log₂(1/8) = −3.',
+  tool_logarithm_formula_item_5:
+    'Umkehrung (Antilogarithmus): x = b^y. Zur Basis 10 ist 10^2,5 = 316,227766, zur Basis e ist e¹ = 2,718281828.',
+  tool_logarithm_formula_title: 'Logarithmusgesetze und Formeln',
   tool_logarithm_how_body:
-    'Wählen Sie log₁₀, ln oder eine eigene Basis. Geben Sie x>0 ein (und b bei Bedarf). Berechnung mit Math.log/Math.log10 und Basiswechsel.',
-  tool_logarithm_how_title: 'So funktioniert’s',
-  tool_logarithm_logOut_label: 'Logarithmenwert',
-  tool_logarithm_mode_custom: 'log_b (eigene Basis)',
-  tool_logarithm_mode_label: 'Log-Typ',
-  tool_logarithm_mode_ln: 'ln (natürlich)',
-  tool_logarithm_mode_log10: 'log₁₀ (Zehner)',
-  tool_logarithm_ref_ln_label: 'Wikipedia — Natürlicher Logarithmus',
-  tool_logarithm_ref_log_label: 'Wikipedia — Logarithmus',
-  tool_logarithm_references: 'Wikipedia Logarithmus und natürlicher Logarithmus.',
-  tool_logarithm_result_note: 'Basiswechsel über ln: log_b(x)=ln(x)/ln(b). Erfordert x>0 und gültige Basis.',
+    'Wählen Sie, was Sie suchen, legen Sie die Basis fest, geben Sie die Zahl ein und klicken Sie auf „Berechnen“. Unter dem Ergebnis steht der Rechenweg.',
+  tool_logarithm_how_item_1:
+    'Wählen Sie „Logarithmus: y = log_b(x)“, um y in b^y = x zu finden, oder „Antilogarithmus: x = b^y“, um aus einem Logarithmus die Zahl zurückzugewinnen.',
+  tool_logarithm_how_item_2:
+    'Nehmen Sie Basis 10, e oder 2, oder wählen Sie „Andere Basis …“ und tippen Sie eine beliebige positive Basis außer 1 ein — auch Brüche wie 1/2 funktionieren.',
+  tool_logarithm_how_item_3:
+    'Geben Sie den Numerus als Dezimalzahl mit Komma (z. B. 0,0345), als Bruch (1/8), als Potenz (2^10) oder in wissenschaftlicher Schreibweise (3,2e-5) ein.',
+  tool_logarithm_how_item_4:
+    'Lesen Sie das Ergebnis ab: den exakten Wert, falls es einen gibt, den Rechenweg über den Basiswechsel, die Probe durch Potenzieren sowie Kennzahl, Mantisse und Stellenzahl.',
+  tool_logarithm_how_title: 'So berechnen Sie einen Logarithmus mit dem Rechner',
+  tool_logarithm_input_hint:
+    'Erlaubt sind Brüche (1/8), Potenzen (2^10), wissenschaftliche Schreibweise (3,2e-5) und die Konstante e. Das Komma gilt als Dezimaltrennzeichen.',
+  tool_logarithm_inverse_tpl: 'Probe durch Umkehrung: {s}',
+  tool_logarithm_mode_antilog: 'Antilogarithmus: x = b^y',
+  tool_logarithm_mode_label: 'Was möchten Sie berechnen?',
+  tool_logarithm_mode_log: 'Logarithmus: y = log_b(x)',
+  tool_logarithm_other_label: 'Dieselbe Zahl zu anderen Basen',
+  tool_logarithm_out_antilog: 'Antilogarithmus',
+  tool_logarithm_out_log: 'Logarithmus',
+  tool_logarithm_places_frac_tpl: 'Nullen zwischen dem Komma und der ersten von null verschiedenen Ziffer in {x}: {z}',
+  tool_logarithm_places_int_tpl: 'Stellen vor dem Komma in {x}: {d}',
+  tool_logarithm_places_label: 'Größenordnung der Zahl',
+  tool_logarithm_ref_ln_label: 'Wikipedia — Natural logarithm (natürlicher Logarithmus, englisch)',
+  tool_logarithm_ref_log_label: 'Wikipedia — Logarithm (Logarithmus, englisch)',
+  tool_logarithm_references: 'Hintergrund zu Definition und Rechengesetzen des Logarithmus sowie zum natürlichen Logarithmus.',
+  tool_logarithm_result_note:
+    'Werte werden auf 10 signifikante Stellen angezeigt. Exakte Werte werden erkannt, wenn der Logarithmus eine ganze Zahl oder ein Bruch mit Nenner bis 12 ist.',
   tool_logarithm_sample: 'Beispiel laden',
-  tool_logarithm_title: 'Logarithmus-Rechner — Logarithmen berechnen',
-  tool_logarithm_usecase_1: 'Hausaufgabe: log₁₀, ln oder log₂ berechnen.',
-  tool_logarithm_usecase_2: 'Basiswechsel von Hand prüfen.',
-  tool_logarithm_usecase_3: 'Skalen für wissenschaftliche Notation vorbereiten.',
-  tool_logarithm_usecases_title: 'Wann sinnvoll',
-  tool_logarithm_x_label: 'Argument x',
-  tool_logarithm_x_ph: 'z. B. 1000',
+  tool_logarithm_sci_label: 'Wissenschaftliche Schreibweise',
+  tool_logarithm_sub_approx: 'Keine ganze Zahl und kein einfacher Bruch — auf 10 signifikante Stellen angegeben',
+  tool_logarithm_title: 'Logarithmus berechnen — Logarithmus jeder Zahl zu jeder Basis, mit exaktem Wert und Rechenweg',
+  tool_logarithm_usecase_1:
+    'Chemie: pH = −lg[H⁺]; eine Wasserstoffionen-Konzentration von 3,2 · 10⁻⁵ mol/L ergibt log₁₀ = −4,494850022, also einen pH-Wert von etwa 4,49.',
+  tool_logarithm_usecase_2:
+    'Geldanlage: Bei 7 % Zinsen pro Jahr verdoppelt sich ein Betrag nach ln 2 ÷ ln 1,07 = 10,24 Jahren — die genaue Fassung der 72er-Regel.',
+  tool_logarithm_usecase_3:
+    'Akustik und Informatik: Dezibel sind 10 · lg eines Leistungsverhältnisses, ein Verhältnis von 1000 entspricht also 30 dB; log₂ zeigt, wie viele Bits oder Halbierungsschritte nötig sind (log₂ 1024 = 10).',
+  tool_logarithm_usecase_4:
+    'Hausaufgaben und Klausuren: Ergebnisse mit den Logarithmusgesetzen kontrollieren, Kennzahl und Mantisse üben oder Stellen zählen — 2¹⁰⁰ hat ⌊30,103⌋ + 1 = 31 Stellen.',
+  tool_logarithm_usecases_title: 'Wofür man Logarithmen braucht',
+  tool_logarithm_why_choose_item_1:
+    'Jedes Ergebnis zeigt den Basiswechsel ln(x) ÷ ln(b) — so können Sie die Rechnung auf jedem Taschenrechner mit lg- und ln-Taste nachvollziehen.',
+  tool_logarithm_why_choose_item_2:
+    'Exakte Ergebnisse, wo es sie gibt: log₄ 8 erscheint als 3/2 statt nur als 1,5 — mit der Begründung 4^(3/2) = 8.',
+  tool_logarithm_why_choose_item_3:
+    'Die Zerlegung des Zehnerlogarithmus liefert Kennzahl, Mantisse und die Strichschreibweise der Logarithmentafel, etwa log₁₀ 0,0345 = 2̄,5378.',
+  tool_logarithm_why_choose_item_4:
+    'Verständliche Hinweise erklären, warum log(0), Logarithmen negativer Zahlen und die Basis 1 keinen reellen Wert haben — statt einer bloßen Fehlermeldung.',
+  tool_logarithm_why_choose_item_5:
+    'Eine Eingabe liefert log₁₀, ln und log₂ nebeneinander; der Antilogarithmus-Modus kehrt jede dieser Rechnungen um.',
+  tool_logarithm_why_choose_title: 'Was dieser Rechner Ihnen bietet',
+  tool_logarithm_work_change: 'Basiswechsel',
+  tool_logarithm_work_label: 'Rechenweg',
+  tool_logarithm_x_label_antilog: 'Exponent y (der Logarithmus)',
+  tool_logarithm_x_label_log: 'Zahl x (Numerus)',
+  tool_logarithm_x_ph_antilog: 'z. B. 2,5 oder −3',
+  tool_logarithm_x_ph_log: 'z. B. 1000; 1/8; 2^10 oder 3,2e-5',
   tool_macros_article: 'Makro-Rechner — Kalorien in Gramm',
   tool_macros_cG_label: 'Kohlenhydrate (g)',
   tool_macros_cPct_label: 'Kohlenhydrate %',
@@ -17463,44 +17833,145 @@ const de: SiteLangDict = {
   tool_measuring_magnetic_fields_value_ph: 'z. B. 200',
   tool_measuring_magnetic_fields_width_label: 'Breite der Fläche (mm)',
   tool_measuring_magnetic_fields_z_label: 'Abstand von der Fläche z (mm)',
-  tool_median_article: 'Median- und Modalwert-Rechner',
+  tool_median_article: 'Median und Modus',
   tool_median_calculate: 'Berechnen',
   tool_median_clear: 'Leeren',
+  tool_median_col_cf: 'Kumulierte Häufigkeit (cf)',
+  tool_median_col_class: 'Klasse',
+  tool_median_col_f: 'Häufigkeit (f)',
+  tool_median_col_mid: 'Klassenmitte (x)',
+  tool_median_count_tpl: '{n} Werte',
   tool_median_description:
-    'Berechnen Sie Median und Modalwert einer Zahlenliste nach dem Sortieren (Mitte; häufigster Wert). Beispiel: 1,2,2,3,4 → Median 2, Modus 2. Nur im Browser; schneller Statistikprozess.',
-  tool_median_disclaimer: 'Nur zur Veranschaulichung (median).',
-  tool_median_err_generic: 'Eingaben prüfen.',
-  tool_median_example: 'Beispiel: Median 2, Modus 2.',
+    'Berechnen Sie Median und Modus einer Zahlenreihe oder einer Häufigkeitstabelle mit klassierten Daten. Sie sehen die sortierte Liste mit markierter Mitte, den Rechenweg bei gerader und ungerader Anzahl, alle Modalwerte (oder keinen), den Mittelwert und die Formel L + (N/2 − cf) ÷ f × h mit Ihren Zahlen.',
+  tool_median_disclaimer:
+    'Für Lernzwecke und die alltägliche Datenprüfung. Ergebnisse für klassierte Daten sind Schätzwerte auf Basis der Klassengrenzen, nicht der exakte Median der Ursprungswerte.',
+  tool_median_err_empty:
+    'Geben Sie Zahlen ein, zum Beispiel 12 5 8 3 9 — oder bei klassierten Daten eine Klasse pro Zeile wie 10-20 8.',
+  tool_median_err_line:
+    '„{line}“ konnte nicht gelesen werden. Schreiben Sie eine Klasse pro Zeile: untere Grenze, obere Grenze, Häufigkeit — zum Beispiel 10-20 8.',
+  tool_median_err_many: 'Höchstens 10.000 Werte oder 100 Klassen.',
+  tool_median_err_order:
+    'Die Klasse {line} überschneidet sich mit der vorherigen. Listen Sie die Klassen aufsteigend und ohne Überschneidung auf.',
+  tool_median_err_token:
+    '„{token}“ ist keine Zahl. Trennen Sie die Werte durch Leerzeichen, Semikolon oder Zeilenumbruch; das Komma gilt als Dezimalzeichen.',
+  tool_median_err_zero: 'Die Gesamthäufigkeit ist 0. Geben Sie mindestens eine Klasse mit einer Häufigkeit größer als 0 ein.',
+  tool_median_even_tpl:
+    'n = {n} ist gerade, also ist der Median der Durchschnitt der Werte an den Positionen {a} und {b}: ({x} + {y}) ÷ 2 = {v}.',
+  tool_median_example:
+    'Zahlenreihe: 12 5 8 3 9 7 41 7. Sortiert: 3 5 7 7 8 9 12 41. Das sind 8 Werte, der Median ist also der Durchschnitt des 4. und 5. Werts: (7 + 8) ÷ 2 = 7,5. Der Modus ist 7 (zweimal). Der Mittelwert beträgt 92 ÷ 8 = 11,5 — von der 41 nach oben gezogen, deshalb ist hier der Median der bessere typische Wert. Klicken Sie erneut auf „Beispiel laden“ für eine bimodale Reihe (Modalwerte 4 und 7) und danach für eine Häufigkeitstabelle mit dem Median 25,83.',
   tool_median_example_title: 'Beispiel',
-  tool_median_faq_a1: 'Beispiel: Median 2, Modus 2.',
-  tool_median_faq_a2: 'See Formula section.',
-  tool_median_faq_a3: 'Educational only.',
-  tool_median_faq_a4: 'Educational only.',
-  tool_median_faq_q1: 'Beispiel?',
-  tool_median_faq_q2: 'Formula?',
-  tool_median_faq_q3: 'Advice?',
-  tool_median_faq_q4: 'Related?',
-  tool_median_formula_body: 'Zahlenliste einfügen.',
-  tool_median_formula_item_1: 'See formula notes.',
-  tool_median_formula_item_2: 'Check inputs.',
-  tool_median_formula_item_3: 'Educational only.',
-  tool_median_formula_title: 'Formel',
-  tool_median_how_body: 'Zahlenliste einfügen.',
-  tool_median_how_title: 'So funktioniert’s',
+  tool_median_faq_a1:
+    'Werte sortieren und den Durchschnitt der beiden mittleren bilden. Bei 3 5 7 7 8 9 12 41 sind das der 4. und 5. Wert, also 7 und 8 — der Median ist 7,5. Der Median muss selbst kein Wert der Liste sein.',
+  tool_median_faq_a2:
+    'Beides ist möglich. In 2 4 4 5 7 7 9 kommen 4 und 7 jeweils zweimal vor, die Reihe ist bimodal (Median 5). Kommt jeder Wert gleich oft vor — etwa 1 2 3 oder 1 1 2 2 —, gibt es keinen Modus.',
+  tool_median_faq_a3:
+    'Wenn die Daten Ausreißer enthalten oder schief verteilt sind. Im Beispiel hebt der einzelne Wert 41 den Mittelwert auf 11,5, während der Median bei 7,5 bleibt. Ohne die 41 fällt der Mittelwert auf 7,29, der Median ändert sich kaum und liegt bei 7. Deshalb werden Einkommen und Immobilienpreise meist als Median angegeben.',
+  tool_median_faq_a4:
+    'N/2 bestimmen, die erste Klasse suchen, deren kumulierte Häufigkeit diesen Wert erreicht (Einfallsklasse), dann L + (N/2 − cf) ÷ f × h anwenden. In der Beispieltabelle ist N = 40, also N/2 = 20; die kumulierte Häufigkeit erreicht 20 in der Klasse 20–30, das ergibt 20 + (20 − 13) ÷ 12 × 10 = 25,83.',
+  tool_median_faq_a5:
+    'Ja: Die Formel braucht lückenlose Klassengrenzen, aus 10–19 wird also 9,5–19,5. Der Rechner erledigt das automatisch und weist darauf hin. Für 10–19: 4; 20–29: 10; 30–39: 14; 40–49: 7; 50–59: 5 ist der Median 33,79 und der Modus 33,14.',
+  tool_median_faq_a6:
+    'Von Hand ja — die Mitte einer unsortierten Liste ist ein beliebiger Wert. Hier können Sie die Zahlen in jeder Reihenfolge einfügen; das Tool sortiert sie und zeigt die sortierte Liste, die Sie in Ihren Rechenweg übernehmen können.',
+  tool_median_faq_a7:
+    'MEDIAN liefert dasselbe Ergebnis. MODUS.EINF gibt nur den ersten Modalwert in der Reihenfolge der Daten zurück und #NV, wenn es keinen gibt; MODUS.VIELF gibt wie diese Seite alle Modalwerte zurück. Für klassierte Daten hat Excel keine Medianfunktion, Häufigkeitstabellen werden daher meist von Hand gerechnet.',
+  tool_median_faq_q1: 'Wie berechnet man den Median bei einer geraden Anzahl von Werten?',
+  tool_median_faq_q2: 'Kann es mehrere Modalwerte geben — oder gar keinen?',
+  tool_median_faq_q3: 'Wann sollte man den Median statt des Mittelwerts verwenden?',
+  tool_median_faq_q4: 'Wie berechnet man den Median bei klassierten Daten?',
+  tool_median_faq_q5: 'Meine Klassen lauten 10–19; 20–29 … muss ich sie umrechnen?',
+  tool_median_faq_q6: 'Muss ich die Zahlen vorher sortieren?',
+  tool_median_faq_q7: 'Stimmt das Ergebnis mit den Excel-Funktionen MEDIAN und MODUS überein?',
+  tool_median_formula_body: 'Für n der Größe nach sortierte Werte:',
+  tool_median_formula_item_1: 'Ungerades n: Der Median ist der Wert an Position (n + 1) ÷ 2 — bei 7 Werten der 4. Wert.',
+  tool_median_formula_item_2:
+    'Gerades n: Der Median ist der Durchschnitt der Werte an den Positionen n ÷ 2 und n ÷ 2 + 1 — bei 8 Werten der 4. und 5. Wert.',
+  tool_median_formula_item_3:
+    'Modus (Modalwert): der Wert, der am häufigsten vorkommt. Eine Datenreihe kann einen Modus haben, mehrere (bimodal, multimodal) oder keinen, wenn alle Werte gleich oft vorkommen.',
+  tool_median_formula_item_4:
+    'Median klassierter Daten = L + (N/2 − cf) ÷ f × h; dabei ist L die untere Klassengrenze der Einfallsklasse, cf die kumulierte Häufigkeit davor, f ihre Häufigkeit und h ihre Klassenbreite.',
+  tool_median_formula_item_5:
+    'Modus klassierter Daten = L + (f₁ − f₀) ÷ (2f₁ − f₀ − f₂) × h; f₁ ist die Häufigkeit der Modalklasse, f₀ und f₂ sind die Häufigkeiten der Klassen davor und danach.',
+  tool_median_formula_title: 'Formeln für Median und Modus',
+  tool_median_g_bound_tpl:
+    'Zwischen den Klassen liegen Lücken von {gap}; jede Grenze wurde um die halbe Lücke nach außen verschoben — die erste Klasse reicht damit von {lo} bis {hi}.',
+  tool_median_g_mean_tpl: 'Σ f·x ÷ N = {sum} ÷ {N} = {v} (x = Klassenmitte)',
+  tool_median_g_median_tpl:
+    'N = {N}, also N/2 = {half}. Die kumulierte Häufigkeit erreicht {half} erstmals in der Klasse {cls} — das ist die Einfallsklasse (kumulierte Häufigkeit davor cf = {cf}, Häufigkeit f = {f}, Klassenbreite h = {h}). Median = L + (N/2 − cf) ÷ f × h = {L} + ({half} − {cf}) ÷ {f} × {h} = {v}.',
+  tool_median_g_mode_flat_tpl:
+    'Modalklasse {cls}, aber die Nachbarklassen sind genauso stark besetzt, sodass die Formel versagt; stattdessen wird die Klassenmitte {mid} verwendet.',
+  tool_median_g_mode_multi_tpl:
+    'Mehrere Klassen haben die größte Häufigkeit ({list}), daher liefert die Formel für den Modus klassierter Daten kein eindeutiges Ergebnis.',
+  tool_median_g_mode_tpl:
+    'Modalklasse {cls} (f₁ = {f1}, Klasse davor f₀ = {f0}, Klasse danach f₂ = {f2}). Modus = L + (f₁ − f₀) ÷ (2f₁ − f₀ − f₂) × h = {L} + ({f1} − {f0}) ÷ (2 × {f1} − {f0} − {f2}) × {h} = {v}.',
+  tool_median_groups_hint:
+    'Geben Sie untere Grenze, obere Grenze und Häufigkeit ein, etwa 10-20 8 oder 10–19: 8. Klassen mit Lücken (etwa 10–19 und 20–29) werden automatisch in lückenlose Klassengrenzen (9,5–19,5) umgerechnet.',
+  tool_median_groups_label: 'Klassen und Häufigkeiten (eine Klasse pro Zeile)',
+  tool_median_groups_ph: 'z. B.\n0-10 5\n10-20 8\n20-30 12',
+  tool_median_how_body:
+    'Sortieren Sie die Zahlen der Größe nach. Bei ungerader Anzahl ist der Median der mittlere Wert, bei gerader Anzahl der Durchschnitt der beiden mittleren Werte. Bei klassierten Daten suchen Sie die Klasse, in der der (N/2)-te Wert liegt, und interpolieren innerhalb dieser Klasse.',
+  tool_median_how_item_1:
+    'Wählen Sie „Zahlenreihe“ — oder „Klassierte Daten (Häufigkeitstabelle)“, wenn Ihnen nur eine Häufigkeitstabelle vorliegt.',
+  tool_median_how_item_2:
+    'Fügen Sie die Werte in beliebiger Reihenfolge ein oder tippen Sie sie ab — bzw. pro Zeile eine Klasse mit ihrer Häufigkeit, etwa 20-30 12.',
+  tool_median_how_item_3:
+    'Klicken Sie auf „Berechnen“. Die sortierte Liste erscheint, der mittlere Wert bzw. die beiden mittleren Werte sind markiert.',
+  tool_median_how_item_4:
+    'Lesen Sie Median, Rechenweg, Modus und Mittelwert ab; bei klassierten Daten ist die Einfallsklasse des Medians in der Tabelle der kumulierten Häufigkeiten hervorgehoben.',
+  tool_median_how_title: 'So berechnen Sie den Median',
+  tool_median_mean_label: 'Mittelwert',
   tool_median_medianOut_label: 'Median',
-  tool_median_modeOut_label: 'Modalwert',
+  tool_median_modeOut_label: 'Modus',
+  tool_median_mode_grouped: 'Klassierte Daten (Häufigkeitstabelle)',
+  tool_median_mode_label: 'Art der Daten',
+  tool_median_mode_list: 'Zahlenreihe',
+  tool_median_mode_multi_tpl: '{list} (jeweils {c}-mal)',
+  tool_median_mode_none_equal_tpl: 'Kein Modus — jeder Wert kommt {c}-mal vor.',
+  tool_median_mode_none_once: 'Kein Modus — jeder Wert kommt nur einmal vor.',
+  tool_median_mode_one_tpl: '{v} (kommt {c}-mal vor)',
+  tool_median_note_grouped:
+    'Ergebnisse für klassierte Daten sind Schätzwerte: Es wird angenommen, dass sich die Werte innerhalb jeder Klasse gleichmäßig verteilen.',
+  tool_median_note_list: 'Die Reihenfolge der Eingabe spielt keine Rolle — die Zahlen werden zuerst sortiert.',
+  tool_median_nums_hint:
+    'Werte durch Leerzeichen, Semikolon oder Zeilenumbruch trennen — das Komma ist das Dezimalzeichen (7,5). Eine aus Excel kopierte Spalte funktioniert direkt; Dezimalzahlen und negative Zahlen sind erlaubt.',
   tool_median_nums_label: 'Zahlen',
-  tool_median_nums_ph: 'z. B. 1,2,2,3,4',
-  tool_median_ref_a_label: 'Wikipedia',
-  tool_median_ref_b_label: 'Textbook formula',
-  tool_median_references: 'Lehrbuchformeln.',
-  tool_median_result_note: 'Bildungszweck.',
+  tool_median_nums_ph: 'z. B. 12 5 8 3 9 7 41 7',
+  tool_median_odd_tpl:
+    'n = {n} ist ungerade, also ist der Median der Wert an Position (n + 1) ÷ 2 = {pos} der sortierten Liste: {v}.',
+  tool_median_range_label: 'Spannweite',
+  tool_median_range_tpl: '{max} − {min} = {r}',
+  tool_median_ref_a_label: 'NIST/SEMATECH e-Handbook — Measures of Location (Lagemaße)',
+  tool_median_ref_b_label: 'Wikipedia — Median for grouped data (Median klassierter Daten)',
+  tool_median_references:
+    'NIST/SEMATECH e-Handbook of Statistical Methods — Measures of location (Lagemaße); Wikipedia — Median for grouped data (Median klassierter Daten).',
   tool_median_sample: 'Beispiel laden',
-  tool_median_title: 'Median- und Modalwert-Rechner',
-  tool_median_usecase_1: 'Homework.',
-  tool_median_usecase_2: 'Quick sketch.',
-  tool_median_usecase_3: 'Compare with mean.',
-  tool_median_usecases_title: 'Wann sinnvoll',
+  tool_median_skew_left:
+    'Der Mittelwert liegt deutlich unter dem Median: Einige kleine Werte ziehen ihn nach unten, deshalb beschreibt der Median einen typischen Wert besser.',
+  tool_median_skew_right:
+    'Der Mittelwert liegt deutlich über dem Median: Einige große Werte ziehen ihn nach oben, deshalb beschreibt der Median einen typischen Wert besser.',
+  tool_median_sorted_label: 'Sortiert',
+  tool_median_title: 'Median und Modus berechnen — für Zahlenreihen und klassierte Daten, mit Rechenweg',
+  tool_median_total_tpl: 'N = {n} (Gesamthäufigkeit)',
+  tool_median_usecase_1:
+    'Statistik-Hausaufgaben mit Häufigkeitstabelle: 0–10: 5; 10–20: 8; 20–30: 12; 30–40: 9; 40–50: 6 ergibt die Einfallsklasse 20–30 und den Median 20 + (20 − 13) ÷ 12 × 10 = 25,83.',
+  tool_median_usecase_2:
+    'Gehälter, Immobilienpreise und Lieferzeiten: Wenige Extremwerte machen den Mittelwert irreführend, deshalb wird meist der Median genannt.',
+  tool_median_usecase_3:
+    'Notenspiegel einer Klassenarbeit oder Bewertungen aus Umfragen: mittlere Note und häufigste Antwort in einem Schritt ermitteln.',
+  tool_median_usecase_4:
+    'Kontrolle einer Tabellenkalkulation: Fügen Sie die Spalte ein, die Sie mit MEDIAN oder MODUS.EINF ausgewertet haben, und prüfen Sie das Ergebnis samt Gleichständen.',
+  tool_median_usecases_title: 'Typische Anwendungen',
+  tool_median_why_choose_item_1:
+    'Die sortierte Liste wird angezeigt und die Mitte markiert — Sie sehen genau, welche Werte verwendet wurden. Der häufigste Fehler ist, die Mitte einer unsortierten Liste zu nehmen.',
+  tool_median_why_choose_item_2:
+    'Klassierte Daten sind eingebaut: Häufigkeitstabelle einfügen und Einfallsklasse, Interpolationsformel mit Ihren Zahlen, Modus der klassierten Daten und Mittelwert über die Klassenmitten erhalten.',
+  tool_median_why_choose_item_3:
+    'Der Modus wird ehrlich angegeben: bei Gleichstand alle Modalwerte und „kein Modus“, wenn alle Werte gleich oft vorkommen — statt einfach die kleinste Zahl auszugeben.',
+  tool_median_why_choose_item_4:
+    'Klassen mit Lücken wie 10–19 und 20–29 werden in Klassengrenzen 9,5–19,5 usw. umgerechnet — ein Schritt, den Lehrbücher verlangen, den viele Rechner aber auslassen.',
+  tool_median_why_choose_item_5:
+    'Mittelwert und Spannweite stehen neben dem Median, mit einem Hinweis, wenn Ausreißer den Mittelwert verzerren — hilfreich bei der Entscheidung, welchen Lageparameter Sie angeben.',
+  tool_median_why_choose_title: 'Warum dieser Median-Rechner',
+  tool_median_work_label: 'Rechenweg',
   tool_merge_pdf_article:
     'Mehrere PDFs in Listenreihenfolge mit clientseitigem pdf-lib zusammenfügen — ohne Server-Upload; Dateien bleiben auf dem Gerät. Neu ordnen, verschlüsselte Fehler klar melden, eine Datei herunterladen.',
   tool_merge_pdf_choose_files: 'PDFs wählen',
@@ -19546,50 +20017,146 @@ const de: SiteLangDict = {
   tool_permutation_combination_work_label: 'Rechenweg',
   tool_permutation_combination_zero_note:
     'r ist größer als n: ohne Wiederholung gibt es keine Möglichkeit, r verschiedene Elemente zu ziehen — diese Zählungen sind 0. Erlauben Sie Wiederholung oder verkleinern Sie r.',
-  tool_present_value_amount_label: 'Betrag',
+  tool_present_value_amount_label_fv: 'Heute angelegter Betrag (Einmalzahlung)',
+  tool_present_value_amount_label_pv: 'Künftiger Betrag (Einmalzahlung am Ende)',
   tool_present_value_amount_ph: 'z. B. 10000',
-  tool_present_value_article: 'Barwert-Rechner (PV/FV)',
+  tool_present_value_ann_fv_tpl: 'Zahlungen: {p} × ({g} − 1) ÷ {i} = {p} × {af} = {v}',
+  tool_present_value_ann_pv_tpl: 'Zahlungen: {p} × (1 − 1 ÷ {g}) ÷ {i} = {p} × {af} = {v}',
+  tool_present_value_ann_zero_tpl: 'Zahlungen bei 0 %: {p} × {N} = {v}',
+  tool_present_value_article: 'Barwert und Endwert',
   tool_present_value_calculate: 'Berechnen',
   tool_present_value_clear: 'Leeren',
+  tool_present_value_col_balance: 'Stand am Jahresende',
+  tool_present_value_col_flow: 'Zahlungen',
+  tool_present_value_col_interest: 'Zinsen',
+  tool_present_value_col_year: 'Jahr',
+  tool_present_value_comp_1: 'Jährlich',
+  tool_present_value_comp_12: 'Monatlich',
+  tool_present_value_comp_2: 'Halbjährlich',
+  tool_present_value_comp_365: 'Täglich (365)',
+  tool_present_value_comp_4: 'Vierteljährlich',
+  tool_present_value_comp_cont: 'Stetig (kontinuierlich)',
+  tool_present_value_comp_label: 'Verzinsung',
+  tool_present_value_cont_tpl: 'Stetige Verzinsung: Aufzinsungsfaktor e^(r × t) = e^({r} × {t}) = {g}.',
   tool_present_value_description:
-    'Wechseln Sie zwischen PV und FV für einen Einmalbetrag. Beispiel: EW 10.000 bei 5% über 5 Jahre → BW ≈ 7.835,26. Bildungszweck.',
-  tool_present_value_disclaimer: 'Nur zur Veranschaulichung (present value) — keine Finanzberatung.',
-  tool_present_value_err_generic: 'Eingaben prüfen.',
-  tool_present_value_example: 'Beispiel: EW 10000, 5%, 5 Jahre → BW ≈ 7835,26.',
+    'Berechnen Sie den Barwert oder Endwert einer Einmalzahlung, regelmäßiger Zahlungen (Rente) oder beider zusammen. Wählen Sie jährliche bis tägliche oder stetige Verzinsung sowie nachschüssige oder vorschüssige Zahlungen und sehen Sie den Rechenweg mit Ihren Zahlen, den effektiven Jahreszins, einen Zinscheck ±1 Prozentpunkt und die Entwicklung Jahr für Jahr.',
+  tool_present_value_disclaimer:
+    'Lernrechnung zum Zeitwert des Geldes, keine Finanz-, Steuer- oder Anlageberatung. Tatsächliche Renditen schwanken; Steuern, Gebühren und Inflation können das Ergebnis verändern.',
+  tool_present_value_due_tpl: 'Vorschüssige Zahlungen werden eine Periode länger verzinst: {a} × (1 + {i}) = {v}',
+  tool_present_value_ear_label: 'Effektiver Jahreszins',
+  tool_present_value_err_amount:
+    'Geben Sie eine Einmalzahlung, eine Zahlung je Periode oder beides ein – mindestens ein Wert über 0, keiner negativ.',
+  tool_present_value_err_rate: 'Geben Sie den Jahreszins in Prozent ein: über −100 % und höchstens 1000 % (0 ist erlaubt).',
+  tool_present_value_err_whole:
+    'Bei regelmäßigen Zahlungen muss Jahre × Perioden pro Jahr eine ganze Zahl ergeben – z. B. 2,5 Jahre monatlich = 30 Zahlungen.',
+  tool_present_value_err_years: 'Geben Sie die Laufzeit in Jahren ein: über 0 und höchstens 200 (Dezimalwerte wie 2,5 sind möglich).',
+  tool_present_value_example:
+    'Beispiel: 10.000 in 5 Jahren, 5 % pro Jahr, jährliche Verzinsung. Barwert = 10.000 ÷ 1,05^5 = 10.000 ÷ 1,276282 = 7.835,26 – wer heute 7.835,26 zu 5 % anlegt, hat nach 5 Jahren 10.000; die Tabelle zeigt es Jahr für Jahr. Bei 4 % läge der Barwert bei 8.219,27, bei 6 % bei 7.472,58. Klicken Sie erneut auf Beispiel laden für 500 monatlich über 10 Jahre zu 6 % (Barwert 45.036,73) und für den Endwert von 5.000 plus 200 monatlich über 20 Jahre zu 7 % (124.379,03).',
   tool_present_value_example_title: 'Beispiel',
-  tool_present_value_faq_a1: 'Beispiel: EW 10000, 5%, 5 Jahre → BW ≈ 7835,26.',
-  tool_present_value_faq_a2: 'See Formula section.',
-  tool_present_value_faq_a3: 'Educational only.',
-  tool_present_value_faq_a4: 'Educational only.',
-  tool_present_value_faq_q1: 'Beispiel?',
-  tool_present_value_faq_q2: 'Formula?',
-  tool_present_value_faq_q3: 'Advice?',
-  tool_present_value_faq_q4: 'Related?',
-  tool_present_value_formula_body: 'PV/FV-Modus wählen; Betrag, Zins und Jahre eingeben.',
-  tool_present_value_formula_item_1: 'See formula notes.',
-  tool_present_value_formula_item_2: 'Check inputs.',
-  tool_present_value_formula_item_3: 'Educational only.',
-  tool_present_value_formula_title: 'Formel',
-  tool_present_value_how_body: 'PV/FV-Modus wählen; Betrag, Zins und Jahre eingeben.',
-  tool_present_value_how_title: 'So funktioniert’s',
-  tool_present_value_mode_fv: 'Endwert finden (aus BW)',
-  tool_present_value_mode_label: 'Modus',
-  tool_present_value_mode_pv: 'Barwert finden (aus EW)',
-  tool_present_value_n_label: 'Jahre',
-  tool_present_value_n_ph: 'z. B. 5',
-  tool_present_value_out_label: 'Ergebnis',
-  tool_present_value_rate_label: 'Jahreszins %',
+  tool_present_value_faq_a1:
+    '7.835,26 bei jährlicher Verzinsung: 10.000 ÷ 1,05^5 oder 10.000 × Abzinsungsfaktor 0,783526. Bei 4 % wären es 8.219,27, bei 6 % 7.472,58 – je höher der Zins, desto niedriger der Barwert.',
+  tool_present_value_faq_a2:
+    'Häufigere Verzinsung senkt den Barwert leicht, weil das Geld schneller wächst. Für 10.000 in 5 Jahren bei 5 %: jährlich 7.835,26, monatlich 7.792,05, täglich 7.788,14, stetig 7.788,01. Monatliche Verzinsung zu 5 % entspricht einem effektiven Jahreszins von 5,12 %.',
+  tool_present_value_faq_a3:
+    'Jede Zahlung kommt eine Periode früher, daher wird der Rentenanteil mit (1 + i) multipliziert. 500 monatlich über 10 Jahre bei 6 % sind heute 45.036,73 wert, wenn jeweils am Monatsende gezahlt wird (nachschüssig), und 45.036,73 × 1,005 = 45.261,91 bei Zahlung am Monatsanfang (vorschüssig).',
+  tool_present_value_faq_a4:
+    'Der Barwert gibt an, was künftiges Geld heute wert ist. Der Kapitalwert (Nettobarwert, NPV) zieht davon die Anfangsauszahlung einer Investition ab und erfasst meist ungleichmäßige Zahlungsströme Jahr für Jahr. Für ein Projekt mit Anfangsinvestition und schwankenden Rückflüssen nutzen Sie den Kapitalwert-Rechner (NPV).',
+  tool_present_value_faq_a5:
+    'Die Rendite, die Sie mit dem Geld sonst erzielen könnten: einen Tagesgeld- oder Festgeldzins für sicheres Geld, Ihren Kreditzins, wenn Sie stattdessen Schulden tilgen würden, oder eine geforderte Mindestrendite bei einer Investition. Um eine künftige Summe in heutiger Kaufkraft auszudrücken, nehmen Sie die Inflationsrate – 100.000 in 10 Jahren bei 3 % entsprechen heute 74.409,39.',
+  tool_present_value_faq_a6:
+    'Nein. Als 20 jährliche Zahlungen von 50.000, die erste sofort, ist er bei 5 % heute 654.266,04 wert (wählen Sie „Barwert (Wert heute)“, Zahlung 50.000, 20 Jahre und „Am Anfang jeder Periode (vorschüssig)“). Eine Sofortauszahlung über diesem Betrag ist bei diesem Zins – vor Steuern – das bessere Angebot.',
+  tool_present_value_faq_a7:
+    'Nutzen Sie =BW(Zins je Periode; Zzr; Rmz; Zw; F) – Zzr ist die Anzahl der Perioden, Rmz die Zahlung, Zw der künftige Wert. =BW(5%;5;0;10000) liefert −7.835,26 und =BW(6%/12;120;500) liefert −45.036,73; das Minuszeichen bedeutet nur, dass Geld abfließt. F = 1 steht für Zahlungen am Anfang jeder Periode.',
+  tool_present_value_faq_q1: 'Wie hoch ist der Barwert von 10.000 in 5 Jahren bei 5 %?',
+  tool_present_value_faq_q2: 'Wie wirkt sich die Verzinsungshäufigkeit auf den Barwert aus?',
+  tool_present_value_faq_q3: 'Was ändert sich bei vorschüssigen Zahlungen am Anfang jeder Periode?',
+  tool_present_value_faq_q4: 'Was ist der Unterschied zwischen Barwert und Kapitalwert (NPV)?',
+  tool_present_value_faq_q5: 'Welchen Abzinsungssatz (Kalkulationszins) sollte ich verwenden?',
+  tool_present_value_faq_q6: 'Ist ein Gewinn von 1.000.000, ausgezahlt über 20 Jahre, wirklich 1.000.000 wert?',
+  tool_present_value_faq_q7: 'Wie prüfe ich das Ergebnis mit der Excel-Funktion BW?',
+  tool_present_value_formula_body:
+    'Bei einem nominalen Jahreszins r, m Zinsperioden pro Jahr und t Jahren Laufzeit beträgt der Zinssatz je Periode i = r ÷ m und die Anzahl der Perioden N = m × t.',
+  tool_present_value_formula_item_1:
+    'Barwert einer Einmalzahlung: Barwert = Endwert ÷ (1 + i)^N. 1 ÷ (1 + i)^N ist der Abzinsungsfaktor (Diskontierungsfaktor).',
+  tool_present_value_formula_item_2: 'Endwert einer Einmalzahlung: Endwert = Barwert × (1 + i)^N; (1 + i)^N ist der Aufzinsungsfaktor.',
+  tool_present_value_formula_item_3:
+    'Nachschüssige Rente (Zahlung R am Ende jeder Periode): Rentenbarwert = R × (1 − (1 + i)^−N) ÷ i und Rentenendwert = R × ((1 + i)^N − 1) ÷ i.',
+  tool_present_value_formula_item_4:
+    'Vorschüssige Rente (Zahlung am Anfang jeder Periode): Den Rentenanteil zusätzlich mit (1 + i) multiplizieren.',
+  tool_present_value_formula_item_5:
+    'Stetige Verzinsung: Barwert = Endwert × e^(−r × t). Effektiver Jahreszins = (1 + r ÷ m)^m − 1, bei stetiger Verzinsung e^r − 1.',
+  tool_present_value_formula_title: 'Formeln für Barwert und Endwert',
+  tool_present_value_how_body:
+    'Beim Barwert wird Geld, das Sie später erhalten, auf heute abgezinst: Sie teilen für jede Periode einmal durch (1 + i). Der Endwert nutzt dieselbe Formel in umgekehrter Richtung (Aufzinsung). Regelmäßige Zahlungen kommen über die Rentenbarwert- bzw. Rentenendwertformel hinzu.',
+  tool_present_value_how_item_1:
+    'Wählen Sie Barwert oder Endwert und geben Sie die Einmalzahlung, die Zahlung je Periode oder beides ein.',
+  tool_present_value_how_item_2: 'Tragen Sie den Jahreszins und die Laufzeit in Jahren ein und legen Sie fest, wie oft verzinst wird.',
+  tool_present_value_how_item_3:
+    'Bei Zahlungen wählen Sie, ob sie am Ende jeder Periode anfallen (nachschüssig: Kredite, die meisten Renten) oder am Anfang (vorschüssig: Miete, Leasing, viele Lotterie-Renten).',
+  tool_present_value_how_item_4:
+    'Klicken Sie auf Berechnen und lesen Sie das Ergebnis, den Rechenweg mit Ihren Zahlen, den Zinscheck ±1 Prozentpunkt und die Entwicklung Jahr für Jahr ab.',
+  tool_present_value_how_title: 'So berechnen Sie den Barwert',
+  tool_present_value_lump_fv_tpl: 'Einmalzahlung: {a} × {g} = {v}',
+  tool_present_value_lump_pv_tpl: 'Einmalzahlung: {a} ÷ {g} = {v}',
+  tool_present_value_mode_fv: 'Endwert (Wert später)',
+  tool_present_value_mode_label: 'Was berechnen?',
+  tool_present_value_mode_pv: 'Barwert (Wert heute)',
+  tool_present_value_out_fv: 'Endwert',
+  tool_present_value_out_pv: 'Barwert',
+  tool_present_value_pmt_hint:
+    'Eine Zahlung pro Zinsperiode – bei monatlicher Verzinsung also monatliche Zahlungen. Leer lassen, wenn nur eine Einmalzahlung gerechnet wird. Bei stetiger Verzinsung nicht verfügbar.',
+  tool_present_value_pmt_label_fv: 'Einzahlung je Periode (optional)',
+  tool_present_value_pmt_label_pv: 'Zahlung je Periode, die Sie erhalten (optional)',
+  tool_present_value_pmt_ph: 'z. B. 500',
+  tool_present_value_rate_label: 'Jährlicher Zins- bzw. Abzinsungssatz (%)',
   tool_present_value_rate_ph: 'z. B. 5',
-  tool_present_value_ref_a_label: 'Investopedia',
-  tool_present_value_ref_b_label: 'Wikipedia',
-  tool_present_value_references: 'Investopedia und Lehrbuchformeln.',
-  tool_present_value_result_note: 'Bildungszweck.',
+  tool_present_value_rate_tpl:
+    'Zinssatz je Periode i = {r} ÷ {m} = {i}; Anzahl der Perioden N = {m} × {t} = {N}; Aufzinsungsfaktor (1 + i)^N = {g}.',
+  tool_present_value_ref_a_label: 'Investopedia — Present Value (PV), Barwert',
+  tool_present_value_ref_b_label: 'Microsoft Support — Funktion BW (PV)',
+  tool_present_value_references: 'Investopedia — Present Value (Barwert); Microsoft Support — Funktion BW.',
+  tool_present_value_result_note:
+    'Der Zinssatz ist ein nominaler Jahreszins, der mit der gewählten Häufigkeit verzinst wird. Beträge werden positiv eingegeben; Steuern und Gebühren sind nicht berücksichtigt.',
   tool_present_value_sample: 'Beispiel laden',
-  tool_present_value_title: 'Barwert-Rechner (PV/FV)',
-  tool_present_value_usecase_1: 'Homework.',
-  tool_present_value_usecase_2: 'Quick sketch.',
-  tool_present_value_usecase_3: 'Contrast with NPV for multi-year cash flows.',
-  tool_present_value_usecases_title: 'Wann sinnvoll',
+  tool_present_value_sens_label: 'Bei Zinsänderung um 1 Prozentpunkt',
+  tool_present_value_sens_tpl: 'bei {r1}: {v1} · bei {r2}: {v2}',
+  tool_present_value_sub_tpl: '{r} p. a. · Verzinsung: {comp} · Laufzeit (Jahre): {t}',
+  tool_present_value_sum_tpl: 'Summe: {a} + {b} = {v}',
+  tool_present_value_table_fv_note: 'So wächst der Kontostand aus dem heute angelegten Betrag und jeder Einzahlung.',
+  tool_present_value_table_pv_lump_note: 'Probe: Legen Sie den Barwert heute zu diesem Zins an – er wächst genau auf den künftigen Betrag.',
+  tool_present_value_table_pv_note:
+    'Probe: Legen Sie den Barwert heute zu diesem Zins an und entnehmen Sie jede Zahlung – der Kontostand endet genau beim künftigen Betrag.',
+  tool_present_value_timing_begin: 'Am Anfang jeder Periode (vorschüssig)',
+  tool_present_value_timing_end: 'Am Ende jeder Periode (nachschüssig)',
+  tool_present_value_timing_label: 'Zahlungszeitpunkt',
+  tool_present_value_title: 'Barwert berechnen — was eine künftige Summe oder regelmäßige Zahlungen heute wert sind, auch Endwert',
+  tool_present_value_total_fv_tpl: 'Sie zahlen insgesamt {total} ein; daraus werden {v}. Erwirtschaftete Zinsen: {d}.',
+  tool_present_value_total_label: 'Ein- und Auszahlungen',
+  tool_present_value_total_pv_tpl:
+    'Sie erhalten im Lauf der Zeit insgesamt {total}; heute ist das {v} wert. Die Differenz von {d} sind die Zinsen, die das Geld in der Zwischenzeit erwirtschaften könnte.',
+  tool_present_value_usecase_1:
+    'Sparziel: wie viel Sie heute anlegen müssen, um in 5 Jahren bei 5 % 10.000 zu haben (7.835,26) – oder was aus 5.000 plus 200 monatlich in 20 Jahren bei 7 % wird.',
+  tool_present_value_usecase_2:
+    'Lotteriegewinn oder Abfindung: 20 jährliche Zahlungen von 50.000, die erste sofort, sind bei 5 % heute 654.266,04 wert – vergleichen Sie das mit der angebotenen Einmalzahlung.',
+  tool_present_value_usecase_3:
+    'Inflation: Bei 3 % Inflation kaufen Sie mit 100.000 in 10 Jahren so viel wie heute mit 74.409,39 – geben Sie 3 % als Zinssatz ein.',
+  tool_present_value_usecase_4:
+    'Finanzmathematik in Studium und Ausbildung: Aufgaben zum Zeitwert des Geldes mit monatlicher Verzinsung, vorschüssiger Rente oder stetiger Verzinsung, jeder Schritt sichtbar.',
+  tool_present_value_usecases_title: 'Wann Sie den Rechner brauchen',
+  tool_present_value_why_choose_item_1:
+    'Der Rechenweg steht mit Ihren Zahlen da: Zinssatz je Periode, Anzahl der Perioden, Aufzinsungsfaktor und jeder Teil des Ergebnisses – praktisch für Übungsaufgaben in Finanzmathematik oder zum Abgleich mit Excel.',
+  tool_present_value_why_choose_item_2:
+    'Einmalzahlung und Rente in einer Rechnung – etwa der Barwert einer Rente, eines Leasingvertrags oder einer Lotterie-Rente, mit oder ohne Schlusszahlung.',
+  tool_present_value_why_choose_item_3:
+    'Alle Verzinsungsarten von jährlich bis täglich plus stetige Verzinsung, jeweils mit effektivem Jahreszins, damit Sie Angebote fair vergleichen können.',
+  tool_present_value_why_choose_item_4:
+    'Ein Zinscheck ±1 Prozentpunkt zeigt, wie stark das Ergebnis vom gewählten Abzinsungssatz abhängt – meist die unsicherste Annahme der ganzen Rechnung.',
+  tool_present_value_why_choose_item_5:
+    'Eine Tabelle Jahr für Jahr liefert die Probe: Barwert anlegen, Zahlungen entnehmen – und der Stand landet genau auf dem künftigen Betrag.',
+  tool_present_value_why_choose_title: 'Warum dieser Barwertrechner',
+  tool_present_value_work_label: 'Rechenweg',
+  tool_present_value_years_label: 'Laufzeit in Jahren',
+  tool_present_value_years_ph: 'z. B. 5',
   tool_print_pdf_advanced: 'Weitere Druckeinstellungen',
   tool_print_pdf_article: 'PDFs aus dem Webbrowser drucken',
   tool_print_pdf_blank_page: 'leer',
@@ -19929,49 +20496,152 @@ const de: SiteLangDict = {
   tool_product_design_prompt_builder_usecases_title: 'Passende Fälle',
   tool_product_design_prompt_builder_wireframe_scope_label: 'Wireframe / Umfang',
   tool_product_design_prompt_builder_wireframe_scope_ph: 'z. B. Wochenleiste, Detail-Sheet, SMS-Einladung…',
-  tool_profit_margin_article: 'Gewinnmargen-Rechner — Netto oder operativ',
+  tool_profit_margin_article:
+    'Gewinnmargen-Rechner für Bruttomarge, operative Marge und Nettomarge aus Umsatz und Kosten, mit prozentualer Kostenaufstellung, Vergleich mit dem Aufschlag und Verkaufspreis für jede Zielmarge.',
   tool_profit_margin_calculate: 'Berechnen',
   tool_profit_margin_clear: 'Leeren',
-  tool_profit_margin_cost_label: 'Kosten',
-  tool_profit_margin_cost_ph: 'z. B. 7000',
+  tool_profit_margin_cogs_label: 'Wareneinsatz (Kosten der verkauften Waren)',
+  tool_profit_margin_cogs_ph: 'z. B. 150000',
+  tool_profit_margin_col_amount: 'Betrag',
+  tool_profit_margin_col_item: 'Posten',
+  tool_profit_margin_col_share: 'Anteil am Umsatz',
+  tool_profit_margin_cost_label: 'Kosten pro Stück',
+  tool_profit_margin_cost_ph: 'z. B. 40',
   tool_profit_margin_description:
-    'Berechnen Sie Netto- oder operative Marge aus Umsatz und Kosten. Beispiel: Umsatz 10.000, Kosten 7.000 → Nettomarge 30%. Typ auf einer Seite. Bildungszweck.',
-  tool_profit_margin_disclaimer: 'Nur zur Veranschaulichung (margen) — keine Finanzberatung.',
-  tool_profit_margin_err_generic: 'Umsatz > 0 und Kosten ≥ 0.',
-  tool_profit_margin_example: 'Beispiel: Umsatz 10.000, Kosten 7.000 → Marge 30%.',
-  tool_profit_margin_example_title: 'Beispiel',
-  tool_profit_margin_faq_a1: '30%',
-  tool_profit_margin_faq_a2: 'Markup÷cost; margin÷revenue.',
-  tool_profit_margin_faq_a3: 'Same form; different cost stacks.',
-  tool_profit_margin_faq_a4: 'Educational only.',
-  tool_profit_margin_faq_q1: 'Beispielergebnis?',
-  tool_profit_margin_faq_q2: 'Markup vs margin?',
-  tool_profit_margin_faq_q3: 'Why two types?',
-  tool_profit_margin_faq_q4: 'Geschäftsberatung?',
-  tool_profit_margin_formula_body: 'Marge % = (Umsatz − Kosten) / Umsatz × 100. Hinweise:',
-  tool_profit_margin_formula_item_1: 'Kosten zur gewählten Definition passend wählen.',
-  tool_profit_margin_formula_item_2: 'Umsatz > 0.',
-  tool_profit_margin_formula_item_3: 'Vereinfachte GuV.',
-  tool_profit_margin_formula_title: 'Formel',
-  tool_profit_margin_how_body: 'Margentyp wählen, Umsatz und Kosten eingeben. Marge = Gewinn / Umsatz × 100.',
-  tool_profit_margin_how_title: 'So funktioniert’s',
-  tool_profit_margin_marginOut_label: 'Marge %',
-  tool_profit_margin_profitOut_label: 'Gewinn',
-  tool_profit_margin_ref_a_label: 'Investopedia — Profit margin',
-  tool_profit_margin_ref_b_label: 'Investopedia — Operating margin',
-  tool_profit_margin_references: 'Investopedia und Lehrbuchformeln.',
-  tool_profit_margin_result_note: 'Marge = Gewinn ÷ Umsatz. Bildungszweck.',
-  tool_profit_margin_rev_label: 'Umsatz',
-  tool_profit_margin_rev_ph: 'z. B. 10000',
+    'Gewinnmarge berechnen aus Umsatz und Kosten: Bruttomarge, operative Marge und Nettomarge (Umsatzrendite) mit Formel und Rechenweg je Schritt, dazu eine Aufstellung, wie sich je 100 Umsatz verteilen. Oder aus Kosten und Zielmarge den Verkaufspreis berechnen – mit Beispielen.',
+  tool_profit_margin_disclaimer:
+    'Nur zur allgemeinen Information und Weiterbildung – keine Buchhaltungs-, Steuer-, Finanz- oder Anlageberatung. Die Ergebnisse hängen davon ab, wie Sie Kosten zuordnen; Rechnungslegungsstandards und Steuerregeln unterscheiden sich von Land zu Land. Lassen Sie wichtige Entscheidungen von Ihrem Steuerberater oder einer qualifizierten Fachkraft für Rechnungswesen prüfen.',
+  tool_profit_margin_err_cost: 'Geben Sie Kosten pro Stück größer als 0 ein.',
+  tool_profit_margin_err_neg:
+    'Wareneinsatz und Betriebskosten dürfen nicht negativ sein. Erstattungen oder sonstige Erträge tragen Sie stattdessen als negativen Betrag im letzten Feld ein.',
+  tool_profit_margin_err_num: 'Bitte nur Zahlen eingeben, zum Beispiel 12500 oder 12.500,50 – ohne Währungszeichen oder Buchstaben.',
+  tool_profit_margin_err_rev:
+    'Geben Sie einen Umsatz größer als 0 ein. Die Marge ist ein Anteil am Umsatz und lässt sich ohne Umsatz nicht berechnen.',
+  tool_profit_margin_err_target:
+    'Geben Sie eine Zielmarge von 0 bis unter 100 % ein. Eine Marge von 100 % hieße, dass der Artikel nichts gekostet hat.',
+  tool_profit_margin_example:
+    'Ein Unternehmen mit 250.000 Umsatz, 150.000 Wareneinsatz, 60.000 Betriebskosten und 12.000 Zinsen und Steuern erzielt 100.000 Rohertrag (40 % Bruttomarge), 40.000 operativen Gewinn (16 % operative Marge) und 28.000 Nettogewinn (11,20 % Nettomarge) – von je 100 Umsatz bleiben also 11,20 als Gewinn. Der Rohertrag entspricht einem Aufschlag von 66,67 % auf die 150.000 Wareneinsatz. Ein zweiter Laden mit 80.000 Umsatz, 52.000 Wareneinsatz und 31.000 Betriebskosten hat zwar 35 % Bruttomarge, macht aber 3.000 Verlust, also eine Nettomarge von −3,75 %. Für 25 % Marge auf einen Artikel, der 40 kostet, muss der Preis 40 ÷ 0,75 = 53,33 betragen; wer 40 + 25 % = 50 ansetzt, erreicht nur 20 % Marge.',
+  tool_profit_margin_example_title: 'Rechenbeispiel',
+  tool_profit_margin_faq_a1:
+    'Teilen Sie den Gewinn durch den Umsatz und multiplizieren Sie mit 100. Bei 250.000 Umsatz und 28.000 Nettogewinn beträgt die Nettomarge 28.000 ÷ 250.000 × 100 = 11,2 %. Für die Bruttomarge nehmen Sie Umsatz minus Wareneinsatz als Gewinn, für die operative Marge ziehen Sie zusätzlich die Betriebskosten ab.',
+  tool_profit_margin_faq_a2:
+    'Beide gehen vom selben Gewinn aus. Die Handelsspanne teilt ihn durch den Verkaufspreis, der Aufschlag (Kalkulationsaufschlag) durch die Kosten. Ein Artikel, der 40 kostet und für 53,33 verkauft wird, bringt 13,33 Gewinn: Das sind 25 % Handelsspanne, aber 33,33 % Aufschlag. Umrechnen lässt sich das mit Aufschlag = Marge ÷ (1 − Marge) bzw. Marge = Aufschlag ÷ (1 + Aufschlag).',
+  tool_profit_margin_faq_a3:
+    'Sie unterscheiden sich darin, wie viele Kosten abgezogen werden. Die Bruttomarge (Rohertragsmarge) zieht nur den Wareneinsatz bzw. die direkten Kosten der verkauften Leistung ab. Die operative Marge berücksichtigt zusätzlich laufende Kosten wie Miete, Personal, Marketing, Software und Abschreibungen. Die Nettomarge zieht alles ab, auch Zinsen und Ertragsteuern. Im Rechenbeispiel liegen die drei Werte bei 40 %, 16 % und 11,2 %.',
+  tool_profit_margin_faq_a4:
+    'Teilen Sie die Kosten durch eins minus Marge: Preis = Kosten ÷ (1 − Marge). Für 25 % Marge bei 40 Kosten ergibt das 40 ÷ 0,75 = 53,33. Ein häufiger Fehler ist, 25 % auf die Kosten aufzuschlagen (40 × 1,25 = 50): Das ist ein Aufschlag von 25 % und entspricht nur 20 % Marge.',
+  tool_profit_margin_faq_a5:
+    'Das hängt stark von der Branche ab. Lebensmittelhändler und viele andere Einzelhändler arbeiten oft mit Nettomargen im niedrigen einstelligen Prozentbereich, während Softwareanbieter und manche Dienstleister 20 % oder mehr erreichen können. Vergleichen Sie sich mit Betrieben derselben Branche und mit Ihren eigenen Vorjahren statt mit einer pauschalen Zahl.',
+  tool_profit_margin_faq_a6:
+    'Die operative Marge liegt nahe an der EBIT-Marge (Ergebnis vor Zinsen und Steuern), wobei das EBIT auch nicht operative Erträge enthalten kann. Bei der EBITDA-Marge werden Abschreibungen wieder hinzugerechnet. Enthielten die 60.000 Betriebskosten im Beispiel 8.000 Abschreibungen, läge das EBITDA bei 48.000 und die EBITDA-Marge bei 19,2 % – gegenüber 16 % operativer Marge.',
+  tool_profit_margin_faq_a7:
+    'Negativ wird sie, sobald die Kosten den Umsatz übersteigen: 80.000 Umsatz bei 83.000 Kosten ergeben eine Nettomarge von −3,75 %. Über 100 % kann sie nicht steigen, solange die Kosten null oder positiv sind, denn der Gewinn kann nie größer als der Umsatz sein. Beim Aufschlag gibt es diese Grenze nicht – 150 % Aufschlag sind bei manchen Waren üblich.',
+  tool_profit_margin_faq_q1: 'Wie berechnet man die Gewinnmarge?',
+  tool_profit_margin_faq_q2: 'Was ist der Unterschied zwischen Marge (Handelsspanne) und Aufschlag?',
+  tool_profit_margin_faq_q3: 'Was unterscheidet Bruttomarge, operative Marge und Nettomarge?',
+  tool_profit_margin_faq_q4: 'Wie berechne ich den Verkaufspreis aus einer Zielmarge?',
+  tool_profit_margin_faq_q5: 'Welche Umsatzrendite ist gut?',
+  tool_profit_margin_faq_q6: 'Ist die operative Marge dasselbe wie die EBIT- oder EBITDA-Marge?',
+  tool_profit_margin_faq_q7: 'Kann die Gewinnmarge negativ sein oder über 100 % liegen?',
+  tool_profit_margin_formula_body:
+    'Jede Marge hat den Umsatz als Nenner. Unterschiedlich ist nur, wie viele Kosten vor der Division abgezogen werden.',
+  tool_profit_margin_formula_item_1:
+    'Bruttomarge = (Umsatz − Wareneinsatz) ÷ Umsatz × 100. Beispiel: (250.000 − 150.000) ÷ 250.000 = 40 %.',
+  tool_profit_margin_formula_item_2:
+    'Operative Marge = (Rohertrag − Betriebskosten) ÷ Umsatz × 100. Beispiel: (100.000 − 60.000) ÷ 250.000 = 16 %.',
+  tool_profit_margin_formula_item_3:
+    'Nettomarge (Umsatzrendite) = (operativer Gewinn − Zinsen, Steuern und Sonstiges) ÷ Umsatz × 100. Beispiel: (40.000 − 12.000) ÷ 250.000 = 11,2 %.',
+  tool_profit_margin_formula_item_4: 'Preis für eine Zielmarge = Kosten ÷ (1 − Marge). Beispiel: 40 ÷ (1 − 0,25) = 53,33.',
+  tool_profit_margin_formula_item_5:
+    'Umrechnung zwischen Marge und Aufschlag: Aufschlag = Marge ÷ (1 − Marge) und Marge = Aufschlag ÷ (1 + Aufschlag). Eine Marge von 25 % entspricht einem Aufschlag von 33,33 %, ein Aufschlag von 50 % einer Marge von 33,33 %.',
+  tool_profit_margin_formula_title: 'Formeln für die Gewinnmarge',
+  tool_profit_margin_gross_label: 'Bruttomarge',
+  tool_profit_margin_gross_tpl: '{p} Rohertrag ÷ {r} Umsatz = {m}',
+  tool_profit_margin_hint_price:
+    'Kosten pro Stück sind alles, was Sie für Herstellung oder Einkauf eines Artikels zahlen. Die Zielmarge muss mindestens 0 % betragen und unter 100 % liegen.',
+  tool_profit_margin_hint_statement:
+    'Alle Zahlen sollten denselben Zeitraum betreffen. Leere Kostenfelder zählen als 0; überwiegen sonstige Erträge die Zinsen und Steuern, tragen Sie im letzten Feld einen negativen Betrag ein.',
+  tool_profit_margin_how_body:
+    'Die Gewinnmarge ist der Gewinn geteilt durch den Umsatz, ausgedrückt in Prozent. Wählen Sie, was Sie ermitteln möchten, tragen Sie Ihre Zahlen ein und klicken Sie auf Berechnen – das Ergebnis zeigt den Rechenweg für jeden Schritt.',
+  tool_profit_margin_how_item_1:
+    'Wählen Sie „Meine Margen aus Umsatz und Kosten“, um Ihre Margen zu sehen, oder „Den Verkaufspreis für eine Zielmarge“, um einen Preis festzulegen.',
+  tool_profit_margin_how_item_2:
+    'Für Margen tragen Sie Umsatz, Wareneinsatz, Betriebskosten sowie Zinsen, Steuern und Sonstiges für denselben Monat, dasselbe Quartal oder dasselbe Jahr ein. Felder, für die Sie keine Zahl haben, lassen Sie leer.',
+  tool_profit_margin_how_item_3:
+    'Für einen Preis geben Sie an, was Sie ein Stück kostet und welche Marge Sie erzielen möchten, zum Beispiel 25.',
+  tool_profit_margin_how_item_4:
+    'Oben lesen Sie die Nettomarge bzw. den Preis ab, darunter Bruttomarge, operative Marge und Nettomarge, den passenden Aufschlag und die Tabelle, wie sich je 100 Umsatz verteilen.',
+  tool_profit_margin_how_title: 'So berechnen Sie die Gewinnmarge mit diesem Rechner',
+  tool_profit_margin_line_cogs: '− Wareneinsatz',
+  tool_profit_margin_line_gross: '= Rohertrag (Bruttogewinn)',
+  tool_profit_margin_line_net: '= Nettogewinn',
+  tool_profit_margin_line_op: '= Operativer Gewinn',
+  tool_profit_margin_line_opex: '− Betriebskosten',
+  tool_profit_margin_line_other: '− Zinsen, Steuern und Sonstiges',
+  tool_profit_margin_line_rev: 'Umsatz',
+  tool_profit_margin_markup_label: 'Derselbe Verkauf als Aufschlag',
+  tool_profit_margin_markup_none: 'nicht definiert, weil der Wareneinsatz 0 ist',
+  tool_profit_margin_markup_price_tpl: '{u} Gewinn ÷ {c} Kosten = {k} Aufschlag auf die Kosten',
+  tool_profit_margin_markup_tpl: '{p} Rohertrag ÷ {c} Wareneinsatz = {m} Aufschlag auf die Kosten',
+  tool_profit_margin_mode_label: 'Was möchten Sie berechnen?',
+  tool_profit_margin_mode_price: 'Den Verkaufspreis für eine Zielmarge',
+  tool_profit_margin_mode_statement: 'Meine Margen aus Umsatz und Kosten',
+  tool_profit_margin_net_label: 'Nettomarge',
+  tool_profit_margin_net_tpl: '{p} Nettogewinn ÷ {r} Umsatz = {m}',
+  tool_profit_margin_op_label: 'Operative Marge',
+  tool_profit_margin_op_tpl: '{p} operativer Gewinn ÷ {r} Umsatz = {m}',
+  tool_profit_margin_opex_label: 'Betriebskosten',
+  tool_profit_margin_opex_ph: 'z. B. 60000',
+  tool_profit_margin_other_label: 'Zinsen, Steuern und Sonstiges (netto)',
+  tool_profit_margin_other_ph: 'z. B. 12000',
+  tool_profit_margin_out_net: 'Nettomarge (Umsatzrendite)',
+  tool_profit_margin_out_price: 'Verkaufspreis',
+  tool_profit_margin_profit_label: 'Gewinn pro Stück',
+  tool_profit_margin_profit_tpl: '{p} Preis − {c} Kosten = {u}',
+  tool_profit_margin_ref_a_label: 'Investopedia — Profit margin (Gewinnmarge)',
+  tool_profit_margin_ref_b_label: 'Investopedia — Operating margin (operative Marge)',
+  tool_profit_margin_references:
+    'Die Formeln folgen den üblichen GuV-Definitionen von Rohertrag, operativem Ergebnis und Jahresüberschuss; Definitionen und Beispiele finden Sie bei Investopedia (englisch).',
+  tool_profit_margin_result_note_price:
+    'Preis = Kosten ÷ (1 − Marge). Die Marge (Handelsspanne) bezieht den Gewinn auf den Verkaufspreis, der Aufschlag auf die Kosten – derselbe Gewinn ergibt deshalb immer einen höheren Aufschlag als eine Marge.',
+  tool_profit_margin_result_note_statement:
+    'Margen sind Anteile am Umsatz. Die Bruttomarge berücksichtigt nur die direkten Kosten der verkauften Ware, die operative Marge zieht zusätzlich die laufenden Betriebskosten ab, und die Nettomarge zeigt, was nach allen Kosten einschließlich Zinsen und Steuern übrig bleibt.',
+  tool_profit_margin_rev_label: 'Umsatz (Umsatzerlöse)',
+  tool_profit_margin_rev_ph: 'z. B. 250000',
   tool_profit_margin_sample: 'Beispiel laden',
-  tool_profit_margin_title: 'Gewinnmargen-Rechner — Netto oder operativ',
-  tool_profit_margin_type_label: 'Margentyp',
-  tool_profit_margin_type_net: 'Nettomarge',
-  tool_profit_margin_type_op: 'Operative Marge',
-  tool_profit_margin_usecase_1: 'Übung Nettomarge.',
-  tool_profit_margin_usecase_2: 'Operativ vs Netto vergleichen.',
-  tool_profit_margin_usecase_3: 'Mit Bruttomarge kontrastieren.',
-  tool_profit_margin_usecases_title: 'Wann sinnvoll',
+  tool_profit_margin_sub_keep_tpl: 'Von je 100 Umsatz bleiben {v} als Nettogewinn.',
+  tool_profit_margin_sub_loss_tpl: 'Die Kosten übersteigen den Umsatz: Je 100 Umsatz entsteht ein Verlust von {v}.',
+  tool_profit_margin_sub_price_tpl: 'Pro Verkauf bleiben Ihnen {u} – das sind {m} des Verkaufspreises.',
+  tool_profit_margin_table_caption: 'Wie sich je 100 Umsatz verteilen',
+  tool_profit_margin_target_label: 'Zielmarge (%)',
+  tool_profit_margin_target_ph: 'z. B. 25',
+  tool_profit_margin_title:
+    'Gewinnmarge berechnen — wie viel von jedem Umsatz als Gewinn bleibt und welcher Preis die Zielmarge bringt',
+  tool_profit_margin_trap_label: 'Häufiger Fehler',
+  tool_profit_margin_trap_tpl:
+    'Wer {m} einfach als Aufschlag auf die Kosten rechnet, kommt auf {c} × (1 + {m}) = {w} – das sind nur {x} Marge und {d} weniger Gewinn pro Stück.',
+  tool_profit_margin_usecase_1:
+    'Kalkulation: einen Verkaufspreis festlegen, der die gewünschte Marge wirklich bringt, statt den Prozentsatz einfach auf die Kosten aufzuschlagen.',
+  tool_profit_margin_usecase_2:
+    'Selbstständige und kleine Unternehmen: aus einer monatlichen oder jährlichen Gewinn- und Verlustrechnung (GuV) Bruttomarge, operative Marge und Umsatzrendite ermitteln und sehen, welcher Kostenblock den größten Anteil am Umsatz hat.',
+  tool_profit_margin_usecase_3:
+    'Ausbildung und Studium: Lösungen in BWL und Rechnungswesen zu Brutto-, operativer und Nettomarge prüfen und die Umrechnung zwischen Marge und Aufschlag üben.',
+  tool_profit_margin_usecase_4:
+    'Unternehmen oder Zeiträume vergleichen: zwei unterschiedlich große GuVs auf denselben Maßstab bringen, weil Margen Anteile am Umsatz sind und keine absoluten Beträge.',
+  tool_profit_margin_usecases_title: 'Wofür sich der Gewinnmargen-Rechner eignet',
+  tool_profit_margin_why_choose_item_1:
+    'Der Rohertrag zusätzlich als Aufschlag auf den Wareneinsatz – die Kennzahl, mit der viele Händler und Handwerksbetriebe ihre Preise kalkulieren.',
+  tool_profit_margin_why_choose_item_2:
+    'Alle drei Margen aus einem Zahlensatz: Bruttomarge, operative Marge und Nettomarge, jeweils mit ausgeschriebener Division.',
+  tool_profit_margin_why_choose_item_3:
+    'Eine Aufstellung in Prozent vom Umsatz, an der Sie sofort sehen, ob Wareneinsatz oder Betriebskosten den größeren Teil der Marge aufzehren.',
+  tool_profit_margin_why_choose_item_4:
+    'Ein Modus für den Preis aus der Zielmarge, der auch zeigt, was Sie tatsächlich verdienen würden, wenn Sie die Marge als Aufschlag auf die Kosten rechnen.',
+  tool_profit_margin_why_choose_item_5:
+    'Verluste werden klar ausgewiesen: Eine negative Marge sagt Ihnen, wie viel Sie je 100 Umsatz verlieren, statt nur eine Fehlermeldung zu zeigen.',
+  tool_profit_margin_why_choose_title: 'Was dieser Gewinnmargen-Rechner zeigt',
+  tool_profit_margin_work_label: 'Rechenweg',
+  tool_profit_margin_work_price_tpl: 'Preis = Kosten ÷ (1 − Marge) = {c} ÷ (1 − {m}) = {p}',
   tool_prompt_template_builder_ai_consent_body:
     'Dieser optionale Schritt schickt Ihren aktuellen Entwurf zur Inferenz an Cloudflare Workers AI. Von unseren Servern geht nichts an OpenAI, Google, Anthropic oder DeepSeek. Ohne KI funktioniert der lokale Zusammenbau unverändert.',
   tool_prompt_template_builder_ai_consent_cancel: 'Abbrechen',
@@ -22413,42 +23083,124 @@ const de: SiteLangDict = {
     'Mit Product design prompt builder vergleichen, wenn Persona/Wireframe statt Sketch.app-Menüs gebraucht werden.',
   tool_sketch_prompt_generator_usecase_4: 'Sensible Entwürfe lokal halten — KI nur nach Zustimmung.',
   tool_sketch_prompt_generator_usecases_title: 'Gute Passungen',
-  tool_slope_article: 'Berechnen Sie die Steigung m zwischen zwei Punkten mit (y₂−y₁)/(x₂−x₁).',
+  tool_slope_angle_label: 'Steigungswinkel',
+  tool_slope_article: 'Steigung einer Geraden',
   tool_slope_calculate: 'Berechnen',
   tool_slope_clear: 'Leeren',
+  tool_slope_coords_hint: 'Ganze Zahlen, Dezimalzahlen mit Komma (z. B. 0,5) oder Brüche wie 3/4 und -5/2 sind möglich.',
   tool_slope_description:
-    'Berechnen Sie die Steigung m=(y₂−y₁)/(x₂−x₁) zwischen zwei Punkten. Beispiel: (1,2) und (3,6) → m=2. Lehnt Vertikale mit Δx=0 ab. Im Browser für Algebra.',
-  tool_slope_disclaimer: 'Nur 2D-Lernsteigung — kein vollständiger Geradenlöser.',
-  tool_slope_err_generic: 'Vier endliche Koordinaten mit x₂≠x₁ eingeben.',
-  tool_slope_example: 'Beispiel: (1,2) und (3,6) → m=2.',
+    'Steigung einer Geraden berechnen: aus zwei Punkten oder aus einem Punkt und der Steigung, mit exakten Brüchen und vollständigem Rechenweg. Dazu erhalten Sie die Geradengleichung in Normalform, Punkt-Steigungs-Form und Koordinatenform, die Achsenschnittpunkte, den Steigungswinkel, die Steigung in Prozent, die Steigung der Senkrechten, den Abstand und den Mittelpunkt.',
+  tool_slope_dir_down: 'Negative Steigung — die Gerade fällt von links nach rechts.',
+  tool_slope_dir_flat: 'Steigung 0 — eine waagerechte Gerade.',
+  tool_slope_dir_up: 'Positive Steigung — die Gerade steigt von links nach rechts.',
+  tool_slope_dir_vert: 'Senkrechte Gerade: x₂ − x₁ = 0, und durch null kann man nicht teilen.',
+  tool_slope_disclaimer:
+    'Für Schule, Studium und Planung. Bauvorschriften für Rampen, Treppen und Dächer legen eigene Grenzwerte und Messregeln fest — prüfen Sie die Norm, die für Ihr Vorhaben gilt.',
+  tool_slope_dist_label: 'Abstand der beiden Punkte',
+  tool_slope_eq_ps_label: 'Punkt-Steigungs-Form',
+  tool_slope_eq_si_label: 'Normalform',
+  tool_slope_eq_std_label: 'Koordinatenform',
+  tool_slope_err_empty_ps: 'Geben Sie x₁, y₁ und die Steigung m ein.',
+  tool_slope_err_empty_two: 'Geben Sie alle vier Koordinaten ein: x₁, y₁, x₂ und y₂.',
+  tool_slope_err_num:
+    '„{v}“ ist keine Zahl. Verwenden Sie Ziffern, ein Komma als Dezimalzeichen (z. B. 0,5) oder einen Bruch wie 3/4.',
+  tool_slope_err_same:
+    'Die beiden Punkte sind gleich, daher geht keine eindeutige Gerade durch sie. Geben Sie zwei verschiedene Punkte ein.',
+  tool_slope_example:
+    'Beispiel: (1; 2) und (3; 6). m = (6 − 2) ÷ (3 − 1) = 4 ÷ 2 = 2 und b = 2 − 2 × 1 = 0, also y = 2x (Koordinatenform 2x − y = 0). Der Steigungswinkel ist arctan(2) = 63,43°, die Steigung in Prozent 200 %, die Steigung der Senkrechten −1/2, der Abstand √20 = 2√5 ≈ 4,4721 und der Mittelpunkt (2; 4). Klicken Sie erneut auf „Beispiel laden“ für (−2; 3) und (4; −1) und danach für eine Rampe 1 : 12.',
   tool_slope_example_title: 'Beispiel',
-  tool_slope_faq_a1: 'Pro +1 in x steigt y um 2.',
-  tool_slope_faq_a2: 'Steigung undefiniert (vertikal); hier Fehler.',
-  tool_slope_faq_a3: 'Vertauschen beider Punkte lässt m gleich.',
-  tool_slope_faq_a4: 'Ja — m=0 wenn y₁=y₂ und x verschieden.',
-  tool_slope_faq_q1: 'Was bedeutet m=2?',
-  tool_slope_faq_q2: 'Wenn x₁=x₂?',
-  tool_slope_faq_q3: 'Reihenfolge der Punkte?',
-  tool_slope_faq_q4: 'Horizontale Gerade?',
-  tool_slope_formula_body: 'Steigung zwischen zwei Punkten:',
-  tool_slope_formula_item_1: 'm=(y₂−y₁)/(x₂−x₁).',
-  tool_slope_formula_item_2: 'm>0 steigt links→rechts; m<0 fällt.',
-  tool_slope_formula_item_3: 'Δx=0 ist vertikal — hier undefiniert.',
-  tool_slope_formula_item_4: 'Vertauschen beider Punkte lässt das Verhältnis gleich.',
-  tool_slope_formula_title: 'Formel',
-  tool_slope_how_body: 'Geben Sie zwei verschiedene Punkte ein. Liefert die Steigung; bei gleichen x-Werten Fehler.',
-  tool_slope_how_title: 'So funktioniert’s',
-  tool_slope_ref_line_label: 'Wikipedia — Lineare Gleichung',
-  tool_slope_ref_slope_label: 'Wikipedia — Steigung',
-  tool_slope_references: 'Wikipedia Steigung.',
-  tool_slope_result_note: 'm=(y₂−y₁)/(x₂−x₁). Vertikale (Δx=0) werden als undefiniert abgelehnt.',
+  tool_slope_faq_a1:
+    'Ziehen Sie die y-Werte voneinander ab, dann die x-Werte in derselben Reihenfolge, und teilen Sie: Für (1; 2) und (3; 6) gilt m = (6 − 2) ÷ (3 − 1) = 4 ÷ 2 = 2. Die Gerade steigt also um 2 Einheiten pro Schritt nach rechts.',
+  tool_slope_faq_a2:
+    'Positiv: Die Gerade steigt von links nach rechts. Negativ: Sie fällt. Null: Sie verläuft waagerecht (y₁ = y₂). Nicht definiert: Sie verläuft senkrecht (x₁ = x₂), weil der Nenner 0 ist und man durch null nicht teilen kann — die Gleichung lautet dann x = c.',
+  tool_slope_faq_a3:
+    'Berechnen Sie m und setzen Sie einen Punkt in y = mx + b ein, um b zu erhalten. Für (−2; 3) und (4; −1): m = −4 ÷ 6 = −2/3 und b = 3 − (−2/3)(−2) = 5/3, also y = −(2/3)x + 5/3. Mit 3 multipliziert ergibt sich die Koordinatenform 2x + 3y = 5.',
+  tool_slope_faq_a4:
+    'Winkel = arctan(m) und Steigung in Prozent = m × 100 %. m = 2 entspricht 63,43° und 200 %; m = 1/12 entspricht 4,76° und 8,33 %. 100 % Steigung heißt Höhe gleich Länge, also 45° — keine senkrechte Wand.',
+  tool_slope_faq_a5:
+    'Nein. Vertauschen Sie die Punkte, ändern beide Differenzen ihr Vorzeichen und der Quotient bleibt gleich: (2 − 6) ÷ (1 − 3) = 2 ebenfalls. Wichtig ist nur, oben und unten dieselbe Reihenfolge zu verwenden; gemischt erhalten Sie das falsche Vorzeichen.',
+  tool_slope_faq_a6:
+    'Den negativen Kehrwert, −1 ÷ m. Für m = −2/3 ist das 3/2, denn (−2/3) × (3/2) = −1. Eine waagerechte Gerade (m = 0) steht senkrecht auf jeder senkrechten Geraden, deren Steigung nicht definiert ist.',
+  tool_slope_faq_a7:
+    '1 Einheit Höhe auf 12 Einheiten waagerechte Länge, also m = 1/12 ≈ 0,0833, 8,33 % Steigung und ein Winkel von 4,76°. Wählen Sie „Ein Punkt und die Steigung“, geben Sie x₁ = 0, y₁ = 0 und m = 1/12 ein und klicken Sie auf „Berechnen“; die Seite zeigt Verhältnis, Prozentwert und einen zweiten Punkt (12; 1).',
+  tool_slope_faq_q1: 'Wie berechnet man die Steigung aus zwei Punkten?',
+  tool_slope_faq_q2: 'Was bedeuten positive, negative, Null- und nicht definierte Steigung?',
+  tool_slope_faq_q3: 'Wie stelle ich die Geradengleichung durch zwei Punkte auf?',
+  tool_slope_faq_q4: 'Wie rechne ich eine Steigung in einen Winkel oder in Prozent um?',
+  tool_slope_faq_q5: 'Spielt es eine Rolle, welchen Punkt ich als ersten nehme?',
+  tool_slope_faq_q6: 'Welche Steigung hat eine dazu senkrechte Gerade?',
+  tool_slope_faq_q7: 'Was bedeutet eine Steigung von 1 : 12?',
+  tool_slope_formula_body:
+    'Für zwei Punkte P(x₁; y₁) und Q(x₂; y₂) mit x₁ ≠ x₂ (in vielen Schulbüchern auch P(x₁|y₁) geschrieben):',
+  tool_slope_formula_item_1:
+    'Steigung (Differenzenquotient): m = (y₂ − y₁) ÷ (x₂ − x₁) — Höhenunterschied durch Längenunterschied im Steigungsdreieck.',
+  tool_slope_formula_item_2:
+    'Geradengleichung: y = mx + b mit b = y₁ − m · x₁; Punkt-Steigungs-Form y − y₁ = m(x − x₁). Je nach Bundesland und Schulbuch heißt der y-Achsenabschnitt auch n (y = mx + n) oder t (y = mx + t) — gemeint ist dasselbe b.',
+  tool_slope_formula_item_3:
+    'Steigungswinkel α = arctan(m), im Ergebnis als θ angezeigt; Steigung in Prozent = m × 100 %. 100 % Steigung entsprechen 45°, nicht einer senkrechten Wand.',
+  tool_slope_formula_item_4:
+    'Parallele Geraden haben dieselbe Steigung; bei zueinander senkrechten (orthogonalen) Geraden ist das Produkt der Steigungen −1, also m⊥ = −1 ÷ m.',
+  tool_slope_formula_item_5: 'Abstand d = √((x₂ − x₁)² + (y₂ − y₁)²); Mittelpunkt ((x₁ + x₂) ÷ 2; (y₁ + y₂) ÷ 2).',
+  tool_slope_formula_title: 'Formeln zur Steigung',
+  tool_slope_grade_label: 'Steigung in Prozent',
+  tool_slope_how_body:
+    'Die Steigung ist Höhenunterschied durch Längenunterschied, wie im Steigungsdreieck: Ziehen Sie die y-Werte voneinander ab, dann die x-Werte in derselben Reihenfolge, und teilen Sie. Setzen Sie anschließend einen Punkt in y = mx + b ein, um den y-Achsenabschnitt b zu bestimmen.',
+  tool_slope_how_item_1: 'Wählen Sie „Zwei Punkte“ – oder „Ein Punkt und die Steigung“, wenn Sie m bereits kennen.',
+  tool_slope_how_item_2:
+    'Tragen Sie die Koordinaten ein — negative Zahlen, Dezimalzahlen mit Komma und Brüche wie 3/4 sind erlaubt.',
+  tool_slope_how_item_3:
+    'Klicken Sie auf „Berechnen“: m erscheint als gekürzter Bruch und als Dezimalzahl, die Differenzen sind ausgeschrieben.',
+  tool_slope_how_item_4:
+    'Übernehmen Sie die Geradengleichung in der Form, die Ihr Unterricht verwendet, und lesen Sie bei Bedarf Achsenschnittpunkte, Steigungswinkel, Steigung in Prozent, Steigung der Senkrechten, Abstand und Mittelpunkt ab.',
+  tool_slope_how_title: 'So berechnen Sie die Steigung aus zwei Punkten',
+  tool_slope_int_flat_tpl:
+    'Schnittpunkt mit der y-Achse (0; {b}); kein Schnittpunkt mit der x-Achse — die Gerade verläuft parallel zur x-Achse.',
+  tool_slope_int_label: 'Schnittpunkte mit den Achsen',
+  tool_slope_int_tpl: 'Schnittpunkt mit der y-Achse (0; {b}); Schnittpunkt mit der x-Achse ({a}; 0)',
+  tool_slope_int_vert_tpl:
+    'Schnittpunkt mit der x-Achse ({a}; 0); kein Schnittpunkt mit der y-Achse — die Gerade verläuft parallel zur y-Achse.',
+  tool_slope_int_xaxis: 'Die Gerade ist die x-Achse selbst (y = 0).',
+  tool_slope_int_yaxis: 'Die Gerade ist die y-Achse selbst (x = 0).',
+  tool_slope_m_label: 'Steigung m',
+  tool_slope_m_ph: 'z. B. 2 oder -3/4',
+  tool_slope_mid_label: 'Mittelpunkt',
+  tool_slope_mode_label: 'Was ist gegeben?',
+  tool_slope_mode_ps: 'Ein Punkt und die Steigung',
+  tool_slope_mode_two: 'Zwei Punkte',
+  tool_slope_no_si: 'Keine — eine senkrechte Gerade lässt sich nicht als y = mx + b schreiben.',
+  tool_slope_perp_label: 'Steigung der Senkrechten',
+  tool_slope_perp_vert: 'Nicht definiert — jede senkrechte Gerade',
+  tool_slope_point2_label: 'Weiterer Punkt auf der Geraden',
+  tool_slope_ratio_label: 'Steigungsverhältnis (Höhe : Länge)',
+  tool_slope_ref_line_label: 'Wikipedia — Linear equation (lineare Gleichung, englisch)',
+  tool_slope_ref_slope_label: 'Wikipedia — Slope (Steigung, englisch)',
+  tool_slope_references: 'Wikipedia — Slope (Steigung, englisch); Wikipedia — Linear equation (lineare Gleichung, englisch).',
+  tool_slope_result_note: 'Brüche bleiben exakt und gekürzt; Dezimalzahlen nach ≈ sind auf 4 Nachkommastellen gerundet.',
   tool_slope_sample: 'Beispiel laden',
   tool_slope_slopeOut_label: 'Steigung m',
-  tool_slope_title: 'Steigungsrechner — Steigung zwischen zwei Punkten',
-  tool_slope_usecase_1: 'Algebra: Steigung aus zwei Punkten.',
-  tool_slope_usecase_2: 'Rise/Run vor dem Zeichnen prüfen.',
-  tool_slope_usecase_3: 'Mit Δy:Δx-Aspektgedanken vergleichen.',
-  tool_slope_usecases_title: 'Wann sinnvoll',
+  tool_slope_title: 'Steigung berechnen — Steigung aus zwei Punkten und Geradengleichung, mit Rechenweg',
+  tool_slope_undefined: 'Nicht definiert',
+  tool_slope_usecase_1:
+    'Hausaufgaben zu linearen Funktionen und analytischer Geometrie: Steigung, Geradengleichung und Achsenschnittpunkte aus zwei gegebenen Punkten — mit Rechenweg zum Nachvollziehen.',
+  tool_slope_usecase_2:
+    'Rampen und Barrierefreiheit: Eine Rampe 1 : 12 (1 nach oben auf 12 in der Waagerechten) hat m = 1/12, 8,33 % Steigung und einen Winkel von 4,76° — die Höchstgrenze der US-amerikanischen ADA Standards. In Deutschland ist DIN 18040 mit höchstens 6 % strenger.',
+  tool_slope_usecase_3:
+    'Dächer, Einfahrten und Entwässerung: Höhe und Länge in Grad oder Prozent umrechnen — eine Dachneigung von 4 auf 12 ist m = 1/3, also 18,43°.',
+  tool_slope_usecase_4:
+    'Graphen und Messwerte lesen: die Änderungsrate zwischen zwei Messungen, etwa 120 km nach 2 h und 300 km nach 5 h, also die Punkte (2; 120) und (5; 300) → 60 km pro Stunde.',
+  tool_slope_usecases_title: 'Wofür Sie den Rechner nutzen',
+  tool_slope_why_choose_item_1:
+    'Die Geradengleichung in allen drei üblichen Formen auf einmal: Normalform y = mx + b, Punkt-Steigungs-Form und Koordinatenform ax + by = c mit ganzen Zahlen.',
+  tool_slope_why_choose_item_2:
+    'Exakte Ergebnisse: (−2; 3) und (4; −1) ergeben m = −2/3 statt −0,666667 und b = 5/3 — so, wie es im Unterricht erwartet wird.',
+  tool_slope_why_choose_item_3:
+    'Sonderfälle werden erklärt statt nur markiert: Eine senkrechte Gerade erhält x = c und „nicht definiert“, eine waagerechte Gerade m = 0 und keinen Schnittpunkt mit der x-Achse.',
+  tool_slope_why_choose_item_4:
+    'Alles, was zu zwei Punkten gefragt wird, an einem Ort: Steigung der Senkrechten, Abstand als vereinfachte Wurzel (√20 = 2√5) und Mittelpunkt.',
+  tool_slope_why_choose_item_5:
+    'Praxiswerte für Rampen, Straßen und Dächer: Steigungswinkel in Grad, Steigung in Prozent und das Verhältnis Höhe : Länge als 1 : n.',
+  tool_slope_why_choose_title: 'Warum dieser Steigungsrechner',
+  tool_slope_work_label: 'Rechenweg',
   tool_slope_x1_label: 'x₁',
   tool_slope_x1_ph: 'z. B. 1',
   tool_slope_x2_label: 'x₂',
@@ -23750,49 +24502,137 @@ const de: SiteLangDict = {
   tool_timezone_converter_usecase_2: 'Ops/Logs: Zeitstempel in Chicago-Lokalzeit — UTC und eigene Zone ohne Kopfrechnen.',
   tool_timezone_converter_usecase_3: 'Reise: Ankunft in Dubai — Sydney und Los Angeles parallel für Übergabe-Anrufe.',
   tool_timezone_converter_usecases_title: 'Typische Einsätze',
-  tool_tip_article: 'Trinkgeld-Rechner',
-  tool_tip_bill_label: 'Rechnung',
+  tool_tip_article: 'Trinkgeldrechner mit Aufteilung der Rechnung',
+  tool_tip_base_label: 'Trinkgeld berechnen vom',
+  tool_tip_base_post: 'Gesamtbetrag inkl. Steuer',
+  tool_tip_base_pre: 'Betrag vor Steuern',
+  tool_tip_bill_label: 'Rechnungsbetrag',
   tool_tip_bill_ph: 'z. B. 80',
   tool_tip_calculate: 'Berechnen',
   tool_tip_clear: 'Leeren',
+  tool_tip_col_each: 'Pro Person',
+  tool_tip_col_rate: 'Trinkgeldsatz',
+  tool_tip_col_tip: 'Trinkgeld',
+  tool_tip_col_total: 'Summe',
   tool_tip_description:
-    'Berechnen Sie Trinkgeld aus Rechnung und Prozent und teilen Sie optional. Beispiel: 80 bei 15% → 12 Trinkgeld, Gesamt 92. Im Browser.',
-  tool_tip_disclaimer: 'Nur zur Veranschaulichung (tip) — keine Finanzberatung.',
-  tool_tip_eachOut_label: 'Pro Person',
-  tool_tip_err_generic: 'Eingaben prüfen.',
-  tool_tip_example: 'Beispiel: 80 bei 15% → 12 / Gesamt 92.',
+    'Trinkgeld berechnen und die Rechnung auf mehrere Personen aufteilen – auf den Cent genau, sodass alle Anteile zusammen exakt die Summe ergeben. Trinkgeld vom Betrag vor Steuern geben, Trinkgeld, Summe oder jeden Anteil aufrunden, aus einem Betrag den Prozentsatz ermitteln und 10–25 % direkt vergleichen.',
+  tool_tip_disclaimer:
+    'Nur eine Rechenhilfe – Trinkgeldgepflogenheiten und Bedienungsgelder unterscheiden sich je nach Land, Lokal und Art der Leistung.',
+  tool_tip_each_label: 'Jede Person zahlt',
+  tool_tip_each_tip_label: 'Trinkgeld pro Person',
+  tool_tip_err_bill: 'Geben Sie den Rechnungsbetrag ein – eine Zahl größer als 0.',
+  tool_tip_err_people: 'Geben Sie die Zahl der Personen als ganze Zahl von 1 bis 100 ein.',
+  tool_tip_err_tax: 'Die Steuer muss 0 oder mehr betragen und kleiner als die Rechnung sein.',
+  tool_tip_err_tip: 'Geben Sie ein Trinkgeld von 0 oder mehr ein (als Prozentsatz bis 1000 %).',
+  tool_tip_example:
+    'Beispiel: eine Rechnung über 80,00 mit 15 % Trinkgeld. Trinkgeld = 80,00 × 15 % = 12,00, die Summe beträgt also 92,00. Klicken Sie erneut auf „Beispiel laden“ für eine Rechnung über 86,40 mit enthaltenen 6,40 Steuer, aufgeteilt auf drei Personen, mit 20 % auf die 80,00 vor Steuern: Das Trinkgeld beträgt 16,00, die Summe 102,40, gezahlt als 34,14 + 34,13 + 34,13. Das dritte Beispiel teilt 137,50 bei 18 % auf vier Personen auf und rundet jeden Anteil auf 41,00 auf – das Trinkgeld wird so 26,50, also 19,27 %.',
   tool_tip_example_title: 'Beispiel',
-  tool_tip_faq_a1: 'Beispiel: 80 bei 15% → 12 / Gesamt 92.',
-  tool_tip_faq_a2: 'See Formula section.',
-  tool_tip_faq_a3: 'Educational only.',
-  tool_tip_faq_a4: 'No — local arithmetic only.',
-  tool_tip_faq_q1: 'Beispiel?',
-  tool_tip_faq_q2: 'Formula?',
-  tool_tip_faq_q3: 'Advice?',
-  tool_tip_faq_q4: 'Related?',
-  tool_tip_formula_body: 'Rechnung, % und Personen eingeben.',
-  tool_tip_formula_item_1: 'See formula notes.',
-  tool_tip_formula_item_2: 'Check inputs.',
-  tool_tip_formula_item_3: 'Educational only.',
-  tool_tip_formula_title: 'Formel',
-  tool_tip_how_body: 'Rechnung, % und Personen eingeben.',
-  tool_tip_how_title: 'So funktioniert’s',
-  tool_tip_ref_a_label: 'Investopedia',
-  tool_tip_ref_b_label: 'Wikipedia',
-  tool_tip_references: 'Investopedia und Lehrbuchformeln.',
-  tool_tip_result_note: 'Bildungszweck.',
+  tool_tip_faq_a1:
+    'Beginnen Sie mit 10 %, indem Sie das Komma um eine Stelle nach links verschieben: 10 % von 64,00 sind 6,40. Verdoppelt ergibt das 20 % (12,80), mit der Hälfte dazu 15 % (6,40 + 3,20 = 9,60). Für 18 % nehmen Sie 20 % und ziehen 2 % ab: 12,80 − 1,28 = 11,52.',
+  tool_tip_faq_a2:
+    'Rechnen Sie in Cent und verteilen Sie die übrigen Cents auf einzelne Personen. 102,40 durch drei sind 34,1333…, also zahlt eine Person 34,14 und zwei zahlen 34,13 – zusammen genau 102,40. Der Rechner zeigt diese Aufteilung unter „Jede Person zahlt“.',
+  tool_tip_faq_a3:
+    'Vier Personen teilen 137,50 mit 18 % Trinkgeld: Das sind 162,25 oder 40,5625 pro Kopf. Rundet jeder auf 41,00 auf, ergibt das 164,00, und das Trinkgeld steigt auf 26,50 – 19,27 % statt 18 %. Wird stattdessen die Summe aufgerundet, kommen 163,00 und ein Trinkgeld von 25,50 (18,55 %) heraus.',
+  tool_tip_faq_a4:
+    'Das hängt von Land und Leistung ab. In den USA empfiehlt das Emily Post Institute 15–20 % der Rechnung vor Steuern beim Service am Tisch, 10 % am Buffet und 15–20 % für Taxi und Friseur. In Deutschland und Österreich sind etwa 5–10 % oder einfaches Aufrunden üblich: Man nennt der Bedienung beim Bezahlen den Betrag, den man insgesamt zahlen möchte, oder sagt „Stimmt so“. In Japan und Südkorea ist Trinkgeld nicht üblich. Prüfen Sie zuerst, ob auf dem Beleg schon ein Bedienungsgeld steht.',
+  tool_tip_faq_a5:
+    'Etikette-Ratgeber wie das Emily Post Institute empfehlen, das Trinkgeld vom Betrag vor Steuern zu berechnen; vom Gesamtbetrag ist es aber verbreitet und einfacher. Der Unterschied ist klein: Bei einer Rechnung über 86,40 mit enthaltenen 6,40 Steuer sind 20 % Trinkgeld 16,00 auf die 80,00 vor Steuern und 17,28 auf den Gesamtbetrag. Tragen Sie die Steuer ein und wählen Sie die gewünschte Basis.',
+  tool_tip_faq_a6:
+    'Stellen Sie „Trinkgeld eingeben als“ auf „Betrag“ und tragen Sie ein, was Sie gegeben haben. 10,00 Trinkgeld auf eine Rechnung über 64,00 sind 10 ÷ 64 = 15,63 %. Die Tabelle zeigt dann, wie das im Vergleich zu 10–25 % bei derselben Rechnung liegt.',
+  tool_tip_faq_a7:
+    'Oft ja. Steht auf dem Beleg bereits ein Bedienungsgeld (Service Charge) – in britischen Restaurants sind 12,5 % verbreitet, und viele Lokale schlagen es bei großen Gruppen auf –, ersetzt es meist das Trinkgeld; prüfen Sie das, bevor Sie noch etwas dazugeben. Wenn Sie lieber selbst ein Trinkgeld festlegen, geben Sie die Rechnung ohne das Bedienungsgeld ein.',
+  tool_tip_faq_q1: 'Wie rechne ich 15 % oder 20 % Trinkgeld im Kopf aus?',
+  tool_tip_faq_q2: 'Wie teile ich die Rechnung mit Trinkgeld, wenn sie nicht glatt aufgeht?',
+  tool_tip_faq_q3: 'Was passiert, wenn jeder seinen Anteil aufrundet?',
+  tool_tip_faq_q4: 'Wie viel Trinkgeld gibt man?',
+  tool_tip_faq_q5: 'Trinkgeld vom Betrag vor oder nach Steuern?',
+  tool_tip_faq_q6: 'Wie viel Prozent Trinkgeld habe ich gegeben?',
+  tool_tip_faq_q7: 'Ist ein Bedienungsgeld dasselbe wie Trinkgeld?',
+  tool_tip_formula_body: 'Für eine Rechnung B mit enthaltener Steuer X, einen Trinkgeldsatz p und n Personen gilt:',
+  tool_tip_formula_item_1:
+    'Trinkgeld = Trinkgeldbasis × p; die Basis ist B oder, wenn Sie vom Betrag vor Steuern ausgehen, B − X.',
+  tool_tip_formula_item_2:
+    'Summe = B + Trinkgeld. Die Steuer bleibt in beiden Fällen in der Rechnung – nur das Trinkgeld ändert sich.',
+  tool_tip_formula_item_3:
+    'Pro Person = Summe ÷ n. In Cent gerechnet: Bleibt bei der Division ein Rest r, zahlen r Personen einen Cent mehr als die übrigen.',
+  tool_tip_formula_item_4: 'Trinkgeldsatz aus einem Betrag = Trinkgeld ÷ Trinkgeldbasis × 100 %.',
+  tool_tip_formula_item_5:
+    'Nach dem Aufrunden gilt: tatsächlicher Trinkgeldsatz = (aufgerundete Summe − B) ÷ Trinkgeldbasis – deshalb erhöht das Aufrunden der Anteile den Prozentsatz.',
+  tool_tip_formula_title: 'Formeln für das Trinkgeld',
+  tool_tip_how_body:
+    'Multiplizieren Sie den Rechnungsbetrag – oder den Betrag vor Steuern – mit dem Trinkgeldsatz, addieren Sie das Trinkgeld zur Rechnung und teilen Sie die Summe durch die Zahl der Personen. Damit die Anteile genau aufgehen, wird in Cent geteilt: Einzelne zahlen dann einen Cent mehr.',
+  tool_tip_how_item_1:
+    'Geben Sie den Rechnungsbetrag ein. Soll das Trinkgeld vom Betrag vor Steuern berechnet werden, tragen Sie zusätzlich die auf dem Beleg ausgewiesene Steuer ein.',
+  tool_tip_how_item_2:
+    'Tippen Sie einen Prozentsatz ein oder wählen Sie einen Wert aus der Schnellwahl – oder stellen Sie auf „Betrag“ um, um zu sehen, wie viel Prozent Ihr Trinkgeld ausmacht.',
+  tool_tip_how_item_3:
+    'Geben Sie an, auf wie viele Personen die Rechnung aufgeteilt wird, und runden Sie bei Bedarf das Trinkgeld, die Summe oder jeden Anteil auf einen ganzen Betrag auf.',
+  tool_tip_how_item_4:
+    'Klicken Sie auf „Berechnen“: Sie sehen Trinkgeld, Summe, was jede Person zahlt, den Rechenweg und wie 10–25 % bei derselben Rechnung ausfallen.',
+  tool_tip_how_title: 'So berechnen Sie das Trinkgeld',
+  tool_tip_out_tip: 'Trinkgeld',
+  tool_tip_people_label: 'Aufteilen auf (Personen)',
+  tool_tip_people_ph: '1',
+  tool_tip_presets_label: 'Schnellwahl:',
+  tool_tip_ref_a_label: 'Wikipedia — Gratuity (Trinkgeld)',
+  tool_tip_ref_b_label: 'Emily Post Institute — General tipping guide (Trinkgeld in den USA)',
+  tool_tip_references: 'Wikipedia — Gratuity (Trinkgeld); Emily Post Institute — General tipping guide.',
+  tool_tip_result_note:
+    'Gerechnet wird durchgehend in Cent. In der Tabelle zeigt die Spalte „Pro Person“ den größten Anteil nach der centgenauen Aufteilung.',
+  tool_tip_round_each: 'Jeden Anteil auf einen ganzen Betrag aufrunden',
+  tool_tip_round_label: 'Rundung',
+  tool_tip_round_none: 'Nicht runden',
+  tool_tip_round_tip: 'Trinkgeld auf einen ganzen Betrag aufrunden',
+  tool_tip_round_total: 'Summe auf einen ganzen Betrag aufrunden',
   tool_tip_sample: 'Beispiel laden',
-  tool_tip_split_label: 'Personen',
-  tool_tip_split_ph: 'z. B. 1',
-  tool_tip_tipOut_label: 'Trinkgeld',
-  tool_tip_tip_label: 'Trinkgeld %',
-  tool_tip_tip_ph: 'z. B. 15',
-  tool_tip_title: 'Trinkgeld-Rechner',
-  tool_tip_totalOut_label: 'Gesamt',
-  tool_tip_usecase_1: 'Homework.',
-  tool_tip_usecase_2: 'Quick sketch.',
-  tool_tip_usecase_3: 'Pair with VAT/discount for receipt drills.',
-  tool_tip_usecases_title: 'Wann sinnvoll',
+  tool_tip_split_even_tpl: 'je {v}',
+  tool_tip_split_uneven_tpl: '{n1} × {v1} + {n2} × {v2} = {t}',
+  tool_tip_sub_tpl: '{p} von {base}',
+  tool_tip_table_caption: 'Übliche Trinkgeldsätze für diese Rechnung (vor dem Runden)',
+  tool_tip_tax_hint: 'Ausfüllen, wenn Sie Trinkgeld vom Betrag vor Steuern geben möchten.',
+  tool_tip_tax_label: 'In der Rechnung enthaltene Steuer (optional)',
+  tool_tip_tax_ph: 'z. B. 6,40',
+  tool_tip_tip_label_amt: 'Trinkgeldbetrag',
+  tool_tip_tip_label_pct: 'Trinkgeld (%)',
+  tool_tip_tip_ph_amt: 'z. B. 10',
+  tool_tip_tip_ph_pct: 'z. B. 15',
+  tool_tip_tipmode_amt: 'Betrag',
+  tool_tip_tipmode_label: 'Trinkgeld eingeben als',
+  tool_tip_tipmode_pct: 'Prozentsatz',
+  tool_tip_title: 'Trinkgeldrechner — Trinkgeld berechnen und die Rechnung auf den Cent genau aufteilen',
+  tool_tip_total_label: 'Insgesamt zu zahlen',
+  tool_tip_usecase_1:
+    'Restaurant in Deutschland oder Österreich: Runden Sie die Summe auf und sehen Sie, wie viel Prozent Trinkgeld das ergibt, bevor Sie der Bedienung den Betrag nennen.',
+  tool_tip_usecase_2:
+    'Essen in der Gruppe: Trinkgeld dazurechnen, die Rechnung unter allen aufteilen und abrechnen, ohne dass am Ende Cents fehlen.',
+  tool_tip_usecase_3:
+    'Schnell nachrechnen bei Lieferdienst, Taxi, Friseur oder Bar – etwa auf Reisen in den USA: 15 % oder 20 % antippen und den Betrag ablesen.',
+  tool_tip_usecase_4:
+    'Beleg oder Kartenterminal prüfen: Manche schlagen Trinkgelder auf Basis des Gesamtbetrags inklusive Steuer vor – vergleichen Sie sie hier mit den Werten vor Steuern.',
+  tool_tip_usecases_title: 'Wann der Rechner hilft',
+  tool_tip_why_choose_item_1:
+    'Aufrunden mit ehrlichen Zahlen: Runden Sie das Trinkgeld, die Summe oder jeden Anteil auf und sehen Sie, wie viel Prozent Sie am Ende tatsächlich geben.',
+  tool_tip_why_choose_item_2:
+    'Anteile, die wirklich aufgehen: Lässt sich die Summe nicht glatt teilen, sehen Sie, wer den zusätzlichen Cent zahlt – 102,40 auf drei Personen sind 34,14 + 34,13 + 34,13, nicht dreimal 34,13.',
+  tool_tip_why_choose_item_3:
+    'Trinkgeld vor Steuern oder vom Gesamtbetrag: Tragen Sie die Steuer vom Beleg ein und wählen Sie die Basis – der Rechenweg zeigt den Satz vor Steuern und was er bezogen auf die ganze Rechnung ausmacht.',
+  tool_tip_why_choose_item_4:
+    'Eine Tabelle mit 10 %, 15 %, 18 %, 20 %, 22 % und 25 % für dieselbe Rechnung, Ihr eigener Satz hervorgehoben – so entscheiden Sie, bevor Sie bezahlen.',
+  tool_tip_why_choose_item_5:
+    'Auch rückwärts: Geben Sie das gezahlte Trinkgeld als Betrag ein und erhalten Sie den Prozentsatz – praktisch, um die Trinkgeldvorschläge eines Kartenterminals zu prüfen.',
+  tool_tip_why_choose_title: 'Warum dieser Trinkgeldrechner',
+  tool_tip_work_base_post_tpl: 'Trinkgeldbasis = Gesamtbetrag inkl. Steuer = {base}',
+  tool_tip_work_base_pre_tpl: 'Trinkgeldbasis (vor Steuern) = {bill} − {tax} = {base}',
+  tool_tip_work_eff_bill_tpl: 'Das sind {p} des Gesamtbetrags inkl. Steuer.',
+  tool_tip_work_label: 'Rechenweg',
+  tool_tip_work_round_each_tpl:
+    'Jeder Anteil von {a} auf {b} aufgerundet; {b} × {n} = {total}, das Trinkgeld beträgt damit {tip} ({p})',
+  tool_tip_work_round_tip_tpl: 'Trinkgeld von {a} auf {b} aufgerundet ({p} der Trinkgeldbasis)',
+  tool_tip_work_round_total_tpl: 'Summe von {a} auf {b} aufgerundet, das Trinkgeld beträgt damit {tip} ({p})',
+  tool_tip_work_split_tpl: 'Pro Person = {total} ÷ {n} {eq} {v}',
+  tool_tip_work_tip_amt_tpl: 'Trinkgeldsatz = {tip} ÷ {base} = {p}',
+  tool_tip_work_tip_pct_tpl: 'Trinkgeld = {base} × {p} = {tip}',
+  tool_tip_work_total_tpl: 'Summe = {bill} + {tip} = {total}',
   tool_transcribe_an_audio_file_to_text_advanced: 'Honest limits',
   tool_transcribe_an_audio_file_to_text_article:
     'People search for audio to text and speech to text expecting a large-model-class transcript. Pure browser pages cannot ship that without a large model or a cloud API. This scene tool uses the browser speech recognition where present: it can play your local file through Web Audio while recognition listens (typically via the microphone, so loopback is imperfect), or you can dictate live with the mic. If browser speech recognition is missing, the page says so clearly. Output is plain text you can edit and download as TXT—not timed SRT. Related tools cover waveform video and voice memos. Keep expectations honest: accuracy and file support vary by browser.',
@@ -24789,45 +25629,153 @@ const de: SiteLangDict = {
   tool_vat_usecase_2: 'Quick sketch.',
   tool_vat_usecase_3: 'Pair with discount/tip pages for receipt math.',
   tool_vat_usecases_title: 'Wann sinnvoll',
-  tool_velocity_article: 'Geschwindigkeitsrechner — Weg durch Zeit',
+  tool_velocity_article:
+    'Geschwindigkeitsrechner, der v = d ÷ t nach Geschwindigkeit, Strecke oder Zeit in allen gängigen Einheiten auflöst, Umrechnung und Rechenweg ausschreibt und für Fahrten mit mehreren Abschnitten die echte Durchschnittsgeschwindigkeit sowie die mittlere Vektorgeschwindigkeit liefert.',
+  tool_velocity_avgvel_label: 'Mittlere Vektorgeschwindigkeit',
+  tool_velocity_avgvel_tpl: '{s} ÷ {t} = {v} (Luftlinie ÷ Gesamtzeit, deshalb ergibt eine Hin- und Rückfahrt 0)',
   tool_velocity_calculate: 'Berechnen',
   tool_velocity_clear: 'Leeren',
+  tool_velocity_conv_label: 'In anderen Einheiten',
   tool_velocity_description:
-    'Berechnen Sie die mittlere Geschwindigkeit mit v=d/t aus Wegstrecke und Zeit. Beispiel: Strecke 100, Zeit 20 → Geschwindigkeit 5 (gleiche Einheiten). Nur im Browser; prüfen Sie den Prozess.',
-  tool_velocity_disclaimer: 'Nur zur Veranschaulichung (velocity).',
-  tool_velocity_dist_label: 'Weg',
+    'Geschwindigkeit berechnen mit der Formel v = d ÷ t – oder umgekehrt Strecke bzw. Zeit ermitteln, in m/s, km/h, mph, ft/s oder Knoten. Mit Rechenweg, jedem Umrechnungsschritt (etwa m/s in km/h), Beispielen und der echten Durchschnittsgeschwindigkeit für Fahrten mit mehreren Abschnitten.',
+  tool_velocity_disclaimer:
+    'Für Lernzwecke und Alltagsschätzungen. Fahrzeiten setzen eine konstante Durchschnittsgeschwindigkeit voraus; echte Fahrten hängen von Verkehr, Pausen und Bedingungen ab.',
+  tool_velocity_disp_label: 'Luftlinie von Start bis Ziel (optional)',
+  tool_velocity_disp_ph: 'z. B. 0 bei Hin- und Rückfahrt',
+  tool_velocity_dist_label: 'Strecke',
   tool_velocity_dist_ph: 'z. B. 100',
-  tool_velocity_err_generic: 'Eingaben prüfen.',
-  tool_velocity_example: 'Beispiel: v=5.',
-  tool_velocity_example_title: 'Beispiel',
-  tool_velocity_faq_a1: 'Beispiel: v=5.',
-  tool_velocity_faq_a2: 'See Formula section.',
-  tool_velocity_faq_a3: 'Educational only.',
-  tool_velocity_faq_a4: 'Educational only.',
-  tool_velocity_faq_q1: 'Beispiel?',
-  tool_velocity_faq_q2: 'Formula?',
-  tool_velocity_faq_q3: 'Advice?',
-  tool_velocity_faq_q4: 'Related?',
-  tool_velocity_formula_body: 'Weg und Zeit eingeben.',
-  tool_velocity_formula_item_1: 'See formula notes.',
-  tool_velocity_formula_item_2: 'Check inputs.',
-  tool_velocity_formula_item_3: 'Educational only.',
-  tool_velocity_formula_title: 'Formel',
-  tool_velocity_how_body: 'Weg und Zeit eingeben.',
-  tool_velocity_how_title: 'So funktioniert’s',
-  tool_velocity_ref_a_label: 'Wikipedia',
-  tool_velocity_ref_b_label: 'Textbook formula',
-  tool_velocity_references: 'Lehrbuchformeln.',
-  tool_velocity_result_note: 'Bildungszweck.',
+  tool_velocity_err_disp: 'Die Luftlinie darf weder negativ noch länger als die insgesamt zurückgelegte Strecke sein.',
+  tool_velocity_err_dist: 'Geben Sie eine Strecke von 0 oder mehr ein.',
+  tool_velocity_err_leg:
+    'Jeder Abschnitt braucht eine Strecke und eine Geschwindigkeit größer als 0. Hat die Fahrt nur zwei Abschnitte, lassen Sie Abschnitt 3 komplett leer.',
+  tool_velocity_err_num: 'Bitte nur Zahlen eingeben, z. B. 42,195 oder 1.500 – ohne Einheiten oder Buchstaben im Feld.',
+  tool_velocity_err_speed: 'Geben Sie eine Geschwindigkeit größer als 0 ein (bei 0 wird keine Strecke zurückgelegt).',
+  tool_velocity_err_time: 'Geben Sie eine Zeit größer als 0 ein.',
+  tool_velocity_example:
+    'Usain Bolts Weltrekord über 100 m von 9,58 s (Berlin 2009) ergibt 100 ÷ 9,58 = 10,44 m/s, also 37,58 km/h oder 23,35 mph. Wer beim Marathon konstant 12 km/h läuft, braucht 42,195 ÷ 12 = 3,5163 h, das sind 3:30:58,5. Ein Auto mit 65 mph legt in 2,5 Stunden 162,5 Meilen (261,52 km) zurück. Fahren Sie 60 km mit 60 km/h hin und mit 40 km/h zurück, dauert das 1 h + 1,5 h = 2,5 h; die Durchschnittsgeschwindigkeit beträgt 120 ÷ 2,5 = 48 km/h – und weil Sie wieder am Start ankommen, ist die mittlere Vektorgeschwindigkeit 0.',
+  tool_velocity_example_title: 'Rechenbeispiel',
+  tool_velocity_faq_a1:
+    'Teilen Sie die Strecke durch die Zeit: v = d ÷ t. 100 Meter in 9,58 Sekunden ergeben 100 ÷ 9,58 = 10,44 m/s. Achten Sie auf passende Einheiten: Kilometer und Stunden liefern km/h, Meter und Sekunden liefern m/s.',
+  tool_velocity_faq_a2:
+    'Multiplizieren Sie m/s mit 3,6 für km/h oder mit 2,2369 für mph: 10 m/s = 36 km/h = 22,37 mph. Umgekehrt teilen Sie km/h durch 3,6: 90 km/h = 25 m/s.',
+  tool_velocity_faq_a3:
+    'Weil Sie mit dem langsameren Tempo länger unterwegs sind. 60 km mit 60 km/h dauern 1 Stunde, zurück mit 40 km/h aber 1,5 Stunden. Für 120 km brauchen Sie also 2,5 Stunden: 48 km/h, nicht 50 km/h. Der einfache Mittelwert stimmt nur, wenn jede Geschwindigkeit gleich lange gefahren wird.',
+  tool_velocity_faq_a4:
+    'Das Tempo (der Betrag) sagt nur, wie schnell; die Geschwindigkeit im physikalischen Sinn ist ein Vektor und hat zusätzlich eine Richtung. Die Durchschnittsgeschwindigkeit nutzt den gesamten zurückgelegten Weg, die mittlere Vektorgeschwindigkeit die Verschiebung von Start bis Ziel. Eine 400-m-Runde in 80 s ergibt ein Tempo von 5 m/s, aber eine mittlere Vektorgeschwindigkeit von 0, weil Sie dort ankommen, wo Sie gestartet sind.',
+  tool_velocity_faq_a5:
+    'Teilen Sie die Strecke durch die Geschwindigkeit: t = d ÷ v. Ein Marathon über 42,195 km mit 12 km/h dauert 42,195 ÷ 12 = 3,5163 Stunden. Die Nachkommastellen mal 60 ergeben die Minuten: 0,5163 × 60 = 30,98, also etwa 3 h 31 min.',
+  tool_velocity_faq_a6:
+    'Ja. In eindimensionalen Physikaufgaben zeigt das Vorzeichen die Richtung: Ist rechts positiv, hat ein Körper, der sich mit 3 m/s nach links bewegt, die Geschwindigkeit −3 m/s. Der Betrag (das Tempo) ist nie negativ. Dieser Rechner arbeitet mit Beträgen; geben Sie also positive Werte ein und behalten Sie die Richtung selbst im Blick.',
+  tool_velocity_faq_a7:
+    'Die Durchschnittsgeschwindigkeit. Strecke ÷ Zeit liefert den Mittelwert über das ganze Intervall; der Tachowert in einem Augenblick ist die Momentangeschwindigkeit und kann höher oder niedriger liegen. Beschleunigt ein Körper gleichmäßig, gelten die Formeln der Beschleunigung, z. B. v = v₀ + a × t.',
+  tool_velocity_faq_q1: 'Wie berechnet man die Geschwindigkeit?',
+  tool_velocity_faq_q2: 'Wie rechne ich m/s in km/h oder mph um?',
+  tool_velocity_faq_q3: 'Warum ist die Durchschnittsgeschwindigkeit nicht der Mittelwert der Geschwindigkeiten?',
+  tool_velocity_faq_q4: 'Was ist der Unterschied zwischen Tempo und Geschwindigkeit?',
+  tool_velocity_faq_q5: 'Wie berechne ich die Zeit aus Strecke und Geschwindigkeit?',
+  tool_velocity_faq_q6: 'Kann die Geschwindigkeit negativ sein?',
+  tool_velocity_faq_q7: 'Ist das die Momentan- oder die Durchschnittsgeschwindigkeit?',
+  tool_velocity_formula_body:
+    'Die mittlere Geschwindigkeit als Vektor ist Verschiebung geteilt durch Zeit; bei Bewegung in eine Richtung auf gerader Linie entspricht das dem Weg geteilt durch die Zeit.',
+  tool_velocity_formula_item_1: 'v = d ÷ t. Beispiel: 100 m ÷ 9,58 s = 10,44 m/s.',
+  tool_velocity_formula_item_2:
+    'Umgestellt: d = v × t und t = d ÷ v. Beispiel: 65 mph × 2,5 h = 162,5 mi; 42,195 km ÷ 12 km/h = 3,5163 h.',
+  tool_velocity_formula_item_3:
+    'Umrechnung: 1 m/s = 3,6 km/h = 2,2369 mph = 3,2808 ft/s = 1,9438 kn; 1 mph = exakt 1,609344 km/h. Von km/h in m/s teilen Sie durch 3,6.',
+  tool_velocity_formula_item_4:
+    'Durchschnittsgeschwindigkeit über mehrere Abschnitte = Gesamtstrecke ÷ Gesamtzeit. Zwei gleich lange Strecken mit 60 und 40 km/h ergeben 120 km ÷ 2,5 h = 48 km/h, nicht 50 km/h.',
+  tool_velocity_formula_item_5:
+    'Mittlere Vektorgeschwindigkeit = Verschiebung (Luftlinie) ÷ Zeit. Sie kann kleiner sein als die Durchschnittsgeschwindigkeit und ist 0, wenn die Fahrt am Startpunkt endet.',
+  tool_velocity_formula_title: 'Formel für die Geschwindigkeit und Einheitenumrechnung',
+  tool_velocity_hint_basic:
+    'Wählen Sie beliebige Einheiten – das Ergebnis erscheint in der passenden Einheit (km mit km/h, Meilen mit mph, Meter mit m/s), die übrigen stehen darunter.',
+  tool_velocity_hint_legs:
+    'Geben Sie für jeden Abschnitt der Fahrt Strecke und Geschwindigkeit ein. Hat die Fahrt nur zwei Abschnitte, lassen Sie Abschnitt 3 leer.',
+  tool_velocity_how_body:
+    'Geschwindigkeit ist Strecke geteilt durch Zeit: v = d ÷ t (d steht für die Strecke, in Schulbüchern oft s). Wählen Sie die gesuchte Größe, tragen Sie die beiden anderen Werte mit Einheit ein und klicken Sie auf „Berechnen“.',
+  tool_velocity_how_item_1:
+    'Legen Sie fest, was gesucht ist: Geschwindigkeit, Strecke oder Zeit – oder die Durchschnittsgeschwindigkeit einer Fahrt mit mehreren Abschnitten.',
+  tool_velocity_how_item_2:
+    'Tragen Sie die zwei bekannten Werte ein und wählen Sie die Einheiten, etwa 100 m und 9,58 s oder 42,195 km und 12 km/h.',
+  tool_velocity_how_item_3:
+    'Bei mehreren Abschnitten geben Sie je Strecke und Geschwindigkeit ein; mit der Luftlinie von Start bis Ziel erhalten Sie zusätzlich die mittlere Vektorgeschwindigkeit.',
+  tool_velocity_how_item_4:
+    'Oben steht das Ergebnis, darunter der Umrechnungsschritt, der vollständige Rechenweg und derselbe Wert in anderen Einheiten.',
+  tool_velocity_how_title: 'So berechnen Sie die Geschwindigkeit',
+  tool_velocity_leg_dist_tpl: 'Abschnitt {n}: Strecke',
+  tool_velocity_leg_speed_tpl: 'Abschnitt {n}: Geschwindigkeit',
+  tool_velocity_leg_work_tpl: 'Abschnitt {n}: {d} ÷ {v} = {t}',
+  tool_velocity_legs_label: 'Zeit pro Abschnitt',
+  tool_velocity_mode_distance: 'Strecke aus Geschwindigkeit und Zeit',
+  tool_velocity_mode_label: 'Was möchten Sie berechnen?',
+  tool_velocity_mode_legs: 'Durchschnittsgeschwindigkeit einer Fahrt mit mehreren Abschnitten',
+  tool_velocity_mode_time: 'Zeit aus Strecke und Geschwindigkeit',
+  tool_velocity_mode_velocity: 'Geschwindigkeit aus Strecke und Zeit',
+  tool_velocity_out_distance: 'Zurückgelegte Strecke',
+  tool_velocity_out_legs: 'Durchschnittsgeschwindigkeit der gesamten Fahrt',
+  tool_velocity_out_time: 'Benötigte Zeit (h:mm:ss)',
+  tool_velocity_out_velocity: 'Durchschnittsgeschwindigkeit',
+  tool_velocity_ref_a_label: 'Wikipedia (Englisch) — Velocity',
+  tool_velocity_ref_b_label: 'Wikipedia (Englisch) — Speed',
+  tool_velocity_references:
+    'Die Begriffe Geschwindigkeit, Tempo und Verschiebung folgen der einführenden Physik; die Umrechnungsfaktoren beruhen auf den exakten Definitionen 1 mi = 1.609,344 m, 1 ft = 0,3048 m und 1 sm = 1.852 m.',
+  tool_velocity_result_note_basic:
+    'Das ist die Durchschnittsgeschwindigkeit über die gesamte Strecke. Als Vektor hat die Geschwindigkeit zusätzlich eine Richtung; auf gerader Strecke in nur eine Richtung ist ihr Betrag gleich dem Tempo.',
+  tool_velocity_result_note_legs:
+    'Durchschnittsgeschwindigkeit = Gesamtstrecke ÷ Gesamtzeit, nicht der Mittelwert der Geschwindigkeiten. Für die mittlere Vektorgeschwindigkeit zählt stattdessen die Luftlinie zwischen Start und Ziel.',
   tool_velocity_sample: 'Beispiel laden',
+  tool_velocity_speed_label: 'Geschwindigkeit',
+  tool_velocity_speed_ph: 'z. B. 12',
+  tool_velocity_step_label: 'Einheitenumrechnung',
+  tool_velocity_sub_distance_tpl: 'bei {v} über {t}',
+  tool_velocity_sub_legs_tpl: '{d} in {t} ({c})',
+  tool_velocity_sub_time_tpl: 'für {d} bei {v}',
+  tool_velocity_sub_velocity_tpl: '{d} in {t}',
+  tool_velocity_sym_ft: 'ft',
+  tool_velocity_sym_fts: 'ft/s',
+  tool_velocity_sym_h: 'h',
+  tool_velocity_sym_km: 'km',
+  tool_velocity_sym_kmh: 'km/h',
+  tool_velocity_sym_kn: 'kn',
+  tool_velocity_sym_m: 'm',
+  tool_velocity_sym_mi: 'mi',
+  tool_velocity_sym_min: 'min',
+  tool_velocity_sym_mph: 'mph',
+  tool_velocity_sym_ms: 'm/s',
+  tool_velocity_sym_nmi: 'sm',
+  tool_velocity_sym_s: 's',
+  tool_velocity_sys_label: 'Einheiten für die Fahrt',
   tool_velocity_time_label: 'Zeit',
-  tool_velocity_time_ph: 'z. B. 20',
-  tool_velocity_title: 'Geschwindigkeitsrechner — Weg durch Zeit',
-  tool_velocity_usecase_1: 'Homework.',
-  tool_velocity_usecase_2: 'Quick sketch.',
-  tool_velocity_usecase_3: 'Compare with acceleration.',
-  tool_velocity_usecases_title: 'Wann sinnvoll',
-  tool_velocity_velOut_label: 'Geschwindigkeit',
+  tool_velocity_time_ph: 'z. B. 9,58',
+  tool_velocity_title: 'Geschwindigkeit berechnen — Tempo, Strecke oder Zeit ermitteln mit Einheitenumrechnung und Rechenweg',
+  tool_velocity_trap_label: 'Häufiger Fehler',
+  tool_velocity_trap_tpl:
+    'Der Mittelwert der Geschwindigkeiten ergäbe {w} – das sind {x} zu viel, weil Sie auf den langsameren Abschnitten mehr Zeit verbringen.',
+  tool_velocity_unit_label: 'Einheit',
+  tool_velocity_usecase_1:
+    'Physik-Hausaufgaben: v = d ÷ t nach jeder der drei Größen auflösen und die Einheiten in jedem Schritt prüfen.',
+  tool_velocity_usecase_2:
+    'Laufen, Radfahren und Schwimmen: aus einer Wettkampfzeit die Durchschnittsgeschwindigkeit berechnen oder aus einem Zieltempo die Endzeit.',
+  tool_velocity_usecase_3:
+    'Reiseplanung: abschätzen, wie lange eine Auto-, Flug- oder Bootsfahrt bei gegebenem Tempo dauert – in km/h, mph oder Knoten.',
+  tool_velocity_usecase_4:
+    'Hin- und Rückfahrten oder Strecken mit Etappen: die echte Durchschnittsgeschwindigkeit statt des Mittelwerts der Einzelgeschwindigkeiten.',
+  tool_velocity_usecases_title: 'Wann ein Geschwindigkeitsrechner hilft',
+  tool_velocity_why_choose_item_1:
+    'Jede Geschwindigkeit erscheint zugleich in m/s, km/h, mph, ft/s und Knoten, jede Zeit in h:mm:ss, Stunden und Minuten – m/s in km/h umrechnen müssen Sie also nicht von Hand.',
+  tool_velocity_why_choose_item_2:
+    'Eine Formel, drei Richtungen: Geschwindigkeit aus Strecke und Zeit, Strecke aus Tempo und Zeit oder Zeit aus Strecke und Tempo.',
+  tool_velocity_why_choose_item_3:
+    'Gemischte Einheiten werden umgerechnet und der Schritt wird angezeigt, z. B. 90 min = 1,5 h – so sehen Sie genau, was geteilt wurde.',
+  tool_velocity_why_choose_item_4:
+    'Der Fahrtmodus liefert die echte Durchschnittsgeschwindigkeit und zeigt, wie weit der einfache Mittelwert der Geschwindigkeiten danebenliegt.',
+  tool_velocity_why_choose_item_5:
+    'Mit der optionalen Luftlinie wird aus dem Tempo die mittlere Vektorgeschwindigkeit – deshalb ist sie bei einer Hin- und Rückfahrt null.',
+  tool_velocity_why_choose_title: 'Was dieser Geschwindigkeitsrechner kann',
+  tool_velocity_work_distance_tpl: 'd = v × t = {v} × {t} = {d}',
+  tool_velocity_work_label: 'Rechenweg',
+  tool_velocity_work_time_tpl: 't = d ÷ v = {d} ÷ {v} = {t}',
+  tool_velocity_work_velocity_tpl: 'v = d ÷ t = {d} ÷ {t} = {v}',
   tool_volume_article: 'Volumenrechner — Quader und Kugel',
   tool_volume_calculate: 'Berechnen',
   tool_volume_clear: 'Leeren',
