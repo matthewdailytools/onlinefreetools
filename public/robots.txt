@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /devlogs/
 
 Sitemap: https://onlinefreetools.org/sitemap.xml

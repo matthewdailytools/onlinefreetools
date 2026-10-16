@@ -9,7 +9,7 @@ alwaysApply: true
 对人有帮助的篇：详细写清解决过程与方案。 
 仅项目留档、对人无帮助的篇：仍须落盘，头部标 `Visibility: project`，可较短。
 
-公开页由 `npm run build:logs` 生成到 `public/devlogs/`：**全站 `noindex, nofollow`、不进 sitemap**（不分 Visibility；`DEVLOGS_ROBOTS_CONTENT` + `X-Robots-Tag`）。`robots.txt` **暂时允许** `/devlogs/`，好让爬虫读到 noindex；GSC 确认已出索引后再加 `Disallow: /devlogs/`（见 `docs/seo/reviews/2026-10-13/03-todo.md`）。索引列表仍可供人浏览全部篇目。
+公开页由 `npm run build:logs` 生成到 `public/devlogs/`：**全站 `noindex, nofollow`、不进 sitemap**（不分 Visibility；`DEVLOGS_ROBOTS_CONTENT` + `X-Robots-Tag`）。`robots.txt` 已加 **`Disallow: /devlogs/`**（第二步：爬虫不再发现新路径；已索引 URL 仍靠 noindex 出索引）。索引列表仍可供人浏览全部篇目。
 
 ## 1. 何时落盘与可见性（每轮必做）
 

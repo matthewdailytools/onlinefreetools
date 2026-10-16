@@ -9,7 +9,7 @@
 - [ ] Clarity：清空筛选，确认 10/6 是否同步掉会话
 - [ ] **冻结**新 how-to-calculate / 新 prompt 变体 / 近义拆页（写进选题 tracker）
 - [ ] 部署 devlogs 全站 noindex（代码已改：meta robots + `X-Robots-Tag` + 移出 sitemap）：`build:site` → `upload:r2` → `git:deploy`
-- [ ] **devlogs 第二步**：GSC 网址检查 / 网页索引报告确认 `/devlogs/` 已「被 noindex 排除」且不再有收录后，再在 `public/robots.txt` 加 `Disallow: /devlogs/`（**提前加会让爬虫读不到 noindex**）
+- [x] **devlogs 第二步**：`public/robots.txt` 已加 `Disallow: /devlogs/`（2026-10-16；用户确认执行。页面仍保留 noindex + `X-Robots-Tag`）
 
 ## 2–6 周（降表面积）
 
