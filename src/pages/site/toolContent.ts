@@ -417,6 +417,8 @@ export const renderToolIgSections = (opts: {
 	usecaseCount?: number;
 	/** 公式/规则列表项上限（默认 4） */
 	ruleItemCount?: number;
+	/** 与 ruleItemCount 同义；计算器页常用此名传入公式条目数 */
+	formulaItemCount?: number;
 	/** How 操作步骤条数上限（默认 6） */
 	howItemCount?: number;
 	/** Why choose 差异条数上限（默认 5） */
@@ -425,7 +427,8 @@ export const renderToolIgSections = (opts: {
 	const { lang, prefix } = opts;
 	const mode = opts.mode ?? 'formula';
 	const usecaseCount = opts.usecaseCount ?? 3;
-	const ruleItemCount = opts.ruleItemCount ?? 4;
+	/** 公式/规则条目上限：优先 formulaItemCount，否则 ruleItemCount。 */
+	const ruleItemCount = opts.formulaItemCount ?? opts.ruleItemCount ?? 4;
 	const howItemCount = opts.howItemCount ?? 6;
 	/** Why choose 列表最多读几条 `why_choose_item_*` 键。 */
 	const whyChooseItemCount = opts.whyChooseItemCount ?? 5;
