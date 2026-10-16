@@ -70,7 +70,7 @@
 | 48 | how-to-calculate-pythagorean-theorem | how-to-calculate | 222 | 7 | 1 | A | 2.7 | done 2026-10-16 |
 | 49 | write-countif-formula-in-excel | category:developer | 232 | 7 | 0 | B | 2.4 | done 2026-10-16 |
 | 50 | how-to-calculate-volume | how-to-calculate | 107 | 2 | 7 | A | 2.1 | done 2026-10-16 |
-| 51 | how-to-calculate-one-rep-max | how-to-calculate | 121 | 2 | 7 | A | 2.0 | todo |
+| 51 | how-to-calculate-one-rep-max | how-to-calculate | 121 | 2 | 7 | A | 2.0 | done 2026-10-16 |
 | 52 | how-to-calculate-markup | how-to-calculate | 188 | 3 | 6 | A | 2.0 | todo |
 | 53 | how-to-calculate-vat | how-to-calculate | 176 | 1 | 14 | A | 1.9 | todo |
 | 54 | markdown-to-html | category:developer | 300 | 12 | 0 | B | 1.7 | todo |

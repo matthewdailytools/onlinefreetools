@@ -4,7 +4,7 @@
 **slug**：`how-to-calculate-one-rep-max`  
 **路径**：`/tools/how-to-calculate-one-rep-max`  
 **主方向**：C  
-**YMYL**：否  
+**YMYL**：是（健康/训练估算；须 disclaimer，非教练建议）  
 
 ## IG 预审
 
@@ -20,8 +20,8 @@
 
 | 字段 | 内容 |
 |---|---|
-| Title (en) | One-Rep Max Calculator (Epley) |
-| Description | Estimate one-rep max with the Epley formula: 1RM ≈ w×(1+reps/30). Sample: 100 for 5 reps → ≈116.67. Educational estimate with a safety note — not coaching advice. |
+| Title (en) | One-Rep Max Calculator — Estimate 1RM from Weight and Reps |
+| Description | Epley + Brzycki + Lombardi; sample 100×5 ≈116.7; %1RM table; educational only / not coaching. ≥120 chars; contains 1RM / one-rep. |
 | related | how-to-calculate-pace, how-to-calculate-body-fat |
 
 ## 清单前检索覆盖优化
@@ -30,7 +30,7 @@
 |---|---|
 | 日期 | 2026-08-09 |
 | slug 结论 | **保留** `how-to-calculate-one-rep-max` |
-| 主检索词 → title/H1 | en：**One-Rep Max Calculator (Epley)**；zh：**一次最大重量计算器（Epley）** |
+| 主检索词 → title/H1 | en：**One-Rep Max Calculator — Estimate 1RM from Weight and Reps**；zh：**一次最大重量计算器 — 由重量与次数估算 1RM** |
 | 次要关键词 → desc/FAQ | 次词落入 description 前半与 FAQ；示例数字固定 |
 | 用户搜索习惯判断 | 结果/场景向 title；禁参数枚举目录腔 |
 | 优化摘要 | 保留 slug；H1 主词+How to；desc 含样例数字与公式信号；非参数枚举 |
