@@ -142,3 +142,6 @@
 | 2b 抽查语检索覆盖优化 | 2026-09-04 | 抽查 en,zh,es,ja 的 title/desc：当地主词进 H1，次词进 FAQ；es/ja 句式不与 en 平行 | en,zh,es,ja 均再核落点 |
 | 3 抽查+禁词+lint | 2026-09-04 | 扫 privacy 设备+服务器句；禁 page 产品名；清待母语抽查 | 可标 i18n-done |
 | IG 修正复审 | 2026-09-05 | en/zh/es/ja 重写 SUM、总账边界与工作流；其余语补真实 1600 Example | 下载 xlsx 总额改为动态公式 |
+| 0b 清单前检索覆盖 | 2026-10-16 | thin-rewrite：title Category→xlsx；desc 1200+400→1600 | 覆盖表已写入 02 |
+| 1b 母版检索覆盖优化 | 2026-10-16 | 预览表；safety；样例轮换；清理无关键 | 母版可合并 |
+| 2b 抽查语检索覆盖优化 | 2026-10-16 | 九语按 brief 检索向重写 | verify:tool OK |

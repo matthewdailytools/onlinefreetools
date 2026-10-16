@@ -76,3 +76,6 @@
 | 2 按 brief 重写 | 2026-08-09 | 按 brief 写十语 title/description 与核心键；按钮短词本地化 | 十语键齐全 |
 | 2b 抽查语检索覆盖优化 | 2026-08-09 | 抽查 en,zh,es,ja：再核 title/desc 当地主词与示例数字 | en,zh,es,ja 已再优化 title/desc |
 | 3 抽查+禁词+lint | 2026-08-09 | 扫禁词与免责；跑 coverage:gate all 与 build:site | 上线验收通过 |
+| 0b 清单前检索覆盖 | 2026-10-16 | thin-rewrite：三模式 V/I/R + 功率 | 覆盖表已写入 02 |
+| 1b 母版检索覆盖优化 | 2026-10-16 | 步骤；safety；样例轮换 | 母版可合并 |
+| 2b 抽查语检索覆盖优化 | 2026-10-16 | 九语按 brief 检索向重写；修 zh/id/de 非枚举 title | verify:tool OK |

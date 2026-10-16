@@ -2229,7 +2229,7 @@
   {
     "slug": "create-budget-spreadsheet",
     "path": "/tools/create-budget-spreadsheet",
-    "updatedAt": "2026-09-05T12:22:00.000Z",
+    "updatedAt": "2026-10-16T00:00:00.000Z",
     "launchedAt": "2026-09-04T14:10:00.000Z",
     "category": "calculator",
     "primaryTopic": "business-finance",
@@ -3908,7 +3908,7 @@
   {
     "slug": "how-to-calculate-ohms-law",
     "path": "/tools/how-to-calculate-ohms-law",
-    "updatedAt": "2026-09-06T09:37:59.139Z",
+    "updatedAt": "2026-10-16T00:00:00.000Z",
     "category": "calculator",
     "primaryTopic": "science-physics",
     "featured": false,
