@@ -1,6 +1,7 @@
 /**
- * 边际贡献计算器 计算器工具页。
- * slug: how-to-calculate-contribution-margin（见 work-tasks/how-to-calculate-contribution-margin/02-tool-info.md）。
+ * 边际贡献计算器：单价−变动成本 → CM 与比率；可选件数得总 CM；可选固定成本得盈亏平衡件数。
+ * YMYL：教育用途，非经营/投资建议。
+ * slug: how-to-calculate-contribution-margin。
  */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
@@ -17,6 +18,9 @@ import {
 	renderToolReferencesSection,
 } from './site/toolContent';
 
+/** 本工具 i18n 键前缀。 */
+const PREFIX = 'tool_contribution_margin';
+
 /** 为路径加上语言前缀（默认语无前缀）。 */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
 	const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
@@ -28,16 +32,20 @@ const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang)
  * @param opts.lang 当前语言
  * @param opts.defaultLang 站点默认语言
  * @param opts.enabledLangs 启用语言列表
+ * @returns 完整页面 HTML
  */
 export const renderHowToCalculateContributionMarginPage = (opts: {
 	lang: SiteLang;
 	defaultLang: SiteLang;
 	enabledLangs: SiteLang[];
 }) => {
+	/** 读取本工具键。 */
+	const tx = (key: string) => t(opts.lang, `${PREFIX}_${key}` as keyof typeof import('../site/i18n/en').default);
+
 	const toolPath = '/tools/how-to-calculate-contribution-margin';
 	const canonicalPath = withLangPrefix(opts.lang, toolPath, opts.defaultLang);
-	const title = `${t(opts.lang, 'tool_contribution_margin_title')} | ${t(opts.lang, 'brand')}`;
-	const description = t(opts.lang, 'tool_contribution_margin_description');
+	const title = `${tx('title')} | ${t(opts.lang, 'brand')}`;
+	const description = tx('description');
 
 	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
@@ -81,137 +89,256 @@ export const renderHowToCalculateContributionMarginPage = (opts: {
   <style>
     .tool-card { max-width: var(--content-max); width: 100%; margin: 0 0 1.5rem; }
     .form-label { display:block; margin-bottom:.5rem; color:#495057; font-weight:500 }
+    .form-hint { display:block; color:#6c757d; font-size:.85rem; margin:-.25rem 0 .75rem; }
     .form-group { margin-bottom:1rem; }
-    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-    .form-half { }
-    @media (max-width:576px) { .form-row { grid-template-columns:1fr; } }
+    .form-row { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:0 1rem; }
+    @media (max-width:576px) { .form-row { grid-template-columns:minmax(0, 1fr); } }
     .btn-row { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; }
-    .result { background:#f8f9fa; padding:1rem; border-radius:8px; margin-top:1rem; text-align:center }
-    .result .muted { color:#6c757d; font-size:.9rem; margin-top:.35rem }
+    .cm-warn { background:#fff3cd; border:1px solid #ffecb5; color:#664d03; padding:.75rem 1rem; border-radius:8px; margin-bottom:1rem; font-size:.92rem; }
+    .result { background:#f8f9fa; padding:1rem; border-radius:8px; margin-top:1rem; }
+    .cm-out { font-size:1.35rem; font-weight:600; font-variant-numeric:tabular-nums; }
+    .cm-row { color:#495057; font-size:.92rem; margin-top:.4rem; }
+    .cm-row strong { color:#343a40; }
+    .cm-h { font-size:1rem; font-weight:600; margin:1rem 0 .35rem; }
+    .cm-steps { margin:0; padding-inline-start:1.3rem; font-size:.92rem; }
+    .cm-steps li { margin-bottom:.35rem; }
+    .result .muted { color:#6c757d; font-size:.9rem; margin-top:.75rem; }
+    .result .muted.cm-err { color:#b02a37; font-weight:500; margin-top:0; }
   </style>`;
 
 	const contentHtml = `
     <div id="contribution-margin" class="mb-3">
-      <h1 class="h4 mb-1">${escapeHtml(t(opts.lang, 'tool_contribution_margin_title'))}</h1>
+      <h1 class="h4 mb-1">${escapeHtml(tx('title'))}</h1>
       <p class="text-muted mb-0">${escapeHtml(description)}</p>
     </div>
 
     <div class="card tool-card">
       <div class="card-body">
-        <form id="calcForm">
+        <div class="cm-warn" role="note">${escapeHtml(tx('safety_banner'))}</div>
+        <form id="calcForm" novalidate>
+          <span class="form-hint">${escapeHtml(tx('hint'))}</span>
           <div class="form-row">
-
-          <div class="form-group form-half">
-            <label class="form-label" for="price">${escapeHtml(t(opts.lang, 'tool_contribution_margin_price_label'))}</label>
-            <input id="price" class="input-lg" type="number" step="any"
-              placeholder="${escapeHtml(t(opts.lang, 'tool_contribution_margin_price_ph'))}">
-          </div>
-
-          <div class="form-group form-half">
-            <label class="form-label" for="vc">${escapeHtml(t(opts.lang, 'tool_contribution_margin_vc_label'))}</label>
-            <input id="vc" class="input-lg" type="number" step="any"
-              placeholder="${escapeHtml(t(opts.lang, 'tool_contribution_margin_vc_ph'))}">
-          </div>
+            <div class="form-group">
+              <label class="form-label" for="price">${escapeHtml(tx('price_label'))}</label>
+              <input id="price" class="input-lg" type="text" inputmode="decimal" autocomplete="off" placeholder="${escapeHtml(tx('price_ph'))}">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="vc">${escapeHtml(tx('vc_label'))}</label>
+              <input id="vc" class="input-lg" type="text" inputmode="decimal" autocomplete="off" placeholder="${escapeHtml(tx('vc_ph'))}">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="units">${escapeHtml(tx('units_label'))}</label>
+              <input id="units" class="input-lg" type="text" inputmode="decimal" autocomplete="off" placeholder="${escapeHtml(tx('units_ph'))}">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fixed">${escapeHtml(tx('fixed_label'))}</label>
+              <input id="fixed" class="input-lg" type="text" inputmode="decimal" autocomplete="off" placeholder="${escapeHtml(tx('fixed_ph'))}">
+            </div>
           </div>
           <div class="btn-row">
-            <button type="submit" class="btn btn-primary">${escapeHtml(t(opts.lang, 'tool_contribution_margin_calculate'))}</button>
-            <button type="button" id="btnSample" class="btn btn-outline-secondary">${escapeHtml(t(opts.lang, 'tool_contribution_margin_sample'))}</button>
-            <button type="button" id="btnClear" class="btn btn-outline-secondary">${escapeHtml(t(opts.lang, 'tool_contribution_margin_clear'))}</button>
+            <button type="submit" class="btn btn-primary">${escapeHtml(tx('calculate'))}</button>
+            <button type="button" id="btnSample" class="btn btn-outline-secondary">${escapeHtml(tx('sample'))}</button>
+            <button type="button" id="btnClear" class="btn btn-outline-secondary">${escapeHtml(tx('clear'))}</button>
           </div>
         </form>
         <div id="calcResult" class="result" style="display:none" aria-live="polite">
-          <div><strong>${escapeHtml(t(opts.lang, 'tool_contribution_margin_cmOut_label'))}:</strong> <span id="cmOut"></span></div>
-          <div class="muted"><strong>${escapeHtml(t(opts.lang, 'tool_contribution_margin_cmrOut_label'))}:</strong> <span id="cmrOut"></span></div>
+          <div class="cm-out">${escapeHtml(tx('cmOut_label'))}: <span id="cmPrimary"></span></div>
+          <div id="cmRows"></div>
+          <div id="cmStepsWrap">
+            <div class="cm-h">${escapeHtml(tx('steps_title'))}</div>
+            <ol id="cmSteps" class="cm-steps"></ol>
+          </div>
           <div id="calcNote" class="muted"></div>
         </div>
       </div>
     </div>
 
-    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_contribution_margin', mode: 'formula' })}`;
+    ${renderToolIgSections({
+			lang: opts.lang,
+			prefix: PREFIX,
+			mode: 'formula',
+			howItemCount: 4,
+			whyChooseItemCount: 5,
+			usecaseCount: 4,
+			formulaItemCount: 5,
+		})}`;
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
 		links: [
-			{
-				label: t(opts.lang, 'tool_contribution_margin_ref_a_label'),
-				href: 'https://www.investopedia.com/terms/c/contributionmargin.asp',
-			},
-			{
-				label: t(opts.lang, 'tool_contribution_margin_ref_b_label'),
-				href: 'https://www.investopedia.com/terms/b/breakevenanalysis.asp',
-			}
+			{ label: tx('ref_a_label'), href: 'https://www.investopedia.com/terms/c/contributionmargin.asp' },
+			{ label: tx('ref_b_label'), href: 'https://www.investopedia.com/terms/b/breakevenanalysis.asp' },
 		],
 	});
+
+	/** 前端文案。 */
+	const clientText = {
+		lang: opts.lang,
+		err: tx('err_generic'),
+		note: tx('result_note'),
+		labelRatio: tx('cmrOut_label'),
+		labelTotal: tx('totalOut_label'),
+		labelBe: tx('beOut_label'),
+		stepCm: tx('step_cm_tpl'),
+		stepRatio: tx('step_ratio_tpl'),
+		stepTotal: tx('step_total_tpl'),
+		stepBe: tx('step_be_tpl'),
+	};
 
 	const extraBodyHtml = `
   <script>
     (function () {
+      /** 控件。 */
       var form = document.getElementById('calcForm');
-      var result = document.getElementById('calcResult');
-      var noteEl = document.getElementById('calcNote');
       var priceEl = document.getElementById('price');
       var vcEl = document.getElementById('vc');
-      var cmOutEl = document.getElementById('cmOut');
-      var cmrOutEl = document.getElementById('cmrOut');
-      var msgErr = ${JSON.stringify(t(opts.lang, 'tool_contribution_margin_err_generic'))};
-      var noteEdu = ${JSON.stringify(t(opts.lang, 'tool_contribution_margin_result_note'))};
+      var unitsEl = document.getElementById('units');
+      var fixedEl = document.getElementById('fixed');
+      var result = document.getElementById('calcResult');
+      var primaryOut = document.getElementById('cmPrimary');
+      var rowsEl = document.getElementById('cmRows');
+      var stepsEl = document.getElementById('cmSteps');
+      var stepsWrap = document.getElementById('cmStepsWrap');
+      var noteEl = document.getElementById('calcNote');
+      var T = ${JSON.stringify(clientText)};
+      var sampleIndex = 0;
+      var SAMPLES = [
+        { price: '50', vc: '30', units: '', fixed: '' },
+        { price: '50', vc: '30', units: '100', fixed: '' },
+        { price: '50', vc: '30', units: '', fixed: '10000' },
+        { price: '40', vc: '28', units: '200', fixed: '4800' }
+      ];
 
-      /** 格式化数字（默认 2 位小数）。 */
-      function fmt(n, d) {
-        d = d == null ? 2 : d;
-        return Number.isFinite(n) ? n.toFixed(d) : '—';
+      /**
+       * 解析非负有限数。
+       * @param {string} raw 原文
+       * @param {boolean} requirePositive 是否要求 > 0
+       * @param {boolean} allowEmpty 空串是否返回 null（可选字段）
+       * @returns {number|null}
+       */
+      function parseNum(raw, requirePositive, allowEmpty) {
+        var s = String(raw == null ? '' : raw).trim().replace(',', '.');
+        if (!s) return allowEmpty ? null : null;
+        var n = Number(s);
+        if (!isFinite(n)) return null;
+        if (requirePositive ? !(n > 0) : n < 0) return null;
+        return n;
       }
 
       /**
-       * 核心计算（由工具定义注入）。
-       * @returns {{ ok: boolean, error?: string, values?: Record<string, string|number> }}
+       * 格式化数字。
+       * @param {number} n 数值
+       * @param {number} digits 小数位
+       * @returns {string}
        */
-      function compute() {
-
-        var P = parseFloat(priceEl.value);
-        var VC = parseFloat(vcEl.value);
-        if (!(P > 0) || !Number.isFinite(VC) || VC < 0) return { ok:false, error: msgErr };
-        var cm = P - VC;
-        var ratio = (cm / P) * 100;
-        return { ok:true, values:{ cmOut: fmt(cm), cmrOut: fmt(ratio)+'%' } };
-
-      }
-
-      /** 执行计算并刷新结果区。 */
-      function runCalc() {
-        var out = compute();
-        result.style.display = 'block';
-        if (!out || !out.ok) {
-          cmOutEl.textContent = '—';
-          cmrOutEl.textContent = '—';
-          noteEl.textContent = (out && out.error) || msgErr;
-          return false;
+      function fmt(n, digits) {
+        if (!isFinite(n)) return '—';
+        var d = digits == null ? 2 : digits;
+        try {
+          return new Intl.NumberFormat(T.lang + '-u-nu-latn', {
+            maximumFractionDigits: d,
+            minimumFractionDigits: 0
+          }).format(n);
+        } catch (e) {
+          return n.toFixed(d);
         }
-        var v = out.values || {};
-        cmOutEl.textContent = v.cmOut != null ? String(v.cmOut) : '—';
-        cmrOutEl.textContent = v.cmrOut != null ? String(v.cmrOut) : '—';
-        noteEl.textContent = noteEdu;
-        return true;
       }
 
-      /** 加载进页样例。 */
+      /**
+       * 模板替换。
+       * @param {string} tpl 模板
+       * @param {Object} map 键值
+       * @returns {string}
+       */
+      function fill(tpl, map) {
+        var s = String(tpl || '');
+        Object.keys(map).forEach(function (k) {
+          s = s.split('{' + k + '}').join(String(map[k]));
+        });
+        return s;
+      }
+
+      /**
+       * 显示错误。
+       * @param {string} msg 错误文案
+       */
+      function showError(msg) {
+        result.style.display = 'block';
+        primaryOut.textContent = '—';
+        rowsEl.innerHTML = '';
+        stepsEl.innerHTML = '';
+        stepsWrap.style.display = 'none';
+        noteEl.className = 'muted cm-err';
+        noteEl.textContent = msg;
+      }
+
+      /** 核心计算。 */
+      function run() {
+        var price = parseNum(priceEl.value, true, false);
+        var vc = parseNum(vcEl.value, false, false);
+        if (price == null || vc == null) return showError(T.err);
+        if (vc > price) return showError(T.err);
+
+        var unitsRaw = String(unitsEl.value || '').trim();
+        var fixedRaw = String(fixedEl.value || '').trim();
+        var units = unitsRaw === '' ? null : parseNum(unitsRaw, true, true);
+        var fixed = fixedRaw === '' ? null : parseNum(fixedRaw, false, true);
+        if (unitsRaw !== '' && units == null) return showError(T.err);
+        if (fixedRaw !== '' && fixed == null) return showError(T.err);
+
+        var cm = price - vc;
+        var ratio = (cm / price) * 100;
+        primaryOut.textContent = fmt(cm, 2);
+        var rows = ['<div class="cm-row"><strong>' + T.labelRatio + ':</strong> ' + fmt(ratio, 2) + '%</div>'];
+        var steps = [
+          fill(T.stepCm, { price: fmt(price, 2), vc: fmt(vc, 2), cm: fmt(cm, 2) }),
+          fill(T.stepRatio, { cm: fmt(cm, 2), price: fmt(price, 2), ratio: fmt(ratio, 2) })
+        ];
+
+        if (units != null) {
+          var total = cm * units;
+          rows.push('<div class="cm-row"><strong>' + T.labelTotal + ':</strong> ' + fmt(total, 2) + '</div>');
+          steps.push(fill(T.stepTotal, { cm: fmt(cm, 2), units: fmt(units, 2), total: fmt(total, 2) }));
+        }
+        if (fixed != null) {
+          if (!(cm > 0)) return showError(T.err);
+          var be = fixed / cm;
+          rows.push('<div class="cm-row"><strong>' + T.labelBe + ':</strong> ' + fmt(be, 2) + '</div>');
+          steps.push(fill(T.stepBe, { fixed: fmt(fixed, 2), cm: fmt(cm, 2), be: fmt(be, 2) }));
+        }
+
+        rowsEl.innerHTML = rows.join('');
+        stepsEl.innerHTML = steps.map(function (s) { return '<li>' + s + '</li>'; }).join('');
+        stepsWrap.style.display = '';
+        noteEl.className = 'muted';
+        noteEl.textContent = T.note;
+        result.style.display = 'block';
+      }
+
+      /** 加载样例。 */
       function loadSample() {
+        var s = SAMPLES[sampleIndex % SAMPLES.length];
+        sampleIndex += 1;
+        priceEl.value = s.price;
+        vcEl.value = s.vc;
+        unitsEl.value = s.units;
+        fixedEl.value = s.fixed;
+        run();
+      }
 
-        priceEl.value='50';
-        vcEl.value='30';
-
-        runCalc();
+      /** 清空。 */
+      function clearAll() {
+        form.reset();
+        result.style.display = 'none';
+        priceEl.focus();
       }
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        runCalc();
+        run();
       });
       document.getElementById('btnSample').addEventListener('click', loadSample);
-      document.getElementById('btnClear').addEventListener('click', function () {
-        form.reset();
-        result.style.display = 'none';
-      });
+      document.getElementById('btnClear').addEventListener('click', clearAll);
       loadSample();
     })();
   </script>`;

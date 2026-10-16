@@ -17,7 +17,7 @@
 
 ### en
 - 检索词：见 title 主词
-- Title：Contribution Margin Calculator — Price Minus Variable Cost
+- Title：Contribution Margin Calculator — Unit CM Ratio and Break-Even Units
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### zh
@@ -76,3 +76,6 @@
 | 2 按 brief 重写 | 2026-08-09 | 按 brief 写十语 title/description 与核心键；按钮短词本地化 | 十语键齐全 |
 | 2b 抽查语检索覆盖优化 | 2026-08-09 | 抽查 en,zh,es,ja：再核 title/desc 当地主词与示例数字 | en,zh,es,ja 已再优化 title/desc |
 | 3 抽查+禁词+lint | 2026-08-09 | 扫禁词与免责；跑 coverage:gate all 与 build:site | 上线验收通过 |
+| 0b 清单前检索覆盖 | 2026-10-16 | thin-rewrite：title 含 CM ratio/BE units；desc 50/30→20(40%) | 覆盖表已写入 02 |
+| 1b 母版检索覆盖优化 | 2026-10-16 | 可选 units/fixed；safety_banner；FAQ vs gross | 母版可合并 |
+| 2b 抽查语检索覆盖优化 | 2026-10-16 | 九语按 brief 检索向重写；zh/ja desc≥120 | verify:tool OK |

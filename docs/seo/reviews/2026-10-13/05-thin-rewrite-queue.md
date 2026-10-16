@@ -80,8 +80,8 @@
 | 58 | how-to-calculate-macros | how-to-calculate | 149 | 1 | 7 | A | 1.3 | done 2026-10-16 |
 | 59 | how-to-calculate-age | how-to-calculate | 160 | 1 | 7 | A | 1.2 | done 2026-10-16 |
 | 60 | how-to-calculate-cagr | how-to-calculate | 344 | 72 | 0 | A | 1.2 | done 2026-10-16 |
-| 61 | how-to-calculate-contribution-margin | how-to-calculate | 176 | 2 | 0 | A | 1.0 | todo |
-| 62 | how-to-calculate-gpa | how-to-calculate | 305 | 7 | 0 | A | 0.9 | todo |
+| 61 | how-to-calculate-contribution-margin | how-to-calculate | 176 | 2 | 0 | A | 1.0 | done 2026-10-16 |
+| 62 | how-to-calculate-gpa | how-to-calculate | 305 | 7 | 0 | A | 0.9 | done 2026-10-16 |
 | 63 | create-budget-spreadsheet | category:calculator | 218 | 2 | 0 | B | 0.8 | todo |
 | 64 | how-to-calculate-ohms-law | how-to-calculate | 110 | 0 | 7 | A | 0.7 | todo |
 | 65 | write-nested-if-formula-for-excel | category:developer | 233 | 2 | 0 | B | 0.7 | todo |
