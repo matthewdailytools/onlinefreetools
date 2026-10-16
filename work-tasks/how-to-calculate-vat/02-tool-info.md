@@ -4,7 +4,7 @@
 **slug**：`how-to-calculate-vat`  
 **路径**：`/tools/how-to-calculate-vat`  
 **主方向**：C  
-**YMYL**：否  
+**YMYL**：是（税务算术；须 disclaimer，非报税建议）  
 
 ## IG 预审
 
@@ -20,8 +20,8 @@
 
 | 字段 | 内容 |
 |---|---|
-| Title (en) | VAT / GST Calculator — Add or Extract Tax |
-| Description | Add VAT/GST to a net amount or extract tax from a gross amount. Sample: net 100 at 20% → gross 120. Enter your own rate — no country tax matrix. Browser-only. |
+| Title (en) | VAT / GST Calculator — Add Tax to Net or Extract Tax from Gross |
+| Description | Add/extract; sample net 100@20% → gross 120; rate chips; reverse check; educational only. ≥120 chars. |
 | related | how-to-calculate-discount, how-to-calculate-tip |
 
 ## 清单前检索覆盖优化
@@ -30,7 +30,7 @@
 |---|---|
 | 日期 | 2026-08-09 |
 | slug 结论 | **保留** `how-to-calculate-vat` |
-| 主检索词 → title/H1 | en：**VAT / GST Calculator — Add or Extract Tax**；zh：**增值税计算器 — 含税与未税互算** |
+| 主检索词 → title/H1 | en：**VAT / GST Calculator — Add Tax to Net or Extract Tax from Gross**；zh：**增值税/GST 计算器 — 未税加税或含税拆税** |
 | 次要关键词 → desc/FAQ | 次词落入 description 前半与 FAQ；示例数字固定 |
 | 用户搜索习惯判断 | 结果/场景向 title；禁参数枚举目录腔 |
 | 优化摘要 | 保留 slug；H1 主词+How to；desc 含样例数字与公式信号；非参数枚举 |

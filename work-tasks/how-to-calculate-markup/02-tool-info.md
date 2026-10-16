@@ -20,9 +20,9 @@
 
 | 字段 | 内容 |
 |---|---|
-| Title (en) | Markup Calculator — How to Calculate Markup Percentage |
-| Description | Calculate markup % from cost and selling price. Example: cost 50, sell 80 → markup 60%. Distinct from profit margin (which divides by sales). Educational retail math in your browser — not business advice. |
-| related | how-to-calculate-discount, how-to-calculate-gross-margin |
+| Title (en) | Markup Calculator — Find Markup %, Selling Price or Cost |
+| Description | Three modes; sample 50/80 → 60% markup / 37.5% margin; educational only. ≥120 chars; contains markup. |
+| related | how-to-calculate-discount, how-to-calculate-gross-margin, how-to-calculate-profit-margin |
 
 ## 清单前检索覆盖优化
 
@@ -30,7 +30,7 @@
 |---|---|
 | 日期 | 2026-08-09 |
 | slug 结论 | **保留** `how-to-calculate-markup` |
-| 主检索词 → title/H1 | en：**Markup Calculator — How to Calculate Markup Percentage**；zh：**加价率计算器 — 如何计算 Markup** |
+| 主检索词 → title/H1 | en：**Markup Calculator — Find Markup %, Selling Price or Cost**；zh：**加价率计算器 — 求加价%、售价或成本** |
 | 次要关键词 → desc/FAQ | 次词落入 description 前半与 FAQ；示例数字固定 |
 | 用户搜索习惯判断 | 结果/场景向 title；禁参数枚举目录腔 |
 | 优化摘要 | 保留 slug；H1 主词+How to；desc 含样例数字与公式信号；非参数枚举 |
