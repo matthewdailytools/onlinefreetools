@@ -144,4 +144,4 @@
 | IG 修正复审 | 2026-09-05 | en/zh/es/ja 重写版本、步骤、Example 与 FAQ；其余语修正 2019/Microsoft 365+ | 删除 H1/头词元叙述；补本地语法边界 |
 | 0b 清单前检索覆盖 | 2026-10-16 | thin-rewrite：IFS Builder + TRUE catch-all | 覆盖表已写入 02 |
 | 1b 母版检索覆盖优化 | 2026-10-16 | 条件表 UI；样例轮换；Excel 2016 提示 | 母版可合并 |
-| 2b 抽查语检索覆盖优化 | 2026-10-16 | 九语按 brief 检索向重写 | 待 verify |
+| 2b 抽查语检索覆盖优化 | 2026-10-16 | 九语按 brief 检索向重写 | verify:tool OK |

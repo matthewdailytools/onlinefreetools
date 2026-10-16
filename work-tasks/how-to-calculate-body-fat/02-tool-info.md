@@ -25,8 +25,8 @@
 
 | 字段 | 内容 |
 |---|---|
-| Title (en) | Body Fat Calculator — How to Estimate Body Fat Percentage |
-| Description | Estimate body fat % with U.S. Navy circumference formulas (Army option on the same page). Example: male 178 cm, neck 40 cm, waist 86 cm → about 15.1%. Browser-only; educational — not medical advice. |
+| Title (en) | Body Fat Calculator — Navy Circumference Estimate with Army Label |
+| Description | Estimate body fat % with U.S. Navy circumference formulas (Army/DoD-style label on the same page). Example: male 178 cm height, neck 40 cm, waist 86 cm → about 15.3%. cm in, inches in the log10 formulas. Educational only — not medical advice or a diagnosis. |
 | related | how-to-calculate-bmi, how-to-calculate-bmr-tdee |
 | Schema | WebApplication + BreadcrumbList |
 
@@ -34,23 +34,55 @@
 
 | 项 | 结论 / 落点 |
 |---|---|
-| 日期 | 2026-08-09 |
+| 日期 | 2026-08-09；复审 2026-10-16 |
 | slug 结论 | **保留** `how-to-calculate-body-fat`；不拆 navy/army/skinfold URL |
-| 主检索词 → title/H1 | en：**Body Fat Calculator — How to Estimate Body Fat Percentage**；zh：**体脂率计算器 — 如何用围度估算体脂率** |
-| 次要关键词 → desc/FAQ | navy body fat → Formula/选项；army → 同页选项；skinfold → FAQ 局限 |
-| 用户搜索习惯判断 | en 搜 body fat calculator / navy body fat；勿堆「颈围、腰围、臀围」进 H1 |
-| 优化摘要 | 结果向 Body Fat Percentage；多公式同页 |
+| 主检索词 → title/H1 | en：**Body Fat Calculator — Navy Circumference Estimate with Army Label**（主词 Body Fat Calculator） |
+| 次要关键词 → desc/FAQ | navy / circumference → H1+desc+FAQ；army/DoD → H1 Army Label + FAQ + usecase；percentage / 15.3% → desc+example；skinfold → FAQ；cm→inches → desc+usecase |
+| 用户搜索习惯判断 | en 搜 body fat calculator / navy body fat；勿堆颈围、腰围、臀围进 H1 |
+| 优化摘要 | 2026-10-16 母版 H1 改为 Navy circumference + Army label；男样例 15.3% 进 desc；医疗建议有意不满足 |
 | [x] 已回写 SEO 卡片 | |
+
+## 同意图相关搜索词（页面生成必吸）
+
+| 搜法（en；他语按 03） | 判定 | 落点 |
+|---|---|---|
+| body fat calculator | absorb 主词 | H1 / title |
+| how to calculate body fat / body fat percentage | absorb 次词 | desc（about 15.3%）/ example / usecase |
+| navy body fat / U.S. Navy circumference | absorb 次词 | H1 Navy Circumference / desc / formula / FAQ |
+| army body fat / DoD circumference | absorb 次词 | H1 Army Label / method UI / FAQ / usecase |
+| centimetre to inches tape measure | absorb 次词 | desc / steps / usecase |
+| skinfold calipers | absorb 次词 | FAQ / formula item（不另开 URL） |
+| medical advice / diagnosis / DXA | 有意不满足 | safety_banner / disclaimer / FAQ |
+
+- [x] 上表已列全本意图相关搜索
+- [x] 生成 title / description / FAQ / Use cases 时按上表写入
+
+## Ads / Keyword Planner 长尾
+
+- [x] 不适用（本 slug 无独立 Planner 长尾表）
+
+## 用户意图审查
+
+| 层 | 结论 |
+|---|---|
+| 00 原话 | 围度估算体脂、海军/陆军同页、不拆 URL，仍成立 |
+| 主检索词任务 | 输入性别与围度得到教育向体脂% → **满足** |
+| 超出 | 无第二计算器；皮褶只在 FAQ 说明 |
+| 有意不满足 | 医疗建议、诊断、DXA/Bod Pod 临床结论 |
+| 总判 | 满足（估算）；医疗建议有意不满足 |
+
+- [x] 已按审查回写 How / 交互主次 / FAQ / desc
 
 > `npm run coverage:gate -- --slug=how-to-calculate-body-fat --phase=0b`
 
 ## 交互规格
 
 - 输入：方法 Navy|Army；性别；身高 cm；颈围 cm；腰围 cm；女另需臀围 cm
-- 输出：体脂%（围度先换算为英寸再套 DoD/海军公式）
-- 样例：男、Navy、身高 178、颈 40、腰 86 → 约 **15.1%**
+- 输出：体脂% + 厘米转英寸步骤（海军与陆军标签共用同一教育向公式）
+- 样例轮换：男 Navy 178/40/86 → 约 **15.3%**；女 Army 标签 165/34/74/96（腰+臀>颈，几何合法）→ 约 **26.7%**。女式常数为 −78.387（不是加）。
 - 进页 loadSample 自动计算
-- 失败：非正数；腰≤颈；女腰+臀≤颈；结果超出合理范围时提示估算局限
+- 失败：非正数；女缺臀围；腰≤颈（女式为腰+臀≤颈）
+- 进度 HUD：不适用（一帧出结果）
 
 ## 页面模块清单
 

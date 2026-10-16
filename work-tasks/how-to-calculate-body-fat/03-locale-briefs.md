@@ -10,6 +10,7 @@
 - [x] title 非参数目录腔
 - [x] 隐私：浏览器内计算
 - [x] **清单前检索覆盖已做**
+- [x] **用户意图审查已做**
 - [x] 十语非同构（完整 UI/FAQ 独立重写，禁止英模回落）
 - [x] **检索覆盖已优化**
 
@@ -19,32 +20,32 @@
 
 ### en
 - 检索词：body fat calculator；navy body fat；how to calculate body fat percentage
-- Title：Body Fat Calculator — How to Estimate Body Fat Percentage
+- Title：Body Fat Calculator — Navy Circumference Estimate with Army Label
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### zh
 - 检索词：体脂率计算器；体脂率怎么算；海军体脂；体脂百分比
-- Title：体脂率计算器 — 如何用围度估算体脂率
+- Title：体脂率计算器 — 用海军围度算出体脂百分比
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### es
 - 检索词：calculadora de grasa corporal；porcentaje de grasa；método navy
-- Title：Calculadora de grasa corporal — Estimar el porcentaje con perímetros
+- Title：Calculadora de grasa corporal — Estimar el porcentaje con el método Navy
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### ar
 - 检索词：حاسبة نسبة الدهون؛ دهون الجسم
-- Title：حاسبة نسبة دهون الجسم — تقدير بالنسبة المئوية
+- Title：حاسبة نسبة الدهون — تقدير دهون الجسم من محيط الجسم
 - 轮次2已重写：[x]  轮次3已抽查：[ ]
 
 ### pt
 - 检索词：calculadora de gordura corporal；percentual de gordura
-- Title：Calculadora de gordura corporal — Estimar o percentual com circunferências
+- Title：Calculadora de gordura corporal — Estimar o percentual pelo método da Marinha
 - 轮次2已重写：[x]  轮次3已抽查：[ ]
 
 ### id
 - 检索词：kalkulator lemak tubuh；persentase lemak tubuh
-- Title：Kalkulator lemak tubuh — Estimasi persen lemak dengan lingkar tubuh
+- Title：Kalkulator lemak tubuh — Hitung persentase lemak dari lingkar tubuh
 - 轮次2已重写：[x]  轮次3已抽查：[ ]
 
 ### fr
@@ -54,17 +55,17 @@
 
 ### ja
 - 检索词：体脂肪率 計算；体脂肪率 電卓；ネイビー 体脂肪
-- Title：体脂肪率の計算ツール — 周囲径から推定する
+- Title：体脂肪率計算 — ネイビーの周囲径から推定する
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### ru
 - 检索词：калькулятор процента жира；процент жира в организме
-- Title：Калькулятор процента жира — оценка по обхватам
+- Title：Калькулятор процента жира — оценка по обхватам ВМС
 - 轮次2已重写：[x]  轮次3已抽查：[ ]
 
 ### de
 - 检索词：Körperfett Rechner；Körperfettanteil berechnen；Navy Methode
-- Title：Körperfett-Rechner — Anteil über Umfangsmaße schätzen
+- Title：Körperfett-Rechner — Anteil mit der Navy-Methode schätzen
 - 轮次2已重写：[x]  轮次3已抽查：[ ]
 
 ## 多轮记录（摘要）
@@ -77,3 +78,6 @@
 | 2 按 brief 重写 | 2026-08-09 | 按 brief 独立写 zh/es/ar/pt/id/fr/ja/ru/de 完整 UI/How/FAQ/免责；禁止英模回落 | 十语键齐全且非英模 |
 | 2b 抽查语检索覆盖优化 | 2026-08-09 | 抽查 en,zh,es,ja：title 当地主词；zh 含体脂率；es 含 grasa corporal；ja 含体脂肪率 | en,zh,es,ja 已再核 title/desc |
 | 3 抽查+禁词+lint | 2026-08-09 | 扫禁词与 YMYL；coverage:gate all + build:site | 上线验收 |
+| 0b 清单前检索覆盖 | 2026-10-16 | 复审保留 how-to-calculate-body-fat；H1 改为 Body Fat Calculator — Navy Circumference Estimate with Army Label；navy/army/percentage/skinfold 落入 H1、desc、FAQ、usecase；医疗建议有意不满足 | 覆盖表与同意图表已回写 02 |
+| 1b 母版检索覆盖优化 | 2026-10-16 | 母版 title 主词 Body Fat Calculator；desc 含 Navy、Army/DoD、男样例约 15.3% 与非医疗建议；次词落 FAQ 与 usecase | 主词在 H1；非参数枚举 |
+| 2b 抽查语检索覆盖优化 | 2026-10-16 | 九语按当地搜法重写；抽查 en,zh,es,ja：zh 体脂率计算器与海军体脂，es grasa corporal 与 método Navy，ja 体脂肪率計算与ネイビー；陆军同方程、女式减 78.387、样例 15.3% 与 26.7% 写入 desc/FAQ/example | en,zh,es,ja 主词在 H1；次词落 desc 与 FAQ；非参数枚举 |
