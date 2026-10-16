@@ -3,104 +3,71 @@
 **状态**：`implemented`  
 **slug**：`write-nested-if-formula-for-excel`  
 **路径**：`/tools/write-nested-if-formula-for-excel`  
-**主方向**：A  
+**主方向**：B  
 **YMYL**：否  
-
----
 
 ## IG 预审
 
-- 目标主词 / 长尾意图：write a nested IF formula for Excel
-- 用户真实任务：Fill condition rows and emit a nested IF() formula plus a trial result for a sample cell.
-- [x] 竞品 SERP：公式站 / 模板站 / Excel Online（本页不克隆套件）
-- [x] 缺口：Quote escaping; contains vs equals; trial eval without Excel.
-- [x] 我们补哪 ≥3 条增益：规则 + 边界 + 进页样例数值
-- [x] 长尾：合并进本页 FAQ/芯片，不拆近义 URL
-- [x] 权威来源：Microsoft IF function support article
-- [x] Use case / 边界 / Example：见交互规格
-- [x] Related：write-ifs-formula-in-excel, excel-formulas-cheat-sheet
-
-### 计划勾选的 §3.1 维度
-
-| # | 维度 | 本页如何体现 |
-|---|---|---|
-| 1 | 公式/规则 | Excel formula string + JS trial value |
-| 2 | 边界/失败 | 空条件报错；首个匹配优先；本地版 Excel 可能需改函数名或分隔符 |
-| 6 | 本地隐私 | 文件与粘贴留在设备、不上传服务器 |
-| 8 | 数值示例 | Cell A1=West; West→A, East→B, else Other → =IF(A1="West","A",IF(A1="East","B","Other")) |
-| 9 | 主题内链 | related ≥2 |
-
----
+- 目标主词：nested IF formula Excel
+- 用户任务：有序条件 → 嵌套 IF + 试算 + 复制
+- [x] Related：`write-ifs-formula-in-excel`、`wrap-formula-with-ifna`
 
 ## 开发 / SEO 卡片
 
 | 字段 | 内容 |
 |---|---|
-| Catalog `page.style` | opts |
-| Title (en) / H1 | **Write a nested IF formula for Excel** |
-| Description 要点 | Process + example. Files/paste stay on the device and are not uploaded. |
-| FAQ 要点（≥3） | 上传？和邻页差？头词也叫？ |
-| Disclaimer / References | Microsoft IF function support article |
-| related | write-ifs-formula-in-excel, excel-formulas-cheat-sheet |
+| Title (en) | Nested IF Formula Builder for Excel — Ordered Conditions to Copy |
+| Description | West→A East→B else Other；浏览器试算后复制。English IF names/commas. |
+| related | write-ifs-formula-in-excel, wrap-formula-with-ifna |
 
-## 清单前检索覆盖优化（生成页面模块清单前必做）
+## 清单前检索覆盖优化
 
 | 项 | 结论 / 落点 |
 |---|---|
-| 日期 | 2026-09-04 |
-| slug 结论 | 保留 `write-nested-if-formula-for-excel`（Planner 场景句 kebab） |
-| 主检索词 → title/H1 | **Write a nested IF formula for Excel** |
-| 次要关键词 → desc / FAQ / Use cases | nested if excel → FAQ; how to use if statement in excel → How; if contains excel → chip / condition type; excel if function multiple conditions → desc |
-| 用户搜索习惯判断 | 搜的是这一次动作/结果，不是 Microsoft Excel 安装 |
-| 优化摘要 | H1 用场景句，不用 ms excel / online excel / IFS Excel / Pivot table Excel 头词进攻 |
-| [x] 已回写上方 SEO 卡片 Title / Description 与建议 slug | |
+| 日期 | 2026-09-04；复审 2026-10-16 |
+| slug 结论 | **保留** |
+| 主检索词 → title/H1 | en：**Nested IF Formula Builder for Excel — Ordered Conditions to Copy** |
+| 次要关键词 → desc/FAQ | nested IF；contains SEARCH；not IFS → FAQ |
+| 优化摘要 | 表头条件行；样例轮换；copy 反馈；清理无关键；禁参数枚举 |
+| [x] 已回写 SEO 卡片 | |
 
-## Ads / Keyword Planner 长尾（有分析时必做）
+## 同意图相关搜索词（页面生成必吸）
 
-- [x] 已引用分析路径：`docs/seo/keywords/excel/2026-09-04-excel-keyword-planner.md`
+| 搜法（en；他语按 03） | 判定 | 落点 |
+|---|---|---|
+| nested IF formula Excel | 吸（主词） | H1 / title |
+| write nested if / IF formula builder | 吸（次词） | desc / how |
+| contains SEARCH blank | 吸（次词） | rules / FAQ |
+| IFS vs nested IF | 吸（次词） | FAQ / related |
+| upload spreadsheet | 有意不满足 | FAQ privacy |
 
-| 长尾词（Planner） | 归属 | 文案落点（H1/desc/FAQ/usecase） | 功能覆盖（控件/结果哪一步） | 不覆盖理由（若有） |
-|---|---|---|---|---|
-| `nested if excel` | absorb | FAQ | condition rows emit nested IF |
-| `how to use if statement in excel` | absorb | How | same builder |
-| `if contains excel` | absorb | chip SEARCH | contains operator |
-| `write if statement excel` | absorb | desc | same emit |
+- [x] 上表已列全本意图相关搜索
+- [x] 生成 title / description / FAQ / Use cases 时按上表写入
 
-- [x] 交互规格已按上表补齐能力（不仅写进文案）
+## Ads / Keyword Planner 长尾
 
-## 用户意图审查（标 ready 前必做）
+- [x] 已引用历史 Planner；本轮不新增长尾 URL
 
-| 项 | 结论 |
+## 用户意图审查
+
+| 层 | 结论 |
 |---|---|
-| 日期 | 2026-09-04 |
-| 总判 | 满足：进页样例即跑出 Excel formula string + JS trial value |
-| 主词搜索者任务 | Fill condition rows and emit a nested IF() formula plus a trial result for a sample cell. |
-| Ads/Planner 长尾任务 | 上表每条有控件；套件编辑器 / 下载 Excel / 教程有意不满足 |
-| 满足之处 | loadSample 与 Example 对齐：Cell A1=West; West→A, East→B, else Other → =IF(A1="West","A",IF(A1="East","B","Other")) |
-| 超出 / 应划边界 | 不做 Excel Online；不把邻页函数硬塞进首屏第二套控件 |
-| 缺口与已做优化 | How 改为单元格→有序条件→否则值→复制；试算等于判断改为不区分大小写 |
-| [x] 已按审查回写 How / 交互主次 / FAQ / desc | |
+| 00 原话 | 写嵌套 IF，仍成立 |
+| 主检索词任务 | 改写后条件表+试算+复制 → **满足** |
+| 超出 | 无本地化函数名/分号自动转换 |
+| 有意不满足 | IFS 本体（相关页） |
+| 总判 | 满足 |
 
-## 交互规格（给实现用）
+> `npm run coverage:gate -- --slug=write-nested-if-formula-for-excel --phase=0b`
 
-- 输入：Cell ref + rows (equals/contains/blank) + else
-- 输出：Excel formula string + JS trial value
-- 核心规则 / 算法：Quote escaping; contains vs equals; trial eval without Excel.
-- 失败与边界行为：无条件时报错；首个匹配优先；试算仅覆盖等于/包含/空白；本地版 Excel 可能需调整语法
-- 示例 Input → Output：Cell A1=West; West→A, East→B, else Other → =IF(A1="West","A",IF(A1="East","B","Other"))
-- **进页样例（必填）**：`loadSample()` 自动跑；与 H2 Example 一致
-- **实现防呆**：opts；正则 `\\w`
+## 交互规格
 
-## 页面模块清单（与 tool-creation 对齐）
+- 输入：cell、trial、else、条件表（eq/contains/blank）
+- 输出：嵌套 IF 公式 + 试算结果 + 复制
+- 样例轮换：区域标签 / 成绩档 / contains
 
-- [x] H1 + 一句话摘要
-- [x] 首屏工具交互区（含进页自动样例结果）
-- [x] How it works
-- [x] Formula / Rules（计算与转换类）
-- [x] Example（固定文案，与默认样例一致）
-- [x] Use cases（2–3）
-- [x] FAQ ≥3
-- [x] Related tools ≥2
-- [x] References ≥1（YMYL 建议 ≥2）
-- [x] Disclaimer（本页按需）
-- [x] `03-locale-briefs.md` 已填（实现十语前）
+## 页面模块清单
+
+- [x] H1 + 摘要 + 交互 + 进页样例
+- [x] How / Rules / Example / Use cases / FAQ≥3 / Related / References
+- [x] `03-locale-briefs.md` 已填

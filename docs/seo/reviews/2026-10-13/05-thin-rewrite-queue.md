@@ -84,7 +84,7 @@
 | 62 | how-to-calculate-gpa | how-to-calculate | 305 | 7 | 0 | A | 0.9 | done 2026-10-16 |
 | 63 | create-budget-spreadsheet | category:calculator | 218 | 2 | 0 | B | 0.8 | done 2026-10-16 |
 | 64 | how-to-calculate-ohms-law | how-to-calculate | 110 | 0 | 7 | A | 0.7 | done 2026-10-16 |
-| 65 | write-nested-if-formula-for-excel | category:developer | 233 | 2 | 0 | B | 0.7 | todo |
+| 65 | write-nested-if-formula-for-excel | category:developer | 233 | 2 | 0 | B | 0.7 | done 2026-10-16 |
 | 66 | write-ifs-formula-in-excel | category:developer | 242 | 2 | 0 | B | 0.6 | todo |
 | 67 | how-to-calculate-body-fat | how-to-calculate | 316 | 6 | 0 | A | 0.6 | todo |
 | 68 | convert-word-document-to-pdf | pdf | 328 | 8 | 0 | B | 0.5 | todo |

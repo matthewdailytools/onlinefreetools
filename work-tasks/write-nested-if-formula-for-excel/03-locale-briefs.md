@@ -141,4 +141,7 @@
 | 2 按 brief 重写 | 2026-09-04 | 按每语当地检索词独立写 title/FAQ/How 开篇，不锁英模问序 | 十语分片齐 |
 | 2b 抽查语检索覆盖优化 | 2026-09-04 | 抽查 en,zh,es,ja 的 title/desc：当地主词进 H1，次词进 FAQ；es/ja 句式不与 en 平行 | en,zh,es,ja 均再核落点 |
 | 3 抽查+禁词+lint | 2026-09-04 | 扫 privacy 设备+服务器句；禁 page 产品名；清待母语抽查 | 可标 i18n-done |
+| 0b 清单前检索覆盖 | 2026-10-16 | thin-rewrite：Nested IF Builder；desc West→A 示例 | 覆盖表已写入 02 |
+| 1b 母版检索覆盖优化 | 2026-10-16 | 条件表头；样例轮换；copy 反馈；清理无关键 | 母版可合并 |
+| 2b 抽查语检索覆盖优化 | 2026-10-16 | 九语按 brief 检索向重写 | verify:tool OK |
 | IG 修正复审 | 2026-09-05 | en/zh/es/ja 重写任务步骤与完整公式；其余语补真实 Input→Output；补本地 Excel 语法边界 | 等于试算改为不区分大小写；无按钮口号 |
