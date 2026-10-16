@@ -99,3 +99,11 @@
 - [x] References ≥1
 - [x] Disclaimer（YMYL 按需）
 - [x] `03-locale-briefs.md` 已填
+
+## 薄改写覆盖（2026-10-16）
+
+| 词 | 归属 | 落点 |
+|---|---|---|
+| convert word document to pdf | 主词 | H1 / title |
+| word to pdf / docx to pdf | 次词 | description、FAQ |
+| .doc / OCR / password | 有意不满足 | FAQ q3、加密错误；不另开 URL |
