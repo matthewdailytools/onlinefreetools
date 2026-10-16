@@ -75,7 +75,7 @@
 | 53 | how-to-calculate-vat | how-to-calculate | 176 | 1 | 14 | A | 1.9 | done 2026-10-16 |
 | 54 | markdown-to-html | category:developer | 300 | 12 | 0 | B | 1.7 | done 2026-10-16 |
 | 55 | how-to-calculate-discount | how-to-calculate | 270 | 7 | 0 | A | 1.6 | done 2026-10-16 |
-| 56 | how-to-calculate-z-score | how-to-calculate | 300 | 11 | 0 | A | 1.6 | todo |
+| 56 | how-to-calculate-z-score | how-to-calculate | 300 | 11 | 0 | A | 1.6 | done 2026-10-16 |
 | 57 | how-to-calculate-p-value | how-to-calculate | 325 | 18 | 0 | A | 1.3 | todo |
 | 58 | how-to-calculate-macros | how-to-calculate | 149 | 1 | 7 | A | 1.3 | todo |
 | 59 | how-to-calculate-age | how-to-calculate | 160 | 1 | 7 | A | 1.2 | todo |

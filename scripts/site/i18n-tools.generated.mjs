@@ -621,8 +621,8 @@ export const toolHomeTranslations = {
     tool_yaml_json_title: 'YAML ↔ JSON Converter — Convert configs in your browser',
     tool_youtube_thumbnail_size_desc: 'Export YouTube thumbnail size 1280×720 (16:9) — stays on your device, not uploaded.',
     tool_youtube_thumbnail_size_title: 'YouTube thumbnail size',
-    tool_z_score_description: 'Convert a raw score to a z-score with z = (x − mean) / SD. Example: x = 85, mean = 70, SD = 10 → z = 1.5. States the linear scaling assumption and SD > 0. Runs in your browser for coursework and quick checks.',
-    tool_z_score_title: 'Z-Score Calculator — How to Calculate a Standard Score',
+    tool_z_score_description: 'Convert a raw score to a z-score with z = (x − mean) / SD, or reverse a z-score back to a raw value. Example: x = 85, mean = 70, SD = 10 → z = 1.5. Requires SD > 0. Educational linear scaling only — not a normality test or p-value.',
+    tool_z_score_title: 'Z-Score Calculator — Convert Raw Score ↔ Standard Score',
   },
   zh: {
     tool_acceleration_description: '按公式 a = (v − v0) ÷ t 计算匀变速直线运动的加速度，也可反过来求末速度、初速度或时间，并写出计算过程与步骤。示例：初速度 0、末速度 10、时间 2 → 加速度 5。速度与时间单位须一致（如 m/s 与 s → m/s²）。',
@@ -1242,8 +1242,8 @@ export const toolHomeTranslations = {
     tool_yaml_json_title: 'YAML ↔ JSON 互转 — 在浏览器里转换配置，不上传服务器',
     tool_youtube_thumbnail_size_desc: '导出 YouTube 缩略图尺寸 1280×720（16:9）；文件留在本机，不上传服务器。',
     tool_youtube_thumbnail_size_title: 'YouTube 缩略图尺寸',
-    tool_z_score_description: '用 z = (x − 均值) / 标准差把原始分换成标准分（Z 分数）。示例：x = 85、均值 = 70、标准差 = 10 → z = 1.5。写明线性尺度与 SD>0。浏览器内计算，适合作业与快速对照。标准分数帮助比较不同分布上的位置。',
-    tool_z_score_title: 'Z 分数计算器 — 如何计算标准分数',
+    tool_z_score_description: '用 z = (x − 均值) / 标准差把原始分换算成 Z 分数（标准分），也能由 z、均值与标准差反推原始分。示例：x = 85、均值 = 70、标准差 = 10 → z = 1.5。要求标准差 > 0。仅供教学线性尺度换算——不是正态性检验，也不直接给出 p 值。',
+    tool_z_score_title: 'Z 分数计算器 — 原始分与标准分互算',
   },
   es: {
     tool_acceleration_description: 'Calcula la aceleración constante con la fórmula a = (v − v0) ÷ t o despeja la velocidad final, la inicial o el tiempo. Ejemplo: de 0 a 10 m/s en 2 s, a = 5 m/s². Verás el proceso con todos los pasos.',
@@ -1863,8 +1863,8 @@ export const toolHomeTranslations = {
     tool_yaml_json_title: 'YAML a JSON (y al revés) — convertir configs en el navegador',
     tool_youtube_thumbnail_size_desc: 'Exporta el tamaño miniatura YouTube 1280×720 (16:9); se queda en el dispositivo, no se sube al servidor.',
     tool_youtube_thumbnail_size_title: 'tamaño miniatura YouTube',
-    tool_z_score_description: 'Convierte una puntuación bruta en z con z = (x − media) / DE. Ejemplo: x = 85, media = 70, DE = 10 → z = 1,5. Deja claros el escalado lineal y DE > 0. En el navegador, para clase y comprobaciones rápidas.',
-    tool_z_score_title: 'Calculadora de puntuación z — Cómo calcular un valor estándar',
+    tool_z_score_description: 'Convierte una puntuación bruta en puntuación z (puntuación estándar) con z = (x − media) / DE, o recupera la puntuación bruta a partir de z. Ejemplo: x = 85, media = 70, DE = 10 → z = 1.5. Exige DE > 0. Solo escala lineal educativa — no es una prueba de normalidad ni calcula un valor p.',
+    tool_z_score_title: 'Calculadora de puntuación z — Puntuación bruta ↔ estándar',
   },
   ar: {
     tool_acceleration_description: 'حساب التسارع المنتظم بالصيغة a = (v − v0) ÷ t، أو إعادة ترتيبها لإيجاد السرعة النهائية أو الابتدائية أو الزمن، مع عرض خطوات الحل. مثال: v0 = 0، v = 10، t = 2 ← a = 5. وحّد وحدات السرعة والزمن (مثل m/s و s ← m/s²).',
@@ -2482,8 +2482,8 @@ export const toolHomeTranslations = {
     tool_yaml_json_title: 'من YAML إلى JSON وبالعكس — تحويل الإعدادات في المتصفح',
     tool_youtube_thumbnail_size_desc: 'صدّر حجم صورة مصغرة يوتيوب 1280×720 (16:9)؛ تبقى على الجهاز دون رفع.',
     tool_youtube_thumbnail_size_title: 'حجم صورة مصغرة يوتيوب',
-    tool_z_score_description: 'حوّل درجة خام إلى درجة z عبر z = (x − المتوسط) / الانحراف. مثال: x = 85 والمتوسط = 70 والانحراف = 10 → z = 1.5. يوضح المقياس الخطي وشرط الانحراف > 0. في المتصفح للتعلّم والتحقق السريع.',
-    tool_z_score_title: 'حاسبة درجة z — كيفية حساب الدرجة المعيارية',
+    tool_z_score_description: 'حوّل درجة خام إلى درجة معيارية z بالمعادلة z = (x − المتوسط) / الانحراف المعياري، أو استرجع الدرجة الخام من قيمة z. مثال: x = 85، المتوسط = 70، الانحراف = 10 → z = 1.5. يشترط أن يكون الانحراف > 0. مقياس خطي تعليمي فقط — ليس اختبار طبيعية ولا قيمة احتمالية p.',
+    tool_z_score_title: 'حاسبة الدرجة المعيارية z — تحويل الدرجة الخام والعكس',
   },
   pt: {
     tool_acceleration_description: 'Use a fórmula a = (v − v0) ÷ t para calcular a aceleração constante ou isolar a velocidade final, a inicial ou o tempo. Exemplo: de 0 a 10 m/s em 2 s, a = 5 m/s². O processo aparece em passos, pronto para conferir.',
@@ -3103,8 +3103,8 @@ export const toolHomeTranslations = {
     tool_yaml_json_title: 'De YAML para JSON — converter configs no navegador',
     tool_youtube_thumbnail_size_desc: 'Exporte o tamanho miniatura YouTube 1280×720 (16:9); fica no dispositivo, não sobe ao servidor.',
     tool_youtube_thumbnail_size_title: 'tamanho miniatura YouTube',
-    tool_z_score_description: 'Converta um escore bruto em z com z = (x − média) / DP. Exemplo: x = 85, média = 70, DP = 10 → z = 1,5. Deixa claros o escalonamento linear e DP > 0. No navegador, para estudo e checagens rápidas.',
-    tool_z_score_title: 'Calculadora de escore z — Como calcular um escore padrão',
+    tool_z_score_description: 'Converta uma nota bruta em escore z com z = (x − média) / DP, ou recupere a nota a partir de z. Exemplo: x = 85, média = 70, DP = 10 → z = 1,5. Exige DP > 0. Apenas escala linear educacional — não é teste de normalidade nem valor-p.',
+    tool_z_score_title: 'Calculadora de escore z — Nota bruta ↔ escore padrão',
   },
   id: {
     tool_acceleration_description: 'Hitung percepatan konstan dengan rumus a = (v − v0) ÷ t, atau balik rumusnya untuk mencari kecepatan akhir, kecepatan awal, maupun waktu. Contoh: dari 0 ke 10 dalam 2 detik → a = 5. Setiap langkah perhitungan ikut ditampilkan.',
@@ -3722,8 +3722,8 @@ export const toolHomeTranslations = {
     tool_yaml_json_title: 'YAML ke JSON & sebaliknya — ubah config di browser',
     tool_youtube_thumbnail_size_desc: 'Ekspor ukuran thumbnail YouTube 1280×720 (16:9); tetap di perangkat, tidak diunggah.',
     tool_youtube_thumbnail_size_title: 'ukuran thumbnail YouTube',
-    tool_z_score_description: 'Ubah skor mentah menjadi skor-z dengan z = (x − mean) / SD. Contoh: x = 85, mean = 70, SD = 10 → z = 1,5. Menuliskan asumsi skala linear dan SD > 0. Di browser untuk tugas dan cek cepat.',
-    tool_z_score_title: 'Kalkulator skor-z — Cara menghitung skor standar',
+    tool_z_score_description: 'Ubah skor mentah menjadi skor-z lewat z = (x − mean) / simpangan baku, atau balik skor-z menjadi nilai mentah. Contoh: x = 85, mean = 70, SD = 10 → z = 1,5. SD harus > 0. Hanya penskalaan linear untuk belajar — bukan uji kenormalan maupun p-value.',
+    tool_z_score_title: 'Kalkulator skor-z — Skor mentah ↔ skor standar',
   },
   fr: {
     tool_acceleration_description: 'Calculer une accélération constante avec la formule a = (v − v0) ÷ t, ou retrouver la vitesse finale, la vitesse initiale ou la durée. Exemple : de 0 à 10 m/s en 2 s, a = 5 m/s². Chaque étape du processus est affichée.',
@@ -4341,8 +4341,8 @@ export const toolHomeTranslations = {
     tool_yaml_json_title: 'YAML vers JSON — convertir des configs dans le navigateur',
     tool_youtube_thumbnail_size_desc: 'Exportez la taille miniature YouTube 1280×720 (16:9) ; reste sur l’appareil, pas envoyé au serveur.',
     tool_youtube_thumbnail_size_title: 'taille miniature YouTube',
-    tool_z_score_description: 'Convertissez un score brut en z avec z = (x − moyenne) / écart-type. Exemple : x = 85, moyenne = 70, écart-type = 10 → z = 1,5. Hypothèses d’échelle linéaire et écart-type > 0. Dans le navigateur, pour cours et vérifications.',
-    tool_z_score_title: 'Calculateur de score z — Comment calculer un score standard',
+    tool_z_score_description: 'Passez d’une note brute à un score z avec z = (x − moyenne) / écart-type, ou reconstituez la note à partir de z. Exemple : x = 85, moyenne = 70, écart-type = 10 → z = 1,5. L’écart-type doit être > 0. Mise à l’échelle linéaire pédagogique seulement — pas un test de normalité ni une p-valeur.',
+    tool_z_score_title: 'Calculateur de score z — Note brute ↔ score standard',
   },
   ja: {
     tool_acceleration_description: '等加速度直線運動の公式 a = (v − v0) ÷ t で加速度を計算し、必要なら終速度・初速度・時間にも変形します。途中式つき。例：v0 = 0、v = 10、t = 2 → a = 5。速度と時間は同じ単位系でそろえてください（m/s と s なら m/s²）。',
@@ -4961,8 +4961,8 @@ export const toolHomeTranslations = {
     tool_yaml_json_title: 'YAML と JSON を相互変換 — ブラウザ内で設定ファイルを変換',
     tool_youtube_thumbnail_size_desc: 'YouTubeサムネイルサイズ 1280×720（16:9）を書き出し。端末内に留まり、サーバーへは送りません。',
     tool_youtube_thumbnail_size_title: 'YouTubeサムネイルサイズ',
-    tool_z_score_description: 'z = (x − 平均) / 標準偏差 で素点を標準得点（Zスコア）にします。例：x = 85、平均 = 70、SD = 10 → z = 1.5。線形尺度と SD>0 を明示。ブラウザ内で、宿題やざっくり確認向けです。異なる分布上の位置を比べる学習にも使えます。',
-    tool_z_score_title: 'Zスコア計算ツール — 標準得点の求め方',
+    tool_z_score_description: 'z = (x − 平均) / 標準偏差 で素点を Zスコア（標準スコア）に変換し、逆に z・平均・標準偏差から素点も求めます。例：x = 85、平均 = 70、標準偏差 = 10 → z = 1.5。標準偏差 > 0 が必要です。教育用の線形スケーリングのみ——正規性検定でも p値算出でもありません。',
+    tool_z_score_title: 'Zスコア計算ツール — 素点と標準スコアの変換',
   },
   ru: {
     tool_acceleration_description: 'Расчёт ускорения при равноускоренном движении по формуле a = (v − v0) ÷ t; можно найти и конечную скорость, начальную скорость или время. Пример: от 0 до 10 за 2 с — a = 5. Каждый шаг решения выводится под ответом.',
@@ -5580,8 +5580,8 @@ export const toolHomeTranslations = {
     tool_yaml_json_title: 'YAML в JSON и обратно — конфиги в браузере, без загрузки на сервер',
     tool_youtube_thumbnail_size_desc: 'Экспорт размера превью YouTube 1280×720 (16:9); остаётся на устройстве, на сервер не уходит.',
     tool_youtube_thumbnail_size_title: 'размер превью YouTube',
-    tool_z_score_description: 'Переведите сырой балл в z по z = (x − среднее) / СКО. Пример: x = 85, среднее = 70, СКО = 10 → z = 1,5. Явно указывает линейное масштабирование и СКО > 0. В браузере для учёбы и быстрой проверки.',
-    tool_z_score_title: 'Калькулятор z-оценки — Как рассчитать стандартный балл',
+    tool_z_score_description: 'Переведите сырой балл в z-оценку по формуле z = (x − среднее) / СКО или восстановите сырой балл из z. Пример: x = 85, среднее = 70, СКО = 10 → z = 1,5. Требуется СКО > 0. Только учебное линейное масштабирование — не проверка нормальности и не p-value.',
+    tool_z_score_title: 'Калькулятор z-оценки — Сырой балл ↔ стандартный балл',
   },
   de: {
     tool_acceleration_description: 'Beschleunigung berechnen mit der Formel a = (v − v0) ÷ t – oder umstellen nach Endgeschwindigkeit, Anfangsgeschwindigkeit oder Zeit. Beispiel: von 0 auf 10 in 2 Sekunden ergibt a = 5. Jeder Rechenschritt wird mit angezeigt.',
@@ -6199,7 +6199,7 @@ export const toolHomeTranslations = {
     tool_yaml_json_title: 'YAML zu JSON — Konfigs im Browser umwandeln',
     tool_youtube_thumbnail_size_desc: 'YouTube Thumbnail Größe 1280×720 (16:9) exportieren; bleibt auf dem Gerät, wird nicht hochgeladen.',
     tool_youtube_thumbnail_size_title: 'YouTube Thumbnail Größe',
-    tool_z_score_description: 'Wandeln Sie einen Rohwert in einen z-Wert um: z = (x − Mittelwert) / SD. Beispiel: x = 85, Mittelwert = 70, SD = 10 → z = 1,5. Macht lineare Skalierung und SD > 0 klar. Im Browser für Übungen und schnelle Checks.',
-    tool_z_score_title: 'Z-Wert-Rechner — Standardwert berechnen',
+    tool_z_score_description: 'Rohwert in einen Z-Score umrechnen mit z = (x − Mittelwert) / SD — oder aus z den Rohwert zurückholen. Beispiel: x = 85, Mittelwert = 70, SD = 10 → z = 1,5. SD muss > 0 sein. Nur lineare Lernskalierung — kein Normalitätstest und kein p-Wert.',
+    tool_z_score_title: 'Z-Score-Rechner — Rohwert ↔ Standardwert',
   }
 };
