@@ -184,10 +184,12 @@ export const renderWriteIfsFormulaInExcelPage = (opts: {
 	});
 
 	/** 前端文案。 */
+	/** 前端文案（含 Excel 2016 边界提示）。 */
 	const clientText = {
 		empty: tx('empty'),
 		copied: tx('copied'),
 		copyFail: tx('copy_fail'),
+		note2016: tx('note_2016'),
 		opEq: tx('op_eq'),
 		opContains: tx('op_contains'),
 		opBlank: tx('op_blank'),
@@ -334,7 +336,7 @@ export const renderWriteIfsFormulaInExcelPage = (opts: {
         out.textContent = emitIfs(cell, list, elseEl.value);
         trialOut.textContent = String(trial(list, trialEl.value, elseEl.value));
         noteEl.className = 'muted';
-        noteEl.textContent = '';
+        noteEl.textContent = T.note2016;
         return true;
       }
 
