@@ -1,5 +1,5 @@
 /**
- * CAGR 计算器：期初价值、期末价值与年数 → 复合年增长率 %。
+ * CAGR 计算器：求复合年增长率 / 期末价值 / 年数；YMYL 教育用途，非投资建议。
  * slug: how-to-calculate-cagr（见 work-tasks/how-to-calculate-cagr/02-tool-info.md）。
  */
 import type { SiteLang } from '../site/i18n';
@@ -17,6 +17,9 @@ import {
 	renderToolReferencesSection,
 } from './site/toolContent';
 
+/** 本工具 i18n 键前缀。 */
+const PREFIX = 'tool_cagr';
+
 /** 为路径加上语言前缀（默认语无前缀）。 */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
 	const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
@@ -24,20 +27,24 @@ const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang)
 };
 
 /**
- * 渲染 CAGR 计算器工具页 HTML。
+ * 渲染 how-to-calculate-cagr 工具页 HTML。
  * @param opts.lang 当前语言
  * @param opts.defaultLang 站点默认语言
  * @param opts.enabledLangs 启用语言列表
+ * @returns 完整页面 HTML
  */
 export const renderHowToCalculateCagrPage = (opts: {
 	lang: SiteLang;
 	defaultLang: SiteLang;
 	enabledLangs: SiteLang[];
 }) => {
+	/** 读取本工具键。 */
+	const tx = (key: string) => t(opts.lang, `${PREFIX}_${key}` as keyof typeof import('../site/i18n/en').default);
+
 	const toolPath = '/tools/how-to-calculate-cagr';
 	const canonicalPath = withLangPrefix(opts.lang, toolPath, opts.defaultLang);
-	const title = `${t(opts.lang, 'tool_cagr_title')} | ${t(opts.lang, 'brand')}`;
-	const description = t(opts.lang, 'tool_cagr_description');
+	const title = `${tx('title')} | ${t(opts.lang, 'brand')}`;
+	const description = tx('description');
 
 	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
@@ -81,136 +88,296 @@ export const renderHowToCalculateCagrPage = (opts: {
   <style>
     .tool-card { max-width: var(--content-max); width: 100%; margin: 0 0 1.5rem; }
     .form-label { display:block; margin-bottom:.5rem; color:#495057; font-weight:500 }
+    .form-hint { display:block; color:#6c757d; font-size:.85rem; margin:-.25rem 0 .75rem; }
     .form-group { margin-bottom:1rem; }
-    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-    @media (max-width:576px) { .form-row { grid-template-columns:1fr; } }
+    .form-row { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:0 1rem; }
+    @media (max-width:576px) { .form-row { grid-template-columns:minmax(0, 1fr); } }
     .btn-row { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; }
-    .result { background:#f8f9fa; padding:1rem; border-radius:8px; margin-top:1rem; text-align:center }
-    .result .muted { color:#6c757d; font-size:.9rem; margin-top:.35rem }
+    .cagr-warn { background:#fff3cd; border:1px solid #ffecb5; color:#664d03; padding:.75rem 1rem; border-radius:8px; margin-bottom:1rem; font-size:.92rem; }
+    .result { background:#f8f9fa; padding:1rem; border-radius:8px; margin-top:1rem; }
+    .cagr-out { font-size:1.35rem; font-weight:600; font-variant-numeric:tabular-nums; }
+    .cagr-row { color:#495057; font-size:.92rem; margin-top:.4rem; }
+    .cagr-row strong { color:#343a40; }
+    .cagr-h { font-size:1rem; font-weight:600; margin:1rem 0 .35rem; }
+    .cagr-steps { margin:0; padding-inline-start:1.3rem; font-size:.92rem; }
+    .cagr-steps li { margin-bottom:.35rem; }
+    .result .muted { color:#6c757d; font-size:.9rem; margin-top:.75rem; }
+    .result .muted.cagr-err { color:#b02a37; font-weight:500; margin-top:0; }
+    .cagr-field[hidden] { display:none !important; }
   </style>`;
 
 	const contentHtml = `
     <div id="cagr" class="mb-3">
-      <h1 class="h4 mb-1">${escapeHtml(t(opts.lang, 'tool_cagr_title'))}</h1>
+      <h1 class="h4 mb-1">${escapeHtml(tx('title'))}</h1>
       <p class="text-muted mb-0">${escapeHtml(description)}</p>
     </div>
 
     <div class="card tool-card">
       <div class="card-body">
-        <form id="cagrForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="cagrBegin">${escapeHtml(t(opts.lang, 'tool_cagr_begin_label'))}</label>
-              <input id="cagrBegin" class="input-lg" type="number" min="0" step="any"
-                placeholder="${escapeHtml(t(opts.lang, 'tool_cagr_begin_ph'))}" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="cagrEnd">${escapeHtml(t(opts.lang, 'tool_cagr_end_label'))}</label>
-              <input id="cagrEnd" class="input-lg" type="number" min="0" step="any"
-                placeholder="${escapeHtml(t(opts.lang, 'tool_cagr_end_ph'))}" required>
-            </div>
-          </div>
+        <div class="cagr-warn" role="note">${escapeHtml(tx('safety_banner'))}</div>
+        <form id="calcForm" novalidate>
           <div class="form-group">
-            <label class="form-label" for="cagrYears">${escapeHtml(t(opts.lang, 'tool_cagr_years_label'))}</label>
-            <input id="cagrYears" class="input-lg" type="number" min="0" step="any"
-              placeholder="${escapeHtml(t(opts.lang, 'tool_cagr_years_ph'))}" required>
+            <label class="form-label" for="mode">${escapeHtml(tx('mode_label'))}</label>
+            <select id="mode" class="input-lg">
+              <option value="rate" selected>${escapeHtml(tx('mode_rate'))}</option>
+              <option value="end">${escapeHtml(tx('mode_end'))}</option>
+              <option value="years">${escapeHtml(tx('mode_years'))}</option>
+            </select>
+          </div>
+          <span class="form-hint">${escapeHtml(tx('hint'))}</span>
+          <div class="form-row">
+            <div class="form-group" id="fgBegin">
+              <label class="form-label" for="begin">${escapeHtml(tx('begin_label'))}</label>
+              <input id="begin" class="input-lg" type="text" inputmode="decimal" autocomplete="off" placeholder="${escapeHtml(tx('begin_ph'))}">
+            </div>
+            <div class="form-group cagr-field" data-for="rate years" id="fgEnd">
+              <label class="form-label" for="end">${escapeHtml(tx('end_label'))}</label>
+              <input id="end" class="input-lg" type="text" inputmode="decimal" autocomplete="off" placeholder="${escapeHtml(tx('end_ph'))}">
+            </div>
+            <div class="form-group cagr-field" data-for="end years" id="fgRate">
+              <label class="form-label" for="rate">${escapeHtml(tx('rate_label'))}</label>
+              <input id="rate" class="input-lg" type="text" inputmode="decimal" autocomplete="off" placeholder="${escapeHtml(tx('rate_ph'))}">
+            </div>
+            <div class="form-group cagr-field" data-for="rate end" id="fgYears">
+              <label class="form-label" for="years">${escapeHtml(tx('years_label'))}</label>
+              <input id="years" class="input-lg" type="text" inputmode="decimal" autocomplete="off" placeholder="${escapeHtml(tx('years_ph'))}">
+            </div>
           </div>
           <div class="btn-row">
-            <button type="submit" class="btn btn-primary">${escapeHtml(t(opts.lang, 'tool_cagr_calculate'))}</button>
-            <button type="button" id="cagrSample" class="btn btn-outline-secondary">${escapeHtml(t(opts.lang, 'tool_cagr_sample'))}</button>
-            <button type="button" id="cagrClear" class="btn btn-outline-secondary">${escapeHtml(t(opts.lang, 'tool_cagr_clear'))}</button>
+            <button type="submit" class="btn btn-primary">${escapeHtml(tx('calculate'))}</button>
+            <button type="button" id="btnSample" class="btn btn-outline-secondary">${escapeHtml(tx('sample'))}</button>
+            <button type="button" id="btnClear" class="btn btn-outline-secondary">${escapeHtml(tx('clear'))}</button>
           </div>
         </form>
-        <div id="cagrResult" class="result" style="display:none" aria-live="polite">
-          <div><strong>${escapeHtml(t(opts.lang, 'tool_cagr_result_label'))}:</strong> <span id="cagrValue"></span></div>
-          <div id="cagrNote" class="muted"></div>
+        <div id="calcResult" class="result" style="display:none" aria-live="polite">
+          <div class="cagr-out"><span id="cagrPrimaryLabel">${escapeHtml(tx('result_label'))}</span>: <span id="cagrPrimary"></span></div>
+          <div id="cagrRows"></div>
+          <div id="cagrStepsWrap">
+            <div class="cagr-h">${escapeHtml(tx('steps_title'))}</div>
+            <ol id="cagrSteps" class="cagr-steps"></ol>
+          </div>
+          <div id="calcNote" class="muted"></div>
         </div>
       </div>
     </div>
 
-    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_cagr', mode: 'formula' })}`;
+    ${renderToolIgSections({
+			lang: opts.lang,
+			prefix: PREFIX,
+			mode: 'formula',
+			howItemCount: 4,
+			whyChooseItemCount: 5,
+			usecaseCount: 4,
+			formulaItemCount: 5,
+		})}`;
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
 		links: [
+			{ label: tx('ref_cagr_label'), href: 'https://www.investopedia.com/terms/c/cagr.asp' },
 			{
-				label: t(opts.lang, 'tool_cagr_ref_cagr_label'),
-				href: 'https://www.investopedia.com/terms/c/cagr.asp',
-			},
-			{
-				label: t(opts.lang, 'tool_cagr_ref_formula_label'),
+				label: tx('ref_formula_label'),
 				href: 'https://www.investopedia.com/ask/answers/071014/what-formula-calculating-compound-annual-growth-rate-cagr.asp',
 			},
 		],
 	});
 
+	/** 前端文案。 */
+	const clientText = {
+		lang: opts.lang,
+		err: tx('err_generic'),
+		note: tx('result_note'),
+		labelRate: tx('result_label'),
+		labelEnd: tx('endOut_label'),
+		labelYears: tx('yearsOut_label'),
+		labelMult: tx('multOut_label'),
+		stepRate: tx('step_rate_tpl'),
+		stepEnd: tx('step_end_tpl'),
+		stepYears: tx('step_years_tpl'),
+		stepCheck: tx('step_check_tpl'),
+	};
+
 	const extraBodyHtml = `
   <script>
     (function () {
-      var form = document.getElementById('cagrForm');
-      var beginEl = document.getElementById('cagrBegin');
-      var endEl = document.getElementById('cagrEnd');
-      var yearsEl = document.getElementById('cagrYears');
-      var result = document.getElementById('cagrResult');
-      var valueEl = document.getElementById('cagrValue');
-      var noteEl = document.getElementById('cagrNote');
-      var msgBegin = ${JSON.stringify(t(opts.lang, 'tool_cagr_err_begin'))};
-      var msgEnd = ${JSON.stringify(t(opts.lang, 'tool_cagr_err_end'))};
-      var msgYears = ${JSON.stringify(t(opts.lang, 'tool_cagr_err_years'))};
-      var noteEdu = ${JSON.stringify(t(opts.lang, 'tool_cagr_result_note'))};
+      /** 控件。 */
+      var form = document.getElementById('calcForm');
+      var modeEl = document.getElementById('mode');
+      var beginEl = document.getElementById('begin');
+      var endEl = document.getElementById('end');
+      var rateEl = document.getElementById('rate');
+      var yearsEl = document.getElementById('years');
+      var fields = Array.prototype.slice.call(document.querySelectorAll('.cagr-field'));
+      var result = document.getElementById('calcResult');
+      var primaryLabel = document.getElementById('cagrPrimaryLabel');
+      var primaryOut = document.getElementById('cagrPrimary');
+      var rowsEl = document.getElementById('cagrRows');
+      var stepsEl = document.getElementById('cagrSteps');
+      var stepsWrap = document.getElementById('cagrStepsWrap');
+      var noteEl = document.getElementById('calcNote');
+      var T = ${JSON.stringify(clientText)};
+      var sampleIndex = 0;
+      var SAMPLES = [
+        { mode: 'rate', begin: '10000', end: '16105.1', rate: '', years: '5' },
+        { mode: 'end', begin: '10000', end: '', rate: '10', years: '5' },
+        { mode: 'years', begin: '10000', end: '16105.1', rate: '10', years: '' },
+        { mode: 'rate', begin: '5000', end: '8000', rate: '', years: '3' }
+      ];
 
-      /** 百分比格式化为两位小数。 */
-      function fmtPct(n) {
-        return Number.isFinite(n) ? n.toFixed(2) + '%' : '—';
+      /**
+       * 解析正数。
+       * @param {string} raw 原文
+       * @returns {number|null}
+       */
+      function parsePos(raw) {
+        var s = String(raw == null ? '' : raw).trim().replace(',', '.');
+        if (!s) return null;
+        var n = Number(s);
+        if (!isFinite(n) || !(n > 0)) return null;
+        return n;
       }
 
       /**
-       * 按 CAGR=((EV/BV)^(1/n)-1)*100 计算复合年增长率。
-       * @returns {boolean} 输入合法并已写出结果时为 true
+       * 格式化数字。
+       * @param {number} n 数值
+       * @param {number} digits 小数位
+       * @returns {string}
        */
-      function runCalc() {
-        var begin = parseFloat(beginEl.value);
-        var end = parseFloat(endEl.value);
-        var years = parseFloat(yearsEl.value);
+      function fmt(n, digits) {
+        if (!isFinite(n)) return '—';
+        var d = digits == null ? 4 : digits;
+        try {
+          return new Intl.NumberFormat(T.lang + '-u-nu-latn', {
+            maximumFractionDigits: d,
+            minimumFractionDigits: 0
+          }).format(n);
+        } catch (e) {
+          return n.toFixed(d);
+        }
+      }
+
+      /**
+       * 模板替换。
+       * @param {string} tpl 模板
+       * @param {Object} map 键值
+       * @returns {string}
+       */
+      function fill(tpl, map) {
+        var s = String(tpl || '');
+        Object.keys(map).forEach(function (k) {
+          s = s.split('{' + k + '}').join(String(map[k]));
+        });
+        return s;
+      }
+
+      /** 按模式显示字段。 */
+      function syncFields() {
+        var mode = modeEl.value;
+        fields.forEach(function (el) {
+          var forModes = (el.getAttribute('data-for') || '').split(' ');
+          var show = forModes.indexOf(mode) !== -1;
+          if (show) el.removeAttribute('hidden');
+          else el.setAttribute('hidden', '');
+        });
+      }
+
+      /**
+       * 显示错误。
+       * @param {string} msg 错误文案
+       */
+      function showError(msg) {
         result.style.display = 'block';
-        if (!(begin > 0)) {
-          valueEl.textContent = '—';
-          noteEl.textContent = msgBegin;
-          return false;
-        }
-        if (!(end > 0)) {
-          valueEl.textContent = '—';
-          noteEl.textContent = msgEnd;
-          return false;
-        }
-        if (!(years > 0)) {
-          valueEl.textContent = '—';
-          noteEl.textContent = msgYears;
-          return false;
-        }
-        var cagrPct = (Math.pow(end / begin, 1 / years) - 1) * 100;
-        valueEl.textContent = fmtPct(cagrPct);
-        noteEl.textContent = noteEdu;
-        return true;
+        primaryOut.textContent = '—';
+        rowsEl.innerHTML = '';
+        stepsEl.innerHTML = '';
+        stepsWrap.style.display = 'none';
+        noteEl.className = 'muted cagr-err';
+        noteEl.textContent = msg;
       }
 
-      /** 加载默认样例：期初 10000、期末 16105.1、年数 5 → CAGR 10.00%。 */
+      /** 核心计算。 */
+      function run() {
+        var mode = modeEl.value;
+        var begin = parsePos(beginEl.value);
+        if (begin == null) return showError(T.err);
+        var end = 0;
+        var years = 0;
+        var ratePct = 0;
+        var steps = [];
+
+        if (mode === 'rate') {
+          end = parsePos(endEl.value);
+          years = parsePos(yearsEl.value);
+          if (end == null || years == null) return showError(T.err);
+          ratePct = (Math.pow(end / begin, 1 / years) - 1) * 100;
+          primaryLabel.textContent = T.labelRate;
+          primaryOut.textContent = fmt(ratePct, 2) + '%';
+          steps.push(fill(T.stepRate, { end: fmt(end, 2), begin: fmt(begin, 2), years: fmt(years, 2), rate: fmt(ratePct, 2) }));
+        } else if (mode === 'end') {
+          ratePct = parsePos(rateEl.value);
+          years = parsePos(yearsEl.value);
+          if (ratePct == null || years == null) return showError(T.err);
+          end = begin * Math.pow(1 + ratePct / 100, years);
+          primaryLabel.textContent = T.labelEnd;
+          primaryOut.textContent = fmt(end, 2);
+          steps.push(fill(T.stepEnd, { begin: fmt(begin, 2), rate: fmt(ratePct, 2), years: fmt(years, 2), end: fmt(end, 2) }));
+        } else {
+          end = parsePos(endEl.value);
+          ratePct = parsePos(rateEl.value);
+          if (end == null || ratePct == null || ratePct === 0) return showError(T.err);
+          if (ratePct === -100) return showError(T.err);
+          var base = 1 + ratePct / 100;
+          if (!(base > 0) || !(end / begin > 0)) return showError(T.err);
+          years = Math.log(end / begin) / Math.log(base);
+          if (!(years > 0) || !isFinite(years)) return showError(T.err);
+          primaryLabel.textContent = T.labelYears;
+          primaryOut.textContent = fmt(years, 4);
+          steps.push(fill(T.stepYears, { end: fmt(end, 2), begin: fmt(begin, 2), rate: fmt(ratePct, 2), years: fmt(years, 4) }));
+        }
+
+        var mult = end / begin;
+        rowsEl.innerHTML = '<div class="cagr-row"><strong>' + T.labelMult + ':</strong> ' + fmt(mult, 4) + '×</div>';
+        steps.push(fill(T.stepCheck, { begin: fmt(begin, 2), rate: fmt(ratePct, 2), years: fmt(years, 4), end: fmt(begin * Math.pow(1 + ratePct / 100, years), 2) }));
+        stepsEl.innerHTML = steps.map(function (s) { return '<li>' + s + '</li>'; }).join('');
+        stepsWrap.style.display = '';
+        noteEl.className = 'muted';
+        noteEl.textContent = T.note;
+        result.style.display = 'block';
+      }
+
+      /** 加载样例。 */
       function loadSample() {
-        beginEl.value = '10000';
-        endEl.value = '16105.1';
-        yearsEl.value = '5';
-        runCalc();
+        var s = SAMPLES[sampleIndex % SAMPLES.length];
+        sampleIndex += 1;
+        modeEl.value = s.mode;
+        beginEl.value = s.begin;
+        endEl.value = s.end;
+        rateEl.value = s.rate;
+        yearsEl.value = s.years;
+        syncFields();
+        run();
       }
 
+      /** 清空。 */
+      function clearAll() {
+        form.reset();
+        modeEl.value = 'rate';
+        syncFields();
+        result.style.display = 'none';
+        beginEl.focus();
+      }
+
+      modeEl.addEventListener('change', function () {
+        syncFields();
+        run();
+      });
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        runCalc();
+        run();
       });
-      document.getElementById('cagrSample').addEventListener('click', loadSample);
-      document.getElementById('cagrClear').addEventListener('click', function () {
-        form.reset();
-        result.style.display = 'none';
-      });
+      document.getElementById('btnSample').addEventListener('click', loadSample);
+      document.getElementById('btnClear').addEventListener('click', clearAll);
+      syncFields();
       loadSample();
     })();
   </script>`;

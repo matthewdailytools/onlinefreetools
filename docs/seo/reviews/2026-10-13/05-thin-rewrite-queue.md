@@ -1,24 +1,24 @@
-# 薄页逐页改写队列（2026-10-13）
+# 薄页逐页改写队列�?026-10-13�?
 
-**第一阶段方案（站长确认 2026-10-13）**：devlogs 剔出 sitemap 并 noindex；薄页 slug **逐页改写**（不批量灌字、不做近义拆页）。
+**第一阶段方案（站长确�?2026-10-13�?*：devlogs 剔出 sitemap �?noindex；薄�?slug **逐页改写**（不批量灌字、不做近义拆页）�?
 
-来源：`04-tool-ig-audit.csv` 中 `gaps` 含 `thin<350w` 的 87 个工具。
+来源：`04-tool-ig-audit.csv` �?`gaps` �?`thin<350w` �?87 个工具�?
 
-## 改写约束（每个 slug 都要满足）
+## 改写约束（每�?slug 都要满足�?
 
-1. **一次一个 slug**，前一个 `verify:tool` 绿之前不开下一个（`tool-coverage-pass`）。
-2. 先查该 slug 的同意图搜法与 SERP 常见结构，写进 `work-tasks/{slug}/02-tool-info.md`（同意图相关搜索表 + 意图审查），再写母版。
-3. 新增内容必须是**本页可验证的增量**：能在交互里复现的样例、真实边界与报错、何时应改用别的工具。不得堆同义句或通用"免费 / 快 / 本地"。
-4. 顺手修复页面实测发现的功能问题（例如输入解析）——功能问题优先于文案。
-5. 十语按 `03-locale-briefs.md` 逐语独立重写（每批 ≤3 语）；他语残留英文（`localeSameAsEn`）必须清零。
-6. 每个 slug 完成后：`tool:touch` → `verify:tool` → 在下表把状态改为 `done` 并写日期。
-7. 节奏：宁慢勿量。**每完成 10 个 slug**（相对队列起点累计）做一次增量发版：`build:site:changed` → `upload:r2`（hash 增量）→ `git:deploy`（含当批工具 + 尚未上线的站点改动如 devlogs noindex）。末批不足 10 个也发。
+1. **一次一�?slug**，前一�?`verify:tool` 绿之前不开下一个（`tool-coverage-pass`）�?
+2. 先查�?slug 的同意图搜法�?SERP 常见结构，写�?`work-tasks/{slug}/02-tool-info.md`（同意图相关搜索�?+ 意图审查），再写母版�?
+3. 新增内容必须�?*本页可验证的增量**：能在交互里复现的样例、真实边界与报错、何时应改用别的工具。不得堆同义句或通用"免费 / �?/ 本地"�?
+4. 顺手修复页面实测发现的功能问题（例如输入解析）——功能问题优先于文案�?
+5. 十语�?`03-locale-briefs.md` 逐语独立重写（每�?�? 语）；他语残留英文（`localeSameAsEn`）必须清零�?
+6. 每个 slug 完成后：`tool:touch` �?`verify:tool` �?在下表把状态改�?`done` 并写日期�?
+7. 节奏：宁慢勿量�?*每完�?10 �?slug**（相对队列起点累计）做一次增量发版：`build:site:changed` �?`upload:r2`（hash 增量）→ `git:deploy`（含当批工具 + 尚未上线的站点改动如 devlogs noindex）。末批不�?10 个也发�?
 
 ## 队列
 
-优先级 = 断崖前曝光 ×（350 − 正文词数）/ 350 + 他语与英文相同条数 / 10。`new` = 2026-09-10 之后上线，无 GSC 数据。
+优先�?= 断崖前曝�?×�?50 �?正文词数�? 350 + 他语与英文相同条�?/ 10。`new` = 2026-09-10 之后上线，无 GSC 数据�?
 
-| # | slug | family | 词数 | 曝光 | 他语=英文 | 审计桶 | 优先级 | 状态 |
+| # | slug | family | 词数 | 曝光 | 他语=英文 | 审计�?| 优先�?| 状�?|
 |---:|---|---|---:|---:|---:|---|---:|---|
 | 1 | how-to-calculate-mean | how-to-calculate | 116 | 77 | 0 | A | 51.5 | done 2026-10-13 |
 | 2 | how-to-calculate-triangle-area | how-to-calculate | 108 | 62 | 7 | A | 43.6 | done 2026-10-13 |
@@ -79,7 +79,7 @@
 | 57 | how-to-calculate-p-value | how-to-calculate | 325 | 18 | 0 | A | 1.3 | done 2026-10-16 |
 | 58 | how-to-calculate-macros | how-to-calculate | 149 | 1 | 7 | A | 1.3 | done 2026-10-16 |
 | 59 | how-to-calculate-age | how-to-calculate | 160 | 1 | 7 | A | 1.2 | done 2026-10-16 |
-| 60 | how-to-calculate-cagr | how-to-calculate | 344 | 72 | 0 | A | 1.2 | todo |
+| 60 | how-to-calculate-cagr | how-to-calculate | 344 | 72 | 0 | A | 1.2 | done 2026-10-16 |
 | 61 | how-to-calculate-contribution-margin | how-to-calculate | 176 | 2 | 0 | A | 1.0 | todo |
 | 62 | how-to-calculate-gpa | how-to-calculate | 305 | 7 | 0 | A | 0.9 | todo |
 | 63 | create-budget-spreadsheet | category:calculator | 218 | 2 | 0 | B | 0.8 | todo |

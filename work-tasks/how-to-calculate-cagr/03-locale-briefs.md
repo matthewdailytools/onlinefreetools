@@ -10,6 +10,7 @@
 - [x] title 非参数目录腔
 - [x] 隐私：浏览器内计算
 - [x] **清单前检索覆盖已做**
+- [x] **用户意图审查已做**
 - [x] 十语非同构（完整 UI/FAQ 独立重写，禁止英模回落）
 - [x] **检索覆盖已优化**
 
@@ -77,3 +78,6 @@
 | 2 按 brief 重写 | 2026-08-09 | 按 brief 独立写 zh/es/ar/pt/id/fr/ja/ru/de 完整 UI/How/FAQ/免责；禁止英模回落 | 十语键齐全且非英模 |
 | 2b 抽查语检索覆盖优化 | 2026-08-09 | 抽查 en,zh,es,ja：title 当地主词；zh 含复合年增长率；es 含 CAGR；ja 含年平均成長率 | en,zh,es,ja 已再核 title/desc |
 | 3 抽查+禁词+lint | 2026-08-09 | 扫禁词与 YMYL；coverage:gate all + build:site | 上线验收 |
+| 0b thin-rewrite #60 | 2026-10-16 | 复审同意图：三模式 / vs ROI；title 改为 Annualized Growth Between Two Values；意图审查写入 02 | 覆盖表+意图审查已回写 |
+| 1b thin-rewrite #60 | 2026-10-16 | 母版加深：三模式+分步+倍数校验+safety+why_choose×5+FAQ×7；desc 含 10k→16105.1@5≈10% | 主词在 H1；次词落 FAQ |
+| 2b thin-rewrite #60 | 2026-10-16 | 九语独立重写全键；抽查 en,zh,es,ja；YMYL disclaimer | en,zh,es,ja 已再优化 title/desc |
