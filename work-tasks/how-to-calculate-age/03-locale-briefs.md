@@ -10,14 +10,15 @@
 - [x] title 非参数目录腔
 - [x] 隐私：浏览器内计算
 - [x] **清单前检索覆盖已做**
+- [x] **用户意图审查已做**
 - [x] **检索覆盖已优化**
 - [x] 十语非同构
 
 ## 每语 brief
 
 ### en
-- 检索词：见 title 主词
-- Title：Age Calculator — Chronological Age from Birthdate
+- 检索词：age calculator；years months days；birth date
+- Title：Age Calculator — Years Months and Days from Two Dates
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### zh
@@ -76,3 +77,6 @@
 | 2 按 brief 重写 | 2026-08-09 | 按 brief 写十语 title/description 与核心键；按钮短词本地化 | 十语键齐全 |
 | 2b 抽查语检索覆盖优化 | 2026-08-09 | 抽查 en,zh,es,ja：再核 title/desc 当地主词与示例数字 | en,zh,es,ja 已再优化 title/desc |
 | 3 抽查+禁词+lint | 2026-08-09 | 扫禁词与免责；跑 coverage:gate all 与 build:site | 上线验收通过 |
+| 0b thin-rewrite #59 | 2026-10-16 | 复审同意图：Y/M/D / total days / as-of；title 改为 Years Months and Days；意图审查写入 02 | 覆盖表+意图审查已回写 |
+| 1b thin-rewrite #59 | 2026-10-16 | 母版加深：修复日期解析；今日快捷+分步+why_choose×5+FAQ×7；desc 含 2000-01-01→2026-08-09 | 主词在 H1；次词落 FAQ |
+| 2b thin-rewrite #59 | 2026-10-16 | 九语独立重写全键；抽查 en,zh,es,ja；修复日期解析说明 | en,zh,es,ja 已再优化 title/desc |
