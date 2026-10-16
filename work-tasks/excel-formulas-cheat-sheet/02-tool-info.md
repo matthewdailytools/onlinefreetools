@@ -103,3 +103,19 @@
 - [x] References ≥1（YMYL 建议 ≥2）
 - [x] Disclaimer（本页按需）
 - [x] `03-locale-briefs.md` 已填（实现十语前）
+
+## 薄改写覆盖（2026-10-16）
+
+| 词 | 归属 | 落点 |
+|---|---|---|
+| excel formulas cheat sheet / copy common Excel formulas | 主词 | H1 |
+| IF SUMIF VLOOKUP XLOOKUP | 次词 | 卡片、FAQ q1、example |
+| nested IF / IFS builder | 有意不满足 | rules_item_5 + 卡片下链接，不在本页拼公式 |
+
+## 薄改写覆盖（2026-10-16）
+
+| 词 | 归属 | 落点 |
+|---|---|---|
+| excel formulas cheat sheet / copy common Excel formulas | 主词 | H1 |
+| IF SUMIF VLOOKUP XLOOKUP | 次词 | 卡片、FAQ q1、example |
+| nested IF / IFS builder | 有意不满足 | rules_item_5 + 卡片下链接，不在本页拼公式 |

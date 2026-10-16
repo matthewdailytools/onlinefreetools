@@ -132,7 +132,7 @@ export const renderExcelFormulasCheatSheetPage = (opts: {
 		prefix: PREFIX,
 		mode: 'rules',
 		usecaseCount: 3,
-		ruleItemCount: 4,
+		ruleItemCount: 5,
 		howItemCount: 4,
 	});
 	/** References. */

@@ -32,10 +32,10 @@
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 ### zh
 
-- 检索词（3–5）：写出嵌套IF / 发票表 / 透视表 等当地说法见实现分片；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：复制常用 Excel 公式；Excel 函数速查；SUMIF 参数；VLOOKUP 公式
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Copy common Excel formulas**），非参数枚举
-- 按钮短词：写出 / 清空 / 加载示例
+- Title / H1 方向：复制常用 Excel 公式（任务句，无破折号枚举）
+- 按钮短词：筛选 / 复制 / 加载示例
 - 本地示例用词：West/East 或当地等价；发票行项目
 - 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
@@ -43,10 +43,10 @@
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 ### es
 
-- 检索词（3–5）：fórmula SI anidada / factura / tabla dinámica；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：fórmulas de Excel；copiar fórmula；BUSCARV；SUMAR.SI
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Copy common Excel formulas**），非参数枚举
-- 按钮短词：Generar / Borrar / Ejemplo
+- Title / H1 方向：Copiar la fórmula de Excel que buscas
+- 按钮短词：Filtrar / Copiar / Cargar ejemplo
 - 本地示例用词：West/East 或当地等价；发票行项目
 - 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
@@ -54,10 +54,10 @@
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 ### ar
 
-- 检索词（3–5）：صيغة IF متداخلة / فاتورة / جدول محوري；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：صيغ إكسل；نسخ صيغة；SUMIF؛VLOOKUP
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Copy common Excel formulas**），非参数枚举
-- 按钮短词：إنشاء / مسح / مثال
+- Title / H1 方向：انسخ صيغة إكسل الشائعة من البطاقة
+- 按钮短词：تصفية / نسخ / تحميل المثال
 - 本地示例用词：West/East 或当地等价；发票行项目
 - 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
@@ -65,10 +65,10 @@
 - 轮次2已重写：[x]  轮次3已抽查：[x]  待母语抽查：[ ]
 ### pt
 
-- 检索词（3–5）：fórmula SE aninhada / fatura / tabela dinâmica；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：fórmulas do Excel；copiar fórmula；PROCV；SOMASE
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Copy common Excel formulas**），非参数枚举
-- 按钮短词：Gerar / Limpar / Exemplo
+- Title / H1 方向：Copiar a fórmula de Excel pronta no cartão
+- 按钮短词：Filtrar / Copiar / Carregar exemplo
 - 本地示例用词：West/East 或当地等价；发票行项目
 - 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
@@ -76,10 +76,10 @@
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 ### id
 
-- 检索词（3–5）：rumus IF bersarang / faktur / pivot；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：rumus Excel；salin rumus；SUMIF；VLOOKUP
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Copy common Excel formulas**），非参数枚举
-- 按钮短词：Buat / Hapus / Contoh
+- Title / H1 方向：Salin rumus Excel dari kartu yang cocok
+- 按钮短词：Saring / Salin / Muat contoh
 - 本地示例用词：West/East 或当地等价；发票行项目
 - 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
@@ -87,10 +87,10 @@
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 ### fr
 
-- 检索词（3–5）：formule SI imbriquée / facture / tableau croisé；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：formules Excel；copier une formule；SOMME.SI；RECHERCHEV
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Copy common Excel formulas**），非参数枚举
-- 按钮短词：Générer / Effacer / Exemple
+- Title / H1 方向：Copier une formule Excel depuis les fiches
+- 按钮短词：Filtrer / Copier / Charger l'exemple
 - 本地示例用词：West/East 或当地等价；发票行项目
 - 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
@@ -98,10 +98,10 @@
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 ### ja
 
-- 检索词（3–5）：ネストしたIF / 請求書 / ピボット；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：Excel 数式 コピー；関数 早見；SUMIF；XLOOKUP
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Copy common Excel formulas**），非参数枚举
-- 按钮短词：作成 / クリア / サンプル
+- Title / H1 方向：Excelの定番数式をカードからコピー
+- 按钮短词：絞り込み / コピー / サンプルを読み込む
 - 本地示例用词：West/East 或当地等价；发票行项目
 - 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
@@ -109,10 +109,10 @@
 - 轮次2已重写：[x]  轮次3已抽查：[x]  待母语抽查：[ ]
 ### ru
 
-- 检索词（3–5）：вложенный ЕСЛИ / счёт / сводная；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：формулы Excel；скопировать формулу；ВПР；СУММЕСЛИ
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Copy common Excel formulas**），非参数枚举
-- 按钮短词：Создать / Очистить / Пример
+- Title / H1 方向：Скопировать готовую формулу Excel с карточки
+- 按钮短词：Фильтр / Копировать / Загрузить пример
 - 本地示例用词：West/East 或当地等价；发票行项目
 - 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
@@ -120,10 +120,10 @@
 - 轮次2已重写：[x]  轮次3已抽查：[x]  待母语抽查：[ ]
 ### de
 
-- 检索词（3–5）：geschachtelte WENN / Rechnung / Pivot；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：Excel-Formeln kopieren；Formelsammlung；SVERWEIS；SUMMEWENN
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Copy common Excel formulas**），非参数枚举
-- 按钮短词：Erzeugen / Leeren / Beispiel
+- Title / H1 方向：Excel-Formeln aus der Sammlung kopieren
+- 按钮短词：Filtern / Kopieren / Beispiel laden
 - 本地示例用词：West/East 或当地等价；发票行项目
 - 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
@@ -142,3 +142,9 @@
 | 2b 抽查语检索覆盖优化 | 2026-09-04 | 抽查 en,zh,es,ja 的 title/desc：当地主词进 H1，次词进 FAQ；es/ja 句式不与 en 平行 | en,zh,es,ja 均再核落点 |
 | 3 抽查+禁词+lint | 2026-09-04 | 扫 privacy 设备+服务器句；禁 page 产品名；清待母语抽查 | 可标 i18n-done |
 | IG 修正复审 | 2026-09-05 | en/zh/es/ja 重写范围、步骤与 FAQ；其余语补真实 IF Input→Output | 实现四个 builder 直达链接；删除搜索/H1 元叙述 |
+| 0b 清单前检索覆盖 | 2026-10-16 | thin-rewrite：八张公式卡 + 规则第 5 条划界 builder | 覆盖表已写入 02 |
+| 1b 母版检索覆盖优化 | 2026-10-16 | desc 含 process / example / Load sample IF | 母版可合并 |
+| 2b 抽查语检索覆盖优化 | 2026-10-16 | 九语按 brief 检索向重写 | 待 verify |
+| 0b 清单前检索覆盖 | 2026-10-16 | thin-rewrite：八张公式卡 + 规则第 5 条划界 builder | 覆盖表已写入 02 |
+| 1b 母版检索覆盖优化 | 2026-10-16 | desc 含 process / example / Load sample IF | 母版可合并 |
+| 2b 抽查语检索覆盖优化 | 2026-10-16 | 抽查 en,zh,es,ja：主词进 H1（copy formulas / 复制常用公式 / fórmula / 数式），次词 SUMIF·VLOOKUP·Ctrl+` 进 FAQ 与 usecase；九语 desc 含步骤或示例且 ≥120 | en,zh,es,ja 落点已核；rules_item_5 划出嵌套 IF 生成器 |
