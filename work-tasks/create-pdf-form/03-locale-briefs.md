@@ -41,3 +41,6 @@
 | 2 按 brief 重写 | 2026-09-03 | 十语 i18n 分片 | 各语场景 title |
 | 2b 抽查语检索覆盖优化 | 2026-09-04 | en,zh,es,ja 再核 | 次词进 FAQ/desc |
 | 3 抽查+禁词+lint | 2026-09-03 | verify:tool | lint 绿 |
+| 0b 清单前检索覆盖 | 2026-10-16 | thin-rewrite：How 对齐 Add field / Download；规则第 5 条划界 | 覆盖表已写入 02 |
+| 1b 母版检索覆盖优化 | 2026-10-16 | desc 含 sample Name + Email 示例 | 母版可合并 |
+| 2b 抽查语检索覆盖优化 | 2026-10-16 | 九语按 brief 检索向重写 | 待 verify |

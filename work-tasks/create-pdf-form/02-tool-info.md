@@ -99,3 +99,11 @@
 - [x] References ≥1
 - [x] Disclaimer（YMYL 按需）
 - [x] `03-locale-briefs.md` 已填
+
+## 薄改写覆盖（2026-10-16）
+
+| 词 | 归属 | 落点 |
+|---|---|---|
+| create a PDF form | 主词 | H1 / title |
+| fillable PDF / checkbox / field name | 次词 | How、FAQ、rules |
+| 在已有 PDF 上加字段 | 有意不满足 | FAQ q2 + rules_item_5，指向 Make a PDF fillable |

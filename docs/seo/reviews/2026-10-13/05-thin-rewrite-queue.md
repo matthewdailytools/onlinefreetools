@@ -88,7 +88,7 @@
 | 66 | write-ifs-formula-in-excel | category:developer | 242 | 2 | 0 | B | 0.6 | done 2026-10-16 |
 | 67 | how-to-calculate-body-fat | how-to-calculate | 316 | 6 | 0 | A | 0.6 | done 2026-10-16 |
 | 68 | convert-word-document-to-pdf | pdf | 328 | 8 | 0 | B | 0.5 | done 2026-10-16 |
-| 69 | create-pdf-form | pdf | 342 | 21 | 0 | B | 0.5 | todo |
+| 69 | create-pdf-form | pdf | 342 | 21 | 0 | B | 0.5 | done 2026-10-16 |
 | 70 | excel-formulas-cheat-sheet | category:developer | 216 | 1 | 0 | B | 0.4 | todo |
 | 71 | create-excel-timesheet | category:calculator | 216 | 1 | 0 | B | 0.4 | todo |
 | 72 | wrap-formula-with-ifna | category:developer | 240 | 1 | 0 | B | 0.3 | todo |

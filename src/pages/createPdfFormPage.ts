@@ -163,7 +163,7 @@ export const renderCreatePdfFormPage = (opts: {
 		prefix,
 		mode: 'rules',
 		usecaseCount: 3,
-		ruleItemCount: 4,
+		ruleItemCount: 5,
 	});
 
 	/** 权威引用。 */
