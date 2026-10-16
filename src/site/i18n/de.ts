@@ -17766,16 +17766,27 @@ const de: SiteLangDict = {
   tool_markdown_export_description:
     'Vollständiges HTML-Dokument aus Markdown mit Vorlage und Metadaten erzeugen. Schritte: rendern, in Vorlage einfügen, Meta hinzufügen, Download. Beispiel: Beitrag als eigenständige .html exportieren.',
   tool_markdown_export_title: 'Markdown-zu-HTML-Export',
-  tool_markdown_faq_a1: 'Bei Markdown → HTML ja — DOMPurify vor Vorschau und Download.',
-  tool_markdown_faq_a2: 'Meist nein. Ziel ist ein editierbarer Entwurf.',
-  tool_markdown_faq_a3: 'Umwandlung lokal. Diese Website liefert nur Bibliotheksdateien.',
-  tool_markdown_faq_a4: 'Nicht zugesichert — bei Bedarf extern diffen.',
-  tool_markdown_faq_a5: 'CommonMark-Basis; optional vollständiges HTML zum Offline-Teilen.',
+  tool_markdown_faq_a1:
+    'Bei Markdown → HTML ja — DOMPurify läuft vor Vorschau, Kopieren und Download, damit typische Skript-Payloads und riskante Attribute nicht durchkommen.',
+  tool_markdown_faq_a2:
+    'Meist nein. Denken Sie an einen editierbaren Entwurf: Skripte und schweres Styling fallen weg, verschachtelte Tabellen werden oft vereinfacht.',
+  tool_markdown_faq_a3:
+    'Die Umwandlung passiert lokal im Tab. Lädt der Browser Bibliotheken von dieser Website, ist das nur Code-Download — kein Upload Ihres Textes.',
+  tool_markdown_faq_a4:
+    'Nicht zugesichert. Leerzeichen und nicht unterstützte Tags können abweichen. Byte-gleichheit prüfen Sie am besten mit einem externen Diff.',
+  tool_markdown_faq_a5:
+    'Übliche CommonMark-Basis: Überschriften, Listen, Links, Hervorhebung, Codeblöcke. Optional können Sie ein vollständiges HTML-Dokument für Offline-Teilen erzeugen.',
+  tool_markdown_faq_a6:
+    'Ja, bei Markdown → HTML, wenn Sie „Vollständiges HTML-Dokument erzeugen“ aktivieren. Sie erhalten eine minimale html/head/body-Hülle um das bereinigte Fragment.',
+  tool_markdown_faq_a7:
+    'marked (Markdown), DOMPurify (Bereinigung) und Turndown (HTML → Markdown). Sie werden von /vendor/ auf dieser Website geladen — nicht von einem Drittanbieter-CDN.',
   tool_markdown_faq_q1: 'Wird HTML von Skripten befreit?',
   tool_markdown_faq_q2: 'Bleibt das Layout in Markdown erhalten?',
   tool_markdown_faq_q3: 'Geht der Text an einen Server?',
   tool_markdown_faq_q4: 'Verlustfreier Roundtrip?',
   tool_markdown_faq_q5: 'Welche Syntax und Exporte?',
+  tool_markdown_faq_q6: 'Kann ich eine komplette HTML-Datei herunterladen?',
+  tool_markdown_faq_q7: 'Welche Bibliotheken stecken dahinter?',
   tool_markdown_full_doc: 'Vollständiges HTML-Dokument erzeugen',
   tool_markdown_how_body:
     'Tabs steuern die Richtung. Links Eingabe, rechts lokales Ergebnis. HTML: Fragment oder schlankes Gesamtdokument; Markdown: Klartext für Editor/LLM.',
@@ -17811,7 +17822,17 @@ const de: SiteLangDict = {
   tool_markdown_usecase_1: 'HTML fürs CMS erzeugen.',
   tool_markdown_usecase_2: 'Dokumentation aus HTML-Export retten.',
   tool_markdown_usecase_3: 'Rich-Text vor einem Prompt glätten.',
+  tool_markdown_usecase_4: 'CommonMark-Grundlagen unterrichten: Live-Vorschau zeigt, was die Bereinigung entfernt.',
   tool_markdown_usecases_title: 'Typische Einsätze',
+  tool_markdown_why_choose_item_1: 'Beide Richtungen auf einer Seite: Markdown → bereinigte HTML-Vorschau und HTML → lesbares Markdown.',
+  tool_markdown_why_choose_item_2:
+    'DOMPurify bei Markdown → HTML vor Vorschau, Kopieren und Download — keine typischen Skript-Payloads in der Ausgabe.',
+  tool_markdown_why_choose_item_3:
+    'Optional vollständiges Dokument, wenn Sie eine teilbare .html-Datei brauchen, nicht nur ein Fragment.',
+  tool_markdown_why_choose_item_4: 'Ehrliche Hinweise zu HTML → Markdown: Layout, Skripte und knifflige Tabellen gehen oft verloren.',
+  tool_markdown_why_choose_item_5:
+    'Einfügen bleibt im Tab; Bibliotheken kommen aus dem vendor-Ordner dieser Website, ohne Upload Ihres Textes.',
+  tool_markdown_why_choose_title: 'Warum dieser Markdown-HTML-Konverter passt',
   tool_markup_article:
     'Aufschlag in %, Verkaufspreis oder Kosten ermitteln und die passende Bruttomarge anzeigen, damit Aufschlag und Marge nicht verwechselt werden.',
   tool_markup_calculate: 'Berechnen',

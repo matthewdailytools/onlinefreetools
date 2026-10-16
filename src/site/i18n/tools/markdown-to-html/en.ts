@@ -30,11 +30,28 @@ const en: SiteLangDict = {
     'No guarantee. Whitespace and unsupported tags drift. If you need byte equality, diff outside this tool.',
   tool_markdown_faq_a5:
     'Headings, lists, links, emphasis, fenced code (CommonMark basics). Toggle full-document wrap when you need a shareable .html shell.',
+  tool_markdown_faq_a6:
+    'Yes for Markdown → HTML when you enable Generate full HTML document. You get a minimal html/head/body shell around the sanitized fragment.',
+  tool_markdown_faq_a7:
+    'marked (Markdown), DOMPurify (sanitize), and Turndown (HTML → Markdown). They load from this site’s /vendor/ — not from a third-party CDN.',
   tool_markdown_faq_q1: 'Do you sanitize the HTML output?',
   tool_markdown_faq_q2: 'Will HTML → Markdown keep my layout?',
   tool_markdown_faq_q3: 'Does paste leave my machine?',
   tool_markdown_faq_q4: 'Can I round-trip without changes?',
   tool_markdown_faq_q5: 'What syntax and export options exist?',
+  tool_markdown_faq_q6: 'Can I download a full HTML file?',
+  tool_markdown_faq_q7: 'Which libraries power the conversion?',
+  tool_markdown_why_choose_title: 'What this Markdown ↔ HTML converter gives you',
+  tool_markdown_why_choose_item_1:
+    'Both directions on one page: Markdown → sanitized HTML preview, and HTML → readable Markdown.',
+  tool_markdown_why_choose_item_2:
+    'DOMPurify on Markdown → HTML before preview, copy and download so common script payloads do not survive.',
+  tool_markdown_why_choose_item_3:
+    'Optional full-document wrap when you need a shareable .html shell, not only a fragment.',
+  tool_markdown_why_choose_item_4:
+    'Honest loss notes for HTML → Markdown: layout, scripts and fiddly tables often flatten.',
+  tool_markdown_why_choose_item_5:
+    'Paste stays in the tab; libraries load from this site’s vendor folder, not as an upload of your text.',
   tool_markdown_full_doc: 'Generate full HTML document',
   tool_markdown_how_body:
     'Pick a tab. Left side is input; right side updates in the browser. Markdown → HTML can copy a fragment or wrap a minimal full document. HTML → Markdown yields plain text for editors and LLMs. Loading this site's libraries ≠ uploading your paste.',
@@ -74,6 +91,7 @@ const en: SiteLangDict = {
   tool_markdown_usecase_1: 'Hand a sanitized HTML export to a CMS or save a standalone .html from a Markdown draft.',
   tool_markdown_usecase_2: 'Strip email/CMS HTML down to Markdown before committing to a docs repo.',
   tool_markdown_usecase_3: 'Normalize rich-text clipboard junk before an LLM prompt.',
+  tool_markdown_usecase_4: 'Teach CommonMark basics with a live preview that shows what sanitization removes.',
   tool_markdown_usecases_title: 'Good fits',
 };
 export default en;

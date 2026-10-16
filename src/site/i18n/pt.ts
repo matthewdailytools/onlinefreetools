@@ -17505,16 +17505,27 @@ const pt: SiteLangDict = {
   tool_markdown_export_description:
     'Gerar um documento HTML completo a partir do Markdown com template e metadados. Passos: renderizar, injetar no template, adicionar meta e baixar. Exemplo: exportar um post como .html independente.',
   tool_markdown_export_title: 'Exportação Markdown para HTML',
-  tool_markdown_faq_a1: 'No sentido Markdown → HTML, DOMPurify age antes da pré-visualização e do download.',
-  tool_markdown_faq_a2: 'Não conte com isso. O foco é texto editável.',
-  tool_markdown_faq_a3: 'A conversão é no cliente. Biblioteca depuis ce site não envia seu artigo.',
-  tool_markdown_faq_a4: 'Não garantido — use diff se precisar de igualdade.',
-  tool_markdown_faq_a5: 'Títulos, listas, links, ênfase, code fence; opção de HTML completo para partilha offline.',
+  tool_markdown_faq_a1:
+    'No sentido Markdown → HTML, sim — o DOMPurify roda antes da pré-visualização, cópia e download, para bloquear scripts comuns e atributos arriscados.',
+  tool_markdown_faq_a2:
+    'Em geral não. Trate como rascunho editável: scripts e estilo pesado somem; tabelas aninhadas costumam simplificar.',
+  tool_markdown_faq_a3:
+    'A conversão fica no navegador. Baixar bibliotecas deste site é só código — seu texto colado não é enviado.',
+  tool_markdown_faq_a4:
+    'Não garantimos igualdade. Espaços e tags não suportadas podem mudar. Para byte a byte, compare com diff externo.',
+  tool_markdown_faq_a5:
+    'Base CommonMark: títulos, listas, links, ênfase, blocos de código. Opcionalmente envolva um HTML completo para partilha offline.',
+  tool_markdown_faq_a6:
+    'Sim, em Markdown → HTML com «Gerar documento HTML completo»: você baixa um .html com casca mínima html/head/body em torno do fragmento sanitizado.',
+  tool_markdown_faq_a7:
+    'marked (Markdown), DOMPurify (sanitização) e Turndown (HTML → Markdown), servidos de /vendor/ neste site — sem CDN de terceiros.',
   tool_markdown_faq_q1: 'O HTML é limpo de scripts?',
   tool_markdown_faq_q2: 'HTML → Markdown mantém o visual?',
   tool_markdown_faq_q3: 'A colagem vai para a nuvem?',
   tool_markdown_faq_q4: 'Round-trip fiel?',
   tool_markdown_faq_q5: 'Quais recursos CommonMark e exportações?',
+  tool_markdown_faq_q6: 'Dá para baixar um arquivo HTML completo?',
+  tool_markdown_faq_q7: 'Quais bibliotecas fazem a conversão?',
   tool_markdown_full_doc: 'Gerar documento HTML completo',
   tool_markdown_how_body:
     'Use as abas. Entrada à esquerda, resultado à direita. No sentido HTML dá para copiar trecho ou documento simples; no sentido Markdown sai texto para Git ou LLM.',
@@ -17550,7 +17561,15 @@ const pt: SiteLangDict = {
   tool_markdown_usecase_1: 'Entregar HTML sanitizado ao CMS.',
   tool_markdown_usecase_2: 'Recuperar docs a partir de HTML exportado.',
   tool_markdown_usecase_3: 'Preparar colagem rica para um modelo de linguagem.',
+  tool_markdown_usecase_4: 'Ensinar CommonMark básico: a prévia ao vivo mostra o que a sanitização remove.',
   tool_markdown_usecases_title: 'Quando ajuda',
+  tool_markdown_why_choose_item_1: 'Dois sentidos numa página: Markdown → prévia HTML sanitizada e HTML → Markdown legível.',
+  tool_markdown_why_choose_item_2:
+    'DOMPurify antes de ver, copiar ou baixar no sentido Markdown → HTML — menos payloads de script na saída.',
+  tool_markdown_why_choose_item_3: 'Envelope de documento completo quando precisa de um .html partilhável, não só um trecho.',
+  tool_markdown_why_choose_item_4: 'Perdas honestas em HTML → Markdown: layout, scripts e tabelas complexas costumam achatar.',
+  tool_markdown_why_choose_item_5: 'Colagem fica no separador; libs vêm da pasta vendor deste site, sem upload do seu texto.',
+  tool_markdown_why_choose_title: 'O que este conversor Markdown ↔ HTML entrega',
   tool_markup_article:
     'Obtenha markup %, preço de venda ou custo e veja a margem bruta correspondente para não confundir markup com margem.',
   tool_markup_calculate: 'Calcular',

@@ -17438,16 +17438,26 @@ const ru: SiteLangDict = {
   tool_markdown_export_description:
     'Сгенерировать полный HTML-документ из Markdown с шаблоном и метаданными. Шаги: рендер, вставка в шаблон, meta, скачивание. Пример: экспорт поста как автономный .html.',
   tool_markdown_export_title: 'Экспорт Markdown в HTML',
-  tool_markdown_faq_a1: 'В направлении Markdown → HTML — да, DOMPurify до предпросмотра и скачивания.',
-  tool_markdown_faq_a2: 'Обычно нет. Это читаемый черновик, не макет.',
-  tool_markdown_faq_a3: 'Преобразование локально. этот сайт отдаёт файлы библиотек.',
-  tool_markdown_faq_a4: 'Не обещаем — сверьте diff при необходимости.',
-  tool_markdown_faq_a5: 'Базовый CommonMark; опционально полный HTML для офлайн-передачи.',
+  tool_markdown_faq_a1:
+    'В направлении Markdown → HTML — да: DOMPurify до предпросмотра, копирования и скачивания, чтобы типичные скрипты и опасные атрибуты не проходили.',
+  tool_markdown_faq_a2:
+    'Обычно нет. Считайте это редактируемым черновиком: скрипты и тяжёлые стили пропадают, вложенные таблицы часто упрощаются.',
+  tool_markdown_faq_a3: 'Преобразование во вкладке. Загрузка библиотек с этого сайта — только код, не отправка вашего текста.',
+  tool_markdown_faq_a4:
+    'Не гарантируем совпадение. Пробелы и неподдерживаемые теги могут сдвинуться. Для побайтового сравнения используйте внешний diff.',
+  tool_markdown_faq_a5:
+    'Базовый CommonMark: заголовки, списки, ссылки, выделение, блоки кода. По желанию — обёртка полного HTML для офлайн-передачи.',
+  tool_markdown_faq_a6:
+    'Да для Markdown → HTML, если включить «Создать полный HTML-документ»: минимальная оболочка html/head/body вокруг очищенного фрагмента.',
+  tool_markdown_faq_a7:
+    'marked (Markdown), DOMPurify (очистка) и Turndown (HTML → Markdown), с /vendor/ этого сайта — без стороннего CDN.',
   tool_markdown_faq_q1: 'HTML очищается от скриптов?',
   tool_markdown_faq_q2: 'Вёрстка сохранится в Markdown?',
   tool_markdown_faq_q3: 'Уходит ли вставка на сервер?',
   tool_markdown_faq_q4: 'Круговой путь без изменений?',
   tool_markdown_faq_q5: 'Какой Markdown и какие экспорты?',
+  tool_markdown_faq_q6: 'Можно скачать полный HTML-файл?',
+  tool_markdown_faq_q7: 'Какие библиотеки делают преобразование?',
   tool_markdown_full_doc: 'Создать полный HTML-документ',
   tool_markdown_how_body:
     'Вкладки задают направление. Слева ввод, справа локальный результат. HTML — фрагмент или простой документ; Markdown — текст для репозитория или LLM.',
@@ -17485,7 +17495,16 @@ const ru: SiteLangDict = {
   tool_markdown_usecase_1: 'Отдать CMS очищенный HTML.',
   tool_markdown_usecase_2: 'Вытащить черновик из HTML письма или панели.',
   tool_markdown_usecase_3: 'Убрать шум rich text перед промптом.',
+  tool_markdown_usecase_4: 'Объяснять основы CommonMark: живой предпросмотр показывает, что убирает очистка.',
   tool_markdown_usecases_title: 'Когда полезно',
+  tool_markdown_why_choose_item_1:
+    'Оба направления на одной странице: Markdown → безопасный HTML-предпросмотр, HTML → читаемый Markdown.',
+  tool_markdown_why_choose_item_2:
+    'DOMPurify до просмотра, копирования и скачивания в Markdown → HTML — типичные скрипты не остаются в выводе.',
+  tool_markdown_why_choose_item_3: 'Опциональная полная обёртка, когда нужен .html для передачи, а не только фрагмент.',
+  tool_markdown_why_choose_item_4: 'Честно про потери HTML → Markdown: вёрстка, скрипты и сложные таблицы часто «сплющиваются».',
+  tool_markdown_why_choose_item_5: 'Вставка остаётся во вкладке; библиотеки из vendor этого сайта — не загрузка вашего документа.',
+  tool_markdown_why_choose_title: 'Зачем этот конвертер Markdown ↔ HTML',
   tool_markup_article:
     'Найдите % markup, цену продажи или себестоимость и сопоставимую валовую маржу, чтобы не путать markup с маржой.',
   tool_markup_calculate: 'Рассчитать',

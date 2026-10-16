@@ -17755,11 +17755,17 @@ const es: SiteLangDict = {
   tool_markdown_faq_a3: 'No. La conversión es local. Este sitio, si aparece, solo entrega código abierto.',
   tool_markdown_faq_a4: 'No lo prometemos. Compará con un diff si necesitás igualdad exacta.',
   tool_markdown_faq_a5: 'Lo habitual de CommonMark. Opcional: envolver un HTML completo para compartir offline.',
+  tool_markdown_faq_a6:
+    'Sí, en Markdown → HTML si activas «Generar documento HTML completo»: obtienes un .html con html/head/body mínimo alrededor del fragmento saneado.',
+  tool_markdown_faq_a7:
+    'marked (Markdown), DOMPurify (limpieza) y Turndown (HTML → Markdown), cargados desde /vendor/ de este sitio — sin CDN de terceros.',
   tool_markdown_faq_q1: '¿El HTML sale filtrado?',
   tool_markdown_faq_q2: '¿Conserva tablas y CSS al pasar a Markdown?',
   tool_markdown_faq_q3: '¿Subís lo que pego?',
   tool_markdown_faq_q4: '¿Puedo ir y volver sin diferencias?',
   tool_markdown_faq_q5: '¿Qué Markdown acepta y qué puedo exportar?',
+  tool_markdown_faq_q6: '¿Puedo bajar un archivo HTML completo?',
+  tool_markdown_faq_q7: '¿Qué librerías hacen la conversión?',
   tool_markdown_full_doc: 'Generar documento HTML completo',
   tool_markdown_how_body:
     'Una pestaña por sentido. Escribes a la izquierda y ves el resultado a la derecha sin subir el texto. En HTML puedes llevarte un fragmento o un documento mínimo; en Markdown obtienes texto plano.',
@@ -17797,7 +17803,16 @@ const es: SiteLangDict = {
   tool_markdown_usecase_1: 'Dejar un artículo listo en HTML para el CMS.',
   tool_markdown_usecase_2: 'Sacar Markdown de un correo o del panel del sitio.',
   tool_markdown_usecase_3: 'Limpiar texto enriquecido antes de un prompt.',
+  tool_markdown_usecase_4: 'Explicar CommonMark en clase: la vista previa en vivo muestra qué quita la sanitización.',
   tool_markdown_usecases_title: 'Para qué sirve',
+  tool_markdown_why_choose_item_1: 'Dos sentidos en una sola página: Markdown → vista previa HTML saneada y HTML → Markdown editable.',
+  tool_markdown_why_choose_item_2:
+    'DOMPurify en Markdown → HTML antes de previsualizar, copiar o descargar: menos scripts peligrosos en la salida.',
+  tool_markdown_why_choose_item_3: 'Opción de documento completo cuando necesitas un .html para compartir, no solo un trozo de código.',
+  tool_markdown_why_choose_item_4: 'Avisos claros al pasar a Markdown: diseño, scripts y tablas complejas suelen aplanarse.',
+  tool_markdown_why_choose_item_5:
+    'Lo que pegas no sale del navegador; las librerías vienen del vendor de este sitio, no es subida de tu texto.',
+  tool_markdown_why_choose_title: 'Por qué usar este conversor Markdown ↔ HTML',
   tool_markup_article:
     'Obtén el % de markup, el precio de venta o el costo, y consulta el margen bruto equivalente para no confundir markup con margen.',
   tool_markup_calculate: 'Calcular',

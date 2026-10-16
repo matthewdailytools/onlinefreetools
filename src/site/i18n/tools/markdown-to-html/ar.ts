@@ -18,16 +18,38 @@ const ar: SiteLangDict = {
   tool_markdown_export_description:
     'إنشاء مستند HTML كامل من Markdown مع قالب وبيانات وصفية. الخطوات: تصيير، إدراج في القالب، إضافة meta، تنزيل. مثال: تصدير مقال كملف .html مستقل.',
   tool_markdown_export_title: 'تصدير Markdown إلى HTML',
-  tool_markdown_faq_a1: 'في Markdown → HTML نعم؛ DOMPurify قبل المعاينة والتنزيل.',
-  tool_markdown_faq_a2: 'نادرًا. اعتبره مسودة قابلة للتحرير.',
-  tool_markdown_faq_a3: 'التحويل محلي. هذا الموقع يوصل ملفات المكتبة فقط.',
-  tool_markdown_faq_a4: 'غير مضمون — قارن بـ Diff إن لزم.',
-  tool_markdown_faq_a5: 'أساسيات CommonMark؛ ومستند HTML كامل اختياري للمشاركة دون اتصال.',
+  tool_markdown_faq_a1:
+    'في Markdown → HTML نعم — يعمل DOMPurify قبل المعاينة والنسخ والتنزيل لتقليل السكربتات الشائعة والسمات الخطرة.',
+  tool_markdown_faq_a2:
+    'نادرًا بالكامل. اعتبره مسودة قابلة للتحرير: السكربتات والتنسيق الثقيل يختفي، والجداول المتداخلة تُبسَّط غالبًا.',
+  tool_markdown_faq_a3:
+    'التحويل داخل التبويب. جلب المكتبات من هذا الموقع يعني تنزيل الشيفرة فقط — لا رفع لنصك.',
+  tool_markdown_faq_a4:
+    'غير مضمون. قد تتغير المسافات والوسوم غير المدعومة. للمساواة بايت-بايت استخدم Diff خارجي.',
+  tool_markdown_faq_a5:
+    'أساس CommonMark: عناوين، قوائم، روابط، تأكيد، كتل شيفرة. يمكنك أيضًا لف مستند HTML كامل للمشاركة دون اتصال.',
   tool_markdown_faq_q1: 'هل يُزال السكربت من HTML؟',
   tool_markdown_faq_q2: 'هل يبقى التنسيق في Markdown؟',
   tool_markdown_faq_q3: 'هل يُرسل اللصق إلى خادم؟',
   tool_markdown_faq_q4: 'هل الذهاب والإياب بلا فرق؟',
   tool_markdown_faq_q5: 'ما الصيغ وخيارات التصدير؟',
+  tool_markdown_faq_a6:
+    'نعم في Markdown → HTML عند تفعيل «إنشاء مستند HTML كامل»: تحصل على html/head/body بسيط حول الجزء المنظَّف.',
+  tool_markdown_faq_a7:
+    'marked (Markdown) وDOMPurify (تنظيف) وTurndown (HTML → Markdown)، تُحمَّل من /vendor/ على هذا الموقع — لا CDN طرف ثالث.',
+  tool_markdown_faq_q6: 'هل أستطيع تنزيل ملف HTML كامل؟',
+  tool_markdown_faq_q7: 'ما المكتبات التي تشغّل التحويل؟',
+  tool_markdown_why_choose_title: 'لماذا هذا المحوّل Markdown ↔ HTML',
+  tool_markdown_why_choose_item_1:
+    'اتجاهان في صفحة واحدة: Markdown → معاينة HTML منظَّفة، وHTML → Markdown قابل للتحرير.',
+  tool_markdown_why_choose_item_2:
+    'DOMPurify قبل المعاينة والنسخ والتنزيل في Markdown → HTML — حمولات سكربت شائعة لا تبقى في المخرجات.',
+  tool_markdown_why_choose_item_3:
+    'لف اختياري لمستند كامل عندما تحتاج .html للمشاركة، لا مجرد جزء.',
+  tool_markdown_why_choose_item_4:
+    'توضيح صادق للفقد في HTML → Markdown: التخطيط والسكربتات والجداول المعقدة تُسطَّح غالبًا.',
+  tool_markdown_why_choose_item_5:
+    'اللصق يبقى في التبويب؛ المكتبات من مجلد vendor هنا — ليس رفعًا لنصك.',
   tool_markdown_full_doc: 'إنشاء مستند HTML كامل',
   tool_markdown_how_body:
     'التبويب يحدد الاتجاه. أدخل يسارًا والنتيجة يمينًا محليًا. HTML: جزء أو مستند بسيط؛ Markdown: نص للمحرر أو النموذج.',
@@ -62,6 +84,8 @@ const ar: SiteLangDict = {
   tool_markdown_usecase_1: 'تسليم HTML آمن لنظام المحتوى.',
   tool_markdown_usecase_2: 'استعادة مسودة من HTML بريد أو لوحة.',
   tool_markdown_usecase_3: 'تنظيف نص غني قبل المطالبة.',
+  tool_markdown_usecase_4:
+    'شرح أساسيات CommonMark: المعاينة الحية تُظهر ما يزيله التنظيف.',
   tool_markdown_usecases_title: 'متى يفيد',
 };
 export default ar;

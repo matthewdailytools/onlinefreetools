@@ -17839,16 +17839,27 @@ const fr: SiteLangDict = {
   tool_markdown_export_description:
     'Générer un document HTML complet depuis Markdown avec modèle et métadonnées. Étapes : rendre, injecter dans le modèle, ajouter meta, télécharger. Exemple : exporter un article en .html autonome.',
   tool_markdown_export_title: 'Export Markdown vers HTML',
-  tool_markdown_faq_a1: 'Oui en Markdown → HTML : DOMPurify avant aperçu et téléchargement.',
-  tool_markdown_faq_a2: 'Rarement. Objectif : brouillon lisible, pas maquette.',
-  tool_markdown_faq_a3: 'Conversion locale. Ce site ne fait qu’apporter le code des libs.',
-  tool_markdown_faq_a4: 'Non garanti — passez par un diff si besoin.',
-  tool_markdown_faq_a5: 'Titres, listes, liens, emphase, code fence ; option document HTML complet hors-ligne.',
+  tool_markdown_faq_a1:
+    'Oui en Markdown → HTML : DOMPurify s’exécute avant l’aperçu, la copie et le téléchargement, pour bloquer scripts courants et attributs risqués.',
+  tool_markdown_faq_a2:
+    'Rarement. Visez un brouillon éditable : scripts et styles lourds disparaissent, les tableaux imbriqués sont souvent aplatis.',
+  tool_markdown_faq_a3:
+    'La conversion reste dans l’onglet. Si ce site charge des bibliothèques, c’est uniquement du code — votre collage n’est pas envoyé.',
+  tool_markdown_faq_a4:
+    'Non garanti. Espaces et balises non prises en charge peuvent diverger. Pour une égalité octet par octet, comparez avec un diff externe.',
+  tool_markdown_faq_a5:
+    'Base CommonMark : titres, listes, liens, emphase, blocs de code. Vous pouvez aussi envelopper un document HTML complet pour partage hors ligne.',
+  tool_markdown_faq_a6:
+    'Oui en Markdown → HTML si vous activez « Générer un document HTML complet » : coquille minimale html/head/body autour du fragment assaini.',
+  tool_markdown_faq_a7:
+    'marked (Markdown), DOMPurify (nettoyage) et Turndown (HTML → Markdown), servis depuis /vendor/ sur ce site — pas via un CDN tiers.',
   tool_markdown_faq_q1: 'Le HTML est-il filtré ?',
   tool_markdown_faq_q2: 'Le rendu CSS survit-il en Markdown ?',
   tool_markdown_faq_q3: 'Le collage part-il sur un serveur ?',
   tool_markdown_faq_q4: 'Aller-retour sans perte ?',
   tool_markdown_faq_q5: 'Couverture CommonMark et exports ?',
+  tool_markdown_faq_q6: 'Puis-je télécharger un fichier HTML complet ?',
+  tool_markdown_faq_q7: 'Quelles bibliothèques alimentent la conversion ?',
   tool_markdown_full_doc: 'Générer un document HTML complet',
   tool_markdown_how_body:
     'Onglets = sens. Saisie à gauche, rendu local à droite. Côté HTML : fragment ou coquille minimale ; côté Markdown : texte pour dépôt ou LLM.',
@@ -17885,7 +17896,17 @@ const fr: SiteLangDict = {
   tool_markdown_usecase_1: 'Livrer un HTML sûr au CMS.',
   tool_markdown_usecase_2: 'Repasser un export HTML en Markdown éditable.',
   tool_markdown_usecase_3: 'Nettoyer un collage riche avant un prompt.',
+  tool_markdown_usecase_4: 'Enseigner les bases CommonMark : l’aperçu live montre ce que l’assainissement retire.',
   tool_markdown_usecases_title: 'Usages typiques',
+  tool_markdown_why_choose_item_1: 'Deux sens sur une page : Markdown → aperçu HTML assaini, HTML → Markdown lisible.',
+  tool_markdown_why_choose_item_2:
+    'DOMPurify avant aperçu, copie et téléchargement en Markdown → HTML — pas de scripts courants dans la sortie.',
+  tool_markdown_why_choose_item_3:
+    'Enveloppe document complète optionnelle quand il vous faut un .html partageable, pas seulement un fragment.',
+  tool_markdown_why_choose_item_4:
+    'Perte assumée en HTML → Markdown : mise en page, scripts et tableaux complexes s’aplatissent souvent.',
+  tool_markdown_why_choose_item_5: 'Collage local ; les libs viennent du dossier vendor de ce site, sans upload de votre texte.',
+  tool_markdown_why_choose_title: 'Ce que ce convertisseur Markdown ↔ HTML apporte',
   tool_markup_article:
     'Obtenez le markup en %, le prix de vente ou le coût, avec la marge brute correspondante pour ne pas confondre markup et marge.',
   tool_markup_calculate: 'Calculer',

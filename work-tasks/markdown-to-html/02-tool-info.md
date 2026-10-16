@@ -86,6 +86,20 @@
 | 工期粗估 | ~0.5–1d（交互 Tab + turndown + 文案/IG 补齐 + 十语检索向） |
 | 本地化核查 | 见 `03-locale-briefs.md`（每语 brief + 禁词表 + ≥3 轮） |
 
+## 清单前检索覆盖优化
+
+| 项 | 结论 / 落点 |
+|---|---|
+| 日期 | 2026-08-06；复审 2026-10-16 |
+| slug 结论 | **保留** `markdown-to-html`（双向 Tab；不新建 `html-to-markdown`） |
+| 主检索词 → title/H1 | en：**Markdown ↔ HTML Converter — Sanitize & Preview**；zh：Markdown ↔ HTML 转换 |
+| 次要关键词 → desc/FAQ | html to markdown；sanitize；CommonMark；full HTML document → FAQ/Use cases |
+| 用户搜索习惯判断 | 搜互转结果；禁拆 doorway 薄页；禁参数枚举 title |
+| 优化摘要 | H1 双向场景；desc≥120；why_choose×5 + FAQ×7（2026-10-16 加深） |
+| [x] 已回写 SEO 卡片 | |
+
+> `npm run coverage:gate -- --slug=markdown-to-html --phase=0b`
+
 ## 交互规格（给实现用）
 
 - 输入：

@@ -18,6 +18,9 @@
 - [x] 十语非同一句式骨架；title 含该语检索说法（本轮打散 How/FAQ/Use cases 开篇）
 - [x] 未依赖 `t()` 英文回退冒充缺语种
 - [x] 未把「脚本同构灌语」当唯一交付；待母语抽查已清
+- [x] **清单前检索覆盖已做**（见 `02` 覆盖表）
+- [x] **用户意图审查已做**（双向同页；不拆 html-to-markdown）
+- [x] **检索覆盖已优化**（i18n 后步 2+4；2026-10-16 补 why_choose×5 / FAQ×7）
 
 技术专名（Markdown、HTML、CommonMark、DOMPurify、Turndown、CDN）可保留，**不可**替代本地主 title。
 
@@ -154,7 +157,11 @@
 
 | 轮次 | 日期 | 做了什么 | 结果 |
 |---|---|---|---|
+| 0b 清单前检索覆盖 | 2026-08-06 | slug 保留双向 kebab；H1=Markdown ↔ HTML；次词进 FAQ；禁拆 html-to-markdown | 覆盖表写入 02 |
 | 1 母版+lint | 2026-08-06 | 双向英文母版 + FAQ；`lint:seo` | 通过 |
+| 1b 母版检索覆盖优化 | 2026-08-06 | 核对 en title 含双向主词；desc 消毒+示例；非参数枚举 | 主词在 H1 |
 | 2 按 brief 重写 | 2026-08-06 | 初版十语 + 首页卡片 | 通过（后发现同构风险） |
+| 2b 抽查语检索覆盖优化 | 2026-08-06 | 抽查 en,zh,es,ja title/desc 当地主词；句式打散 | en,zh,es,ja 再核 |
 | 3 抽查+禁词+lint | 2026-08-06 | 抽 en/zh/ja/fr/de；禁词；lint | 通过 |
 | 4 收紧合规重写 | 2026-08-06 | 十语 SEO 段独立重写打散句式；清 ar/ja/ru「待母语抽查」；rules 写入稳妥常态 | `lint:seo` 通过；`i18n-done` |
+| thin-rewrite #54 | 2026-10-16 | 页加 why_choose×5；FAQ×7；usecase_4；九语补键 | verify 待跑 |

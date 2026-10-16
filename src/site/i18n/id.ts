@@ -17421,16 +17421,26 @@ const id: SiteLangDict = {
   tool_markdown_export_description:
     'Buat dokumen HTML lengkap dari Markdown dengan template dan meta. Langkah: render, sisipkan ke template, tambah meta, unduh. Contoh: ekspor artikel sebagai .html mandiri.',
   tool_markdown_export_title: 'Ekspor Markdown ke HTML',
-  tool_markdown_faq_a1: 'Pada arah Markdown → HTML, DOMPurify jalan sebelum pratinjau dan unduhan.',
-  tool_markdown_faq_a2: 'Jarang. Anggap hasilnya draf yang bisa diedit.',
-  tool_markdown_faq_a3: 'Tidak. Konversi lokal; situs ini hanya mengantar file pustaka.',
-  tool_markdown_faq_a4: 'Tidak dijamin. Diff jika Anda butuh sama persis.',
-  tool_markdown_faq_a5: 'Dasar CommonMark; opsi dokumen HTML penuh untuk berbagi offline.',
+  tool_markdown_faq_a1:
+    'Pada arah Markdown → HTML, ya — DOMPurify berjalan sebelum pratinjau, salin, dan unduh agar skrip umum dan atribut berisiko tidak lolos.',
+  tool_markdown_faq_a2:
+    'Jarang utuh. Anggap draf yang bisa diedit: skrip dan gaya berat hilang; tabel bersarang sering disederhanakan.',
+  tool_markdown_faq_a3: 'Konversi tetap di tab. Mengambil pustaka dari situs ini hanya unduh kode — bukan unggah teks Anda.',
+  tool_markdown_faq_a4:
+    'Tidak dijamin. Spasi dan tag tak didukung bisa bergeser. Untuk sama persis byte demi byte, diff di luar alat ini.',
+  tool_markdown_faq_a5:
+    'Dasar CommonMark: judul, daftar, tautan, penekanan, blok kode. Opsional bungkus dokumen HTML penuh untuk berbagi offline.',
+  tool_markdown_faq_a6:
+    'Ya untuk Markdown → HTML jika Anda aktifkan «Buat dokumen HTML lengkap»: file .html dengan html/head/body minimal mengelilingi fragmen yang disanitasi.',
+  tool_markdown_faq_a7:
+    'marked (Markdown), DOMPurify (sanitasi), dan Turndown (HTML → Markdown), dimuat dari /vendor/ situs ini — bukan CDN pihak ketiga.',
   tool_markdown_faq_q1: 'Apakah output HTML aman dari skrip?',
   tool_markdown_faq_q2: 'Apakah tata letak HTML bertahan di Markdown?',
   tool_markdown_faq_q3: 'Apakah tempelan dikirim ke server?',
   tool_markdown_faq_q4: 'Bisakah bolak-balik tanpa ubah?',
   tool_markdown_faq_q5: 'Fitur Markdown dan opsi ekspor?',
+  tool_markdown_faq_q6: 'Bisa unduh file HTML lengkap?',
+  tool_markdown_faq_q7: 'Pustaka apa yang menjalankan konversi?',
   tool_markdown_full_doc: 'Buat dokumen HTML lengkap',
   tool_markdown_how_body:
     'Tab menentukan arah. Kiri input, kanan hasil lokal. HTML bisa fragmen atau dokumen sederhana; Markdown siap untuk editor/LLM.',
@@ -17466,7 +17476,14 @@ const id: SiteLangDict = {
   tool_markdown_usecase_1: 'Kirim HTML bersih ke CMS.',
   tool_markdown_usecase_2: 'Ambil ulang dokumen dari HTML email/panel.',
   tool_markdown_usecase_3: 'Rapikan rich text sebelum prompt.',
+  tool_markdown_usecase_4: 'Mengajar dasar CommonMark: pratinjau langsung menunjukkan apa yang dibersihkan sanitasi.',
   tool_markdown_usecases_title: 'Cocok untuk',
+  tool_markdown_why_choose_item_1: 'Dua arah satu halaman: Markdown → pratinjau HTML bersih, HTML → Markdown yang mudah diedit.',
+  tool_markdown_why_choose_item_2: 'DOMPurify sebelum lihat, salin, atau unduh di Markdown → HTML — muatan skrip umum jarang tembus.',
+  tool_markdown_why_choose_item_3: 'Opsi dokumen penuh saat Anda butuh .html untuk dibagikan, bukan hanya fragmen.',
+  tool_markdown_why_choose_item_4: 'Catatan jujur untuk HTML → Markdown: layout, skrip, dan tabel rumit sering rata.',
+  tool_markdown_why_choose_item_5: 'Tempelan tetap di tab; pustaka dari folder vendor situs ini, bukan unggah konten Anda.',
+  tool_markdown_why_choose_title: 'Keunggulan konverter Markdown ↔ HTML ini',
   tool_markup_article:
     'Temukan % markup, harga jual, atau biaya, dan lihat margin kotor yang sejajar agar markup tidak tertukar dengan margin.',
   tool_markup_calculate: 'Hitung',

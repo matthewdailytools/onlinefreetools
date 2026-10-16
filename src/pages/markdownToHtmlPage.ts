@@ -142,6 +142,17 @@ export const renderMarkdownToHtmlPage = (opts: {
       </ol>
     </section>
 
+    <section class="mt-4" id="why-choose" aria-labelledby="why-choose-heading">
+      <h2 class="h5" id="why-choose-heading">${escapeHtml(t(opts.lang, 'tool_markdown_why_choose_title'))}</h2>
+      <ul class="text-muted mb-0">
+        <li>${escapeHtml(t(opts.lang, 'tool_markdown_why_choose_item_1'))}</li>
+        <li>${escapeHtml(t(opts.lang, 'tool_markdown_why_choose_item_2'))}</li>
+        <li>${escapeHtml(t(opts.lang, 'tool_markdown_why_choose_item_3'))}</li>
+        <li>${escapeHtml(t(opts.lang, 'tool_markdown_why_choose_item_4'))}</li>
+        <li>${escapeHtml(t(opts.lang, 'tool_markdown_why_choose_item_5'))}</li>
+      </ul>
+    </section>
+
     <section class="mt-4" id="rules" aria-labelledby="rules-heading">
       <h2 class="h5" id="rules-heading">${escapeHtml(t(opts.lang, 'tool_markdown_rules_title'))}</h2>
       <p class="text-muted">${escapeHtml(t(opts.lang, 'tool_markdown_rules_intro'))}</p>
@@ -164,6 +175,7 @@ export const renderMarkdownToHtmlPage = (opts: {
         <li>${escapeHtml(t(opts.lang, 'tool_markdown_usecase_1'))}</li>
         <li>${escapeHtml(t(opts.lang, 'tool_markdown_usecase_2'))}</li>
         <li>${escapeHtml(t(opts.lang, 'tool_markdown_usecase_3'))}</li>
+        <li>${escapeHtml(t(opts.lang, 'tool_markdown_usecase_4'))}</li>
       </ul>
     </section>`;
 
