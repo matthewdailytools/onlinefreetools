@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-p-value",
   "path": "/tools/how-to-calculate-p-value",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-16T04:02:59.480Z",
   "category": "calculator",
   "primaryTopic": "math-stats",
   "featured": false,
@@ -11,9 +11,9 @@
   "homeDescKey": "tool_p_value_description",
   "faqPrefix": "tool_p_value",
   "related": [
+    "how-to-calculate-z-score",
     "how-to-calculate-standard-deviation",
-    "how-to-calculate-confidence-interval",
-    "how-to-calculate-sample-size"
+    "how-to-calculate-confidence-interval"
   ],
   "logo": "/icons/tools/how-to-calculate-p-value.svg",
   "page": {

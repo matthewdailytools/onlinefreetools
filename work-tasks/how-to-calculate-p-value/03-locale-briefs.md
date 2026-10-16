@@ -10,6 +10,7 @@
 - [x] title 非参数目录腔
 - [x] 隐私：浏览器内计算
 - [x] **清单前检索覆盖已做**
+- [x] **用户意图审查已做**
 - [x] 十语非同构
 - [x] **检索覆盖已优化**
 
@@ -18,8 +19,8 @@
 ## 每语 brief
 
 ### en
-- 检索词：p-value calculator；how to calculate p-value；two-tailed p from z
-- Title：P-Value Calculator — How to Calculate a P-Value
+- 检索词：p-value calculator；p from z；two-tailed；one-tailed
+- Title：P-Value Calculator — From a Z-Score (Normal Tail)
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### zh
@@ -72,9 +73,11 @@
 | 轮次 | 日期 | 做了什么 | 结果 |
 |---|---|---|---|
 | 0b 清单前检索覆盖 | 2026-08-09 | 保留 how-to-calculate-p-value；title 定为 P-Value Calculator — How to Calculate a P-Value；次词 two-tailed/z 落 desc；禁参数枚举 | 覆盖表已写入 02；可标 ready |
-
 | 1 母版+lint | 2026-08-09 | 写 en 完整键 + Page/catalog/icon；进页 loadSample | 母版可合并 |
 | 1b 母版检索覆盖优化 | 2026-08-09 | 核对 en title 含主检索词与 How to Calculate/结果向副标题；desc 含固定示例数字；非参数枚举 | 主词在 H1；次词落 FAQ/模式 |
 | 2 按 brief 重写 | 2026-08-09 | 按 brief 写十语 title/description 与核心键；按钮短词本地化 | 十语键齐全 |
 | 2b 抽查语检索覆盖优化 | 2026-08-09 | 抽查 en,zh,es,ja：再核 title/desc 当地主词与示例数字 | en,zh,es,ja 已再优化 title/desc |
 | 3 抽查+禁词+lint | 2026-08-09 | 扫禁词与免责；跑 coverage:gate all 与 build:site | 上线验收通过 |
+| 0b thin-rewrite #57 | 2026-10-16 | 复审同意图：one/two-tailed / z=1.96≈0.05；title 改为 From a Z-Score；意图审查写入 02 | 覆盖表+意图审查已回写 |
+| 1b thin-rewrite #57 | 2026-10-16 | 母版加深：单/双侧 + 临界 z 芯片 + 分步 + why_choose×5 + FAQ×7；desc 含 1.96→0.05 | 主词在 H1；次词落 FAQ/模式 |
+| 2b thin-rewrite #57 | 2026-10-16 | 九语独立重写全键；抽查 en,zh,es,ja title/desc 与 1.96→0.05 | en,zh,es,ja 已再优化 title/desc |
