@@ -76,3 +76,4 @@
 | 2 按 brief 重写 | 2026-08-09 | 按 brief 写十语 title/description 与核心键；按钮短词本地化 | 十语键齐全 |
 | 2b 抽查语检索覆盖优化 | 2026-08-09 | 抽查 en,zh,es,ja：再核 title/desc 当地主词与示例数字 | en,zh,es,ja 已再优化 title/desc |
 | 3 抽查+禁词+lint | 2026-08-09 | 扫禁词与免责；跑 coverage:gate all 与 build:site | 上线验收通过 |
+| thin-rewrite #50 | 2026-10-16 | 五立体（盒/立方/球/圆柱/圆锥）+公式步骤+字段显隐；en why_choose×5 FAQ×7；九语独立重写 | verify:tool OK；phase=all 绿 |

@@ -37,9 +37,9 @@
 | 字段 | 内容 |
 |---|---|
 | Catalog `page.style` | opts |
-| Title (en) / H1 | **Write a COUNTIF formula in Excel** |
-| Description 要点 | Process + example. Files/paste stay on the device and are not uploaded. |
-| FAQ 要点（≥3） | 上传？和邻页差？头词也叫？ |
+| Title (en) / H1 | **Write a COUNTIF Formula in Excel — Count Matches with Wildcards** |
+| Description 要点 | Process + example (A2:A6 / West); * ? wildcards; >10; blank `""`; sample match preview; nothing uploaded. ≥120 chars; contains COUNTIF. |
+| FAQ 要点（≥3） | 怎么写 COUNTIF？通配符 LIKE？何时 COUNTIFS？数字/运算符引号？空白单元格？上传？分号分隔符？ |
 | Disclaimer / References | Microsoft COUNTIF function support article |
 | related | excel-formulas-cheat-sheet, write-nested-if-formula-for-excel |
 

@@ -60,16 +60,16 @@
 | 38 | how-to-calculate-inflation | how-to-calculate | 156 | 8 | 7 | A | 5.1 | done 2026-10-15 |
 | 39 | how-to-calculate-profit-margin | how-to-calculate | 222 | 14 | 0 | A | 5.1 | done 2026-10-15 |
 | 40 | how-to-calculate-velocity | how-to-calculate | 99 | 6 | 7 | A | 5.0 | done 2026-10-15 |
-| 41 | write-pdf-document-online | pdf | 330 | 0 | 48 | C | 4.8 | todo |
-| 42 | how-to-calculate-significant-figures | how-to-calculate | 253 | 17 | 0 | A | 4.7 | todo |
-| 43 | how-to-calculate-pace | how-to-calculate | 124 | 5 | 7 | A | 3.9 | todo |
-| 44 | how-to-calculate-bmi | how-to-calculate | 328 | 58 | 0 | A | 3.6 | todo |
-| 45 | make-pdf-flipbook | pdf | 344 | 3 | 32 | B | 3.3 | todo |
-| 46 | how-to-calculate-exponent | how-to-calculate | 201 | 7 | 2 | A | 3.2 | todo |
-| 47 | how-to-calculate-rule-of-72 | how-to-calculate | 162 | 4 | 7 | A | 2.8 | todo |
-| 48 | how-to-calculate-pythagorean-theorem | how-to-calculate | 222 | 7 | 1 | A | 2.7 | todo |
-| 49 | write-countif-formula-in-excel | category:developer | 232 | 7 | 0 | B | 2.4 | todo |
-| 50 | how-to-calculate-volume | how-to-calculate | 107 | 2 | 7 | A | 2.1 | todo |
+| 41 | write-pdf-document-online | pdf | 330 | 0 | 48 | C | 4.8 | done 2026-10-15 |
+| 42 | how-to-calculate-significant-figures | how-to-calculate | 253 | 17 | 0 | A | 4.7 | done 2026-10-15 |
+| 43 | how-to-calculate-pace | how-to-calculate | 124 | 5 | 7 | A | 3.9 | done 2026-10-15 |
+| 44 | how-to-calculate-bmi | how-to-calculate | 328 | 58 | 0 | A | 3.6 | done 2026-10-15 |
+| 45 | make-pdf-flipbook | pdf | 344 | 3 | 32 | B | 3.3 | done 2026-10-15 |
+| 46 | how-to-calculate-exponent | how-to-calculate | 201 | 7 | 2 | A | 3.2 | done 2026-10-15 |
+| 47 | how-to-calculate-rule-of-72 | how-to-calculate | 162 | 4 | 7 | A | 2.8 | done 2026-10-16 |
+| 48 | how-to-calculate-pythagorean-theorem | how-to-calculate | 222 | 7 | 1 | A | 2.7 | done 2026-10-16 |
+| 49 | write-countif-formula-in-excel | category:developer | 232 | 7 | 0 | B | 2.4 | done 2026-10-16 |
+| 50 | how-to-calculate-volume | how-to-calculate | 107 | 2 | 7 | A | 2.1 | done 2026-10-16 |
 | 51 | how-to-calculate-one-rep-max | how-to-calculate | 121 | 2 | 7 | A | 2.0 | todo |
 | 52 | how-to-calculate-markup | how-to-calculate | 188 | 3 | 6 | A | 2.0 | todo |
 | 53 | how-to-calculate-vat | how-to-calculate | 176 | 1 | 14 | A | 1.9 | todo |

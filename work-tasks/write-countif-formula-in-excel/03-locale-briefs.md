@@ -21,113 +21,113 @@
 
 ### en
 
-- 检索词（3–5）：write a COUNTIF formula in Excel；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：write a COUNTIF formula in Excel；excel countif like / wildcards；count blank cells COUNTIF；privacy not uploaded
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Write a COUNTIF formula in Excel**），非参数枚举
-- 按钮短词：Write / Clear / Load sample
-- 本地示例用词：West/East 或当地等价；发票行项目
-- 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
-- 额外禁用：online excel 套件壳、page 当产品名
-- SERP 竞品 title（1–3）：Microsoft support / 模板站 / Excel Online（本页不克隆）
+- Title / H1 方向：**Write a COUNTIF Formula in Excel — Count Matches with Wildcards**（场景句，非 Range/Criteria 参数枚举）
+- 按钮短词：Write formula / Clear / Load sample / Copy
+- 本地示例用词：West/East、*west*、>10、blank ""
+- 可保留英文/符号：COUNTIF, COUNTIFS, Excel, A1
+- 额外禁用：online excel 套件壳、page 当产品名、参数枚举 title
+- SERP 竞品 title（1–3）：Microsoft COUNTIF support / 模板站 / Excel Online（本页不克隆）
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 ### zh
 
-- 检索词（3–5）：写出嵌套IF / 发票表 / 透视表 等当地说法见实现分片；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：Excel COUNTIF 公式；COUNTIF 通配符；统计空白单元格；条件计数公式
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Write a COUNTIF formula in Excel**），非参数枚举
-- 按钮短词：写出 / 清空 / 加载示例
-- 本地示例用词：West/East 或当地等价；发票行项目
-- 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
+- Title / H1 方向：写出 Excel COUNTIF 公式（含通配符匹配计数），非参数枚举
+- 按钮短词：写出公式 / 清空 / 加载样例 / 复制
+- 本地示例用词：西区/东区 或保留 West；*west*；>10；空白 ""
+- 可保留英文/符号：COUNTIF, COUNTIFS, Excel, A1
 - 额外禁用：online excel 套件壳、page 当产品名
-- SERP 竞品 title（1–3）：Microsoft support / 模板站 / Excel Online（本页不克隆）
+- SERP 竞品 title（1–3）：Microsoft COUNTIF / 公式站
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 ### es
 
-- 检索词（3–5）：fórmula SI anidada / factura / tabla dinámica；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：fórmula COUNTIF Excel；comodines COUNTIF；contar celdas en blanco；criterio COUNTIF
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Write a COUNTIF formula in Excel**），非参数枚举
-- 按钮短词：Generar / Borrar / Ejemplo
-- 本地示例用词：West/East 或当地等价；发票行项目
-- 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
+- Title / H1 方向：escribir fórmula COUNTIF en Excel con comodines（场景句）
+- 按钮短词：Escribir fórmula / Borrar / Ejemplo / Copiar
+- 本地示例用词：Oeste/Este 或 West；*west*；>10
+- 可保留英文/符号：COUNTIF, COUNTIFS, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
-- SERP 竞品 title（1–3）：Microsoft support / 模板站 / Excel Online（本页不克隆）
+- SERP 竞品 title（1–3）：Microsoft COUNTIF / plantillas
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 ### ar
 
-- 检索词（3–5）：صيغة IF متداخلة / فاتورة / جدول محوري；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：صيغة COUNTIF في Excel؛ أحرف البدل؛ عد الخلايا الفارغة
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Write a COUNTIF formula in Excel**），非参数枚举
-- 按钮短词：إنشاء / مسح / مثال
-- 本地示例用词：West/East 或当地等价；发票行项目
-- 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
+- Title / H1 方向：كتابة صيغة COUNTIF مع أحرف البدل（场景句）
+- 按钮短词：كتابة الصيغة / مسح / مثال / نسخ
+- 本地示例用词：West/*west*/ >10 / فارغ
+- 可保留英文/符号：COUNTIF, COUNTIFS, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
-- SERP 竞品 title（1–3）：Microsoft support / 模板站 / Excel Online（本页不克隆）
+- SERP 竞品 title（1–3）：Microsoft COUNTIF
 - 轮次2已重写：[x]  轮次3已抽查：[x]  待母语抽查：[ ]
 ### pt
 
-- 检索词（3–5）：fórmula SE aninhada / fatura / tabela dinâmica；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：fórmula COUNTIF Excel；curingas COUNTIF；contar células em branco
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Write a COUNTIF formula in Excel**），非参数枚举
-- 按钮短词：Gerar / Limpar / Exemplo
-- 本地示例用词：West/East 或当地等价；发票行项目
-- 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
+- Title / H1 方向：escrever fórmula COUNTIF no Excel com curingas
+- 按钮短词：Escrever fórmula / Limpar / Exemplo / Copiar
+- 本地示例用词：West/*west*/ >10
+- 可保留英文/符号：COUNTIF, COUNTIFS, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
-- SERP 竞品 title（1–3）：Microsoft support / 模板站 / Excel Online（本页不克隆）
+- SERP 竞品 title（1–3）：Microsoft COUNTIF
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 ### id
 
-- 检索词（3–5）：rumus IF bersarang / faktur / pivot；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：rumus COUNTIF Excel；wildcard COUNTIF；hitung sel kosong
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Write a COUNTIF formula in Excel**），非参数枚举
-- 按钮短词：Buat / Hapus / Contoh
-- 本地示例用词：West/East 或当地等价；发票行项目
-- 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
+- Title / H1 方向：tulis rumus COUNTIF di Excel dengan wildcard
+- 按钮短词：Tulis rumus / Hapus / Contoh / Salin
+- 本地示例用词：West/*west*/ >10
+- 可保留英文/符号：COUNTIF, COUNTIFS, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
-- SERP 竞品 title（1–3）：Microsoft support / 模板站 / Excel Online（本页不克隆）
+- SERP 竞品 title（1–3）：Microsoft COUNTIF
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 ### fr
 
-- 检索词（3–5）：formule SI imbriquée / facture / tableau croisé；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：formule COUNTIF Excel；jokers COUNTIF；compter cellules vides
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Write a COUNTIF formula in Excel**），非参数枚举
-- 按钮短词：Générer / Effacer / Exemple
-- 本地示例用词：West/East 或当地等价；发票行项目
-- 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
+- Title / H1 方向：écrire une formule COUNTIF Excel avec jokers
+- 按钮短词：Écrire la formule / Effacer / Exemple / Copier
+- 本地示例用词：West/*west*/ >10
+- 可保留英文/符号：COUNTIF, COUNTIFS, Excel
 - 额外禁用：online excel 套件壳、page 当产品名
-- SERP 竞品 title（1–3）：Microsoft support / 模板站 / Excel Online（本页不克隆）
+- SERP 竞品 title（1–3）：Microsoft COUNTIF
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 ### ja
 
-- 检索词（3–5）：ネストしたIF / 請求書 / ピボット；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：Excel COUNTIF 書き方；COUNTIF ワイルドカード；空白セル カウント
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Write a COUNTIF formula in Excel**），非参数枚举
-- 按钮短词：作成 / クリア / サンプル
-- 本地示例用词：West/East 或当地等价；发票行项目
-- 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
-- 额外禁用：online excel 套件壳、page 当产品名
-- SERP 竞品 title（1–3）：Microsoft support / 模板站 / Excel Online（本页不克隆）
+- Title / H1 方向：ExcelでCOUNTIF数式を書く（ワイルドカード対応）
+- 按钮短词：数式を作成 / クリア / サンプル / コピー
+- 本地示例用词：West/*west*/ >10
+- 可保留英文/符号：COUNTIF, COUNTIFS, Excel
+- 额外禁用：online excel 套件壳、page 当产品名、ユースケース空壳
+- SERP 竞品 title（1–3）：Microsoft COUNTIF
 - 轮次2已重写：[x]  轮次3已抽查：[x]  待母语抽查：[ ]
 ### ru
 
-- 检索词（3–5）：вложенный ЕСЛИ / счёт / сводная；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：формула СЧЁТЕСЛИ Excel；подстановочные знаки；пустые ячейки
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Write a COUNTIF formula in Excel**），非参数枚举
-- 按钮短词：Создать / Очистить / Пример
-- 本地示例用词：West/East 或当地等价；发票行项目
-- 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
+- Title / H1 方向：написать формулу СЧЁТЕСЛИ / COUNTIF с подстановками（可用 COUNTIF 保留）
+- 按钮短词：Создать формулу / Очистить / Пример / Копировать
+- 本地示例用词：West/*west*/ >10
+- 可保留英文/符号：COUNTIF, COUNTIFS, Excel；可提 СЧЁТЕСЛИ
 - 额外禁用：online excel 套件壳、page 当产品名
-- SERP 竞品 title（1–3）：Microsoft support / 模板站 / Excel Online（本页不克隆）
+- SERP 竞品 title（1–3）：Microsoft COUNTIF / СЧЁТЕСЛИ
 - 轮次2已重写：[x]  轮次3已抽查：[x]  待母语抽查：[ ]
 ### de
 
-- 检索词（3–5）：geschachtelte WENN / Rechnung / Pivot；本工具场景句；隐私「不上服务器」
+- 检索词（3–5）：COUNTIF Formel Excel；Platzhalter COUNTIF；leere Zellen zählen；ZÄHLENWENN
 - 语气：口语工具站
-- Title / H1 方向：当地检索向场景句（en 母版 **Write a COUNTIF formula in Excel**），非参数枚举
-- 按钮短词：Erzeugen / Leeren / Beispiel
-- 本地示例用词：West/East 或当地等价；发票行项目
-- 可保留英文/符号：IF, IFS, IFNA, COUNTIF, xlsx, CSV, Excel
-- 额外禁用：online excel 套件壳、page 当产品名
-- SERP 竞品 title（1–3）：Microsoft support / 模板站 / Excel Online（本页不克隆）
+- Title / H1 方向：COUNTIF-/ZÄHLENWENN-Formel in Excel schreiben mit Platzhaltern
+- 按钮短词：Formel schreiben / Leeren / Beispiel / Kopieren
+- 本地示例用词：West/*west*/ >10
+- 可保留英文/符号：COUNTIF, COUNTIFS, Excel；可提 ZÄHLENWENN
+- 额外禁用：online excel 套件壳、page 当产品名、Granularität
+- SERP 竞品 title（1–3）：Microsoft COUNTIF / ZÄHLENWENN
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 
@@ -142,3 +142,4 @@
 | 2b 抽查语检索覆盖优化 | 2026-09-04 | 抽查 en,zh,es,ja 的 title/desc：当地主词进 H1，次词进 FAQ；es/ja 句式不与 en 平行 | en,zh,es,ja 均再核落点 |
 | 3 抽查+禁词+lint | 2026-09-04 | 扫 privacy 设备+服务器句；禁 page 产品名；清待母语抽查 | 可标 i18n-done |
 | IG 修正复审 | 2026-09-05 | en/zh/es/ja 补完整 COUNTIF 与 wildcard Example；其余语补真实公式结果 | FAQ 明示 COUNTIFS、~ 转义及本地语法边界 |
+| thin-rewrite #49 | 2026-10-16 | 样例表+匹配预览+芯片；en 加深 why_choose×5 / FAQ×7；title 场景向；九语独立重写 | phase=2 绿；待 phase=4 |

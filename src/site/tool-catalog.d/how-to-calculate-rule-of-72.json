@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-rule-of-72",
   "path": "/tools/how-to-calculate-rule-of-72",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-16T01:43:28.474Z",
   "category": "calculator",
   "primaryTopic": "personal-money",
   "featured": false,
@@ -12,7 +12,8 @@
   "faqPrefix": "tool_rule_of_72",
   "related": [
     "how-to-calculate-cagr",
-    "how-to-calculate-compound-interest"
+    "how-to-calculate-compound-interest",
+    "how-to-calculate-exponent"
   ],
   "logo": "/icons/tools/how-to-calculate-rule-of-72.svg",
   "page": {

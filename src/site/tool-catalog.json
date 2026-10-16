@@ -3197,7 +3197,7 @@
   {
     "slug": "how-to-calculate-bmi",
     "path": "/tools/how-to-calculate-bmi",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T14:11:32.900Z",
     "category": "calculator",
     "primaryTopic": "health-body",
     "featured": true,
@@ -3554,7 +3554,7 @@
   {
     "slug": "how-to-calculate-exponent",
     "path": "/tools/how-to-calculate-exponent",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T15:46:05.778Z",
     "category": "calculator",
     "primaryTopic": "math-stats",
     "featured": false,
@@ -3565,7 +3565,8 @@
     "faqPrefix": "tool_exponent",
     "related": [
       "how-to-calculate-logarithm",
-      "how-to-calculate-scientific-notation"
+      "how-to-calculate-scientific-notation",
+      "how-to-calculate-rule-of-72"
     ],
     "logo": "/icons/tools/how-to-calculate-exponent.svg",
     "localProcessing": true,
@@ -3975,7 +3976,7 @@
   {
     "slug": "how-to-calculate-pace",
     "path": "/tools/how-to-calculate-pace",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T13:08:20.625Z",
     "category": "calculator",
     "primaryTopic": "health-body",
     "secondaryTopics": [
@@ -4147,7 +4148,7 @@
   {
     "slug": "how-to-calculate-pythagorean-theorem",
     "path": "/tools/how-to-calculate-pythagorean-theorem",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-16T01:57:54.300Z",
     "category": "calculator",
     "primaryTopic": "geometry-measure",
     "secondaryTopics": [
@@ -4222,7 +4223,7 @@
   {
     "slug": "how-to-calculate-rule-of-72",
     "path": "/tools/how-to-calculate-rule-of-72",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-16T01:43:28.474Z",
     "category": "calculator",
     "primaryTopic": "personal-money",
     "featured": false,
@@ -4233,7 +4234,8 @@
     "faqPrefix": "tool_rule_of_72",
     "related": [
       "how-to-calculate-cagr",
-      "how-to-calculate-compound-interest"
+      "how-to-calculate-compound-interest",
+      "how-to-calculate-exponent"
     ],
     "logo": "/icons/tools/how-to-calculate-rule-of-72.svg",
     "localProcessing": true,
@@ -4317,7 +4319,7 @@
   {
     "slug": "how-to-calculate-significant-figures",
     "path": "/tools/how-to-calculate-significant-figures",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-10-15T12:15:03.397Z",
     "category": "calculator",
     "primaryTopic": "math-stats",
     "secondaryTopics": [
@@ -4507,7 +4509,7 @@
   {
     "slug": "how-to-calculate-volume",
     "path": "/tools/how-to-calculate-volume",
-    "updatedAt": "2026-08-20T12:50:00.718Z",
+    "updatedAt": "2026-10-16T02:20:00.000Z",
     "category": "calculator",
     "primaryTopic": "geometry-measure",
     "secondaryTopics": [
@@ -5552,7 +5554,7 @@
   {
     "slug": "make-pdf-flipbook",
     "path": "/tools/make-pdf-flipbook",
-    "updatedAt": "2026-09-06T09:33:13.437Z",
+    "updatedAt": "2026-10-15T15:04:58.010Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -5567,7 +5569,8 @@
     "faqPrefix": "tool_make_pdf_flipbook",
     "related": [
       "open-pdf-in-browser",
-      "pdf-to-jpg"
+      "pdf-to-jpg",
+      "combine-files-into-one-pdf"
     ],
     "logo": "/icons/tools/make-pdf-flipbook.svg",
     "localProcessing": true,
@@ -7430,7 +7433,7 @@
   {
     "slug": "write-countif-formula-in-excel",
     "path": "/tools/write-countif-formula-in-excel",
-    "updatedAt": "2026-09-05T12:22:00.000Z",
+    "updatedAt": "2026-10-16T01:30:00.000Z",
     "launchedAt": "2026-09-04T14:10:00.000Z",
     "category": "developer",
     "primaryTopic": "dev-data",
@@ -7496,7 +7499,7 @@
   {
     "slug": "write-pdf-document-online",
     "path": "/tools/write-pdf-document-online",
-    "updatedAt": "2026-09-06T09:33:13.437Z",
+    "updatedAt": "2026-10-15T12:01:26.526Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",

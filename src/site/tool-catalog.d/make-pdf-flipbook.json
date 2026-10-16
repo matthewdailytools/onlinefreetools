@@ -1,7 +1,7 @@
 {
   "slug": "make-pdf-flipbook",
   "path": "/tools/make-pdf-flipbook",
-  "updatedAt": "2026-09-06T09:33:13.437Z",
+  "updatedAt": "2026-10-15T15:04:58.010Z",
   "launchedAt": "2026-09-03T14:00:00.000Z",
   "category": "pdf",
   "primaryTopic": "pdf-docs",
@@ -16,7 +16,8 @@
   "faqPrefix": "tool_make_pdf_flipbook",
   "related": [
     "open-pdf-in-browser",
-    "pdf-to-jpg"
+    "pdf-to-jpg",
+    "combine-files-into-one-pdf"
   ],
   "logo": "/icons/tools/make-pdf-flipbook.svg",
   "page": {

@@ -7,72 +7,77 @@
 
 ## 共用禁词 / 禁模式
 
-- [x] title 非参数目录腔
-- [x] 隐私：浏览器内计算
+- [x] title 非参数目录腔；zh 避免「A 和 B」并列
+- [x] 禁站内自指 / doorway
+- [x] 术语：zh 勾股定理、直角边、斜边、勾股数；ja 三平方の定理、直角をはさむ辺、斜辺；es teorema de Pitágoras, cateto, hipotenusa；pt teorema de Pitágoras, cateto, hipotenusa；fr théorème de Pythagore, côté de l’angle droit, hypoténuse；de Satz des Pythagoras, Kathete, Hypotenuse；ru теорема Пифагора, катет, гипотенуза；id teorema Pythagoras, sisi tegak, sisi miring；ar نظرية فيثاغورس، ضلع قائم، وتر
+- [x] 小数逗号语种：2,4；面积等
+- [x] 固定数字不可改
 - [x] **清单前检索覆盖已做**
+- [x] **用户意图审查已做**
 - [x] **检索覆盖已优化**
 - [x] 十语非同构
+
+## 固定数字
+
+3-4-5 → c=5、面积6、周长12、高2.4；5-12-13；8与10求a→6；6-8-10=2×(3-4-5)。
 
 ## 每语 brief
 
 ### en
-- 检索词：见 title 主词
-- Title：Pythagorean Theorem Calculator — How to Find a Missing Side
+- Title：Pythagorean Theorem Calculator — Find a Missing Side of a Right Triangle
+- 按钮：Calculate / Load sample / Clear
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### zh
-- 检索词：见 title 主词
-- Title：勾股定理计算器 — 如何求直角三角形缺边
+- 检索词：勾股定理计算器；直角三角形求斜边；勾股数 3-4-5
+- Title：勾股定理计算器 — 求直角三角形未知边并写出平方验算
+- 按钮：计算 / 加载样例 / 清空
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### es
-- 检索词：见 title 主词
-- Title：Calculadora de Pitágoras — Cómo hallar el lado faltante
+- Title：Calculadora del teorema de Pitágoras — halla el lado que falta en un triángulo rectángulo
+- 按钮：Calcular / Cargar ejemplo / Borrar
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### ar
-- 检索词：见 title 主词
-- Title：حاسبة فيثاغورس — كيفية إيجاد الضلع المفقود
+- Title：حاسبة نظرية فيثاغورس — أوجد الضلع الناقص في المثلث قائم الزاوية
+- 按钮：احسب / تحميل مثال / مسح
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### pt
-- 检索词：见 title 主词
-- Title：Calculadora de Pitágoras — Como achar o lado faltante
+- Title：Calculadora do teorema de Pitágoras — encontre o lado que falta em um triângulo retângulo
+- 按钮：Calcular / Carregar exemplo / Limpar
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### id
-- 检索词：见 title 主词
-- Title：Kalkulator Pythagoras — Cara mencari sisi yang hilang
+- Title：Kalkulator Teorema Pythagoras — Cari Sisi yang Hilang pada Segitiga Siku-siku
+- 按钮：Hitung / Muat contoh / Hapus
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### fr
-- 检索词：见 title 主词
-- Title：Calculateur de Pythagore — Trouver le côté manquant
+- Title：Calculateur du théorème de Pythagore — trouvez le côté manquant d’un triangle rectangle
+- 按钮：Calculer / Charger un exemple / Effacer
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### ja
-- 检索词：见 title 主词
-- Title：三平方の定理計算ツール — 欠けた辺の求め方
+- Title：三平方の定理計算ツール — 直角三角形の未知の辺を求め、検算と面積も表示
+- 按钮：計算する / サンプルを読み込む / クリア
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### ru
-- 检索词：见 title 主词
-- Title：Калькулятор Пифагора — Как найти недостающую сторону
+- Title：Калькулятор теоремы Пифагора — найдите недостающую сторону прямоугольного треугольника
+- 按钮：Рассчитать / Загрузить пример / Очистить
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
 ### de
-- 检索词：见 title 主词
-- Title：Pythagoras-Rechner — Fehlende Seite finden
+- Title：Satz-des-Pythagoras-Rechner — fehlende Seite im rechtwinkligen Dreieck berechnen
+- 按钮：Berechnen / Beispiel laden / Leeren
 - 轮次2已重写：[x]  轮次3已抽查：[x]
 
-## 多轮记录（摘要）
+## 多轮记录
 
 | 轮次 | 日期 | 做了什么 | 结果 |
 |---|---|---|---|
-| 0b 清单前检索覆盖 | 2026-08-09 | 保留 how-to-calculate-pythagorean-theorem；title 定为结果向主词+How to；次词与固定样例落入 desc/FAQ；禁参数枚举 | 覆盖表已写入 02；可标 ready |
-
-| 1 母版+lint | 2026-08-09 | 写 en 完整键 + Page/catalog/icon；进页 loadSample | 母版可合并 |
-| 1b 母版检索覆盖优化 | 2026-08-09 | 核对 en title 含主检索词与 How to Calculate/结果向副标题；desc 含固定示例数字；非参数枚举 | 主词在 H1；次词落 FAQ/模式 |
-| 2 按 brief 重写 | 2026-08-09 | 按 brief 写十语 title/description 与核心键；按钮短词本地化 | 十语键齐全 |
-| 2b 抽查语检索覆盖优化 | 2026-08-09 | 抽查 en,zh,es,ja：再核 title/desc 当地主词与示例数字 | en,zh,es,ja 已再优化 title/desc |
-| 3 抽查+禁词+lint | 2026-08-09 | 扫禁词与免责；跑 coverage:gate all 与 build:site | 上线验收通过 |
+| 0b | 2026-10-16 | 保留 slug；H1 强调 missing side；同意图表与意图审查 | 02 回写 |
+| 1b | 2026-10-16 | en 母版覆盖主次词与 triple/area/altitude | 主词在 H1 |
+| 2b | 2026-10-16 | 十语检索向重写；抽查 en,zh,es,ja,de | 键集一致 |

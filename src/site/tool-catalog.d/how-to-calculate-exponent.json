@@ -1,7 +1,7 @@
 {
   "slug": "how-to-calculate-exponent",
   "path": "/tools/how-to-calculate-exponent",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-10-15T15:46:05.778Z",
   "category": "calculator",
   "primaryTopic": "math-stats",
   "featured": false,
@@ -12,7 +12,8 @@
   "faqPrefix": "tool_exponent",
   "related": [
     "how-to-calculate-logarithm",
-    "how-to-calculate-scientific-notation"
+    "how-to-calculate-scientific-notation",
+    "how-to-calculate-rule-of-72"
   ],
   "logo": "/icons/tools/how-to-calculate-exponent.svg",
   "page": {

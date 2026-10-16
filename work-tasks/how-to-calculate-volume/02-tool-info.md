@@ -20,8 +20,8 @@
 
 | 字段 | 内容 |
 |---|---|
-| Title (en) | Volume Calculator — Box and Sphere |
-| Description | Compute volume for a box (L×W×H) or sphere (4/3 πr³). Sample: box 2×3×4 → 24. Browser-only. |
+| Title (en) | Volume Calculator — Find the Volume of Common Solids |
+| Description | Box L×W×H, cube a³, sphere (4/3)πr³, cylinder πr²h, cone (1/3)πr²h. Sample box 2×3×4 → 24. Formula + steps; browser-only. ≥120 chars; contains volume. |
 | related | how-to-calculate-triangle-area, how-to-calculate-circle |
 
 ## 清单前检索覆盖优化
@@ -30,7 +30,7 @@
 |---|---|
 | 日期 | 2026-08-09 |
 | slug 结论 | **保留** `how-to-calculate-volume` |
-| 主检索词 → title/H1 | en：**Volume Calculator — Box and Sphere**；zh：**体积计算器 — 长方体与球** |
+| 主检索词 → title/H1 | en：**Volume Calculator — Find the Volume of Common Solids**；zh：**体积计算器 — 求常见立体的体积** |
 | 次要关键词 → desc/FAQ | 次词落入 description 前半与 FAQ；示例数字固定 |
 | 用户搜索习惯判断 | 结果/场景向 title；禁参数枚举目录腔 |
 | 优化摘要 | 保留 slug；H1 主词+How to；desc 含样例数字与公式信号；非参数枚举 |
