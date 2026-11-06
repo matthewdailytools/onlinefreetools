@@ -133,9 +133,11 @@ export const renderLayout = ({
       if (!toggle || !panel) return;
       var mq = window.matchMedia('(min-width: 992px)');
       var closeTimer = null;
+      var openedByClick = false;
       var CLOSE_DELAY_MS = 220;
 
       function setOpen(open) {
+        if (!open) openedByClick = false;
         item.classList.toggle('is-open', open);
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       }
@@ -149,6 +151,7 @@ export const renderLayout = ({
 
       function scheduleClose() {
         clearCloseTimer();
+        if (openedByClick) return;
         closeTimer = setTimeout(function () {
           setOpen(false);
           closeTimer = null;
@@ -171,11 +174,11 @@ export const renderLayout = ({
       }
 
       panel.querySelectorAll('.tools-mega-topic').forEach(function (btn) {
-        btn.addEventListener('mouseenter', function () {
-          activateTopic(btn.getAttribute('data-topic-id'));
+        btn.addEventListener('pointerenter', function (e) {
+          if (mq.matches && e.pointerType === 'mouse') activateTopic(btn.getAttribute('data-topic-id'));
         });
         btn.addEventListener('focus', function () {
-          activateTopic(btn.getAttribute('data-topic-id'));
+          if (btn.matches(':focus-visible')) activateTopic(btn.getAttribute('data-topic-id'));
         });
         btn.addEventListener('click', function (e) {
           e.preventDefault();
@@ -183,33 +186,44 @@ export const renderLayout = ({
         });
       });
 
-      item.addEventListener('mouseenter', function () {
-        if (!mq.matches) return;
+      item.addEventListener('pointerenter', function (e) {
+        if (!mq.matches || e.pointerType !== 'mouse') return;
         clearCloseTimer();
         setOpen(true);
       });
-      item.addEventListener('mouseleave', function () {
-        if (!mq.matches) return;
+      item.addEventListener('pointerleave', function (e) {
+        if (!mq.matches || e.pointerType !== 'mouse') return;
         scheduleClose();
       });
-      panel.addEventListener('mouseenter', function () {
-        if (!mq.matches) return;
+      panel.addEventListener('pointerenter', function (e) {
+        if (!mq.matches || e.pointerType !== 'mouse') return;
         clearCloseTimer();
         setOpen(true);
       });
-      panel.addEventListener('mouseleave', function () {
-        if (!mq.matches) return;
+      panel.addEventListener('pointerleave', function (e) {
+        if (!mq.matches || e.pointerType !== 'mouse') return;
         scheduleClose();
       });
 
-      /** 点击「工具」展开/收起（桌面与窄屏相同）；桌面仍可悬停打开。 */
       toggle.addEventListener('click', function (e) {
         e.preventDefault();
         clearCloseTimer();
-        setOpen(!item.classList.contains('is-open'));
+        openedByClick = !openedByClick;
+        setOpen(openedByClick);
       });
       document.addEventListener('click', function (e) {
         if (!item.contains(e.target)) setOpen(false);
+      });
+      item.addEventListener('focusout', function (e) {
+        if (e.relatedTarget && !item.contains(e.relatedTarget)) setOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape' || !item.classList.contains('is-open')) return;
+        var restoreFocus = item.contains(document.activeElement);
+        e.preventDefault();
+        clearCloseTimer();
+        setOpen(false);
+        if (restoreFocus) toggle.focus();
       });
     })();
   </script>`;

@@ -66,6 +66,7 @@ import { renderCheckRobotsTxtUrlBlockedPage } from '../pages/checkRobotsTxtUrlBl
 import { renderCheckSslCertificateExpirationPage } from '../pages/checkSslCertificateExpirationPage';
 import { renderCidrCheatSheetPage } from '../pages/cidrCheatSheetPage';
 import { renderCidrToIpRangePage } from '../pages/cidrToIpRangePage';
+import { renderCloneAVoiceFromARecordingPage } from '../pages/cloneAVoiceFromARecordingPage';
 import { renderColorFromImagePage } from '../pages/colorFromImagePage';
 import { renderCombineFilesIntoOnePdfPage } from '../pages/combineFilesIntoOnePdfPage';
 import { renderCompareTwoPdfsPage } from '../pages/compareTwoPdfsPage';
@@ -297,6 +298,7 @@ import { renderSvgOptimizerPage } from '../pages/svgOptimizerPage';
 import { renderSyncSongLyricsToLrcByTappingPage } from '../pages/syncSongLyricsToLrcByTappingPage';
 import { renderTerraformCidrsubnetPage } from '../pages/terraformCidrsubnetPage';
 import { renderTextDiffPage } from '../pages/textDiffPage';
+import { renderTextToSpeechForVoiceoversPage } from '../pages/textToSpeechForVoiceoversPage';
 import { renderTimezoneConverterPage } from '../pages/timezoneConverterPage';
 import { renderTranscribeAnAudioFileToTextPage } from '../pages/transcribeAnAudioFileToTextPage';
 import { renderTrimAVideoClipAndExportPage } from '../pages/trimAVideoClipAndExportPage';
@@ -392,6 +394,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'check-ssl-certificate-expiration': (lang, defaultLang, enabled) => renderCheckSslCertificateExpirationPage({ lang, defaultLang, enabledLangs: enabled }),
 	'cidr-cheat-sheet': (lang, defaultLang, enabled) => renderCidrCheatSheetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'cidr-to-ip-range': (lang, defaultLang, enabled) => renderCidrToIpRangePage({ lang, defaultLang, enabledLangs: enabled }),
+	'clone-a-voice-from-a-recording': (lang, defaultLang, enabled) => renderCloneAVoiceFromARecordingPage({ lang, defaultLang, enabledLangs: enabled }),
 	'color-from-image': (lang, defaultLang, enabled) => renderColorFromImagePage({ lang, defaultLang, enabledLangs: enabled }),
 	'combine-files-into-one-pdf': (lang, defaultLang, enabled) => renderCombineFilesIntoOnePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'compare-two-pdfs': (lang, defaultLang, enabled) => renderCompareTwoPdfsPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -623,6 +626,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'sync-song-lyrics-to-lrc-by-tapping': (lang, defaultLang, enabled) => renderSyncSongLyricsToLrcByTappingPage({ lang, defaultLang, enabledLangs: enabled }),
 	'terraform-cidrsubnet': (lang, defaultLang, enabled) => renderTerraformCidrsubnetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'text-diff': (lang, defaultLang, enabled) => renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled }),
+	'text-to-speech-for-voiceovers': (lang, defaultLang, enabled) => renderTextToSpeechForVoiceoversPage({ lang, defaultLang, enabledLangs: enabled }),
 	'timezone-converter': (lang, defaultLang, enabled) => renderTimezoneConverterPage({ lang, defaultLang, enabledLangs: enabled }),
 	'transcribe-an-audio-file-to-text': (lang, defaultLang, enabled) => renderTranscribeAnAudioFileToTextPage({ lang, defaultLang, enabledLangs: enabled }),
 	'trim-a-video-clip-and-export': (lang, defaultLang, enabled) => renderTrimAVideoClipAndExportPage({ lang, defaultLang, enabledLangs: enabled }),

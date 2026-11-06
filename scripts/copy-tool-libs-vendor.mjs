@@ -161,6 +161,15 @@ for (const rel of whisperRequired) {
 	}
 }
 
+// MOSS uses the tracked Whisper WASM pair and its own generated JS entry points.
+for (const rel of ['moss-support.mjs', 'ort.wasm.min.mjs']) {
+	const file = path.join(outRoot, 'moss-nano', rel);
+	if (!fs.existsSync(file)) {
+		console.error('Missing MOSS vendor file (run npm run vendor:moss-nano):', path.relative(root, file));
+		process.exit(1);
+	}
+}
+
 /**
  * Mediabunny（MKV→MP4 AAC）不由本脚本打包：须已提交 `public/vendor/mediabunny/`（见 `npm run vendor:mediabunny`）。
  */

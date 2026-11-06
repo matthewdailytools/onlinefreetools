@@ -68,6 +68,8 @@
 - [从录音中去除市电嗡嗡](https://onlinefreetools.org/zh/tools/remove-mains-hum-from-a-recording) - 用 50/60 Hz 陷波及可选谐波切掉市电嗡嗡，试听后下载 16 位 WAV；文件留在本机，不上传服务器
 - [看着提词器录制旁白](https://onlinefreetools.org/zh/tools/record-a-voiceover-with-a-teleprompter) - 先排练滚稿，再边读边录，同步暂停文字与音频，试听后下载；稿件和声音留在设备、不上传服务器
 - [在浏览器录一段语音备忘](https://onlinefreetools.org/zh/tools/record-a-voice-memo-in-the-browser) - 查看麦克风电平，可暂停和继续，停止后试听并下载；音频留在设备、不上传服务器
+- [文字转语音在线配音](https://onlinefreetools.org/zh/tools/text-to-speech-for-voiceovers) - 用预设音色读短文稿，在浏览器生成并试听，下载 WAV
+- [从授权录音克隆声音](https://onlinefreetools.org/zh/tools/clone-a-voice-from-a-recording) - 导入或录制参考，确认授权后用相似音色生成新文稿，试听并下载 WAV
 - [从视频文件提取音频](https://onlinefreetools.org/zh/tools/extract-audio-from-a-video-file) - 本机从单个本地视频提取音轨为 WAV/MP3；短片整段解码，长片流式 MP3 稳住内存；多文件请用批量页；文件不上传服务器
 - [从 WebM 文件提取音频](https://onlinefreetools.org/zh/tools/extract-audio-from-a-webm-file) - 仅 WebM：浏览器播放抓取 Opus 为 WAV/MP3，单文件约 500 MiB/4 小时；不上传服务器
 - [从 MP4 文件提取音频](https://onlinefreetools.org/zh/tools/extract-audio-from-an-mp4-file) - 仅 MP4/M4V：本机 demux 容器内 AAC 为 WAV/MP3，大文件走 OPFS；不上传服务器
@@ -348,6 +350,8 @@ Below are our available online tools with their links (English version):
 - [Remove mains hum from a recording](https://onlinefreetools.org/tools/remove-mains-hum-from-a-recording) - Cut 50 or 60 Hz electrical hum with notch filters and optional harmonics, preview, then download 16-bit WAV; audio stays on your device without server upload
 - [Record a voiceover with a teleprompter](https://onlinefreetools.org/tools/record-a-voiceover-with-a-teleprompter) - Rehearse a scrolling script, record while reading, pause text and audio together, then listen and download; text and audio stay on your device without upload
 - [Record a voice memo in the browser](https://onlinefreetools.org/tools/record-a-voice-memo-in-the-browser) - Watch the microphone level, pause or resume, then play and download the recording — stays on the device, not uploaded
+- [Text to Speech for Voiceovers](https://onlinefreetools.org/tools/text-to-speech-for-voiceovers) - Generate a short voiceover on your device, preview the take, and save it as WAV
+- [Clone a Voice from a Recording](https://onlinefreetools.org/tools/clone-a-voice-from-a-recording) - Add a recording you have permission to use, synthesize a new script on your device, and download WAV
 - [Extract audio from a video file](https://onlinefreetools.org/tools/extract-audio-from-a-video-file) - Pull a soundtrack from one local video to WAV/MP3 on-device; short clips decode in one pass, longer clips stream MP3 for stable memory; use the batch page for many files — not uploaded
 - [Extract audio from a WebM file](https://onlinefreetools.org/tools/extract-audio-from-a-webm-file) - WebM-only: capture Opus from one local screen-recording WebM to WAV/MP3 via browser playback (about 500 MiB / 4 h cap) — stays on your device, not uploaded
 - [Extract audio from an MP4 file](https://onlinefreetools.org/tools/extract-audio-from-an-mp4-file) - MP4/M4V only: demux AAC from one local phone or camera export to WAV/MP3 with ISOBMFF+OPFS for large files — stays on your device, not uploaded

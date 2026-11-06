@@ -1,15 +1,18 @@
 /**
- * 首页内容：Hero（工具数量）+ Why×3 + 最新上线 + 分类工具目录。
+ * 首页内容：Hero（工具数量）+ Why×3 + 单工具推荐 + 最新上线 + 分类工具目录。
  * 站内工具链接使用显式语言前缀（含 /en/），避免切到英文后再被 Accept-Language 打回。
  */
 import { t } from '../i18n.mjs';
-import { TOOL_CATALOG, getLatestTools, getToolsByCategory, LATEST_TOOL_COUNT } from '../tool-catalog.mjs';
+import { withLangPath } from '../config.mjs';
+import { TOOL_CATALOG, getLatestTools, getToolsByCategory, getToolBySlug, getToolLogoUrl, LATEST_TOOL_COUNT } from '../tool-catalog.mjs';
 import {
   TOOL_CATEGORY_ORDER,
   getCategoryAnchor,
   CATEGORY_HOME_SECTION_KEYS,
 } from '../categories.mjs';
-import { renderNoUploadTag, renderToolCard } from './content-tool-cards.mjs';
+import { renderNoUploadTag, renderToolCard, showNoUploadTag } from './content-tool-cards.mjs';
+
+const featuredTool = getToolBySlug('clone-a-voice-from-a-recording');
 
 /**
  * 渲染首页主体。
@@ -24,6 +27,27 @@ export const renderHomeContent = ({ lang }) => {
   const EAGER_LOGO_COUNT = 12;
   /** 已分配 eager 的图标计数 */
   let eagerLeft = EAGER_LOGO_COUNT;
+  const featuredSection = featuredTool ? `
+    <section id="featured-tool" class="home-featured mb-5" aria-labelledby="home-featured-heading">
+      <div class="home-section-head">
+        <h2 id="home-featured-heading">${t(lang, 'home_featured')}</h2>
+      </div>
+      <article class="card tool-entry-card">
+        <div class="card-body d-flex flex-column flex-md-row align-items-md-center gap-3">
+          <div class="d-flex align-items-start flex-grow-1 gap-3">
+            <img class="tool-card-logo" src="${getToolLogoUrl(featuredTool)}" width="36" height="36" alt="" loading="lazy" decoding="async">
+            <div>
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                <h3 class="home-card-title home-card-title--featured mb-0">${t(lang, featuredTool.homeTitleKey)}</h3>
+                ${showNoUploadTag(featuredTool) ? renderNoUploadTag(lang) : ''}
+              </div>
+              <p class="home-card-desc mb-0">${t(lang, featuredTool.homeDescKey)}</p>
+            </div>
+          </div>
+          <a class="btn btn-primary flex-shrink-0" href="${withLangPath(lang, featuredTool.path)}">${openCta}</a>
+        </div>
+      </article>
+    </section>` : '';
   /** 按首次上线时间取最近一批，供首页「最新上线」模块 */
   const latestTools = getLatestTools(LATEST_TOOL_COUNT);
   /** 最新上线卡片 HTML；无工具时不渲染整块 */
@@ -117,6 +141,7 @@ export const renderHomeContent = ({ lang }) => {
     </div>
 
     <div class="home-main">
+    ${featuredSection}
     ${latestSection}
 
     <section id="all-tools">

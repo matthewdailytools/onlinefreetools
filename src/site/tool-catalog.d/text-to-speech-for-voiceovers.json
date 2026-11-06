@@ -1,0 +1,28 @@
+{
+  "slug": "text-to-speech-for-voiceovers",
+  "path": "/tools/text-to-speech-for-voiceovers",
+  "updatedAt": "2026-11-06T09:20:00.000Z",
+  "launchedAt": "2026-11-06T09:20:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_text_to_speech_for_voiceovers_title",
+  "homeTitleKey": "tool_text_to_speech_for_voiceovers_title",
+  "homeDescKey": "tool_text_to_speech_for_voiceovers_desc",
+  "faqPrefix": "tool_text_to_speech_for_voiceovers",
+  "related": [
+    "mix-a-voiceover-with-background-music",
+    "join-audio-files-in-order",
+    "clone-a-voice-from-a-recording"
+  ],
+  "logo": "/icons/tools/text-to-speech-for-voiceovers.svg",
+  "page": {
+    "module": "../pages/textToSpeechForVoiceoversPage",
+    "export": "renderTextToSpeechForVoiceoversPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}

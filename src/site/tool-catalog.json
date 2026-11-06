@@ -1495,6 +1495,29 @@
     "subject": "network"
   },
   {
+    "slug": "clone-a-voice-from-a-recording",
+    "path": "/tools/clone-a-voice-from-a-recording",
+    "updatedAt": "2026-11-06T14:27:30.485Z",
+    "launchedAt": "2026-11-06T09:35:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_clone_a_voice_from_a_recording_title",
+    "homeTitleKey": "tool_clone_a_voice_from_a_recording_title",
+    "homeDescKey": "tool_clone_a_voice_from_a_recording_desc",
+    "faqPrefix": "tool_clone_a_voice_from_a_recording",
+    "related": [
+      "text-to-speech-for-voiceovers",
+      "record-a-voice-memo-in-the-browser",
+      "mix-a-voiceover-with-background-music"
+    ],
+    "logo": "/icons/tools/clone-a-voice-from-a-recording.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
+  },
+  {
     "slug": "color-from-image",
     "path": "/tools/color-from-image",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -7030,6 +7053,29 @@
     "scenario": "developer",
     "subject": "text",
     "launchedAt": "2026-08-06T17:00:35+08:00"
+  },
+  {
+    "slug": "text-to-speech-for-voiceovers",
+    "path": "/tools/text-to-speech-for-voiceovers",
+    "updatedAt": "2026-11-06T09:20:00.000Z",
+    "launchedAt": "2026-11-06T09:20:00.000Z",
+    "category": "developer",
+    "primaryTopic": "sound-editor",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_text_to_speech_for_voiceovers_title",
+    "homeTitleKey": "tool_text_to_speech_for_voiceovers_title",
+    "homeDescKey": "tool_text_to_speech_for_voiceovers_desc",
+    "faqPrefix": "tool_text_to_speech_for_voiceovers",
+    "related": [
+      "mix-a-voiceover-with-background-music",
+      "join-audio-files-in-order",
+      "clone-a-voice-from-a-recording"
+    ],
+    "logo": "/icons/tools/text-to-speech-for-voiceovers.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "audio"
   },
   {
     "slug": "timezone-converter",

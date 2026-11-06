@@ -544,8 +544,6 @@ body.is-tool-page .tool-lead {
     height: 28px;
   }
 
-  .nav-item--tools-mega:hover > .tools-mega-panel,
-  .nav-item--tools-mega:focus-within > .tools-mega-panel,
   .nav-item--tools-mega.is-open > .tools-mega-panel {
     display: grid !important;
   }
@@ -1547,6 +1545,10 @@ footer.bg-light {
 /** 最新上线与下方全部分类目录拉开间距 */
 .home-latest {
   margin-bottom: 2.75rem;
+}
+
+#all-tools {
+  scroll-margin-block-start: calc(var(--header-h, 56px) + var(--lang-hint-h, 0px) + 1rem);
 }
 
 .home-why {

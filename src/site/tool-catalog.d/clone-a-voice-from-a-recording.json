@@ -1,0 +1,28 @@
+{
+  "slug": "clone-a-voice-from-a-recording",
+  "path": "/tools/clone-a-voice-from-a-recording",
+  "updatedAt": "2026-11-06T14:27:30.485Z",
+  "launchedAt": "2026-11-06T09:35:00.000Z",
+  "category": "developer",
+  "primaryTopic": "sound-editor",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_clone_a_voice_from_a_recording_title",
+  "homeTitleKey": "tool_clone_a_voice_from_a_recording_title",
+  "homeDescKey": "tool_clone_a_voice_from_a_recording_desc",
+  "faqPrefix": "tool_clone_a_voice_from_a_recording",
+  "related": [
+    "text-to-speech-for-voiceovers",
+    "record-a-voice-memo-in-the-browser",
+    "mix-a-voiceover-with-background-music"
+  ],
+  "logo": "/icons/tools/clone-a-voice-from-a-recording.svg",
+  "page": {
+    "module": "../pages/cloneAVoiceFromARecordingPage",
+    "export": "renderCloneAVoiceFromARecordingPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "audio"
+}
