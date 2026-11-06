@@ -711,6 +711,10 @@ body.is-tool-page .tool-lead {
 
 /* 窄屏：点击「工具」展开；主题轨 + 当前工具列表纵向堆叠 */
 @media (max-width: 991.98px) {
+  .navbar.site-navbar .navbar-collapse {
+    min-width: 0;
+  }
+
   .tools-mega-panel {
     display: none;
     flex-direction: column;
